@@ -72,21 +72,41 @@ function HomePage() {
           <p className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-1 text-xs font-medium tracking-wide">
             <Sparkles className="size-3.5" /> {t("tagline")}
           </p>
-          
-          {/* ২ লাইনে শিরোনাম এবং টাইপরাইটার অ্যানিমেশন */}
+
+          {/* ২ লাইনে শিরোনাম এবং লুপড টাইপরাইটার অ্যানিমেশন */}
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
             {lang === "bn" ? (
               <>
                 পবিত্র কুরআন — বুঝে পড়ুন <br />
                 <span className="gold-text inline-block mt-1">
-                  <Typewriter text="শব্দে শব্দে" speed={120} delay={500} loop={true} />
+                  <Typewriter
+                    words={[
+                      "শব্দে শব্দে অর্থসহ",
+                      "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
+                      "সহজ বাংলা অনুবাদে",
+                      "প্রামাণ্য তথ্যসূত্রসহ"
+                    ]}
+                    typingSpeed={90}
+                    deletingSpeed={50}
+                    delayBetweenWords={1500}
+                  />
                 </span>
               </>
             ) : (
               <>
                 The Holy Quran — understand it <br />
                 <span className="gold-text inline-block mt-1">
-                  <Typewriter text="word by word" speed={110} delay={500} loop={true} />
+                  <Typewriter
+                    words={[
+                      "word by word",
+                      "with scientific context",
+                      "in clear translation",
+                      "with authentic notes"
+                    ]}
+                    typingSpeed={80}
+                    deletingSpeed={40}
+                    delayBetweenWords={1500}
+                  />
                 </span>
               </>
             )}
