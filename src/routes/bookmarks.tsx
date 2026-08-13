@@ -49,7 +49,7 @@ function BookmarksPage() {
         </div>
       ) : (
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {bookmarks.map((b) => {
+          {bookmarks.map((b, index) => {
             const isArticle = b.kind === "article";
             const isAyah = b.kind === "ayah";
             const surahId = "surah" in b ? String(b.surah) : "1";
@@ -58,14 +58,9 @@ function BookmarksPage() {
 
             return (
               <div
-                key={
-                  isArticle
-                    ? `article-${articleSlug}`
-                    : `${b.kind}-${surahId}-${ayahNum ?? 0}`
-                }
+                key={index}
                 className="card-soft group relative flex items-center justify-between p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
               >
-                {/* ১. আর্টিকেলের জন্য ক্লিকেবল লিংক */}
                 {isArticle ? (
                   <Link
                     to="/articles/$slug"
@@ -83,7 +78,6 @@ function BookmarksPage() {
                     </h3>
                   </Link>
                 ) : (
-                  /* ২. সুরা এবং আয়াতের জন্য ক্লিকেবল লিংক */
                   <Link
                     to="/surah/$id"
                     params={{ id: surahId }}
@@ -106,7 +100,6 @@ function BookmarksPage() {
                   </Link>
                 )}
 
-                {/* মুছে ফেলার বাটন */}
                 <Button
                   variant="ghost"
                   size="icon"
