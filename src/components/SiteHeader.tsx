@@ -62,7 +62,6 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-
 export function SiteHeader() {
   const { t, lang, toggleLang, dark, setDark } = usePrefs();
   const { user } = useSession();
@@ -72,12 +71,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-chrome text-chrome-foreground">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-3 px-4">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+        <Link to="/" className="flex items-center gap-2.5">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
             <BookOpen className="size-5" />
           </span>
-          <span className="font-display text-lg font-semibold tracking-tight">
-            {t("siteName")}
+          <span 
+            className="text-xl sm:text-2xl font-normal text-amber-400 tracking-wide"
+            style={{ fontFamily: "'Kaushan Script', cursive" }}
+          >
+            Quran Explorer
           </span>
         </Link>
 
@@ -152,7 +154,6 @@ export function SiteHeader() {
               </Link>
             </Button>
           )}
-
 
           <button
             className="md:hidden rounded-md border border-white/15 p-1.5"
