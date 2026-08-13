@@ -91,7 +91,7 @@ function SurahPage() {
     // Search param অথবা hash থেকে আয়াত নম্বর বের করা
     let targetAyah = searchParams?.ayah;
     if (!targetAyah && typeof window !== "undefined" && window.location.hash) {
-      targetAyah = window.location.hash.replace("#ayah-", "");
+      targetAyah = window.location.hash.replace("#ayah-", "").replace("#", "");
     }
 
     if (targetAyah) {
@@ -102,9 +102,9 @@ function SurahPage() {
           el.classList.add("ring-2", "ring-primary", "transition-all", "duration-500");
           setTimeout(() => {
             el.classList.remove("ring-2", "ring-primary");
-          }, 3000);
+          }, 3500);
         }
-      }, 300);
+      }, 400);
 
       return () => clearTimeout(timer);
     }
@@ -442,21 +442,22 @@ function SurahPage() {
           </div>
         </div>
 
-        <aside className="order-1 space-y-4 lg:order-2 lg:sticky lg:top-24 lg:self-start">
+        {/* আপডেট করা স্ক্রলেবল ডেক্সটপ সাইডবার */}
+        <aside className="order-1 space-y-4 lg:order-2 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
           <DisplayToggles />
           <OfflineDownload audioUrls={Object.values(audio.data ?? {})} />
           <div className="card-soft p-5">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t("surahs")}
             </p>
-            <div className="max-h-80 space-y-1 overflow-y-auto pr-1">
+            <div className="max-h-[calc(100vh-22rem)] space-y-1 overflow-y-auto pr-1">
               {chapters.data?.map((c) => (
                 <Link
                   key={c.id}
                   to="/surah/$id"
                   params={{ id: String(c.id) }}
                   className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground"
-                  activeProps={{ className: "bg-accent text-accent-foreground" }}
+                  activeProps={{ className: "bg-accent text-accent-foreground font-medium" }}
                 >
                   <span className="w-7 text-xs text-muted-foreground">
                     {localNumber(c.id, lang)}
