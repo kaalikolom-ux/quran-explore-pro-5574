@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Slate Minimalist": Dark modern slate gray theme,
- * ultra-clean neutral accents. All colors are oklch semantic tokens.
+ * Design system — "Slate & Warm Parchment": 
+ * #E0CEBA Day mode background, Dark Slate Night mode.
  */
 
 @theme inline {
@@ -52,8 +52,8 @@
   --font-sans: "Noto Serif Bengali", "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", "Noto Serif Bengali", ui-sans-serif, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", serif;
-  --shadow-soft: 0 1px 3px oklch(0 0 0 / 0.1), 0 10px 25px -10px oklch(0 0 0 / 0.3);
-  --shadow-lift: 0 4px 12px oklch(0 0 0 / 0.15), 0 20px 40px -15px oklch(0 0 0 / 0.4);
+  --shadow-soft: 0 1px 3px oklch(0 0 0 / 0.08), 0 8px 20px -8px oklch(0 0 0 / 0.15);
+  --shadow-lift: 0 4px 12px oklch(0 0 0 / 0.12), 0 16px 32px -12px oklch(0 0 0 / 0.2);
 }
 
 :root {
@@ -61,42 +61,43 @@
   --chrome-foreground: oklch(0.98 0 0);
   --radius: 0.75rem;
 
-  --background: oklch(0.98 0.005 250);
-  --foreground: oklch(0.25 0.02 250);
-  --card: oklch(0.995 0.002 250);
-  --card-foreground: oklch(0.25 0.02 250);
-  --popover: oklch(0.995 0.002 250);
-  --popover-foreground: oklch(0.25 0.02 250);
-  --primary: oklch(0.3 0.03 250);
+  /* Day Mode Background set to #E0CEBA */
+  --background: oklch(0.85 0.03 70);
+  --foreground: oklch(0.22 0.02 50);
+  --card: oklch(0.89 0.025 70);
+  --card-foreground: oklch(0.22 0.02 50);
+  --popover: oklch(0.89 0.025 70);
+  --popover-foreground: oklch(0.22 0.02 50);
+  --primary: oklch(0.25 0.02 250);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.94 0.01 250);
-  --secondary-foreground: oklch(0.25 0.02 250);
-  --muted: oklch(0.95 0.008 250);
-  --muted-foreground: oklch(0.55 0.015 250);
-  --accent: oklch(0.92 0.012 250);
-  --accent-foreground: oklch(0.25 0.02 250);
-  --gold: oklch(0.85 0.01 250);
-  --gold-foreground: oklch(0.2 0.02 250);
+  --secondary: oklch(0.8 0.03 70);
+  --secondary-foreground: oklch(0.22 0.02 50);
+  --muted: oklch(0.81 0.02 70);
+  --muted-foreground: oklch(0.45 0.02 50);
+  --accent: oklch(0.8 0.03 70);
+  --accent-foreground: oklch(0.22 0.02 50);
+  --gold: oklch(0.7 0.08 70);
+  --gold-foreground: oklch(0.2 0.02 50);
   --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.01 250);
-  --input: oklch(0.9 0.01 250);
-  --ring: oklch(0.4 0.02 250);
-  --sidebar: oklch(0.97 0.008 250);
-  --sidebar-foreground: oklch(0.25 0.02 250);
-  --sidebar-primary: oklch(0.3 0.03 250);
+  --border: oklch(0.78 0.02 70);
+  --input: oklch(0.78 0.02 70);
+  --ring: oklch(0.3 0.02 250);
+  --sidebar: oklch(0.84 0.028 70);
+  --sidebar-foreground: oklch(0.22 0.02 50);
+  --sidebar-primary: oklch(0.25 0.02 250);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.92 0.012 250);
-  --sidebar-accent-foreground: oklch(0.25 0.02 250);
-  --sidebar-border: oklch(0.9 0.01 250);
-  --sidebar-ring: oklch(0.4 0.02 250);
+  --sidebar-accent: oklch(0.8 0.03 70);
+  --sidebar-accent-foreground: oklch(0.22 0.02 50);
+  --sidebar-border: oklch(0.78 0.02 70);
+  --sidebar-ring: oklch(0.3 0.02 250);
   --gradient-hero: linear-gradient(
     160deg,
     oklch(0.28 0.02 250) 0%,
     oklch(0.22 0.018 250) 55%,
     oklch(0.16 0.015 250) 100%
   );
-  --gradient-gold: linear-gradient(100deg, oklch(0.9 0.01 250), oklch(0.75 0.015 250));
+  --gradient-gold: linear-gradient(100deg, oklch(0.75 0.08 70), oklch(0.6 0.08 70));
 }
 
 .dark {
