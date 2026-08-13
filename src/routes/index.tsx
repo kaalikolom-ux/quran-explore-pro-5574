@@ -86,7 +86,7 @@ function HomePage() {
               <>
                 The Holy Quran — understand it <br />
                 <span className="gold-text inline-block mt-1">
-                  <Typewriter text="word by Word" speed={110} delay={500} loop={true} />
+                  <Typewriter text="word by word" speed={110} delay={500} loop={true} />
                 </span>
               </>
             )}
