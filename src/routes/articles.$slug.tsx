@@ -1,185 +1,132 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Calendar, ChevronLeft, User } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { BookmarkButton } from "@/components/BookmarkButton";
-import { AuthorCard } from "@/components/AuthorCard";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/articles/$slug")({
-  head: ({ params }) => ({
-    meta: [
-      { title: `${params.slug} — কুরআন অন্বেষা` },
-      { name: "description", content: "কুরআন ও বিজ্ঞান নিয়ে আর্টিকেল — কুরআন অন্বেষা।" },
-      { property: "og:title", content: `${params.slug} — কুরআন অন্বেষা` },
-      { property: "og:description", content: "কুরআন ও বিজ্ঞান নিয়ে আর্টিকেল।" },
-      { property: "og:type", content: "article" },
-      {
-        property: "og:url",
-        content: `https://quran-explore-pro.lovable.app/articles/${params.slug}`,
-      },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      {
-        rel: "canonical",
-        href: `https://quran-explore-pro.lovable.app/articles/${params.slug}`,
-      },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const article = loaderData;
+    const title = article ? `${article.title_bn} — কুরআন অন্বেষা` : "আর্টিকেল — কুরআন অন্বেষা";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: article?.excerpt_bn ?? "ইসলাম ও বিজ্ঞান বিষয়ক প্রবন্ধ।" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: article?.excerpt_bn ?? "" },
+        ...(article?.cover_image_url
+          ? [{ property: "og:image", content: article.cover_image_url }]
+          : []),
+      ],
+    };
+  },
+  loader: async ({ params }) => {
+    const { data } = await supabase
+      .from("articles")
+      .select("*, author:authors(name_bn, name_en)")
+      .eq("slug", params.slug)
+      .eq("published", true)
+      .single();
+    return data;
+  },
   component: ArticlePage,
 });
 
 function ArticlePage() {
   const { slug } = Route.useParams();
-  const { t, lang } = usePrefs();
+  const { lang, t } = usePrefs();
+  const initial = Route.useLoaderData();
 
-  const article = useQuery({
+  const query = useQuery({
     queryKey: ["article", slug],
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("*")
+        .select("*, author:authors(name_bn, name_en)")
         .eq("slug", slug)
         .eq("published", true)
-        .maybeSingle();
+        .single();
       if (error) throw error;
       return data;
     },
+    initialData: initial ?? undefined,
   });
 
-  const publishedAt = article.data?.published_at ?? null;
+  const article = query.data;
 
-  const neighbours = useQuery({
-    queryKey: ["article-neighbours", slug, publishedAt],
-    enabled: !!publishedAt,
-    queryFn: async () => {
-      const [prev, next] = await Promise.all([
-        supabase
-          .from("articles")
-          .select("slug, title_bn, title_en")
-          .eq("published", true)
-          .lt("published_at", publishedAt!)
-          .order("published_at", { ascending: false })
-          .limit(1)
-          .maybeSingle(),
-        supabase
-          .from("articles")
-          .select("slug, title_bn, title_en")
-          .eq("published", true)
-          .gt("published_at", publishedAt!)
-          .order("published_at", { ascending: true })
-          .limit(1)
-          .maybeSingle(),
-      ]);
-      if (prev.error) throw prev.error;
-      if (next.error) throw next.error;
-      return { prev: prev.data, next: next.data };
-    },
-  });
-
-
-
-  if (article.isLoading) {
-    return <p className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground">{t("loading")}</p>;
-  }
-
-  if (!article.data) {
+  if (!article) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-16">
-        <p className="text-sm text-muted-foreground">{t("noArticles")}</p>
-        <Link to="/articles" className="mt-4 inline-flex items-center gap-1 text-sm text-primary">
-          <ArrowLeft className="size-4" /> {t("backToArticles")}
-        </Link>
+      <div className="mx-auto max-w-3xl px-4 py-20 text-center">
+        <p className="text-muted-foreground">{t("notFound")}</p>
+        <Button asChild className="mt-4" variant="outline">
+          <Link to="/articles">
+            <ChevronLeft className="size-4" /> {t("articles")}
+          </Link>
+        </Button>
       </div>
     );
   }
 
-  const a = article.data;
-  const title = lang === "en" && a.title_en ? a.title_en : a.title_bn;
-  const content = lang === "en" && a.content_en ? a.content_en : a.content_bn;
+  const title = lang === "en" && article.title_en ? article.title_en : article.title_bn;
+  const content = lang === "en" && article.content_en ? article.content_en : article.content_bn;
+  const authorName =
+    article.author &&
+    (lang === "en" && article.author.name_en ? article.author.name_en : article.author.name_bn);
 
   return (
     <article className="mx-auto w-full max-w-3xl px-4 py-12">
-      <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary">
-        <ArrowLeft className="size-4" /> {t("backToArticles")}
-      </Link>
+      <Button asChild variant="ghost" size="sm" className="mb-6 -ml-2">
+        <Link to="/articles">
+          <ChevronLeft className="size-4" /> {t("articles")}
+        </Link>
+      </Button>
 
-      <h1 className="mt-6 text-3xl font-semibold leading-snug">{title}</h1>
-      <div className="mt-3 flex items-center justify-between gap-3">
-        {a.published_at && (
-          <p className="text-xs text-muted-foreground">
-            {new Date(a.published_at).toLocaleDateString(lang === "bn" ? "bn-BD" : "en-GB")}
-          </p>
-        )}
-        <BookmarkButton
-          variant="outline"
-          target={{ kind: "article", articleId: a.id, label: a.title_bn }}
-        />
-      </div>
-
-      {a.cover_image_url && (
+      {article.cover_image_url && (
         <img
-          src={a.cover_image_url}
+          src={article.cover_image_url}
           alt={title}
-          className="mt-6 w-full rounded-xl object-cover"
-          loading="lazy"
+          className="mb-8 h-64 w-full rounded-xl object-cover shadow-sm sm:h-80"
         />
       )}
 
-      <div className="prose-reader mt-8 space-y-4 text-base leading-relaxed">
-        {(content ?? "").split(/\n{2,}/).map((para, i) => (
-          <p key={i} className="whitespace-pre-line">
-            {para}
-          </p>
-        ))}
+      <div className="flex items-center justify-between gap-4">
+        <h1 className="text-3xl font-bold leading-tight sm:text-4xl">{title}</h1>
+        {/* আর্টিকেল সঠিকভাবে বুকমার্ক করার বাটন */}
+        <BookmarkButton
+          target={{
+            kind: "article",
+            slug: article.slug,
+            label: title,
+          }}
+        />
       </div>
 
-      {a.author_id && <AuthorCard authorId={a.author_id} />}
+      <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-b border-border pb-6">
+        {article.published_at && (
+          <span className="inline-flex items-center gap-1">
+            <Calendar className="size-3.5" />
+            {new Date(article.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+        )}
+        {authorName && (
+          <span className="inline-flex items-center gap-1">
+            <User className="size-3.5" />
+            {authorName}
+          </span>
+        )}
+      </div>
 
-      <nav className="mt-12 grid gap-4 sm:grid-cols-2" aria-label={t("articles")}>
-        {neighbours.data?.prev ? (
-          <Link
-            to="/articles/$slug"
-            params={{ slug: neighbours.data.prev.slug }}
-            className="card-soft group flex items-center gap-3 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[var(--shadow-lift)]"
-          >
-            <ArrowLeft className="size-4 shrink-0 text-primary transition-transform group-hover:-translate-x-1" />
-            <span className="min-w-0">
-              <span className="block text-[11px] uppercase tracking-wide text-muted-foreground">
-                {t("prevPost")}
-              </span>
-              <span className="mt-1 block line-clamp-2 text-xs font-medium group-hover:text-primary">
-                {lang === "en" && neighbours.data.prev.title_en
-                  ? neighbours.data.prev.title_en
-                  : neighbours.data.prev.title_bn}
-              </span>
-            </span>
-          </Link>
-        ) : (
-          <span />
-        )}
-        {neighbours.data?.next && (
-          <Link
-            to="/articles/$slug"
-            params={{ slug: neighbours.data.next.slug }}
-            className="card-soft group flex items-center justify-end gap-3 p-4 text-right transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[var(--shadow-lift)]"
-          >
-            <span className="min-w-0">
-              <span className="block text-[11px] uppercase tracking-wide text-muted-foreground">
-                {t("nextPost")}
-              </span>
-              <span className="mt-1 block line-clamp-2 text-xs font-medium group-hover:text-primary">
-                {lang === "en" && neighbours.data.next.title_en
-                  ? neighbours.data.next.title_en
-                  : neighbours.data.next.title_bn}
-              </span>
-            </span>
-            <ArrowRight className="size-4 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
-          </Link>
-        )}
-      </nav>
+      <div
+        className="prose prose-neutral dark:prose-invert mt-8 max-w-none text-base leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: content ?? "" }}
+      />
     </article>
   );
 }
