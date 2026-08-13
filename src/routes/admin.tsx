@@ -23,6 +23,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { Markdown } from "tiptap-markdown";
 
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
@@ -57,7 +58,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* RICH TEXT EDITOR COMPONENT                                                  */
+/* RICH TEXT EDITOR COMPONENT (WITH MARKDOWN PASTE SUPPORT)                  */
 /* ========================================================================== */
 function RichTextEditor({
   value,
@@ -67,7 +68,13 @@ function RichTextEditor({
   onChange: (val: string) => void;
 }) {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Markdown.configure({
+        html: true,                  // HTML কোড পার্স করতে সাহায্য করবে
+        transformPastedText: true,   // কপি-পেস্ট করা মার্কডাউন টেক্সট (যেমন '>', '---') কে অটোমেটিক ফরম্যাট করবে
+      }),
+    ],
     content: value,
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
