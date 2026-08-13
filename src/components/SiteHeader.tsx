@@ -71,12 +71,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-chrome text-chrome-foreground">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-3 px-4">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-            <BookOpen className="size-5" />
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-slate-100 shadow-sm transition-colors group-hover:bg-slate-700">
+            <BookOpen className="size-5 text-slate-200" />
           </span>
           <span 
-            className="text-xl sm:text-2xl font-normal text-amber-400 tracking-wide"
+            className="text-xl sm:text-2xl font-normal text-slate-100 tracking-wide transition-colors group-hover:text-white"
             style={{ fontFamily: "'Kaushan Script', cursive" }}
           >
             Quran Explorer
