@@ -1,21 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Trash2 } from "lucide-react";
-import { toast } from "sonner";
+import { Bookmark, ExternalLink, Trash2 } from "lucide-react";
 
-import { supabase } from "@/integrations/supabase/client";
-import { useSession } from "@/lib/auth";
 import { usePrefs } from "@/lib/prefs";
-import { localNumber } from "@/lib/quran";
+import { useBookmarks } from "@/lib/bookmarks";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/bookmarks")({
   head: () => ({
     meta: [
-      { title: "আমার বুকমার্ক — কুরআন অন্বেষা" },
-      { name: "description", content: "আপনার সংরক্ষিত সুরা, আয়াত ও আর্টিকেল এক জায়গায়।" },
-      { property: "og:title", content: "আমার বুকমার্ক — কুরআন অন্বেষা" },
-      { property: "og:description", content: "সংরক্ষিত সুরা, আয়াত ও আর্টিকেল।" },
+      { title: "বুকমার্কসমূহ — কুরআন অন্বেষা" },
+      { name: "description", content: "আপনার সংরক্ষিত সুরা ও আয়াতসমূহ।" },
     ],
   }),
   component: BookmarksPage,
@@ -23,94 +17,91 @@ export const Route = createFileRoute("/bookmarks")({
 
 function BookmarksPage() {
   const { t, lang } = usePrefs();
-  const { user, loading } = useSession();
-  const queryClient = useQueryClient();
-
-  const bookmarks = useQuery({
-    queryKey: ["bookmarks", user?.id],
-    enabled: !!user,
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("bookmarks")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data;
-    },
-  });
-
-  const remove = useMutation({
-    mutationFn: async (id: string) => {
-      const { error } = await supabase.from("bookmarks").delete().eq("id", id);
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["bookmarks"] });
-      toast.success(t("removeBookmark"));
-    },
-    onError: (error: Error) => toast.error(error.message),
-  });
-
-  if (loading) {
-    return <p className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground">{t("loading")}</p>;
-  }
-
-  if (!user) {
-    return (
-      <div className="mx-auto max-w-md px-4 py-20 text-center">
-        <p className="text-sm text-muted-foreground">{t("signInPrompt")}</p>
-        <Button asChild className="mt-4">
-          <Link to="/auth">{t("signIn")}</Link>
-        </Button>
-      </div>
-    );
-  }
+  const { bookmarks, removeBookmark, clearBookmarks } = useBookmarks();
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-12">
-      <h1 className="text-3xl font-semibold">{t("myBookmarks")}</h1>
-
-      {bookmarks.data && bookmarks.data.length === 0 && (
-        <p className="mt-8 text-sm text-muted-foreground">{t("emptyBookmarks")}</p>
-      )}
-
-      <div className="mt-8 space-y-3">
-        {bookmarks.data?.map((b) => (
-          <div key={b.id} className="card-soft flex items-center gap-3 p-4">
-            <span className="rounded-full bg-accent px-2.5 py-1 text-xs text-accent-foreground">
-              {b.kind === "article" ? t("article") : b.kind === "ayah" ? t("ayah") : t("surahs")}
-            </span>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium">{b.label}</p>
-              {b.surah && (
-                <p className="text-xs text-muted-foreground">
-                  {localNumber(b.surah, lang)}
-                  {b.ayah ? `:${localNumber(b.ayah, lang)}` : ""}
-                </p>
-              )}
-            </div>
-            {b.surah ? (
-              <Button asChild variant="outline" size="sm">
-                <Link
-                  to="/surah/$id"
-                  params={{ id: String(b.surah) }}
-                  {...(b.ayah ? { hash: `ayah-${b.ayah}` } : {})}
-                >
-                  {t("readMore")}
-                </Link>
-              </Button>
-            ) : null}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => remove.mutate(b.id)}
-              aria-label={t("delete")}
-            >
-              <Trash2 className="size-4 text-destructive" />
-            </Button>
-          </div>
-        ))}
+    <div className="mx-auto w-full max-w-4xl px-4 py-12">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-semibold flex items-center gap-2">
+            <Bookmark className="size-7 text-primary" /> {t("bookmarks")}
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            আপনার পছন্দের সুরা এবং আয়াতসমূহ এখানে সংরক্ষিত থাকবে।
+          </p>
+        </div>
+        {bookmarks.length > 0 && (
+          <Button variant="outline" size="sm" onClick={clearBookmarks}>
+            <Trash2 className="size-4 mr-1.5 text-destructive" /> সব মুছে ফেলুন
+          </Button>
+        )}
       </div>
+
+      {bookmarks.length === 0 ? (
+        <div className="card-soft mt-8 p-12 text-center">
+          <Bookmark className="mx-auto size-12 text-muted-foreground/40" />
+          <p className="mt-4 text-sm text-muted-foreground">
+            এখনো কোনো সুরা বা আয়াত বুকমার্ক করা হয়নি।
+          </p>
+          <Button asChild className="mt-6">
+            <Link to="/">{t("readQuran")}</Link>
+          </Button>
+        </div>
+      ) : (
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {bookmarks.map((b) => {
+            // সুরা অথবা আয়াতের নেভিগেশন লিংক তৈরি
+            const isAyah = b.kind === "ayah" && b.ayah;
+            const targetTo = "/surah/$id";
+            const targetParams = { id: String(b.surah) };
+            const targetSearch = isAyah ? { ayah: String(b.ayah) } : undefined;
+            const targetHash = isAyah ? `ayah-${b.ayah}` : undefined;
+
+            return (
+              <div
+                key={`${b.kind}-${b.surah}-${b.ayah ?? 0}`}
+                className="card-soft group relative flex items-center justify-between p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+              >
+                {/* ক্লিকেবল লিংক এলাকা */}
+                <Link
+                  to={targetTo}
+                  params={targetParams}
+                  search={targetSearch}
+                  hash={targetHash}
+                  className="flex-1 min-w-0 pr-3"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
+                      {b.kind === "ayah" ? "আয়াত" : "সুরা"}
+                    </span>
+                    <span className="text-xs text-muted-foreground font-mono">
+                      {b.surah}{b.ayah ? `:${b.ayah}` : ""}
+                    </span>
+                  </div>
+                  <h3 className="mt-2 text-base font-medium truncate group-hover:text-primary transition-colors flex items-center gap-1.5">
+                    {b.label}
+                    <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-primary shrink-0" />
+                  </h3>
+                </Link>
+
+                {/* মুছে ফেলার বাটন */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="shrink-0 text-muted-foreground hover:text-destructive"
+                  title="রিমুভ করুন"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeBookmark(b);
+                  }}
+                >
+                  <Trash2 className="size-4" />
+                </Button>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
