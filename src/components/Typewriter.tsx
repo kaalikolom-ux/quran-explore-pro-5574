@@ -1,54 +1,54 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 interface TypewriterProps {
-  text: string;
-  speed?: number;
-  delay?: number;
-  className?: string;
-  cursor?: boolean;
+  words: string[];
+  typingSpeed?: number;
+  deletingSpeed?: number;
+  delayBetweenWords?: number;
 }
 
 export function Typewriter({
-  text,
-  speed = 100,
-  delay = 600,
-  className = "",
-  cursor = true,
+  words,
+  typingSpeed = 90,
+  deletingSpeed = 50,
+  delayBetweenWords = 1500,
 }: TypewriterProps) {
-  const [displayed, setDisplayed] = useState("");
-  const [showCursor, setShowCursor] = useState(cursor);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>;
-    let i = 0;
+    if (!words || words.length === 0) return;
 
-    const start = setTimeout(() => {
-      const tick = () => {
-        if (i < text.length) {
-          setDisplayed(text.slice(0, i + 1));
-          i += 1;
-          timeout = setTimeout(tick, speed);
+    const currentWord = words[wordIndex % words.length];
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        if (text.length < currentWord.length) {
+          setText(currentWord.slice(0, text.length + 1));
         } else {
-          setShowCursor(false);
+          setTimeout(() => setIsDeleting(true), delayBetweenWords);
         }
-      };
-      tick();
-    }, delay);
-
-    return () => {
-      clearTimeout(start);
-      clearTimeout(timeout);
+      } else {
+        if (text.length > 0) {
+          setText(currentWord.slice(0, text.length - 1));
+        } else {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }
     };
-  }, [text, speed, delay]);
+
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    const timer = setTimeout(handleTyping, speed);
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
 
   return (
-    <span className={className} aria-label={text}>
-      {displayed}
-      {showCursor && (
-        <span className="inline-block w-[0.05em] animate-pulse bg-current align-baseline">
-          &nbsp;
-        </span>
-      )}
+    <span className="inline-block">
+      {text}
+      <span className="animate-pulse font-normal opacity-80 ms-0.5">|</span>
     </span>
   );
 }

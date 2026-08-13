@@ -140,7 +140,6 @@ function HomePage() {
 
       <section className="mx-auto w-full max-w-6xl px-4 py-14">
         <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
-          {/* Mobile: settings first for instant access. Desktop: right sidebar. */}
           <aside className="order-first space-y-4 lg:order-last lg:sticky lg:top-24 lg:self-start">
             <DisplayToggles />
           </aside>
