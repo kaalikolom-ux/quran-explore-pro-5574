@@ -46,9 +46,12 @@ export function Typewriter({
   }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
 
   return (
-    <span className="inline-block text-slate-200">
-      {text}
-      <span className="animate-pulse font-normal opacity-70 text-slate-300 ms-0.5">|</span>
+    <span className="inline-block">
+      {/* ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড ক্লিপ ফিল্টার */}
+      <span className="bg-gradient-to-r from-white/90 via-white/50 to-white/90 bg-clip-text text-transparent opacity-90 drop-shadow-sm">
+        {text}
+      </span>
+      <span className="animate-pulse font-normal text-white/50 ms-0.5">|</span>
     </span>
   );
 }
