@@ -46,9 +46,9 @@ export function Typewriter({
   }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
 
   return (
-    <span className="inline-block">
+    <span className="inline-block text-slate-200">
       {text}
-      <span className="animate-pulse font-normal opacity-80 ms-0.5">|</span>
+      <span className="animate-pulse font-normal opacity-70 text-slate-300 ms-0.5">|</span>
     </span>
   );
 }
