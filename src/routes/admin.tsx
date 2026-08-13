@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { Pencil, Plus, Trash2 } from "lucide-react";
+import { Pencil, Plus, Trash2, UserCheck, Shield, UserX } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
       { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
@@ -74,6 +74,7 @@ function AdminPage() {
           <TabsTrigger value="translations">{t("translationsTab")}</TabsTrigger>
           <TabsTrigger value="posts">{t("postSettings")}</TabsTrigger>
           <TabsTrigger value="categories">{t("categoriesTab")}</TabsTrigger>
+          <TabsTrigger value="roles">অ্যাডমিন বা ইউজার রোল</TabsTrigger>
           <TabsTrigger value="menu">{t("menuTab")}</TabsTrigger>
           <TabsTrigger value="pages">{t("pagesTab")}</TabsTrigger>
           <TabsTrigger value="social">{t("socialTab")}</TabsTrigger>
@@ -82,6 +83,7 @@ function AdminPage() {
           <TabsTrigger value="offline">{t("offlineTab")}</TabsTrigger>
           <TabsTrigger value="subs">{t("subscribersTab")}</TabsTrigger>
         </TabsList>
+
         <TabsContent value="articles" className="mt-6">
           <ArticlesAdmin />
         </TabsContent>
@@ -96,6 +98,9 @@ function AdminPage() {
         </TabsContent>
         <TabsContent value="categories" className="mt-6">
           <CategoriesAdmin />
+        </TabsContent>
+        <TabsContent value="roles" className="mt-6">
+          <RolesAdmin />
         </TabsContent>
         <TabsContent value="menu" className="mt-6">
           <MenuAdmin />
@@ -119,7 +124,117 @@ function AdminPage() {
           <SubscribersAdmin />
         </TabsContent>
       </Tabs>
+    </div>
+  );
+}
 
+function RolesAdmin() {
+  const queryClient = useQueryClient();
+  const [userId, setUserId] = useState("");
+  const [role, setRole] = useState<"admin" | "user">("admin");
+
+  const rolesList = useQuery({
+    queryKey: ["admin-user-roles"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  const addRole = useMutation({
+    mutationFn: async () => {
+      if (!userId.trim()) throw new Error("User ID প্রদান করুন");
+      const { error } = await supabase
+        .from("user_roles")
+        .upsert({ user_id: userId.trim(), role }, { onConflict: "user_id,role" });
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
+      setUserId("");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+    },
+    onError: (err: Error) => toast.error(err.message),
+  });
+
+  const removeRole = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("user_roles").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
+      toast.success("রোল রিমুভ করা হয়েছে");
+    },
+    onError: (err: Error) => toast.error(err.message),
+  });
+
+  return (
+    <div className="space-y-8">
+      <form
+        className="card-soft space-y-4 p-6"
+        onSubmit={(e) => {
+          e.preventDefault();
+          addRole.mutate();
+        }}
+      >
+        <h2 className="font-semibold text-lg flex items-center gap-2">
+          <Shield className="size-5 text-primary" /> নতুন এডমিন বা রোল যুক্ত করুন
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="userId">User ID (Supabase Auth UID)</Label>
+            <Input
+              id="userId"
+              placeholder="যেমন: e2a8b... (User UUID)"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+              required
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="roleSelect">রোল সিলেক্ট করুন</Label>
+            <select
+              id="roleSelect"
+              value={role}
+              onChange={(e) => setRole(e.target.value as "admin" | "user")}
+              className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
+            >
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+        </div>
+        <Button type="submit" disabled={addRole.isPending}>
+          <UserCheck className="size-4 mr-2" /> রোল অ্যাসাইন করুন
+        </Button>
+      </form>
+
+      <div className="space-y-3">
+        <h3 className="font-medium text-sm text-muted-foreground">বর্তমান রোলগুলোর তালিকা:</h3>
+        {rolesList.data?.map((r) => (
+          <div key={r.id} className="card-soft flex items-center justify-between p-4">
+            <div>
+              <p className="text-sm font-medium font-mono">{r.user_id}</p>
+              <span className="inline-block mt-1 rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
+                {r.role}
+              </span>
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Delete Role"
+              onClick={() => removeRole.mutate(r.id)}
+            >
+              <UserX className="size-4 text-destructive" />
+            </Button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
