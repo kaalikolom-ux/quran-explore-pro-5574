@@ -51,21 +51,25 @@ function BookmarksPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {bookmarks.map((b) => {
             const isArticle = b.kind === "article";
+            const isAyah = b.kind === "ayah";
+            const surahId = "surah" in b ? String(b.surah) : "1";
+            const ayahNum = isAyah && "ayah" in b ? String(b.ayah) : undefined;
+            const articleSlug = isArticle && "slug" in b ? b.slug : "";
 
             return (
               <div
                 key={
                   isArticle
-                    ? `article-${b.slug}`
-                    : `${b.kind}-${b.surah}-${'ayah' in b ? b.ayah : 0}`
+                    ? `article-${articleSlug}`
+                    : `${b.kind}-${surahId}-${ayahNum ?? 0}`
                 }
                 className="card-soft group relative flex items-center justify-between p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
               >
                 {/* ১. আর্টিকেলের জন্য ক্লিকেবল লিংক */}
-                {isArticle && (
+                {isArticle ? (
                   <Link
                     to="/articles/$slug"
-                    params={{ slug: b.slug ?? "" }}
+                    params={{ slug: articleSlug }}
                     className="flex-1 min-w-0 pr-3"
                   >
                     <div className="flex items-center gap-2">
@@ -78,23 +82,21 @@ function BookmarksPage() {
                       <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-primary shrink-0" />
                     </h3>
                   </Link>
-                )}
-
-                {/* ২. সুরা এবং আয়াতের জন্য ক্লিকেবল লিংক */}
-                {!isArticle && (
+                ) : (
+                  /* ২. সুরা এবং আয়াতের জন্য ক্লিকেবল লিংক */
                   <Link
                     to="/surah/$id"
-                    params={{ id: String(b.surah) }}
-                    search={'ayah' in b && b.ayah ? { ayah: String(b.ayah) } : undefined}
-                    hash={'ayah' in b && b.ayah ? `ayah-${b.ayah}` : undefined}
+                    params={{ id: surahId }}
+                    search={ayahNum ? { ayah: ayahNum } : undefined}
+                    hash={ayahNum ? `ayah-${ayahNum}` : undefined}
                     className="flex-1 min-w-0 pr-3"
                   >
                     <div className="flex items-center gap-2">
                       <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
-                        {b.kind === "ayah" ? "আয়াত" : "সুরা"}
+                        {isAyah ? "আয়াত" : "সুরা"}
                       </span>
                       <span className="text-xs text-muted-foreground font-mono">
-                        {b.surah}{'ayah' in b && b.ayah ? `:${b.ayah}` : ""}
+                        {surahId}{ayahNum ? `:${ayahNum}` : ""}
                       </span>
                     </div>
                     <h3 className="mt-2 text-base font-medium truncate group-hover:text-primary transition-colors flex items-center gap-1.5">
