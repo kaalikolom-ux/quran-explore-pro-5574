@@ -50,62 +50,61 @@ function BookmarksPage() {
       ) : (
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {bookmarks.map((b) => {
-            // বুকমার্কের টাইপ অনুযায়ী লিংক ও প্যারামিটার নির্ধারণ
-            let targetTo = "/surah/$id";
-            let targetParams: Record<string, string> = {};
-            let targetSearch: Record<string, string> | undefined = undefined;
-            let targetHash: string | undefined = undefined;
-
-            if (b.kind === "article") {
-              targetTo = "/articles/$slug";
-              targetParams = { slug: b.slug ?? "" };
-            } else {
-              targetTo = "/surah/$id";
-              targetParams = { id: String(b.surah ?? 1) };
-              if (b.kind === "ayah" && b.ayah) {
-                targetSearch = { ayah: String(b.ayah) };
-                targetHash = `ayah-${b.ayah}`;
-              }
-            }
+            const isArticle = b.kind === "article";
 
             return (
               <div
                 key={
-                  b.kind === "article"
+                  isArticle
                     ? `article-${b.slug}`
-                    : `${b.kind}-${b.surah}-${b.ayah ?? 0}`
+                    : `${b.kind}-${b.surah}-${'ayah' in b ? b.ayah : 0}`
                 }
                 className="card-soft group relative flex items-center justify-between p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
               >
-                {/* ক্লিকেবল লিংক এলাকা */}
-                <Link
-                  to={targetTo as "/surah/$id"}
-                  params={targetParams}
-                  search={targetSearch}
-                  hash={targetHash}
-                  className="flex-1 min-w-0 pr-3"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
-                      {b.kind === "article"
-                        ? "আর্টিকেল"
-                        : b.kind === "ayah"
-                        ? "আয়াত"
-                        : "সুরা"}
-                    </span>
-                    {b.kind !== "article" && (
-                      <span className="text-xs text-muted-foreground font-mono">
-                        {b.surah}{b.ayah ? `:${b.ayah}` : ""}
+                {/* ১. আর্টিকেলের জন্য ক্লিকেবল লিংক */}
+                {isArticle && (
+                  <Link
+                    to="/articles/$slug"
+                    params={{ slug: b.slug ?? "" }}
+                    className="flex-1 min-w-0 pr-3"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
+                        আর্টিকেল
                       </span>
-                    )}
-                  </div>
-                  <h3 className="mt-2 text-base font-medium truncate group-hover:text-primary transition-colors flex items-center gap-1.5">
-                    {b.label}
-                    <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-primary shrink-0" />
-                  </h3>
-                </Link>
+                    </div>
+                    <h3 className="mt-2 text-base font-medium truncate group-hover:text-primary transition-colors flex items-center gap-1.5">
+                      {b.label}
+                      <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-primary shrink-0" />
+                    </h3>
+                  </Link>
+                )}
 
-                {/* রিমুভ বাটন */}
+                {/* ২. সুরা এবং আয়াতের জন্য ক্লিকেবল লিংক */}
+                {!isArticle && (
+                  <Link
+                    to="/surah/$id"
+                    params={{ id: String(b.surah) }}
+                    search={'ayah' in b && b.ayah ? { ayah: String(b.ayah) } : undefined}
+                    hash={'ayah' in b && b.ayah ? `ayah-${b.ayah}` : undefined}
+                    className="flex-1 min-w-0 pr-3"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
+                        {b.kind === "ayah" ? "আয়াত" : "সুরা"}
+                      </span>
+                      <span className="text-xs text-muted-foreground font-mono">
+                        {b.surah}{'ayah' in b && b.ayah ? `:${b.ayah}` : ""}
+                      </span>
+                    </div>
+                    <h3 className="mt-2 text-base font-medium truncate group-hover:text-primary transition-colors flex items-center gap-1.5">
+                      {b.label}
+                      <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-primary shrink-0" />
+                    </h3>
+                  </Link>
+                )}
+
+                {/* মুছে ফেলার বাটন */}
                 <Button
                   variant="ghost"
                   size="icon"

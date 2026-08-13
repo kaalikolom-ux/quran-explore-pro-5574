@@ -94,7 +94,6 @@ function ArticlePage() {
 
       <div className="flex items-center justify-between gap-4">
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl">{title}</h1>
-        {/* আর্টিকেল সঠিকভাবে বুকমার্ক করার বাটন */}
         <BookmarkButton
           target={{
             kind: "article",
