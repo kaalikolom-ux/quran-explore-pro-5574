@@ -1,9 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
-import { Pencil, Plus, Trash2, UserCheck, Shield, UserX } from "lucide-react";
+import { useState, useEffect } from "react";
+import {
+  Pencil,
+  Plus,
+  Trash2,
+  UserCheck,
+  Shield,
+  UserX,
+  Bold,
+  Italic,
+  List,
+  ListOrdered,
+  Heading1,
+  Heading2,
+  Heading3,
+  Quote,
+  Undo,
+  Redo,
+} from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
 
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
@@ -28,7 +47,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
       { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
@@ -36,6 +55,154 @@ export const Route = createFileRoute("/admin")({
   }),
   component: AdminPage,
 });
+
+/* ========================================================================== */
+/* RICH TEXT EDITOR COMPONENT                                                  */
+/* ========================================================================== */
+function RichTextEditor({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (val: string) => void;
+}) {
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content: value,
+    onUpdate: ({ editor }) => {
+      onChange(editor.getHTML());
+    },
+  });
+
+  useEffect(() => {
+    if (editor && editor.getHTML() !== value) {
+      editor.commands.setContent(value || "");
+    }
+  }, [value, editor]);
+
+  if (!editor) return null;
+
+  return (
+    <div className="rounded-md border border-input bg-background">
+      {/* Editor Toolbar */}
+      <div className="flex flex-wrap items-center gap-1 border-b border-border bg-muted/40 p-2">
+        <Button
+          type="button"
+          variant={editor.isActive("bold") ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          title="Bold"
+        >
+          <Bold className="size-4" />
+        </Button>
+        <Button
+          type="button"
+          variant={editor.isActive("italic") ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+          title="Italic"
+        >
+          <Italic className="size-4" />
+        </Button>
+        <div className="h-4 w-px bg-border mx-1" />
+        <Button
+          type="button"
+          variant={editor.isActive("heading", { level: 1 }) ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+          title="Heading 1"
+        >
+          <Heading1 className="size-4" />
+        </Button>
+        <Button
+          type="button"
+          variant={editor.isActive("heading", { level: 2 }) ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+          title="Heading 2"
+        >
+          <Heading2 className="size-4" />
+        </Button>
+        <Button
+          type="button"
+          variant={editor.isActive("heading", { level: 3 }) ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+          title="Heading 3"
+        >
+          <Heading3 className="size-4" />
+        </Button>
+        <div className="h-4 w-px bg-border mx-1" />
+        <Button
+          type="button"
+          variant={editor.isActive("bulletList") ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          title="Bullet List"
+        >
+          <List className="size-4" />
+        </Button>
+        <Button
+          type="button"
+          variant={editor.isActive("orderedList") ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleOrderedList().run()}
+          title="Numbered List"
+        >
+          <ListOrdered className="size-4" />
+        </Button>
+        <Button
+          type="button"
+          variant={editor.isActive("blockquote") ? "secondary" : "ghost"}
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().toggleBlockquote().run()}
+          title="Blockquote"
+        >
+          <Quote className="size-4" />
+        </Button>
+        <div className="h-4 w-px bg-border mx-1" />
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().undo().run()}
+          disabled={!editor.can().undo()}
+          title="Undo"
+        >
+          <Undo className="size-4" />
+        </Button>
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={() => editor.chain().focus().redo().run()}
+          disabled={!editor.can().redo()}
+          title="Redo"
+        >
+          <Redo className="size-4" />
+        </Button>
+      </div>
+
+      {/* Editor Content Area */}
+      <div className="p-4">
+        <EditorContent
+          editor={editor}
+          className="prose prose-sm dark:prose-invert max-w-none min-h-[200px] focus:outline-none [&_.tiptap]:focus:outline-none"
+        />
+      </div>
+    </div>
+  );
+}
 
 function AdminPage() {
   const { t } = usePrefs();
@@ -156,7 +323,7 @@ function RolesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
       setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -168,7 +335,7 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল রিমুভ করা হয়েছে");
+      toast.success("রোল রিমুভ করা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -352,12 +519,19 @@ function ArticlesAdmin() {
     <div className="space-y-2">
       <Label htmlFor={key}>{label}</Label>
       {long ? (
-        <Textarea
-          id={key}
-          rows={key.startsWith("content") ? 8 : 3}
-          value={form[key]}
-          onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-        />
+        key.startsWith("content") ? (
+          <RichTextEditor
+            value={form[key]}
+            onChange={(val) => setForm({ ...form, [key]: val })}
+          />
+        ) : (
+          <Textarea
+            id={key}
+            rows={3}
+            value={form[key]}
+            onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+          />
+        )
       ) : (
         <Input
           id={key}
