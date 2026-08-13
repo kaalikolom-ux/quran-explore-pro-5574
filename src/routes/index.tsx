@@ -34,7 +34,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-// বাংলা ডিজিটকে ইংরেজি ডিজিটে রূপান্তর করার হেল্পার ফাংশন
 function bnToEnDigits(str: string): string {
   const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
   return str.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
@@ -68,19 +67,16 @@ function HomePage() {
     const list = chapters.data ?? [];
     if (!normalizedTerm) return list;
 
-    // যদি সুরার নম্বর দেয়া হয়
     const isNum = /^\d+$/.test(normalizedTerm);
     if (isNum) {
       return list.filter((c) => String(c.id) === normalizedTerm);
     }
 
-    // যদি আয়াত সার্চ ফরম্যাট (যেমন 33:40) হয়, তবে পুরো লিস্ট রেখে প্রথম সুরা দেখাবে
     if (/^\d+[:ঃ/-]\d+$/.test(normalizedTerm)) {
       const [s] = normalizedTerm.split(/[:ঃ/-]/);
       return list.filter((c) => String(c.id) === s);
     }
 
-    // টেক্সট সার্চ
     const rawQ = term.trim().toLowerCase();
     return list.filter(
       (c) =>
@@ -90,12 +86,11 @@ function HomePage() {
     );
   }, [chapters.data, normalizedTerm, term]);
 
-  // সার্চ সাবমিট বা ইন্টার চাপলে আয়াতের পাতায় নিয়ে যাবে
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!normalizedTerm) return;
 
-    // আয়াত সার্চ ফরম্যাট চেক: যেমন 33:40, ৩৩ঃ৪০, 33/40
+    // আয়াত সার্চ ফরম্যাট চেক: যেমন 33:40, ৩৩ঃ৪০, 33/40
     const match = normalizedTerm.match(/^(\d+)[:ঃ/-](\d+)$/);
     if (match) {
       const surahNum = match[1];
@@ -103,12 +98,12 @@ function HomePage() {
       void navigate({
         to: `/surah/$id`,
         params: { id: surahNum },
+        search: { ayah: ayahNum },
         hash: `ayah-${ayahNum}`,
       });
       return;
     }
 
-    // শুধু সুরার নম্বর হলে সরাসরি সেই সুরায় নিয়ে যাবে
     if (/^\d+$/.test(normalizedTerm)) {
       const sNum = Number(normalizedTerm);
       if (sNum >= 1 && sNum <= 114) {
@@ -204,7 +199,6 @@ function HomePage() {
                 {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
               </h2>
 
-              {/* সার্চ ফর্ম ও ট্রান্সপারেন্ট হিন্টস */}
               <div className="w-full max-w-sm space-y-1.5">
                 <form onSubmit={handleSearchSubmit} className="relative w-full">
                   <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />

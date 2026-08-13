@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookA, ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-react";
 
 import {
@@ -25,6 +25,9 @@ import { WordSearchDialog } from "@/components/WordSearchDialog";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/surah/$id")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    ayah: search.ayah ? String(search.ayah) : undefined,
+  }),
   head: ({ params }) => {
     const title = `সুরা ${params.id} — কুরআন অন্বেষা`;
     return {
@@ -51,6 +54,7 @@ export const Route = createFileRoute("/surah/$id")({
 
 function SurahPage() {
   const { id } = Route.useParams();
+  const searchParams = useSearch({ from: "/surah/$id" });
   const surah = Number(id);
   const { t, lang, layers } = usePrefs();
   const { isAdmin } = useIsAdmin();
@@ -79,6 +83,32 @@ function SurahPage() {
   const [playing, setPlaying] = useState<number | null>(null);
   const [lexOpen, setLexOpen] = useState<number | null>(null);
   const [searchWord, setSearchWord] = useState<string | null>(null);
+
+  // অটোমেটিক নির্দিষ্ট আয়াতে স্মুথ স্ক্রল করার লজিক
+  useEffect(() => {
+    if (!verses.data || verses.data.length === 0) return;
+
+    // Search param অথবা hash থেকে আয়াত নম্বর বের করা
+    let targetAyah = searchParams?.ayah;
+    if (!targetAyah && typeof window !== "undefined" && window.location.hash) {
+      targetAyah = window.location.hash.replace("#ayah-", "");
+    }
+
+    if (targetAyah) {
+      const timer = setTimeout(() => {
+        const el = document.getElementById(`ayah-${targetAyah}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.classList.add("ring-2", "ring-primary", "transition-all", "duration-500");
+          setTimeout(() => {
+            el.classList.remove("ring-2", "ring-primary");
+          }, 3000);
+        }
+      }, 300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [verses.data, searchParams?.ayah]);
 
   async function playAyah(ayah: number) {
     const el = audioRef.current;
@@ -176,7 +206,6 @@ function SurahPage() {
               const isPlaying = playing === v.verse_number;
               const lexiconOpen = lexOpen === v.verse_number;
 
-              // ডাটা খালি নাকি উপস্থিত তা চেক করা হচ্ছে
               const hasSciBn = !!sciBn?.text?.trim();
               const hasSciEn = !!sciEn?.text?.trim();
 
@@ -304,7 +333,6 @@ function SurahPage() {
                         />
                       )}
 
-                      {/* বিজ্ঞানভিত্তিক অনুবাদ (বাংলা): ডাটা না থাকলে সাধারণ ইউজারের জন্য লুকিয়ে থাকবে, এডমিন অন রাখলে দেখতে ও এডিট করতে পারবে */}
                       {layers.sciBn && (isAdmin || hasSciBn) && (
                         <TranslationLayer
                           surah={surah}
@@ -317,7 +345,6 @@ function SurahPage() {
                         />
                       )}
 
-                      {/* বিজ্ঞানভিত্তিক অনুবাদ (ইংরেজি): ডাটা না থাকলে সাধারণ ইউজারের জন্য লুকিয়ে থাকবে, এডমিন অন রাখলে দেখতে ও এডিট করতে পারবে */}
                       {layers.sciEn && (isAdmin || hasSciEn) && (
                         <TranslationLayer
                           surah={surah}
