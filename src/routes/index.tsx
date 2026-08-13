@@ -73,12 +73,12 @@ function HomePage() {
             <Sparkles className="size-3.5" /> {t("tagline")}
           </p>
 
-          {/* ২ লাইনে শিরোনাম এবং লুপড টাইপরাইটার অ্যানিমেশন */}
+          {/* ২ লাইনে শিরোনাম এবং মোবাইল ও ডেসকটপে একই কালারে টাইপরাইটার অ্যানিমেশন */}
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
             {lang === "bn" ? (
               <>
                 পবিত্র কুরআন — বুঝে পড়ুন <br />
-                <span className="gold-text inline-block mt-1">
+                <span className="gold-text text-slate-100 inline-block mt-1">
                   <Typewriter
                     words={[
                       "শব্দে শব্দে অর্থসহ",
@@ -95,7 +95,7 @@ function HomePage() {
             ) : (
               <>
                 The Holy Quran — understand it <br />
-                <span className="gold-text inline-block mt-1">
+                <span className="gold-text text-slate-100 inline-block mt-1">
                   <Typewriter
                     words={[
                       "word by word",
