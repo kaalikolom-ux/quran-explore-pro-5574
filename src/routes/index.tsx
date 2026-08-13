@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { ArrowRight, BookOpen, Newspaper, Search, Sparkles } from "lucide-react";
@@ -34,10 +34,17 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+// বাংলা ডিজিটকে ইংরেজি ডিজিটে রূপান্তর করার হেল্পার ফাংশন
+function bnToEnDigits(str: string): string {
+  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  return str.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
+}
+
 function HomePage() {
   const { t, lang } = usePrefs();
   const [term, setTerm] = useState("");
   const chapters = useQuery(chaptersQuery(lang));
+  const navigate = useNavigate();
 
   const articles = useQuery({
     queryKey: ["articles", "published", "home"],
@@ -53,17 +60,65 @@ function HomePage() {
     },
   });
 
+  const normalizedTerm = useMemo(() => {
+    return bnToEnDigits(term.trim().toLowerCase());
+  }, [term]);
+
   const filtered = useMemo(() => {
     const list = chapters.data ?? [];
-    const q = term.trim().toLowerCase();
-    if (!q) return list;
+    if (!normalizedTerm) return list;
+
+    // যদি সুরার নম্বর দেয়া হয়
+    const isNum = /^\d+$/.test(normalizedTerm);
+    if (isNum) {
+      return list.filter((c) => String(c.id) === normalizedTerm);
+    }
+
+    // যদি আয়াত সার্চ ফরম্যাট (যেমন 33:40) হয়, তবে পুরো লিস্ট রেখে প্রথম সুরা দেখাবে
+    if (/^\d+[:ঃ/-]\d+$/.test(normalizedTerm)) {
+      const [s] = normalizedTerm.split(/[:ঃ/-]/);
+      return list.filter((c) => String(c.id) === s);
+    }
+
+    // টেক্সট সার্চ
+    const rawQ = term.trim().toLowerCase();
     return list.filter(
       (c) =>
-        c.name_simple.toLowerCase().includes(q) ||
-        c.translated_name.name.toLowerCase().includes(q) ||
-        String(c.id) === q,
+        c.name_simple.toLowerCase().includes(rawQ) ||
+        c.translated_name.name.toLowerCase().includes(rawQ) ||
+        String(c.id) === normalizedTerm
     );
-  }, [chapters.data, term]);
+  }, [chapters.data, normalizedTerm, term]);
+
+  // সার্চ সাবমিট বা ইন্টার চাপলে আয়াতের পাতায় নিয়ে যাবে
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!normalizedTerm) return;
+
+    // আয়াত সার্চ ফরম্যাট চেক: যেমন 33:40, ৩৩ঃ৪০, 33/40
+    const match = normalizedTerm.match(/^(\d+)[:ঃ/-](\d+)$/);
+    if (match) {
+      const surahNum = match[1];
+      const ayahNum = match[2];
+      void navigate({
+        to: `/surah/$id`,
+        params: { id: surahNum },
+        hash: `ayah-${ayahNum}`,
+      });
+      return;
+    }
+
+    // শুধু সুরার নম্বর হলে সরাসরি সেই সুরায় নিয়ে যাবে
+    if (/^\d+$/.test(normalizedTerm)) {
+      const sNum = Number(normalizedTerm);
+      if (sNum >= 1 && sNum <= 114) {
+        void navigate({
+          to: `/surah/$id`,
+          params: { id: String(sNum) },
+        });
+      }
+    }
+  };
 
   return (
     <div>
@@ -73,7 +128,6 @@ function HomePage() {
             <Sparkles className="size-3.5" /> {t("tagline")}
           </p>
 
-          {/* ২ লাইনে শিরোনাম এবং ট্রান্সপারেন্ট টাইপরাইটার অ্যানিমেশন */}
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
             {lang === "bn" ? (
               <>
@@ -84,7 +138,7 @@ function HomePage() {
                       "শব্দে শব্দে অর্থসহ",
                       "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
                       "সহজ বাংলা অনুবাদে",
-                      "প্রামাণ্য তথ্যসূত্রসহ"
+                      "প্রামাণ্য তথ্যসূত্রসহ",
                     ]}
                     typingSpeed={90}
                     deletingSpeed={50}
@@ -101,7 +155,7 @@ function HomePage() {
                       "word by word",
                       "with scientific context",
                       "in clear translation",
-                      "with authentic notes"
+                      "with authentic notes",
                     ]}
                     typingSpeed={80}
                     deletingSpeed={40}
@@ -145,18 +199,31 @@ function HomePage() {
           </aside>
 
           <div className="min-w-0">
-            <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="flex flex-wrap items-start justify-between gap-4">
               <h2 className="text-2xl font-semibold">
                 {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
               </h2>
-              <div className="relative w-full max-w-xs">
-                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  value={term}
-                  onChange={(e) => setTerm(e.target.value)}
-                  placeholder={t("searchSurah")}
-                  className="pl-9"
-                />
+
+              {/* সার্চ ফর্ম ও ট্রান্সপারেন্ট হিন্টস */}
+              <div className="w-full max-w-sm space-y-1.5">
+                <form onSubmit={handleSearchSubmit} className="relative w-full">
+                  <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    value={term}
+                    onChange={(e) => setTerm(e.target.value)}
+                    placeholder={
+                      lang === "bn"
+                        ? "সুরা খুঁজুন... / আয়াত খুঁজুন..."
+                        : "Search Surah... / Ayah..."
+                    }
+                    className="pl-9 pr-3"
+                  />
+                </form>
+                <p className="text-[11px] leading-tight text-muted-foreground/70 px-1">
+                  {lang === "bn"
+                    ? "💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।"
+                    : "💡 Search surah by name or no. (33). Search ayah like 33:40 and press Enter."}
+                </p>
               </div>
             </div>
 
