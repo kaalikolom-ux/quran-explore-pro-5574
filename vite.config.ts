@@ -14,6 +14,22 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    build: {
+      cssCodeSplit: true,
+      sourcemap: false,
+      chunkSizeWarningLimit: 800,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // ভারি লাইব্রেরিগুলোকে আলাদা বান্ডেলে স্প্লিট করা হলো যাতে হোমপেজ হালকা থাকে
+            "tiptap-vendor": ["@tiptap/react", "@tiptap/starter-kit", "tiptap-markdown"],
+            "react-vendor": ["react", "react-dom"],
+            "tanstack-vendor": ["@tanstack/react-query", "@tanstack/react-router"],
+            "ui-vendor": ["lucide-react", "clsx", "tailwind-merge"],
+          },
+        },
+      },
+    },
     plugins: [
       VitePWA({
         strategies: "generateSW",
@@ -37,12 +53,39 @@ export default defineConfig({
               urlPattern: ({ url, sameOrigin }) =>
                 sameOrigin && url.pathname.startsWith("/assets/"),
               handler: "CacheFirst",
-              options: { cacheName: "quran-assets" },
+              options: {
+                cacheName: "quran-assets",
+                expiration: {
+                  maxEntries: 100,
+                  maxAgeSeconds: 60 * 60 * 24 * 30, // ৩০ দিন ক্যাশ থাকবে
+                },
+              },
             },
             {
               urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\//,
               handler: "StaleWhileRevalidate",
-              options: { cacheName: "quran-fonts" },
+              options: {
+                cacheName: "quran-fonts",
+                expiration: {
+                  maxEntries: 20,
+                  maxAgeSeconds: 60 * 60 * 24 * 365, // ১ বছর ক্যাশ থাকবে
+                },
+              },
+            },
+            {
+              // কুরআন API ডাটা ব্রাউজারে ক্যাশ করা যাতে তাৎক্ষণিক পেজ লোড হয়
+              urlPattern: /^https:\/\/api\.quran\.com\/api\/v4\//,
+              handler: "CacheFirst",
+              options: {
+                cacheName: "quran-api-cache",
+                expiration: {
+                  maxEntries: 200,
+                  maxAgeSeconds: 60 * 60 * 24 * 14, // ১৪ দিন ক্যাশ থাকবে
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
             },
           ],
         },
