@@ -12,17 +12,16 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-/** Strip Arabic diacritics and normalize characters completely */
+/** Strip all Arabic harakat, dagger alifs, quranic annotation symbols */
 function normalizeArabic(text: string) {
   if (!text) return "";
   return text
-    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // Remove all harakat and Quranic marks
-    .replace(/[أإآٱ]/g, "ا") // Normalize Alif
-    .replace(/[يى]/g, "ي") // Normalize Yaa / Alif Maqsoora
-    .replace(/[ة]/g, "ه") // Normalize Taa Marbuta
-    .replace(/[ؤ]/g, "و") // Normalize Waw with Hamza
-    .replace(/[ئ]/g, "ي") // Normalize Yaa with Hamza
-    .replace(/[^\u0621-\u064A]/g, "") // Keep only clean Arabic letters
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // All vowels & marks
+    .replace(/[أإآٱ]/g, "ا")
+    .replace(/[يىئ]/g, "ي")
+    .replace(/[ة]/g, "ه")
+    .replace(/[ؤ]/g, "و")
+    .replace(/[^\u0621-\u064A]/g, "") // Keep pure letters only
     .trim();
 }
 
@@ -85,7 +84,7 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-lexicon-search-v10", rawWord, normalized, lang],
+    queryKey: ["word-lexicon-search-v11", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       const searchTarget = normalized || rawWord;
@@ -117,39 +116,45 @@ export function WordSearchDialog({
             const v = verseJson.verse;
 
             const [s, a] = hit.verse_key.split(":").map(Number);
+            
+            // Filter only words (exclude end of ayah numbers)
             const words: any[] = (v.words || []).filter(
-              (w: any) => w.char_type_name === "word" // Filter out end markers
+              (w: any) => w.char_type_name === "word"
             );
 
-            // ১. হুবহু (Exact) ম্যাচ খোঁজা
+            // এক্স্যাক্ট ওয়ার্ড খোঁজার একাধিক ধাপ:
+            // ধাপ ১: হুবহু নরমালাইজড ম্যাচ
             let matchedWord = words.find((w) => {
               const wNorm = normalizeArabic(w.text_uthmani || w.text || "");
               return wNorm === normalized;
             });
 
-            // ২. যদি হুবহু না পাওয়া যায় তবে আংশিক (Contains) ম্যাচ খোঁজা
+            // ধাপ ২: যদি শব্দে সাব-ম্যাচ থাকে
             if (!matchedWord) {
               matchedWord = words.find((w) => {
                 const wNorm = normalizeArabic(w.text_uthmani || w.text || "");
-                return wNorm.includes(normalized) || normalized.includes(wNorm);
+                return wNorm.includes(normalized) || (normalized.length >= 3 && normalized.includes(wNorm));
               });
             }
+
+            // ধাপ ৩: যদি কোনোভাবেই নির্দিষ্ট শব্দ ম্যাচ না হয়, তাহলে ভুল ডাটা না দেখিয়ে খালি রাখবে
+            const wordInfo = matchedWord
+              ? {
+                  text_uthmani: matchedWord.text_uthmani || matchedWord.text,
+                  transliteration:
+                    matchedWord.transliteration?.text ||
+                    matchedWord.transliteration,
+                  translation:
+                    matchedWord.translation?.text ||
+                    matchedWord.translation,
+                }
+              : undefined;
 
             return {
               surah: s,
               ayah: a,
               text_uthmani: v.text_uthmani || hit.text,
-              wordInfo: matchedWord
-                ? {
-                    text_uthmani: matchedWord.text_uthmani || matchedWord.text,
-                    transliteration:
-                      matchedWord.transliteration?.text ||
-                      matchedWord.transliteration,
-                    translation:
-                      matchedWord.translation?.text ||
-                      matchedWord.translation,
-                  }
-                : undefined,
+              wordInfo,
             };
           } catch {
             return null;
