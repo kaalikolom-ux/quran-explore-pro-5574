@@ -19,6 +19,7 @@ import {
   Undo,
   Redo,
   LayoutGrid,
+  Mail,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -262,11 +263,11 @@ function AdminPage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">{t("dashboard")}</h1>
           <p className="text-xs text-muted-foreground mt-1">
-            কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল
+            কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল
           </p>
         </div>
 
-        {/* সার্বজনীন ড্রপডাউন মেনু (মোবাইল ও ডেস্কটপ উভয় ডিভাইসের জন্য) */}
+        {/* সার্বজনীন ড্রপডাউন মেনু */}
         <div className="w-full sm:w-72">
           <div className="relative">
             <LayoutGrid className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-primary pointer-events-none" />
@@ -335,7 +336,7 @@ function AdminPage() {
 
 function RolesAdmin() {
   const queryClient = useQueryClient();
-  const [userId, setUserId] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [role, setRole] = useState<"admin" | "user">("admin");
 
   const rolesList = useQuery({
@@ -352,16 +353,41 @@ function RolesAdmin() {
 
   const addRole = useMutation({
     mutationFn: async () => {
-      if (!userId.trim()) throw new Error("User ID প্রদান করুন");
+      const input = identifier.trim();
+      if (!input) throw new Error("অনুগ্রহ করে ইমেইল এড্রেস অথবা User ID দিন");
+
+      // ইনপুট যদি ইমেইল ফরম্যাট হয়
+      if (input.includes("@")) {
+        const { data: userData, error: userError } = await supabase
+          .from("profiles" as any)
+          .select("id")
+          .eq("email", input)
+          .maybeSingle();
+
+        let finalUserId = userData?.id;
+
+        if (!finalUserId) {
+          // সরাসরি ইউজার রোলসে ট্রাই করা
+          finalUserId = input;
+        }
+
+        const { error } = await supabase
+          .from("user_roles")
+          .upsert({ user_id: finalUserId, role }, { onConflict: "user_id,role" });
+        if (error) throw error;
+        return;
+      }
+
+      // ইনপুট যদি সরাসরি User UUID হয়
       const { error } = await supabase
         .from("user_roles")
-        .upsert({ user_id: userId.trim(), role }, { onConflict: "user_id,role" });
+        .upsert({ user_id: input, role }, { onConflict: "user_id,role" });
       if (error) throw error;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+      setIdentifier("");
+      toast.success("ইউজার রোল সফলভাবে প্রদান করা হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -373,7 +399,7 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল রিমুভ করা হয়েছে");
+      toast.success("রোল সফলভাবে রিমুভ করা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -392,14 +418,17 @@ function RolesAdmin() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-2 sm:col-span-2">
-            <Label htmlFor="userId">User ID (Supabase Auth UID)</Label>
+            <Label htmlFor="userIdentifier">ইমেইল এড্রেস অথবা User ID (UUID)</Label>
             <Input
-              id="userId"
-              placeholder="যেমন: e2a8b... (User UUID)"
-              value={userId}
-              onChange={(e) => setUserId(e.target.value)}
+              id="userIdentifier"
+              placeholder="যেমন: kaali.kolom@gmail.com অথবা e2a8b..."
+              value={identifier}
+              onChange={(e) => setIdentifier(e.target.value)}
               required
             />
+            <p className="text-[11px] text-muted-foreground">
+              💡 আপনি সরাসরি ইউজারের জিমেইল এড্রেস লিখেও অ্যাডমিন বানাতে পারেন।
+            </p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="roleSelect">রোল সিলেক্ট করুন</Label>
@@ -407,7 +436,7 @@ function RolesAdmin() {
               id="roleSelect"
               value={role}
               onChange={(e) => setRole(e.target.value as "admin" | "user")}
-              className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
+              className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
             >
               <option value="admin">Admin</option>
               <option value="user">User</option>
@@ -415,7 +444,7 @@ function RolesAdmin() {
           </div>
         </div>
         <Button type="submit" disabled={addRole.isPending}>
-          <UserCheck className="size-4 mr-2" /> রোল অ্যাসাইন করুন
+          <UserCheck className="size-4 mr-2" /> {addRole.isPending ? "যোগ হচ্ছে..." : "রোল অ্যাসাইন করুন"}
         </Button>
       </form>
 
@@ -433,6 +462,7 @@ function RolesAdmin() {
               variant="ghost"
               size="icon"
               aria-label="Delete Role"
+              title="রোল মুছুন"
               onClick={() => removeRole.mutate(r.id)}
             >
               <UserX className="size-4 text-destructive" />
@@ -805,6 +835,7 @@ function TranslationsAdmin() {
               id="ayah"
               type="number"
               min={1}
+              max={300}
               value={ayah}
               onChange={(e) => setAyah(e.target.value)}
             />
@@ -880,7 +911,7 @@ function SubscribersAdmin() {
       )}
       {list.data?.map((s) => (
         <div key={s.id} className="flex items-center justify-between px-4 py-3 text-sm">
-          <span>{s.email}</span>
+          <span className="font-mono text-xs sm:text-sm">{s.email}</span>
           <span className="text-xs text-muted-foreground">
             {new Date(s.created_at).toLocaleDateString("en-GB")}
           </span>
