@@ -89,26 +89,27 @@ function HomePage() {
     e.preventDefault();
     if (!normalizedTerm) return;
 
-    // সুরা ও আয়াত প্যাটার্ন (যেমন: ৩৩:৪০, 33:40, 33/40, ৩৩-৪০)
-    const match = normalizedTerm.match(/^(\d+)[:ঃ\/\.\-](\d+)$/);
+    // ১. সূরা ও আয়াত সার্চ (যেমন: ২৫/২০, 25:20, 25.20, ২৫-২০)
+    const match = normalizedTerm.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
     if (match) {
-      const surahNum = match[1];
-      const ayahNum = match[2];
-      
-      // লোকাল স্টোরেজে টার্গেট আয়াত ক্যাশ করে পাঠানো যাতে ১০০% স্ক্রোল হয়
-      if (typeof window !== "undefined") {
-        sessionStorage.setItem("target_jump_ayah", ayahNum);
-      }
+      const surahNum = Number(match[1]);
+      const ayahNum = Number(match[2]);
 
-      void navigate({
-        to: "/surah/$id",
-        params: { id: surahNum },
-        hash: `ayah-${ayahNum}`,
-      });
-      return;
+      if (surahNum >= 1 && surahNum <= 114) {
+        if (typeof window !== "undefined") {
+          sessionStorage.setItem("target_scroll_ayah", String(ayahNum));
+        }
+
+        void navigate({
+          to: "/surah/$id",
+          params: { id: String(surahNum) },
+          hash: `ayah-${ayahNum}`,
+        });
+        return;
+      }
     }
 
-    // শুধু সুরা নম্বর
+    // ২. শুধুমাত্র সূরা নম্বর সার্চ (১-১১৪)
     if (/^\d+$/.test(normalizedTerm)) {
       const sNum = Number(normalizedTerm);
       if (sNum >= 1 && sNum <= 114) {
@@ -116,7 +117,16 @@ function HomePage() {
           to: "/surah/$id",
           params: { id: String(sNum) },
         });
+        return;
       }
+    }
+
+    // ৩. নামের সাথে মিল থাকলে প্রথম ফলাফলটিতে নিয়ে যাওয়া
+    if (filtered.length > 0) {
+      void navigate({
+        to: "/surah/$id",
+        params: { id: String(filtered[0].id) },
+      });
     }
   };
 
