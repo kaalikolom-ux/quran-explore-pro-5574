@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, BookOpen, Sparkles } from "lucide-react";
 
-import { SURAHS, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,6 +39,13 @@ export type SurahData = {
   ayahs: QuranAyah[];
 };
 
+// লোকাল নাম্বার কনভার্টার
+function formatNumber(num: number | string, lang: string) {
+  if (lang !== "bn") return String(num);
+  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  return String(num).replace(/\d/g, (d) => bnDigits[Number(d)]);
+}
+
 function SurahDetailPage() {
   const { id } = Route.useParams();
   const surahId = Number(id) || 1;
@@ -49,8 +55,6 @@ function SurahDetailPage() {
     ayah: number;
     word: QuranWord;
   } | null>(null);
-
-  const meta = SURAHS.find((s) => s.id === surahId) || SURAHS[0];
 
   // লোকাল ডাটা ফাইল থেকে সম্পূর্ণ সুরা লোড করা
   const surahQuery = useQuery<SurahData>({
@@ -67,16 +71,18 @@ function SurahDetailPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 space-y-6">
       {/* ১. সুরা হেডার কার্ড */}
-      <div className="card-soft flex flex-col items-center justify-center p-6 text-center space-y-2 border-border/80 shadow-xs">
+      <div className="card-soft flex flex-col items-center justify-center p-6 text-center space-y-2 border border-border/80 shadow-xs rounded-xl bg-card">
         <span className="rounded-full bg-primary/10 px-3 py-0.5 text-xs font-semibold text-primary">
-          সুরা নম্বর: {localNumber(meta.id, lang)} · {meta.type === "Meccan" ? "মাক্কী" : "মাদানী"}
+          সুরা নম্বর: {formatNumber(surahId, lang)}
         </span>
         <h1 className="text-3xl font-bold tracking-tight text-foreground">
-          {meta.name_bn} <span className="arabic text-2xl font-normal text-muted-foreground">({meta.name_ar})</span>
+          সুরা {formatNumber(surahId, lang)}
         </h1>
-        <p className="text-xs text-muted-foreground">
-          মোট আয়াত: {localNumber(meta.total_ayahs, lang)} টি
-        </p>
+        {surahQuery.data?.ayahs && (
+          <p className="text-xs text-muted-foreground">
+            মোট আয়াত: {formatNumber(surahQuery.data.ayahs.length, lang)} টি
+          </p>
+        )}
 
         {/* নেভিগেশন বাটন */}
         <div className="flex items-center gap-3 pt-2">
@@ -115,7 +121,7 @@ function SurahDetailPage() {
 
       {surahQuery.isError && (
         <div className="py-12 text-center text-sm text-destructive">
-          সুরা লোড করতে সমস্যা হয়েছে।
+          সুরা লোড করতে সমস্যা হয়েছে। ডাটা ফাইল চেক করুন।
         </div>
       )}
 
@@ -125,15 +131,15 @@ function SurahDetailPage() {
           <div
             key={ayah.ayah}
             id={`ayah-${ayah.ayah}`}
-            className="card-soft p-5 space-y-4 transition-all hover:border-border/90"
+            className="rounded-xl border border-border/70 bg-card p-5 space-y-4 transition-all hover:border-border/90 shadow-xs"
           >
             {/* আয়াত নম্বর বার */}
             <div className="flex items-center justify-between border-b border-border/50 pb-2">
               <span className="inline-flex items-center justify-center size-7 rounded-full bg-muted font-mono text-xs font-semibold text-foreground">
-                {localNumber(ayah.ayah, lang)}
+                {formatNumber(ayah.ayah, lang)}
               </span>
               <span className="text-xs text-muted-foreground font-mono">
-                {meta.name_en} {surahId}:{ayah.ayah}
+                {surahId}:{ayah.ayah}
               </span>
             </div>
 
@@ -271,7 +277,7 @@ function WordDetailsDialog({
 
         {/* অবস্থান তথ্য */}
         <div className="p-5 text-center text-xs text-muted-foreground">
-          অবস্থান: সুরা {localNumber(surah, lang)} : আয়াত {localNumber(ayah, lang)} · শব্দ নম্বর {localNumber(word.position, lang)}
+          অবস্থান: সুরা {formatNumber(surah, lang)} : আয়াত {formatNumber(ayah, lang)} · শব্দ নম্বর {formatNumber(word.position, lang)}
         </div>
       </DialogContent>
     </Dialog>
