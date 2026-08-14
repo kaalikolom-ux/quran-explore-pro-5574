@@ -15,6 +15,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
@@ -51,6 +52,11 @@ const ContactRoute = ContactRouteImport.update({
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -97,6 +103,7 @@ export interface FileRoutesByFullPath {
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/p/$slug': typeof PSlugRoute
@@ -112,6 +119,7 @@ export interface FileRoutesByTo {
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/p/$slug': typeof PSlugRoute
@@ -128,6 +136,7 @@ export interface FileRoutesById {
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/p/$slug': typeof PSlugRoute
@@ -145,6 +154,7 @@ export interface FileRouteTypes {
     | '/bookmarks'
     | '/contact'
     | '/reset-password'
+    | '/settings'
     | '/sitemap.xml'
     | '/articles/$slug'
     | '/p/$slug'
@@ -160,6 +170,7 @@ export interface FileRouteTypes {
     | '/bookmarks'
     | '/contact'
     | '/reset-password'
+    | '/settings'
     | '/sitemap.xml'
     | '/articles/$slug'
     | '/p/$slug'
@@ -175,6 +186,7 @@ export interface FileRouteTypes {
     | '/bookmarks'
     | '/contact'
     | '/reset-password'
+    | '/settings'
     | '/sitemap.xml'
     | '/articles/$slug'
     | '/p/$slug'
@@ -191,6 +203,7 @@ export interface RootRouteChildren {
   BookmarksRoute: typeof BookmarksRoute
   ContactRoute: typeof ContactRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
+  SettingsRoute: typeof SettingsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
   PSlugRoute: typeof PSlugRoute
@@ -242,6 +255,13 @@ declare module '@tanstack/react-router' {
       path: '/reset-password'
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -303,6 +323,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookmarksRoute: BookmarksRoute,
   ContactRoute: ContactRoute,
   ResetPasswordRoute: ResetPasswordRoute,
+  SettingsRoute: SettingsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
   PSlugRoute: PSlugRoute,

@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight, BookOpen, Sparkles } from "lucide-react";
 
 import { SURAHS, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
-import { fetchSurahFromGreentech, QuranWord } from "@/lib/quranService";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,10 +17,33 @@ export const Route = createFileRoute("/surah/$id")({
   component: SurahDetailPage,
 });
 
+export type QuranWord = {
+  id?: number;
+  position: number;
+  text_uthmani: string;
+  transliteration?: string;
+  translation_bn?: string;
+  root?: string;
+  lemma?: string;
+  grammar_bn?: string;
+};
+
+export type QuranAyah = {
+  surah: number;
+  ayah: number;
+  text_uthmani: string;
+  words: QuranWord[];
+};
+
+export type SurahData = {
+  surah: number;
+  ayahs: QuranAyah[];
+};
+
 function SurahDetailPage() {
   const { id } = Route.useParams();
   const surahId = Number(id) || 1;
-  const { lang, t } = usePrefs();
+  const { lang } = usePrefs();
   const [selectedWordInfo, setSelectedWordInfo] = useState<{
     surah: number;
     ayah: number;
@@ -30,12 +52,15 @@ function SurahDetailPage() {
 
   const meta = SURAHS.find((s) => s.id === surahId) || SURAHS[0];
 
-  // লোকাল ডাটাবেজ থেকে সম্পূর্ণ সুরা ফেচ (০ মিলি-সেকেন্ড ল্যাগ)
-  const surahQuery = useQuery({
+  // লোকাল ডাটা ফাইল থেকে সম্পূর্ণ সুরা লোড করা
+  const surahQuery = useQuery<SurahData>({
     queryKey: ["local-greentech-surah", surahId],
     queryFn: async () => {
-      const data = await fetchSurahFromGreentech(surahId);
-      return data;
+      const res = await fetch(`/data/quran/surahs/${surahId}.json`);
+      if (!res.ok) {
+        throw new Error(`Failed to load Surah ${surahId}`);
+      }
+      return res.json();
     },
   });
 
@@ -90,7 +115,7 @@ function SurahDetailPage() {
 
       {surahQuery.isError && (
         <div className="py-12 text-center text-sm text-destructive">
-          সুরা লোড করতে সমস্যা হয়েছে। ডাটা ফাইলটি চেক করুন।
+          সুরা লোড করতে সমস্যা হয়েছে।
         </div>
       )}
 
@@ -194,9 +219,11 @@ function WordDetailsDialog({
               [{word.transliteration}]
             </p>
           )}
-          <p className="text-base font-semibold text-foreground/90 mt-1">
-            "{word.translation_bn}"
-          </p>
+          {word.translation_bn && (
+            <p className="text-base font-semibold text-foreground/90 mt-1">
+              "{word.translation_bn}"
+            </p>
+          )}
 
           {/* ৪. গ্রীনটেক রুট ও ক্রিয়ামূল কার্ড */}
           <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto mt-4">
@@ -237,7 +264,7 @@ function WordDetailsDialog({
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <Sparkles className="size-3.5 text-amber-500" /> মূল রুট ({word.root})
+              <Sparkles className="size-3.5 text-amber-500" /> মূল রুট ({word.root || "—"})
             </button>
           </div>
         </DialogHeader>
