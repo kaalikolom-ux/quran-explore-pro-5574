@@ -12,22 +12,22 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-/** Strip all Arabic harakat, dagger alifs, quranic annotation symbols */
-function normalizeArabic(text: string) {
+/** Strip all Arabic harakat, quranic marks and normalize letters */
+function cleanArabic(text: string): string {
   if (!text) return "";
   return text
-    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // All vowels & marks
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/[يىئ]/g, "ي")
-    .replace(/[ة]/g, "ه")
-    .replace(/[ؤ]/g, "و")
-    .replace(/[^\u0621-\u064A]/g, "") // Keep pure letters only
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // All vowels, tanween & quran symbols
+    .replace(/[أإآٱ]/g, "ا") // Normalize Alif
+    .replace(/[يىئ]/g, "ي") // Normalize Yaa / Hamza
+    .replace(/[ة]/g, "ه") // Normalize Taa Marbuta
+    .replace(/[ؤ]/g, "و") // Normalize Waw
+    .replace(/[^\u0621-\u064A]/g, "") // Keep pure Arabic letters only
     .trim();
 }
 
-/** Regex builder to match exact Arabic word with optional Harakat */
+/** Regex builder to highlight matched word accurately inside the verse */
 function highlightArabicWord(fullText: string, searchWord: string) {
-  const bare = normalizeArabic(searchWord);
+  const bare = cleanArabic(searchWord);
   if (!bare) return fullText;
 
   const harakatPattern = "[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED\\u0640]*";
@@ -81,18 +81,18 @@ export function WordSearchDialog({
 }) {
   const { t, lang } = usePrefs();
   const rawWord = word ? word.trim() : "";
-  const normalized = normalizeArabic(rawWord);
+  const targetClean = cleanArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-lexicon-search-v11", rawWord, normalized, lang],
+    queryKey: ["word-lexicon-search-v12", rawWord, targetClean, lang],
     enabled: !!rawWord,
     queryFn: async () => {
-      const searchTarget = normalized || rawWord;
+      if (!targetClean) return [];
 
-      // 1. Search for matching verse keys
+      // ১. শব্দ দিয়ে আয়াতগুলো সার্চ করা
       const searchRes = await fetch(
         `https://api.quran.com/api/v4/search?q=${encodeURIComponent(
-          searchTarget
+          targetClean
         )}&size=30`
       );
 
@@ -102,7 +102,7 @@ export function WordSearchDialog({
 
       if (hits.length === 0) return [];
 
-      // 2. Fetch specific word lexicon & verse data
+      // ২. প্রতিটি আয়াতের শব্দে শব্দে ডাটা ও ট্রান্সলেশন আনা
       const detailedVerses = await Promise.all(
         hits.slice(0, 30).map(async (hit: any) => {
           try {
@@ -117,36 +117,58 @@ export function WordSearchDialog({
 
             const [s, a] = hit.verse_key.split(":").map(Number);
             
-            // Filter only words (exclude end of ayah numbers)
-            const words: any[] = (v.words || []).filter(
+            // শুধুমাত্র আসল শব্দগুলো নেওয়া (আয়াত নম্বর ও ওয়াক্ফ মার্কার বাদে)
+            const wordsList: any[] = (v.words || []).filter(
               (w: any) => w.char_type_name === "word"
             );
 
-            // এক্স্যাক্ট ওয়ার্ড খোঁজার একাধিক ধাপ:
-            // ধাপ ১: হুবহু নরমালাইজড ম্যাচ
-            let matchedWord = words.find((w) => {
-              const wNorm = normalizeArabic(w.text_uthmani || w.text || "");
-              return wNorm === normalized;
-            });
+            // স্কোরিং অ্যালগরিদম দিয়ে সেরা ম্যাচিং শব্দটি খুঁজে বের করা
+            let bestWord: any = null;
+            let highestScore = 0;
 
-            // ধাপ ২: যদি শব্দে সাব-ম্যাচ থাকে
-            if (!matchedWord) {
-              matchedWord = words.find((w) => {
-                const wNorm = normalizeArabic(w.text_uthmani || w.text || "");
-                return wNorm.includes(normalized) || (normalized.length >= 3 && normalized.includes(wNorm));
-              });
+            for (const w of wordsList) {
+              const wText = cleanArabic(
+                w.text_uthmani || w.text_imlaei || w.text || ""
+              );
+              
+              if (!wText) continue;
+
+              // ১. হুবহু মিললে সর্বোচ্চ স্কোর
+              if (wText === targetClean) {
+                bestWord = w;
+                highestScore = 100;
+                break;
+              }
+
+              // ২. প্রিফিক্সসহ মিল (যেমন: بالمسجد এবং المسجد)
+              if (wText.endsWith(targetClean) || targetClean.endsWith(wText)) {
+                if (highestScore < 80) {
+                  bestWord = w;
+                  highestScore = 80;
+                }
+              }
+
+              // ৩. সাবস্ট্রিং মিল (যেকোনো একটার ভেতরে আরেকটা থাকা)
+              else if (wText.includes(targetClean) || targetClean.includes(wText)) {
+                if (highestScore < 50) {
+                  bestWord = w;
+                  highestScore = 50;
+                }
+              }
             }
 
-            // ধাপ ৩: যদি কোনোভাবেই নির্দিষ্ট শব্দ ম্যাচ না হয়, তাহলে ভুল ডাটা না দেখিয়ে খালি রাখবে
-            const wordInfo = matchedWord
+            // সঠিক ওয়ার্ড ইনফো তৈরি
+            const wordInfo: WordInfo | undefined = bestWord
               ? {
-                  text_uthmani: matchedWord.text_uthmani || matchedWord.text,
+                  text_uthmani: bestWord.text_uthmani || bestWord.text,
                   transliteration:
-                    matchedWord.transliteration?.text ||
-                    matchedWord.transliteration,
+                    bestWord.transliteration?.text ||
+                    bestWord.transliteration ||
+                    "",
                   translation:
-                    matchedWord.translation?.text ||
-                    matchedWord.translation,
+                    bestWord.translation?.text ||
+                    bestWord.translation ||
+                    "",
                 }
               : undefined;
 
