@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Sliders, 
   Download, 
   Check, 
   Type, 
   HardDrive, 
-  Sparkles,
   RefreshCw,
   Layers,
   Database
@@ -23,15 +22,43 @@ export const Route = createFileRoute("/settings")({
 });
 
 function SettingsPage() {
-  const { prefs, updatePref, lang } = usePrefs() as any;
+  const prefsContext = usePrefs() as any;
+  const { prefs, updatePref, lang } = prefsContext || {};
 
-  // ডাউনলোড প্রগ্রেস স্টেট
+  // লোকাল স্টেট হ্যান্ডলিং
+  const [arabicSize, setArabicSize] = useState<number>(() => {
+    if (prefs?.arabicFontSize) return Number(prefs.arabicFontSize);
+    const saved = localStorage.getItem("quran_arabic_font_size");
+    return saved ? Number(saved) : 28;
+  });
+
+  const [translationSize, setTranslationSize] = useState<number>(() => {
+    if (prefs?.translationFontSize) return Number(prefs.translationFontSize);
+    const saved = localStorage.getItem("quran_translation_font_size");
+    return saved ? Number(saved) : 15;
+  });
+
   const [downloadingSurahs, setDownloadingSurahs] = useState(false);
   const [downloadingAyahs, setDownloadingAyahs] = useState(false);
   const [surahProgress, setSurahProgress] = useState<number | null>(null);
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
 
-  // ১. ১১৪টি সূরা ডাউনলোড লজিক (Service Worker / Local Cache)
+  // ফন্ট সাইজ চেঞ্জ হ্যান্ডলার
+  const handleArabicFontChange = (val: number[]) => {
+    const size = val[0];
+    setArabicSize(size);
+    localStorage.setItem("quran_arabic_font_size", String(size));
+    if (updatePref) updatePref("arabicFontSize", size);
+  };
+
+  const handleTranslationFontChange = (val: number[]) => {
+    const size = val[0];
+    setTranslationSize(size);
+    localStorage.setItem("quran_translation_font_size", String(size));
+    if (updatePref) updatePref("translationFontSize", size);
+  };
+
+  // ১১৪টি সুরা ডাউনলোড
   const handleDownloadAllSurahs = async () => {
     setDownloadingSurahs(true);
     setSurahProgress(0);
@@ -48,7 +75,7 @@ function SettingsPage() {
     }
   };
 
-  // ২. সম্পূর্ণ ৬২৩৬টি আয়াত অফলাইন ব্যাকআপ ডাউনলোড
+  // ৬২৩৬টি আয়াত ডাউনলোড
   const handleDownloadAllAyahs = async () => {
     setDownloadingAyahs(true);
     setAyahProgress(0);
@@ -65,7 +92,6 @@ function SettingsPage() {
     }
   };
 
-  // ডিসপ্লে লেয়ার তালিকা
   const displayLayers = [
     {
       key: "showArabic",
@@ -109,14 +135,10 @@ function SettingsPage() {
     },
   ];
 
-  // ফন্ট সাইজ ডিফল্ট ও স্টেট
-  const arabicFontSize = prefs?.arabicFontSize || 28;
-  const translationFontSize = prefs?.translationFontSize || 15;
-
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 space-y-8">
       
-      {/* ১. হেডার */}
+      {/* হেডার */}
       <div className="flex items-center justify-between border-b border-border/60 pb-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2">
@@ -135,7 +157,67 @@ function SettingsPage() {
         </span>
       </div>
 
-      {/* ২. অফলাইন ডাউনলোড সেকশন (সুরা ও আয়াত ডাউনলোড) */}
+      {/* ফন্ট সাইজ সেটিংস (সক্রিয় স্লাইডার) */}
+      <div className="space-y-3">
+        <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+          <Type className="size-4 text-primary" />
+          <span>{lang === "bn" ? "ফন্ট সাইজ সেটিংস" : "Font Size Settings"}</span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* আরবি ফন্ট সাইজ */}
+          <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
+            <div className="flex items-center justify-between">
+              <Label className="text-xs font-semibold text-foreground">
+                {lang === "bn" ? "আরবি ফন্ট সাইজ" : "Arabic Font Size"}
+              </Label>
+              <span className="font-mono text-xs text-primary font-bold">{arabicSize}px</span>
+            </div>
+            
+            <Slider
+              value={[arabicSize]}
+              min={20}
+              max={52}
+              step={1}
+              onValueChange={handleArabicFontChange}
+              className="py-1 cursor-pointer"
+            />
+
+            <div className="text-center pt-2 border-t border-border/40">
+              <p className="arabic text-foreground font-normal leading-relaxed" style={{ fontSize: `${arabicSize}px` }}>
+                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+              </p>
+            </div>
+          </div>
+
+          {/* অনুবাদ ফন্ট সাইজ */}
+          <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
+            <div className="flex items-center justify-between">
+              <Label className="text-xs font-semibold text-foreground">
+                {lang === "bn" ? "অনুবাদ ফন্ট সাইজ" : "Translation Font Size"}
+              </Label>
+              <span className="font-mono text-xs text-primary font-bold">{translationSize}px</span>
+            </div>
+
+            <Slider
+              value={[translationSize]}
+              min={12}
+              max={28}
+              step={1}
+              onValueChange={handleTranslationFontChange}
+              className="py-1 cursor-pointer"
+            />
+
+            <div className="text-center pt-3 border-t border-border/40">
+              <p className="text-muted-foreground leading-relaxed" style={{ fontSize: `${translationSize}px` }}>
+                পরম করুণাময় অতি দয়ালু আল্লাহর নামে
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* অফলাইন ডাউনলোড */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Database className="size-4 text-primary" />
@@ -143,7 +225,7 @@ function SettingsPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* সুরা ডাউনলোড কার্ড */}
+          {/* সুরা ডাউনলোড */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
@@ -193,7 +275,7 @@ function SettingsPage() {
             </Button>
           </div>
 
-          {/* আয়াত ডাউনলোড কার্ড */}
+          {/* আয়াত ডাউনলোড */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
@@ -245,73 +327,7 @@ function SettingsPage() {
         </div>
       </div>
 
-      {/* ৩. ফন্ট সাইজ সেটিংস (Font Scaling) */}
-      <div className="space-y-3">
-        <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-          <Type className="size-4 text-primary" />
-          <span>{lang === "bn" ? "ফন্ট সাইজ সেটিংস" : "Font Size Settings"}</span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* আরবি ফন্ট সাইজ */}
-          <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
-            <div className="flex items-center justify-between">
-              <Label className="text-xs font-semibold text-foreground">
-                {lang === "bn" ? "আরবি ফন্ট সাইজ" : "Arabic Font Size"}
-              </Label>
-              <span className="font-mono text-xs text-primary font-bold">{arabicFontSize}px</span>
-            </div>
-            
-            <Slider
-              value={[arabicFontSize]}
-              min={20}
-              max={48}
-              step={1}
-              onValueChange={(val) => {
-                if (updatePref) updatePref("arabicFontSize", val[0]);
-              }}
-              className="py-1"
-            />
-
-            {/* আরবি প্রিভিউ */}
-            <div className="text-center pt-2 border-t border-border/40">
-              <p className="arabic text-foreground font-normal" style={{ fontSize: `${arabicFontSize}px` }}>
-                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-              </p>
-            </div>
-          </div>
-
-          {/* অনুবাদ ও বাংলা ফন্ট সাইজ */}
-          <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
-            <div className="flex items-center justify-between">
-              <Label className="text-xs font-semibold text-foreground">
-                {lang === "bn" ? "অনুবাদ ফন্ট সাইজ" : "Translation Font Size"}
-              </Label>
-              <span className="font-mono text-xs text-primary font-bold">{translationFontSize}px</span>
-            </div>
-
-            <Slider
-              value={[translationFontSize]}
-              min={12}
-              max={24}
-              step={1}
-              onValueChange={(val) => {
-                if (updatePref) updatePref("translationFontSize", val[0]);
-              }}
-              className="py-1"
-            />
-
-            {/* অনুবাদ প্রিভিউ */}
-            <div className="text-center pt-3 border-t border-border/40">
-              <p className="text-muted-foreground" style={{ fontSize: `${translationFontSize}px` }}>
-                পরম করুণাময় অতি দয়ালু আল্লাহর নামে
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ৪. প্রদর্শন সেটিংস (Display Layers) */}
+      {/* ডিসপ্লে লেয়ার সেটিংস */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Layers className="size-4 text-primary" />
