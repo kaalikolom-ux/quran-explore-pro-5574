@@ -16,8 +16,6 @@ import { usePrefs } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import { resolveAudioSrc } from "@/lib/offline";
-import { DisplayToggles } from "@/components/DisplayToggles";
-import { OfflineDownload } from "@/components/OfflineDownload";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { TranslationLayer } from "@/components/TranslationLayer";
 import { WordSearchDialog } from "@/components/WordSearchDialog";
@@ -56,7 +54,7 @@ function SurahPage() {
   const { id } = Route.useParams();
   const searchParams = useSearch({ from: "/surah/$id" });
   const surah = Number(id);
-  const { t, lang, layers } = usePrefs();
+  const { t, lang, layers, arabicFontSize, translationFontSize } = usePrefs();
   const { isAdmin } = useIsAdmin();
 
   const chapters = useQuery(chaptersQuery(lang));
@@ -88,7 +86,6 @@ function SurahPage() {
   useEffect(() => {
     if (!verses.data || verses.data.length === 0) return;
 
-    // Search param অথবা hash থেকে আয়াত নম্বর বের করা
     let targetAyah = searchParams?.ayah;
     if (!targetAyah && typeof window !== "undefined" && window.location.hash) {
       targetAyah = window.location.hash.replace("#ayah-", "").replace("#", "");
@@ -134,7 +131,8 @@ function SurahPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-10">
       <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
-        <div className="order-2 min-w-0 lg:order-1">
+        {/* প্রধান আয়াত পড়ার সেকশন */}
+        <div className="min-w-0">
           <div className="card-soft mb-6 flex flex-wrap items-center justify-between gap-4 p-6">
             <div>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">
@@ -266,16 +264,18 @@ function SurahPage() {
 
                   {layers.arabic && (
                     <>
-                      <TranslationLayer
-                        surah={surah}
-                        ayah={v.verse_number}
-                        storageLang="arabic"
-                        title={t("arabicText")}
-                        text={arabicEdited ? arabicEdited.text : v.text_uthmani}
-                        edited={!!arabicEdited}
-                        hideNoteField
-                        textClassName="arabic text-right text-3xl leading-[2.4] text-foreground"
-                      />
+                      <div style={{ fontSize: `${arabicFontSize ?? 28}px` }}>
+                        <TranslationLayer
+                          surah={surah}
+                          ayah={v.verse_number}
+                          storageLang="arabic"
+                          title={t("arabicText")}
+                          text={arabicEdited ? arabicEdited.text : v.text_uthmani}
+                          edited={!!arabicEdited}
+                          hideNoteField
+                          textClassName="arabic text-right text-3xl leading-[2.4] text-foreground"
+                        />
+                      </div>
                       {fullTransliteration && (
                         <p className="mt-3 text-sm italic leading-relaxed text-muted-foreground">
                           {fullTransliteration}
@@ -309,7 +309,10 @@ function SurahPage() {
                   )}
 
                   {layers.translation && (
-                    <div className="mt-5 space-y-4 border-t border-border pt-5">
+                    <div 
+                      className="mt-5 space-y-4 border-t border-border pt-5"
+                      style={{ fontSize: `${translationFontSize ?? 16}px` }}
+                    >
                       {layers.bn && (
                         <TranslationLayer
                           surah={surah}
@@ -442,15 +445,13 @@ function SurahPage() {
           </div>
         </div>
 
-        {/* আপডেট করা স্ক্রলেবল ডেক্সটপ সাইডবার */}
-        <aside className="order-1 space-y-4 lg:order-2 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
-          <DisplayToggles />
-          <OfflineDownload audioUrls={Object.values(audio.data ?? {})} />
+        {/* ডেস্কটপ সাইডবার (শুধুমাত্র বড় স্ক্রিনে দৃশ্যমান) */}
+        <aside className="hidden lg:block lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
           <div className="card-soft p-5">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t("surahs")}
             </p>
-            <div className="max-h-[calc(100vh-22rem)] space-y-1 overflow-y-auto pr-1">
+            <div className="max-h-[calc(100vh-14rem)] space-y-1 overflow-y-auto pr-1">
               {chapters.data?.map((c) => (
                 <Link
                   key={c.id}
