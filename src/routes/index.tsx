@@ -71,8 +71,8 @@ function HomePage() {
       return list.filter((c) => String(c.id) === normalizedTerm);
     }
 
-    if (/^\d+[:ঃ/-]\d+$/.test(normalizedTerm)) {
-      const [s] = normalizedTerm.split(/[:ঃ/-]/);
+    if (/^\d+[:ঃ\/\.\-]\d+$/.test(normalizedTerm)) {
+      const [s] = normalizedTerm.split(/[:ঃ\/\.\-]/);
       return list.filter((c) => String(c.id) === s);
     }
 
@@ -89,24 +89,31 @@ function HomePage() {
     e.preventDefault();
     if (!normalizedTerm) return;
 
-    const match = normalizedTerm.match(/^(\d+)[:ঃ/-](\d+)$/);
+    // সুরা ও আয়াত প্যাটার্ন (যেমন: ৩৩:৪০, 33:40, 33/40, ৩৩-৪০)
+    const match = normalizedTerm.match(/^(\d+)[:ঃ\/\.\-](\d+)$/);
     if (match) {
       const surahNum = match[1];
       const ayahNum = match[2];
+      
+      // লোকাল স্টোরেজে টার্গেট আয়াত ক্যাশ করে পাঠানো যাতে ১০০% স্ক্রোল হয়
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("target_jump_ayah", ayahNum);
+      }
+
       void navigate({
-        to: `/surah/$id`,
+        to: "/surah/$id",
         params: { id: surahNum },
-        search: { ayah: ayahNum },
         hash: `ayah-${ayahNum}`,
       });
       return;
     }
 
+    // শুধু সুরা নম্বর
     if (/^\d+$/.test(normalizedTerm)) {
       const sNum = Number(normalizedTerm);
       if (sNum >= 1 && sNum <= 114) {
         void navigate({
-          to: `/surah/$id`,
+          to: "/surah/$id",
           params: { id: String(sNum) },
         });
       }
@@ -115,39 +122,24 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন উইথ ইসলামিক জিওমেট্রিক ব্যাকগ্রাউন্ড */}
+      {/* হিরো সেকশন */}
       <section className="hero-surface relative overflow-hidden">
-        {/* জ্যামিতিক আর্ট ও সার্কেল ভেক্টর ব্যাকগ্রাউন্ড */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
-          {/* সফট রেডিয়াল গ্লো */}
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-primary/10 blur-3xl" />
           
-          {/* জ্যামিতিক ইসলামিক স্টার ও কনসেন্ট্রিক সার্কেল */}
           <div className="relative right-[-5%] lg:right-[6%] flex items-center justify-center opacity-70 lg:opacity-90 scale-90 sm:scale-100 lg:scale-110">
-            {/* আউটার সার্কেল ১ */}
             <div className="absolute h-[480px] w-[480px] rounded-full border border-white/5" />
-            
-            {/* আউটার সার্কেল ২ (ড্যাশড লাইন) */}
             <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-white/10" />
-            
-            {/* ইনার সার্কেল ৩ */}
             <div className="absolute h-[290px] w-[290px] rounded-full border border-white/10" />
 
-            {/* ইসলামিক আট-কোণা স্টার (Rub el Hizb) */}
             <div className="relative flex items-center justify-center">
-              {/* স্কয়ার ১ */}
               <div className="absolute h-40 w-40 rounded-sm border border-amber-400/40 bg-amber-400/[0.02] shadow-[0_0_20px_rgba(251,191,36,0.1)] transition-transform duration-700 hover:rotate-6" />
-              
-              {/* স্কয়ার ২ (৪৫ ডিগ্রি ঘোরানো) */}
               <div className="absolute h-40 w-40 rotate-45 rounded-sm border border-amber-400/40 bg-amber-400/[0.02] shadow-[0_0_20px_rgba(251,191,36,0.1)] transition-transform duration-700 hover:rotate-[51deg]" />
-              
-              {/* মাঝের আলোকিত গ্লোয়িং ডট */}
               <div className="relative z-10 h-6 w-6 rounded-full bg-amber-400/70 shadow-[0_0_25px_8px_rgba(251,191,36,0.4)]" />
             </div>
           </div>
         </div>
 
-        {/* হিরো কন্টেন্ট */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-20 sm:py-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-1 text-xs font-medium tracking-wide bg-white/5 backdrop-blur-sm">
             <Sparkles className="size-3.5" /> {t("tagline")}
@@ -193,7 +185,6 @@ function HomePage() {
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80">{t("heroSub")}</p>
           
-          {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
