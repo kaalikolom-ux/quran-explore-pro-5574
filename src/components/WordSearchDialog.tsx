@@ -12,16 +12,16 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-/** Strip all Arabic harakat, quranic marks and normalize letters */
+/** Strip all Arabic harakat, quranic annotation symbols, and normalize letters */
 function cleanArabic(text: string): string {
   if (!text) return "";
   return text
-    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // All vowels, tanween & quran symbols
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // All vowels, tanween & quranic symbols
     .replace(/[أإآٱ]/g, "ا") // Normalize Alif
-    .replace(/[يىئ]/g, "ي") // Normalize Yaa / Hamza
+    .replace(/[يىئ]/g, "ي") // Normalize Yaa
     .replace(/[ة]/g, "ه") // Normalize Taa Marbuta
     .replace(/[ؤ]/g, "و") // Normalize Waw
-    .replace(/[^\u0621-\u064A]/g, "") // Keep pure Arabic letters only
+    .replace(/[^\u0621-\u064A]/g, "") // Keep pure letters only
     .trim();
 }
 
@@ -84,12 +84,12 @@ export function WordSearchDialog({
   const targetClean = cleanArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-lexicon-search-v12", rawWord, targetClean, lang],
+    queryKey: ["word-lexicon-search-v14", rawWord, targetClean, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       if (!targetClean) return [];
 
-      // ১. শব্দ দিয়ে আয়াতগুলো সার্চ করা
+      // ১. শব্দ দিয়ে আয়াত সার্চ করা
       const searchRes = await fetch(
         `https://api.quran.com/api/v4/search?q=${encodeURIComponent(
           targetClean
@@ -102,72 +102,60 @@ export function WordSearchDialog({
 
       if (hits.length === 0) return [];
 
-      // ২. প্রতিটি আয়াতের শব্দে শব্দে ডাটা ও ট্রান্সলেশন আনা
+      // ২. প্রতিটি আয়াতের শব্দে শব্দে তথ্য আনা
       const detailedVerses = await Promise.all(
         hits.slice(0, 30).map(async (hit: any) => {
           try {
             const verseRes = await fetch(
               `https://api.quran.com/api/v4/verses/by_key/${hit.verse_key}?language=${
                 lang === "bn" ? "bn" : "en"
-              }&words=true`
+              }&words=true&word_fields=text_uthmani,text_imlaei,location`
             );
             if (!verseRes.ok) return null;
             const verseJson = await verseRes.json();
             const v = verseJson.verse;
 
             const [s, a] = hit.verse_key.split(":").map(Number);
-            
-            // শুধুমাত্র আসল শব্দগুলো নেওয়া (আয়াত নম্বর ও ওয়াক্ফ মার্কার বাদে)
-            const wordsList: any[] = (v.words || []).filter(
-              (w: any) => w.char_type_name === "word"
-            );
+            const allWords: any[] = v.words || [];
 
-            // স্কোরিং অ্যালগরিদম দিয়ে সেরা ম্যাচিং শব্দটি খুঁজে বের করা
-            let bestWord: any = null;
-            let highestScore = 0;
+            // নির্দিষ্ট ম্যাচিং শব্দটি বের করার অ্যালগরিদম
+            let matchedWord: any = null;
 
-            for (const w of wordsList) {
-              const wText = cleanArabic(
-                w.text_uthmani || w.text_imlaei || w.text || ""
-              );
-              
-              if (!wText) continue;
+            // ১. হুবহু (Exact) ম্যাচিং
+            matchedWord = allWords.find((w) => {
+              const u = cleanArabic(w.text_uthmani || "");
+              const im = cleanArabic(w.text_imlaei || "");
+              const tx = cleanArabic(w.text || "");
+              return u === targetClean || im === targetClean || tx === targetClean;
+            });
 
-              // ১. হুবহু মিললে সর্বোচ্চ স্কোর
-              if (wText === targetClean) {
-                bestWord = w;
-                highestScore = 100;
-                break;
-              }
-
-              // ২. প্রিফিক্সসহ মিল (যেমন: بالمسجد এবং المسجد)
-              if (wText.endsWith(targetClean) || targetClean.endsWith(wText)) {
-                if (highestScore < 80) {
-                  bestWord = w;
-                  highestScore = 80;
-                }
-              }
-
-              // ৩. সাবস্ট্রিং মিল (যেকোনো একটার ভেতরে আরেকটা থাকা)
-              else if (wText.includes(targetClean) || targetClean.includes(wText)) {
-                if (highestScore < 50) {
-                  bestWord = w;
-                  highestScore = 50;
-                }
-              }
+            // ২. সাবস্ট্রিং বা প্রিফিক্স ম্যাচিং (যদি সরাসরি না মেলে)
+            if (!matchedWord) {
+              matchedWord = allWords.find((w) => {
+                const u = cleanArabic(w.text_uthmani || "");
+                const im = cleanArabic(w.text_imlaei || "");
+                return (
+                  (u && (u.includes(targetClean) || targetClean.includes(u))) ||
+                  (im && (im.includes(targetClean) || targetClean.includes(im)))
+                );
+              });
             }
 
-            // সঠিক ওয়ার্ড ইনফো তৈরি
-            const wordInfo: WordInfo | undefined = bestWord
+            // ৩. ওয়ার্ড ইনফো সাজানো
+            const wordInfo: WordInfo | undefined = matchedWord
               ? {
-                  text_uthmani: bestWord.text_uthmani || bestWord.text,
+                  text_uthmani:
+                    matchedWord.text_uthmani ||
+                    matchedWord.text_imlaei ||
+                    matchedWord.text ||
+                    rawWord,
                   transliteration:
-                    bestWord.transliteration?.text ||
-                    bestWord.transliteration ||
+                    matchedWord.transliteration?.text ||
+                    matchedWord.transliteration ||
                     "",
                   translation:
-                    bestWord.translation?.text ||
-                    bestWord.translation ||
+                    matchedWord.translation?.text ||
+                    matchedWord.translation ||
                     "",
                 }
               : undefined;
