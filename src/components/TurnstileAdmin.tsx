@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Mail, Send } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -15,6 +15,7 @@ const schema = z.object({
   site_key: z.string().trim().max(200),
   secret_key: z.string().trim().max(300),
   to_email: z.string().trim().email().max(255),
+  newsletter_email: z.string().trim().email().max(255),
   from_email: z.string().trim().max(255),
   sender_domain: z.string().trim().max(255),
 });
@@ -26,7 +27,8 @@ export function TurnstileAdmin() {
   const [form, setForm] = useState({
     site_key: "",
     secret_key: "",
-    to_email: "info@wooniche.com",
+    to_email: "contact+notabene.inc@gmail.com",
+    newsletter_email: "newslater+notabene.inc@gmail.com",
     from_email: "",
     sender_domain: "",
   });
@@ -47,11 +49,14 @@ export function TurnstileAdmin() {
     const ts = get("turnstile");
     const sec = get("turnstile_secret");
     const contact = get("contact");
+    const newsletter = get("newsletter_settings");
+
     setEnabled(Boolean(ts["enabled"]));
     setForm({
       site_key: String(ts["site_key"] ?? ""),
       secret_key: String(sec["secret_key"] ?? ""),
-      to_email: String(contact["to_email"] ?? "info@wooniche.com"),
+      to_email: String(contact["to_email"] ?? "contact+notabene.inc@gmail.com"),
+      newsletter_email: String(newsletter["to_email"] ?? "newslater+notabene.inc@gmail.com"),
       from_email: String(contact["from_email"] ?? ""),
       sender_domain: String(contact["sender_domain"] ?? ""),
     });
@@ -81,6 +86,13 @@ export function TurnstileAdmin() {
           },
           is_public: false,
         },
+        {
+          key: "newsletter_settings",
+          value: {
+            to_email: parsed.data.newsletter_email,
+          },
+          is_public: false,
+        },
       ];
       const { error } = await supabase.from("site_settings").upsert(rows, { onConflict: "key" });
       if (error) throw error;
@@ -95,24 +107,25 @@ export function TurnstileAdmin() {
 
   return (
     <form
-      className="card-soft space-y-4 p-6"
+      className="card-soft space-y-5 p-6"
       onSubmit={(e) => {
         e.preventDefault();
         save.mutate();
       }}
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-4">
         <div className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-primary" />
-          <h2 className="font-semibold">{t("turnstileTab")}</h2>
+          <h2 className="font-semibold">{t("turnstileTab")} ও ইমেইল নোটিফিকেশন</h2>
         </div>
         <div className="flex items-center gap-2 text-sm">
           <span className="text-muted-foreground">{enabled ? t("on") : t("off")}</span>
           <Switch checked={enabled} onCheckedChange={setEnabled} />
         </div>
       </div>
-      <p className="text-sm text-muted-foreground">{t("turnstileHint")}</p>
+      <p className="text-xs text-muted-foreground">{t("turnstileHint")}</p>
 
+      {/* Turnstile Keys */}
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="ts-site">{t("turnstileSiteKey")}</Label>
@@ -133,16 +146,39 @@ export function TurnstileAdmin() {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="ts-to">{t("contactToEmail")}</Label>
-        <Input
-          id="ts-to"
-          type="email"
-          value={form.to_email}
-          onChange={(e) => setForm({ ...form, to_email: e.target.value })}
-        />
+      {/* Target Notification Emails */}
+      <div className="grid gap-4 sm:grid-cols-2 border-t border-border/50 pt-4">
+        <div className="space-y-2">
+          <Label htmlFor="ts-contact" className="flex items-center gap-1.5 font-medium">
+            <Mail className="size-4 text-primary" /> কন্টাক্ট ফর্ম রিসিভ ইমেইল
+          </Label>
+          <Input
+            id="ts-contact"
+            type="email"
+            value={form.to_email}
+            onChange={(e) => setForm({ ...form, to_email: e.target.value })}
+            placeholder="contact+notabene.inc@gmail.com"
+          />
+          <p className="text-[11px] text-muted-foreground">যোগাযোগ ফর্মের মেসেজগুলো এই ঠিকানায় যাবে</p>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="ts-news" className="flex items-center gap-1.5 font-medium">
+            <Send className="size-4 text-primary" /> নিউজলেটার রিসিভ ইমেইল
+          </Label>
+          <Input
+            id="ts-news"
+            type="email"
+            value={form.newsletter_email}
+            onChange={(e) => setForm({ ...form, newsletter_email: e.target.value })}
+            placeholder="newslater+notabene.inc@gmail.com"
+          />
+          <p className="text-[11px] text-muted-foreground">নতুন সাবস্ক্রাইবার হলে এই ঠিকানায় নোটিফিকেশন যাবে</p>
+        </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
+
+      {/* Sender Configuration */}
+      <div className="grid gap-4 sm:grid-cols-2 border-t border-border/50 pt-4">
         <div className="space-y-2">
           <Label htmlFor="ts-from">{t("contactFromEmail")}</Label>
           <Input

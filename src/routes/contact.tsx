@@ -4,6 +4,7 @@ import { Mail, Send } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
+import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { useTurnstileConfig } from "@/lib/site";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -107,12 +108,24 @@ function ContactPage() {
     }
     setSending(true);
     try {
+      // ১. প্রথমে API কল করার চেষ্টা
       const res = await fetch("/api/public/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...parsed.data, token }),
       });
-      if (!res.ok) throw new Error(t("contactFailed"));
+
+      if (!res.ok) {
+        // ২. API ফেইল হলে সরাসরি Supabase টেবিলে ব্যাকআপ ইনসার্ট
+        const { error: dbError } = await supabase.from("contact_messages").insert({
+          name: parsed.data.name,
+          email: parsed.data.email,
+          subject: parsed.data.subject || null,
+          message: parsed.data.message,
+        });
+        if (dbError) throw new Error(t("contactFailed"));
+      }
+
       toast.success(t("contactSent"));
       setForm({ name: "", email: "", subject: "", message: "" });
       setToken("");
