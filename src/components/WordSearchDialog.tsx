@@ -12,14 +12,17 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-/** Strip Arabic diacritics and normalize characters */
+/** Strip Arabic diacritics and normalize characters completely */
 function normalizeArabic(text: string) {
   if (!text) return "";
   return text
-    .replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "") // Remove harakat
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "") // Remove all harakat and Quranic marks
     .replace(/[أإآٱ]/g, "ا") // Normalize Alif
-    .replace(/ى/g, "ي") // Normalize Alif Maqsoora
-    .replace(/ة/g, "ه") // Normalize Ta Marbootah
+    .replace(/[يى]/g, "ي") // Normalize Yaa / Alif Maqsoora
+    .replace(/[ة]/g, "ه") // Normalize Taa Marbuta
+    .replace(/[ؤ]/g, "و") // Normalize Waw with Hamza
+    .replace(/[ئ]/g, "ي") // Normalize Yaa with Hamza
+    .replace(/[^\u0621-\u064A]/g, "") // Keep only clean Arabic letters
     .trim();
 }
 
@@ -28,13 +31,14 @@ function highlightArabicWord(fullText: string, searchWord: string) {
   const bare = normalizeArabic(searchWord);
   if (!bare) return fullText;
 
-  const harakatPattern = "[\\u064B-\\u0652\\u0670\\u06D6-\\u06ED\\u0640]*";
+  const harakatPattern = "[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED\\u0640]*";
   const regexPattern = bare
     .split("")
     .map((char) => {
       if (char === "ا") return `[اأإآٱ]${harakatPattern}`;
-      if (char === "ي") return `[ييى]${harakatPattern}`;
+      if (char === "ي") return `[ييىئ]${harakatPattern}`;
       if (char === "ه") return `[ههة]${harakatPattern}`;
+      if (char === "و") return `[ووؤ]${harakatPattern}`;
       return `${char}${harakatPattern}`;
     })
     .join("");
@@ -81,7 +85,7 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-lexicon-search-v9", rawWord, normalized, lang],
+    queryKey: ["word-lexicon-search-v10", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       const searchTarget = normalized || rawWord;
@@ -113,13 +117,23 @@ export function WordSearchDialog({
             const v = verseJson.verse;
 
             const [s, a] = hit.verse_key.split(":").map(Number);
-            const words: any[] = v.words || [];
+            const words: any[] = (v.words || []).filter(
+              (w: any) => w.char_type_name === "word" // Filter out end markers
+            );
 
-            // Find the exact word matching the search target in this verse
-            const matchedWord = words.find((w) => {
-              const wNorm = normalizeArabic(w.text_uthmani || "");
-              return wNorm.includes(normalized) || normalized.includes(wNorm);
+            // ১. হুবহু (Exact) ম্যাচ খোঁজা
+            let matchedWord = words.find((w) => {
+              const wNorm = normalizeArabic(w.text_uthmani || w.text || "");
+              return wNorm === normalized;
             });
+
+            // ২. যদি হুবহু না পাওয়া যায় তবে আংশিক (Contains) ম্যাচ খোঁজা
+            if (!matchedWord) {
+              matchedWord = words.find((w) => {
+                const wNorm = normalizeArabic(w.text_uthmani || w.text || "");
+                return wNorm.includes(normalized) || normalized.includes(wNorm);
+              });
+            }
 
             return {
               surah: s,
@@ -127,9 +141,13 @@ export function WordSearchDialog({
               text_uthmani: v.text_uthmani || hit.text,
               wordInfo: matchedWord
                 ? {
-                    text_uthmani: matchedWord.text_uthmani,
-                    transliteration: matchedWord.transliteration?.text,
-                    translation: matchedWord.translation?.text,
+                    text_uthmani: matchedWord.text_uthmani || matchedWord.text,
+                    transliteration:
+                      matchedWord.transliteration?.text ||
+                      matchedWord.transliteration,
+                    translation:
+                      matchedWord.translation?.text ||
+                      matchedWord.translation,
                   }
                 : undefined,
             };
@@ -154,7 +172,7 @@ export function WordSearchDialog({
             </span>
           </DialogTitle>
           <DialogDescription>
-            এই শব্দটি যেসব আয়াতে রয়েছে এবং ওই আয়াতে শব্দটির নির্দিষ্ট উচ্চারণ ও অর্থ নিচে দেওয়া হলো:
+            এই শব্দটি যেসব আয়াতে রয়েছে এবং ওই আয়াতে শব্দটির নির্দিষ্ট উচ্চারণ ও অর্থ নিচে দেওয়া হলো:
           </DialogDescription>
         </DialogHeader>
 
