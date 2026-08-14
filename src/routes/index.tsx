@@ -6,7 +6,6 @@ import { ArrowRight, BookOpen, Search, Settings, Sparkles } from "lucide-react";
 import { chaptersQuery, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
@@ -62,18 +61,29 @@ function HomePage() {
     return bnToEnDigits(term.trim().toLowerCase());
   }, [term]);
 
+  // আয়াত নম্বর থাকলে তা আলাদা করে নেওয়া (যেমন: ২৫:২০ -> ২০)
+  const parsedAyahTarget = useMemo(() => {
+    const match = normalizedTerm.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
+    if (match) {
+      return {
+        surah: Number(match[1]),
+        ayah: Number(match[2]),
+      };
+    }
+    return null;
+  }, [normalizedTerm]);
+
   const filtered = useMemo(() => {
     const list = chapters.data ?? [];
     if (!normalizedTerm) return list;
 
+    if (parsedAyahTarget) {
+      return list.filter((c) => c.id === parsedAyahTarget.surah);
+    }
+
     const isNum = /^\d+$/.test(normalizedTerm);
     if (isNum) {
       return list.filter((c) => String(c.id) === normalizedTerm);
-    }
-
-    if (/^\d+[:ঃ\/\.\-]\d+$/.test(normalizedTerm)) {
-      const [s] = normalizedTerm.split(/[:ঃ\/\.\-]/);
-      return list.filter((c) => String(c.id) === s);
     }
 
     const rawQ = term.trim().toLowerCase();
@@ -83,50 +93,36 @@ function HomePage() {
         c.translated_name.name.toLowerCase().includes(rawQ) ||
         String(c.id) === normalizedTerm
     );
-  }, [chapters.data, normalizedTerm, term]);
+  }, [chapters.data, normalizedTerm, term, parsedAyahTarget]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!normalizedTerm) return;
 
-    // ১. সূরা ও আয়াত সার্চ (যেমন: ২৫/২০, 25:20, 25.20, ২৫-২০)
-    const match = normalizedTerm.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
-    if (match) {
-      const surahNum = Number(match[1]);
-      const ayahNum = Number(match[2]);
-
-      if (surahNum >= 1 && surahNum <= 114) {
+    // ১. সুরা ও আয়াত প্যাটার্ন (২৫/২০, ২৫:২০, 25:20)
+    if (parsedAyahTarget) {
+      const { surah, ayah } = parsedAyahTarget;
+      if (surah >= 1 && surah <= 114) {
         if (typeof window !== "undefined") {
-          sessionStorage.setItem("target_scroll_ayah", String(ayahNum));
+          sessionStorage.setItem("target_scroll_ayah", String(ayah));
         }
-
-        void navigate({
-          to: "/surah/$id",
-          params: { id: String(surahNum) },
-          hash: `ayah-${ayahNum}`,
-        });
+        window.location.href = `/surah/${surah}?ayah=${ayah}#ayah-${ayah}`;
         return;
       }
     }
 
-    // ২. শুধুমাত্র সূরা নম্বর সার্চ (১-১১৪)
+    // ২. শুধুমাত্র সুরা নম্বর (১-১১৪)
     if (/^\d+$/.test(normalizedTerm)) {
       const sNum = Number(normalizedTerm);
       if (sNum >= 1 && sNum <= 114) {
-        void navigate({
-          to: "/surah/$id",
-          params: { id: String(sNum) },
-        });
+        window.location.href = `/surah/${sNum}`;
         return;
       }
     }
 
-    // ৩. নামের সাথে মিল থাকলে প্রথম ফলাফলটিতে নিয়ে যাওয়া
+    // ৩. সুরা নাম ফিল্টারের ১ম ফলাফল
     if (filtered.length > 0) {
-      void navigate({
-        to: "/surah/$id",
-        params: { id: String(filtered[0].id) },
-      });
+      window.location.href = `/surah/${filtered[0].id}`;
     }
   };
 
@@ -229,9 +225,14 @@ function HomePage() {
             </h2>
 
             <div className="w-full max-w-sm space-y-1.5">
-              <form onSubmit={handleSearchSubmit} className="relative w-full">
-                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
+              {/* সার্চ ফর্ম + সক্রিয় "যান" বাটন */}
+              <form
+                onSubmit={handleSearchSubmit}
+                className="relative flex items-center rounded-xl border border-border/80 bg-card/70 px-3 py-1.5 shadow-xs focus-within:border-foreground/40 transition-all"
+              >
+                <Search className="size-4 text-muted-foreground shrink-0 mr-2" />
+                <input
+                  type="text"
                   value={term}
                   onChange={(e) => setTerm(e.target.value)}
                   placeholder={
@@ -239,8 +240,14 @@ function HomePage() {
                       ? "সুরা খুঁজুন... / আয়াত খুঁজুন..."
                       : "Search Surah... / Ayah..."
                   }
-                  className="pl-9 pr-3"
+                  className="w-full bg-transparent border-none outline-none text-sm text-foreground placeholder:text-muted-foreground"
                 />
+                <button
+                  type="submit"
+                  className="rounded-lg bg-primary/15 hover:bg-primary/25 text-primary px-2.5 py-1 text-xs font-semibold transition-colors border border-primary/20 shrink-0 cursor-pointer"
+                >
+                  যান
+                </button>
               </form>
               <p className="text-[11px] leading-tight text-muted-foreground/70 px-1">
                 {lang === "bn"
@@ -254,25 +261,44 @@ function HomePage() {
             <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
           ) : (
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((c) => (
-                <Link
-                  key={c.id}
-                  to="/surah/$id"
-                  params={{ id: String(c.id) }}
-                  className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
-                >
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
-                    {localNumber(c.id, lang)}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate font-medium">{c.name_simple}</span>
-                    <span className="block truncate text-xs text-muted-foreground">
-                      {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
+              {filtered.map((c) => {
+                const targetAyah = parsedAyahTarget && parsedAyahTarget.surah === c.id ? parsedAyahTarget.ayah : null;
+
+                return (
+                  <div
+                    key={c.id}
+                    onClick={() => {
+                      if (targetAyah) {
+                        if (typeof window !== "undefined") {
+                          sessionStorage.setItem("target_scroll_ayah", String(targetAyah));
+                        }
+                        window.location.href = `/surah/${c.id}?ayah=${targetAyah}#ayah-${targetAyah}`;
+                      } else {
+                        window.location.href = `/surah/${c.id}`;
+                      }
+                    }}
+                    className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer"
+                  >
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
+                      {localNumber(c.id, lang)}
                     </span>
-                  </span>
-                  <span className="arabic text-lg text-primary">{c.name_arabic}</span>
-                </Link>
-              ))}
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate font-medium">
+                        {c.name_simple}
+                        {targetAyah && (
+                          <span className="ml-2 text-xs font-semibold text-primary">
+                            ({localNumber(targetAyah, lang)} নং আয়াত)
+                          </span>
+                        )}
+                      </span>
+                      <span className="block truncate text-xs text-muted-foreground">
+                        {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
+                      </span>
+                    </span>
+                    <span className="arabic text-lg text-primary">{c.name_arabic}</span>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
