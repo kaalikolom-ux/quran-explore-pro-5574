@@ -44,6 +44,10 @@ type PrefsValue = {
   setDark: (dark: boolean) => void;
   layers: Layers;
   toggleLayer: (key: LayerKey) => void;
+  arabicFontSize: number; // যেমন: 28px
+  setArabicFontSize: (size: number | ((prev: number) => number)) => void;
+  translationFontSize: number; // যেমন: 16px
+  setTranslationFontSize: (size: number | ((prev: number) => number)) => void;
   ready: boolean;
 };
 
@@ -55,9 +59,11 @@ export function PrefsProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("bn");
   const [dark, setDarkState] = useState(false);
   const [layers, setLayers] = useState<Layers>(DEFAULT_LAYERS);
+  const [arabicFontSize, setArabicFontSize] = useState<number>(28);
+  const [translationFontSize, setTranslationFontSize] = useState<number>(16);
   const [ready, setReady] = useState(false);
 
-  // Read stored prefs after hydration so server and client markup match.
+  // Read stored prefs after hydration
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -66,10 +72,14 @@ export function PrefsProvider({ children }: { children: ReactNode }) {
           lang: Lang;
           dark: boolean;
           layers: Partial<Layers>;
+          arabicFontSize: number;
+          translationFontSize: number;
         }>;
         if (parsed.lang === "bn" || parsed.lang === "en") setLangState(parsed.lang);
         if (typeof parsed.dark === "boolean") setDarkState(parsed.dark);
         if (parsed.layers) setLayers({ ...DEFAULT_LAYERS, ...parsed.layers });
+        if (typeof parsed.arabicFontSize === "number") setArabicFontSize(parsed.arabicFontSize);
+        if (typeof parsed.translationFontSize === "number") setTranslationFontSize(parsed.translationFontSize);
       } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         setDarkState(true);
       }
@@ -82,11 +92,20 @@ export function PrefsProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!ready) return;
     try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ lang, dark, layers }));
+      window.localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({
+          lang,
+          dark,
+          layers,
+          arabicFontSize,
+          translationFontSize,
+        })
+      );
     } catch {
       // storage may be unavailable
     }
-  }, [lang, dark, layers, ready]);
+  }, [lang, dark, layers, arabicFontSize, translationFontSize, ready]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -109,9 +128,13 @@ export function PrefsProvider({ children }: { children: ReactNode }) {
       layers,
       toggleLayer: (key: LayerKey) =>
         setLayers((prev) => ({ ...prev, [key]: !prev[key] })),
+      arabicFontSize,
+      setArabicFontSize,
+      translationFontSize,
+      setTranslationFontSize,
       ready,
     }),
-    [lang, dark, layers, ready],
+    [lang, dark, layers, arabicFontSize, translationFontSize, ready]
   );
 
   return <PrefsContext.Provider value={value}>{children}</PrefsContext.Provider>;
