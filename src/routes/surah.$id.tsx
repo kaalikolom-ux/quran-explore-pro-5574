@@ -151,7 +151,7 @@ const SURAH_LIST = [
   { id: 87, name_bn: "আল-আলা", name_ar: "الأعلى", type: "মাক্কী", total: 19 },
   { id: 88, name_bn: "আল-গাশিয়াহ", name_ar: "الغاشية", type: "মাক্কী", total: 26 },
   { id: 89, name_bn: "আল-ফাজর", name_ar: "الفجر", type: "মাক্কী", total: 30 },
-  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلد", type: "মাক্কী", total: 20 },
+  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلদ", type: "মাক্কী", total: 20 },
   { id: 91, name_bn: "আশ-শামস", name_ar: "الشمس", type: "মাক্কী", total: 15 },
   { id: 92, name_bn: "আল-লাইল", name_ar: "الليل", type: "মাক্কী", total: 21 },
   { id: 93, name_bn: "আদ-দুহা", name_ar: "الضحى", type: "মাক্কী", total: 11 },
@@ -219,7 +219,7 @@ function SurahDetailPage() {
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v10", surahId],
+    queryKey: ["local-greentech-surah-v11", surahId],
     queryFn: async () => {
       const res = await fetch(`/data/quran/surahs/${surahId}.json`);
       if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
@@ -311,7 +311,7 @@ function SurahDetailPage() {
   return (
     <div className="relative mx-auto w-full max-w-4xl px-4 pt-16 pb-8 space-y-6">
       
-      {/* ফ্লোটিং স্লিম হেডার */}
+      {/* ফ্লোটিং হেডার */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60 shadow-xs">
         <div className="mx-auto max-w-4xl px-4 py-2.5 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -331,7 +331,7 @@ function SurahDetailPage() {
             </div>
           </div>
 
-          {/* স্মার্ট সার্চ ও জাম্প */}
+          {/* সার্চ জাম্প */}
           <form
             onSubmit={handleJumpSubmit}
             className="flex items-center gap-1 bg-muted/50 border border-border/70 rounded-lg px-2 py-1 focus-within:border-foreground/30 transition-all"
@@ -352,7 +352,7 @@ function SurahDetailPage() {
             </button>
           </form>
 
-          {/* পূর্ববর্তী / পরবর্তী */}
+          {/* নেভিগেশন বাটন */}
           <div className="flex items-center gap-1 shrink-0">
             {surahId > 1 && (
               <Button asChild variant="outline" size="sm" className="h-7 px-2 text-xs">
@@ -389,13 +389,13 @@ function SurahDetailPage() {
       )}
 
       {/* আয়াতসমূহ */}
-      <div className="space-y-5">
+      <div className="space-y-6">
         {surahQuery.data?.ayahs?.map((ayah) => {
           return (
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className="rounded-xl border border-border/70 bg-card p-5 space-y-4 shadow-2xs transition-all hover:border-border"
+              className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
             >
               {/* হেডার ও এডিট বাটন */}
               <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
@@ -433,7 +433,7 @@ function SurahDetailPage() {
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted"
+                        className="h-7 px-2.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80"
                         onClick={() => handleStartEdit(ayah)}
                       >
                         <Edit3 className="size-3 mr-1.5" /> আধুনিক অনুবাদ ও অভিধান এডিট
@@ -477,37 +477,37 @@ function SurahDetailPage() {
                 ))}
               </div>
 
-              {/* [২] পুরো আয়াতের উচ্চারণ (সফট থিম) */}
+              {/* [২] পুরো আয়াতের উচ্চারণ */}
               {ayah.transliteration && (
-                <div className="rounded-lg bg-muted/30 p-2.5 space-y-0.5 border border-border/30">
+                <div className="rounded-xl bg-muted/20 p-3 space-y-1 border border-border/30">
                   <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">
-                    <Volume2 className="size-3 text-muted-foreground" />
+                    <Volume2 className="size-3.5 text-foreground/70" />
                     <span>উচ্চারণ / Transliteration:</span>
                   </div>
-                  <p className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-4">
+                  <p className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5">
                     {ayah.transliteration}
                   </p>
                 </div>
               )}
 
-              {/* [৩] অনুবাদের ৪টি সারি (থিম কোহেসিভ কালার) */}
-              <div className="space-y-3 pt-1">
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি (সফট ব্যাকগ্রাউন্ড শেডিং সহ) */}
+              <div className="space-y-2.5 pt-1">
                 
                 {/* সারি ১: প্রচলিত অনুবাদ */}
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    <FileText className="size-3" />
+                <div className="rounded-xl bg-muted/20 p-3 space-y-1 border border-border/30">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">
+                    <FileText className="size-3 text-muted-foreground" />
                     <span>১. প্রচলিত অনুবাদ</span>
                   </div>
-                  <p className="text-sm font-normal text-foreground/90 leading-relaxed pl-4">
+                  <p className="text-sm font-normal text-foreground leading-relaxed pl-4">
                     {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
                   </p>
                 </div>
 
                 {/* সারি ২: Conventional Translation */}
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    <Languages className="size-3" />
+                <div className="rounded-xl bg-muted/10 p-3 space-y-1 border border-border/20">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">
+                    <Languages className="size-3 text-muted-foreground" />
                     <span>২. Conventional Translation</span>
                   </div>
                   <p className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-4">
@@ -515,9 +515,9 @@ function SurahDetailPage() {
                   </p>
                 </div>
 
-                {/* সারি ৩: আধুনিক অনুবাদ */}
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground/90 uppercase tracking-wide">
+                {/* সারি ৩: আধুনিক অনুবাদ (হাইলাইট শেড) */}
+                <div className="rounded-xl bg-primary/5 p-3 space-y-1 border border-primary/20">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-primary uppercase tracking-wide">
                     <BookMarked className="size-3 text-primary" />
                     <span>৩. আধুনিক অনুবাদ</span>
                   </div>
@@ -527,7 +527,7 @@ function SurahDetailPage() {
                       onChange={(e) =>
                         setEditForm({ ...editForm, modern_translation_bn: e.target.value })
                       }
-                      className="text-sm ml-4 mt-1"
+                      className="text-sm mt-1 bg-background"
                       placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
                     />
                   ) : (
@@ -537,9 +537,9 @@ function SurahDetailPage() {
                   )}
                 </div>
 
-                {/* সারি ৪: Modern Translation */}
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground/90 uppercase tracking-wide">
+                {/* সারি ৪: Modern Translation (হাইলাইট শেড) */}
+                <div className="rounded-xl bg-primary/5 p-3 space-y-1 border border-primary/20">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-primary uppercase tracking-wide">
                     <BookmarkCheck className="size-3 text-primary" />
                     <span>৪. Modern Translation</span>
                   </div>
@@ -549,60 +549,64 @@ function SurahDetailPage() {
                       onChange={(e) =>
                         setEditForm({ ...editForm, modern_translation_en: e.target.value })
                       }
-                      className="text-sm font-serif italic ml-4 mt-1"
+                      className="text-sm font-serif italic mt-1 bg-background"
                       placeholder="Modern contemporary English translation..."
                     />
                   ) : (
-                    <p className="text-xs italic text-foreground/80 font-serif leading-relaxed pl-4">
+                    <p className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-4">
                       {ayah.modern_translation_en || "— [Modern English translation will be updated sequentially]"}
                     </p>
                   )}
                 </div>
               </div>
 
-              {/* [৪] অভিধান / Lexicon */}
-              <div className="space-y-2 pt-2 border-t border-border/40">
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  <Layers className="size-3" />
+              {/* [৪] অভিধান / Lexicon (সমৃদ্ধ চিপস ও এডিটেবল নোট) */}
+              <div className="rounded-xl bg-muted/25 p-3 space-y-2 border border-border/40">
+                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">
+                  <Layers className="size-3 text-foreground/70" />
                   <span>অভিধান / Lexicon</span>
                 </div>
 
-                <div className="pl-4 flex flex-wrap gap-1.5">
+                {/* শব্দভিত্তিক ব্যাকরণ, অর্থ ও রুট ব্যাজ */}
+                <div className="flex flex-wrap gap-1.5 pl-1">
                   {ayah.words
-                    .filter((w) => w.root && w.root !== "—")
+                    .filter((w) => w.text_uthmani)
                     .map((w, idx) => (
                       <span
                         key={idx}
-                        className="inline-flex items-center gap-1 rounded-md border border-border/60 bg-muted/40 px-2 py-0.5 font-mono text-[11px]"
+                        className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background/80 px-2.5 py-1 font-mono text-[11px] shadow-2xs"
                       >
-                        <span className="arabic font-medium text-foreground text-xs">{w.text_uthmani}</span>
-                        <span className="text-muted-foreground font-semibold">({w.root})</span>
-                        <span className="text-muted-foreground/80 text-[10px]">
-                          {w.translation_bn ? `· ${w.translation_bn}` : ""}
-                        </span>
+                        <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
+                        {w.root && w.root !== "—" && (
+                          <span className="text-primary font-semibold">({w.root})</span>
+                        )}
+                        {w.translation_bn && (
+                          <span className="text-muted-foreground text-[10px]">· {w.translation_bn}</span>
+                        )}
                       </span>
                     ))}
                 </div>
 
+                {/* এডিটেবল আধুনিক লেক্সিকন নোট */}
                 {editingAyah === ayah.ayah ? (
-                  <div className="pl-4 mt-2">
+                  <div className="mt-2 pt-2 border-t border-border/40">
                     <label className="text-[11px] font-medium text-muted-foreground block mb-1">
-                      আধুনিক অভিধান / Lexicon শব্দার্থ ইনপুট:
+                      আধুনিক অভিধান / Lexicon নোট:
                     </label>
                     <Textarea
                       value={editForm.lexicon_modern_notes}
                       onChange={(e) =>
                         setEditForm({ ...editForm, lexicon_modern_notes: e.target.value })
                       }
-                      className="text-sm"
-                      placeholder="শব্দের আধুনিক অর্থ, প্রাসঙ্গিক ব্যাকরণগত বিশ্লেষণ বা গভীর অর্থ লিখুন..."
+                      className="text-sm bg-background"
+                      placeholder="শব্দের আধুনিক অর্থ, ব্যুৎপত্তি বা ব্যাকরণগত নোট..."
                     />
                   </div>
                 ) : (
                   ayah.lexicon_modern_notes && (
-                    <div className="pl-4">
-                      <p className="text-xs text-muted-foreground bg-muted/20 p-2 rounded-md border border-border/30 leading-relaxed">
-                        <span className="font-semibold text-foreground mr-1">আধুনিক অভিধান নোট:</span>
+                    <div className="mt-2 pt-2 border-t border-border/30">
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
                         {ayah.lexicon_modern_notes}
                       </p>
                     </div>
@@ -614,7 +618,7 @@ function SurahDetailPage() {
         })}
       </div>
 
-      {/* ওয়ার্ড ও রুট ডায়ালগ */}
+      {/* গ্রীনটেক স্টাইল Word & Root Search ডায়ালগ */}
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
         onClose={() => setSelectedWordInfo(null)}
@@ -702,7 +706,7 @@ function WordAndRootSearchDialog({
               onClick={() => setSearchType("root")}
               className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${
                 searchType === "root"
-                  ? "bg-background text-foreground shadow-xs font-semibold"
+                  ? "bg-background text-primary shadow-xs font-semibold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
