@@ -4,6 +4,8 @@
     {
       "surah": 107,
       "ayah": 1,
+      "transliteration": "ara-ayta alladhī yukadhibu bil-dīni",
+      "translation_bn": "তুমি কি তাকে দেখেছ, যে কর্মফল (দিবসকে) অস্বীকার করে?",
       "words": [
         {
           "id": 256,
@@ -60,6 +62,8 @@
     {
       "surah": 107,
       "ayah": 2,
+      "transliteration": "fadhālika alladhī yaduʿʿu l-yatīma",
+      "translation_bn": "সে তো সেই (লোক) যে ইয়াতীমকে ধাক্কা দিয়ে সরিয়ে দেয়,",
       "words": [
         {
           "id": 1007,
@@ -116,6 +120,8 @@
     {
       "surah": 107,
       "ayah": 3,
+      "transliteration": "walā yaḥuḍḍu ʿalā ṭaʿāmi l-mis'kīni",
+      "translation_bn": "এবং মিসকীনকে অন্ন দিতে উৎসাহ দেয় না",
       "words": [
         {
           "id": 2449,
@@ -182,6 +188,8 @@
     {
       "surah": 107,
       "ayah": 4,
+      "transliteration": "fawaylun lil'muṣallīna",
+      "translation_bn": "অতএব দুর্ভোগ সে সব নামায আদায়কারীর",
       "words": [
         {
           "id": 3903,
@@ -218,6 +226,8 @@
     {
       "surah": 107,
       "ayah": 5,
+      "transliteration": "alladhīna hum ʿan ṣalātihim sāhūna",
+      "translation_bn": "যারা নিজেদের নামাযের ব্যাপারে উদাসীন,",
       "words": [
         {
           "id": 5264,
@@ -284,6 +294,8 @@
     {
       "surah": 107,
       "ayah": 6,
+      "transliteration": "alladhīna hum yurāūna",
+      "translation_bn": "যারা লোক দেখানোর জন্য তা করে,",
       "words": [
         {
           "id": 6392,
@@ -330,6 +342,8 @@
     {
       "surah": 107,
       "ayah": 7,
+      "transliteration": "wayamnaʿūna l-māʿūna",
+      "translation_bn": "এবং প্রয়োজনীয় গৃহসামগ্রী দানের ছোট খাট সাহায্য করা থেকেও বিরত থাকে।",
       "words": [
         {
           "id": 7669,

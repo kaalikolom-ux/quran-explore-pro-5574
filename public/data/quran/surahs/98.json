@@ -4,6 +4,8 @@
     {
       "surah": 98,
       "ayah": 1,
+      "transliteration": "lam yakuni alladhīna kafarū min ahli l-kitābi wal-mush'rikīna munfakkīna ḥattā tatiyahumu l-bayinatu",
+      "translation_bn": "কিতাবধারীদের মধ্যে যারা কাফির ছিল তারা আর মুশরিকরা (তাদের ভ্রান্ত মত ও পথ হতে) সরে আসত না যতক্ষণ না তাদের কাছে আসত সুস্পষ্ট প্রমাণ।",
       "words": [
         {
           "id": 122,
@@ -140,6 +142,8 @@
     {
       "surah": 98,
       "ayah": 2,
+      "transliteration": "rasūlun mina l-lahi yatlū ṣuḥufan muṭahharatan",
+      "translation_bn": "(অর্থাৎ) আল্লাহর নিকট হতে একজন রসূল, যে পাঠ করে পবিত্র গ্রন্থ।",
       "words": [
         {
           "id": 1795,
@@ -216,6 +220,8 @@
     {
       "surah": 98,
       "ayah": 3,
+      "transliteration": "fīhā kutubun qayyimatun",
+      "translation_bn": "যাতে আছে সঠিক বিধান।",
       "words": [
         {
           "id": 2907,
@@ -262,6 +268,8 @@
     {
       "surah": 98,
       "ayah": 4,
+      "transliteration": "wamā tafarraqa alladhīna ūtū l-kitāba illā min baʿdi mā jāathumu l-bayinatu",
+      "translation_bn": "যাদেরকে কিতাব দেয়া হয়েছিল তাদের মাঝে বিচ্ছিন্নতা দেখা দিয়েছিল তাদের কাছে সুস্পষ্ট প্রমাণ আসার পর।",
       "words": [
         {
           "id": 3300,
@@ -388,6 +396,8 @@
     {
       "surah": 98,
       "ayah": 5,
+      "transliteration": "wamā umirū illā liyaʿbudū l-laha mukh'liṣīna lahu l-dīna ḥunafāa wayuqīmū l-ṣalata wayu'tū l-zakata wadhālika dīnu l-qayimati",
+      "translation_bn": "তাদেরকে এ ছাড়া অন্য কোন হুকুমই দেয়া হয়নি যে, তারা আল্লাহর ‘ইবাদাত করবে খাঁটি মনে একনিষ্ঠভাবে তাঁর আনুগত্যের মাধ্যমে। আর তারা নামায প্রতিষ্ঠা করবে আর যাকাত দিবে। আর এটাই সঠিক সুদৃঢ় দ্বীন।",
       "words": [
         {
           "id": 4610,
@@ -564,6 +574,8 @@
     {
       "surah": 98,
       "ayah": 6,
+      "transliteration": "inna alladhīna kafarū min ahli l-kitābi wal-mush'rikīna fī nāri jahannama khālidīna fīhā ulāika hum sharru l-bariyati",
+      "translation_bn": "কিতাবধারীদের মধ্যে যারা কুফুরী করে তারা আর মুশরিকরা জাহান্নামের আগুনে স্থায়ীভাবে থাকবে। এরাই সৃষ্টির অধম।",
       "words": [
         {
           "id": 6766,
@@ -740,6 +752,8 @@
     {
       "surah": 98,
       "ayah": 7,
+      "transliteration": "inna alladhīna āmanū waʿamilū l-ṣāliḥāti ulāika hum khayru l-bariyati",
+      "translation_bn": "যারা ঈমান আনে আর সৎ কাজ করে তারা সৃষ্টির উত্তম।",
       "words": [
         {
           "id": 8199,
@@ -846,6 +860,8 @@
     {
       "surah": 98,
       "ayah": 8,
+      "transliteration": "jazāuhum ʿinda rabbihim jannātu ʿadnin tajrī min taḥtihā l-anhāru khālidīna fīhā abadan raḍiya l-lahu ʿanhum waraḍū ʿanhu dhālika liman khashiya rabbahu",
+      "translation_bn": "তাদের প্রতিপালকের কাছে তাদের প্রতিদান আছে স্থায়ী জান্নাত, যার তলদেশ দিয়ে নদ-নদী প্রবাহিত, তাতে তারা চিরকাল স্থায়ীভাবে থাকবে। আল্লাহ তাদের প্রতি সন্তুষ্ট, আর তারাও তাঁর প্রতি সন্তুষ্ট। এ সব কিছু তার জন্য যে তার প্রতিপালককে ভয় করে।",
       "words": [
         {
           "id": 9410,

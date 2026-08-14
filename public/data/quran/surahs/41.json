@@ -4,6 +4,8 @@
     {
       "surah": 41,
       "ayah": 1,
+      "transliteration": "hha-meem",
+      "translation_bn": "হা-মীম।",
       "words": [
         {
           "id": 106,
@@ -30,6 +32,8 @@
     {
       "surah": 41,
       "ayah": 2,
+      "transliteration": "tanzīlun mina l-raḥmāni l-raḥīmi",
+      "translation_bn": "পরম দয়াময়, পরম দয়ালুর নিকট হতে অবতীর্ণ।",
       "words": [
         {
           "id": 956,
@@ -86,6 +90,8 @@
     {
       "surah": 41,
       "ayah": 3,
+      "transliteration": "kitābun fuṣṣilat āyātuhu qur'ānan ʿarabiyyan liqawmin yaʿlamūna",
+      "translation_bn": "এক কিতাব, যার আয়াতগুলো বিস্তারিতভাবে ব্যাখ্যাকৃত, আরবী ভাষার কুরআন, জ্ঞানসম্পন্ন মানুষদের জন্য।",
       "words": [
         {
           "id": 2059,
@@ -172,6 +178,8 @@
     {
       "surah": 41,
       "ayah": 4,
+      "transliteration": "bashīran wanadhīran fa-aʿraḍa aktharuhum fahum lā yasmaʿūna",
+      "translation_bn": "সুসংবাদবাহী ও সাবধানকারী। কিন্তু ওদের অধিকাংশই (এ কুরআন থেকে) মুখ ফিরিয়ে নিয়েছে, কাজেই ওরা শুনবে না।",
       "words": [
         {
           "id": 3312,
@@ -258,6 +266,8 @@
     {
       "surah": 41,
       "ayah": 5,
+      "transliteration": "waqālū qulūbunā fī akinnatin mimmā tadʿūnā ilayhi wafī ādhāninā waqrun wamin bayninā wabaynika ḥijābun fa-iʿ'mal innanā ʿāmilūna",
+      "translation_bn": "তারা বলে, তুমি আমাদেরকে যার দিকে ডাক দিচ্ছ তাত্থেকে আমাদের দিল আবরণে ঢাকা আছে, আর আমাদের কানে আছে বধিরতা, আমাদের আর তোমাদের মাঝে আছে এক পর্দা (অর্থাৎ তোমার দীন প্রচারের কারণে আমাদের ও তোমাদের মাঝে বিচ্ছেদ ঘটে গেছে), কাজেই তুমি তোমার কাজ কর, আমরা আমাদের কাজ করি।",
       "words": [
         {
           "id": 4653,
@@ -444,6 +454,8 @@
     {
       "surah": 41,
       "ayah": 6,
+      "transliteration": "qul innamā anā basharun mith'lukum yūḥā ilayya annamā ilāhukum ilāhun wāḥidun fa-is'taqīmū ilayhi wa-is'taghfirūhu wawaylun lil'mush'rikīna",
+      "translation_bn": "বল, আমি তোমাদের মতই একজন মানুষ। (পার্থক্য শুধু এই যে) আমার কাছে ওয়াহী করা হয় যে, তোমাদের ইলাহ কেবল এক ইলাহ; কাজেই তোমরা তাঁরই সরল সঠিক পথে চল, তাঁর কাছে ক্ষমা প্রার্থনা কর। ধ্বংস তাদের জন্য যারা আল্লাহর সাথে অন্যদেরকে শরীক গণ্য করে।",
       "words": [
         {
           "id": 5937,
@@ -620,6 +632,8 @@
     {
       "surah": 41,
       "ayah": 7,
+      "transliteration": "alladhīna lā yu'tūna l-zakata wahum bil-ākhirati hum kāfirūna",
+      "translation_bn": "যারা যাকাত দেয় না, আর তারা আখিরাত অমান্য করে।",
       "words": [
         {
           "id": 7253,
@@ -716,6 +730,8 @@
     {
       "surah": 41,
       "ayah": 8,
+      "transliteration": "inna alladhīna āmanū waʿamilū l-ṣāliḥāti lahum ajrun ghayru mamnūnin",
+      "translation_bn": "যারা ঈমান আনে আর নেক কাজ করে, তাদের জন্য আছে এমন পুরস্কার যা কোন দিনও বন্ধ হবে না।",
       "words": [
         {
           "id": 8532,
@@ -822,6 +838,8 @@
     {
       "surah": 41,
       "ayah": 9,
+      "transliteration": "qul a-innakum latakfurūna bi-alladhī khalaqa l-arḍa fī yawmayni watajʿalūna lahu andādan dhālika rabbu l-ʿālamīna",
+      "translation_bn": "বল- তোমরা কি তাঁকে অস্বীকারই করছ যিনি যমীনকে সৃষ্টি করেছেন দু’দিনে আর তাঁর সমকক্ষ বানাচ্ছ? তিনিই তো বিশ্বজগতের রব্ব।",
       "words": [
         {
           "id": 9737,
@@ -978,6 +996,8 @@
     {
       "surah": 41,
       "ayah": 10,
+      "transliteration": "wajaʿala fīhā rawāsiya min fawqihā wabāraka fīhā waqaddara fīhā aqwātahā fī arbaʿati ayyāmin sawāan lilssāilīna",
+      "translation_bn": "(যমীন সৃষ্টির পর) তার বুকে তিনি সৃদৃঢ় পর্বতমালা স্থাপন করেছেন, যমীনকে বরকতমন্ডিত করেছেন আর তাতে প্রার্থীদের প্রয়োজন মুতাবেক নির্দিষ্ট পরিমাণ খাদ্য সঞ্চিত করেছেন চার দিনে।",
       "words": [
         {
           "id": 10870,
@@ -1144,6 +1164,8 @@
     {
       "surah": 41,
       "ayah": 11,
+      "transliteration": "thumma is'tawā ilā l-samāi wahiya dukhānun faqāla lahā walil'arḍi i'tiyā ṭawʿan aw karhan qālatā ataynā ṭāiʿīna",
+      "translation_bn": "তারপর নজর দিয়েছেন আকাশের দিকে যখন তা ছিল ধোঁয়া (’র মত)। তখন তিনি আকাশ আর পৃথিবীকে বললেন- আমার অনুগত হও, ইচ্ছায় অথবা অনিচ্ছায়। উভয়ে বলল- আমরা স্বেচ্ছায় অনুগত হলাম।",
       "words": [
         {
           "id": 12187,
@@ -1320,6 +1342,8 @@
     {
       "surah": 41,
       "ayah": 12,
+      "transliteration": "faqaḍāhunna sabʿa samāwātin fī yawmayni wa-awḥā fī kulli samāin amrahā wazayyannā l-samāa l-dun'yā bimaṣābīḥa waḥif'ẓan dhālika taqdīru l-ʿazīzi l-ʿalīmi",
+      "translation_bn": "অতঃপর তিনি আকাশমন্ডলীকে সাত আকাশে বিন্যস্ত করলেন দু’দিনে আর প্রত্যেক আকাশকে তার বিধি-ব্যবস্থা ওয়াহীর মাধ্যমে প্রদান করলেন। আমি আলোকমালার সাহায্যে দুনিয়ার আকাশের শোভাবর্ধন করলাম আর সুরক্ষার (ও ব্যবস্থা করলাম)। এ হল মহা পরাক্রমশালী সর্বজ্ঞ আল্লাহর সুনির্ধারিত (ব্যবস্থাপনা)।",
       "words": [
         {
           "id": 13543,
@@ -1526,6 +1550,8 @@
     {
       "surah": 41,
       "ayah": 13,
+      "transliteration": "fa-in aʿraḍū faqul andhartukum ṣāʿiqatan mith'la ṣāʿiqati ʿādin wathamūda",
+      "translation_bn": "এরপরও তারা যদি মুখ ফিরিয়ে নেয় তাহলে বল- আমি তোমাদেরকে অকস্মাৎ শাস্তির ভয় দেখাচ্ছি- ‘আদ ও সামূদের (উপর নেমে আসা) অকস্মাৎ-শাস্তির মত।",
       "words": [
         {
           "id": 14715,
@@ -1632,6 +1658,8 @@
     {
       "surah": 41,
       "ayah": 14,
+      "transliteration": "idh jāathumu l-rusulu min bayni aydīhim wamin khalfihim allā taʿbudū illā l-laha qālū law shāa rabbunā la-anzala malāikatan fa-innā bimā ur'sil'tum bihi kāfirūna",
+      "translation_bn": "তাদের কাছে যখন তাদের অগ্রে ও পশ্চাতে (একের পর এক) রসূলগণ এসেছিল (আর বলেছিল)- তোমরা আল্লাহ ছাড়া কারো ‘ইবাদাত করো না। (জবাবে) তারা বলেছিল- আমাদের প্রতিপালক ইচ্ছে করলে তো অবশ্যই ফেরেশতা নাযিল করতেন। কাজেই তোমাদেরকে যা দিয়ে পাঠানো হয়েছে আমরা তা অমান্য করছি।",
       "words": [
         {
           "id": 15783,
@@ -1878,6 +1906,8 @@
     {
       "surah": 41,
       "ayah": 15,
+      "transliteration": "fa-ammā ʿādun fa-is'takbarū fī l-arḍi bighayri l-ḥaqi waqālū man ashaddu minnā quwwatan awalam yaraw anna l-laha alladhī khalaqahum huwa ashaddu min'hum quwwatan wakānū biāyātinā yajḥadūna",
+      "translation_bn": "আর ‘আদ-এর অবস্থা ছিল এই যে, দুনিয়াতে তারা না-হক অহংকার করেছিল, আর বলেছিল- আমাদের চেয়ে বেশি শক্তিশালী আর কে আছে? তারা কি চিন্তা করে দেখেনি যে, আল্লাহ- যিনি তাদেরকে সৃষ্টি করেছেন- শক্তিতে তাদের চেয়ে প্রবল? কিন্তু তারা আমার আয়াতগুলো অস্বীকার করতেই থাকল।",
       "words": [
         {
           "id": 16872,
@@ -2144,6 +2174,8 @@
     {
       "surah": 41,
       "ayah": 16,
+      "transliteration": "fa-arsalnā ʿalayhim rīḥan ṣarṣaran fī ayyāmin naḥisātin linudhīqahum ʿadhāba l-khiz'yi fī l-ḥayati l-dun'yā walaʿadhābu l-ākhirati akhzā wahum lā yunṣarūna",
+      "translation_bn": "অতঃপর আমি অশুভ দিনগুলোতে তাদের বিরুদ্ধে ঝাঞ্ঝা বায়ু পাঠালাম যাতে তারা দুনিয়ার জীবনে অপমানজনক শাস্তি আস্বাদন করে। আখিরাতের শাস্তি অবশ্যই অধিক লাঞ্ছনাদায়ক আর তারা সাহায্যপ্রাপ্তও হবে না।",
       "words": [
         {
           "id": 18037,
@@ -2350,6 +2382,8 @@
     {
       "surah": 41,
       "ayah": 17,
+      "transliteration": "wa-ammā thamūdu fahadaynāhum fa-is'taḥabbū l-ʿamā ʿalā l-hudā fa-akhadhathum ṣāʿiqatu l-ʿadhābi l-hūni bimā kānū yaksibūna",
+      "translation_bn": "আর সামূদের অবস্থা এই যে, আমি তাদেরকে সঠিক পথে চলার নির্দেশ দিয়েছিলাম। কিন্তু তারা সঠিক পথে চলার পরিবর্তে অন্ধ হয়ে থাকাকেই পছন্দ করে ছিল। তখন তাদের কৃতকর্মের কারণে অপমানজনক শাস্তির বজ্রাঘাত তাদেরকে পাকড়াও করল।",
       "words": [
         {
           "id": 19040,
@@ -2506,6 +2540,8 @@
     {
       "surah": 41,
       "ayah": 18,
+      "transliteration": "wanajjaynā alladhīna āmanū wakānū yattaqūna",
+      "translation_bn": "আর আমি তাদেরকে বাঁচিয়ে দিলাম যারা ঈমান এনেছিল আর (আল্লাহকে) ভয় করে চলত।",
       "words": [
         {
           "id": 20138,
@@ -2572,6 +2608,8 @@
     {
       "surah": 41,
       "ayah": 19,
+      "transliteration": "wayawma yuḥ'sharu aʿdāu l-lahi ilā l-nāri fahum yūzaʿūna",
+      "translation_bn": "যে দিন আল্লাহর দুশমনদেরকে জাহান্নামের দিকে সমবেত করা হবে, তাদেরকে বিভিন্ন দলে বিন্যস্ত করা হবে।",
       "words": [
         {
           "id": 21247,
@@ -2668,6 +2706,8 @@
     {
       "surah": 41,
       "ayah": 20,
+      "transliteration": "ḥattā idhā mā jāūhā shahida ʿalayhim samʿuhum wa-abṣāruhum wajulūduhum bimā kānū yaʿmalūna",
+      "translation_bn": "শেষ পর্যন্ত যখন তারা জাহান্নামের নিকটে পৌঁছবে, তখন তারা যা করত সে সম্পর্কে তাদের কান, তাদের চোখ আর তাদের চামড়া তাদের বিরুদ্ধে সাক্ষ্য দেবে।",
       "words": [
         {
           "id": 22325,
@@ -2804,6 +2844,8 @@
     {
       "surah": 41,
       "ayah": 21,
+      "transliteration": "waqālū lijulūdihim lima shahidttum ʿalaynā qālū anṭaqanā l-lahu alladhī anṭaqa kulla shayin wahuwa khalaqakum awwala marratin wa-ilayhi tur'jaʿūna",
+      "translation_bn": "তারা তাদের চামড়াকে বলবে- আমাদের বিরুদ্ধে কেন সাক্ষ্য দিচ্ছ? তারা উত্তর দিবে- আল্লাহ আমাদেরকে কথা বলার শক্তি দিয়েছেন, যিনি সব কিছুকেই (আজ) কথা বলার শক্তি দিয়েছেন। তিনিই প্রথমবার তোমাদেরকে সৃষ্টি করেছেন, আর তাঁর কাছেই তোমাদেরকে ফিরিয়ে নেয়া হবে।",
       "words": [
         {
           "id": 23443,
@@ -3000,6 +3042,8 @@
     {
       "surah": 41,
       "ayah": 22,
+      "transliteration": "wamā kuntum tastatirūna an yashhada ʿalaykum samʿukum walā abṣārukum walā julūdukum walākin ẓanantum anna l-laha lā yaʿlamu kathīran mimmā taʿmalūna",
+      "translation_bn": "(দুনিয়ায় নিজেদের শরীরের অংশগুলোকে তোমরা) এই ভেবে গোপন করতে না যে, না তোমাদের কান, না তোমাদের চোখ আর না তোমাদের চামড়া তোমাদের বিরুদ্ধে সাক্ষ্য দেবে। বরং তোমরা মনে করতে যে, তোমরা যা কর তার অধিকাংশই আল্লাহ জানেন না।",
       "words": [
         {
           "id": 24428,
@@ -3216,6 +3260,8 @@
     {
       "surah": 41,
       "ayah": 23,
+      "transliteration": "wadhālikum ẓannukumu alladhī ẓanantum birabbikum ardākum fa-aṣbaḥtum mina l-khāsirīna",
+      "translation_bn": "তোমাদের এই (ভুল) ধারণাই- যা তোমরা তোমাদের প্রতিপালক সম্পর্কে পোষণ করতে- তোমাদেরকে ধ্বংস করেছে, ফলে তোমরা ক্ষতিগ্রস্তদের দলে শামিল হয়ে গেছ।",
       "words": [
         {
           "id": 25506,
@@ -3322,6 +3368,8 @@
     {
       "surah": 41,
       "ayah": 24,
+      "transliteration": "fa-in yaṣbirū fal-nāru mathwan lahum wa-in yastaʿtibū famā hum mina l-muʿ'tabīna",
+      "translation_bn": "এখন যদি তারা ধৈর্য ধারণ করে তবুও জাহান্নামই হবে তাদের আবাস, আর যদি তারা ক্ষমা প্রার্থনা করে তবুও তারা ক্ষমাপ্রাপ্ত হবে না।",
       "words": [
         {
           "id": 26576,
@@ -3448,6 +3496,8 @@
     {
       "surah": 41,
       "ayah": 25,
+      "transliteration": "waqayyaḍnā lahum quranāa fazayyanū lahum mā bayna aydīhim wamā khalfahum waḥaqqa ʿalayhimu l-qawlu fī umamin qad khalat min qablihim mina l-jini wal-insi innahum kānū khāsirīna",
+      "translation_bn": "আমি তাদেরকে প্রাণের বন্ধু জুটিয়ে দিয়েছিলাম, যারা তাদেরকে তাদের সামনের আর পিছনের প্রত্যেকটি জিনিসকে চাকচিক্যময় করে দেখাচ্ছিল। শেষ পর্যন্ত তাদের উপরও তেমনি ‘আযাবের ফয়সালা কার্যকর হল, যা তাদের পূর্ববর্তী জ্বিন ও মানব দলের উপর কার্যকর হয়েছিল। বাস্তবিকই তারা ক্ষতিগ্রস্ত হয়ে গেল।",
       "words": [
         {
           "id": 27586,
@@ -3714,6 +3764,8 @@
     {
       "surah": 41,
       "ayah": 26,
+      "transliteration": "waqāla alladhīna kafarū lā tasmaʿū lihādhā l-qur'āni wal-ghaw fīhi laʿallakum taghlibūna",
+      "translation_bn": "কাফিররা বলে- এ কুরআন শুনো না, আর তা পড়ার কালে শোরগোল কর যাতে তোমরা বিজয়ী হতে পার।",
       "words": [
         {
           "id": 28619,
@@ -3840,6 +3892,8 @@
     {
       "surah": 41,
       "ayah": 27,
+      "transliteration": "falanudhīqanna alladhīna kafarū ʿadhāban shadīdan walanajziyannahum aswa-a alladhī kānū yaʿmalūna",
+      "translation_bn": "ফলতঃ আমি কাফিরদেরকে অবশ্য অবশ্যই কঠিন শাস্তি আস্বাদন করাব, আর আমি অবশ্য অবশ্যই তাদেরকে তাদের নিকৃষ্টতম কাজের অনুসারে প্রতিফল দিব।",
       "words": [
         {
           "id": 29514,
@@ -3956,6 +4010,8 @@
     {
       "surah": 41,
       "ayah": 28,
+      "transliteration": "dhālika jazāu aʿdāi l-lahi l-nāru lahum fīhā dāru l-khul'di jazāan bimā kānū biāyātinā yajḥadūna",
+      "translation_bn": "আল্লাহর দুশমনদের জন্য প্রতিফল হল এ জাহান্নাম। তাতে আছে তাদের জন্য চিরস্থায়ী আবাস। (এ হল তাদের) প্রতিফল, কারণ তারা আমার আয়াতগুলোকে অস্বীকার করত।",
       "words": [
         {
           "id": 30540,
@@ -4112,6 +4168,8 @@
     {
       "surah": 41,
       "ayah": 29,
+      "transliteration": "waqāla alladhīna kafarū rabbanā arinā alladhayni aḍallānā mina l-jini wal-insi najʿalhumā taḥta aqdāminā liyakūnā mina l-asfalīna",
+      "translation_bn": "কাফিররা বলবে- হে আমাদের প্রতিপালক! জ্বিন ও মানুষদের মধ্যেকার যারা আমাদেরকে পথভ্রষ্ট করেছিল তাদের উভয়কে দেখিয়ে দিন, তাদের উভয়কে পায়ের তলায় পিষ্ট করব, যাতে তারা নিকৃষ্ট অধমদের মধ্যে গণ্য হয়।",
       "words": [
         {
           "id": 31532,
@@ -4288,6 +4346,8 @@
     {
       "surah": 41,
       "ayah": 30,
+      "transliteration": "inna alladhīna qālū rabbunā l-lahu thumma is'taqāmū tatanazzalu ʿalayhimu l-malāikatu allā takhāfū walā taḥzanū wa-abshirū bil-janati allatī kuntum tūʿadūna",
+      "translation_bn": "যারা বলে- আমাদের প্রতিপালক আল্লাহ, অতঃপর (সে কথার উপর) সুদৃঢ় থাকে, ফেরেশতারা তাদের নিকট অবতীর্ণ হয় আর বলে, তোমরা ভয় করো না, চিন্তা করো না, আর জান্নাতের সুসংবাদ গ্রহণ কর যার ওয়া‘দা তোমাদেরকে দেয়া হয়েছে।",
       "words": [
         {
           "id": 32455,
@@ -4494,6 +4554,8 @@
     {
       "surah": 41,
       "ayah": 31,
+      "transliteration": "naḥnu awliyāukum fī l-ḥayati l-dun'yā wafī l-ākhirati walakum fīhā mā tashtahī anfusukum walakum fīhā mā taddaʿūna",
+      "translation_bn": "পার্থিব জীবনে আর আখিরাতে আমরাই তোমাদের সঙ্গী-সাথী। আর সেখানে (অর্থাৎ জান্নাতে) তোমাদের জন্য তোমাদের মন যা চায় তা-ই আছে; তোমরা যে জিনিসের আকাঙ্ক্ষা কর, তোমাদের জন্য সেখানে তা-ই আছে",
       "words": [
         {
           "id": 33305,
@@ -4670,6 +4732,8 @@
     {
       "surah": 41,
       "ayah": 32,
+      "transliteration": "nuzulan min ghafūrin raḥīmin",
+      "translation_bn": "পরম ক্ষমাশীল, পরম দয়ালু (আল্লাহ)’র পক্ষ থেকে আপ্যায়ন হিসেবে।",
       "words": [
         {
           "id": 34365,
@@ -4726,6 +4790,8 @@
     {
       "surah": 41,
       "ayah": 33,
+      "transliteration": "waman aḥsanu qawlan mimman daʿā ilā l-lahi waʿamila ṣāliḥan waqāla innanī mina l-mus'limīna",
+      "translation_bn": "কথায় ঐ ব্যক্তি থেকে কে বেশি উত্তম যে (মানুষকে) আল্লাহর দিকে আহবান করে, আর সৎ কাজ করে এবং বলে, ‘আমি (আল্লাহর প্রতি) অনুগতদের অন্তর্ভুক্ত’।",
       "words": [
         {
           "id": 35244,
@@ -4872,6 +4938,8 @@
     {
       "surah": 41,
       "ayah": 34,
+      "transliteration": "walā tastawī l-ḥasanatu walā l-sayi-atu id'faʿ bi-allatī hiya aḥsanu fa-idhā alladhī baynaka wabaynahu ʿadāwatun ka-annahu waliyyun ḥamīmun",
+      "translation_bn": "ভাল আর মন্দ সমান নয়। উৎকৃষ্ট দিয়ে মন্দকে দূর কর। তখন দেখবে, তোমার আর যার মধ্যে শত্রুতা আছে সে যেন অন্তরঙ্গ বন্ধু।",
       "words": [
         {
           "id": 36131,
@@ -5058,6 +5126,8 @@
     {
       "surah": 41,
       "ayah": 35,
+      "transliteration": "wamā yulaqqāhā illā alladhīna ṣabarū wamā yulaqqāhā illā dhū ḥaẓẓin ʿaẓīmin",
+      "translation_bn": "এ গুণ কেবল তারাই লাভ করে যারা ধৈর্যশীল, এ গুণ কেবল তারাই লাভ করে যারা মহা ভাগ্যবান।",
       "words": [
         {
           "id": 36933,
@@ -5184,6 +5254,8 @@
     {
       "surah": 41,
       "ayah": 36,
+      "transliteration": "wa-immā yanzaghannaka mina l-shayṭāni nazghun fa-is'taʿidh bil-lahi innahu huwa l-samīʿu l-ʿalīmu",
+      "translation_bn": "শয়ত্বানের পক্ষ থেকে যদি তুমি কুমন্ত্রণা অনুভব কর, তাহলে আল্লাহর আশ্রয় প্রার্থনা কর। তিনি সর্বশ্রোতা সর্বজ্ঞ।",
       "words": [
         {
           "id": 38572,
@@ -5310,6 +5382,8 @@
     {
       "surah": 41,
       "ayah": 37,
+      "transliteration": "wamin āyātihi al-laylu wal-nahāru wal-shamsu wal-qamaru lā tasjudū lilshamsi walā lil'qamari wa-us'judū lillahi alladhī khalaqahunna in kuntum iyyāhu taʿbudūna",
+      "translation_bn": "তাঁর নিদর্শনগুলোর মধ্যে হল রাত, দিন, সূর্য আর চন্দ্র। সূর্যকে সেজদা করো না, চন্দ্রকেও না। সেজদা কর আল্লাহকে যিনি ওগুলোকে সৃষ্টি করেছেন যদি সত্যিকারভাবে একমাত্র তাঁরই তোমরা ইবাদাত করতে চাও।",
       "words": [
         {
           "id": 38653,
@@ -5516,6 +5590,8 @@
     {
       "surah": 41,
       "ayah": 38,
+      "transliteration": "fa-ini is'takbarū fa-alladhīna ʿinda rabbika yusabbiḥūna lahu bi-al-layli wal-nahāri wahum lā yasamūna",
+      "translation_bn": "অতঃপর তারা যদি অহংকার করে তবে (তারা জেনে নিক যে), তোমার প্রতিপালকের নিকটে যারা রয়েছে তারা দিন-রাত তাঁর মাহাত্ম্য বর্ণনায় লিপ্ত আছে, আর তারা কখনও ক্লান্তিবোধ করে না।[সাজদাহ]",
       "words": [
         {
           "id": 39540,
@@ -5652,6 +5728,8 @@
     {
       "surah": 41,
       "ayah": 39,
+      "transliteration": "wamin āyātihi annaka tarā l-arḍa khāshiʿatan fa-idhā anzalnā ʿalayhā l-māa ih'tazzat warabat inna alladhī aḥyāhā lamuḥ'yī l-mawtā innahu ʿalā kulli shayin qadīrun",
+      "translation_bn": "তাঁর নিদর্শনগুলোর মধ্যে হল এই যে, তুমি যমীনকে দেখ শুষ্ক অনুর্বর পড়ে আছে। অতঃপর আমি যখন তার উপর বৃষ্টি বর্ষণ করি তখন তা সতেজ হয় ও বেড়ে যায়। যিনি এ মৃত যমীনকে জীবিত করেন, তিনি অবশ্যই মৃতদেরকে জীবিত করবেন। তিনি সকল বিষয়ের উপর ক্ষমতাবান।",
       "words": [
         {
           "id": 40339,
@@ -5888,6 +5966,8 @@
     {
       "surah": 41,
       "ayah": 40,
+      "transliteration": "inna alladhīna yul'ḥidūna fī āyātinā lā yakhfawna ʿalaynā afaman yul'qā fī l-nāri khayrun am man yatī āminan yawma l-qiyāmati iʿ'malū mā shi'tum innahu bimā taʿmalūna baṣīrun",
+      "translation_bn": "যারা আমার আয়াতসমূহের অর্থকে ভিন্নপথে পরিচালিত করে, তারা আমার থেকে লুক্কায়িত নয়। যাকে জাহান্নামে নিক্ষেপ করা হবে সেই উত্তম না ঐ ব্যক্তি যে ক্বিয়ামতের দিন সম্পূর্ণ নিরাপদ হয়ে হাজির হবে? তোমাদের যা ইচ্ছে হয় করতে থাক। তোমরা যা কর তা তিনি (খুব ভালভাবেই) দেখেন।",
       "words": [
         {
           "id": 41073,
@@ -6164,6 +6244,8 @@
     {
       "surah": 41,
       "ayah": 41,
+      "transliteration": "inna alladhīna kafarū bil-dhik'ri lammā jāahum wa-innahu lakitābun ʿazīzun",
+      "translation_bn": "যারা তাদের কাছে উপদেশ বাণী আসার পর তা প্রত্যাখ্যান করে (তারা আমার থেকে লুক্কায়িত নয়)। এটা হল অবশ্যই এক মহা শক্তিশালী গ্রন্থ।",
       "words": [
         {
           "id": 41967,
@@ -6270,6 +6352,8 @@
     {
       "surah": 41,
       "ayah": 42,
+      "transliteration": "lā yatīhi l-bāṭilu min bayni yadayhi walā min khalfihi tanzīlun min ḥakīmin ḥamīdin",
+      "translation_bn": "মিথ্যা এর কাছে না এর সামনে দিয়ে আসতে পারে, না এর পিছন দিয়ে। এটা অবতীর্ণ হয়েছে মহাজ্ঞানী, সকল প্রশংসার যোগ্য (আল্লাহ)’র পক্ষ হতে।",
       "words": [
         {
           "id": 42699,
@@ -6416,6 +6500,8 @@
     {
       "surah": 41,
       "ayah": 43,
+      "transliteration": "mā yuqālu laka illā mā qad qīla lilrrusuli min qablika inna rabbaka ladhū maghfiratin wadhū ʿiqābin alīmin",
+      "translation_bn": "তোমাকে তা-ই বলা হচ্ছে যা বলা হত তোমার পূর্ববর্তী রসূলদেরকে। তোমার প্রতিপালক অবশ্যই ক্ষমার অধিকারী, আর যন্ত্রণাদায়ক শাস্তিদাতা।",
       "words": [
         {
           "id": 44006,
@@ -6602,6 +6688,8 @@
     {
       "surah": 41,
       "ayah": 44,
+      "transliteration": "walaw jaʿalnāhu qur'ānan aʿjamiyyan laqālū lawlā fuṣṣilat āyātuhu āʿ'jamiyyun waʿarabiyyun qul huwa lilladhīna āmanū hudan washifāon wa-alladhīna lā yu'minūna fī ādhānihim waqrun wahuwa ʿalayhim ʿaman ulāika yunādawna min makānin baʿīdin",
+      "translation_bn": "আমি যদি একে অনারব ভাষায় (অবতীর্ণ) কুরআন করতাম তাহলে তারা অবশ্যই বলত- এর আয়াতগুলো সুস্পষ্টভাবে বর্ণনা করা হল না কেন? আশ্চর্য ব্যাপার! কিতাব হল অনারব দেশীয় আর শ্রোতারা হল আরবীভাষী। বল- যারা ঈমান আনে তাদের জন্য এ কুরআন সঠিক পথের দিশারী ও আরোগ্য (লাভের উপায়)। যারা ঈমান আনে না তাদের কানে আছে বধিরতা, আর এ কুরআন তাদের জন্য অন্ধত্ব। (যেন) বহু দূর থেকে তাদেরকে ডাকা হচ্ছে।",
       "words": [
         {
           "id": 44233,
@@ -6918,6 +7006,8 @@
     {
       "surah": 41,
       "ayah": 45,
+      "transliteration": "walaqad ātaynā mūsā l-kitāba fa-ukh'tulifa fīhi walawlā kalimatun sabaqat min rabbika laquḍiya baynahum wa-innahum lafī shakkin min'hu murībin",
+      "translation_bn": "(ইতোপূর্বে) মূসাকে আমি কিতাব দিয়েছিলাম, কিন্তু তাতে মতভেদ করা হয়েছিল। তোমার প্রতিপালক যদি পূর্বেই একটি কথা ঘোষণা করে না দিতেন, তাহলে তাদের মধ্যে (মতভেদের ব্যাপারে) ফয়সালা করেই দিতেন। তারা এ ব্যাপারে এক অস্থিরতাপূর্ণ সন্দেহে লিপ্ত।",
       "words": [
         {
           "id": 44955,
@@ -7114,6 +7204,8 @@
     {
       "surah": 41,
       "ayah": 46,
+      "transliteration": "man ʿamila ṣāliḥan falinafsihi waman asāa faʿalayhā wamā rabbuka biẓallāmin lil'ʿabīdi",
+      "translation_bn": "যে সৎকাজ করবে নিজের কল্যাণেই করবে. যে অসৎ কাজ করবে তার পরিণতি তাকেই ভোগ করতে হবে। তোমার প্রতিপালক বান্দাদের প্রতি যালিম নন।",
       "words": [
         {
           "id": 45716,
@@ -7240,6 +7332,8 @@
     {
       "surah": 41,
       "ayah": 47,
+      "transliteration": "ilayhi yuraddu ʿil'mu l-sāʿati wamā takhruju min thamarātin min akmāmihā wamā taḥmilu min unthā walā taḍaʿu illā biʿil'mihi wayawma yunādīhim ayna shurakāī qālū ādhannāka mā minnā min shahīdin",
+      "translation_bn": "ক্বিয়ামত কখন সংঘটিত হবে সে সম্পর্কিত জ্ঞান একমাত্র তাঁর কাছেই আছে। কোন ফলই তার আবরণ থেকে বেরিয়ে আসে না, এবং কোন নারী গর্ভধারণ করে না আর সন্তান প্রসব করে না তাঁর অজ্ঞাতে। যে দিন তিনি তাদেরকে ডেকে বলবেন- আমার শরীকরা কোথায় (তোমরা যেগুলো বানিয়ে নিয়েছিলে)? তারা বলবে- আপনাকে নিশ্চয়তা দিচ্ছি যে, (আজ) আমাদের কেউ (আপনার শরীক থাকার ব্যাপারে) সাক্ষ্য দাতা হবে না।",
       "words": [
         {
           "id": 46309,
@@ -7536,6 +7630,8 @@
     {
       "surah": 41,
       "ayah": 48,
+      "transliteration": "waḍalla ʿanhum mā kānū yadʿūna min qablu waẓannū mā lahum min maḥīṣin",
+      "translation_bn": "পূর্বে তারা যাদেরকে ডাকত তারা তাদের থেকে উধাও হয়ে যাবে, আর তারা বুঝতে পারবে যে, তাদের পালানোর কোন জায়গা নেই।",
       "words": [
         {
           "id": 47059,
@@ -7672,6 +7768,8 @@
     {
       "surah": 41,
       "ayah": 49,
+      "transliteration": "lā yasamu l-insānu min duʿāi l-khayri wa-in massahu l-sharu fayaūsun qanūṭun",
+      "translation_bn": "মানুষ নিজের কল্যাণ কামনায় দু‘আ প্রার্থনা করতে ক্লান্ত হয় না, আর মন্দ যখন তাকে স্পর্শ করে, তখন সে নৈরাশ্যে ডুবে যায়।",
       "words": [
         {
           "id": 47739,
@@ -7798,6 +7896,8 @@
     {
       "surah": 41,
       "ayah": 50,
+      "transliteration": "wala-in adhaqnāhu raḥmatan minnā min baʿdi ḍarrāa massathu layaqūlanna hādhā lī wamā aẓunnu l-sāʿata qāimatan wala-in rujiʿ'tu ilā rabbī inna lī ʿindahu lalḥus'nā falanunabbi-anna alladhīna kafarū bimā ʿamilū walanudhīqannahum min ʿadhābin ghalīẓin",
+      "translation_bn": "দুঃখ-বিপদ মানুষকে স্পর্শ করার পর আমি যখন তাকে আমার অনুগ্রহ আস্বাদন করাই তখন সে অবশ্য অবশ্যই বলে- এটা আমার ন্যায্য পাওনা। ক্বিয়ামত যে সংঘটিত হবে আমি মোটেই তা মনে করি না। আর যদি আমাকে আমার প্রতিপালকের নিকট ফিরিয়ে নেয়া হয়ই, তবে তাঁর কাছে আমার জন্য অবশ্যই কল্যাণ আছে। অতঃপর আমি কাফিরদেরকে অবশ্য অবশ্যই জানিয়ে দেব তারা (দুনিয়াতে) কী কাজ করেছিল। আর অবশ্য অবশ্যই তাদেরকে আমি কঠিন শাস্তি আস্বাদন করাব।",
       "words": [
         {
           "id": 48392,
@@ -8134,6 +8234,8 @@
     {
       "surah": 41,
       "ayah": 51,
+      "transliteration": "wa-idhā anʿamnā ʿalā l-insāni aʿraḍa wanaā bijānibihi wa-idhā massahu l-sharu fadhū duʿāin ʿarīḍin",
+      "translation_bn": "আমি যখন মানুষকে নি‘মাত দেই তখন সে মুখ ফিরিয়ে নেয়, আর পাশ কেটে (আমার থেকে দূরে) সরে যায়। আর যখন মন্দ তাকে স্পর্শ করে, তখন সে লম্বা-চওড়া দু‘আ করতে থাকে।",
       "words": [
         {
           "id": 49478,
@@ -8280,6 +8382,8 @@
     {
       "surah": 41,
       "ayah": 52,
+      "transliteration": "qul ara-aytum in kāna min ʿindi l-lahi thumma kafartum bihi man aḍallu mimman huwa fī shiqāqin baʿīdin",
+      "translation_bn": "বল- তোমরা কি ভেবে দেখেছ এ (কুরআন) যদি আল্লাহর পক্ষ থেকেই এসে থাকে, আর তোমরা সেটাকে অস্বীকার করতেই থাক, তাহলে সে ব্যক্তি ছাড়া অধিক পথভ্রষ্ট আর কে আছে, যে বিরোধিতায় বহু দূরে চলে গেছে?",
       "words": [
         {
           "id": 49750,
@@ -8466,6 +8570,8 @@
     {
       "surah": 41,
       "ayah": 53,
+      "transliteration": "sanurīhim āyātinā fī l-āfāqi wafī anfusihim ḥattā yatabayyana lahum annahu l-ḥaqu awalam yakfi birabbika annahu ʿalā kulli shayin shahīdun",
+      "translation_bn": "আমি তাদেরকে আমার নিদর্শনাবলী দেখাব দূর দিগন্তে (অর্থাৎ দূর পর্যন্ত ইসলামের আলো বিচ্ছুরিত হবে) আর তাদের নিজেদের মধ্যেও (অর্থাৎ কাফিররা নতজানু হয়ে ইসলাম কবূল করবে) যখন তাদের কাছে স্পষ্ট হয়ে যাবে যে, এ কুরআন সত্য। এটা কি যথেষ্ট নয় যে, তোমার প্রতিপালক সব কিছুরই সাক্ষী।",
       "words": [
         {
           "id": 50377,
@@ -8672,6 +8778,8 @@
     {
       "surah": 41,
       "ayah": 54,
+      "transliteration": "alā innahum fī mir'yatin min liqāi rabbihim alā innahu bikulli shayin muḥīṭun",
+      "translation_bn": "শুনে রাখ, এরা তাদের প্রতিপালকের সঙ্গে সাক্ষাতের ব্যাপারে সন্দেহে পড়ে আছে। শুনে রাখ, তিনি সব কিছুকেই বেষ্টন করে আছেন।",
       "words": [
         {
           "id": 51021,

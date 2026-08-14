@@ -4,6 +4,8 @@
     {
       "surah": 101,
       "ayah": 1,
+      "transliteration": "al-qāriʿatu",
+      "translation_bn": "মহা বিপদ",
       "words": [
         {
           "id": 272,
@@ -30,6 +32,8 @@
     {
       "surah": 101,
       "ayah": 2,
+      "transliteration": "mā l-qāriʿatu",
+      "translation_bn": "কী সেই মহা বিপদ?",
       "words": [
         {
           "id": 977,
@@ -66,6 +70,8 @@
     {
       "surah": 101,
       "ayah": 3,
+      "transliteration": "wamā adrāka mā l-qāriʿatu",
+      "translation_bn": "মহা বিপদ সম্পর্কে তুমি কী জান?",
       "words": [
         {
           "id": 2067,
@@ -122,6 +128,8 @@
     {
       "surah": 101,
       "ayah": 4,
+      "transliteration": "yawma yakūnu l-nāsu kal-farāshi l-mabthūthi",
+      "translation_bn": "সে দিন মানুষ হবে বিক্ষিপ্ত পতঙ্গের মত",
       "words": [
         {
           "id": 3357,
@@ -188,6 +196,8 @@
     {
       "surah": 101,
       "ayah": 5,
+      "transliteration": "watakūnu l-jibālu kal-ʿih'ni l-manfūshi",
+      "translation_bn": "আর পর্বতগুলো হবে ধুনা রঙ্গিন পশমের মত।",
       "words": [
         {
           "id": 4791,
@@ -244,6 +254,8 @@
     {
       "surah": 101,
       "ayah": 6,
+      "transliteration": "fa-ammā man thaqulat mawāzīnuhu",
+      "translation_bn": "অতঃপর যার (সৎ কর্মের) পাল্লা ভারি হবে।",
       "words": [
         {
           "id": 6037,
@@ -300,6 +312,8 @@
     {
       "surah": 101,
       "ayah": 7,
+      "transliteration": "fahuwa fī ʿīshatin rāḍiyatin",
+      "translation_bn": "সে সুখী জীবন যাপন করবে।",
       "words": [
         {
           "id": 7350,
@@ -356,6 +370,8 @@
     {
       "surah": 101,
       "ayah": 8,
+      "transliteration": "wa-ammā man khaffat mawāzīnuhu",
+      "translation_bn": "আর যার (সৎকর্মের) পাল্লা হালকা হবে,",
       "words": [
         {
           "id": 8590,
@@ -412,6 +428,8 @@
     {
       "surah": 101,
       "ayah": 9,
+      "transliteration": "fa-ummuhu hāwiyatun",
+      "translation_bn": "(জাহান্নামের) অতলস্পর্শী গর্তই হবে তার বাসস্থান।",
       "words": [
         {
           "id": 9782,
@@ -448,6 +466,8 @@
     {
       "surah": 101,
       "ayah": 10,
+      "transliteration": "wamā adrāka mā hiyah",
+      "translation_bn": "তুমি কি জান তা কী?",
       "words": [
         {
           "id": 10824,
@@ -504,6 +524,8 @@
     {
       "surah": 101,
       "ayah": 11,
+      "transliteration": "nārun ḥāmiyatun",
+      "translation_bn": "জ্বলন্ত আগুন।",
       "words": [
         {
           "id": 12437,

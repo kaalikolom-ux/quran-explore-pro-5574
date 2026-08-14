@@ -4,6 +4,8 @@
     {
       "surah": 78,
       "ayah": 1,
+      "transliteration": "ʿamma yatasāalūna",
+      "translation_bn": "লোকেরা কোন বিষয়ে একে অন্যের কাছে জিজ্ঞাসাবাদ করছে?",
       "words": [
         {
           "id": 676,
@@ -40,6 +42,8 @@
     {
       "surah": 78,
       "ayah": 2,
+      "transliteration": "ʿani l-naba-i l-ʿaẓīmi",
+      "translation_bn": "(ক্বিয়ামত সংঘটিত হওয়ার) সেই মহা সংবাদের বিষয়ে,",
       "words": [
         {
           "id": 1691,
@@ -86,6 +90,8 @@
     {
       "surah": 78,
       "ayah": 3,
+      "transliteration": "alladhī hum fīhi mukh'talifūna",
+      "translation_bn": "যে বিষয়ে তাদের মাঝে মতপার্থক্য আছে।",
       "words": [
         {
           "id": 2799,
@@ -142,6 +148,8 @@
     {
       "surah": 78,
       "ayah": 4,
+      "transliteration": "kallā sayaʿlamūna",
+      "translation_bn": "কক্ষনো না, (তারা যা ধারণা করে তা একেবারে, অলীক ও অবাস্তব), তারা শীঘ্রই জানতে পারবে।",
       "words": [
         {
           "id": 4175,
@@ -178,6 +186,8 @@
     {
       "surah": 78,
       "ayah": 5,
+      "transliteration": "thumma kallā sayaʿlamūna",
+      "translation_bn": "আবার বলছি, কক্ষনো না (তাদের ধারণা একেবারে অলীক ও অবাস্তব), তারা শীঘ্রই জানতে পারবে।",
       "words": [
         {
           "id": 5448,
@@ -224,6 +234,8 @@
     {
       "surah": 78,
       "ayah": 6,
+      "transliteration": "alam najʿali l-arḍa mihādan",
+      "translation_bn": "(আমি যে সব কিছুকে দ্বিতীয়বার সৃষ্টি করতে সক্ষম তা তোমরা অস্বীকার করছ কীভাবে) আমি কি যমীনকে (তোমাদের জন্য) শয্যা বানাইনি?",
       "words": [
         {
           "id": 6671,
@@ -280,6 +292,8 @@
     {
       "surah": 78,
       "ayah": 7,
+      "transliteration": "wal-jibāla awtādan",
+      "translation_bn": "আর পর্বতগুলোকে কীলক (বানাইনি)?",
       "words": [
         {
           "id": 8023,
@@ -316,6 +330,8 @@
     {
       "surah": 78,
       "ayah": 8,
+      "transliteration": "wakhalaqnākum azwājan",
+      "translation_bn": "আর আমি তোমাদেরকে সৃষ্টি করেছি জোড়ায় জোড়ায়।",
       "words": [
         {
           "id": 9186,
@@ -352,6 +368,8 @@
     {
       "surah": 78,
       "ayah": 9,
+      "transliteration": "wajaʿalnā nawmakum subātan",
+      "translation_bn": "আর তোমাদের নিদ্রাকে করেছি বিশ্রামদায়ী।",
       "words": [
         {
           "id": 10397,
@@ -398,6 +416,8 @@
     {
       "surah": 78,
       "ayah": 10,
+      "transliteration": "wajaʿalnā al-layla libāsan",
+      "translation_bn": "রাতকে করেছি আবরণ,",
       "words": [
         {
           "id": 11624,
@@ -444,6 +464,8 @@
     {
       "surah": 78,
       "ayah": 11,
+      "transliteration": "wajaʿalnā l-nahāra maʿāshan",
+      "translation_bn": "আর দিনকে করেছি জীবিকা সংগ্রহের মাধ্যম।",
       "words": [
         {
           "id": 12975,
@@ -490,6 +512,8 @@
     {
       "surah": 78,
       "ayah": 12,
+      "transliteration": "wabanaynā fawqakum sabʿan shidādan",
+      "translation_bn": "আর তোমাদের উর্ধ্বদেশে বানিয়েছি সাতটি সুদৃঢ় আকাশ।",
       "words": [
         {
           "id": 14242,
@@ -546,6 +570,8 @@
     {
       "surah": 78,
       "ayah": 13,
+      "transliteration": "wajaʿalnā sirājan wahhājan",
+      "translation_bn": "এবং সৃষ্টি করেছি উজ্জ্বল প্রদীপ।",
       "words": [
         {
           "id": 14934,
@@ -592,6 +618,8 @@
     {
       "surah": 78,
       "ayah": 14,
+      "transliteration": "wa-anzalnā mina l-muʿ'ṣirāti māan thajjājan",
+      "translation_bn": "আর আমি বর্ষণ করি বৃষ্টিবাহী মেঘমালা থেকে প্রচুর পানি,",
       "words": [
         {
           "id": 16417,
@@ -658,6 +686,8 @@
     {
       "surah": 78,
       "ayah": 15,
+      "transliteration": "linukh'rija bihi ḥabban wanabātan",
+      "translation_bn": "যাতে আমি তা দিয়ে উৎপন্ন করি শস্য ও উদ্ভিদ,",
       "words": [
         {
           "id": 17571,
@@ -714,6 +744,8 @@
     {
       "surah": 78,
       "ayah": 16,
+      "transliteration": "wajannātin alfāfan",
+      "translation_bn": "আর ঘন উদ্যান।",
       "words": [
         {
           "id": 18606,
@@ -750,6 +782,8 @@
     {
       "surah": 78,
       "ayah": 17,
+      "transliteration": "inna yawma l-faṣli kāna mīqātan",
+      "translation_bn": "নিশ্চয়ই নির্ধারিত আছে মীমাংসার দিন,",
       "words": [
         {
           "id": 19597,
@@ -816,6 +850,8 @@
     {
       "surah": 78,
       "ayah": 18,
+      "transliteration": "yawma yunfakhu fī l-ṣūri fatatūna afwājan",
+      "translation_bn": "সেদিন শিঙ্গায় ফুঁক দেয়া হবে, আর তোমরা দলে দলে আসবে,",
       "words": [
         {
           "id": 20738,
@@ -892,6 +928,8 @@
     {
       "surah": 78,
       "ayah": 19,
+      "transliteration": "wafutiḥati l-samāu fakānat abwāban",
+      "translation_bn": "আকাশ খুলে দেয়া হবে আর তাতে হবে অনেক দরজা।",
       "words": [
         {
           "id": 21767,
@@ -948,6 +986,8 @@
     {
       "surah": 78,
       "ayah": 20,
+      "transliteration": "wasuyyirati l-jibālu fakānat sarāban",
+      "translation_bn": "আর পর্বতগুলোকে করা হবে চলমান, ফলে তা নিছক মরীচিকায় পরিণত হবে।",
       "words": [
         {
           "id": 22905,
@@ -1004,6 +1044,8 @@
     {
       "surah": 78,
       "ayah": 21,
+      "transliteration": "inna jahannama kānat mir'ṣādan",
+      "translation_bn": "জাহান্নাম তো ওঁৎ পেতে আছে,",
       "words": [
         {
           "id": 23638,
@@ -1060,6 +1102,8 @@
     {
       "surah": 78,
       "ayah": 22,
+      "transliteration": "lilṭṭāghīna maāban",
+      "translation_bn": "(আর তা হল) সীমালঙ্ঘনকারীদের আশ্রয়স্থল।",
       "words": [
         {
           "id": 24973,
@@ -1096,6 +1140,8 @@
     {
       "surah": 78,
       "ayah": 23,
+      "transliteration": "lābithīna fīhā aḥqāban",
+      "translation_bn": "সেখানে তারা যুগ যুগ ধরে থাকবে,",
       "words": [
         {
           "id": 25605,
@@ -1142,6 +1188,8 @@
     {
       "surah": 78,
       "ayah": 24,
+      "transliteration": "lā yadhūqūna fīhā bardan walā sharāban",
+      "translation_bn": "সেখানে তারা কোন শীতল ও পানীয় আস্বাদন করবে না",
       "words": [
         {
           "id": 27095,
@@ -1218,6 +1266,8 @@
     {
       "surah": 78,
       "ayah": 25,
+      "transliteration": "illā ḥamīman waghassāqan",
+      "translation_bn": "ফুটন্ত পানি ও পুঁজ ছাড়া;",
       "words": [
         {
           "id": 27701,
@@ -1264,6 +1314,8 @@
     {
       "surah": 78,
       "ayah": 26,
+      "transliteration": "jazāan wifāqan",
+      "translation_bn": "উপযুক্ত প্রতিফল।",
       "words": [
         {
           "id": 28535,
@@ -1300,6 +1352,8 @@
     {
       "surah": 78,
       "ayah": 27,
+      "transliteration": "innahum kānū lā yarjūna ḥisāban",
+      "translation_bn": "তারা (তাদের কৃতকর্মের) কোন হিসাব-নিকাশ আশা করত না,",
       "words": [
         {
           "id": 29508,
@@ -1366,6 +1420,8 @@
     {
       "surah": 78,
       "ayah": 28,
+      "transliteration": "wakadhabū biāyātinā kidhāban",
+      "translation_bn": "তারা আমার নিদর্শনগুলোকে অস্বীকার করেছিল- পুরোপুরি অস্বীকার।",
       "words": [
         {
           "id": 30557,
@@ -1412,6 +1468,8 @@
     {
       "surah": 78,
       "ayah": 29,
+      "transliteration": "wakulla shayin aḥṣaynāhu kitāban",
+      "translation_bn": "সবকিছুই আমি সংরক্ষণ করে রেখেছি লিখিতভাবে।",
       "words": [
         {
           "id": 31527,
@@ -1468,6 +1526,8 @@
     {
       "surah": 78,
       "ayah": 30,
+      "transliteration": "fadhūqū falan nazīdakum illā ʿadhāban",
+      "translation_bn": "অতএব এখন স্বাদ গ্রহণ কর, আমি তোমাদের জন্য কেবল শাস্তিই বৃদ্ধি করব (অন্য আর কিছু নয়)।",
       "words": [
         {
           "id": 32887,
@@ -1534,6 +1594,8 @@
     {
       "surah": 78,
       "ayah": 31,
+      "transliteration": "inna lil'muttaqīna mafāzan",
+      "translation_bn": "(অন্য দিকে) মুত্তাকীদের জন্য আছে সাফল্য।",
       "words": [
         {
           "id": 33849,
@@ -1580,6 +1642,8 @@
     {
       "surah": 78,
       "ayah": 32,
+      "transliteration": "ḥadāiqa wa-aʿnāban",
+      "translation_bn": "বাগান, আঙ্গুর,",
       "words": [
         {
           "id": 34755,
@@ -1616,6 +1680,8 @@
     {
       "surah": 78,
       "ayah": 33,
+      "transliteration": "wakawāʿiba atrāban",
+      "translation_bn": "আর সমবয়স্কা নব্য যুবতী",
       "words": [
         {
           "id": 36038,
@@ -1652,6 +1718,8 @@
     {
       "surah": 78,
       "ayah": 34,
+      "transliteration": "wakasan dihāqan",
+      "translation_bn": "এবং পরিপূর্ণ পানপাত্র।",
       "words": [
         {
           "id": 36858,
@@ -1688,6 +1756,8 @@
     {
       "surah": 78,
       "ayah": 35,
+      "transliteration": "lā yasmaʿūna fīhā laghwan walā kidhāban",
+      "translation_bn": "সেখানে তারা শুনবে না অসার অর্থহীন আর মিথ্যে কথা,",
       "words": [
         {
           "id": 37732,
@@ -1764,6 +1834,8 @@
     {
       "surah": 78,
       "ayah": 36,
+      "transliteration": "jazāan min rabbika ʿaṭāan ḥisāban",
+      "translation_bn": "এটা তোমার প্রতিপালকের পক্ষ থেকে প্রতিফল, যথোচিত দান।",
       "words": [
         {
           "id": 38535,
@@ -1830,6 +1902,8 @@
     {
       "surah": 78,
       "ayah": 37,
+      "transliteration": "rabbi l-samāwāti wal-arḍi wamā baynahumā l-raḥmāni lā yamlikūna min'hu khiṭāban",
+      "translation_bn": "যিনি আকাশ, পৃথিবী আর এগুলোর মাঝে যা কিছু আছে সব কিছুর প্রতিপালক, তিনি অতি দয়াময়, তাঁর সম্মুখে কথা বলার সাহস কারো হবে না।",
       "words": [
         {
           "id": 39402,
@@ -1946,6 +2020,8 @@
     {
       "surah": 78,
       "ayah": 38,
+      "transliteration": "yawma yaqūmu l-rūḥu wal-malāikatu ṣaffan lā yatakallamūna illā man adhina lahu l-raḥmānu waqāla ṣawāban",
+      "translation_bn": "সেদিন রূহ (জিবরাঈল) আর ফেরেশতারা সারিবদ্ধ হয়ে দাঁড়াবে, কেউ কোন কথা বলতে পারবে না, সে ব্যতীত যাকে পরম করুণাময় অনুমতি দিবেন, আর সে যথার্থ কথাই বলবে।",
       "words": [
         {
           "id": 40124,
@@ -2102,6 +2178,8 @@
     {
       "surah": 78,
       "ayah": 39,
+      "transliteration": "dhālika l-yawmu l-ḥaqu faman shāa ittakhadha ilā rabbihi maāban",
+      "translation_bn": "এ দিনটি সত্য, সুনিশ্চিত, অতএব যার ইচ্ছে সে তার প্রতিপালকের দিকে আশ্রয় গ্রহণ করুক।",
       "words": [
         {
           "id": 40931,
@@ -2208,6 +2286,8 @@
     {
       "surah": 78,
       "ayah": 40,
+      "transliteration": "innā andharnākum ʿadhāban qarīban yawma yanẓuru l-maru mā qaddamat yadāhu wayaqūlu l-kāfiru yālaytanī kuntu turāban",
+      "translation_bn": "আমি তোমাদেরকে নিকটবর্তী শাস্তি সম্পর্কে সতর্ক করছি, যেদিন মানুষ দেখতে পাবে তার হাতগুলো আগেই কী (‘আমাল) পাঠিয়েছে আর কাফির বলবে- ‘হায়! আমি যদি মাটি হতাম (তাহলে আমাকে আজকের এ ‘আযাবের সম্মুখীন হতে হত না)।",
       "words": [
         {
           "id": 41863,

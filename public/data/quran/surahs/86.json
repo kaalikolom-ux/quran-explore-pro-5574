@@ -4,6 +4,8 @@
     {
       "surah": 86,
       "ayah": 1,
+      "transliteration": "wal-samāi wal-ṭāriqi",
+      "translation_bn": "শপথ আসমানের আর যা রাতে আসে তার,",
       "words": [
         {
           "id": 716,
@@ -40,6 +42,8 @@
     {
       "surah": 86,
       "ayah": 2,
+      "transliteration": "wamā adrāka mā l-ṭāriqu",
+      "translation_bn": "তুমি কি জান যা রাতে আসে তা কী?",
       "words": [
         {
           "id": 1764,
@@ -96,6 +100,8 @@
     {
       "surah": 86,
       "ayah": 3,
+      "transliteration": "al-najmu l-thāqibu",
+      "translation_bn": "উজ্জ্বল নক্ষত্র।",
       "words": [
         {
           "id": 2882,
@@ -132,6 +138,8 @@
     {
       "surah": 86,
       "ayah": 4,
+      "transliteration": "in kullu nafsin lammā ʿalayhā ḥāfiẓun",
+      "translation_bn": "প্রত্যেক আত্মার সাথে একজন সংরক্ষক আছে।",
       "words": [
         {
           "id": 4239,
@@ -208,6 +216,8 @@
     {
       "surah": 86,
       "ayah": 5,
+      "transliteration": "falyanẓuri l-insānu mimma khuliqa",
+      "translation_bn": "অতঃপর মানুষ চিন্তা করে দেখুক কোন জিনিস থেকে তাকে সৃষ্টি করা হয়েছে।",
       "words": [
         {
           "id": 5502,
@@ -264,6 +274,8 @@
     {
       "surah": 86,
       "ayah": 6,
+      "transliteration": "khuliqa min māin dāfiqin",
+      "translation_bn": "তাকে সৃষ্টি করা হয়েছে সবেগে বের হয়ে আসা পানি থেকে।",
       "words": [
         {
           "id": 6738,
@@ -320,6 +332,8 @@
     {
       "surah": 86,
       "ayah": 7,
+      "transliteration": "yakhruju min bayni l-ṣul'bi wal-tarāibi",
+      "translation_bn": "যা বের হয় শিরদাঁড়া ও পাঁজরের মাঝখান থেকে।",
       "words": [
         {
           "id": 8081,
@@ -386,6 +400,8 @@
     {
       "surah": 86,
       "ayah": 8,
+      "transliteration": "innahu ʿalā rajʿihi laqādirun",
+      "translation_bn": "তিনি মানুষকে আবার (জীবনে) ফিরিয়ে আনতে অবশ্যই সক্ষম।",
       "words": [
         {
           "id": 9253,
@@ -442,6 +458,8 @@
     {
       "surah": 86,
       "ayah": 9,
+      "transliteration": "yawma tub'lā l-sarāiru",
+      "translation_bn": "যেদিন (কাজকর্ম আকীদা বিশ্বাস ও নিয়্যাত সম্পর্কিত) গোপন বিষয়াদি যাচাই পরখ করা হবে।",
       "words": [
         {
           "id": 10450,
@@ -488,6 +506,8 @@
     {
       "surah": 86,
       "ayah": 10,
+      "transliteration": "famā lahu min quwwatin walā nāṣirin",
+      "translation_bn": "সেদিন মানুষের না থাকবে নিজের কোন সামর্থ্য, আর না থাকবে কোন সাহায্যকারী।",
       "words": [
         {
           "id": 11664,
@@ -564,6 +584,8 @@
     {
       "surah": 86,
       "ayah": 11,
+      "transliteration": "wal-samāi dhāti l-rajʿi",
+      "translation_bn": "ঘুরে ঘুরে আসা বৃষ্টিবাহী আকাশের শপথ,",
       "words": [
         {
           "id": 13040,
@@ -610,6 +632,8 @@
     {
       "surah": 86,
       "ayah": 12,
+      "transliteration": "wal-arḍi dhāti l-ṣadʿi",
+      "translation_bn": "এবং গাছপালার চারা গজানোর সময় বক্ষ দীর্ণকারী যমীনের শপথ, (বৃষ্টিপাতের মাধ্যমে বৃক্ষলতার উৎপাদন যেমন অকাট্য সত্য, তেমনি কুরআন যা ঘোষণা করে তাও অকাট্য সত্য)",
       "words": [
         {
           "id": 14495,
@@ -656,6 +680,8 @@
     {
       "surah": 86,
       "ayah": 13,
+      "transliteration": "innahu laqawlun faṣlun",
+      "translation_bn": "কুরআন (সত্য-মিথ্যার পার্থক্যকারী) চূড়ান্ত সিদ্ধান্তকারী বাণী,",
       "words": [
         {
           "id": 15402,
@@ -702,6 +728,8 @@
     {
       "surah": 86,
       "ayah": 14,
+      "transliteration": "wamā huwa bil-hazli",
+      "translation_bn": "এবং তা কোন হাসি-ঠাট্টামূলক কথা নয়।",
       "words": [
         {
           "id": 16447,
@@ -748,6 +776,8 @@
     {
       "surah": 86,
       "ayah": 15,
+      "transliteration": "innahum yakīdūna kaydan",
+      "translation_bn": "এবং তারা (সত্যের বিরুদ্ধে) ষড়যন্ত্র করছে,",
       "words": [
         {
           "id": 17607,
@@ -794,6 +824,8 @@
     {
       "surah": 86,
       "ayah": 16,
+      "transliteration": "wa-akīdu kaydan",
+      "translation_bn": "আর আমিও (তাদের অন্যায় ধ্বংসাত্মক ষড়যন্ত্র ভন্ডুল করার) কৌশল করছি।",
       "words": [
         {
           "id": 18777,
@@ -830,6 +862,8 @@
     {
       "surah": 86,
       "ayah": 17,
+      "transliteration": "famahhili l-kāfirīna amhil'hum ruwaydan",
+      "translation_bn": "কাজেই (এই ষড়যন্ত্রকারী) কাফিরদেরকে অবকাশ দাও, তাদেরকে কিছু সময়ের জন্য অবকাশ দাও।",
       "words": [
         {
           "id": 19707,

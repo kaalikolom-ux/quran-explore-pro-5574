@@ -4,6 +4,8 @@
     {
       "surah": 51,
       "ayah": 1,
+      "transliteration": "wal-dhāriyāti dharwan",
+      "translation_bn": "শপথ সেই বাতাসের যা ধূলাবালি উড়ায়,",
       "words": [
         {
           "id": 269,
@@ -40,6 +42,8 @@
     {
       "surah": 51,
       "ayah": 2,
+      "transliteration": "fal-ḥāmilāti wiq'ran",
+      "translation_bn": "আর যা উঠিয়ে নেয় আর বহন করে ভারী বোঝা,",
       "words": [
         {
           "id": 1127,
@@ -76,6 +80,8 @@
     {
       "surah": 51,
       "ayah": 3,
+      "transliteration": "fal-jāriyāti yus'ran",
+      "translation_bn": "আর যা ধীর ও শান্ত গতিতে বয়ে চলে",
       "words": [
         {
           "id": 2189,
@@ -112,6 +118,8 @@
     {
       "surah": 51,
       "ayah": 4,
+      "transliteration": "fal-muqasimāti amran",
+      "translation_bn": "আর যারা কর্ম বণ্টন করে,",
       "words": [
         {
           "id": 3507,
@@ -148,6 +156,8 @@
     {
       "surah": 51,
       "ayah": 5,
+      "transliteration": "innamā tūʿadūna laṣādiqun",
+      "translation_bn": "তোমাদেরকে যার ও‘য়াদা দেয়া হয়েছে তা অবশ্যই সত্য।",
       "words": [
         {
           "id": 4864,
@@ -194,6 +204,8 @@
     {
       "surah": 51,
       "ayah": 6,
+      "transliteration": "wa-inna l-dīna lawāqiʿun",
+      "translation_bn": "কর্মফল দিবস অবশ্যই আসবে।",
       "words": [
         {
           "id": 6108,
@@ -240,6 +252,8 @@
     {
       "surah": 51,
       "ayah": 7,
+      "transliteration": "wal-samāi dhāti l-ḥubuki",
+      "translation_bn": "বহু পথ বিশিষ্ট আকাশের শপথ।",
       "words": [
         {
           "id": 7436,
@@ -286,6 +300,8 @@
     {
       "surah": 51,
       "ayah": 8,
+      "transliteration": "innakum lafī qawlin mukh'talifin",
+      "translation_bn": "(পরকাল সম্পর্কে) তোমরা অবশ্যই রয়েছ মতভেদের মধ্যে।",
       "words": [
         {
           "id": 8699,
@@ -342,6 +358,8 @@
     {
       "surah": 51,
       "ayah": 9,
+      "transliteration": "yu'faku ʿanhu man ufika",
+      "translation_bn": "যারা সেই (সত্য) মানতে ভুল করে তারাই গুমরাহ।",
       "words": [
         {
           "id": 9925,
@@ -398,6 +416,8 @@
     {
       "surah": 51,
       "ayah": 10,
+      "transliteration": "qutila l-kharāṣūna",
+      "translation_bn": "অনুমানকারীরা ধ্বংস হোক,",
       "words": [
         {
           "id": 11112,
@@ -434,6 +454,8 @@
     {
       "surah": 51,
       "ayah": 11,
+      "transliteration": "alladhīna hum fī ghamratin sāhūna",
+      "translation_bn": "যারা অজ্ঞতা ও উদাসীনতার মধ্যে রয়েছে।",
       "words": [
         {
           "id": 12440,
@@ -500,6 +522,8 @@
     {
       "surah": 51,
       "ayah": 12,
+      "transliteration": "yasalūna ayyāna yawmu l-dīni",
+      "translation_bn": "তারা জিজ্ঞেস করে- ‘প্রতিফল দিবস কবে হবে?’",
       "words": [
         {
           "id": 13752,
@@ -556,6 +580,8 @@
     {
       "surah": 51,
       "ayah": 13,
+      "transliteration": "yawma hum ʿalā l-nāri yuf'tanūna",
+      "translation_bn": "(তা হবে সেদিন) যেদিন তাদেরকে আগুনে শাস্তি দেয়া হবে।",
       "words": [
         {
           "id": 14907,
@@ -622,6 +648,8 @@
     {
       "surah": 51,
       "ayah": 14,
+      "transliteration": "dhūqū fit'natakum hādhā alladhī kuntum bihi tastaʿjilūna",
+      "translation_bn": "(তাদেরকে বলা হবে) তোমরা তোমাদের (কৃতকর্মের) শাস্তি ভোগ কর, এটা হচ্ছে তাই যার জন্য তোমরা তাড়াহুড়া করছিলে।",
       "words": [
         {
           "id": 15989,
@@ -708,6 +736,8 @@
     {
       "surah": 51,
       "ayah": 15,
+      "transliteration": "inna l-mutaqīna fī jannātin waʿuyūnin",
+      "translation_bn": "মুত্তাকীরা থাকবে জান্নাত আর ঝর্ণাধারার মাঝে।",
       "words": [
         {
           "id": 17216,
@@ -774,6 +804,8 @@
     {
       "surah": 51,
       "ayah": 16,
+      "transliteration": "ākhidhīna mā ātāhum rabbuhum innahum kānū qabla dhālika muḥ'sinīna",
+      "translation_bn": "তাদের প্রতিপালক যা তাদেরকে দিবেন তা তারা ভোগ করবে, কারণ তারা পূর্বে (দুনিয়ার জীবনে) ছিল সৎকর্মশীল,",
       "words": [
         {
           "id": 18256,
@@ -880,6 +912,8 @@
     {
       "surah": 51,
       "ayah": 17,
+      "transliteration": "kānū qalīlan mina al-layli mā yahjaʿūna",
+      "translation_bn": "তারা রাত্রিকালে খুব কমই শয়ন করত।",
       "words": [
         {
           "id": 19282,
@@ -956,6 +990,8 @@
     {
       "surah": 51,
       "ayah": 18,
+      "transliteration": "wabil-asḥāri hum yastaghfirūna",
+      "translation_bn": "আর তারা রাত্রির শেষ প্রহরে ক্ষমা প্রার্থনা করত।",
       "words": [
         {
           "id": 20357,
@@ -1002,6 +1038,8 @@
     {
       "surah": 51,
       "ayah": 19,
+      "transliteration": "wafī amwālihim ḥaqqun lilssāili wal-maḥrūmi",
+      "translation_bn": "এবং তাদের ধন-মালে আছে যাঞ্ঝাকারী ও বঞ্চিতদের অধিকার (যা তারা আদায় করত)।",
       "words": [
         {
           "id": 21438,
@@ -1068,6 +1106,8 @@
     {
       "surah": 51,
       "ayah": 20,
+      "transliteration": "wafī l-arḍi āyātun lil'mūqinīna",
+      "translation_bn": "নিশ্চিত বিশ্বাসীদের জন্য পৃথিবীতে আছে নিদর্শন,",
       "words": [
         {
           "id": 22534,
@@ -1124,6 +1164,8 @@
     {
       "surah": 51,
       "ayah": 21,
+      "transliteration": "wafī anfusikum afalā tub'ṣirūna",
+      "translation_bn": "আর (নিদর্শন আছে) তোমাদের মাঝেও, তোমরা কি দেখ না?",
       "words": [
         {
           "id": 23684,
@@ -1180,6 +1222,8 @@
     {
       "surah": 51,
       "ayah": 22,
+      "transliteration": "wafī l-samāi riz'qukum wamā tūʿadūna",
+      "translation_bn": "এবং আকাশে আছে তোমাদের রিযক আর আছে যার ও‘য়াদা তোমাদেরকে দেয়া হয়েছে।",
       "words": [
         {
           "id": 24658,
@@ -1246,6 +1290,8 @@
     {
       "surah": 51,
       "ayah": 23,
+      "transliteration": "fawarabbi l-samāi wal-arḍi innahu laḥaqqun mith'la mā annakum tanṭiqūna",
+      "translation_bn": "আকাশ ও যমীনের প্রতিপালকের শপথ! এ সব অবশ্যই সত্য, এমনই দৃঢ় সত্য যেমন তোমরা (যে কথাবার্তা) বলে থাক (সেই কথাবার্তা বলার ব্যাপারটা যেমন নিঃসন্দেহে সত্য)।",
       "words": [
         {
           "id": 25973,
@@ -1352,6 +1398,8 @@
     {
       "surah": 51,
       "ayah": 24,
+      "transliteration": "hal atāka ḥadīthu ḍayfi ib'rāhīma l-muk'ramīna",
+      "translation_bn": "তোমার কাছে ইবরাহীমের সম্মানিত মেহমানদের খবর পৌঁছেছে কি?",
       "words": [
         {
           "id": 26800,
@@ -1428,6 +1476,8 @@
     {
       "surah": 51,
       "ayah": 25,
+      "transliteration": "idh dakhalū ʿalayhi faqālū salāman qāla salāmun qawmun munkarūna",
+      "translation_bn": "যখন তারা তার সামনে উপস্থিত হল তখন বলল, ‘সালাম’। সে উত্তর দিল- ‘সালাম’। (ইবরাহীম মনে মনে ভাবল এদেরকে তো দেখছি) অপরিচিত লোক।",
       "words": [
         {
           "id": 27852,
@@ -1534,6 +1584,8 @@
     {
       "surah": 51,
       "ayah": 26,
+      "transliteration": "farāgha ilā ahlihi fajāa biʿij'lin samīnin",
+      "translation_bn": "তখন সে তাড়াতাড়ি তার ঘরের লোকেদের নিকট চলে গেল এবং একটি মোটাতাজা (ভাজা) বাছুর নিয়ে আসল।",
       "words": [
         {
           "id": 28813,
@@ -1610,6 +1662,8 @@
     {
       "surah": 51,
       "ayah": 27,
+      "transliteration": "faqarrabahu ilayhim qāla alā takulūna",
+      "translation_bn": "অতঃপর সেটিকে তাদের সামনে রেখে দিল এবং বলল- ‘তোমরা খাচ্ছ না কেন?’",
       "words": [
         {
           "id": 29739,
@@ -1676,6 +1730,8 @@
     {
       "surah": 51,
       "ayah": 28,
+      "transliteration": "fa-awjasa min'hum khīfatan qālū lā takhaf wabasharūhu bighulāmin ʿalīmin",
+      "translation_bn": "(যখন তারা খেল না) তখন সে তাদের ব্যাপারে মনে ভয় পেয়ে গেল। তারা বলল- ‘তুমি ভয় পেও না’, অতঃপর তারা তাকে এক জ্ঞানবান পুত্রের সুসংবাদ দিল।",
       "words": [
         {
           "id": 30692,
@@ -1782,6 +1838,8 @@
     {
       "surah": 51,
       "ayah": 29,
+      "transliteration": "fa-aqbalati im'ra-atuhu fī ṣarratin faṣakkat wajhahā waqālat ʿajūzun ʿaqīmun",
+      "translation_bn": "তখন তার স্ত্রী চিৎকার করতে করতে এগিয়ে আসল। সে নিজের কপালে আঘাত করে বলল ‘(আমি) এক বৃদ্ধা, বন্ধ্যা’ (আমার কীভাবে সন্তান হবে?)",
       "words": [
         {
           "id": 31773,
@@ -1888,6 +1946,8 @@
     {
       "surah": 51,
       "ayah": 30,
+      "transliteration": "qālū kadhāliki qāla rabbuki innahu huwa l-ḥakīmu l-ʿalīmu",
+      "translation_bn": "তারা বলল- ‘‘তোমার প্রতিপালক এ রকমই বলেছেন, তিনি মহা প্রজ্ঞাময়, সর্বজ্ঞ\"।",
       "words": [
         {
           "id": 32615,
@@ -1984,6 +2044,8 @@
     {
       "surah": 51,
       "ayah": 31,
+      "transliteration": "qāla famā khaṭbukum ayyuhā l-mur'salūna",
+      "translation_bn": "ইবরাহীম বলল- ‘ওহে আল্লাহর দূতগণ (ফেরেশতারা)! তোমাদের কাজ কী (এখন)?’",
       "words": [
         {
           "id": 33563,
@@ -2050,6 +2112,8 @@
     {
       "surah": 51,
       "ayah": 32,
+      "transliteration": "qālū innā ur'sil'nā ilā qawmin muj'rimīna",
+      "translation_bn": "তারা বলল- ‘আমাদেরকে এক অপরাধী জাতির কাছে পাঠানো হয়েছে'।",
       "words": [
         {
           "id": 34571,
@@ -2126,6 +2190,8 @@
     {
       "surah": 51,
       "ayah": 33,
+      "transliteration": "linur'sila ʿalayhim ḥijāratan min ṭīnin",
+      "translation_bn": "যেন তাদের উপর মাটির পাথর বর্ষণ করি",
       "words": [
         {
           "id": 35566,
@@ -2192,6 +2258,8 @@
     {
       "surah": 51,
       "ayah": 34,
+      "transliteration": "musawwamatan ʿinda rabbika lil'mus'rifīna",
+      "translation_bn": "যা তোমার প্রতিপালকের নিকট চিহ্নিত হয়ে আছে সীমালঙ্ঘনকারীদের জন্য।",
       "words": [
         {
           "id": 36323,
@@ -2248,6 +2316,8 @@
     {
       "surah": 51,
       "ayah": 35,
+      "transliteration": "fa-akhrajnā man kāna fīhā mina l-mu'minīna",
+      "translation_bn": "সেখানে যারা মু’মিন ছিল আমি তাদেরকে বের করে এনেছিলাম,",
       "words": [
         {
           "id": 37013,
@@ -2324,6 +2394,8 @@
     {
       "surah": 51,
       "ayah": 36,
+      "transliteration": "famā wajadnā fīhā ghayra baytin mina l-mus'limīna",
+      "translation_bn": "আমি সেখানে মুসলিমদের একটি পরিবার ছাড়া আর পাইনি।",
       "words": [
         {
           "id": 37880,
@@ -2410,6 +2482,8 @@
     {
       "surah": 51,
       "ayah": 37,
+      "transliteration": "wataraknā fīhā āyatan lilladhīna yakhāfūna l-ʿadhāba l-alīma",
+      "translation_bn": "আর তাদের জন্য সেখানে একটা নিদর্শন রেখে দিলাম যারা অত্যন্ত পীড়াদায়ক ‘আযাবের ভয় করে।",
       "words": [
         {
           "id": 38741,
@@ -2496,6 +2570,8 @@
     {
       "surah": 51,
       "ayah": 38,
+      "transliteration": "wafī mūsā idh arsalnāhu ilā fir'ʿawna bisul'ṭānin mubīnin",
+      "translation_bn": "আর মূসার ঘটনাতেও (নিদর্শন আছে) যখন আমি তাকে স্পষ্ট প্রমাণসহ ফেরাউনের কাছে পাঠিয়েছিলাম,",
       "words": [
         {
           "id": 39672,
@@ -2592,6 +2668,8 @@
     {
       "surah": 51,
       "ayah": 39,
+      "transliteration": "fatawallā biruk'nihi waqāla sāḥirun aw majnūnun",
+      "translation_bn": "তখন সে তার ক্ষমতার দাপটে মুখ ফিরিয়ে নিল আর বলল- ‘এ লোক একটা যাদুকর না হয় পাগল।’",
       "words": [
         {
           "id": 40464,
@@ -2668,6 +2746,8 @@
     {
       "surah": 51,
       "ayah": 40,
+      "transliteration": "fa-akhadhnāhu wajunūdahu fanabadhnāhum fī l-yami wahuwa mulīmun",
+      "translation_bn": "শেষে আমি তাকে আর তার সৈন্য সামন্তকে পাকড়াও করলাম আর তাদেরকে সমুদ্রে নিক্ষেপ করলাম। সে ছিল ধিকৃত নিন্দিত।",
       "words": [
         {
           "id": 41163,
@@ -2754,6 +2834,8 @@
     {
       "surah": 51,
       "ayah": 41,
+      "transliteration": "wafī ʿādin idh arsalnā ʿalayhimu l-rīḥa l-ʿaqīma",
+      "translation_bn": "আর ‘আদ-এর ঘটনাতেও (নিদর্শন আছে)। আমি তাদের কাছে পাঠিয়েছিলাম অকল্যাণের বাতাস।",
       "words": [
         {
           "id": 42063,
@@ -2840,6 +2922,8 @@
     {
       "surah": 51,
       "ayah": 42,
+      "transliteration": "mā tadharu min shayin atat ʿalayhi illā jaʿalathu kal-ramīmi",
+      "translation_bn": "তা যা কিছুর উপর দিয়ে বয়ে গিয়েছিল তাকে চূর্ণ-বিচূর্ণ ও ধ্বংসস্তুপে পরিণত না করে ছাড়েনি।",
       "words": [
         {
           "id": 42805,
@@ -2946,6 +3030,8 @@
     {
       "surah": 51,
       "ayah": 43,
+      "transliteration": "wafī thamūda idh qīla lahum tamattaʿū ḥattā ḥīnin",
+      "translation_bn": "আর সামূদের ঘটনাতেও (নিদর্শন আছে) যখন তাদেরকে বলা হয়েছিল, ‘একটা নির্দিষ্ট সময় পর্যন্ত ভোগ করে লও।’",
       "words": [
         {
           "id": 43593,
@@ -3042,6 +3128,8 @@
     {
       "surah": 51,
       "ayah": 44,
+      "transliteration": "faʿataw ʿan amri rabbihim fa-akhadhathumu l-ṣāʿiqatu wahum yanẓurūna",
+      "translation_bn": "কিন্তু তারা ধৃষ্টতার সঙ্গে তাদের প্রতিপালকের আদেশ অমান্য করল। ফলে বজ্রাঘাত তাদেরকে পাকড়াও করল যা তারা চেয়ে চেয়ে দেখছিল।",
       "words": [
         {
           "id": 44396,
@@ -3138,6 +3226,8 @@
     {
       "surah": 51,
       "ayah": 45,
+      "transliteration": "famā is'taṭāʿū min qiyāmin wamā kānū muntaṣirīna",
+      "translation_bn": "তারা (পায়ের ভরে) উঠে দাঁড়াতেও পারল না আর আত্মরক্ষা করতেও পারল না।",
       "words": [
         {
           "id": 45105,
@@ -3224,6 +3314,8 @@
     {
       "surah": 51,
       "ayah": 46,
+      "transliteration": "waqawma nūḥin min qablu innahum kānū qawman fāsiqīna",
+      "translation_bn": "ইতোপূর্বে আমি নূহের জাতিকে ধ্বংস করেছিলাম, তারা ছিল এক পাপাচারী জাতি।",
       "words": [
         {
           "id": 45839,
@@ -3320,6 +3412,8 @@
     {
       "surah": 51,
       "ayah": 47,
+      "transliteration": "wal-samāa banaynāhā bi-aydin wa-innā lamūsiʿūna",
+      "translation_bn": "আমি নিজ হাত দ্বারা আসমান সৃষ্টি করেছি আর আমি অবশ্যই মহা প্রশস্তকারী।",
       "words": [
         {
           "id": 46488,
@@ -3386,6 +3480,8 @@
     {
       "surah": 51,
       "ayah": 48,
+      "transliteration": "wal-arḍa farashnāhā faniʿ'ma l-māhidūna",
+      "translation_bn": "আর যমীন- তাকে আমিই বিছিয়েছি, আমি কতই না সুন্দর (সমতল) প্রসারণকারী!",
       "words": [
         {
           "id": 47227,
@@ -3442,6 +3538,8 @@
     {
       "surah": 51,
       "ayah": 49,
+      "transliteration": "wamin kulli shayin khalaqnā zawjayni laʿallakum tadhakkarūna",
+      "translation_bn": "আমি প্রত্যেকটি বস্তু সৃষ্টি করেছি জোড়ায় জোড়ায়, যাতে তোমরা শিক্ষা গ্রহণ কর।",
       "words": [
         {
           "id": 47837,
@@ -3528,6 +3626,8 @@
     {
       "surah": 51,
       "ayah": 50,
+      "transliteration": "fafirrū ilā l-lahi innī lakum min'hu nadhīrun mubīnun",
+      "translation_bn": "অতএব দৌড়াও আল্লাহর দিকে, আমি তোমাদের জন্য তাঁর পক্ষ হতে স্পষ্ট সতর্ককারী।",
       "words": [
         {
           "id": 48517,
@@ -3624,6 +3724,8 @@
     {
       "surah": 51,
       "ayah": 51,
+      "transliteration": "walā tajʿalū maʿa l-lahi ilāhan ākhara innī lakum min'hu nadhīrun mubīnun",
+      "translation_bn": "তোমরা আল্লাহর সঙ্গে কোন ইলাহ স্থির করো না, আমি তাঁর পক্ষ থেকে তোমাদের জন্য স্পষ্ট সতর্ককারী।",
       "words": [
         {
           "id": 49164,
@@ -3750,6 +3852,8 @@
     {
       "surah": 51,
       "ayah": 52,
+      "transliteration": "kadhālika mā atā alladhīna min qablihim min rasūlin illā qālū sāḥirun aw majnūnun",
+      "translation_bn": "এভাবে যখনই তাদের আগের লোকেদের মধ্যে কোন রসূল এসেছে, তখনই তারা বলেছে- ‘সে যাদুকর না হয় উন্মাদ।’",
       "words": [
         {
           "id": 49830,
@@ -3896,6 +4000,8 @@
     {
       "surah": 51,
       "ayah": 53,
+      "transliteration": "atawāṣaw bihi bal hum qawmun ṭāghūna",
+      "translation_bn": "তারা কি বংশ পরম্পরায় এরই অসিয়ত (অর্থাৎ অন্তিম সবক) দিয়ে আসছে, বরং তারা সীমালঙ্ঘনকারী জাতি।",
       "words": [
         {
           "id": 50463,
@@ -3972,6 +4078,8 @@
     {
       "surah": 51,
       "ayah": 54,
+      "transliteration": "fatawalla ʿanhum famā anta bimalūmin",
+      "translation_bn": "কাজেই তুমি তাদের দিক থেকে মুখ ফিরিয়ে লও, তার জন্য তুমি তিরস্কৃত হবে না।",
       "words": [
         {
           "id": 51119,
@@ -4038,6 +4146,8 @@
     {
       "surah": 51,
       "ayah": 55,
+      "transliteration": "wadhakkir fa-inna l-dhik'rā tanfaʿu l-mu'minīna",
+      "translation_bn": "আর তুমি উপদেশ দিতে থাক, কেননা উপদেশ মু’মিনদের উপকার করবে।",
       "words": [
         {
           "id": 51663,
@@ -4104,6 +4214,8 @@
     {
       "surah": 51,
       "ayah": 56,
+      "transliteration": "wamā khalaqtu l-jina wal-insa illā liyaʿbudūni",
+      "translation_bn": "আমি জ্বিন ও মানবকে সৃষ্টি করেছি একমাত্র এ কারণে যে, তারা আমারই ‘ইবাদাত করবে।",
       "words": [
         {
           "id": 52169,
@@ -4180,6 +4292,8 @@
     {
       "surah": 51,
       "ayah": 57,
+      "transliteration": "mā urīdu min'hum min riz'qin wamā urīdu an yuṭ'ʿimūni",
+      "translation_bn": "আমি তাদের থেকে রিযক চাই না, আর আমি এও চাই না যে, তারা আমাকে খাওয়াবে।",
       "words": [
         {
           "id": 52743,
@@ -4286,6 +4400,8 @@
     {
       "surah": 51,
       "ayah": 58,
+      "transliteration": "inna l-laha huwa l-razāqu dhū l-quwati l-matīnu",
+      "translation_bn": "আল্লাহই তো রিযকদাতা, মহা শক্তিধর, প্রবল পরাক্রান্ত।",
       "words": [
         {
           "id": 53583,
@@ -4372,6 +4488,8 @@
     {
       "surah": 51,
       "ayah": 59,
+      "transliteration": "fa-inna lilladhīna ẓalamū dhanūban mith'la dhanūbi aṣḥābihim falā yastaʿjilūni",
+      "translation_bn": "কাজেই যারা যুলম করেছে তাদের প্রাপ্য তাই যে প্রাপ্য পূর্বে ছিল তাদের মত লোকেদের; কাজেই (নিজেদের প্রাপ্য পাওয়ার জন্য) তারা যেন তাড়াহুড়া না করে।",
       "words": [
         {
           "id": 54149,
@@ -4478,6 +4596,8 @@
     {
       "surah": 51,
       "ayah": 60,
+      "transliteration": "fawaylun lilladhīna kafarū min yawmihimu alladhī yūʿadūna",
+      "translation_bn": "কাফিরদের জন্য ধ্বংস (নেমে আসবে) তাদের সেদিনের যেদিনের ভয় তাদেরকে দেখানো হয়েছে।",
       "words": [
         {
           "id": 54318,

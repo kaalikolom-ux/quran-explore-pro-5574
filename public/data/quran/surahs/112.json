@@ -4,6 +4,8 @@
     {
       "surah": 112,
       "ayah": 1,
+      "transliteration": "qul huwa l-lahu aḥadun",
+      "translation_bn": "বল, তিনি আল্লাহ, এক অদ্বিতীয়,",
       "words": [
         {
           "id": 6,
@@ -60,6 +62,8 @@
     {
       "surah": 112,
       "ayah": 2,
+      "transliteration": "al-lahu l-ṣamadu",
+      "translation_bn": "আল্লাহ কোন কিছুর মুখাপেক্ষী নন, সবই তাঁর মুখাপেক্ষী,",
       "words": [
         {
           "id": 916,
@@ -96,6 +100,8 @@
     {
       "surah": 112,
       "ayah": 3,
+      "transliteration": "lam yalid walam yūlad",
+      "translation_bn": "তিনি কাউকে জন্ম দেন না, আর তাঁকেও জন্ম দেয়া হয়নি।",
       "words": [
         {
           "id": 2746,
@@ -152,6 +158,8 @@
     {
       "surah": 112,
       "ayah": 4,
+      "transliteration": "walam yakun lahu kufuwan aḥadun",
+      "translation_bn": "তাঁর সমকক্ষ কেউ নয়।",
       "words": [
         {
           "id": 4136,

@@ -4,6 +4,8 @@
     {
       "surah": 76,
       "ayah": 1,
+      "transliteration": "hal atā ʿalā l-insāni ḥīnun mina l-dahri lam yakun shayan madhkūran",
+      "translation_bn": "মহাকালের মধ্য হতে মানুষের উপর কি এমন একটা সময় অতিবাহিত হয়নি যখন সে উল্লেখ করার যোগ্য কোন বস্তুই ছিল না?",
       "words": [
         {
           "id": 639,
@@ -130,6 +132,8 @@
     {
       "surah": 76,
       "ayah": 2,
+      "transliteration": "innā khalaqnā l-insāna min nuṭ'fatin amshājin nabtalīhi fajaʿalnāhu samīʿan baṣīran",
+      "translation_bn": "আমি মানুষকে সৃষ্টি করেছি সংমিশ্রিত শুক্রবিন্দু থেকে তাকে পরীক্ষা করার জন্য, এজন্য তাকে করেছি শ্রবণশক্তি ও দৃষ্টিশক্তির অধিকারী।",
       "words": [
         {
           "id": 1621,
@@ -246,6 +250,8 @@
     {
       "surah": 76,
       "ayah": 3,
+      "transliteration": "innā hadaynāhu l-sabīla immā shākiran wa-immā kafūran",
+      "translation_bn": "আমি তাকে পথ দেখিয়ে দিয়েছি, হয় সে কৃতজ্ঞ হবে, না হয় সে অকৃতজ্ঞ হবে।",
       "words": [
         {
           "id": 2751,
@@ -332,6 +338,8 @@
     {
       "surah": 76,
       "ayah": 4,
+      "transliteration": "innā aʿtadnā lil'kāfirīna salāsilā wa-aghlālan wasaʿīran",
+      "translation_bn": "আমি (অকৃতজ্ঞ) কাফিরদের জন্য প্রস্তুত করে রেখেছি শেকল, বেড়ি আর জ্বলন্ত আগুন।",
       "words": [
         {
           "id": 4055,
@@ -408,6 +416,8 @@
     {
       "surah": 76,
       "ayah": 5,
+      "transliteration": "inna l-abrāra yashrabūna min kasin kāna mizājuhā kāfūran",
+      "translation_bn": "(অপরদিকে) নেককার লোকেরা এমন পানপাত্র থেকে পান করবে যাতে কর্পুরের সংমিশ্রণ থাকবে।",
       "words": [
         {
           "id": 5392,
@@ -504,6 +514,8 @@
     {
       "surah": 76,
       "ayah": 6,
+      "transliteration": "ʿaynan yashrabu bihā ʿibādu l-lahi yufajjirūnahā tafjīran",
+      "translation_bn": "আল্লাহর বান্দারা একটি ঝর্ণা থেকে পান করবে। তারা এই ঝর্ণাকে (তাদের) ইচ্ছেমত প্রবাহিত করবে।",
       "words": [
         {
           "id": 6625,
@@ -590,6 +602,8 @@
     {
       "surah": 76,
       "ayah": 7,
+      "transliteration": "yūfūna bil-nadhri wayakhāfūna yawman kāna sharruhu mus'taṭīran",
+      "translation_bn": "যারা মানত পূরণ করে আর সেই দিনকে ভয় করে যার অনিষ্ট হবে সুদূরপ্রসারী।",
       "words": [
         {
           "id": 7959,
@@ -676,6 +690,8 @@
     {
       "surah": 76,
       "ayah": 8,
+      "transliteration": "wayuṭ'ʿimūna l-ṭaʿāma ʿalā ḥubbihi mis'kīnan wayatīman wa-asīran",
+      "translation_bn": "আর তারা আল্লাহর প্রতি তাদের ভালবাসার কারণে মিসকীন, ইয়াতীম ও কয়েদীকে খাবার খাওয়ায়।",
       "words": [
         {
           "id": 9123,
@@ -762,6 +778,8 @@
     {
       "surah": 76,
       "ayah": 9,
+      "transliteration": "innamā nuṭ'ʿimukum liwajhi l-lahi lā nurīdu minkum jazāan walā shukūran",
+      "translation_bn": "তারা বলে- ‘আমরা তোমাদেরকে খাবার খাওয়াচ্ছি কেবল আল্লাহর চেহারা (সন্তুষ্টি) লাভের জন্য, আমরা তোমাদের থেকে কোন প্রতিদান চাই না, চাই না কোন কৃতজ্ঞতা (জ্ঞাপন ও ধন্যবাদ)।",
       "words": [
         {
           "id": 10343,
@@ -878,6 +896,8 @@
     {
       "surah": 76,
       "ayah": 10,
+      "transliteration": "innā nakhāfu min rabbinā yawman ʿabūsan qamṭarīran",
+      "translation_bn": "আমরা কেবল ভয় করি আমাদের প্রতিপালকের পক্ষ হতে এক ভীতিপ্রদ ভয়ানক দিনের।",
       "words": [
         {
           "id": 11585,
@@ -964,6 +984,8 @@
     {
       "surah": 76,
       "ayah": 11,
+      "transliteration": "fawaqāhumu l-lahu sharra dhālika l-yawmi walaqqāhum naḍratan wasurūran",
+      "translation_bn": "যার ফলে আল্লাহ তাদেরকে সে দিনের অনিষ্ট হতে রক্ষা করবেন আর তাদেরকে দিবেন সজীবতা ও আনন্দ।",
       "words": [
         {
           "id": 12886,
@@ -1060,6 +1082,8 @@
     {
       "surah": 76,
       "ayah": 12,
+      "transliteration": "wajazāhum bimā ṣabarū jannatan waḥarīran",
+      "translation_bn": "আর তাদের ধৈর্য সহিষ্ণুতার বিনিময়ে তাদেরকে দিবেন জান্নাত ও রেশমী পোশাক।",
       "words": [
         {
           "id": 14499,
@@ -1126,6 +1150,8 @@
     {
       "surah": 76,
       "ayah": 13,
+      "transliteration": "muttakiīna fīhā ʿalā l-arāiki lā yarawna fīhā shamsan walā zamharīran",
+      "translation_bn": "সেখানে তারা উচ্চ আসনগুলোতে হেলান দিয়ে বসবে, সেখানে তারা দেখবে না অতি গরম, আর অতি শীত।",
       "words": [
         {
           "id": 15270,
@@ -1242,6 +1268,8 @@
     {
       "surah": 76,
       "ayah": 14,
+      "transliteration": "wadāniyatan ʿalayhim ẓilāluhā wadhullilat quṭūfuhā tadhlīlan",
+      "translation_bn": "জান্নাতের বৃক্ষরাজির ছায়া তাদের উপর থাকবে, আর ফলের গুচ্ছ একেবারে তাদের নাগালের মধ্যে রাখা হবে।",
       "words": [
         {
           "id": 16329,
@@ -1318,6 +1346,8 @@
     {
       "surah": 76,
       "ayah": 15,
+      "transliteration": "wayuṭāfu ʿalayhim biāniyatin min fiḍḍatin wa-akwābin kānat qawārīrā",
+      "translation_bn": "তাদের সামনে ঘুরে ঘুরে রুপার পাত্র পরিবেশন করা হবে আর সাদা পাথরের পানপাত্র।",
       "words": [
         {
           "id": 17475,
@@ -1414,6 +1444,8 @@
     {
       "surah": 76,
       "ayah": 16,
+      "transliteration": "qawārīrā min fiḍḍatin qaddarūhā taqdīran",
+      "translation_bn": "সেই সাদা পাথরও হবে রুপার তৈরী। তারা এগুলোকে যথাযথ পরিমাণে ভর্তি করবে।",
       "words": [
         {
           "id": 18884,
@@ -1480,6 +1512,8 @@
     {
       "surah": 76,
       "ayah": 17,
+      "transliteration": "wayus'qawna fīhā kasan kāna mizājuhā zanjabīlan",
+      "translation_bn": "তাদেরকে পান করানোর জন্য এমন পাত্র পরিবেশন করা হবে যাতে আদার মিশ্রণ থাকবে।",
       "words": [
         {
           "id": 19574,
@@ -1556,6 +1590,8 @@
     {
       "surah": 76,
       "ayah": 18,
+      "transliteration": "ʿaynan fīhā tusammā salsabīlan",
+      "translation_bn": "সেখানে আছে একটা ঝর্ণা, যার নাম সালসাবীল।",
       "words": [
         {
           "id": 20655,
@@ -1612,6 +1648,8 @@
     {
       "surah": 76,
       "ayah": 19,
+      "transliteration": "wayaṭūfu ʿalayhim wil'dānun mukhalladūna idhā ra-aytahum ḥasib'tahum lu'lu-an manthūran",
+      "translation_bn": "ঘুরে ঘুরে তাদের সেবাদান কার্যে নিয়োজিত থাকবে চিরকিশোরগণ। তুমি যখন তাদেরকে দেখবে, তুমি মনে করবে, তারা যেন ছড়ানো মুক্তা।",
       "words": [
         {
           "id": 21711,
@@ -1718,6 +1756,8 @@
     {
       "surah": 76,
       "ayah": 20,
+      "transliteration": "wa-idhā ra-ayta thamma ra-ayta naʿīman wamul'kan kabīran",
+      "translation_bn": "তুমি যখন দেখবে তখন দেখতে পাবে ভোগ বিলাসের নানান সামগ্রী আর এক বিশাল রাজ্য।",
       "words": [
         {
           "id": 23150,
@@ -1804,6 +1844,8 @@
     {
       "surah": 76,
       "ayah": 21,
+      "transliteration": "ʿāliyahum thiyābu sundusin khuḍ'run wa-is'tabraqun waḥullū asāwira min fiḍḍatin wasaqāhum rabbuhum sharāban ṭahūran",
+      "translation_bn": "তাদের আবরণ হবে চিকন সবুজ রেশম ও মোটা রেশম, আর তাদেরকে অলংকারে সজ্জিত করা হবে রুপার কঙ্কণ দ্বারা, আর তাদের রব্ব তাদেরকে পান করাবেন পবিত্র পরিচ্ছন্ন পানীয়।",
       "words": [
         {
           "id": 23965,
@@ -1950,6 +1992,8 @@
     {
       "surah": 76,
       "ayah": 22,
+      "transliteration": "inna hādhā kāna lakum jazāan wakāna saʿyukum mashkūran",
+      "translation_bn": "‘এটাই তোমাদের প্রতিদান, তোমাদের চেষ্টা-সাধনা সাদরে গৃহীত হয়েছে।’",
       "words": [
         {
           "id": 25129,
@@ -2046,6 +2090,8 @@
     {
       "surah": 76,
       "ayah": 23,
+      "transliteration": "innā naḥnu nazzalnā ʿalayka l-qur'āna tanzīlan",
+      "translation_bn": "(হে নবী!) আমি তোমার কাছে কুরআন অবতীর্ণ করেছি ক্রমে ক্রমে (অল্প অল্প করে)।",
       "words": [
         {
           "id": 26005,
@@ -2122,6 +2168,8 @@
     {
       "surah": 76,
       "ayah": 24,
+      "transliteration": "fa-iṣ'bir liḥuk'mi rabbika walā tuṭiʿ min'hum āthiman aw kafūran",
+      "translation_bn": "কাজেই তুমি ধৈর্য ধ’রে, তোমার প্রতিপালকের নির্দেশের অপেক্ষা কর আর তাদের মধ্যেকার পাপাচারী অথবা কাফিরের আনুগত্য কর না।",
       "words": [
         {
           "id": 27292,
@@ -2228,6 +2276,8 @@
     {
       "surah": 76,
       "ayah": 25,
+      "transliteration": "wa-udh'kuri is'ma rabbika buk'ratan wa-aṣīlan",
+      "translation_bn": "আর সকাল-সন্ধ্যায় তোমার রব্ব এর নাম স্মরণ কর।",
       "words": [
         {
           "id": 28101,
@@ -2294,6 +2344,8 @@
     {
       "surah": 76,
       "ayah": 26,
+      "transliteration": "wamina al-layli fa-us'jud lahu wasabbiḥ'hu laylan ṭawīlan",
+      "translation_bn": "আর রাতের কিছু অংশে তাঁর জন্য সেজদায় অবনত হও আর রাতের দীর্ঘ সময় ধরে তাঁর মহিমা বর্ণনা কর।",
       "words": [
         {
           "id": 29162,
@@ -2380,6 +2432,8 @@
     {
       "surah": 76,
       "ayah": 27,
+      "transliteration": "inna hāulāi yuḥibbūna l-ʿājilata wayadharūna warāahum yawman thaqīlan",
+      "translation_bn": "এ লোকেরা তো পার্থিব জীবনকে ভালবাসে আর তাদের আড়ালে যে (কিয়ামাতের) কঠিন দিন (আসছে) তাকে উপেক্ষা করে।",
       "words": [
         {
           "id": 29906,
@@ -2476,6 +2530,8 @@
     {
       "surah": 76,
       "ayah": 28,
+      "transliteration": "naḥnu khalaqnāhum washadadnā asrahum wa-idhā shi'nā baddalnā amthālahum tabdīlan",
+      "translation_bn": "আমিই তাদেরকে সৃষ্টি করেছি আর তাদের গঠন মজবুত করেছি। আমি যখন চাইব তখন তাদের স্থলে তাদের মত অন্য লোক আনব।",
       "words": [
         {
           "id": 31141,
@@ -2582,6 +2638,8 @@
     {
       "surah": 76,
       "ayah": 29,
+      "transliteration": "inna hādhihi tadhkiratun faman shāa ittakhadha ilā rabbihi sabīlan",
+      "translation_bn": "এটা এক উপদেশ, কাজেই যার ইচ্ছে সে (এ উপদেশ মান্য ক’রে) তার প্রতিপালকের পথ ধরুক।",
       "words": [
         {
           "id": 31985,
@@ -2688,6 +2746,8 @@
     {
       "surah": 76,
       "ayah": 30,
+      "transliteration": "wamā tashāūna illā an yashāa l-lahu inna l-laha kāna ʿalīman ḥakīman",
+      "translation_bn": "তোমরা ইচ্ছে কর না আল্লাহর ইচ্ছে ব্যতীত। (অর্থাৎ আল্লাহ কোন কিছু কার্যকর করতে চাইলে তোমাদের মাঝে ইচ্ছে ও শক্তি সঞ্চার করতঃ তোমাদের মাধ্যমে তা কার্যকর করেন)। আল্লাহ সর্বজ্ঞাতা মহাবিজ্ঞানী।",
       "words": [
         {
           "id": 32874,
@@ -2814,6 +2874,8 @@
     {
       "surah": 76,
       "ayah": 31,
+      "transliteration": "yud'khilu man yashāu fī raḥmatihi wal-ẓālimīna aʿadda lahum ʿadhāban alīman",
+      "translation_bn": "তিনি যাকে ইচ্ছে তাঁর রাহমাতে দাখিল করেন। আর যালিমরা- তাদের জন্য তিনি প্রস্তুত করে রেখেছেন বড়ই পীড়াদায়ক শাস্তি।",
       "words": [
         {
           "id": 33277,

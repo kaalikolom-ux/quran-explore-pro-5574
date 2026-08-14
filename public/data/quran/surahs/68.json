@@ -4,6 +4,8 @@
     {
       "surah": 68,
       "ayah": 1,
+      "transliteration": "noon wal-qalami wamā yasṭurūna",
+      "translation_bn": "নূন, কলমের শপথ আর লেখকেরা যা লেখে তার শপথ।",
       "words": [
         {
           "id": 582,
@@ -60,6 +62,8 @@
     {
       "surah": 68,
       "ayah": 2,
+      "transliteration": "mā anta biniʿ'mati rabbika bimajnūnin",
+      "translation_bn": "তোমার প্রতিপালকের অনুগ্রহে তুমি পাগল নও।",
       "words": [
         {
           "id": 1475,
@@ -126,6 +130,8 @@
     {
       "surah": 68,
       "ayah": 3,
+      "transliteration": "wa-inna laka la-ajran ghayra mamnūnin",
+      "translation_bn": "তোমার জন্য অবশ্যই আছে অফুরন্ত পুরস্কার,",
       "words": [
         {
           "id": 2550,
@@ -192,6 +198,8 @@
     {
       "surah": 68,
       "ayah": 4,
+      "transliteration": "wa-innaka laʿalā khuluqin ʿaẓīmin",
+      "translation_bn": "নিশ্চয়ই তুমি মহান চরিত্রের উচ্চমার্গে উন্নীত।",
       "words": [
         {
           "id": 3965,
@@ -248,6 +256,8 @@
     {
       "surah": 68,
       "ayah": 5,
+      "transliteration": "fasatub'ṣiru wayub'ṣirūna",
+      "translation_bn": "শীঘ্রই তুমি দেখতে পাবে আর তারাও দেখবে,",
       "words": [
         {
           "id": 5261,
@@ -284,6 +294,8 @@
     {
       "surah": 68,
       "ayah": 6,
+      "transliteration": "bi-ayyikumu l-maftūnu",
+      "translation_bn": "তোমাদের মধ্যে কে পাগলামিতে আক্রান্ত।",
       "words": [
         {
           "id": 6484,
@@ -320,6 +332,8 @@
     {
       "surah": 68,
       "ayah": 7,
+      "transliteration": "inna rabbaka huwa aʿlamu biman ḍalla ʿan sabīlihi wahuwa aʿlamu bil-muh'tadīna",
+      "translation_bn": "তোমার প্রতিপালক বেশি জানেন কে তাঁর পথ থেকে গুমরাহ হয়ে গেছে, আর সঠিক পথপ্রাপ্তদেরকেও তিনি ভাল করে জানেন।",
       "words": [
         {
           "id": 7876,
@@ -446,6 +460,8 @@
     {
       "surah": 68,
       "ayah": 8,
+      "transliteration": "falā tuṭiʿi l-mukadhibīna",
+      "translation_bn": "কাজেই তুমি মিথ্যাবাদীদের কথা মান্য কর না।",
       "words": [
         {
           "id": 9067,
@@ -492,6 +508,8 @@
     {
       "surah": 68,
       "ayah": 9,
+      "transliteration": "waddū law tud'hinu fayud'hinūna",
+      "translation_bn": "তারা চায় যে, তুমি যদি নমনীয় হও, তবে তারাও নমনীয় হবে,",
       "words": [
         {
           "id": 10283,
@@ -548,6 +566,8 @@
     {
       "surah": 68,
       "ayah": 10,
+      "transliteration": "walā tuṭiʿ kulla ḥallāfin mahīnin",
+      "translation_bn": "তুমি তার অনুসরণ কর না, যে বেশি বেশি কসম খায় আর যে (বার বার মিথ্যা কসম খাওয়ার কারণে মানুষের কাছে) লাঞ্ছিত।",
       "words": [
         {
           "id": 11458,
@@ -614,6 +634,8 @@
     {
       "surah": 68,
       "ayah": 11,
+      "transliteration": "hammāzin mashāin binamīmin",
+      "translation_bn": "যে পশ্চাতে নিন্দা করে একের কথা অপরের কাছে লাগিয়ে ফিরে,",
       "words": [
         {
           "id": 13076,
@@ -660,6 +682,8 @@
     {
       "surah": 68,
       "ayah": 12,
+      "transliteration": "mannāʿin lil'khayri muʿ'tadin athīmin",
+      "translation_bn": "যে ভাল কাজে বাধা দেয়, সীমালঙ্ঘনকারী, পাপিষ্ঠ,",
       "words": [
         {
           "id": 13892,
@@ -716,6 +740,8 @@
     {
       "surah": 68,
       "ayah": 13,
+      "transliteration": "ʿutullin baʿda dhālika zanīmin",
+      "translation_bn": "কঠোর স্বভাব, তার উপরে আবার কুখ্যাত।",
       "words": [
         {
           "id": 15068,
@@ -772,6 +798,8 @@
     {
       "surah": 68,
       "ayah": 14,
+      "transliteration": "an kāna dhā mālin wabanīna",
+      "translation_bn": "কারণ সে সম্পদ আর (অনেক) সন্তানাদির অধিকারী।",
       "words": [
         {
           "id": 16157,
@@ -838,6 +866,8 @@
     {
       "surah": 68,
       "ayah": 15,
+      "transliteration": "idhā tut'lā ʿalayhi āyātunā qāla asāṭīru l-awalīna",
+      "translation_bn": "তার কাছে যখন আমার আয়াত পাঠ করা হয় তখন সে বলে, ‘‘এতো আগে কালের লোকেদের কিসসা কাহিনী মাত্র।",
       "words": [
         {
           "id": 17428,
@@ -924,6 +954,8 @@
     {
       "surah": 68,
       "ayah": 16,
+      "transliteration": "sanasimuhu ʿalā l-khur'ṭūmi",
+      "translation_bn": "আমি তার শুঁড়ের উপর দাগ দিয়ে দিব (অর্থাৎ তাকে লাঞ্ছিত করব)।",
       "words": [
         {
           "id": 18491,
@@ -970,6 +1002,8 @@
     {
       "surah": 68,
       "ayah": 17,
+      "transliteration": "innā balawnāhum kamā balawnā aṣḥāba l-janati idh aqsamū layaṣrimunnahā muṣ'biḥīna",
+      "translation_bn": "আমি এদেরকে (অর্থাৎ মক্কাবাসীদেরকে) পরীক্ষা করেছি যেমন আমি বাগানের মালিকদেরকে পরীক্ষা করেছিলাম। যখন তারা কসম করে বলেছিল যে, তারা সকাল বেলায় অবশ্যই বাগানের ফল সংগ্রহ করে নেবে।",
       "words": [
         {
           "id": 19055,
@@ -1086,6 +1120,8 @@
     {
       "surah": 68,
       "ayah": 18,
+      "transliteration": "walā yastathnūna",
+      "translation_bn": "তারা ‘ইনশাআল্লাহ’ বলেনি।",
       "words": [
         {
           "id": 20548,
@@ -1122,6 +1158,8 @@
     {
       "surah": 68,
       "ayah": 19,
+      "transliteration": "faṭāfa ʿalayhā ṭāifun min rabbika wahum nāimūna",
+      "translation_bn": "অতঃপর তোমার প্রতিপালকের পক্ষ থেকে বাগানে এক বিপদ এসে পড়ল যখন তারা ছিল নিদ্রিত।",
       "words": [
         {
           "id": 22185,
@@ -1208,6 +1246,8 @@
     {
       "surah": 68,
       "ayah": 20,
+      "transliteration": "fa-aṣbaḥat kal-ṣarīmi",
+      "translation_bn": "যার ফলে তা হয়ে গেল বিবর্ণ কাটা ফসলের মত।",
       "words": [
         {
           "id": 23281,
@@ -1244,6 +1284,8 @@
     {
       "surah": 68,
       "ayah": 21,
+      "transliteration": "fatanādaw muṣ'biḥīna",
+      "translation_bn": "সকালে একে অপরকে ডেকে বলল,",
       "words": [
         {
           "id": 24346,
@@ -1280,6 +1322,8 @@
     {
       "surah": 68,
       "ayah": 22,
+      "transliteration": "ani igh'dū ʿalā ḥarthikum in kuntum ṣārimīna",
+      "translation_bn": "‘তোমরা যদি ফল সংগ্রহ করতে চাও তবে সকাল সকাল ক্ষেতে চল।",
       "words": [
         {
           "id": 24880,
@@ -1366,6 +1410,8 @@
     {
       "surah": 68,
       "ayah": 23,
+      "transliteration": "fa-inṭalaqū wahum yatakhāfatūna",
+      "translation_bn": "তারা চুপি চুপি কথা বলতে বলতে চলল।",
       "words": [
         {
           "id": 25942,
@@ -1412,6 +1458,8 @@
     {
       "surah": 68,
       "ayah": 24,
+      "transliteration": "an lā yadkhulannahā l-yawma ʿalaykum mis'kīnun",
+      "translation_bn": "‘আজ যেন সেখানে তোমাদের কাছে মিসকীনরা অবশ্যই ঢুকতে না পারে।’",
       "words": [
         {
           "id": 26995,
@@ -1488,6 +1536,8 @@
     {
       "surah": 68,
       "ayah": 25,
+      "transliteration": "waghadaw ʿalā ḥardin qādirīna",
+      "translation_bn": "তারা এক (অন্যায়) সিদ্ধান্তে সংকল্পবদ্ধ হয়ে সকাল করল।",
       "words": [
         {
           "id": 28445,
@@ -1544,6 +1594,8 @@
     {
       "surah": 68,
       "ayah": 26,
+      "transliteration": "falammā ra-awhā qālū innā laḍāllūna",
+      "translation_bn": "অতঃপর তারা যখন বাগানটি দেখল তখন তারা বলল, ‘‘আমরা অবশ্যই পথ হারিয়ে ফেলেছি,",
       "words": [
         {
           "id": 28914,
@@ -1610,6 +1662,8 @@
     {
       "surah": 68,
       "ayah": 27,
+      "transliteration": "bal naḥnu maḥrūmūna",
+      "translation_bn": "(অতঃপর ব্যাপারটি বুঝতে পারার পর তারা বলে উঠল) বরং আমরা তো কপাল পোড়া।’’",
       "words": [
         {
           "id": 30379,
@@ -1656,6 +1710,8 @@
     {
       "surah": 68,
       "ayah": 28,
+      "transliteration": "qāla awsaṭuhum alam aqul lakum lawlā tusabbiḥūna",
+      "translation_bn": "তাদের মধ্যেকার সবচেয়ে ভাল লোকটি বলল, ‘আমি কি তোমাদেরকে বলিনি যে, তোমরা আল্লাহর পবিত্রতা ও মহিমা ঘোষণা করছ না কেন?’",
       "words": [
         {
           "id": 30905,
@@ -1742,6 +1798,8 @@
     {
       "surah": 68,
       "ayah": 29,
+      "transliteration": "qālū sub'ḥāna rabbinā innā kunnā ẓālimīna",
+      "translation_bn": "তারা বলল, ‘আমরা আমাদের প্রতিপালকের পবিত্রতা ও মহিমা ঘোষণা করছি, আমরা সীমালঙ্ঘনকারীই ছিলাম।’",
       "words": [
         {
           "id": 32292,
@@ -1818,6 +1876,8 @@
     {
       "surah": 68,
       "ayah": 30,
+      "transliteration": "fa-aqbala baʿḍuhum ʿalā baʿḍin yatalāwamūna",
+      "translation_bn": "অতঃপর তারা একে অপরের দিকে এগিয়ে গিয়ে পরস্পরের প্রতি দোষারোপ করতে লাগল।",
       "words": [
         {
           "id": 32779,
@@ -1884,6 +1944,8 @@
     {
       "surah": 68,
       "ayah": 31,
+      "transliteration": "qālū yāwaylanā innā kunnā ṭāghīna",
+      "translation_bn": "তারা বলল, ‘দুর্ভোগ আমাদের, আমরা ছিলাম সীমালঙ্ঘনকারী,",
       "words": [
         {
           "id": 33975,
@@ -1950,6 +2012,8 @@
     {
       "surah": 68,
       "ayah": 32,
+      "transliteration": "ʿasā rabbunā an yub'dilanā khayran min'hā innā ilā rabbinā rāghibūna",
+      "translation_bn": "সম্ভবতঃ আমাদের প্রতিপালক এর পরিবর্তে আমাদেরকে উত্তম (বাগান) দিবেন, আমরা আমাদের প্রতিপালকের অভিমুখী হলাম।’",
       "words": [
         {
           "id": 34687,
@@ -2066,6 +2130,8 @@
     {
       "surah": 68,
       "ayah": 33,
+      "transliteration": "kadhālika l-ʿadhābu walaʿadhābu l-ākhirati akbaru law kānū yaʿlamūna",
+      "translation_bn": "‘আযাব এ রকমই হয়ে থাকে। আর আখিরাতের ‘আযাব তো সবচেয়ে কঠিন। যদি তারা জানত!",
       "words": [
         {
           "id": 35814,
@@ -2162,6 +2228,8 @@
     {
       "surah": 68,
       "ayah": 34,
+      "transliteration": "inna lil'muttaqīna ʿinda rabbihim jannāti l-naʿīmi",
+      "translation_bn": "মুত্তাক্বীদের জন্য তাদের প্রতিপালকের নিকট আছে নি‘মাতে পরিপূর্ণ জান্নাত।",
       "words": [
         {
           "id": 36438,
@@ -2238,6 +2306,8 @@
     {
       "surah": 68,
       "ayah": 35,
+      "transliteration": "afanajʿalu l-mus'limīna kal-muj'rimīna",
+      "translation_bn": "আমি কি আত্মসমর্পণকারীদেরকে অপরাধীদের মত গণ্য করব?",
       "words": [
         {
           "id": 37534,
@@ -2284,6 +2354,8 @@
     {
       "surah": 68,
       "ayah": 36,
+      "transliteration": "mā lakum kayfa taḥkumūna",
+      "translation_bn": "তোমাদের কী হয়েছে, তোমরা কেমনভাবে বিচার করে সিদ্ধান্ত দিচ্ছ?",
       "words": [
         {
           "id": 38415,
@@ -2340,6 +2412,8 @@
     {
       "surah": 68,
       "ayah": 37,
+      "transliteration": "am lakum kitābun fīhi tadrusūna",
+      "translation_bn": "তোমাদের কাছে কি (আল্লাহর নাযিলকৃত) কোন কিতাব আছে যা পড়ে তোমরা জানতে পার যে,",
       "words": [
         {
           "id": 39219,
@@ -2406,6 +2480,8 @@
     {
       "surah": 68,
       "ayah": 38,
+      "transliteration": "inna lakum fīhi lamā takhayyarūna",
+      "translation_bn": "তোমাদের জন্য সেখানে তাই আছে যা তোমরা পছন্দ কর?",
       "words": [
         {
           "id": 39781,
@@ -2472,6 +2548,8 @@
     {
       "surah": 68,
       "ayah": 39,
+      "transliteration": "am lakum aymānun ʿalaynā bālighatun ilā yawmi l-qiyāmati inna lakum lamā taḥkumūna",
+      "translation_bn": "অথবা তোমাদের জন্য আমার উপর কি ক্বিয়ামত পর্যন্ত বলবৎ কোন দায়বদ্ধতা আছে যে, তোমরা যা দাবী করবে তাই পাবে?",
       "words": [
         {
           "id": 40768,
@@ -2608,6 +2686,8 @@
     {
       "surah": 68,
       "ayah": 40,
+      "transliteration": "salhum ayyuhum bidhālika zaʿīmun",
+      "translation_bn": "তুমি তাদেরকে জিজ্ঞেস কর (আল্লাহ যে তাদের সঙ্গে প্রতিশ্রুতিতে দায়বদ্ধ) এ ব্যাপারে তাদের মধ্যে কোন্ ব্যক্তি জামিনদার (গ্যারান্টর)?",
       "words": [
         {
           "id": 41363,
@@ -2664,6 +2744,8 @@
     {
       "surah": 68,
       "ayah": 41,
+      "transliteration": "am lahum shurakāu falyatū bishurakāihim in kānū ṣādiqīna",
+      "translation_bn": "অথবা তাদের কি শরীক উপাস্য আছে, থাকলে তাদের শরীক উপাস্যদেরকে হাজির করুক- তারা যদি সত্যবাদী হয়ে থাকে।",
       "words": [
         {
           "id": 42152,
@@ -2760,6 +2842,8 @@
     {
       "surah": 68,
       "ayah": 42,
+      "transliteration": "yawma yuk'shafu ʿan sāqin wayud'ʿawna ilā l-sujūdi falā yastaṭīʿūna",
+      "translation_bn": "যেদিন (ক্বিয়ামতে) পায়ের গোছা (হাঁটুর নিম্নভাগ) উন্মোচিত হবে আর তাদেরকে ডাকা হবে সেজদা করার জন্য, কিন্তু তারা সেজদা করতে সক্ষম হবে না।",
       "words": [
         {
           "id": 43008,
@@ -2866,6 +2950,8 @@
     {
       "surah": 68,
       "ayah": 43,
+      "transliteration": "khāshiʿatan abṣāruhum tarhaquhum dhillatun waqad kānū yud'ʿawna ilā l-sujūdi wahum sālimūna",
+      "translation_bn": "তাদের দৃষ্টি হবে অবনত, অপমান লাঞ্ছনা তাদের উপর চেপে বসবে। (দুনিয়াতে) তারা যখন সুস্থ ও নিরাপদ ছিল তখনও তাদেরকে সেজদা করার জন্য ডাকা হত (কিন্তু তারা সেজদা করত না)",
       "words": [
         {
           "id": 43772,
@@ -2992,6 +3078,8 @@
     {
       "surah": 68,
       "ayah": 44,
+      "transliteration": "fadharnī waman yukadhibu bihādhā l-ḥadīthi sanastadrijuhum min ḥaythu lā yaʿlamūna",
+      "translation_bn": "কাজেই ছেড়ে দাও আমাকে আর তাদেরকে যারা এ বাণীকে অস্বীকার করেছে। আমি তাদেরকে ক্রমে ক্রমে আস্তে আস্তে এমনভাবে ধরে টান দিব যে, তারা একটু টেরও পাবে না।",
       "words": [
         {
           "id": 44595,
@@ -3108,6 +3196,8 @@
     {
       "surah": 68,
       "ayah": 45,
+      "transliteration": "wa-um'lī lahum inna kaydī matīnun",
+      "translation_bn": "আমি তাদেরকে (লম্বা) সময় দেই, আমার কৌশল বড়ই মজবুত।",
       "words": [
         {
           "id": 45282,
@@ -3174,6 +3264,8 @@
     {
       "surah": 68,
       "ayah": 46,
+      "transliteration": "am tasaluhum ajran fahum min maghramin muth'qalūna",
+      "translation_bn": "তুমি কি তাদের কাছে কোন পারিশ্রমিক চাচ্ছ যে, দেনার দায়ভার বহন করা তাদের জন্য কঠিন হয়ে পড়েছে?",
       "words": [
         {
           "id": 46017,
@@ -3260,6 +3352,8 @@
     {
       "surah": 68,
       "ayah": 47,
+      "transliteration": "am ʿindahumu l-ghaybu fahum yaktubūna",
+      "translation_bn": "নাকি তাদের কাছে গায়বের খবর আছে যা তা তারা লিখে রাখে।",
       "words": [
         {
           "id": 46571,
@@ -3326,6 +3420,8 @@
     {
       "surah": 68,
       "ayah": 48,
+      "transliteration": "fa-iṣ'bir liḥuk'mi rabbika walā takun kaṣāḥibi l-ḥūti idh nādā wahuwa makẓūmun",
+      "translation_bn": "কাজেই তুমি তোমার প্রতিপালকের হুকুমের জন্য ধৈর্য ধরে অপেক্ষা কর, আর মাছওয়ালা [ইউনুস (আঃ)] এর মত (অধৈর্য) হয়ো না। স্মরণ কর যখন সে (তার প্রতিপালককে ডাক দিয়েছিল চিন্তায় দুঃখে আচ্ছন্ন হয়ে।",
       "words": [
         {
           "id": 47413,
@@ -3452,6 +3548,8 @@
     {
       "surah": 68,
       "ayah": 49,
+      "transliteration": "lawlā an tadārakahu niʿ'matun min rabbihi lanubidha bil-ʿarāi wahuwa madhmūmun",
+      "translation_bn": "তার প্রতিপালকের অনুগ্রহ যদি তার কাছে না পৌঁছত, তাহলে সে লাঞ্ছিত অবস্থায় ধুঁধুঁ বালুকাময় তীরে নিক্ষিপ্ত হত।",
       "words": [
         {
           "id": 47917,
@@ -3568,6 +3666,8 @@
     {
       "surah": 68,
       "ayah": 50,
+      "transliteration": "fa-ij'tabāhu rabbuhu fajaʿalahu mina l-ṣāliḥīna",
+      "translation_bn": "এভাবে তার প্রতিপালক তাকে বেছে নিলেন আর তাকে সৎকর্মশীলদের অন্তর্ভুক্ত করলেন।",
       "words": [
         {
           "id": 48749,
@@ -3634,6 +3734,8 @@
     {
       "surah": 68,
       "ayah": 51,
+      "transliteration": "wa-in yakādu alladhīna kafarū layuz'liqūnaka bi-abṣārihim lammā samiʿū l-dhik'ra wayaqūlūna innahu lamajnūnun",
+      "translation_bn": "কাফিররা যখন কুরআন শুনে তখন তারা যেন তাদের দৃষ্টি দিয়ে তোমাকে আছড়ে ফেলবে। আর তারা বলে, ‘‘সে তো অবশ্যই পাগল।’’",
       "words": [
         {
           "id": 49285,
@@ -3770,6 +3872,8 @@
     {
       "surah": 68,
       "ayah": 52,
+      "transliteration": "wamā huwa illā dhik'run lil'ʿālamīna",
+      "translation_bn": "অথচ এ কুরআন বিশ্বজগতের জন্য উপদেশ ছাড়া অন্য কিছুই নয়।",
       "words": [
         {
           "id": 50003,

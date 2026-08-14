@@ -4,6 +4,8 @@
     {
       "surah": 80,
       "ayah": 1,
+      "transliteration": "ʿabasa watawallā",
+      "translation_bn": "(নবী) মুখ ভার করল আর মুখ ঘুরিয়ে নিল।",
       "words": [
         {
           "id": 692,
@@ -40,6 +42,8 @@
     {
       "surah": 80,
       "ayah": 2,
+      "transliteration": "an jāahu l-aʿmā",
+      "translation_bn": "(কারণ সে যখন কুরায়শ সরদারদের সাথে আলোচনায় রত ছিল তখন) তার কাছে এক অন্ধ ব্যক্তি আসল।",
       "words": [
         {
           "id": 1718,
@@ -86,6 +90,8 @@
     {
       "surah": 80,
       "ayah": 3,
+      "transliteration": "wamā yud'rīka laʿallahu yazzakkā",
+      "translation_bn": "(হে নবী!) তুমি কি জান, সে হয়ত পরিশুদ্ধ হত।",
       "words": [
         {
           "id": 2814,
@@ -142,6 +148,8 @@
     {
       "surah": 80,
       "ayah": 4,
+      "transliteration": "aw yadhakkaru fatanfaʿahu l-dhik'rā",
+      "translation_bn": "কিংবা উপদেশ গ্রহণ করত, ফলে উপদেশ তার উপকারে লাগত।",
       "words": [
         {
           "id": 4187,
@@ -198,6 +206,8 @@
     {
       "surah": 80,
       "ayah": 5,
+      "transliteration": "ammā mani is'taghnā",
+      "translation_bn": "পক্ষান্তরে যে পরোয়া করে না,",
       "words": [
         {
           "id": 5455,
@@ -244,6 +254,8 @@
     {
       "surah": 80,
       "ayah": 6,
+      "transliteration": "fa-anta lahu taṣaddā",
+      "translation_bn": "তার প্রতি তুমি মনোযোগ দিচ্ছ।",
       "words": [
         {
           "id": 6685,
@@ -290,6 +302,8 @@
     {
       "surah": 80,
       "ayah": 7,
+      "transliteration": "wamā ʿalayka allā yazzakkā",
+      "translation_bn": "সে পরিশুদ্ধ না হলে তোমার উপর কোন দোষ নেই।",
       "words": [
         {
           "id": 8029,
@@ -346,6 +360,8 @@
     {
       "surah": 80,
       "ayah": 8,
+      "transliteration": "wa-ammā man jāaka yasʿā",
+      "translation_bn": "পক্ষান্তরে যে লোক তোমার কাছে ছুটে আসল।",
       "words": [
         {
           "id": 9193,
@@ -402,6 +418,8 @@
     {
       "surah": 80,
       "ayah": 9,
+      "transliteration": "wahuwa yakhshā",
+      "translation_bn": "আর সে ভয়ও করে,",
       "words": [
         {
           "id": 10408,
@@ -438,6 +456,8 @@
     {
       "surah": 80,
       "ayah": 10,
+      "transliteration": "fa-anta ʿanhu talahhā",
+      "translation_bn": "তুমি তার প্রতি অমনোযোগী হলে।",
       "words": [
         {
           "id": 11634,
@@ -484,6 +504,8 @@
     {
       "surah": 80,
       "ayah": 11,
+      "transliteration": "kallā innahā tadhkiratun",
+      "translation_bn": "না, এটা মোটেই ঠিক নয়, এটা তো উপদেশ বাণী,",
       "words": [
         {
           "id": 13002,
@@ -530,6 +552,8 @@
     {
       "surah": 80,
       "ayah": 12,
+      "transliteration": "faman shāa dhakarahu",
+      "translation_bn": "কাজেই যার ইচ্ছে তা স্মরণে রাখবে,",
       "words": [
         {
           "id": 14324,
@@ -576,6 +600,8 @@
     {
       "surah": 80,
       "ayah": 13,
+      "transliteration": "fī ṣuḥufin mukarramatin",
+      "translation_bn": "(এটা লিপিবদ্ধ আছে) মর্যাদাসম্পন্ন কিতাবসমূহে",
       "words": [
         {
           "id": 15695,
@@ -622,6 +648,8 @@
     {
       "surah": 80,
       "ayah": 14,
+      "transliteration": "marfūʿatin muṭahharatin",
+      "translation_bn": "সমুন্নত, পবিত্র।",
       "words": [
         {
           "id": 16803,
@@ -658,6 +686,8 @@
     {
       "surah": 80,
       "ayah": 15,
+      "transliteration": "bi-aydī safaratin",
+      "translation_bn": "(এমন) লেখকদের হাতে",
       "words": [
         {
           "id": 16813,
@@ -694,6 +724,8 @@
     {
       "surah": 80,
       "ayah": 16,
+      "transliteration": "kirāmin bararatin",
+      "translation_bn": "(যারা) মহা সম্মানিত পূত-পবিত্র।",
       "words": [
         {
           "id": 17980,
@@ -730,6 +762,8 @@
     {
       "surah": 80,
       "ayah": 17,
+      "transliteration": "qutila l-insānu mā akfarahu",
+      "translation_bn": "মানুষ ধ্বংস হোক! কোন্ জিনিস তাকে সত্য প্রত্যাখ্যানে উদ্বুদ্ধ করল?",
       "words": [
         {
           "id": 19197,
@@ -786,6 +820,8 @@
     {
       "surah": 80,
       "ayah": 18,
+      "transliteration": "min ayyi shayin khalaqahu",
+      "translation_bn": "আল্লাহ তাকে কোন বস্তু হতে সৃষ্টি করেছেন?",
       "words": [
         {
           "id": 20752,
@@ -842,6 +878,8 @@
     {
       "surah": 80,
       "ayah": 19,
+      "transliteration": "min nuṭ'fatin khalaqahu faqaddarahu",
+      "translation_bn": "শুক্রবিন্দু হতে। তিনি তাকে সৃষ্টি করেছেন, অতঃপর তাকে পরিমিতভাবে গড়ে তুলেছেন।",
       "words": [
         {
           "id": 21803,
@@ -898,6 +936,8 @@
     {
       "surah": 80,
       "ayah": 20,
+      "transliteration": "thumma l-sabīla yassarahu",
+      "translation_bn": "অতঃপর তিনি (উপায়-উপকরণ ও প্রয়োজনীয় দ্রব্যসামগ্রী দিয়ে জীবনে চলার জন্য) তার পথ সহজ করে দিয়েছেন।",
       "words": [
         {
           "id": 22937,
@@ -944,6 +984,8 @@
     {
       "surah": 80,
       "ayah": 21,
+      "transliteration": "thumma amātahu fa-aqbarahu",
+      "translation_bn": "অতঃপর তার মৃত্যু ঘটান এবং তাকে কবরস্থ করেন।",
       "words": [
         {
           "id": 23983,
@@ -990,6 +1032,8 @@
     {
       "surah": 80,
       "ayah": 22,
+      "transliteration": "thumma idhā shāa ansharahu",
+      "translation_bn": "অতঃপর যখন তিনি চাইবেন তাকে আবার জীবিত করবেন।",
       "words": [
         {
           "id": 25002,
@@ -1046,6 +1090,8 @@
     {
       "surah": 80,
       "ayah": 23,
+      "transliteration": "kallā lammā yaqḍi mā amarahu",
+      "translation_bn": "না, মোটেই না, আল্লাহ তাকে যে নির্দেশ দিয়ে ছিলেন তা সে এখনও পূর্ণ করেনি।",
       "words": [
         {
           "id": 26068,
@@ -1112,6 +1158,8 @@
     {
       "surah": 80,
       "ayah": 24,
+      "transliteration": "falyanẓuri l-insānu ilā ṭaʿāmihi",
+      "translation_bn": "মানুষ তার খাদ্যের ব্যপারটাই ভেবে দেখুক না কেন।",
       "words": [
         {
           "id": 26981,
@@ -1168,6 +1216,8 @@
     {
       "surah": 80,
       "ayah": 25,
+      "transliteration": "annā ṣababnā l-māa ṣabban",
+      "translation_bn": "আমি প্রচুর পানি ঢালি,",
       "words": [
         {
           "id": 28148,
@@ -1224,6 +1274,8 @@
     {
       "surah": 80,
       "ayah": 26,
+      "transliteration": "thumma shaqaqnā l-arḍa shaqqan",
+      "translation_bn": "তারপর যমীনকে বিদীর্ণ করে দেই,",
       "words": [
         {
           "id": 29107,
@@ -1280,6 +1332,8 @@
     {
       "surah": 80,
       "ayah": 27,
+      "transliteration": "fa-anbatnā fīhā ḥabban",
+      "translation_bn": "অতঃপর তাতে আমি উৎপন্ন করি-শস্য,",
       "words": [
         {
           "id": 29994,
@@ -1326,6 +1380,8 @@
     {
       "surah": 80,
       "ayah": 28,
+      "transliteration": "waʿinaban waqaḍban",
+      "translation_bn": "আঙ্গুর, তাজা শাক-শব্জী,",
       "words": [
         {
           "id": 30849,
@@ -1362,6 +1418,8 @@
     {
       "surah": 80,
       "ayah": 29,
+      "transliteration": "wazaytūnan wanakhlan",
+      "translation_bn": "যয়তূন, খেজুর,",
       "words": [
         {
           "id": 32031,
@@ -1398,6 +1456,8 @@
     {
       "surah": 80,
       "ayah": 30,
+      "transliteration": "waḥadāiqa ghul'ban",
+      "translation_bn": "আর ঘন বৃক্ষ পরিপূর্ণ বাগবাগিচা,",
       "words": [
         {
           "id": 32583,
@@ -1434,6 +1494,8 @@
     {
       "surah": 80,
       "ayah": 31,
+      "transliteration": "wafākihatan wa-abban",
+      "translation_bn": "আর নানান জাতের ফল আর ঘাস-লতাপাতা।",
       "words": [
         {
           "id": 33784,
@@ -1470,6 +1532,8 @@
     {
       "surah": 80,
       "ayah": 32,
+      "transliteration": "matāʿan lakum wali-anʿāmikum",
+      "translation_bn": "তোমাদের আর তোমাদের গৃহপালিত পশুগুলোর ভোগের জন্য।",
       "words": [
         {
           "id": 34643,
@@ -1516,6 +1580,8 @@
     {
       "surah": 80,
       "ayah": 33,
+      "transliteration": "fa-idhā jāati l-ṣākhatu",
+      "translation_bn": "অবশেষে যখন কান-ফাটানো শব্দ আসবে;",
       "words": [
         {
           "id": 35590,
@@ -1562,6 +1628,8 @@
     {
       "surah": 80,
       "ayah": 34,
+      "transliteration": "yawma yafirru l-maru min akhīhi",
+      "translation_bn": "সেদিন মানুষ পালিয়ে যাবে তার ভাই থেকে,",
       "words": [
         {
           "id": 36520,
@@ -1628,6 +1696,8 @@
     {
       "surah": 80,
       "ayah": 35,
+      "transliteration": "wa-ummihi wa-abīhi",
+      "translation_bn": "তার মা, তার বাপ,",
       "words": [
         {
           "id": 37399,
@@ -1664,6 +1734,8 @@
     {
       "surah": 80,
       "ayah": 36,
+      "transliteration": "waṣāḥibatihi wabanīhi",
+      "translation_bn": "তার স্ত্রী ও তার সন্তান থেকে,",
       "words": [
         {
           "id": 38026,
@@ -1700,6 +1772,8 @@
     {
       "surah": 80,
       "ayah": 37,
+      "transliteration": "likulli im'ri-in min'hum yawma-idhin shanun yugh'nīhi",
+      "translation_bn": "সেদিন তাদের প্রত্যেকেই নিজেকে নিয়ে ব্যতিব্যস্ত থাকবে।",
       "words": [
         {
           "id": 39058,
@@ -1776,6 +1850,8 @@
     {
       "surah": 80,
       "ayah": 38,
+      "transliteration": "wujūhun yawma-idhin mus'firatun",
+      "translation_bn": "সেদিন কতক মুখ উজ্জ্বল হবে,",
       "words": [
         {
           "id": 39879,
@@ -1822,6 +1898,8 @@
     {
       "surah": 80,
       "ayah": 39,
+      "transliteration": "ḍāḥikatun mus'tabshiratun",
+      "translation_bn": "সহাস্য, উৎফুল্ল।",
       "words": [
         {
           "id": 40700,
@@ -1858,6 +1936,8 @@
     {
       "surah": 80,
       "ayah": 40,
+      "transliteration": "wawujūhun yawma-idhin ʿalayhā ghabaratun",
+      "translation_bn": "সেদিন কতক মুখ হবে ধূলিমলিন।",
       "words": [
         {
           "id": 41292,
@@ -1914,6 +1994,8 @@
     {
       "surah": 80,
       "ayah": 41,
+      "transliteration": "tarhaquhā qataratun",
+      "translation_bn": "কালিমা ওগুলোকে আচ্ছন্ন করবে।",
       "words": [
         {
           "id": 42285,
@@ -1950,6 +2032,8 @@
     {
       "surah": 80,
       "ayah": 42,
+      "transliteration": "ulāika humu l-kafaratu l-fajaratu",
+      "translation_bn": "তারাই আল্লাহকে প্রত্যাখ্যানকারী, পাপাচারী।",
       "words": [
         {
           "id": 42815,

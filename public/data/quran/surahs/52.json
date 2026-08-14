@@ -4,6 +4,8 @@
     {
       "surah": 52,
       "ayah": 1,
+      "transliteration": "wal-ṭūri",
+      "translation_bn": "শপথ তূর (পর্বত) এর,",
       "words": [
         {
           "id": 274,
@@ -30,6 +32,8 @@
     {
       "surah": 52,
       "ayah": 2,
+      "transliteration": "wakitābin masṭūrin",
+      "translation_bn": "শপথ কিতাবের যা লিখিত",
       "words": [
         {
           "id": 1153,
@@ -66,6 +70,8 @@
     {
       "surah": 52,
       "ayah": 3,
+      "transliteration": "fī raqqin manshūrin",
+      "translation_bn": "খোলা পৃষ্ঠায়,",
       "words": [
         {
           "id": 2192,
@@ -112,6 +118,8 @@
     {
       "surah": 52,
       "ayah": 4,
+      "transliteration": "wal-bayti l-maʿmūri",
+      "translation_bn": "শপথ বেশি বেশি আবাদকৃত ঘরের,",
       "words": [
         {
           "id": 3515,
@@ -148,6 +156,8 @@
     {
       "surah": 52,
       "ayah": 5,
+      "transliteration": "wal-saqfi l-marfūʿi",
+      "translation_bn": "শপথ সুউচ্চ ছাদের,",
       "words": [
         {
           "id": 4868,
@@ -184,6 +194,8 @@
     {
       "surah": 52,
       "ayah": 6,
+      "transliteration": "wal-baḥri l-masjūri",
+      "translation_bn": "শপথ তরঙ্গায়িত সমুদ্রের,",
       "words": [
         {
           "id": 6112,
@@ -220,6 +232,8 @@
     {
       "surah": 52,
       "ayah": 7,
+      "transliteration": "inna ʿadhāba rabbika lawāqiʿun",
+      "translation_bn": "তোমার প্রতিপালকের ‘আযাব অবশ্যই সংঘটিত হবে।",
       "words": [
         {
           "id": 7445,
@@ -276,6 +290,8 @@
     {
       "surah": 52,
       "ayah": 8,
+      "transliteration": "mā lahu min dāfiʿin",
+      "translation_bn": "তার প্রতিরোধকারী কেউ নেই।",
       "words": [
         {
           "id": 8704,
@@ -332,6 +348,8 @@
     {
       "surah": 52,
       "ayah": 9,
+      "transliteration": "yawma tamūru l-samāu mawran",
+      "translation_bn": "যেদিন আকাশ প্রচন্ডভাবে কাঁপবে,",
       "words": [
         {
           "id": 9930,
@@ -388,6 +406,8 @@
     {
       "surah": 52,
       "ayah": 10,
+      "transliteration": "watasīru l-jibālu sayran",
+      "translation_bn": "আর পর্বত হবে দ্রুত চলমান,",
       "words": [
         {
           "id": 11059,
@@ -434,6 +454,8 @@
     {
       "surah": 52,
       "ayah": 11,
+      "transliteration": "fawaylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "ধ্বংস সেদিন সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 12255,
@@ -480,6 +502,8 @@
     {
       "surah": 52,
       "ayah": 12,
+      "transliteration": "alladhīna hum fī khawḍin yalʿabūna",
+      "translation_bn": "যারা নিরর্থক কথার খেলায় মগ্ন আছে।",
       "words": [
         {
           "id": 13630,
@@ -546,6 +570,8 @@
     {
       "surah": 52,
       "ayah": 13,
+      "transliteration": "yawma yudaʿʿūna ilā nāri jahannama daʿʿan",
+      "translation_bn": "যেদিন তাদেরকে জাহান্নামের আগুনের দিকে তাড়িয়ে নেয়া হবে ধাক্কাতে ধাক্কাতে,",
       "words": [
         {
           "id": 14918,
@@ -622,6 +648,8 @@
     {
       "surah": 52,
       "ayah": 14,
+      "transliteration": "hādhihi l-nāru allatī kuntum bihā tukadhibūna",
+      "translation_bn": "(বলা হবে) এটা হল জাহান্নামের সেই আগুন তোমরা যাকে মিথ্যে জানতে।",
       "words": [
         {
           "id": 15997,
@@ -698,6 +726,8 @@
     {
       "surah": 52,
       "ayah": 15,
+      "transliteration": "afasiḥ'run hādhā am antum lā tub'ṣirūna",
+      "translation_bn": "এটা কি যাদু, নাকি তোমরা দেখতে পাচ্ছ না?",
       "words": [
         {
           "id": 17222,
@@ -774,6 +804,8 @@
     {
       "surah": 52,
       "ayah": 16,
+      "transliteration": "iṣ'lawhā fa-iṣ'birū aw lā taṣbirū sawāon ʿalaykum innamā tuj'zawna mā kuntum taʿmalūna",
+      "translation_bn": "এখন এর ভিতর জ্বলতে থাক, অতঃপর ধৈর্য ধর কিংবা ধৈর্য না ধর, তোমাদের জন্য দুই-ই সমান। তোমাদেরকে সেই প্রতিফলই দেয়া হবে যা তোমরা ‘আমাল করতে।",
       "words": [
         {
           "id": 18267,
@@ -910,6 +942,8 @@
     {
       "surah": 52,
       "ayah": 17,
+      "transliteration": "inna l-mutaqīna fī jannātin wanaʿīmin",
+      "translation_bn": "মুত্তাক্বীরা থাকবে জান্নাতে আর নি‘মাত সম্ভারের মাঝে,",
       "words": [
         {
           "id": 19299,
@@ -976,6 +1010,8 @@
     {
       "surah": 52,
       "ayah": 18,
+      "transliteration": "fākihīna bimā ātāhum rabbuhum wawaqāhum rabbuhum ʿadhāba l-jaḥīmi",
+      "translation_bn": "তারা ভোগ করবে তাদের প্রতিপালক যা তাদেরকে দিবেন, আর তাদের প্রতিপালক তাদেরকে জাহান্নামের ‘আযাব থেকে রক্ষা করবেন।",
       "words": [
         {
           "id": 20366,
@@ -1072,6 +1108,8 @@
     {
       "surah": 52,
       "ayah": 19,
+      "transliteration": "kulū wa-ish'rabū hanīan bimā kuntum taʿmalūna",
+      "translation_bn": "(তাদেরকে বলা হবে) খাও আর পান কর খুব মজা করে- তোমরা যে ‘আমাল করতে তার প্রতিফল হিসেবে।",
       "words": [
         {
           "id": 21444,
@@ -1148,6 +1186,8 @@
     {
       "surah": 52,
       "ayah": 20,
+      "transliteration": "muttakiīna ʿalā sururin maṣfūfatin wazawwajnāhum biḥūrin ʿīnin",
+      "translation_bn": "তারা সারিবদ্ধভাবে সাজানো আসনে হেলান দিয়ে বসবে, আর আমি তাদের বিয়ে দিয়ে দেব সুন্দর বড় বড় উজ্জ্বল চক্ষু বিশিষ্টা কুমারীদের সঙ্গে।",
       "words": [
         {
           "id": 22539,
@@ -1234,6 +1274,8 @@
     {
       "surah": 52,
       "ayah": 21,
+      "transliteration": "wa-alladhīna āmanū wa-ittabaʿathum dhurriyyatuhum biīmānin alḥaqnā bihim dhurriyyatahum wamā alatnāhum min ʿamalihim min shayin kullu im'ri-in bimā kasaba rahīnun",
+      "translation_bn": "যারা ঈমান আনে আর তাদের সন্তান সন্ততিরা ঈমানের সাথে পিতামাতাকে অনুসরণ করে, আমি তাদের সাথে তাদের সন্তান সন্ততিকে মিলিত করব। তাদের ‘আমালের কোন কিছু থেকেই আমি তাদেরকে বঞ্চিত করব না। প্রত্যেক ব্যক্তিই নিজ কৃতকর্মের জন্য দায়বদ্ধ।",
       "words": [
         {
           "id": 23690,
@@ -1440,6 +1482,8 @@
     {
       "surah": 52,
       "ayah": 22,
+      "transliteration": "wa-amdadnāhum bifākihatin walaḥmin mimmā yashtahūna",
+      "translation_bn": "আমি তাদেরকে দিব ফলমূল আর গোশত যা তারা পছন্দ করবে।",
       "words": [
         {
           "id": 24664,
@@ -1506,6 +1550,8 @@
     {
       "surah": 52,
       "ayah": 23,
+      "transliteration": "yatanāzaʿūna fīhā kasan lā laghwun fīhā walā tathīmun",
+      "translation_bn": "তারা সেখানে পরস্পরের মধ্যে বিনিময় করবে পানপাত্র, থাকবে না সেখানে কোন বেহুদা বকবকানি, থাকবে না কোন পাপের কাজ।",
       "words": [
         {
           "id": 26136,
@@ -1602,6 +1648,8 @@
     {
       "surah": 52,
       "ayah": 24,
+      "transliteration": "wayaṭūfu ʿalayhim ghil'mānun lahum ka-annahum lu'lu-on maknūnun",
+      "translation_bn": "তাদের চতুর্দিকে ঘুর ঘুর ক’রে তাদের সেবায় নিয়োজিত থাকবে কিশোরেরা (যারা এতই সুন্দর) যেন সযত্নে লুকিয়ে রাখা মণিমুক্তা।",
       "words": [
         {
           "id": 26808,
@@ -1688,6 +1736,8 @@
     {
       "surah": 52,
       "ayah": 25,
+      "transliteration": "wa-aqbala baʿḍuhum ʿalā baʿḍin yatasāalūna",
+      "translation_bn": "তারা পরস্পরের নিকট এগিয়ে গিয়ে একে অপরকে জিজ্ঞেস করবে,",
       "words": [
         {
           "id": 27863,
@@ -1754,6 +1804,8 @@
     {
       "surah": 52,
       "ayah": 26,
+      "transliteration": "qālū innā kunnā qablu fī ahlinā mush'fiqīna",
+      "translation_bn": "তারা বলবে, ‘পূর্বে আমরা আমাদের পরিবারে (দুনিয়াবী নানা কারণে ও আখিরাতের ‘আযাবের আশংকায়) ভয় ভীতির মধ্যে ছিলাম।",
       "words": [
         {
           "id": 28820,
@@ -1840,6 +1892,8 @@
     {
       "surah": 52,
       "ayah": 27,
+      "transliteration": "famanna l-lahu ʿalaynā wawaqānā ʿadhāba l-samūmi",
+      "translation_bn": "অবশেষে আল্লাহ আমাদের প্রতি অনুগ্রহ করেছেন আর আমাদেরকে ঝলসে দেয়া বাতাসের ‘আযাব থেকে রক্ষা করেছেন।",
       "words": [
         {
           "id": 30275,
@@ -1916,6 +1970,8 @@
     {
       "surah": 52,
       "ayah": 28,
+      "transliteration": "innā kunnā min qablu nadʿūhu innahu huwa l-baru l-raḥīmu",
+      "translation_bn": "পূর্বে আমরা তাঁর কাছেই দু‘আ করতাম, তিনি অতি অনুগ্রহকারী, পরম দয়াবান।",
       "words": [
         {
           "id": 30704,
@@ -2022,6 +2078,8 @@
     {
       "surah": 52,
       "ayah": 29,
+      "transliteration": "fadhakkir famā anta biniʿ'mati rabbika bikāhinin walā majnūnin",
+      "translation_bn": "কাজেই তুমি উপদেশ দিতে থাক, তোমার প্রতিপালকের অনুগ্রহে তুমি গণকও নও, আর পাগলও নও।",
       "words": [
         {
           "id": 31795,
@@ -2118,6 +2176,8 @@
     {
       "surah": 52,
       "ayah": 30,
+      "transliteration": "am yaqūlūna shāʿirun natarabbaṣu bihi rayba l-manūni",
+      "translation_bn": "তারা কি বলে সে একজন কবি, যার জন্য আমরা কালচক্রের (বিপদাপদের) অপেক্ষা করছি।",
       "words": [
         {
           "id": 32628,
@@ -2204,6 +2264,8 @@
     {
       "surah": 52,
       "ayah": 31,
+      "transliteration": "qul tarabbaṣū fa-innī maʿakum mina l-mutarabiṣīna",
+      "translation_bn": "ওদেরকে বল- তোমরা অপেক্ষা কর, আমিও তোমাদের সঙ্গে অপেক্ষা করছি। (অতঃপর উভয় পক্ষই দেখতে পাবে কার কী পরিণতি হয়)।",
       "words": [
         {
           "id": 33502,
@@ -2280,6 +2342,8 @@
     {
       "surah": 52,
       "ayah": 32,
+      "transliteration": "am tamuruhum aḥlāmuhum bihādhā am hum qawmun ṭāghūna",
+      "translation_bn": "তাদের বুদ্ধি বিবেক কি তাদেরকে এ নির্দেশ দেয়, নাকি তারা মূলতঃই এক সীমালঙ্ঘনকারী জাতি?",
       "words": [
         {
           "id": 34596,
@@ -2376,6 +2440,8 @@
     {
       "surah": 52,
       "ayah": 33,
+      "transliteration": "am yaqūlūna taqawwalahu bal lā yu'minūna",
+      "translation_bn": "তারা কি বলে- ‘সে নিজেই (কুরআন) রচনা করে নিয়েছে? আসলে তারা ঈমানই আনেনি।",
       "words": [
         {
           "id": 35409,
@@ -2452,6 +2518,8 @@
     {
       "surah": 52,
       "ayah": 34,
+      "transliteration": "falyatū biḥadīthin mith'lihi in kānū ṣādiqīna",
+      "translation_bn": "তারা সত্যবাদী হলে এ রকম একটা কালাম তারা নিয়ে আসুক না কেন।",
       "words": [
         {
           "id": 36335,
@@ -2528,6 +2596,8 @@
     {
       "surah": 52,
       "ayah": 35,
+      "transliteration": "am khuliqū min ghayri shayin am humu l-khāliqūna",
+      "translation_bn": "তারা কি সৃষ্টি হয়েছে, নাকি তারা নিজেরাই সৃষ্টিকর্তা?",
       "words": [
         {
           "id": 37205,
@@ -2624,6 +2694,8 @@
     {
       "surah": 52,
       "ayah": 36,
+      "transliteration": "am khalaqū l-samāwāti wal-arḍa bal lā yūqinūna",
+      "translation_bn": "নাকি তারা আসমান ও যমীন সৃষ্টি করেছে? আসলে তারা নিশ্চিত বিশ্বাসী নয়।",
       "words": [
         {
           "id": 37957,
@@ -2710,6 +2782,8 @@
     {
       "surah": 52,
       "ayah": 37,
+      "transliteration": "am ʿindahum khazāinu rabbika am humu l-muṣayṭirūna",
+      "translation_bn": "নাকি তোমার প্রতিপালকের ধনভান্ডারগুলো তাদের হাতে, না তারা এর নিয়ন্ত্রক?",
       "words": [
         {
           "id": 38791,
@@ -2796,6 +2870,8 @@
     {
       "surah": 52,
       "ayah": 38,
+      "transliteration": "am lahum sullamun yastamiʿūna fīhi falyati mus'tamiʿuhum bisul'ṭānin mubīnin",
+      "translation_bn": "নাকি তাদের কাছে, সিঁড়ি আছে যাতে তারা (আকাশে উঠে যায় আর গোপন কথা) শুনে থাকে? থাকলে তাদের (সেই) শ্রোতা স্পষ্ট প্রমাণ হাজির করুক।",
       "words": [
         {
           "id": 39681,
@@ -2902,6 +2978,8 @@
     {
       "surah": 52,
       "ayah": 39,
+      "transliteration": "am lahu l-banātu walakumu l-banūna",
+      "translation_bn": "নাকি আল্লাহর জন্য কন্যা সন্তান, আর তোমাদের জন্য পুত্র সন্তান?",
       "words": [
         {
           "id": 40719,
@@ -2968,6 +3046,8 @@
     {
       "surah": 52,
       "ayah": 40,
+      "transliteration": "am tasaluhum ajran fahum min maghramin muth'qalūna",
+      "translation_bn": "নাকি তুমি তাদের কাছে পারিশ্রমিক চাচ্ছ, যার ফলে তারা ঋণে ভারাক্রান্ত হয়ে পড়ছে?",
       "words": [
         {
           "id": 41171,
@@ -3054,6 +3134,8 @@
     {
       "surah": 52,
       "ayah": 41,
+      "transliteration": "am ʿindahumu l-ghaybu fahum yaktubūna",
+      "translation_bn": "নাকি তাদের কাছে অদৃশ্যের জ্ঞান আছে, আর তারা তা লিখছে?",
       "words": [
         {
           "id": 42071,
@@ -3120,6 +3202,8 @@
     {
       "surah": 52,
       "ayah": 42,
+      "transliteration": "am yurīdūna kaydan fa-alladhīna kafarū humu l-makīdūna",
+      "translation_bn": "নাকি তারা (তোমার বিরুদ্ধে) চক্রান্ত করতে চায়? তাহলে কিন্তু কাফিররাই চক্রান্তের ফাঁদে আটকা পড়বে।",
       "words": [
         {
           "id": 42835,
@@ -3206,6 +3290,8 @@
     {
       "surah": 52,
       "ayah": 43,
+      "transliteration": "am lahum ilāhun ghayru l-lahi sub'ḥāna l-lahi ʿammā yush'rikūna",
+      "translation_bn": "নাকি আল্লাহ ছাড়া তাদের জন্য ইলাহ্ আছে? তারা যাকে শরীক গণ্য করে আল্লাহ তা থেকে পবিত্র।",
       "words": [
         {
           "id": 43744,
@@ -3312,6 +3398,8 @@
     {
       "surah": 52,
       "ayah": 44,
+      "transliteration": "wa-in yaraw kis'fan mina l-samāi sāqiṭan yaqūlū saḥābun markūmun",
+      "translation_bn": "আকাশের কোন খন্ড ভেঙ্গে পড়তে দেখলে তারা বলত- ‘এটা তো পুঞ্জীভূত মেঘ। (তাদেরকে আল্লাহর যতই বিস্ময়কর নিদর্শন দেখানো হোক না কেন, তারা ঈমান আনবে না।)",
       "words": [
         {
           "id": 44374,
@@ -3418,6 +3506,8 @@
     {
       "surah": 52,
       "ayah": 45,
+      "transliteration": "fadharhum ḥattā yulāqū yawmahumu alladhī fīhi yuṣ'ʿaqūna",
+      "translation_bn": "কাজেই তাদেরকে উপেক্ষা কর যতক্ষণ না তারা সাক্ষাৎ করে তাদের সেদিনের যেদিন তারা হবে বজ্রাহত।",
       "words": [
         {
           "id": 45113,
@@ -3504,6 +3594,8 @@
     {
       "surah": 52,
       "ayah": 46,
+      "transliteration": "yawma lā yugh'nī ʿanhum kayduhum shayan walā hum yunṣarūna",
+      "translation_bn": "সেদিন তাদের ষড়যন্ত্র তাদের কোন কাজে আসবে না, আর তারা সাহায্যপ্রাপ্তও হবে না।",
       "words": [
         {
           "id": 45849,
@@ -3610,6 +3702,8 @@
     {
       "surah": 52,
       "ayah": 47,
+      "transliteration": "wa-inna lilladhīna ẓalamū ʿadhāban dūna dhālika walākinna aktharahum lā yaʿlamūna",
+      "translation_bn": "যালিমদের জন্য এছাড়া আরো ‘আযাব রয়েছে, কিন্তু তাদের অধিকাংশই জানে না।",
       "words": [
         {
           "id": 46604,
@@ -3726,6 +3820,8 @@
     {
       "surah": 52,
       "ayah": 48,
+      "transliteration": "wa-iṣ'bir liḥuk'mi rabbika fa-innaka bi-aʿyuninā wasabbiḥ biḥamdi rabbika ḥīna taqūmu",
+      "translation_bn": "তুমি ধৈর্য ধরে তোমার প্রতিপালকের হুকুমের অপেক্ষায় থাক, কারণ তুমি আমার চোখের সামনেই আছ। আর তুমি তোমার প্রতিপালকের প্রশংসা ঘোষণা কর যখন তুমি উঠ (মাজলিস শেষে, অথবা বিছানা ছেড়ে কিংবা নামাযের জন্য)।",
       "words": [
         {
           "id": 47215,
@@ -3842,6 +3938,8 @@
     {
       "surah": 52,
       "ayah": 49,
+      "transliteration": "wamina al-layli fasabbiḥ'hu wa-id'bāra l-nujūmi",
+      "translation_bn": "আর রাত্রিকালে তাঁর প্রশংসা ও মহিমা ঘোষণা কর আর (রাতের শেষভাগে যখন) তারকারাজি অস্তমিত হয়ে যায়।",
       "words": [
         {
           "id": 48042,

@@ -4,6 +4,8 @@
     {
       "surah": 1,
       "ayah": 1,
+      "transliteration": "bis'mi l-lahi l-raḥmāni l-raḥīmi",
+      "translation_bn": "(আরম্ভ করছি) পরম করুণাময় অসীম দয়াময় আল্লাহর নামে।",
       "words": [
         {
           "id": 1,
@@ -60,6 +62,8 @@
     {
       "surah": 1,
       "ayah": 2,
+      "transliteration": "al-ḥamdu lillahi rabbi l-ʿālamīna",
+      "translation_bn": "যাবতীয় প্রশংসা জগৎসমূহের প্রতিপালক আল্লাহরই জন্য।",
       "words": [
         {
           "id": 1130,
@@ -116,6 +120,8 @@
     {
       "surah": 1,
       "ayah": 3,
+      "transliteration": "al-raḥmāni l-raḥīmi",
+      "translation_bn": "যিনি পরম করুণাময় অতি দয়ালু।",
       "words": [
         {
           "id": 2953,
@@ -152,6 +158,8 @@
     {
       "surah": 1,
       "ayah": 4,
+      "transliteration": "māliki yawmi l-dīni",
+      "translation_bn": "যিনি প্রতিফল দিবসের মালিক।",
       "words": [
         {
           "id": 3252,
@@ -198,6 +206,8 @@
     {
       "surah": 1,
       "ayah": 5,
+      "transliteration": "iyyāka naʿbudu wa-iyyāka nastaʿīnu",
+      "translation_bn": "আমরা কেবল তোমারই ‘ইবাদাত করি এবং কেবলমাত্র তোমারই সাহায্য প্রার্থনা করি।",
       "words": [
         {
           "id": 5334,
@@ -254,6 +264,8 @@
     {
       "surah": 1,
       "ayah": 6,
+      "transliteration": "ih'dinā l-ṣirāṭa l-mus'taqīma",
+      "translation_bn": "আমাদেরকে সরল সঠিক পথ প্রদর্শন কর ও তার প্রতি অটুট থাকার তাওফীক দান কর।",
       "words": [
         {
           "id": 6844,
@@ -300,6 +312,8 @@
     {
       "surah": 1,
       "ayah": 7,
+      "transliteration": "ṣirāṭa alladhīna anʿamta ʿalayhim ghayri l-maghḍūbi ʿalayhim walā l-ḍālīna",
+      "translation_bn": "তাদের পথ, যাদের প্রতি তুমি অনুগ্রহ করেছ। তাদের পথ, যারা গযবপ্রাপ্ত (ইয়াহূদী) ও পথভ্রষ্ট (খ্রিস্টান) নয়।",
       "words": [
         {
           "id": 8411,

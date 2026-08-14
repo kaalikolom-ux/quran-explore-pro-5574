@@ -4,6 +4,8 @@
     {
       "surah": 77,
       "ayah": 1,
+      "transliteration": "wal-mur'salāti ʿur'fan",
+      "translation_bn": "পর পর পাঠানো বাতাসের শপথ যা উপকার সাধন করে,",
       "words": [
         {
           "id": 673,
@@ -40,6 +42,8 @@
     {
       "surah": 77,
       "ayah": 2,
+      "transliteration": "fal-ʿāṣifāti ʿaṣfan",
+      "translation_bn": "অতঃপর তা প্রচন্ড ঝড়ের বেগে বইতে থাকে,",
       "words": [
         {
           "id": 1659,
@@ -76,6 +80,8 @@
     {
       "surah": 77,
       "ayah": 3,
+      "transliteration": "wal-nāshirāti nashran",
+      "translation_bn": "শপথ সেই বায়ুর যা (মেঘমালাকে) ছড়িয়ে দেয় দূর দূরান্তে,",
       "words": [
         {
           "id": 2790,
@@ -112,6 +118,8 @@
     {
       "surah": 77,
       "ayah": 4,
+      "transliteration": "fal-fāriqāti farqan",
+      "translation_bn": "আর বিচ্ছিন্নকারী বাতাসের শপথ যা (মেঘমালাকে) বিচ্ছিন্ন করে,",
       "words": [
         {
           "id": 4142,
@@ -148,6 +156,8 @@
     {
       "surah": 77,
       "ayah": 5,
+      "transliteration": "fal-mul'qiyāti dhik'ran",
+      "translation_bn": "অতঃপর (মানুষের অন্তরে) পৌঁছে দেয় (আল্লাহর) স্মরণ,",
       "words": [
         {
           "id": 5433,
@@ -184,6 +194,8 @@
     {
       "surah": 77,
       "ayah": 6,
+      "transliteration": "ʿudh'ran aw nudh'ran",
+      "translation_bn": "(বিশ্বাসী লোকদেরকে) ক্ষমা চাওয়ার সুযোগ দেয়ার জন্য আর (কাফিরদেরকে) সতর্ক করার জন্য।",
       "words": [
         {
           "id": 6648,
@@ -230,6 +242,8 @@
     {
       "surah": 77,
       "ayah": 7,
+      "transliteration": "innamā tūʿadūna lawāqiʿun",
+      "translation_bn": "তোমাদেরকে যার ও‘য়াদা দেয়া হয়েছে তা অবশ্যই সংঘটিত হবে।",
       "words": [
         {
           "id": 8009,
@@ -276,6 +290,8 @@
     {
       "surah": 77,
       "ayah": 8,
+      "transliteration": "fa-idhā l-nujūmu ṭumisat",
+      "translation_bn": "যখন নক্ষত্ররাজির আলো বিলুপ্ত হবে,",
       "words": [
         {
           "id": 9169,
@@ -322,6 +338,8 @@
     {
       "surah": 77,
       "ayah": 9,
+      "transliteration": "wa-idhā l-samāu furijat",
+      "translation_bn": "যখন আকাশ বিদীর্ণ হবে,",
       "words": [
         {
           "id": 10371,
@@ -368,6 +386,8 @@
     {
       "surah": 77,
       "ayah": 10,
+      "transliteration": "wa-idhā l-jibālu nusifat",
+      "translation_bn": "যখন পবর্তমালা ধুনিত হবে।",
       "words": [
         {
           "id": 11609,
@@ -414,6 +434,8 @@
     {
       "surah": 77,
       "ayah": 11,
+      "transliteration": "wa-idhā l-rusulu uqqitat",
+      "translation_bn": "যখন (হাশরের মাঠে) রসূলগণের একত্রিত হওয়ার সময় এসে পড়বে।",
       "words": [
         {
           "id": 12984,
@@ -460,6 +482,8 @@
     {
       "surah": 77,
       "ayah": 12,
+      "transliteration": "li-ayyi yawmin ujjilat",
+      "translation_bn": "(এ সব বিষয়) কোন দিনের জন্য স্থগিত রাখা হয়েছে?",
       "words": [
         {
           "id": 14196,
@@ -506,6 +530,8 @@
     {
       "surah": 77,
       "ayah": 13,
+      "transliteration": "liyawmi l-faṣli",
+      "translation_bn": "চূড়ান্ত ফয়সালার দিনের জন্য।",
       "words": [
         {
           "id": 15375,
@@ -542,6 +568,8 @@
     {
       "surah": 77,
       "ayah": 14,
+      "transliteration": "wamā adrāka mā yawmu l-faṣli",
+      "translation_bn": "সেই চূড়ান্ত ফয়সালার দিনটি কী তা তোমাকে কিসে জানাবে?",
       "words": [
         {
           "id": 16336,
@@ -608,6 +636,8 @@
     {
       "surah": 77,
       "ayah": 15,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সে দিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 17490,
@@ -654,6 +684,8 @@
     {
       "surah": 77,
       "ayah": 16,
+      "transliteration": "alam nuh'liki l-awalīna",
+      "translation_bn": "আমি কি আগেকার লোকেদেরকে ধ্বংস করে দেইনি?",
       "words": [
         {
           "id": 18562,
@@ -700,6 +732,8 @@
     {
       "surah": 77,
       "ayah": 17,
+      "transliteration": "thumma nut'biʿuhumu l-ākhirīna",
+      "translation_bn": "অতঃপর পরবর্তী লোকেদেরকেও আমি তাদের অনুগামী করব।",
       "words": [
         {
           "id": 19650,
@@ -746,6 +780,8 @@
     {
       "surah": 77,
       "ayah": 18,
+      "transliteration": "kadhālika nafʿalu bil-muj'rimīna",
+      "translation_bn": "অপরাধীদের প্রতি আমি এরকমই করে থাকি।",
       "words": [
         {
           "id": 20660,
@@ -792,6 +828,8 @@
     {
       "surah": 77,
       "ayah": 19,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সে দিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 21584,
@@ -838,6 +876,8 @@
     {
       "surah": 77,
       "ayah": 20,
+      "transliteration": "alam nakhluqkkum min māin mahīnin",
+      "translation_bn": "আমি কি নগণ্য পানি থেকে তোমাদেরকে সৃষ্টি করিনি?",
       "words": [
         {
           "id": 22881,
@@ -904,6 +944,8 @@
     {
       "surah": 77,
       "ayah": 21,
+      "transliteration": "fajaʿalnāhu fī qarārin makīnin",
+      "translation_bn": "অতঃপর আমি তা রেখেছি এক সুসংরক্ষিত স্থানে।",
       "words": [
         {
           "id": 23954,
@@ -960,6 +1002,8 @@
     {
       "surah": 77,
       "ayah": 22,
+      "transliteration": "ilā qadarin maʿlūmin",
+      "translation_bn": "একটা নির্ধারিত সময় পর্যন্ত,",
       "words": [
         {
           "id": 24939,
@@ -1006,6 +1050,8 @@
     {
       "surah": 77,
       "ayah": 23,
+      "transliteration": "faqadarnā faniʿ'ma l-qādirūna",
+      "translation_bn": "অতঃপর আমি তাকে গঠন করেছি সুসামঞ্জস্যপূর্ণরূপে, আমি কতই না উত্তম ক্ষমতার অধিকারী!",
       "words": [
         {
           "id": 26027,
@@ -1052,6 +1098,8 @@
     {
       "surah": 77,
       "ayah": 24,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সে দিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 27091,
@@ -1098,6 +1146,8 @@
     {
       "surah": 77,
       "ayah": 25,
+      "transliteration": "alam najʿali l-arḍa kifātan",
+      "translation_bn": "আমি কি পৃথিবীকে (সব কিছুকে টেনে গুটিয়ে) ধারণকারীরূপে সৃষ্টি করিনি?",
       "words": [
         {
           "id": 28174,
@@ -1154,6 +1204,8 @@
     {
       "surah": 77,
       "ayah": 26,
+      "transliteration": "aḥyāan wa-amwātan",
+      "translation_bn": "জীবিত ও মৃতদেরকে (ভাল আর মন্দকে নেককার আর পাপাচারীকে)।",
       "words": [
         {
           "id": 28882,
@@ -1190,6 +1242,8 @@
     {
       "surah": 77,
       "ayah": 27,
+      "transliteration": "wajaʿalnā fīhā rawāsiya shāmikhātin wa-asqaynākum māan furātan",
+      "translation_bn": "আর আমি তাতে স্থাপন করেছি অনড় সুউচ্চ পবর্তমালা আর তোমাদেরকে পান করিয়েছি সুমিষ্ট সুপেয় পানি।",
       "words": [
         {
           "id": 29898,
@@ -1276,6 +1330,8 @@
     {
       "surah": 77,
       "ayah": 28,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 31007,
@@ -1322,6 +1378,8 @@
     {
       "surah": 77,
       "ayah": 29,
+      "transliteration": "inṭaliqū ilā mā kuntum bihi tukadhibūna",
+      "translation_bn": "(তাদেরকে বলা হবে) ‘চলো তার দিকে তোমরা যাকে মিথ্যে ব’লে প্রত্যাখ্যান করতে।",
       "words": [
         {
           "id": 31975,
@@ -1398,6 +1456,8 @@
     {
       "surah": 77,
       "ayah": 30,
+      "transliteration": "inṭaliqū ilā ẓillin dhī thalāthi shuʿabin",
+      "translation_bn": "‘চলো সেই (ধোঁয়ার) ছায়ার দিকে যার আছে তিনটি শাখা (অর্থাৎ ডানে, বামে, উপরে সব দিক থেকেই ঘিরে ধরবে),",
       "words": [
         {
           "id": 32815,
@@ -1474,6 +1534,8 @@
     {
       "surah": 77,
       "ayah": 31,
+      "transliteration": "lā ẓalīlin walā yugh'nī mina l-lahabi",
+      "translation_bn": "যা শীতল নয়, আর তা লেলিহান অগ্নিশিখা থেকে বাঁচাতেও পারবে না।",
       "words": [
         {
           "id": 33654,
@@ -1550,6 +1612,8 @@
     {
       "surah": 77,
       "ayah": 32,
+      "transliteration": "innahā tarmī bishararin kal-qaṣri",
+      "translation_bn": "সে আগুন প্রাসাদের ন্যায় (বিশাল) স্ফুলিঙ্গ উৎক্ষেপ করবে,",
       "words": [
         {
           "id": 34750,
@@ -1606,6 +1670,8 @@
     {
       "surah": 77,
       "ayah": 33,
+      "transliteration": "ka-annahu jimālatun ṣuf'run",
+      "translation_bn": "যেন হলুদ রঙ্গের উটের সারি,",
       "words": [
         {
           "id": 35562,
@@ -1652,6 +1718,8 @@
     {
       "surah": 77,
       "ayah": 34,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 36427,
@@ -1698,6 +1766,8 @@
     {
       "surah": 77,
       "ayah": 35,
+      "transliteration": "hādhā yawmu lā yanṭiqūna",
+      "translation_bn": "এদিন এমন যে, কেউ কথা বলতে পারবে না,",
       "words": [
         {
           "id": 37271,
@@ -1754,6 +1824,8 @@
     {
       "surah": 77,
       "ayah": 36,
+      "transliteration": "walā yu'dhanu lahum fayaʿtadhirūna",
+      "translation_bn": "তাদেরকে কোন ওজর পেশ করারও সুযোগ দেয়া হবে না।",
       "words": [
         {
           "id": 38121,
@@ -1810,6 +1882,8 @@
     {
       "surah": 77,
       "ayah": 37,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 38877,
@@ -1856,6 +1930,8 @@
     {
       "surah": 77,
       "ayah": 38,
+      "transliteration": "hādhā yawmu l-faṣli jamaʿnākum wal-awalīna",
+      "translation_bn": "এটা চূড়ান্ত ফয়সালার দিন, আমি একত্রিত করেছি তোমাদেরকে আর আগের লোকেদেরকে।",
       "words": [
         {
           "id": 39516,
@@ -1922,6 +1998,8 @@
     {
       "surah": 77,
       "ayah": 39,
+      "transliteration": "fa-in kāna lakum kaydun fakīdūni",
+      "translation_bn": "এক্ষণে তোমাদের কাছে যদি কোন কৌশল থাকে তাহলে তা আমার বিরুদ্ধে প্রয়োগ কর।",
       "words": [
         {
           "id": 40577,
@@ -1988,6 +2066,8 @@
     {
       "surah": 77,
       "ayah": 40,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 41469,
@@ -2034,6 +2114,8 @@
     {
       "surah": 77,
       "ayah": 41,
+      "transliteration": "inna l-mutaqīna fī ẓilālin waʿuyūnin",
+      "translation_bn": "মুত্তাকীরা থাকবে ছায়া আর ঝর্ণাধারার মাঝে,",
       "words": [
         {
           "id": 42161,
@@ -2100,6 +2182,8 @@
     {
       "surah": 77,
       "ayah": 42,
+      "transliteration": "wafawākiha mimmā yashtahūna",
+      "translation_bn": "আর তাদের জন্য থাকবে ফলমূল- যেটি তাদের মন চাইবে।",
       "words": [
         {
           "id": 43004,
@@ -2146,6 +2230,8 @@
     {
       "surah": 77,
       "ayah": 43,
+      "transliteration": "kulū wa-ish'rabū hanīan bimā kuntum taʿmalūna",
+      "translation_bn": "(তাদেরকে বলা হবে) ‘তোমরা তৃপ্তির সঙ্গে খাও আর পান কর, তোমরা যে ‘আমাল করেছিলে তার পুরস্কারস্বরূপ।",
       "words": [
         {
           "id": 43967,
@@ -2222,6 +2308,8 @@
     {
       "surah": 77,
       "ayah": 44,
+      "transliteration": "innā kadhālika najzī l-muḥ'sinīna",
+      "translation_bn": "সৎকর্মশীলদেরকে আমি এভাবেই প্রতিফল দিয়ে থাকি।",
       "words": [
         {
           "id": 44580,
@@ -2278,6 +2366,8 @@
     {
       "surah": 77,
       "ayah": 45,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 45191,
@@ -2324,6 +2414,8 @@
     {
       "surah": 77,
       "ayah": 46,
+      "transliteration": "kulū watamattaʿū qalīlan innakum muj'rimūna",
+      "translation_bn": "(ওহে সত্য প্রত্যাখ্যানকারীরা!) তোমরা অল্প কিছুকাল খেয়ে নাও আর ভোগ করে নাও, তোমরা তো অপরাধী।",
       "words": [
         {
           "id": 45883,
@@ -2390,6 +2482,8 @@
     {
       "surah": 77,
       "ayah": 47,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 46761,
@@ -2436,6 +2530,8 @@
     {
       "surah": 77,
       "ayah": 48,
+      "transliteration": "wa-idhā qīla lahumu ir'kaʿū lā yarkaʿūna",
+      "translation_bn": "তাদেরকে যখন বলা হয় (আল্লাহর সম্মুখে) নত হও, (তাঁর আদেশসমূহ পালনের মাধ্যমে) তখন তারা নত হয় না।",
       "words": [
         {
           "id": 47388,
@@ -2512,6 +2608,8 @@
     {
       "surah": 77,
       "ayah": 49,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ সত্য প্রত্যাখ্যানকারীদের জন্য।",
       "words": [
         {
           "id": 47817,
@@ -2558,6 +2656,8 @@
     {
       "surah": 77,
       "ayah": 50,
+      "transliteration": "fabi-ayyi ḥadīthin baʿdahu yu'minūna",
+      "translation_bn": "তাহলে কুরআনের পর (তার চেয়ে উত্তম) আর কোন্ কিতাব আছে যার উপর তারা ঈমান আনবে?",
       "words": [
         {
           "id": 48620,

@@ -4,6 +4,8 @@
     {
       "surah": 83,
       "ayah": 1,
+      "transliteration": "waylun lil'muṭaffifīna",
+      "translation_bn": "দুর্ভোগ ঠকবাজদের জন্য (যারা মাপে বা ওজনে কম দেয়),",
       "words": [
         {
           "id": 703,
@@ -40,6 +42,8 @@
     {
       "surah": 83,
       "ayah": 2,
+      "transliteration": "alladhīna idhā ik'tālū ʿalā l-nāsi yastawfūna",
+      "translation_bn": "যারা লোকের কাছ থেকে মেপে নেয়ার সময় পুরামাত্রায় নেয়,",
       "words": [
         {
           "id": 1730,
@@ -116,6 +120,8 @@
     {
       "surah": 83,
       "ayah": 3,
+      "transliteration": "wa-idhā kālūhum aw wazanūhum yukh'sirūna",
+      "translation_bn": "আর যখন তাদেরকে মেপে দেয় বা ওজন ক’রে দেয় তখন কম দেয়।",
       "words": [
         {
           "id": 2853,
@@ -182,6 +188,8 @@
     {
       "surah": 83,
       "ayah": 4,
+      "transliteration": "alā yaẓunnu ulāika annahum mabʿūthūna",
+      "translation_bn": "তারা কি চিন্তা করে না যে (তাদের মৃত্যুর পর) তাদেরকে আবার উঠানো হবে,",
       "words": [
         {
           "id": 4218,
@@ -248,6 +256,8 @@
     {
       "surah": 83,
       "ayah": 5,
+      "transliteration": "liyawmin ʿaẓīmin",
+      "translation_bn": "এক মহা দিবসে।",
       "words": [
         {
           "id": 5485,
@@ -284,6 +294,8 @@
     {
       "surah": 83,
       "ayah": 6,
+      "transliteration": "yawma yaqūmu l-nāsu lirabbi l-ʿālamīna",
+      "translation_bn": "যেদিন মানুষ বিশ্বজগতের প্রতিপালকের সামনে দাঁড়াবে।",
       "words": [
         {
           "id": 6714,
@@ -350,6 +362,8 @@
     {
       "surah": 83,
       "ayah": 7,
+      "transliteration": "kallā inna kitāba l-fujāri lafī sijjīnin",
+      "translation_bn": "(তারা যে সব ধারণা করছে তা) কক্ষনো না, নিশ্চয়ই পাপীদের ‘আমালনামা সিজ্জীনে (সংরক্ষিত) আছে।",
       "words": [
         {
           "id": 8061,
@@ -426,6 +440,8 @@
     {
       "surah": 83,
       "ayah": 8,
+      "transliteration": "wamā adrāka mā sijjīnun",
+      "translation_bn": "তুমি কি জান সিজ্জীন কী",
       "words": [
         {
           "id": 9233,
@@ -482,6 +498,8 @@
     {
       "surah": 83,
       "ayah": 9,
+      "transliteration": "kitābun marqūmun",
+      "translation_bn": "সীলমোহরকৃত কিতাব।",
       "words": [
         {
           "id": 10430,
@@ -518,6 +536,8 @@
     {
       "surah": 83,
       "ayah": 10,
+      "transliteration": "waylun yawma-idhin lil'mukadhibīna",
+      "translation_bn": "সেদিন দুর্ভোগ হবে অস্বীকারকারীদের,",
       "words": [
         {
           "id": 11660,
@@ -564,6 +584,8 @@
     {
       "surah": 83,
       "ayah": 11,
+      "transliteration": "alladhīna yukadhibūna biyawmi l-dīni",
+      "translation_bn": "যারা কর্মফল দিবসকে অস্বীকার করে।",
       "words": [
         {
           "id": 13009,
@@ -620,6 +642,8 @@
     {
       "surah": 83,
       "ayah": 12,
+      "transliteration": "wamā yukadhibu bihi illā kullu muʿ'tadin athīmin",
+      "translation_bn": "কেবল সীমালঙ্ঘনকারী, পাপাচারী ছাড়া কেউই তা অস্বীকার করে না।",
       "words": [
         {
           "id": 14271,
@@ -706,6 +730,8 @@
     {
       "surah": 83,
       "ayah": 13,
+      "transliteration": "idhā tut'lā ʿalayhi āyātunā qāla asāṭīru l-awalīna",
+      "translation_bn": "তার সামনে যখন আমার আয়াত পড়ে শোনানো হয়, তখন সে বলে, ‘এ তো প্রাচীন কালের লোকেদের কাহিনী’’।",
       "words": [
         {
           "id": 15383,
@@ -792,6 +818,8 @@
     {
       "surah": 83,
       "ayah": 14,
+      "transliteration": "kallā bal rāna ʿalā qulūbihim mā kānū yaksibūna",
+      "translation_bn": "কক্ষনো না, বরং তাদের কৃতকর্মই তাদের অন্তরে জং ধরিয়ে দিয়েছে।",
       "words": [
         {
           "id": 16386,
@@ -888,6 +916,8 @@
     {
       "surah": 83,
       "ayah": 15,
+      "transliteration": "kallā innahum ʿan rabbihim yawma-idhin lamaḥjūbūna",
+      "translation_bn": "কক্ষনো না, তারা সেদিন তাদের প্রতিপালক থেকে পর্দার আড়ালে থাকবে।",
       "words": [
         {
           "id": 17589,
@@ -964,6 +994,8 @@
     {
       "surah": 83,
       "ayah": 16,
+      "transliteration": "thumma innahum laṣālū l-jaḥīmi",
+      "translation_bn": "অতঃপর তারা অবশ্যই জাহান্নামে প্রবেশ করবে।",
       "words": [
         {
           "id": 18633,
@@ -1020,6 +1052,8 @@
     {
       "surah": 83,
       "ayah": 17,
+      "transliteration": "thumma yuqālu hādhā alladhī kuntum bihi tukadhibūna",
+      "translation_bn": "অতঃপর বলা হবে ‘এটাই তা যা তোমরা অস্বীকার করতে।’",
       "words": [
         {
           "id": 19687,
@@ -1106,6 +1140,8 @@
     {
       "surah": 83,
       "ayah": 18,
+      "transliteration": "kallā inna kitāba l-abrāri lafī ʿilliyyīna",
+      "translation_bn": "(ভাল-মন্দের বিচার হবে না, শাস্তি-পুরস্কার কিছুই হবে না তা) কক্ষনো না, নিশ্চয়ই সৎলোকদের ‘আমালমানা ‘ইল্লিয়ীনে (সংরক্ষিত) আছে।",
       "words": [
         {
           "id": 20633,
@@ -1182,6 +1218,8 @@
     {
       "surah": 83,
       "ayah": 19,
+      "transliteration": "wamā adrāka mā ʿilliyyūna",
+      "translation_bn": "তুমি কি জান ইল্লিয়ীন কী?",
       "words": [
         {
           "id": 21824,
@@ -1238,6 +1276,8 @@
     {
       "surah": 83,
       "ayah": 20,
+      "transliteration": "kitābun marqūmun",
+      "translation_bn": "সীলমোহরকৃত কিতাব।",
       "words": [
         {
           "id": 22964,
@@ -1274,6 +1314,8 @@
     {
       "surah": 83,
       "ayah": 21,
+      "transliteration": "yashhaduhu l-muqarabūna",
+      "translation_bn": "আল্লাহর নৈকট্যপ্রাপ্ত (ফেরেশতারা) তার তত্ত্বাবধান করে।",
       "words": [
         {
           "id": 23987,
@@ -1310,6 +1352,8 @@
     {
       "surah": 83,
       "ayah": 22,
+      "transliteration": "inna l-abrāra lafī naʿīmin",
+      "translation_bn": "পুণ্যবান লোকেরা থাকবে অফুরন্ত নি‘মাতের মাঝে।",
       "words": [
         {
           "id": 24934,
@@ -1366,6 +1410,8 @@
     {
       "surah": 83,
       "ayah": 23,
+      "transliteration": "ʿalā l-arāiki yanẓurūna",
+      "translation_bn": "উচ্চ আসনে বসে তারা (চারদিকের সবকিছু) দেখতে থাকবে।",
       "words": [
         {
           "id": 26084,
@@ -1412,6 +1458,8 @@
     {
       "surah": 83,
       "ayah": 24,
+      "transliteration": "taʿrifu fī wujūhihim naḍrata l-naʿīmi",
+      "translation_bn": "তুমি তাদের মুখে আরাম আয়েশের উজ্জ্বলতা দেখতে পাবে।",
       "words": [
         {
           "id": 27146,
@@ -1478,6 +1526,8 @@
     {
       "surah": 83,
       "ayah": 25,
+      "transliteration": "yus'qawna min raḥīqin makhtūmin",
+      "translation_bn": "তাদেরকে পান করানো হবে সীল-আঁটা উৎকৃষ্ট পানীয়।",
       "words": [
         {
           "id": 28159,
@@ -1534,6 +1584,8 @@
     {
       "surah": 83,
       "ayah": 26,
+      "transliteration": "khitāmuhu mis'kun wafī dhālika falyatanāfasi l-mutanāfisūna",
+      "translation_bn": "তার সীল হবে মিশকের, প্রতিযোগীরা এ বিষয়েই প্রতিযোগিতা করুক।",
       "words": [
         {
           "id": 29131,
@@ -1610,6 +1662,8 @@
     {
       "surah": 83,
       "ayah": 27,
+      "transliteration": "wamizājuhu min tasnīmin",
+      "translation_bn": "তাতে মেশানো থাকবে ‘তাসনীম,",
       "words": [
         {
           "id": 30018,
@@ -1656,6 +1710,8 @@
     {
       "surah": 83,
       "ayah": 28,
+      "transliteration": "ʿaynan yashrabu bihā l-muqarabūna",
+      "translation_bn": "ওটা একটা ঝর্ণা, যাত্থেকে (আল্লাহর) নৈকট্যপ্রাপ্তরা পান করবে।",
       "words": [
         {
           "id": 31087,
@@ -1712,6 +1768,8 @@
     {
       "surah": 83,
       "ayah": 29,
+      "transliteration": "inna alladhīna ajramū kānū mina alladhīna āmanū yaḍḥakūna",
+      "translation_bn": "পাপাচারী লোকেরা (দুনিয়ায়) মু’মিনদেরকে ঠাট্টা-বিদ্রুপ করত।",
       "words": [
         {
           "id": 32071,
@@ -1808,6 +1866,8 @@
     {
       "surah": 83,
       "ayah": 30,
+      "transliteration": "wa-idhā marrū bihim yataghāmazūna",
+      "translation_bn": "আর তারা যখন তাদের পাশ দিয়ে অতিক্রম করত তখন পরস্পরে চোখ টিপে ইশারা করত।",
       "words": [
         {
           "id": 32746,
@@ -1864,6 +1924,8 @@
     {
       "surah": 83,
       "ayah": 31,
+      "transliteration": "wa-idhā inqalabū ilā ahlihimu inqalabū fakihīna",
+      "translation_bn": "আর তারা যখন তাদের আপন জনদের কাছে ফিরে আসত, তখন (মু’মিনদেরকে ঠাট্টা ক’রে আসার কারণে) ফিরত উৎফুল্ল হয়ে।",
       "words": [
         {
           "id": 33800,
@@ -1940,6 +2002,8 @@
     {
       "surah": 83,
       "ayah": 32,
+      "transliteration": "wa-idhā ra-awhum qālū inna hāulāi laḍāllūna",
+      "translation_bn": "আর তারা যখন মু’মিনদেরকে দেখত তখন বলত, ‘এরা তো অবশ্যই গুমরাহ্।’",
       "words": [
         {
           "id": 34781,
@@ -2016,6 +2080,8 @@
     {
       "surah": 83,
       "ayah": 33,
+      "transliteration": "wamā ur'silū ʿalayhim ḥāfiẓīna",
+      "translation_bn": "তাদেরকে তো মু’মিনদের হিফাযাতকারী হিসেবে পাঠানো হয়নি (মু’মিনদের কৃতকর্মের হিসাব মু’মিনরাই দিবে)।",
       "words": [
         {
           "id": 35603,
@@ -2072,6 +2138,8 @@
     {
       "surah": 83,
       "ayah": 34,
+      "transliteration": "fal-yawma alladhīna āmanū mina l-kufāri yaḍḥakūna",
+      "translation_bn": "আজ (জান্নাত হতে) মু’মিনরা কাফিরদের (পরিণতির) উপর হাসছে,",
       "words": [
         {
           "id": 36431,
@@ -2148,6 +2216,8 @@
     {
       "surah": 83,
       "ayah": 35,
+      "transliteration": "ʿalā l-arāiki yanẓurūna",
+      "translation_bn": "উচ্চ আসনে বসে তাদের অবস্থা দেখছে।",
       "words": [
         {
           "id": 37297,
@@ -2194,6 +2264,8 @@
     {
       "surah": 83,
       "ayah": 36,
+      "transliteration": "hal thuwwiba l-kufāru mā kānū yafʿalūna",
+      "translation_bn": "কাফিররা যা করত তার ‘সওয়াব’ পেল তো?",
       "words": [
         {
           "id": 38227,

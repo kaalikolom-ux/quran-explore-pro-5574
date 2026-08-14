@@ -4,6 +4,8 @@
     {
       "surah": 96,
       "ayah": 1,
+      "transliteration": "iq'ra bi-is'mi rabbika alladhī khalaqa",
+      "translation_bn": "পাঠ কর তোমার প্রতিপালকের নামে যিনি সৃষ্টি করেছেন,",
       "words": [
         {
           "id": 100,
@@ -70,6 +72,8 @@
     {
       "surah": 96,
       "ayah": 2,
+      "transliteration": "khalaqa l-insāna min ʿalaqin",
+      "translation_bn": "সৃষ্টি করেছেন মানুষকে জমাট-বাঁধা রক্তপিন্ড হতে।",
       "words": [
         {
           "id": 1580,
@@ -126,6 +130,8 @@
     {
       "surah": 96,
       "ayah": 3,
+      "transliteration": "iq'ra warabbuka l-akramu",
+      "translation_bn": "পাঠ কর, আর তোমার রব বড়ই অনুগ্রহশীল।",
       "words": [
         {
           "id": 2566,
@@ -172,6 +178,8 @@
     {
       "surah": 96,
       "ayah": 4,
+      "transliteration": "alladhī ʿallama bil-qalami",
+      "translation_bn": "যিনি শিক্ষা দিয়েছেন কলম দিয়ে,",
       "words": [
         {
           "id": 3723,
@@ -218,6 +226,8 @@
     {
       "surah": 96,
       "ayah": 5,
+      "transliteration": "ʿallama l-insāna mā lam yaʿlam",
+      "translation_bn": "শিক্ষা দিয়েছেন মানুষকে যা সে জানত না,",
       "words": [
         {
           "id": 5427,
@@ -284,6 +294,8 @@
     {
       "surah": 96,
       "ayah": 6,
+      "transliteration": "kallā inna l-insāna layaṭghā",
+      "translation_bn": "না (এমন আচরণ করা) মোটেই ঠিক নয়, মানুষ অবশ্যই সীমালঙ্ঘন করে,",
       "words": [
         {
           "id": 6676,
@@ -340,6 +352,8 @@
     {
       "surah": 96,
       "ayah": 7,
+      "transliteration": "an raāhu is'taghnā",
+      "translation_bn": "কারণ, সে নিজেকে অভাবমুক্ত মনে করে,",
       "words": [
         {
           "id": 8005,
@@ -386,6 +400,8 @@
     {
       "surah": 96,
       "ayah": 8,
+      "transliteration": "inna ilā rabbika l-ruj'ʿā",
+      "translation_bn": "নিঃসন্দেহে (সকলকে) ফিরে যেতে হবে তোমার প্রতিপালকের দিকে।",
       "words": [
         {
           "id": 9198,
@@ -442,6 +458,8 @@
     {
       "surah": 96,
       "ayah": 9,
+      "transliteration": "ara-ayta alladhī yanhā",
+      "translation_bn": "তুমি কি তাকে (অর্থাৎ আবূ জাহলকে) দেখেছ যে নিষেধ করে,",
       "words": [
         {
           "id": 10404,
@@ -488,6 +506,8 @@
     {
       "surah": 96,
       "ayah": 10,
+      "transliteration": "ʿabdan idhā ṣallā",
+      "translation_bn": "এক বান্দাহকে [অর্থাৎ রসূলুল্লাহ (সা.)-কে] যখন সে নামায আদায় করতে থাকে?",
       "words": [
         {
           "id": 11656,
@@ -534,6 +554,8 @@
     {
       "surah": 96,
       "ayah": 11,
+      "transliteration": "ara-ayta in kāna ʿalā l-hudā",
+      "translation_bn": "তুমি কি ভেবে দেখেছ (যাকে নিষেধ করা হচ্ছে) সে যদি সৎ পথে থাকে,",
       "words": [
         {
           "id": 13014,
@@ -600,6 +622,8 @@
     {
       "surah": 96,
       "ayah": 12,
+      "transliteration": "aw amara bil-taqwā",
+      "translation_bn": "আর তাকওয়া অবলম্বনের নির্দেশ দেয় (তাহলে তার এ কাজগুলো কেমন মনে কর?)",
       "words": [
         {
           "id": 14267,
@@ -646,6 +670,8 @@
     {
       "surah": 96,
       "ayah": 13,
+      "transliteration": "ara-ayta in kadhaba watawallā",
+      "translation_bn": "তোমার কী ধারণা যদি সে (অর্থাৎ নিষেধকারী ব্যক্তি) সত্যকে অস্বীকার করে আর মুখ ফিরিয়ে নেয় (তাহলে তার এ কাজ কেমন মনে কর?)",
       "words": [
         {
           "id": 15356,
@@ -702,6 +728,8 @@
     {
       "surah": 96,
       "ayah": 14,
+      "transliteration": "alam yaʿlam bi-anna l-laha yarā",
+      "translation_bn": "সে কি জানে না যে, আল্লাহ দেখেন?",
       "words": [
         {
           "id": 16380,
@@ -768,6 +796,8 @@
     {
       "surah": 96,
       "ayah": 15,
+      "transliteration": "kallā la-in lam yantahi lanasfaʿan bil-nāṣiyati",
+      "translation_bn": "না, (সে যা করতে চায়) তা কক্ষনো করতে পারবে না, সে যদি বিরত না হয় তাহলে আমি অবশ্যই তার মাথার সামনের চুলগুচ্ছ ধরে হেঁচড়ে নিয়ে যাব-",
       "words": [
         {
           "id": 17600,
@@ -844,6 +874,8 @@
     {
       "surah": 96,
       "ayah": 16,
+      "transliteration": "nāṣiyatin kādhibatin khāṭi-atin",
+      "translation_bn": "মিথ্যাচারী পাপাচারী চুলগুচ্ছ",
       "words": [
         {
           "id": 18642,
@@ -890,6 +922,8 @@
     {
       "surah": 96,
       "ayah": 17,
+      "transliteration": "falyadʿu nādiyahu",
+      "translation_bn": "কাজেই সে তার সভাষদদের ডাকুক।",
       "words": [
         {
           "id": 19699,
@@ -926,6 +960,8 @@
     {
       "surah": 96,
       "ayah": 18,
+      "transliteration": "sanadʿu l-zabāniyata",
+      "translation_bn": "আমিও ‘আযাবের ফেরেশতাদেরকে ডাকব,",
       "words": [
         {
           "id": 20790,
@@ -962,6 +998,8 @@
     {
       "surah": 96,
       "ayah": 19,
+      "transliteration": "kallā lā tuṭiʿ'hu wa-us'jud wa-iq'tarib",
+      "translation_bn": "না, তুমি কক্ষনো তার অনুসরণ করো না, তুমি সাজদাহ কর আর (আল্লাহর) নৈকট্য লাভ কর।[সাজদাহ]",
       "words": [
         {
           "id": 21853,

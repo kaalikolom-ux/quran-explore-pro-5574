@@ -4,6 +4,8 @@
     {
       "surah": 79,
       "ayah": 1,
+      "transliteration": "wal-nāziʿāti gharqan",
+      "translation_bn": "শপথ সেই ফেরেশতাদের যারা (পাপীদের আত্মা) নির্মমভাবে টেনে বের করে,",
       "words": [
         {
           "id": 679,
@@ -40,6 +42,8 @@
     {
       "surah": 79,
       "ayah": 2,
+      "transliteration": "wal-nāshiṭāti nashṭan",
+      "translation_bn": "আর যারা (নেককারদের আত্মা) খুবই সহজভাবে বের করে,",
       "words": [
         {
           "id": 1695,
@@ -76,6 +80,8 @@
     {
       "surah": 79,
       "ayah": 3,
+      "transliteration": "wal-sābiḥāti sabḥan",
+      "translation_bn": "শপথ সেই ফেরেশতাদের যারা দ্রুতগতিতে সাঁতার কাটে,",
       "words": [
         {
           "id": 2804,
@@ -112,6 +118,8 @@
     {
       "surah": 79,
       "ayah": 4,
+      "transliteration": "fal-sābiqāti sabqan",
+      "translation_bn": "আর (আল্লাহর নির্দেশ পালনের জন্য) ক্ষিপ্র গতিতে এগিয়ে যায়,",
       "words": [
         {
           "id": 4178,
@@ -148,6 +156,8 @@
     {
       "surah": 79,
       "ayah": 5,
+      "transliteration": "fal-mudabirāti amran",
+      "translation_bn": "অতঃপর সব কাজের ব্যবস্থা করে।",
       "words": [
         {
           "id": 5452,
@@ -184,6 +194,8 @@
     {
       "surah": 79,
       "ayah": 6,
+      "transliteration": "yawma tarjufu l-rājifatu",
+      "translation_bn": "সেদিন ভূকম্পন প্রকম্পিত করবে,",
       "words": [
         {
           "id": 6681,
@@ -230,6 +242,8 @@
     {
       "surah": 79,
       "ayah": 7,
+      "transliteration": "tatbaʿuhā l-rādifatu",
+      "translation_bn": "তারপর আসবে আরেকটি ভূকম্পন।",
       "words": [
         {
           "id": 8026,
@@ -266,6 +280,8 @@
     {
       "surah": 79,
       "ayah": 8,
+      "transliteration": "qulūbun yawma-idhin wājifatun",
+      "translation_bn": "কত হৃদয় সে দিন ভয়ে ভীত হয়ে পড়বে,",
       "words": [
         {
           "id": 9189,
@@ -312,6 +328,8 @@
     {
       "surah": 79,
       "ayah": 9,
+      "transliteration": "abṣāruhā khāshiʿatun",
+      "translation_bn": "তাদের দৃষ্টি নত হবে,",
       "words": [
         {
           "id": 10401,
@@ -348,6 +366,8 @@
     {
       "surah": 79,
       "ayah": 10,
+      "transliteration": "yaqūlūna a-innā lamardūdūna fī l-ḥāfirati",
+      "translation_bn": "তারা বলে, ‘আমাদেরকে কি আগের অবস্থায় ফিরিয়ে আনা হবে?",
       "words": [
         {
           "id": 11628,
@@ -414,6 +434,8 @@
     {
       "surah": 79,
       "ayah": 11,
+      "transliteration": "a-idhā kunnā ʿiẓāman nakhiratan",
+      "translation_bn": "আমরা যখন পচা-গলা হাড় হয়ে যাব (তখনও)?’",
       "words": [
         {
           "id": 12979,
@@ -470,6 +492,8 @@
     {
       "surah": 79,
       "ayah": 12,
+      "transliteration": "qālū til'ka idhan karratun khāsiratun",
+      "translation_bn": "তারা বলে, ‘অবস্থা যদি তাই হয় তাহলে এই ফিরিয়ে আনাটাতো সর্বনাশের ব্যাপার হবে।’",
       "words": [
         {
           "id": 14247,
@@ -536,6 +560,8 @@
     {
       "surah": 79,
       "ayah": 13,
+      "transliteration": "fa-innamā hiya zajratun wāḥidatun",
+      "translation_bn": "ওটা তো কেবল একটা বিকট আওয়াজ,",
       "words": [
         {
           "id": 15480,
@@ -592,6 +618,8 @@
     {
       "surah": 79,
       "ayah": 14,
+      "transliteration": "fa-idhā hum bil-sāhirati",
+      "translation_bn": "সহসাই তারা খোলা ময়দানে আবির্ভূত হবে।",
       "words": [
         {
           "id": 16413,
@@ -638,6 +666,8 @@
     {
       "surah": 79,
       "ayah": 15,
+      "transliteration": "hal atāka ḥadīthu mūsā",
+      "translation_bn": "মূসার বৃত্তান্ত তোমার কাছে পৌঁছেছে কি?",
       "words": [
         {
           "id": 17576,
@@ -694,6 +724,8 @@
     {
       "surah": 79,
       "ayah": 16,
+      "transliteration": "idh nādāhu rabbuhu bil-wādi l-muqadasi ṭuwan",
+      "translation_bn": "যখন তার প্রতিপালক তাকে পবিত্র তুয়া প্রান্তরে ডাক দিয়ে বলেছিলেন",
       "words": [
         {
           "id": 18609,
@@ -770,6 +802,8 @@
     {
       "surah": 79,
       "ayah": 17,
+      "transliteration": "idh'hab ilā fir'ʿawna innahu ṭaghā",
+      "translation_bn": "‘ফেরাউনের কাছে যাও, সে সীমালঙ্ঘন করেছে,",
       "words": [
         {
           "id": 19654,
@@ -836,6 +870,8 @@
     {
       "surah": 79,
       "ayah": 18,
+      "transliteration": "faqul hal laka ilā an tazakkā",
+      "translation_bn": "তাকে জিজ্ঞেস কর, ‘তুমি কি পবিত্রতা অবলম্বন করতে ইচ্ছুক?",
       "words": [
         {
           "id": 20745,
@@ -912,6 +948,8 @@
     {
       "surah": 79,
       "ayah": 19,
+      "transliteration": "wa-ahdiyaka ilā rabbika fatakhshā",
+      "translation_bn": "আর আমি তোমাকে তোমার প্রতিপালকের দিকে পথ দেখাই যাতে তুমি তাঁকে ভয় কর?’",
       "words": [
         {
           "id": 21721,
@@ -968,6 +1006,8 @@
     {
       "surah": 79,
       "ayah": 20,
+      "transliteration": "fa-arāhu l-āyata l-kub'rā",
+      "translation_bn": "অতঃপর মূসা তাকে বিরাট নিদর্শন দেখাল।",
       "words": [
         {
           "id": 22933,
@@ -1014,6 +1054,8 @@
     {
       "surah": 79,
       "ayah": 21,
+      "transliteration": "fakadhaba waʿaṣā",
+      "translation_bn": "কিন্তু সে অস্বীকার করল ও অমান্য করল।",
       "words": [
         {
           "id": 23980,
@@ -1050,6 +1092,8 @@
     {
       "surah": 79,
       "ayah": 22,
+      "transliteration": "thumma adbara yasʿā",
+      "translation_bn": "অতঃপর সে (আল্লাহর বিরুদ্ধে) জোর প্রচেষ্টা চালানোর জন্য (সত্যের) উল্টোপথে ফিরে গেল।",
       "words": [
         {
           "id": 24994,
@@ -1096,6 +1140,8 @@
     {
       "surah": 79,
       "ayah": 23,
+      "transliteration": "faḥashara fanādā",
+      "translation_bn": "সে লোকদেরকে একত্রিত করল আর ঘোষণা দিল।",
       "words": [
         {
           "id": 26093,
@@ -1132,6 +1178,8 @@
     {
       "surah": 79,
       "ayah": 24,
+      "transliteration": "faqāla anā rabbukumu l-aʿlā",
+      "translation_bn": "সে বলল, ‘আমিই তোমাদের সর্বশ্রেষ্ঠ রব’।",
       "words": [
         {
           "id": 27117,
@@ -1188,6 +1236,8 @@
     {
       "surah": 79,
       "ayah": 25,
+      "transliteration": "fa-akhadhahu l-lahu nakāla l-ākhirati wal-ūlā",
+      "translation_bn": "পরিশেষে আল্লাহ তাকে আখেরাত ও দুনিয়ার ‘আযাবে পাকড়াও করলেন।",
       "words": [
         {
           "id": 28127,
@@ -1254,6 +1304,8 @@
     {
       "surah": 79,
       "ayah": 26,
+      "transliteration": "inna fī dhālika laʿib'ratan liman yakhshā",
+      "translation_bn": "যে ভয় করে এমন প্রতিটি লোকের জন্য এতে অবশ্যই শিক্ষা আছে।",
       "words": [
         {
           "id": 29100,
@@ -1330,6 +1382,8 @@
     {
       "surah": 79,
       "ayah": 27,
+      "transliteration": "a-antum ashaddu khalqan ami l-samāu banāhā",
+      "translation_bn": "তোমাদের সৃষ্টি বেশি কঠিন না আকাশের? তিনি তো সেটা সৃষ্টি করেছেন।",
       "words": [
         {
           "id": 29998,
@@ -1406,6 +1460,8 @@
     {
       "surah": 79,
       "ayah": 28,
+      "transliteration": "rafaʿa samkahā fasawwāhā",
+      "translation_bn": "তার ছাদ অনেক উচ্চে তুলেছেন, অতঃপর তাকে ভারসাম্যপূর্ণ করেছেন।",
       "words": [
         {
           "id": 31058,
@@ -1452,6 +1508,8 @@
     {
       "surah": 79,
       "ayah": 29,
+      "transliteration": "wa-aghṭasha laylahā wa-akhraja ḍuḥāhā",
+      "translation_bn": "তিনি তার রাতকে আঁধারে ঢেকে দিয়েছেন, আর তার দিবালোক প্রকাশ করেছেন।",
       "words": [
         {
           "id": 32026,
@@ -1508,6 +1566,8 @@
     {
       "surah": 79,
       "ayah": 30,
+      "transliteration": "wal-arḍa baʿda dhālika daḥāhā",
+      "translation_bn": "অতঃপর তিনি যমীনকে বিস্তীর্ণ করেছেন।",
       "words": [
         {
           "id": 32912,
@@ -1564,6 +1624,8 @@
     {
       "surah": 79,
       "ayah": 31,
+      "transliteration": "akhraja min'hā māahā wamarʿāhā",
+      "translation_bn": "তিনি তার ভিতর থেকে বের করেছেন তার পানি ও তার তৃণভূমি।",
       "words": [
         {
           "id": 33779,
@@ -1620,6 +1682,8 @@
     {
       "surah": 79,
       "ayah": 32,
+      "transliteration": "wal-jibāla arsāhā",
+      "translation_bn": "পবর্তকে তিনি দৃঢ়ভাবে প্রতিষ্ঠিত করেছেন,",
       "words": [
         {
           "id": 34778,
@@ -1656,6 +1720,8 @@
     {
       "surah": 79,
       "ayah": 33,
+      "transliteration": "matāʿan lakum wali-anʿāmikum",
+      "translation_bn": "এ সমস্ত তোমাদের আর তোমাদের গৃহপালিত পশুগুলোর জীবিকার সামগ্রী।",
       "words": [
         {
           "id": 35582,
@@ -1702,6 +1768,8 @@
     {
       "surah": 79,
       "ayah": 34,
+      "transliteration": "fa-idhā jāati l-ṭāmatu l-kub'rā",
+      "translation_bn": "অতঃপর যখন মহাসংকট এসে যাবে।",
       "words": [
         {
           "id": 36515,
@@ -1758,6 +1826,8 @@
     {
       "surah": 79,
       "ayah": 35,
+      "transliteration": "yawma yatadhakkaru l-insānu mā saʿā",
+      "translation_bn": "সেদিন মানুষ স্মরণ করবে যা কিছু করার জন্য সে জোর প্রচেষ্টা চালিয়েছে।",
       "words": [
         {
           "id": 37388,
@@ -1824,6 +1894,8 @@
     {
       "surah": 79,
       "ayah": 36,
+      "transliteration": "waburrizati l-jaḥīmu liman yarā",
+      "translation_bn": "এবং জাহান্নামকে দেখানো হবে এমন ব্যক্তিকে যে দেখতে পায়।",
       "words": [
         {
           "id": 38222,
@@ -1880,6 +1952,8 @@
     {
       "surah": 79,
       "ayah": 37,
+      "transliteration": "fa-ammā man ṭaghā",
+      "translation_bn": "অতঃপর (দুনিয়ায়) যে লোক সীমালঙ্ঘন করেছিল,",
       "words": [
         {
           "id": 39040,
@@ -1926,6 +2000,8 @@
     {
       "surah": 79,
       "ayah": 38,
+      "transliteration": "waāthara l-ḥayata l-dun'yā",
+      "translation_bn": "আর পার্থিব জীবনকে (পরকালের উপর) প্রাধান্য দিয়েছিল",
       "words": [
         {
           "id": 39875,
@@ -1972,6 +2048,8 @@
     {
       "surah": 79,
       "ayah": 39,
+      "transliteration": "fa-inna l-jaḥīma hiya l-mawā",
+      "translation_bn": "জাহান্নামই হবে তার আবাসস্থল।",
       "words": [
         {
           "id": 40439,
@@ -2028,6 +2106,8 @@
     {
       "surah": 79,
       "ayah": 40,
+      "transliteration": "wa-ammā man khāfa maqāma rabbihi wanahā l-nafsa ʿani l-hawā",
+      "translation_bn": "আর যে লোক তার প্রতিপালকের সামনে দাঁড়ানোকে ভয় করেছিল এবং নিজেকে কামনা বাসনা থেকে নিবৃত্ত রেখেছিল,",
       "words": [
         {
           "id": 41492,
@@ -2134,6 +2214,8 @@
     {
       "surah": 79,
       "ayah": 41,
+      "transliteration": "fa-inna l-janata hiya l-mawā",
+      "translation_bn": "জান্নাতই হবে তার বাসস্থান।",
       "words": [
         {
           "id": 42280,
@@ -2190,6 +2272,8 @@
     {
       "surah": 79,
       "ayah": 42,
+      "transliteration": "yasalūnaka ʿani l-sāʿati ayyāna mur'sāhā",
+      "translation_bn": "এরা তোমাকে জিজ্ঞেস করে ক্বিয়ামত সম্পর্কে- ‘কখন তা ঘটবে?’",
       "words": [
         {
           "id": 43053,
@@ -2256,6 +2340,8 @@
     {
       "surah": 79,
       "ayah": 43,
+      "transliteration": "fīma anta min dhik'rāhā",
+      "translation_bn": "এর আলোচনার সাথে তোমার কী সম্পর্ক?",
       "words": [
         {
           "id": 43729,
@@ -2312,6 +2398,8 @@
     {
       "surah": 79,
       "ayah": 44,
+      "transliteration": "ilā rabbika muntahāhā",
+      "translation_bn": "এ সংক্রান্ত জ্ঞান তোমার প্রতিপালক পর্যন্তই শেষ।",
       "words": [
         {
           "id": 44494,
@@ -2358,6 +2446,8 @@
     {
       "surah": 79,
       "ayah": 45,
+      "transliteration": "innamā anta mundhiru man yakhshāhā",
+      "translation_bn": "যারা একে ভয় করে তুমি কেবল তাদের সতর্ককারী।",
       "words": [
         {
           "id": 45276,
@@ -2424,6 +2514,8 @@
     {
       "surah": 79,
       "ayah": 46,
+      "transliteration": "ka-annahum yawma yarawnahā lam yalbathū illā ʿashiyyatan aw ḍuḥāhā",
+      "translation_bn": "যেদিন তারা তা দেখবে সেদিন তাদের মনে হবে, যেন তারা (পৃথিবীতে) এক সন্ধ্যা বা এক সকালের বেশি অবস্থান করেনি।",
       "words": [
         {
           "id": 45814,

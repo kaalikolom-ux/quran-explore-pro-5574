@@ -4,6 +4,8 @@
     {
       "surah": 15,
       "ayah": 1,
+      "transliteration": "alif-lam-ra til'ka āyātu l-kitābi waqur'ānin mubīnin",
+      "translation_bn": "আলিফ-লাম-র, এগুলো কিতাবের এবং সুস্পষ্ট কুরআনে আয়াতসমূহ।",
       "words": [
         {
           "id": 833,
@@ -80,6 +82,8 @@
     {
       "surah": 15,
       "ayah": 2,
+      "transliteration": "rubamā yawaddu alladhīna kafarū law kānū mus'limīna",
+      "translation_bn": "এমন একটা সময় আসবে যখন কাফিরগণ আক্ষেপ করে বলবে, ‘হায়, আমরা যদি মুসলিম হয়ে যেতাম!’",
       "words": [
         {
           "id": 1944,
@@ -166,6 +170,8 @@
     {
       "surah": 15,
       "ayah": 3,
+      "transliteration": "dharhum yakulū wayatamattaʿū wayul'hihimu l-amalu fasawfa yaʿlamūna",
+      "translation_bn": "ছেড়ে দাও ওদেরকে, ওরা খেতে থাক আর ভোগ করতে থাক, আর (মিথ্যে) আশা ওদেরকে উদাসীনতায় ডুবিয়ে রাখুক, শীঘ্রই ওরা (ওদের ‘আমালের পরিণতি) জানতে পারবে।",
       "words": [
         {
           "id": 3132,
@@ -252,6 +258,8 @@
     {
       "surah": 15,
       "ayah": 4,
+      "transliteration": "wamā ahlaknā min qaryatin illā walahā kitābun maʿlūmun",
+      "translation_bn": "আমি যে জনপদকেই ধ্বংস করেছি তাদের জন্য ছিল লিখিত একটা নির্দিষ্ট সময়।",
       "words": [
         {
           "id": 3605,
@@ -348,6 +356,8 @@
     {
       "surah": 15,
       "ayah": 5,
+      "transliteration": "mā tasbiqu min ummatin ajalahā wamā yastakhirūna",
+      "translation_bn": "কোন জাতিই তাদের নির্দিষ্ট কালকে অগ্র-পশ্চাৎ করতে পারে না।",
       "words": [
         {
           "id": 5180,
@@ -434,6 +444,8 @@
     {
       "surah": 15,
       "ayah": 6,
+      "transliteration": "waqālū yāayyuhā alladhī nuzzila ʿalayhi l-dhik'ru innaka lamajnūnun",
+      "translation_bn": "তারা বলে, ‘ওহে ঐ ব্যক্তি যার প্রতি কুরআন অবতীর্ণ হয়েছে! তুমি তো অবশ্যই পাগল।",
       "words": [
         {
           "id": 6937,
@@ -530,6 +542,8 @@
     {
       "surah": 15,
       "ayah": 7,
+      "transliteration": "law mā tatīnā bil-malāikati in kunta mina l-ṣādiqīna",
+      "translation_bn": "তুমি সত্যবাদী হলে আমাদের নিকট ফেরেশতাদের হাজির করছ না কেন?’",
       "words": [
         {
           "id": 8233,
@@ -626,6 +640,8 @@
     {
       "surah": 15,
       "ayah": 8,
+      "transliteration": "mā nunazzilu l-malāikata illā bil-ḥaqi wamā kānū idhan munẓarīna",
+      "translation_bn": "যথাযথ কারণ ছাড়া আমি ফেরেশতা পাঠাই না, পাঠালে কাফিরদেরকে আর কোন অবকাশ দেয়া হবে না।",
       "words": [
         {
           "id": 9493,
@@ -732,6 +748,8 @@
     {
       "surah": 15,
       "ayah": 9,
+      "transliteration": "innā naḥnu nazzalnā l-dhik'ra wa-innā lahu laḥāfiẓūna",
+      "translation_bn": "নিশ্চয় আমিই কুরআন নাযিল করেছি আর অবশ্যই আমি তার সংরক্ষক।",
       "words": [
         {
           "id": 10575,
@@ -818,6 +836,8 @@
     {
       "surah": 15,
       "ayah": 10,
+      "transliteration": "walaqad arsalnā min qablika fī shiyaʿi l-awalīna",
+      "translation_bn": "তোমার পূর্ববর্তী জাতিগুলোর কাছেও আমি রসূল পাঠিয়েছিলাম।",
       "words": [
         {
           "id": 11721,
@@ -904,6 +924,8 @@
     {
       "surah": 15,
       "ayah": 11,
+      "transliteration": "wamā yatīhim min rasūlin illā kānū bihi yastahziūna",
+      "translation_bn": "তাদের কাছে এমন কোন রসূল আসেনি যাকে তারা ঠাট্টা-বিদ্রূপ করেনি।",
       "words": [
         {
           "id": 13206,
@@ -1000,6 +1022,8 @@
     {
       "surah": 15,
       "ayah": 12,
+      "transliteration": "kadhālika naslukuhu fī qulūbi l-muj'rimīna",
+      "translation_bn": "এভাবে আমি এ রকম আচরণ পাপীদের অন্তরে বদ্ধমূল করে দেই।",
       "words": [
         {
           "id": 13537,
@@ -1066,6 +1090,8 @@
     {
       "surah": 15,
       "ayah": 13,
+      "transliteration": "lā yu'minūna bihi waqad khalat sunnatu l-awalīna",
+      "translation_bn": "তারা এর প্রতি ঈমান আনবে না, পূর্ববর্তী লোকেদেরও এ নিয়ম-নীতি চলে এসেছে।",
       "words": [
         {
           "id": 14925,
@@ -1152,6 +1178,8 @@
     {
       "surah": 15,
       "ayah": 14,
+      "transliteration": "walaw fataḥnā ʿalayhim bāban mina l-samāi faẓallū fīhi yaʿrujūna",
+      "translation_bn": "যদি তাদের জন্য আকাশের দরজা খুলে দেয়া হত, আর তারা তাতে উঠতে থাকত,",
       "words": [
         {
           "id": 16703,
@@ -1258,6 +1286,8 @@
     {
       "surah": 15,
       "ayah": 15,
+      "transliteration": "laqālū innamā sukkirat abṣārunā bal naḥnu qawmun masḥūrūna",
+      "translation_bn": "তারা অবশ্যই বলত, ‘আমাদের চোখকে বাঁধিয়ে দেয়া হয়েছে, বরং আমাদের উপর যাদু করা হয়েছে।’",
       "words": [
         {
           "id": 17885,
@@ -1354,6 +1384,8 @@
     {
       "surah": 15,
       "ayah": 16,
+      "transliteration": "walaqad jaʿalnā fī l-samāi burūjan wazayyannāhā lilnnāẓirīna",
+      "translation_bn": "আমি আকাশে গ্রহ-নক্ষত্র সৃষ্টি করেছি আর দর্শকদের জন্য তা সুসজ্জিত করে দিয়েছি।",
       "words": [
         {
           "id": 18922,
@@ -1440,6 +1472,8 @@
     {
       "surah": 15,
       "ayah": 17,
+      "transliteration": "waḥafiẓ'nāhā min kulli shayṭānin rajīmin",
+      "translation_bn": "আর প্রত্যেক অভিশপ্ত শয়ত্বান থেকে সেগুলোকে সুরক্ষিত করে দিয়েছি।",
       "words": [
         {
           "id": 20031,
@@ -1506,6 +1540,8 @@
     {
       "surah": 15,
       "ayah": 18,
+      "transliteration": "illā mani is'taraqa l-samʿa fa-atbaʿahu shihābun mubīnun",
+      "translation_bn": "কিন্তু কেউ চুরি করে (খবর) শুনতে চাইলে উজ্জ্বল অগ্নিশিখা তার পশ্চাদ্ধাবণ করে।",
       "words": [
         {
           "id": 21100,
@@ -1592,6 +1628,8 @@
     {
       "surah": 15,
       "ayah": 19,
+      "transliteration": "wal-arḍa madadnāhā wa-alqaynā fīhā rawāsiya wa-anbatnā fīhā min kulli shayin mawzūnin",
+      "translation_bn": "আর পৃথিবী, আমি সেটাকে বিছিয়ে দিয়েছি আর তাতে পর্বতরাজি সংস্থাপিত করেছি আর তাতে সকল বস্তু উদগত করেছি যথাযথ পরিমাণে।",
       "words": [
         {
           "id": 22214,
@@ -1718,6 +1756,8 @@
     {
       "surah": 15,
       "ayah": 20,
+      "transliteration": "wajaʿalnā lakum fīhā maʿāyisha waman lastum lahu birāziqīna",
+      "translation_bn": "আর তাতে তোমাদের জীবন ধারণের ব্যবস্থা করেছি আর তাদেরও যাদের রিযকদাতা তোমরা নও।",
       "words": [
         {
           "id": 23244,
@@ -1814,6 +1854,8 @@
     {
       "surah": 15,
       "ayah": 21,
+      "transliteration": "wa-in min shayin illā ʿindanā khazāinuhu wamā nunazziluhu illā biqadarin maʿlūmin",
+      "translation_bn": "এমন কোন জিনিসই নেই যার ভান্ডার আমার কাছে নেই, কিন্তু আমি সেগুলো আমার জ্ঞান মোতাবেক নির্দিষ্ট পরিমাণে সরবরাহ করে থাকি।",
       "words": [
         {
           "id": 24309,
@@ -1940,6 +1982,8 @@
     {
       "surah": 15,
       "ayah": 22,
+      "transliteration": "wa-arsalnā l-riyāḥa lawāqiḥa fa-anzalnā mina l-samāi māan fa-asqaynākumūhu wamā antum lahu bikhāzinīna",
+      "translation_bn": "আমি বৃষ্টি-সঞ্চারী বাতাস প্রেরণ করি, অতঃপর আসমান থেকে পানি বর্ষণ করি আর তা তোমাদের পান করাই, তোমরা তার স্টোর কীপার নও।",
       "words": [
         {
           "id": 25333,
@@ -2076,6 +2120,8 @@
     {
       "surah": 15,
       "ayah": 23,
+      "transliteration": "wa-innā lanaḥnu nuḥ'yī wanumītu wanaḥnu l-wārithūna",
+      "translation_bn": "আমিই জীবন দেই আর মৃত্যু ঘটাই আর আমিই চূড়ান্ত উত্তরাধিকারী।",
       "words": [
         {
           "id": 26380,
@@ -2152,6 +2198,8 @@
     {
       "surah": 15,
       "ayah": 24,
+      "transliteration": "walaqad ʿalim'nā l-mus'taqdimīna minkum walaqad ʿalim'nā l-mus'takhirīna",
+      "translation_bn": "তোমাদের মধ্যেকার যারা পূর্বে গত হয়ে গেছে আমি তাদেরকে জানি আর পরে যারা আসবে তাদেরকেও জানি।",
       "words": [
         {
           "id": 27400,
@@ -2238,6 +2286,8 @@
     {
       "surah": 15,
       "ayah": 25,
+      "transliteration": "wa-inna rabbaka huwa yaḥshuruhum innahu ḥakīmun ʿalīmun",
+      "translation_bn": "অবশ্যই তোমার প্রতিপালক তিনি সববাইকে একত্রিত করবেন, তিনি মহাবিজ্ঞানী, সর্বজ্ঞ।",
       "words": [
         {
           "id": 28464,
@@ -2324,6 +2374,8 @@
     {
       "surah": 15,
       "ayah": 26,
+      "transliteration": "walaqad khalaqnā l-insāna min ṣalṣālin min ḥama-in masnūnin",
+      "translation_bn": "আমি কাল শুষ্ক ঠনঠনে মাটির গাড়া থেকে মানুষকে সৃষ্টি করেছি।",
       "words": [
         {
           "id": 29372,
@@ -2420,6 +2472,8 @@
     {
       "surah": 15,
       "ayah": 27,
+      "transliteration": "wal-jāna khalaqnāhu min qablu min nāri l-samūmi",
+      "translation_bn": "এর পূর্বে আমি জ্বীনকে আগুনের লেলিহান আগুন থেকে সৃষ্টি করেছি।",
       "words": [
         {
           "id": 30363,
@@ -2506,6 +2560,8 @@
     {
       "surah": 15,
       "ayah": 28,
+      "transliteration": "wa-idh qāla rabbuka lil'malāikati innī khāliqun basharan min ṣalṣālin min ḥama-in masnūnin",
+      "translation_bn": "স্মরণ কর যখন তোমার প্রতিপালক ফেরেশতাদেরকে বলেছিলেন, ‘আমি কাল শুষ্ক ঠনঠনে মাটির কাদা থেকে মানুষ সৃষ্টি করছি।",
       "words": [
         {
           "id": 31367,
@@ -2642,6 +2698,8 @@
     {
       "surah": 15,
       "ayah": 29,
+      "transliteration": "fa-idhā sawwaytuhu wanafakhtu fīhi min rūḥī faqaʿū lahu sājidīna",
+      "translation_bn": "আমি যখন তাকে পূর্ণ মাত্রায় বানিয়ে দেব আর তাতে আমার পক্ষ হতে রূহ ফুঁকে দেব, তখন তোমরা তার প্রতি সাজদায় পড়ে যেও।",
       "words": [
         {
           "id": 32324,
@@ -2748,6 +2806,8 @@
     {
       "surah": 15,
       "ayah": 30,
+      "transliteration": "fasajada l-malāikatu kulluhum ajmaʿūna",
+      "translation_bn": "তখন ফেরেশতারা সবাই সাজদাহ করল।",
       "words": [
         {
           "id": 33185,
@@ -2804,6 +2864,8 @@
     {
       "surah": 15,
       "ayah": 31,
+      "transliteration": "illā ib'līsa abā an yakūna maʿa l-sājidīna",
+      "translation_bn": "ইবলীস বাদে, সে সাজদাহ্কারীদের দলভুক্ত হতে অস্বীকৃতি জানাল।",
       "words": [
         {
           "id": 34242,
@@ -2890,6 +2952,8 @@
     {
       "surah": 15,
       "ayah": 32,
+      "transliteration": "qāla yāib'līsu mā laka allā takūna maʿa l-sājidīna",
+      "translation_bn": "আল্লাহ বলবেন, ‘হে ইবলীস! তোমার কী হল যে তুমি সাজদাহকারীদের দলভুক্ত হলে না?’",
       "words": [
         {
           "id": 35104,
@@ -2986,6 +3050,8 @@
     {
       "surah": 15,
       "ayah": 33,
+      "transliteration": "qāla lam akun li-asjuda libasharin khalaqtahu min ṣalṣālin min ḥama-in masnūnin",
+      "translation_bn": "ইবলীস বলল, ‘আমার কাজ নয় মানুষকে সাজদাহ্ করা যাকে তুমি পচা কর্দমের ঠনঠনে গাড়া থেকে সৃষ্টি করেছ।’",
       "words": [
         {
           "id": 35960,
@@ -3112,6 +3178,8 @@
     {
       "surah": 15,
       "ayah": 34,
+      "transliteration": "qāla fa-ukh'ruj min'hā fa-innaka rajīmun",
+      "translation_bn": "তিনি বললেন, ‘বেরিয়ে যাও এখান থেকে, কারণ তুমি হলে অভিশপ্ত।",
       "words": [
         {
           "id": 36836,
@@ -3178,6 +3246,8 @@
     {
       "surah": 15,
       "ayah": 35,
+      "transliteration": "wa-inna ʿalayka l-laʿnata ilā yawmi l-dīni",
+      "translation_bn": "বিচার দিবস পর্যন্ত তোমার উপর থাকল লা‘নত।’",
       "words": [
         {
           "id": 37632,
@@ -3254,6 +3324,8 @@
     {
       "surah": 15,
       "ayah": 36,
+      "transliteration": "qāla rabbi fa-anẓir'nī ilā yawmi yub'ʿathūna",
+      "translation_bn": "সে বলল, ‘হে আমার প্রতিপালক! পুনরুত্থান দিবস পর্যন্ত আমাকে সময় দিন।’",
       "words": [
         {
           "id": 38507,
@@ -3330,6 +3402,8 @@
     {
       "surah": 15,
       "ayah": 37,
+      "transliteration": "qāla fa-innaka mina l-munẓarīna",
+      "translation_bn": "তিনি বললেন, ‘তোমাকে সময় দেয়া হল",
       "words": [
         {
           "id": 39378,
@@ -3386,6 +3460,8 @@
     {
       "surah": 15,
       "ayah": 38,
+      "transliteration": "ilā yawmi l-waqti l-maʿlūmi",
+      "translation_bn": "সেদিন পর্যন্ত যার নির্দিষ্ট ক্ষণ আমার জানা আছে।’",
       "words": [
         {
           "id": 40207,
@@ -3442,6 +3518,8 @@
     {
       "surah": 15,
       "ayah": 39,
+      "transliteration": "qāla rabbi bimā aghwaytanī la-uzayyinanna lahum fī l-arḍi wala-ugh'wiyannahum ajmaʿīna",
+      "translation_bn": "সে বলল, ‘হে আমার প্রতিপালক! যেহেতু আপনি আমাকে ভ্রান্তপথে ঠেলে দিলেন, কাজেই আমিও পৃথিবীতে মানুষের কাছে পাপকাজকে অবশ্য অবশ্যই সুশোভিত করে দেখাব আর তাদের সবাইকে অবশ্য অবশ্যই বিভ্রান্ত করব।",
       "words": [
         {
           "id": 40942,
@@ -3558,6 +3636,8 @@
     {
       "surah": 15,
       "ayah": 40,
+      "transliteration": "illā ʿibādaka min'humu l-mukh'laṣīna",
+      "translation_bn": "কিন্তু তাদের মধ্যে আপনার বাছাই করা বান্দাহদের ছাড়া।’",
       "words": [
         {
           "id": 41841,
@@ -3614,6 +3694,8 @@
     {
       "surah": 15,
       "ayah": 41,
+      "transliteration": "qāla hādhā ṣirāṭun ʿalayya mus'taqīmun",
+      "translation_bn": "তিনি বললেন- (আমার বাছাই করা বান্দারা যে পথে চলছে) এটাই আমার কাছে পৌঁছার সরল সোজা পথ।",
       "words": [
         {
           "id": 42129,
@@ -3680,6 +3762,8 @@
     {
       "surah": 15,
       "ayah": 42,
+      "transliteration": "inna ʿibādī laysa laka ʿalayhim sul'ṭānun illā mani ittabaʿaka mina l-ghāwīna",
+      "translation_bn": "আমার প্রকৃত বান্দাহ্দের উপর তোমার কোন আধিপত্য চলবে না, তোমাকে যারা অনুসরণ করে সেই বিভ্রান্তরা ছাড়া।",
       "words": [
         {
           "id": 43315,
@@ -3806,6 +3890,8 @@
     {
       "surah": 15,
       "ayah": 43,
+      "transliteration": "wa-inna jahannama lamawʿiduhum ajmaʿīna",
+      "translation_bn": "আর তাদের সবার জন্য অবশ্যই ওয়া‘দাকৃত স্থান হচ্ছে জাহান্নাম।",
       "words": [
         {
           "id": 44076,
@@ -3862,6 +3948,8 @@
     {
       "surah": 15,
       "ayah": 44,
+      "transliteration": "lahā sabʿatu abwābin likulli bābin min'hum juz'on maqsūmun",
+      "translation_bn": "তার সাতটা দরজা আছে। প্রত্যেক দরজার জন্য তাদের মধ্যে শ্রেণী নির্দিষ্ট আছে।’",
       "words": [
         {
           "id": 44878,
@@ -3958,6 +4046,8 @@
     {
       "surah": 15,
       "ayah": 45,
+      "transliteration": "inna l-mutaqīna fī jannātin waʿuyūnin",
+      "translation_bn": "অবশ্যই মুত্তাকীরা থাকবে জান্নাতে আর নির্ঝরিণীগুলোর মধ্যে।",
       "words": [
         {
           "id": 45550,
@@ -4024,6 +4114,8 @@
     {
       "surah": 15,
       "ayah": 46,
+      "transliteration": "ud'khulūhā bisalāmin āminīna",
+      "translation_bn": "তাদেরকে বলা হবে, ‘পূর্ণ শান্তি ও নিরাপত্তার সাথে তোমরা এতে প্রবেশ কর।’",
       "words": [
         {
           "id": 46242,
@@ -4070,6 +4162,8 @@
     {
       "surah": 15,
       "ayah": 47,
+      "transliteration": "wanazaʿnā mā fī ṣudūrihim min ghillin ikh'wānan ʿalā sururin mutaqābilīna",
+      "translation_bn": "তাদের অন্তর থেকে আমি বিদ্বেষ দূরীভূত করব, তারা ভ্রাতৃবন্ধনে আবদ্ধ হয়ে আসনে মুখোমুখী সমাসীন হবে।",
       "words": [
         {
           "id": 46911,
@@ -4186,6 +4280,8 @@
     {
       "surah": 15,
       "ayah": 48,
+      "transliteration": "lā yamassuhum fīhā naṣabun wamā hum min'hā bimukh'rajīna",
+      "translation_bn": "কোন ক্লান্তি তাদেরকে স্পর্শ করবে না, আর সেখান থেকে তারা কখনও বহিষ্কৃতও হবে না।",
       "words": [
         {
           "id": 47651,
@@ -4282,6 +4378,8 @@
     {
       "surah": 15,
       "ayah": 49,
+      "transliteration": "nabbi ʿibādī annī anā l-ghafūru l-raḥīmu",
+      "translation_bn": "আমার বান্দাহদেরকে সংবাদ দাও যে, আমি বড়ই ক্ষমাশীল, বড়ই দয়ালু।",
       "words": [
         {
           "id": 48307,
@@ -4358,6 +4456,8 @@
     {
       "surah": 15,
       "ayah": 50,
+      "transliteration": "wa-anna ʿadhābī huwa l-ʿadhābu l-alīmu",
+      "translation_bn": "আর আমার শাস্তি- তা বড়ই ভয়াবহ শাস্তি।",
       "words": [
         {
           "id": 48983,
@@ -4424,6 +4524,8 @@
     {
       "surah": 15,
       "ayah": 51,
+      "transliteration": "wanabbi'hum ʿan ḍayfi ib'rāhīma",
+      "translation_bn": "তাদেরকে ইবরাহীমের মেহমানের কাহিনী জানিয়ে দাও।",
       "words": [
         {
           "id": 49596,
@@ -4480,6 +4582,8 @@
     {
       "surah": 15,
       "ayah": 52,
+      "transliteration": "idh dakhalū ʿalayhi faqālū salāman qāla innā minkum wajilūna",
+      "translation_bn": "তারা যখন তার কাছে উপস্থিত হল তখন তারা বলল, ‘তোমার প্রতি সালাম।’ তখন সে বলল, ‘তোমাদের দেখে আমরা শংকিত।’",
       "words": [
         {
           "id": 50201,
@@ -4586,6 +4690,8 @@
     {
       "surah": 15,
       "ayah": 53,
+      "transliteration": "qālū lā tawjal innā nubashiruka bighulāmin ʿalīmin",
+      "translation_bn": "তারা বলল, ‘শংকা করো না, আমরা তোমাকে এক জ্ঞানী পুত্রের সুখবর দিচ্ছি।’",
       "words": [
         {
           "id": 50870,
@@ -4672,6 +4778,8 @@
     {
       "surah": 15,
       "ayah": 54,
+      "transliteration": "qāla abashartumūnī ʿalā an massaniya l-kibaru fabima tubashirūna",
+      "translation_bn": "সে বলল, ‘বার্ধক্য যখন আমাকে স্পর্শ করেছে তখন তোমরা আমাকে সুখবর দিচ্ছ। আচ্ছা, তোমাদের সুখবরটা কী?’",
       "words": [
         {
           "id": 51322,
@@ -4768,6 +4876,8 @@
     {
       "surah": 15,
       "ayah": 55,
+      "transliteration": "qālū basharnāka bil-ḥaqi falā takun mina l-qāniṭīna",
+      "translation_bn": "তারা বলল, ‘তোমাকে আমরা প্রকৃতই সুসংবাদ দিচ্ছি। কাজেই তুমি নিরাশদের অন্তর্ভুক্ত হয়ো না।’",
       "words": [
         {
           "id": 51782,
@@ -4854,6 +4964,8 @@
     {
       "surah": 15,
       "ayah": 56,
+      "transliteration": "qāla waman yaqnaṭu min raḥmati rabbihi illā l-ḍālūna",
+      "translation_bn": "সে বলল, ‘পথভ্রষ্টরা ছাড়া আর কে তার প্রতিপালকের রহমাত থেকে নিরাশ হয়?’",
       "words": [
         {
           "id": 52314,
@@ -4950,6 +5062,8 @@
     {
       "surah": 15,
       "ayah": 57,
+      "transliteration": "qāla famā khaṭbukum ayyuhā l-mur'salūna",
+      "translation_bn": "সে বলল, ‘হে আল্লাহর প্রেরিতরা! তোমরা কোন্ কাজে আগমন করেছ?’",
       "words": [
         {
           "id": 52875,
@@ -5016,6 +5130,8 @@
     {
       "surah": 15,
       "ayah": 58,
+      "transliteration": "qālū innā ur'sil'nā ilā qawmin muj'rimīna",
+      "translation_bn": "তারা বলল, ‘আমরা এক অপরাধী জাতির বিরুদ্ধে প্রেরিত হয়েছি।",
       "words": [
         {
           "id": 53566,
@@ -5092,6 +5208,8 @@
     {
       "surah": 15,
       "ayah": 59,
+      "transliteration": "illā āla lūṭin innā lamunajjūhum ajmaʿīna",
+      "translation_bn": "তবে লূতের পরিবার বাদে, তাদের সবাইকে আমরা অবশ্যই রক্ষা করব।",
       "words": [
         {
           "id": 53857,
@@ -5168,6 +5286,8 @@
     {
       "surah": 15,
       "ayah": 60,
+      "transliteration": "illā im'ra-atahu qaddarnā innahā lamina l-ghābirīna",
+      "translation_bn": "তবে তার স্ত্রীকে নয়, আমরা (আল্লাহর নির্দেশক্রমে) তার জন্য নির্ধারিত করে দিয়েছি যে, সে পেছনে থেকে যাওয়া লোকেদের মধ্যে শামিল থাকবে।’",
       "words": [
         {
           "id": 54439,
@@ -5244,6 +5364,8 @@
     {
       "surah": 15,
       "ayah": 61,
+      "transliteration": "falammā jāa āla lūṭin l-mur'salūna",
+      "translation_bn": "আল্লাহর প্রেরিতরা যখন লূত পরিবারের নিকট আসল,",
       "words": [
         {
           "id": 55345,
@@ -5310,6 +5432,8 @@
     {
       "surah": 15,
       "ayah": 62,
+      "transliteration": "qāla innakum qawmun munkarūna",
+      "translation_bn": "সে বলল, ‘আপনাদেরকে তো অপরিচিত লোক মনে হচ্ছে।’",
       "words": [
         {
           "id": 55853,
@@ -5366,6 +5490,8 @@
     {
       "surah": 15,
       "ayah": 63,
+      "transliteration": "qālū bal ji'nāka bimā kānū fīhi yamtarūna",
+      "translation_bn": "তারা বলল, ‘আমরা তা-ই নিয়ে এসেছি যে ব্যাপারে এ লোকেরা সন্দেহে পতিত ছিল।",
       "words": [
         {
           "id": 56423,
@@ -5452,6 +5578,8 @@
     {
       "surah": 15,
       "ayah": 64,
+      "transliteration": "wa-ataynāka bil-ḥaqi wa-innā laṣādiqūna",
+      "translation_bn": "তোমার কাছে আমরা সত্য নিয়েই এসেছি, আর আমরা অবশ্যই সত্যবাদী।",
       "words": [
         {
           "id": 56940,
@@ -5508,6 +5636,8 @@
     {
       "surah": 15,
       "ayah": 65,
+      "transliteration": "fa-asri bi-ahlika biqiṭ'ʿin mina al-layli wa-ittabiʿ adbārahum walā yaltafit minkum aḥadun wa-im'ḍū ḥaythu tu'marūna",
+      "translation_bn": "কাজেই কিছুটা রাত থাকতে তুমি তোমার পরিবারবর্গকে নিয়ে বেরিয়ে পড় আর তুমি তাদের পেছনে পেছনে চলতে থাক। তোমাদের কেউ যেন পেছনে ফিরে না তাকায় বরং যেখানে যেতে বলা হচ্ছে চলে যাও।’",
       "words": [
         {
           "id": 57388,
@@ -5664,6 +5794,8 @@
     {
       "surah": 15,
       "ayah": 66,
+      "transliteration": "waqaḍaynā ilayhi dhālika l-amra anna dābira hāulāi maqṭūʿun muṣ'biḥīna",
+      "translation_bn": "আমি লূতকে এ সিদ্ধান্ত জানিয়ে দিলাম যে, সকাল হতে না হতেই সমূলে ধ্বংস করা হবে।",
       "words": [
         {
           "id": 57884,
@@ -5770,6 +5902,8 @@
     {
       "surah": 15,
       "ayah": 67,
+      "transliteration": "wajāa ahlu l-madīnati yastabshirūna",
+      "translation_bn": "শহরের লোকেরা আনন্দ সহকারে (লূতের ঘরে) উপস্থিত হল।",
       "words": [
         {
           "id": 58345,
@@ -5826,6 +5960,8 @@
     {
       "surah": 15,
       "ayah": 68,
+      "transliteration": "qāla inna hāulāi ḍayfī falā tafḍaḥūni",
+      "translation_bn": "লূত বলল, ‘এরা আমার মেহমান, কাজেই তোমরা আমাকে লাঞ্ছিত করো না।",
       "words": [
         {
           "id": 58825,
@@ -5902,6 +6038,8 @@
     {
       "surah": 15,
       "ayah": 69,
+      "transliteration": "wa-ittaqū l-laha walā tukh'zūni",
+      "translation_bn": "তোমরা আল্লাহকে ভয় কর, আমাকে লজ্জিত করো না।’",
       "words": [
         {
           "id": 59329,
@@ -5958,6 +6096,8 @@
     {
       "surah": 15,
       "ayah": 70,
+      "transliteration": "qālū awalam nanhaka ʿani l-ʿālamīna",
+      "translation_bn": "তারা বলল, দুনিয়াব্যাপী বিষয় নিয়ে কথা বলতে আমরা কি তোমাকে নিষেধ করিনি?’",
       "words": [
         {
           "id": 59762,
@@ -6024,6 +6164,8 @@
     {
       "surah": 15,
       "ayah": 71,
+      "transliteration": "qāla hāulāi banātī in kuntum fāʿilīna",
+      "translation_bn": "(লূত (আ.)) বলল, ‘তোমরা যদি কিছু করতেই চাও তাহলে এই আমার (জাতির) কন্যারা আছে।’",
       "words": [
         {
           "id": 60243,
@@ -6100,6 +6242,8 @@
     {
       "surah": 15,
       "ayah": 72,
+      "transliteration": "laʿamruka innahum lafī sakratihim yaʿmahūna",
+      "translation_bn": "তোমার জীবনের শপথ হে নাবী! তারা উন্মত্ত নেশায় আত্মহারা হয়ে পড়েছিল।",
       "words": [
         {
           "id": 60516,
@@ -6166,6 +6310,8 @@
     {
       "surah": 15,
       "ayah": 73,
+      "transliteration": "fa-akhadhathumu l-ṣayḥatu mush'riqīna",
+      "translation_bn": "সূর্যোদয়ের সময়ে এক প্রচন্ড ধ্বনি তাদের উপর আঘাত হানল।",
       "words": [
         {
           "id": 61109,
@@ -6212,6 +6358,8 @@
     {
       "surah": 15,
       "ayah": 74,
+      "transliteration": "fajaʿalnā ʿāliyahā sāfilahā wa-amṭarnā ʿalayhim ḥijāratan min sijjīlin",
+      "translation_bn": "আর আমি সে জনপদকে উল্টে (উপর-নীচ) করে দিলাম আর তাদের উপর পাকানো মাটির প্রস্তর বর্ষণ করলাম।",
       "words": [
         {
           "id": 61822,
@@ -6308,6 +6456,8 @@
     {
       "surah": 15,
       "ayah": 75,
+      "transliteration": "inna fī dhālika laāyātin lil'mutawassimīna",
+      "translation_bn": "এতে অবশ্যই অন্তর্দৃষ্টিসম্পন্ন লোকেদের জন্য অনেক নিদর্শন রয়েছে।",
       "words": [
         {
           "id": 62016,
@@ -6374,6 +6524,8 @@
     {
       "surah": 15,
       "ayah": 76,
+      "transliteration": "wa-innahā labisabīlin muqīmin",
+      "translation_bn": "এটি মানুষের চলাচল পথের পাশেই বিদ্যমান।",
       "words": [
         {
           "id": 62717,
@@ -6420,6 +6572,8 @@
     {
       "surah": 15,
       "ayah": 77,
+      "transliteration": "inna fī dhālika laāyatan lil'mu'minīna",
+      "translation_bn": "মু’মিনদের জন্য এতে বড়ই নিদর্শন রয়েছে।",
       "words": [
         {
           "id": 62818,
@@ -6486,6 +6640,8 @@
     {
       "surah": 15,
       "ayah": 78,
+      "transliteration": "wa-in kāna aṣḥābu l-aykati laẓālimīna",
+      "translation_bn": "আর আয়কাহবাসীরাও অবশ্যই যালিম ছিল।",
       "words": [
         {
           "id": 63643,
@@ -6552,6 +6708,8 @@
     {
       "surah": 15,
       "ayah": 79,
+      "transliteration": "fa-intaqamnā min'hum wa-innahumā labi-imāmin mubīnin",
+      "translation_bn": "কাজেই তাদের উপর প্রতিশোধ নিয়েছিলাম, এ দু’টো জনপদই প্রকাশ্য পথের উপর অবস্থিত।",
       "words": [
         {
           "id": 63852,
@@ -6618,6 +6776,8 @@
     {
       "surah": 15,
       "ayah": 80,
+      "transliteration": "walaqad kadhaba aṣḥābu l-ḥij'ri l-mur'salīna",
+      "translation_bn": "হিজর-এর লোকেরাও রসূলদেরকে অমান্য করেছিল।",
       "words": [
         {
           "id": 64444,
@@ -6684,6 +6844,8 @@
     {
       "surah": 15,
       "ayah": 81,
+      "transliteration": "waātaynāhum āyātinā fakānū ʿanhā muʿ'riḍīna",
+      "translation_bn": "আমি তাদেরকে আমার নিদর্শনাবলী দিয়েছিলাম কিন্তু তাত্থেকে তারা মুখ ফিরিয়েই রেখেছিল।",
       "words": [
         {
           "id": 64455,
@@ -6750,6 +6912,8 @@
     {
       "surah": 15,
       "ayah": 82,
+      "transliteration": "wakānū yanḥitūna mina l-jibāli buyūtan āminīna",
+      "translation_bn": "তারা পাহাড় খোদাই করতঃ ঘর তৈরি করে নিজেদেরকে নিরাপদ ভাবত।",
       "words": [
         {
           "id": 65222,
@@ -6826,6 +6990,8 @@
     {
       "surah": 15,
       "ayah": 83,
+      "transliteration": "fa-akhadhathumu l-ṣayḥatu muṣ'biḥīna",
+      "translation_bn": "অতঃপর এক সকালে প্রচন্ড ধ্বনি তাদের উপর আঘাত হানল।",
       "words": [
         {
           "id": 65399,
@@ -6872,6 +7038,8 @@
     {
       "surah": 15,
       "ayah": 84,
+      "transliteration": "famā aghnā ʿanhum mā kānū yaksibūna",
+      "translation_bn": "তাদের উপার্জন তাদের কোন কাজে আসল না।",
       "words": [
         {
           "id": 65649,
@@ -6948,6 +7116,8 @@
     {
       "surah": 15,
       "ayah": 85,
+      "transliteration": "wamā khalaqnā l-samāwāti wal-arḍa wamā baynahumā illā bil-ḥaqi wa-inna l-sāʿata laātiyatun fa-iṣ'faḥi l-ṣafḥa l-jamīla",
+      "translation_bn": "আমি আসমানসমূহ, যমীন আর এ দু’য়ের মাঝে যা কিছু আছে প্রকৃত উদ্দেশ্য ছাড়া সৃষ্টি করিনি। ক্বিয়ামাত অবশ্যই আসবে, কাজেই উত্তম পন্থায় (তাদেরকে) এড়িয়ে যাও।",
       "words": [
         {
           "id": 66318,
@@ -7104,6 +7274,8 @@
     {
       "surah": 15,
       "ayah": 86,
+      "transliteration": "inna rabbaka huwa l-khalāqu l-ʿalīmu",
+      "translation_bn": "নিশ্চয় তোমার প্রতিপালক তিনি সর্বস্রষ্টা, সর্বজ্ঞ।",
       "words": [
         {
           "id": 66681,
@@ -7170,6 +7342,8 @@
     {
       "surah": 15,
       "ayah": 87,
+      "transliteration": "walaqad ātaynāka sabʿan mina l-mathānī wal-qur'āna l-ʿaẓīma",
+      "translation_bn": "আমি তোমাকে দিয়েছি পুনঃ পুনঃ আবৃত্ত সপ্ত আয়াত আর মহা কুরআন।",
       "words": [
         {
           "id": 67007,
@@ -7256,6 +7430,8 @@
     {
       "surah": 15,
       "ayah": 88,
+      "transliteration": "lā tamuddanna ʿaynayka ilā mā mattaʿnā bihi azwājan min'hum walā taḥzan ʿalayhim wa-ikh'fiḍ janāḥaka lil'mu'minīna",
+      "translation_bn": "তুমি দুনিয়ার দ্রব্য সামগ্রীর প্রতি চোখ তুলে তাকিও না যা আমি তাদের বিভিন্ন লোকেদের দিয়েছি। (তারা ভুল চিন্তা ও ভুল কর্মের মাধ্যমে নিজেদের ভয়াবহ পরিণাম ডেকে আনছে, এমতাবস্থায়) তাদের জন্য তুমি দুঃখ করো না, আর মু’মিনদের জন্য তোমার (অনুকম্পার) ডানা মেলে দাও।",
       "words": [
         {
           "id": 67438,
@@ -7422,6 +7598,8 @@
     {
       "surah": 15,
       "ayah": 89,
+      "transliteration": "waqul innī anā l-nadhīru l-mubīnu",
+      "translation_bn": "আর বলে দাও, ‘আমি তো স্পষ্ট ভাষায় সতর্ককারী মাত্র।’",
       "words": [
         {
           "id": 67846,
@@ -7488,6 +7666,8 @@
     {
       "surah": 15,
       "ayah": 90,
+      "transliteration": "kamā anzalnā ʿalā l-muq'tasimīna",
+      "translation_bn": "যে ধরনের সতর্কীকরণ পাঠানো হয়েছিল (আল্লাহর কিতাবকে) বিভক্তকারী (ইয়াহূদী ও খ্রীস্টান)দের উপর।",
       "words": [
         {
           "id": 68021,
@@ -7544,6 +7724,8 @@
     {
       "surah": 15,
       "ayah": 91,
+      "transliteration": "alladhīna jaʿalū l-qur'āna ʿiḍīna",
+      "translation_bn": "যারা কুরআনকে (নিজেদের খেয়াল খুশিমত) ভাগ ভাগ করে ফেলেছে (যেটা ইচ্ছে মানছে, যেটা ইচ্ছে অমান্য করছে)।",
       "words": [
         {
           "id": 68582,
@@ -7600,6 +7782,8 @@
     {
       "surah": 15,
       "ayah": 92,
+      "transliteration": "fawarabbika lanasalannahum ajmaʿīna",
+      "translation_bn": "অতএব শপথ তোমার রব্বের! তাদের সববাইকে অবশ্য অবশ্যই আমি জিজ্ঞেস করব ।",
       "words": [
         {
           "id": 68618,
@@ -7646,6 +7830,8 @@
     {
       "surah": 15,
       "ayah": 93,
+      "transliteration": "ʿammā kānū yaʿmalūna",
+      "translation_bn": "তারা যা করছে সে সম্পর্কে।",
       "words": [
         {
           "id": 69141,
@@ -7692,6 +7878,8 @@
     {
       "surah": 15,
       "ayah": 94,
+      "transliteration": "fa-iṣ'daʿ bimā tu'maru wa-aʿriḍ ʿani l-mush'rikīna",
+      "translation_bn": "কাজেই তোমাকে যে বিষয়ের হুকুম দেয়া হয়েছে তা জোরে শোরে প্রকাশ্যে প্রচার কর, আর মুশরিকদের থেকে মুখ ফিরিয়ে নাও।",
       "words": [
         {
           "id": 69653,
@@ -7768,6 +7956,8 @@
     {
       "surah": 15,
       "ayah": 95,
+      "transliteration": "innā kafaynāka l-mus'tahziīna",
+      "translation_bn": "(সেই) ঠাট্টা-বিদ্রূপকারীদের বিরুদ্ধে তোমার জন্য আমিই যথেষ্ট",
       "words": [
         {
           "id": 69693,
@@ -7814,6 +8004,8 @@
     {
       "surah": 15,
       "ayah": 96,
+      "transliteration": "alladhīna yajʿalūna maʿa l-lahi ilāhan ākhara fasawfa yaʿlamūna",
+      "translation_bn": "যারা আল্লাহর সাথে অন্যকেও ইলাহ বানিয়ে নিয়েছে, (কাজেই শিরকের পরিণতি কী) শীঘ্রই তারা জানতে পারবে।",
       "words": [
         {
           "id": 70137,
@@ -7910,6 +8102,8 @@
     {
       "surah": 15,
       "ayah": 97,
+      "transliteration": "walaqad naʿlamu annaka yaḍīqu ṣadruka bimā yaqūlūna",
+      "translation_bn": "আমি জানি, তারা যে সব কথা-বার্তা বলে তাতে তোমার মন সংকুচিত হয়।",
       "words": [
         {
           "id": 70391,
@@ -7996,6 +8190,8 @@
     {
       "surah": 15,
       "ayah": 98,
+      "transliteration": "fasabbiḥ biḥamdi rabbika wakun mina l-sājidīna",
+      "translation_bn": "কাজেই প্রশংসা সহকারে তুমি তোমার প্রতিপালকের পবিত্রতা ঘোষণা কর, আর সাজদাহকারীদের দলভুক্ত হও।",
       "words": [
         {
           "id": 70814,
@@ -8072,6 +8268,8 @@
     {
       "surah": 15,
       "ayah": 99,
+      "transliteration": "wa-uʿ'bud rabbaka ḥattā yatiyaka l-yaqīnu",
+      "translation_bn": "আর তোমার রব্বের ‘ইবাদাত করতে থাক তোমার সুনিশ্চিত ক্ষণের (অর্থাৎ মৃত্যুর) আগমন পর্যন্ত।",
       "words": [
         {
           "id": 70959,

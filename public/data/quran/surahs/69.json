@@ -4,6 +4,8 @@
     {
       "surah": 69,
       "ayah": 1,
+      "transliteration": "al-ḥāqatu",
+      "translation_bn": "নিশ্চিত সংঘটিতব্য বিষয়,",
       "words": [
         {
           "id": 588,
@@ -30,6 +32,8 @@
     {
       "surah": 69,
       "ayah": 2,
+      "transliteration": "mā l-ḥāqatu",
+      "translation_bn": "কী সেই নিশ্চিত সংঘটিতব্য বিষয়?",
       "words": [
         {
           "id": 1484,
@@ -66,6 +70,8 @@
     {
       "surah": 69,
       "ayah": 3,
+      "transliteration": "wamā adrāka mā l-ḥāqatu",
+      "translation_bn": "আর তুমি কি জান কী সেই নিশ্চিত সংঘটিতব্য বিষয়?",
       "words": [
         {
           "id": 2561,
@@ -122,6 +128,8 @@
     {
       "surah": 69,
       "ayah": 4,
+      "transliteration": "kadhabat thamūdu waʿādun bil-qāriʿati",
+      "translation_bn": "‘আদ ও সামূদ জাতি সেই আকস্মিকভাবে সংঘটিতব্য মহাবিপদকে মিথ্যে বলেছিল।",
       "words": [
         {
           "id": 3970,
@@ -178,6 +186,8 @@
     {
       "surah": 69,
       "ayah": 5,
+      "transliteration": "fa-ammā thamūdu fa-uh'likū bil-ṭāghiyati",
+      "translation_bn": "অতঃপর সামূদ জাতিকে ধ্বংস করা হয়েছিল এক প্রলয়ংকর বিপর্যয় দিয়ে।",
       "words": [
         {
           "id": 5275,
@@ -234,6 +244,8 @@
     {
       "surah": 69,
       "ayah": 6,
+      "transliteration": "wa-ammā ʿādun fa-uh'likū birīḥin ṣarṣarin ʿātiyatin",
+      "translation_bn": "আর ‘আদকে ধ্বংস করা হয়েছিল এক প্রচন্ড ঝড়ো হাওয়া দিয়ে।",
       "words": [
         {
           "id": 6487,
@@ -310,6 +322,8 @@
     {
       "surah": 69,
       "ayah": 7,
+      "transliteration": "sakharahā ʿalayhim sabʿa layālin wathamāniyata ayyāmin ḥusūman fatarā l-qawma fīhā ṣarʿā ka-annahum aʿjāzu nakhlin khāwiyatin",
+      "translation_bn": "যা তাদের উপর প্রবাহিত হয়েছিল সাত রাত আট দিন বিরামহীনভাবে, তুমি দেখতে তারা পড়ে আছে ইতস্তত বিক্ষিপ্ত, যেন তারা পুরাতন শুকনো খেজুর গাছের কান্ড।",
       "words": [
         {
           "id": 7888,
@@ -476,6 +490,8 @@
     {
       "surah": 69,
       "ayah": 8,
+      "transliteration": "fahal tarā lahum min bāqiyatin",
+      "translation_bn": "তুমি তাদের কাউকে রক্ষা পেয়ে বেঁচে থাকতে দেখছ কি?",
       "words": [
         {
           "id": 9071,
@@ -542,6 +558,8 @@
     {
       "surah": 69,
       "ayah": 9,
+      "transliteration": "wajāa fir'ʿawnu waman qablahu wal-mu'tafikātu bil-khāṭi-ati",
+      "translation_bn": "ফেরাউন আর তার পূর্ববর্তীরা আর উল্টে দেয়া জনপদবাসীরা গুরুতর পাপে লিপ্ত ছিল।",
       "words": [
         {
           "id": 10288,
@@ -618,6 +636,8 @@
     {
       "surah": 69,
       "ayah": 10,
+      "transliteration": "faʿaṣaw rasūla rabbihim fa-akhadhahum akhdhatan rābiyatan",
+      "translation_bn": "তারা তাদের প্রতিপালকের রসূলকে অমান্য করেছিল, তখন তিনি তাদেরকে পাকড়াও করলেন- অত্যন্ত কঠিন পাকড়াও।",
       "words": [
         {
           "id": 11519,
@@ -694,6 +714,8 @@
     {
       "surah": 69,
       "ayah": 11,
+      "transliteration": "innā lammā ṭaghā l-māu ḥamalnākum fī l-jāriyati",
+      "translation_bn": "(নূহের বানের) পানি যখন কূল ছাপিয়ে সীমা ছাড়িয়ে গেল, তখন আমি তোমাদেরকে চলন্ত নৌযানে আরোহণ করালাম।",
       "words": [
         {
           "id": 12835,
@@ -780,6 +802,8 @@
     {
       "surah": 69,
       "ayah": 12,
+      "transliteration": "linajʿalahā lakum tadhkiratan wataʿiyahā udhunun wāʿiyatun",
+      "translation_bn": "যেন এ ঘটনাটিকে আমি তোমাদের জন্য শিক্ষাপ্রদ-স্মারক করে রাখি আর সংরক্ষণকারী কান তা সংরক্ষণ করে।",
       "words": [
         {
           "id": 14094,
@@ -856,6 +880,8 @@
     {
       "surah": 69,
       "ayah": 13,
+      "transliteration": "fa-idhā nufikha fī l-ṣūri nafkhatun wāḥidatun",
+      "translation_bn": "অতঃপর যখন সিঙ্গায় ফুঁৎকার দেয়া হবে- মাত্র একটি ফুঁৎকার।",
       "words": [
         {
           "id": 15213,
@@ -932,6 +958,8 @@
     {
       "surah": 69,
       "ayah": 14,
+      "transliteration": "waḥumilati l-arḍu wal-jibālu fadukkatā dakkatan wāḥidatan",
+      "translation_bn": "পৃথিবী আর পর্বতমালা উৎক্ষিপ্ত হবে আর একই আঘাতে তাদেরকে চূর্ণ বিচূর্ণ করা হবে।",
       "words": [
         {
           "id": 16249,
@@ -1008,6 +1036,8 @@
     {
       "surah": 69,
       "ayah": 15,
+      "transliteration": "fayawma-idhin waqaʿati l-wāqiʿatu",
+      "translation_bn": "সেদিন ঘটবে সেই সংঘটিতব্য (মহা) ঘটনা।",
       "words": [
         {
           "id": 17436,
@@ -1054,6 +1084,8 @@
     {
       "surah": 69,
       "ayah": 16,
+      "transliteration": "wa-inshaqqati l-samāu fahiya yawma-idhin wāhiyatun",
+      "translation_bn": "আকাশ হয়ে যাবে দীর্ণ বিদীর্ণ আর সেদিন তা হবে বাঁধন-হারা-বিক্ষিপ্ত।",
       "words": [
         {
           "id": 18425,
@@ -1120,6 +1152,8 @@
     {
       "surah": 69,
       "ayah": 17,
+      "transliteration": "wal-malaku ʿalā arjāihā wayaḥmilu ʿarsha rabbika fawqahum yawma-idhin thamāniyatun",
+      "translation_bn": "ফেরেশতারা থাকবে আকাশের আশে পাশে। আটজন ফেরেশতা সেদিন তোমার প্রতিপালকের ‘আরশ নিজেদের ঊর্ধ্বে বহন করবে।",
       "words": [
         {
           "id": 19493,
@@ -1226,6 +1260,8 @@
     {
       "surah": 69,
       "ayah": 18,
+      "transliteration": "yawma-idhin tuʿ'raḍūna lā takhfā minkum khāfiyatun",
+      "translation_bn": "সেদিন তোমাদেরকে (বিচারের জন্য) হাজির করা হবে আর তোমাদের কোন কাজই- যা তোমরা গোপন কর- গোপন থাকবে না।",
       "words": [
         {
           "id": 20593,
@@ -1302,6 +1338,8 @@
     {
       "surah": 69,
       "ayah": 19,
+      "transliteration": "fa-ammā man ūtiya kitābahu biyamīnihi fayaqūlu hāumu iq'raū kitābiyah",
+      "translation_bn": "তখন যাকে তার ‘আমালনামা তার ডান হাতে দেয়া হবে সে বলবে, ‘এই যে আমার ‘আমালানামা পড়ে দেখ,",
       "words": [
         {
           "id": 21655,
@@ -1408,6 +1446,8 @@
     {
       "surah": 69,
       "ayah": 20,
+      "transliteration": "innī ẓanantu annī mulāqin ḥisābiyah",
+      "translation_bn": "আমি জানতাম যে, আমাকে আমার হিসাবের সম্মুখীন হতে হবে।’",
       "words": [
         {
           "id": 22740,
@@ -1474,6 +1514,8 @@
     {
       "surah": 69,
       "ayah": 21,
+      "transliteration": "fahuwa fī ʿīshatin rāḍiyatin",
+      "translation_bn": "অতঃপর সে আনন্দময় জীবন যাপন করবে,",
       "words": [
         {
           "id": 23891,
@@ -1530,6 +1572,8 @@
     {
       "surah": 69,
       "ayah": 22,
+      "transliteration": "fī jannatin ʿāliyatin",
+      "translation_bn": "উচ্চতম মর্যাদার জান্নাতে,",
       "words": [
         {
           "id": 24905,
@@ -1576,6 +1620,8 @@
     {
       "surah": 69,
       "ayah": 23,
+      "transliteration": "quṭūfuhā dāniyatun",
+      "translation_bn": "তার ফলসমূহ (ঝুলে থাকবে) নীচে-নাগালের মধ্যে।",
       "words": [
         {
           "id": 25970,
@@ -1612,6 +1658,8 @@
     {
       "surah": 69,
       "ayah": 24,
+      "transliteration": "kulū wa-ish'rabū hanīan bimā aslaftum fī l-ayāmi l-khāliyati",
+      "translation_bn": "(তাদেরকে বলা হবে) পরিপূর্ণ তৃপ্তির সঙ্গে খাও এবং পান কর বিগত দিনে তোমরা যা (নেক ‘আমাল) করেছিলে তার প্রতিদান স্বরূপ।",
       "words": [
         {
           "id": 26972,
@@ -1708,6 +1756,8 @@
     {
       "surah": 69,
       "ayah": 25,
+      "transliteration": "wa-ammā man ūtiya kitābahu bishimālihi fayaqūlu yālaytanī lam ūta kitābiyah",
+      "translation_bn": "কিন্তু যার ‘আমালনামা বাম হাতে দেয়া হবে সে বলবে, ‘হায়! আমাকে যদি আমার ‘আমালনামা না দেয়া হত,",
       "words": [
         {
           "id": 28032,
@@ -1824,6 +1874,8 @@
     {
       "surah": 69,
       "ayah": 26,
+      "transliteration": "walam adri mā ḥisābiyah",
+      "translation_bn": "আর আমার হিসাব কী তা যদি আমি না-ই জানতাম,",
       "words": [
         {
           "id": 28990,
@@ -1880,6 +1932,8 @@
     {
       "surah": 69,
       "ayah": 27,
+      "transliteration": "yālaytahā kānati l-qāḍiyata",
+      "translation_bn": "‘হায়! (দুনিয়ার) মৃত্যুই যদি আমার শেষ (অবস্থা) হত!",
       "words": [
         {
           "id": 29803,
@@ -1926,6 +1980,8 @@
     {
       "surah": 69,
       "ayah": 28,
+      "transliteration": "mā aghnā ʿannī māliyah",
+      "translation_bn": "আমার ধন-সম্পদ আমার কোন কাজে আসল না,",
       "words": [
         {
           "id": 30852,
@@ -1982,6 +2038,8 @@
     {
       "surah": 69,
       "ayah": 29,
+      "transliteration": "halaka ʿannī sul'ṭāniyah",
+      "translation_bn": "আমার (সব) ক্ষমতা আধিপত্য নিঃশেষ হয়ে গেছে,",
       "words": [
         {
           "id": 31929,
@@ -2028,6 +2086,8 @@
     {
       "surah": 69,
       "ayah": 30,
+      "transliteration": "khudhūhu faghullūhu",
+      "translation_bn": "(তখন নির্দেশ আসবে) ধর ওকে, ওর গলায় ফাঁস লাগিয়ে দাও,",
       "words": [
         {
           "id": 32812,
@@ -2064,6 +2124,8 @@
     {
       "surah": 69,
       "ayah": 31,
+      "transliteration": "thumma l-jaḥīma ṣallūhu",
+      "translation_bn": "তারপর ছুড়ে ফেল ওকে জাহান্নামে,",
       "words": [
         {
           "id": 33634,
@@ -2110,6 +2172,8 @@
     {
       "surah": 69,
       "ayah": 32,
+      "transliteration": "thumma fī sil'silatin dharʿuhā sabʿūna dhirāʿan fa-us'lukūhu",
+      "translation_bn": "তারপর ওকে শিকল দিয়ে বাঁধ- সত্তর হাত দীর্ঘ এক শিকলে,",
       "words": [
         {
           "id": 34520,
@@ -2196,6 +2260,8 @@
     {
       "surah": 69,
       "ayah": 33,
+      "transliteration": "innahu kāna lā yu'minu bil-lahi l-ʿaẓīmi",
+      "translation_bn": "সে মহান আল্লাহর উপর ঈমান আনেনি,",
       "words": [
         {
           "id": 35527,
@@ -2272,6 +2338,8 @@
     {
       "surah": 69,
       "ayah": 34,
+      "transliteration": "walā yaḥuḍḍu ʿalā ṭaʿāmi l-mis'kīni",
+      "translation_bn": "আর না সে মিসকীনকে খাবার খাওয়াতে উৎসাহ দিত,",
       "words": [
         {
           "id": 36445,
@@ -2338,6 +2406,8 @@
     {
       "surah": 69,
       "ayah": 35,
+      "transliteration": "falaysa lahu l-yawma hāhunā ḥamīmun",
+      "translation_bn": "কাজেই আজ এখানে তার কোন বন্ধু নেই,",
       "words": [
         {
           "id": 37301,
@@ -2404,6 +2474,8 @@
     {
       "surah": 69,
       "ayah": 36,
+      "transliteration": "walā ṭaʿāmun illā min ghis'līnin",
+      "translation_bn": "ক্ষত হতে পড়া পুঁজ ছাড়া কোন খাদ্য নেই,",
       "words": [
         {
           "id": 38032,
@@ -2470,6 +2542,8 @@
     {
       "surah": 69,
       "ayah": 37,
+      "transliteration": "lā yakuluhu illā l-khāṭiūna",
+      "translation_bn": "যা অপরাধীরা ছাড়া অন্য কেউ খায় না।",
       "words": [
         {
           "id": 38955,
@@ -2526,6 +2600,8 @@
     {
       "surah": 69,
       "ayah": 38,
+      "transliteration": "falā uq'simu bimā tub'ṣirūna",
+      "translation_bn": "আমি কসম করছি সে সব জিনিসের যা তোমরা দেখতে পাও,",
       "words": [
         {
           "id": 39803,
@@ -2582,6 +2658,8 @@
     {
       "surah": 69,
       "ayah": 39,
+      "transliteration": "wamā lā tub'ṣirūna",
+      "translation_bn": "আর (সে সব জিনিসেরও) যা তোমরা দেখতে পাও না",
       "words": [
         {
           "id": 40595,
@@ -2628,6 +2706,8 @@
     {
       "surah": 69,
       "ayah": 40,
+      "transliteration": "innahu laqawlu rasūlin karīmin",
+      "translation_bn": "যে, অবশ্যই এ কুরআন এক মহা সম্মানিত রসূল [জিবরীল (আঃ)]-এর (বহন করে আনা) বাণী।",
       "words": [
         {
           "id": 41152,
@@ -2684,6 +2764,8 @@
     {
       "surah": 69,
       "ayah": 41,
+      "transliteration": "wamā huwa biqawli shāʿirin qalīlan mā tu'minūna",
+      "translation_bn": "তা কোন কবির কথা নয়, (কবির কথা তো) তোমরা বিশ্বাস করো না,",
       "words": [
         {
           "id": 42179,
@@ -2770,6 +2852,8 @@
     {
       "surah": 69,
       "ayah": 42,
+      "transliteration": "walā biqawli kāhinin qalīlan mā tadhakkarūna",
+      "translation_bn": "এটা কোন গণকের কথাও নয়, (গণকের কথায় তো) তোমরা নসীহত লাভ করো না।",
       "words": [
         {
           "id": 43018,
@@ -2846,6 +2930,8 @@
     {
       "surah": 69,
       "ayah": 43,
+      "transliteration": "tanzīlun min rabbi l-ʿālamīna",
+      "translation_bn": "এটা বিশ্ব জগতের প্রতিপালকের নিকট থেকে অবতীর্ণ,",
       "words": [
         {
           "id": 43710,
@@ -2902,6 +2988,8 @@
     {
       "surah": 69,
       "ayah": 44,
+      "transliteration": "walaw taqawwala ʿalaynā baʿḍa l-aqāwīli",
+      "translation_bn": "নবী যদি কোন কথা নিজে রচনা করে আমার নামে চালিয়ে দিত,",
       "words": [
         {
           "id": 44524,
@@ -2968,6 +3056,8 @@
     {
       "surah": 69,
       "ayah": 45,
+      "transliteration": "la-akhadhnā min'hu bil-yamīni",
+      "translation_bn": "আমি অবশ্যই তার ডান হাত ধরে তাকে পাকড়াও করতাম,",
       "words": [
         {
           "id": 45227,
@@ -3014,6 +3104,8 @@
     {
       "surah": 69,
       "ayah": 46,
+      "transliteration": "thumma laqaṭaʿnā min'hu l-watīna",
+      "translation_bn": "তারপর অবশ্যই কেটে দিতাম তার হৃৎপিন্ডের শিরা,",
       "words": [
         {
           "id": 45965,
@@ -3070,6 +3162,8 @@
     {
       "surah": 69,
       "ayah": 47,
+      "transliteration": "famā minkum min aḥadin ʿanhu ḥājizīna",
+      "translation_bn": "অতঃপর তোমাদের মধ্যে এমন কেউ নেই যে, (আমার গোস্বা থেকে তাকে রক্ষা করার জন্য) বাধা সৃষ্টি করতে পারে।",
       "words": [
         {
           "id": 46593,
@@ -3146,6 +3240,8 @@
     {
       "surah": 69,
       "ayah": 48,
+      "transliteration": "wa-innahu latadhkiratun lil'muttaqīna",
+      "translation_bn": "মুত্তাক্বীদের জন্য এ কুরআন অবশ্যই এক উপদেশ,",
       "words": [
         {
           "id": 47088,
@@ -3192,6 +3288,8 @@
     {
       "surah": 69,
       "ayah": 49,
+      "transliteration": "wa-innā lanaʿlamu anna minkum mukadhibīna",
+      "translation_bn": "আমি অবশ্যই জানি যে, তোমাদের মধ্যে কতক লোক (কুরআনকে) অস্বীকার করবে।",
       "words": [
         {
           "id": 47934,
@@ -3258,6 +3356,8 @@
     {
       "surah": 69,
       "ayah": 50,
+      "transliteration": "wa-innahu laḥasratun ʿalā l-kāfirīna",
+      "translation_bn": "আর এ কুরআন কাফিরদের জন্য অবশ্যই দুঃখ ও হতাশার কারণ হবে (যখন কুরআনে বর্ণিত শাস্তি তাদেরকে ঘিরে ধরবে)।",
       "words": [
         {
           "id": 48697,
@@ -3314,6 +3414,8 @@
     {
       "surah": 69,
       "ayah": 51,
+      "transliteration": "wa-innahu laḥaqqu l-yaqīni",
+      "translation_bn": "এটা একেবারে নিশ্চিত সত্য।",
       "words": [
         {
           "id": 49239,
@@ -3360,6 +3462,8 @@
     {
       "surah": 69,
       "ayah": 52,
+      "transliteration": "fasabbiḥ bi-is'mi rabbika l-ʿaẓīmi",
+      "translation_bn": "অতএব তুমি তোমার মহান প্রতিপালকের নামের পবিত্রতা ও মহিমা বর্ণনা কর।",
       "words": [
         {
           "id": 49973,

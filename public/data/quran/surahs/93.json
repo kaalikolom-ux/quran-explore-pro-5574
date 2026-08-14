@@ -4,6 +4,8 @@
     {
       "surah": 93,
       "ayah": 1,
+      "transliteration": "wal-ḍuḥā",
+      "translation_bn": "সকালের উজ্জ্বল আলোর শপথ,",
       "words": [
         {
           "id": 70,
@@ -30,6 +32,8 @@
     {
       "surah": 93,
       "ayah": 2,
+      "transliteration": "wa-al-layli idhā sajā",
+      "translation_bn": "রাতের শপথ যখন তা হয় শান্ত-নিঝুম,",
       "words": [
         {
           "id": 1191,
@@ -76,6 +80,8 @@
     {
       "surah": 93,
       "ayah": 3,
+      "transliteration": "mā waddaʿaka rabbuka wamā qalā",
+      "translation_bn": "তোমার প্রতিপালক তোমাকে কক্ষনো পরিত্যাগ করেননি, আর তিনি অসন্তুষ্টও নন।",
       "words": [
         {
           "id": 2251,
@@ -142,6 +148,8 @@
     {
       "surah": 93,
       "ayah": 4,
+      "transliteration": "walalākhiratu khayrun laka mina l-ūlā",
+      "translation_bn": "অবশ্যই পরবর্তী সময় পূর্ববর্তী সময়ের চেয়ে তোমার জন্য হবে অধিক উৎকৃষ্ট।",
       "words": [
         {
           "id": 3555,
@@ -208,6 +216,8 @@
     {
       "surah": 93,
       "ayah": 5,
+      "transliteration": "walasawfa yuʿ'ṭīka rabbuka fatarḍā",
+      "translation_bn": "শীঘ্রই তোমার প্রতিপালক তোমাকে (এত নি‘মাত) দিবেন যার ফলে তুমি সন্তুষ্ট হয়ে যাবে।",
       "words": [
         {
           "id": 4814,
@@ -264,6 +274,8 @@
     {
       "surah": 93,
       "ayah": 6,
+      "transliteration": "alam yajid'ka yatīman faāwā",
+      "translation_bn": "তিনি কি তোমাকে ইয়াতীম অবস্থায় পান নাই? অতঃপর তিনি আশ্রয় দিয়েছেন।",
       "words": [
         {
           "id": 5889,
@@ -320,6 +332,8 @@
     {
       "surah": 93,
       "ayah": 7,
+      "transliteration": "wawajadaka ḍāllan fahadā",
+      "translation_bn": "তিনি তোমাকে পেয়েছিলেন পথের দিশা-হীন, অতঃপর দেখালেন সঠিক পথ।",
       "words": [
         {
           "id": 7732,
@@ -366,6 +380,8 @@
     {
       "surah": 93,
       "ayah": 8,
+      "transliteration": "wawajadaka ʿāilan fa-aghnā",
+      "translation_bn": "তিনি তোমাকে পেলেন নিঃস্ব, অতঃপর করলেন অভাবমুক্ত।",
       "words": [
         {
           "id": 8971,
@@ -412,6 +428,8 @@
     {
       "surah": 93,
       "ayah": 9,
+      "transliteration": "fa-ammā l-yatīma falā taqhar",
+      "translation_bn": "কাজেই তুমি ইয়াতীমের প্রতি কঠোরতা করবে না।",
       "words": [
         {
           "id": 10182,
@@ -468,6 +486,8 @@
     {
       "surah": 93,
       "ayah": 10,
+      "transliteration": "wa-ammā l-sāila falā tanhar",
+      "translation_bn": "এবং ভিক্ষুককে ধমক দিবে না।",
       "words": [
         {
           "id": 11376,
@@ -524,6 +544,8 @@
     {
       "surah": 93,
       "ayah": 11,
+      "transliteration": "wa-ammā biniʿ'mati rabbika faḥaddith",
+      "translation_bn": "আর তুমি তোমার রব-এর নি‘মাতকে (তোমার কথা, কাজকর্ম ও আচরণের মাধ্যমে) প্রকাশ করতে থাক।",
       "words": [
         {
           "id": 12598,

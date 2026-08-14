@@ -4,6 +4,8 @@
     {
       "surah": 4,
       "ayah": 1,
+      "transliteration": "yāayyuhā l-nāsu ittaqū rabbakumu alladhī khalaqakum min nafsin wāḥidatin wakhalaqa min'hā zawjahā wabatha min'humā rijālan kathīran wanisāan wa-ittaqū l-laha alladhī tasāalūna bihi wal-arḥāma inna l-laha kāna ʿalaykum raqīban",
+      "translation_bn": "হে মনুষ্য সমাজ! তোমরা তোমাদের প্রতিপালককে ভয় কর, যিনি তোমাদেরকে একটি মাত্র ব্যক্তি হতে পয়দা করেছেন এবং তা হতে তার জোড়া সৃষ্টি করেছেন, অতঃপর সেই দু’জন হতে বহু নর-নারী ছড়িয়ে দিয়েছেন এবং তোমরা আল্লাহকে ভয় কর, যাঁর নামে তোমরা পরস্পর পরস্পরের নিকট (হাক্ব) চেয়ে থাক এবং সতর্ক থাক জ্ঞাতি-বন্ধন সম্পর্কে, নিশ্চয়ই আল্লাহ তোমাদের উপর তীক্ষ্ণ দৃষ্টি রাখেন।",
       "words": [
         {
           "id": 24,
@@ -300,6 +302,8 @@
     {
       "surah": 4,
       "ayah": 2,
+      "transliteration": "waātū l-yatāmā amwālahum walā tatabaddalū l-khabītha bil-ṭayibi walā takulū amwālahum ilā amwālikum innahu kāna ḥūban kabīran",
+      "translation_bn": "এবং ইয়াতীমদেরকে তাদের ধন-সম্পদ প্রদান কর এবং ভালোর সাথে মন্দের বদল করো না এবং তাদের মাল নিজেদের মালের সঙ্গে মিশিয়ে গ্রাস করো না, নিশ্চয় এটা মহাপাপ।",
       "words": [
         {
           "id": 1251,
@@ -476,6 +480,8 @@
     {
       "surah": 4,
       "ayah": 3,
+      "transliteration": "wa-in khif'tum allā tuq'siṭū fī l-yatāmā fa-inkiḥū mā ṭāba lakum mina l-nisāi mathnā wathulātha warubāʿa fa-in khif'tum allā taʿdilū fawāḥidatan aw mā malakat aymānukum dhālika adnā allā taʿūlū",
+      "translation_bn": "যদি তোমরা আশঙ্কা কর যে, (নারী) ইয়াতীমদের প্রতি সুবিচার করতে পারবে না, তবে নারীদের মধ্য হতে নিজেদের পছন্দমত দুই-দুই, তিন-তিন ও চার-চার জনকে বিবাহ কর, কিন্তু যদি তোমরা আশঙ্কা কর যে, তোমরা সুবিচার করতে পারবে না, তাহলে একজনকে কিংবা তোমাদের অধীনস্থ দাসীকে; এটাই হবে অবিচার না করার কাছাকাছি।",
       "words": [
         {
           "id": 2759,
@@ -772,6 +778,8 @@
     {
       "surah": 4,
       "ayah": 4,
+      "transliteration": "waātū l-nisāa ṣaduqātihinna niḥ'latan fa-in ṭib'na lakum ʿan shayin min'hu nafsan fakulūhu hanīan marīan",
+      "translation_bn": "নারীদেরকে তাদের মোহর স্বতঃস্ফূর্ত হয়ে দেবে, অতঃপর তারা যদি সন্তোষের সঙ্গে তাথেকে তোমাদের জন্য কিছু ছেড়ে দেয়, তবে তা তৃপ্তির সঙ্গে ভোগ কর।",
       "words": [
         {
           "id": 3256,
@@ -928,6 +936,8 @@
     {
       "surah": 4,
       "ayah": 5,
+      "transliteration": "walā tu'tū l-sufahāa amwālakumu allatī jaʿala l-lahu lakum qiyāman wa-ur'zuqūhum fīhā wa-ik'sūhum waqūlū lahum qawlan maʿrūfan",
+      "translation_bn": "এবং তোমরা অল্প-বুদ্ধিসম্পন্নদেরকে নিজেদের মাল প্রদান করো না, যা আল্লাহ তোমাদের জীবনে প্রতিষ্ঠিত থাকার উপকরণ করেছেন এবং সে মাল হতে তাদের অন্ন-বস্ত্রের ব্যবস্থা করবে এবং তাদের সঙ্গে দয়ার্দ্র ন্যায়ানুগ কথা বলবে।",
       "words": [
         {
           "id": 4574,
@@ -1104,6 +1114,8 @@
     {
       "surah": 4,
       "ayah": 6,
+      "transliteration": "wa-ib'talū l-yatāmā ḥattā idhā balaghū l-nikāḥa fa-in ānastum min'hum rush'dan fa-id'faʿū ilayhim amwālahum walā takulūhā is'rāfan wabidāran an yakbarū waman kāna ghaniyyan falyastaʿfif waman kāna faqīran falyakul bil-maʿrūfi fa-idhā dafaʿtum ilayhim amwālahum fa-ashhidū ʿalayhim wakafā bil-lahi ḥasīban",
+      "translation_bn": "ইয়াতীমদেরকে পরখ কর যে পর্যন্ত না তারা বিবাহযোগ্য হয়, যদি তাদের মধ্যে বিচারবোধ লক্ষ্য কর, তবে তাদেরকে তাদের মাল ফিরিয়ে দেবে। তাদের বয়ঃপ্রাপ্তির ভয়ে অপব্যয় করে এবং তাড়াতাড়ি করে তাদের মাল খেয়ে ফেলো না। আর যে অভাবমুক্ত, সে যেন নিবৃত্ত থাকে এবং যে অভাবগ্রস্ত সে ন্যায়সঙ্গতভাবে ভোগ করবে এবং যখন তাদের মাল তাদেরকে সমর্পণ করবে, তাদের সামনে সাক্ষী রাখবে; হিসাব গ্রহণে আল্লাহই যথেষ্ট।",
       "words": [
         {
           "id": 5894,
@@ -1490,6 +1502,8 @@
     {
       "surah": 4,
       "ayah": 7,
+      "transliteration": "lilrrijāli naṣībun mimmā taraka l-wālidāni wal-aqrabūna walilnnisāi naṣībun mimmā taraka l-wālidāni wal-aqrabūna mimmā qalla min'hu aw kathura naṣīban mafrūḍan",
+      "translation_bn": "মাতা-পিতা এবং আত্মীয়দের রেখে যাওয়া সম্পত্তিতে পুরুষদের অংশ রয়েছে; আর মাতা-পিতা এবং আত্মীয়দের রেখে যাওয়া সম্পত্তিতে নারীদেরও অংশ আছে, তা অল্পই হোক আর বেশিই হোক, এক নির্ধারিত অংশ।",
       "words": [
         {
           "id": 7204,
@@ -1696,6 +1710,8 @@
     {
       "surah": 4,
       "ayah": 8,
+      "transliteration": "wa-idhā ḥaḍara l-qis'mata ulū l-qur'bā wal-yatāmā wal-masākīnu fa-ur'zuqūhum min'hu waqūlū lahum qawlan maʿrūfan",
+      "translation_bn": "(সম্পত্তি) বণ্টনকালে স্বজন, ইয়াতীম এবং মিসকীন উপস্থিত থাকলে তাদেরকেও তাত্থেকে কিছু দিয়ে দেবে, তাদের সঙ্গে দয়ার্দ্র ন্যায়ানুগ কথা বলবে।",
       "words": [
         {
           "id": 8518,
@@ -1842,6 +1858,8 @@
     {
       "surah": 4,
       "ayah": 9,
+      "transliteration": "walyakhsha alladhīna law tarakū min khalfihim dhurriyyatan ḍiʿāfan khāfū ʿalayhim falyattaqū l-laha walyaqūlū qawlan sadīdan",
+      "translation_bn": "তারা যেন ভয় করে যে, অসহায় সন্তান পেছনে ছেড়ে গেলে তারাও তাদের জন্য চিন্তিত হত, সুতরাং তারা যেন আল্লাহকে ভয় করে এবং সঙ্গত কথা বলে।",
       "words": [
         {
           "id": 9720,
@@ -2008,6 +2026,8 @@
     {
       "surah": 4,
       "ayah": 10,
+      "transliteration": "inna alladhīna yakulūna amwāla l-yatāmā ẓul'man innamā yakulūna fī buṭūnihim nāran wasayaṣlawna saʿīran",
+      "translation_bn": "যারা ইয়াতীমদের মাল অন্যায়ভাবে গ্রাস করে, তারা তো নিজেদের পেটে কেবল অগ্নিই ভক্ষণ করে, তারা শীঘ্রই জ্বলন্ত আগুনে জ্বলবে।",
       "words": [
         {
           "id": 10855,
@@ -2154,6 +2174,8 @@
     {
       "surah": 4,
       "ayah": 11,
+      "transliteration": "yūṣīkumu l-lahu fī awlādikum lildhakari mith'lu ḥaẓẓi l-unthayayni fa-in kunna nisāan fawqa ith'natayni falahunna thuluthā mā taraka wa-in kānat wāḥidatan falahā l-niṣ'fu wali-abawayhi likulli wāḥidin min'humā l-sudusu mimmā taraka in kāna lahu waladun fa-in lam yakun lahu waladun wawarithahu abawāhu fali-ummihi l-thuluthu fa-in kāna lahu ikh'watun fali-ummihi l-sudusu min baʿdi waṣiyyatin yūṣī bihā aw daynin ābāukum wa-abnāukum lā tadrūna ayyuhum aqrabu lakum nafʿan farīḍatan mina l-lahi inna l-laha kāna ʿalīman ḥakīman",
+      "translation_bn": "আল্লাহ তোমাদেরকে তোমাদের সন্তান-সন্ততির (অংশ) সম্পর্কে নির্দেশ দিচ্ছেন, পুরুষ দুই নারীর অংশের সমান পাবে, তবে সন্তান-সন্ততি যদি শুধু দু’জন নারীর অধিক হয় তাহলে তাঁরা রেখে যাওয়া সম্পত্তির তিন ভাগের দু’ ভাগ পাবে, আর কেবল একটি কন্যা থাকলে সে অর্ধেক পাবে এবং তার পিতা-মাতা উভয়ের প্রত্যেকে রেখে যাওয়া সম্পত্তির ছয় ভাগের এক ভাগ পাবে যদি তার সন্তান থাকে, আর যদি তার সন্তান না থাকে এবং তার ওয়ারিশ মাতা-পিতাই হয়, সে অবস্থায় তার মাতার জন্য এক তৃতীয়াংশ, কিন্তু তার ভাই-বোন থাকলে, তার মাতা পাবে ছয় ভাগের এক ভাগ, (ঐসব বণ্টন হবে) তার কৃত ওয়াসীয়াত অথবা ঋণ পরিশোধের পর। তোমরা জান না তোমাদের পিতা এবং সন্তানদের মধ্যে কে তোমাদের পক্ষে উপকারের দিক দিয়ে অধিকতর নিকটবর্তী। (এ বণ্টন) আল্লাহর পক্ষ হতে নির্ধারিত করে দেয়া হয়েছে, নিশ্চয় আল্লাহ মহাজ্ঞানী, প্রজ্ঞাশীল।",
       "words": [
         {
           "id": 12105,
@@ -2880,6 +2902,8 @@
     {
       "surah": 4,
       "ayah": 12,
+      "transliteration": "walakum niṣ'fu mā taraka azwājukum in lam yakun lahunna waladun fa-in kāna lahunna waladun falakumu l-rubuʿu mimmā tarakna min baʿdi waṣiyyatin yūṣīna bihā aw daynin walahunna l-rubuʿu mimmā taraktum in lam yakun lakum waladun fa-in kāna lakum waladun falahunna l-thumunu mimmā taraktum min baʿdi waṣiyyatin tūṣūna bihā aw daynin wa-in kāna rajulun yūrathu kalālatan awi im'ra-atun walahu akhun aw ukh'tun falikulli wāḥidin min'humā l-sudusu fa-in kānū akthara min dhālika fahum shurakāu fī l-thuluthi min baʿdi waṣiyyatin yūṣā bihā aw daynin ghayra muḍārrin waṣiyyatan mina l-lahi wal-lahu ʿalīmun ḥalīmun",
+      "translation_bn": "তোমাদের স্ত্রীদের রেখে যাওয়া সম্পত্তির অর্ধেক তোমাদের জন্য- যদি তাদের কোন সন্তান না থাকে আর যদি সন্তান থাকে, তবে তোমাদের জন্য তাদের রেখে যাওয়া সম্পত্তির এক চতুর্থাংশ, তাদের কৃত ওয়াসীয়াত কিংবা ঋণ পরিশোধের পর এবং তারা তোমাদের রেখে যাওয়া সম্পত্তির সিকি অংশ পাবে যদি তোমাদের কোন সন্তান না থাকে, আর তোমাদের সন্তান থাকলে তাদের জন্য তোমাদের সম্পত্তির আট ভাগের একভাগ- তোমাদের কৃত ওয়াসীয়ত কিংবা ঋণ পরিশোধের পর। যদি পিতা-মাতাহীন ও সন্তানহীন কোন পুরুষ বা নারীর শুধু বৈপিত্রেয় একটি ভাই বা একটি ভগ্নি থাকে, তবে প্রত্যেকের জন্য ছ’ ভাগের এক ভাগ। যদি তারা তার চেয়ে অধিক হয়, তবে সকলেই তৃতীয়াংশে শরীক হবে কৃত ওয়াসীয়াত কিংবা ঋণ পরিশোধের পরে, যদি কারো জন্য ক্ষতিকর না হয়, এ হল আল্লাহর বিধান, আল্লাহ সর্বজ্ঞ, সহনশীল।",
       "words": [
         {
           "id": 13438,
@@ -3776,6 +3800,8 @@
     {
       "surah": 4,
       "ayah": 13,
+      "transliteration": "til'ka ḥudūdu l-lahi waman yuṭiʿi l-laha warasūlahu yud'khil'hu jannātin tajrī min taḥtihā l-anhāru khālidīna fīhā wadhālika l-fawzu l-ʿaẓīmu",
+      "translation_bn": "এসব আল্লাহর নির্ধারিত সীমা এবং যে ব্যক্তি আল্লাহ এবং তাঁর রসূলের অনুসরণ করবে, আল্লাহ তাকে জান্নাতে দাখিল করবেন, যার পাদদেশে ঝর্ণাধারা প্রবাহিত, তারা তাতে চিরবাসী হবে এবং এটা বিরাট সাফল্য।",
       "words": [
         {
           "id": 14694,
@@ -3972,6 +3998,8 @@
     {
       "surah": 4,
       "ayah": 14,
+      "transliteration": "waman yaʿṣi l-laha warasūlahu wayataʿadda ḥudūdahu yud'khil'hu nāran khālidan fīhā walahu ʿadhābun muhīnun",
+      "translation_bn": "আর যে ব্যক্তি আল্লাহ এবং তাঁর রসূলের নাফরমানী করবে এবং তাঁর নির্ধারিত সীমালঙ্ঘন করবে, আল্লাহ তাকে জাহান্নামে দাখিল করবেন, সে তাতে চিরবাসী হবে এবং সে অবমাননাকর শাস্তি ভোগ করবে।",
       "words": [
         {
           "id": 15769,
@@ -4118,6 +4146,8 @@
     {
       "surah": 4,
       "ayah": 15,
+      "transliteration": "wa-allātī yatīna l-fāḥishata min nisāikum fa-is'tashhidū ʿalayhinna arbaʿatan minkum fa-in shahidū fa-amsikūhunna fī l-buyūti ḥattā yatawaffāhunna l-mawtu aw yajʿala l-lahu lahunna sabīlan",
+      "translation_bn": "তোমাদের যে সব নারী ব্যভিচার করবে, তোমরা তাদের বিরুদ্ধে তোমাদের চারজনের সাক্ষ্য গ্রহণ কর। যদি তারা সাক্ষ্য দেয়, তবে তোমরা তাদেরকে সে সময় পর্যন্ত গৃহে আবদ্ধ করে রাখবে যে পর্যন্ত না তাদের মৃত্যু হয় কিংবা আল্লাহ তাদের জন্য কোন পৃথক পথ বের করেন।",
       "words": [
         {
           "id": 16900,
@@ -4354,6 +4384,8 @@
     {
       "surah": 4,
       "ayah": 16,
+      "transliteration": "wa-alladhāni yatiyānihā minkum faādhūhumā fa-in tābā wa-aṣlaḥā fa-aʿriḍū ʿanhumā inna l-laha kāna tawwāban raḥīman",
+      "translation_bn": "তোমাদের মধ্যেকার যে দু’জন তাতে লিপ্ত হবে, তোমরা সে দু’জনকে শাস্তি দেবে, অতঃপর যদি তারা তাওবাহ করে এবং নিজেদেরকে সংশোধন করে তবে তাদের ব্যাপারে নিবৃত্ত হও, নিশ্চয় আল্লাহ অতিশয় তাওবাহ কবূলকারী, পরম দয়ালু।",
       "words": [
         {
           "id": 18020,
@@ -4510,6 +4542,8 @@
     {
       "surah": 4,
       "ayah": 17,
+      "transliteration": "innamā l-tawbatu ʿalā l-lahi lilladhīna yaʿmalūna l-sūa bijahālatin thumma yatūbūna min qarībin fa-ulāika yatūbu l-lahu ʿalayhim wakāna l-lahu ʿalīman ḥakīman",
+      "translation_bn": "নিশ্চয়ই যারা অজ্ঞতাবশতঃ মন্দ কাজ ক’রে বসে, তৎপর সত্বর তাওবাহ করে, এরাই তারা যাদের তাওবাহ আল্লাহ কবূল করেন। আল্লাহ মহাজ্ঞানী, মহাবিজ্ঞানী।",
       "words": [
         {
           "id": 19018,
@@ -4726,6 +4760,8 @@
     {
       "surah": 4,
       "ayah": 18,
+      "transliteration": "walaysati l-tawbatu lilladhīna yaʿmalūna l-sayiāti ḥattā idhā ḥaḍara aḥadahumu l-mawtu qāla innī tub'tu l-āna walā alladhīna yamūtūna wahum kuffārun ulāika aʿtadnā lahum ʿadhāban alīman",
+      "translation_bn": "এমন লোকেদের তাওবাহ নিস্ফল যারা গুনাহ করতেই থাকে, অতঃপর মৃত্যুর মুখোমুখী হলে বলে, আমি এখন তাওবাহ করছি এবং (তাওবাহ) তাদের জন্যও নয় যাদের মৃত্যু হয় কাফির অবস্থায়। এরাই তারা যাদের জন্য ভয়াবহ শাস্তির ব্যবস্থা করে রেখেছি।",
       "words": [
         {
           "id": 20144,
@@ -4982,6 +5018,8 @@
     {
       "surah": 4,
       "ayah": 19,
+      "transliteration": "yāayyuhā alladhīna āmanū lā yaḥillu lakum an tarithū l-nisāa karhan walā taʿḍulūhunna litadhhabū bibaʿḍi mā ātaytumūhunna illā an yatīna bifāḥishatin mubayyinatin waʿāshirūhunna bil-maʿrūfi fa-in karih'tumūhunna faʿasā an takrahū shayan wayajʿala l-lahu fīhi khayran kathīran",
+      "translation_bn": "হে ঈমানদারগণ! জোরপূর্বক নারীদের ওয়ারিশ হওয়া তোমাদের জন্য বৈধ নয় আর তাদেরকে দেয়া মাল হতে কিছু উসূল করে নেয়ার উদ্দেশ্যে তাদের সঙ্গে রূঢ় আচরণ করবে না, যদি না তারা সুস্পষ্ট ব্যভিচার করে। তাদের সাথে দয়া ও সততার সঙ্গে জীবন যাপন কর, যদি তাদেরকে না-পছন্দ কর, তবে হতে পারে যে তোমরা যাকে না-পছন্দ করছ, বস্তুতঃ তারই মধ্যে আল্লাহ বহু কল্যাণ দিয়ে রেখেছেন।",
       "words": [
         {
           "id": 21209,
@@ -5338,6 +5376,8 @@
     {
       "surah": 4,
       "ayah": 20,
+      "transliteration": "wa-in aradttumu is'tib'dāla zawjin makāna zawjin waātaytum iḥ'dāhunna qinṭāran falā takhudhū min'hu shayan atakhudhūnahu buh'tānan wa-ith'man mubīnan",
+      "translation_bn": "যদি তোমরা এক স্ত্রী বদলিয়ে তদস্থলে অন্য স্ত্রী গ্রহণের ইচ্ছে কর এবং তাদের একজনকে অগাধ সম্পদও দিয়ে থাক, তবুও তাত্থেকে কিছুই ফিরিয়ে নিও না। তোমরা কি (স্ত্রীর নামে) মিথ্যে দুর্নাম রটিয়ে সুস্পষ্ট গুনাহ করে তা ফেরত নেবে?",
       "words": [
         {
           "id": 23284,
@@ -5524,6 +5564,8 @@
     {
       "surah": 4,
       "ayah": 21,
+      "transliteration": "wakayfa takhudhūnahu waqad afḍā baʿḍukum ilā baʿḍin wa-akhadhna minkum mīthāqan ghalīẓan",
+      "translation_bn": "কেমন করেই বা তোমরা তা গ্রহণ করবে যখন তোমরা একে অন্যের সাথে সঙ্গত হয়েছ এবং তারা তোমাদের নিকট হতে (বিবাহ বন্ধনের) সুস্পষ্ট প্রতিশ্রুতি নিয়েছে।",
       "words": [
         {
           "id": 24364,
@@ -5650,6 +5692,8 @@
     {
       "surah": 4,
       "ayah": 22,
+      "transliteration": "walā tankiḥū mā nakaḥa ābāukum mina l-nisāi illā mā qad salafa innahu kāna fāḥishatan wamaqtan wasāa sabīlan",
+      "translation_bn": "যাদেরকে তোমাদের পিতৃপুরুষ বিয়ে করেছে, সেসব নারীকে বিয়ে করো না, পূর্বে যা হয়ে গেছে হয়ে গেছে, নিশ্চয়ই তা অশ্লীল, অতি ঘৃণ্য ও নিকৃষ্ট পন্থা।",
       "words": [
         {
           "id": 24449,
@@ -5836,6 +5880,8 @@
     {
       "surah": 4,
       "ayah": 23,
+      "transliteration": "ḥurrimat ʿalaykum ummahātukum wabanātukum wa-akhawātukum waʿammātukum wakhālātukum wabanātu l-akhi wabanātu l-ukh'ti wa-ummahātukumu allātī arḍaʿnakum wa-akhawātukum mina l-raḍāʿati wa-ummahātu nisāikum warabāibukumu allātī fī ḥujūrikum min nisāikumu allātī dakhaltum bihinna fa-in lam takūnū dakhaltum bihinna falā junāḥa ʿalaykum waḥalāilu abnāikumu alladhīna min aṣlābikum wa-an tajmaʿū bayna l-ukh'tayni illā mā qad salafa inna l-laha kāna ghafūran raḥīman",
+      "translation_bn": "তোমাদের প্রতি হারাম করা হয়েছে তোমাদের মা এবং মেয়ে, বোন, ফুফু, খালা, ভাইঝি, ভাগিনী, দুধ মা, দুধ বোন, শ্বাশুড়ী, তোমাদের স্ত্রীদের মধ্যে যার সাথে সঙ্গত হয়েছ তার পূর্ব স্বামীর ঔরসজাত মেয়ে যারা তোমাদের তত্ত্বাবধানে আছে, কিন্তু যদি তাদের সাথে তোমরা সহবাস না করে থাক, তবে (তাদের বদলে তাদের মেয়েদেরকে বিয়ে করলে) তোমাদের প্রতি গুনাহ নেই এবং (তোমাদের প্রতি হারাম করা হয়েছে) তোমাদের ঔরসজাত পুত্রের স্ত্রী এবং এক সঙ্গে দু’ বোনকে (বিবাহ বন্ধনে) রাখা, পূর্বে যা হয়ে গেছে, হয়ে গেছে, নিশ্চয়ই আল্লাহ পরম ক্ষমাশীল, দয়ালু।",
       "words": [
         {
           "id": 25516,
@@ -6392,6 +6438,8 @@
     {
       "surah": 4,
       "ayah": 24,
+      "transliteration": "wal-muḥ'ṣanātu mina l-nisāi illā mā malakat aymānukum kitāba l-lahi ʿalaykum wa-uḥilla lakum mā warāa dhālikum an tabtaghū bi-amwālikum muḥ'ṣinīna ghayra musāfiḥīna famā is'tamtaʿtum bihi min'hunna faātūhunna ujūrahunna farīḍatan walā junāḥa ʿalaykum fīmā tarāḍaytum bihi min baʿdi l-farīḍati inna l-laha kāna ʿalīman ḥakīman",
+      "translation_bn": "নারীদের মধ্যে বিবাহবন্ধনে আবদ্ধ নারীগণও তোমাদের জন্য নিষিদ্ধ, কিন্তু তোমাদের অধিকারভুক্ত দাসীদের বাদে, আল্লাহ এসব ব্যবস্থা তোমাদের উপর ফরয করে দিয়েছেন। তোমাদের জন্য নিষিদ্ধ নারীদের ছাড়া অন্যান্য সকল নারীদেরকে মোহরের অর্থের বদলে বিবাহ বন্ধনে আবদ্ধ করতে চাওয়া তোমাদের জন্য বৈধ করা হয়েছে, অবৈধ যৌন সম্পর্কের জন্য নয়। অতঃপর তাদের মধ্যে যাদের তোমরা সম্ভোগ করেছ, তাদেরকে তাদের ধার্যকৃত মোহর প্রদান কর। তোমাদের প্রতি কোনও গুনাহ নেই মোহর ধার্যের পরও তোমরা উভয়ের সম্মতির ভিত্তিতে মোহরের পরিমাণে হেরফের করলে, নিশ্চয় আল্লাহ সবিশেষ পরিজ্ঞাত ও পরম কুশলী।",
       "words": [
         {
           "id": 26590,
@@ -6828,6 +6876,8 @@
     {
       "surah": 4,
       "ayah": 25,
+      "transliteration": "waman lam yastaṭiʿ minkum ṭawlan an yankiḥa l-muḥ'ṣanāti l-mu'mināti famin mā malakat aymānukum min fatayātikumu l-mu'mināti wal-lahu aʿlamu biīmānikum baʿḍukum min baʿḍin fa-inkiḥūhunna bi-idh'ni ahlihinna waātūhunna ujūrahunna bil-maʿrūfi muḥ'ṣanātin ghayra musāfiḥātin walā muttakhidhāti akhdānin fa-idhā uḥ'ṣinna fa-in atayna bifāḥishatin faʿalayhinna niṣ'fu mā ʿalā l-muḥ'ṣanāti mina l-ʿadhābi dhālika liman khashiya l-ʿanata minkum wa-an taṣbirū khayrun lakum wal-lahu ghafūrun raḥīmun",
+      "translation_bn": "তোমাদের যে ব্যক্তির স্বাধীনা মু’মিন নারী বিবাহের ক্ষমতা না থাকে, সে যেন তোমাদের অধীনস্থ মু’মিনা দাসী বিবাহ করে এবং আল্লাহ বিশেষরূপে তোমাদের ঈমানকে জানেন। তোমাদের একজন অন্যজন থেকে উদ্ভূত, কাজেই তাদেরকে বিয়ে কর তাদের মালিকের অনুমতি নিয়ে, ন্যায়সঙ্গতভাবে তাদের মহর তাদেরকে দিয়ে দাও, তারা হবে সচ্চরিত্রা, ব্যভিচারিণী নয়, উপপতি গ্রহণকারিণীও নয়। বিবাহের দূর্গে সুরক্ষিত হওয়ার পর তারা যদি ব্যভিচার করে, তবে তাদের শাস্তি আজাদ নারীদের অর্ধেক; এ ব্যবস্থা তার জন্য তোমাদের যে ব্যক্তি (অবিবাহিত থাকার কারণে) ব্যভিচারের ভয় করে। ধৈর্য ধারণ করা তোমাদের পক্ষে উত্তম এবং আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 27613,
@@ -7424,6 +7474,8 @@
     {
       "surah": 4,
       "ayah": 26,
+      "transliteration": "yurīdu l-lahu liyubayyina lakum wayahdiyakum sunana alladhīna min qablikum wayatūba ʿalaykum wal-lahu ʿalīmun ḥakīmun",
+      "translation_bn": "আল্লাহ ইচ্ছে করেন তোমাদের নিকট সবিস্তারে বর্ণনা করতে তোমাদের আগেকার লোকেদের নিয়মনীতি তোমাদের দেখানোর গ্রহণের জন্য, আর তোমাদেরকে ক্ষমা করার জন্য; বস্তুতঃ আল্লাহ সুপরিজ্ঞাত, পরম কুশলী।",
       "words": [
         {
           "id": 28631,
@@ -7580,6 +7632,8 @@
     {
       "surah": 4,
       "ayah": 27,
+      "transliteration": "wal-lahu yurīdu an yatūba ʿalaykum wayurīdu alladhīna yattabiʿūna l-shahawāti an tamīlū maylan ʿaẓīman",
+      "translation_bn": "আল্লাহ তোমাদেরকে ক্ষমা করতে চান, পক্ষান্তরে কুপ্রবৃত্তির অনুসারীরা চায় যে, তোমরা (আল্লাহর নিকট হতে) দূরে বহু দূরে সরে যাও।",
       "words": [
         {
           "id": 29525,
@@ -7726,6 +7780,8 @@
     {
       "surah": 4,
       "ayah": 28,
+      "transliteration": "yurīdu l-lahu an yukhaffifa ʿankum wakhuliqa l-insānu ḍaʿīfan",
+      "translation_bn": "আল্লাহ তোমাদের ভার লঘু করতে চান, কারণ মানুষকে দুর্বলরূপে সৃষ্টি করা হয়েছে।",
       "words": [
         {
           "id": 30561,
@@ -7822,6 +7878,8 @@
     {
       "surah": 4,
       "ayah": 29,
+      "transliteration": "yāayyuhā alladhīna āmanū lā takulū amwālakum baynakum bil-bāṭili illā an takūna tijāratan ʿan tarāḍin minkum walā taqtulū anfusakum inna l-laha kāna bikum raḥīman",
+      "translation_bn": "হে ঈমানদারগণ! তোমরা অন্যায়ভাবে একে অন্যের সম্পদ গ্রাস করো না, তবে পারস্পরিক সম্মতিতে ব্যবসায় বৈধ এবং নিজেদের ধ্বংস ডেকে এনো না কিংবা তোমরা পরস্পরকে হত্যা করো না, নিশ্চয় আল্লাহ তোমাদের প্রতি কৃপাময়।",
       "words": [
         {
           "id": 31567,
@@ -8068,6 +8126,8 @@
     {
       "surah": 4,
       "ayah": 30,
+      "transliteration": "waman yafʿal dhālika ʿud'wānan waẓul'man fasawfa nuṣ'līhi nāran wakāna dhālika ʿalā l-lahi yasīran",
+      "translation_bn": "যে ব্যক্তি সীমালঙ্ঘন ক’রে অন্যায়ভাবে এটা করবে, তাকে আমি অতিসত্বর অগ্নিতে দগ্ধ করব, এটা আল্লাহর পক্ষে সহজ।",
       "words": [
         {
           "id": 32486,
@@ -8214,6 +8274,8 @@
     {
       "surah": 4,
       "ayah": 31,
+      "transliteration": "in tajtanibū kabāira mā tun'hawna ʿanhu nukaffir ʿankum sayyiātikum wanud'khil'kum mud'khalan karīman",
+      "translation_bn": "যদি তোমরা নিষিদ্ধ কাজের বড় বড় গুলো হতে বিরত থাক, তাহলে আমি তোমাদের ছোট ছোট পাপগুলো ক্ষমা ক’রে দেব এবং তোমাদেরকে এক মহামর্যাদার স্থানে প্রবেশ করাব।",
       "words": [
         {
           "id": 33339,
@@ -8350,6 +8412,8 @@
     {
       "surah": 4,
       "ayah": 32,
+      "transliteration": "walā tatamannaw mā faḍḍala l-lahu bihi baʿḍakum ʿalā baʿḍin lilrrijāli naṣībun mimmā ik'tasabū walilnnisāi naṣībun mimmā ik'tasabna wasalū l-laha min faḍlihi inna l-laha kāna bikulli shayin ʿalīman",
+      "translation_bn": "তোমরা তা কামনা করো না যা দ্বারা আল্লাহ তোমাদের কাউকে কারো উপর মর্যাদা প্রদান করেছেন। পুরুষেরা তাদের কৃতকার্যের অংশ পাবে, নারীরাও তাদের কৃতকর্মের অংশ পাবে এবং তোমরা আল্লাহর নিকট তাঁর অনুগ্রহ কামনা কর, নিশ্চয়ই আল্লাহ সর্ববিষয়ে সর্বজ্ঞ।",
       "words": [
         {
           "id": 34370,
@@ -8636,6 +8700,8 @@
     {
       "surah": 4,
       "ayah": 33,
+      "transliteration": "walikullin jaʿalnā mawāliya mimmā taraka l-wālidāni wal-aqrabūna wa-alladhīna ʿaqadat aymānukum faātūhum naṣībahum inna l-laha kāna ʿalā kulli shayin shahīdan",
+      "translation_bn": "মাতা-পিতা ও স্বজনদের রেখে যাওয়া সম্পদে আমি প্রত্যেক উত্তরাধিকারের অংশ স্থির করেছি এবং যাদের সঙ্গে তোমাদের অঙ্গীকার রয়েছে, কাজেই তাদেরকে তাদের অংশ প্রদান কর, নিশ্চয়ই আল্লাহ সর্ববিষয়ে প্রত্যক্ষদর্শী।",
       "words": [
         {
           "id": 35301,
@@ -8842,6 +8908,8 @@
     {
       "surah": 4,
       "ayah": 34,
+      "transliteration": "al-rijālu qawwāmūna ʿalā l-nisāi bimā faḍḍala l-lahu baʿḍahum ʿalā baʿḍin wabimā anfaqū min amwālihim fal-ṣāliḥātu qānitātun ḥāfiẓātun lil'ghaybi bimā ḥafiẓa l-lahu wa-allātī takhāfūna nushūzahunna faʿiẓūhunna wa-uh'jurūhunna fī l-maḍājiʿi wa-iḍ'ribūhunna fa-in aṭaʿnakum falā tabghū ʿalayhinna sabīlan inna l-laha kāna ʿaliyyan kabīran",
+      "translation_bn": "পুরুষগণ নারীদের উপর কর্তৃত্বশীল এ কারণে যে, আল্লাহ তাদের এককে অন্যের উপর মর্যাদা প্রদান করেছেন, আর এজন্য যে, পুরুষেরা স্বীয় ধন-সম্পদ হতে ব্যয় করে। ফলে পুণ্যবান স্ত্রীরা (আল্লাহ ও স্বামীর প্রতি) অনুগতা থাকে এবং পুরুষের অনুপস্থিতিতে তারা তা (অর্থাৎ তাদের সতীত্ব ও স্বামীর সম্পদ) সংরক্ষণ করে যা আল্লাহ সংরক্ষণ করতে আদেশ দিয়েছেন। যদি তাদের মধ্যে অবাধ্যতার সম্ভাবনা দেখতে পাও, তাদেরকে সদুপদেশ দাও এবং তাদের সাথে শয্যা বন্ধ কর এবং তাদেরকে (সঙ্গতভাবে) প্রহার কর, অতঃপর যদি তারা তোমাদের অনুগত হয়, তাহলে তাদের উপর নির্যাতনের বাহানা খোঁজ করো না, নিশ্চয় আল্লাহ সর্বোচ্চ, সর্বশ্রেষ্ঠ।",
       "words": [
         {
           "id": 36370,
@@ -9258,6 +9326,8 @@
     {
       "surah": 4,
       "ayah": 35,
+      "transliteration": "wa-in khif'tum shiqāqa baynihimā fa-ib'ʿathū ḥakaman min ahlihi waḥakaman min ahlihā in yurīdā iṣ'lāḥan yuwaffiqi l-lahu baynahumā inna l-laha kāna ʿalīman khabīran",
+      "translation_bn": "যদি তোমরা তাদের মধ্যে অনৈক্যের আশংকা কর, তবে স্বামীর আত্মীয়-স্বজন হতে একজন এবং স্ত্রীর আত্মীয়-স্বজন হতে একজন সালিস নিযুক্ত কর। যদি উভয়ে মীমাংসা করিয়ে দেয়ার ইচ্ছে করে, তবে আল্লাহ উভয়ের মধ্যে নিষ্পত্তির ব্যবস্থা করবেন, নিশ্চয় আল্লাহ সব কিছু জানেন, সকল কিছুর খবর রাখেন।",
       "words": [
         {
           "id": 36976,
@@ -9494,6 +9564,8 @@
     {
       "surah": 4,
       "ayah": 36,
+      "transliteration": "wa-uʿ'budū l-laha walā tush'rikū bihi shayan wabil-wālidayni iḥ'sānan wabidhī l-qur'bā wal-yatāmā wal-masākīni wal-jāri dhī l-qur'bā wal-jāri l-junubi wal-ṣāḥibi bil-janbi wa-ib'ni l-sabīli wamā malakat aymānukum inna l-laha lā yuḥibbu man kāna mukh'tālan fakhūran",
+      "translation_bn": "তোমরা আল্লাহর ‘ইবাদাত কর, কিছুকেই তাঁর শরীক করো না এবং মাতা-পিতা, আত্মীয়-স্বজন, ইয়াতীম অভাবগ্রস্ত, নিকট প্রতিবেশী, দূর প্রতিবেশী, সাথী, মুসাফির এবং তোমাদের আয়ত্তাধীন দাস-দাসীদের সঙ্গে সদ্ব্যবহার কর, নিশ্চয়ই আল্লাহ ঐ লোককে ভালবাসেন না, যে অহংকারী, দাম্ভিক।",
       "words": [
         {
           "id": 37800,
@@ -9830,6 +9902,8 @@
     {
       "surah": 4,
       "ayah": 37,
+      "transliteration": "alladhīna yabkhalūna wayamurūna l-nāsa bil-bukh'li wayaktumūna mā ātāhumu l-lahu min faḍlihi wa-aʿtadnā lil'kāfirīna ʿadhāban muhīnan",
+      "translation_bn": "যারা কৃপণতা করে অধিকন্তু লোকেদেরকেও কার্পণ্য করার আদেশ দেয় এবং আল্লাহ নিজ অনুগ্রহে তাদেরকে যা দিয়েছেন তা গোপন করে, (ঐসব) কাফিরদের জন্য আমি লাঞ্ছনাদায়ক শাস্তি প্রস্তুত করে রেখেছি।",
       "words": [
         {
           "id": 38693,
@@ -9996,6 +10070,8 @@
     {
       "surah": 4,
       "ayah": 38,
+      "transliteration": "wa-alladhīna yunfiqūna amwālahum riāa l-nāsi walā yu'minūna bil-lahi walā bil-yawmi l-ākhiri waman yakuni l-shayṭānu lahu qarīnan fasāa qarīnan",
+      "translation_bn": "(আর সেসব লোককেও আল্লাহ পছন্দ করেন না) যারা মানুষকে দেখানোর জন্য নিজেদের ধন-সম্পদ খরচ করে এবং আল্লাহ ও আখিরাত দিবসের উপর বিশ্বাস রাখে না। শয়ত্বান কারো সঙ্গী হলে সে সঙ্গী কতই না জঘন্য!",
       "words": [
         {
           "id": 39566,
@@ -10192,6 +10268,8 @@
     {
       "surah": 4,
       "ayah": 39,
+      "transliteration": "wamādhā ʿalayhim law āmanū bil-lahi wal-yawmi l-ākhiri wa-anfaqū mimmā razaqahumu l-lahu wakāna l-lahu bihim ʿalīman",
+      "translation_bn": "তাদের কী ক্ষতি হত যদি তারা আল্লাহ ও আখিরাত দিবসের উপর ঈমান আনত, আর আল্লাহ তাদেরকে যে রিযক দিয়েছেন তাত্থেকে ব্যয় করত, বস্তুতঃ আল্লাহ তাদের বিষয় খুব জ্ঞাত আছেন।",
       "words": [
         {
           "id": 40381,
@@ -10358,6 +10436,8 @@
     {
       "surah": 4,
       "ayah": 40,
+      "transliteration": "inna l-laha lā yaẓlimu mith'qāla dharratin wa-in taku ḥasanatan yuḍāʿif'hā wayu'ti min ladun'hu ajran ʿaẓīman",
+      "translation_bn": "আল্লাহ অণু পরিমাণও যুলম করেন না, আর কোন পুণ্য কাজ হলে তাকে তিনি দ্বিগুণ করেন এবং নিজের নিকট হতেও বিরাট পুরস্কার দান করেন।",
       "words": [
         {
           "id": 41120,
@@ -10524,6 +10604,8 @@
     {
       "surah": 4,
       "ayah": 41,
+      "transliteration": "fakayfa idhā ji'nā min kulli ummatin bishahīdin waji'nā bika ʿalā hāulāi shahīdan",
+      "translation_bn": "সুতরাং তখন কী অবস্থা দাঁড়াবে, যখন আমি প্রত্যেক উম্মাতের মধ্য হতে এক একজনকে সাক্ষী উপস্থিত করব এবং তোমাকেও হাজির করব তাদের উপর সাক্ষ্য দানের জন্য।",
       "words": [
         {
           "id": 42009,
@@ -10660,6 +10742,8 @@
     {
       "surah": 4,
       "ayah": 42,
+      "transliteration": "yawma-idhin yawaddu alladhīna kafarū waʿaṣawū l-rasūla law tusawwā bihimu l-arḍu walā yaktumūna l-laha ḥadīthan",
+      "translation_bn": "যারা অস্বীকার করেছে এবং রসূল-এর নাফরমানী করেছে, তারা সে দিন কামনা করবে, হায়! তারা যদি মাটির সাথে মিশে যেত এবং তারা আল্লাহ হতে কোন কথাই লুকিয়ে রাখতে পারবে না।",
       "words": [
         {
           "id": 42747,
@@ -10816,6 +10900,8 @@
     {
       "surah": 4,
       "ayah": 43,
+      "transliteration": "yāayyuhā alladhīna āmanū lā taqrabū l-ṣalata wa-antum sukārā ḥattā taʿlamū mā taqūlūna walā junuban illā ʿābirī sabīlin ḥattā taghtasilū wa-in kuntum marḍā aw ʿalā safarin aw jāa aḥadun minkum mina l-ghāiṭi aw lāmastumu l-nisāa falam tajidū māan fatayammamū ṣaʿīdan ṭayyiban fa-im'saḥū biwujūhikum wa-aydīkum inna l-laha kāna ʿafuwwan ghafūran",
+      "translation_bn": "হে ঈমানদারগণ! তোমরা নেশাগ্রস্ত অবস্থায় সলাতের নিকটবর্তী হয়ো না যতক্ষণ না তোমরা যা বল, তা বুঝতে পার এবং অপবিত্র অবস্থায়ও (সলাতের কাছে যেও না) গোসল না করা পর্যন্ত (মসজিদে) পথ অতিক্রম করা ব্যতীত; এবং যদি তোমরা পীড়িত হও কিংবা সফরে থাক; অথবা তোমাদের কেউ শৌচস্থান হতে আসে অথবা তোমরা স্ত্রী সঙ্গম করে থাক, অতঃপর পানি না পাও, তবে পবিত্র মাটি দিয়ে তায়াম্মুম কর, আর তা দিয়ে তোমাদের মুখমন্ডল ও হস্তদ্বয় মাসহ কর; আল্লাহ নিশ্চয়ই পাপ মোচনকারী, ক্ষমাশীল।",
       "words": [
         {
           "id": 43505,
@@ -11312,6 +11398,8 @@
     {
       "surah": 4,
       "ayah": 44,
+      "transliteration": "alam tara ilā alladhīna ūtū naṣīban mina l-kitābi yashtarūna l-ḍalālata wayurīdūna an taḍillū l-sabīla",
+      "translation_bn": "তুমি কি সেই লোকেদের প্রতি লক্ষ্য করনি, যাদেরকে কিতাবের অংশ দেয়া হয়েছিল? তারা নিজেরা পথভ্রষ্টতার সওদা করে আর তারা চায় তোমরাও পথভ্রষ্ট হয়ে যাও।",
       "words": [
         {
           "id": 44509,
@@ -11468,6 +11556,8 @@
     {
       "surah": 4,
       "ayah": 45,
+      "transliteration": "wal-lahu aʿlamu bi-aʿdāikum wakafā bil-lahi waliyyan wakafā bil-lahi naṣīran",
+      "translation_bn": "আল্লাহ তোমাদের শত্রুদেরকে ভালভাবে জানেন, অভিভাবক হিসেবে আল্লাহ্ই যথেষ্ট এবং সাহায্যকারী হিসেবে আল্লাহ্ই যথেষ্ট।",
       "words": [
         {
           "id": 45066,
@@ -11574,6 +11664,8 @@
     {
       "surah": 4,
       "ayah": 46,
+      "transliteration": "mina alladhīna hādū yuḥarrifūna l-kalima ʿan mawāḍiʿihi wayaqūlūna samiʿ'nā waʿaṣaynā wa-is'maʿ ghayra mus'maʿin warāʿinā layyan bi-alsinatihim waṭaʿnan fī l-dīni walaw annahum qālū samiʿ'nā wa-aṭaʿnā wa-is'maʿ wa-unẓur'nā lakāna khayran lahum wa-aqwama walākin laʿanahumu l-lahu bikuf'rihim falā yu'minūna illā qalīlan",
+      "translation_bn": "ইয়াহূদীদের কতক লোক কথাকে প্রকৃত স্থান থেকে সরিয়ে বিকৃত করে এবং বলে, ‘আমরা শুনলাম ও অমান্য করলাম’ এবং শুনেও না শোনার মত আর নিজেদের জিহবা কুঞ্চিত ক’রে এবং দ্বীনের প্রতি দোষারোপ ক’রে বলে, ‘রাইনা’ (আমাদের রাখাল)। কিন্তু তারা যদি বলত ‘আমরা শুনলাম ও মেনে নিলাম, শোন এবং আমাদের প্রতি লক্ষ্য কর, তবে তা তাদের জন্য উত্তম এবং সঙ্গত হত, কিন্তু তাদের কুফরীর কারণে আল্লাহ তাদেরকে লা‘নত করেছেন, তারা স্বল্পসংখ্যক ব্যতীত ঈমান আনবে না।",
       "words": [
         {
           "id": 45774,
@@ -11970,6 +12062,8 @@
     {
       "surah": 4,
       "ayah": 47,
+      "transliteration": "yāayyuhā alladhīna ūtū l-kitāba āminū bimā nazzalnā muṣaddiqan limā maʿakum min qabli an naṭmisa wujūhan fanaruddahā ʿalā adbārihā aw nalʿanahum kamā laʿannā aṣḥāba l-sabti wakāna amru l-lahi mafʿūlan",
+      "translation_bn": "ওহে যাদেরকে কিতাব দেয়া হয়েছে, আমি যা নাযিল করেছি, তার উপর তোমরা ঈমান আন, যা তোমাদের কাছে যা আছে তার সমর্থক আমি তোমাদের মুখগুলোকে বিকৃত করে সেগুলোকে পিছনের দিকে ফিরিয়ে দেয়ার পূর্বে (ঈমান আন), কিংবা শনিবারওয়ালাদেরকে যেমন অভিসম্পাত করেছিলাম, এদেরকেও তেমনি অভিসম্পাত করার পূর্বে। বস্তুতঃ আল্লাহর হুকুম কার্যকরী হয়েই থাকে।",
       "words": [
         {
           "id": 46445,
@@ -12266,6 +12360,8 @@
     {
       "surah": 4,
       "ayah": 48,
+      "transliteration": "inna l-laha lā yaghfiru an yush'raka bihi wayaghfiru mā dūna dhālika liman yashāu waman yush'rik bil-lahi faqadi if'tarā ith'man ʿaẓīman",
+      "translation_bn": "নিশ্চয় আল্লাহ তাঁর সাথে শরীক করা ক্ষমা করবেন না। এটা ছাড়া অন্য সব যাকে ইচ্ছে মাফ করবেন এবং যে আল্লাহর সাথে শরীক করল, সে এক মহা অপবাদ আরোপ করল।",
       "words": [
         {
           "id": 47143,
@@ -12482,6 +12578,8 @@
     {
       "surah": 4,
       "ayah": 49,
+      "transliteration": "alam tara ilā alladhīna yuzakkūna anfusahum bali l-lahu yuzakkī man yashāu walā yuẓ'lamūna fatīlan",
+      "translation_bn": "তুমি কি তাদেরকে দেখনি, যারা নিজেদেরকে পবিত্র ব’লে দাবী করে? বরং আল্লাহ্ই যাকে ইচ্ছে পবিত্র করেন। (কেউ প্রকৃতই পবিত্রতা অর্জন করলে তা অগ্রাহ্য করতঃ) তাদের প্রতি সামান্য পরিমাণও অন্যায় করা হবে না।",
       "words": [
         {
           "id": 47801,
@@ -12638,6 +12736,8 @@
     {
       "surah": 4,
       "ayah": 50,
+      "transliteration": "unẓur kayfa yaftarūna ʿalā l-lahi l-kadhiba wakafā bihi ith'man mubīnan",
+      "translation_bn": "দেখ, এরা আল্লাহর সম্বন্ধে কেমন মিথ্যে রচনা করে, সুস্পষ্ট গুনাহের জন্য এটাই যথেষ্ট।",
       "words": [
         {
           "id": 48464,
@@ -12754,6 +12854,8 @@
     {
       "surah": 4,
       "ayah": 51,
+      "transliteration": "alam tara ilā alladhīna ūtū naṣīban mina l-kitābi yu'minūna bil-jib'ti wal-ṭāghūti wayaqūlūna lilladhīna kafarū hāulāi ahdā mina alladhīna āmanū sabīlan",
+      "translation_bn": "যারা কিতাবের জ্ঞানের একাংশ প্রদত্ত হয়েছে, সেই লোকদের প্রতি তুমি কি লক্ষ্য করনি, তারা অমূলক যাদু, প্রতিমা ও তাগূতের প্রতি বিশ্বাস করে এবং কাফিরদের সম্বন্ধে বলে যে তারা মু’মিনগণের তুলনায় অধিক সঠিক পথে রয়েছে।",
       "words": [
         {
           "id": 49130,
@@ -12970,6 +13072,8 @@
     {
       "surah": 4,
       "ayah": 52,
+      "transliteration": "ulāika alladhīna laʿanahumu l-lahu waman yalʿani l-lahu falan tajida lahu naṣīran",
+      "translation_bn": "এরা সেই লোক, যাদেরকে আল্লাহ অভিশাপ দিয়েছেন এবং যাকে আল্লাহ অভিশাপ দেন, তুমি কক্ষনো তার সাহায্যকারী পাবে না।",
       "words": [
         {
           "id": 50183,
@@ -13096,6 +13200,8 @@
     {
       "surah": 4,
       "ayah": 53,
+      "transliteration": "am lahum naṣībun mina l-mul'ki fa-idhan lā yu'tūna l-nāsa naqīran",
+      "translation_bn": "তাদের কি শাসন ক্ষমতায় কোন অংশ আছে? তা থাকলে তারা লোকেদেরকে তিল পরিমাণও দিত না।",
       "words": [
         {
           "id": 50427,
@@ -13212,6 +13318,8 @@
     {
       "surah": 4,
       "ayah": 54,
+      "transliteration": "am yaḥsudūna l-nāsa ʿalā mā ātāhumu l-lahu min faḍlihi faqad ātaynā āla ib'rāhīma l-kitāba wal-ḥik'mata waātaynāhum mul'kan ʿaẓīman",
+      "translation_bn": "কিংবা আল্লাহ নিজ অনুগ্রহে লোকেদেরকে যেসব নি‘মাত দান করেছেন, সেজন্য কি এরা তাদের হিংসা করে, আমি ইবরাহীমের বংশধরদেরকেও তো কিতাব ও হিকমাত দিয়েছিলাম, তাদেরকে সুবিশাল রাজ্যও প্রদান করেছিলাম।",
       "words": [
         {
           "id": 51065,
@@ -13408,6 +13516,8 @@
     {
       "surah": 4,
       "ayah": 55,
+      "transliteration": "famin'hum man āmana bihi wamin'hum man ṣadda ʿanhu wakafā bijahannama saʿīran",
+      "translation_bn": "অতঃপর তাদের মধ্যে কেউ কেউ তার উপর ঈমান আনল এবং তাদের মধ্যে কেউ কেউ তার থেকে মুখ ফিরিয়ে রাখল, (দগ্ধ করার জন্য) প্রজ্জ্বলিত জাহান্নামই যথেষ্ট।",
       "words": [
         {
           "id": 51634,
@@ -13534,6 +13644,8 @@
     {
       "surah": 4,
       "ayah": 56,
+      "transliteration": "inna alladhīna kafarū biāyātinā sawfa nuṣ'līhim nāran kullamā naḍijat julūduhum baddalnāhum julūdan ghayrahā liyadhūqū l-ʿadhāba inna l-laha kāna ʿazīzan ḥakīman",
+      "translation_bn": "যারা আমার আয়াতসমূহকে প্রত্যাখ্যান করে নিশ্চয়ই আমি তাদেরকে আগুনে দগ্ধ করব, যখন তাদের গায়ের চামড়া দগ্ধ হবে, আমি সেই চামড়াকে নতুন চামড়া দ্বারা বদলে দেব যেন তারা (শাস্তির পর) শাস্তি ভোগ করে। আল্লাহ নিশ্চয়ই পরাক্রমশালী ও বিজ্ঞানময়।",
       "words": [
         {
           "id": 52476,
@@ -13750,6 +13862,8 @@
     {
       "surah": 4,
       "ayah": 57,
+      "transliteration": "wa-alladhīna āmanū waʿamilū l-ṣāliḥāti sanud'khiluhum jannātin tajrī min taḥtihā l-anhāru khālidīna fīhā abadan lahum fīhā azwājun muṭahharatun wanud'khiluhum ẓillan ẓalīlan",
+      "translation_bn": "যারা ঈমান এনেছে এবং সৎকাজ করেছে নিশ্চয়ই আমি তাদেরকে জান্নাতে দাখিল করব যার নিম্নে ঝর্ণাধারা প্রবাহিত, সেখানে তারা চিরবাসী হবে, তাতে তাদের জন্য থাকবে পবিত্র স্ত্রী এবং আমি তাদেরকে চির স্নিগ্ধ ঘন ছায়ায় দাখিল করব।",
       "words": [
         {
           "id": 52811,
@@ -13966,6 +14080,8 @@
     {
       "surah": 4,
       "ayah": 58,
+      "transliteration": "inna l-laha yamurukum an tu-addū l-amānāti ilā ahlihā wa-idhā ḥakamtum bayna l-nāsi an taḥkumū bil-ʿadli inna l-laha niʿimmā yaʿiẓukum bihi inna l-laha kāna samīʿan baṣīran",
+      "translation_bn": "নিশ্চয়ই আল্লাহ তোমাদেরকে নির্দেশ দিচ্ছেন, হকদারদের হক তাদের কাছে পৌঁছে দিতে। তোমরা যখন মানুষের মাঝে বিচার করবে তখন ন্যায়পরায়ণতার সঙ্গে বিচার করবে। আল্লাহ তোমাদেরকে কত উত্তম উপদেশই না দিচ্ছেন; নিশ্চয়ই আল্লাহ সবকিছু শোনেন, সবকিছু দেখেন।",
       "words": [
         {
           "id": 53203,
@@ -14232,6 +14348,8 @@
     {
       "surah": 4,
       "ayah": 59,
+      "transliteration": "yāayyuhā alladhīna āmanū aṭīʿū l-laha wa-aṭīʿū l-rasūla wa-ulī l-amri minkum fa-in tanāzaʿtum fī shayin faruddūhu ilā l-lahi wal-rasūli in kuntum tu'minūna bil-lahi wal-yawmi l-ākhiri dhālika khayrun wa-aḥsanu tawīlan",
+      "translation_bn": "হে ঈমানদারগণ! তোমরা আল্লাহর অনুগত হও এবং রসূলের অনুগত হও এবং তোমাদের মধ্যকার কর্তৃস্থানীয় ব্যক্তিগণের; যদি কোন বিষয়ে তোমাদের মধ্যে মতভেদ ঘটে, তাহলে সেই বিষয়কে আল্লাহ এবং রসূলের (নির্দেশের) দিকে ফিরিয়ে দাও যদি তোমরা আল্লাহ এবং আখিরাত দিবসের প্রতি ঈমান এনে থাক; এটাই উত্তম এবং সুন্দরতম মর্মকথা।",
       "words": [
         {
           "id": 53736,
@@ -14528,6 +14646,8 @@
     {
       "surah": 4,
       "ayah": 60,
+      "transliteration": "alam tara ilā alladhīna yazʿumūna annahum āmanū bimā unzila ilayka wamā unzila min qablika yurīdūna an yataḥākamū ilā l-ṭāghūti waqad umirū an yakfurū bihi wayurīdu l-shayṭānu an yuḍillahum ḍalālan baʿīdan",
+      "translation_bn": "তুমি কি সেই লোকেদের প্রতি লক্ষ্য করনি, যারা তোমাদের প্রতি অবতীর্ণ কিতাবের এবং তোমার আগে অবতীর্ণ কিতাবের উপর ঈমান এনেছে বলে দাবী করে, কিন্তু তাগূতের কাছে বিচারপ্রার্থী হতে চায়, অথচ তাকে প্রত্যাখ্যান করার জন্য তাদেরকে নির্দেশ দেয়া হয়েছে, শয়ত্বান তাদেরকে পথভ্রষ্ট করে বহুদূরে নিয়ে যেতে চায়।",
       "words": [
         {
           "id": 54326,
@@ -14844,6 +14964,8 @@
     {
       "surah": 4,
       "ayah": 61,
+      "transliteration": "wa-idhā qīla lahum taʿālaw ilā mā anzala l-lahu wa-ilā l-rasūli ra-ayta l-munāfiqīna yaṣuddūna ʿanka ṣudūdan",
+      "translation_bn": "যখন তাদেরকে বলা হয়- তোমরা আল্লাহর অবতীর্ণ কিতাবের এবং রসূলের দিকে এসো, তখন তুমি ঐ মুনাফিকদেরকে দেখবে, তারা তোমা হতে ঘৃণা ভরে মুখ ফিরিয়ে নিচ্ছে।",
       "words": [
         {
           "id": 55356,
@@ -15010,6 +15132,8 @@
     {
       "surah": 4,
       "ayah": 62,
+      "transliteration": "fakayfa idhā aṣābathum muṣībatun bimā qaddamat aydīhim thumma jāūka yaḥlifūna bil-lahi in aradnā illā iḥ'sānan watawfīqan",
+      "translation_bn": "যখন তাদের কৃতকার্যের জন্য তাদের উপর বিপদ আপতিত হবে, তখন কী অবস্থা হবে? তখন তারা আল্লাহর নামে শপথ করতে করতে তোমার কাছে এসে বলবে, ‘আমরা সদ্ভাব ও সম্প্রীতি ছাড়া অন্য কিছু চাইনি।’",
       "words": [
         {
           "id": 55509,
@@ -15186,6 +15310,8 @@
     {
       "surah": 4,
       "ayah": 63,
+      "transliteration": "ulāika alladhīna yaʿlamu l-lahu mā fī qulūbihim fa-aʿriḍ ʿanhum waʿiẓ'hum waqul lahum fī anfusihim qawlan balīghan",
+      "translation_bn": "তারা সেই লোক, যাদের অন্তরস্থিত বিষয়ে আল্লাহ পরিজ্ঞাত, কাজেই তুমি তাদেরকে উপেক্ষা কর, তাদেরকে সদুপদেশ দান কর, আর তাদেরকে এমন কথা বল যা তাদের অন্তর স্পর্শ করে।",
       "words": [
         {
           "id": 56014,
@@ -15362,6 +15488,8 @@
     {
       "surah": 4,
       "ayah": 64,
+      "transliteration": "wamā arsalnā min rasūlin illā liyuṭāʿa bi-idh'ni l-lahi walaw annahum idh ẓalamū anfusahum jāūka fa-is'taghfarū l-laha wa-is'taghfara lahumu l-rasūlu lawajadū l-laha tawwāban raḥīman",
+      "translation_bn": "আমি রসূল এ উদ্দেশেই প্রেরণ করেছি, যেন আল্লাহর নির্দেশে তাঁর আনুগত্য করা হয়। যখন তারা নিজেদের উপর যুলম করেছিল, তখন যদি তোমার নিকট চলে আসত আর আল্লাহর কাছে ক্ষমাপ্রার্থী হত এবং রসূলও তাদের পক্ষে ক্ষমা চাইত, তাহলে তারা আল্লাহকে নিরতিশয় তাওবাহ কবূলকারী ও পরম দয়ালুরূপে পেত।",
       "words": [
         {
           "id": 56513,
@@ -15608,6 +15736,8 @@
     {
       "surah": 4,
       "ayah": 65,
+      "transliteration": "falā warabbika lā yu'minūna ḥattā yuḥakkimūka fīmā shajara baynahum thumma lā yajidū fī anfusihim ḥarajan mimmā qaḍayta wayusallimū taslīman",
+      "translation_bn": "কিন্তু না, তোমার প্রতিপালকের শপথ! তারা মু’মিন হবে না, যে পর্যন্ত না তারা তাদের বিবাদ-বিসম্বাদের মীমাংসার ভার তোমার উপর ন্যস্ত না করে, অতঃপর তোমার ফয়সালার ব্যাপারে তাদের মনে কিছু মাত্র কুণ্ঠাবোধ না থাকে, আর তারা তার সামনে নিজেদেরকে পূর্ণরূপে সমর্পণ করে।",
       "words": [
         {
           "id": 57190,
@@ -15814,6 +15944,8 @@
     {
       "surah": 4,
       "ayah": 66,
+      "transliteration": "walaw annā katabnā ʿalayhim ani uq'tulū anfusakum awi ukh'rujū min diyārikum mā faʿalūhu illā qalīlun min'hum walaw annahum faʿalū mā yūʿaẓūna bihi lakāna khayran lahum wa-ashadda tathbītan",
+      "translation_bn": "যদি আমি তাদের প্রতি ফরয করে দিতাম যে তোমরা নিজেদেরকে হত্যা কর, কিংবা নিজেদের দেশ থেকে বেরিয়ে যাও, তবে স্বল্পসংখ্যক লোক ছাড়া কেউ তা পালন করত না, যা করতে তাদেরকে উপদেশ দেয়া হয় তা যদি তারা পালন করত, তবে তা তাদের পক্ষে কল্যাণকর হত এবং দৃঢ় চিত্ততার কারণ হত।",
       "words": [
         {
           "id": 57518,
@@ -16100,6 +16232,8 @@
     {
       "surah": 4,
       "ayah": 67,
+      "transliteration": "wa-idhan laātaynāhum min ladunnā ajran ʿaẓīman",
+      "translation_bn": "সে অবস্থায় অবশ্যই আমি তাদেরকে আমার নিকট হতে মহাপুরস্কার দান করতাম।",
       "words": [
         {
           "id": 58121,
@@ -16176,6 +16310,8 @@
     {
       "surah": 4,
       "ayah": 68,
+      "transliteration": "walahadaynāhum ṣirāṭan mus'taqīman",
+      "translation_bn": "এবং তাদেরকে অবশ্যই সঠিক পথ প্রদর্শন করতাম।",
       "words": [
         {
           "id": 58529,
@@ -16222,6 +16358,8 @@
     {
       "surah": 4,
       "ayah": 69,
+      "transliteration": "waman yuṭiʿi l-laha wal-rasūla fa-ulāika maʿa alladhīna anʿama l-lahu ʿalayhim mina l-nabiyīna wal-ṣidīqīna wal-shuhadāi wal-ṣāliḥīna waḥasuna ulāika rafīqan",
+      "translation_bn": "যারা আল্লাহ ও রসূলের আনুগত্য করে, তারা নাবী, সিদ্দীক, শহীদ এবং নেককার লোকদের সঙ্গী হবে, যাদের প্রতি আল্লাহ নি‘মাত দান করেছেন, তারা কতই না উত্তম সঙ্গী!",
       "words": [
         {
           "id": 58952,
@@ -16418,6 +16556,8 @@
     {
       "surah": 4,
       "ayah": 70,
+      "transliteration": "dhālika l-faḍlu mina l-lahi wakafā bil-lahi ʿalīman",
+      "translation_bn": "এটা আল্লাহর পক্ষ হতে অনুগ্রহ, সর্বজ্ঞ হিসেবে আল্লাহ্ই যথেষ্ট।",
       "words": [
         {
           "id": 59365,
@@ -16504,6 +16644,8 @@
     {
       "surah": 4,
       "ayah": 71,
+      "transliteration": "yāayyuhā alladhīna āmanū khudhū ḥidh'rakum fa-infirū thubātin awi infirū jamīʿan",
+      "translation_bn": "হে ঈমানদারগণ! তোমরা সতর্কতা অবলম্বন কর এবং দলে দলে ভাগ হয়ে কিংবা মিলিতভাবে অগ্রসর হও।",
       "words": [
         {
           "id": 59902,
@@ -16620,6 +16762,8 @@
     {
       "surah": 4,
       "ayah": 72,
+      "transliteration": "wa-inna minkum laman layubaṭṭi-anna fa-in aṣābatkum muṣībatun qāla qad anʿama l-lahu ʿalayya idh lam akun maʿahum shahīdan",
+      "translation_bn": "এবং তোমাদের কেউ কেউ নিশ্চয়ই পশ্চাতে সরে থাকবে, অতঃপর তোমাদের উপর কোন বিপদ আসলে সে বলবে, ‘আল্লাহ আমার প্রতি অনুগ্রহ করেছেন যে, আমি তাদের সঙ্গে উপস্থিত ছিলাম না।’",
       "words": [
         {
           "id": 60733,
@@ -16806,6 +16950,8 @@
     {
       "surah": 4,
       "ayah": 73,
+      "transliteration": "wala-in aṣābakum faḍlun mina l-lahi layaqūlanna ka-an lam takun baynakum wabaynahu mawaddatun yālaytanī kuntu maʿahum fa-afūza fawzan ʿaẓīman",
+      "translation_bn": "আর যদি তোমাদের প্রতি আল্লাহর অনুগ্রহ হয়, তবে যেন তোমাদের ও তাদের মধ্যে কোন প্রকারের সম্পর্ক ছিল না, এমনিভাবে অবশ্যই বলে উঠবে, ‘হায় পরিতাপ! আমিও যদি তাদের সঙ্গে থাকতাম তাহলে মহা সাফল্য লাভ করতাম।’",
       "words": [
         {
           "id": 61343,
@@ -17002,6 +17148,8 @@
     {
       "surah": 4,
       "ayah": 74,
+      "transliteration": "falyuqātil fī sabīli l-lahi alladhīna yashrūna l-ḥayata l-dun'yā bil-ākhirati waman yuqātil fī sabīli l-lahi fayuq'tal aw yaghlib fasawfa nu'tīhi ajran ʿaẓīman",
+      "translation_bn": "সুতরাং যারা আখেরাতের বিনিময়ে পার্থিব জীবন বিক্রয় করে তারা আল্লাহর পথে জিহাদ করুক এবং যে ব্যক্তি আল্লাহর পথে জিহাদ করবে, অতঃপর সে নিহত হোক অথবা বিজয়ী হোক, অচিরেই আমি তাকে মহা প্রতিফল দান করব।",
       "words": [
         {
           "id": 61789,
@@ -17228,6 +17376,8 @@
     {
       "surah": 4,
       "ayah": 75,
+      "transliteration": "wamā lakum lā tuqātilūna fī sabīli l-lahi wal-mus'taḍʿafīna mina l-rijāli wal-nisāi wal-wil'dāni alladhīna yaqūlūna rabbanā akhrij'nā min hādhihi l-qaryati l-ẓālimi ahluhā wa-ij'ʿal lanā min ladunka waliyyan wa-ij'ʿal lanā min ladunka naṣīran",
+      "translation_bn": "তোমাদের কী হয়েছে যে, তোমরা আল্লাহর পথে এবং অসহায় নারী-পুরুষ আর শিশুদের (রক্ষার) জন্য লড়াই করবে না, যারা দু‘আ করছে- ‘হে আমাদের প্রতিপালক! আমাদেরকে এ যালিম অধ্যূষিত জনপথ হতে মুক্তি দাও, তোমার পক্ষ হতে কাউকেও আমাদের বন্ধু বানিয়ে দাও এবং তোমার পক্ষ হতে কাউকেও আমাদের সাহায্যকারী করে দাও।’",
       "words": [
         {
           "id": 62104,
@@ -17554,6 +17704,8 @@
     {
       "surah": 4,
       "ayah": 76,
+      "transliteration": "alladhīna āmanū yuqātilūna fī sabīli l-lahi wa-alladhīna kafarū yuqātilūna fī sabīli l-ṭāghūti faqātilū awliyāa l-shayṭāni inna kayda l-shayṭāni kāna ḍaʿīfan",
+      "translation_bn": "ঈমানদারগণ আল্লাহর পথে যুদ্ধ করে আর যারা কাফির তারা তাগুতের পথে যুদ্ধ করে। কাজেই তোমরা শায়ত্বনের বন্ধুদের বিরুদ্ধে যুদ্ধ কর, শায়ত্বনের ফন্দি অবশ্যই দুর্বল।",
       "words": [
         {
           "id": 62591,
@@ -17770,6 +17922,8 @@
     {
       "surah": 4,
       "ayah": 77,
+      "transliteration": "alam tara ilā alladhīna qīla lahum kuffū aydiyakum wa-aqīmū l-ṣalata waātū l-zakata falammā kutiba ʿalayhimu l-qitālu idhā farīqun min'hum yakhshawna l-nāsa kakhashyati l-lahi aw ashadda khashyatan waqālū rabbanā lima katabta ʿalaynā l-qitāla lawlā akhartanā ilā ajalin qarībin qul matāʿu l-dun'yā qalīlun wal-ākhiratu khayrun limani ittaqā walā tuẓ'lamūna fatīlan",
+      "translation_bn": "তুমি কি তাদেরকে দেখনি, যাদেরকে বলা হয়েছিল, তোমরা তোমাদের হাত সংযত রাখ, নামায কায়িম কর এবং যাকাত দাও? অতঃপর যখন তাদের প্রতি জিহাদ ফরয করা হল, তখন তাদের একদল মানুষকে এমন ভয় করতে লাগল যেমন আল্লাহকে ভয় করা উচিত, বরং তার চেয়েও বেশী এবং বলতে লাগল, ‘হে আমাদের প্রতিপালক! কেন আমাদের প্রতি জিহাদ ফরয করলে, আমাদেরকে আরও কিছু অবসর দিলে না কেন?’ বল, ‘পার্থিব ভোগ সামান্য, যে তাকওয়া অবলম্বন করে তার জন্য আখিরাতই উত্তম, তোমাদের প্রতি বিন্দুমাত্র অন্যায় করা হবে না।’",
       "words": [
         {
           "id": 62943,
@@ -18266,6 +18420,8 @@
     {
       "surah": 4,
       "ayah": 78,
+      "transliteration": "aynamā takūnū yud'rikkumu l-mawtu walaw kuntum fī burūjin mushayyadatin wa-in tuṣib'hum ḥasanatun yaqūlū hādhihi min ʿindi l-lahi wa-in tuṣib'hum sayyi-atun yaqūlū hādhihi min ʿindika qul kullun min ʿindi l-lahi famāli hāulāi l-qawmi lā yakādūna yafqahūna ḥadīthan",
+      "translation_bn": "তোমরা যেখানেই থাক না কেন, মৃত্যু তোমাদেরকে পেয়ে বসবেই, যদিও তোমরা সুউচ্চ সুদৃঢ় দূর্গ মধ্যে অবস্থান কর। যদি তাদের কোন কল্যাণ ঘটে, তখন তারা বলে, এটা আল্লাহর তরফ হতে। পক্ষান্তরে যদি তাদের কোন অকল্যাণ ঘটে তখন বলে, ‘এটা তো তোমার তরফ হতে।’ বল, ‘সবকিছুই আল্লাহর তরফ হতে।’ এ সম্প্রদায়ের হল কী যে, তারা কোন কথাই বুঝে না।",
       "words": [
         {
           "id": 63219,
@@ -18642,6 +18798,8 @@
     {
       "surah": 4,
       "ayah": 79,
+      "transliteration": "mā aṣābaka min ḥasanatin famina l-lahi wamā aṣābaka min sayyi-atin famin nafsika wa-arsalnāka lilnnāsi rasūlan wakafā bil-lahi shahīdan",
+      "translation_bn": "তোমার কোন কল্যাণ হলে তা হয় আল্লাহর তরফ হতে এবং তোমার যে কোন অকল্যাণ হলে তা হয় তোমার নিজের কারণে এবং আমি তোমাকে মানুষের জন্য রসূলরূপে প্রেরণ করেছি, (এ কথার) সাক্ষী হিসেবে আল্লাহ্ই যথেষ্ট।",
       "words": [
         {
           "id": 63824,
@@ -18838,6 +18996,8 @@
     {
       "surah": 4,
       "ayah": 80,
+      "transliteration": "man yuṭiʿi l-rasūla faqad aṭāʿa l-laha waman tawallā famā arsalnāka ʿalayhim ḥafīẓan",
+      "translation_bn": "যে রসূলের আনুগত্য করল, সে তো আল্লাহরই আনুগত্য করল, কেউ মুখ ফিরিয়ে নিলে (জোরপূর্বক তাকে সৎপথে আনার জন্য) আমি তোমাকে তাদের প্রতি পাহারাদার করে পাঠাইনি।",
       "words": [
         {
           "id": 64178,
@@ -18974,6 +19134,8 @@
     {
       "surah": 4,
       "ayah": 81,
+      "transliteration": "wayaqūlūna ṭāʿatun fa-idhā barazū min ʿindika bayyata ṭāifatun min'hum ghayra alladhī taqūlu wal-lahu yaktubu mā yubayyitūna fa-aʿriḍ ʿanhum watawakkal ʿalā l-lahi wakafā bil-lahi wakīlan",
+      "translation_bn": "তারা মুখেই আনুগত্য করে, কিন্তু যখন তোমার নিকট থেকে চলে যায়, তখন তাদের মধ্যে একটা দল রাত্রিবেলা একত্রিত হয়ে তোমার কথার বিরুদ্ধে সলা পরামর্শ করে, আল্লাহ তাদের রাত্রিকালীন মন্ত্রণাগুলো লিখে রাখছেন, কাজেই তাদের প্রতি ভ্রুক্ষেপ করো না, আল্লাহর উপর ভরসা কর এবং আল্লাহ্ই কর্মবিধায়ক হিসেবে যথেষ্ট।",
       "words": [
         {
           "id": 64595,
@@ -19230,6 +19392,8 @@
     {
       "surah": 4,
       "ayah": 82,
+      "transliteration": "afalā yatadabbarūna l-qur'āna walaw kāna min ʿindi ghayri l-lahi lawajadū fīhi ikh'tilāfan kathīran",
+      "translation_bn": "তারা কি কুরআনের মর্ম বিষয়ে চিন্তে-ভাবনা করে না? যদি তা আল্লাহ ছাড়া অন্য কারো নিকট হতে আসত, তবে তাতে তারা অবশ্যই বহু অসঙ্গতি পেত।",
       "words": [
         {
           "id": 65022,
@@ -19376,6 +19540,8 @@
     {
       "surah": 4,
       "ayah": 83,
+      "transliteration": "wa-idhā jāahum amrun mina l-amni awi l-khawfi adhāʿū bihi walaw raddūhu ilā l-rasūli wa-ilā ulī l-amri min'hum laʿalimahu alladhīna yastanbiṭūnahu min'hum walawlā faḍlu l-lahi ʿalaykum waraḥmatuhu la-ittabaʿtumu l-shayṭāna illā qalīlan",
+      "translation_bn": "যখন তাদের নিকট নিরাপত্তার কিংবা ভয়ের কোন সংবাদ আসে তখন তারা তা রটিয়ে দেয়। যদি তারা তা রসূলের কিংবা তাদের মধ্যে যারা ক্ষমতার অধিকারী তাদের গোচরে আনত, তবে তাদের মধ্য হতে তথ্যানুসন্ধানীগণ প্রকৃত তথ্য জেনে নিত। যদি তোমাদের প্রতি আল্লাহর দয়া ও করুণা না থাকত তবে তোমাদের অল্প সংখ্যক ছাড়া সকলেই শায়ত্বনের অনুসরণ করত।",
       "words": [
         {
           "id": 65556,
@@ -19692,6 +19858,8 @@
     {
       "surah": 4,
       "ayah": 84,
+      "transliteration": "faqātil fī sabīli l-lahi lā tukallafu illā nafsaka waḥarriḍi l-mu'minīna ʿasā l-lahu an yakuffa basa alladhīna kafarū wal-lahu ashaddu basan wa-ashaddu tankīlan",
+      "translation_bn": "কাজেই আল্লাহর পথে যুদ্ধ কর, তোমাকে শুধু তোমার নিজের জন্য দায়ী করা হবে, মু’মিনদের উদ্বুদ্ধ কর, হতে পারে যে আল্লাহ কাফিরদের শক্তি সংযত করবেন এবং আল্লাহ শক্তিতে অতি প্রবল, শাস্তিদানে অতি কঠোর।",
       "words": [
         {
           "id": 65946,
@@ -19928,6 +20096,8 @@
     {
       "surah": 4,
       "ayah": 85,
+      "transliteration": "man yashfaʿ shafāʿatan ḥasanatan yakun lahu naṣībun min'hā waman yashfaʿ shafāʿatan sayyi-atan yakun lahu kif'lun min'hā wakāna l-lahu ʿalā kulli shayin muqītan",
+      "translation_bn": "যে ব্যক্তি ভাল কাজের জন্য সুপারিশ করবে, তার জন্য তাতে (সাওয়াবের) অংশ আছে এবং যে মন্দ কাজের জন্য সুপারিশ করবে, তার জন্য তাতে অংশ আছে, আল্লাহ সকল বিষয়ে খোঁজ রাখেন।",
       "words": [
         {
           "id": 66121,
@@ -20164,6 +20334,8 @@
     {
       "surah": 4,
       "ayah": 86,
+      "transliteration": "wa-idhā ḥuyyītum bitaḥiyyatin faḥayyū bi-aḥsana min'hā aw ruddūhā inna l-laha kāna ʿalā kulli shayin ḥasīban",
+      "translation_bn": "যখন তোমাদেরকে সসম্মানে সালাম প্রদান করা হয়, তখন তোমরা তার চেয়ে উত্তমরূপে জওয়াবী সালাম দাও কিংবা (কমপক্ষে) অনুরূপভাবে দাও, নিশ্চয়ই আল্লাহ (ক্ষুদ্র-বৃহৎ) সকল বিষয়ে হিসাব গ্রহণকারী।",
       "words": [
         {
           "id": 66621,
@@ -20330,6 +20502,8 @@
     {
       "surah": 4,
       "ayah": 87,
+      "transliteration": "al-lahu lā ilāha illā huwa layajmaʿannakum ilā yawmi l-qiyāmati lā rayba fīhi waman aṣdaqu mina l-lahi ḥadīthan",
+      "translation_bn": "আল্লাহ, তিনি ছাড়া সত্যিকারের কোন ইলাহ নেই, তিনি ক্বিয়ামাত দিবসে সকলকে একত্র করবেনই, এতে কোনই সন্দেহ নেই, আল্লাহ অপেক্ষা আর কার কথা অধিক সত্য হতে পারে?",
       "words": [
         {
           "id": 66842,
@@ -20516,6 +20690,8 @@
     {
       "surah": 4,
       "ayah": 88,
+      "transliteration": "famā lakum fī l-munāfiqīna fi-atayni wal-lahu arkasahum bimā kasabū aturīdūna an tahdū man aḍalla l-lahu waman yuḍ'lili l-lahu falan tajida lahu sabīlan",
+      "translation_bn": "তোমাদের কী হল যে, মুনাফিকদের ব্যাপারে (কী নীতি অবলম্বন করা হবে সে বিষয়ে) তোমরা দু’ দলে বিভক্ত হয়ে গেলে? বস্তুতঃ আল্লাহ তাদের এ কার্যকলাপের কারণে তাদেরকে উল্টা মুখে ফিরিয়ে দিয়েছেন (ইসলাম থেকে আবার কুফরের দিকে)। আল্লাহ যাকে পথভ্রষ্ট করেছেন, তোমরা কি তাকে সুপথ দেখাতে চাও? বস্তুতঃ আল্লাহ যাকে পথভ্রষ্ট করেন, তার জন্য কক্ষনো পথ খুঁজে পাবে না।",
       "words": [
         {
           "id": 67200,
@@ -20752,6 +20928,8 @@
     {
       "surah": 4,
       "ayah": 89,
+      "transliteration": "waddū law takfurūna kamā kafarū fatakūnūna sawāan falā tattakhidhū min'hum awliyāa ḥattā yuhājirū fī sabīli l-lahi fa-in tawallaw fakhudhūhum wa-uq'tulūhum ḥaythu wajadttumūhum walā tattakhidhū min'hum waliyyan walā naṣīran",
+      "translation_bn": "তারা আকাঙ্ক্ষা করে যে, তারা নিজেরা যেমন কুফরী করেছে, তোমরাও তেমনি কুফরী কর, যাতে তোমরা তাদের সমান হয়ে যাও। কাজেই তাদের মধ্য হতে কাউকেও বন্ধুরূপে গ্রহণ করো না, যে পর্যন্ত তারা আল্লাহর পথে হিজরত না করে। যদি তারা মুখ ফিরিয়ে নেয়, তবে তাদেরকে গ্রেফতার কর এবং যেখানেই তাদেরকে পাও, হত্যা কর। তাদের মধ্য হতে কোন বন্ধু ও সাহায্যকারী গ্রহণ করো না।",
       "words": [
         {
           "id": 67562,
@@ -21048,6 +21226,8 @@
     {
       "surah": 4,
       "ayah": 90,
+      "transliteration": "illā alladhīna yaṣilūna ilā qawmin baynakum wabaynahum mīthāqun aw jāūkum ḥaṣirat ṣudūruhum an yuqātilūkum aw yuqātilū qawmahum walaw shāa l-lahu lasallaṭahum ʿalaykum falaqātalūkum fa-ini iʿ'tazalūkum falam yuqātilūkum wa-alqaw ilaykumu l-salama famā jaʿala l-lahu lakum ʿalayhim sabīlan",
+      "translation_bn": "কিন্তু (সে সব মুনাফিক এ কথার মধ্যে শামিল নয়) যারা তোমাদের সাথে চুক্তিবদ্ধ কোন জাতির সঙ্গে গিয়ে মিলিত হয়। তেমনি (তারাও এর মধ্যে শামিল নয়) যারা তোমার কাছে আসে আর তারা ঝগড়া-বিবাদে উৎসাহী নয়, তারা না তোমাদের বিরুদ্ধে লড়াই করতে চায়, না নিজের জাতির বিরুদ্ধে। আল্লাহ যদি ইচ্ছে করতেন, তবে তাদেরকে তোমাদের উপর প্রবল করে দিতেন, সে অবস্থায় তারা নিশ্চয় তোমাদের বিরুদ্ধে যুদ্ধ করত। কাজেই তারা যদি তোমাদের হতে সরে থাকে, তোমাদের বিরুদ্ধে যুদ্ধ না করে ও তোমাদের নিকট শান্তি প্রস্তাব করে, তবে আল্লাহ তোমাদের জন্য তাদের বিরুদ্ধে কোনও ব্যবস্থা অবলম্বনের পথ রাখেননি।",
       "words": [
         {
           "id": 67928,
@@ -21424,6 +21604,8 @@
     {
       "surah": 4,
       "ayah": 91,
+      "transliteration": "satajidūna ākharīna yurīdūna an yamanūkum wayamanū qawmahum kulla mā ruddū ilā l-fit'nati ur'kisū fīhā fa-in lam yaʿtazilūkum wayul'qū ilaykumu l-salama wayakuffū aydiyahum fakhudhūhum wa-uq'tulūhum ḥaythu thaqif'tumūhum wa-ulāikum jaʿalnā lakum ʿalayhim sul'ṭānan mubīnan",
+      "translation_bn": "অচিরেই তোমরা কতক লোককে এমনও পাবে, যারা তোমাদের কাছ থেকেও নিরাপদ থাকতে চায়, তাদের নিজ সম্প্রদায় থেকেও নিরাপদ থাকতে চায়, যখন তাদেরকে ফিতনার দিকে মনোনিবেশ করানো হয় তখন তাতেই জড়িয়ে পড়ে। কাজেই যদি তারা তোমাদের শত্রুতা হতে সরে না যায় এবং তোমাদের নিকট শান্তি প্রস্তাব না করে এবং তাদের হস্ত সংবরণ না করে, তবে তাদেরকে গ্রেফতার কর আর যেখানেই পাও হত্যা কর, এরাই হচ্ছে সেই সব লোক তোমাদেরকে যাদের বিরুদ্ধাচরণের স্পষ্ট অধিকার দিয়েছি।",
       "words": [
         {
           "id": 68374,
@@ -21760,6 +21942,8 @@
     {
       "surah": 4,
       "ayah": 92,
+      "transliteration": "wamā kāna limu'minin an yaqtula mu'minan illā khaṭa-an waman qatala mu'minan khaṭa-an fataḥrīru raqabatin mu'minatin wadiyatun musallamatun ilā ahlihi illā an yaṣṣaddaqū fa-in kāna min qawmin ʿaduwwin lakum wahuwa mu'minun fataḥrīru raqabatin mu'minatin wa-in kāna min qawmin baynakum wabaynahum mīthāqun fadiyatun musallamatun ilā ahlihi wataḥrīru raqabatin mu'minatin faman lam yajid faṣiyāmu shahrayni mutatābiʿayni tawbatan mina l-lahi wakāna l-lahu ʿalīman ḥakīman",
+      "translation_bn": "কোন মু’মিনকে হত্যা করা কোন মু’মিনের কাজ নয় তবে ভুলবশত হতে পারে, কেউ কোন মু’মিনকে ভুলক্রমে হত্যা করলে, একজন মু’মিন দাস মুক্ত করা বা তার পরিবারবর্গকে রক্তপণ দেয়া কর্তব্য, যদি না তারা ক্ষমা করে দেয়। যদি সে তোমাদের শত্রুপক্ষের লোক হয় এবং মু’মিন হয় তবে একজন মু’মিন গোলাম আযাদ করা কর্তব্য, আর যদি সে এমন গোত্রের লোক হয় যাদের মধ্যে ও তোমাদের মধ্যে চুক্তি রয়েছে তবে তার পরিবারকে রক্তপণ দেয়া এবং একজন মু’মিন গোলাম আযাদ করা কর্তব্য এবং যে ব্যক্তি সঙ্গতিহীন সে একাদিক্রমে দু’ মাস রোযা পালন করবে। এটাই হল আল্লাহর নিকট তাওবাহ করার ব্যবস্থা, আল্লাহ মহাজ্ঞানী, সুবিজ্ঞ।",
       "words": [
         {
           "id": 68812,
@@ -22376,6 +22560,8 @@
     {
       "surah": 4,
       "ayah": 93,
+      "transliteration": "waman yaqtul mu'minan mutaʿammidan fajazāuhu jahannamu khālidan fīhā waghaḍiba l-lahu ʿalayhi walaʿanahu wa-aʿadda lahu ʿadhāban ʿaẓīman",
+      "translation_bn": "যে ব্যক্তি কোন মু’মিনকে ইচ্ছাপূর্বক হত্যা করে, তার শাস্তি জাহান্নাম। যাতে স্থায়ীভাবে থাকবে, তার উপর আল্লাহর ক্রোধ ও অভিসম্পাত। আল্লাহ তার জন্য মহাশাস্তি নির্দিষ্ট করে রেখেছেন।",
       "words": [
         {
           "id": 69300,
@@ -22552,6 +22738,8 @@
     {
       "surah": 4,
       "ayah": 94,
+      "transliteration": "yāayyuhā alladhīna āmanū idhā ḍarabtum fī sabīli l-lahi fatabayyanū walā taqūlū liman alqā ilaykumu l-salāma lasta mu'minan tabtaghūna ʿaraḍa l-ḥayati l-dun'yā faʿinda l-lahi maghānimu kathīratun kadhālika kuntum min qablu famanna l-lahu ʿalaykum fatabayyanū inna l-laha kāna bimā taʿmalūna khabīran",
+      "translation_bn": "হে মু’মিনগণ! যখন তোমরা আল্লাহর পথে যাত্রা করবে তখন কে বন্ধু আর কে শত্রু তা পরীক্ষা করে নেবে, কেউ তোমাদেরকে সালাম করলে তাকে বলো না, ‘তুমি মু’মিন নও’, তোমরা ইহজগতের সম্পদের আকাঙ্ক্ষা কর, বস্তুতঃ আল্লাহর নিকট তোমাদের জন্য প্রচুর গনীমত আছে। তোমরাও এর পূর্বে এ রকমই ছিলে (অর্থাৎ তোমারাও তাদের মতই তোমাদের ঈমানকে তোমাদের কওম থেকে গোপন করতে), তৎপর আল্লাহ তোমাদের প্রতি কৃপা করেছেন, কাজেই অগ্রে বিশেষভাবে পরীক্ষা করে নিবে; তোমরা যা কিছু কর, সে বিষয়ে আল্লাহ সবিশেষ অবহিত।",
       "words": [
         {
           "id": 69317,
@@ -22958,6 +23146,8 @@
     {
       "surah": 4,
       "ayah": 95,
+      "transliteration": "lā yastawī l-qāʿidūna mina l-mu'minīna ghayru ulī l-ḍarari wal-mujāhidūna fī sabīli l-lahi bi-amwālihim wa-anfusihim faḍḍala l-lahu l-mujāhidīna bi-amwālihim wa-anfusihim ʿalā l-qāʿidīna darajatan wakullan waʿada l-lahu l-ḥus'nā wafaḍḍala l-lahu l-mujāhidīna ʿalā l-qāʿidīna ajran ʿaẓīman",
+      "translation_bn": "অক্ষম নয় এমন বসে-থাকা মু’মিনরা আর জান-মাল দ্বারা আল্লাহর পথে জিহাদকারীগণ সমান নয়; নিজেদের ধন-প্রাণ দ্বারা জিহাদকারীদেরকে বসে-থাকা লোকেদের উপর আল্লাহ মর্যাদা দিয়েছেন। আল্লাহ সকলের জন্যই কল্যাণের ওয়াদা করেছেন এবং মুজাহিদদেরকে বসে-থাকা লোকেদের তুলনায় আল্লাহ মহাপুরস্কার দিয়ে মর্যাদা দান করেছেন।",
       "words": [
         {
           "id": 69746,
@@ -23304,6 +23494,8 @@
     {
       "surah": 4,
       "ayah": 96,
+      "transliteration": "darajātin min'hu wamaghfiratan waraḥmatan wakāna l-lahu ghafūran raḥīman",
+      "translation_bn": "ওটা আল্লাহর নিকট হতে পদমর্যাদা, ক্ষমা ও দয়া; আল্লাহ বড়ই ক্ষমাশীল, পরম দয়াবান।",
       "words": [
         {
           "id": 70100,
@@ -23400,6 +23592,8 @@
     {
       "surah": 4,
       "ayah": 97,
+      "transliteration": "inna alladhīna tawaffāhumu l-malāikatu ẓālimī anfusihim qālū fīma kuntum qālū kunnā mus'taḍʿafīna fī l-arḍi qālū alam takun arḍu l-lahi wāsiʿatan fatuhājirū fīhā fa-ulāika mawāhum jahannamu wasāat maṣīran",
+      "translation_bn": "যারা নিজেদের আত্মার উপর যুলম করেছিল এমন লোকেদের প্রাণ হরণের সময় ফেরেশতারা তাদেরকে জিজ্ঞেস করে- ‘তোমরা কোন্ কাজে নিমজ্জিত ছিলে’? তারা বলে, ‘দুনিয়ায় আমরা দুর্বল ক্ষমতাহীন ছিলাম’, ফেরেশতারা বলে, ‘আল্লাহর যমীন কি প্রশস্ত ছিল না যাতে তোমরা হিজরাত করতে’? সুতরাং তাদের আবাসস্থল হবে জাহান্নাম এবং তা কতই না নিকৃষ্ট প্রত্যাবর্তন স্থান!",
       "words": [
         {
           "id": 70399,
@@ -23686,6 +23880,8 @@
     {
       "surah": 4,
       "ayah": 98,
+      "transliteration": "illā l-mus'taḍʿafīna mina l-rijāli wal-nisāi wal-wil'dāni lā yastaṭīʿūna ḥīlatan walā yahtadūna sabīlan",
+      "translation_bn": "কিন্তু যে সকল সহায়হীন পুরুষ, নারী ও বালক যারা উপায় বের করতে পারে না আর তারা পথও পায় না,",
       "words": [
         {
           "id": 70753,
@@ -23822,6 +24018,8 @@
     {
       "surah": 4,
       "ayah": 99,
+      "transliteration": "fa-ulāika ʿasā l-lahu an yaʿfuwa ʿanhum wakāna l-lahu ʿafuwwan ghafūran",
+      "translation_bn": "আশা আছে যে, আল্লাহ তাদেরকে ক্ষমা করবেন এবং আল্লাহ গুনাহ মোচনকারী, বড়ই ক্ষমাশীল।",
       "words": [
         {
           "id": 71023,
@@ -23938,6 +24136,8 @@
     {
       "surah": 4,
       "ayah": 100,
+      "transliteration": "waman yuhājir fī sabīli l-lahi yajid fī l-arḍi murāghaman kathīran wasaʿatan waman yakhruj min baytihi muhājiran ilā l-lahi warasūlihi thumma yud'rik'hu l-mawtu faqad waqaʿa ajruhu ʿalā l-lahi wakāna l-lahu ghafūran raḥīman",
+      "translation_bn": "যে ব্যক্তি আল্লাহর পথে হিজরাত করবে, সে পৃথিবীতে বহু আশ্রয়স্থল এবং প্রাচুর্য প্রাপ্ত হবে; এবং যে ব্যক্তি নিজের গৃহ হতে আল্লাহ ও তাঁর রসূলের দিকে হিজরাত করে বের হয়, অতঃপর মৃত্যু তাকে পেয়ে বসে তার সাওয়াব আল্লাহর জিম্মায় সাব্যস্ত হয়ে গেছে এবং আল্লাহ অতি ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 71257,
@@ -24264,6 +24464,8 @@
     {
       "surah": 4,
       "ayah": 101,
+      "transliteration": "wa-idhā ḍarabtum fī l-arḍi falaysa ʿalaykum junāḥun an taqṣurū mina l-ṣalati in khif'tum an yaftinakumu alladhīna kafarū inna l-kāfirīna kānū lakum ʿaduwwan mubīnan",
+      "translation_bn": "যখন তোমরা দেশে-বিদেশে সফর কর, তখন নামায কসর করাতে তোমাদের কিছুমাত্র দোষ নেই, যদি তোমরা ভয় কর যে, কাফিরগণ তোমাদেরকে বিপদগ্রস্ত করবে। নিঃসন্দেহে কাফিরগণ তো তোমাদের প্রকাশ্য শত্রু।",
       "words": [
         {
           "id": 71726,
@@ -24510,6 +24712,8 @@
     {
       "surah": 4,
       "ayah": 102,
+      "transliteration": "wa-idhā kunta fīhim fa-aqamta lahumu l-ṣalata faltaqum ṭāifatun min'hum maʿaka walyakhudhū asliḥatahum fa-idhā sajadū falyakūnū min warāikum waltati ṭāifatun ukh'rā lam yuṣallū falyuṣallū maʿaka walyakhudhū ḥidh'rahum wa-asliḥatahum wadda alladhīna kafarū law taghfulūna ʿan asliḥatikum wa-amtiʿatikum fayamīlūna ʿalaykum maylatan wāḥidatan walā junāḥa ʿalaykum in kāna bikum adhan min maṭarin aw kuntum marḍā an taḍaʿū asliḥatakum wakhudhū ḥidh'rakum inna l-laha aʿadda lil'kāfirīna ʿadhāban muhīnan",
+      "translation_bn": "এবং যখন তুমি মু’মিনদের মাঝে অবস্থান করবে আর তাদের সঙ্গে নামায কায়িম করবে তখন তাদের একটি দল যেন তোমার সঙ্গে দাঁড়ায় এবং সশস্ত্র থাকে, তাদের সাজদাহ করা হলে তারা যেন তোমাদের পশ্চাতে অবস্থান করে এবং অপর যে দলটি নামায আদায় করেনি তারা যেন তোমার সঙ্গে নামায আদায় করে এবং সতর্ক ও সশস্ত্র থাকে; কাফিরগণ কামনা করে যে, তোমরা যেন তোমাদের অস্ত্রশস্ত্র ও সরঞ্জামের ব্যাপারে অসতর্ক হও, যাতে তারা একজোটে তোমাদের উপর ঝাঁপিয়ে পড়তে পারে। যদি তোমাদের বৃষ্টির কারণে কষ্ট হয়, কিংবা তোমরা পীড়িত হও, তবে অস্ত্র রেখে দিলে তোমাদের কোন গুনাহ নেই, কিন্তু সতর্কতা অবলম্বন করবে, আল্লাহ কাফিরদের জন্য অবমাননাকর শাস্তি প্রস্তুত করে রেখেছেন।",
       "words": [
         {
           "id": 72026,
@@ -25146,6 +25350,8 @@
     {
       "surah": 4,
       "ayah": 103,
+      "transliteration": "fa-idhā qaḍaytumu l-ṣalata fa-udh'kurū l-laha qiyāman waquʿūdan waʿalā junūbikum fa-idhā iṭ'manantum fa-aqīmū l-ṣalata inna l-ṣalata kānat ʿalā l-mu'minīna kitāban mawqūtan",
+      "translation_bn": "যখন তোমরা নামায আদায় করে নেবে, তখন দাঁড়িয়ে, বসে, শুয়ে আল্লাহকে স্মরণ করবে, অতঃপর যখন তোমরা নিরাপদ হবে তখন (যথানিয়মে) নামায কায়িম করবে। নির্দিষ্ট সময়ে নামায কায়িম করা মু’মিনদের জন্য অবশ্য কর্তব্য।",
       "words": [
         {
           "id": 72201,
@@ -25362,6 +25568,8 @@
     {
       "surah": 4,
       "ayah": 104,
+      "transliteration": "walā tahinū fī ib'tighāi l-qawmi in takūnū talamūna fa-innahum yalamūna kamā talamūna watarjūna mina l-lahi mā lā yarjūna wakāna l-lahu ʿalīman ḥakīman",
+      "translation_bn": "এ (শত্রু) কওমের পশ্চাদ্ধাবণে দুর্বলতা দেখাবে না, কেননা যদি তোমরা কষ্ট পাও, তবে তোমাদের মত তারাও তো কষ্ট পায়, আর তোমরা আল্লাহ হতে এমন কিছু আশা কর, যা তারা আশা করে না। আল্লাহ মহাজ্ঞানী, বিজ্ঞানময়।",
       "words": [
         {
           "id": 72491,
@@ -25598,6 +25806,8 @@
     {
       "surah": 4,
       "ayah": 105,
+      "transliteration": "innā anzalnā ilayka l-kitāba bil-ḥaqi litaḥkuma bayna l-nāsi bimā arāka l-lahu walā takun lil'khāinīna khaṣīman",
+      "translation_bn": "অবশ্যই আমি সত্য সহকারে তোমার প্রতি কিতাব নাযিল করেছি, যেন তুমি যা আল্লাহ তোমাকে জানিয়েছেন, সে অনুসারে মানুষের মধ্যে বিচার ফায়সালা কর এবং খিয়ানতকারীদের পক্ষে তর্ক করো না।",
       "words": [
         {
           "id": 72672,
@@ -25764,6 +25974,8 @@
     {
       "surah": 4,
       "ayah": 106,
+      "transliteration": "wa-is'taghfiri l-laha inna l-laha kāna ghafūran raḥīman",
+      "translation_bn": "আর আল্লাহর নিকট ক্ষমা চাও, নিশ্চয় আল্লাহ অতিশয় ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 73026,
@@ -25850,6 +26062,8 @@
     {
       "surah": 4,
       "ayah": 107,
+      "transliteration": "walā tujādil ʿani alladhīna yakhtānūna anfusahum inna l-laha lā yuḥibbu man kāna khawwānan athīman",
+      "translation_bn": "নিজেদের (বিবেক ও জ্ঞানের) প্রতি খিয়ানতকারীদের পক্ষে তুমি বাদানুবাদ করো না, কারণ আল্লাহ অতি খিয়ানতকারী চরম পাপীকে পছন্দ করেন না।",
       "words": [
         {
           "id": 73288,
@@ -26006,6 +26220,8 @@
     {
       "surah": 4,
       "ayah": 108,
+      "transliteration": "yastakhfūna mina l-nāsi walā yastakhfūna mina l-lahi wahuwa maʿahum idh yubayyitūna mā lā yarḍā mina l-qawli wakāna l-lahu bimā yaʿmalūna muḥīṭan",
+      "translation_bn": "তারা মানুষ হতে গোপন করে থাকে, কিন্তু তারা আল্লাহ হতে গোপন করতে পারে না; কেননা যে সময়ে তারা রাত্রে এমন বিষয়ে পরামর্শ করে যা আল্লাহ পছন্দ করেন না, তখনও তিনি তাদের সঙ্গেই থাকেন; আল্লাহ তাদের সমুদয় কার্যকলাপকে বেষ্টন করে আছেন।",
       "words": [
         {
           "id": 73582,
@@ -26232,6 +26448,8 @@
     {
       "surah": 4,
       "ayah": 109,
+      "transliteration": "hāantum hāulāi jādaltum ʿanhum fī l-ḥayati l-dun'yā faman yujādilu l-laha ʿanhum yawma l-qiyāmati am man yakūnu ʿalayhim wakīlan",
+      "translation_bn": "দেখ, ওরা সেই লোক যাদের পক্ষে পার্থিব জীবনে তোমরা বিতর্ক করছ কিন্তু ক্বিয়ামাত দিবসে তাদের পক্ষ হতে আল্লাহর সম্মুখে কে ঝগড়া করবে? কিংবা কে তাদের উকীল হবে?",
       "words": [
         {
           "id": 73780,
@@ -26428,6 +26646,8 @@
     {
       "surah": 4,
       "ayah": 110,
+      "transliteration": "waman yaʿmal sūan aw yaẓlim nafsahu thumma yastaghfiri l-laha yajidi l-laha ghafūran raḥīman",
+      "translation_bn": "যে ব্যক্তি অসৎকাজ করে কিংবা নিজের আত্মার প্রতি যুলম করে, অতঃপর আল্লাহ হতে ক্ষমা ভিক্ষে করে, সে আল্লাহকে অতি ক্ষমাশীল, পরম দয়ালু পাবে।",
       "words": [
         {
           "id": 74162,
@@ -26574,6 +26794,8 @@
     {
       "surah": 4,
       "ayah": 111,
+      "transliteration": "waman yaksib ith'man fa-innamā yaksibuhu ʿalā nafsihi wakāna l-lahu ʿalīman ḥakīman",
+      "translation_bn": "এবং যে ব্যক্তি কোন পাপকাজ করে, সে নিজের বিরুদ্ধেই তা করে, বস্তুতঃ আল্লাহ মহাবিজ্ঞানী, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 74434,
@@ -26700,6 +26922,8 @@
     {
       "surah": 4,
       "ayah": 112,
+      "transliteration": "waman yaksib khaṭīatan aw ith'man thumma yarmi bihi barīan faqadi iḥ'tamala buh'tānan wa-ith'man mubīnan",
+      "translation_bn": "যে ব্যক্তি কোন ত্রুটি কিংবা পাপ ক’রে তা কোন নির্দোষ ব্যক্তির উপর চাপিয়ে দেয়, সে তো জ্বলন্ত অপবাদ এবং সুস্পষ্ট গুনাহ নিজের উপর চাপিয়ে নেয়।",
       "words": [
         {
           "id": 74722,
@@ -26856,6 +27080,8 @@
     {
       "surah": 4,
       "ayah": 113,
+      "transliteration": "walawlā faḍlu l-lahi ʿalayka waraḥmatuhu lahammat ṭāifatun min'hum an yuḍillūka wamā yuḍillūna illā anfusahum wamā yaḍurrūnaka min shayin wa-anzala l-lahu ʿalayka l-kitāba wal-ḥik'mata waʿallamaka mā lam takun taʿlamu wakāna faḍlu l-lahi ʿalayka ʿaẓīman",
+      "translation_bn": "যদি তোমার প্রতি আল্লাহর করুণা এবং দয়া না হত, তবে তাদের একদল তো তোমাকে পথভ্রষ্ট করতেই চেয়েছিল; বস্তুতঃ তারা নিজেদেরকে ছাড়া অন্য কাউকে পথভ্রষ্ট করে না আর তারা তোমার কিছুই অনিষ্ট করতে পারবে না, কারণ আল্লাহ তোমার প্রতি কিতাব ও হিকমাত নাযিল করেছেন এবং তুমি যা জানতে না তা তোমাকে শিক্ষা দিয়েছেন এবং তোমার উপর রয়েছে আল্লাহর অপরিসীম অনুগ্রহ।",
       "words": [
         {
           "id": 74913,
@@ -27202,6 +27428,8 @@
     {
       "surah": 4,
       "ayah": 114,
+      "transliteration": "lā khayra fī kathīrin min najwāhum illā man amara biṣadaqatin aw maʿrūfin aw iṣ'lāḥin bayna l-nāsi waman yafʿal dhālika ib'tighāa marḍāti l-lahi fasawfa nu'tīhi ajran ʿaẓīman",
+      "translation_bn": "তাদের অধিকাংশ গোপন পরামর্শের মধ্যে কোন কল্যাণ নেই, কিন্তু কল্যাণ আছে যে ব্যক্তি দান-খয়রাত অথবা কোন সৎকাজের কিংবা লোকেদের মধ্যে মিলমিশের নির্দেশ দেয়। যে কেউ আল্লাহর সন্তুষ্টি সাধন উদ্দেশে এমন কাজ করবে, আমি তাকে মহা পুরস্কার দান করব।",
       "words": [
         {
           "id": 75203,
@@ -27478,6 +27706,8 @@
     {
       "surah": 4,
       "ayah": 115,
+      "transliteration": "waman yushāqiqi l-rasūla min baʿdi mā tabayyana lahu l-hudā wayattabiʿ ghayra sabīli l-mu'minīna nuwallihi mā tawallā wanuṣ'lihi jahannama wasāat maṣīran",
+      "translation_bn": "যে ব্যক্তি সত্য পথ প্রকাশিত হওয়ার পরও রসূলের বিরোধিতা করে এবং মু’মিনদের পথ বাদ দিয়ে ভিন্ন পথ অনুসরণ করে, আমি তাকে সে পথেই ফিরাব যে পথে সে ফিরে যায়, আর তাকে জাহান্নামে দগ্ধ করব, কত মন্দই না সে আবাস!",
       "words": [
         {
           "id": 75403,
@@ -27694,6 +27924,8 @@
     {
       "surah": 4,
       "ayah": 116,
+      "transliteration": "inna l-laha lā yaghfiru an yush'raka bihi wayaghfiru mā dūna dhālika liman yashāu waman yush'rik bil-lahi faqad ḍalla ḍalālan baʿīdan",
+      "translation_bn": "নিশ্চয়ই আল্লাহ তাঁর সঙ্গে শরীক করাকে ক্ষমা করেন না, এছাড়া অন্য সব যাকে ইচ্ছে মাফ করেন এবং যে ব্যক্তি আল্লাহর সঙ্গে শরীক করে, সে চরমভাবে গোমরাহীতে পতিত হল।",
       "words": [
         {
           "id": 75573,
@@ -27910,6 +28142,8 @@
     {
       "surah": 4,
       "ayah": 117,
+      "transliteration": "in yadʿūna min dūnihi illā ināthan wa-in yadʿūna illā shayṭānan marīdan",
+      "translation_bn": "তারা আল্লাহকে ছেড়ে শুধু কতকগুলো দেবীরই পূজা করে, তারা কেবল আল্লাহদ্রোহী শায়ত্বনের পূজা করে।",
       "words": [
         {
           "id": 75859,
@@ -28036,6 +28270,8 @@
     {
       "surah": 4,
       "ayah": 118,
+      "transliteration": "laʿanahu l-lahu waqāla la-attakhidhanna min ʿibādika naṣīban mafrūḍan",
+      "translation_bn": "আল্লাহ তাকে লা‘নাত করেছেন কারণ সে বলেছিল, ‘আমি তোমার বান্দাদের থেকে নির্দিষ্ট অংশকে আমার অনুসারী হিসেবে গ্রহণ করব।’",
       "words": [
         {
           "id": 76032,
@@ -28132,6 +28368,8 @@
     {
       "surah": 4,
       "ayah": 119,
+      "transliteration": "wala-uḍillannahum wala-umanniyannahum walaāmurannahum falayubattikunna ādhāna l-anʿāmi walaāmurannahum falayughayyirunna khalqa l-lahi waman yattakhidhi l-shayṭāna waliyyan min dūni l-lahi faqad khasira khus'rānan mubīnan",
+      "translation_bn": "তাদেরকে অবশ্য অবশ্যই পথভ্রষ্ট করব, তাদেরকে অবশ্য অবশ্যই বহু প্রলোভন দেব এবং তাদেরকে অবশ্য অবশ্যই নির্দেশ দেব, ফলে তারা জন্তু-জানোয়ারের কান ছেদন করবে, আমি তাদেরকে অবশ্য অবশ্যই নির্দেশ দেব, ফলে তারা অবশ্য অবশ্যই আল্লাহর সৃষ্টি বিকৃত করবে। আল্লাহকে বাদ দিয়ে যে কেউ শয়ত্বানকে অভিভাবক হিসেবে গ্রহণ করে, সে সুস্পষ্টত ক্ষতিগ্রস্ত।",
       "words": [
         {
           "id": 76180,
@@ -28358,6 +28596,8 @@
     {
       "surah": 4,
       "ayah": 120,
+      "transliteration": "yaʿiduhum wayumannīhim wamā yaʿiduhumu l-shayṭānu illā ghurūran",
+      "translation_bn": "সে তাদেরকে আশ্বাস দেয়, মিথ্যা প্রলোভন দেয়, বস্তুতঃ শয়ত্বান তাদেরকে যে আশ্বাস দেয় তা ছলনা ছাড়া আর কিছুই নয়।",
       "words": [
         {
           "id": 76490,
@@ -28444,6 +28684,8 @@
     {
       "surah": 4,
       "ayah": 121,
+      "transliteration": "ulāika mawāhum jahannamu walā yajidūna ʿanhā maḥīṣan",
+      "translation_bn": "এরাই তারা যাদের আবাসস্থল জাহান্নাম এবং তারা তাত্থেকে নিস্কৃতি পাওয়ার কোন পথ পাবে না।",
       "words": [
         {
           "id": 76536,
@@ -28530,6 +28772,8 @@
     {
       "surah": 4,
       "ayah": 122,
+      "transliteration": "wa-alladhīna āmanū waʿamilū l-ṣāliḥāti sanud'khiluhum jannātin tajrī min taḥtihā l-anhāru khālidīna fīhā abadan waʿda l-lahi ḥaqqan waman aṣdaqu mina l-lahi qīlan",
+      "translation_bn": "আর যারা ঈমান এনেছে ও নেক কাজ করেছে অবিলম্বে আমি তাদেরকে জান্নাতে দাখিল করব; যার পাদদেশে ঝর্ণাধারা প্রবাহিত, তারা তাতে চিরকাল চিরস্থায়ী হয়ে থাকবে, আল্লাহর ওয়া‘দা সত্য, কথায় আল্লাহ অপেক্ষা কে বেশি সত্যবাদী?",
       "words": [
         {
           "id": 76692,
@@ -28756,6 +29000,8 @@
     {
       "surah": 4,
       "ayah": 123,
+      "transliteration": "laysa bi-amāniyyikum walā amāniyyi ahli l-kitābi man yaʿmal sūan yuj'za bihi walā yajid lahu min dūni l-lahi waliyyan walā naṣīran",
+      "translation_bn": "তোমাদের বাসনা আর আহলে কিতাবদের বাসনা কোন কাজে আসবে না। যে ব্যক্তি কোন কুকর্ম করবে, সে তার বিনিময় প্রাপ্ত হবে, সে আল্লাহ ছাড়া তার জন্য কোন অভিভাবক পাবে না, কোন সাহায্যকারীও না।",
       "words": [
         {
           "id": 76937,
@@ -28972,6 +29218,8 @@
     {
       "surah": 4,
       "ayah": 124,
+      "transliteration": "waman yaʿmal mina l-ṣāliḥāti min dhakarin aw unthā wahuwa mu'minun fa-ulāika yadkhulūna l-janata walā yuẓ'lamūna naqīran",
+      "translation_bn": "পুরুষ ও নারীর মধ্যে যে সৎকাজ করবে আর সে ঈমানদারও বটে, তাহলে তারা জান্নাতে প্রবেশ করবে, তাদের প্রতি তিল পরিমাণও অন্যায় করা হবে না।",
       "words": [
         {
           "id": 76959,
@@ -29148,6 +29396,8 @@
     {
       "surah": 4,
       "ayah": 125,
+      "transliteration": "waman aḥsanu dīnan mimman aslama wajhahu lillahi wahuwa muḥ'sinun wa-ittabaʿa millata ib'rāhīma ḥanīfan wa-ittakhadha l-lahu ib'rāhīma khalīlan",
+      "translation_bn": "সে ব্যক্তি অপেক্ষা দ্বীনে কে বেশি উত্তম যে ব্যক্তি আল্লাহর কাছে আত্মসমর্পণ করে, অধিকন্তু সে সৎকর্মশীল এবং একনিষ্ঠভাবে ইবরাহীমের দ্বীন অনুসরণ করে। আল্লাহ ইবরাহীমকে একান্ত বন্ধুরূপে গ্রহণ করেছিলেন।",
       "words": [
         {
           "id": 77160,
@@ -29334,6 +29584,8 @@
     {
       "surah": 4,
       "ayah": 126,
+      "transliteration": "walillahi mā fī l-samāwāti wamā fī l-arḍi wakāna l-lahu bikulli shayin muḥīṭan",
+      "translation_bn": "আসমান ও যমীনে যা কিছু আছে সব আল্লাহরই এবং আল্লাহ সবকিছুকেই পরিবেষ্টন করে আছেন।",
       "words": [
         {
           "id": 77277,
@@ -29470,6 +29722,8 @@
     {
       "surah": 4,
       "ayah": 127,
+      "transliteration": "wayastaftūnaka fī l-nisāi quli l-lahu yuf'tīkum fīhinna wamā yut'lā ʿalaykum fī l-kitābi fī yatāmā l-nisāi allātī lā tu'tūnahunna mā kutiba lahunna watarghabūna an tankiḥūhunna wal-mus'taḍʿafīna mina l-wil'dāni wa-an taqūmū lil'yatāmā bil-qis'ṭi wamā tafʿalū min khayrin fa-inna l-laha kāna bihi ʿalīman",
+      "translation_bn": "লোকেরা তোমার কাছে নারীদের সম্বন্ধে বিধান জানতে চাচ্ছে। বলে দাও, ‘আল্লাহ তাদের সম্বন্ধে তোমাদেরকে বিধান জানিয়ে দিচ্ছেন সেসব নারী সম্পর্কে যাদের প্রাপ্য তোমরা প্রদান কর না অথচ তাদেরকে বিয়ে করতে চাও এবং অসহায় শিশুদের সম্পর্কে এবং ইয়াতীমদের প্রতি তোমাদের ন্যায়বিচার করা সম্পর্কে যা কিতাবে তোমাদেরকে শুনানো হয় তাও জানিয়ে দেন।’ যা কিছু সৎ কাজ তোমরা কর, তদ্বিষয়ে আল্লাহ ভালভাবেই জ্ঞাত।",
       "words": [
         {
           "id": 77472,
@@ -29886,6 +30140,8 @@
     {
       "surah": 4,
       "ayah": 128,
+      "transliteration": "wa-ini im'ra-atun khāfat min baʿlihā nushūzan aw iʿ'rāḍan falā junāḥa ʿalayhimā an yuṣ'liḥā baynahumā ṣul'ḥan wal-ṣul'ḥu khayrun wa-uḥ'ḍirati l-anfusu l-shuḥa wa-in tuḥ'sinū watattaqū fa-inna l-laha kāna bimā taʿmalūna khabīran",
+      "translation_bn": "এবং যদি কোন নারী স্বীয় স্বামী হতে রূঢ়তা কিংবা উপেক্ষার আশঙ্কা করে, তবে তারা পরস্পর আপোষ করলে তাদের কোন গুনাহ নেই, বস্তুতঃ আপোষ করাই উত্তম। আর নফস্ কৃপণতার দিকে সহজেই ঝুঁকে পড়ে, আর যদি তোমরা সৎকর্ম কর এবং তাকওয়া অবলম্বন কর তবে তোমরা যা কর আল্লাহ তার খবর রাখেন।",
       "words": [
         {
           "id": 77723,
@@ -30192,6 +30448,8 @@
     {
       "surah": 4,
       "ayah": 129,
+      "transliteration": "walan tastaṭīʿū an taʿdilū bayna l-nisāi walaw ḥaraṣtum falā tamīlū kulla l-mayli fatadharūhā kal-muʿalaqati wa-in tuṣ'liḥū watattaqū fa-inna l-laha kāna ghafūran raḥīman",
+      "translation_bn": "তোমরা কক্ষনো স্ত্রীদের মধ্যে সমতা রক্ষা করতে পারবে না যদিও প্রবল ইচ্ছে কর, তোমরা একজনের দিকে সম্পূর্ণরূপে ঝুঁকে পড়ো না এবং অন্যকে ঝুলিয়ে রেখ না। যদি তোমরা নিজেদেরকে সংশোধন কর এবং তাকওয়া অবলম্বন কর, তবে আল্লাহ অতি ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 77860,
@@ -30428,6 +30686,8 @@
     {
       "surah": 4,
       "ayah": 130,
+      "transliteration": "wa-in yatafarraqā yugh'ni l-lahu kullan min saʿatihi wakāna l-lahu wāsiʿan ḥakīman",
+      "translation_bn": "তারা যদি উভয়ে পৃথক হয়ে যায় তবে আল্লাহ আপন প্রাচুর্য দিয়ে প্রত্যেককে অভাবমুক্ত করে দেবেন, আল্লাহ প্রাচুর্যময়, মহাকুশলী।",
       "words": [
         {
           "id": 77978,
@@ -30554,6 +30814,8 @@
     {
       "surah": 4,
       "ayah": 131,
+      "transliteration": "walillahi mā fī l-samāwāti wamā fī l-arḍi walaqad waṣṣaynā alladhīna ūtū l-kitāba min qablikum wa-iyyākum ani ittaqū l-laha wa-in takfurū fa-inna lillahi mā fī l-samāwāti wamā fī l-arḍi wakāna l-lahu ghaniyyan ḥamīdan",
+      "translation_bn": "যা কিছু আকাশসমূহে ও ভূমন্ডলে আছে সমস্ত আল্লাহরই এবং অবশ্যই আমি তোমাদের আগে যাদেরকে কিতাব দেয়া হয়েছিল তাদেরকে আর তোমাদেরকেও আদেশ দিয়েছি যে, আল্লাহকে ভয় কর আর যদি অমান্য কর তবে আকাশসমূহে যা আছে ও ভূমন্ডলে যা আছে তা আল্লাহরই। আল্লাহ অভাবমুক্ত, অতিশয় প্রশংসিত।",
       "words": [
         {
           "id": 78080,
@@ -30890,6 +31152,8 @@
     {
       "surah": 4,
       "ayah": 132,
+      "transliteration": "walillahi mā fī l-samāwāti wamā fī l-arḍi wakafā bil-lahi wakīlan",
+      "translation_bn": "আসমানে যা আছে আর যমীনে যা আছে সব আল্লাহরই, কার্যনির্বাহক হিসেবে আল্লাহ্ই যথেষ্ট।",
       "words": [
         {
           "id": 78186,
@@ -31006,6 +31270,8 @@
     {
       "surah": 4,
       "ayah": 133,
+      "transliteration": "in yasha yudh'hib'kum ayyuhā l-nāsu wayati biākharīna wakāna l-lahu ʿalā dhālika qadīran",
+      "translation_bn": "তিনি ইচ্ছে করলে হে মানুষ! তোমাদেরকে বিলুপ্ত ক’রে তিনি অন্য সম্প্রদায়কে আনতে পারেন, আল্লাহ তা করতে পুরোপুরি সক্ষম।",
       "words": [
         {
           "id": 78266,
@@ -31142,6 +31408,8 @@
     {
       "surah": 4,
       "ayah": 134,
+      "transliteration": "man kāna yurīdu thawāba l-dun'yā faʿinda l-lahi thawābu l-dun'yā wal-ākhirati wakāna l-lahu samīʿan baṣīran",
+      "translation_bn": "যে ব্যক্তি পার্থিব পুরস্কার কামনা করে সে জেনে রাখুক যে আল্লাহর নিকট ইহলৌকিক ও পারলৌকিক পুরস্কার আছে। আল্লাহ সর্বশ্রোতা, সর্বদ্রষ্টা।",
       "words": [
         {
           "id": 78375,
@@ -31298,6 +31566,8 @@
     {
       "surah": 4,
       "ayah": 135,
+      "transliteration": "yāayyuhā alladhīna āmanū kūnū qawwāmīna bil-qis'ṭi shuhadāa lillahi walaw ʿalā anfusikum awi l-wālidayni wal-aqrabīna in yakun ghaniyyan aw faqīran fal-lahu awlā bihimā falā tattabiʿū l-hawā an taʿdilū wa-in talwū aw tuʿ'riḍū fa-inna l-laha kāna bimā taʿmalūna khabīran",
+      "translation_bn": "হে ঈমানদারগণ! ন্যায়ের প্রতি সুপ্রতিষ্ঠ ও আল্লাহর জন্য সাক্ষ্যদাতা হও যদিও তা তোমাদের নিজেদের কিংবা মাতা-পিতা এবং আত্মীয়গণের বিরুদ্ধে হয়, কেউ ধনী হোক বা দরিদ্র হোক, আল্লাহ উভয়েরই ঘনিষ্ঠতর। অতএব প্রবৃত্তির অনুসরণ করো না যাতে তোমরা ন্যায়বিচার করতে পার এবং যদি তোমরা বক্রভাবে কথা বল কিংবা সত্যকে এড়িয়ে যাও তবে নিশ্চয় তোমরা যা করছ, আল্লাহ সে বিষয়ে সম্পূর্ণ অবগত।",
       "words": [
         {
           "id": 78502,
@@ -31684,6 +31954,8 @@
     {
       "surah": 4,
       "ayah": 136,
+      "transliteration": "yāayyuhā alladhīna āmanū āminū bil-lahi warasūlihi wal-kitābi alladhī nazzala ʿalā rasūlihi wal-kitābi alladhī anzala min qablu waman yakfur bil-lahi wamalāikatihi wakutubihi warusulihi wal-yawmi l-ākhiri faqad ḍalla ḍalālan baʿīdan",
+      "translation_bn": "হে ঈমানদারগণ! তোমরা আল্লাহ, তাঁর রসূলের, তাঁর রসূলের নিকট তিনি অবতীর্ণ করেছেন সেই কিতাবের এবং পূর্বে নাযিলকৃত কিতাবের উপর ঈমান আন। যে ব্যক্তি আল্লাহকে ও তাঁর ফেরেশতাদেরকে, তাঁর কিতাবসমূহকে, তাঁর রসূলগণকে এবং শেষ দিবসকে অস্বীকার করে সে সীমাহীন পথভ্রষ্টতায় পতিত হয়।",
       "words": [
         {
           "id": 78659,
@@ -31980,6 +32252,8 @@
     {
       "surah": 4,
       "ayah": 137,
+      "transliteration": "inna alladhīna āmanū thumma kafarū thumma āmanū thumma kafarū thumma iz'dādū kuf'ran lam yakuni l-lahu liyaghfira lahum walā liyahdiyahum sabīlan",
+      "translation_bn": "যারা ঈমান আনল, অতঃপর কুফরী করল আবার ঈমান আনল আবার কুফরী করল, অতঃপর কুফরীতে অগ্রসর হতে থাকল, আল্লাহ তাদেরকে ক্ষমা করবেন না এবং পথপ্রদর্শন করবেন না।",
       "words": [
         {
           "id": 78804,
@@ -32196,6 +32470,8 @@
     {
       "surah": 4,
       "ayah": 138,
+      "transliteration": "bashiri l-munāfiqīna bi-anna lahum ʿadhāban alīman",
+      "translation_bn": "মুনাফিকদেরকে সুসংবাদ শুনিয়ে দাও যে, তাদের জন্য যন্ত্রণাদায়ক শাস্তি রয়েছে।",
       "words": [
         {
           "id": 78945,
@@ -32272,6 +32548,8 @@
     {
       "surah": 4,
       "ayah": 139,
+      "transliteration": "alladhīna yattakhidhūna l-kāfirīna awliyāa min dūni l-mu'minīna ayabtaghūna ʿindahumu l-ʿizata fa-inna l-ʿizata lillahi jamīʿan",
+      "translation_bn": "যারা মু’মিনদেরকে ছেড়ে কাফিরদেরকে বন্ধুরূপে গ্রহণ করে তারা কি তাদের নিকট ইযযত চায়? ইযযতের সবকিছুই আল্লাহর অধিকারে।",
       "words": [
         {
           "id": 78952,
@@ -32428,6 +32706,8 @@
     {
       "surah": 4,
       "ayah": 140,
+      "transliteration": "waqad nazzala ʿalaykum fī l-kitābi an idhā samiʿ'tum āyāti l-lahi yuk'faru bihā wayus'tahza-u bihā falā taqʿudū maʿahum ḥattā yakhūḍū fī ḥadīthin ghayrihi innakum idhan mith'luhum inna l-laha jāmiʿu l-munāfiqīna wal-kāfirīna fī jahannama jamīʿan",
+      "translation_bn": "কিতাবে তোমাদের নিকট তিনি নাযিল করেছেন যে, যখন তোমরা শুনবে আল্লাহর আয়াতের প্রতি কুফরী হচ্ছে এবং তার প্রতি ঠাট্টা করা হচ্ছে, তখন তাদের নিকট বসো না যে পর্যন্ত তারা অন্য আলোচনায় লিপ্ত না হয়, নচেৎ তোমরাও তাদের মত হয়ে যাবে, নিশ্চয় আল্লাহ মুনাফিক ও কাফিরদের সকলকেই জাহান্নামে একত্রিত করবেন।",
       "words": [
         {
           "id": 79153,
@@ -32774,6 +33054,8 @@
     {
       "surah": 4,
       "ayah": 141,
+      "transliteration": "alladhīna yatarabbaṣūna bikum fa-in kāna lakum fatḥun mina l-lahi qālū alam nakun maʿakum wa-in kāna lil'kāfirīna naṣībun qālū alam nastaḥwidh ʿalaykum wanamnaʿkum mina l-mu'minīna fal-lahu yaḥkumu baynakum yawma l-qiyāmati walan yajʿala l-lahu lil'kāfirīna ʿalā l-mu'minīna sabīlan",
+      "translation_bn": "তারা (অর্থাৎ মুনাফিকরা) তোমাদের ব্যাপারে ওঁৎ পেতে থাকে, তারা আল্লাহর তরফ হতে তোমাদের জয়লাভ হলে বলে আমরা কি তোমাদের সঙ্গে ছিলাম না? আর যদি কাফিরদের কিছু বিজয় ঘটে তখন তারা বলে, আমরা কি তোমাদের উপর বিজয়ী ছিলাম না এবং আমরা কি তোমাদেরকে মু’মিনদের হতে রক্ষা করিনি? এমতাবস্থায় আল্লাহ ক্বিয়ামাত দিবসে তোমাদের মধ্যে মীমাংসা করে দেবেন এবং আল্লাহ কক্ষনো মু’মিনদের বিরুদ্ধে কাফিরদেরকে (জয়লাভের) পথ করে দেবেন না।",
       "words": [
         {
           "id": 79198,
@@ -33150,6 +33432,8 @@
     {
       "surah": 4,
       "ayah": 142,
+      "transliteration": "inna l-munāfiqīna yukhādiʿūna l-laha wahuwa khādiʿuhum wa-idhā qāmū ilā l-ṣalati qāmū kusālā yurāūna l-nāsa walā yadhkurūna l-laha illā qalīlan",
+      "translation_bn": "নিশ্চয় মুনাফিকগণ আল্লাহর সঙ্গে ধোঁকাবাজি করে, তিনি তাদেরকে ধোঁকায় ফেলে শাস্তি দেন এবং তারা যখন সলাতের জন্য দাঁড়ায়, তখন শৈথিল্যভরে দাঁড়ায়, লোক দেখানোর জন্য, তারা আল্লাহকে সামান্যই স্মরণ করে।",
       "words": [
         {
           "id": 79411,
@@ -33356,6 +33640,8 @@
     {
       "surah": 4,
       "ayah": 143,
+      "transliteration": "mudhabdhabīna bayna dhālika lā ilā hāulāi walā ilā hāulāi waman yuḍ'lili l-lahu falan tajida lahu sabīlan",
+      "translation_bn": "তারা মাঝখানে দোদুল্যমান, না এদের দিকে, না ওদের দিকে; বস্তুতঃ আল্লাহ যাকে পথভ্রষ্ট করেন তুমি তার জন্য কক্ষনো কোন পথ পাবে না।",
       "words": [
         {
           "id": 79436,
@@ -33532,6 +33818,8 @@
     {
       "surah": 4,
       "ayah": 144,
+      "transliteration": "yāayyuhā alladhīna āmanū lā tattakhidhū l-kāfirīna awliyāa min dūni l-mu'minīna aturīdūna an tajʿalū lillahi ʿalaykum sul'ṭānan mubīnan",
+      "translation_bn": "হে ঈমানদারগণ! তোমরা মু’মিনদের পরিবর্তে কাফিরদেরকে তোমাদের বন্ধুরূপে গ্রহণ করো না, তোমরা কি তোমাদের নিজেদের বিরুদ্ধে আল্লাহর কাছে সুস্পষ্ট প্রমাণ পেশ করতে চাও?",
       "words": [
         {
           "id": 79645,
@@ -33718,6 +34006,8 @@
     {
       "surah": 4,
       "ayah": 145,
+      "transliteration": "inna l-munāfiqīna fī l-darki l-asfali mina l-nāri walan tajida lahum naṣīran",
+      "translation_bn": "মুনাফিকরা থাকবে জাহান্নামের সর্বনিম্ন স্তরে, তুমি তাদের জন্য কক্ষনো কোন সাহায্যকারী পাবে না।",
       "words": [
         {
           "id": 79780,
@@ -33844,6 +34134,8 @@
     {
       "surah": 4,
       "ayah": 146,
+      "transliteration": "illā alladhīna tābū wa-aṣlaḥū wa-iʿ'taṣamū bil-lahi wa-akhlaṣū dīnahum lillahi fa-ulāika maʿa l-mu'minīna wasawfa yu'ti l-lahu l-mu'minīna ajran ʿaẓīman",
+      "translation_bn": "অবশ্য তারা এদের মধ্যে শামিল নয় যারা তাওবাহ করবে, নিজেদেরকে সংশোধন করবে, আল্লাহকে মজবুতভাবে ধারণ করবে, আর নিজেদের দ্বীনকে আল্লাহর জন্য একনিষ্ঠ করবে। তখন তারা মু’মিনদের সঙ্গী হিসেবে গণ্য হবে আর আল্লাহ অচিরেই মু’মিনদেরকে মহা প্রতিফল দান করবেন।",
       "words": [
         {
           "id": 79963,
@@ -34040,6 +34332,8 @@
     {
       "surah": 4,
       "ayah": 147,
+      "transliteration": "mā yafʿalu l-lahu biʿadhābikum in shakartum waāmantum wakāna l-lahu shākiran ʿalīman",
+      "translation_bn": "তোমরা যদি শোকরগুজারি কর আর ঈমান আন তাহলে তোমাদেরকে শাস্তি দিয়ে আল্লাহ কী করবেন? আল্লাহ (সৎকাজের বড়ই) পুরস্কারদাতা, সর্ববিষয়ে জ্ঞাত।",
       "words": [
         {
           "id": 80075,
@@ -34166,6 +34460,8 @@
     {
       "surah": 4,
       "ayah": 148,
+      "transliteration": "lā yuḥibbu l-lahu l-jahra bil-sūi mina l-qawli illā man ẓulima wakāna l-lahu samīʿan ʿalīman",
+      "translation_bn": "খারাপ কথার প্রচার প্রপাগান্ডা আল্লাহ পছন্দ করেন না, তবে যার প্রতি অন্যায় করা হয়েছে (তার কথা আলাদা), আল্লাহ সর্বশ্রোতা, সর্বজ্ঞ।",
       "words": [
         {
           "id": 80185,
@@ -34322,6 +34618,8 @@
     {
       "surah": 4,
       "ayah": 149,
+      "transliteration": "in tub'dū khayran aw tukh'fūhu aw taʿfū ʿan sūin fa-inna l-laha kāna ʿafuwwan qadīran",
+      "translation_bn": "তোমরা যদি ভাল কাজ প্রকাশ্যে কর কিংবা তা গোপনে কর কিংবা মন্দকে ক্ষমা কর তবে আল্লাহও দোষত্রুটি মোচনকারী, ক্ষমতার অধিকারী।",
       "words": [
         {
           "id": 80338,
@@ -34478,6 +34776,8 @@
     {
       "surah": 4,
       "ayah": 150,
+      "transliteration": "inna alladhīna yakfurūna bil-lahi warusulihi wayurīdūna an yufarriqū bayna l-lahi warusulihi wayaqūlūna nu'minu bibaʿḍin wanakfuru bibaʿḍin wayurīdūna an yattakhidhū bayna dhālika sabīlan",
+      "translation_bn": "যারা আল্লাহ ও তাঁর রসূলদেরকে অস্বীকার করে আর আল্লাহ ও রসূলদের মাঝে পার্থক্য সৃষ্টি করতে চায় আর বলে (রসূলদের) কতককে আমরা মানি আর কতককে মানি না, আর তারা তার (কুফর ও ঈমানের) মাঝ দিয়ে একটা রাস্তা বের করতে চায় ।",
       "words": [
         {
           "id": 80363,
@@ -34714,6 +35014,8 @@
     {
       "surah": 4,
       "ayah": 151,
+      "transliteration": "ulāika humu l-kāfirūna ḥaqqan wa-aʿtadnā lil'kāfirīna ʿadhāban muhīnan",
+      "translation_bn": "তারাই হল প্রকৃত কাফির আর কাফিরদের জন্য আমি অবমাননাকর শাস্তি প্রস্তুত করে রেখেছি।",
       "words": [
         {
           "id": 80617,
@@ -34810,6 +35112,8 @@
     {
       "surah": 4,
       "ayah": 152,
+      "transliteration": "wa-alladhīna āmanū bil-lahi warusulihi walam yufarriqū bayna aḥadin min'hum ulāika sawfa yu'tīhim ujūrahum wakāna l-lahu ghafūran raḥīman",
+      "translation_bn": "আর যারা আল্লাহ ও তাঁর রসূলদের প্রতি বিশ্বাস স্থাপন করে আর তাদের কারো মধ্যে কোন পার্থক্য করে না, তিনি অবশ্যই তাদেরকে তাদের পুরস্কার দান করবেন, আল্লাহ বড়ই ক্ষমাশীল, বড়ই দয়ালু।",
       "words": [
         {
           "id": 80639,
@@ -34996,6 +35300,8 @@
     {
       "surah": 4,
       "ayah": 153,
+      "transliteration": "yasaluka ahlu l-kitābi an tunazzila ʿalayhim kitāban mina l-samāi faqad sa-alū mūsā akbara min dhālika faqālū arinā l-laha jahratan fa-akhadhathumu l-ṣāʿiqatu biẓul'mihim thumma ittakhadhū l-ʿij'la min baʿdi mā jāathumu l-bayinātu faʿafawnā ʿan dhālika waātaynā mūsā sul'ṭānan mubīnan",
+      "translation_bn": "কিতাবধারীগণ তোমাকে আসমান থেকে তাদের সামনে কিতাব নিয়ে আসতে বলে। তারা তো মূসার কাছে এর চেয়েও বড় দাবী পেশ করেছিল। তারা বলেছিল- আমাদেরকে প্রকাশ্যে আল্লাহকে দেখাও। তখন তাদের অন্যায় ও বাড়াবাড়ির কারণে বিদ্যুৎ তাদের উপর আঘাত হেনেছিল। অতঃপর তাদের কাছে স্পষ্ট প্রমাণ আসার পরেও তারা গো-বৎসকে (উপাস্য) গ্রহণ করেছিল, তাও আমি ক্ষমা করে দিয়েছিলাম, আর মূসাকে সুস্পষ্ট কর্তৃত্ব দান করেছিলাম।",
       "words": [
         {
           "id": 80815,
@@ -35382,6 +35688,8 @@
     {
       "surah": 4,
       "ayah": 154,
+      "transliteration": "warafaʿnā fawqahumu l-ṭūra bimīthāqihim waqul'nā lahumu ud'khulū l-bāba sujjadan waqul'nā lahum lā taʿdū fī l-sabti wa-akhadhnā min'hum mīthāqan ghalīẓan",
+      "translation_bn": "তাদের নিকট হতে অঙ্গীকার গ্রহণের জন্য আমি তূর পাহাড়কে তাদের ঊর্ধ্বে তুলে ধরেছিলাম, আর তাদেরকে বলেছিলাম- অবনত মস্তকে (নগর) দ্বারে প্রবেশ কর আর তাদেরকে বলেছিলাম শনিবারের আইন ভঙ্গ করো না, আর তাদের নিকট থেকে নিয়েছিলাম পাকা প্রতিশ্রুতি।",
       "words": [
         {
           "id": 80968,
@@ -35588,6 +35896,8 @@
     {
       "surah": 4,
       "ayah": 155,
+      "transliteration": "fabimā naqḍihim mīthāqahum wakuf'rihim biāyāti l-lahi waqatlihimu l-anbiyāa bighayri ḥaqqin waqawlihim qulūbunā ghul'fun bal ṭabaʿa l-lahu ʿalayhā bikuf'rihim falā yu'minūna illā qalīlan",
+      "translation_bn": "(তাদের প্রতি আল্লাহর অসন্তোষ নেমে এসেছে) তাদের ওয়া‘দা ভঙ্গের কারণে, আর আল্লাহর নিদর্শনসমূহকে অস্বীকার করার কারণে, অন্যায়ভাবে নাবীগণকে তাদের হত্যা করার কারণে, আর ‘আমাদের হৃদয়গুলো আচ্ছাদিত’ তাদের এ কথা বলার কারণে- বরং তাদের অস্বীকৃতির কারণে আল্লাহ তাদের হৃদয়গুলোতে মোহর মেরে দিয়েছেন। যে কারণে তাদের অল্পসংখ্যক ছাড়া ঈমান আনে না।",
       "words": [
         {
           "id": 81179,
@@ -35824,6 +36134,8 @@
     {
       "surah": 4,
       "ayah": 156,
+      "transliteration": "wabikuf'rihim waqawlihim ʿalā maryama buh'tānan ʿaẓīman",
+      "translation_bn": "(তাদের প্রতি আল্লাহর অসন্তোষ নেমে এসেছে) তাদের কুফরীর জন্য আর মারইয়ামের প্রতি তাদের গুরুতর অপবাদপূর্ণ কথা উচ্চারণের জন্য।",
       "words": [
         {
           "id": 81219,
@@ -35900,6 +36212,8 @@
     {
       "surah": 4,
       "ayah": 157,
+      "transliteration": "waqawlihim innā qatalnā l-masīḥa ʿīsā ib'na maryama rasūla l-lahi wamā qatalūhu wamā ṣalabūhu walākin shubbiha lahum wa-inna alladhīna ikh'talafū fīhi lafī shakkin min'hu mā lahum bihi min ʿil'min illā ittibāʿa l-ẓani wamā qatalūhu yaqīnan",
+      "translation_bn": "আর ‘আমরা আল্লাহর রসূল মাসীহ ঈসা ইবনু মারইয়ামকে হত্যা করেছি’ তাদের এ উক্তির জন্য। কিন্তু তারা না তাকে হত্যা করেছে, না তাকে ক্রুশবিদ্ধ করেছে, কেবলমাত্র তাদের জন্য (এক লোককে) তার সদৃশ করা হয়েছিল, আর যারা এ বিষয়ে মতভেদ করেছিল তারাও এ সম্পর্কে সন্দেহে পতিত হয়েছিল। শুধু অমূলক ধারণার অনুসরণ ছাড়া এ ব্যাপারে তাদের কোন জ্ঞানই ছিল না। এটা নিশ্চিত সত্য যে, তারা তাকে হত্যা করেনি।",
       "words": [
         {
           "id": 81444,
@@ -36256,6 +36570,8 @@
     {
       "surah": 4,
       "ayah": 158,
+      "transliteration": "bal rafaʿahu l-lahu ilayhi wakāna l-lahu ʿazīzan ḥakīman",
+      "translation_bn": "বরং আল্লাহ তাকে নিজের কাছে উঠিয়ে নিয়েছেন, আর আল্লাহ হলেন মহাপরাক্রমশালী, মহাবিজ্ঞানী।",
       "words": [
         {
           "id": 81529,
@@ -36352,6 +36668,8 @@
     {
       "surah": 4,
       "ayah": 159,
+      "transliteration": "wa-in min ahli l-kitābi illā layu'minanna bihi qabla mawtihi wayawma l-qiyāmati yakūnu ʿalayhim shahīdan",
+      "translation_bn": "কিতাবওয়ালাদের মধ্যে এমন কেউ নেই যে, তার মৃত্যুর পূর্বে তার প্রতি অবশ্যই ঈমান আনবে না, আর ক্বিয়ামাতের দিন সে তাদের বিরুদ্ধে সাক্ষ্য দেবে।",
       "words": [
         {
           "id": 81685,
@@ -36508,6 +36826,8 @@
     {
       "surah": 4,
       "ayah": 160,
+      "transliteration": "fabiẓul'min mina alladhīna hādū ḥarramnā ʿalayhim ṭayyibātin uḥillat lahum wabiṣaddihim ʿan sabīli l-lahi kathīran",
+      "translation_bn": "আমি ইয়াহূদীদের জন্য পবিত্র বস্তুসমূহ যা তাদের জন্য হালাল ছিল, তা হারাম করে দিয়েছি তাদের বাড়াবাড়ির কারণে আর বহু লোককে আল্লাহর পথে তাদের বাধা দেয়ার কারণে।",
       "words": [
         {
           "id": 81853,
@@ -36664,6 +36984,8 @@
     {
       "surah": 4,
       "ayah": 161,
+      "transliteration": "wa-akhdhihimu l-riba waqad nuhū ʿanhu wa-aklihim amwāla l-nāsi bil-bāṭili wa-aʿtadnā lil'kāfirīna min'hum ʿadhāban alīman",
+      "translation_bn": "এবং তাদের সুদ গ্রহণের কারণে যদিও তাত্থেকে তাদেরকে নিষেধ করা হয়েছিল এবং তাদের অন্যায়ভাবে লোকেদের ধন-সম্পদ গ্রাস করার কারণে এবং আমি তাদের মাঝে যারা অবিশ্বাসী তাদের জন্যে যন্ত্রণাদায়ক শাস্তি প্রস্তুত করে রেখেছি।",
       "words": [
         {
           "id": 81868,
@@ -36820,6 +37142,8 @@
     {
       "surah": 4,
       "ayah": 162,
+      "transliteration": "lākini l-rāsikhūna fī l-ʿil'mi min'hum wal-mu'minūna yu'minūna bimā unzila ilayka wamā unzila min qablika wal-muqīmīna l-ṣalata wal-mu'tūna l-zakata wal-mu'minūna bil-lahi wal-yawmi l-ākhiri ulāika sanu'tīhim ajran ʿaẓīman",
+      "translation_bn": "কিন্তু তাদের মধ্যে যারা জ্ঞানে পরিপক্ক আর মু’মিনগণ তোমার প্রতি যা অবতীর্ণ হয়েছে আর তোমার পূর্বে যা অবতীর্ণ হয়েছে তাতে বিশ্বাস স্থাপন করে আর তারা নামায ক্বায়িমকারী ও যাকাত আদায়কারী এবং আল্লাহ্তে ও শেষ দিনের প্রতি বিশ্বাসী; এদেরকেই আমি শীঘ্র মহাপুরস্কার দান করব।",
       "words": [
         {
           "id": 82012,
@@ -37096,6 +37420,8 @@
     {
       "surah": 4,
       "ayah": 163,
+      "transliteration": "innā awḥaynā ilayka kamā awḥaynā ilā nūḥin wal-nabiyīna min baʿdihi wa-awḥaynā ilā ib'rāhīma wa-is'māʿīla wa-is'ḥāqa wayaʿqūba wal-asbāṭi waʿīsā wa-ayyūba wayūnusa wahārūna wasulaymāna waātaynā dāwūda zabūran",
+      "translation_bn": "আমি তোমার কাছে ওয়াহী পাঠিয়েছি যেমন নূহ ও তার আগের নাবীগণের নিকট ওয়াহী পাঠিয়েছিলাম, আর ইবরাহীম, ইসমাঈল, ইসহাক, ইয়াকুব ও তার বংশধর আর ঈসা, আইয়ূব, ইউনুস, হারূন ও সুলায়মানের নিকটও ওয়াহী পাঠিয়েছিলাম আর আমি দাঊদকে যাবূর প্রদান করেছিলাম।",
       "words": [
         {
           "id": 82068,
@@ -37362,6 +37688,8 @@
     {
       "surah": 4,
       "ayah": 164,
+      "transliteration": "warusulan qad qaṣaṣnāhum ʿalayka min qablu warusulan lam naqṣuṣ'hum ʿalayka wakallama l-lahu mūsā taklīman",
+      "translation_bn": "আমি সেই রসূলদের প্রতিও ওয়াহী পাঠিয়েছি যাদের সম্পর্কে আমি তোমাকে আগেই বলেছি, আর অনেক রসূল যাদের কথা আমি তোমাকে বলিনি। আর আল্লাহ মূসার সাথে কথা বলেছেন সরাসরি।",
       "words": [
         {
           "id": 82200,
@@ -37518,6 +37846,8 @@
     {
       "surah": 4,
       "ayah": 165,
+      "transliteration": "rusulan mubashirīna wamundhirīna li-allā yakūna lilnnāsi ʿalā l-lahi ḥujjatun baʿda l-rusuli wakāna l-lahu ʿazīzan ḥakīman",
+      "translation_bn": "রসূলগণ ছিলেন সুসংবাদদাতা ও সতর্ককারী যাতে রসূলদের আগমনের পর আল্লাহর বিরুদ্ধে মানুষের কোন অযুহাতের সুযোগ না থাকে। আল্লাহ হলেন মহাপরাক্রমশালী, বিজ্ঞানময়।",
       "words": [
         {
           "id": 82333,
@@ -37684,6 +38014,8 @@
     {
       "surah": 4,
       "ayah": 166,
+      "transliteration": "lākini l-lahu yashhadu bimā anzala ilayka anzalahu biʿil'mihi wal-malāikatu yashhadūna wakafā bil-lahi shahīdan",
+      "translation_bn": "কিন্তু আল্লাহ সাক্ষ্য দিচ্ছেন যে, যা তিনি নাযিল করেছেন তা তাঁর জ্ঞানের ভিত্তিতেই নাযিল করেছেন। ফেরেশতারাও সে সাক্ষ্য দিচ্ছে আর সাক্ষী হিসেবে আল্লাহ্ই যথেষ্ট।",
       "words": [
         {
           "id": 82505,
@@ -37830,6 +38162,8 @@
     {
       "surah": 4,
       "ayah": 167,
+      "transliteration": "inna alladhīna kafarū waṣaddū ʿan sabīli l-lahi qad ḍallū ḍalālan baʿīdan",
+      "translation_bn": "যারা কুফরী করে আর লোকেদেরকে আল্লাহর পথ হতে ফিরিয়ে রাখে তারা চরম পথভ্রষ্টতায় পথভ্রষ্ট হয়ে গেছে।",
       "words": [
         {
           "id": 82531,
@@ -37956,6 +38290,8 @@
     {
       "surah": 4,
       "ayah": 168,
+      "transliteration": "inna alladhīna kafarū waẓalamū lam yakuni l-lahu liyaghfira lahum walā liyahdiyahum ṭarīqan",
+      "translation_bn": "যারা কুফরী করেছে আর বাড়াবাড়ি করেছে, আল্লাহ তাদেরকে ক্ষমা করবেন না, তাদেরকে কোন পথও দেখাবেন না ।",
       "words": [
         {
           "id": 82658,
@@ -38092,6 +38428,8 @@
     {
       "surah": 4,
       "ayah": 169,
+      "transliteration": "illā ṭarīqa jahannama khālidīna fīhā abadan wakāna dhālika ʿalā l-lahi yasīran",
+      "translation_bn": "জাহান্নামের পথ ছাড়া, যাতে তারা চিরকালের জন্য স্থায়ী হবে, আর এটা আল্লাহর জন্য সহজ।",
       "words": [
         {
           "id": 82719,
@@ -38218,6 +38556,8 @@
     {
       "surah": 4,
       "ayah": 170,
+      "transliteration": "yāayyuhā l-nāsu qad jāakumu l-rasūlu bil-ḥaqi min rabbikum faāminū khayran lakum wa-in takfurū fa-inna lillahi mā fī l-samāwāti wal-arḍi wakāna l-lahu ʿalīman ḥakīman",
+      "translation_bn": "হে মানুষ! রসূল তোমাদের কাছে তোমাদের প্রতিপালকের নিকট হতে সত্য বিধান নিয়ে এসেছে, কাজেই তোমরা ঈমান আন, এটা তোমাদের জন্য কল্যাণকর হবে, আর যদি কুফরী কর (তাহলে জেনে রেখ) আকাশসমূহে আর যমীনে যা কিছু আছে সবই আল্লাহর আর আল্লাহ হলেন সর্বজ্ঞ, মহা কুশলী।",
       "words": [
         {
           "id": 82873,
@@ -38464,6 +38804,8 @@
     {
       "surah": 4,
       "ayah": 171,
+      "transliteration": "yāahla l-kitābi lā taghlū fī dīnikum walā taqūlū ʿalā l-lahi illā l-ḥaqa innamā l-masīḥu ʿīsā ub'nu maryama rasūlu l-lahi wakalimatuhu alqāhā ilā maryama warūḥun min'hu faāminū bil-lahi warusulihi walā taqūlū thalāthatun intahū khayran lakum innamā l-lahu ilāhun wāḥidun sub'ḥānahu an yakūna lahu waladun lahu mā fī l-samāwāti wamā fī l-arḍi wakafā bil-lahi wakīlan",
+      "translation_bn": "ওহে কিতাবধারীগণ! তোমরা তোমাদের দ্বীনের ব্যাপারে বাড়াবাড়ি করো না, আর আল্লাহ সম্বন্ধে সত্য ছাড়া কিছু বলো না, ঈসা মাসীহ তো আল্লাহর রসূল আর তাঁর বানী যা তিনি মারইয়ামের নিকট প্রেরণ করেছিলেন, আর তাঁর পক্ষ হতে নির্দেশ, কাজেই তোমরা আল্লাহর প্রতি ও তাঁর রসূলগণের প্রতি ঈমান আনো, আর বলো না ‘তিন’ (জন ইলাহ আছে), নিবৃত্ত হও, তা হবে তোমাদের জন্য কল্যাণকর, আল্লাহ তো একক ইলাহ, তিনি পবিত্র এত্থেকে যে, তাঁর সন্তান হবে। আসমানসমূহে আর যমীনে যা আছে সব কিছু তাঁরই, আর কর্মবিধায়ক হিসেবে আল্লাহই যথেষ্ট।",
       "words": [
         {
           "id": 82924,
@@ -39010,6 +39352,8 @@
     {
       "surah": 4,
       "ayah": 172,
+      "transliteration": "lan yastankifa l-masīḥu an yakūna ʿabdan lillahi walā l-malāikatu l-muqarabūna waman yastankif ʿan ʿibādatihi wayastakbir fasayaḥshuruhum ilayhi jamīʿan",
+      "translation_bn": "মাসীহ আল্লাহর বান্দা হওয়াকে তুচ্ছ জ্ঞান করে না, আর নৈকট্যের অধিকারী ফেরেশতারাও না। যে তাঁর ‘ইবাদাতকে হেয় জ্ঞান করে আর অহঙ্কার করে, তিনি তাদের সকলকে শীঘ্রই তাঁর কাছে একত্রিত করবেন।",
       "words": [
         {
           "id": 83096,
@@ -39206,6 +39550,8 @@
     {
       "surah": 4,
       "ayah": 173,
+      "transliteration": "fa-ammā alladhīna āmanū waʿamilū l-ṣāliḥāti fayuwaffīhim ujūrahum wayazīduhum min faḍlihi wa-ammā alladhīna is'tankafū wa-is'takbarū fayuʿadhibuhum ʿadhāban alīman walā yajidūna lahum min dūni l-lahi waliyyan walā naṣīran",
+      "translation_bn": "কিন্তু যারা ঈমান আনে ও সৎ কাজ করে আল্লাহ তাদের পুরস্কার পুরোপুরি দান করবেন, আর নিজ অনুগ্রহে আরো বেশি দেবেন। আর যারা তুচ্ছ জ্ঞান করবে ও অহঙ্কার করবে তাদেরকে কষ্টদায়ক শাস্তি দান করবেন। আল্লাহ ব্যতীত তাদের জন্য তারা না পাবে কোন অভিভাবক, না (পাবে) কোন সাহায্যকারী।",
       "words": [
         {
           "id": 83161,
@@ -39482,6 +39828,8 @@
     {
       "surah": 4,
       "ayah": 174,
+      "transliteration": "yāayyuhā l-nāsu qad jāakum bur'hānun min rabbikum wa-anzalnā ilaykum nūran mubīnan",
+      "translation_bn": "হে মানবমন্ডলী! তোমাদের প্রতিপালকের নিকট হতে তোমাদের কাছে উজ্জ্বল প্রমাণ এসে পৌঁছেছে, আর আমি তোমাদের নিকট সুস্পষ্ট জ্যোতি অবতীর্ণ করেছি।",
       "words": [
         {
           "id": 83226,
@@ -39608,6 +39956,8 @@
     {
       "surah": 4,
       "ayah": 175,
+      "transliteration": "fa-ammā alladhīna āmanū bil-lahi wa-iʿ'taṣamū bihi fasayud'khiluhum fī raḥmatin min'hu wafaḍlin wayahdīhim ilayhi ṣirāṭan mus'taqīman",
+      "translation_bn": "অতঃপর যারা আল্লাহর প্রতি ঈমান আনে আর তাঁকে দৃঢ়ভাবে অাঁকড়ে ধরে থাকে, অচিরেই তিনি তাদেরকে তাঁর রহমত ও অনুগ্রহের মধ্যে দাখিল করবেন এবং তাঁর দিকে সরল-সুদৃঢ় পথে পরিচালিত করবেন।",
       "words": [
         {
           "id": 83350,
@@ -39774,6 +40124,8 @@
     {
       "surah": 4,
       "ayah": 176,
+      "transliteration": "yastaftūnaka quli l-lahu yuf'tīkum fī l-kalālati ini im'ru-on halaka laysa lahu waladun walahu ukh'tun falahā niṣ'fu mā taraka wahuwa yarithuhā in lam yakun lahā waladun fa-in kānatā ith'natayni falahumā l-thuluthāni mimmā taraka wa-in kānū ikh'watan rijālan wanisāan falildhakari mith'lu ḥaẓẓi l-unthayayni yubayyinu l-lahu lakum an taḍillū wal-lahu bikulli shayin ʿalīmun",
+      "translation_bn": "লোকেরা তোমার কাছে ফাতাওয়া জিজ্ঞেস করছে; বল, আল্লাহ তোমাদেরকে পিতা-মাতাহীন নিঃসন্তান ব্যক্তি সম্পর্কে ফাতাওয়া দিচ্ছেন, কোন ব্যক্তি মারা গেলে তার যদি সন্তান না থাকে আর তার একটি বোন থাকে, তবে রেখে যাওয়া সম্পত্তির অর্ধেক সে পাবে, আর সে (মৃত নারী) যদি সন্তানহীনা হয় তবে তার ভাই তার উত্তরাধিকারী হবে, আর দু’ বোন থাকলে তারা তার রেখে যাওয়া সম্পত্তির দু’-তৃতীয়াংশ পাবে, আর যদি ভাই ও বোন দু’ই থাকে, তবে পুরুষ পাবে দু’জন নারীর সমান। আল্লাহ সুস্পষ্টভাবে বর্ণনা করেছেন যাতে তোমরা বিভ্রান্তিতে পতিত না হও। আল্লাহ যাবতীয় ব্যাপারে পূর্ণরূপে অবহিত।",
       "words": [
         {
           "id": 83385,

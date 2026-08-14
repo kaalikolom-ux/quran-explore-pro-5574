@@ -4,6 +4,8 @@
     {
       "surah": 81,
       "ayah": 1,
+      "transliteration": "idhā l-shamsu kuwwirat",
+      "translation_bn": "যখন সূর্যকে গুটিয়ে নেয়া হবে",
       "words": [
         {
           "id": 695,
@@ -50,6 +52,8 @@
     {
       "surah": 81,
       "ayah": 2,
+      "transliteration": "wa-idhā l-nujūmu inkadarat",
+      "translation_bn": "আর তারকাগুলো যখন তাদের উজ্জ্বলতা হারিয়ে খসে পড়বে।",
       "words": [
         {
           "id": 1722,
@@ -96,6 +100,8 @@
     {
       "surah": 81,
       "ayah": 3,
+      "transliteration": "wa-idhā l-jibālu suyyirat",
+      "translation_bn": "পর্বতগুলোকে যখন চলমান করা হবে,",
       "words": [
         {
           "id": 2845,
@@ -142,6 +148,8 @@
     {
       "surah": 81,
       "ayah": 4,
+      "transliteration": "wa-idhā l-ʿishāru ʿuṭṭilat",
+      "translation_bn": "যখন দশ মাসের গর্ভবতী উটনিগুলোকে অযত্নে পরিত্যাগ করা হবে,",
       "words": [
         {
           "id": 4210,
@@ -188,6 +196,8 @@
     {
       "surah": 81,
       "ayah": 5,
+      "transliteration": "wa-idhā l-wuḥūshu ḥushirat",
+      "translation_bn": "যখন বনের জন্তু জানোয়ারকে (বন থেকে গুটিয়ে এনে লোকালয়ে) একত্রিত করা হবে,",
       "words": [
         {
           "id": 5469,
@@ -234,6 +244,8 @@
     {
       "surah": 81,
       "ayah": 6,
+      "transliteration": "wa-idhā l-biḥāru sujjirat",
+      "translation_bn": "যখন সমুদ্রগুলোকে প্রজ্জ্বলিত করে উত্তাল করা হবে।",
       "words": [
         {
           "id": 6689,
@@ -280,6 +292,8 @@
     {
       "surah": 81,
       "ayah": 7,
+      "transliteration": "wa-idhā l-nufūsu zuwwijat",
+      "translation_bn": "যখন দেহের সঙ্গে আত্মাগুলোকে আবার জুড়ে দেয়া হবে,",
       "words": [
         {
           "id": 8052,
@@ -326,6 +340,8 @@
     {
       "surah": 81,
       "ayah": 8,
+      "transliteration": "wa-idhā l-mawūdatu su-ilat",
+      "translation_bn": "যখন জীবন্ত পুঁতে-ফেলা কন্যা-শিশুকে জিজ্ঞেস করা হবে,",
       "words": [
         {
           "id": 9203,
@@ -372,6 +388,8 @@
     {
       "surah": 81,
       "ayah": 9,
+      "transliteration": "bi-ayyi dhanbin qutilat",
+      "translation_bn": "কোন্ অপরাধে তাকে হত্যা করা হয়েছে?",
       "words": [
         {
           "id": 10421,
@@ -418,6 +436,8 @@
     {
       "surah": 81,
       "ayah": 10,
+      "transliteration": "wa-idhā l-ṣuḥufu nushirat",
+      "translation_bn": "যখন ‘আমালনামাগুলো খুলে ধরা হবে,",
       "words": [
         {
           "id": 11040,
@@ -464,6 +484,8 @@
     {
       "surah": 81,
       "ayah": 11,
+      "transliteration": "wa-idhā l-samāu kushiṭat",
+      "translation_bn": "যখন আসমানের পর্দা সরিয়ে ফেলা হবে।",
       "words": [
         {
           "id": 12988,
@@ -510,6 +532,8 @@
     {
       "surah": 81,
       "ayah": 12,
+      "transliteration": "wa-idhā l-jaḥīmu suʿʿirat",
+      "translation_bn": "যখন জাহান্নামকে উসকে দেয়া হবে,",
       "words": [
         {
           "id": 13610,
@@ -556,6 +580,8 @@
     {
       "surah": 81,
       "ayah": 13,
+      "transliteration": "wa-idhā l-janatu uz'lifat",
+      "translation_bn": "আর জান্নাতকে নিকটে আনা হবে,",
       "words": [
         {
           "id": 15361,
@@ -602,6 +628,8 @@
     {
       "surah": 81,
       "ayah": 14,
+      "transliteration": "ʿalimat nafsun mā aḥḍarat",
+      "translation_bn": "তখন প্রত্যেক ব্যক্তি জানতে পারবে সে কী (সঙ্গে) নিয়ে এসেছে।",
       "words": [
         {
           "id": 15854,
@@ -658,6 +686,8 @@
     {
       "surah": 81,
       "ayah": 15,
+      "transliteration": "falā uq'simu bil-khunasi",
+      "translation_bn": "আমি শপথ করছি (গ্রহের) যা পেছনে সরে যায়,",
       "words": [
         {
           "id": 17581,
@@ -704,6 +734,8 @@
     {
       "surah": 81,
       "ayah": 16,
+      "transliteration": "al-jawāri l-kunasi",
+      "translation_bn": "চলে ও লুকিয়ে যায়,",
       "words": [
         {
           "id": 17983,
@@ -740,6 +772,8 @@
     {
       "surah": 81,
       "ayah": 17,
+      "transliteration": "wa-al-layli idhā ʿasʿasa",
+      "translation_bn": "শপথ রাতের যখন তা বিদায় নেয়",
       "words": [
         {
           "id": 19660,
@@ -786,6 +820,8 @@
     {
       "surah": 81,
       "ayah": 18,
+      "transliteration": "wal-ṣub'ḥi idhā tanaffasa",
+      "translation_bn": "আর ঊষার যখন তা নিঃশ্বাস ফেলে অন্ধকারকে বের করে দেয়,",
       "words": [
         {
           "id": 20195,
@@ -832,6 +868,8 @@
     {
       "surah": 81,
       "ayah": 19,
+      "transliteration": "innahu laqawlu rasūlin karīmin",
+      "translation_bn": "এ কুরআন নিশ্চয়ই সম্মানিত রসূলের (অর্থাৎ জিবরাঈলের) আনীত বাণী।",
       "words": [
         {
           "id": 21808,
@@ -888,6 +926,8 @@
     {
       "surah": 81,
       "ayah": 20,
+      "transliteration": "dhī quwwatin ʿinda dhī l-ʿarshi makīnin",
+      "translation_bn": "যে শক্তিশালী, ‘আরশের মালিক (আল্লাহ)’র নিকট মর্যাদাশীল।",
       "words": [
         {
           "id": 22338,
@@ -964,6 +1004,8 @@
     {
       "surah": 81,
       "ayah": 21,
+      "transliteration": "muṭāʿin thamma amīnin",
+      "translation_bn": "সেখানে মান্য ও বিশ্বস্ত।",
       "words": [
         {
           "id": 23835,
@@ -1010,6 +1052,8 @@
     {
       "surah": 81,
       "ayah": 22,
+      "transliteration": "wamā ṣāḥibukum bimajnūnin",
+      "translation_bn": "(ওহে মাক্কাবাসী!) তোমাদের সঙ্গী (মুহাম্মাদ) পাগল নয়।",
       "words": [
         {
           "id": 25055,
@@ -1056,6 +1100,8 @@
     {
       "surah": 81,
       "ayah": 23,
+      "transliteration": "walaqad raāhu bil-ufuqi l-mubīni",
+      "translation_bn": "সে সেই বাণী বাহককে সুস্পষ্ট দিগন্তে দেখেছে,",
       "words": [
         {
           "id": 26318,
@@ -1112,6 +1158,8 @@
     {
       "surah": 81,
       "ayah": 24,
+      "transliteration": "wamā huwa ʿalā l-ghaybi biḍanīnin",
+      "translation_bn": "সে গায়বের (জ্ঞান মানুষের কাছে পৌঁছে দেয়ার) ব্যাপারে কৃপণতা করে না।",
       "words": [
         {
           "id": 27140,
@@ -1178,6 +1226,8 @@
     {
       "surah": 81,
       "ayah": 25,
+      "transliteration": "wamā huwa biqawli shayṭānin rajīmin",
+      "translation_bn": "আর তা কোন অভিশপ্ত শয়ত্বানের বাণী নয়।",
       "words": [
         {
           "id": 28153,
@@ -1244,6 +1294,8 @@
     {
       "surah": 81,
       "ayah": 26,
+      "transliteration": "fa-ayna tadhhabūna",
+      "translation_bn": "কাজেই তোমরা (সত্যকে প্রত্যাখ্যান করে) কোথায় চলেছ?",
       "words": [
         {
           "id": 29117,
@@ -1280,6 +1332,8 @@
     {
       "surah": 81,
       "ayah": 27,
+      "transliteration": "in huwa illā dhik'run lil'ʿālamīna",
+      "translation_bn": "এটা তো কেবল বিশ্ববাসীদের জন্য উপদেশ।",
       "words": [
         {
           "id": 30297,
@@ -1346,6 +1400,8 @@
     {
       "surah": 81,
       "ayah": 28,
+      "transliteration": "liman shāa minkum an yastaqīma",
+      "translation_bn": "তার জন্য- যে তোমাদের মধ্যে সরল সঠিক পথে চলতে চায়।",
       "words": [
         {
           "id": 31325,
@@ -1412,6 +1468,8 @@
     {
       "surah": 81,
       "ayah": 29,
+      "transliteration": "wamā tashāūna illā an yashāa l-lahu rabbu l-ʿālamīna",
+      "translation_bn": "তোমরা ইচ্ছে কর না যদি বিশ্বজগতের প্রতিপালক আল্লাহ ইচ্ছে না করেন।",
       "words": [
         {
           "id": 32049,

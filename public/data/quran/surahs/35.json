@@ -4,6 +4,8 @@
     {
       "surah": 35,
       "ayah": 1,
+      "transliteration": "al-ḥamdu lillahi fāṭiri l-samāwāti wal-arḍi jāʿili l-malāikati rusulan ulī ajniḥatin mathnā wathulātha warubāʿa yazīdu fī l-khalqi mā yashāu inna l-laha ʿalā kulli shayin qadīrun",
+      "translation_bn": "যাবতীয় প্রশংসা আকাশমন্ডলী ও পৃথিবীর সৃষ্টিকর্তা আল্লাহর জন্য। তিনি দূত মনোনীত করেন ফেরেশতামন্ডলীকে, যারা দুই দুই বা তিন তিন বা চার চার ডানা বিশিষ্ট। তিনি সৃষ্টিতে যা ইচ্ছে বৃদ্ধি করেন। আল্লাহ সকল বিষয়ের উপর সর্বশক্তিমান।",
       "words": [
         {
           "id": 860,
@@ -260,6 +262,8 @@
     {
       "surah": 35,
       "ayah": 2,
+      "transliteration": "mā yaftaḥi l-lahu lilnnāsi min raḥmatin falā mum'sika lahā wamā yum'sik falā mur'sila lahu min baʿdihi wahuwa l-ʿazīzu l-ḥakīmu",
+      "translation_bn": "আল্লাহ মানুষের জন্য তাঁর অনুগ্রহ থেকে যা খুলে দেন তা নিবারণ করার কেউ নেই। আর তিনি যা বারিত করেন অতঃপর কেউ তা প্রেরণ করতে পারে না। তিনি মহাপরাক্রমশালী, মহাপ্রজ্ঞাময়।",
       "words": [
         {
           "id": 1952,
@@ -466,6 +470,8 @@
     {
       "surah": 35,
       "ayah": 3,
+      "transliteration": "yāayyuhā l-nāsu udh'kurū niʿ'mata l-lahi ʿalaykum hal min khāliqin ghayru l-lahi yarzuqukum mina l-samāi wal-arḍi lā ilāha illā huwa fa-annā tu'fakūna",
+      "translation_bn": "হে মানুষ! তোমরা তোমাদের প্রতি আল্লাহর অনুগ্রহের কথা স্মরণ কর। তিনি ছাড়া কোন সৃষ্টিকর্তা আছে কি যে তোমাদেরকে আকাশ ও যমীন থেকে রিযক দান করে? তিনি ছাড়া সত্যিকারের কোন ইলাহ নেই, তাহলে কীভাবে তোমরা বিপথগামী হচ্ছ?",
       "words": [
         {
           "id": 3141,
@@ -692,6 +698,8 @@
     {
       "surah": 35,
       "ayah": 4,
+      "transliteration": "wa-in yukadhibūka faqad kudhibat rusulun min qablika wa-ilā l-lahi tur'jaʿu l-umūru",
+      "translation_bn": "তারা যদি তোমাকে মিথ্যে বলে অস্বীকার করে, তাহলে (তাদের এ আচরণ তো কোন নতুন বিষয় নয়) তোমার পূর্বেও রসূলদেরকে মিথ্যে বলে অস্বীকার করা হয়েছে। (যে যা-ই কিছু করুক না কেন) সমস্ত কার্যকলাপ (হিসাব নিকাশের জন্য) আল্লাহর কাছে ফিরে যাবে।",
       "words": [
         {
           "id": 4511,
@@ -818,6 +826,8 @@
     {
       "surah": 35,
       "ayah": 5,
+      "transliteration": "yāayyuhā l-nāsu inna waʿda l-lahi ḥaqqun falā taghurrannakumu l-ḥayatu l-dun'yā walā yaghurrannakum bil-lahi l-gharūru",
+      "translation_bn": "হে মানুষ! আল্লাহর ওয়া‘দা সত্য, কাজেই পার্থিব জীবন কিছুতেই যেন তোমাদেরকে প্রতারিত না করে; আর সেই প্রধান প্রতারক (শয়ত্বান) যেন কিছুতেই তোমাদেরকে আল্লাহ সম্পর্কে প্রতারিত না করে।",
       "words": [
         {
           "id": 5765,
@@ -974,6 +984,8 @@
     {
       "surah": 35,
       "ayah": 6,
+      "transliteration": "inna l-shayṭāna lakum ʿaduwwun fa-ittakhidhūhu ʿaduwwan innamā yadʿū ḥiz'bahu liyakūnū min aṣḥābi l-saʿīri",
+      "translation_bn": "শয়ত্বান তোমাদের শত্রু, কাজেই তাকে শত্রু হিসেবে গ্রহণ কর। সে কেবল তার দলবলকে ডাকে, যাতে তারা জ্বলন্ত অগ্নির সঙ্গী হয়।",
       "words": [
         {
           "id": 7054,
@@ -1120,6 +1132,8 @@
     {
       "surah": 35,
       "ayah": 7,
+      "transliteration": "alladhīna kafarū lahum ʿadhābun shadīdun wa-alladhīna āmanū waʿamilū l-ṣāliḥāti lahum maghfiratun wa-ajrun kabīrun",
+      "translation_bn": "যারা কুফুরী করে তাদের জন্য রয়েছে কঠিন শাস্তি। আর যারা ঈমান আনে আর সৎকাজ করে তাদের জন্য রয়েছে ক্ষমা ও মহা প্রতিফল।",
       "words": [
         {
           "id": 8361,
@@ -1266,6 +1280,8 @@
     {
       "surah": 35,
       "ayah": 8,
+      "transliteration": "afaman zuyyina lahu sūu ʿamalihi faraāhu ḥasanan fa-inna l-laha yuḍillu man yashāu wayahdī man yashāu falā tadhhab nafsuka ʿalayhim ḥasarātin inna l-laha ʿalīmun bimā yaṣnaʿūna",
+      "translation_bn": "যাকে তার মন্দ কর্ম শোভনীয় ক’রে দেখানো হয়, অতঃপর সে সেটাকে উত্তম মনে করে (সে কি তার সমান, যে সৎ পথে পরিচালিত?) আল্লাহ যাকে ইচ্ছে বিপথগামী করেন, আর যাকে ইচ্ছে সঠিক পথে পরিচালিত করেন। কাজেই তাদের জন্য আক্ষেপ ক’রে, তুমি তোমার জীবনকে ধ্বংস হতে দিও না। তারা যা করে আল্লাহ তা খুব ভালভাবেই জানেন।",
       "words": [
         {
           "id": 9532,
@@ -1532,6 +1548,8 @@
     {
       "surah": 35,
       "ayah": 9,
+      "transliteration": "wal-lahu alladhī arsala l-riyāḥa fatuthīru saḥāban fasuq'nāhu ilā baladin mayyitin fa-aḥyaynā bihi l-arḍa baʿda mawtihā kadhālika l-nushūru",
+      "translation_bn": "আল্লাহ, যিনি বায়ু প্রেরণ করেন, অতঃপর তা মেঘ সঞ্চার করে, অতঃপর আমি তা নির্জীব ভূখন্ডের দিকে পরিচালিত করি। অতঃপর আমি তা দিয়ে মৃত্তিকাকে তার মৃত্যুর পর আবার সঞ্জীবিত করি। এভাবেই (ঘটবে) পুনরুত্থান।",
       "words": [
         {
           "id": 10722,
@@ -1718,6 +1736,8 @@
     {
       "surah": 35,
       "ayah": 10,
+      "transliteration": "man kāna yurīdu l-ʿizata falillahi l-ʿizatu jamīʿan ilayhi yaṣʿadu l-kalimu l-ṭayibu wal-ʿamalu l-ṣāliḥu yarfaʿuhu wa-alladhīna yamkurūna l-sayiāti lahum ʿadhābun shadīdun wamakru ulāika huwa yabūru",
+      "translation_bn": "কেউ সম্মান-সুখ্যাতি চাইলে (আল্লাহকে উপেক্ষা করে তা লাভ করা যাবে না), সে জেনে নিক যাবতীয় সম্মান-সুখ্যাতির অধিকারী হলেন আল্লাহ। তাঁরই দিকে উত্থিত হয় পবিত্র কথাগুলো আর সৎকাজ সেগুলোকে উচ্চে তুলে ধরে। যারা মন্দ কাজের চক্রান্ত করে তাদের জন্য আছে কঠিন শাস্তি। তাদের চক্রান্ত নিষ্ফল হবে।",
       "words": [
         {
           "id": 11966,
@@ -1974,6 +1994,8 @@
     {
       "surah": 35,
       "ayah": 11,
+      "transliteration": "wal-lahu khalaqakum min turābin thumma min nuṭ'fatin thumma jaʿalakum azwājan wamā taḥmilu min unthā walā taḍaʿu illā biʿil'mihi wamā yuʿammaru min muʿammarin walā yunqaṣu min ʿumurihi illā fī kitābin inna dhālika ʿalā l-lahi yasīrun",
+      "translation_bn": "আল্লাহ তোমাদেরকে মাটি থেকে সৃষ্টি করেছেন, অতঃপর শুক্র-বিন্দু হতে, অতঃপর তিনি তোমাদেরকে করেছেন (স্বামী-স্ত্রীর) জোড়া। তাঁর অবগতি ব্যতীত কোন নারী গর্ভ ধারণ করে না বা (তার বোঝা) হালকা করে না। কোন দীর্ঘায়ুর আয়ু দীর্ঘ করা হয় না, আর তার আয়ু কমানো হয় না কিতাবের লিখন ছাড়া। এটা (অর্থাৎ এ সবের হিসাব রাখা ও তত্ত্বাবধান করা) আল্লাহর জন্য সহজ।",
       "words": [
         {
           "id": 13262,
@@ -2330,6 +2352,8 @@
     {
       "surah": 35,
       "ayah": 12,
+      "transliteration": "wamā yastawī l-baḥrāni hādhā ʿadhbun furātun sāighun sharābuhu wahādhā mil'ḥun ujājun wamin kullin takulūna laḥman ṭariyyan watastakhrijūna ḥil'yatan talbasūnahā watarā l-ful'ka fīhi mawākhira litabtaghū min faḍlihi walaʿallakum tashkurūna",
+      "translation_bn": "দু’টি দরিয়াও এক রকম নয়। একটি সুমিষ্ট, সুস্বাদু, সুপেয়; অন্যটি লবণাক্ত, বিস্বাদ। তথাপি তোমরা সকল (প্রকার পানি) থেকে তাজা গোশত আহার কর আর বের কর অলংকার- পরিধান করার জন্যে। তোমরা দেখতে পাও নৌযানগুলো ঢেউয়ের বুক চিরে চলাচল করে যাতে তোমরা তাঁর অনুগ্রহ খোঁজ করতে পার, আর যাতে তোমরা কৃতজ্ঞতা প্রকাশ কর।",
       "words": [
         {
           "id": 14560,
@@ -2626,6 +2650,8 @@
     {
       "surah": 35,
       "ayah": 13,
+      "transliteration": "yūliju al-layla fī l-nahāri wayūliju l-nahāra fī al-layli wasakhara l-shamsa wal-qamara kullun yajrī li-ajalin musamman dhālikumu l-lahu rabbukum lahu l-mul'ku wa-alladhīna tadʿūna min dūnihi mā yamlikūna min qiṭ'mīrin",
+      "translation_bn": "তিনি রাতকে দিনে ঢুকিয়ে দেন, আর দিনকে রাতে ঢুকিয়ে দেন। তিনি সূর্য ও চন্দ্রকে তাঁর নিয়ন্ত্রণের অধীনে (কাজে নিয়োজিত) রেখেছেন। প্রত্যেকেই নির্ধারিত সময় অনুসারে গতিশীল আছে। এই হলেন আল্লাহ, তোমাদের প্রতিপালক। রাজত্ব তাঁরই। তোমরা তাঁর পরিবর্তে যাদেরকে ডাক তারা তো খেজুরের অাঁটি সংলগ্ন (অত্যন্ত পাতলা ও দুর্বল) আবরণেরও মালিক নয়।",
       "words": [
         {
           "id": 15655,
@@ -2922,6 +2948,8 @@
     {
       "surah": 35,
       "ayah": 14,
+      "transliteration": "in tadʿūhum lā yasmaʿū duʿāakum walaw samiʿū mā is'tajābū lakum wayawma l-qiyāmati yakfurūna bishir'kikum walā yunabbi-uka mith'lu khabīrin",
+      "translation_bn": "তোমরা তাদেরকে ডাকলে তারা তোমাদের ডাক শুনবে না আর যদি শুনেও, তবুও তোমাদের (ডাকে) সাড়া দিতে পারবে না। আর তোমরা যে তাদেরকে (আল্লাহর) অংশীদার গণ্য করতে, ক্বিয়ামতের দিন তা তারা অস্বীকার করবে। কেউই তোমাদেরকে সর্বজ্ঞ আল্লাহর মত খবর জানাতে পারবে না।",
       "words": [
         {
           "id": 16713,
@@ -3118,6 +3146,8 @@
     {
       "surah": 35,
       "ayah": 15,
+      "transliteration": "yāayyuhā l-nāsu antumu l-fuqarāu ilā l-lahi wal-lahu huwa l-ghaniyu l-ḥamīdu",
+      "translation_bn": "হে মানুষ! তোমরাই আল্লাহর মুখাপেক্ষী, আর আল্লাহ তিনি তো অভাবহীন, প্রশংসিত।",
       "words": [
         {
           "id": 17895,
@@ -3234,6 +3264,8 @@
     {
       "surah": 35,
       "ayah": 16,
+      "transliteration": "in yasha yudh'hib'kum wayati bikhalqin jadīdin",
+      "translation_bn": "তিনি ইচ্ছে করলে তোমাদেরকে বিলুপ্ত করতে পারেন, আর এক নতুন সৃষ্টি আনতে পারেন।",
       "words": [
         {
           "id": 18915,
@@ -3310,6 +3342,8 @@
     {
       "surah": 35,
       "ayah": 17,
+      "transliteration": "wamā dhālika ʿalā l-lahi biʿazīzin",
+      "translation_bn": "এটা আল্লাহর পক্ষে কঠিন নয়।",
       "words": [
         {
           "id": 20025,
@@ -3376,6 +3410,8 @@
     {
       "surah": 35,
       "ayah": 18,
+      "transliteration": "walā taziru wāziratun wiz'ra ukh'rā wa-in tadʿu muth'qalatun ilā ḥim'lihā lā yuḥ'mal min'hu shayon walaw kāna dhā qur'bā innamā tundhiru alladhīna yakhshawna rabbahum bil-ghaybi wa-aqāmū l-ṣalata waman tazakkā fa-innamā yatazakkā linafsihi wa-ilā l-lahi l-maṣīru",
+      "translation_bn": "কোন বহনকারী অন্যের (পাপের) বোঝা বইবে না। কেউ যদি তার গুরুভার বয়ে দেয়ার জন্য অন্যকে ডাকে তবে তার কিছুই বয়ে দেয়া হবে না- নিকটাত্মীয় হলেও। তুমি কেবল তাদেরকেই সতর্ক করতে পার, যারা না দেখেই তাদের প্রতিপালককে ভয় করে আর নামায প্রতিষ্ঠা করে। যে কেউ নিজেকে পরিশুদ্ধ করে সে তো পরিশুদ্ধ করে নিজের কল্যাণেই। আল্লাহর দিকেই (সকলের) প্রত্যাবর্তন।",
       "words": [
         {
           "id": 21061,
@@ -3732,6 +3768,8 @@
     {
       "surah": 35,
       "ayah": 19,
+      "transliteration": "wamā yastawī l-aʿmā wal-baṣīru",
+      "translation_bn": "অন্ধ আর চোখওয়ালা সমান নয়।",
       "words": [
         {
           "id": 22226,
@@ -3788,6 +3826,8 @@
     {
       "surah": 35,
       "ayah": 20,
+      "transliteration": "walā l-ẓulumātu walā l-nūru",
+      "translation_bn": "আর অন্ধকার ও আলোও (সমান নয়)।",
       "words": [
         {
           "id": 23239,
@@ -3844,6 +3884,8 @@
     {
       "surah": 35,
       "ayah": 21,
+      "transliteration": "walā l-ẓilu walā l-ḥarūru",
+      "translation_bn": "আর ছায়া ও রোদও (সমান নয়)।",
       "words": [
         {
           "id": 24304,
@@ -3900,6 +3942,8 @@
     {
       "surah": 35,
       "ayah": 22,
+      "transliteration": "wamā yastawī l-aḥyāu walā l-amwātu inna l-laha yus'miʿu man yashāu wamā anta bimus'miʿin man fī l-qubūri",
+      "translation_bn": "আর জীবিত ও মৃতও সমান নয়। আল্লাহ যাকে ইচ্ছে করেন শোনান; যারা ক্ববরে আছে তুমি তাদেরকে শোনাতে পার না।",
       "words": [
         {
           "id": 25314,
@@ -4076,6 +4120,8 @@
     {
       "surah": 35,
       "ayah": 23,
+      "transliteration": "in anta illā nadhīrun",
+      "translation_bn": "তুমি তো কেবল একজন সতর্ককারী।",
       "words": [
         {
           "id": 26375,
@@ -4132,6 +4178,8 @@
     {
       "surah": 35,
       "ayah": 24,
+      "transliteration": "innā arsalnāka bil-ḥaqi bashīran wanadhīran wa-in min ummatin illā khalā fīhā nadhīrun",
+      "translation_bn": "আমি তোমাকে সত্যসহ পাঠিয়েছি সুসংবাদদাতা ও সতর্ককারীরূপে। এমন কোন সম্প্রদায় নেই যাতে সতর্ককারী আসেনি।",
       "words": [
         {
           "id": 27386,
@@ -4268,6 +4316,8 @@
     {
       "surah": 35,
       "ayah": 25,
+      "transliteration": "wa-in yukadhibūka faqad kadhaba alladhīna min qablihim jāathum rusuluhum bil-bayināti wabil-zuburi wabil-kitābi l-munīri",
+      "translation_bn": "তারা যদি তোমাকে মিথ্যে ব’লে অস্বীকার করে, (তাহলে জেনে রেখ, এটা কোন নতুন ব্যাপার নয়, কারণ) তাদের পূর্ববর্তীরাও (নবী-রসূলদেরকে) মিথ্যে ব’লে অস্বীকার করেছিল। তাদের কাছে তাদের রসূলগণ সুস্পষ্ট নিদর্শন, লিখিত দলীল ও আলোকপ্রদ কিতাব নিয়ে এসেছিল।",
       "words": [
         {
           "id": 28450,
@@ -4414,6 +4464,8 @@
     {
       "surah": 35,
       "ayah": 26,
+      "transliteration": "thumma akhadhtu alladhīna kafarū fakayfa kāna nakīri",
+      "translation_bn": "যারা কুফরী করেছিল, অতঃপর আমি তাদেরকে পাকড়াও করেছিলাম। কী (ভয়ংকর) ছিল আমার শাস্তি!",
       "words": [
         {
           "id": 29363,
@@ -4500,6 +4552,8 @@
     {
       "surah": 35,
       "ayah": 27,
+      "transliteration": "alam tara anna l-laha anzala mina l-samāi māan fa-akhrajnā bihi thamarātin mukh'talifan alwānuhā wamina l-jibāli judadun bīḍun waḥum'run mukh'talifun alwānuhā wagharābību sūdun",
+      "translation_bn": "তুমি কি দেখ না যে, আল্লাহ আকাশ হতে পানি বর্ষণ করেন, অতঃপর আমি তা দিয়ে রং বেরংয়ের ফলমূল উদগত করি। পাহাড়ের মধ্যে আছে বিভিন্ন বর্ণের গিরিপথ- সাদা, লাল আর নিকষ কালো।",
       "words": [
         {
           "id": 30339,
@@ -4736,6 +4790,8 @@
     {
       "surah": 35,
       "ayah": 28,
+      "transliteration": "wamina l-nāsi wal-dawābi wal-anʿāmi mukh'talifun alwānuhu kadhālika innamā yakhshā l-laha min ʿibādihi l-ʿulamāu inna l-laha ʿazīzun ghafūrun",
+      "translation_bn": "তেমনিভাবে মানুষ, জীব-জন্তু আর গৃহপালিত পশুদের মধ্যেও রয়েছে তাদের বিভিন্ন রং। আল্লাহর বান্দাহদের মধ্যে তারাই তাঁকে ভয় করে যারা জ্ঞানী। আল্লাহ মহা ক্ষমতাশালী, পরম দয়ালু।",
       "words": [
         {
           "id": 31347,
@@ -4922,6 +4978,8 @@
     {
       "surah": 35,
       "ayah": 29,
+      "transliteration": "inna alladhīna yatlūna kitāba l-lahi wa-aqāmū l-ṣalata wa-anfaqū mimmā razaqnāhum sirran waʿalāniyatan yarjūna tijāratan lan tabūra",
+      "translation_bn": "যারা আল্লাহর কিতাব তিলাওয়াত করে, নামায প্রতিষ্ঠা করে আর আল্লাহ তাদেরকে যে রিযক দিয়েছেন তাথেকে গোপনে ও প্রকাশ্যে ব্যয় করে, তারা এমন এক ব্যবসায়ের আশা করে যাতে কক্ষনো লোকসান হবে না।",
       "words": [
         {
           "id": 32307,
@@ -5098,6 +5156,8 @@
     {
       "surah": 35,
       "ayah": 30,
+      "transliteration": "liyuwaffiyahum ujūrahum wayazīdahum min faḍlihi innahu ghafūrun shakūrun",
+      "translation_bn": "কারণ, তিনি তাদেরকে তাদের প্রতিফল পূর্ণমাত্রায় দান করবেন এবং নিজ অনুগ্রহে আরো বেশি দিবেন। তিনি অতি ক্ষমাশীল, (ভাল কাজের) বড়ই মর্যাদাদানকারী।",
       "words": [
         {
           "id": 33175,
@@ -5194,6 +5254,8 @@
     {
       "surah": 35,
       "ayah": 31,
+      "transliteration": "wa-alladhī awḥaynā ilayka mina l-kitābi huwa l-ḥaqu muṣaddiqan limā bayna yadayhi inna l-laha biʿibādihi lakhabīrun baṣīrun",
+      "translation_bn": "আমি যে কিতাবটি হতে তোমার প্রতি ওয়াহী করেছি তা সত্য, পূর্ববর্তী কিতাবের সত্যায়নকারী। আল্লাহ তাঁর বান্দাহদের সম্পর্কে অবশ্যই সব খবর রাখেন এবং সব দেখেন।",
       "words": [
         {
           "id": 34224,
@@ -5370,6 +5432,8 @@
     {
       "surah": 35,
       "ayah": 32,
+      "transliteration": "thumma awrathnā l-kitāba alladhīna iṣ'ṭafaynā min ʿibādinā famin'hum ẓālimun linafsihi wamin'hum muq'taṣidun wamin'hum sābiqun bil-khayrāti bi-idh'ni l-lahi dhālika huwa l-faḍlu l-kabīru",
+      "translation_bn": "অতঃপর সেই কিতাবটির উত্তরাধিকারী করেছি আমি আমার বান্দাহদের মধ্যে হতে যাদেরকে বেছে নিয়েছি। অতঃপর তাদের কতক নিজেদের প্রতি অত্যাচার করেছে, আর কতক মধ্যপন্থী। তাদের কতক আল্লাহর নির্দেশে সৎ কাজে অগ্রণী। এটাই (মানুষের প্রতি আল্লাহর) খুবই বড় দয়া।",
       "words": [
         {
           "id": 35080,
@@ -5596,6 +5660,8 @@
     {
       "surah": 35,
       "ayah": 33,
+      "transliteration": "jannātu ʿadnin yadkhulūnahā yuḥallawna fīhā min asāwira min dhahabin walu'lu-an walibāsuhum fīhā ḥarīrun",
+      "translation_bn": "স্থায়ী জান্নাতে তারা প্রবেশ করবে। যেখানে তাদেরকে স্বর্ণ ও মুক্তার কঙ্কণে অলঙ্কৃত করা হবে। যেখানে তাদের পোশাক হবে রেশমের।",
       "words": [
         {
           "id": 35945,
@@ -5742,6 +5808,8 @@
     {
       "surah": 35,
       "ayah": 34,
+      "transliteration": "waqālū l-ḥamdu lillahi alladhī adhhaba ʿannā l-ḥazana inna rabbanā laghafūrun shakūrun",
+      "translation_bn": "আর তারা বলবে- যাবতীয় প্রশংসা আল্লাহর যিনি আমাদের দুঃখ কষ্ট দূর করে দিয়েছেন। আমাদের প্রতিপালক অবশ্যই পরম ক্ষমাশীল, (ভাল কাজের) বড়ই মর্যাদাদানকারী।",
       "words": [
         {
           "id": 36823,
@@ -5868,6 +5936,8 @@
     {
       "surah": 35,
       "ayah": 35,
+      "transliteration": "alladhī aḥallanā dāra l-muqāmati min faḍlihi lā yamassunā fīhā naṣabun walā yamassunā fīhā lughūbun",
+      "translation_bn": "যিনি স্বীয় অনুগ্রহে আমাদেরকে স্থায়ী আবাস দান করেছেন। সেখানে ক্লেশ আমাদেরকে স্পর্শ করে না, ক্লান্তিও আমাদেরকে স্পর্শ করে না।",
       "words": [
         {
           "id": 37617,
@@ -6024,6 +6094,8 @@
     {
       "surah": 35,
       "ayah": 36,
+      "transliteration": "wa-alladhīna kafarū lahum nāru jahannama lā yuq'ḍā ʿalayhim fayamūtū walā yukhaffafu ʿanhum min ʿadhābihā kadhālika najzī kulla kafūrin",
+      "translation_bn": "আর যারা কুফুরী করে, তাদের জন্য আছে জাহান্নামের আগুন। তাদের জন্য কোন সময় নির্ধারণ করা হবে না যে, তারা (নির্ধারিত সময় আসলে) মরে যাবে, আর তাদের থেকে শাস্তিও কমানো হবে না। প্রত্যেক অকৃতজ্ঞকে আমি এভাবেই প্রতিফল দিয়ে থাকি।",
       "words": [
         {
           "id": 38038,
@@ -6220,6 +6292,8 @@
     {
       "surah": 35,
       "ayah": 37,
+      "transliteration": "wahum yaṣṭarikhūna fīhā rabbanā akhrij'nā naʿmal ṣāliḥan ghayra alladhī kunnā naʿmalu awalam nuʿammir'kum mā yatadhakkaru fīhi man tadhakkara wajāakumu l-nadhīru fadhūqū famā lilẓẓālimīna min naṣīrin",
+      "translation_bn": "সেখানে তারা চিৎকার করে বলবে- হে আমাদের পালনকর্তা! বের করুন আমাদেরকে, আমরা সৎকাজ করব, আমরা যে কাজ করতাম তা করব না। আমি কি তোমাদেরকে এতটা বয়স দেইনি যে, তখন কেউ নসীহত গ্রহণ করতে চাইলে নসীহত গ্রহণ করতে পারতে? আর তোমাদের কাছে সতর্ককারীও এসেছিল। কাজেই শাস্তি ভোগ কর, যালিমদের কোন সাহায্যকারী নেই।",
       "words": [
         {
           "id": 39350,
@@ -6486,6 +6560,8 @@
     {
       "surah": 35,
       "ayah": 38,
+      "transliteration": "inna l-laha ʿālimu ghaybi l-samāwāti wal-arḍi innahu ʿalīmun bidhāti l-ṣudūri",
+      "translation_bn": "আল্লাহ আসমান যমীনের অদৃশ্য বিষয় সম্পর্কে অবগত। অন্তরে যা আছে সে সম্পর্কে তিনি বিশেষভাবে জ্ঞাত।",
       "words": [
         {
           "id": 40195,
@@ -6602,6 +6678,8 @@
     {
       "surah": 35,
       "ayah": 39,
+      "transliteration": "huwa alladhī jaʿalakum khalāifa fī l-arḍi faman kafara faʿalayhi kuf'ruhu walā yazīdu l-kāfirīna kuf'ruhum ʿinda rabbihim illā maqtan walā yazīdu l-kāfirīna kuf'ruhum illā khasāran",
+      "translation_bn": "তিনি তোমাদেরকে পৃথিবীতে (নিজের) প্রতিনিধি করেছেন। অতএব যে কুফুরী করবে তার কুফুরীর জন্য সে নিজেই দায়ী হবে। কাফিরদের কুফর তাদের প্রতিপালকের ঘৃণাই বৃদ্ধি করে। কাফিরদের কুফর তাদের ক্ষতিই বৃদ্ধি করে।",
       "words": [
         {
           "id": 40903,
@@ -6858,6 +6936,8 @@
     {
       "surah": 35,
       "ayah": 40,
+      "transliteration": "qul ara-aytum shurakāakumu alladhīna tadʿūna min dūni l-lahi arūnī mādhā khalaqū mina l-arḍi am lahum shir'kun fī l-samāwāti am ātaynāhum kitāban fahum ʿalā bayyinatin min'hu bal in yaʿidu l-ẓālimūna baʿḍuhum baʿḍan illā ghurūran",
+      "translation_bn": "বল- তোমরা কি তোমাদের শরীকদেরকে দেখেছ আল্লাহর পরিবর্তে তোমরা যাদেরকে ডেকে থাক? তারা পৃথিবীতে কী সৃষ্টি করেছে তা আমাকে দেখাও; কিংবা আকাশমন্ডলীতে তাদের কোন শরীকানা আছে কি? কিংবা আমি কি তাদেরকে কোন কিতাব দিয়েছি যাত্থেকে কোন সুস্পষ্ট প্রমাণের উপর তারা আছে? বরং সীমালঙ্ঘনকারীরা একে অপরকে প্রতারণামূলক ওয়া‘দা দিয়ে থাকে।",
       "words": [
         {
           "id": 41806,
@@ -7204,6 +7284,8 @@
     {
       "surah": 35,
       "ayah": 41,
+      "transliteration": "inna l-laha yum'siku l-samāwāti wal-arḍa an tazūlā wala-in zālatā in amsakahumā min aḥadin min baʿdihi innahu kāna ḥalīman ghafūran",
+      "translation_bn": "আল্লাহই আসমান ও যমীনকে স্থির রাখেন যাতে ও দু’টো টলে না যায়। ও দু’টো যদি টলে যায় তাহলে তিনি ছাড়া কে ও দু’টোকে স্থির রাখবে? তিনি পরম সহিষ্ণু, পরম ক্ষমাশীল।",
       "words": [
         {
           "id": 42580,
@@ -7410,6 +7492,8 @@
     {
       "surah": 35,
       "ayah": 42,
+      "transliteration": "wa-aqsamū bil-lahi jahda aymānihim la-in jāahum nadhīrun layakūnunna ahdā min iḥ'dā l-umami falammā jāahum nadhīrun mā zādahum illā nufūran",
+      "translation_bn": "আর তারা (অর্থাৎ মক্কার মুশরিকরা) শক্তভাবে কসম খেয়ে বলত যে, তাদের কাছে সতর্ককারী আসলে তারা অন্য যে কোন সম্প্রদায়ের চেয়ে অবশ্য অবশ্যই সৎ পথের অধিক অনুসারী হয়ে যাবে। কিন্তু তাদের কাছে যখন সতর্ককারী আসল, তা বাড়িয়েই তুলল তাদের ঘৃণা,",
       "words": [
         {
           "id": 43294,
@@ -7616,6 +7700,8 @@
     {
       "surah": 35,
       "ayah": 43,
+      "transliteration": "is'tik'bāran fī l-arḍi wamakra l-sayi-i walā yaḥīqu l-makru l-sayi-u illā bi-ahlihi fahal yanẓurūna illā sunnata l-awalīna falan tajida lisunnati l-lahi tabdīlan walan tajida lisunnati l-lahi taḥwīlan",
+      "translation_bn": "যমীনে উদ্ধত আচরণ আর কু-চক্রান্ত। কু-চক্রান্ত তাকেই ঘিরে ধরবে যে তা করবে। তাহলে তারা কি তাদের পূর্ববর্তীদের উপর (আল্লাহর পক্ষ হতে) যে বিধান প্রয়োগ করা হয়েছে তারই অপেক্ষা করছে? তুমি আল্লাহর বিধানে কক্ষনো কোন পরিবর্তন পাবে না। তুমি আল্লাহর বিধানে কক্ষনো কোন ব্যতিক্রম পাবে না।",
       "words": [
         {
           "id": 43420,
@@ -7892,6 +7978,8 @@
     {
       "surah": 35,
       "ayah": 44,
+      "transliteration": "awalam yasīrū fī l-arḍi fayanẓurū kayfa kāna ʿāqibatu alladhīna min qablihim wakānū ashadda min'hum quwwatan wamā kāna l-lahu liyuʿ'jizahu min shayin fī l-samāwāti walā fī l-arḍi innahu kāna ʿalīman qadīran",
+      "translation_bn": "তারা কি পৃথিবীতে ভ্রমণ করে না? তাহলে দেখত, তাদের পূর্ববর্তীদের পরিণাম কী হয়েছিল। তারা তো শক্তিতে ছিল এদের চেয়েও শক্তিশালী। আসমান ও যমীনের কোন কিছুই আল্লাহকে অপারগ করতে পারে না। তিনি সর্বজ্ঞাতা, সকল শক্তির অধিকারী।",
       "words": [
         {
           "id": 44845,
@@ -8208,6 +8296,8 @@
     {
       "surah": 35,
       "ayah": 45,
+      "transliteration": "walaw yuākhidhu l-lahu l-nāsa bimā kasabū mā taraka ʿalā ẓahrihā min dābbatin walākin yu-akhiruhum ilā ajalin musamman fa-idhā jāa ajaluhum fa-inna l-laha kāna biʿibādihi baṣīran",
+      "translation_bn": "আল্লাহ মানুষকে তার কৃতকর্মের জন্য পাকড়াও করতে চাইলে ভূপৃষ্ঠের একটি প্রাণীকেও রেহাই দিতেন না। কিন্তু তিনি তাদের জন্য একটা নির্ধারিত কাল পর্যন্ত সময় বিলম্বিত করেন। অতঃপর তাদের সে নির্ধারিত সময় যখন এসে যায়, (তখন আল্লাহর ফয়সালা কার্যকরী হতে এক মুহূর্তও বিলম্ব ঘটে না), কারণ আল্লাহ (প্রতিটি মুহূর্তে) তাঁর বান্দাহদের পর্যবেক্ষণকারী।",
       "words": [
         {
           "id": 45523,

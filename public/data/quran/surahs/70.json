@@ -4,6 +4,8 @@
     {
       "surah": 70,
       "ayah": 1,
+      "transliteration": "sa-ala sāilun biʿadhābin wāqiʿin",
+      "translation_bn": "এক ব্যক্তি চাইল সে ‘আযাব যা অবশ্যই সংঘটিত হবে।",
       "words": [
         {
           "id": 594,
@@ -60,6 +62,8 @@
     {
       "surah": 70,
       "ayah": 2,
+      "transliteration": "lil'kāfirīna laysa lahu dāfiʿun",
+      "translation_bn": "কাফিরদের জন্য তা প্রতিরোধ করার কেউ নেই",
       "words": [
         {
           "id": 1552,
@@ -116,6 +120,8 @@
     {
       "surah": 70,
       "ayah": 3,
+      "transliteration": "mina l-lahi dhī l-maʿāriji",
+      "translation_bn": "(যে শাস্তি আসবে) আল্লাহর নিকট হতে যিনি আসমানে উঠার সিঁড়িগুলোর মালিক,",
       "words": [
         {
           "id": 2576,
@@ -172,6 +178,8 @@
     {
       "surah": 70,
       "ayah": 4,
+      "transliteration": "taʿruju l-malāikatu wal-rūḥu ilayhi fī yawmin kāna miq'dāruhu khamsīna alfa sanatin",
+      "translation_bn": "ফেরেশতা এবং রূহ (অর্থাৎ জিবরীল) আল্লাহর দিকে আরোহণ করে এমন এক দিনে, যার পরিমাণ পঞ্চাশ হাজার বছর।",
       "words": [
         {
           "id": 3975,
@@ -298,6 +306,8 @@
     {
       "surah": 70,
       "ayah": 5,
+      "transliteration": "fa-iṣ'bir ṣabran jamīlan",
+      "translation_bn": "সুতরাং (হে নবী!) ধৈর্য ধর- সুন্দর সৌজন্যমূলক ধৈর্য।",
       "words": [
         {
           "id": 5286,
@@ -344,6 +354,8 @@
     {
       "surah": 70,
       "ayah": 6,
+      "transliteration": "innahum yarawnahu baʿīdan",
+      "translation_bn": "তারা ঐ দিনটিকে সুদূর মনে করছে,",
       "words": [
         {
           "id": 6494,
@@ -390,6 +402,8 @@
     {
       "surah": 70,
       "ayah": 7,
+      "transliteration": "wanarāhu qarīban",
+      "translation_bn": "কিন্তু আমি তা নিকটে দেখতে পাচ্ছি।",
       "words": [
         {
           "id": 7904,
@@ -426,6 +440,8 @@
     {
       "surah": 70,
       "ayah": 8,
+      "transliteration": "yawma takūnu l-samāu kal-muh'li",
+      "translation_bn": "সেদিন আকাশ হবে গলিত রূপার মত,",
       "words": [
         {
           "id": 9081,
@@ -482,6 +498,8 @@
     {
       "surah": 70,
       "ayah": 9,
+      "transliteration": "watakūnu l-jibālu kal-ʿih'ni",
+      "translation_bn": "আর পাহাড়গুলো হবে রঙ্গীণ পশমের মত,",
       "words": [
         {
           "id": 10295,
@@ -528,6 +546,8 @@
     {
       "surah": 70,
       "ayah": 10,
+      "transliteration": "walā yasalu ḥamīmun ḥamīman",
+      "translation_bn": "বন্ধু বন্ধুর খবর নিবে না,",
       "words": [
         {
           "id": 11526,
@@ -584,6 +604,8 @@
     {
       "surah": 70,
       "ayah": 11,
+      "transliteration": "yubaṣṣarūnahum yawaddu l-muj'rimu law yaftadī min ʿadhābi yawmi-idhin bibanīhi",
+      "translation_bn": "যদিও তাদেরকে রাখা হবে পরস্পরের দৃষ্টির সামনে, অপরাধী সেদিনের ‘আযাব থেকে বাঁচার জন্য বিনিময়ে দিতে চাইবে তার সন্তানাদিকে,",
       "words": [
         {
           "id": 12843,
@@ -690,6 +712,8 @@
     {
       "surah": 70,
       "ayah": 12,
+      "transliteration": "waṣāḥibatihi wa-akhīhi",
+      "translation_bn": "তার স্ত্রী ও ভাইকে,",
       "words": [
         {
           "id": 14101,
@@ -726,6 +750,8 @@
     {
       "surah": 70,
       "ayah": 13,
+      "transliteration": "wafaṣīlatihi allatī tu'wīhi",
+      "translation_bn": "আর তার আত্মীয় গোষ্ঠীকে যারা তাকে আশ্রয় দিত,",
       "words": [
         {
           "id": 15220,
@@ -772,6 +798,8 @@
     {
       "surah": 70,
       "ayah": 14,
+      "transliteration": "waman fī l-arḍi jamīʿan thumma yunjīhi",
+      "translation_bn": "আর দুনিয়ার সব্বাইকে, যাতে তা তাকে রক্ষা করতে পারে।",
       "words": [
         {
           "id": 16256,
@@ -848,6 +876,8 @@
     {
       "surah": 70,
       "ayah": 15,
+      "transliteration": "kallā innahā laẓā",
+      "translation_bn": "না, কক্ষনো নয়, ওটা জ্বলন্ত অগ্নিশিখা,",
       "words": [
         {
           "id": 17440,
@@ -894,6 +924,8 @@
     {
       "surah": 70,
       "ayah": 16,
+      "transliteration": "nazzāʿatan lilshawā",
+      "translation_bn": "যা চামড়া তুলে দিবে,",
       "words": [
         {
           "id": 18505,
@@ -930,6 +962,8 @@
     {
       "surah": 70,
       "ayah": 17,
+      "transliteration": "tadʿū man adbara watawallā",
+      "translation_bn": "জাহান্নাম সেই ব্যক্তিকে ডাকবে যে পেছনে ফিরে গিয়েছিল এবং সত্য থেকে মুখ ফিরিয়ে নিয়েছিল।",
       "words": [
         {
           "id": 19511,
@@ -986,6 +1020,8 @@
     {
       "surah": 70,
       "ayah": 18,
+      "transliteration": "wajamaʿa fa-awʿā",
+      "translation_bn": "সে মালধন জমা করত, অতঃপর তা আগলে রাখত,",
       "words": [
         {
           "id": 20600,
@@ -1022,6 +1058,8 @@
     {
       "surah": 70,
       "ayah": 19,
+      "transliteration": "inna l-insāna khuliqa halūʿan",
+      "translation_bn": "মানুষকে সৃষ্টি করা হয়েছে খুবই অস্থির-মনা করে,",
       "words": [
         {
           "id": 22124,
@@ -1078,6 +1116,8 @@
     {
       "surah": 70,
       "ayah": 20,
+      "transliteration": "idhā massahu l-sharu jazūʿan",
+      "translation_bn": "বিপদ তাকে স্পর্শ করলে সে হয় উৎকণ্ঠিত,",
       "words": [
         {
           "id": 22746,
@@ -1134,6 +1174,8 @@
     {
       "surah": 70,
       "ayah": 21,
+      "transliteration": "wa-idhā massahu l-khayru manūʿan",
+      "translation_bn": "কল্যাণ তাকে স্পর্শ করলে সে হয়ে পড়ে অতি কৃপণ,",
       "words": [
         {
           "id": 23903,
@@ -1190,6 +1232,8 @@
     {
       "surah": 70,
       "ayah": 22,
+      "transliteration": "illā l-muṣalīna",
+      "translation_bn": "তবে নামায আদায়কারীরা এ রকম নয়,",
       "words": [
         {
           "id": 24909,
@@ -1226,6 +1270,8 @@
     {
       "surah": 70,
       "ayah": 23,
+      "transliteration": "alladhīna hum ʿalā ṣalātihim dāimūna",
+      "translation_bn": "যারা তাদের নামাযে স্থির সংকল্প",
       "words": [
         {
           "id": 26118,
@@ -1292,6 +1338,8 @@
     {
       "surah": 70,
       "ayah": 24,
+      "transliteration": "wa-alladhīna fī amwālihim ḥaqqun maʿlūmun",
+      "translation_bn": "যাদের ধন-সম্পদে একটা সুবিদিত অধিকার আছে,",
       "words": [
         {
           "id": 27029,
@@ -1358,6 +1406,8 @@
     {
       "surah": 70,
       "ayah": 25,
+      "transliteration": "lilssāili wal-maḥrūmi",
+      "translation_bn": "প্রার্থী এবং বঞ্চিতদের,",
       "words": [
         {
           "id": 28043,
@@ -1394,6 +1444,8 @@
     {
       "surah": 70,
       "ayah": 26,
+      "transliteration": "wa-alladhīna yuṣaddiqūna biyawmi l-dīni",
+      "translation_bn": "যারা বিচার দিবসকে সত্য মানে।",
       "words": [
         {
           "id": 28995,
@@ -1450,6 +1502,8 @@
     {
       "surah": 70,
       "ayah": 27,
+      "transliteration": "wa-alladhīna hum min ʿadhābi rabbihim mush'fiqūna",
+      "translation_bn": "যারা তাদের প্রতিপালকের শাস্তি সম্পর্কে ভীত কম্পিত,",
       "words": [
         {
           "id": 30268,
@@ -1526,6 +1580,8 @@
     {
       "surah": 70,
       "ayah": 28,
+      "transliteration": "inna ʿadhāba rabbihim ghayru mamūnin",
+      "translation_bn": "তাদের প্রতিপালকের শাস্তি এমন যে তাত্থেকে নিজেকে নিরাপদ ভাবা যায় না,",
       "words": [
         {
           "id": 30935,
@@ -1592,6 +1648,8 @@
     {
       "surah": 70,
       "ayah": 29,
+      "transliteration": "wa-alladhīna hum lifurūjihim ḥāfiẓūna",
+      "translation_bn": "যারা নিজেদের লজ্জাস্থান সংরক্ষণ করে",
       "words": [
         {
           "id": 31958,
@@ -1648,6 +1706,8 @@
     {
       "surah": 70,
       "ayah": 30,
+      "transliteration": "illā ʿalā azwājihim aw mā malakat aymānuhum fa-innahum ghayru malūmīna",
+      "translation_bn": "তাদের স্ত্রী অথবা অধিকারভুক্ত দাসী ছাড়া, কেননা তাতে তারা তিরস্কৃত হবে না,",
       "words": [
         {
           "id": 32822,
@@ -1764,6 +1824,8 @@
     {
       "surah": 70,
       "ayah": 31,
+      "transliteration": "famani ib'taghā warāa dhālika fa-ulāika humu l-ʿādūna",
+      "translation_bn": "তবে এর বাইরে যারা অন্য কাউকে কামনা করবে, তারাই সীমালঙ্ঘনকারী।",
       "words": [
         {
           "id": 33853,
@@ -1850,6 +1912,8 @@
     {
       "surah": 70,
       "ayah": 32,
+      "transliteration": "wa-alladhīna hum li-amānātihim waʿahdihim rāʿūna",
+      "translation_bn": "যারা তাদের আমানাত ও ও‘য়াদা রক্ষা করে,",
       "words": [
         {
           "id": 34708,
@@ -1916,6 +1980,8 @@
     {
       "surah": 70,
       "ayah": 33,
+      "transliteration": "wa-alladhīna hum bishahādātihim qāimūna",
+      "translation_bn": "যারা তাদের সাক্ষ্যদানে (সত্যতার উপর) সুপ্রতিষ্ঠিত,",
       "words": [
         {
           "id": 35534,
@@ -1972,6 +2038,8 @@
     {
       "surah": 70,
       "ayah": 34,
+      "transliteration": "wa-alladhīna hum ʿalā ṣalātihim yuḥāfiẓūna",
+      "translation_bn": "যারা তাদের নামাযে যত্নবান,",
       "words": [
         {
           "id": 36462,
@@ -2038,6 +2106,8 @@
     {
       "surah": 70,
       "ayah": 35,
+      "transliteration": "ulāika fī jannātin muk'ramūna",
+      "translation_bn": "তারাই হবে জান্নাতে সম্মানিত।",
       "words": [
         {
           "id": 37394,
@@ -2094,6 +2164,8 @@
     {
       "surah": 70,
       "ayah": 36,
+      "transliteration": "famāli alladhīna kafarū qibalaka muh'ṭiʿīna",
+      "translation_bn": "কাফিরদের কী হল যে, তারা তোমার দিকে ছুটে আসছে (তোমার কুরআন পাঠ শুনে তোমাকে ঠাট্টা-বিদ্রূপ করার জন্য),",
       "words": [
         {
           "id": 38126,
@@ -2160,6 +2232,8 @@
     {
       "surah": 70,
       "ayah": 37,
+      "transliteration": "ʿani l-yamīni waʿani l-shimāli ʿizīna",
+      "translation_bn": "ডান দিক আর বাম দিক থেকে দলে দলে,",
       "words": [
         {
           "id": 39127,
@@ -2226,6 +2300,8 @@
     {
       "surah": 70,
       "ayah": 38,
+      "transliteration": "ayaṭmaʿu kullu im'ri-in min'hum an yud'khala jannata naʿīmin",
+      "translation_bn": "তাদের প্রত্যেকেই কি এই লোভ করে যে, তাকে নি‘মাত-ভরা জান্নাতে দাখিল করা হবে?",
       "words": [
         {
           "id": 39817,
@@ -2322,6 +2398,8 @@
     {
       "surah": 70,
       "ayah": 39,
+      "transliteration": "kallā innā khalaqnāhum mimmā yaʿlamūna",
+      "translation_bn": "কক্ষনো না, আমি তাদেরকে কী থেকে সৃষ্টি করেছি তা তারা জানে (এমন নগণ্য বস্তু থেকে সৃষ্ট মানুষ কেবল মানুষ হয়ে জন্ম নেয়ার কারণেই জান্নাতে চলে যাবে এ রকম লোভ করা বড়ই অবিবেচনাপ্রসূত ব্যাপার)।",
       "words": [
         {
           "id": 40725,
@@ -2388,6 +2466,8 @@
     {
       "surah": 70,
       "ayah": 40,
+      "transliteration": "falā uq'simu birabbi l-mashāriqi wal-maghāribi innā laqādirūna",
+      "translation_bn": "আমি শপথ করছি উদয়স্থানসমূহের ও অস্তাচলসমূহের রব্বের-আমি অবশ্যই সক্ষম,",
       "words": [
         {
           "id": 41393,
@@ -2474,6 +2554,8 @@
     {
       "surah": 70,
       "ayah": 41,
+      "transliteration": "ʿalā an nubaddila khayran min'hum wamā naḥnu bimasbūqīna",
+      "translation_bn": "তাদের পরিবর্তে তাদের চেয়ে উৎকৃষ্ট মানুষ বানাতে, আমাকে পরাস্ত করবে এমন কেউ নেই।",
       "words": [
         {
           "id": 42188,
@@ -2570,6 +2652,8 @@
     {
       "surah": 70,
       "ayah": 42,
+      "transliteration": "fadharhum yakhūḍū wayalʿabū ḥattā yulāqū yawmahumu alladhī yūʿadūna",
+      "translation_bn": "কাজেই তাদেরকে অনর্থক কথাবার্তা ও খেল তামাশায় মত্ত থাকতে দাও যতক্ষণ না তারা তাদের সেদিনের সাক্ষাৎ লাভ করে যে দিনের ও‘য়াদা তাদেরকে দেয়া হয়েছিল।",
       "words": [
         {
           "id": 43034,
@@ -2666,6 +2750,8 @@
     {
       "surah": 70,
       "ayah": 43,
+      "transliteration": "yawma yakhrujūna mina l-ajdāthi sirāʿan ka-annahum ilā nuṣubin yūfiḍūna",
+      "translation_bn": "যেদিন তারা কবর থেকে বের হবে দ্রুততার সাথে- যেন তারা কোন লক্ষ্যস্থলের দিকে ছুটে চলেছে।",
       "words": [
         {
           "id": 43734,
@@ -2772,6 +2858,8 @@
     {
       "surah": 70,
       "ayah": 44,
+      "transliteration": "khāshiʿatan abṣāruhum tarhaquhum dhillatun dhālika l-yawmu alladhī kānū yūʿadūna",
+      "translation_bn": "তাদের দৃষ্টি হবে অবনমিত, লাঞ্ছনা তাদেরকে আচ্ছন্ন করবে। এটাই হল সেই দিন যার ও‘য়াদা তাদেরকে দেয়া হচ্ছিল।",
       "words": [
         {
           "id": 44478,

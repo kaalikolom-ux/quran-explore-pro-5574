@@ -4,6 +4,8 @@
     {
       "surah": 88,
       "ayah": 1,
+      "transliteration": "hal atāka ḥadīthu l-ghāshiyati",
+      "translation_bn": "(সব কিছুকে) আচ্ছন্নকারী কিয়ামাতের খবর তোমার কাছে পৌঁছেছে কি?",
       "words": [
         {
           "id": 724,
@@ -60,6 +62,8 @@
     {
       "surah": 88,
       "ayah": 2,
+      "transliteration": "wujūhun yawma-idhin khāshiʿatun",
+      "translation_bn": "কতক মুখ সেদিন নীচু হবে",
       "words": [
         {
           "id": 1774,
@@ -106,6 +110,8 @@
     {
       "surah": 88,
       "ayah": 3,
+      "transliteration": "ʿāmilatun nāṣibatun",
+      "translation_bn": "হবে কর্মক্লান্ত, শ্রান্ত।",
       "words": [
         {
           "id": 2859,
@@ -142,6 +148,8 @@
     {
       "surah": 88,
       "ayah": 4,
+      "transliteration": "taṣlā nāran ḥāmiyatan",
+      "translation_bn": "তারা জ্বলন্ত আগুনে প্রবেশ করবে।",
       "words": [
         {
           "id": 3332,
@@ -188,6 +196,8 @@
     {
       "surah": 88,
       "ayah": 5,
+      "transliteration": "tus'qā min ʿaynin āniyatin",
+      "translation_bn": "টগবগে ফুটন্ত ঝর্ণা থেকে তাদেরকে পান করানো হবে।",
       "words": [
         {
           "id": 4671,
@@ -244,6 +254,8 @@
     {
       "surah": 88,
       "ayah": 6,
+      "transliteration": "laysa lahum ṭaʿāmun illā min ḍarīʿin",
+      "translation_bn": "কাঁটাযুক্ত শুকনো ঘাস ছাড়া তাদের জন্য আর কোন খাদ্য থাকবে না।",
       "words": [
         {
           "id": 5859,
@@ -320,6 +332,8 @@
     {
       "surah": 88,
       "ayah": 7,
+      "transliteration": "lā yus'minu walā yugh'nī min jūʿin",
+      "translation_bn": "যা পুষ্টিসাধন করবে না, আর ক্ষুধাও মিটাবে না।",
       "words": [
         {
           "id": 7328,
@@ -396,6 +410,8 @@
     {
       "surah": 88,
       "ayah": 8,
+      "transliteration": "wujūhun yawma-idhin nāʿimatun",
+      "translation_bn": "কতক মুখ সেদিন হবে আনন্দে উজ্জ্বল।",
       "words": [
         {
           "id": 8595,
@@ -442,6 +458,8 @@
     {
       "surah": 88,
       "ayah": 9,
+      "transliteration": "lisaʿyihā rāḍiyatun",
+      "translation_bn": "নিজেদের চেষ্টা-সাধনার জন্য সন্তুষ্ট।",
       "words": [
         {
           "id": 9841,
@@ -478,6 +496,8 @@
     {
       "surah": 88,
       "ayah": 10,
+      "transliteration": "fī jannatin ʿāliyatin",
+      "translation_bn": "উচ্চ মর্যাদাপূর্ণ জান্নাতে,",
       "words": [
         {
           "id": 10990,
@@ -524,6 +544,8 @@
     {
       "surah": 88,
       "ayah": 11,
+      "transliteration": "lā tasmaʿu fīhā lāghiyatan",
+      "translation_bn": "সেখানে শুনবে না কোন অনর্থক কথাবার্তা,",
       "words": [
         {
           "id": 12228,
@@ -580,6 +602,8 @@
     {
       "surah": 88,
       "ayah": 12,
+      "transliteration": "fīhā ʿaynun jāriyatun",
+      "translation_bn": "সেখানে থাকবে প্রবহমান ঝর্ণা,",
       "words": [
         {
           "id": 13384,
@@ -626,6 +650,8 @@
     {
       "surah": 88,
       "ayah": 13,
+      "transliteration": "fīhā sururun marfūʿatun",
+      "translation_bn": "সেখানে থাকবে উন্নত মর্যাদাসম্পন্ন আসন,",
       "words": [
         {
           "id": 14875,
@@ -672,6 +698,8 @@
     {
       "surah": 88,
       "ayah": 14,
+      "transliteration": "wa-akwābun mawḍūʿatun",
+      "translation_bn": "পানপাত্র থাকবে প্রস্তুত।",
       "words": [
         {
           "id": 15926,
@@ -708,6 +736,8 @@
     {
       "surah": 88,
       "ayah": 15,
+      "transliteration": "wanamāriqu maṣfūfatun",
+      "translation_bn": "সারি সারি বালিশ,",
       "words": [
         {
           "id": 17213,
@@ -744,6 +774,8 @@
     {
       "surah": 88,
       "ayah": 16,
+      "transliteration": "wazarābiyyu mabthūthatun",
+      "translation_bn": "আর থাকবে মখমল- বিছানো।",
       "words": [
         {
           "id": 18237,
@@ -780,6 +812,8 @@
     {
       "surah": 88,
       "ayah": 17,
+      "transliteration": "afalā yanẓurūna ilā l-ibili kayfa khuliqat",
+      "translation_bn": "(ক্বিয়ামত হবে একথা যারা অমান্য করে) তারা কি উটের প্রতি লক্ষ্য করে না, (সৃষ্টি কুশলতায় ভরপুর ক’রে) কী ভাবে তা সৃষ্টি করা হয়েছে?",
       "words": [
         {
           "id": 19310,
@@ -856,6 +890,8 @@
     {
       "surah": 88,
       "ayah": 18,
+      "transliteration": "wa-ilā l-samāi kayfa rufiʿat",
+      "translation_bn": "এবং আসমানের দিকে, কীভাবে তা ঊর্ধ্বে উঠানো হয়েছে?",
       "words": [
         {
           "id": 20361,
@@ -912,6 +948,8 @@
     {
       "surah": 88,
       "ayah": 19,
+      "transliteration": "wa-ilā l-jibāli kayfa nuṣibat",
+      "translation_bn": "এবং পর্বতমালার দিকে, কী রকম দৃঢ়ভাবে তাকে প্রতিষ্ঠিত করা হয়েছে?",
       "words": [
         {
           "id": 21422,
@@ -968,6 +1006,8 @@
     {
       "surah": 88,
       "ayah": 20,
+      "transliteration": "wa-ilā l-arḍi kayfa suṭiḥat",
+      "translation_bn": "আর যমীনের দিকে, কীভাবে তাকে বিছিয়ে দেয়া হয়েছে?",
       "words": [
         {
           "id": 22570,
@@ -1024,6 +1064,8 @@
     {
       "surah": 88,
       "ayah": 21,
+      "transliteration": "fadhakkir innamā anta mudhakkirun",
+      "translation_bn": "কাজেই তুমি তাদেরকে উপদেশ দাও, তুমি একজন উপদেশদাতা মাত্র।",
       "words": [
         {
           "id": 23739,
@@ -1080,6 +1122,8 @@
     {
       "surah": 88,
       "ayah": 22,
+      "transliteration": "lasta ʿalayhim bimuṣayṭirin",
+      "translation_bn": "তুমি তাদের ওপর জবরদস্তিকারী নও।",
       "words": [
         {
           "id": 24774,
@@ -1126,6 +1170,8 @@
     {
       "surah": 88,
       "ayah": 23,
+      "transliteration": "illā man tawallā wakafara",
+      "translation_bn": "তবে কেউ কুফুরি করলে এবং মুখ ফিরিয়ে নিলে",
       "words": [
         {
           "id": 25796,
@@ -1182,6 +1228,8 @@
     {
       "surah": 88,
       "ayah": 24,
+      "transliteration": "fayuʿadhibuhu l-lahu l-ʿadhāba l-akbara",
+      "translation_bn": "আল্লাহ তাকে মহাশাস্তিতে শাস্তি দেবেন।",
       "words": [
         {
           "id": 26853,
@@ -1238,6 +1286,8 @@
     {
       "surah": 88,
       "ayah": 25,
+      "transliteration": "inna ilaynā iyābahum",
+      "translation_bn": "তাদেরকে আমার কাছেই ফিরে আসতে হবে।",
       "words": [
         {
           "id": 27843,
@@ -1284,6 +1334,8 @@
     {
       "surah": 88,
       "ayah": 26,
+      "transliteration": "thumma inna ʿalaynā ḥisābahum",
+      "translation_bn": "অতঃপর তাদের হিসাব নেয়া তো আমারই কাজ।",
       "words": [
         {
           "id": 28569,

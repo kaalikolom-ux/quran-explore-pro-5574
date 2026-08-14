@@ -4,6 +4,8 @@
     {
       "surah": 97,
       "ayah": 1,
+      "transliteration": "innā anzalnāhu fī laylati l-qadri",
+      "translation_bn": "আমি কুরআনকে কাদরের রাতে নাযিল করেছি,",
       "words": [
         {
           "id": 169,
@@ -70,6 +72,8 @@
     {
       "surah": 97,
       "ayah": 2,
+      "transliteration": "wamā adrāka mā laylatu l-qadri",
+      "translation_bn": "তুমি কি জান ক্বাদরের রাত কী?",
       "words": [
         {
           "id": 1789,
@@ -136,6 +140,8 @@
     {
       "surah": 97,
       "ayah": 3,
+      "transliteration": "laylatu l-qadri khayrun min alfi shahrin",
+      "translation_bn": "ক্বাদরের রাত হাজার মাসের চেয়েও অধিক উত্তম,",
       "words": [
         {
           "id": 2900,
@@ -212,6 +218,8 @@
     {
       "surah": 97,
       "ayah": 4,
+      "transliteration": "tanazzalu l-malāikatu wal-rūḥu fīhā bi-idh'ni rabbihim min kulli amrin",
+      "translation_bn": "এ রাতে ফেরেশতা আর রূহ তাদের রব-এর অনুমতিক্রমে প্রত্যেক কাজে অবতীর্ণ হয়।",
       "words": [
         {
           "id": 4399,
@@ -318,6 +326,8 @@
     {
       "surah": 97,
       "ayah": 5,
+      "transliteration": "salāmun hiya ḥattā maṭlaʿi l-fajri",
+      "translation_bn": "(এ রাতে বিরাজ করে) শান্তি আর শান্তি- ফজর উদয় হওয়া পর্যন্ত।",
       "words": [
         {
           "id": 4984,

@@ -4,6 +4,8 @@
     {
       "surah": 82,
       "ayah": 1,
+      "transliteration": "idhā l-samāu infaṭarat",
+      "translation_bn": "যখন আসমান ফেটে যাবে,",
       "words": [
         {
           "id": 699,
@@ -50,6 +52,8 @@
     {
       "surah": 82,
       "ayah": 2,
+      "transliteration": "wa-idhā l-kawākibu intatharat",
+      "translation_bn": "যখন তারকাগুলো বিক্ষিপ্ত হয়ে (ঝরে) পড়বে,",
       "words": [
         {
           "id": 1726,
@@ -96,6 +100,8 @@
     {
       "surah": 82,
       "ayah": 3,
+      "transliteration": "wa-idhā l-biḥāru fujjirat",
+      "translation_bn": "সমুদ্রকে যখন উত্তাল করে তোলা হবে,",
       "words": [
         {
           "id": 2849,
@@ -142,6 +148,8 @@
     {
       "surah": 82,
       "ayah": 4,
+      "transliteration": "wa-idhā l-qubūru buʿ'thirat",
+      "translation_bn": "যখন কবরস্থ মানুষদেরকে উঠানো হবে,",
       "words": [
         {
           "id": 4214,
@@ -188,6 +196,8 @@
     {
       "surah": 82,
       "ayah": 5,
+      "transliteration": "ʿalimat nafsun mā qaddamat wa-akharat",
+      "translation_bn": "তখন প্রত্যেকে জেনে নিবে সে কী আগে পাঠিয়েছিল, আর কী পেছনে ছেড়ে এসেছিল।",
       "words": [
         {
           "id": 5479,
@@ -254,6 +264,8 @@
     {
       "surah": 82,
       "ayah": 6,
+      "transliteration": "yāayyuhā l-insānu mā gharraka birabbika l-karīmi",
+      "translation_bn": "হে মানুষ! কিসে তোমাকে তোমার মহান প্রতিপালক সম্পর্কে ধোঁকায় ফেলে দিয়েছে?",
       "words": [
         {
           "id": 6707,
@@ -330,6 +342,8 @@
     {
       "surah": 82,
       "ayah": 7,
+      "transliteration": "alladhī khalaqaka fasawwāka faʿadalaka",
+      "translation_bn": "যিনি তোমাকে সৃষ্টি করেছেন, অতঃপর তোমাকে সুঠাম করেছেন, অতঃপর তোমাকে করেছেন ভারসাম্যপূর্ণ।",
       "words": [
         {
           "id": 8056,
@@ -386,6 +400,8 @@
     {
       "surah": 82,
       "ayah": 8,
+      "transliteration": "fī ayyi ṣūratin mā shāa rakkabaka",
+      "translation_bn": "তিনি তোমাকে তাঁর ইচ্ছেমত আকৃতিতে গঠন করেছেন।",
       "words": [
         {
           "id": 9226,
@@ -462,6 +478,8 @@
     {
       "surah": 82,
       "ayah": 9,
+      "transliteration": "kallā bal tukadhibūna bil-dīni",
+      "translation_bn": "না (তোমাদের এই বিভ্রান্তি মোটেই সঠিক নয়), তোমরা তো (আখেরাতের) শাস্তি ও পুরস্কারকে অস্বীকার করে থাক;",
       "words": [
         {
           "id": 10425,
@@ -518,6 +536,8 @@
     {
       "surah": 82,
       "ayah": 10,
+      "transliteration": "wa-inna ʿalaykum laḥāfiẓīna",
+      "translation_bn": "অবশ্যই তোমাদের উপর নিযুক্ত আছে তত্ত্বাবধায়কগণ;",
       "words": [
         {
           "id": 11831,
@@ -564,6 +584,8 @@
     {
       "surah": 82,
       "ayah": 11,
+      "transliteration": "kirāman kātibīna",
+      "translation_bn": "সম্মানিত লেখকগণ (যারা লিপিবদ্ধ করছে তোমাদের কার্যকলাপ),",
       "words": [
         {
           "id": 13006,
@@ -600,6 +622,8 @@
     {
       "surah": 82,
       "ayah": 12,
+      "transliteration": "yaʿlamūna mā tafʿalūna",
+      "translation_bn": "তারা জানে তোমরা যা কর।",
       "words": [
         {
           "id": 14263,
@@ -646,6 +670,8 @@
     {
       "surah": 82,
       "ayah": 13,
+      "transliteration": "inna l-abrāra lafī naʿīmin",
+      "translation_bn": "নেককারগণ থাকবে নানান নি‘মাতের মাঝে",
       "words": [
         {
           "id": 15378,
@@ -702,6 +728,8 @@
     {
       "surah": 82,
       "ayah": 14,
+      "transliteration": "wa-inna l-fujāra lafī jaḥīmin",
+      "translation_bn": "আর পাপীরা থাকবে জাহান্নামে,",
       "words": [
         {
           "id": 16432,
@@ -758,6 +786,8 @@
     {
       "surah": 82,
       "ayah": 15,
+      "transliteration": "yaṣlawnahā yawma l-dīni",
+      "translation_bn": "কর্মফলের দিন তারা তাতে প্রবেশ করবে।",
       "words": [
         {
           "id": 17585,
@@ -804,6 +834,8 @@
     {
       "surah": 82,
       "ayah": 16,
+      "transliteration": "wamā hum ʿanhā bighāibīna",
+      "translation_bn": "তারা সেখান থেকে কক্ষনো উধাও হয়ে যেতে পারবে না।",
       "words": [
         {
           "id": 18628,
@@ -860,6 +892,8 @@
     {
       "surah": 82,
       "ayah": 17,
+      "transliteration": "wamā adrāka mā yawmu l-dīni",
+      "translation_bn": "তুমি কি জান কর্মফলের দিনটি কী?",
       "words": [
         {
           "id": 19681,
@@ -926,6 +960,8 @@
     {
       "surah": 82,
       "ayah": 18,
+      "transliteration": "thumma mā adrāka mā yawmu l-dīni",
+      "translation_bn": "আবার বলি, তুমি কি জান কর্মফলের দিনটি কী ?",
       "words": [
         {
           "id": 20783,
@@ -1002,6 +1038,8 @@
     {
       "surah": 82,
       "ayah": 19,
+      "transliteration": "yawma lā tamliku nafsun linafsin shayan wal-amru yawma-idhin lillahi",
+      "translation_bn": "সেদিন কোন মানুষ অপরের জন্য কিছু করার সামর্থ্য রাখবে না, সেদিন সকল কর্তৃত্ব থাকবে একমাত্র আল্লাহরই (ইখতিয়ারে)।",
       "words": [
         {
           "id": 21813,

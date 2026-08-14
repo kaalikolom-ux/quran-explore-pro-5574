@@ -4,6 +4,8 @@
     {
       "surah": 36,
       "ayah": 1,
+      "transliteration": "ya-seen",
+      "translation_bn": "ইয়াসীন।",
       "words": [
         {
           "id": 887,
@@ -30,6 +32,8 @@
     {
       "surah": 36,
       "ayah": 2,
+      "transliteration": "wal-qur'āni l-ḥakīmi",
+      "translation_bn": "শপথ হিকমতপূর্ণ কুরআনের।",
       "words": [
         {
           "id": 1974,
@@ -66,6 +70,8 @@
     {
       "surah": 36,
       "ayah": 3,
+      "transliteration": "innaka lamina l-mur'salīna",
+      "translation_bn": "তুমি অবশ্যই রসূলগণের অন্তর্ভুক্ত।",
       "words": [
         {
           "id": 3169,
@@ -112,6 +118,8 @@
     {
       "surah": 36,
       "ayah": 4,
+      "transliteration": "ʿalā ṣirāṭin mus'taqīmin",
+      "translation_bn": "তুমি সরল সঠিক পথে প্রতিষ্ঠিত।",
       "words": [
         {
           "id": 4524,
@@ -158,6 +166,8 @@
     {
       "surah": 36,
       "ayah": 5,
+      "transliteration": "tanzīla l-ʿazīzi l-raḥīmi",
+      "translation_bn": "(এ কুরআন) মহাপরাক্রমশালী পরম করুণাময় (আল্লাহ) হতে অবতীর্ণ।",
       "words": [
         {
           "id": 5782,
@@ -204,6 +214,8 @@
     {
       "surah": 36,
       "ayah": 6,
+      "transliteration": "litundhira qawman mā undhira ābāuhum fahum ghāfilūna",
+      "translation_bn": "যাতে তুমি সতর্ক করতে পার এমন এক সম্প্রদায়কে যাদের পিৃতপুরুষদেরকে সতর্ক করা হয়নি, কাজেই তারা (আল্লাহর নিদর্শন সম্পর্কে) উদাসীন।",
       "words": [
         {
           "id": 7069,
@@ -290,6 +302,8 @@
     {
       "surah": 36,
       "ayah": 7,
+      "transliteration": "laqad ḥaqqa l-qawlu ʿalā aktharihim fahum lā yu'minūna",
+      "translation_bn": "(জেনে বুঝে আল্লাহর অবাধ্য হওয়ার কারণে) তাদের অধিকাংশের উপর (তাদের অন্তঃকরণে সীল লাগিয়ে দেয়ার) বাণী অবধারিত হয়ে গেছে, কাজেই তারা ঈমান আনবে না।",
       "words": [
         {
           "id": 8380,
@@ -386,6 +400,8 @@
     {
       "surah": 36,
       "ayah": 8,
+      "transliteration": "innā jaʿalnā fī aʿnāqihim aghlālan fahiya ilā l-adhqāni fahum muq'maḥūna",
+      "translation_bn": "আমি তাদের গলদেশে (তাদের জিদ ও অহমিকার) বেড়ি পরিয়ে দিয়েছি আর তা থুতনি পর্যন্ত (গিয়ে ঠেকেছে), কাজেই তারা মাথা খাড়া করে রেখেছে।",
       "words": [
         {
           "id": 9561,
@@ -502,6 +518,8 @@
     {
       "surah": 36,
       "ayah": 9,
+      "transliteration": "wajaʿalnā min bayni aydīhim saddan wamin khalfihim saddan fa-aghshaynāhum fahum lā yub'ṣirūna",
+      "translation_bn": "তাদের সামনে আমি একটা (বাধার) প্রাচীর দাঁড় করিয়ে দিয়েছি, আর পেছনে একটা প্রাচীর, উপরন্তু তাদেরকে ঢেকে দিয়েছি; কাজেই তারা দেখতে পায় না।",
       "words": [
         {
           "id": 10741,
@@ -638,6 +656,8 @@
     {
       "surah": 36,
       "ayah": 10,
+      "transliteration": "wasawāon ʿalayhim a-andhartahum am lam tundhir'hum lā yu'minūna",
+      "translation_bn": "তুমি তাদেরকে সতর্ক কর আর না কর, তাদের কাছে দু’টোই সমান, তারা ঈমান আনবে না।",
       "words": [
         {
           "id": 11994,
@@ -734,6 +754,8 @@
     {
       "surah": 36,
       "ayah": 11,
+      "transliteration": "innamā tundhiru mani ittabaʿa l-dhik'ra wakhashiya l-raḥmāna bil-ghaybi fabashir'hu bimaghfiratin wa-ajrin karīmin",
+      "translation_bn": "তুমি তো সতর্ক কেবল তাকেই করতে পার যে লোক উপদেশ মেনে চলে আর দয়াময় (আল্লাহ)-কে না দেখেও ভয় করে। অতঃপর এদেরকে তুমি ক্ষমা ও সম্মানজনক পুরস্কারের সুসংবাদ দাও।",
       "words": [
         {
           "id": 13300,
@@ -870,6 +892,8 @@
     {
       "surah": 36,
       "ayah": 12,
+      "transliteration": "innā naḥnu nuḥ'yī l-mawtā wanaktubu mā qaddamū waāthārahum wakulla shayin aḥṣaynāhu fī imāmin mubīnin",
+      "translation_bn": "আমিই মৃতকে জীবিত করি, আর লিখে রাখি যা তারা আগে পাঠিয়ে দেয় আর যা পেছনে ছেড়ে যায়। সব কিছুই আমি স্পষ্ট কিতাবে সংরক্ষিত করে রেখেছি।",
       "words": [
         {
           "id": 14591,
@@ -1026,6 +1050,8 @@
     {
       "surah": 36,
       "ayah": 13,
+      "transliteration": "wa-iḍ'rib lahum mathalan aṣḥāba l-qaryati idh jāahā l-mur'salūna",
+      "translation_bn": "তাদের কাছে দৃষ্টান্ত স্বরূপ এক জনপদবাসীদের কথা শুনিয়ে দাও যখন তাদের কাছে এসেছিল রসূলগণ।",
       "words": [
         {
           "id": 15686,
@@ -1122,6 +1148,8 @@
     {
       "surah": 36,
       "ayah": 14,
+      "transliteration": "idh arsalnā ilayhimu ith'nayni fakadhabūhumā faʿazzaznā bithālithin faqālū innā ilaykum mur'salūna",
+      "translation_bn": "যখন তাদের কাছে দু’জন রসূল পাঠিয়েছিলাম তখন তারা সে দু’জনকে মিথ্যে ব’লে প্রত্যাখ্যান করল। অতঃপর আমি তৃতীয় আরেকজন দ্বারা তাদের শক্তি বৃদ্ধি করলাম। তারা বলল- আমরা তোমাদের প্রতি প্রেরিত হয়েছি।",
       "words": [
         {
           "id": 16734,
@@ -1248,6 +1276,8 @@
     {
       "surah": 36,
       "ayah": 15,
+      "transliteration": "qālū mā antum illā basharun mith'lunā wamā anzala l-raḥmānu min shayin in antum illā takdhibūna",
+      "translation_bn": "জনপদবাসীরা বলল- তোমরা তো আমাদেরই মত মানুষ বতীত অন্য কিছু নও। আর দয়াময় (আল্লাহ) কোন কিছুই নাযিল করেননি। তোমরা শুধু মিথ্যেই বলছ।",
       "words": [
         {
           "id": 17907,
@@ -1414,6 +1444,8 @@
     {
       "surah": 36,
       "ayah": 16,
+      "transliteration": "qālū rabbunā yaʿlamu innā ilaykum lamur'salūna",
+      "translation_bn": "রসূলগণ বলল- আমাদের পালনকর্তা জানেন আমরা অবশ্যই তোমাদের প্রতি প্রেরিত হয়েছি।",
       "words": [
         {
           "id": 18930,
@@ -1490,6 +1522,8 @@
     {
       "surah": 36,
       "ayah": 17,
+      "transliteration": "wamā ʿalaynā illā l-balāghu l-mubīnu",
+      "translation_bn": "স্পষ্টভাবে (আল্লাহর বাণী) পৌঁছে দেয়াই আমাদের একমাত্র দায়িত্ব।",
       "words": [
         {
           "id": 20037,
@@ -1556,6 +1590,8 @@
     {
       "surah": 36,
       "ayah": 18,
+      "transliteration": "qālū innā taṭayyarnā bikum la-in lam tantahū lanarjumannakum walayamassannakum minnā ʿadhābun alīmun",
+      "translation_bn": "জনপদের লোকেরা বলল- আমরা তোমাদেরকেই অমঙ্গলের কারণ মনে করি। তোমরা যদি (প্রচারকার্য থেকে) নিবৃত্ত না হও, তাহলে আমরা অবশ্য অবশ্যই তোমাদেরকে পাথর মেরে হত্যা করব এবং আমাদের পক্ষ থেকে বড়ই মর্মান্তিক শাস্তি তোমাদের উপর অবশ্য অবশ্যই নেমে আসবে।",
       "words": [
         {
           "id": 21108,
@@ -1692,6 +1728,8 @@
     {
       "surah": 36,
       "ayah": 19,
+      "transliteration": "qālū ṭāirukum maʿakum a-in dhukkir'tum bal antum qawmun mus'rifūna",
+      "translation_bn": "রসূলগণ বলল- তোমাদের অমঙ্গলের কারণ তোমাদের সাথেই আছে (আর তা হল তোমাদের অপকর্ম)। তোমাদেরকে নসীহত করা হলেই কি (সেটাকে তোমরা তোমাদের অমঙ্গলের কারণ মনে কর)? আসলে তোমরা হচ্ছ এক সীমালঙ্ঘনকারী জাতি।",
       "words": [
         {
           "id": 22231,
@@ -1798,6 +1836,8 @@
     {
       "surah": 36,
       "ayah": 20,
+      "transliteration": "wajāa min aqṣā l-madīnati rajulun yasʿā qāla yāqawmi ittabiʿū l-mur'salīna",
+      "translation_bn": "নগর প্রান্ত থেকে এক লোক ছুটে আসলো। সে বলল- হে আমার জাতির লোকেরা! তোমরা রসূলদের মান্য কর।",
       "words": [
         {
           "id": 23253,
@@ -1914,6 +1954,8 @@
     {
       "surah": 36,
       "ayah": 21,
+      "transliteration": "ittabiʿū man lā yasalukum ajran wahum muh'tadūna",
+      "translation_bn": "তোমরা মান্য কর এদেরকে- যারা তোমাদের কাছে কোন প্রতিদান চায় না। উপরন্তু তারা সঠিক পথে পরিচালিত।",
       "words": [
         {
           "id": 24321,
@@ -2000,6 +2042,8 @@
     {
       "surah": 36,
       "ayah": 22,
+      "transliteration": "wamā liya lā aʿbudu alladhī faṭaranī wa-ilayhi tur'jaʿūna",
+      "translation_bn": "কেন আমি তাঁর ‘ইবাদাত করব না যিনি আমাকে সৃষ্টি করেছেন, আর তাঁর কাছেই তোমাদেরকে ফিরে যেতে হবে?",
       "words": [
         {
           "id": 25346,
@@ -2096,6 +2140,8 @@
     {
       "surah": 36,
       "ayah": 23,
+      "transliteration": "a-attakhidhu min dūnihi ālihatan in yurid'ni l-raḥmānu biḍurrin lā tugh'ni ʿannī shafāʿatuhum shayan walā yunqidhūni",
+      "translation_bn": "আমি কি তাঁর পরিবর্তে (অন্য) সব ইলাহ্ গ্রহণ করব? করুণাময় আল্লাহ যদি আমার কোন ক্ষতি করতে চান তবে আমার জন্য তাদের সুপারিশ কোনই কাজে আসবে না, আর তারা আমাকে উদ্ধার করতেও পারবে না।",
       "words": [
         {
           "id": 26387,
@@ -2262,6 +2308,8 @@
     {
       "surah": 36,
       "ayah": 24,
+      "transliteration": "innī idhan lafī ḍalālin mubīnin",
+      "translation_bn": "তা যদি করি, তাহলে আমি স্পষ্ট পথভ্রষ্টতেই পতিত হব।",
       "words": [
         {
           "id": 27408,
@@ -2328,6 +2376,8 @@
     {
       "surah": 36,
       "ayah": 25,
+      "transliteration": "innī āmantu birabbikum fa-is'maʿūni",
+      "translation_bn": "আমি তো তোমাদের পালনকর্তার উপর ঈমান এনেছি, কাজেই তোমরা আমার কথা শুন।",
       "words": [
         {
           "id": 28473,
@@ -2384,6 +2434,8 @@
     {
       "surah": 36,
       "ayah": 26,
+      "transliteration": "qīla ud'khuli l-janata qāla yālayta qawmī yaʿlamūna",
+      "translation_bn": "(লোকেরা তাকে হত্যা করে ফেললে আল্লাহর পক্ষ থেকে) তাকে বলা হল- জান্নাতে প্রবেশ কর। (তখন) সে বলল- হায়! আমার জাতির লোকেরা যদি জানত,",
       "words": [
         {
           "id": 29381,
@@ -2470,6 +2522,8 @@
     {
       "surah": 36,
       "ayah": 27,
+      "transliteration": "bimā ghafara lī rabbī wajaʿalanī mina l-muk'ramīna",
+      "translation_bn": "আমার পালনকর্তা কোন্ জিনিসের বদৌলতে আমাকে ক্ষমা করেছেন আর আমাকে সম্মানিতদের অন্তর্ভুক্ত করেছেন।",
       "words": [
         {
           "id": 30371,
@@ -2556,6 +2610,8 @@
     {
       "surah": 36,
       "ayah": 28,
+      "transliteration": "wamā anzalnā ʿalā qawmihi min baʿdihi min jundin mina l-samāi wamā kunnā munzilīna",
+      "translation_bn": "আমি তার মৃত্যুর পর তার জাতির বিরুদ্ধে আসমান থেকে কোন সৈন্যবাহিনী পাঠাইনি, আর তা পাঠানোর আমার কোন দরকারও ছিল না।",
       "words": [
         {
           "id": 31381,
@@ -2702,6 +2758,8 @@
     {
       "surah": 36,
       "ayah": 29,
+      "transliteration": "in kānat illā ṣayḥatan wāḥidatan fa-idhā hum khāmidūna",
+      "translation_bn": "ওটা ছিল মাত্র একটা প্রচন্ড শব্দ, ফলে তারা সহসাই নিস্তব্ধ হয়ে গেল।",
       "words": [
         {
           "id": 32334,
@@ -2798,6 +2856,8 @@
     {
       "surah": 36,
       "ayah": 30,
+      "transliteration": "yāḥasratan ʿalā l-ʿibādi mā yatīhim min rasūlin illā kānū bihi yastahziūna",
+      "translation_bn": "বান্দাহদের জন্য পরিতাপ! তাদের কাছে এমন কোন রসূলই আসেনি যাকে তারা ঠাট্টা-বিদ্রূপ করেনি।",
       "words": [
         {
           "id": 33190,
@@ -2924,6 +2984,8 @@
     {
       "surah": 36,
       "ayah": 31,
+      "transliteration": "alam yaraw kam ahlaknā qablahum mina l-qurūni annahum ilayhim lā yarjiʿūna",
+      "translation_bn": "তারা কি দেখে না যে, তাদের পূর্বে আমি কত মানবগোষ্ঠীকে ধ্বংস করে দিয়েছি? তারা তাদের কাছে ফিরে আসবে না।",
       "words": [
         {
           "id": 34250,
@@ -3050,6 +3112,8 @@
     {
       "surah": 36,
       "ayah": 32,
+      "transliteration": "wa-in kullun lammā jamīʿun ladaynā muḥ'ḍarūna",
+      "translation_bn": "তাদের সব্বাইকে একত্রে আমার কাছে হাজির করা হবে।",
       "words": [
         {
           "id": 35113,
@@ -3126,6 +3190,8 @@
     {
       "surah": 36,
       "ayah": 33,
+      "transliteration": "waāyatun lahumu l-arḍu l-maytatu aḥyaynāhā wa-akhrajnā min'hā ḥabban famin'hu yakulūna",
+      "translation_bn": "মৃত যমীন তাদের জন্য একটা নিদর্শন। তাকে আমি জীবিত করি আর তা থেকে আমি উৎপন্ন করি শস্য যা থেকে তারা খায়।",
       "words": [
         {
           "id": 35972,
@@ -3242,6 +3308,8 @@
     {
       "surah": 36,
       "ayah": 34,
+      "transliteration": "wajaʿalnā fīhā jannātin min nakhīlin wa-aʿnābin wafajjarnā fīhā mina l-ʿuyūni",
+      "translation_bn": "আর আমি তাতে খেজুর ও আঙ্গুরের বাগান তৈরি করি, আর তাতে প্রবাহিত করি ঝর্ণাধারা।",
       "words": [
         {
           "id": 36725,
@@ -3358,6 +3426,8 @@
     {
       "surah": 36,
       "ayah": 35,
+      "transliteration": "liyakulū min thamarihi wamā ʿamilathu aydīhim afalā yashkurūna",
+      "translation_bn": "যাতে তারা তার ফল খেতে পারে- যা তারা তাদের হাত দিয়ে বানায়নি। তাহলে কেন তারা কৃতজ্ঞতা প্রকাশ করে না?",
       "words": [
         {
           "id": 37639,
@@ -3454,6 +3524,8 @@
     {
       "surah": 36,
       "ayah": 36,
+      "transliteration": "sub'ḥāna alladhī khalaqa l-azwāja kullahā mimmā tunbitu l-arḍu wamin anfusihim wamimmā lā yaʿlamūna",
+      "translation_bn": "পূত পবিত্র সেই সত্তা যিনি জোড়া সৃষ্টি করেছেন প্রত্যেকটির যা উৎপন্ন করে যমীন, আর তাদের নিজেদের ভিতরেও আর সে সবেও যা তারা জানে না।",
       "words": [
         {
           "id": 38514,
@@ -3600,6 +3672,8 @@
     {
       "surah": 36,
       "ayah": 37,
+      "transliteration": "waāyatun lahumu al-laylu naslakhu min'hu l-nahāra fa-idhā hum muẓ'limūna",
+      "translation_bn": "তাদের জন্য একটি নিদর্শন হচ্ছে রাত, তাত্থেকে আমি দিনকে সরিয়ে নেই, ফলে তখনই তারা অন্ধকারে ডুবে যায়।",
       "words": [
         {
           "id": 39386,
@@ -3706,6 +3780,8 @@
     {
       "surah": 36,
       "ayah": 38,
+      "transliteration": "wal-shamsu tajrī limus'taqarrin lahā dhālika taqdīru l-ʿazīzi l-ʿalīmi",
+      "translation_bn": "আর সূর্য তার জন্যে নির্দিষ্ট ক’রে দেয়া জায়গায় গতিশীল, এটা মহা পরাক্রমশালী সর্বজ্ঞের সুনিরূপিত নির্ধারণ।",
       "words": [
         {
           "id": 40071,
@@ -3802,6 +3878,8 @@
     {
       "surah": 36,
       "ayah": 39,
+      "transliteration": "wal-qamara qaddarnāhu manāzila ḥattā ʿāda kal-ʿur'jūni l-qadīmi",
+      "translation_bn": "আর চাঁদ-তার জন্য আমি নির্দিষ্ট করেছি বিভিন্ন মান্যিল (যা সে অতিক্রম করে), এমনকি শেষ পর্যন্ত সেটি খেজুরের কাঁদির পুরানো শুকনো দন্ডের মত হয়ে ফিরে আসে।",
       "words": [
         {
           "id": 40880,
@@ -3888,6 +3966,8 @@
     {
       "surah": 36,
       "ayah": 40,
+      "transliteration": "lā l-shamsu yanbaghī lahā an tud'rika l-qamara walā al-laylu sābiqu l-nahāri wakullun fī falakin yasbaḥūna",
+      "translation_bn": "সূর্যের পক্ষে সম্ভব নয় চাঁদকে ধরে ফেলা, আর রাতের পক্ষে সম্ভব নয় দিনকে ছাড়িয়ে আগে বেড়ে যাওয়া, প্রত্যেকেই নিজ নিজ কক্ষ পথে সাঁতার কাটছে।",
       "words": [
         {
           "id": 41846,
@@ -4054,6 +4134,8 @@
     {
       "surah": 36,
       "ayah": 41,
+      "transliteration": "waāyatun lahum annā ḥamalnā dhurriyyatahum fī l-ful'ki l-mashḥūni",
+      "translation_bn": "তাদের জন্য (আমার কুদরাতের) আরো একটি নিদর্শন এই যে, আমি তাদের বংশধরদেরকে (মহা প্লাবণের সময়) ভরা নৌকায় আরোহণ করিয়েছি।",
       "words": [
         {
           "id": 42602,
@@ -4150,6 +4232,8 @@
     {
       "surah": 36,
       "ayah": 42,
+      "transliteration": "wakhalaqnā lahum min mith'lihi mā yarkabūna",
+      "translation_bn": "আর তাদের জন্য ঐ ধরনের আরো যানবাহন তৈরি করেছি যাতে তারা আরোহণ করে থাকে।",
       "words": [
         {
           "id": 43327,
@@ -4226,6 +4310,8 @@
     {
       "surah": 36,
       "ayah": 43,
+      "transliteration": "wa-in nasha nugh'riq'hum falā ṣarīkha lahum walā hum yunqadhūna",
+      "translation_bn": "আমি ইচ্ছে করলে তাদেরকে ডুবিয়ে দিতে পারি, তখন (তাদের ফরিয়াদ শুনার জন্য) কোন সাহায্যকারী থাকবে না, আর তারা পরিত্রাণও পাবে না",
       "words": [
         {
           "id": 44081,
@@ -4332,6 +4418,8 @@
     {
       "surah": 36,
       "ayah": 44,
+      "transliteration": "illā raḥmatan minnā wamatāʿan ilā ḥīnin",
+      "translation_bn": "আমার রহমত না হলে, আর কিছু কালের জন্য তাদেরকে জীবন উপভোগ করতে না দিলে।",
       "words": [
         {
           "id": 44713,
@@ -4408,6 +4496,8 @@
     {
       "surah": 36,
       "ayah": 45,
+      "transliteration": "wa-idhā qīla lahumu ittaqū mā bayna aydīkum wamā khalfakum laʿallakum tur'ḥamūna",
+      "translation_bn": "তাদেরকে যখন বলা হয় ‘‘তোমাদের সামনে যে পরিণাম আসছে তাত্থেকে আর তোমাদের পেছনের (অতীত জাতিগুলোর উপর ঘটে গেছে সে রকম) ‘আযাব থেকে নিজেদেরকে রক্ষা কর যাতে তোমাদের উপর রহম করা হয় (তখন তারা মুখ ফিরিয়ে নেয়)।’’",
       "words": [
         {
           "id": 45556,
@@ -4534,6 +4624,8 @@
     {
       "surah": 36,
       "ayah": 46,
+      "transliteration": "wamā tatīhim min āyatin min āyāti rabbihim illā kānū ʿanhā muʿ'riḍīna",
+      "translation_bn": "তাদের কাছে তাদের প্রতিপালকের নিদর্শন থেকে যখনই কোন নিদর্শন আসে তখনই তারা তাত্থেকে মুখ ফিরিয়ে নেয়।",
       "words": [
         {
           "id": 46246,
@@ -4660,6 +4752,8 @@
     {
       "surah": 36,
       "ayah": 47,
+      "transliteration": "wa-idhā qīla lahum anfiqū mimmā razaqakumu l-lahu qāla alladhīna kafarū lilladhīna āmanū anuṭ'ʿimu man law yashāu l-lahu aṭʿamahu in antum illā fī ḍalālin mubīnin",
+      "translation_bn": "তাদেরকে যখন বলা হয় ‘আল্লাহ তোমাদেরকে যে রিযক দিয়েছেন তাত্থেকে তোমরা (আল্লাহর পথে) ব্যয় কর; তখন কাফিররা মু’মিনদেরকে বলে, ‘‘আমরা কি এমন লোককে খাওয়াবো আল্লাহ ইচ্ছে করলে যাকে খাওয়াতে পারতেন? তোমরা তো স্পষ্ট পথভ্রষ্টতে পড়ে আছ।",
       "words": [
         {
           "id": 46922,
@@ -4916,6 +5010,8 @@
     {
       "surah": 36,
       "ayah": 48,
+      "transliteration": "wayaqūlūna matā hādhā l-waʿdu in kuntum ṣādiqīna",
+      "translation_bn": "আর তারা বলে, ‘‘তোমরা যদি সত্যবাদী হও তাহলে বল, (ক্বিয়ামতের) এ ও‘য়াদা কখন পূর্ণ হবে?’’",
       "words": [
         {
           "id": 47051,
@@ -5002,6 +5098,8 @@
     {
       "surah": 36,
       "ayah": 49,
+      "transliteration": "mā yanẓurūna illā ṣayḥatan wāḥidatan takhudhuhum wahum yakhiṣṣimūna",
+      "translation_bn": "তারা যে জন্য অপেক্ষা করছে সেটাতো একটা প্রচন্ড শব্দ যা তাদেরকে পাকড়াও করবে যখন তারা নিজেদের মধ্যে বাক-বিতন্ডায় লিপ্ত থাকবে।",
       "words": [
         {
           "id": 48297,
@@ -5098,6 +5196,8 @@
     {
       "surah": 36,
       "ayah": 50,
+      "transliteration": "falā yastaṭīʿūna tawṣiyatan walā ilā ahlihim yarjiʿūna",
+      "translation_bn": "(ক্বিয়ামত এমনই হঠাৎ আক্রমণ করবে যে) তারা না পারবে ওসীয়াত করতে আর না পারবে তাদের পরিবার পরিজনের কাছে ফিরে যেতে।",
       "words": [
         {
           "id": 48989,
@@ -5184,6 +5284,8 @@
     {
       "surah": 36,
       "ayah": 51,
+      "transliteration": "wanufikha fī l-ṣūri fa-idhā hum mina l-ajdāthi ilā rabbihim yansilūna",
+      "translation_bn": "আর যখন শিঙ্গায় ফুঁক দেয়া হবে, তখনই তারা ক্ববর থেকে তাদের পালনকর্তার দিকে ছুটে আসবে।",
       "words": [
         {
           "id": 49601,
@@ -5300,6 +5402,8 @@
     {
       "surah": 36,
       "ayah": 52,
+      "transliteration": "qālū yāwaylanā man baʿathanā min marqadinā hādhā mā waʿada l-raḥmānu waṣadaqa l-mur'salūna",
+      "translation_bn": "তারা বলবে, ‘হায় আমাদের দুর্ভোগ! আমাদেরকে আমাদের ঘুমের জায়গা থেকে কে উঠালো? (তাদেরকে জবাব দেয়া হবে) ‘‘এটা হল তাই- দয়াময় আল্লাহ যার ও‘য়াদা দিয়েছিলেন, আর রসূলগণও সত্য কথাই বলেছিলেন।’",
       "words": [
         {
           "id": 50051,
@@ -5436,6 +5540,8 @@
     {
       "surah": 36,
       "ayah": 53,
+      "transliteration": "in kānat illā ṣayḥatan wāḥidatan fa-idhā hum jamīʿun ladaynā muḥ'ḍarūna",
+      "translation_bn": "মাত্র একটা প্রচন্ড শব্দ হবে, তক্ষুণি তাদের সব্বাইকে আমার সামনে হাজির করা হবে।",
       "words": [
         {
           "id": 50878,
@@ -5552,6 +5658,8 @@
     {
       "surah": 36,
       "ayah": 54,
+      "transliteration": "fal-yawma lā tuẓ'lamu nafsun shayan walā tuj'zawna illā mā kuntum taʿmalūna",
+      "translation_bn": "আজ কারো প্রতি কোন যুলম করা হবে না, তোমরা যে ‘আমাল করছিলে তোমাদেরকে কেবল তারই প্রতিফল দেয়া হবে।",
       "words": [
         {
           "id": 51460,
@@ -5678,6 +5786,8 @@
     {
       "surah": 36,
       "ayah": 55,
+      "transliteration": "inna aṣḥāba l-janati l-yawma fī shughulin fākihūna",
+      "translation_bn": "সে দিন জান্নাতীরা আনন্দে মশগুল হয়ে থাকবে।",
       "words": [
         {
           "id": 51981,
@@ -5764,6 +5874,8 @@
     {
       "surah": 36,
       "ayah": 56,
+      "transliteration": "hum wa-azwājuhum fī ẓilālin ʿalā l-arāiki muttakiūna",
+      "translation_bn": "তারা আর তাদের স্ত্রীরা সুশীতল ছায়ায়, উঁচু উঁচু আসনে হেলান দিয়ে বসবে।",
       "words": [
         {
           "id": 52528,
@@ -5850,6 +5962,8 @@
     {
       "surah": 36,
       "ayah": 57,
+      "transliteration": "lahum fīhā fākihatun walahum mā yaddaʿūna",
+      "translation_bn": "তাদের জন্য সেখানে থাকবে ফলমূল আর তাদের জন্য থাকবে তারা যা কিছু পেতে চাইবে।",
       "words": [
         {
           "id": 53032,
@@ -5926,6 +6040,8 @@
     {
       "surah": 36,
       "ayah": 58,
+      "transliteration": "salāmun qawlan min rabbin raḥīmin",
+      "translation_bn": "দয়াময় প্রতিপালকের পক্ষ থেকে তাদেরকে ‘সালাম’ বলে সম্ভাষণ করা হবে।",
       "words": [
         {
           "id": 53573,
@@ -5992,6 +6108,8 @@
     {
       "surah": 36,
       "ayah": 59,
+      "transliteration": "wa-im'tāzū l-yawma ayyuhā l-muj'rimūna",
+      "translation_bn": "(সে দিন বলা হবে) ‘হে অপরাধীরা! আজ তোমরা আলাদা হয়ে যাও।’",
       "words": [
         {
           "id": 54137,
@@ -6048,6 +6166,8 @@
     {
       "surah": 36,
       "ayah": 60,
+      "transliteration": "alam aʿhad ilaykum yābanī ādama an lā taʿbudū l-shayṭāna innahu lakum ʿaduwwun mubīnun",
+      "translation_bn": "‘হে আদাম সন্তান! আমি কি তোমাদেরকে নির্দেশ দেইনি যে, তোমরা শয়ত্বানের ‘ইবাদাত করো না, কারণ সে তোমাদের প্রকাশ্য দুশমন?",
       "words": [
         {
           "id": 54448,
@@ -6194,6 +6314,8 @@
     {
       "surah": 36,
       "ayah": 61,
+      "transliteration": "wa-ani uʿ'budūnī hādhā ṣirāṭun mus'taqīmun",
+      "translation_bn": "আর আমারই ‘ইবাদাত কর, এটাই সরল সঠিক পথ।",
       "words": [
         {
           "id": 55338,
@@ -6260,6 +6382,8 @@
     {
       "surah": 36,
       "ayah": 62,
+      "transliteration": "walaqad aḍalla minkum jibillan kathīran afalam takūnū taʿqilūna",
+      "translation_bn": "(কিন্তু তোমাদেরকে সতর্ক করে দেয়া সত্ত্বেও) শয়ত্বান তোমাদের বহু দলকে বিভ্রান্ত করে দিয়েছে, তবুও কি তোমরা বুঝ না?",
       "words": [
         {
           "id": 55858,
@@ -6356,6 +6480,8 @@
     {
       "surah": 36,
       "ayah": 63,
+      "transliteration": "hādhihi jahannamu allatī kuntum tūʿadūna",
+      "translation_bn": "এটা সেই জাহান্নাম যে বিষয়ে তোমাদেরকে ভয় দেখানো হয়েছিল।",
       "words": [
         {
           "id": 56417,
@@ -6422,6 +6548,8 @@
     {
       "surah": 36,
       "ayah": 64,
+      "transliteration": "iṣ'lawhā l-yawma bimā kuntum takfurūna",
+      "translation_bn": "আজ তাতে প্রবেশ কর, কেননা তোমরা এটাকে অবিশ্বাস করেছিলে।’",
       "words": [
         {
           "id": 56645,
@@ -6488,6 +6616,8 @@
     {
       "surah": 36,
       "ayah": 65,
+      "transliteration": "al-yawma nakhtimu ʿalā afwāhihim watukallimunā aydīhim watashhadu arjuluhum bimā kānū yaksibūna",
+      "translation_bn": "আজ আমি তাদের মুখে সীল মোহর লাগিয়ে দেব, তাদের হাত আমার সঙ্গে কথা বলবে, আর তারা যা করত সে সম্পর্কে তাদের পাগুলো সাক্ষ্য দেবে।",
       "words": [
         {
           "id": 57166,
@@ -6614,6 +6744,8 @@
     {
       "surah": 36,
       "ayah": 66,
+      "transliteration": "walaw nashāu laṭamasnā ʿalā aʿyunihim fa-is'tabaqū l-ṣirāṭa fa-annā yub'ṣirūna",
+      "translation_bn": "আমি ইচ্ছে করলে তাদের দৃষ্টিশক্তি বিলুপ্ত করে দিতাম। তখন তারা পথের দিকে দৌঁড়ে দেখতে চাইলে কীভাবে তারা দেখতে পেত?",
       "words": [
         {
           "id": 57692,
@@ -6720,6 +6852,8 @@
     {
       "surah": 36,
       "ayah": 67,
+      "transliteration": "walaw nashāu lamasakhnāhum ʿalā makānatihim famā is'taṭāʿū muḍiyyan walā yarjiʿūna",
+      "translation_bn": "আমি ইচ্ছে করলে তাদের নিজ নিজ জায়গাতেই তাদের আকৃতি পরিবর্তন করে দিতাম, তখন তারা না সামনের দিকে চলতে পারত, আর না পারত পেছনে ফিরে যেতে।",
       "words": [
         {
           "id": 58055,
@@ -6836,6 +6970,8 @@
     {
       "surah": 36,
       "ayah": 68,
+      "transliteration": "waman nuʿammir'hu nunakkis'hu fī l-khalqi afalā yaʿqilūna",
+      "translation_bn": "আমি যাকে দীর্ঘ জীবন দেই, তাকে সৃষ্টির ক্ষেত্রে পূর্বের অবস্থায় ফিরিয়ে আনি। তবুও কি তারা বুঝে না?",
       "words": [
         {
           "id": 58816,
@@ -6922,6 +7058,8 @@
     {
       "surah": 36,
       "ayah": 69,
+      "transliteration": "wamā ʿallamnāhu l-shiʿ'ra wamā yanbaghī lahu in huwa illā dhik'run waqur'ānun mubīnun",
+      "translation_bn": "[কাফিররা রসূল (সা.)-কে উদ্দেশ্য করে বলে, লোকটা একটা কবি। কিন্তু) আমি রসূলকে কবিতা শিখাইনি, আর তা তার জন্য শোভনীয়ও নয়। তাতো এক উপদেশ ও স্পষ্ট কুরআন ব্যতীত অন্য কিছু নয়।",
       "words": [
         {
           "id": 59315,
@@ -7058,6 +7196,8 @@
     {
       "surah": 36,
       "ayah": 70,
+      "transliteration": "liyundhira man kāna ḥayyan wayaḥiqqa l-qawlu ʿalā l-kāfirīna",
+      "translation_bn": "যাতে সে (আত্মিকভাবে) জীবিতকে সতর্ক করতে পারে আর কাফিরদের বিরুদ্ধে অকাট্য দলীল হতে পারে।",
       "words": [
         {
           "id": 59753,
@@ -7154,6 +7294,8 @@
     {
       "surah": 36,
       "ayah": 71,
+      "transliteration": "awalam yaraw annā khalaqnā lahum mimmā ʿamilat aydīnā anʿāman fahum lahā mālikūna",
+      "translation_bn": "তারা কি দেখে না যে আমার হাতে তৈরি জিনিসগুলোর মধ্যে আমি তাদের জন্য সৃষ্টি করেছি গৃহপালিত পশু আর এখন তারা এগুলোর মালিক!",
       "words": [
         {
           "id": 59964,
@@ -7290,6 +7432,8 @@
     {
       "surah": 36,
       "ayah": 72,
+      "transliteration": "wadhallalnāhā lahum famin'hā rakūbuhum wamin'hā yakulūna",
+      "translation_bn": "আমি এগুলোকে তাদের বশীভূত করে দিয়েছি, ফলে এগুলোর কতক তাদের বাহন, আর এদের কতকগুলো তারা খায়।",
       "words": [
         {
           "id": 60840,
@@ -7366,6 +7510,8 @@
     {
       "surah": 36,
       "ayah": 73,
+      "transliteration": "walahum fīhā manāfiʿu wamashāribu afalā yashkurūna",
+      "translation_bn": "তাদের জন্য এগুলোতে আছে বহু উপকার আর পানীয় দ্রব্য। তবুও তারা কেন শুকরিয়া আদায় করে না?",
       "words": [
         {
           "id": 60926,
@@ -7442,6 +7588,8 @@
     {
       "surah": 36,
       "ayah": 74,
+      "transliteration": "wa-ittakhadhū min dūni l-lahi ālihatan laʿallahum yunṣarūna",
+      "translation_bn": "তারা আল্লাহর পরিবর্তে অনেক ইলাহ গ্রহণ করেছে এই আশায় যে, তারা (ঐ সব ইলাহ দ্বারা) সাহায্যপ্রাপ্ত হবে।",
       "words": [
         {
           "id": 61426,
@@ -7528,6 +7676,8 @@
     {
       "surah": 36,
       "ayah": 75,
+      "transliteration": "lā yastaṭīʿūna naṣrahum wahum lahum jundun muḥ'ḍarūna",
+      "translation_bn": "ঐ সব ইলাহ তাদেরকে সাহায্য করতে সক্ষম নয়, বরং (উল্টো) এ লোকেরাই (ঐ সব ইলাহকে সাহায্য করার জন্য) সদা প্রস্তুত সেনাবাহিনীর মত হাযির হয়ে আছে।",
       "words": [
         {
           "id": 61951,
@@ -7614,6 +7764,8 @@
     {
       "surah": 36,
       "ayah": 76,
+      "transliteration": "falā yaḥzunka qawluhum innā naʿlamu mā yusirrūna wamā yuʿ'linūna",
+      "translation_bn": "কাজেই তাদের কথাবার্তা তোমাকে যেন দুঃখ না দেয়; আমি জানি তারা যা গোপন করে, আর যা প্রকাশ করে।",
       "words": [
         {
           "id": 62457,
@@ -7720,6 +7872,8 @@
     {
       "surah": 36,
       "ayah": 77,
+      "transliteration": "awalam yara l-insānu annā khalaqnāhu min nuṭ'fatin fa-idhā huwa khaṣīmun mubīnun",
+      "translation_bn": "মানুষ কি দেখে না যে আমি তাকে সৃষ্টি করেছি শুক্রবিন্দু হতে? অতঃপর সে হয়ে গেল সুস্পষ্ট ঝগড়াটে।",
       "words": [
         {
           "id": 62862,
@@ -7846,6 +8000,8 @@
     {
       "surah": 36,
       "ayah": 78,
+      "transliteration": "waḍaraba lanā mathalan wanasiya khalqahu qāla man yuḥ'yī l-ʿiẓāma wahiya ramīmun",
+      "translation_bn": "সে (আমার সৃষ্টির সাথে) আমার তুলনা করে, অথচ সে তার নিজের সৃষ্টির ব্যপারটি ভুলে যায় (যে তাকে আমিই সৃষ্টি করেছি)। সে বলে, ‘হাড়গুলোকে কে আবার জীবন্ত করবে যখন তা পচে গলে যাবে?’’",
       "words": [
         {
           "id": 63505,
@@ -7972,6 +8128,8 @@
     {
       "surah": 36,
       "ayah": 79,
+      "transliteration": "qul yuḥ'yīhā alladhī ansha-ahā awwala marratin wahuwa bikulli khalqin ʿalīmun",
+      "translation_bn": "বল, ‘‘তাকে তিনিই জীবন্ত করবেন যিনি ওগুলোকে প্রথমবার সৃষ্টি করেছেন, আর তিনি প্রতিটি সৃষ্টি সম্পর্কে সবচেয়ে বেশি অবগত।",
       "words": [
         {
           "id": 63978,
@@ -8088,6 +8246,8 @@
     {
       "surah": 36,
       "ayah": 80,
+      "transliteration": "alladhī jaʿala lakum mina l-shajari l-akhḍari nāran fa-idhā antum min'hu tūqidūna",
+      "translation_bn": "যিনি তোমাদের জন্য সবুজ গাছ হতে আগুন তৈরি করেছেন, অতঃপর তোমরা তাত্থেকে আগুন জ্বালাও।",
       "words": [
         {
           "id": 64227,
@@ -8214,6 +8374,8 @@
     {
       "surah": 36,
       "ayah": 81,
+      "transliteration": "awalaysa alladhī khalaqa l-samāwāti wal-arḍa biqādirin ʿalā an yakhluqa mith'lahum balā wahuwa l-khalāqu l-ʿalīmu",
+      "translation_bn": "যিনি আসমান যমীন সৃষ্টি করেছেন তিনি কি সেই লোকদের অনুরূপ (আবার) সৃষ্টি করতে সক্ষম নন? হাঁ, অবশ্যই। তিনি মহা স্রষ্টা, সর্বজ্ঞ।",
       "words": [
         {
           "id": 64623,
@@ -8370,6 +8532,8 @@
     {
       "surah": 36,
       "ayah": 82,
+      "transliteration": "innamā amruhu idhā arāda shayan an yaqūla lahu kun fayakūnu",
+      "translation_bn": "তাঁর কাজকর্ম কেবল এ রকম যে, যখন তিনি কোন কিছুর ইচ্ছে করেন তখন তাকে হুকুম করেন যে হয়ে যাও, আর অমনি তা হয়ে যায়।",
       "words": [
         {
           "id": 65041,
@@ -8486,6 +8650,8 @@
     {
       "surah": 36,
       "ayah": 83,
+      "transliteration": "fasub'ḥāna alladhī biyadihi malakūtu kulli shayin wa-ilayhi tur'jaʿūna",
+      "translation_bn": "কাজেই পবিত্র ও মহান তিনি যাঁর হাতে সব কিছুর সর্বময় কর্তৃত্ব, আর তাঁর কাছেই তোমাদের (সকলকে) ফিরিয়ে আনা হবে।",
       "words": [
         {
           "id": 65312,

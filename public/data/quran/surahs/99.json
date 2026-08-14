@@ -4,6 +4,8 @@
     {
       "surah": 99,
       "ayah": 1,
+      "transliteration": "idhā zul'zilati l-arḍu zil'zālahā",
+      "translation_bn": "পৃথিবীকে যখন তার প্রচন্ড কম্পনে কাঁপিয়ে দেয়া হবে,",
       "words": [
         {
           "id": 55,
@@ -60,6 +62,8 @@
     {
       "surah": 99,
       "ayah": 2,
+      "transliteration": "wa-akhrajati l-arḍu athqālahā",
+      "translation_bn": "পৃথিবী তার (ভেতরের যাবতীয়) বোঝা বাইরে নিক্ষেপ করবে,",
       "words": [
         {
           "id": 1839,
@@ -106,6 +110,8 @@
     {
       "surah": 99,
       "ayah": 3,
+      "transliteration": "waqāla l-insānu mā lahā",
+      "translation_bn": "এবং মানুষ বলবে ‘এর কী হয়েছে?’",
       "words": [
         {
           "id": 2911,
@@ -162,6 +168,8 @@
     {
       "surah": 99,
       "ayah": 4,
+      "transliteration": "yawma-idhin tuḥaddithu akhbārahā",
+      "translation_bn": "সে দিন পৃথিবী তার (নিজের উপর সংঘটিত) বৃত্তান্ত বর্ণনা করবে,",
       "words": [
         {
           "id": 4356,
@@ -208,6 +216,8 @@
     {
       "surah": 99,
       "ayah": 5,
+      "transliteration": "bi-anna rabbaka awḥā lahā",
+      "translation_bn": "কারণ তোমার প্রতিপালক তাকে আদেশ করবেন,",
       "words": [
         {
           "id": 5612,
@@ -264,6 +274,8 @@
     {
       "surah": 99,
       "ayah": 6,
+      "transliteration": "yawma-idhin yaṣduru l-nāsu ashtātan liyuraw aʿmālahum",
+      "translation_bn": "সেদিন মানুষ বের হবে ভিন্ন ভিন্ন দলে যাতে তাদেরকে তাদের কৃতকর্ম দেখানো যায়,",
       "words": [
         {
           "id": 6824,
@@ -340,6 +352,8 @@
     {
       "surah": 99,
       "ayah": 7,
+      "transliteration": "faman yaʿmal mith'qāla dharratin khayran yarahu",
+      "translation_bn": "অতএব কেউ অণু পরিমাণও সৎ কাজ করলে সে তা দেখবে,",
       "words": [
         {
           "id": 8354,
@@ -416,6 +430,8 @@
     {
       "surah": 99,
       "ayah": 8,
+      "transliteration": "waman yaʿmal mith'qāla dharratin sharran yarahu",
+      "translation_bn": "আর কেউ অণু পরিমাণও অসৎ কাজ করলে সেও তা দেখবে।",
       "words": [
         {
           "id": 9503,

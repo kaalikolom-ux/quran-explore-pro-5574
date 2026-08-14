@@ -4,6 +4,8 @@
     {
       "surah": 94,
       "ayah": 1,
+      "transliteration": "alam nashraḥ laka ṣadraka",
+      "translation_bn": "(হে নবী! ওয়াহীর মাধ্যমে প্রকৃত জ্ঞান ও মানসিক শক্তি দিয়ে) আমি কি তোমার বক্ষদেশকে প্রসারিত করে দেইনি?",
       "words": [
         {
           "id": 188,
@@ -60,6 +62,8 @@
     {
       "surah": 94,
       "ayah": 2,
+      "transliteration": "wawaḍaʿnā ʿanka wiz'raka",
+      "translation_bn": "আর আমি তোমার হতে সরিয়ে দিয়েছি (সমাজের অনাচার, অশ্লীলতা ও পঙ্কিলতা দেখে তোমার অন্তরে জেগে উঠা দুঃখ, বেদনা, উদ্বেগ ও অস্থিরতার) ভার,",
       "words": [
         {
           "id": 1361,
@@ -106,6 +110,8 @@
     {
       "surah": 94,
       "ayah": 3,
+      "transliteration": "alladhī anqaḍa ẓahraka",
+      "translation_bn": "যা তোমার কোমরকে ভেঙ্গে দিচ্ছিল।",
       "words": [
         {
           "id": 2546,
@@ -152,6 +158,8 @@
     {
       "surah": 94,
       "ayah": 4,
+      "transliteration": "warafaʿnā laka dhik'raka",
+      "translation_bn": "এবং আমি (মু’মিনদের যাবতীয় আবশ্যিক ‘ইবাদাত আযান, ইক্বামাত, নামায, খুৎবাহ ইত্যাদির মাধ্যমে) তোমার স্মৃতিকে উচ্চ মর্যাদায় তুলে ধরেছি।",
       "words": [
         {
           "id": 3914,
@@ -198,6 +206,8 @@
     {
       "surah": 94,
       "ayah": 5,
+      "transliteration": "fa-inna maʿa l-ʿus'ri yus'ran",
+      "translation_bn": "কষ্টের সাথেই স্বস্তি আছে,",
       "words": [
         {
           "id": 5270,
@@ -254,6 +264,8 @@
     {
       "surah": 94,
       "ayah": 6,
+      "transliteration": "inna maʿa l-ʿus'ri yus'ran",
+      "translation_bn": "নিঃসন্দেহে কষ্টের সাথেই স্বস্তি আছে।",
       "words": [
         {
           "id": 6456,
@@ -310,6 +322,8 @@
     {
       "surah": 94,
       "ayah": 7,
+      "transliteration": "fa-idhā faraghta fa-inṣab",
+      "translation_bn": "কাজেই তুমি যখনই অবসর পাবে, ‘ইবাদাতের কঠোর শ্রমে লেগে যাবে,",
       "words": [
         {
           "id": 7614,
@@ -356,6 +370,8 @@
     {
       "surah": 94,
       "ayah": 8,
+      "transliteration": "wa-ilā rabbika fa-ir'ghab",
+      "translation_bn": "এবং তোমার রব-এর প্রতি গভীরভাবে মনোযোগ দিবে।",
       "words": [
         {
           "id": 9077,

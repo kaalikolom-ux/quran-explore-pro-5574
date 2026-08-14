@@ -4,6 +4,8 @@
     {
       "surah": 95,
       "ayah": 1,
+      "transliteration": "wal-tīni wal-zaytūni",
+      "translation_bn": "শপথ তীন ও যায়তূন-এর (যা জন্মে সিরিয়া ও ফিলিস্তিন এলাকায় যে স্থান বহু পুণ্যময় নবী ও রসূলের স্মৃতিতে ধন্য)।",
       "words": [
         {
           "id": 95,
@@ -40,6 +42,8 @@
     {
       "surah": 95,
       "ayah": 2,
+      "transliteration": "waṭūri sīnīna",
+      "translation_bn": "শপথ সিনাই পর্বতের (যা নবী মূসার স্মৃতি বিজড়িত),",
       "words": [
         {
           "id": 1481,
@@ -76,6 +80,8 @@
     {
       "surah": 95,
       "ayah": 3,
+      "transliteration": "wahādhā l-baladi l-amīni",
+      "translation_bn": "আর (ইবরাহীম ও ইসমাঈল কর্তৃক নির্মিত কা‘বার) এই নিরাপদ নগরীর শপথ,",
       "words": [
         {
           "id": 2603,
@@ -122,6 +128,8 @@
     {
       "surah": 95,
       "ayah": 4,
+      "transliteration": "laqad khalaqnā l-insāna fī aḥsani taqwīmin",
+      "translation_bn": "আমি মানুষকে সৃষ্টি করেছি অতি উত্তম আকার আকৃতি দিয়ে, (এবং জ্ঞান ও যোগ্যতা দিয়ে যার সুন্দরতম নমুনা হল নবী রসূলগণ)।",
       "words": [
         {
           "id": 4019,
@@ -198,6 +206,8 @@
     {
       "surah": 95,
       "ayah": 5,
+      "transliteration": "thumma radadnāhu asfala sāfilīna",
+      "translation_bn": "আবার উল্টোদিকে তাকে করেছি হীনদের হীনমত (যেমন আল্লাহ বিদ্রোহী কাফির, অত্যাচারী রাজা-বাদশা-শাসক, খুনী, পুতুল পূজারী ইত্যাদি)।",
       "words": [
         {
           "id": 5296,
@@ -254,6 +264,8 @@
     {
       "surah": 95,
       "ayah": 6,
+      "transliteration": "illā alladhīna āmanū waʿamilū l-ṣāliḥāti falahum ajrun ghayru mamnūnin",
+      "translation_bn": "কিন্তু তাদেরকে নয় যারা ঈমান আনে ও সৎ কাজ করে, তাদের জন্য তো আছে অফুরন্ত প্রতিদান।",
       "words": [
         {
           "id": 6536,
@@ -360,6 +372,8 @@
     {
       "surah": 95,
       "ayah": 7,
+      "transliteration": "famā yukadhibuka baʿdu bil-dīni",
+      "translation_bn": "(ভাল কাজের পুরস্কার দেয়া আর অন্যায় কাজের শাস্তি দেয়াই ইনসাফপূর্ণ কথা) কাজেই শেষ বিচারের দিনকে অস্বীকার করতে কিসে তোমাদেরকে উদ্বুদ্ধ করছে?",
       "words": [
         {
           "id": 7954,
@@ -416,6 +430,8 @@
     {
       "surah": 95,
       "ayah": 8,
+      "transliteration": "alaysa l-lahu bi-aḥkami l-ḥākimīna",
+      "translation_bn": "আল্লাহ কি বিচারকদের মধ্যে শ্রেষ্ঠতম (বিচারক) নন?",
       "words": [
         {
           "id": 9118,

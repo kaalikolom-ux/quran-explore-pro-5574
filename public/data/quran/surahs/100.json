@@ -4,6 +4,8 @@
     {
       "surah": 100,
       "ayah": 1,
+      "transliteration": "wal-ʿādiyāti ḍabḥan",
+      "translation_bn": "শপথ সেই (ঘোড়া) গুলোর যারা ঊর্ধ্বশ্বাসে দৌড়ায়,",
       "words": [
         {
           "id": 13,
@@ -40,6 +42,8 @@
     {
       "surah": 100,
       "ayah": 2,
+      "transliteration": "fal-mūriyāti qadḥan",
+      "translation_bn": "অতঃপর (নিজের ক্ষুরের) ঘর্ষণে আগুন ছুটায়,",
       "words": [
         {
           "id": 1941,
@@ -76,6 +80,8 @@
     {
       "surah": 100,
       "ayah": 3,
+      "transliteration": "fal-mughīrāti ṣub'ḥan",
+      "translation_bn": "অতঃপর সকালে হঠাৎ আক্রমণ চালায়,",
       "words": [
         {
           "id": 3166,
@@ -112,6 +118,8 @@
     {
       "surah": 100,
       "ayah": 4,
+      "transliteration": "fa-atharna bihi naqʿan",
+      "translation_bn": "আর সে সময় ধূলি উড়ায়,",
       "words": [
         {
           "id": 4469,
@@ -158,6 +166,8 @@
     {
       "surah": 100,
       "ayah": 5,
+      "transliteration": "fawasaṭna bihi jamʿan",
+      "translation_bn": "অতঃপর (শত্রু) দলের অভ্যন্তরে ঢুকে পড়ে (এভাবে মানুষ নিজের শক্তি-সামর্থ্য ও আল্লাহর এক অতি বড় নি‘মাত ঘোড়াকে অপরের সম্পদ লুণ্ঠন ও অন্যের প্রতি যুলমের কাজে ব্যবহার করে),",
       "words": [
         {
           "id": 5794,
@@ -204,6 +214,8 @@
     {
       "surah": 100,
       "ayah": 6,
+      "transliteration": "inna l-insāna lirabbihi lakanūdun",
+      "translation_bn": "বস্তুতঃ মানুষ তার রব-এর প্রতি বড়ই অকৃতজ্ঞ।",
       "words": [
         {
           "id": 7117,
@@ -260,6 +272,8 @@
     {
       "surah": 100,
       "ayah": 7,
+      "transliteration": "wa-innahu ʿalā dhālika lashahīdun",
+      "translation_bn": "আর সে নিজেই (নিজের কাজ-কর্মের মাধ্যমে) এ বিষয়ের সাক্ষী।",
       "words": [
         {
           "id": 8429,
@@ -316,6 +330,8 @@
     {
       "surah": 100,
       "ayah": 8,
+      "transliteration": "wa-innahu liḥubbi l-khayri lashadīdun",
+      "translation_bn": "আর ধন-সম্পদের প্রতি অবশ্যই সে খুবই আসক্ত।",
       "words": [
         {
           "id": 9582,
@@ -372,6 +388,8 @@
     {
       "surah": 100,
       "ayah": 9,
+      "transliteration": "afalā yaʿlamu idhā buʿ'thira mā fī l-qubūri",
+      "translation_bn": "সে কি জানে না, কবরে যা আছে তা যখন উত্থিত হবে,",
       "words": [
         {
           "id": 10714,
@@ -458,6 +476,8 @@
     {
       "surah": 100,
       "ayah": 10,
+      "transliteration": "waḥuṣṣila mā fī l-ṣudūri",
+      "translation_bn": "আর অন্তরে যা (কিছু লুকানো) আছে তা প্রকাশ করা হবে,",
       "words": [
         {
           "id": 11729,
@@ -514,6 +534,8 @@
     {
       "surah": 100,
       "ayah": 11,
+      "transliteration": "inna rabbahum bihim yawma-idhin lakhabīrun",
+      "translation_bn": "নিঃসন্দেহে তাদের প্রতিপালক সেদিন তাদের সম্পর্কে পুরোপুরি অবহিত থাকবেন।",
       "words": [
         {
           "id": 12259,

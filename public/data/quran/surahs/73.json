@@ -4,6 +4,8 @@
     {
       "surah": 73,
       "ayah": 1,
+      "transliteration": "yāayyuhā l-muzamilu",
+      "translation_bn": "ওহে চাদরে আবৃত (ব্যক্তি)!",
       "words": [
         {
           "id": 628,
@@ -40,6 +42,8 @@
     {
       "surah": 73,
       "ayah": 2,
+      "transliteration": "qumi al-layla illā qalīlan",
+      "translation_bn": "রাতে নামাযে দাঁড়াও তবে (রাতের) কিছু অংশ বাদে,",
       "words": [
         {
           "id": 1575,
@@ -96,6 +100,8 @@
     {
       "surah": 73,
       "ayah": 3,
+      "transliteration": "niṣ'fahu awi unquṣ min'hu qalīlan",
+      "translation_bn": "রাতের অর্ধেক (সময় দাঁড়াও) কিংবা তার থেকে কিছুটা কম কর,",
       "words": [
         {
           "id": 2616,
@@ -162,6 +168,8 @@
     {
       "surah": 73,
       "ayah": 4,
+      "transliteration": "aw zid ʿalayhi warattili l-qur'āna tartīlan",
+      "translation_bn": "অথবা তার চেয়ে বাড়াও, আর ধীরে ধীরে সুস্পষ্টভাবে কুরআন পাঠ কর।",
       "words": [
         {
           "id": 4034,
@@ -238,6 +246,8 @@
     {
       "surah": 73,
       "ayah": 5,
+      "transliteration": "innā sanul'qī ʿalayka qawlan thaqīlan",
+      "translation_bn": "আমি তোমার উপর গুরুভার কালাম নাযিল করব (বিশ্বের বুকে যার প্রচার ও প্রতিষ্ঠা করার দায়িত্বভার অতি বড় কঠিন কাজ)।",
       "words": [
         {
           "id": 5325,
@@ -304,6 +314,8 @@
     {
       "surah": 73,
       "ayah": 6,
+      "transliteration": "inna nāshi-ata al-layli hiya ashaddu waṭan wa-aqwamu qīlan",
+      "translation_bn": "বাস্তবিকই রাতে বিছানা ছেড়ে উঠা আত্মসংযমের জন্য বেশি কার্যকর এবং (কুরআন) স্পষ্ট উচ্চারণের অনুকূল।",
       "words": [
         {
           "id": 6527,
@@ -400,6 +412,8 @@
     {
       "surah": 73,
       "ayah": 7,
+      "transliteration": "inna laka fī l-nahāri sabḥan ṭawīlan",
+      "translation_bn": "দিনের বেলায় তোমার জন্য আছে দীর্ঘ কর্মব্যস্ততা।",
       "words": [
         {
           "id": 7940,
@@ -476,6 +490,8 @@
     {
       "surah": 73,
       "ayah": 8,
+      "transliteration": "wa-udh'kuri is'ma rabbika watabattal ilayhi tabtīlan",
+      "translation_bn": "কাজেই তুমি তোমার প্রতিপালকের নাম স্মরণ কর এবং একাগ্রচিত্তে তাঁর প্রতি মগ্ন হও।",
       "words": [
         {
           "id": 9106,
@@ -552,6 +568,8 @@
     {
       "surah": 73,
       "ayah": 9,
+      "transliteration": "rabbu l-mashriqi wal-maghribi lā ilāha illā huwa fa-ittakhidh'hu wakīlan",
+      "translation_bn": "(তিনি) পূর্ব ও পশ্চিমের সর্বময় কর্তা, তিনি ছাড়া সত্যিকারের কোন ইলাহ নেই, অতএব তাঁকেই তুমি তোমার কার্য সম্পদানকারী বানিয়ে লও।",
       "words": [
         {
           "id": 10328,
@@ -658,6 +676,8 @@
     {
       "surah": 73,
       "ayah": 10,
+      "transliteration": "wa-iṣ'bir ʿalā mā yaqūlūna wa-uh'jur'hum hajran jamīlan",
+      "translation_bn": "তারা যা বলে সে ব্যাপারে ধৈর্য ধারণ কর আর ভদ্রতার সঙ্গে তাদেরকে পরিহার ক’রে চল।",
       "words": [
         {
           "id": 11562,
@@ -744,6 +764,8 @@
     {
       "surah": 73,
       "ayah": 11,
+      "transliteration": "wadharnī wal-mukadhibīna ulī l-naʿmati wamahhil'hum qalīlan",
+      "translation_bn": "আর ছেড়ে দাও আমাকে আর নানান বিলাস সামগ্রীর মালিক ঐ মিথ্যুকদেরকে এবং তাদেরকে কিছুটা সময় অবকাশ দাও।",
       "words": [
         {
           "id": 12870,
@@ -820,6 +842,8 @@
     {
       "surah": 73,
       "ayah": 12,
+      "transliteration": "inna ladaynā ankālan wajaḥīman",
+      "translation_bn": "আমার কাছে আছে শেকল আর দাউ দাউ করে জ্বলা আগুন,",
       "words": [
         {
           "id": 14126,
@@ -876,6 +900,8 @@
     {
       "surah": 73,
       "ayah": 13,
+      "transliteration": "waṭaʿāman dhā ghuṣṣatin waʿadhāban alīman",
+      "translation_bn": "আর গলায় আটকে যায় এমন খাবার আর মর্মান্তিক শাস্তি।",
       "words": [
         {
           "id": 15254,
@@ -942,6 +968,8 @@
     {
       "surah": 73,
       "ayah": 14,
+      "transliteration": "yawma tarjufu l-arḍu wal-jibālu wakānati l-jibālu kathīban mahīlan",
+      "translation_bn": "(এসব শাস্তি দেয়া হবে) যেদিন যমীন আর পাহাড়গুলো কেঁপে উঠবে, আর পাহাড়গুলো হবে চলমান বালুকারাশি।",
       "words": [
         {
           "id": 16751,
@@ -1038,6 +1066,8 @@
     {
       "surah": 73,
       "ayah": 15,
+      "transliteration": "innā arsalnā ilaykum rasūlan shāhidan ʿalaykum kamā arsalnā ilā fir'ʿawna rasūlan",
+      "translation_bn": "আমি তোমাদের কাছে তেমনিভাবে একজন রসূলকে তোমাদের প্রতি সাক্ষ্যদাতা হিসেবে পাঠিয়েছি (যিনি ক্বিয়ামতে সাক্ষ্য দিবেন যে, দ্বীনের দাওয়াত তিনি যথাযথভাবে মানুষের কাছে পৌঁছে দিয়েছেন) যেমনভাবে আমি ফেরাউনের কাছে পাঠিয়েছিলাম একজন রসূলকে।",
       "words": [
         {
           "id": 17873,
@@ -1164,6 +1194,8 @@
     {
       "surah": 73,
       "ayah": 16,
+      "transliteration": "faʿaṣā fir'ʿawnu l-rasūla fa-akhadhnāhu akhdhan wabīlan",
+      "translation_bn": "তখন ফেরাউন সেই রসূলকে অমান্য করল। ফলে আমি তাকে শক্ত ধরায় ধরলাম।",
       "words": [
         {
           "id": 18541,
@@ -1240,6 +1272,8 @@
     {
       "surah": 73,
       "ayah": 17,
+      "transliteration": "fakayfa tattaqūna in kafartum yawman yajʿalu l-wil'dāna shīban",
+      "translation_bn": "অতএব তোমরা যদি (এই রসূলকে) অস্বীকার কর, তাহলে তোমরা কীভাবে সেদিন আত্মরক্ষা করবে যেদিনটি (তার ভীষণতা ও ভয়াবহতায়) বালককে ক’রে দেবে বুড়ো।",
       "words": [
         {
           "id": 19545,
@@ -1336,6 +1370,8 @@
     {
       "surah": 73,
       "ayah": 18,
+      "transliteration": "al-samāu munfaṭirun bihi kāna waʿduhu mafʿūlan",
+      "translation_bn": "যার কারণে আকাশ ফেটে যাবে, আল্লাহর ওয়া‘দা পূর্ণ হয়ে যাবে।",
       "words": [
         {
           "id": 21122,
@@ -1412,6 +1448,8 @@
     {
       "surah": 73,
       "ayah": 19,
+      "transliteration": "inna hādhihi tadhkiratun faman shāa ittakhadha ilā rabbihi sabīlan",
+      "translation_bn": "এটা উপদেশ। কাজেই যার মন চায় সে তার প্রতিপালকের দিকে পথ ধরুক।",
       "words": [
         {
           "id": 21685,
@@ -1518,6 +1556,8 @@
     {
       "surah": 73,
       "ayah": 20,
+      "transliteration": "inna rabbaka yaʿlamu annaka taqūmu adnā min thuluthayi al-layli waniṣ'fahu wathuluthahu waṭāifatun mina alladhīna maʿaka wal-lahu yuqaddiru al-layla wal-nahāra ʿalima an lan tuḥ'ṣūhu fatāba ʿalaykum fa-iq'raū mā tayassara mina l-qur'āni ʿalima an sayakūnu minkum marḍā waākharūna yaḍribūna fī l-arḍi yabtaghūna min faḍli l-lahi waākharūna yuqātilūna fī sabīli l-lahi fa-iq'raū mā tayassara min'hu wa-aqīmū l-ṣalata waātū l-zakata wa-aqriḍū l-laha qarḍan ḥasanan wamā tuqaddimū li-anfusikum min khayrin tajidūhu ʿinda l-lahi huwa khayran wa-aʿẓama ajran wa-is'taghfirū l-laha inna l-laha ghafūrun raḥīmun",
+      "translation_bn": "তোমার প্রতিপালক জানেন যে, তুমি কখনও রাতের দু’তৃতীয়াংশ ‘ইবাদাতের জন্য দাঁড়াও, কখনও অর্ধেক, কখনও রাতের এক তৃতীয়াংশ, তোমার সঙ্গী-সাথীদের একটি দলও (তাই করে)। আল্লাহ্ই রাত আর দিনের পরিমাণ নির্ধারণ করেন। তিনি জানেন, তোমরা তা যথাযথ হিসাব রেখে পালন করতে পারবে না। কাজেই তিনি তোমাদের প্রতি ক্ষমাপরবশ হয়েছেন। কাজেই কুরআনের যতটুকু পড়া তোমার জন্য সহজ হয়, তুমি ততটুকু পড়। তিনি জানেন, তোমাদের মধ্যে কেউ কেউ অসুস্থ হবে, আর কতক আল্লাহর অনুগ্রহ সন্ধানে যমীনে ভ্রমণ করবে, আর কতক আল্লাহর পথে যুদ্ধ করবে। কাজেই তোমাদের জন্য যতটুকু সহজসাধ্য হয় তাই তাত্থেকে পাঠ কর, আর নামায প্রতিষ্ঠা কর, যাকাত দাও আর আল্লাহকে ঋণ দাও উত্তম ঋণ। তোমরা যা কিছু কল্যাণ নিজেদের জন্য আগে পাঠাবে, তা আল্লাহর নিকট (সঞ্চিত) পাবে, তাই উত্তম এবং পুরস্কার হিসেবে খুব বড়। তোমরা আল্লাহর নিকট ক্ষমা প্রার্থনা কর, আল্লাহ অতি ক্ষমাশীল, বড়ই দয়ালু।",
       "words": [
         {
           "id": 22776,

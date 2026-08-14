@@ -4,6 +4,8 @@
     {
       "surah": 55,
       "ayah": 1,
+      "transliteration": "al-raḥmānu",
+      "translation_bn": "পরম দয়ালু (আল্লাহ),",
       "words": [
         {
           "id": 297,
@@ -30,6 +32,8 @@
     {
       "surah": 55,
       "ayah": 2,
+      "transliteration": "ʿallama l-qur'āna",
+      "translation_bn": "তিনিই শিক্ষা দিয়েছেন কুরআন,",
       "words": [
         {
           "id": 1061,
@@ -66,6 +70,8 @@
     {
       "surah": 55,
       "ayah": 3,
+      "transliteration": "khalaqa l-insāna",
+      "translation_bn": "তিনিই মানুষ সৃষ্টি করেছেন,",
       "words": [
         {
           "id": 2223,
@@ -102,6 +108,8 @@
     {
       "surah": 55,
       "ayah": 4,
+      "transliteration": "ʿallamahu l-bayāna",
+      "translation_bn": "তিনিই শিখিয়েছেন মনের কথা প্রকাশ করতে,",
       "words": [
         {
           "id": 3552,
@@ -138,6 +146,8 @@
     {
       "surah": 55,
       "ayah": 5,
+      "transliteration": "al-shamsu wal-qamaru biḥus'bānin",
+      "translation_bn": "সূর্য ও চন্দ্র আবর্তন করে সুনির্দিষ্ট হিসাব অনুযায়ী।",
       "words": [
         {
           "id": 4871,
@@ -184,6 +194,8 @@
     {
       "surah": 55,
       "ayah": 6,
+      "transliteration": "wal-najmu wal-shajaru yasjudāni",
+      "translation_bn": "তৃণলতা গাছপালা (তাঁরই জন্য) সাজদায় অবনত,",
       "words": [
         {
           "id": 6162,
@@ -230,6 +242,8 @@
     {
       "surah": 55,
       "ayah": 7,
+      "transliteration": "wal-samāa rafaʿahā wawaḍaʿa l-mīzāna",
+      "translation_bn": "তিনি আকাশকে করেছেন সমুন্নত, আর স্থাপন করেছেন (ন্যায়ের) মানদন্ড,",
       "words": [
         {
           "id": 7495,
@@ -286,6 +300,8 @@
     {
       "surah": 55,
       "ayah": 8,
+      "transliteration": "allā taṭghaw fī l-mīzāni",
+      "translation_bn": "যাতে তোমরা মানদন্ডে সীমালঙ্ঘন না কর,",
       "words": [
         {
           "id": 8741,
@@ -342,6 +358,8 @@
     {
       "surah": 55,
       "ayah": 9,
+      "transliteration": "wa-aqīmū l-wazna bil-qis'ṭi walā tukh'sirū l-mīzāna",
+      "translation_bn": "সুবিচারের সঙ্গে ওজন প্রতিষ্ঠা কর আর ওজনে কম দিও না,",
       "words": [
         {
           "id": 9969,
@@ -418,6 +436,8 @@
     {
       "surah": 55,
       "ayah": 10,
+      "transliteration": "wal-arḍa waḍaʿahā lil'anāmi",
+      "translation_bn": "আর যমীন- তিনি (তাঁর) প্রাণীকুলের জন্য তাকে করেছেন বিস্তৃত,",
       "words": [
         {
           "id": 11167,
@@ -464,6 +484,8 @@
     {
       "surah": 55,
       "ayah": 11,
+      "transliteration": "fīhā fākihatun wal-nakhlu dhātu l-akmāmi",
+      "translation_bn": "এতে আছে নানান ফলমূল, আর খেজুর গাছ যার ফল আবরণে ঢাকা,",
       "words": [
         {
           "id": 12493,
@@ -530,6 +552,8 @@
     {
       "surah": 55,
       "ayah": 12,
+      "transliteration": "wal-ḥabu dhū l-ʿaṣfi wal-rayḥānu",
+      "translation_bn": "আর খোসা ও ডাটা বিশিষ্ট দানা আর সুগন্ধী গাছ।",
       "words": [
         {
           "id": 13820,
@@ -586,6 +610,8 @@
     {
       "surah": 55,
       "ayah": 13,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নিয়ামতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 14970,
@@ -642,6 +668,8 @@
     {
       "surah": 55,
       "ayah": 14,
+      "transliteration": "khalaqa l-insāna min ṣalṣālin kal-fakhāri",
+      "translation_bn": "তিনি মানুষকে সৃষ্টি করেছেন পোড়া মাটির মত শুকনা পচা কাদা হতে,",
       "words": [
         {
           "id": 16038,
@@ -708,6 +736,8 @@
     {
       "surah": 55,
       "ayah": 15,
+      "transliteration": "wakhalaqa l-jāna min mārijin min nārin",
+      "translation_bn": "আর জ্বিনকে সৃষ্টি করেছেন ধোঁয়াবিহীন আগুন হতে।",
       "words": [
         {
           "id": 17285,
@@ -784,6 +814,8 @@
     {
       "surah": 55,
       "ayah": 16,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 18340,
@@ -840,6 +872,8 @@
     {
       "surah": 55,
       "ayah": 17,
+      "transliteration": "rabbu l-mashriqayni warabbu l-maghribayni",
+      "translation_bn": "তিনিই দু’টি উদয় স্থান ও দু’টি অস্তাচলের নিয়ন্ত্রক,",
       "words": [
         {
           "id": 19356,
@@ -896,6 +930,8 @@
     {
       "surah": 55,
       "ayah": 18,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 20415,
@@ -952,6 +988,8 @@
     {
       "surah": 55,
       "ayah": 19,
+      "transliteration": "maraja l-baḥrayni yaltaqiyāni",
+      "translation_bn": "দু’টি সমুদ্রকে তিনিই প্রবাহিত করেন যারা পরস্পর মিলিত হয়,",
       "words": [
         {
           "id": 21507,
@@ -998,6 +1036,8 @@
     {
       "surah": 55,
       "ayah": 20,
+      "transliteration": "baynahumā barzakhun lā yabghiyāni",
+      "translation_bn": "(কিন্তু তা সত্ত্বেও) উভয়ের মাঝে আছে এক আড়াল যা তারা অতিক্রম করতে পারে না।",
       "words": [
         {
           "id": 22582,
@@ -1054,6 +1094,8 @@
     {
       "surah": 55,
       "ayah": 21,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 23744,
@@ -1110,6 +1152,8 @@
     {
       "surah": 55,
       "ayah": 22,
+      "transliteration": "yakhruju min'humā l-lu'lu-u wal-marjānu",
+      "translation_bn": "এ সব দরিয়া হতে বের হয় মুক্তা ও প্রবাল,",
       "words": [
         {
           "id": 24746,
@@ -1166,6 +1210,8 @@
     {
       "surah": 55,
       "ayah": 23,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 26447,
@@ -1222,6 +1268,8 @@
     {
       "surah": 55,
       "ayah": 24,
+      "transliteration": "walahu l-jawāri l-munshaātu fī l-baḥri kal-aʿlāmi",
+      "translation_bn": "পর্বত সম জাহাজসমূহ তাঁরই, যা দরিয়ার বুকে শান্তভাবে চলাচল করে।",
       "words": [
         {
           "id": 26869,
@@ -1298,6 +1346,8 @@
     {
       "surah": 55,
       "ayah": 25,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 27898,
@@ -1354,6 +1404,8 @@
     {
       "surah": 55,
       "ayah": 26,
+      "transliteration": "kullu man ʿalayhā fānin",
+      "translation_bn": "পৃথিবী পৃষ্ঠে যা আছে সবই ধ্বংসশীল,",
       "words": [
         {
           "id": 28868,
@@ -1410,6 +1462,8 @@
     {
       "surah": 55,
       "ayah": 27,
+      "transliteration": "wayabqā wajhu rabbika dhū l-jalāli wal-ik'rāmi",
+      "translation_bn": "কিন্তু চিরস্থায়ী তোমার প্রতিপালকের চেহারা (সত্তা)- যিনি মহীয়ান, গরীয়ান,",
       "words": [
         {
           "id": 29677,
@@ -1486,6 +1540,8 @@
     {
       "surah": 55,
       "ayah": 28,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 30759,
@@ -1542,6 +1598,8 @@
     {
       "surah": 55,
       "ayah": 29,
+      "transliteration": "yasaluhu man fī l-samāwāti wal-arḍi kulla yawmin huwa fī shanin",
+      "translation_bn": "আকাশ আর পৃথিবীতে যারা আছে তারা (নিজেদের প্রয়োজন মেটানোর জন্য যা কিছু দরকার) তাঁর কাছেই চায়, প্রতি মুহূর্ত তিনি নতুন নতুন গুরুত্বপূর্ণ কাজে নিয়োজিত (কাউকেও বাঁচাচ্ছেন, কাউকেও মারছেন, কাউকেও সম্মানিত ক’রে ঊর্ধ্বে উঠাচ্ছেন, কাউকেও অপমানিত ক’রে নামিয়ে দিচ্ছেন ইত্যাদি)।",
       "words": [
         {
           "id": 31835,
@@ -1658,6 +1716,8 @@
     {
       "surah": 55,
       "ayah": 30,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 32686,
@@ -1714,6 +1774,8 @@
     {
       "surah": 55,
       "ayah": 31,
+      "transliteration": "sanafrughu lakum ayyuha l-thaqalāni",
+      "translation_bn": "(দায়িত্বের) ভারে ভারাক্রান্ত ওহে (জ্বিন ও মানুষ) দু’ (জাতি)! অতি শীঘ্র (কর্মমুক্ত হয়ে তোমাদেরকে জিজ্ঞাসাবাদের জন্য) আমি তোমাদের প্রতি মনোনিবেশ করব,",
       "words": [
         {
           "id": 33861,
@@ -1770,6 +1832,8 @@
     {
       "surah": 55,
       "ayah": 32,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 34638,
@@ -1826,6 +1890,8 @@
     {
       "surah": 55,
       "ayah": 33,
+      "transliteration": "yāmaʿshara l-jini wal-insi ini is'taṭaʿtum an tanfudhū min aqṭāri l-samāwāti wal-arḍi fa-unfudhū lā tanfudhūna illā bisul'ṭānin",
+      "translation_bn": "হে জ্বিন ও মানুষ জাতি! তোমরা যদি আকাশ ও পৃথিবীর সীমানা অতিক্রম করতে পার তাহলে অতিক্রম কর, কিন্তু (আল্লাহর) প্রমাণপত্র ছাড়া তোমরা তা অতিক্রম করতে পারবে না।",
       "words": [
         {
           "id": 35426,
@@ -2002,6 +2068,8 @@
     {
       "surah": 55,
       "ayah": 34,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 36349,
@@ -2058,6 +2126,8 @@
     {
       "surah": 55,
       "ayah": 35,
+      "transliteration": "yur'salu ʿalaykumā shuwāẓun min nārin wanuḥāsun falā tantaṣirāni",
+      "translation_bn": "(অতিক্রম করতে চাইলে) তোমাদের দিকে আগুনের শিখা ও ধোঁয়া ছেড়ে দেয়া হবে, তখন তোমরা তা প্রতিরোধ করতে পারবে না।",
       "words": [
         {
           "id": 37563,
@@ -2154,6 +2224,8 @@
     {
       "surah": 55,
       "ayah": 36,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 38021,
@@ -2210,6 +2282,8 @@
     {
       "surah": 55,
       "ayah": 37,
+      "transliteration": "fa-idhā inshaqqati l-samāu fakānat wardatan kal-dihāni",
+      "translation_bn": "যখন আকাশ দীর্ণ বিদীর্ণ হবে আর লাল চামড়ার মত রক্তবর্ণ ধারণ করবে",
       "words": [
         {
           "id": 38835,
@@ -2286,6 +2360,8 @@
     {
       "surah": 55,
       "ayah": 38,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 39722,
@@ -2342,6 +2418,8 @@
     {
       "surah": 55,
       "ayah": 39,
+      "transliteration": "fayawma-idhin lā yus'alu ʿan dhanbihi insun walā jānnun",
+      "translation_bn": "সে দিন না মানুষকে, না জ্বিনকে তার গুনাহ সম্পর্কে জিজ্ঞেস করা হবে।",
       "words": [
         {
           "id": 40782,
@@ -2438,6 +2516,8 @@
     {
       "surah": 55,
       "ayah": 40,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 41246,
@@ -2494,6 +2574,8 @@
     {
       "surah": 55,
       "ayah": 41,
+      "transliteration": "yuʿ'rafu l-muj'rimūna bisīmāhum fayu'khadhu bil-nawāṣī wal-aqdāmi",
+      "translation_bn": "অপরাধীদেরকে চিনতে পারা যাবে তাদের চেহারা থেকেই, আর মাথার ঝুঁটি ও পা ধরে তাদেরকে পাকড়াও করা হবে।",
       "words": [
         {
           "id": 42122,
@@ -2570,6 +2652,8 @@
     {
       "surah": 55,
       "ayah": 42,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 42952,
@@ -2626,6 +2710,8 @@
     {
       "surah": 55,
       "ayah": 43,
+      "transliteration": "hādhihi jahannamu allatī yukadhibu bihā l-muj'rimūna",
+      "translation_bn": "এটা সেই জাহান্নাম যাকে অপরাধীরা মিথ্যে মনে করেছিল।",
       "words": [
         {
           "id": 43641,
@@ -2702,6 +2788,8 @@
     {
       "surah": 55,
       "ayah": 44,
+      "transliteration": "yaṭūfūna baynahā wabayna ḥamīmin ānin",
+      "translation_bn": "সেই জাহান্নাম আর ফুটন্ত পানিতে তারা ঘুরপাক খেতে থাকবে।",
       "words": [
         {
           "id": 44390,
@@ -2768,6 +2856,8 @@
     {
       "surah": 55,
       "ayah": 45,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 45150,
@@ -2824,6 +2914,8 @@
     {
       "surah": 55,
       "ayah": 46,
+      "transliteration": "waliman khāfa maqāma rabbihi jannatāni",
+      "translation_bn": "আর যে তার প্রতিপালকের সামনে হাজির হওয়ার ভয় রাখে তার জন্য আছে দু’টো বাগান।",
       "words": [
         {
           "id": 45871,
@@ -2890,6 +2982,8 @@
     {
       "surah": 55,
       "ayah": 47,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন কোন নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 46666,
@@ -2946,6 +3040,8 @@
     {
       "surah": 55,
       "ayah": 48,
+      "transliteration": "dhawātā afnānin",
+      "translation_bn": "দু’টোই শাখা পল্লবে ভরপুর।",
       "words": [
         {
           "id": 47269,
@@ -2982,6 +3078,8 @@
     {
       "surah": 55,
       "ayah": 49,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 47880,
@@ -3038,6 +3136,8 @@
     {
       "surah": 55,
       "ayah": 50,
+      "transliteration": "fīhimā ʿaynāni tajriyāni",
+      "translation_bn": "দু’বাগানেই আছে দু’টো করে প্রবহমান ঝর্ণা।",
       "words": [
         {
           "id": 48665,
@@ -3084,6 +3184,8 @@
     {
       "surah": 55,
       "ayah": 51,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 49319,
@@ -3140,6 +3242,8 @@
     {
       "surah": 55,
       "ayah": 52,
+      "transliteration": "fīhimā min kulli fākihatin zawjāni",
+      "translation_bn": "উভয় বাগানে আছে প্রত্যেকটি ফলের দু’টি প্রকার।",
       "words": [
         {
           "id": 49884,
@@ -3206,6 +3310,8 @@
     {
       "surah": 55,
       "ayah": 53,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 50593,
@@ -3262,6 +3368,8 @@
     {
       "surah": 55,
       "ayah": 54,
+      "transliteration": "muttakiīna ʿalā furushin baṭāinuhā min is'tabraqin wajanā l-janatayni dānin",
+      "translation_bn": "তারা হেলান দিয়ে বসবে শয্যার উপর যার আস্তর হবে পুরু রেশমের। দু’বাগানের ফল হবে নিকটবর্তী (জান্নাতীদের নাগালের মধ্যে)।",
       "words": [
         {
           "id": 51153,
@@ -3368,6 +3476,8 @@
     {
       "surah": 55,
       "ayah": 55,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 51790,
@@ -3424,6 +3534,8 @@
     {
       "surah": 55,
       "ayah": 56,
+      "transliteration": "fīhinna qāṣirātu l-ṭarfi lam yaṭmith'hunna insun qablahum walā jānnun",
+      "translation_bn": "তার মধ্যে থাকবে সতীসাধ্বী সংযত-নয়না (কুমারী)রা, পূর্বে যাদেরকে স্পর্শ করেনি কোন মানুষ আর কোন জ্বিন।",
       "words": [
         {
           "id": 52188,
@@ -3530,6 +3642,8 @@
     {
       "surah": 55,
       "ayah": 57,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 52806,
@@ -3586,6 +3700,8 @@
     {
       "surah": 55,
       "ayah": 58,
+      "transliteration": "ka-annahunna l-yāqūtu wal-marjānu",
+      "translation_bn": "তারা যেন পদ্মরাগ ও প্রবাল।",
       "words": [
         {
           "id": 53397,
@@ -3632,6 +3748,8 @@
     {
       "surah": 55,
       "ayah": 59,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 53852,
@@ -3688,6 +3806,8 @@
     {
       "surah": 55,
       "ayah": 60,
+      "transliteration": "hal jazāu l-iḥ'sāni illā l-iḥ'sānu",
+      "translation_bn": "উত্তম কাজের প্রতিফল উত্তম পুরস্কার ছাড়া কী হতে পারে?",
       "words": [
         {
           "id": 54424,
@@ -3754,6 +3874,8 @@
     {
       "surah": 55,
       "ayah": 61,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 55097,
@@ -3810,6 +3932,8 @@
     {
       "surah": 55,
       "ayah": 62,
+      "transliteration": "wamin dūnihimā jannatāni",
+      "translation_bn": "এ দু’টো বাগান ছাড়াও আরো বাগান আছে।",
       "words": [
         {
           "id": 55719,
@@ -3856,6 +3980,8 @@
     {
       "surah": 55,
       "ayah": 63,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 56167,
@@ -3912,6 +4038,8 @@
     {
       "surah": 55,
       "ayah": 64,
+      "transliteration": "mud'hāmmatāni",
+      "translation_bn": "ঘন সবুজ এ বাগান দু’টো।",
       "words": [
         {
           "id": 56581,
@@ -3938,6 +4066,8 @@
     {
       "surah": 55,
       "ayah": 65,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 57226,
@@ -3994,6 +4124,8 @@
     {
       "surah": 55,
       "ayah": 66,
+      "transliteration": "fīhimā ʿaynāni naḍḍākhatāni",
+      "translation_bn": "দু’টো বাগানেই আছে অবিরাম ও প্রচুর পরিমাণে উৎক্ষিপ্তমান দু’টো ঝর্ণাধারা।",
       "words": [
         {
           "id": 57766,
@@ -4040,6 +4172,8 @@
     {
       "surah": 55,
       "ayah": 67,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 58087,
@@ -4096,6 +4230,8 @@
     {
       "surah": 55,
       "ayah": 68,
+      "transliteration": "fīhimā fākihatun wanakhlun warummānun",
+      "translation_bn": "তাতে আছে ফলমূল, আর খেজুর আর ডালিম,",
       "words": [
         {
           "id": 58642,
@@ -4152,6 +4288,8 @@
     {
       "surah": 55,
       "ayah": 69,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 59039,
@@ -4208,6 +4346,8 @@
     {
       "surah": 55,
       "ayah": 70,
+      "transliteration": "fīhinna khayrātun ḥisānun",
+      "translation_bn": "তাতে আছে উত্তম স্বভাব চরিত্রের সুন্দরী (কুমারী)রা।",
       "words": [
         {
           "id": 59465,
@@ -4254,6 +4394,8 @@
     {
       "surah": 55,
       "ayah": 71,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 60058,
@@ -4310,6 +4452,8 @@
     {
       "surah": 55,
       "ayah": 72,
+      "transliteration": "ḥūrun maqṣūrātun fī l-khiyāmi",
+      "translation_bn": "(সুসজ্জিত) প্যাভিলিয়নে সুরক্ষিত থাকবে সুলোচনা সুন্দরীরা।",
       "words": [
         {
           "id": 60462,
@@ -4366,6 +4510,8 @@
     {
       "surah": 55,
       "ayah": 73,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 61062,
@@ -4422,6 +4568,8 @@
     {
       "surah": 55,
       "ayah": 74,
+      "transliteration": "lam yaṭmith'hunna insun qablahum walā jānnun",
+      "translation_bn": "পূর্বে যাদেরকে স্পর্শ কোন মানুষেও করেনি, কোন জ্বিনেও করেনি।",
       "words": [
         {
           "id": 61472,
@@ -4498,6 +4646,8 @@
     {
       "surah": 55,
       "ayah": 75,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 61984,
@@ -4554,6 +4704,8 @@
     {
       "surah": 55,
       "ayah": 76,
+      "transliteration": "muttakiīna ʿalā rafrafin khuḍ'rin waʿabqariyyin ḥisānin",
+      "translation_bn": "তারা হেলান দিবে সবুজ তাকীয়াহ্ আর সুন্দর সুসজ্জিত গালিচার উপরে,",
       "words": [
         {
           "id": 62450,
@@ -4630,6 +4782,8 @@
     {
       "surah": 55,
       "ayah": 77,
+      "transliteration": "fabi-ayyi ālāi rabbikumā tukadhibāni",
+      "translation_bn": "অতএব (হে জ্বিন ও মানুষ!) তোমরা তোমাদের প্রতিপালকের কোন্ কোন্ নি‘মাতকে অস্বীকার করবে?",
       "words": [
         {
           "id": 62938,
@@ -4686,6 +4840,8 @@
     {
       "surah": 55,
       "ayah": 78,
+      "transliteration": "tabāraka us'mu rabbika dhī l-jalāli wal-ik'rāmi",
+      "translation_bn": "মাহাত্ম্য ও সম্মানের অধিকারী তোমার প্রতিপালকের নাম বড়ই কল্যাণময়।",
       "words": [
         {
           "id": 63260,
