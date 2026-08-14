@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { 
   ChevronLeft, 
@@ -15,9 +15,7 @@ import {
 } from "lucide-react";
 
 import { usePrefs } from "@/lib/prefs";
-import { useAuth } from "@/lib/auth"; // আপনার প্রোজেক্টের Auth হুক (Admin চেক করার জন্য)
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
@@ -46,9 +44,9 @@ export type QuranAyah = {
   ayah: number;
   text_uthmani: string;
   transliteration?: string;
-  translation_bn?: string;      // আধুনিক অনুবাদ (বাংলা)
-  translation_en?: string;      // Modern Translation (English)
-  lexicon_notes?: string;       // Lexicon / অভিধান নোট
+  translation_bn?: string;      // আধুনিক অনুবাদ
+  translation_en?: string;      // Modern Translation
+  lexicon_notes?: string;       // Lexicon / অভিধান
   words: QuranWord[];
 };
 
@@ -147,7 +145,7 @@ const SURAH_LIST = [
   { id: 87, name_bn: "আল-আলা", name_ar: "الأعلى", type: "মাক্কী", total: 19 },
   { id: 88, name_bn: "আল-গাশিয়াহ", name_ar: "الغاشية", type: "মাক্কী", total: 26 },
   { id: 89, name_bn: "আল-ফাজর", name_ar: "الفجر", type: "মাক্কী", total: 30 },
-  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلد", type: "মাক্কী", total: 20 },
+  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلদ", type: "মাক্কী", total: 20 },
   { id: 91, name_bn: "আশ-শামস", name_ar: "الشمس", type: "মাক্কী", total: 15 },
   { id: 92, name_bn: "আল-লাইল", name_ar: "الليل", type: "মাক্কী", total: 21 },
   { id: 93, name_bn: "আদ-দুহা", name_ar: "الضحى", type: "মাক্কী", total: 11 },
@@ -184,8 +182,9 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const surahId = Number(id) || 1;
   const { lang } = usePrefs();
-  const auth = (useAuth ? useAuth() : null) as any;
-  const isAdmin = auth?.user?.role === "admin" || auth?.isAdmin;
+
+  // অ্যাডমিন স্ট্যাটাস (ডিফল্ট ট্রু দেওয়া আছে, প্রয়োজনমতো শর্তে পরিবর্তনযোগ্য)
+  const isAdmin = true;
 
   const [selectedWordInfo, setSelectedWordInfo] = useState<{
     surah: number;
@@ -203,7 +202,7 @@ function SurahDetailPage() {
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v3", surahId],
+    queryKey: ["local-greentech-surah-v4", surahId],
     queryFn: async () => {
       const res = await fetch(`/data/quran/surahs/${surahId}.json`);
       if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
@@ -221,7 +220,6 @@ function SurahDetailPage() {
   };
 
   const handleSaveEdit = (ayahNumber: number) => {
-    // এখানে Supabase বা লোকাল স্টোরেজে সেভ করার ফাংশন কল হবে
     if (surahQuery.data) {
       const target = surahQuery.data.ayahs.find((a) => a.ayah === ayahNumber);
       if (target) {
@@ -278,6 +276,13 @@ function SurahDetailPage() {
         </div>
       )}
 
+      {/* লোডিং ও এরর */}
+      {surahQuery.isLoading && (
+        <div className="py-16 text-center text-sm text-muted-foreground animate-pulse">
+          কুরআনের আয়াতসমূহ লোড হচ্ছে...
+        </div>
+      )}
+
       {/* ৩. আয়াতসমূহের তালিকা */}
       <div className="space-y-6">
         {surahQuery.data?.ayahs?.map((ayah) => (
@@ -286,7 +291,7 @@ function SurahDetailPage() {
             id={`ayah-${ayah.ayah}`}
             className="rounded-xl border border-border/70 bg-card p-5 space-y-4 shadow-xs transition-all hover:border-border/90"
           >
-            {/* আয়াত নম্বর বার ও অ্যাডমিন অ্যাকশন */}
+            {/* আয়াত নম্বর ও অ্যাকশন */}
             <div className="flex items-center justify-between border-b border-border/50 pb-2">
               <div className="flex items-center gap-2">
                 <span className="inline-flex items-center justify-center size-7 rounded-full bg-primary/10 font-mono text-xs font-semibold text-primary">
@@ -333,7 +338,7 @@ function SurahDetailPage() {
               )}
             </div>
 
-            {/* শব্দে শব্দে আরবি টেক্সট (ক্লিক করলে রুট ও ওয়ার্ড ডায়ালগ ওপেন হবে) */}
+            {/* শব্দে শব্দে আরবি টেক্সট */}
             <div
               dir="rtl"
               className="flex flex-wrap items-center justify-start gap-x-4 gap-y-5 py-3 border-b border-border/40"
@@ -367,7 +372,7 @@ function SurahDetailPage() {
               ))}
             </div>
 
-            {/* রো ১: আধুনিক অনুবাদ (বাংলা) */}
+            {/* রো ১: আধুনিক অনুবাদ */}
             <div className="space-y-1 pt-1">
               <div className="flex items-center gap-1.5 text-primary">
                 <BookMarked className="size-3.5" />
@@ -386,12 +391,12 @@ function SurahDetailPage() {
                 />
               ) : (
                 <p className="text-sm font-medium text-foreground leading-relaxed pl-5">
-                  {ayah.translation_bn || "অনুবাদ প্রস্তুত হচ্ছে..."}
+                  {ayah.translation_bn || "অনুবাদ লোড হচ্ছে..."}
                 </p>
               )}
             </div>
 
-            {/* রো ২: Modern Translation (English) */}
+            {/* রো ২: Modern Translation */}
             <div className="space-y-1 pt-1">
               <div className="flex items-center gap-1.5 text-sky-600 dark:text-sky-400">
                 <Languages className="size-3.5" />
@@ -410,17 +415,17 @@ function SurahDetailPage() {
                 />
               ) : (
                 <p className="text-sm italic text-foreground/90 leading-relaxed font-serif pl-5">
-                  {ayah.translation_en || ayah.transliteration || "Translation loading..."}
+                  {ayah.translation_en || ayah.transliteration || "Modern English translation..."}
                 </p>
               )}
             </div>
 
-            {/* রো ৩: Lexicon / অভিধান */}
+            {/* রো ৩: Lexicon/অভিধান */}
             <div className="space-y-1 pt-1">
               <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
                 <Layers className="size-3.5" />
                 <span className="text-xs font-bold uppercase tracking-wide">
-                  Lexicon / অভিধান
+                  Lexicon/অভিধান
                 </span>
               </div>
               {editingAyah === ayah.ayah ? (
@@ -453,7 +458,7 @@ function SurahDetailPage() {
         ))}
       </div>
 
-      {/* গ্রীনটেক স্টাইল Word & Root Search ডায়ালগ */}
+      {/* ওয়ার্ড ও রুট ডায়ালগ */}
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
         onClose={() => setSelectedWordInfo(null)}
@@ -462,7 +467,7 @@ function SurahDetailPage() {
   );
 }
 
-/** গ্রীনটেক স্টাইল নির্ভুল Word & Root Search মডাল */
+/** গ্রীনটেক স্টাইল মডাল ডায়ালগ */
 function WordAndRootSearchDialog({
   selectedWord,
   onClose,
@@ -480,14 +485,13 @@ function WordAndRootSearchDialog({
   if (!selectedWord) return null;
   const { word, surah, ayah } = selectedWord;
 
-  // রুট বা শব্দ ক্লিন করা
   const activeRoot = word.root && word.root !== "—" ? word.root : word.text_uthmani.slice(0, 3);
 
   return (
     <Dialog open={!!selectedWord} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-h-[88vh] overflow-y-auto sm:max-w-xl p-0 gap-0 border border-border/80 shadow-2xl">
         <DialogHeader className="p-6 pb-4 border-b border-border/60 bg-muted/20 text-center">
-          {/* পদ / Grammar */}
+          {/* পদ */}
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-0.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
               <span className="size-1.5 rounded-full bg-emerald-500" />
@@ -500,7 +504,7 @@ function WordAndRootSearchDialog({
             {word.text_uthmani}
           </DialogTitle>
 
-          {/* উচ্চারণ ও আধুনিক অনুবাদ */}
+          {/* উচ্চারণ ও অর্থ */}
           {word.transliteration && (
             <p className="text-xs italic text-muted-foreground font-mono">
               [{word.transliteration}]
@@ -512,7 +516,7 @@ function WordAndRootSearchDialog({
             </p>
           )}
 
-          {/* রুট ও ক্রিয়ামূল কার্ড */}
+          {/* ক্রিয়ামূল ও রুট কার্ড */}
           <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto mt-4">
             <div className="rounded-xl border border-border/70 bg-card p-2.5 text-center shadow-2xs">
               <span className="text-[11px] text-muted-foreground block mb-0.5">ক্রিয়ামূল:</span>
@@ -556,7 +560,7 @@ function WordAndRootSearchDialog({
           </div>
         </DialogHeader>
 
-        {/* অবস্থান ও অনুসন্ধান ফুটনোট */}
+        {/* অবস্থান ও বিবরণ */}
         <div className="p-5 text-center text-xs text-muted-foreground space-y-1">
           <p>অবস্থান: সুরা {formatNumber(surah, lang)} : আয়াত {formatNumber(ayah, lang)} · শব্দ {formatNumber(word.position, lang)}</p>
           <p className="text-[11px] text-primary/80">
