@@ -43,7 +43,7 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-search-v3", rawWord, normalized, lang],
+    queryKey: ["word-search-full-v4", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       // Step 1: Try local Supabase database search
@@ -54,7 +54,7 @@ export function WordSearchDialog({
           .ilike("text_uthmani", `%${normalized}%`)
           .order("surah")
           .order("ayah")
-          .limit(50);
+          .limit(40);
 
         if (!error && data && data.length > 0) {
           return data.map((v) => ({
@@ -68,14 +68,12 @@ export function WordSearchDialog({
         console.warn("Supabase local search fallback to Quran API", e);
       }
 
-      // Step 2: Fallback to Quran.com Official API v4 with transliteration & translation
+      // Step 2: Fallback to Quran.com Official API v4 (fetches verse text + translation + transliteration)
       const searchTarget = normalized || rawWord;
-      const transResource = lang === "bn" ? "163" : "131"; // 163: Bengali, 131: Sahih International
-
       const response = await fetch(
         `https://api.quran.com/api/v4/search?q=${encodeURIComponent(
           searchTarget
-        )}&size=50&language=${lang === "bn" ? "bn" : "en"}`
+        )}&size=40&language=${lang === "bn" ? "bn" : "en"}`
       );
 
       if (!response.ok) {
@@ -85,11 +83,8 @@ export function WordSearchDialog({
       const resData = await response.json();
       const hits = resData?.search?.results || [];
 
-      // Fetch additional transliteration details if needed
-      const parsedResults: VerseResult[] = hits.map((hit: any) => {
+      return hits.map((hit: any) => {
         const [s, a] = hit.verse_key.split(":").map(Number);
-        
-        // Extract transliteration from words if available in hit
         const words = hit.words || [];
         const transliterationStr = words
           .map((w: any) => w.transliteration?.text)
@@ -106,66 +101,88 @@ export function WordSearchDialog({
             : "",
         };
       });
-
-      return parsedResults;
     },
   });
 
   return (
     <Dialog open={!!word} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-h-[80vh] overflow-y-auto sm:max-w-2xl">
+      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-3">
-            <span className="arabic text-2xl text-primary">{word}</span>
+            <span className="arabic text-3xl text-primary">{word}</span>
             <span className="text-sm font-normal text-muted-foreground">{t("wordSearch")}</span>
           </DialogTitle>
           <DialogDescription>
-            {t("wordSearchHint")} · {t("searchInDb")}
+            এই শব্দ বা মূল অক্ষর সম্বলিত আয়াতগুলো এবং তাদের উচ্চারণ ও অর্থ নিচে দেখানো হলো:
           </DialogDescription>
         </DialogHeader>
 
-        {results.isLoading && <p className="py-4 text-center text-sm text-muted-foreground">{t("loading")}</p>}
-        {results.isError && <p className="py-4 text-center text-sm text-destructive">{t("error")}</p>}
-        {results.data && results.data.length === 0 && (
-          <p className="py-4 text-center text-sm text-muted-foreground">{t("noWordResults")}</p>
+        {results.isLoading && (
+          <div className="py-8 text-center text-sm text-muted-foreground">
+            আয়াত ও অর্থ লোড হচ্ছে...
+          </div>
         )}
 
-        <ul className="divide-y divide-border">
+        {results.isError && (
+          <div className="py-8 text-center text-sm text-destructive">
+            {t("error")}
+          </div>
+        )}
+
+        {results.data && results.data.length === 0 && (
+          <div className="py-8 text-center text-sm text-muted-foreground">
+            {t("noWordResults")}
+          </div>
+        )}
+
+        <div className="space-y-4 mt-2">
           {results.data?.map((v) => (
-            <li key={`${v.surah}:${v.ayah}`} className="py-4 space-y-2">
-              <div className="flex items-center justify-between">
+            <div
+              key={`${v.surah}:${v.ayah}`}
+              className="rounded-lg border border-border/80 bg-card p-4 space-y-3 shadow-xs"
+            >
+              {/* হেডলাইন: সুরা ও আয়াত নম্বর উইথ লিঙ্ক */}
+              <div className="flex items-center justify-between border-b border-border/50 pb-2">
+                <span className="text-xs font-medium text-muted-foreground">
+                  {lang === "bn" ? "আয়াত নম্বর:" : "Verse:"}
+                </span>
                 <Link
                   to="/surah/$id"
                   params={{ id: String(v.surah) }}
                   hash={`ayah-${v.ayah}`}
                   onClick={onClose}
-                  className="rounded bg-accent/60 px-2.5 py-1 text-xs font-semibold text-primary hover:underline"
+                  className="inline-flex items-center gap-1 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
                 >
                   সুরা {localNumber(v.surah, lang)} : আয়াত {localNumber(v.ayah, lang)} ➔
                 </Link>
               </div>
 
-              {/* আরবি টেক্সট */}
-              <p className="arabic text-right text-2xl leading-loose text-foreground">
+              {/* ১. আরবি পাঠ */}
+              <p className="arabic text-right text-2xl leading-relaxed text-foreground">
                 {v.text_uthmani}
               </p>
 
-              {/* উচ্চারণ (Transliteration) */}
+              {/* ২. উচ্চারণ (Transliteration) */}
               {v.transliteration && (
-                <p className="text-xs italic text-muted-foreground/80 leading-relaxed">
-                  উচ্চারণ: {v.transliteration}
+                <p className="text-xs italic text-muted-foreground leading-normal bg-muted/30 p-2 rounded">
+                  <span className="font-semibold non-italic">উচ্চারণ:</span> {v.transliteration}
                 </p>
               )}
 
-              {/* অনুবাদ/অর্থ (Translation) */}
+              {/* ৩. অর্থ/অনুবাদ (Translation) */}
               {v.translation && (
-                <p className="text-sm text-foreground/90 leading-relaxed border-l-2 border-primary/40 pl-3">
-                  {v.translation}
-                </p>
+                <div className="border-l-3 border-primary/60 pl-3 pt-1">
+                  <p className="text-xs font-semibold text-primary/80 uppercase tracking-wide mb-0.5">
+                    {lang === "bn" ? "অনুবাদ:" : "Translation:"}
+                  </p>
+                  <p className="text-sm text-foreground/90 leading-relaxed">
+                    {v.translation}
+                  </p>
+                </div>
               )}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </DialogContent>
     </Dialog>
   );
