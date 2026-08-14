@@ -27,6 +27,7 @@ type VerseResult = {
   surah: number;
   ayah: number;
   text_uthmani: string;
+  transliteration?: string;
   translation?: string;
 };
 
@@ -42,7 +43,7 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-search-v2", rawWord, normalized, lang],
+    queryKey: ["word-search-v3", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       // Step 1: Try local Supabase database search
@@ -67,8 +68,10 @@ export function WordSearchDialog({
         console.warn("Supabase local search fallback to Quran API", e);
       }
 
-      // Step 2: Fallback to Quran.com Official API v4 if local DB has no records
+      // Step 2: Fallback to Quran.com Official API v4 with transliteration & translation
       const searchTarget = normalized || rawWord;
+      const transResource = lang === "bn" ? "163" : "131"; // 163: Bengali, 131: Sahih International
+
       const response = await fetch(
         `https://api.quran.com/api/v4/search?q=${encodeURIComponent(
           searchTarget
@@ -82,17 +85,29 @@ export function WordSearchDialog({
       const resData = await response.json();
       const hits = resData?.search?.results || [];
 
-      return hits.map((hit: any) => {
+      // Fetch additional transliteration details if needed
+      const parsedResults: VerseResult[] = hits.map((hit: any) => {
         const [s, a] = hit.verse_key.split(":").map(Number);
+        
+        // Extract transliteration from words if available in hit
+        const words = hit.words || [];
+        const transliterationStr = words
+          .map((w: any) => w.transliteration?.text)
+          .filter(Boolean)
+          .join(" ");
+
         return {
           surah: s,
           ayah: a,
           text_uthmani: hit.text,
+          transliteration: transliterationStr || undefined,
           translation: hit.translations?.[0]?.text
             ? hit.translations[0].text.replace(/<[^>]*>?/gm, "")
             : "",
         };
       });
+
+      return parsedResults;
     },
   });
 
@@ -117,19 +132,36 @@ export function WordSearchDialog({
 
         <ul className="divide-y divide-border">
           {results.data?.map((v) => (
-            <li key={`${v.surah}:${v.ayah}`} className="py-3">
-              <Link
-                to="/surah/$id"
-                params={{ id: String(v.surah) }}
-                hash={`ayah-${v.ayah}`}
-                onClick={onClose}
-                className="text-xs font-semibold text-primary hover:underline"
-              >
-                {localNumber(v.surah, lang)}:{localNumber(v.ayah, lang)}
-              </Link>
-              <p className="arabic mt-1 text-right text-xl leading-loose">{v.text_uthmani}</p>
+            <li key={`${v.surah}:${v.ayah}`} className="py-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <Link
+                  to="/surah/$id"
+                  params={{ id: String(v.surah) }}
+                  hash={`ayah-${v.ayah}`}
+                  onClick={onClose}
+                  className="rounded bg-accent/60 px-2.5 py-1 text-xs font-semibold text-primary hover:underline"
+                >
+                  সুরা {localNumber(v.surah, lang)} : আয়াত {localNumber(v.ayah, lang)} ➔
+                </Link>
+              </div>
+
+              {/* আরবি টেক্সট */}
+              <p className="arabic text-right text-2xl leading-loose text-foreground">
+                {v.text_uthmani}
+              </p>
+
+              {/* উচ্চারণ (Transliteration) */}
+              {v.transliteration && (
+                <p className="text-xs italic text-muted-foreground/80 leading-relaxed">
+                  উচ্চারণ: {v.transliteration}
+                </p>
+              )}
+
+              {/* অনুবাদ/অর্থ (Translation) */}
               {v.translation && (
-                <p className="mt-1 text-sm text-muted-foreground">{v.translation}</p>
+                <p className="text-sm text-foreground/90 leading-relaxed border-l-2 border-primary/40 pl-3">
+                  {v.translation}
+                </p>
               )}
             </li>
           ))}
