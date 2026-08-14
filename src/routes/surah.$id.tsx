@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -29,7 +29,16 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+type SurahSearchParams = {
+  ayah?: number;
+};
+
 export const Route = createFileRoute("/surah/$id")({
+  validateSearch: (search: Record<string, unknown>): SurahSearchParams => {
+    return {
+      ayah: search.ayah ? Number(search.ayah) : undefined,
+    };
+  },
   component: SurahDetailPage,
 });
 
@@ -122,10 +131,10 @@ const SURAH_LIST = [
   { id: 57, name_bn: "আল-হাদিদ", name_ar: "الحديد", type: "মাদানী", total: 29 },
   { id: 58, name_bn: "আল-মুজাদালাহ", name_ar: "المجادلة", type: "মাদানী", total: 22 },
   { id: 59, name_bn: "আল-হাশর", name_ar: "الحشر", type: "মাদানী", total: 24 },
-  { id: 60, name_bn: "আল-মুমতাহানাহ", name_ar: "المমتحنة", type: "মাদানী", total: 13 },
+  { id: 60, name_bn: "আল-মুমতাহানাহ", name_ar: "الممتحنة", type: "মাদানী", total: 13 },
   { id: 61, name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
   { id: 62, name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
-  { id: 63, name_bn: "আল-মুনাফিকুন", name_ar: "المনাفقون", type: "মাদানী", total: 11 },
+  { id: 63, name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
   { id: 64, name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
   { id: 65, name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
   { id: 66, name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
@@ -141,9 +150,9 @@ const SURAH_LIST = [
   { id: 76, name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   { id: 77, name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   { id: 78, name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "الনাজعات", type: "মাক্কী", total: 46 },
+  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
   { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
-  { id: 81, name_bn: "আত-তাকভীর", name_ar: "التکویر", type: "মাক্কী", total: 29 },
+  { id: 81, name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
   { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
   { id: 83, name_bn: "আল-মুতাফফিফিন", name_ar: "المطففين", type: "মাক্কী", total: 36 },
   { id: 84, name_bn: "আল-ইনশিকাক", name_ar: "الانشقاق", type: "মাক্কী", total: 25 },
@@ -152,7 +161,7 @@ const SURAH_LIST = [
   { id: 87, name_bn: "আল-আলা", name_ar: "الأعلى", type: "মাক্কী", total: 19 },
   { id: 88, name_bn: "আল-গাশিয়াহ", name_ar: "الغاشية", type: "মাক্কী", total: 26 },
   { id: 89, name_bn: "আল-ফাজর", name_ar: "الفجر", type: "মাক্কী", total: 30 },
-  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلদ", type: "মাক্কী", total: 20 },
+  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلد", type: "মাক্কী", total: 20 },
   { id: 91, name_bn: "আশ-শামস", name_ar: "الشمس", type: "মাক্কী", total: 15 },
   { id: 92, name_bn: "আল-লাইল", name_ar: "الليل", type: "মাক্কী", total: 21 },
   { id: 93, name_bn: "আদ-দুহা", name_ar: "الضحى", type: "মাক্কী", total: 11 },
@@ -167,8 +176,8 @@ const SURAH_LIST = [
   { id: 102, name_bn: "আত-তাকাসুর", name_ar: "التكاثر", type: "মাক্কী", total: 8 },
   { id: 103, name_bn: "আল-আসর", name_ar: "العصر", type: "মাক্কী", total: 3 },
   { id: 104, name_bn: "আল-হুমাযাহ", name_ar: "الهمزة", type: "মাক্কী", total: 9 },
-  { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
-  { id: 106, name_bn: "কুরাইশ", name_ar: "قريশ", type: "মাক্কী", total: 4 },
+  { id: 105, name_bn: "আল-ফীল", name_ar: "الفিল", type: "মাক্কী", total: 5 },
+  { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
   { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
   { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
@@ -195,29 +204,27 @@ function formatNumber(num: number | string, lang: string) {
 
 function SurahDetailPage() {
   const { id } = Route.useParams();
+  const search = Route.useSearch();
   const surahId = Number(id) || 1;
   const { prefs, lang } = (usePrefs ? usePrefs() : {}) as any;
   const navigate = useNavigate();
 
   const isAdmin = true;
 
-  // ফন্ট সাইজ স্টেট
   const [arabicFontSize, setArabicFontSize] = useState<number>(28);
   const [translationFontSize, setTranslationFontSize] = useState<number>(15);
-
-  // ব্যাক টু টপ বাটন ভিজিবিলিটি স্টেট
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 350) {
         setShowBackToTop(true);
       } else {
         setShowBackToTop(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -236,7 +243,6 @@ function SurahDetailPage() {
   }, [prefs]);
 
   const [searchJumpText, setSearchJumpText] = useState("");
-  const [targetScrollAyah, setTargetScrollAyah] = useState<number | null>(null);
 
   const [selectedWordInfo, setSelectedWordInfo] = useState<{
     surah: number;
@@ -254,7 +260,7 @@ function SurahDetailPage() {
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v18", surahId],
+    queryKey: ["local-greentech-surah-v23", surahId],
     queryFn: async () => {
       const res = await fetch(`/data/quran/surahs/${surahId}.json`);
       if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
@@ -262,12 +268,13 @@ function SurahDetailPage() {
     },
   });
 
+  // নির্ভুল ও স্মুথ স্ক্রোল ফাংশন
   const scrollToAyah = (ayahNum: number) => {
     let attempts = 0;
     const interval = setInterval(() => {
       const el = document.getElementById(`ayah-${ayahNum}`);
       if (el) {
-        const headerOffset = 130;
+        const headerOffset = 100;
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -276,19 +283,24 @@ function SurahDetailPage() {
           behavior: "smooth"
         });
 
+        el.classList.add("ring-2", "ring-primary/40");
+        setTimeout(() => {
+          el.classList.remove("ring-2", "ring-primary/40");
+        }, 2000);
+
         clearInterval(interval);
       }
       attempts++;
-      if (attempts > 20) clearInterval(interval);
-    }, 100);
+      if (attempts > 30) clearInterval(interval);
+    }, 80);
   };
 
+  // 🚀 হোম পেজ থেকে আসা সার্চ প্যারামিটার (?ayah=...) ট্র্যাক করা
   useEffect(() => {
-    if (targetScrollAyah && surahQuery.isSuccess) {
-      scrollToAyah(targetScrollAyah);
-      setTargetScrollAyah(null);
+    if (surahQuery.isSuccess && search.ayah) {
+      scrollToAyah(Number(search.ayah));
     }
-  }, [targetScrollAyah, surahQuery.isSuccess]);
+  }, [surahQuery.isSuccess, search.ayah, surahId]);
 
   const handleJumpSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -306,8 +318,11 @@ function SurahDetailPage() {
         if (targetSurah === surahId) {
           scrollToAyah(targetAyah);
         } else {
-          setTargetScrollAyah(targetAyah);
-          navigate({ to: "/surah/$id", params: { id: String(targetSurah) } });
+          navigate({
+            to: "/surah/$id",
+            params: { id: String(targetSurah) },
+            search: { ayah: targetAyah },
+          });
         }
       }
       setSearchJumpText("");
@@ -353,10 +368,10 @@ function SurahDetailPage() {
   const showLexicon = prefs ? prefs.showLexicon !== false : true;
 
   return (
-    <div className="relative mx-auto w-full max-w-4xl px-4 py-4 space-y-6">
+    <div className="mx-auto w-full max-w-4xl px-4 py-4 space-y-6">
       
       {/* ফ্লোটিং হেডার */}
-      <div className="sticky top-14 sm:top-16 z-30 bg-card/90 backdrop-blur-md border border-border/70 rounded-2xl px-4 py-2.5 shadow-sm transition-all">
+      <div className="sticky top-4 z-30 bg-card/90 backdrop-blur-md border border-border/70 rounded-2xl px-4 py-2.5 shadow-sm transition-all">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center size-6 rounded-md bg-muted font-bold text-xs text-foreground font-mono shrink-0">
@@ -389,7 +404,7 @@ function SurahDetailPage() {
             />
             <button
               type="submit"
-              className="rounded bg-background px-1.5 py-0.5 text-[10px] font-medium text-foreground hover:bg-muted transition-colors border border-border/50"
+              className="rounded bg-background px-1.5 py-0.5 text-[10px] font-medium text-foreground hover:bg-muted transition-colors border border-border/50 cursor-pointer"
             >
               যান
             </button>
@@ -441,7 +456,7 @@ function SurahDetailPage() {
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className="scroll-mt-32 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
+              className="scroll-mt-28 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
             >
               {/* হেডার ও এডিট বাটন */}
               <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
@@ -550,10 +565,10 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [৩] অনুবাদের ৪টি পৃথক সারি (সেটিংস স্টাইল কার্ড) */}
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-3 pt-0.5">
                 
-                {/* সারি ১: প্রচলিত অনুবাদ (বাংলা) */}
+                {/* সারি ১: প্রচলিত অনুবাদ */}
                 {showConventionalBn && (
                   <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
                     <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -569,7 +584,7 @@ function SurahDetailPage() {
                   </div>
                 )}
 
-                {/* সারি ২: Conventional Translation (English) */}
+                {/* সারি ২: Conventional Translation */}
                 {showConventionalEn && (
                   <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
                     <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -585,7 +600,7 @@ function SurahDetailPage() {
                   </div>
                 )}
 
-                {/* সারি ৩: আধুনিক অনুবাদ (বাংলা) */}
+                {/* সারি ৩: আধুনিক অনুবাদ */}
                 {(isEditing || (showModernBn && hasModernBnData)) && (
                   <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
                     <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
@@ -613,7 +628,7 @@ function SurahDetailPage() {
                   </div>
                 )}
 
-                {/* সারি ৪: Modern Translation (English) */}
+                {/* সারি ৪: Modern Translation */}
                 {(isEditing || (showModernEn && hasModernEnData)) && (
                   <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
                     <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
@@ -700,20 +715,20 @@ function SurahDetailPage() {
         })}
       </div>
 
-      {/* 🚀 স্ক্রিনশটের মতো Transparent Squircle Back to Top Floating Button */}
+      {/* ব্যাক টু টপ বাটন */}
       {showBackToTop && (
         <button
           type="button"
           onClick={scrollToTop}
           title="শীর্ষে যান"
-          className="fixed bottom-6 right-6 z-40 flex size-11 items-center justify-center rounded-2xl border border-border/80 bg-card/65 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:bg-card/90 hover:border-foreground/30 active:scale-95"
+          aria-label="Back to top"
+          className="fixed bottom-6 right-6 z-40 flex size-11 items-center justify-center rounded-2xl border border-border/80 bg-card/65 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:bg-card/90 hover:border-foreground/30 active:scale-95 cursor-pointer"
         >
-          {/* স্ক্রিনশটের মতোই সুন্দর পেপার প্লেন/ন্যাভিগেশন তীর আইকন */}
           <Navigation className="size-5 text-foreground/90 -rotate-45" />
         </button>
       )}
 
-      {/* ওয়ার্ড ও রুট ডায়ালগ */}
+      {/* ডায়ালগ */}
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
         onClose={() => setSelectedWordInfo(null)}
@@ -722,7 +737,6 @@ function SurahDetailPage() {
   );
 }
 
-/** গ্রীনটেক স্টাইল Word & Root Search ডায়ালগ */
 function WordAndRootSearchDialog({
   selectedWord,
   onClose,
@@ -788,7 +802,7 @@ function WordAndRootSearchDialog({
             <button
               type="button"
               onClick={() => setSearchType("word")}
-              className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${
+              className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                 searchType === "word"
                   ? "bg-background text-foreground shadow-xs font-semibold"
                   : "text-muted-foreground hover:text-foreground"
@@ -799,7 +813,7 @@ function WordAndRootSearchDialog({
             <button
               type="button"
               onClick={() => setSearchType("root")}
-              className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${
+              className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                 searchType === "root"
                   ? "bg-background text-primary shadow-xs font-semibold"
                   : "text-muted-foreground hover:text-foreground"

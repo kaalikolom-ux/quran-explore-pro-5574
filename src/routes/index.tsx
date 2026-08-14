@@ -61,7 +61,6 @@ function HomePage() {
     return bnToEnDigits(term.trim().toLowerCase());
   }, [term]);
 
-  // আয়াত নম্বর থাকলে তা আলাদা করে নেওয়া (যেমন: ২৫:২০ -> ২০)
   const parsedAyahTarget = useMemo(() => {
     const match = normalizedTerm.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
     if (match) {
@@ -99,36 +98,39 @@ function HomePage() {
     e.preventDefault();
     if (!normalizedTerm) return;
 
-    // ১. সুরা ও আয়াত প্যাটার্ন (২৫/২০, ২৫:২০, 25:20)
     if (parsedAyahTarget) {
       const { surah, ayah } = parsedAyahTarget;
       if (surah >= 1 && surah <= 114) {
-        if (typeof window !== "undefined") {
-          sessionStorage.setItem("target_scroll_ayah", String(ayah));
-        }
-        window.location.href = `/surah/${surah}?ayah=${ayah}#ayah-${ayah}`;
+        navigate({
+          to: "/surah/$id",
+          params: { id: String(surah) },
+          search: { ayah: Number(ayah) },
+        });
         return;
       }
     }
 
-    // ২. শুধুমাত্র সুরা নম্বর (১-১১৪)
     if (/^\d+$/.test(normalizedTerm)) {
       const sNum = Number(normalizedTerm);
       if (sNum >= 1 && sNum <= 114) {
-        window.location.href = `/surah/${sNum}`;
+        navigate({
+          to: "/surah/$id",
+          params: { id: String(sNum) },
+        });
         return;
       }
     }
 
-    // ৩. সুরা নাম ফিল্টারের ১ম ফলাফল
     if (filtered.length > 0) {
-      window.location.href = `/surah/${filtered[0].id}`;
+      navigate({
+        to: "/surah/$id",
+        params: { id: String(filtered[0].id) },
+      });
     }
   };
 
   return (
     <div>
-      {/* হিরো সেকশন */}
       <section className="hero-surface relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-primary/10 blur-3xl" />
@@ -216,7 +218,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* সুরা তালিকা সেকশন */}
+      {/* সুরা তালিকা */}
       <section className="mx-auto w-full max-w-6xl px-4 py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -225,7 +227,6 @@ function HomePage() {
             </h2>
 
             <div className="w-full max-w-sm space-y-1.5">
-              {/* সার্চ ফর্ম + সক্রিয় "যান" বাটন */}
               <form
                 onSubmit={handleSearchSubmit}
                 className="relative flex items-center rounded-xl border border-border/80 bg-card/70 px-3 py-1.5 shadow-xs focus-within:border-foreground/40 transition-all"
@@ -262,21 +263,14 @@ function HomePage() {
           ) : (
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((c) => {
-                const targetAyah = parsedAyahTarget && parsedAyahTarget.surah === c.id ? parsedAyahTarget.ayah : null;
+                const targetAyah = parsedAyahTarget && parsedAyahTarget.surah === c.id ? parsedAyahTarget.ayah : undefined;
 
                 return (
-                  <div
+                  <Link
                     key={c.id}
-                    onClick={() => {
-                      if (targetAyah) {
-                        if (typeof window !== "undefined") {
-                          sessionStorage.setItem("target_scroll_ayah", String(targetAyah));
-                        }
-                        window.location.href = `/surah/${c.id}?ayah=${targetAyah}#ayah-${targetAyah}`;
-                      } else {
-                        window.location.href = `/surah/${c.id}`;
-                      }
-                    }}
+                    to="/surah/$id"
+                    params={{ id: String(c.id) }}
+                    search={targetAyah ? { ayah: targetAyah } : undefined}
                     className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer"
                   >
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
@@ -296,7 +290,7 @@ function HomePage() {
                       </span>
                     </span>
                     <span className="arabic text-lg text-primary">{c.name_arabic}</span>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
@@ -347,7 +341,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* নিউজলেটার সেকশন */}
+      {/* নিউজলেটার */}
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
           <h2 className="text-xl font-semibold">{t("newsletter")}</h2>
