@@ -219,7 +219,7 @@ function SurahDetailPage() {
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v11", surahId],
+    queryKey: ["local-greentech-surah-v12", surahId],
     queryFn: async () => {
       const res = await fetch(`/data/quran/surahs/${surahId}.json`);
       if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
@@ -232,7 +232,8 @@ function SurahDetailPage() {
     const interval = setInterval(() => {
       const el = document.getElementById(`ayah-${ayahNum}`);
       if (el) {
-        const headerOffset = 80;
+        // গ্লোবাল ন্যাভবার ও সাব-হেডারের মোট হাইট অফসেট
+        const headerOffset = 130;
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -309,11 +310,13 @@ function SurahDetailPage() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-4xl px-4 pt-16 pb-8 space-y-6">
+    <div className="mx-auto w-full max-w-4xl px-4 py-4 space-y-6">
       
-      {/* ফ্লোটিং হেডার */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60 shadow-xs">
-        <div className="mx-auto max-w-4xl px-4 py-2.5 flex items-center justify-between gap-2">
+      {/* 🚀 গ্লোবাল ন্যাভবারের নিচে ফ্লোট করার জন্য sticky top-14 / top-16 */}
+      <div className="sticky top-14 sm:top-16 z-30 bg-background/90 backdrop-blur-md border border-border/80 rounded-2xl px-4 py-2.5 shadow-sm transition-all">
+        <div className="flex items-center justify-between gap-2">
+          
+          {/* বামে: সুরা টাইটেল */}
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center size-6 rounded-md bg-muted font-bold text-xs text-foreground font-mono shrink-0">
               {formatNumber(meta.id, lang)}
@@ -331,10 +334,10 @@ function SurahDetailPage() {
             </div>
           </div>
 
-          {/* সার্চ জাম্প */}
+          {/* মাঝখানে: সার্চ জাম্প */}
           <form
             onSubmit={handleJumpSubmit}
-            className="flex items-center gap-1 bg-muted/50 border border-border/70 rounded-lg px-2 py-1 focus-within:border-foreground/30 transition-all"
+            className="flex items-center gap-1 bg-muted/60 border border-border/70 rounded-lg px-2 py-1 focus-within:border-foreground/30 transition-all"
           >
             <Search className="size-3 text-muted-foreground shrink-0" />
             <input
@@ -352,7 +355,7 @@ function SurahDetailPage() {
             </button>
           </form>
 
-          {/* নেভিগেশন বাটন */}
+          {/* ডানে: নেভিগেশন */}
           <div className="flex items-center gap-1 shrink-0">
             {surahId > 1 && (
               <Button asChild variant="outline" size="sm" className="h-7 px-2 text-xs">
@@ -370,7 +373,7 @@ function SurahDetailPage() {
             )}
           </div>
         </div>
-      </header>
+      </div>
 
       {/* বিসমিল্লাহ */}
       {surahId !== 9 && surahId !== 1 && (
@@ -395,7 +398,7 @@ function SurahDetailPage() {
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
+              className="scroll-mt-32 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
             >
               {/* হেডার ও এডিট বাটন */}
               <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
@@ -490,7 +493,7 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [৩] অনুবাদের ৪টি পৃথক সারি (সফট ব্যাকগ্রাউন্ড শেডিং সহ) */}
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-2.5 pt-1">
                 
                 {/* সারি ১: প্রচলিত অনুবাদ */}
@@ -515,7 +518,7 @@ function SurahDetailPage() {
                   </p>
                 </div>
 
-                {/* সারি ৩: আধুনিক অনুবাদ (হাইলাইট শেড) */}
+                {/* সারি ৩: আধুনিক অনুবাদ */}
                 <div className="rounded-xl bg-primary/5 p-3 space-y-1 border border-primary/20">
                   <div className="flex items-center gap-1.5 text-[11px] font-semibold text-primary uppercase tracking-wide">
                     <BookMarked className="size-3 text-primary" />
@@ -537,7 +540,7 @@ function SurahDetailPage() {
                   )}
                 </div>
 
-                {/* সারি ৪: Modern Translation (হাইলাইট শেড) */}
+                {/* সারি ৪: Modern Translation */}
                 <div className="rounded-xl bg-primary/5 p-3 space-y-1 border border-primary/20">
                   <div className="flex items-center gap-1.5 text-[11px] font-semibold text-primary uppercase tracking-wide">
                     <BookmarkCheck className="size-3 text-primary" />
@@ -560,14 +563,13 @@ function SurahDetailPage() {
                 </div>
               </div>
 
-              {/* [৪] অভিধান / Lexicon (সমৃদ্ধ চিপস ও এডিটেবল নোট) */}
+              {/* [৪] অভিধান / Lexicon */}
               <div className="rounded-xl bg-muted/25 p-3 space-y-2 border border-border/40">
                 <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">
                   <Layers className="size-3 text-foreground/70" />
                   <span>অভিধান / Lexicon</span>
                 </div>
 
-                {/* শব্দভিত্তিক ব্যাকরণ, অর্থ ও রুট ব্যাজ */}
                 <div className="flex flex-wrap gap-1.5 pl-1">
                   {ayah.words
                     .filter((w) => w.text_uthmani)
@@ -587,7 +589,6 @@ function SurahDetailPage() {
                     ))}
                 </div>
 
-                {/* এডিটেবল আধুনিক লেক্সিকন নোট */}
                 {editingAyah === ayah.ayah ? (
                   <div className="mt-2 pt-2 border-t border-border/40">
                     <label className="text-[11px] font-medium text-muted-foreground block mb-1">
@@ -618,7 +619,7 @@ function SurahDetailPage() {
         })}
       </div>
 
-      {/* গ্রীনটেক স্টাইল Word & Root Search ডায়ালগ */}
+      {/* ওয়ার্ড ও রুট ডায়ালগ */}
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
         onClose={() => setSelectedWordInfo(null)}
