@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -20,7 +20,6 @@ import {
 
 import { usePrefs } from "@/lib/prefs";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
@@ -70,7 +69,7 @@ const SURAH_LIST = [
   { id: 5, name_bn: "আল-মায়িদাহ", name_ar: "المائدة", type: "মাদানী", total: 120 },
   { id: 6, name_bn: "আল-আনআম", name_ar: "الأنعام", type: "মাক্কী", total: 165 },
   { id: 7, name_bn: "আল-আরাফ", name_ar: "الأعراف", type: "মাক্কী", total: 206 },
-  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفাল", type: "মাদানী", total: 75 },
+  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفال", type: "মাদানী", total: 75 },
   { id: 9, name_bn: "আত-তাওবাহ", name_ar: "التوبة", type: "মাদানী", total: 129 },
   { id: 10, name_bn: "ইউনুস", name_ar: "يونس", type: "মাক্কী", total: 109 },
   { id: 11, name_bn: "হুদ", name_ar: "هود", type: "মাক্কী", total: 123 },
@@ -179,7 +178,6 @@ const SURAH_LIST = [
   { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
 ];
 
-// বাংলা সংখ্যাকে ইংরেজিতে রূপান্তর
 function toEnglishNumber(str: string): string {
   const bnToEn: Record<string, string> = {
     "০": "0", "১": "1", "২": "2", "৩": "3", "৪": "4",
@@ -203,6 +201,8 @@ function SurahDetailPage() {
   const isAdmin = true;
 
   const [searchJumpText, setSearchJumpText] = useState("");
+  const [targetScrollAyah, setTargetScrollAyah] = useState<number | null>(null);
+
   const [selectedWordInfo, setSelectedWordInfo] = useState<{
     surah: number;
     ayah: number;
@@ -219,13 +219,44 @@ function SurahDetailPage() {
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v8", surahId],
+    queryKey: ["local-greentech-surah-v9", surahId],
     queryFn: async () => {
       const res = await fetch(`/data/quran/surahs/${surahId}.json`);
       if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
       return res.json();
     },
   });
+
+  // নির্দিষ্ট আয়াতে নিখুঁত স্ক্রোল মেকানিজম
+  const scrollToAyah = (ayahNum: number) => {
+    let attempts = 0;
+    const interval = setInterval(() => {
+      const el = document.getElementById(`ayah-${ayahNum}`);
+      if (el) {
+        // ফ্লোটিং হেডারের জন্য অফসেট স্ক্রোল
+        const headerOffset = 90;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        clearInterval(interval);
+      }
+      attempts++;
+      if (attempts > 20) clearInterval(interval);
+    }, 100);
+  };
+
+  // ডাটা লোড হওয়ার পর টার্গেট আয়াতে স্ক্রোল করা
+  useEffect(() => {
+    if (targetScrollAyah && surahQuery.isSuccess) {
+      scrollToAyah(targetScrollAyah);
+      setTargetScrollAyah(null);
+    }
+  }, [targetScrollAyah, surahQuery.isSuccess]);
 
   // স্মার্ট সার্চ জাম্প লজিক
   const handleJumpSubmit = (e: React.FormEvent) => {
@@ -243,14 +274,10 @@ function SurahDetailPage() {
 
       if (targetSurah >= 1 && targetSurah <= 114) {
         if (targetSurah === surahId) {
-          const el = document.getElementById(`ayah-${targetAyah}`);
-          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          scrollToAyah(targetAyah);
         } else {
+          setTargetScrollAyah(targetAyah);
           navigate({ to: "/surah/$id", params: { id: String(targetSurah) } });
-          setTimeout(() => {
-            const el = document.getElementById(`ayah-${targetAyah}`);
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 400);
         }
       }
       setSearchJumpText("");
@@ -288,53 +315,53 @@ function SurahDetailPage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-4 space-y-6">
+    <div className="relative mx-auto w-full max-w-4xl px-4 pt-20 pb-8 space-y-6">
       
-      {/* ফ্লোটিং ও অর্ধেক হাইটের স্লিম সুরা হেডার বার */}
-      <div className="sticky top-2 z-30 backdrop-blur-md bg-card/90 border border-border/80 rounded-2xl p-3 shadow-lg transition-all">
-        <div className="flex flex-wrap items-center justify-between gap-2">
+      {/* 🚀 ১০০% ফ্লোটিং কমপ্যাক্ট গ্লাস হেডার */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-border/80 shadow-md">
+        <div className="mx-auto max-w-4xl px-4 py-2.5 flex items-center justify-between gap-2">
           
-          {/* বাম পাশে: সুরা টাইটেল ও ব্যাজ */}
+          {/* বাম পাশে: সংক্ষিপ্ত সুরা টাইটেল */}
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center size-7 rounded-lg bg-primary/10 font-bold text-xs text-primary font-mono">
+            <span className="inline-flex items-center justify-center size-7 rounded-lg bg-primary/10 font-bold text-xs text-primary font-mono shrink-0">
               {formatNumber(meta.id, lang)}
             </span>
-            <div>
-              <h1 className="text-base sm:text-lg font-bold text-foreground leading-tight flex items-center gap-1.5">
+            <div className="leading-tight">
+              <h1 className="text-sm sm:text-base font-bold text-foreground flex items-center gap-1">
                 {meta.name_bn}
-                <span className="arabic text-sm text-muted-foreground font-normal">
+                <span className="arabic text-xs text-muted-foreground font-normal hidden sm:inline">
                   ({meta.name_ar})
                 </span>
               </h1>
-              <p className="text-[11px] text-muted-foreground">
-                {meta.type} · আয়াত {formatNumber(meta.total, lang)} টি
+              <p className="text-[10px] text-muted-foreground">
+                {meta.type} · আয়াত {formatNumber(meta.total, lang)}
               </p>
             </div>
           </div>
 
-          {/* মাঝখানে: স্মার্ট সার্চ ও জাম্প ইনপুট */}
+          {/* মাঝখানে: স্মার্ট সার্চ ও জাম্প ফিল্টার */}
           <form
             onSubmit={handleJumpSubmit}
-            className="flex items-center gap-1.5 bg-muted/60 border border-border/80 rounded-xl px-2 py-1 focus-within:border-primary/80 transition-all"
+            className="flex items-center gap-1 bg-muted/70 border border-border/80 rounded-lg px-2 py-1 focus-within:border-primary/80 transition-all shadow-inner"
           >
-            <Search className="size-3.5 text-muted-foreground" />
+            <Search className="size-3.5 text-muted-foreground shrink-0" />
             <input
               type="text"
               value={searchJumpText}
               onChange={(e) => setSearchJumpText(e.target.value)}
               placeholder="৩৩/৪০ বা ১-১১৪..."
-              className="bg-transparent border-none outline-none text-xs w-28 sm:w-36 text-foreground placeholder:text-muted-foreground"
+              className="bg-transparent border-none outline-none text-xs w-24 sm:w-32 text-foreground placeholder:text-muted-foreground"
             />
             <button
               type="submit"
-              className="rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary hover:bg-primary/20 transition-colors"
+              className="rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary hover:bg-primary/20 transition-colors"
             >
-              যাও
+              যান
             </button>
           </form>
 
           {/* ডান পাশে: পূর্ববর্তী / পরবর্তী বাটন */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 shrink-0">
             {surahId > 1 && (
               <Button asChild variant="outline" size="sm" className="h-7 px-2 text-xs">
                 <Link to="/surah/$id" params={{ id: String(surahId - 1) }}>
@@ -351,7 +378,7 @@ function SurahDetailPage() {
             )}
           </div>
         </div>
-      </div>
+      </header>
 
       {/* বিসমিল্লাহ (সুরা তাওবাহ ব্যতিত) */}
       {surahId !== 9 && surahId !== 1 && (
@@ -383,7 +410,7 @@ function SurahDetailPage() {
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className="rounded-xl border border-border/70 bg-card p-5 space-y-4 shadow-xs transition-all hover:border-border/90"
+              className="scroll-mt-24 rounded-xl border border-border/70 bg-card p-5 space-y-4 shadow-xs transition-all hover:border-border/90"
             >
               {/* হেডার ও এডিট বাটন */}
               <div className="flex items-center justify-between border-b border-border/50 pb-2">
@@ -465,7 +492,7 @@ function SurahDetailPage() {
                 ))}
               </div>
 
-              {/* [২] পুরো আয়াতের উচ্চারণ (Transliteration) */}
+              {/* [২] পুরো আয়াতের পরে আয়াতের Transliteration */}
               {ayah.transliteration && (
                 <div className="rounded-lg bg-muted/40 p-3 space-y-1">
                   <div className="flex items-center gap-1.5 text-muted-foreground text-xs font-semibold uppercase tracking-wider">
