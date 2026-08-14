@@ -19,7 +19,8 @@ import {
   Undo,
   Redo,
   LayoutGrid,
-  Mail,
+  Copy,
+  Check,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -336,7 +337,7 @@ function AdminPage() {
 
 function RolesAdmin() {
   const queryClient = useQueryClient();
-  const [identifier, setIdentifier] = useState("");
+  const [userId, setUserId] = useState("");
   const [role, setRole] = useState<"admin" | "user">("admin");
 
   const rolesList = useQuery({
@@ -353,41 +354,16 @@ function RolesAdmin() {
 
   const addRole = useMutation({
     mutationFn: async () => {
-      const input = identifier.trim();
-      if (!input) throw new Error("অনুগ্রহ করে ইমেইল এড্রেস অথবা User ID দিন");
-
-      // ইনপুট যদি ইমেইল ফরম্যাট হয়
-      if (input.includes("@")) {
-        const { data: userData, error: userError } = await supabase
-          .from("profiles" as any)
-          .select("id")
-          .eq("email", input)
-          .maybeSingle();
-
-        let finalUserId = userData?.id;
-
-        if (!finalUserId) {
-          // সরাসরি ইউজার রোলসে ট্রাই করা
-          finalUserId = input;
-        }
-
-        const { error } = await supabase
-          .from("user_roles")
-          .upsert({ user_id: finalUserId, role }, { onConflict: "user_id,role" });
-        if (error) throw error;
-        return;
-      }
-
-      // ইনপুট যদি সরাসরি User UUID হয়
+      if (!userId.trim()) throw new Error("User ID প্রদান করুন");
       const { error } = await supabase
         .from("user_roles")
-        .upsert({ user_id: input, role }, { onConflict: "user_id,role" });
+        .upsert({ user_id: userId.trim(), role }, { onConflict: "user_id,role" });
       if (error) throw error;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      setIdentifier("");
-      toast.success("ইউজার রোল সফলভাবে প্রদান করা হয়েছে!");
+      setUserId("");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -399,7 +375,7 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল সফলভাবে রিমুভ করা হয়েছে");
+      toast.success("রোল রিমুভ করা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -418,16 +394,16 @@ function RolesAdmin() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-2 sm:col-span-2">
-            <Label htmlFor="userIdentifier">ইমেইল এড্রেস অথবা User ID (UUID)</Label>
+            <Label htmlFor="userId">User ID (Supabase Auth UID)</Label>
             <Input
-              id="userIdentifier"
-              placeholder="যেমন: kaali.kolom@gmail.com অথবা e2a8b..."
-              value={identifier}
-              onChange={(e) => setIdentifier(e.target.value)}
+              id="userId"
+              placeholder="যেমন: e2a8b... (User UUID)"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
               required
             />
             <p className="text-[11px] text-muted-foreground">
-              💡 আপনি সরাসরি ইউজারের জিমেইল এড্রেস লিখেও অ্যাডমিন বানাতে পারেন।
+              💡 আপনি সাবস্ক্রাইবার তালিকা থেকে সরাসরি UUID কপি করে এখানে পেস্ট করতে পারেন।
             </p>
           </div>
           <div className="space-y-2">
@@ -444,7 +420,7 @@ function RolesAdmin() {
           </div>
         </div>
         <Button type="submit" disabled={addRole.isPending}>
-          <UserCheck className="size-4 mr-2" /> {addRole.isPending ? "যোগ হচ্ছে..." : "রোল অ্যাসাইন করুন"}
+          <UserCheck className="size-4 mr-2" /> রোল অ্যাসাইন করুন
         </Button>
       </form>
 
@@ -462,7 +438,6 @@ function RolesAdmin() {
               variant="ghost"
               size="icon"
               aria-label="Delete Role"
-              title="রোল মুছুন"
               onClick={() => removeRole.mutate(r.id)}
             >
               <UserX className="size-4 text-destructive" />
@@ -892,6 +867,9 @@ function TranslationsAdmin() {
 
 function SubscribersAdmin() {
   const { t } = usePrefs();
+  const queryClient = useQueryClient();
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
   const list = useQuery({
     queryKey: ["admin-subscribers"],
     queryFn: async () => {
@@ -904,19 +882,65 @@ function SubscribersAdmin() {
     },
   });
 
+  const copyToClipboard = (id: string) => {
+    navigator.clipboard.writeText(id);
+    setCopiedId(id);
+    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
   return (
-    <div className="card-soft divide-y divide-border p-2">
-      {list.data?.length === 0 && (
-        <p className="p-4 text-sm text-muted-foreground">{t("noArticles")}</p>
-      )}
-      {list.data?.map((s) => (
-        <div key={s.id} className="flex items-center justify-between px-4 py-3 text-sm">
-          <span className="font-mono text-xs sm:text-sm">{s.email}</span>
-          <span className="text-xs text-muted-foreground">
-            {new Date(s.created_at).toLocaleDateString("en-GB")}
-          </span>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between px-1">
+        <div>
+          <h2 className="text-lg font-semibold">নিউজলেটার সাবস্ক্রাইবার তালিকা</h2>
+          <p className="text-xs text-muted-foreground">
+            সাবস্ক্রাইবারের UUID দেখতে পাবেন এবং কপি করে এডমিন রোলে ব্যবহার করতে পারবেন।
+          </p>
         </div>
-      ))}
+      </div>
+
+      <div className="card-soft divide-y divide-border">
+        {list.data?.length === 0 && (
+          <p className="p-4 text-sm text-muted-foreground">{t("noArticles")}</p>
+        )}
+        {list.data?.map((s) => (
+          <div
+            key={s.id}
+            className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 text-sm"
+          >
+            <div className="space-y-1">
+              <span className="font-medium text-foreground">{s.email}</span>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[11px] text-muted-foreground bg-muted/70 px-2 py-0.5 rounded border border-border/50 select-all">
+                  UUID: {s.id}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => copyToClipboard(s.id)}
+                  className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline font-medium"
+                >
+                  {copiedId === s.id ? (
+                    <>
+                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="size-3" /> কপি
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-muted-foreground">
+                {new Date(s.created_at).toLocaleDateString("en-GB")}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
