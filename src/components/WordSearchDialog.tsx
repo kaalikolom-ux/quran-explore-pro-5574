@@ -12,18 +12,30 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+/** Common Arabic root / word meanings fallback dictionary for Bengali & English */
+const WORD_MEANING_DICTIONARY: Record<string, { bn: string[]; en: string[] }> = {
+  جعل: { bn: ["আরোপ", "ন্যস্ত", "নির্ধারণ", "বানায়", "স্থাপন", "করে"], en: ["assign", "make", "set", "place"] },
+  يوم: { bn: ["দিন", "দিবস", "কেয়ামত"], en: ["day", "daytime"] },
+  سماء: { bn: ["আকাশ", "আকাশমন্ডলী", "আকাশমণ্ডল"], en: ["heaven", "sky"] },
+  ارض: { bn: ["পৃথিবী", "জমি", "ভূখণ্ড"], en: ["earth", "land"] },
+  رحم: { bn: ["দয়ালু", "রহম", "দয়া", "করুণাময়"], en: ["merciful", "mercy", "compassionate"] },
+  علم: { bn: ["জ্ঞান", "জানেন", "অবগত", "শিক্ষা"], en: ["know", "knowledge", "learn"] },
+  قول: { bn: ["বলুন", "বলেন", "কথা", "বক্তব্য"], en: ["say", "said", "speech"] },
+  ويل: { bn: ["দুর্ভোগ", "ধ্বংস", "পরিতাপ"], en: ["woe", "destruction"] },
+};
+
 /** Strip Arabic diacritics and normalize characters */
 function normalizeArabic(text: string) {
   if (!text) return "";
   return text
-    .replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "") // Remove harakat
-    .replace(/[أإآٱ]/g, "ا") // Normalize Alif
-    .replace(/ى/g, "ي") // Normalize Alif Maqsoora
-    .replace(/ة/g, "ه") // Normalize Ta Marbootah
+    .replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "")
+    .replace(/[أإآٱ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .replace(/ة/g, "ه")
     .trim();
 }
 
-/** Regex builder to match Arabic word even with diacritics (Harakat) */
+/** Regex builder to match Arabic word with optional Harakat */
 function highlightArabicWord(fullText: string, searchWord: string) {
   const bare = normalizeArabic(searchWord);
   if (!bare) return fullText;
@@ -46,7 +58,7 @@ function highlightArabicWord(fullText: string, searchWord: string) {
     regex.test(part) ? (
       <span
         key={i}
-        className="rounded-md bg-primary/20 px-1 py-0.5 font-bold text-primary dark:bg-primary/30"
+        className="rounded-md bg-primary/25 px-1 py-0.5 font-bold text-primary dark:bg-primary/35"
       >
         {part}
       </span>
@@ -56,18 +68,25 @@ function highlightArabicWord(fullText: string, searchWord: string) {
   );
 }
 
-/** Highlight target text in Transliteration or Translation */
-function highlightText(fullText: string, targetWord?: string) {
-  if (!fullText || !targetWord || !targetWord.trim()) return fullText;
-  const cleanTarget = targetWord.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const regex = new RegExp(`(${cleanTarget})`, "gi");
+/** Smart highlight function for Transliteration and Translation */
+function highlightTextWithCandidates(fullText: string, candidateWords: string[]) {
+  if (!fullText || !candidateWords || candidateWords.length === 0) return fullText;
+
+  const validCandidates = candidateWords
+    .map((w) => w.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .filter((w) => w.length > 1);
+
+  if (validCandidates.length === 0) return fullText;
+
+  const pattern = validCandidates.join("|");
+  const regex = new RegExp(`(${pattern})`, "gi");
   const parts = fullText.split(regex);
 
   return parts.map((part, i) =>
     regex.test(part) ? (
       <span
         key={i}
-        className="rounded bg-primary/20 px-1 py-0.5 font-medium text-primary dark:bg-primary/30"
+        className="rounded bg-primary/25 px-1 py-0.5 font-semibold text-primary dark:bg-primary/35"
       >
         {part}
       </span>
@@ -82,9 +101,9 @@ type VerseResult = {
   ayah: number;
   text_uthmani: string;
   transliteration?: string;
-  matchedTransliteration?: string;
+  matchedTransliterations: string[];
   translation?: string;
-  matchedTranslation?: string;
+  matchedTranslations: string[];
 };
 
 export function WordSearchDialog({
@@ -99,7 +118,7 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-search-highlight-v6", rawWord, normalized, lang],
+    queryKey: ["word-search-v7", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       const searchTarget = normalized || rawWord;
@@ -132,10 +151,27 @@ export function WordSearchDialog({
             const [s, a] = hit.verse_key.split(":").map(Number);
             const words = v.words || [];
 
-            // Find matching word to extract its specific transliteration and meaning
-            const matchedWordObj = words.find((w: any) => {
+            // 1. Collect all transliterations for matching
+            const matchedWordObjs = words.filter((w: any) => {
               const wordNorm = normalizeArabic(w.text_uthmani || "");
               return wordNorm.includes(normalized) || normalized.includes(wordNorm);
+            });
+
+            const transCandidates = matchedWordObjs
+              .map((w: any) => w.transliteration?.text)
+              .filter(Boolean);
+
+            // 2. Collect translation candidate words from API + Dictionary fallback
+            const transMeaningCandidates = matchedWordObjs
+              .map((w: any) => w.translation?.text)
+              .filter(Boolean);
+
+            // Check dictionary for fallback synonyms
+            Object.keys(WORD_MEANING_DICTIONARY).forEach((rootKey) => {
+              if (normalized.includes(rootKey) || rootKey.includes(normalized)) {
+                const dictWords = WORD_MEANING_DICTIONARY[rootKey][lang === "bn" ? "bn" : "en"];
+                transMeaningCandidates.push(...dictWords);
+              }
             });
 
             const transliterationStr = words
@@ -154,9 +190,9 @@ export function WordSearchDialog({
               ayah: a,
               text_uthmani: v.text_uthmani || hit.text,
               transliteration: transliterationStr,
-              matchedTransliteration: matchedWordObj?.transliteration?.text,
+              matchedTransliterations: transCandidates,
               translation: translationStr,
-              matchedTranslation: matchedWordObj?.translation?.text,
+              matchedTranslations: transMeaningCandidates,
             };
           } catch {
             return null;
@@ -233,19 +269,19 @@ export function WordSearchDialog({
                 <div className="rounded bg-muted/40 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
                   <span className="font-semibold text-foreground/80">উচ্চারণ: </span>
                   <span className="italic">
-                    {highlightText(v.transliteration, v.matchedTransliteration)}
+                    {highlightTextWithCandidates(v.transliteration, v.matchedTransliterations)}
                   </span>
                 </div>
               )}
 
-              {/* ৩. পূর্ণ অর্থ/অনুবাদ (Translation হাইলাইটেড) */}
+              {/* ৩. পূর্ণ অর্থ/অনুবাদ (Translation স্মার্ট হাইলাইটেড) */}
               {v.translation && (
                 <div className="border-l-2 border-primary/60 pl-3 py-0.5">
                   <p className="text-xs font-semibold text-primary mb-0.5">
                     {lang === "bn" ? "অনুবাদ:" : "Translation:"}
                   </p>
                   <p className="text-sm leading-relaxed text-foreground/90">
-                    {highlightText(v.translation, v.matchedTranslation)}
+                    {highlightTextWithCandidates(v.translation, v.matchedTranslations)}
                   </p>
                 </div>
               )}
