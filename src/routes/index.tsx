@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
-import { ArrowRight, BookOpen, Newspaper, Search, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Search, Settings, Sparkles } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
@@ -9,7 +9,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { DisplayToggles } from "@/components/DisplayToggles";
 import { Typewriter } from "@/components/Typewriter";
 
 export const Route = createFileRoute("/")({
@@ -131,7 +130,7 @@ function HomePage() {
                   <Typewriter
                     words={[
                       "শব্দে শব্দে অর্থসহ",
-                      "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
+                      "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
                       "সহজ বাংলা অনুবাদে",
                       "প্রামাণ্য তথ্যসূত্রসহ",
                     ]}
@@ -162,6 +161,8 @@ function HomePage() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80">{t("heroSub")}</p>
+          
+          {/* CTA Buttons (কুরআন পড়ুন ও সেটিংস বাটন) */}
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
@@ -170,7 +171,7 @@ function HomePage() {
               className="bg-white/10 text-white shadow-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:shadow-md hover:scale-[1.02]"
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
-                <BookOpen className="size-4" /> {t("readQuran")}
+                <BookOpen className="size-4 mr-2" /> {t("readQuran")}
               </Link>
             </Button>
             <Button
@@ -179,77 +180,73 @@ function HomePage() {
               variant="ghost"
               className="bg-white/10 text-white shadow-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:shadow-md hover:scale-[1.02]"
             >
-              <Link to="/articles">
-                <Newspaper className="size-4" /> {t("articles")}
+              <Link to="/settings">
+                <Settings className="size-4 mr-2" /> {lang === "bn" ? "সেটিংস" : "Settings"}
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
+      {/* সুরা তালিকা সেকশন (ক্লিন ও ফুল-উইডথ গ্রিড) */}
       <section className="mx-auto w-full max-w-6xl px-4 py-14">
-        <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
-          <aside className="order-first space-y-4 lg:order-last lg:sticky lg:top-24 lg:self-start">
-            <DisplayToggles />
-          </aside>
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <h2 className="text-2xl font-semibold">
+              {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
+            </h2>
 
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <h2 className="text-2xl font-semibold">
-                {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
-              </h2>
-
-              <div className="w-full max-w-sm space-y-1.5">
-                <form onSubmit={handleSearchSubmit} className="relative w-full">
-                  <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                  <Input
-                    value={term}
-                    onChange={(e) => setTerm(e.target.value)}
-                    placeholder={
-                      lang === "bn"
-                        ? "সুরা খুঁজুন... / আয়াত খুঁজুন..."
-                        : "Search Surah... / Ayah..."
-                    }
-                    className="pl-9 pr-3"
-                  />
-                </form>
-                <p className="text-[11px] leading-tight text-muted-foreground/70 px-1">
-                  {lang === "bn"
-                    ? "💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।"
-                    : "💡 Search surah by name or no. (33). Search ayah like 33:40 and press Enter."}
-                </p>
-              </div>
+            <div className="w-full max-w-sm space-y-1.5">
+              <form onSubmit={handleSearchSubmit} className="relative w-full">
+                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  value={term}
+                  onChange={(e) => setTerm(e.target.value)}
+                  placeholder={
+                    lang === "bn"
+                      ? "সুরা খুঁজুন... / আয়াত খুঁজুন..."
+                      : "Search Surah... / Ayah..."
+                  }
+                  className="pl-9 pr-3"
+                />
+              </form>
+              <p className="text-[11px] leading-tight text-muted-foreground/70 px-1">
+                {lang === "bn"
+                  ? "💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।"
+                  : "💡 Search surah by name or no. (33). Search ayah like 33:40 and press Enter."}
+              </p>
             </div>
-
-            {chapters.isLoading ? (
-              <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
-            ) : (
-              <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {filtered.map((c) => (
-                  <Link
-                    key={c.id}
-                    to="/surah/$id"
-                    params={{ id: String(c.id) }}
-                    className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
-                  >
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
-                      {localNumber(c.id, lang)}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate font-medium">{c.name_simple}</span>
-                      <span className="block truncate text-xs text-muted-foreground">
-                        {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
-                      </span>
-                    </span>
-                    <span className="arabic text-lg text-primary">{c.name_arabic}</span>
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
+
+          {chapters.isLoading ? (
+            <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
+          ) : (
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((c) => (
+                <Link
+                  key={c.id}
+                  to="/surah/$id"
+                  params={{ id: String(c.id) }}
+                  className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
+                    {localNumber(c.id, lang)}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-medium">{c.name_simple}</span>
+                    <span className="block truncate text-xs text-muted-foreground">
+                      {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
+                    </span>
+                  </span>
+                  <span className="arabic text-lg text-primary">{c.name_arabic}</span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
+      {/* আর্টিকেল সেকশন */}
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
@@ -292,6 +289,7 @@ function HomePage() {
         </div>
       </section>
 
+      {/* নিউজলেটার সেকশন */}
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
           <h2 className="text-xl font-semibold">{t("newsletter")}</h2>
