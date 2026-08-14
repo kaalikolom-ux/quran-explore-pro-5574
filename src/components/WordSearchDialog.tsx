@@ -56,38 +56,17 @@ function highlightArabicWord(fullText: string, searchWord: string) {
   );
 }
 
-/** Highlight exact matched target string in text */
-function highlightExactPhrase(fullText: string, target?: string) {
-  if (!fullText || !target || !target.trim()) return fullText;
-
-  const cleanTarget = target.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  if (cleanTarget.length < 2) return fullText;
-
-  const regex = new RegExp(`(${cleanTarget})`, "gi");
-  const parts = fullText.split(regex);
-
-  return parts.map((part, i) =>
-    regex.test(part) ? (
-      <span
-        key={i}
-        className="rounded bg-primary/25 px-1 py-0.5 font-semibold text-primary dark:bg-primary/35"
-      >
-        {part}
-      </span>
-    ) : (
-      <React.Fragment key={i}>{part}</React.Fragment>
-    )
-  );
-}
+type WordInfo = {
+  text_uthmani: string;
+  transliteration?: string;
+  translation?: string;
+};
 
 type VerseResult = {
   surah: number;
   ayah: number;
   text_uthmani: string;
-  transliteration?: string;
-  targetTransliteration?: string;
-  translation?: string;
-  targetTranslation?: string;
+  wordInfo?: WordInfo;
 };
 
 export function WordSearchDialog({
@@ -102,16 +81,16 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-search-v8", rawWord, normalized, lang],
+    queryKey: ["word-lexicon-search-v9", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       const searchTarget = normalized || rawWord;
-      const transId = lang === "bn" ? "163" : "131";
 
+      // 1. Search for matching verse keys
       const searchRes = await fetch(
         `https://api.quran.com/api/v4/search?q=${encodeURIComponent(
           searchTarget
-        )}&size=25`
+        )}&size=30`
       );
 
       if (!searchRes.ok) throw new Error("Search failed");
@@ -120,13 +99,14 @@ export function WordSearchDialog({
 
       if (hits.length === 0) return [];
 
+      // 2. Fetch specific word lexicon & verse data
       const detailedVerses = await Promise.all(
-        hits.slice(0, 25).map(async (hit: any) => {
+        hits.slice(0, 30).map(async (hit: any) => {
           try {
             const verseRes = await fetch(
               `https://api.quran.com/api/v4/verses/by_key/${hit.verse_key}?language=${
                 lang === "bn" ? "bn" : "en"
-              }&words=true&translations=${transId}`
+              }&words=true`
             );
             if (!verseRes.ok) return null;
             const verseJson = await verseRes.json();
@@ -135,35 +115,23 @@ export function WordSearchDialog({
             const [s, a] = hit.verse_key.split(":").map(Number);
             const words: any[] = v.words || [];
 
-            // 1. Find the exact word object that matches search
+            // Find the exact word matching the search target in this verse
             const matchedWord = words.find((w) => {
               const wNorm = normalizeArabic(w.text_uthmani || "");
               return wNorm.includes(normalized) || normalized.includes(wNorm);
             });
 
-            // Target transliteration and translation derived from clicked word
-            const targetTrans = matchedWord?.transliteration?.text || "";
-            const targetTransMeaning = matchedWord?.translation?.text || "";
-
-            const transliterationStr = words
-              .map((w) => w.transliteration?.text)
-              .filter(Boolean)
-              .join(" ");
-
-            const translationStr = v.translations?.[0]?.text
-              ? v.translations[0].text
-                  .replace(/<[^>]*>?/gm, "")
-                  .replace(/\[\d+\]/g, "")
-              : "";
-
             return {
               surah: s,
               ayah: a,
               text_uthmani: v.text_uthmani || hit.text,
-              transliteration: transliterationStr,
-              targetTransliteration: targetTrans,
-              translation: translationStr,
-              targetTranslation: targetTransMeaning,
+              wordInfo: matchedWord
+                ? {
+                    text_uthmani: matchedWord.text_uthmani,
+                    transliteration: matchedWord.transliteration?.text,
+                    translation: matchedWord.translation?.text,
+                  }
+                : undefined,
             };
           } catch {
             return null;
@@ -182,17 +150,17 @@ export function WordSearchDialog({
           <DialogTitle className="flex items-center gap-3">
             <span className="arabic text-3xl text-primary">{word}</span>
             <span className="text-sm font-normal text-muted-foreground">
-              {t("wordSearch")}
+              {t("wordSearch")} · অভিধান
             </span>
           </DialogTitle>
           <DialogDescription>
-            এই শব্দ বা মূল অক্ষর সম্বলিত আয়াতসমূহ (শব্দ, সঠিক উচ্চারণ ও অর্থ হাইলাইট করা হয়েছে):
+            এই শব্দটি যেসব আয়াতে রয়েছে এবং ওই আয়াতে শব্দটির নির্দিষ্ট উচ্চারণ ও অর্থ নিচে দেওয়া হলো:
           </DialogDescription>
         </DialogHeader>
 
         {results.isLoading && (
           <div className="py-10 text-center text-sm text-muted-foreground animate-pulse">
-            উচ্চারণ ও অনুবাদসহ আয়াতগুলো প্রস্তুত হচ্ছে...
+            অভিধান ও আয়াতগুলো প্রস্তুত হচ্ছে...
           </div>
         )}
 
@@ -217,7 +185,7 @@ export function WordSearchDialog({
               {/* আয়াত ও সুরা নম্বর বার */}
               <div className="flex items-center justify-between border-b border-border/50 pb-2">
                 <span className="text-xs font-medium text-muted-foreground">
-                  {lang === "bn" ? "স্থান:" : "Location:"}
+                  {lang === "bn" ? "অবস্থান:" : "Location:"}
                 </span>
                 <Link
                   to="/surah/$id"
@@ -230,30 +198,29 @@ export function WordSearchDialog({
                 </Link>
               </div>
 
-              {/* ১. আরবি টেক্সট (সার্চ করা শব্দটি হাইলাইটেড) */}
+              {/* ১. সম্পূর্ণ আরবি আয়াত (সার্চ করা শব্দটি হাইলাইটেড) */}
               <p className="arabic text-right text-2xl leading-relaxed text-foreground">
                 {highlightArabicWord(v.text_uthmani, rawWord)}
               </p>
 
-              {/* ২. উচ্চারণ (একক ক্লিক করা শব্দটির উচ্চারণ হাইলাইটেড) */}
-              {v.transliteration && (
-                <div className="rounded bg-muted/40 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-                  <span className="font-semibold text-foreground/80">উচ্চারণ: </span>
-                  <span className="italic">
-                    {highlightExactPhrase(v.transliteration, v.targetTransliteration)}
-                  </span>
-                </div>
-              )}
-
-              {/* ৩. পূর্ণ অর্থ/অনুবাদ (একক শব্দটির সঠিক অনুবাদ হাইলাইটেড) */}
-              {v.translation && (
-                <div className="border-l-2 border-primary/60 pl-3 py-0.5">
-                  <p className="text-xs font-semibold text-primary mb-0.5">
-                    {lang === "bn" ? "অনুবাদ:" : "Translation:"}
-                  </p>
-                  <p className="text-sm leading-relaxed text-foreground/90">
-                    {highlightExactPhrase(v.translation, v.targetTranslation)}
-                  </p>
+              {/* ২. নির্দিষ্ট শব্দের অভিধান/অর্থ কার্ড (Lexicon Row) */}
+              {v.wordInfo && (
+                <div className="flex flex-wrap items-center justify-between gap-2 rounded-md bg-muted/40 px-3 py-2 border border-border/40">
+                  <div className="flex items-center gap-3">
+                    <span className="arabic text-lg font-semibold text-primary">
+                      {v.wordInfo.text_uthmani}
+                    </span>
+                    {v.wordInfo.transliteration && (
+                      <span className="text-xs italic text-muted-foreground">
+                        [{v.wordInfo.transliteration}]
+                      </span>
+                    )}
+                  </div>
+                  {v.wordInfo.translation && (
+                    <span className="text-sm font-medium text-foreground bg-primary/10 px-2.5 py-0.5 rounded">
+                      অর্থ: {v.wordInfo.translation}
+                    </span>
+                  )}
                 </div>
               )}
             </div>
