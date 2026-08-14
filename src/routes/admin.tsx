@@ -71,8 +71,8 @@ function RichTextEditor({
     extensions: [
       StarterKit,
       Markdown.configure({
-        html: true,                  // HTML কোড পার্স করতে সাহায্য করবে
-        transformPastedText: true,   // কপি-পেস্ট করা মার্কডাউন টেক্সট (যেমন '>', '---') কে অটোমেটিক ফরম্যাট করবে
+        html: true,
+        transformPastedText: true,
       }),
     ],
     content: value,
@@ -215,6 +215,22 @@ function AdminPage() {
   const { t } = usePrefs();
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
+  const [activeTab, setActiveTab] = useState("articles");
+
+  const tabOptions = [
+    { value: "articles", label: t("articles") },
+    { value: "translations", label: t("translationsTab") },
+    { value: "posts", label: t("postSettings") },
+    { value: "categories", label: t("categoriesTab") },
+    { value: "roles", label: "অ্যাডমিন বা ইউজার রোল" },
+    { value: "menu", label: t("menuTab") },
+    { value: "pages", label: t("pagesTab") },
+    { value: "social", label: t("socialTab") },
+    { value: "turnstile", label: t("turnstileTab") },
+    { value: "messages", label: t("messagesTab") },
+    { value: "offline", label: t("offlineTab") },
+    { value: "subs", label: t("subscribersTab") },
+  ];
 
   if (loading || (user && roleLoading)) {
     return <p className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground">{t("loading")}</p>;
@@ -242,21 +258,41 @@ function AdminPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12">
       <h1 className="text-3xl font-semibold">{t("dashboard")}</h1>
-      <Tabs defaultValue="articles" className="mt-8">
-        <TabsList className="flex-wrap">
-          <TabsTrigger value="articles">{t("articles")}</TabsTrigger>
-          <TabsTrigger value="translations">{t("translationsTab")}</TabsTrigger>
-          <TabsTrigger value="posts">{t("postSettings")}</TabsTrigger>
-          <TabsTrigger value="categories">{t("categoriesTab")}</TabsTrigger>
-          <TabsTrigger value="roles">অ্যাডমিন বা ইউজার রোল</TabsTrigger>
-          <TabsTrigger value="menu">{t("menuTab")}</TabsTrigger>
-          <TabsTrigger value="pages">{t("pagesTab")}</TabsTrigger>
-          <TabsTrigger value="social">{t("socialTab")}</TabsTrigger>
-          <TabsTrigger value="turnstile">{t("turnstileTab")}</TabsTrigger>
-          <TabsTrigger value="messages">{t("messagesTab")}</TabsTrigger>
-          <TabsTrigger value="offline">{t("offlineTab")}</TabsTrigger>
-          <TabsTrigger value="subs">{t("subscribersTab")}</TabsTrigger>
-        </TabsList>
+
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
+        {/* ১. মোবাইল ভিউ: পরিষ্কার ড্রপডাউন সিলেক্টর (sm এর নিচে দেখাবে) */}
+        <div className="block sm:hidden mb-6">
+          <Label htmlFor="mobile-tab-select" className="text-xs text-muted-foreground mb-1.5 block">
+            ট্যাব নির্বাচন করুন:
+          </Label>
+          <select
+            id="mobile-tab-select"
+            value={activeTab}
+            onChange={(e) => setActiveTab(e.target.value)}
+            className="w-full rounded-xl border border-input bg-card px-3.5 py-2.5 text-sm font-medium shadow-sm outline-none focus:ring-2 focus:ring-primary"
+          >
+            {tabOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* ২. ডেস্কটপ ও ট্যাবলেট ভিউ: হরাইজন্টাল স্ক্রলেবল ট্যাব বার (sm বা তার বড় স্ক্রিনে দেখাবে) */}
+        <div className="hidden sm:block w-full overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <TabsList className="inline-flex w-max items-center justify-start gap-1 p-1 bg-muted/70 rounded-xl">
+            {tabOptions.map((opt) => (
+              <TabsTrigger
+                key={opt.value}
+                value={opt.value}
+                className="whitespace-nowrap px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all"
+              >
+                {opt.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
 
         <TabsContent value="articles" className="mt-6">
           <ArticlesAdmin />
