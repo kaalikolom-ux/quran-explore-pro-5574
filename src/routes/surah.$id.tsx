@@ -1,7 +1,7 @@
-import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useRef, useState } from "react";
-import { BookA, ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { BookA, ChevronLeft, ChevronRight, ExternalLink, Pause, Play, Search } from "lucide-react";
 
 import {
   BN_TRANSLATION_ID,
@@ -19,7 +19,7 @@ import { resolveAudioSrc } from "@/lib/offline";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { TranslationLayer } from "@/components/TranslationLayer";
 import { WordSearchDialog } from "@/components/WordSearchDialog";
-
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/surah/$id")({
@@ -50,13 +50,20 @@ export const Route = createFileRoute("/surah/$id")({
   component: SurahPage,
 });
 
+function bnToEnDigits(str: string): string {
+  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  return str.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
+}
+
 function SurahPage() {
   const { id } = Route.useParams();
   const searchParams = useSearch({ from: "/surah/$id" });
   const surah = Number(id);
   const { t, lang, layers, arabicFontSize, translationFontSize } = usePrefs();
   const { isAdmin } = useIsAdmin();
+  const navigate = useNavigate();
 
+  const [searchTerm, setSearchTerm] = useState("");
   const chapters = useQuery(chaptersQuery(lang));
   const verses = useQuery(versesQuery(surah, lang));
   const chapter = chapters.data?.find((c) => c.id === surah);
@@ -128,8 +135,59 @@ function SurahPage() {
     else setPlaying(null);
   }
 
+  // ফ্লোটিং সার্চ সাবমিট হ্যান্ডলার
+  const handleFloatingSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const raw = searchTerm.trim();
+    if (!raw) return;
+
+    const normalized = bnToEnDigits(raw.toLowerCase());
+
+    // ১. আয়াত ফরম্যাট চেক: ৩৩:৪০, 33:40, 33/40
+    const match = normalized.match(/^(\d+)[:ঃ/-](\d+)$/);
+    if (match) {
+      const sNum = match[1];
+      const aNum = match[2];
+      setSearchTerm("");
+      void navigate({
+        to: `/surah/$id`,
+        params: { id: sNum },
+        search: { ayah: aNum },
+        hash: `ayah-${aNum}`,
+      });
+      return;
+    }
+
+    // ২. শুধু সুরা নম্বর চেক: যেমন 67 বা ৬৭
+    if (/^\d+$/.test(normalized)) {
+      const sNum = Number(normalized);
+      if (sNum >= 1 && sNum <= 114) {
+        setSearchTerm("");
+        void navigate({
+          to: `/surah/$id`,
+          params: { id: String(sNum) },
+        });
+        return;
+      }
+    }
+
+    // ৩. সুরার নাম দিয়ে চেক: যেমন Mulk, রহমান ইত্যাদি
+    const found = chapters.data?.find(
+      (c) =>
+        c.name_simple.toLowerCase().includes(raw.toLowerCase()) ||
+        c.translated_name.name.toLowerCase().includes(raw.toLowerCase())
+    );
+    if (found) {
+      setSearchTerm("");
+      void navigate({
+        to: `/surah/$id`,
+        params: { id: String(found.id) },
+      });
+    }
+  };
+
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-10">
+    <div className="mx-auto w-full max-w-6xl px-4 py-10 pb-28">
       <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
         {/* প্রধান আয়াত পড়ার সেকশন */}
         <div className="min-w-0">
@@ -309,7 +367,7 @@ function SurahPage() {
                   )}
 
                   {layers.translation && (
-                    <div 
+                    <div
                       className="mt-5 space-y-4 border-t border-border pt-5"
                       style={{ fontSize: `${translationFontSize ?? 16}px` }}
                     >
@@ -367,7 +425,7 @@ function SurahPage() {
                       <button
                         className="flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                         aria-expanded={lexiconOpen}
-                        onClick={() => setLexOpen(lexiconOpen ? null : v.verse_number)}
+                        onClick={() => setLexOpen(lexOpen ? null : v.verse_number)}
                       >
                         <BookA className="size-4" />
                         {t("lexicon")}
@@ -469,6 +527,32 @@ function SurahPage() {
             </div>
           </div>
         </aside>
+      </div>
+
+      {/* 🚀 ফ্লোটিং জাম্প বার (Floating Navigation Search Bar) */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-md">
+        <div className="rounded-2xl border border-border/80 bg-background/90 p-2 shadow-2xl backdrop-blur-lg">
+          <form onSubmit={handleFloatingSearch} className="relative flex items-center">
+            <Search className="absolute left-3 size-4 text-muted-foreground pointer-events-none" />
+            <Input
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder={
+                lang === "bn"
+                  ? "সুরা/আয়াত জাম্প (যেমন: ৩৩:৪০ বা 33:40)..."
+                  : "Jump to Surah/Ayah (e.g. 33:40)..."
+              }
+              className="h-10 rounded-xl border-border/60 bg-muted/40 pl-9 pr-14 text-sm placeholder:text-muted-foreground/70 focus-visible:ring-primary"
+            />
+            <Button
+              type="submit"
+              size="sm"
+              className="absolute right-1 h-8 rounded-lg px-3 text-xs"
+            >
+              জাম্প
+            </Button>
+          </form>
+        </div>
       </div>
 
       <WordSearchDialog word={searchWord} onClose={() => setSearchWord(null)} />
