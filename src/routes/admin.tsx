@@ -18,6 +18,7 @@ import {
   Quote,
   Undo,
   Redo,
+  LayoutGrid,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -34,7 +35,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { OfflineSyncAdmin } from "@/components/OfflineSyncAdmin";
 import { AuthorsAdmin } from "@/components/AuthorsAdmin";
 import { CategoriesAdmin } from "@/components/CategoriesAdmin";
@@ -257,80 +258,74 @@ function AdminPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12">
-      <h1 className="text-3xl font-semibold">{t("dashboard")}</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border/60 pb-6">
+        <div>
+          <h1 className="text-3xl font-semibold tracking-tight">{t("dashboard")}</h1>
+          <p className="text-xs text-muted-foreground mt-1">
+            কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল
+          </p>
+        </div>
+
+        {/* সার্বজনীন ড্রপডাউন মেনু (মোবাইল ও ডেস্কটপ উভয় ডিভাইসের জন্য) */}
+        <div className="w-full sm:w-72">
+          <div className="relative">
+            <LayoutGrid className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-primary pointer-events-none" />
+            <select
+              value={activeTab}
+              onChange={(e) => setActiveTab(e.target.value)}
+              className="w-full h-11 appearance-none rounded-xl border border-border/80 bg-card pl-10 pr-9 text-sm font-semibold shadow-sm transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
+            >
+              {tabOptions.map((opt) => (
+                <option key={opt.value} value={opt.value} className="bg-background text-foreground py-2">
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground text-xs font-mono">
+              ▼
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
-        {/* ১. মোবাইল ভিউ: পরিষ্কার ড্রপডাউন সিলেক্টর (sm এর নিচে দেখাবে) */}
-        <div className="block sm:hidden mb-6">
-          <Label htmlFor="mobile-tab-select" className="text-xs text-muted-foreground mb-1.5 block">
-            ট্যাব নির্বাচন করুন:
-          </Label>
-          <select
-            id="mobile-tab-select"
-            value={activeTab}
-            onChange={(e) => setActiveTab(e.target.value)}
-            className="w-full rounded-xl border border-input bg-card px-3.5 py-2.5 text-sm font-medium shadow-sm outline-none focus:ring-2 focus:ring-primary"
-          >
-            {tabOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* ২. ডেস্কটপ ও ট্যাবলেট ভিউ: হরাইজন্টাল স্ক্রলেবল ট্যাব বার (sm বা তার বড় স্ক্রিনে দেখাবে) */}
-        <div className="hidden sm:block w-full overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <TabsList className="inline-flex w-max items-center justify-start gap-1 p-1 bg-muted/70 rounded-xl">
-            {tabOptions.map((opt) => (
-              <TabsTrigger
-                key={opt.value}
-                value={opt.value}
-                className="whitespace-nowrap px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all"
-              >
-                {opt.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </div>
-
-        <TabsContent value="articles" className="mt-6">
+        <TabsContent value="articles" className="mt-0">
           <ArticlesAdmin />
         </TabsContent>
-        <TabsContent value="translations" className="mt-6">
+        <TabsContent value="translations" className="mt-0">
           <TranslationsAdmin />
         </TabsContent>
-        <TabsContent value="posts" className="mt-6">
+        <TabsContent value="posts" className="mt-0">
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">{t("authorsTab")}</p>
             <AuthorsAdmin />
           </div>
         </TabsContent>
-        <TabsContent value="categories" className="mt-6">
+        <TabsContent value="categories" className="mt-0">
           <CategoriesAdmin />
         </TabsContent>
-        <TabsContent value="roles" className="mt-6">
+        <TabsContent value="roles" className="mt-0">
           <RolesAdmin />
         </TabsContent>
-        <TabsContent value="menu" className="mt-6">
+        <TabsContent value="menu" className="mt-0">
           <MenuAdmin />
         </TabsContent>
-        <TabsContent value="pages" className="mt-6">
+        <TabsContent value="pages" className="mt-0">
           <PagesAdmin />
         </TabsContent>
-        <TabsContent value="social" className="mt-6">
+        <TabsContent value="social" className="mt-0">
           <SocialLinksAdmin />
         </TabsContent>
-        <TabsContent value="turnstile" className="mt-6">
+        <TabsContent value="turnstile" className="mt-0">
           <TurnstileAdmin />
         </TabsContent>
-        <TabsContent value="messages" className="mt-6">
+        <TabsContent value="messages" className="mt-0">
           <MessagesAdmin />
         </TabsContent>
-        <TabsContent value="offline" className="mt-6">
+        <TabsContent value="offline" className="mt-0">
           <OfflineSyncAdmin />
         </TabsContent>
-        <TabsContent value="subs" className="mt-6">
+        <TabsContent value="subs" className="mt-0">
           <SubscribersAdmin />
         </TabsContent>
       </Tabs>
