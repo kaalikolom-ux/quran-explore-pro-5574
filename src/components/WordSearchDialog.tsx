@@ -12,10 +12,23 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-/** Strip Arabic diacritics so a clicked word matches unvowelled spellings too. */
-function bareRoot(word: string) {
-  return word.replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "");
+/** Strip Arabic diacritics and normalize characters for accurate search */
+function normalizeArabic(text: string) {
+  if (!text) return "";
+  return text
+    .replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "") // Remove harakat/diacritics
+    .replace(/[أإآٱ]/g, "ا") // Normalize Alif
+    .replace(/ى/g, "ي") // Normalize Alif Maqsoora
+    .replace(/ة/g, "ه") // Normalize Ta Marbootah
+    .trim();
 }
+
+type VerseResult = {
+  surah: number;
+  ayah: number;
+  text_uthmani: string;
+  translation?: string;
+};
 
 export function WordSearchDialog({
   word,
@@ -25,21 +38,61 @@ export function WordSearchDialog({
   onClose: () => void;
 }) {
   const { t, lang } = usePrefs();
-  const root = word ? bareRoot(word) : "";
+  const rawWord = word ? word.trim() : "";
+  const normalized = normalizeArabic(rawWord);
 
-  const results = useQuery({
-    queryKey: ["word-search", root],
-    enabled: !!root,
+  const results = useQuery<VerseResult[]>({
+    queryKey: ["word-search-v2", rawWord, normalized, lang],
+    enabled: !!rawWord,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("quran_verses")
-        .select("surah, ayah, text_uthmani, bn_text, en_text")
-        .ilike("text_uthmani", `%${root}%`)
-        .order("surah")
-        .order("ayah")
-        .limit(60);
-      if (error) throw error;
-      return data;
+      // Step 1: Try local Supabase database search
+      try {
+        const { data, error } = await supabase
+          .from("quran_verses")
+          .select("surah, ayah, text_uthmani, bn_text, en_text")
+          .ilike("text_uthmani", `%${normalized}%`)
+          .order("surah")
+          .order("ayah")
+          .limit(50);
+
+        if (!error && data && data.length > 0) {
+          return data.map((v) => ({
+            surah: v.surah,
+            ayah: v.ayah,
+            text_uthmani: v.text_uthmani,
+            translation: lang === "bn" ? v.bn_text : v.en_text,
+          }));
+        }
+      } catch (e) {
+        console.warn("Supabase local search fallback to Quran API", e);
+      }
+
+      // Step 2: Fallback to Quran.com Official API v4 if local DB has no records
+      const searchTarget = normalized || rawWord;
+      const response = await fetch(
+        `https://api.quran.com/api/v4/search?q=${encodeURIComponent(
+          searchTarget
+        )}&size=50&language=${lang === "bn" ? "bn" : "en"}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Search API failed");
+      }
+
+      const resData = await response.json();
+      const hits = resData?.search?.results || [];
+
+      return hits.map((hit: any) => {
+        const [s, a] = hit.verse_key.split(":").map(Number);
+        return {
+          surah: s,
+          ayah: a,
+          text_uthmani: hit.text,
+          translation: hit.translations?.[0]?.text
+            ? hit.translations[0].text.replace(/<[^>]*>?/gm, "")
+            : "",
+        };
+      });
     },
   });
 
@@ -56,10 +109,10 @@ export function WordSearchDialog({
           </DialogDescription>
         </DialogHeader>
 
-        {results.isLoading && <p className="text-sm text-muted-foreground">{t("loading")}</p>}
-        {results.isError && <p className="text-sm text-destructive">{t("error")}</p>}
-        {results.data?.length === 0 && (
-          <p className="text-sm text-muted-foreground">{t("noWordResults")}</p>
+        {results.isLoading && <p className="py-4 text-center text-sm text-muted-foreground">{t("loading")}</p>}
+        {results.isError && <p className="py-4 text-center text-sm text-destructive">{t("error")}</p>}
+        {results.data && results.data.length === 0 && (
+          <p className="py-4 text-center text-sm text-muted-foreground">{t("noWordResults")}</p>
         )}
 
         <ul className="divide-y divide-border">
@@ -75,9 +128,9 @@ export function WordSearchDialog({
                 {localNumber(v.surah, lang)}:{localNumber(v.ayah, lang)}
               </Link>
               <p className="arabic mt-1 text-right text-xl leading-loose">{v.text_uthmani}</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {lang === "bn" ? v.bn_text : v.en_text}
-              </p>
+              {v.translation && (
+                <p className="mt-1 text-sm text-muted-foreground">{v.translation}</p>
+              )}
             </li>
           ))}
         </ul>
