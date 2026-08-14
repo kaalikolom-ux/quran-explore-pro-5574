@@ -333,3 +333,8 @@ function HomePage() {
     </div>
   );
 }
+/* পুরো সাইটকে মার্জিত সাদা-কালো (Grayscale) লুকে দেখার ফিল্টার */
+html {
+  filter: grayscale(100%) !important;
+  -webkit-filter: grayscale(100%) !important;
+}
