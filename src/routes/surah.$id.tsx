@@ -15,7 +15,8 @@ import {
   FileText, 
   Volume2, 
   BookmarkCheck,
-  Search
+  Search,
+  Navigation
 } from "lucide-react";
 
 import { usePrefs } from "@/lib/prefs";
@@ -121,10 +122,10 @@ const SURAH_LIST = [
   { id: 57, name_bn: "আল-হাদিদ", name_ar: "الحديد", type: "মাদানী", total: 29 },
   { id: 58, name_bn: "আল-মুজাদালাহ", name_ar: "المجادلة", type: "মাদানী", total: 22 },
   { id: 59, name_bn: "আল-হাশর", name_ar: "الحشر", type: "মাদানী", total: 24 },
-  { id: 60, name_bn: "আল-মুমতাহানাহ", name_ar: "الممتحنة", type: "মাদানী", total: 13 },
+  { id: 60, name_bn: "আল-মুমতাহানাহ", name_ar: "المমتحنة", type: "মাদানী", total: 13 },
   { id: 61, name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
   { id: 62, name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
-  { id: 63, name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
+  { id: 63, name_bn: "আল-মুনাফিকুন", name_ar: "المনাفقون", type: "মাদানী", total: 11 },
   { id: 64, name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
   { id: 65, name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
   { id: 66, name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
@@ -140,7 +141,7 @@ const SURAH_LIST = [
   { id: 76, name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   { id: 77, name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   { id: 78, name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
+  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "الনাজعات", type: "মাক্কী", total: 46 },
   { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   { id: 81, name_bn: "আত-তাকভীর", name_ar: "التکویر", type: "মাক্কী", total: 29 },
   { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
@@ -167,13 +168,13 @@ const SURAH_LIST = [
   { id: 103, name_bn: "আল-আসর", name_ar: "العصر", type: "মাক্কী", total: 3 },
   { id: 104, name_bn: "আল-হুমাযাহ", name_ar: "الهمزة", type: "মাক্কী", total: 9 },
   { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
-  { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
+  { id: 106, name_bn: "কুরাইশ", name_ar: "قريশ", type: "মাক্কী", total: 4 },
   { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
   { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
   { id: 111, name_bn: "আল-লাহাব", name_ar: "المসদ", type: "মাক্কী", total: 5 },
-  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإخلاص", type: "মাক্কী", total: 4 },
+  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإখلاص", type: "মাক্কী", total: 4 },
   { id: 113, name_bn: "আল-ফালাক", name_ar: "الفلق", type: "মাক্কী", total: 5 },
   { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
 ];
@@ -200,9 +201,32 @@ function SurahDetailPage() {
 
   const isAdmin = true;
 
-  // ফন্ট সাইজ
+  // ফন্ট সাইজ স্টেট
   const [arabicFontSize, setArabicFontSize] = useState<number>(28);
   const [translationFontSize, setTranslationFontSize] = useState<number>(15);
+
+  // ব্যাক টু টপ বাটন ভিজিবিলিটি স্টেট
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   useEffect(() => {
     const savedAr = prefs?.arabicFontSize || localStorage.getItem("quran_arabic_font_size");
@@ -230,7 +254,7 @@ function SurahDetailPage() {
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v16", surahId],
+    queryKey: ["local-greentech-surah-v18", surahId],
     queryFn: async () => {
       const res = await fetch(`/data/quran/surahs/${surahId}.json`);
       if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
@@ -329,7 +353,7 @@ function SurahDetailPage() {
   const showLexicon = prefs ? prefs.showLexicon !== false : true;
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-4 space-y-6">
+    <div className="relative mx-auto w-full max-w-4xl px-4 py-4 space-y-6">
       
       {/* ফ্লোটিং হেডার */}
       <div className="sticky top-14 sm:top-16 z-30 bg-card/90 backdrop-blur-md border border-border/70 rounded-2xl px-4 py-2.5 shadow-sm transition-all">
@@ -417,7 +441,7 @@ function SurahDetailPage() {
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className="scroll-mt-32 rounded-2xl border border-border/70 bg-card p-5 space-y-3.5 shadow-sm transition-all hover:border-border"
+              className="scroll-mt-32 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
             >
               {/* হেডার ও এডিট বাটন */}
               <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
@@ -455,7 +479,7 @@ function SurahDetailPage() {
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-7 px-2.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80"
+                        className="h-7 px-2.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
                         onClick={() => handleStartEdit(ayah)}
                       >
                         <Edit3 className="size-3 mr-1.5" /> আধুনিক অনুবাদ ও অভিধান এডিট
@@ -510,15 +534,15 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [২] পুরো আয়াতের উচ্চারণ (ক্লিন ও মার্জিত শেড) */}
+              {/* [২] পুরো আয়াতের উচ্চারণ */}
               {showTransliteration && ayah.transliteration && (
-                <div className="rounded-xl bg-muted/20 p-3 space-y-1 border border-border/30">
-                  <div className="flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wide">
+                <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     <Volume2 className="size-3.5 text-muted-foreground/80" />
-                    <span>উচ্চারণ / Transliteration:</span>
+                    <span>উচ্চারণ (Transliteration)</span>
                   </div>
                   <p 
-                    className="italic text-foreground/90 font-serif leading-relaxed pl-4"
+                    className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5.5"
                     style={{ fontSize: `${Math.max(12, translationFontSize - 2)}px` }}
                   >
                     {ayah.transliteration}
@@ -526,18 +550,18 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [৩] অনুবাদের ৪টি পৃথক সারি (মোনোক্রোম থিম-সামঞ্জস্যপূর্ণ শেড) */}
-              <div className="space-y-2.5 pt-0.5">
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি (সেটিংস স্টাইল কার্ড) */}
+              <div className="space-y-3 pt-0.5">
                 
                 {/* সারি ১: প্রচলিত অনুবাদ (বাংলা) */}
                 {showConventionalBn && (
-                  <div className="rounded-xl bg-muted/20 p-3 space-y-1 border border-border/30">
-                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wide">
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                       <FileText className="size-3.5 text-muted-foreground/80" />
                       <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
                     </div>
                     <p 
-                      className="font-normal text-foreground leading-relaxed pl-4"
+                      className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
                       style={{ fontSize: `${translationFontSize}px` }}
                     >
                       {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
@@ -547,13 +571,13 @@ function SurahDetailPage() {
 
                 {/* সারি ২: Conventional Translation (English) */}
                 {showConventionalEn && (
-                  <div className="rounded-xl bg-muted/10 p-3 space-y-1 border border-border/20">
-                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wide">
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                       <Languages className="size-3.5 text-muted-foreground/80" />
                       <span>২. Conventional Translation (English)</span>
                     </div>
                     <p 
-                      className="italic text-muted-foreground font-serif leading-relaxed pl-4"
+                      className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
                       style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
                     >
                       {ayah.conventional_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
@@ -563,8 +587,8 @@ function SurahDetailPage() {
 
                 {/* সারি ৩: আধুনিক অনুবাদ (বাংলা) */}
                 {(isEditing || (showModernBn && hasModernBnData)) && (
-                  <div className="rounded-xl bg-primary/5 p-3 space-y-1 border border-primary/20">
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-primary uppercase tracking-wide">
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
                       <BookMarked className="size-3.5 text-primary" />
                       <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
                     </div>
@@ -580,7 +604,7 @@ function SurahDetailPage() {
                       />
                     ) : (
                       <p 
-                        className="font-medium text-foreground leading-relaxed pl-4"
+                        className="text-sm font-medium text-foreground leading-relaxed pl-5.5"
                         style={{ fontSize: `${translationFontSize}px` }}
                       >
                         {ayah.modern_translation_bn}
@@ -591,8 +615,8 @@ function SurahDetailPage() {
 
                 {/* সারি ৪: Modern Translation (English) */}
                 {(isEditing || (showModernEn && hasModernEnData)) && (
-                  <div className="rounded-xl bg-primary/5 p-3 space-y-1 border border-primary/20">
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-primary uppercase tracking-wide">
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
                       <BookmarkCheck className="size-3.5 text-primary" />
                       <span>৪. Modern Translation (English)</span>
                     </div>
@@ -608,7 +632,7 @@ function SurahDetailPage() {
                       />
                     ) : (
                       <p 
-                        className="italic text-foreground/90 font-serif leading-relaxed pl-4"
+                        className="italic text-foreground/90 font-serif leading-relaxed pl-5.5"
                         style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
                       >
                         {ayah.modern_translation_en}
@@ -618,35 +642,35 @@ function SurahDetailPage() {
                 )}
               </div>
 
-              {/* [৪] অভিধান / Lexicon (ক্লিন ডার্ক শেড ও মিনিম্যাল ব্যাজ) */}
+              {/* [৪] অভিধান / Lexicon */}
               {showLexicon && (
-                <div className="rounded-xl bg-muted/20 p-3 space-y-2 border border-border/30">
-                  <div className="flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground uppercase tracking-wide">
+                <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     <Layers className="size-3.5 text-muted-foreground/80" />
                     <span>অভিধান / Lexicon</span>
                   </div>
 
-                  <div className="flex flex-wrap gap-1.5 pl-1">
+                  <div className="flex flex-wrap gap-1.5 pl-5.5">
                     {ayah.words
                       .filter((w) => w.text_uthmani)
                       .map((w, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/60 px-2.5 py-1 font-mono text-[11px]"
+                          className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/50 px-2.5 py-1 font-mono text-[11px]"
                         >
                           <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
                           {w.root && w.root !== "—" && (
                             <span className="text-muted-foreground font-semibold">({w.root})</span>
                           )}
                           {w.translation_bn && (
-                            <span className="text-muted-foreground/90 text-[10px]">· {w.translation_bn}</span>
+                            <span className="text-muted-foreground/80 text-[10px]">· {w.translation_bn}</span>
                           )}
                         </span>
                       ))}
                   </div>
 
                   {isEditing ? (
-                    <div className="mt-2 pt-2 border-t border-border/40">
+                    <div className="mt-2 pt-2 border-t border-border/40 pl-5.5">
                       <label className="text-[11px] font-medium text-muted-foreground block mb-1">
                         আধুনিক অভিধান / Lexicon নোট:
                       </label>
@@ -661,8 +685,8 @@ function SurahDetailPage() {
                     </div>
                   ) : (
                     ayah.lexicon_modern_notes && (
-                      <div className="mt-2 pt-2 border-t border-border/30">
-                        <p className="text-xs text-muted-foreground leading-relaxed pl-1">
+                      <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
                           {ayah.lexicon_modern_notes}
                         </p>
@@ -675,6 +699,19 @@ function SurahDetailPage() {
           );
         })}
       </div>
+
+      {/* 🚀 স্ক্রিনশটের মতো Transparent Squircle Back to Top Floating Button */}
+      {showBackToTop && (
+        <button
+          type="button"
+          onClick={scrollToTop}
+          title="শীর্ষে যান"
+          className="fixed bottom-6 right-6 z-40 flex size-11 items-center justify-center rounded-2xl border border-border/80 bg-card/65 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:bg-card/90 hover:border-foreground/30 active:scale-95"
+        >
+          {/* স্ক্রিনশটের মতোই সুন্দর পেপার প্লেন/ন্যাভিগেশন তীর আইকন */}
+          <Navigation className="size-5 text-foreground/90 -rotate-45" />
+        </button>
+      )}
 
       {/* ওয়ার্ড ও রুট ডায়ালগ */}
       <WordAndRootSearchDialog
