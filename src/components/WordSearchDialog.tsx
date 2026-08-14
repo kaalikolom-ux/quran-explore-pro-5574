@@ -12,30 +12,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-/** Common Arabic root / word meanings fallback dictionary for Bengali & English */
-const WORD_MEANING_DICTIONARY: Record<string, { bn: string[]; en: string[] }> = {
-  جعل: { bn: ["আরোপ", "ন্যস্ত", "নির্ধারণ", "বানায়", "স্থাপন", "করে"], en: ["assign", "make", "set", "place"] },
-  يوم: { bn: ["দিন", "দিবস", "কেয়ামত"], en: ["day", "daytime"] },
-  سماء: { bn: ["আকাশ", "আকাশমন্ডলী", "আকাশমণ্ডল"], en: ["heaven", "sky"] },
-  ارض: { bn: ["পৃথিবী", "জমি", "ভূখণ্ড"], en: ["earth", "land"] },
-  رحم: { bn: ["দয়ালু", "রহম", "দয়া", "করুণাময়"], en: ["merciful", "mercy", "compassionate"] },
-  علم: { bn: ["জ্ঞান", "জানেন", "অবগত", "শিক্ষা"], en: ["know", "knowledge", "learn"] },
-  قول: { bn: ["বলুন", "বলেন", "কথা", "বক্তব্য"], en: ["say", "said", "speech"] },
-  ويل: { bn: ["দুর্ভোগ", "ধ্বংস", "পরিতাপ"], en: ["woe", "destruction"] },
-};
-
 /** Strip Arabic diacritics and normalize characters */
 function normalizeArabic(text: string) {
   if (!text) return "";
   return text
-    .replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ة/g, "ه")
+    .replace(/[\u064B-\u0652\u0670\u06D6-\u06ED\u0640]/g, "") // Remove harakat
+    .replace(/[أإآٱ]/g, "ا") // Normalize Alif
+    .replace(/ى/g, "ي") // Normalize Alif Maqsoora
+    .replace(/ة/g, "ه") // Normalize Ta Marbootah
     .trim();
 }
 
-/** Regex builder to match Arabic word with optional Harakat */
+/** Regex builder to match exact Arabic word with optional Harakat */
 function highlightArabicWord(fullText: string, searchWord: string) {
   const bare = normalizeArabic(searchWord);
   if (!bare) return fullText;
@@ -68,18 +56,14 @@ function highlightArabicWord(fullText: string, searchWord: string) {
   );
 }
 
-/** Smart highlight function for Transliteration and Translation */
-function highlightTextWithCandidates(fullText: string, candidateWords: string[]) {
-  if (!fullText || !candidateWords || candidateWords.length === 0) return fullText;
+/** Highlight exact matched target string in text */
+function highlightExactPhrase(fullText: string, target?: string) {
+  if (!fullText || !target || !target.trim()) return fullText;
 
-  const validCandidates = candidateWords
-    .map((w) => w.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-    .filter((w) => w.length > 1);
+  const cleanTarget = target.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (cleanTarget.length < 2) return fullText;
 
-  if (validCandidates.length === 0) return fullText;
-
-  const pattern = validCandidates.join("|");
-  const regex = new RegExp(`(${pattern})`, "gi");
+  const regex = new RegExp(`(${cleanTarget})`, "gi");
   const parts = fullText.split(regex);
 
   return parts.map((part, i) =>
@@ -101,9 +85,9 @@ type VerseResult = {
   ayah: number;
   text_uthmani: string;
   transliteration?: string;
-  matchedTransliterations: string[];
+  targetTransliteration?: string;
   translation?: string;
-  matchedTranslations: string[];
+  targetTranslation?: string;
 };
 
 export function WordSearchDialog({
@@ -118,7 +102,7 @@ export function WordSearchDialog({
   const normalized = normalizeArabic(rawWord);
 
   const results = useQuery<VerseResult[]>({
-    queryKey: ["word-search-v7", rawWord, normalized, lang],
+    queryKey: ["word-search-v8", rawWord, normalized, lang],
     enabled: !!rawWord,
     queryFn: async () => {
       const searchTarget = normalized || rawWord;
@@ -149,33 +133,20 @@ export function WordSearchDialog({
             const v = verseJson.verse;
 
             const [s, a] = hit.verse_key.split(":").map(Number);
-            const words = v.words || [];
+            const words: any[] = v.words || [];
 
-            // 1. Collect all transliterations for matching
-            const matchedWordObjs = words.filter((w: any) => {
-              const wordNorm = normalizeArabic(w.text_uthmani || "");
-              return wordNorm.includes(normalized) || normalized.includes(wordNorm);
+            // 1. Find the exact word object that matches search
+            const matchedWord = words.find((w) => {
+              const wNorm = normalizeArabic(w.text_uthmani || "");
+              return wNorm.includes(normalized) || normalized.includes(wNorm);
             });
 
-            const transCandidates = matchedWordObjs
-              .map((w: any) => w.transliteration?.text)
-              .filter(Boolean);
-
-            // 2. Collect translation candidate words from API + Dictionary fallback
-            const transMeaningCandidates = matchedWordObjs
-              .map((w: any) => w.translation?.text)
-              .filter(Boolean);
-
-            // Check dictionary for fallback synonyms
-            Object.keys(WORD_MEANING_DICTIONARY).forEach((rootKey) => {
-              if (normalized.includes(rootKey) || rootKey.includes(normalized)) {
-                const dictWords = WORD_MEANING_DICTIONARY[rootKey][lang === "bn" ? "bn" : "en"];
-                transMeaningCandidates.push(...dictWords);
-              }
-            });
+            // Target transliteration and translation derived from clicked word
+            const targetTrans = matchedWord?.transliteration?.text || "";
+            const targetTransMeaning = matchedWord?.translation?.text || "";
 
             const transliterationStr = words
-              .map((w: any) => w.transliteration?.text)
+              .map((w) => w.transliteration?.text)
               .filter(Boolean)
               .join(" ");
 
@@ -190,9 +161,9 @@ export function WordSearchDialog({
               ayah: a,
               text_uthmani: v.text_uthmani || hit.text,
               transliteration: transliterationStr,
-              matchedTransliterations: transCandidates,
+              targetTransliteration: targetTrans,
               translation: translationStr,
-              matchedTranslations: transMeaningCandidates,
+              targetTranslation: targetTransMeaning,
             };
           } catch {
             return null;
@@ -215,7 +186,7 @@ export function WordSearchDialog({
             </span>
           </DialogTitle>
           <DialogDescription>
-            এই শব্দ বা মূল অক্ষর সম্বলিত আয়াতসমূহ (শব্দ, উচ্চারণ ও অর্থ হাইলাইট করা হয়েছে):
+            এই শব্দ বা মূল অক্ষর সম্বলিত আয়াতসমূহ (শব্দ, সঠিক উচ্চারণ ও অর্থ হাইলাইট করা হয়েছে):
           </DialogDescription>
         </DialogHeader>
 
@@ -264,24 +235,24 @@ export function WordSearchDialog({
                 {highlightArabicWord(v.text_uthmani, rawWord)}
               </p>
 
-              {/* ২. উচ্চারণ (Transliteration হাইলাইটেড) */}
+              {/* ২. উচ্চারণ (একক ক্লিক করা শব্দটির উচ্চারণ হাইলাইটেড) */}
               {v.transliteration && (
                 <div className="rounded bg-muted/40 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
                   <span className="font-semibold text-foreground/80">উচ্চারণ: </span>
                   <span className="italic">
-                    {highlightTextWithCandidates(v.transliteration, v.matchedTransliterations)}
+                    {highlightExactPhrase(v.transliteration, v.targetTransliteration)}
                   </span>
                 </div>
               )}
 
-              {/* ৩. পূর্ণ অর্থ/অনুবাদ (Translation স্মার্ট হাইলাইটেড) */}
+              {/* ৩. পূর্ণ অর্থ/অনুবাদ (একক শব্দটির সঠিক অনুবাদ হাইলাইটেড) */}
               {v.translation && (
                 <div className="border-l-2 border-primary/60 pl-3 py-0.5">
                   <p className="text-xs font-semibold text-primary mb-0.5">
                     {lang === "bn" ? "অনুবাদ:" : "Translation:"}
                   </p>
                   <p className="text-sm leading-relaxed text-foreground/90">
-                    {highlightTextWithCandidates(v.translation, v.matchedTranslations)}
+                    {highlightExactPhrase(v.translation, v.targetTranslation)}
                   </p>
                 </div>
               )}
