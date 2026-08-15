@@ -120,7 +120,7 @@ const SURAH_LIST = [
   { id: 46, name_bn: "আল-আহকাফ", name_ar: "الأحقاف", type: "মাক্কী", total: 35 },
   { id: 47, name_bn: "মুহাম্মদ", name_ar: "محمد", type: "মাদানী", total: 38 },
   { id: 48, name_bn: "আল-ফাতহ", name_ar: "الفتح", type: "মাদানী", total: 29 },
-  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحجرات", type: "মাদানী", total: 18 },
+  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحজرات", type: "মাদানী", total: 18 },
   { id: 50, name_bn: "কাফ", name_ar: "ق", type: "মাক্কী", total: 45 },
   { id: 51, name_bn: "আজ-যারিয়াত", name_ar: "الذاريات", type: "মাক্কী", total: 60 },
   { id: 52, name_bn: "আত-তুর", name_ar: "الطور", type: "মাক্কী", total: 49 },
@@ -273,7 +273,7 @@ function SurahDetailPage() {
     const interval = setInterval(() => {
       const el = document.getElementById(`ayah-${ayahNum}`);
       if (el) {
-        const headerOffset = 110;
+        const headerOffset = 140;
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -366,10 +366,11 @@ function SurahDetailPage() {
   const showLexicon = prefs ? prefs.showLexicon !== false : true;
 
   return (
-    <div className="min-h-screen">
-      {/* গ্যারান্টেড ফিক্সড হেডার বার */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/80 shadow-md py-2.5 px-4">
-        <div className="mx-auto w-full max-w-4xl flex items-center justify-between gap-2">
+    <div className="mx-auto w-full max-w-4xl px-4 py-3 space-y-6">
+      
+      {/* ফ্লোটিং স্টিকি হেডার - মূল নেভবারের নিচে সুন্দরভাবে স্টিকি থাকবে */}
+      <div className="sticky top-16 z-30 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl px-4 py-2.5 shadow-md transition-all">
+        <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center size-6 rounded-md bg-muted font-bold text-xs text-foreground font-mono shrink-0">
               {formatNumber(meta.id, lang)}
@@ -426,314 +427,310 @@ function SurahDetailPage() {
         </div>
       </div>
 
-      {/* মূল কন্টেন্ট - হেডারের জন্য উপরে pt-16 স্পেসিং দেওয়া হয়েছে */}
-      <div className="mx-auto w-full max-w-4xl px-4 pt-16 pb-8 space-y-6">
+      {/* বিসমিল্লাহ */}
+      {surahId !== 9 && surahId !== 1 && (
+        <div className="text-center py-2">
+          <p className="arabic text-foreground/90 font-medium" style={{ fontSize: `${arabicFontSize + 2}px` }}>
+            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+          </p>
+        </div>
+      )}
 
-        {/* বিসমিল্লাহ */}
-        {surahId !== 9 && surahId !== 1 && (
-          <div className="text-center py-2">
-            <p className="arabic text-foreground/90 font-medium" style={{ fontSize: `${arabicFontSize + 2}px` }}>
-              بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-            </p>
-          </div>
-        )}
+      {/* লোডিং স্টেট */}
+      {surahQuery.isLoading && (
+        <div className="py-16 text-center text-sm text-muted-foreground animate-pulse">
+          কুরআনের আয়াতসমূহ লোড হচ্ছে...
+        </div>
+      )}
 
-        {/* লোডিং স্টেট */}
-        {surahQuery.isLoading && (
-          <div className="py-16 text-center text-sm text-muted-foreground animate-pulse">
-            কুরআনের আয়াতসমূহ লোড হচ্ছে...
-          </div>
-        )}
+      {/* আয়াতসমূহ */}
+      <div className="space-y-6">
+        {surahQuery.data?.ayahs?.map((ayah) => {
+          const isEditing = editingAyah === ayah.ayah;
+          const hasModernBnData = Boolean(ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0);
+          const hasModernEnData = Boolean(ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0);
 
-        {/* আয়াতসমূহ */}
-        <div className="space-y-6">
-          {surahQuery.data?.ayahs?.map((ayah) => {
-            const isEditing = editingAyah === ayah.ayah;
-            const hasModernBnData = Boolean(ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0);
-            const hasModernEnData = Boolean(ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0);
+          return (
+            <div
+              key={ayah.ayah}
+              id={`ayah-${ayah.ayah}`}
+              className="scroll-mt-36 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
+            >
+              {/* হেডার ও এডিট বাটন */}
+              <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center justify-center size-6 rounded-full bg-muted font-mono text-xs font-semibold text-foreground">
+                    {formatNumber(ayah.ayah, lang)}
+                  </span>
+                  <span className="text-xs text-muted-foreground font-mono font-medium">
+                    {meta.name_bn} {surahId}:{ayah.ayah}
+                  </span>
+                </div>
 
-            return (
-              <div
-                key={ayah.ayah}
-                id={`ayah-${ayah.ayah}`}
-                className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
-              >
-                {/* হেডার ও এডিট বাটন */}
-                <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center justify-center size-6 rounded-full bg-muted font-mono text-xs font-semibold text-foreground">
-                      {formatNumber(ayah.ayah, lang)}
-                    </span>
-                    <span className="text-xs text-muted-foreground font-mono font-medium">
-                      {meta.name_bn} {surahId}:{ayah.ayah}
-                    </span>
-                  </div>
-
-                  {isAdmin && (
-                    <div>
-                      {isEditing ? (
-                        <div className="flex items-center gap-1">
-                          <Button
-                            size="sm"
-                            variant="default"
-                            className="h-7 px-2.5 text-xs"
-                            onClick={() => handleSaveEdit(ayah.ayah)}
-                          >
-                            <Check className="size-3 mr-1" /> সংরক্ষণ
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            className="h-7 px-2 text-xs"
-                            onClick={() => setEditingAyah(null)}
-                          >
-                            <X className="size-3.5" />
-                          </Button>
-                        </div>
-                      ) : (
+                {isAdmin && (
+                  <div>
+                    {isEditing ? (
+                      <div className="flex items-center gap-1">
+                        <Button
+                          size="sm"
+                          variant="default"
+                          className="h-7 px-2.5 text-xs"
+                          onClick={() => handleSaveEdit(ayah.ayah)}
+                        >
+                          <Check className="size-3 mr-1" /> সংরক্ষণ
+                        </Button>
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="h-7 px-2.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
-                          onClick={() => handleStartEdit(ayah)}
+                          className="h-7 px-2 text-xs"
+                          onClick={() => setEditingAyah(null)}
                         >
-                          <Edit3 className="size-3 mr-1.5" /> আধুনিক অনুবাদ ও অভিধান এডিট
+                          <X className="size-3.5" />
                         </Button>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                {/* [১] শব্দে শব্দে আরবি টেক্সট */}
-                {showArabic && (
-                  <div
-                    dir="rtl"
-                    className="flex flex-wrap items-center justify-start gap-x-4 gap-y-4 py-2 border-b border-border/40"
-                  >
-                    {ayah.words.map((word) => (
-                      <div
-                        key={word.position}
-                        onClick={() =>
-                          setSelectedWordInfo({
-                            surah: surahId,
-                            ayah: ayah.ayah,
-                            word,
-                          })
-                        }
-                        className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
-                      >
-                        <span 
-                          className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
-                          style={{ fontSize: `${arabicFontSize}px` }}
-                        >
-                          {word.text_uthmani}
-                        </span>
-                        {showWordByWord && word.transliteration && (
-                          <span 
-                            className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
-                            style={{ fontSize: `${Math.max(10, translationFontSize - 4)}px` }}
-                          >
-                            {word.transliteration}
-                          </span>
-                        )}
-                        {showWordByWord && word.translation_bn && (
-                          <span 
-                            className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
-                            style={{ fontSize: `${Math.max(11, translationFontSize - 3)}px` }}
-                          >
-                            {word.translation_bn}
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* [২] পুরো আয়াতের উচ্চারণ */}
-                {showTransliteration && ayah.transliteration && (
-                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                      <Volume2 className="size-3.5 text-muted-foreground/80" />
-                      <span>উচ্চারণ (Transliteration)</span>
-                    </div>
-                    <p 
-                      className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5.5"
-                      style={{ fontSize: `${Math.max(12, translationFontSize - 2)}px` }}
-                    >
-                      {ayah.transliteration}
-                    </p>
-                  </div>
-                )}
-
-                {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
-                <div className="space-y-3 pt-0.5">
-                  
-                  {/* সারি ১: প্রচলিত অনুবাদ */}
-                  {showConventionalBn && (
-                    <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        <FileText className="size-3.5 text-muted-foreground/80" />
-                        <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
-                      </div>
-                      <p 
-                        className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
-                        style={{ fontSize: `${translationFontSize}px` }}
-                      >
-                        {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* সারি ২: Conventional Translation */}
-                  {showConventionalEn && (
-                    <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        <Languages className="size-3.5 text-muted-foreground/80" />
-                        <span>২. Conventional Translation (English)</span>
-                      </div>
-                      <p 
-                        className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
-                        style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
-                      >
-                        {ayah.conventional_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* সারি ৩: আধুনিক অনুবাদ */}
-                  {(isEditing || (showModernBn && hasModernBnData)) && (
-                    <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
-                        <BookMarked className="size-3.5 text-primary" />
-                        <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
-                      </div>
-                      {isEditing ? (
-                        <Textarea
-                          value={editForm.modern_translation_bn}
-                          onChange={(e) =>
-                            setEditForm({ ...editForm, modern_translation_bn: e.target.value })
-                          }
-                          className="mt-1 bg-background"
-                          style={{ fontSize: `${translationFontSize}px` }}
-                          placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
-                        />
-                      ) : (
-                        <p 
-                          className="text-sm font-medium text-foreground leading-relaxed pl-5.5"
-                          style={{ fontSize: `${translationFontSize}px` }}
-                        >
-                          {ayah.modern_translation_bn}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {/* সারি ৪: Modern Translation */}
-                  {(isEditing || (showModernEn && hasModernEnData)) && (
-                    <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
-                        <BookmarkCheck className="size-3.5 text-primary" />
-                        <span>৪. Modern Translation (English)</span>
-                      </div>
-                      {isEditing ? (
-                        <Textarea
-                          value={editForm.modern_translation_en}
-                          onChange={(e) =>
-                            setEditForm({ ...editForm, modern_translation_en: e.target.value })
-                          }
-                          className="font-serif italic mt-1 bg-background"
-                          style={{ fontSize: `${translationFontSize}px` }}
-                          placeholder="Modern contemporary English translation..."
-                        />
-                      ) : (
-                        <p 
-                          className="italic text-foreground/90 font-serif leading-relaxed pl-5.5"
-                          style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
-                        >
-                          {ayah.modern_translation_en}
-                        </p>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                {/* [৪] অভিধান / Lexicon */}
-                {showLexicon && (
-                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                      <Layers className="size-3.5 text-muted-foreground/80" />
-                      <span>অভিধান / Lexicon</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5 pl-5.5">
-                      {ayah.words
-                        .filter((w) => w.text_uthmani)
-                        .map((w, idx) => (
-                          <span
-                            key={idx}
-                            className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/50 px-2.5 py-1 font-mono text-[11px]"
-                          >
-                            <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
-                            {w.root && w.root !== "—" && (
-                              <span className="text-muted-foreground font-semibold">({w.root})</span>
-                            )}
-                            {w.translation_bn && (
-                              <span className="text-muted-foreground/80 text-[10px]">· {w.translation_bn}</span>
-                            )}
-                          </span>
-                        ))}
-                    </div>
-
-                    {isEditing ? (
-                      <div className="mt-2 pt-2 border-t border-border/40 pl-5.5">
-                        <label className="text-[11px] font-medium text-muted-foreground block mb-1">
-                          আধুনিক অভিধান / Lexicon নোট:
-                        </label>
-                        <Textarea
-                          value={editForm.lexicon_modern_notes}
-                          onChange={(e) =>
-                            setEditForm({ ...editForm, lexicon_modern_notes: e.target.value })
-                          }
-                          className="text-sm bg-background"
-                          placeholder="শব্দের আধুনিক অর্থ, ব্যুৎপত্তি বা ব্যাকরণগত নোট..."
-                        />
                       </div>
                     ) : (
-                      ayah.lexicon_modern_notes && (
-                        <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
-                            {ayah.lexicon_modern_notes}
-                          </p>
-                        </div>
-                      )
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="h-7 px-2.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
+                        onClick={() => handleStartEdit(ayah)}
+                      >
+                        <Edit3 className="size-3 mr-1.5" /> আধুনিক অনুবাদ ও অভিধান এডিট
+                      </Button>
                     )}
                   </div>
                 )}
               </div>
-            );
-          })}
-        </div>
 
-        {/* ব্যাক টু টপ বাটন */}
-        {showBackToTop && (
-          <button
-            type="button"
-            onClick={scrollToTop}
-            title="শীর্ষে যান"
-            aria-label="Back to top"
-            className="fixed bottom-6 right-6 z-40 flex size-11 items-center justify-center rounded-2xl border border-border/80 bg-card/65 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:bg-card/90 hover:border-foreground/30 active:scale-95 cursor-pointer"
-          >
-            <Navigation className="size-5 text-foreground/90 -rotate-45" />
-          </button>
-        )}
+              {/* [১] শব্দে শব্দে আরবি টেক্সট */}
+              {showArabic && (
+                <div
+                  dir="rtl"
+                  className="flex flex-wrap items-center justify-start gap-x-4 gap-y-4 py-2 border-b border-border/40"
+                >
+                  {ayah.words.map((word) => (
+                    <div
+                      key={word.position}
+                      onClick={() =>
+                        setSelectedWordInfo({
+                          surah: surahId,
+                          ayah: ayah.ayah,
+                          word,
+                        })
+                      }
+                      className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
+                    >
+                      <span 
+                        className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
+                        style={{ fontSize: `${arabicFontSize}px` }}
+                      >
+                        {word.text_uthmani}
+                      </span>
+                      {showWordByWord && word.transliteration && (
+                        <span 
+                          className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
+                          style={{ fontSize: `${Math.max(10, translationFontSize - 4)}px` }}
+                        >
+                          {word.transliteration}
+                        </span>
+                      )}
+                      {showWordByWord && word.translation_bn && (
+                        <span 
+                          className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
+                          style={{ fontSize: `${Math.max(11, translationFontSize - 3)}px` }}
+                        >
+                          {word.translation_bn}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
 
-        {/* ডায়ালগ */}
-        <WordAndRootSearchDialog
-          selectedWord={selectedWordInfo}
-          onClose={() => setSelectedWordInfo(null)}
-        />
+              {/* [২] পুরো আয়াতের উচ্চারণ */}
+              {showTransliteration && ayah.transliteration && (
+                <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    <Volume2 className="size-3.5 text-muted-foreground/80" />
+                    <span>উচ্চারণ (Transliteration)</span>
+                  </div>
+                  <p 
+                    className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5.5"
+                    style={{ fontSize: `${Math.max(12, translationFontSize - 2)}px` }}
+                  >
+                    {ayah.transliteration}
+                  </p>
+                </div>
+              )}
+
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
+              <div className="space-y-3 pt-0.5">
+                
+                {/* সারি ১: প্রচলিত অনুবাদ */}
+                {showConventionalBn && (
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                      <FileText className="size-3.5 text-muted-foreground/80" />
+                      <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
+                    </div>
+                    <p 
+                      className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
+                      style={{ fontSize: `${translationFontSize}px` }}
+                    >
+                      {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
+                    </p>
+                  </div>
+                )}
+
+                {/* সারি ২: Conventional Translation */}
+                {showConventionalEn && (
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                      <Languages className="size-3.5 text-muted-foreground/80" />
+                      <span>২. Conventional Translation (English)</span>
+                    </div>
+                    <p 
+                      className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
+                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
+                    >
+                      {ayah.conventional_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
+                    </p>
+                  </div>
+                )}
+
+                {/* সারি ৩: আধুনিক অনুবাদ */}
+                {(isEditing || (showModernBn && hasModernBnData)) && (
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
+                      <BookMarked className="size-3.5 text-primary" />
+                      <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
+                    </div>
+                    {isEditing ? (
+                      <Textarea
+                        value={editForm.modern_translation_bn}
+                        onChange={(e) =>
+                          setEditForm({ ...editForm, modern_translation_bn: e.target.value })
+                        }
+                        className="mt-1 bg-background"
+                        style={{ fontSize: `${translationFontSize}px` }}
+                        placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
+                      />
+                    ) : (
+                      <p 
+                        className="text-sm font-medium text-foreground leading-relaxed pl-5.5"
+                        style={{ fontSize: `${translationFontSize}px` }}
+                      >
+                        {ayah.modern_translation_bn}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {/* সারি ৪: Modern Translation */}
+                {(isEditing || (showModernEn && hasModernEnData)) && (
+                  <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 uppercase tracking-wider">
+                      <BookmarkCheck className="size-3.5 text-primary" />
+                      <span>৪. Modern Translation (English)</span>
+                    </div>
+                    {isEditing ? (
+                      <Textarea
+                        value={editForm.modern_translation_en}
+                        onChange={(e) =>
+                          setEditForm({ ...editForm, modern_translation_en: e.target.value })
+                        }
+                        className="font-serif italic mt-1 bg-background"
+                        style={{ fontSize: `${translationFontSize}px` }}
+                        placeholder="Modern contemporary English translation..."
+                      />
+                    ) : (
+                      <p 
+                        className="italic text-foreground/90 font-serif leading-relaxed pl-5.5"
+                        style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
+                      >
+                        {ayah.modern_translation_en}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* [৪] অভিধান / Lexicon */}
+              {showLexicon && (
+                <div className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    <Layers className="size-3.5 text-muted-foreground/80" />
+                    <span>অভিধান / Lexicon</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pl-5.5">
+                    {ayah.words
+                      .filter((w) => w.text_uthmani)
+                      .map((w, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/50 px-2.5 py-1 font-mono text-[11px]"
+                        >
+                          <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
+                          {w.root && w.root !== "—" && (
+                            <span className="text-muted-foreground font-semibold">({w.root})</span>
+                          )}
+                          {w.translation_bn && (
+                            <span className="text-muted-foreground/80 text-[10px]">· {w.translation_bn}</span>
+                          )}
+                        </span>
+                      ))}
+                  </div>
+
+                  {isEditing ? (
+                    <div className="mt-2 pt-2 border-t border-border/40 pl-5.5">
+                      <label className="text-[11px] font-medium text-muted-foreground block mb-1">
+                        আধুনিক অভিধান / Lexicon নোট:
+                      </label>
+                      <Textarea
+                        value={editForm.lexicon_modern_notes}
+                        onChange={(e) =>
+                          setEditForm({ ...editForm, lexicon_modern_notes: e.target.value })
+                        }
+                        className="text-sm bg-background"
+                        placeholder="শব্দের আধুনিক অর্থ, ব্যুৎপত্তি বা ব্যাকরণগত নোট..."
+                      />
+                    </div>
+                  ) : (
+                    ayah.lexicon_modern_notes && (
+                      <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
+                          {ayah.lexicon_modern_notes}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
+
+      {/* ব্যাক টু টপ বাটন */}
+      {showBackToTop && (
+        <button
+          type="button"
+          onClick={scrollToTop}
+          title="শীর্ষে যান"
+          aria-label="Back to top"
+          className="fixed bottom-6 right-6 z-40 flex size-11 items-center justify-center rounded-2xl border border-border/80 bg-card/65 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:bg-card/90 hover:border-foreground/30 active:scale-95 cursor-pointer"
+        >
+          <Navigation className="size-5 text-foreground/90 -rotate-45" />
+        </button>
+      )}
+
+      {/* ডায়ালগ */}
+      <WordAndRootSearchDialog
+        selectedWord={selectedWordInfo}
+        onClose={() => setSelectedWordInfo(null)}
+      />
     </div>
   );
 }
