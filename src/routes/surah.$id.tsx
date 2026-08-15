@@ -18,8 +18,15 @@ import {
   Search,
   Navigation,
   Loader2,
-  ExternalLink
+  ExternalLink,
+  Play,
+  Pause,
+  Bookmark,
+  Copy,
+  Share2,
+  StickyNote
 } from "lucide-react";
+import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
 import { Button } from "@/components/ui/button";
@@ -229,7 +236,7 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   }
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
 
-  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("نا") || base.endsWith("ها")) && base.length > 4) {
+  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("না") || base.endsWith("হা")) && base.length > 4) {
     base = base.slice(0, -2);
   } else if ((base.endsWith("ه") || base.endsWith("ي") || base.endsWith("ك")) && base.length > 3) {
     base = base.slice(0, -1);
@@ -242,7 +249,6 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
-// গ্লোবাল ফেচার ফাংশন
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   const res = await fetch(`/data/quran/surahs/${sId}.json`);
   if (!res.ok) throw new Error(`Failed to load Surah ${sId}`);
@@ -262,6 +268,31 @@ function SurahDetailPage() {
   const [arabicFontSize, setArabicFontSize] = useState<number>(28);
   const [translationFontSize, setTranslationFontSize] = useState<number>(15);
   const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // অডিও প্লেয়ার স্টেট
+  const [playingAyah, setPlayingAyah] = useState<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // বুকমার্ক স্টেট
+  const [bookmarkedAyahs, setBookmarkedAyahs] = useState<number[]>([]);
+
+  // নোট স্টেট
+  const [activeNoteAyah, setActiveNoteAyah] = useState<number | null>(null);
+  const [ayahNotes, setAyahNotes] = useState<Record<string, string>>({});
+  const [currentNoteText, setCurrentNoteText] = useState("");
+
+  // লোকালস্টোরেজ থেকে বুকমার্ক ও নোট লোড
+  useEffect(() => {
+    try {
+      const savedBms = localStorage.getItem(`bookmarks_surah_${surahId}`);
+      if (savedBms) setBookmarkedAyahs(JSON.parse(savedBms));
+
+      const savedNotes = localStorage.getItem(`notes_surah_${surahId}`);
+      if (savedNotes) setAyahNotes(JSON.parse(savedNotes));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [surahId]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -307,15 +338,13 @@ function SurahDetailPage() {
 
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
-  // 🚀 অপটিমাইজড কোয়েরি (ইনস্ট্যান্ট ক্যাশ)
   const surahQuery = useQuery<SurahData>({
     queryKey: ["local-surah-cache", surahId],
     queryFn: () => fetchSurahData(surahId),
-    staleTime: Infinity, // ডেটা সর্বদা ফ্রেশ থাকবে
-    gcTime: 1000 * 60 * 60 * 24, // ২৪ ঘণ্টা মেমোরিতে ধরে রাখবে
+    staleTime: Infinity,
+    gcTime: 1000 * 60 * 60 * 24,
   });
 
-  // ⚡ ব্যাকগ্রাউন্ড প্রি-ফেচিং (আগের ও পরের সুরা স্বয়ংক্রিয়ভাবে লোড করে রাখা)
   useEffect(() => {
     if (surahId < 114) {
       queryClient.prefetchQuery({
@@ -364,6 +393,86 @@ function SurahDetailPage() {
       scrollToAyah(Number(search.ayah));
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
+
+  // 🎵 অডিও প্লে/পজ লজিক
+  const handlePlayAudio = (ayahNum: number) => {
+    if (playingAyah === ayahNum) {
+      audioRef.current?.pause();
+      setPlayingAyah(null);
+      return;
+    }
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+
+    const sStr = String(surahId).padStart(3, "0");
+    const aStr = String(ayahNum).padStart(3, "0");
+    const audioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+
+    const audio = new Audio(audioUrl);
+    audioRef.current = audio;
+    setPlayingAyah(ayahNum);
+
+    audio.play().catch(() => {
+      toast.error("অডিও প্লে করতে সমস্যা হয়েছে");
+      setPlayingAyah(null);
+    });
+
+    audio.onended = () => {
+      setPlayingAyah(null);
+    };
+  };
+
+  // 🔖 বুকমার্ক হ্যান্ডলার
+  const handleToggleBookmark = (ayahNum: number) => {
+    let updated: number[];
+    if (bookmarkedAyahs.includes(ayahNum)) {
+      updated = bookmarkedAyahs.filter((a) => a !== ayahNum);
+      toast.info(`আয়াত ${ayahNum} বুকমার্ক থেকে সরানো হয়েছে`);
+    } else {
+      updated = [...bookmarkedAyahs, ayahNum];
+      toast.success(`আয়াত ${ayahNum} বুকমার্কে সংরক্ষণ করা হয়েছে`);
+    }
+    setBookmarkedAyahs(updated);
+    localStorage.setItem(`bookmarks_surah_${surahId}`, JSON.stringify(updated));
+  };
+
+  // 📋 কপি হ্যান্ডলার
+  const handleCopyAyah = (ayah: QuranAyah) => {
+    const text = `${ayah.text_uthmani}\n\n[উচ্চারণ]: ${ayah.transliteration || ""}\n[অনুবাদ]: ${ayah.conventional_bn || ""}\n\n— সুরা ${meta.name_bn} (${surahId}:${ayah.ayah})`;
+    navigator.clipboard.writeText(text);
+    toast.success("আয়াত ক্লিপবোর্ডে কপি করা হয়েছে");
+  };
+
+  // 🔗 শেয়ার হ্যান্ডলার
+  const handleShareAyah = (ayahNum: number) => {
+    const shareUrl = `${window.location.origin}/surah/${surahId}?ayah=${ayahNum}`;
+    if (navigator.share) {
+      navigator.share({
+        title: `সুরা ${meta.name_bn} - আয়াত ${ayahNum}`,
+        url: shareUrl,
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(shareUrl);
+      toast.success("আয়াতের লিংক কপি করা হয়েছে");
+    }
+  };
+
+  // 📝 নোট ওপেন ও সেভ হ্যান্ডলার
+  const handleOpenNote = (ayahNum: number) => {
+    setActiveNoteAyah(ayahNum);
+    setCurrentNoteText(ayahNotes[ayahNum] || "");
+  };
+
+  const handleSaveNote = () => {
+    if (!activeNoteAyah) return;
+    const updated = { ...ayahNotes, [activeNoteAyah]: currentNoteText };
+    setAyahNotes(updated);
+    localStorage.setItem(`notes_surah_${surahId}`, JSON.stringify(updated));
+    toast.success("নোট সংরক্ষিত হয়েছে");
+    setActiveNoteAyah(null);
+  };
 
   const handleJumpSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -512,6 +621,10 @@ function SurahDetailPage() {
       <div className="space-y-6">
         {surahQuery.data?.ayahs?.map((ayah) => {
           const isEditing = editingAyah === ayah.ayah;
+          const isBookmarked = bookmarkedAyahs.includes(ayah.ayah);
+          const isPlaying = playingAyah === ayah.ayah;
+          const hasNote = Boolean(ayahNotes[ayah.ayah]);
+
           const hasModernBnData = Boolean(ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0);
           const hasModernEnData = Boolean(ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0);
 
@@ -521,50 +634,107 @@ function SurahDetailPage() {
               id={`ayah-${ayah.ayah}`}
               className="scroll-mt-36 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
             >
-              {/* হেডার ও এডিট বাটন */}
-              <div className="flex items-center justify-between border-b border-border/40 pb-2.5">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center justify-center size-6 rounded-full bg-muted font-mono text-xs font-semibold text-foreground">
-                    {formatNumber(ayah.ayah, lang)}
-                  </span>
-                  <span className="text-xs text-muted-foreground font-mono font-medium">
-                    {meta.name_bn} {surahId}:{ayah.ayah}
-                  </span>
+              {/* হেডার রো: নম্বর, প্লে, বুকমার্ক ও অ্যাকশন বাটনসমূহ */}
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
+                
+                {/* বামপাশে: আয়াত নম্বর, Play, Bookmark */}
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
+                    <span>{surahId}:{ayah.ayah}</span>
+                  </div>
+
+                  <div className="flex items-center gap-1 text-muted-foreground">
+                    {/* Play Button */}
+                    <button
+                      type="button"
+                      onClick={() => handlePlayAudio(ayah.ayah)}
+                      title={isPlaying ? "পজ করুন" : "তেলাওয়াত শুনুন"}
+                      className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
+                        isPlaying ? "text-primary bg-primary/10" : ""
+                      }`}
+                    >
+                      {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="size-4 fill-current" />}
+                    </button>
+
+                    {/* Bookmark Button */}
+                    <button
+                      type="button"
+                      onClick={() => handleToggleBookmark(ayah.ayah)}
+                      title={isBookmarked ? "বুকমার্ক সরান" : "বুকমার্ক করুন"}
+                      className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
+                        isBookmarked ? "text-amber-500 fill-amber-500" : ""
+                      }`}
+                    >
+                      <Bookmark className={`size-4 ${isBookmarked ? "fill-current" : ""}`} />
+                    </button>
+                  </div>
                 </div>
 
-                {isAdmin && (
-                  <div>
-                    {isEditing ? (
-                      <div className="flex items-center gap-1">
-                        <Button
-                          size="sm"
-                          variant="default"
-                          className="h-7 px-2.5 text-xs"
-                          onClick={() => handleSaveEdit(ayah.ayah)}
-                        >
-                          <Check className="size-3 mr-1" /> সংরক্ষণ
-                        </Button>
+                {/* ডানপাশে: Copy, Share, Note & Admin Edit */}
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => handleCopyAyah(ayah)}
+                    title="আয়াত কপি করুন"
+                    className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                  >
+                    <Copy className="size-4" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleShareAyah(ayah.ayah)}
+                    title="আয়াত শেয়ার করুন"
+                    className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                  >
+                    <Share2 className="size-4" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleOpenNote(ayah.ayah)}
+                    title={hasNote ? "নোট দেখুন/এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
+                    className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
+                      hasNote ? "text-primary font-semibold" : "text-muted-foreground"
+                    }`}
+                  >
+                    <StickyNote className={`size-4 ${hasNote ? "fill-primary/20" : ""}`} />
+                  </button>
+
+                  {isAdmin && (
+                    <div className="ml-2 border-l border-border/40 pl-2">
+                      {isEditing ? (
+                        <div className="flex items-center gap-1">
+                          <Button
+                            size="sm"
+                            variant="default"
+                            className="h-7 px-2 text-xs"
+                            onClick={() => handleSaveEdit(ayah.ayah)}
+                          >
+                            <Check className="size-3 mr-1" /> সংরক্ষণ
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            className="h-7 px-2 text-xs"
+                            onClick={() => setEditingAyah(null)}
+                          >
+                            <X className="size-3.5" />
+                          </Button>
+                        </div>
+                      ) : (
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="h-7 px-2 text-xs"
-                          onClick={() => setEditingAyah(null)}
+                          className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
+                          onClick={() => handleStartEdit(ayah)}
                         >
-                          <X className="size-3.5" />
+                          <Edit3 className="size-3 mr-1" /> এডিট
                         </Button>
-                      </div>
-                    ) : (
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        className="h-7 px-2.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
-                        onClick={() => handleStartEdit(ayah)}
-                      >
-                        <Edit3 className="size-3 mr-1.5" /> আধুনিক অনুবাদ ও অভিধান এডিট
-                      </Button>
-                    )}
-                  </div>
-                )}
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* [১] শব্দে শব্দে আরবি টেক্সট */}
@@ -794,16 +964,46 @@ function SurahDetailPage() {
         </button>
       )}
 
-      {/* ডায়ালগ */}
+      {/* শব্দ ও রুট সার্চ ডায়ালগ */}
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
         onClose={() => setSelectedWordInfo(null)}
       />
+
+      {/* 📝 ব্যক্তিগত নোট ডায়ালগ */}
+      <Dialog open={activeNoteAyah !== null} onOpenChange={(open) => !open && setActiveNoteAyah(null)}>
+        <DialogContent className="sm:max-w-md bg-card border-border/80">
+          <DialogHeader>
+            <DialogTitle className="text-base font-semibold flex items-center gap-2">
+              <StickyNote className="size-4 text-primary" />
+              <span>আয়াত {surahId}:{activeNoteAyah} এর ব্যক্তিগত নোট</span>
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="space-y-4 pt-2">
+            <Textarea
+              value={currentNoteText}
+              onChange={(e) => setCurrentNoteText(e.target.value)}
+              placeholder="এই আয়াত সম্পর্কিত আপনার ব্যক্তিগত অনুভূতি, তাদাব্বুর বা নোট এখানে লিখুন..."
+              rows={5}
+              className="bg-background text-sm leading-relaxed"
+            />
+
+            <div className="flex justify-end gap-2">
+              <Button variant="ghost" size="sm" onClick={() => setActiveNoteAyah(null)}>
+                বাতিল
+              </Button>
+              <Button size="sm" onClick={handleSaveNote}>
+                সংরক্ষণ করুন
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
 
-// ইন-মেমোরি গ্লোবাল সার্চ ক্যাশ
 const searchCacheMap = new Map<string, MatchedOccurrence[]>();
 
 type MatchedOccurrence = {
@@ -841,7 +1041,6 @@ function WordAndRootSearchDialog({
 
     const cacheKey = `${searchType}:${searchType === "word" ? cleanArabicText(selectedWord.word.text_uthmani) : activeRoot}`;
     
-    // ক্যাশে থাকলে নেটওয়ার্ক ফেচ ছাড়াই ইনস্ট্যান্ট সেট হবে
     if (searchCacheMap.has(cacheKey)) {
       setResults(searchCacheMap.get(cacheKey)!);
       return;
@@ -859,7 +1058,6 @@ function WordAndRootSearchDialog({
       await Promise.all(
         surahIds.map(async (sId) => {
           try {
-            // TanStack Query ক্যাশ থেকে ফেচ (যা অলরেডি মেমরিতে থাকলে ০ms লাগবে)
             const data: SurahData = await queryClient.fetchQuery({
               queryKey: ["local-surah-cache", sId],
               queryFn: () => fetchSurahData(sId),
@@ -895,15 +1093,13 @@ function WordAndRootSearchDialog({
                 });
               }
             });
-          } catch (e) {
-            // স্কিপ
-          }
+          } catch (e) {}
         })
       );
 
       if (isMounted) {
         matchedAyahs.sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
-        searchCacheMap.set(cacheKey, matchedAyahs); // ক্যাশে সেভ করা
+        searchCacheMap.set(cacheKey, matchedAyahs);
         setResults(matchedAyahs);
         setIsLoading(false);
       }
@@ -934,7 +1130,6 @@ function WordAndRootSearchDialog({
     <Dialog open={!!selectedWord} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-h-[90vh] overflow-hidden flex flex-col sm:max-w-2xl p-0 gap-0 border border-border/80 shadow-2xl bg-card">
         
-        {/* ডায়ালগ হেডার */}
         <DialogHeader className="p-5 pb-3 border-b border-border/60 bg-muted/20 text-center shrink-0">
           <div className="flex items-center justify-center gap-2 mb-1">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground">
@@ -958,7 +1153,6 @@ function WordAndRootSearchDialog({
             </p>
           )}
 
-          {/* ক্রিয়ামূল ও রুট বক্স */}
           <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto mt-3">
             <div className="rounded-xl border border-border/70 bg-card p-2 text-center shadow-xs">
               <span className="text-[10px] text-muted-foreground block mb-0.5">ক্রিয়ামূল:</span>
@@ -975,7 +1169,6 @@ function WordAndRootSearchDialog({
             </div>
           </div>
 
-          {/* সার্চ সুইচ বাটন */}
           <div className="flex items-center justify-center gap-1 mt-3 p-1 rounded-xl bg-muted/80 w-fit mx-auto border border-border/60">
             <button
               type="button"
@@ -1003,9 +1196,7 @@ function WordAndRootSearchDialog({
           </div>
         </DialogHeader>
 
-        {/* সার্চ রেজাল্ট বডি */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
-          
           <div className="flex items-center justify-between text-xs text-muted-foreground px-1 border-b border-border/40 pb-2">
             <span>
               {searchType === "word" 
@@ -1036,7 +1227,6 @@ function WordAndRootSearchDialog({
                   key={`${res.surah}-${res.ayah}-${index}`}
                   className="rounded-xl border border-border/70 bg-card p-3.5 space-y-2.5 shadow-xs hover:border-primary/40 transition-all"
                 >
-                  {/* সুরা ও আয়াতের শিরোনাম */}
                   <div className="flex items-center justify-between">
                     <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground font-mono">
                       <span className="size-2 rounded-full bg-primary" />
@@ -1053,7 +1243,6 @@ function WordAndRootSearchDialog({
                     </button>
                   </div>
 
-                  {/* সম্পূর্ণ আয়াত (শব্দ হাইলাইটসহ) */}
                   <div 
                     dir="rtl" 
                     className="flex flex-wrap items-center justify-start gap-x-2 gap-y-2 py-1 leading-loose"
@@ -1084,7 +1273,6 @@ function WordAndRootSearchDialog({
                     })}
                   </div>
 
-                  {/* নিচে শুধুমাত্র ঐ আয়াতে ম্যাচ হওয়া শব্দগুলোর অর্থ ও উচ্চারণ */}
                   <div className="space-y-1.5 pt-1">
                     {res.matchedWords.map((mw, mIdx) => (
                       <div 
