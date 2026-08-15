@@ -165,7 +165,7 @@ export const dict: Dict = {
   },
   translationType: { bn: "অনুবাদের ধরন", en: "Translation type" },
   author: { bn: "লেখক", en: "Author" },
-  postSettings: { bn: "পোস্ট সেটিংস", en: "Post settings" },
+  postSettings: { bn: "লেখক", en: "Authors" },
   authorsTab: { bn: "লেখক", en: "Authors" },
   newAuthor: { bn: "নতুন লেখক", en: "New author" },
   authorNameBn: { bn: "লেখকের নাম (বাংলা)", en: "Author name (Bangla)" },
