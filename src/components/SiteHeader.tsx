@@ -1,8 +1,7 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import React from "react";
+import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
+import React, { useEffect, useState } from "react";
 import { 
   Home,
-  BookOpen, 
   FileText, 
   Bookmark, 
   Settings, 
@@ -11,16 +10,41 @@ import {
   Sun, 
   Languages, 
   ShieldCheck,
+  LogIn,
+  LogOut,
+  User,
   Menu,
   X
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export function SiteHeader() {
   const { prefs, updatePref, toggleLang, lang } = usePrefs();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
   const routerState = useRouterState();
+  const navigate = useNavigate();
   const currentPath = routerState.location.pathname;
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast.success(lang === "bn" ? "লগআউট সফল হয়েছে" : "Logged out successfully");
+    navigate({ to: "/" });
+  };
 
   const navItems = [
     { to: "/", label: lang === "bn" ? "হোম" : "Home", icon: Home },
@@ -50,7 +74,7 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        {/* ডেস্কটপ মেনু আইটেমসমূহ (হোম ও যোগাযোগসহ প্রতিটিতে আইকন) */}
+        {/* ডেস্কটপ মেনু আইটেমসমূহ */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -72,8 +96,31 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* অ্যাকশন বাটনসমূহ (ভাষা পরিবর্তন, ডার্ক মোড ও মোবাইল টগল) */}
+        {/* অ্যাকশন বাটনসমূহ (লগইন, ভাষা পরিবর্তন, ডার্ক মোড ও মোবাইল টগল) */}
         <div className="flex items-center gap-1.5">
+          
+          {/* লগইন / প্রোফাইল বাটন */}
+          {user ? (
+            <button
+              type="button"
+              onClick={handleLogout}
+              title={lang === "bn" ? "লগআউট করুন" : "Log out"}
+              className="flex h-8 items-center gap-1.5 rounded-lg border border-border/60 bg-muted/30 px-2.5 text-xs font-medium text-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+            >
+              <LogOut className="size-3.5" />
+              <span className="hidden sm:inline">{lang === "bn" ? "লগআউট" : "Logout"}</span>
+            </button>
+          ) : (
+            <Link
+              to="/auth"
+              title={lang === "bn" ? "লগইন করুন" : "Sign In"}
+              className="flex h-8 items-center gap-1.5 rounded-lg bg-primary px-2.5 text-xs font-medium text-primary-foreground shadow-xs hover:bg-primary/90 transition-colors cursor-pointer"
+            >
+              <LogIn className="size-3.5" />
+              <span className="hidden sm:inline">{lang === "bn" ? "লগইন" : "Login"}</span>
+            </Link>
+          )}
+
           {/* ভাষা টগল */}
           <button
             type="button"
@@ -129,6 +176,31 @@ export function SiteHeader() {
               </Link>
             );
           })}
+
+          <div className="pt-2 border-t border-border/60">
+            {user ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  handleLogout();
+                }}
+                className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-all cursor-pointer"
+              >
+                <LogOut className="size-4" />
+                <span>{lang === "bn" ? "লগআউট" : "Logout"}</span>
+              </button>
+            ) : (
+              <Link
+                to="/auth"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-primary bg-primary/10 transition-all"
+              >
+                <LogIn className="size-4" />
+                <span>{lang === "bn" ? "লগইন করুন" : "Login"}</span>
+              </Link>
+            )}
+          </div>
         </div>
       )}
     </header>
