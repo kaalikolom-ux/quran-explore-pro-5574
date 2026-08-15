@@ -92,7 +92,7 @@ const SURAH_LIST = [
   { id: 5, name_bn: "আল-মায়িদাহ", name_ar: "المائدة", type: "মাদানী", total: 120 },
   { id: 6, name_bn: "আল-আনআম", name_ar: "الأنعام", type: "মাক্কী", total: 165 },
   { id: 7, name_bn: "আল-আরাফ", name_ar: "الأعراف", type: "মাক্কী", total: 206 },
-  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفال", type: "মাদানী", total: 75 },
+  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفাল", type: "মাদানী", total: 75 },
   { id: 9, name_bn: "আত-তাওবাহ", name_ar: "التوبة", type: "মাদানী", total: 129 },
   { id: 10, name_bn: "ইউনুস", name_ar: "يونس", type: "মাক্কী", total: 109 },
   { id: 11, name_bn: "হুদ", name_ar: "هود", type: "মাক্কী", total: 123 },
@@ -133,7 +133,7 @@ const SURAH_LIST = [
   { id: 46, name_bn: "আল-আহকাফ", name_ar: "الأحقاف", type: "মাক্কী", total: 35 },
   { id: 47, name_bn: "মুহাম্মদ", name_ar: "محمد", type: "মাদানী", total: 38 },
   { id: 48, name_bn: "আল-ফাতহ", name_ar: "الفتح", type: "মাদানী", total: 29 },
-  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحজরাত", type: "মাদানী", total: 18 },
+  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحجرات", type: "মাদানী", total: 18 },
   { id: 50, name_bn: "কাফ", name_ar: "ق", type: "মাক্কী", total: 45 },
   { id: 51, name_bn: "আজ-যারিয়াত", name_ar: "الذاريات", type: "মাক্কী", total: 60 },
   { id: 52, name_bn: "আত-তুর", name_ar: "الطور", type: "মাক্কী", total: 49 },
@@ -163,7 +163,7 @@ const SURAH_LIST = [
   { id: 76, name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   { id: 77, name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   { id: 78, name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "الনাযعات", type: "মাক্কী", total: 46 },
+  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
   { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   { id: 81, name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
   { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
@@ -192,7 +192,7 @@ const SURAH_LIST = [
   { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
   { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
   { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
-  { id: 108, name_bn: "আল-কাউসার", name_ar: "الকোثر", type: "মাক্কী", total: 3 },
+  { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
   { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
@@ -263,17 +263,14 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, lang } = (usePrefs ? usePrefs() : {}) as any;
-  const { bookmarks, toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
+  const { prefs, lang } = usePrefs();
+  const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const isAdmin = true;
 
-  const [arabicFontSize, setArabicFontSize] = useState<number>(28);
-  const [translationFontSize, setTranslationFontSize] = useState<number>(15);
   const [showBackToTop, setShowBackToTop] = useState(false);
-
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -310,13 +307,6 @@ function SurahDetailPage() {
       behavior: "smooth"
     });
   };
-
-  useEffect(() => {
-    const savedAr = prefs?.arabicFontSize || localStorage.getItem("quran_arabic_font_size");
-    const savedTr = prefs?.translationFontSize || localStorage.getItem("quran_translation_font_size");
-    if (savedAr) setArabicFontSize(Number(savedAr));
-    if (savedTr) setTranslationFontSize(Number(savedTr));
-  }, [prefs]);
 
   const [searchJumpText, setSearchJumpText] = useState("");
 
@@ -420,7 +410,6 @@ function SurahDetailPage() {
     };
   };
 
-  // 🔖 Bookmarks Hook-এর সাথে শতভাগ নির্ভুল ইন্টিগ্রেশন
   const isAyahBookmarked = (ayahNum: number) => {
     return checkBookmarked({
       kind: "ayah",
@@ -476,7 +465,6 @@ function SurahDetailPage() {
     }
   };
 
-  // 📝 নোট হ্যান্ডলার
   const handleOpenNote = (ayahNum: number) => {
     setActiveNoteAyah(ayahNum);
     setCurrentNoteText(ayahNotes[ayahNum] || "");
@@ -564,14 +552,18 @@ function SurahDetailPage() {
     setEditingAyah(null);
   };
 
-  const showArabic = prefs ? prefs.showArabic !== false : true;
-  const showWordByWord = prefs ? prefs.showWordByWord !== false : true;
-  const showTransliteration = prefs ? prefs.showTransliteration !== false : true;
-  const showConventionalBn = prefs ? prefs.showConventionalBn !== false : true;
-  const showConventionalEn = prefs ? prefs.showConventionalEn !== false : true;
-  const showModernBn = prefs ? prefs.showModernBn !== false : true;
-  const showModernEn = prefs ? prefs.showModernEn !== false : true;
-  const showLexicon = prefs ? prefs.showLexicon !== false : true;
+  // ✅ নিখুঁত ট্রু/ফলস চেকিং
+  const showArabic = prefs.showArabic === true;
+  const showWordByWord = prefs.showWordByWord === true;
+  const showTransliteration = prefs.showTransliteration === true;
+  const showConventionalBn = prefs.showConventionalBn === true;
+  const showConventionalEn = prefs.showConventionalEn === true;
+  const showModernBn = prefs.showModernBn === true;
+  const showModernEn = prefs.showModernEn === true;
+  const showLexicon = prefs.showLexicon === true;
+
+  const arabicFontSize = prefs.arabicFontSize || 28;
+  const translationFontSize = prefs.translationFontSize || 15;
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-3 space-y-6">
@@ -725,7 +717,6 @@ function SurahDetailPage() {
                     <Share2 className="size-4" />
                   </button>
 
-                  {/* 📝 উজ্জ্বল হাইলাইটেড নোট আইকন */}
                   <button
                     type="button"
                     onClick={() => handleOpenNote(ayah.ayah)}
@@ -1097,7 +1088,7 @@ function WordAndRootSearchDialog({
   } | null;
   onClose: () => void;
 }) {
-  const { lang } = (usePrefs ? usePrefs() : {}) as any;
+  const { lang } = usePrefs();
   const [searchType, setSearchType] = useState<"word" | "root">("word");
   const [results, setResults] = useState<MatchedOccurrence[]>([]);
   const [isLoading, setIsLoading] = useState(false);
