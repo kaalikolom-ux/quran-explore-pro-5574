@@ -65,10 +65,12 @@ export type QuranWord = {
 export type QuranAyah = {
   surah: number;
   ayah: number;
-  text_uthmani: string;
+  text_uthmani?: string;
   transliteration?: string;
   conventional_bn?: string;
   conventional_en?: string;
+  translation_bn?: string;
+  translation_en?: string;
   modern_translation_bn?: string;
   modern_translation_en?: string;
   lexicon_modern_notes?: string;
@@ -186,13 +188,13 @@ const SURAH_LIST = [
   { id: 103, name_bn: "আল-আসর", name_ar: "العصر", type: "মাক্কী", total: 3 },
   { id: 104, name_bn: "আল-হুমাযাহ", name_ar: "الهمزة", type: "মাক্কী", total: 9 },
   { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
-  { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
+  { id: 106, name_bn: "কুরাইশ", name_ar: "قريশ", type: "মাক্কী", total: 4 },
   { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
   { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
-  { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
-  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإخلاص", type: "মাক্কী", total: 4 },
+  { id: 111, name_bn: "আল-লাহাব", name_ar: "المسদ", type: "মাক্কী", total: 5 },
+  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإখلاص", type: "মাক্কী", total: 4 },
   { id: 113, name_bn: "আল-ফালাক", name_ar: "الفلق", type: "মাক্কী", total: 5 },
   { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
 ];
@@ -259,7 +261,8 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, lang } = (usePrefs ? usePrefs() : {}) as any;
+  const prefsContext = (usePrefs ? usePrefs() : {}) as any;
+  const { prefs, lang } = prefsContext;
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -273,26 +276,30 @@ function SurahDetailPage() {
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // বুকমার্ক স্টেট
-  const [bookmarkedAyahs, setBookmarkedAyahs] = useState<number[]>([]);
+  // গ্লোবাল বুকমার্ক লিস্ট
+  const [globalBookmarks, setGlobalBookmarks] = useState<any[]>([]);
 
   // নোট স্টেট
   const [activeNoteAyah, setActiveNoteAyah] = useState<number | null>(null);
   const [ayahNotes, setAyahNotes] = useState<Record<string, string>>({});
   const [currentNoteText, setCurrentNoteText] = useState("");
 
-  // লোকালস্টোরেজ থেকে বুকমার্ক ও নোট লোড
+  // গ্লোবাল বুকমার্ক সিঙ্ক
   useEffect(() => {
     try {
-      const savedBms = localStorage.getItem(`bookmarks_surah_${surahId}`);
-      if (savedBms) setBookmarkedAyahs(JSON.parse(savedBms));
+      const savedGlobal = localStorage.getItem("quran_bookmarks") || localStorage.getItem("bookmarks");
+      if (savedGlobal) {
+        setGlobalBookmarks(JSON.parse(savedGlobal));
+      } else if (prefsContext.bookmarks) {
+        setGlobalBookmarks(prefsContext.bookmarks);
+      }
 
       const savedNotes = localStorage.getItem(`notes_surah_${surahId}`);
       if (savedNotes) setAyahNotes(JSON.parse(savedNotes));
     } catch (e) {
       console.error(e);
     }
-  }, [surahId]);
+  }, [surahId, prefsContext.bookmarks]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -394,7 +401,7 @@ function SurahDetailPage() {
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
-  // 🎵 অডিও প্লে/পজ লজিক
+  // 🎵 অডিও প্লে/পজ
   const handlePlayAudio = (ayahNum: number) => {
     if (playingAyah === ayahNum) {
       audioRef.current?.pause();
@@ -424,25 +431,68 @@ function SurahDetailPage() {
     };
   };
 
-  // 🔖 বুকমার্ক হ্যান্ডলার
-  const handleToggleBookmark = (ayahNum: number) => {
-    let updated: number[];
-    if (bookmarkedAyahs.includes(ayahNum)) {
-      updated = bookmarkedAyahs.filter((a) => a !== ayahNum);
-      toast.info(`আয়াত ${ayahNum} বুকমার্ক থেকে সরানো হয়েছে`);
-    } else {
-      updated = [...bookmarkedAyahs, ayahNum];
-      toast.success(`আয়াত ${ayahNum} বুকমার্কে সংরক্ষণ করা হয়েছে`);
-    }
-    setBookmarkedAyahs(updated);
-    localStorage.setItem(`bookmarks_surah_${surahId}`, JSON.stringify(updated));
+  // 🔖 গ্লোবাল বুকমার্ক টগল (বুকমার্ক পেজে সরাসরি যুক্ত হবে)
+  const isAyahBookmarked = (ayahNum: number) => {
+    return globalBookmarks.some(
+      (b) => (b.surah === surahId || b.surah_id === surahId) && (b.ayah === ayahNum || b.verse_id === ayahNum || b.ayah_id === ayahNum)
+    );
   };
 
-  // 📋 কপি হ্যান্ডলার
+  const handleToggleBookmark = (ayah: QuranAyah) => {
+    const isBookmarked = isAyahBookmarked(ayah.ayah);
+    let updated: any[];
+
+    if (isBookmarked) {
+      updated = globalBookmarks.filter(
+        (b) => !((b.surah === surahId || b.surah_id === surahId) && (b.ayah === ayah.ayah || b.verse_id === ayah.ayah || b.ayah_id === ayah.ayah))
+      );
+      toast.info(`আয়াত ${ayah.ayah} বুকমার্ক থেকে সরানো হয়েছে`);
+    } else {
+      const fullArabic = ayah.text_uthmani || ayah.words?.map((w) => w.text_uthmani).join(" ") || "";
+      const translation = ayah.conventional_bn || (ayah as any).translation_bn || ayah.words?.map((w) => w.translation_bn).join(" ") || "";
+      
+      const newBm = {
+        id: `surah-${surahId}-ayah-${ayah.ayah}`,
+        type: "verse",
+        surah: surahId,
+        surah_id: surahId,
+        ayah: ayah.ayah,
+        verse_id: ayah.ayah,
+        surah_name_bn: meta.name_bn,
+        surah_name_ar: meta.name_ar,
+        arabic: fullArabic,
+        translation: translation,
+        transliteration: ayah.transliteration || "",
+        created_at: new Date().toISOString(),
+      };
+      updated = [newBm, ...globalBookmarks];
+      toast.success(`আয়াত ${ayah.ayah} বুকমার্কে সংরক্ষণ করা হয়েছে`);
+    }
+
+    setGlobalBookmarks(updated);
+    localStorage.setItem("quran_bookmarks", JSON.stringify(updated));
+    localStorage.setItem("bookmarks", JSON.stringify(updated));
+
+    if (prefsContext.setBookmarks) {
+      prefsContext.setBookmarks(updated);
+    }
+  };
+
+  // 📋 নির্ভুল কপি হ্যান্ডলার
   const handleCopyAyah = (ayah: QuranAyah) => {
-    const text = `${ayah.text_uthmani}\n\n[উচ্চারণ]: ${ayah.transliteration || ""}\n[অনুবাদ]: ${ayah.conventional_bn || ""}\n\n— সুরা ${meta.name_bn} (${surahId}:${ayah.ayah})`;
-    navigator.clipboard.writeText(text);
-    toast.success("আয়াত ক্লিপবোর্ডে কপি করা হয়েছে");
+    const arabicText = ayah.text_uthmani || ayah.words?.map((w) => w.text_uthmani).join(" ") || "";
+    const translationText = ayah.conventional_bn || (ayah as any).translation_bn || ayah.words?.map((w) => w.translation_bn).filter(Boolean).join(" ") || "";
+    const transliterationText = ayah.transliteration || ayah.words?.map((w) => w.transliteration).filter(Boolean).join(" ") || "";
+
+    const fullCopyText = `${arabicText}
+
+[উচ্চারণ]: ${transliterationText}
+[অনুবাদ]: ${translationText}
+
+— সুরা ${meta.name_bn} (${surahId}:${ayah.ayah})`;
+
+    navigator.clipboard.writeText(fullCopyText);
+    toast.success("আয়াত সম্পূর্ণ কপি করা হয়েছে");
   };
 
   // 🔗 শেয়ার হ্যান্ডলার
@@ -459,7 +509,7 @@ function SurahDetailPage() {
     }
   };
 
-  // 📝 নোট ওপেন ও সেভ হ্যান্ডলার
+  // 📝 নোট হ্যান্ডলার
   const handleOpenNote = (ayahNum: number) => {
     setActiveNoteAyah(ayahNum);
     setCurrentNoteText(ayahNotes[ayahNum] || "");
@@ -621,7 +671,7 @@ function SurahDetailPage() {
       <div className="space-y-6">
         {surahQuery.data?.ayahs?.map((ayah) => {
           const isEditing = editingAyah === ayah.ayah;
-          const isBookmarked = bookmarkedAyahs.includes(ayah.ayah);
+          const isBookmarked = isAyahBookmarked(ayah.ayah);
           const isPlaying = playingAyah === ayah.ayah;
           const hasNote = Boolean(ayahNotes[ayah.ayah]);
 
@@ -644,7 +694,6 @@ function SurahDetailPage() {
                   </div>
 
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    {/* Play Button */}
                     <button
                       type="button"
                       onClick={() => handlePlayAudio(ayah.ayah)}
@@ -656,10 +705,9 @@ function SurahDetailPage() {
                       {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="size-4 fill-current" />}
                     </button>
 
-                    {/* Bookmark Button */}
                     <button
                       type="button"
-                      onClick={() => handleToggleBookmark(ayah.ayah)}
+                      onClick={() => handleToggleBookmark(ayah)}
                       title={isBookmarked ? "বুকমার্ক সরান" : "বুকমার্ক করুন"}
                       className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
                         isBookmarked ? "text-amber-500 fill-amber-500" : ""
