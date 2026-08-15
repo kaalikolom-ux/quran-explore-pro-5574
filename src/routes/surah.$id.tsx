@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -16,7 +16,9 @@ import {
   Volume2, 
   BookmarkCheck,
   Search,
-  Navigation
+  Navigation,
+  Loader2,
+  ExternalLink
 } from "lucide-react";
 
 import { usePrefs } from "@/lib/prefs";
@@ -101,7 +103,7 @@ const SURAH_LIST = [
   { id: 27, name_bn: "আন-নামল", name_ar: "النمل", type: "মাক্কী", total: 93 },
   { id: 28, name_bn: "আল-কাসাস", name_ar: "القصص", type: "মাক্কী", total: 88 },
   { id: 29, name_bn: "আল-আনকাবুত", name_ar: "العنكبوت", type: "মাক্কী", total: 69 },
-  { id: 30, name_bn: "আর-রুম", name_ar: "الروم", type: "মাক্কী", total: 60 },
+  { id: 30, name_bn: "আর-রুম", name_ar: "الরوم", type: "মাক্কী", total: 60 },
   { id: 31, name_bn: "লুকমান", name_ar: "لقمان", type: "মাক্কী", total: 34 },
   { id: 32, name_bn: "আস-সাজদাহ", name_ar: "السجدة", type: "মাক্কী", total: 30 },
   { id: 33, name_bn: "আল-আহযাব", name_ar: "الأحزاب", type: "মাদানী", total: 73 },
@@ -120,7 +122,7 @@ const SURAH_LIST = [
   { id: 46, name_bn: "আল-আহকাফ", name_ar: "الأحقاف", type: "মাক্কী", total: 35 },
   { id: 47, name_bn: "মুহাম্মদ", name_ar: "محمد", type: "মাদানী", total: 38 },
   { id: 48, name_bn: "আল-ফাতহ", name_ar: "الفتح", type: "মাদানী", total: 29 },
-  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحজرات", type: "মাদানী", total: 18 },
+  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحجرات", type: "মাদানী", total: 18 },
   { id: 50, name_bn: "কাফ", name_ar: "ق", type: "মাক্কী", total: 45 },
   { id: 51, name_bn: "আজ-যারিয়াত", name_ar: "الذاريات", type: "মাক্কী", total: 60 },
   { id: 52, name_bn: "আত-তুর", name_ar: "الطور", type: "মাক্কী", total: 49 },
@@ -183,7 +185,7 @@ const SURAH_LIST = [
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
   { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
-  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإخلاص", type: "মাক্কী", total: 4 },
+  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإখلاص", type: "মাক্কী", total: 4 },
   { id: 113, name_bn: "আল-ফালাক", name_ar: "الفلق", type: "মাক্কী", total: 5 },
   { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
 ];
@@ -200,6 +202,17 @@ function formatNumber(num: number | string, lang: string) {
   if (lang !== "bn") return String(num);
   const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
   return String(num).replace(/\d/g, (d) => bnDigits[Number(d)]);
+}
+
+// আরবি হরকত ও চিহ্ন সরানোর ফাংশন (নির্ভুল সার্চের জন্য)
+function cleanArabicText(text: string): string {
+  if (!text) return "";
+  return text
+    .replace(/[\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED]/g, "")
+    .replace(/[ٱإأآ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .replace(/ة/g, "ه")
+    .trim();
 }
 
 function SurahDetailPage() {
@@ -368,7 +381,7 @@ function SurahDetailPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-3 space-y-6">
       
-      {/* ফ্লোটিং স্টিকি হেডার - মূল নেভবারের নিচে সুন্দরভাবে স্টিকি থাকবে */}
+      {/* ফ্লোটিং স্টিকি হেডার */}
       <div className="sticky top-16 z-30 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl px-4 py-2.5 shadow-md transition-all">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -735,6 +748,13 @@ function SurahDetailPage() {
   );
 }
 
+type MatchedOccurrence = {
+  surah: number;
+  ayah: number;
+  word: QuranWord;
+  allWords: QuranWord[];
+};
+
 function WordAndRootSearchDialog({
   selectedWord,
   onClose,
@@ -748,24 +768,108 @@ function WordAndRootSearchDialog({
 }) {
   const { lang } = (usePrefs ? usePrefs() : {}) as any;
   const [searchType, setSearchType] = useState<"word" | "root">("word");
+  const [results, setResults] = useState<MatchedOccurrence[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const activeRoot = selectedWord?.word?.root && selectedWord.word.root !== "—" 
+    ? selectedWord.word.root 
+    : (selectedWord?.word?.lemma || "");
+
+  // পুরো কুরআনে সার্চ করার ইফেক্ট
+  useEffect(() => {
+    if (!selectedWord) return;
+
+    let isMounted = true;
+    setIsLoading(true);
+    setResults([]);
+
+    const runSearch = async () => {
+      const matched: MatchedOccurrence[] = [];
+      const cleanedTargetText = cleanArabicText(selectedWord.word.text_uthmani);
+      const cleanedTargetRoot = cleanArabicText(activeRoot);
+
+      // ১ থেকে ১১৪ সুরা ফেচ করে ম্যাচিং বের করা
+      const surahIds = Array.from({ length: 114 }, (_, i) => i + 1);
+
+      await Promise.all(
+        surahIds.map(async (sId) => {
+          try {
+            const res = await fetch(`/data/quran/surahs/${sId}.json`);
+            if (!res.ok) return;
+            const data: SurahData = await res.json();
+
+            data.ayahs.forEach((a) => {
+              a.words.forEach((w) => {
+                let isMatch = false;
+
+                if (searchType === "word") {
+                  isMatch = cleanArabicText(w.text_uthmani) === cleanedTargetText;
+                } else if (searchType === "root") {
+                  if (w.root && w.root !== "—") {
+                    isMatch = cleanArabicText(w.root) === cleanedTargetRoot;
+                  } else if (w.lemma) {
+                    isMatch = cleanArabicText(w.lemma).includes(cleanedTargetRoot);
+                  }
+                }
+
+                if (isMatch) {
+                  matched.push({
+                    surah: sId,
+                    ayah: a.ayah,
+                    word: w,
+                    allWords: a.words,
+                  });
+                }
+              });
+            });
+          } catch (e) {
+            // কোনো সুরা লোড না হলে স্কিপ করবে
+          }
+        })
+      );
+
+      if (isMounted) {
+        // সুরা ও আয়াত অনুসারে ক্রমানুসারে সাজানো
+        matched.sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
+        setResults(matched);
+        setIsLoading(false);
+      }
+    };
+
+    runSearch();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [selectedWord, searchType, activeRoot]);
 
   if (!selectedWord) return null;
   const { word, surah, ayah } = selectedWord;
 
-  const activeRoot = word.root && word.root !== "—" ? word.root : word.text_uthmani.slice(0, 3);
+  const handleJumpToAyah = (sId: number, aNum: number) => {
+    onClose();
+    navigate({
+      to: "/surah/$id",
+      params: { id: String(sId) },
+      search: { ayah: aNum },
+    });
+  };
 
   return (
     <Dialog open={!!selectedWord} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-h-[88vh] overflow-y-auto sm:max-w-xl p-0 gap-0 border border-border/80 shadow-2xl">
-        <DialogHeader className="p-6 pb-4 border-b border-border/60 bg-muted/20 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
+      <DialogContent className="max-h-[90vh] overflow-hidden flex flex-col sm:max-w-2xl p-0 gap-0 border border-border/80 shadow-2xl bg-card">
+        
+        {/* ডায়ালগ হেডার */}
+        <DialogHeader className="p-5 pb-3 border-b border-border/60 bg-muted/20 text-center shrink-0">
+          <div className="flex items-center justify-center gap-2 mb-1">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground">
               <span className="size-1.5 rounded-full bg-primary" />
               {word.grammar_bn || "শব্দ"}
             </span>
           </div>
 
-          <DialogTitle className="arabic text-4xl text-foreground font-bold tracking-wide my-1">
+          <DialogTitle className="arabic text-3xl text-foreground font-bold tracking-wide my-1">
             {word.text_uthmani}
           </DialogTitle>
 
@@ -775,32 +879,34 @@ function WordAndRootSearchDialog({
             </p>
           )}
           {word.translation_bn && (
-            <p className="text-base font-medium text-foreground/90 mt-1">
+            <p className="text-sm font-medium text-foreground/90 mt-1">
               "{word.translation_bn}"
             </p>
           )}
 
-          <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto mt-4">
-            <div className="rounded-xl border border-border/70 bg-card p-2.5 text-center shadow-2xs">
-              <span className="text-[11px] text-muted-foreground block mb-0.5">ক্রিয়ামূল:</span>
-              <span className="arabic text-base font-semibold text-foreground">
+          {/* ক্রিয়ামূল ও রুট বক্স */}
+          <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto mt-3">
+            <div className="rounded-xl border border-border/70 bg-card p-2 text-center shadow-xs">
+              <span className="text-[10px] text-muted-foreground block mb-0.5">ক্রিয়ামূল:</span>
+              <span className="arabic text-sm font-semibold text-foreground">
                 {word.lemma || word.text_uthmani}
               </span>
             </div>
 
-            <div className="rounded-xl border border-border/70 bg-card p-2.5 text-center shadow-2xs">
-              <span className="text-[11px] text-muted-foreground block mb-0.5">মূল (Root):</span>
-              <span className="arabic text-base font-semibold text-foreground">
-                {activeRoot}
+            <div className="rounded-xl border border-border/70 bg-card p-2 text-center shadow-xs">
+              <span className="text-[10px] text-muted-foreground block mb-0.5">মূল (Root):</span>
+              <span className="arabic text-sm font-semibold text-foreground">
+                {activeRoot || "—"}
               </span>
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-1 mt-4 p-1 rounded-xl bg-muted/80 w-fit mx-auto border border-border/60">
+          {/* সার্চ সুইচ বাটন */}
+          <div className="flex items-center justify-center gap-1 mt-3 p-1 rounded-xl bg-muted/80 w-fit mx-auto border border-border/60">
             <button
               type="button"
               onClick={() => setSearchType("word")}
-              className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 rounded-lg px-3 py-1 text-xs font-medium transition-all cursor-pointer ${
                 searchType === "word"
                   ? "bg-background text-foreground shadow-xs font-semibold"
                   : "text-muted-foreground hover:text-foreground"
@@ -810,23 +916,120 @@ function WordAndRootSearchDialog({
             </button>
             <button
               type="button"
+              disabled={!activeRoot}
               onClick={() => setSearchType("root")}
-              className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 rounded-lg px-3 py-1 text-xs font-medium transition-all cursor-pointer ${
                 searchType === "root"
                   ? "bg-background text-primary shadow-xs font-semibold"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-foreground disabled:opacity-40"
               }`}
             >
-              <Sparkles className="size-3.5 text-primary" /> মূল রুট ({activeRoot})
+              <Sparkles className="size-3.5 text-primary" /> মূল রুট ({activeRoot || "নেই"})
             </button>
           </div>
         </DialogHeader>
 
-        <div className="p-5 text-center text-xs text-muted-foreground space-y-1">
-          <p>অবস্থান: সুরা {formatNumber(surah, lang)} : আয়াত {formatNumber(ayah, lang)} · শব্দ {formatNumber(word.position, lang)}</p>
-          <p className="text-[11px] text-muted-foreground">
-            {searchType === "word" ? `কুরআন জুড়ে "${word.text_uthmani}" শব্দের ব্যবহার` : `কুরআন জুড়ে মূল ধাতু "${activeRoot}" থেকে গঠিত সকল আয়াত`}
-          </p>
+        {/* সার্চ রেজাল্ট বডি */}
+        <div className="flex-1 overflow-y-auto p-4 space-y-3">
+          
+          <div className="flex items-center justify-between text-xs text-muted-foreground px-1 border-b border-border/40 pb-2">
+            <span>
+              {searchType === "word" ? `"${word.text_uthmani}" শব্দের ব্যবহার` : `মূল ধাতু "${activeRoot}" থেকে গঠিত সকল আয়াত`}
+            </span>
+            <span className="font-semibold text-foreground bg-muted px-2 py-0.5 rounded-md">
+              মোট ফলাফল: {formatNumber(results.length, lang)} টি
+            </span>
+          </div>
+
+          {isLoading ? (
+            <div className="py-12 text-center text-xs text-muted-foreground flex flex-col items-center gap-2">
+              <Loader2 className="size-5 animate-spin text-primary" />
+              <span>কুরআন জুড়ে অনুসন্ধান করা হচ্ছে...</span>
+            </div>
+          ) : results.length === 0 ? (
+            <div className="py-12 text-center text-xs text-muted-foreground">
+              কোনো ফলাফল পাওয়া যায়নি।
+            </div>
+          ) : (
+            results.map((res, index) => {
+              const surahObj = SURAH_LIST[res.surah - 1];
+              const cleanedTarget = searchType === "word" 
+                ? cleanArabicText(word.text_uthmani) 
+                : cleanArabicText(activeRoot);
+
+              return (
+                <div
+                  key={`${res.surah}-${res.ayah}-${res.word.position}-${index}`}
+                  className="rounded-xl border border-border/70 bg-card p-3.5 space-y-2.5 shadow-xs hover:border-primary/40 transition-all"
+                >
+                  {/* সুরা ও আয়াতের শিরোনাম */}
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground font-mono">
+                      <span className="size-2 rounded-full bg-primary" />
+                      {surahObj?.name_bn || `সুরা ${res.surah}`} ({res.surah}:{res.ayah})
+                    </span>
+                    
+                    <button
+                      type="button"
+                      onClick={() => handleJumpToAyah(res.surah, res.ayah)}
+                      className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline font-medium cursor-pointer"
+                    >
+                      <span>আয়াতে যান</span>
+                      <ExternalLink className="size-3" />
+                    </button>
+                  </div>
+
+                  {/* সম্পূর্ণ আয়াত (শব্দ হাইলাইটসহ) */}
+                  <div 
+                    dir="rtl" 
+                    className="flex flex-wrap items-center justify-start gap-x-2 gap-y-2 py-1 leading-loose"
+                  >
+                    {res.allWords.map((w, wIdx) => {
+                      const isHighlighted = searchType === "word"
+                        ? cleanArabicText(w.text_uthmani) === cleanedTarget
+                        : (w.root && cleanArabicText(w.root) === cleanedTarget) || (w.lemma && cleanArabicText(w.lemma).includes(cleanedTarget));
+
+                      return (
+                        <span
+                          key={wIdx}
+                          className={`arabic text-lg rounded-md px-1.5 py-0.5 transition-all ${
+                            isHighlighted
+                              ? "bg-primary/20 text-primary font-bold border border-primary/40 shadow-2xs"
+                              : "text-foreground/90 font-normal"
+                          }`}
+                        >
+                          {w.text_uthmani}
+                        </span>
+                      );
+                    })}
+                  </div>
+
+                  {/* নিচে শুধুমাত্র ঐ শব্দের অর্থ ও উচ্চারণ */}
+                  <div className="rounded-lg bg-muted/40 p-2.5 border border-border/40 flex items-center justify-between gap-2 text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-foreground arabic text-sm">
+                        {res.word.text_uthmani}
+                      </span>
+                      {res.word.transliteration && (
+                        <span className="italic text-muted-foreground font-mono text-[11px]">
+                          [{res.word.transliteration}]
+                        </span>
+                      )}
+                      {res.word.translation_bn && (
+                        <span className="text-foreground/90 font-medium">
+                          : {res.word.translation_bn}
+                        </span>
+                      )}
+                    </div>
+
+                    <span className="text-[10px] text-muted-foreground shrink-0 font-mono">
+                      শব্দ নং {formatNumber(res.word.position, lang)}
+                    </span>
+                  </div>
+                </div>
+              );
+            })
+          )}
         </div>
       </DialogContent>
     </Dialog>
