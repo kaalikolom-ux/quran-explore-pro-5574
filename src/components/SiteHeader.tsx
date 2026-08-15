@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, Bookmark, Languages, LogIn, LogOut, Moon, Shield, Sun, Menu } from "lucide-react";
+import { BookOpen, Bookmark, Languages, LogIn, LogOut, Moon, Shield, Sun, Menu, Settings } from "lucide-react";
 import { useState } from "react";
 
 import { usePrefs } from "@/lib/prefs";
@@ -90,6 +90,7 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-2">
           <SocialLinks className="hidden lg:flex" />
 
+          {/* ভাষা পরিবর্তন বাটন */}
           <button
             onClick={toggleLang}
             className="flex size-9 items-center justify-center rounded-md border border-white/15 text-chrome-foreground/80 transition-colors hover:bg-white/10 hover:text-chrome-foreground"
@@ -99,11 +100,26 @@ export function SiteHeader() {
             <Languages className="size-4" />
           </button>
 
+          {/* ডার্ক/লাইট মোড সুইচ */}
           <div className="flex items-center gap-1.5 rounded-md border border-white/15 px-2 py-1">
             <Sun className="size-3.5 text-chrome-foreground/60" />
             <Switch checked={dark} onCheckedChange={setDark} aria-label={t("darkMode")} />
             <Moon className="size-3.5 text-chrome-foreground/60" />
           </div>
+
+          {/* ⚙️ সেটিংস শর্টকাট গিয়ার আইকন বাটন */}
+          <Button
+            asChild
+            variant="ghost"
+            size="icon"
+            className="text-chrome-foreground/80 hover:bg-white/10 hover:text-chrome-foreground"
+            aria-label={lang === "bn" ? "সেটিংস" : "Settings"}
+            title={lang === "bn" ? "সেটিংস" : "Settings"}
+          >
+            <Link to="/settings">
+              <Settings className="size-4" />
+            </Link>
+          </Button>
 
           {user ? (
             <div className="hidden items-center gap-1 sm:flex">
@@ -169,6 +185,11 @@ export function SiteHeader() {
         <div className="border-t border-white/10 bg-chrome px-4 py-4 md:hidden">
           <div className="flex flex-col gap-3">
             <NavLinks onNavigate={() => setOpen(false)} />
+            
+            <Link to="/settings" onClick={() => setOpen(false)} className="flex items-center gap-2 text-sm font-medium">
+              <Settings className="size-4" /> {lang === "bn" ? "সেটিংস" : "Settings"}
+            </Link>
+
             {user ? (
               <>
                 <Link to="/bookmarks" onClick={() => setOpen(false)} className="text-sm font-medium">
