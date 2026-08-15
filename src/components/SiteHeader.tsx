@@ -10,8 +10,6 @@ import {
   Sun, 
   Languages, 
   ShieldCheck,
-  DoorOpen,
-  DoorClosed,
   Menu,
   X
 } from "lucide-react";
@@ -19,31 +17,42 @@ import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-// তোর ছবির অনুরূপ মডার্ন ট্রান্সপারেন্ট শিল্ড আইকন
-function DefenderShieldIcon({ className = "size-5" }: { className?: string }) {
+// [১] ইউজার + গিয়ার এডমিন SVG আইকন
+function AdminGearIcon({ className = "size-4.5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <defs>
-        <linearGradient id="shieldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#0284c7" />
-        </linearGradient>
-        <linearGradient id="shieldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#2563eb" />
-          <stop offset="100%" stopColor="#1d4ed8" />
-        </linearGradient>
-      </defs>
-      {/* বাম পাশের বাঁকানো লেয়ার */}
-      <path
-        d="M50 8C75 8 92 18 92 18C92 65 58 96 50 102C42 96 8 65 8 18C8 18 25 8 50 8Z"
-        fill="url(#shieldGrad1)"
-        fillOpacity="0.85"
-      />
-      {/* ভেতরের রিবন বাঁক */}
-      <path
-        d="M50 8C75 8 92 18 92 18C92 65 58 96 50 102C60 85 85 58 68 32C55 12 50 8 50 8Z"
-        fill="url(#shieldGrad2)"
-      />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* ইউজার হেড ও বডি */}
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      {/* এডমিন সেটিংস গিয়ার */}
+      <circle cx="19" cy="11" r="2" />
+      <path d="M19 8v1m0 4v1m-2.6-4.5.7.7m3.8 3.8.7.7m-5.2 0 .7-.7m3.8-3.8.7-.7" />
+    </svg>
+  );
+}
+
+// [২] লগআউট দরজা SVG আইকন (Arrow বাইরের দিকে)
+function LogoutDoorIcon({ className = "size-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* খোলা দরজার ফ্রেম ও পাল্লা */}
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      {/* বের হওয়ার তীর */}
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  );
+}
+
+// [৩] লগইন দরজা SVG আইকন (Arrow ভেতরের দিকে)
+function LoginDoorIcon({ className = "size-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* দরজার ফ্রেম */}
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+      {/* প্রবেশের তীর */}
+      <polyline points="10 17 15 12 10 7" />
+      <line x1="15" y1="12" x2="3" y2="12" />
     </svg>
   );
 }
@@ -130,22 +139,21 @@ export function SiteHeader() {
         {/* ডানদিকের অ্যাকশন আইকনসমূহ */}
         <div className="flex items-center gap-1.5">
           
-          {/* 🛡️ ট্রান্সপারেন্ট ডিফেন্ডার এডমিন আইকন (টুলটিপসহ) */}
+          {/* ⚙️ এডমিন আইকন (লগইন থাকলে দেখা যাবে) */}
           {user && (
             <Link
               to="/admin"
-              title={lang === "bn" ? "এডমিন কন্ট্রোল প্যানেল" : "Admin Control Panel"}
-              className={`group relative flex size-8 items-center justify-center rounded-lg transition-all hover:bg-sky-500/10 active:scale-95 ${
-                currentPath.startsWith("/admin")
-                  ? "bg-sky-500/15 ring-1 ring-sky-500/40"
-                  : "bg-transparent"
+              title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
+              aria-label="Admin Panel"
+              className={`flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer ${
+                currentPath.startsWith("/admin") ? "border-primary text-primary bg-primary/10" : ""
               }`}
             >
-              <DefenderShieldIcon className="size-4.5 drop-shadow-xs transition-transform group-hover:scale-110" />
+              <AdminGearIcon className="size-4" />
             </Link>
           )}
 
-          {/* 🚪 শুধু দরজার আইকন: লগআউট (খোলা দরজা) ও লগইন (বন্ধ দরজা) */}
+          {/* 🚪 অবস্থানভেদে একই জায়গায় পাল্টে যাওয়া দরজা আইকন (Login/Logout) */}
           {user ? (
             <button
               type="button"
@@ -154,7 +162,7 @@ export function SiteHeader() {
               aria-label="Logout"
               className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
             >
-              <DoorOpen className="size-4" />
+              <LogoutDoorIcon className="size-4" />
             </button>
           ) : (
             <Link
@@ -163,7 +171,7 @@ export function SiteHeader() {
               aria-label="Login"
               className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors cursor-pointer"
             >
-              <DoorClosed className="size-4" />
+              <LoginDoorIcon className="size-4" />
             </Link>
           )}
 
@@ -229,9 +237,9 @@ export function SiteHeader() {
               <Link
                 to="/admin"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-sky-500 bg-sky-500/10 transition-all"
+                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground bg-muted/40 transition-all"
               >
-                <DefenderShieldIcon className="size-4" />
+                <AdminGearIcon className="size-4 text-primary" />
                 <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
               </Link>
             )}
@@ -245,7 +253,7 @@ export function SiteHeader() {
                 }}
                 className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-all cursor-pointer"
               >
-                <DoorOpen className="size-4" />
+                <LogoutDoorIcon className="size-4" />
                 <span>{lang === "bn" ? "লগআউট" : "Logout"}</span>
               </button>
             ) : (
@@ -254,7 +262,7 @@ export function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-primary bg-primary/10 transition-all"
               >
-                <DoorClosed className="size-4" />
+                <LoginDoorIcon className="size-4" />
                 <span>{lang === "bn" ? "লগইন করুন" : "Login"}</span>
               </Link>
             )}
