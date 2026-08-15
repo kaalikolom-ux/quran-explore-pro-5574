@@ -103,7 +103,7 @@ const SURAH_LIST = [
   { id: 27, name_bn: "আন-নামল", name_ar: "النمل", type: "মাক্কী", total: 93 },
   { id: 28, name_bn: "আল-কাসাস", name_ar: "القصص", type: "মাক্কী", total: 88 },
   { id: 29, name_bn: "আল-আনকাবুত", name_ar: "العنكبوت", type: "মাক্কী", total: 69 },
-  { id: 30, name_bn: "আর-রুম", name_ar: "الরوم", type: "মাক্কী", total: 60 },
+  { id: 30, name_bn: "আর-রুম", name_ar: "الروم", type: "মাক্কী", total: 60 },
   { id: 31, name_bn: "লুকমান", name_ar: "لقمان", type: "মাক্কী", total: 34 },
   { id: 32, name_bn: "আস-সাজদাহ", name_ar: "السجدة", type: "মাক্কী", total: 30 },
   { id: 33, name_bn: "আল-আহযাব", name_ar: "الأحزاب", type: "মাদানী", total: 73 },
@@ -185,7 +185,7 @@ const SURAH_LIST = [
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
   { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
-  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإখلاص", type: "মাক্কী", total: 4 },
+  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإخلاص", type: "মাক্কী", total: 4 },
   { id: 113, name_bn: "আল-ফালাক", name_ar: "الفلق", type: "মাক্কী", total: 5 },
   { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
 ];
@@ -204,11 +204,23 @@ function formatNumber(num: number | string, lang: string) {
   return String(num).replace(/\d/g, (d) => bnDigits[Number(d)]);
 }
 
-// আরবি হরকত ও চিহ্ন সরানোর ফাংশন (নির্ভুল সার্চের জন্য)
+// আরবি হরকত ও চিহ্ন সরানোর ফাংশন (শব্দ ম্যাচিংয়ের জন্য)
 function cleanArabicText(text: string): string {
   if (!text) return "";
   return text
     .replace(/[\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED]/g, "")
+    .replace(/[ٱإأآ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .replace(/ة/g, "ه")
+    .replace(/\s+/g, "")
+    .trim();
+}
+
+// আরবি রুট নরমালাইজার (স্পেস, ড্যাশ, আলিফ ভ্যারিয়েশন দূর করে বিশুদ্ধ ৩/৪ অক্ষরের রুট বের করা)
+function cleanArabicRoot(rootText: string): string {
+  if (!rootText || rootText === "—" || rootText === "-") return "";
+  return rootText
+    .replace(/[\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED\s\-\.\,\/]/g, "")
     .replace(/[ٱإأآ]/g, "ا")
     .replace(/ى/g, "ي")
     .replace(/ة/g, "ه")
@@ -748,10 +760,11 @@ function SurahDetailPage() {
   );
 }
 
+// আয়াতভিত্তিক গ্রুপ রেজাল্ট টাইপ
 type MatchedOccurrence = {
   surah: number;
   ayah: number;
-  word: QuranWord;
+  matchedWords: QuranWord[]; // এই আয়াতে রুট/শব্দের সাথে ম্যাচ হওয়া শব্দগুলো
   allWords: QuranWord[];
 };
 
@@ -772,11 +785,14 @@ function WordAndRootSearchDialog({
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const activeRoot = selectedWord?.word?.root && selectedWord.word.root !== "—" 
+  // বিশুদ্ধ রুট স্ট্রিং নির্ধারণ
+  const rawRoot = selectedWord?.word?.root && selectedWord.word.root !== "—" 
     ? selectedWord.word.root 
-    : (selectedWord?.word?.lemma || "");
+    : "";
 
-  // পুরো কুরআনে সার্চ করার ইফেক্ট
+  const cleanTargetRoot = cleanArabicRoot(rawRoot);
+  const displayRoot = rawRoot || "—";
+
   useEffect(() => {
     if (!selectedWord) return;
 
@@ -785,11 +801,10 @@ function WordAndRootSearchDialog({
     setResults([]);
 
     const runSearch = async () => {
-      const matched: MatchedOccurrence[] = [];
-      const cleanedTargetText = cleanArabicText(selectedWord.word.text_uthmani);
-      const cleanedTargetRoot = cleanArabicText(activeRoot);
+      const matchedAyahs: MatchedOccurrence[] = [];
+      const cleanTargetWord = cleanArabicText(selectedWord.word.text_uthmani);
 
-      // ১ থেকে ১১৪ সুরা ফেচ করে ম্যাচিং বের করা
+      // ১ থেকে ১১৪ সুরার ডেটা স্ক্যান
       const surahIds = Array.from({ length: 114 }, (_, i) => i + 1);
 
       await Promise.all(
@@ -800,39 +815,46 @@ function WordAndRootSearchDialog({
             const data: SurahData = await res.json();
 
             data.ayahs.forEach((a) => {
+              const matchedWordsInThisAyah: QuranWord[] = [];
+
               a.words.forEach((w) => {
                 let isMatch = false;
 
                 if (searchType === "word") {
-                  isMatch = cleanArabicText(w.text_uthmani) === cleanedTargetText;
-                } else if (searchType === "root") {
-                  if (w.root && w.root !== "—") {
-                    isMatch = cleanArabicText(w.root) === cleanedTargetRoot;
-                  } else if (w.lemma) {
-                    isMatch = cleanArabicText(w.lemma).includes(cleanedTargetRoot);
+                  // হুবহু শব্দ মিলানো
+                  isMatch = cleanArabicText(w.text_uthmani) === cleanTargetWord;
+                } else if (searchType === "root" && cleanTargetRoot) {
+                  // বিশুদ্ধ রুট ম্যাচিং
+                  const wordCleanRoot = cleanArabicRoot(w.root || "");
+                  if (wordCleanRoot) {
+                    isMatch = wordCleanRoot === cleanTargetRoot;
                   }
                 }
 
                 if (isMatch) {
-                  matched.push({
-                    surah: sId,
-                    ayah: a.ayah,
-                    word: w,
-                    allWords: a.words,
-                  });
+                  matchedWordsInThisAyah.push(w);
                 }
               });
+
+              if (matchedWordsInThisAyah.length > 0) {
+                matchedAyahs.push({
+                  surah: sId,
+                  ayah: a.ayah,
+                  matchedWords: matchedWordsInThisAyah,
+                  allWords: a.words,
+                });
+              }
             });
           } catch (e) {
-            // কোনো সুরা লোড না হলে স্কিপ করবে
+            // নেটওয়ার্ক বা ফাইল মিসিং হ্যান্ডলিং
           }
         })
       );
 
       if (isMounted) {
         // সুরা ও আয়াত অনুসারে ক্রমানুসারে সাজানো
-        matched.sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
-        setResults(matched);
+        matchedAyahs.sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
+        setResults(matchedAyahs);
         setIsLoading(false);
       }
     };
@@ -842,7 +864,7 @@ function WordAndRootSearchDialog({
     return () => {
       isMounted = false;
     };
-  }, [selectedWord, searchType, activeRoot]);
+  }, [selectedWord, searchType, cleanTargetRoot]);
 
   if (!selectedWord) return null;
   const { word, surah, ayah } = selectedWord;
@@ -855,6 +877,9 @@ function WordAndRootSearchDialog({
       search: { ayah: aNum },
     });
   };
+
+  // মোট কতটি শব্দ পাওয়া গেছে তার মোট গণনা
+  const totalWordOccurrences = results.reduce((acc, curr) => acc + curr.matchedWords.length, 0);
 
   return (
     <Dialog open={!!selectedWord} onOpenChange={(open) => !open && onClose()}>
@@ -894,9 +919,9 @@ function WordAndRootSearchDialog({
             </div>
 
             <div className="rounded-xl border border-border/70 bg-card p-2 text-center shadow-xs">
-              <span className="text-[10px] text-muted-foreground block mb-0.5">মূল (Root):</span>
+              <span className="text-[10px] text-muted-foreground block mb-0.5">মূল ধাতু (Root):</span>
               <span className="arabic text-sm font-semibold text-foreground">
-                {activeRoot || "—"}
+                {displayRoot}
               </span>
             </div>
           </div>
@@ -916,7 +941,7 @@ function WordAndRootSearchDialog({
             </button>
             <button
               type="button"
-              disabled={!activeRoot}
+              disabled={!cleanTargetRoot}
               onClick={() => setSearchType("root")}
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1 text-xs font-medium transition-all cursor-pointer ${
                 searchType === "root"
@@ -924,7 +949,7 @@ function WordAndRootSearchDialog({
                   : "text-muted-foreground hover:text-foreground disabled:opacity-40"
               }`}
             >
-              <Sparkles className="size-3.5 text-primary" /> মূল রুট ({activeRoot || "নেই"})
+              <Sparkles className="size-3.5 text-primary" /> মূল রুট ({displayRoot})
             </button>
           </div>
         </DialogHeader>
@@ -934,10 +959,12 @@ function WordAndRootSearchDialog({
           
           <div className="flex items-center justify-between text-xs text-muted-foreground px-1 border-b border-border/40 pb-2">
             <span>
-              {searchType === "word" ? `"${word.text_uthmani}" শব্দের ব্যবহার` : `মূল ধাতু "${activeRoot}" থেকে গঠিত সকল আয়াত`}
+              {searchType === "word" 
+                ? `হুবহু "${word.text_uthmani}" শব্দের ব্যবহার` 
+                : `মূল ধাতু "${displayRoot}" থেকে গঠিত সকল শব্দের ব্যবহার`}
             </span>
             <span className="font-semibold text-foreground bg-muted px-2 py-0.5 rounded-md">
-              মোট ফলাফল: {formatNumber(results.length, lang)} টি
+              {formatNumber(results.length, lang)} টি আয়াতে মোট {formatNumber(totalWordOccurrences, lang)} বার
             </span>
           </div>
 
@@ -953,13 +980,11 @@ function WordAndRootSearchDialog({
           ) : (
             results.map((res, index) => {
               const surahObj = SURAH_LIST[res.surah - 1];
-              const cleanedTarget = searchType === "word" 
-                ? cleanArabicText(word.text_uthmani) 
-                : cleanArabicText(activeRoot);
+              const cleanTargetWord = cleanArabicText(word.text_uthmani);
 
               return (
                 <div
-                  key={`${res.surah}-${res.ayah}-${res.word.position}-${index}`}
+                  key={`${res.surah}-${res.ayah}-${index}`}
                   className="rounded-xl border border-border/70 bg-card p-3.5 space-y-2.5 shadow-xs hover:border-primary/40 transition-all"
                 >
                   {/* সুরা ও আয়াতের শিরোনাম */}
@@ -986,8 +1011,8 @@ function WordAndRootSearchDialog({
                   >
                     {res.allWords.map((w, wIdx) => {
                       const isHighlighted = searchType === "word"
-                        ? cleanArabicText(w.text_uthmani) === cleanedTarget
-                        : (w.root && cleanArabicText(w.root) === cleanedTarget) || (w.lemma && cleanArabicText(w.lemma).includes(cleanedTarget));
+                        ? cleanArabicText(w.text_uthmani) === cleanTargetWord
+                        : (cleanTargetRoot && cleanArabicRoot(w.root || "") === cleanTargetRoot);
 
                       return (
                         <span
@@ -1004,27 +1029,34 @@ function WordAndRootSearchDialog({
                     })}
                   </div>
 
-                  {/* নিচে শুধুমাত্র ঐ শব্দের অর্থ ও উচ্চারণ */}
-                  <div className="rounded-lg bg-muted/40 p-2.5 border border-border/40 flex items-center justify-between gap-2 text-xs">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-foreground arabic text-sm">
-                        {res.word.text_uthmani}
-                      </span>
-                      {res.word.transliteration && (
-                        <span className="italic text-muted-foreground font-mono text-[11px]">
-                          [{res.word.transliteration}]
-                        </span>
-                      )}
-                      {res.word.translation_bn && (
-                        <span className="text-foreground/90 font-medium">
-                          : {res.word.translation_bn}
-                        </span>
-                      )}
-                    </div>
+                  {/* নিচে শুধুমাত্র ঐ আয়াতে ম্যাচ হওয়া শব্দগুলোর অর্থ ও উচ্চারণ */}
+                  <div className="space-y-1.5 pt-1">
+                    {res.matchedWords.map((mw, mIdx) => (
+                      <div 
+                        key={mIdx} 
+                        className="rounded-lg bg-muted/40 p-2 border border-border/40 flex items-center justify-between gap-2 text-xs"
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-foreground arabic text-sm">
+                            {mw.text_uthmani}
+                          </span>
+                          {mw.transliteration && (
+                            <span className="italic text-muted-foreground font-mono text-[11px]">
+                              [{mw.transliteration}]
+                            </span>
+                          )}
+                          {mw.translation_bn && (
+                            <span className="text-foreground/90 font-medium">
+                              : {mw.translation_bn}
+                            </span>
+                          )}
+                        </div>
 
-                    <span className="text-[10px] text-muted-foreground shrink-0 font-mono">
-                      শব্দ নং {formatNumber(res.word.position, lang)}
-                    </span>
+                        <span className="text-[10px] text-muted-foreground shrink-0 font-mono">
+                          শব্দ নং {formatNumber(mw.position, lang)}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               );
