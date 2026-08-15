@@ -24,7 +24,8 @@ import {
   Bookmark,
   Copy,
   Share2,
-  StickyNote
+  StickyNote,
+  Trash2
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -164,7 +165,7 @@ const SURAH_LIST = [
   { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
   { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   { id: 81, name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
-  { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
+  { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانফطار", type: "মাক্কী", total: 19 },
   { id: 83, name_bn: "আল-মুতাফফিফিন", name_ar: "المطففين", type: "মাক্কী", total: 36 },
   { id: 84, name_bn: "আল-ইনশিকাক", name_ar: "الانشقاق", type: "মাক্কী", total: 25 },
   { id: 85, name_bn: "আল-বুরূজ", name_ar: "البروج", type: "মাক্কী", total: 22 },
@@ -188,13 +189,13 @@ const SURAH_LIST = [
   { id: 103, name_bn: "আল-আসর", name_ar: "العصر", type: "মাক্কী", total: 3 },
   { id: 104, name_bn: "আল-হুমাযাহ", name_ar: "الهمزة", type: "মাক্কী", total: 9 },
   { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
-  { id: 106, name_bn: "কুরাইশ", name_ar: "قريশ", type: "মাক্কী", total: 4 },
+  { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
   { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
-  { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
+  { id: 108, name_bn: "আল-কাউসার", name_ar: "الকোثر", type: "মাক্কী", total: 3 },
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
-  { id: 111, name_bn: "আল-লাহাব", name_ar: "المسদ", type: "মাক্কী", total: 5 },
-  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإখلاص", type: "মাক্কী", total: 4 },
+  { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
+  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإخلاص", type: "মাক্কী", total: 4 },
   { id: 113, name_bn: "আল-ফালাক", name_ar: "الفلق", type: "মাক্কী", total: 5 },
   { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
 ];
@@ -233,12 +234,12 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   if (!base) return "";
 
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
-  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ب") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
+  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ব") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
     base = base.slice(1);
   }
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
 
-  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("না") || base.endsWith("হা")) && base.length > 4) {
+  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("نا") || base.endsWith("ها")) && base.length > 4) {
     base = base.slice(0, -2);
   } else if ((base.endsWith("ه") || base.endsWith("ي") || base.endsWith("ك")) && base.length > 3) {
     base = base.slice(0, -1);
@@ -272,19 +273,16 @@ function SurahDetailPage() {
   const [translationFontSize, setTranslationFontSize] = useState<number>(15);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
-  // অডিও প্লেয়ার স্টেট
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // গ্লোবাল বুকমার্ক লিস্ট
   const [globalBookmarks, setGlobalBookmarks] = useState<any[]>([]);
 
-  // নোট স্টেট
+  // নোট সংক্রান্ত স্টেট
   const [activeNoteAyah, setActiveNoteAyah] = useState<number | null>(null);
   const [ayahNotes, setAyahNotes] = useState<Record<string, string>>({});
   const [currentNoteText, setCurrentNoteText] = useState("");
 
-  // গ্লোবাল বুকমার্ক সিঙ্ক
   useEffect(() => {
     try {
       const savedGlobal = localStorage.getItem("quran_bookmarks") || localStorage.getItem("bookmarks");
@@ -401,7 +399,6 @@ function SurahDetailPage() {
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
-  // 🎵 অডিও প্লে/পজ
   const handlePlayAudio = (ayahNum: number) => {
     if (playingAyah === ayahNum) {
       audioRef.current?.pause();
@@ -431,7 +428,6 @@ function SurahDetailPage() {
     };
   };
 
-  // 🔖 গ্লোবাল বুকমার্ক টগল (বুকমার্ক পেজে সরাসরি যুক্ত হবে)
   const isAyahBookmarked = (ayahNum: number) => {
     return globalBookmarks.some(
       (b) => (b.surah === surahId || b.surah_id === surahId) && (b.ayah === ayahNum || b.verse_id === ayahNum || b.ayah_id === ayahNum)
@@ -478,7 +474,6 @@ function SurahDetailPage() {
     }
   };
 
-  // 📋 নির্ভুল কপি হ্যান্ডলার
   const handleCopyAyah = (ayah: QuranAyah) => {
     const arabicText = ayah.text_uthmani || ayah.words?.map((w) => w.text_uthmani).join(" ") || "";
     const translationText = ayah.conventional_bn || (ayah as any).translation_bn || ayah.words?.map((w) => w.translation_bn).filter(Boolean).join(" ") || "";
@@ -495,7 +490,6 @@ function SurahDetailPage() {
     toast.success("আয়াত সম্পূর্ণ কপি করা হয়েছে");
   };
 
-  // 🔗 শেয়ার হ্যান্ডলার
   const handleShareAyah = (ayahNum: number) => {
     const shareUrl = `${window.location.origin}/surah/${surahId}?ayah=${ayahNum}`;
     if (navigator.share) {
@@ -517,11 +511,28 @@ function SurahDetailPage() {
 
   const handleSaveNote = () => {
     if (!activeNoteAyah) return;
-    const updated = { ...ayahNotes, [activeNoteAyah]: currentNoteText };
+    const cleanText = currentNoteText.trim();
+    const updated = { ...ayahNotes };
+    
+    if (cleanText) {
+      updated[activeNoteAyah] = cleanText;
+      toast.success(`আয়াত ${activeNoteAyah} এর নোট সংরক্ষিত হয়েছে`);
+    } else {
+      delete updated[activeNoteAyah];
+      toast.info(`আয়াত ${activeNoteAyah} এর নোট মুছে ফেলা হয়েছে`);
+    }
+    
     setAyahNotes(updated);
     localStorage.setItem(`notes_surah_${surahId}`, JSON.stringify(updated));
-    toast.success("নোট সংরক্ষিত হয়েছে");
     setActiveNoteAyah(null);
+  };
+
+  const handleDeleteNote = (ayahNum: number) => {
+    const updated = { ...ayahNotes };
+    delete updated[ayahNum];
+    setAyahNotes(updated);
+    localStorage.setItem(`notes_surah_${surahId}`, JSON.stringify(updated));
+    toast.info("নোট মুছে ফেলা হয়েছে");
   };
 
   const handleJumpSubmit = (e: React.FormEvent) => {
@@ -673,7 +684,8 @@ function SurahDetailPage() {
           const isEditing = editingAyah === ayah.ayah;
           const isBookmarked = isAyahBookmarked(ayah.ayah);
           const isPlaying = playingAyah === ayah.ayah;
-          const hasNote = Boolean(ayahNotes[ayah.ayah]);
+          const noteContent = ayahNotes[ayah.ayah];
+          const hasNote = Boolean(noteContent && noteContent.trim().length > 0);
 
           const hasModernBnData = Boolean(ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0);
           const hasModernEnData = Boolean(ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0);
@@ -682,7 +694,9 @@ function SurahDetailPage() {
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className="scroll-mt-36 rounded-2xl border border-border/70 bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border"
+              className={`scroll-mt-36 rounded-2xl border bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border ${
+                hasNote ? "border-amber-400/50 shadow-amber-400/5" : "border-border/70"
+              }`}
             >
               {/* হেডার রো: নম্বর, প্লে, বুকমার্ক ও অ্যাকশন বাটনসমূহ */}
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
@@ -710,7 +724,7 @@ function SurahDetailPage() {
                       onClick={() => handleToggleBookmark(ayah)}
                       title={isBookmarked ? "বুকমার্ক সরান" : "বুকমার্ক করুন"}
                       className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
-                        isBookmarked ? "text-amber-500 fill-amber-500" : ""
+                        isBookmarked ? "text-amber-500 fill-amber-500 bg-amber-500/10" : ""
                       }`}
                     >
                       <Bookmark className={`size-4 ${isBookmarked ? "fill-current" : ""}`} />
@@ -738,15 +752,18 @@ function SurahDetailPage() {
                     <Share2 className="size-4" />
                   </button>
 
+                  {/* 📝 উজ্জ্বল হাইলাইটেড নোট আইকন */}
                   <button
                     type="button"
                     onClick={() => handleOpenNote(ayah.ayah)}
-                    title={hasNote ? "নোট দেখুন/এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
-                    className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
-                      hasNote ? "text-primary font-semibold" : "text-muted-foreground"
+                    title={hasNote ? "নোট দেখুন / এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
+                    className={`p-1.5 rounded-lg transition-all cursor-pointer ${
+                      hasNote 
+                        ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs" 
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
-                    <StickyNote className={`size-4 ${hasNote ? "fill-primary/20" : ""}`} />
+                    <StickyNote className={`size-4 ${hasNote ? "fill-amber-400/30" : ""}`} />
                   </button>
 
                   {isAdmin && (
@@ -994,6 +1011,41 @@ function SurahDetailPage() {
                   )}
                 </div>
               )}
+
+              {/* [৫] 📝 ব্যক্তিগত নোট কার্ড (যদি নোট থাকে তবে সরাসরি আয়াতের নিচে দেখা যাবে) */}
+              {hasNote && (
+                <div className="rounded-xl border border-amber-400/40 bg-amber-400/[0.04] p-4 space-y-2 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-wider">
+                      <StickyNote className="size-3.5" />
+                      <span>আমার ব্যক্তিগত নোট / তাদাব্বুর</span>
+                    </div>
+
+                    <div className="flex items-center gap-1">
+                      <button
+                        type="button"
+                        onClick={() => handleOpenNote(ayah.ayah)}
+                        className="p-1 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                        title="নোট এডিট করুন"
+                      >
+                        <Edit3 className="size-3.5" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteNote(ayah.ayah)}
+                        className="p-1 rounded-md text-xs text-destructive/80 hover:text-destructive hover:bg-destructive/10 transition-colors cursor-pointer"
+                        title="নোট মুছে ফেলুন"
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-foreground/95 leading-relaxed pl-5.5 whitespace-pre-wrap">
+                    {noteContent}
+                  </p>
+                </div>
+              )}
             </div>
           );
         })}
@@ -1018,12 +1070,12 @@ function SurahDetailPage() {
         onClose={() => setSelectedWordInfo(null)}
       />
 
-      {/* 📝 ব্যক্তিগত নোট ডায়ালগ */}
+      {/* 📝 ব্যক্তিগত নোট লেখার ডায়ালগ */}
       <Dialog open={activeNoteAyah !== null} onOpenChange={(open) => !open && setActiveNoteAyah(null)}>
         <DialogContent className="sm:max-w-md bg-card border-border/80">
           <DialogHeader>
             <DialogTitle className="text-base font-semibold flex items-center gap-2">
-              <StickyNote className="size-4 text-primary" />
+              <StickyNote className="size-4 text-amber-400" />
               <span>আয়াত {surahId}:{activeNoteAyah} এর ব্যক্তিগত নোট</span>
             </DialogTitle>
           </DialogHeader>
@@ -1034,7 +1086,7 @@ function SurahDetailPage() {
               onChange={(e) => setCurrentNoteText(e.target.value)}
               placeholder="এই আয়াত সম্পর্কিত আপনার ব্যক্তিগত অনুভূতি, তাদাব্বুর বা নোট এখানে লিখুন..."
               rows={5}
-              className="bg-background text-sm leading-relaxed"
+              className="bg-background text-sm leading-relaxed focus-visible:ring-amber-400/40"
             />
 
             <div className="flex justify-end gap-2">
