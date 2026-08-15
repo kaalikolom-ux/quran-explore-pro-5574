@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { 
   ChevronLeft, 
@@ -81,7 +81,7 @@ const SURAH_LIST = [
   { id: 5, name_bn: "আল-মায়িদাহ", name_ar: "المائدة", type: "মাদানী", total: 120 },
   { id: 6, name_bn: "আল-আনআম", name_ar: "الأنعام", type: "মাক্কী", total: 165 },
   { id: 7, name_bn: "আল-আরাফ", name_ar: "الأعراف", type: "মাক্কী", total: 206 },
-  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفাল", type: "মাদানী", total: 75 },
+  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفال", type: "মাদানী", total: 75 },
   { id: 9, name_bn: "আত-তাওবাহ", name_ar: "التوبة", type: "মাদানী", total: 129 },
   { id: 10, name_bn: "ইউনুস", name_ar: "يونس", type: "মাক্কী", total: 109 },
   { id: 11, name_bn: "হুদ", name_ar: "هود", type: "মাক্কী", total: 123 },
@@ -204,7 +204,6 @@ function formatNumber(num: number | string, lang: string) {
   return String(num).replace(/\d/g, (d) => bnDigits[Number(d)]);
 }
 
-// আরবি হরকত ও বিশেষ চিহ্ন দূর করে টেক্সট ক্লিন করার ফাংশন
 function cleanArabicText(text: string): string {
   if (!text) return "";
   return text
@@ -216,31 +215,26 @@ function cleanArabicText(text: string): string {
     .trim();
 }
 
-// যে কোনো আরবি শব্দ/লেমা থেকে রুট বের করার স্মার্ট অ্যালগরিদম
 function extractIntelligentRoot(wordObj: QuranWord): string {
   if (wordObj.root && wordObj.root !== "—" && wordObj.root.trim().length > 0) {
     return cleanArabicText(wordObj.root);
   }
 
-  // যদি রুট ফাঁকা থাকে, তবে লেমা বা উসমানি টেক্সট থেকে প্রিফিক্স ও সাফিক্স বাদ দেওয়া
   let base = cleanArabicText(wordObj.lemma || wordObj.text_uthmani);
   if (!base) return "";
 
-  // প্রিফিক্স অপসারণ (ال, و, ف, ب, ل, س, ك)
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
   if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ب") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
     base = base.slice(1);
   }
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
 
-  // সাফিক্স অপসারণ (ون, ين, ات, هم, كم, نا, ها, ي, ه)
   if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("نا") || base.endsWith("ها")) && base.length > 4) {
     base = base.slice(0, -2);
   } else if ((base.endsWith("ه") || base.endsWith("ي") || base.endsWith("ك")) && base.length > 3) {
     base = base.slice(0, -1);
   }
 
-  // ইসমাইল ফায়েল বা মুফা'আল প্যাটার্নের 'م' বা 'ت' রিমুভ (যেমন: مفلح -> فلح)
   if ((base.startsWith("م") || base.startsWith("ت") || base.startsWith("ي") || base.startsWith("ن") || base.startsWith("ا")) && base.length === 4) {
     base = base.slice(1);
   }
@@ -248,12 +242,20 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
+// গ্লোবাল ফেচার ফাংশন
+const fetchSurahData = async (sId: number): Promise<SurahData> => {
+  const res = await fetch(`/data/quran/surahs/${sId}.json`);
+  if (!res.ok) throw new Error(`Failed to load Surah ${sId}`);
+  return res.json();
+};
+
 function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
   const { prefs, lang } = (usePrefs ? usePrefs() : {}) as any;
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const isAdmin = true;
 
@@ -305,14 +307,31 @@ function SurahDetailPage() {
 
   const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
 
+  // 🚀 অপটিমাইজড কোয়েরি (ইনস্ট্যান্ট ক্যাশ)
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-greentech-surah-v23", surahId],
-    queryFn: async () => {
-      const res = await fetch(`/data/quran/surahs/${surahId}.json`);
-      if (!res.ok) throw new Error(`Failed to load Surah ${surahId}`);
-      return res.json();
-    },
+    queryKey: ["local-surah-cache", surahId],
+    queryFn: () => fetchSurahData(surahId),
+    staleTime: Infinity, // ডেটা সর্বদা ফ্রেশ থাকবে
+    gcTime: 1000 * 60 * 60 * 24, // ২৪ ঘণ্টা মেমোরিতে ধরে রাখবে
   });
+
+  // ⚡ ব্যাকগ্রাউন্ড প্রি-ফেচিং (আগের ও পরের সুরা স্বয়ংক্রিয়ভাবে লোড করে রাখা)
+  useEffect(() => {
+    if (surahId < 114) {
+      queryClient.prefetchQuery({
+        queryKey: ["local-surah-cache", surahId + 1],
+        queryFn: () => fetchSurahData(surahId + 1),
+        staleTime: Infinity,
+      });
+    }
+    if (surahId > 1) {
+      queryClient.prefetchQuery({
+        queryKey: ["local-surah-cache", surahId - 1],
+        queryFn: () => fetchSurahData(surahId - 1),
+        staleTime: Infinity,
+      });
+    }
+  }, [surahId, queryClient]);
 
   const scrollToAyah = (ayahNum: number) => {
     let attempts = 0;
@@ -784,7 +803,9 @@ function SurahDetailPage() {
   );
 }
 
-// আয়াতভিত্তিক গ্রুপ রেজাল্ট টাইপ
+// ইন-মেমোরি গ্লোবাল সার্চ ক্যাশ
+const searchCacheMap = new Map<string, MatchedOccurrence[]>();
+
 type MatchedOccurrence = {
   surah: number;
   ayah: number;
@@ -808,8 +829,8 @@ function WordAndRootSearchDialog({
   const [results, setResults] = useState<MatchedOccurrence[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  // স্মার্ট উপায়ে রুট বের করা
   const activeRoot = useMemo(() => {
     if (!selectedWord) return "";
     return extractIntelligentRoot(selectedWord.word);
@@ -818,6 +839,14 @@ function WordAndRootSearchDialog({
   useEffect(() => {
     if (!selectedWord) return;
 
+    const cacheKey = `${searchType}:${searchType === "word" ? cleanArabicText(selectedWord.word.text_uthmani) : activeRoot}`;
+    
+    // ক্যাশে থাকলে নেটওয়ার্ক ফেচ ছাড়াই ইনস্ট্যান্ট সেট হবে
+    if (searchCacheMap.has(cacheKey)) {
+      setResults(searchCacheMap.get(cacheKey)!);
+      return;
+    }
+
     let isMounted = true;
     setIsLoading(true);
     setResults([]);
@@ -825,16 +854,17 @@ function WordAndRootSearchDialog({
     const runSearch = async () => {
       const matchedAyahs: MatchedOccurrence[] = [];
       const cleanTargetWord = cleanArabicText(selectedWord.word.text_uthmani);
-
-      // ১ থেকে ১১৪ সুরার ডেটা স্ক্যান
       const surahIds = Array.from({ length: 114 }, (_, i) => i + 1);
 
       await Promise.all(
         surahIds.map(async (sId) => {
           try {
-            const res = await fetch(`/data/quran/surahs/${sId}.json`);
-            if (!res.ok) return;
-            const data: SurahData = await res.json();
+            // TanStack Query ক্যাশ থেকে ফেচ (যা অলরেডি মেমরিতে থাকলে ০ms লাগবে)
+            const data: SurahData = await queryClient.fetchQuery({
+              queryKey: ["local-surah-cache", sId],
+              queryFn: () => fetchSurahData(sId),
+              staleTime: Infinity,
+            });
 
             data.ayahs.forEach((a) => {
               const matchedWordsInThisAyah: QuranWord[] = [];
@@ -843,21 +873,12 @@ function WordAndRootSearchDialog({
                 let isMatch = false;
 
                 if (searchType === "word") {
-                  // হুবহু শব্দ ম্যাচিং
                   isMatch = cleanArabicText(w.text_uthmani) === cleanTargetWord;
                 } else if (searchType === "root" && activeRoot) {
-                  // রুট ম্যাচিং (স্মার্ট রুট এক্সট্রাক্টর দিয়ে)
                   const wRoot = extractIntelligentRoot(w);
                   const wText = cleanArabicText(w.text_uthmani);
                   const wLemma = cleanArabicText(w.lemma || "");
-
-                  if (wRoot && wRoot === activeRoot) {
-                    isMatch = true;
-                  } else if (wLemma && wLemma.includes(activeRoot)) {
-                    isMatch = true;
-                  } else if (wText.includes(activeRoot)) {
-                    isMatch = true;
-                  }
+                  isMatch = (wRoot === activeRoot) || wLemma.includes(activeRoot) || wText.includes(activeRoot);
                 }
 
                 if (isMatch) {
@@ -882,6 +903,7 @@ function WordAndRootSearchDialog({
 
       if (isMounted) {
         matchedAyahs.sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
+        searchCacheMap.set(cacheKey, matchedAyahs); // ক্যাশে সেভ করা
         setResults(matchedAyahs);
         setIsLoading(false);
       }
@@ -892,7 +914,7 @@ function WordAndRootSearchDialog({
     return () => {
       isMounted = false;
     };
-  }, [selectedWord, searchType, activeRoot]);
+  }, [selectedWord, searchType, activeRoot, queryClient]);
 
   if (!selectedWord) return null;
   const { word, surah, ayah } = selectedWord;
