@@ -21,19 +21,41 @@ export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
 
-function SettingsPage() {
-  const prefsContext = usePrefs() as any;
-  const { prefs, updatePref, lang } = prefsContext || {};
+const DEFAULT_PREFS = {
+  showArabic: true,
+  showWordByWord: true,
+  showTransliteration: true,
+  showConventionalBn: true,
+  showConventionalEn: true,
+  showModernBn: true,
+  showModernEn: true,
+  showLexicon: true,
+};
 
-  // লোকাল স্টেট হ্যান্ডলিং
+function SettingsPage() {
+  const prefsContext = (usePrefs ? usePrefs() : {}) as any;
+  const { prefs: contextPrefs, updatePref, setPrefs, lang } = prefsContext;
+
+  // ডিসপ্লে লেয়ার স্টেট (লোকালস্টোরেজ থেকে সরাসরি ইনিশিয়ালাইজ)
+  const [layersState, setLayersState] = useState<Record<string, boolean>>(() => {
+    try {
+      const saved = localStorage.getItem("quran_prefs") || localStorage.getItem("prefs");
+      if (saved) {
+        return { ...DEFAULT_PREFS, ...JSON.parse(saved) };
+      }
+    } catch (e) {}
+    return { ...DEFAULT_PREFS, ...(contextPrefs || {}) };
+  });
+
+  // ফন্ট সাইজ স্টেট
   const [arabicSize, setArabicSize] = useState<number>(() => {
-    if (prefs?.arabicFontSize) return Number(prefs.arabicFontSize);
+    if (contextPrefs?.arabicFontSize) return Number(contextPrefs.arabicFontSize);
     const saved = localStorage.getItem("quran_arabic_font_size");
     return saved ? Number(saved) : 28;
   });
 
   const [translationSize, setTranslationSize] = useState<number>(() => {
-    if (prefs?.translationFontSize) return Number(prefs.translationFontSize);
+    if (contextPrefs?.translationFontSize) return Number(contextPrefs.translationFontSize);
     const saved = localStorage.getItem("quran_translation_font_size");
     return saved ? Number(saved) : 15;
   });
@@ -43,19 +65,43 @@ function SettingsPage() {
   const [surahProgress, setSurahProgress] = useState<number | null>(null);
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
 
+  // ডিসপ্লে টগল সুইচ হ্যান্ডলার (ইনস্ট্যান্ট অন/অফ এবং স্টোরেজ সেভ)
+  const handleToggleLayer = (key: string, val: boolean) => {
+    setLayersState((prev) => {
+      const next = { ...prev, [key]: val };
+      
+      // লোকাল স্টোরেজে সংরক্ষণ
+      localStorage.setItem("quran_prefs", JSON.stringify(next));
+      localStorage.setItem("prefs", JSON.stringify(next));
+
+      // গ্লোবাল কন্টেক্সট আপডেট
+      if (typeof updatePref === "function") {
+        updatePref(key, val);
+      } else if (typeof setPrefs === "function") {
+        setPrefs(next);
+      }
+
+      // অন্যান্য ট্যাব/পেজে জানানোর জন্য কাস্টম ইভেন্ট
+      window.dispatchEvent(new Event("storage"));
+      window.dispatchEvent(new Event("prefs-updated"));
+
+      return next;
+    });
+  };
+
   // ফন্ট সাইজ চেঞ্জ হ্যান্ডলার
   const handleArabicFontChange = (val: number[]) => {
     const size = val[0];
     setArabicSize(size);
     localStorage.setItem("quran_arabic_font_size", String(size));
-    if (updatePref) updatePref("arabicFontSize", size);
+    if (typeof updatePref === "function") updatePref("arabicFontSize", size);
   };
 
   const handleTranslationFontChange = (val: number[]) => {
     const size = val[0];
     setTranslationSize(size);
     localStorage.setItem("quran_translation_font_size", String(size));
-    if (updatePref) updatePref("translationFontSize", size);
+    if (typeof updatePref === "function") updatePref("translationFontSize", size);
   };
 
   // ১১৪টি সুরা ডাউনলোড
@@ -75,7 +121,7 @@ function SettingsPage() {
     }
   };
 
-  // ৬২৩৬টি আয়াত ডাউনলোড
+  // ৬২৩৬টি আয়াত ডাউনলোড
   const handleDownloadAllAyahs = async () => {
     setDownloadingAyahs(true);
     setAyahProgress(0);
@@ -106,7 +152,7 @@ function SettingsPage() {
     {
       key: "showTransliteration",
       title: lang === "bn" ? "উচ্চারণ (Transliteration)" : "Ayah Transliteration",
-      desc: lang === "bn" ? "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" : "Full ayah phonetic reading guide",
+      desc: lang === "bn" ? "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" : "Full ayah phonetic reading guide",
     },
     {
       key: "showConventionalBn",
@@ -126,7 +172,7 @@ function SettingsPage() {
     {
       key: "showModernEn",
       title: lang === "bn" ? "৪. Modern Translation" : "4. Modern Translation (EN)",
-      desc: lang === "bn" ? "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ" : "Contemporary contextual English translation",
+      desc: lang === "bn" ? "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ" : "Contemporary contextual English translation",
     },
     {
       key: "showLexicon",
@@ -147,17 +193,17 @@ function SettingsPage() {
           </h1>
           <p className="text-xs text-muted-foreground mt-1">
             {lang === "bn"
-              ? "অফলাইন ডাটা, ফন্ট সাইজ এবং ডিসপ্লে লেয়ার কাস্টমাইজ করুন"
+              ? "অফলাইন ডাটা, ফন্ট সাইজ এবং ডিসপ্লে লেয়ার কাস্টমাইজ করুন"
               : "Manage offline data, font scaling and customize display layers"}
           </p>
         </div>
         <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
           <Check className="size-3" />
-          {lang === "bn" ? "স্বয়ংক্রিয় সংরক্ষিত" : "Auto saved"}
+          {lang === "bn" ? "স্বয়ংক্রিয় সংরক্ষিত" : "Auto saved"}
         </span>
       </div>
 
-      {/* ফন্ট সাইজ সেটিংস (সক্রিয় স্লাইডার) */}
+      {/* ফন্ট সাইজ সেটিংস */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Type className="size-4 text-primary" />
@@ -198,7 +244,7 @@ function SettingsPage() {
               </Label>
               <span className="font-mono text-xs text-primary font-bold">{translationSize}px</span>
             </div>
-
+            
             <Slider
               value={[translationSize]}
               min={12}
@@ -275,12 +321,12 @@ function SettingsPage() {
             </Button>
           </div>
 
-          {/* আয়াত ডাউনলোড */}
+          {/* আয়াত ডাউনলোড */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="text-sm font-semibold text-foreground">
-                  {lang === "bn" ? "২. আয়াত ডাউনলোড (৬২৩৬টি)" : "2. Download Ayahs (6236)"}
+                  {lang === "bn" ? "২. আয়াত ডাউনলোড (৬২৩৬টি)" : "2. Download Ayahs (6236)"}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-0.5">
                   {lang === "bn" ? "শব্দে শব্দে অর্থ ও রুটসহ অফলাইন ডাটা সেভ করুন" : "Save all ayahs with words and roots"}
@@ -319,7 +365,7 @@ function SettingsPage() {
               ) : (
                 <>
                   <Download className="size-3.5 mr-1.5" />
-                  ৬২৩৬টি আয়াত অফলাইন সেভ করুন
+                  ৬২৩৬টি আয়াত অফলাইন সেভ করুন
                 </>
               )}
             </Button>
@@ -327,7 +373,7 @@ function SettingsPage() {
         </div>
       </div>
 
-      {/* ডিসপ্লে লেয়ার সেটিংস */}
+      {/* ডিসপ্লে লেয়ার সেটিংস (সরাসরি ইন্টারঅ্যাক্টিভ সুইচ) */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Layers className="size-4 text-primary" />
@@ -336,14 +382,15 @@ function SettingsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {displayLayers.map((layer) => {
-            const isChecked = prefs ? prefs[layer.key] !== false : true;
+            const isChecked = layersState[layer.key] !== false;
 
             return (
               <div
                 key={layer.key}
-                className="flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-xs transition-all hover:border-border"
+                className="flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-xs transition-all hover:border-border cursor-pointer"
+                onClick={() => handleToggleLayer(layer.key, !isChecked)}
               >
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 pointer-events-none select-none">
                   <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
                     {layer.title}
                   </Label>
@@ -352,13 +399,13 @@ function SettingsPage() {
                   </p>
                 </div>
 
-                <Switch
-                  id={layer.key}
-                  checked={isChecked}
-                  onCheckedChange={(val) => {
-                    if (updatePref) updatePref(layer.key, val);
-                  }}
-                />
+                <div onClick={(e) => e.stopPropagation()}>
+                  <Switch
+                    id={layer.key}
+                    checked={isChecked}
+                    onCheckedChange={(val) => handleToggleLayer(layer.key, val)}
+                  />
+                </div>
               </div>
             );
           })}
