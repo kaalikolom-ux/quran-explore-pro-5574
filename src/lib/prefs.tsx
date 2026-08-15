@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-export type Prefs = {
-  lang: "bn" | "en";
-  dark: boolean;
-  arabicFontSize: number;
-  translationFontSize: number;
+export type DisplayLayers = {
   showArabic: boolean;
   showWordByWord: boolean;
   showTransliteration: boolean;
@@ -15,7 +11,14 @@ export type Prefs = {
   showLexicon: boolean;
 };
 
-const DEFAULT_PREFS: Prefs = {
+export type Prefs = DisplayLayers & {
+  lang: "bn" | "en";
+  dark: boolean;
+  arabicFontSize: number;
+  translationFontSize: number;
+};
+
+export const DEFAULT_PREFS: Prefs = {
   lang: "bn",
   dark: true,
   arabicFontSize: 28,
@@ -30,7 +33,7 @@ const DEFAULT_PREFS: Prefs = {
   showLexicon: true,
 };
 
-const STORAGE_KEY = "quran_anwesha_prefs_v2";
+const STORAGE_KEY = "quran_explorer_unified_prefs_v1";
 
 export function getStoredPrefs(): Prefs {
   if (typeof window === "undefined") return DEFAULT_PREFS;
@@ -43,11 +46,10 @@ export function getStoredPrefs(): Prefs {
   }
 }
 
-export function savePrefs(prefs: Prefs) {
+export function savePrefs(newPrefs: Prefs) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(newPrefs));
   window.dispatchEvent(new Event("prefs-updated"));
-  window.dispatchEvent(new Event("storage"));
 }
 
 export function usePrefs() {
@@ -57,10 +59,8 @@ export function usePrefs() {
     const handleUpdate = () => {
       setPrefsState(getStoredPrefs());
     };
-
     window.addEventListener("prefs-updated", handleUpdate);
     window.addEventListener("storage", handleUpdate);
-
     return () => {
       window.removeEventListener("prefs-updated", handleUpdate);
       window.removeEventListener("storage", handleUpdate);
@@ -76,7 +76,8 @@ export function usePrefs() {
   }, [prefs.dark]);
 
   const updatePref = <K extends keyof Prefs>(key: K, value: Prefs[K]) => {
-    const updated = { ...getStoredPrefs(), [key]: value };
+    const current = getStoredPrefs();
+    const updated = { ...current, [key]: value };
     setPrefsState(updated);
     savePrefs(updated);
   };

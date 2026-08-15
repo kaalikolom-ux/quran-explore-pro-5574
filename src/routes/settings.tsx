@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { 
   Sliders, 
   Download, 
@@ -11,7 +11,7 @@ import {
   Database
 } from "lucide-react";
 
-import { usePrefs } from "@/lib/prefs";
+import { usePrefs, type Prefs } from "@/lib/prefs";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -21,71 +21,13 @@ export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
 
-export const PREFS_KEY = "quran_display_prefs_v3";
-
-export const DEFAULT_DISPLAY_SETTINGS = {
-  showArabic: true,
-  showWordByWord: true,
-  showTransliteration: true,
-  showConventionalBn: true,
-  showConventionalEn: true,
-  showModernBn: true,
-  showModernEn: true,
-  showLexicon: true,
-};
-
-export function getDisplaySettings() {
-  if (typeof window === "undefined") return DEFAULT_DISPLAY_SETTINGS;
-  try {
-    const raw = localStorage.getItem(PREFS_KEY);
-    if (!raw) return DEFAULT_DISPLAY_SETTINGS;
-    return { ...DEFAULT_DISPLAY_SETTINGS, ...JSON.parse(raw) };
-  } catch {
-    return DEFAULT_DISPLAY_SETTINGS;
-  }
-}
-
 function SettingsPage() {
-  const { lang, prefs, updatePref } = usePrefs();
-  const [layers, setLayers] = useState(getDisplaySettings);
-
-  const [arabicSize, setArabicSize] = useState<number>(() => {
-    const saved = localStorage.getItem("quran_arabic_font_size");
-    return saved ? Number(saved) : 28;
-  });
-
-  const [translationSize, setTranslationSize] = useState<number>(() => {
-    const saved = localStorage.getItem("quran_translation_font_size");
-    return saved ? Number(saved) : 15;
-  });
+  const { prefs, updatePref, lang } = usePrefs();
 
   const [downloadingSurahs, setDownloadingSurahs] = useState(false);
   const [downloadingAyahs, setDownloadingAyahs] = useState(false);
   const [surahProgress, setSurahProgress] = useState<number | null>(null);
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
-
-  // সুইচ টগল হ্যান্ডলার
-  const handleToggle = (key: string, val: boolean) => {
-    const updated = { ...layers, [key]: val };
-    setLayers(updated);
-    localStorage.setItem(PREFS_KEY, JSON.stringify(updated));
-    window.dispatchEvent(new Event("prefs-updated"));
-    window.dispatchEvent(new Event("storage"));
-  };
-
-  const handleArabicFontChange = (val: number[]) => {
-    setArabicSize(val[0]);
-    localStorage.setItem("quran_arabic_font_size", String(val[0]));
-    if (updatePref) updatePref("arabicFontSize", val[0]);
-    window.dispatchEvent(new Event("prefs-updated"));
-  };
-
-  const handleTranslationFontChange = (val: number[]) => {
-    setTranslationSize(val[0]);
-    localStorage.setItem("quran_translation_font_size", String(val[0]));
-    if (updatePref) updatePref("translationFontSize", val[0]);
-    window.dispatchEvent(new Event("prefs-updated"));
-  };
 
   const handleDownloadAllSurahs = async () => {
     setDownloadingSurahs(true);
@@ -119,7 +61,7 @@ function SettingsPage() {
     }
   };
 
-  const displayLayers = [
+  const displayLayers: { key: keyof Prefs; title: string; desc: string }[] = [
     {
       key: "showArabic",
       title: lang === "bn" ? "আরবি টেক্সট" : "Arabic Text",
@@ -182,7 +124,7 @@ function SettingsPage() {
         </span>
       </div>
 
-      {/* ফন্ট সাইজ */}
+      {/* ফন্ট সাইজ সেটিংস */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Type className="size-4 text-primary" />
@@ -195,20 +137,18 @@ function SettingsPage() {
               <Label className="text-xs font-semibold text-foreground">
                 {lang === "bn" ? "আরবি ফন্ট সাইজ" : "Arabic Font Size"}
               </Label>
-              <span className="font-mono text-xs text-primary font-bold">{arabicSize}px</span>
+              <span className="font-mono text-xs text-primary font-bold">{prefs.arabicFontSize}px</span>
             </div>
-            
             <Slider
-              value={[arabicSize]}
+              value={[prefs.arabicFontSize]}
               min={20}
               max={52}
               step={1}
-              onValueChange={handleArabicFontChange}
+              onValueChange={(val) => updatePref("arabicFontSize", val[0])}
               className="py-1 cursor-pointer"
             />
-
             <div className="text-center pt-2 border-t border-border/40">
-              <p className="arabic text-foreground font-normal leading-relaxed" style={{ fontSize: `${arabicSize}px` }}>
+              <p className="arabic text-foreground font-normal leading-relaxed" style={{ fontSize: `${prefs.arabicFontSize}px` }}>
                 بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
               </p>
             </div>
@@ -219,20 +159,18 @@ function SettingsPage() {
               <Label className="text-xs font-semibold text-foreground">
                 {lang === "bn" ? "অনুবাদ ফন্ট সাইজ" : "Translation Font Size"}
               </Label>
-              <span className="font-mono text-xs text-primary font-bold">{translationSize}px</span>
+              <span className="font-mono text-xs text-primary font-bold">{prefs.translationFontSize}px</span>
             </div>
-            
             <Slider
-              value={[translationSize]}
+              value={[prefs.translationFontSize]}
               min={12}
               max={28}
               step={1}
-              onValueChange={handleTranslationFontChange}
+              onValueChange={(val) => updatePref("translationFontSize", val[0])}
               className="py-1 cursor-pointer"
             />
-
             <div className="text-center pt-3 border-t border-border/40">
-              <p className="text-muted-foreground leading-relaxed" style={{ fontSize: `${translationSize}px` }}>
+              <p className="text-muted-foreground leading-relaxed" style={{ fontSize: `${prefs.translationFontSize}px` }}>
                 পরম করুণাময় অতি দয়ালু আল্লাহর নামে
               </p>
             </div>
@@ -268,10 +206,7 @@ function SettingsPage() {
                   <span>{surahProgress}%</span>
                 </div>
                 <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-primary transition-all duration-300"
-                    style={{ width: `${surahProgress}%` }}
-                  />
+                  <div className="h-full bg-primary transition-all duration-300" style={{ width: `${surahProgress}%` }} />
                 </div>
               </div>
             )}
@@ -317,10 +252,7 @@ function SettingsPage() {
                   <span>{ayahProgress}%</span>
                 </div>
                 <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-emerald-600 transition-all duration-300"
-                    style={{ width: `${ayahProgress}%` }}
-                  />
+                  <div className="h-full bg-emerald-600 transition-all duration-300" style={{ width: `${ayahProgress}%` }} />
                 </div>
               </div>
             )}
@@ -348,7 +280,7 @@ function SettingsPage() {
         </div>
       </div>
 
-      {/* ডিসপ্লে লেয়ার সুইচসমূহ */}
+      {/* ডিসপ্লে লেয়ার সেটিংস */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Layers className="size-4 text-primary" />
@@ -357,13 +289,13 @@ function SettingsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {displayLayers.map((layer) => {
-            const isChecked = Boolean(layers[layer.key as keyof typeof layers]);
+            const isChecked = prefs[layer.key] === true;
 
             return (
               <div
                 key={layer.key}
                 className="flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-xs transition-all hover:border-border cursor-pointer"
-                onClick={() => handleToggle(layer.key, !isChecked)}
+                onClick={() => updatePref(layer.key, !isChecked)}
               >
                 <div className="space-y-0.5 select-none pointer-events-none">
                   <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
@@ -378,7 +310,7 @@ function SettingsPage() {
                   <Switch
                     id={layer.key}
                     checked={isChecked}
-                    onCheckedChange={(val) => handleToggle(layer.key, val)}
+                    onCheckedChange={(val) => updatePref(layer.key, val)}
                   />
                 </div>
               </div>
