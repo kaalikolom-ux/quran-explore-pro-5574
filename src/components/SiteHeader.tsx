@@ -59,17 +59,20 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b border-border/80 bg-background/95 backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         
-        {/* লোগো ও ব্র্যান্ডিং */}
-        <Link to="/" className="flex items-center gap-2.5 font-bold transition-opacity hover:opacity-90">
-          <div className="flex size-8 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-xs font-serif font-bold text-base">
-            ق
-          </div>
+        {/* লোগো ও ব্র্যান্ডিং (Kaushan Script ও ট্রান্সপারেন্ট স্টাইল) */}
+        <Link to="/" className="group flex items-center gap-2 transition-opacity hover:opacity-90">
           <div className="flex flex-col leading-none">
-            <span className="text-base font-bold tracking-tight text-foreground">
-              {lang === "bn" ? "কুরআন অন্বেষা" : "Quran Explorer"}
+            <span 
+              className="text-lg sm:text-xl font-bold tracking-normal text-foreground select-none"
+              style={{ 
+                fontFamily: "'Kaushan Script', cursive",
+                background: "transparent"
+              }}
+            >
+              Quran Explorer
             </span>
-            <span className="text-[10px] text-muted-foreground font-normal">
-              {lang === "bn" ? "শব্দে শব্দে অর্থ ও অনুবাদ" : "Word by Word & Meaning"}
+            <span className="text-[10px] text-muted-foreground font-normal tracking-wide">
+              {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
             </span>
           </div>
         </Link>
