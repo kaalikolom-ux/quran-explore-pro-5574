@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 export type DisplayLayers = {
   showArabic: boolean;
@@ -52,7 +52,19 @@ export function savePrefs(newPrefs: Prefs) {
   window.dispatchEvent(new Event("prefs-updated"));
 }
 
-export function usePrefs() {
+type PrefsContextType = {
+  prefs: Prefs;
+  lang: "bn" | "en";
+  dark: boolean;
+  setDark: (dark: boolean) => void;
+  toggleLang: () => void;
+  updatePref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void;
+  t: (key: string) => string;
+};
+
+const PrefsContext = createContext<PrefsContextType | null>(null);
+
+export function PrefsProvider({ children }: { children: React.ReactNode }) {
   const [prefs, setPrefsState] = useState<Prefs>(getStoredPrefs);
 
   useEffect(() => {
@@ -116,13 +128,36 @@ export function usePrefs() {
     return dict[key]?.[prefs.lang] || key;
   };
 
-  return {
-    prefs,
-    lang: prefs.lang,
-    dark: prefs.dark,
-    setDark,
-    toggleLang,
-    updatePref,
-    t,
-  };
+  return (
+    <PrefsContext.Provider
+      value={{
+        prefs,
+        lang: prefs.lang,
+        dark: prefs.dark,
+        setDark,
+        toggleLang,
+        updatePref,
+        t,
+      }}
+    >
+      {children}
+    </PrefsContext.Provider>
+  );
+}
+
+export function usePrefs() {
+  const context = useContext(PrefsContext);
+  if (!context) {
+    const fallbackPrefs = getStoredPrefs();
+    return {
+      prefs: fallbackPrefs,
+      lang: fallbackPrefs.lang,
+      dark: fallbackPrefs.dark,
+      setDark: () => {},
+      toggleLang: () => {},
+      updatePref: () => {},
+      t: (key: string) => key,
+    };
+  }
+  return context;
 }
