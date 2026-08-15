@@ -79,6 +79,22 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+// Google Rich Snippet / Schema.org Structured Data
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "কুরআন অন্বেষা — Quran Explorer",
+  "alternateName": "Quran Anwesha",
+  "url": "https://qurananwesha.com",
+  "description": "পবিত্র কুরআনের শব্দে শব্দে অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ।",
+  "inLanguage": ["bn", "ar", "en"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://qurananwesha.com/surah/1?ayah={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -88,14 +104,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "আরবি, শব্দে শব্দে অর্থ, বাংলা ও ইংরেজি অনুবাদ এবং আধুনিক তাদাব্বুরসহ পবিত্র কুরআন পড়ুন।",
+          "পবিত্র কুরআনের প্রতিটি শব্দের বাংলা অর্থ, উচ্চারণ, প্রামাণ্য অনুবাদ ও প্রাঞ্জল ব্যাখ্যা একই পাতায় পড়ুন।",
       },
+      { name: "keywords", content: "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran" },
       { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
         property: "og:description",
-        content: "শব্দে শব্দে অর্থ, প্রচলিত ও আধুনিক অনুবাদ একই পাতায়।",
+        content: "শব্দে শব্দে অর্থ, প্রচলিত ও আধুনিক বাংলা অনুবাদ একই পাতায়।",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#020817" },
     ],
@@ -110,6 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "canonical", href: "https://qurananwesha.com/" },
     ],
   }),
   shellComponent: RootShell,
@@ -123,8 +142,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="bn">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
         <style>{`
-          /* দ্রুততম টেক্সট রেন্ডারিং নিশ্চিত করার জন্য font-display: swap */
           @font-face {
             font-family: 'Amiri';
             font-display: swap;
