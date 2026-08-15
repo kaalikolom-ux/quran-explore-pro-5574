@@ -10,15 +10,43 @@ import {
   Sun, 
   Languages, 
   ShieldCheck,
-  ShieldAlert,
-  LogIn,
-  LogOut,
+  DoorOpen,
+  DoorClosed,
   Menu,
   X
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+
+// তোর ছবির অনুরূপ মডার্ন ট্রান্সপারেন্ট শিল্ড আইকন
+function DefenderShieldIcon({ className = "size-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <defs>
+        <linearGradient id="shieldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#38bdf8" />
+          <stop offset="100%" stopColor="#0284c7" />
+        </linearGradient>
+        <linearGradient id="shieldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#2563eb" />
+          <stop offset="100%" stopColor="#1d4ed8" />
+        </linearGradient>
+      </defs>
+      {/* বাম পাশের বাঁকানো লেয়ার */}
+      <path
+        d="M50 8C75 8 92 18 92 18C92 65 58 96 50 102C42 96 8 65 8 18C8 18 25 8 50 8Z"
+        fill="url(#shieldGrad1)"
+        fillOpacity="0.85"
+      />
+      {/* ভেতরের রিবন বাঁক */}
+      <path
+        d="M50 8C75 8 92 18 92 18C92 65 58 96 50 102C60 85 85 58 68 32C55 12 50 8 50 8Z"
+        fill="url(#shieldGrad2)"
+      />
+    </svg>
+  );
+}
 
 export function SiteHeader() {
   const { prefs, updatePref, toggleLang, lang } = usePrefs();
@@ -59,7 +87,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b border-border/80 bg-background/95 backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         
-        {/* লোগো ও ব্র্যান্ডিং (Kaushan Script ও ট্রান্সপারেন্ট স্টাইল) */}
+        {/* লোগো ও ব্র্যান্ডিং */}
         <Link to="/" className="group flex items-center gap-2 transition-opacity hover:opacity-90">
           <div className="flex flex-col leading-none">
             <span 
@@ -99,44 +127,43 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* ডানদিকের অ্যাকশন বাটনসমূহ (এডমিন, অথ, ভাষা, ডার্ক মোড) */}
+        {/* ডানদিকের অ্যাকশন আইকনসমূহ */}
         <div className="flex items-center gap-1.5">
           
-          {/* ইউজার লগইন অবস্থায় থাকলে দৃশ্যমান অ্যাডমিন ড্যাশবোর্ড বাটন */}
+          {/* 🛡️ ট্রান্সপারেন্ট ডিফেন্ডার এডমিন আইকন (টুলটিপসহ) */}
           {user && (
             <Link
               to="/admin"
-              title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
-              className={`flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold transition-all border ${
+              title={lang === "bn" ? "এডমিন কন্ট্রোল প্যানেল" : "Admin Control Panel"}
+              className={`group relative flex size-8 items-center justify-center rounded-lg transition-all hover:bg-sky-500/10 active:scale-95 ${
                 currentPath.startsWith("/admin")
-                  ? "bg-amber-500 text-white border-amber-600 shadow-xs"
-                  : "bg-amber-500/10 text-amber-500 border-amber-500/30 hover:bg-amber-500/20"
+                  ? "bg-sky-500/15 ring-1 ring-sky-500/40"
+                  : "bg-transparent"
               }`}
             >
-              <ShieldAlert className="size-3.5" />
-              <span>{lang === "bn" ? "এডমিন" : "Admin"}</span>
+              <DefenderShieldIcon className="size-4.5 drop-shadow-xs transition-transform group-hover:scale-110" />
             </Link>
           )}
 
-          {/* লগআউট বা লগইন বাটন */}
+          {/* 🚪 শুধু দরজার আইকন: লগআউট (খোলা দরজা) ও লগইন (বন্ধ দরজা) */}
           {user ? (
             <button
               type="button"
               onClick={handleLogout}
               title={lang === "bn" ? "লগআউট করুন" : "Log out"}
-              className="flex h-8 items-center gap-1 rounded-lg border border-border/60 bg-muted/30 px-2 text-xs font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+              aria-label="Logout"
+              className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
             >
-              <LogOut className="size-3.5" />
-              <span className="hidden sm:inline">{lang === "bn" ? "লগআউট" : "Logout"}</span>
+              <DoorOpen className="size-4" />
             </button>
           ) : (
             <Link
               to="/auth"
               title={lang === "bn" ? "লগইন করুন" : "Sign In"}
-              className="flex h-8 items-center gap-1.5 rounded-lg bg-primary px-2.5 text-xs font-medium text-primary-foreground shadow-xs hover:bg-primary/90 transition-colors cursor-pointer"
+              aria-label="Login"
+              className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors cursor-pointer"
             >
-              <LogIn className="size-3.5" />
-              <span className="hidden sm:inline">{lang === "bn" ? "লগইন" : "Login"}</span>
+              <DoorClosed className="size-4" />
             </Link>
           )}
 
@@ -161,7 +188,7 @@ export function SiteHeader() {
             {prefs.dark ? <Sun className="size-4 text-amber-400" /> : <Moon className="size-4 text-slate-700" />}
           </button>
 
-          {/* মোবাইল মেনু টগল বাটন */}
+          {/* মোবাইল মেনু বাটন */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -196,19 +223,19 @@ export function SiteHeader() {
             );
           })}
 
-          {/* মোবাইলেও এডমিন লিংক */}
-          {user && (
-            <Link
-              to="/admin"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-semibold text-amber-500 bg-amber-500/10 border border-amber-500/20 transition-all"
-            >
-              <ShieldAlert className="size-4 text-amber-500" />
-              <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
-            </Link>
-          )}
+          {/* মোবাইলে এডমিন ও দরজার বাটন */}
+          <div className="pt-2 border-t border-border/60 space-y-1">
+            {user && (
+              <Link
+                to="/admin"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-sky-500 bg-sky-500/10 transition-all"
+              >
+                <DefenderShieldIcon className="size-4" />
+                <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
+              </Link>
+            )}
 
-          <div className="pt-2 border-t border-border/60">
             {user ? (
               <button
                 type="button"
@@ -218,7 +245,7 @@ export function SiteHeader() {
                 }}
                 className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-all cursor-pointer"
               >
-                <LogOut className="size-4" />
+                <DoorOpen className="size-4" />
                 <span>{lang === "bn" ? "লগআউট" : "Logout"}</span>
               </button>
             ) : (
@@ -227,7 +254,7 @@ export function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-primary bg-primary/10 transition-all"
               >
-                <LogIn className="size-4" />
+                <DoorClosed className="size-4" />
                 <span>{lang === "bn" ? "লগইন করুন" : "Login"}</span>
               </Link>
             )}
