@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Sliders, 
   Download, 
@@ -11,7 +11,7 @@ import {
   Database
 } from "lucide-react";
 
-import { usePrefs, type Prefs } from "@/lib/prefs";
+import { usePrefs } from "@/lib/prefs";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -21,24 +21,72 @@ export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
 
+export const PREFS_KEY = "quran_display_prefs_v3";
+
+export const DEFAULT_DISPLAY_SETTINGS = {
+  showArabic: true,
+  showWordByWord: true,
+  showTransliteration: true,
+  showConventionalBn: true,
+  showConventionalEn: true,
+  showModernBn: true,
+  showModernEn: true,
+  showLexicon: true,
+};
+
+export function getDisplaySettings() {
+  if (typeof window === "undefined") return DEFAULT_DISPLAY_SETTINGS;
+  try {
+    const raw = localStorage.getItem(PREFS_KEY);
+    if (!raw) return DEFAULT_DISPLAY_SETTINGS;
+    return { ...DEFAULT_DISPLAY_SETTINGS, ...JSON.parse(raw) };
+  } catch {
+    return DEFAULT_DISPLAY_SETTINGS;
+  }
+}
+
 function SettingsPage() {
-  const { prefs, updatePref, lang } = usePrefs();
+  const { lang, prefs, updatePref } = usePrefs();
+  const [layers, setLayers] = useState(getDisplaySettings);
+
+  const [arabicSize, setArabicSize] = useState<number>(() => {
+    const saved = localStorage.getItem("quran_arabic_font_size");
+    return saved ? Number(saved) : 28;
+  });
+
+  const [translationSize, setTranslationSize] = useState<number>(() => {
+    const saved = localStorage.getItem("quran_translation_font_size");
+    return saved ? Number(saved) : 15;
+  });
 
   const [downloadingSurahs, setDownloadingSurahs] = useState(false);
   const [downloadingAyahs, setDownloadingAyahs] = useState(false);
   const [surahProgress, setSurahProgress] = useState<number | null>(null);
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
 
-  // ফন্ট সাইজ চেঞ্জ হ্যান্ডলার
+  // সুইচ টগল হ্যান্ডলার
+  const handleToggle = (key: string, val: boolean) => {
+    const updated = { ...layers, [key]: val };
+    setLayers(updated);
+    localStorage.setItem(PREFS_KEY, JSON.stringify(updated));
+    window.dispatchEvent(new Event("prefs-updated"));
+    window.dispatchEvent(new Event("storage"));
+  };
+
   const handleArabicFontChange = (val: number[]) => {
-    updatePref("arabicFontSize", val[0]);
+    setArabicSize(val[0]);
+    localStorage.setItem("quran_arabic_font_size", String(val[0]));
+    if (updatePref) updatePref("arabicFontSize", val[0]);
+    window.dispatchEvent(new Event("prefs-updated"));
   };
 
   const handleTranslationFontChange = (val: number[]) => {
-    updatePref("translationFontSize", val[0]);
+    setTranslationSize(val[0]);
+    localStorage.setItem("quran_translation_font_size", String(val[0]));
+    if (updatePref) updatePref("translationFontSize", val[0]);
+    window.dispatchEvent(new Event("prefs-updated"));
   };
 
-  // ১১৪টি সুরা ডাউনলোড
   const handleDownloadAllSurahs = async () => {
     setDownloadingSurahs(true);
     setSurahProgress(0);
@@ -55,7 +103,6 @@ function SettingsPage() {
     }
   };
 
-  // ৬২৩৬টি আয়াত ডাউনলোড
   const handleDownloadAllAyahs = async () => {
     setDownloadingAyahs(true);
     setAyahProgress(0);
@@ -72,7 +119,7 @@ function SettingsPage() {
     }
   };
 
-  const displayLayers: { key: keyof Prefs; title: string; desc: string }[] = [
+  const displayLayers = [
     {
       key: "showArabic",
       title: lang === "bn" ? "আরবি টেক্সট" : "Arabic Text",
@@ -117,8 +164,6 @@ function SettingsPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 space-y-8">
-      
-      {/* হেডার */}
       <div className="flex items-center justify-between border-b border-border/60 pb-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2">
@@ -137,7 +182,7 @@ function SettingsPage() {
         </span>
       </div>
 
-      {/* ফন্ট সাইজ সেটিংস */}
+      {/* ফন্ট সাইজ */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Type className="size-4 text-primary" />
@@ -145,17 +190,16 @@ function SettingsPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* আরবি ফন্ট সাইজ */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
               <Label className="text-xs font-semibold text-foreground">
                 {lang === "bn" ? "আরবি ফন্ট সাইজ" : "Arabic Font Size"}
               </Label>
-              <span className="font-mono text-xs text-primary font-bold">{prefs.arabicFontSize}px</span>
+              <span className="font-mono text-xs text-primary font-bold">{arabicSize}px</span>
             </div>
             
             <Slider
-              value={[prefs.arabicFontSize]}
+              value={[arabicSize]}
               min={20}
               max={52}
               step={1}
@@ -164,23 +208,22 @@ function SettingsPage() {
             />
 
             <div className="text-center pt-2 border-t border-border/40">
-              <p className="arabic text-foreground font-normal leading-relaxed" style={{ fontSize: `${prefs.arabicFontSize}px` }}>
+              <p className="arabic text-foreground font-normal leading-relaxed" style={{ fontSize: `${arabicSize}px` }}>
                 بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
               </p>
             </div>
           </div>
 
-          {/* অনুবাদ ফন্ট সাইজ */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
               <Label className="text-xs font-semibold text-foreground">
                 {lang === "bn" ? "অনুবাদ ফন্ট সাইজ" : "Translation Font Size"}
               </Label>
-              <span className="font-mono text-xs text-primary font-bold">{prefs.translationFontSize}px</span>
+              <span className="font-mono text-xs text-primary font-bold">{translationSize}px</span>
             </div>
             
             <Slider
-              value={[prefs.translationFontSize]}
+              value={[translationSize]}
               min={12}
               max={28}
               step={1}
@@ -189,7 +232,7 @@ function SettingsPage() {
             />
 
             <div className="text-center pt-3 border-t border-border/40">
-              <p className="text-muted-foreground leading-relaxed" style={{ fontSize: `${prefs.translationFontSize}px` }}>
+              <p className="text-muted-foreground leading-relaxed" style={{ fontSize: `${translationSize}px` }}>
                 পরম করুণাময় অতি দয়ালু আল্লাহর নামে
               </p>
             </div>
@@ -205,7 +248,6 @@ function SettingsPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* সুরা ডাউনলোড */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
@@ -255,7 +297,6 @@ function SettingsPage() {
             </Button>
           </div>
 
-          {/* আয়াত ডাউনলোড */}
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
@@ -307,7 +348,7 @@ function SettingsPage() {
         </div>
       </div>
 
-      {/* ডিসপ্লে লেয়ার সেটিংস */}
+      {/* ডিসপ্লে লেয়ার সুইচসমূহ */}
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Layers className="size-4 text-primary" />
@@ -316,13 +357,13 @@ function SettingsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {displayLayers.map((layer) => {
-            const isChecked = prefs[layer.key] === true;
+            const isChecked = Boolean(layers[layer.key as keyof typeof layers]);
 
             return (
               <div
                 key={layer.key}
                 className="flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-xs transition-all hover:border-border cursor-pointer"
-                onClick={() => updatePref(layer.key, !isChecked)}
+                onClick={() => handleToggle(layer.key, !isChecked)}
               >
                 <div className="space-y-0.5 select-none pointer-events-none">
                   <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
@@ -337,7 +378,7 @@ function SettingsPage() {
                   <Switch
                     id={layer.key}
                     checked={isChecked}
-                    onCheckedChange={(val) => updatePref(layer.key, val)}
+                    onCheckedChange={(val) => handleToggle(layer.key, val)}
                   />
                 </div>
               </div>
@@ -345,7 +386,6 @@ function SettingsPage() {
           })}
         </div>
       </div>
-
     </div>
   );
 }

@@ -29,8 +29,9 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-import { usePrefs, getStoredPrefs, type Prefs } from "@/lib/prefs";
+import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
+import { getDisplaySettings } from "@/routes/settings";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -163,7 +164,7 @@ const SURAH_LIST = [
   { id: 76, name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   { id: 77, name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   { id: 78, name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
+  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "الনাযعات", type: "মাক্কী", total: 46 },
   { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   { id: 81, name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
   { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
@@ -263,25 +264,38 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, lang } = usePrefs();
+  const { lang } = usePrefs();
   const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const isAdmin = true;
 
-  // রিয়েল-টাইম লাইভ ডিসপ্লে স্টেট
-  const [livePrefs, setLivePrefs] = useState<Prefs>(getStoredPrefs);
+  // রিয়েলটাইম ডিসপ্লে ও ফন্ট সেটিংস
+  const [displayLayers, setDisplayLayers] = useState(getDisplaySettings);
+  const [arabicFontSize, setArabicFontSize] = useState<number>(() => {
+    const saved = localStorage.getItem("quran_arabic_font_size");
+    return saved ? Number(saved) : 28;
+  });
+  const [translationFontSize, setTranslationFontSize] = useState<number>(() => {
+    const saved = localStorage.getItem("quran_translation_font_size");
+    return saved ? Number(saved) : 15;
+  });
 
   useEffect(() => {
-    const handleStorageUpdate = () => {
-      setLivePrefs(getStoredPrefs());
+    const syncSettings = () => {
+      setDisplayLayers(getDisplaySettings());
+      const savedAr = localStorage.getItem("quran_arabic_font_size");
+      const savedTr = localStorage.getItem("quran_translation_font_size");
+      if (savedAr) setArabicFontSize(Number(savedAr));
+      if (savedTr) setTranslationFontSize(Number(savedTr));
     };
-    window.addEventListener("prefs-updated", handleStorageUpdate);
-    window.addEventListener("storage", handleStorageUpdate);
+
+    window.addEventListener("prefs-updated", syncSettings);
+    window.addEventListener("storage", syncSettings);
     return () => {
-      window.removeEventListener("prefs-updated", handleStorageUpdate);
-      window.removeEventListener("storage", handleStorageUpdate);
+      window.removeEventListener("prefs-updated", syncSettings);
+      window.removeEventListener("storage", syncSettings);
     };
   }, []);
 
@@ -566,19 +580,15 @@ function SurahDetailPage() {
     setEditingAyah(null);
   };
 
-  // ✅ লাইভ এবং নির্ভুল দৃশ্যমানতা চেকিং
-  const currentSettings = livePrefs || prefs || getStoredPrefs();
-  const showArabic = Boolean(currentSettings.showArabic);
-  const showWordByWord = Boolean(currentSettings.showWordByWord);
-  const showTransliteration = Boolean(currentSettings.showTransliteration);
-  const showConventionalBn = Boolean(currentSettings.showConventionalBn);
-  const showConventionalEn = Boolean(currentSettings.showConventionalEn);
-  const showModernBn = Boolean(currentSettings.showModernBn);
-  const showModernEn = Boolean(currentSettings.showModernEn);
-  const showLexicon = Boolean(currentSettings.showLexicon);
-
-  const arabicFontSize = currentSettings.arabicFontSize || 28;
-  const translationFontSize = currentSettings.translationFontSize || 15;
+  // ✅ সুইচ অফ থাকলে পুরোপুরি অদৃশ্য করার রিয়েল-টাইম কন্ডিশন
+  const showArabic = Boolean(displayLayers.showArabic);
+  const showWordByWord = Boolean(displayLayers.showWordByWord);
+  const showTransliteration = Boolean(displayLayers.showTransliteration);
+  const showConventionalBn = Boolean(displayLayers.showConventionalBn);
+  const showConventionalEn = Boolean(displayLayers.showConventionalEn);
+  const showModernBn = Boolean(displayLayers.showModernBn);
+  const showModernEn = Boolean(displayLayers.showModernEn);
+  const showLexicon = Boolean(displayLayers.showLexicon);
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-3 space-y-6">
