@@ -10,9 +10,9 @@ import {
   Sun, 
   Languages, 
   ShieldCheck,
+  ShieldAlert,
   LogIn,
   LogOut,
-  User,
   Menu,
   X
 } from "lucide-react";
@@ -74,7 +74,7 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        {/* ডেস্কটপ মেনু আইটেমসমূহ */}
+        {/* সাধারণ ন্যাভিগেশন মেনু */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -83,7 +83,7 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
                   isActive
                     ? "bg-primary/10 text-primary font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -96,16 +96,32 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* অ্যাকশন বাটনসমূহ (লগইন, ভাষা পরিবর্তন, ডার্ক মোড ও মোবাইল টগল) */}
+        {/* ডানদিকের অ্যাকশন বাটনসমূহ (এডমিন, অথ, ভাষা, ডার্ক মোড) */}
         <div className="flex items-center gap-1.5">
           
-          {/* লগইন / প্রোফাইল বাটন */}
+          {/* ইউজার লগইন অবস্থায় থাকলে দৃশ্যমান অ্যাডমিন ড্যাশবোর্ড বাটন */}
+          {user && (
+            <Link
+              to="/admin"
+              title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
+              className={`flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold transition-all border ${
+                currentPath.startsWith("/admin")
+                  ? "bg-amber-500 text-white border-amber-600 shadow-xs"
+                  : "bg-amber-500/10 text-amber-500 border-amber-500/30 hover:bg-amber-500/20"
+              }`}
+            >
+              <ShieldAlert className="size-3.5" />
+              <span>{lang === "bn" ? "এডমিন" : "Admin"}</span>
+            </Link>
+          )}
+
+          {/* লগআউট বা লগইন বাটন */}
           {user ? (
             <button
               type="button"
               onClick={handleLogout}
               title={lang === "bn" ? "লগআউট করুন" : "Log out"}
-              className="flex h-8 items-center gap-1.5 rounded-lg border border-border/60 bg-muted/30 px-2.5 text-xs font-medium text-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+              className="flex h-8 items-center gap-1 rounded-lg border border-border/60 bg-muted/30 px-2 text-xs font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
             >
               <LogOut className="size-3.5" />
               <span className="hidden sm:inline">{lang === "bn" ? "লগআউট" : "Logout"}</span>
@@ -121,7 +137,7 @@ export function SiteHeader() {
             </Link>
           )}
 
-          {/* ভাষা টগল */}
+          {/* ভাষা পরিবর্তন */}
           <button
             type="button"
             onClick={toggleLang}
@@ -132,7 +148,7 @@ export function SiteHeader() {
             <span className="uppercase font-mono text-[11px]">{lang}</span>
           </button>
 
-          {/* থিম টগল */}
+          {/* ডার্ক মোড */}
           <button
             type="button"
             onClick={() => updatePref("dark", !prefs.dark)}
@@ -142,7 +158,7 @@ export function SiteHeader() {
             {prefs.dark ? <Sun className="size-4 text-amber-400" /> : <Moon className="size-4 text-slate-700" />}
           </button>
 
-          {/* মোবাইল মেনু বাটন */}
+          {/* মোবাইল মেনু টগল বাটন */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -176,6 +192,18 @@ export function SiteHeader() {
               </Link>
             );
           })}
+
+          {/* মোবাইলেও এডমিন লিংক */}
+          {user && (
+            <Link
+              to="/admin"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-semibold text-amber-500 bg-amber-500/10 border border-amber-500/20 transition-all"
+            >
+              <ShieldAlert className="size-4 text-amber-500" />
+              <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
+            </Link>
+          )}
 
           <div className="pt-2 border-t border-border/60">
             {user ? (
