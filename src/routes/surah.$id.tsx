@@ -30,7 +30,7 @@ import {
 import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
-import { useBookmarks } from "@/lib/bookmarks";
+import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -133,7 +133,7 @@ const SURAH_LIST = [
   { id: 46, name_bn: "আল-আহকাফ", name_ar: "الأحقاف", type: "মাক্কী", total: 35 },
   { id: 47, name_bn: "মুহাম্মদ", name_ar: "محمد", type: "মাদানী", total: 38 },
   { id: 48, name_bn: "আল-ফাতহ", name_ar: "الفتح", type: "মাদানী", total: 29 },
-  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحجرات", type: "মাদানী", total: 18 },
+  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحজরাত", type: "মাদানী", total: 18 },
   { id: 50, name_bn: "কাফ", name_ar: "ق", type: "মাক্কী", total: 45 },
   { id: 51, name_bn: "আজ-যারিয়াত", name_ar: "الذاريات", type: "মাক্কী", total: 60 },
   { id: 52, name_bn: "আত-তুর", name_ar: "الطور", type: "মাক্কী", total: 49 },
@@ -163,7 +163,7 @@ const SURAH_LIST = [
   { id: 76, name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   { id: 77, name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   { id: 78, name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
+  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "الনাযعات", type: "মাক্কী", total: 46 },
   { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   { id: 81, name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
   { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
@@ -192,7 +192,7 @@ const SURAH_LIST = [
   { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
   { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
   { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
-  { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
+  { id: 108, name_bn: "আল-কাউসার", name_ar: "الকোثر", type: "মাক্কী", total: 3 },
   { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
   { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
@@ -264,7 +264,7 @@ function SurahDetailPage() {
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
   const { prefs, lang } = (usePrefs ? usePrefs() : {}) as any;
-  const { bookmarks, toggleBookmark } = useBookmarks();
+  const { bookmarks, toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -420,28 +420,30 @@ function SurahDetailPage() {
     };
   };
 
-  // 🔖 Bookmarks Page-এর হুকের সাথে শতভাগ সামঞ্জস্যপূর্ণ হ্যান্ডলার
+  // 🔖 Bookmarks Hook-এর সাথে শতভাগ নির্ভুল ইন্টিগ্রেশন
   const isAyahBookmarked = (ayahNum: number) => {
-    return bookmarks.some(
-      (b: any) => b.kind === "ayah" && b.surah === surahId && b.ayah === ayahNum
-    );
+    return checkBookmarked({
+      kind: "ayah",
+      surah: surahId,
+      ayah: ayahNum,
+      label: "",
+    });
   };
 
   const handleToggleBookmark = (ayah: QuranAyah) => {
-    const isBookmarked = isAyahBookmarked(ayah.ayah);
-    
-    // Bookmarks Page-এ ঠিক যেভাবে পড়া হচ্ছে সেই অবজেক্ট তৈরি
-    toggleBookmark({
+    const target: BookmarkTarget = {
       kind: "ayah",
       surah: surahId,
       ayah: ayah.ayah,
       label: `সুরা ${meta.name_bn} : আয়াত ${ayah.ayah}`,
-    } as any);
+    };
 
-    if (isBookmarked) {
-      toast.info(`আয়াত ${ayah.ayah} বুকমার্ক থেকে সরানো হয়েছে`);
-    } else {
+    const isNowBookmarked = toggleBm(target);
+
+    if (isNowBookmarked) {
       toast.success(`আয়াত ${ayah.ayah} বুকমার্কে সংরক্ষণ করা হয়েছে`);
+    } else {
+      toast.info(`আয়াত ${ayah.ayah} বুকমার্ক থেকে সরানো হয়েছে`);
     }
   };
 
