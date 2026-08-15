@@ -88,16 +88,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "আরবি, শব্দে শব্দে অর্থ, বাংলা ও ইংরেজি অনুবাদ এবং বিজ্ঞানভিত্তিক অনুবাদসহ পবিত্র কুরআন পড়ুন।",
+          "আরবি, শব্দে শব্দে অর্থ, বাংলা ও ইংরেজি অনুবাদ এবং আধুনিক তাদাব্বুরসহ পবিত্র কুরআন পড়ুন।",
       },
       { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
         property: "og:description",
-        content: "শব্দে শব্দে অর্থ, প্রচলিত ও বিজ্ঞানভিত্তিক অনুবাদ একই পাতায়।",
+        content: "শব্দে শব্দে অর্থ, প্রচলিত ও আধুনিক অনুবাদ একই পাতায়।",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#14532d" },
+      { name: "theme-color", content: "#020817" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -123,8 +123,22 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="bn">
       <head>
         <HeadContent />
+        <style>{`
+          /* দ্রুততম টেক্সট রেন্ডারিং নিশ্চিত করার জন্য font-display: swap */
+          @font-face {
+            font-family: 'Amiri';
+            font-display: swap;
+          }
+          @font-face {
+            font-family: 'Noto Serif Bengali';
+            font-display: swap;
+          }
+          body {
+            font-display: swap;
+          }
+        `}</style>
       </head>
-      <body>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/20 selection:text-primary">
         {children}
         <Scripts />
       </body>
@@ -163,7 +177,6 @@ function RootComponent() {
         <div className="flex min-h-screen flex-col bg-background">
           <SiteHeader />
           <main className="flex-1">
-            {/* Required: nested routes render here. */}
             <Outlet />
           </main>
           <SiteFooter />
