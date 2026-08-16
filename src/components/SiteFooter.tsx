@@ -33,7 +33,6 @@ export function SiteFooter() {
 
     setLoading(true);
     try {
-      // ১. ডাটাবেজের newsletter_subscribers টেবিলে সেভ
       const { error } = await supabase
         .from("newsletter_subscribers")
         .insert({ email: parsed.data });
@@ -51,7 +50,6 @@ export function SiteFooter() {
         throw error;
       }
 
-      // ২. নোটিফিকেশন API কল করার চেষ্টা
       try {
         await fetch("/api/public/newsletter", {
           method: "POST",
@@ -62,7 +60,7 @@ export function SiteFooter() {
           }),
         });
       } catch (apiErr) {
-        // API কল ব্যাকগ্রাউন্ডে হ্যান্ডেল হবে
+        // Handled silently
       }
 
       setSubscribed(true);
@@ -82,14 +80,26 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-chrome text-chrome-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
-        {/* ১. পরিচিতি ও সোশ্যাল (হেডারের মতো ফন্ট ও লুক) */}
+        
+        {/* ১. পরিচিতি ও সোশ্যাল (হেডারের হুবহু লোগো ও ফন্ট) */}
         <div>
-          <Link to="/" className="inline-block group">
-            <span className="text-xl font-bold tracking-tight text-chrome-foreground transition-opacity group-hover:opacity-90">
-              Quran Explorer
-            </span>
+          <Link to="/" className="group inline-flex items-center gap-2 transition-opacity hover:opacity-90">
+            <div className="flex flex-col leading-none">
+              <span 
+                className="text-lg sm:text-xl font-bold tracking-normal text-chrome-foreground select-none"
+                style={{ 
+                  fontFamily: "'Kaushan Script', cursive",
+                  background: "transparent"
+                }}
+              >
+                Quran Explorer
+              </span>
+              <span className="mt-1 text-[10px] text-chrome-foreground/60 font-normal tracking-wide">
+                {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
+              </span>
+            </div>
           </Link>
-          <p className="mt-2 text-sm leading-relaxed text-chrome-foreground/70">{t("tagline")}</p>
+          <p className="mt-3 text-sm leading-relaxed text-chrome-foreground/70">{t("tagline")}</p>
           <SocialLinks className="mt-5" />
         </div>
 
@@ -157,7 +167,14 @@ export function SiteFooter() {
 
           <div className="pt-2 text-xs text-chrome-foreground/50 border-t border-white/10">
             <p>
-              © {new Date().getFullYear()} <span className="font-semibold text-chrome-foreground/80">Quran Explorer</span> — {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}
+              © {new Date().getFullYear()}{" "}
+              <span 
+                style={{ fontFamily: "'Kaushan Script', cursive" }}
+                className="text-chrome-foreground/80 font-bold"
+              >
+                Quran Explorer
+              </span>{" "}
+              — {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}
             </p>
           </div>
         </div>
