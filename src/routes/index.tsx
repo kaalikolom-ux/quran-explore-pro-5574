@@ -19,11 +19,25 @@ export const Route = createFileRoute("/")({
         content:
           "আরবি, শব্দে শব্দে অর্থ, বাংলা (তাইসিরুল কুরআন) ও ইংরেজি (Pickthall) অনুবাদ এবং বিজ্ঞানভিত্তিক অনুবাদসহ কুরআন পড়ুন। বুকমার্ক ও আর্টিকেল সুবিধা।",
       },
+      // Open Graph / Facebook / WhatsApp
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
         property: "og:description",
         content: "শব্দে শব্দে অর্থ, প্রচলিত ও বিজ্ঞানভিত্তিক অনুবাদ একই পাতায়।",
       },
+      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+
+      // Twitter Card
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
+      {
+        name: "twitter:description",
+        content: "শব্দে শব্দে অর্থ, প্রচলিত ও বিজ্ঞানভিত্তিক অনুবাদ একই পাতায়।",
+      },
+      { name: "twitter:image", content: "/og-image.jpg" },
     ],
   }),
   loader: ({ context }) => {
@@ -281,7 +295,7 @@ function HomePage() {
                         {c.name_simple}
                         {targetAyah && (
                           <span className="ml-2 text-xs font-semibold text-primary">
-                            ({localNumber(targetAyah, lang)} নং আয়াত)
+                            ({localNumber(targetAyah, lang)} নং আয়াত)
                           </span>
                         )}
                       </span>
