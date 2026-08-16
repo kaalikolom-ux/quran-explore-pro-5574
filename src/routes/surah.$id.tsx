@@ -27,7 +27,8 @@ import {
   StickyNote,
   Trash2,
   Download,
-  CheckCircle2
+  CheckCircle2,
+  FileAudio
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -111,7 +112,7 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   61: { name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
   62: { name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
   63: { name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
-  64: { name_bn: "আত-তাগাবুন", name_ar: "التغابন", type: "মাদানী", total: 18 },
+  64: { name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
   65: { name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
   66: { name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
   67: { name_bn: "আল-মুলক", name_ar: "الملك", type: "মাক্কী", total: 30 },
@@ -257,12 +258,12 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   if (!base) return "";
 
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
-  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ب") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
+  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ব") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
     base = base.slice(1);
   }
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
 
-  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("نا") || base.endsWith("ها")) && base.length > 4) {
+  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("না") || base.endsWith("হা")) && base.length > 4) {
     base = base.slice(0, -2);
   } else if ((base.endsWith("ه") || base.endsWith("ي") || base.endsWith("ك")) && base.length > 3) {
     base = base.slice(0, -1);
@@ -325,6 +326,7 @@ function SurahDetailPage() {
   const [isAudioDownloaded, setIsAudioDownloaded] = useState(false);
   const [downloadingSurahAudio, setDownloadingSurahAudio] = useState(false);
   const [audioProgress, setAudioProgress] = useState<number | null>(null);
+  const [downloadingFullMp3, setDownloadingFullMp3] = useState(false);
 
   const [cachedAyahs, setCachedAyahs] = useState<Set<number>>(new Set());
   const [downloadingAyahsMap, setDownloadingAyahsMap] = useState<Record<number, boolean>>({});
@@ -440,6 +442,40 @@ function SurahDetailPage() {
     } finally {
       setDownloadingSurahAudio(false);
       setTimeout(() => setAudioProgress(null), 3000);
+    }
+  };
+
+  // সরাসরি ডিভাইসের ফাইল স্টোরেজে পূর্ণ সুরার MP3 ডাউনলোড
+  const handleDownloadFullSurahMp3ToDevice = async () => {
+    setDownloadingFullMp3(true);
+    const sStr = String(surahId).padStart(3, "0");
+    const fullSurahUrl = `https://server8.mp3quran.net/afs/${sStr}.mp3`;
+
+    try {
+      toast.info(lang === "bn" ? `সুরা ${meta.name_bn} MP3 ডাউনলোড শুরু হয়েছে...` : `Downloading Surah ${meta.name_bn} MP3...`);
+      const response = await fetch(fullSurahUrl);
+      if (!response.ok) throw new Error("File download failed");
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = downloadUrl;
+      a.download = `Surah_${sStr}_${meta.name_bn.replace(/\s+/g, "_")}.mp3`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(downloadUrl);
+      toast.success(lang === "bn" ? `সুরা ${meta.name_bn} আপনার ডিভাইসে ডাউনলোড সম্পন্ন হয়েছে!` : `Surah ${meta.name_bn} MP3 downloaded to device!`);
+    } catch (err) {
+      // Direct link fallback
+      const a = document.createElement("a");
+      a.href = fullSurahUrl;
+      a.target = "_blank";
+      a.download = `Surah_${sStr}.mp3`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } finally {
+      setDownloadingFullMp3(false);
     }
   };
 
@@ -758,14 +794,14 @@ function SurahDetailPage() {
           </form>
 
           <div className="flex items-center gap-1.5 shrink-0">
-            {/* সম্পূর্ণ সুরার অডিও ডাউনলোড বাটন */}
+            {/* ১. ওয়েব অফলাইন ক্যাশ বাটন */}
             <Button
               size="sm"
               variant="outline"
               disabled={downloadingSurahAudio || isAudioDownloaded}
               onClick={handleDownloadThisSurahAudio}
               className="h-7 px-2 text-[11px] font-medium"
-              title={isAudioDownloaded ? "এই সুরার অডিও সম্পূর্ণ অফলাইনে সংরক্ষিত আছে" : "এই সুরার সম্পূর্ণ অডিও অফলাইনে সংরক্ষণ করুন"}
+              title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "ওয়েব প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও ক্যাশ করুন"}
             >
               {downloadingSurahAudio ? (
                 <>
@@ -775,14 +811,31 @@ function SurahDetailPage() {
               ) : isAudioDownloaded ? (
                 <>
                   <Check className="size-3 mr-1 text-emerald-500" />
-                  <span className="hidden sm:inline">সংরক্ষিত</span>
+                  <span className="hidden sm:inline">ক্যাশড</span>
                 </>
               ) : (
                 <>
-                  <Download className="size-3 mr-1 text-primary" />
-                  <span className="hidden sm:inline">অডিও</span>
+                  <CheckCircle2 className="size-3 mr-1 text-primary" />
+                  <span className="hidden sm:inline">ক্যাশ</span>
                 </>
               )}
+            </Button>
+
+            {/* ২. ডিভাইসে সরাসরি সুরার MP3 ফাইল ডাউনলোড বাটন */}
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={downloadingFullMp3}
+              onClick={handleDownloadFullSurahMp3ToDevice}
+              className="h-7 px-2 text-[11px] font-medium bg-primary/5 hover:bg-primary/15 text-primary border-primary/30"
+              title={`সুরা ${meta.name_bn}-এর সম্পূর্ণ MP3 ফাইল আপনার মোবাইলে/কম্পিউটারে ডাউনলোড করুন`}
+            >
+              {downloadingFullMp3 ? (
+                <Loader2 className="size-3 mr-1 animate-spin text-primary" />
+              ) : (
+                <FileAudio className="size-3 mr-1" />
+              )}
+              <span className="hidden sm:inline">MP3</span>
             </Button>
 
             {surahId > 1 && (
@@ -842,7 +895,6 @@ function SurahDetailPage() {
               }`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
-                {/* বামপাশে: আয়াত নম্বর, Play, Bookmark, Ayah Audio Download */}
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
                     <span>{surahId}:{ayah.ayah}</span>
