@@ -108,10 +108,10 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   57: { name_bn: "আল-হাদিদ", name_ar: "الحديد", type: "মাদানী", total: 29 },
   58: { name_bn: "আল-মুজাদালাহ", name_ar: "المجادلة", type: "মাদানী", total: 22 },
   59: { name_bn: "আল-হাশর", name_ar: "الحشر", type: "মাদানী", total: 24 },
-  60: { name_bn: "আল-মুমতাহানাহ", name_ar: "الممتحنة", type: "মাদানী", total: 13 },
+  60: { name_bn: "আল-মুমতাহানাহ", name_ar: "المমتحنة", type: "মাদানী", total: 13 },
   61: { name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
   62: { name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
-  63: { name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
+  63: { name_bn: "আল-মুনাফিকুন", name_ar: "المনাفقون", type: "মাদানী", total: 11 },
   64: { name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
   65: { name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
   66: { name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
@@ -129,7 +129,7 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   78: { name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
   79: { name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
   80: { name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
-  81: { name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
+  81: { name_bn: "আত-তাকভীর", name_ar: "التکویر", type: "মাক্কী", total: 29 },
   82: { name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
   83: { name_bn: "আল-মুতাফফিফিন", name_ar: "المطففين", type: "মাক্কী", total: 36 },
   84: { name_bn: "আল-ইনশিকাক", name_ar: "الانشقاق", type: "মাক্কী", total: 25 },
@@ -156,7 +156,7 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   105: { name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
   106: { name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
   107: { name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
-  108: { name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
+  108: { name_bn: "আল-কাউসার", name_ar: "الکوثر", type: "মাক্কী", total: 3 },
   109: { name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
   110: { name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
   111: { name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
@@ -445,7 +445,6 @@ function SurahDetailPage() {
     }
   };
 
-  // সরাসরি ডিভাইসের ফাইল স্টোরেজে পূর্ণ সুরার MP3 ডাউনলোড
   const handleDownloadFullSurahMp3ToDevice = async () => {
     setDownloadingFullMp3(true);
     const sStr = String(surahId).padStart(3, "0");
@@ -466,7 +465,6 @@ function SurahDetailPage() {
       window.URL.revokeObjectURL(downloadUrl);
       toast.success(lang === "bn" ? `সুরা ${meta.name_bn} আপনার ডিভাইসে ডাউনলোড সম্পন্ন হয়েছে!` : `Surah ${meta.name_bn} MP3 downloaded to device!`);
     } catch (err) {
-      // Direct link fallback
       const a = document.createElement("a");
       a.href = fullSurahUrl;
       a.target = "_blank";
@@ -757,8 +755,9 @@ function SurahDetailPage() {
       <div className="sticky top-16 z-30 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl px-4 py-2.5 shadow-md transition-all">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center size-6 rounded-md bg-muted font-bold text-xs text-foreground font-mono shrink-0">
-              {formatNumber(meta.id, lang)}
+            {/* নম্বর ব্যাজ */}
+            <span className="inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-md bg-muted font-bold text-xs text-foreground font-mono shrink-0">
+              {formatNumber(surahId, lang)}
             </span>
             <div className="leading-tight">
               <h1 className="text-sm font-semibold text-foreground flex items-center gap-1">
