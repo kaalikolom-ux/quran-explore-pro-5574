@@ -25,13 +25,19 @@ export default defineConfig({
         workbox: {
           navigateFallback: "/",
           navigateFallbackDenylist: [/^\/~oauth/, /^\/api\//, /^\/_serverFn\//],
-          globPatterns: ["**/*.{js,css,html,woff2,png,svg}"],
+          globPatterns: ["**/*.{js,css,html,woff2,png,svg,json}"],
           runtimeCaching: [
             {
-              // HTML navigations must stay network-first so deploys are picked up.
+              // HTML navigations stay network-first so deploys are picked up, but fallback instantly offline
               urlPattern: ({ request }) => request.mode === "navigate",
               handler: "NetworkFirst",
-              options: { cacheName: "quran-pages" },
+              options: { 
+                cacheName: "quran-pages",
+                networkTimeoutSeconds: 3,
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
             },
             {
               urlPattern: ({ url, sameOrigin }) =>
@@ -40,14 +46,14 @@ export default defineConfig({
               options: { cacheName: "quran-assets" },
             },
             {
-              // ১১৪টি সূরার JSON ফাইল লোকাল ডিস্কে ক্যাশ করার নিয়ম (০ মিলিসেকেন্ডে লোড হবে)
+              // ১১৪টি সূরার JSON ফাইল লোকাল ডিস্কে ক্যাশ করার নিয়ম
               urlPattern: /\/data\/quran\/surahs\/.*\.json$/,
               handler: "CacheFirst",
               options: {
-                cacheName: "quran-surahs-json-cache-v1",
+                cacheName: "quran-text-v1",
                 expiration: {
-                  maxEntries: 120,
-                  maxAgeSeconds: 60 * 60 * 24 * 90, // ৯০ দিন ক্যাশে সংরক্ষিত থাকবে
+                  maxEntries: 150,
+                  maxAgeSeconds: 60 * 60 * 24 * 365, // ১ বছর ক্যাশে সংরক্ষিত থাকবে
                 },
                 cacheableResponse: {
                   statuses: [0, 200],
@@ -55,14 +61,14 @@ export default defineConfig({
               },
             },
             {
-              // তেলাওয়াত অডিও ফাইল ক্যাশ করার নিয়ম
+              // তেলাওয়াত অডিও ফাইল ক্যাশ করার নিয়ম (সকল ৬২৩৬ আয়াতের সাপোর্ট)
               urlPattern: /^https:\/\/everyayah\.com\/data\/.*\.mp3$/,
               handler: "CacheFirst",
               options: {
-                cacheName: "quran-audio-cache-v1",
+                cacheName: "quran-audio-v1",
                 expiration: {
-                  maxEntries: 300,
-                  maxAgeSeconds: 60 * 60 * 24 * 30, // ৩০ দিন ক্যাশে থাকবে
+                  maxEntries: 7000,
+                  maxAgeSeconds: 60 * 60 * 24 * 365, // ১ বছর ক্যাশে থাকবে
                 },
                 cacheableResponse: {
                   statuses: [0, 200],
