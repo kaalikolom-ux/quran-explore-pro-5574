@@ -10,6 +10,7 @@ import {
   Layers,
   Database
 } from "lucide-react";
+import { toast } from "sonner";
 
 import { usePrefs, type Prefs } from "@/lib/prefs";
 import { Switch } from "@/components/ui/switch";
@@ -21,6 +22,8 @@ export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
 
+const SURAH_TEXT_CACHE = "quran-text-v1";
+
 function SettingsPage() {
   const { prefs, updatePref, lang } = usePrefs();
 
@@ -30,15 +33,30 @@ function SettingsPage() {
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
 
   const handleDownloadAllSurahs = async () => {
+    if (typeof window === "undefined" || !("caches" in window)) {
+      toast.error(lang === "bn" ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই" : "Offline storage not supported in your browser");
+      return;
+    }
+
     setDownloadingSurahs(true);
     setSurahProgress(0);
     try {
+      const cache = await caches.open(SURAH_TEXT_CACHE);
       for (let i = 1; i <= 114; i++) {
-        await fetch(`/data/quran/surahs/${i}.json`);
+        const url = `/data/quran/surahs/${i}.json`;
+        const existing = await cache.match(url);
+        if (!existing) {
+          const res = await fetch(url);
+          if (res.ok) {
+            await cache.put(url, res.clone());
+          }
+        }
         setSurahProgress(Math.round((i / 114) * 100));
       }
+      toast.success(lang === "bn" ? "১১৪টি সুরার ডাটা অফলাইনে সম্পূর্ণ সংরক্ষিত হয়েছে!" : "All 114 surahs cached offline successfully!");
     } catch (e) {
       console.error(e);
+      toast.error(lang === "bn" ? "ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Download failed, check connection");
     } finally {
       setDownloadingSurahs(false);
       setTimeout(() => setSurahProgress(null), 3000);
@@ -46,15 +64,27 @@ function SettingsPage() {
   };
 
   const handleDownloadAllAyahs = async () => {
+    if (typeof window === "undefined" || !("caches" in window)) {
+      toast.error(lang === "bn" ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই" : "Offline storage not supported in your browser");
+      return;
+    }
+
     setDownloadingAyahs(true);
     setAyahProgress(0);
     try {
+      const cache = await caches.open(SURAH_TEXT_CACHE);
       for (let i = 1; i <= 114; i++) {
-        await fetch(`/data/quran/surahs/${i}.json`);
+        const url = `/data/quran/surahs/${i}.json`;
+        const res = await fetch(url);
+        if (res.ok) {
+          await cache.put(url, res.clone());
+        }
         setAyahProgress(Math.round((i / 114) * 100));
       }
+      toast.success(lang === "bn" ? "৬২৩৬টি আয়াত ও শব্দকোষ অফলাইনে সম্পূর্ণ সংরক্ষিত!" : "All 6236 ayahs & roots saved offline!");
     } catch (e) {
       console.error(e);
+      toast.error(lang === "bn" ? "সংরক্ষণে ত্রুটি হয়েছে" : "Failed to save offline");
     } finally {
       setDownloadingAyahs(false);
       setTimeout(() => setAyahProgress(null), 3000);

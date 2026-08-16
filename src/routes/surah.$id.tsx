@@ -31,6 +31,7 @@ import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
+import { resolveAudioSrc } from "@/lib/offline";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -269,7 +270,7 @@ const SURAH_LIST = [
   { id: 46, name_bn: "আল-আহকাফ", name_ar: "الأحقاف", type: "মাক্কী", total: 35 },
   { id: 47, name_bn: "মুহাম্মদ", name_ar: "محمد", type: "মাদানী", total: 38 },
   { id: 48, name_bn: "আল-ফাতহ", name_ar: "الفتح", type: "মাদানী", total: 29 },
-  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحজرات", type: "মাদানী", total: 18 },
+  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحجرات", type: "মাদানী", total: 18 },
   { id: 50, name_bn: "কাফ", name_ar: "ق", type: "মাক্কী", total: 45 },
   { id: 51, name_bn: "আজ-যারিয়াত", name_ar: "الذاريات", type: "মাক্কী", total: 60 },
   { id: 52, name_bn: "আত-তুর", name_ar: "الطور", type: "মাক্কী", total: 49 },
@@ -371,12 +372,12 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   if (!base) return "";
 
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
-  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ব") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
+  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ب") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
     base = base.slice(1);
   }
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
 
-  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("না") || base.endsWith("হা")) && base.length > 4) {
+  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("نا") || base.endsWith("ها")) && base.length > 4) {
     base = base.slice(0, -2);
   } else if ((base.endsWith("ه") || base.endsWith("ي") || base.endsWith("ك")) && base.length > 3) {
     base = base.slice(0, -1);
@@ -389,9 +390,38 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
+const SURAH_TEXT_CACHE = "quran-text-v1";
+
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  const res = await fetch(`/data/quran/surahs/${sId}.json`);
+  const url = `/data/quran/surahs/${sId}.json`;
+  
+  // ১. অফলাইন ক্যাশ চেক করা
+  if (typeof window !== "undefined" && "caches" in window) {
+    try {
+      const cache = await caches.open(SURAH_TEXT_CACHE);
+      const cachedRes = await cache.match(url);
+      if (cachedRes) {
+        return await cachedRes.json();
+      }
+    } catch {
+      // ক্যাশ অ্যাক্সেস ফেইল করলে নেটওয়ার্কে যাবে
+    }
+  }
+
+  // ২. নেটওয়ার্ক রিকোয়েস্ট
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load Surah ${sId}`);
+  
+  // ৩. অফলাইনের জন্য স্বয়ংক্রিয় ক্যাশ করা
+  if (typeof window !== "undefined" && "caches" in window) {
+    try {
+      const cache = await caches.open(SURAH_TEXT_CACHE);
+      await cache.put(url, res.clone());
+    } catch {
+      // ক্যাশ রাইট ব্যর্থ হলেও রিকোয়েস্ট বাধাগ্রস্ত হবে না
+    }
+  }
+
   return res.json();
 };
 
@@ -516,7 +546,7 @@ function SurahDetailPage() {
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
-  const handlePlayAudio = (ayahNum: number) => {
+  const handlePlayAudio = async (ayahNum: number) => {
     if (playingAyah === ayahNum) {
       audioRef.current?.pause();
       setPlayingAyah(null);
@@ -529,14 +559,17 @@ function SurahDetailPage() {
 
     const sStr = String(surahId).padStart(3, "0");
     const aStr = String(ayahNum).padStart(3, "0");
-    const audioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+    const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+
+    // অফলাইন ক্যাশ চেক করে সোর্স তৈরি করা
+    const audioUrl = await resolveAudioSrc(rawAudioUrl);
 
     const audio = new Audio(audioUrl);
     audioRef.current = audio;
     setPlayingAyah(ayahNum);
 
     audio.play().catch(() => {
-      toast.error("অডিও প্লে করতে সমস্যা হয়েছে");
+      toast.error("অডিও প্লে করতে সমস্যা হয়েছে (অফলাইন কপি নেই)");
       setPlayingAyah(null);
     });
 
@@ -565,9 +598,9 @@ function SurahDetailPage() {
     const isNowBookmarked = toggleBm(target);
 
     if (isNowBookmarked) {
-      toast.success(`আয়াত ${ayah.ayah} বুকমার্কে সংরক্ষণ করা হয়েছে`);
+      toast.success(`আয়াত ${ayah.ayah} বুকমার্কে সংরক্ষণ করা হয়েছে`);
     } else {
-      toast.info(`আয়াত ${ayah.ayah} বুকমার্ক থেকে সরানো হয়েছে`);
+      toast.info(`আয়াত ${ayah.ayah} বুকমার্ক থেকে সরানো হয়েছে`);
     }
   };
 
@@ -584,19 +617,19 @@ function SurahDetailPage() {
 — সুরা ${meta.name_bn} (${surahId}:${ayah.ayah})`;
 
     navigator.clipboard.writeText(fullCopyText);
-    toast.success("আয়াত সম্পূর্ণ কপি করা হয়েছে");
+    toast.success("আয়াত সম্পূর্ণ কপি করা হয়েছে");
   };
 
   const handleShareAyah = (ayahNum: number) => {
     const shareUrl = `${window.location.origin}/surah/${surahId}?ayah=${ayahNum}`;
     if (navigator.share) {
       navigator.share({
-        title: `সুরা ${meta.name_bn} - আয়াত ${ayahNum}`,
+        title: `সুরা ${meta.name_bn} - আয়াত ${ayahNum}`,
         url: shareUrl,
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(shareUrl);
-      toast.success("আয়াতের লিংক কপি করা হয়েছে");
+      toast.success("আয়াতের লিংক কপি করা হয়েছে");
     }
   };
 
@@ -612,10 +645,10 @@ function SurahDetailPage() {
     
     if (cleanText) {
       updated[activeNoteAyah] = cleanText;
-      toast.success(`আয়াত ${activeNoteAyah} এর নোট সংরক্ষিত হয়েছে`);
+      toast.success(`আয়াত ${activeNoteAyah} এর নোট সংরক্ষিত হয়েছে`);
     } else {
       delete updated[activeNoteAyah];
-      toast.info(`আয়াত ${activeNoteAyah} এর নোট মুছে ফেলা হয়েছে`);
+      toast.info(`আয়াত ${activeNoteAyah} এর নোট মুছে ফেলা হয়েছে`);
     }
     
     setAyahNotes(updated);
@@ -628,7 +661,7 @@ function SurahDetailPage() {
     delete updated[ayahNum];
     setAyahNotes(updated);
     localStorage.setItem(`notes_surah_${surahId}`, JSON.stringify(updated));
-    toast.info("নোট মুছে ফেলা হয়েছে");
+    toast.info("নোট মুছে ফেলা হয়েছে");
   };
 
   const handleJumpSubmit = (e: React.FormEvent) => {
@@ -800,7 +833,7 @@ function SurahDetailPage() {
               {/* হেডার রো: নম্বর, প্লে, বুকমার্ক ও অ্যাকশন বাটনসমূহ */}
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
                 
-                {/* বামপাশে: আয়াত নম্বর, Play, Bookmark */}
+                {/* বামপাশে: আয়াত নম্বর, Play, Bookmark */}
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
                     <span>{surahId}:{ayah.ayah}</span>
@@ -836,7 +869,7 @@ function SurahDetailPage() {
                   <button
                     type="button"
                     onClick={() => handleCopyAyah(ayah)}
-                    title="আয়াত কপি করুন"
+                    title="আয়াত কপি করুন"
                     className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
                   >
                     <Copy className="size-4" />
@@ -845,13 +878,12 @@ function SurahDetailPage() {
                   <button
                     type="button"
                     onClick={() => handleShareAyah(ayah.ayah)}
-                    title="আয়াত শেয়ার করুন"
+                    title="আয়াত শেয়ার করুন"
                     className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
                   >
                     <Share2 className="size-4" />
                   </button>
 
-                  {/* 📝 উজ্জ্বল হাইলাইটেড নোট আইকন */}
                   <button
                     type="button"
                     onClick={() => handleOpenNote(ayah.ayah)}
@@ -1178,13 +1210,13 @@ function SurahDetailPage() {
         onClose={() => setSelectedWordInfo(null)}
       />
 
-      {/* 📝 ব্যক্তিগত নোট লেখার ডায়ালগ */}
+      {/* 📝 ব্যক্তিগত নোট লেখার ডায়ালগ */}
       <Dialog open={activeNoteAyah !== null} onOpenChange={(open) => !open && setActiveNoteAyah(null)}>
         <DialogContent className="sm:max-w-md bg-card border-border/80">
           <DialogHeader>
             <DialogTitle className="text-base font-semibold flex items-center gap-2">
               <StickyNote className="size-4 text-amber-400" />
-              <span>আয়াত {surahId}:{activeNoteAyah} এর ব্যক্তিগত নোট</span>
+              <span>আয়াত {surahId}:{activeNoteAyah} এর ব্যক্তিগত নোট</span>
             </DialogTitle>
           </DialogHeader>
 
@@ -1192,7 +1224,7 @@ function SurahDetailPage() {
             <Textarea
               value={currentNoteText}
               onChange={(e) => setCurrentNoteText(e.target.value)}
-              placeholder="এই আয়াত সম্পর্কিত আপনার ব্যক্তিগত অনুভূতি, তাদাব্বুর বা নোট এখানে লিখুন..."
+              placeholder="এই আয়াত সম্পর্কিত আপনার ব্যক্তিগত অনুভূতি, তাদাব্বুর বা নোট এখানে লিখুন..."
               rows={5}
               className="bg-background text-sm leading-relaxed focus-visible:ring-amber-400/40"
             />
