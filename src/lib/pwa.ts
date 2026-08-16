@@ -1,12 +1,11 @@
 /**
- * Service-worker registration guard. The offline app shell must never be
- * registered in dev or inside the Lovable preview iframe.
+ * Service-worker registration guard.
  */
 const SW_PATH = "/sw.js";
 
-function previewOrDevContext() {
-  if (!import.meta.env.PROD) return true;
-  if (window.self !== window.top) return true;
+function previewContext() {
+  if (typeof window === "undefined") return true;
+  if (window.self !== window.top) return true; // Lovable preview iframe
   const host = window.location.hostname;
   if (host.startsWith("id-preview--") || host.startsWith("preview--")) return true;
   if (host === "lovableproject.com" || host.endsWith(".lovableproject.com")) return true;
@@ -19,19 +18,38 @@ function previewOrDevContext() {
 export async function registerOfflineWorker() {
   if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
 
-  if (previewOrDevContext()) {
-    const registrations = await navigator.serviceWorker.getRegistrations();
-    await Promise.all(
-      registrations
-        .filter((r) => (r.active?.scriptURL ?? "").endsWith(SW_PATH))
-        .map((r) => r.unregister()),
-    );
+  if (previewContext()) {
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(
+        registrations
+          .filter((r) => (r.active?.scriptURL ?? "").endsWith(SW_PATH))
+          .map((r) => r.unregister()),
+      );
+    } catch (e) {
+      console.warn("Failed to unregister preview SW:", e);
+    }
     return;
   }
 
   try {
-    await navigator.serviceWorker.register(SW_PATH, { scope: "/" });
-  } catch {
-    // offline shell is optional
+    const reg = await navigator.serviceWorker.register(SW_PATH, { scope: "/" });
+    
+    // সাথে সাথে নতুন আপডেট চেক ও এক্টিভ করা
+    if (reg.waiting) {
+      reg.waiting.postMessage({ type: "SKIP_WAITING" });
+    }
+    reg.onupdatefound = () => {
+      const installingWorker = reg.installing;
+      if (installingWorker) {
+        installingWorker.onstatechange = () => {
+          if (installingWorker.state === "installed" && navigator.serviceWorker.controller) {
+            console.log("New offline content is available; please refresh.");
+          }
+        };
+      }
+    };
+  } catch (err) {
+    console.warn("Service worker registration failed:", err);
   }
 }
