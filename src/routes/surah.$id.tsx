@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -28,7 +28,9 @@ import {
   Trash2,
   Download,
   CheckCircle2,
-  FileAudio
+  FileAudio,
+  Repeat,
+  Square
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -108,10 +110,10 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   57: { name_bn: "আল-হাদিদ", name_ar: "الحديد", type: "মাদানী", total: 29 },
   58: { name_bn: "আল-মুজাদালাহ", name_ar: "المجادلة", type: "মাদানী", total: 22 },
   59: { name_bn: "আল-হাশর", name_ar: "الحشر", type: "মাদানী", total: 24 },
-  60: { name_bn: "আল-মুমতাহানাহ", name_ar: "المমتحنة", type: "মাদানী", total: 13 },
+  60: { name_bn: "আল-মুমতাহানাহ", name_ar: "الممتحنة", type: "মাদানী", total: 13 },
   61: { name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
   62: { name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
-  63: { name_bn: "আল-মুনাফিকুন", name_ar: "المনাفقون", type: "মাদানী", total: 11 },
+  63: { name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
   64: { name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
   65: { name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
   66: { name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
@@ -269,7 +271,7 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
     base = base.slice(0, -1);
   }
 
-  if ((base.startsWith("م") || base.startsWith("ت") || base.startsWith("ي") || base.startsWith("ن") || base.startsWith("ا")) && base.length === 4) {
+  if ((base.startsWith("م") || base.startsWith("ت") || base.startsWith("ي") || base.startsWith("ন") || base.startsWith("ا")) && base.length === 4) {
     base = base.slice(1);
   }
 
@@ -321,6 +323,7 @@ function SurahDetailPage() {
 
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
+  const [isLoopingSurah, setIsLoopingSurah] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const [isAudioDownloaded, setIsAudioDownloaded] = useState(false);
@@ -563,13 +566,8 @@ function SurahDetailPage() {
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
-  const handlePlayAudio = async (ayahNum: number) => {
-    if (playingAyah === ayahNum) {
-      audioRef.current?.pause();
-      setPlayingAyah(null);
-      return;
-    }
-
+  // একনাগাড়ে পুরো সুরা প্লে করার হ্যান্ডলার
+  const playAyahSequentially = useCallback(async (ayahNum: number) => {
     if (audioRef.current) {
       audioRef.current.pause();
     }
@@ -579,20 +577,64 @@ function SurahDetailPage() {
     const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
 
     const audioUrl = await resolveAudioSrc(rawAudioUrl);
-
     const audio = new Audio(audioUrl);
     audioRef.current = audio;
     setPlayingAyah(ayahNum);
 
+    // যে আয়াত বাজছে সেখানে নিজে থেকে স্ক্রল করা
+    scrollToAyah(ayahNum);
+
     audio.play().catch(() => {
-      toast.error(lang === "bn" ? "অডিও প্লে করতে সমস্যা হয়েছে (অফলাইন কপি নেই)" : "Audio playback failed (Offline copy unavailable)");
+      toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
       setPlayingAyah(null);
     });
 
     audio.onended = () => {
-      setPlayingAyah(null);
+      const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
+      if (ayahNum < totalAyahs) {
+        playAyahSequentially(ayahNum + 1);
+      } else {
+        // সুরার শেষ আয়াত শেষ হলে
+        if (isLoopingSurah) {
+          playAyahSequentially(1); // লুপ মোড অন থাকলে আবার ১ নম্বর থেকে শুরু
+        } else {
+          setPlayingAyah(null);
+          toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
+        }
+      }
     };
+  }, [surahId, surahQuery.data, meta.total, isLoopingSurah, lang]);
+
+  const handleToggleSurahPlay = () => {
+    if (playingAyah !== null) {
+      // যদি ইতিমধ্যেই চলে তবে পজ/বন্ধ করা
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      setPlayingAyah(null);
+    } else {
+      // পুরো সুরা শুরু থেকে বাজানো
+      playAyahSequentially(1);
+    }
   };
+
+  const handlePlayAyah = (ayahNum: number) => {
+    if (playingAyah === ayahNum) {
+      if (audioRef.current) audioRef.current.pause();
+      setPlayingAyah(null);
+    } else {
+      playAyahSequentially(ayahNum);
+    }
+  };
+
+  // পেজ পরিবর্তন হলে অডিও বন্ধ করা
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, [surahId]);
 
   const isAyahBookmarked = (ayahNum: number) => {
     return checkBookmarked({
@@ -748,6 +790,8 @@ function SurahDetailPage() {
   const arabicFontSize = prefs.arabicFontSize || 28;
   const translationFontSize = prefs.translationFontSize || 15;
 
+  const isSurahPlaying = playingAyah !== null;
+
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-3 space-y-6">
       
@@ -782,7 +826,7 @@ function SurahDetailPage() {
               value={searchJumpText}
               onChange={(e) => setSearchJumpText(e.target.value)}
               placeholder="৩৩/৪০ বা ১-১১৪..."
-              className="bg-transparent border-none outline-none text-xs w-20 sm:w-28 text-foreground placeholder:text-muted-foreground"
+              className="bg-transparent border-none outline-none text-xs w-16 sm:w-24 text-foreground placeholder:text-muted-foreground"
             />
             <button
               type="submit"
@@ -793,13 +837,59 @@ function SurahDetailPage() {
           </form>
 
           <div className="flex items-center gap-1.5 shrink-0">
-            {/* ১. ওয়েব অফলাইন ক্যাশ বাটন */}
+            {/* ১. সম্পূর্ণ সুরা প্লে / পজ বাটন */}
+            <Button
+              size="sm"
+              variant={isSurahPlaying ? "default" : "outline"}
+              onClick={handleToggleSurahPlay}
+              className={`h-7 px-2.5 text-[11px] font-medium transition-all ${
+                isSurahPlaying ? "bg-primary text-primary-foreground shadow-xs animate-pulse" : ""
+              }`}
+              title={isSurahPlaying ? "তেলাওয়াত বন্ধ করুন" : "সম্পূর্ণ সুরা একনাগাড়ে শুনুন"}
+            >
+              {isSurahPlaying ? (
+                <>
+                  <Pause className="size-3.5 mr-1 fill-current" />
+                  <span className="hidden sm:inline">আয়াত {formatNumber(playingAyah, lang)}</span>
+                </>
+              ) : (
+                <>
+                  <Play className="size-3.5 mr-1 fill-current text-primary" />
+                  <span className="hidden sm:inline">সুরা শুনুন</span>
+                </>
+              )}
+            </Button>
+
+            {/* ২. সুরা লুপ / রিপিট টগল বাটন */}
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => {
+                const nextState = !isLoopingSurah;
+                setIsLoopingSurah(nextState);
+                if (nextState) {
+                  toast.success(lang === "bn" ? "লুপ মোড চালু হয়েছে (সুরা বারবার বাজবে)" : "Loop mode enabled");
+                } else {
+                  toast.info(lang === "bn" ? "লুপ মোড বন্ধ করা হয়েছে" : "Loop mode disabled");
+                }
+              }}
+              className={`h-7 px-2 text-[11px] font-medium transition-all ${
+                isLoopingSurah
+                  ? "bg-primary/15 text-primary border-primary/50 shadow-2xs font-semibold"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+              title={isLoopingSurah ? "লুপ বন্ধ করুন" : "সুরাটি শেষ হলে আবার শুরু থেকে বাজান (লুপ)"}
+            >
+              <Repeat className={`size-3.5 ${isLoopingSurah ? "text-primary stroke-[2.5]" : ""}`} />
+            </Button>
+
+            {/* ৩. ওয়েব অফলাইন ক্যাশ বাটন */}
             <Button
               size="sm"
               variant="outline"
               disabled={downloadingSurahAudio || isAudioDownloaded}
               onClick={handleDownloadThisSurahAudio}
-              className="h-7 px-2 text-[11px] font-medium"
+              className="h-7 px-2 text-[11px] font-medium hidden md:inline-flex"
               title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "ওয়েব প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও ক্যাশ করুন"}
             >
               {downloadingSurahAudio ? (
@@ -820,7 +910,7 @@ function SurahDetailPage() {
               )}
             </Button>
 
-            {/* ২. ডিভাইসে সরাসরি সুরার MP3 ফাইল ডাউনলোড বাটন */}
+            {/* ৪. ডিভাইসে সরাসরি সুরার MP3 ফাইল ডাউনলোড বাটন */}
             <Button
               size="sm"
               variant="outline"
@@ -889,8 +979,12 @@ function SurahDetailPage() {
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
-              className={`scroll-mt-36 rounded-2xl border bg-card p-5 space-y-4 shadow-sm transition-all hover:border-border ${
-                hasNote ? "border-amber-400/50 shadow-amber-400/5" : "border-border/70"
+              className={`scroll-mt-36 rounded-2xl border bg-card p-5 space-y-4 shadow-sm transition-all duration-300 ${
+                isPlaying 
+                  ? "border-primary/80 ring-2 ring-primary/20 bg-primary/[0.02] shadow-md"
+                  : hasNote 
+                    ? "border-amber-400/50 shadow-amber-400/5 hover:border-border" 
+                    : "border-border/70 hover:border-border"
               }`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
@@ -902,8 +996,8 @@ function SurahDetailPage() {
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <button
                       type="button"
-                      onClick={() => handlePlayAudio(ayah.ayah)}
-                      title={isPlaying ? "পজ করুন" : "তেলাওয়াত শুনুন"}
+                      onClick={() => handlePlayAyah(ayah.ayah)}
+                      title={isPlaying ? "পজ করুন" : "এই আয়াত থেকে শুনুন"}
                       className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
                         isPlaying ? "text-primary bg-primary/10" : ""
                       }`}
