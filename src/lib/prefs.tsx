@@ -104,8 +104,9 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string) => {
     const dict: Record<string, { bn: string; en: string }> = {
+      siteName: { bn: "Quran Explorer", en: "Quran Explorer" },
       home: { bn: "হোম", en: "Home" },
-      readQuran: { bn: "কুরআন পড়ুন", en: "Read Quran" },
+      readQuran: { bn: "কুরআন পড়ুন", en: "Read Quran" },
       articles: { bn: "আর্টিকেল", en: "Articles" },
       contact: { bn: "যোগাযোগ", en: "Contact" },
       settings: { bn: "সেটিংস", en: "Settings" },
@@ -124,6 +125,26 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       noArticles: { bn: "কোনো আর্টিকেল পাওয়া যায়নি।", en: "No articles found." },
       newsletter: { bn: "আমাদের নিউজলেটার সাবস্ক্রাইব করুন", en: "Subscribe to our Newsletter" },
       newsletterSub: { bn: "কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।", en: "Get Quranic tadabbur and new analytical articles directly in your inbox." },
+      menuLinks: { bn: "মেনু লিংক", en: "Menu Links" },
+      rights: { bn: "সর্বস্বত্ব সংরক্ষিত।", en: "All rights reserved." },
+      allCategories: { bn: "সকল ক্যাটাগরি", en: "All Categories" },
+      dashboard: { bn: "ড্যাশবোর্ড", en: "Dashboard" },
+      dashboardSub: { bn: "কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল", en: "Content, settings and website management panel" },
+      newArticle: { bn: "নতুন আর্টিকেল", en: "New Article" },
+      editArticle: { bn: "আর্টিকেল এডিট করুন", en: "Edit Article" },
+      slug: { bn: "স্লাগ (URL)", en: "Slug (URL)" },
+      titleBn: { bn: "বাংলা শিরোনাম", en: "Bangla Title" },
+      titleEn: { bn: "ইংরেজি শিরোনাম", en: "English Title" },
+      excerptBn: { bn: "বাংলা সংক্ষিপ্ত বিবরণ", en: "Bangla Excerpt" },
+      excerptEn: { bn: "ইংরেজি সংক্ষিপ্ত বিবরণ", en: "English Excerpt" },
+      contentBn: { bn: "বাংলা মূল বিষয়বস্তু", en: "Bangla Content" },
+      contentEn: { bn: "ইংরেজি মূল বিষয়বস্তু", en: "English Content" },
+      published: { bn: "প্রকাশিত", en: "Published" },
+      coverImageUrl: { bn: "কভার ছবির URL", en: "Cover Image URL" },
+      category: { bn: "ক্যাটাগরি", en: "Category" },
+      save: { bn: "সংরক্ষণ করুন", en: "Save" },
+      saving: { bn: "সংরক্ষণ হচ্ছে...", en: "Saving..." },
+      cancel: { bn: "বাতিল", en: "Cancel" },
     };
     return dict[key]?.[prefs.lang] || key;
   };
