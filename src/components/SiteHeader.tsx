@@ -1,186 +1,258 @@
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
-import { toast } from "sonner";
-import { z } from "zod";
-
+import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
+import React, { useEffect, useState } from "react";
+import { 
+  Home,
+  FileText, 
+  Bookmark, 
+  Settings, 
+  Mail, 
+  Moon, 
+  Sun, 
+  Languages, 
+  ShieldCheck,
+  Menu,
+  X
+} from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
-import { useMenuItems } from "@/lib/menu";
 import { supabase } from "@/integrations/supabase/client";
-import { SocialLinks } from "@/components/SocialLinks";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 
-const footerLinkClass =
-  "w-fit rounded-md border border-transparent px-3 py-1.5 text-chrome-foreground/70 transition-all duration-200 hover:bg-white/10 hover:text-chrome-foreground hover:translate-x-1";
+function AdminGearIcon({ className = "size-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <circle cx="19" cy="11" r="2" />
+      <path d="M19 8v1m0 4v1m-2.6-4.5.7.7m3.8 3.8.7.7m-5.2 0 .7-.7m3.8-3.8.7-.7" />
+    </svg>
+  );
+}
 
-const emailSchema = z.string().trim().email("সঠিক ইমেইল এড্রেস লিখুন");
+function LogoutDoorIcon({ className = "size-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  );
+}
 
-export function SiteFooter() {
-  const { t, lang } = usePrefs();
-  const menu = useMenuItems("footer");
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [subscribed, setSubscribed] = useState(false);
+function LoginDoorIcon({ className = "size-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+      <polyline points="10 17 15 12 10 7" />
+      <line x1="15" y1="12" x2="3" y2="12" />
+    </svg>
+  );
+}
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const parsed = emailSchema.safeParse(email);
-    if (!parsed.success) {
-      toast.error(lang === "en" ? "Please enter a valid email address" : "সঠিক ইমেইল এড্রেস দিন");
-      return;
-    }
+export function SiteHeader() {
+  const { prefs, updatePref, toggleLang, lang } = usePrefs();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const routerState = useRouterState();
+  const navigate = useNavigate();
+  const currentPath = routerState.location.pathname;
 
-    setLoading(true);
-    try {
-      // ১. ডাটাবেজের newsletter_subscribers টেবিলে সেভ
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert({ email: parsed.data });
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
 
-      if (error) {
-        if (error.code === "23505") {
-          toast.info(
-            lang === "en"
-              ? "You are already subscribed!"
-              : "আপনি ইতিমধ্যে সাবস্ক্রাইব করেছেন!"
-          );
-          setSubscribed(true);
-          return;
-        }
-        throw error;
-      }
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
 
-      // ২. নোটিফিকেশন API কল করার চেষ্টা
-      try {
-        await fetch("/api/public/newsletter", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: parsed.data,
-            target_notification: "newslater+notabene.inc@gmail.com",
-          }),
-        });
-      } catch (apiErr) {
-        // API কল ব্যাকগ্রাউন্ডে হ্যান্ডেল হবে
-      }
+    return () => subscription.unsubscribe();
+  }, []);
 
-      setSubscribed(true);
-      setEmail("");
-      toast.success(
-        lang === "en"
-          ? "Thank you for subscribing to our newsletter!"
-          : "নিউজলেটারে সাবস্ক্রাইব করার জন্য ধন্যবাদ!"
-      );
-    } catch (err: any) {
-      toast.error(err.message || "সাবস্ক্রিপশন ব্যর্থ হয়েছে");
-    } finally {
-      setLoading(false);
-    }
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast.success(lang === "bn" ? "লগআউট সফল হয়েছে" : "Logged out successfully");
+    navigate({ to: "/" });
   };
 
-  return (
-    <footer className="border-t border-white/10 bg-chrome text-chrome-foreground">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
-        
-        {/* ১. পরিচিতি ও সোশ্যাল (হেডারের অনুরূপ লোগো) */}
-        <div>
-          <Link to="/" className="group inline-flex items-center gap-2 transition-opacity hover:opacity-90">
-            <div className="flex flex-col leading-none">
-              <span 
-                className="text-lg sm:text-xl font-bold tracking-normal text-chrome-foreground select-none"
-                style={{ 
-                  fontFamily: "'Kaushan Script', cursive",
-                  background: "transparent"
-                }}
-              >
-                Quran Explorer
-              </span>
-              <span className="mt-1 text-[10px] text-chrome-foreground/60 font-normal tracking-wide">
-                {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
-              </span>
-            </div>
-          </Link>
-          <p className="mt-3 text-sm leading-relaxed text-chrome-foreground/70">{t("tagline")}</p>
-          <SocialLinks className="mt-5" />
-        </div>
+  const navItems = [
+    { to: "/", label: lang === "bn" ? "হোম" : "Home", icon: Home },
+    { to: "/articles", label: lang === "bn" ? "আর্টিকেল" : "Articles", icon: FileText },
+    { to: "/bookmarks", label: lang === "bn" ? "বুকমার্ক" : "Bookmarks", icon: Bookmark },
+    { to: "/settings", label: lang === "bn" ? "সেটিংস" : "Settings", icon: Settings },
+    { to: "/privacy", label: lang === "bn" ? "প্রাইভেসি" : "Privacy", icon: ShieldCheck },
+    { to: "/contact", label: lang === "bn" ? "যোগাযোগ" : "Contact", icon: Mail },
+  ];
 
-        {/* ২. গুরুত্বপূর্ণ লিংকসমূহ */}
-        <nav className="flex flex-col gap-1 text-sm">
-          <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-chrome-foreground/40">
-            {lang === "en" ? "Navigation" : "মেনু লিংক"}
-          </p>
-          <Link to="/" className={footerLinkClass}>
-            {t("home")}
-          </Link>
-          <Link to="/surah/$id" params={{ id: "1" }} className={footerLinkClass}>
-            {t("readQuran")}
-          </Link>
-          <Link to="/articles" className={footerLinkClass}>
-            {t("articles")}
-          </Link>
-          {menu.data?.map((m) => (
-            <a key={m.id} href={m.href} className={footerLinkClass}>
-              {lang === "en" && m.label_en ? m.label_en : m.label_bn}
-            </a>
-          ))}
-          <Link to="/contact" className={footerLinkClass}>
-            {t("contact")}
-          </Link>
+  return (
+    <header className="sticky top-0 z-40 w-full border-b border-border/80 bg-background/95 backdrop-blur-md transition-colors">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
+        
+        {/* লোগো ও ব্র্যান্ডিং */}
+        <Link to="/" className="group flex items-center gap-2 transition-opacity hover:opacity-90">
+          <div className="flex flex-col leading-none">
+            <span 
+              className="text-lg sm:text-xl font-bold tracking-normal text-foreground select-none"
+              style={{ 
+                fontFamily: "'Kaushan Script', cursive",
+                background: "transparent"
+              }}
+            >
+              Quran Explorer
+            </span>
+            <span className="text-[10px] text-muted-foreground font-normal tracking-wide mt-0.5">
+              {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
+            </span>
+          </div>
+        </Link>
+
+        {/* সাধারণ ন্যাভিগেশন মেনু */}
+        <nav className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
+                  isActive
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                }`}
+              >
+                <Icon className={`size-3.5 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* ৩. নিউজলেটার সাবস্ক্রিপশন ও কপিরাইট */}
-        <div className="space-y-4 text-sm text-chrome-foreground/80">
-          <div>
-            <p className="font-semibold text-chrome-foreground">
-              {lang === "en" ? "Subscribe to Newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"}
-            </p>
-            <p className="mt-1 text-xs text-chrome-foreground/60">
-              {lang === "en"
-                ? "Get updates on new articles and scientific Quran translations."
-                : "নতুন আর্টিকেল এবং বিজ্ঞানভিত্তিক অনুবাদের আপডেট সরাসরি ইমেইলে পান।"}
-            </p>
-          </div>
-
-          {subscribed ? (
-            <div className="flex items-center gap-2 rounded-xl bg-primary/20 border border-primary/30 p-3 text-xs text-primary">
-              <CheckCircle2 className="size-4" />
-              <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
-            </div>
-          ) : (
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-              <Input
-                type="email"
-                placeholder={lang === "en" ? "Your email address..." : "আপনার ইমেইল অ্যাড্রেস..."}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="h-10 rounded-xl border-white/20 bg-white/5 text-chrome-foreground placeholder:text-chrome-foreground/40 focus-visible:ring-primary text-xs"
-              />
-              <Button
-                type="submit"
-                disabled={loading}
-                className="h-10 rounded-xl px-4 text-xs shrink-0"
-              >
-                {loading ? "..." : <Send className="size-3.5" />}
-              </Button>
-            </form>
+        {/* ডানদিকের অ্যাকশন আইকনসমূহ */}
+        <div className="flex items-center gap-1.5">
+          
+          {user && (
+            <Link
+              to="/admin"
+              title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
+              aria-label="Admin Panel"
+              className={`flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer ${
+                currentPath.startsWith("/admin") ? "border-primary text-primary bg-primary/10" : ""
+              }`}
+            >
+              <AdminGearIcon className="size-4" />
+            </Link>
           )}
 
-          <div className="pt-2 text-xs text-chrome-foreground/50 border-t border-white/10">
-            <p>
-              © {new Date().getFullYear()}{" "}
-              <span 
-                style={{ fontFamily: "'Kaushan Script', cursive" }}
-                className="text-chrome-foreground/80 font-bold"
-              >
-                Quran Explorer
-              </span>{" "}
-              — {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}
-            </p>
-          </div>
+          {user ? (
+            <button
+              type="button"
+              onClick={handleLogout}
+              title={lang === "bn" ? "লগআউট করুন" : "Log out"}
+              aria-label="Logout"
+              className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+            >
+              <LogoutDoorIcon className="size-4" />
+            </button>
+          ) : (
+            <Link
+              to="/auth"
+              title={lang === "bn" ? "লগইন করুন" : "Sign In"}
+              aria-label="Login"
+              className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors cursor-pointer"
+            >
+              <LoginDoorIcon className="size-4" />
+            </Link>
+          )}
+
+          <button
+            type="button"
+            onClick={toggleLang}
+            title={lang === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
+            className="flex h-8 items-center gap-1 rounded-lg border border-border/60 bg-muted/30 px-2 text-xs font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
+          >
+            <Languages className="size-3.5 text-muted-foreground" />
+            <span className="uppercase font-mono text-[11px]">{lang}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => updatePref("dark", !prefs.dark)}
+            title={prefs.dark ? "লাইট মোড" : "ডার্ক মোড"}
+            className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-foreground hover:bg-muted transition-colors cursor-pointer"
+          >
+            {prefs.dark ? <Sun className="size-4 text-amber-400" /> : <Moon className="size-4 text-slate-700" />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="flex size-8 items-center justify-center rounded-lg border border-border/60 bg-muted/30 text-foreground md:hidden hover:bg-muted transition-colors cursor-pointer"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+          </button>
         </div>
       </div>
-    </footer>
+
+      {mobileOpen && (
+        <div className="border-b border-border/80 bg-card p-4 md:hidden space-y-1 animate-in slide-in-from-top duration-200">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setMobileOpen(false)}
+                className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition-all ${
+                  isActive
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                }`}
+              >
+                <Icon className="size-4 text-primary" />
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
+
+          <div className="pt-2 border-t border-border/60 space-y-1">
+            {user && (
+              <Link
+                to="/admin"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground bg-muted/40 transition-all"
+              >
+                <AdminGearIcon className="size-4 text-primary" />
+                <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
+              </Link>
+            )}
+
+            {user ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  handleLogout();
+                }}
+                className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-all cursor-pointer"
+              >
+                <LogoutDoorIcon className="size-4" />
+                <span>{lang === "bn" ? "লগআউট" : "Logout"}</span>
+              </button>
+            ) : (
+              <Link
+                to="/auth"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-primary bg-primary/10 transition-all"
+              >
+                <LoginDoorIcon className="size-4" />
+                <span>{lang === "bn" ? "লগইন করুন" : "Login"}</span>
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
