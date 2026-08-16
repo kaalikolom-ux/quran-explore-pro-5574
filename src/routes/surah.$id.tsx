@@ -26,13 +26,14 @@ import {
   Share2,
   StickyNote,
   Trash2,
-  Download
+  Download,
+  CheckCircle2
 } from "lucide-react";
 import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
-import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded } from "@/lib/offline";
+import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded, AUDIO_CACHE } from "@/lib/offline";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -110,7 +111,7 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   61: { name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
   62: { name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
   63: { name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
-  64: { name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
+  64: { name_bn: "আত-তাগাবুন", name_ar: "التغابন", type: "মাদানী", total: 18 },
   65: { name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
   66: { name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
   67: { name_bn: "আল-মুলক", name_ar: "الملك", type: "মাক্কী", total: 30 },
@@ -125,7 +126,7 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   76: { name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   77: { name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   78: { name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  79: { name_bn: "আন-নাযিয়াত", name_ar: "الনাজعات", type: "মাক্কী", total: 46 },
+  79: { name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
   80: { name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   81: { name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
   82: { name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
@@ -325,6 +326,9 @@ function SurahDetailPage() {
   const [downloadingSurahAudio, setDownloadingSurahAudio] = useState(false);
   const [audioProgress, setAudioProgress] = useState<number | null>(null);
 
+  const [cachedAyahs, setCachedAyahs] = useState<Set<number>>(new Set());
+  const [downloadingAyahsMap, setDownloadingAyahsMap] = useState<Record<number, boolean>>({});
+
   const [activeNoteAyah, setActiveNoteAyah] = useState<number | null>(null);
   const [ayahNotes, setAyahNotes] = useState<Record<string, string>>({});
   const [currentNoteText, setCurrentNoteText] = useState("");
@@ -391,11 +395,34 @@ function SurahDetailPage() {
     });
   }, [surahQuery.data, surahId]);
 
-  useEffect(() => {
-    if (surahAudioUrls.length > 0) {
-      isSurahAudioDownloaded(surahAudioUrls).then(setIsAudioDownloaded);
+  const checkIndividualAyahCaches = async () => {
+    if (typeof window === "undefined" || !("caches" in window) || !surahQuery.data?.ayahs) return;
+    try {
+      const cache = await caches.open(AUDIO_CACHE);
+      const sStr = String(surahId).padStart(3, "0");
+      const found = new Set<number>();
+      for (const a of surahQuery.data.ayahs) {
+        const aStr = String(a.ayah).padStart(3, "0");
+        const url = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+        const match = await cache.match(url);
+        if (match) found.add(a.ayah);
+      }
+      setCachedAyahs(found);
+      if (found.size === surahQuery.data.ayahs.length && surahQuery.data.ayahs.length > 0) {
+        setIsAudioDownloaded(true);
+      } else {
+        setIsAudioDownloaded(false);
+      }
+    } catch (e) {
+      // Ignore cache query errors
     }
-  }, [surahAudioUrls]);
+  };
+
+  useEffect(() => {
+    if (surahQuery.isSuccess) {
+      checkIndividualAyahCaches();
+    }
+  }, [surahQuery.isSuccess, surahId]);
 
   const handleDownloadThisSurahAudio = async () => {
     if (surahAudioUrls.length === 0) return;
@@ -406,12 +433,50 @@ function SurahDetailPage() {
         setAudioProgress(Math.round((done / total) * 100));
       });
       setIsAudioDownloaded(true);
+      await checkIndividualAyahCaches();
       toast.success(lang === "bn" ? `সুরা ${meta.name_bn}-এর সম্পূর্ণ অডিও অফলাইনে সংরক্ষিত হয়েছে!` : `Audio of Surah ${meta.name_bn} downloaded!`);
     } catch (err) {
       toast.error(lang === "bn" ? "অডিও ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Audio download failed, check connection");
     } finally {
       setDownloadingSurahAudio(false);
       setTimeout(() => setAudioProgress(null), 3000);
+    }
+  };
+
+  const handleToggleAyahAudioDownload = async (ayahNum: number) => {
+    if (typeof window === "undefined" || !("caches" in window)) {
+      toast.error("অফলাইন স্টোরেজ সাপোর্ট নেই");
+      return;
+    }
+    const sStr = String(surahId).padStart(3, "0");
+    const aStr = String(ayahNum).padStart(3, "0");
+    const audioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+
+    setDownloadingAyahsMap((prev) => ({ ...prev, [ayahNum]: true }));
+    try {
+      const cache = await caches.open(AUDIO_CACHE);
+      const exists = await cache.match(audioUrl);
+
+      if (exists) {
+        await cache.delete(audioUrl);
+        setCachedAyahs((prev) => {
+          const next = new Set(prev);
+          next.delete(ayahNum);
+          return next;
+        });
+        setIsAudioDownloaded(false);
+        toast.info(`আয়াত ${ayahNum}-এর অডিও অফলাইন থেকে সরানো হয়েছে`);
+      } else {
+        const res = await fetch(audioUrl, { mode: "cors" });
+        if (!res.ok) throw new Error("Audio download failed");
+        await cache.put(audioUrl, res.clone());
+        setCachedAyahs((prev) => new Set(prev).add(ayahNum));
+        toast.success(`আয়াত ${ayahNum}-এর অডিও অফলাইনে সংরক্ষিত হয়েছে`);
+      }
+    } catch (err) {
+      toast.error("আয়াত অডিও সংরক্ষণ ব্যর্থ হয়েছে, ইন্টারনেট চেক করুন");
+    } finally {
+      setDownloadingAyahsMap((prev) => ({ ...prev, [ayahNum]: false }));
     }
   };
 
@@ -693,13 +758,14 @@ function SurahDetailPage() {
           </form>
 
           <div className="flex items-center gap-1.5 shrink-0">
+            {/* সম্পূর্ণ সুরার অডিও ডাউনলোড বাটন */}
             <Button
               size="sm"
               variant="outline"
               disabled={downloadingSurahAudio || isAudioDownloaded}
               onClick={handleDownloadThisSurahAudio}
               className="h-7 px-2 text-[11px] font-medium"
-              title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "এই সুরার সম্পূর্ণ অডিও অফলাইনে সংরক্ষণ করুন"}
+              title={isAudioDownloaded ? "এই সুরার অডিও সম্পূর্ণ অফলাইনে সংরক্ষিত আছে" : "এই সুরার সম্পূর্ণ অডিও অফলাইনে সংরক্ষণ করুন"}
             >
               {downloadingSurahAudio ? (
                 <>
@@ -759,6 +825,8 @@ function SurahDetailPage() {
           const isEditing = editingAyah === ayah.ayah;
           const isBookmarked = isAyahBookmarked(ayah.ayah);
           const isPlaying = playingAyah === ayah.ayah;
+          const isAyahAudioSaved = cachedAyahs.has(ayah.ayah);
+          const isThisAyahDownloading = Boolean(downloadingAyahsMap[ayah.ayah]);
           const noteContent = ayahNotes[ayah.ayah];
           const hasNote = Boolean(noteContent && noteContent.trim().length > 0);
 
@@ -774,6 +842,7 @@ function SurahDetailPage() {
               }`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
+                {/* বামপাশে: আয়াত নম্বর, Play, Bookmark, Ayah Audio Download */}
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
                     <span>{surahId}:{ayah.ayah}</span>
@@ -800,6 +869,27 @@ function SurahDetailPage() {
                       }`}
                     >
                       <Bookmark className={`size-4 ${isBookmarked ? "fill-current" : ""}`} />
+                    </button>
+
+                    {/* আয়াত অডিও ডাউনলোড বাটন */}
+                    <button
+                      type="button"
+                      disabled={isThisAyahDownloading}
+                      onClick={() => handleToggleAyahAudioDownload(ayah.ayah)}
+                      title={isAyahAudioSaved ? "অফলাইন অডিও সংরক্ষিত আছে (মুছতে ক্লিক করুন)" : "এই আয়াতের অডিও অফলাইনে সংরক্ষণ করুন"}
+                      className={`p-1.5 rounded-lg transition-colors hover:bg-muted cursor-pointer ${
+                        isAyahAudioSaved
+                          ? "text-emerald-500 bg-emerald-500/10"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {isThisAyahDownloading ? (
+                        <Loader2 className="size-4 animate-spin text-primary" />
+                      ) : isAyahAudioSaved ? (
+                        <CheckCircle2 className="size-4" />
+                      ) : (
+                        <Download className="size-4" />
+                      )}
                     </button>
                   </div>
                 </div>
@@ -872,6 +962,7 @@ function SurahDetailPage() {
                 </div>
               </div>
 
+              {/* [১] শব্দে শব্দে আরবি টেক্সট */}
               <div
                 dir="rtl"
                 style={{ display: showArabic ? "flex" : "none" }}
@@ -917,6 +1008,7 @@ function SurahDetailPage() {
                 ))}
               </div>
 
+              {/* [২] পুরো আয়াতের উচ্চারণ */}
               {ayah.transliteration && (
                 <div 
                   style={{ display: showTransliteration ? "block" : "none" }}
@@ -935,6 +1027,7 @@ function SurahDetailPage() {
                 </div>
               )}
 
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-3 pt-0.5">
                 <div 
                   style={{ display: showConventionalBn ? "block" : "none" }}
@@ -1025,6 +1118,7 @@ function SurahDetailPage() {
                 </div>
               </div>
 
+              {/* [৪] অভিধান / Lexicon */}
               <div 
                 style={{ display: showLexicon ? "block" : "none" }}
                 className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80"
@@ -1082,6 +1176,7 @@ function SurahDetailPage() {
                 )}
               </div>
 
+              {/* [৫] ব্যক্তিগত নোট কার্ড */}
               {hasNote && (
                 <div className="rounded-xl border border-amber-400/40 bg-amber-400/[0.04] p-4 space-y-2 transition-all">
                   <div className="flex items-center justify-between">
