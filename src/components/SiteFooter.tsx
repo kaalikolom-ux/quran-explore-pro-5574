@@ -51,7 +51,7 @@ export function SiteFooter() {
         throw error;
       }
 
-      // ২. নোটিফিকেশন API কল করার চেষ্টা (যদি ব্যাকএন্ডে কনফিগার থাকে)
+      // ২. নোটিফিকেশন API কল করার চেষ্টা
       try {
         await fetch("/api/public/newsletter", {
           method: "POST",
@@ -82,9 +82,13 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-chrome text-chrome-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
-        {/* ১. পরিচিতি ও সোশ্যাল */}
+        {/* ১. পরিচিতি ও সোশ্যাল (হেডারের মতো ফন্ট ও লুক) */}
         <div>
-          <p className="font-display text-lg font-semibold tracking-tight">{t("siteName")}</p>
+          <Link to="/" className="inline-block group">
+            <span className="text-xl font-bold tracking-tight text-chrome-foreground transition-opacity group-hover:opacity-90">
+              Quran Explorer
+            </span>
+          </Link>
           <p className="mt-2 text-sm leading-relaxed text-chrome-foreground/70">{t("tagline")}</p>
           <SocialLinks className="mt-5" />
         </div>
@@ -129,7 +133,7 @@ export function SiteFooter() {
           {subscribed ? (
             <div className="flex items-center gap-2 rounded-xl bg-primary/20 border border-primary/30 p-3 text-xs text-primary">
               <CheckCircle2 className="size-4" />
-              <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
+              <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
             </div>
           ) : (
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
@@ -152,7 +156,9 @@ export function SiteFooter() {
           )}
 
           <div className="pt-2 text-xs text-chrome-foreground/50 border-t border-white/10">
-            <p>© {new Date().getFullYear()} {t("siteName")} — সর্বস্বত্ব সংরক্ষিত।</p>
+            <p>
+              © {new Date().getFullYear()} <span className="font-semibold text-chrome-foreground/80">Quran Explorer</span> — {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}
+            </p>
           </div>
         </div>
       </div>
