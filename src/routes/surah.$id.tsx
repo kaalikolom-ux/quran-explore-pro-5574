@@ -1,19 +1,19 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  BookOpen, 
-  Sparkles, 
-  Edit3, 
-  Check, 
-  X, 
-  BookMarked, 
-  Languages, 
-  Layers, 
-  FileText, 
-  Volume2, 
+import {
+  ChevronLeft,
+  ChevronRight,
+  BookOpen,
+  Sparkles,
+  Edit3,
+  Check,
+  X,
+  BookMarked,
+  Languages,
+  Layers,
+  FileText,
+  Volume2,
   BookmarkCheck,
   Search,
   Navigation,
@@ -25,13 +25,14 @@ import {
   Copy,
   Share2,
   StickyNote,
-  Trash2
+  Trash2,
+  Download
 } from "lucide-react";
 import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
-import { resolveAudioSrc } from "@/lib/offline";
+import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded } from "@/lib/offline";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -124,7 +125,7 @@ const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: s
   76: { name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
   77: { name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
   78: { name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  79: { name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
+  79: { name_bn: "আন-নাযিয়াত", name_ar: "الনাজعات", type: "মাক্কী", total: 46 },
   80: { name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
   81: { name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
   82: { name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
@@ -221,123 +222,6 @@ export type SurahData = {
   ayahs: QuranAyah[];
 };
 
-const SURAH_LIST = [
-  { id: 1, name_bn: "আল-ফাতিহা", name_ar: "الفاتحة", type: "মাক্কী", total: 7 },
-  { id: 2, name_bn: "আল-বাকারাহ", name_ar: "البقرة", type: "মাদানী", total: 286 },
-  { id: 3, name_bn: "আলে ইমরান", name_ar: "آل عمران", type: "মাদানী", total: 200 },
-  { id: 4, name_bn: "আন-নিসা", name_ar: "النساء", type: "মাদানী", total: 176 },
-  { id: 5, name_bn: "আল-মায়িদাহ", name_ar: "المائدة", type: "মাদানী", total: 120 },
-  { id: 6, name_bn: "আল-আনআম", name_ar: "الأنعام", type: "মাক্কী", total: 165 },
-  { id: 7, name_bn: "আল-আরাফ", name_ar: "الأعراف", type: "মাক্কী", total: 206 },
-  { id: 8, name_bn: "আল-আনফাল", name_ar: "الأنفال", type: "মাদানী", total: 75 },
-  { id: 9, name_bn: "আত-তাওবাহ", name_ar: "التوبة", type: "মাদানী", total: 129 },
-  { id: 10, name_bn: "ইউনুস", name_ar: "يونس", type: "মাক্কী", total: 109 },
-  { id: 11, name_bn: "হুদ", name_ar: "هود", type: "মাক্কী", total: 123 },
-  { id: 12, name_bn: "ইউসুফ", name_ar: "يوسف", type: "মাক্কী", total: 111 },
-  { id: 13, name_bn: "আর-রাদ", name_ar: "الرعد", type: "মাদানী", total: 43 },
-  { id: 14, name_bn: "ইবরাহিম", name_ar: "إبراهيم", type: "মাক্কী", total: 52 },
-  { id: 15, name_bn: "আল-হিজর", name_ar: "الحجر", type: "মাক্কী", total: 99 },
-  { id: 16, name_bn: "আন-নাহল", name_ar: "النحل", type: "মাক্কী", total: 128 },
-  { id: 17, name_bn: "আল-ইসরা", name_ar: "الإسراء", type: "মাক্কী", total: 111 },
-  { id: 18, name_bn: "আল-কাহফ", name_ar: "الكهف", type: "মাক্কী", total: 110 },
-  { id: 19, name_bn: "মারিয়াম", name_ar: "مريم", type: "মাক্কী", total: 98 },
-  { id: 20, name_bn: "ত্বা-হা", name_ar: "طه", type: "মাক্কী", total: 135 },
-  { id: 21, name_bn: "আল-আম্বিয়া", name_ar: "الأنبياء", type: "মাক্কী", total: 112 },
-  { id: 22, name_bn: "আল-হাজ্জ", name_ar: "الحج", type: "মাদানী", total: 78 },
-  { id: 23, name_bn: "আল-মুমিনুন", name_ar: "المؤمنون", type: "মাক্কী", total: 118 },
-  { id: 24, name_bn: "আন-নুর", name_ar: "النور", type: "মাদানী", total: 64 },
-  { id: 25, name_bn: "আল-ফুরকান", name_ar: "الفرقان", type: "মাক্কী", total: 77 },
-  { id: 26, name_bn: "আশ-শুয়ারা", name_ar: "الشعراء", type: "মাক্কী", total: 227 },
-  { id: 27, name_bn: "আন-নামল", name_ar: "النمل", type: "মাক্কী", total: 93 },
-  { id: 28, name_bn: "আল-কাসাস", name_ar: "القصص", type: "মাক্কী", total: 88 },
-  { id: 29, name_bn: "আল-আনকাবুত", name_ar: "العنكبوت", type: "মাক্কী", total: 69 },
-  { id: 30, name_bn: "আর-রুম", name_ar: "الروم", type: "মাক্কী", total: 60 },
-  { id: 31, name_bn: "লুকমান", name_ar: "لقمان", type: "মাক্কী", total: 34 },
-  { id: 32, name_bn: "আস-সাজদাহ", name_ar: "السجدة", type: "মাক্কী", total: 30 },
-  { id: 33, name_bn: "আল-আহযাব", name_ar: "الأحزاب", type: "মাদানী", total: 73 },
-  { id: 34, name_bn: "সাবা", name_ar: "سبإ", type: "মাক্কী", total: 54 },
-  { id: 35, name_bn: "ফাতির", name_ar: "فاطر", type: "মাক্কী", total: 45 },
-  { id: 36, name_bn: "ইয়াসিন", name_ar: "يس", type: "মাক্কী", total: 83 },
-  { id: 37, name_bn: "আস-সাফফাত", name_ar: "الصافات", type: "মাক্কী", total: 182 },
-  { id: 38, name_bn: "সোয়াদ", name_ar: "ص", type: "মাক্কী", total: 88 },
-  { id: 39, name_bn: "আজ-জুমার", name_ar: "الزمر", type: "মাক্কী", total: 75 },
-  { id: 40, name_bn: "গাফির", name_ar: "غافر", type: "মাক্কী", total: 85 },
-  { id: 41, name_bn: "ফুসসিলাত", name_ar: "فصلت", type: "মাক্কী", total: 54 },
-  { id: 42, name_bn: "আশ-শুরা", name_ar: "الشورى", type: "মাক্কী", total: 53 },
-  { id: 43, name_bn: "আজ-জুখরূফ", name_ar: "الزخرف", type: "মাক্কী", total: 89 },
-  { id: 44, name_bn: "আদ-দুখান", name_ar: "الدخان", type: "মাক্কী", total: 59 },
-  { id: 45, name_bn: "আল-জাসিয়াহ", name_ar: "الجاثية", type: "মাক্কী", total: 37 },
-  { id: 46, name_bn: "আল-আহকাফ", name_ar: "الأحقاف", type: "মাক্কী", total: 35 },
-  { id: 47, name_bn: "মুহাম্মদ", name_ar: "محمد", type: "মাদানী", total: 38 },
-  { id: 48, name_bn: "আল-ফাতহ", name_ar: "الفتح", type: "মাদানী", total: 29 },
-  { id: 49, name_bn: "আল-হুজুরাত", name_ar: "الحجرات", type: "মাদানী", total: 18 },
-  { id: 50, name_bn: "কাফ", name_ar: "ق", type: "মাক্কী", total: 45 },
-  { id: 51, name_bn: "আজ-যারিয়াত", name_ar: "الذاريات", type: "মাক্কী", total: 60 },
-  { id: 52, name_bn: "আত-তুর", name_ar: "الطور", type: "মাক্কী", total: 49 },
-  { id: 53, name_bn: "আন-নাজম", name_ar: "النجم", type: "মাক্কী", total: 62 },
-  { id: 54, name_bn: "আল-কামার", name_ar: "القمر", type: "মাক্কী", total: 55 },
-  { id: 55, name_bn: "আর-রাহমান", name_ar: "الرحمن", type: "মাদানী", total: 78 },
-  { id: 56, name_bn: "আল-ওয়াকিয়াহ", name_ar: "الواقعة", type: "মাক্কী", total: 96 },
-  { id: 57, name_bn: "আল-হাদিদ", name_ar: "الحديد", type: "মাদানী", total: 29 },
-  { id: 58, name_bn: "আল-মুজাদালাহ", name_ar: "المجادلة", type: "মাদানী", total: 22 },
-  { id: 59, name_bn: "আল-হাশর", name_ar: "الحشر", type: "মাদানী", total: 24 },
-  { id: 60, name_bn: "আল-মুমতাহানাহ", name_ar: "الممتحنة", type: "মাদানী", total: 13 },
-  { id: 61, name_bn: "আস-সফ", name_ar: "الصف", type: "মাদানী", total: 14 },
-  { id: 62, name_bn: "আল-জুমুআহ", name_ar: "الجمعة", type: "মাদানী", total: 11 },
-  { id: 63, name_bn: "আল-মুনাফিকুন", name_ar: "المنافقون", type: "মাদানী", total: 11 },
-  { id: 64, name_bn: "আত-তাগাবুন", name_ar: "التغابن", type: "মাদানী", total: 18 },
-  { id: 65, name_bn: "আত-ত্বালাক", name_ar: "الطلاق", type: "মাদানী", total: 12 },
-  { id: 66, name_bn: "আত-তাহরিম", name_ar: "التحريم", type: "মাদানী", total: 12 },
-  { id: 67, name_bn: "আল-মুলক", name_ar: "الملك", type: "মাক্কী", total: 30 },
-  { id: 68, name_bn: "আল-কলম", name_ar: "القلم", type: "মাক্কী", total: 52 },
-  { id: 69, name_bn: "আল-হাক্কাহ", name_ar: "الحاقة", type: "মাক্কী", total: 52 },
-  { id: 70, name_bn: "আল-মাআরিজ", name_ar: "المعارج", type: "মাক্কী", total: 44 },
-  { id: 71, name_bn: "নুহ", name_ar: "نوح", type: "মাক্কী", total: 28 },
-  { id: 72, name_bn: "আল-জ্বিন", name_ar: "الجن", type: "মাক্কী", total: 28 },
-  { id: 73, name_bn: "আল-মুযযাম্মিল", name_ar: "المزمل", type: "মাক্কী", total: 20 },
-  { id: 74, name_bn: "আল-মুদ্দাসসির", name_ar: "المدثر", type: "মাক্কী", total: 56 },
-  { id: 75, name_bn: "আল-কিয়ামাহ", name_ar: "القيامة", type: "মাক্কী", total: 40 },
-  { id: 76, name_bn: "আল-ইনসান", name_ar: "الإنسان", type: "মাদানী", total: 31 },
-  { id: 77, name_bn: "আল-মুরসালাত", name_ar: "المرسلات", type: "মাক্কী", total: 50 },
-  { id: 78, name_bn: "আন-নাবা", name_ar: "النبإ", type: "মাক্কী", total: 40 },
-  { id: 79, name_bn: "আন-নাযিয়াত", name_ar: "النازعات", type: "মাক্কী", total: 46 },
-  { id: 80, name_bn: "আবাসা", name_ar: "عبس", type: "মাক্কী", total: 42 },
-  { id: 81, name_bn: "আত-তাকভীর", name_ar: "التكوير", type: "মাক্কী", total: 29 },
-  { id: 82, name_bn: "আল-ইনফিতার", name_ar: "الانفطار", type: "মাক্কী", total: 19 },
-  { id: 83, name_bn: "আল-মুতাফফিফিন", name_ar: "المطففين", type: "মাক্কী", total: 36 },
-  { id: 84, name_bn: "আল-ইনশিকাক", name_ar: "الانشقاق", type: "মাক্কী", total: 25 },
-  { id: 85, name_bn: "আল-বুরূজ", name_ar: "البروج", type: "মাক্কী", total: 22 },
-  { id: 86, name_bn: "আত-তারিক", name_ar: "الطارق", type: "মাক্কী", total: 17 },
-  { id: 87, name_bn: "আল-আলা", name_ar: "الأعلى", type: "মাক্কী", total: 19 },
-  { id: 88, name_bn: "আল-গাশিয়াহ", name_ar: "الغاشية", type: "মাক্কী", total: 26 },
-  { id: 89, name_bn: "আল-ফাজর", name_ar: "الفجر", type: "মাক্কী", total: 30 },
-  { id: 90, name_bn: "আল-বালাদ", name_ar: "البلد", type: "মাক্কী", total: 20 },
-  { id: 91, name_bn: "আশ-শামস", name_ar: "الشمس", type: "মাক্কী", total: 15 },
-  { id: 92, name_bn: "আল-লাইল", name_ar: "الليل", type: "মাক্কী", total: 21 },
-  { id: 93, name_bn: "আদ-দুহা", name_ar: "الضحى", type: "মাক্কী", total: 11 },
-  { id: 94, name_bn: "আশ-শারহ", name_ar: "الشرح", type: "মাক্কী", total: 8 },
-  { id: 95, name_bn: "আত-তীন", name_ar: "التين", type: "মাক্কী", total: 8 },
-  { id: 96, name_bn: "আল-আলাক", name_ar: "العلق", type: "মাক্কী", total: 19 },
-  { id: 97, name_bn: "আল-কদর", name_ar: "القدر", type: "মাক্কী", total: 5 },
-  { id: 98, name_bn: "আল-বাইয়িনাহ", name_ar: "البينة", type: "মাদানী", total: 8 },
-  { id: 99, name_bn: "আল-যিলযাল", name_ar: "الزلزلة", type: "মাদানী", total: 8 },
-  { id: 100, name_bn: "আল-আদিয়াত", name_ar: "العاديات", type: "মাক্কী", total: 11 },
-  { id: 101, name_bn: "আল-কারিয়াহ", name_ar: "القارعة", type: "মাক্কী", total: 11 },
-  { id: 102, name_bn: "আত-তাকাসুর", name_ar: "التكاثر", type: "মাক্কী", total: 8 },
-  { id: 103, name_bn: "আল-আসর", name_ar: "العصر", type: "মাক্কী", total: 3 },
-  { id: 104, name_bn: "আল-হুমাযাহ", name_ar: "الهمزة", type: "মাক্কী", total: 9 },
-  { id: 105, name_bn: "আল-ফীল", name_ar: "الفيل", type: "মাক্কী", total: 5 },
-  { id: 106, name_bn: "কুরাইশ", name_ar: "قريش", type: "মাক্কী", total: 4 },
-  { id: 107, name_bn: "আল-মাউন", name_ar: "الماعون", type: "মাক্কী", total: 7 },
-  { id: 108, name_bn: "আল-কাউসার", name_ar: "الكوثر", type: "মাক্কী", total: 3 },
-  { id: 109, name_bn: "আল-কাফিরুন", name_ar: "الكافرون", type: "মাক্কী", total: 6 },
-  { id: 110, name_bn: "আন-নাসর", name_ar: "النصر", type: "মাদানী", total: 3 },
-  { id: 111, name_bn: "আল-লাহাব", name_ar: "المسد", type: "মাক্কী", total: 5 },
-  { id: 112, name_bn: "আল-ইখলাস", name_ar: "الإخلاص", type: "মাক্কী", total: 4 },
-  { id: 113, name_bn: "আল-ফালাক", name_ar: "الفلق", type: "মাক্কী", total: 5 },
-  { id: 114, name_bn: "আন-নাস", name_ar: "الناس", type: "মাক্কী", total: 6 },
-];
-
 function toEnglishNumber(str: string): string {
   const bnToEn: Record<string, string> = {
     "০": "0", "১": "1", "২": "2", "৩": "3", "৪": "4",
@@ -395,7 +279,6 @@ const SURAH_TEXT_CACHE = "quran-text-v1";
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   const url = `/data/quran/surahs/${sId}.json`;
   
-  // ১. অফলাইন ক্যাশ চেক করা
   if (typeof window !== "undefined" && "caches" in window) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
@@ -404,21 +287,19 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
         return await cachedRes.json();
       }
     } catch {
-      // ক্যাশ অ্যাক্সেস ফেইল করলে নেটওয়ার্কে যাবে
+      // Fallback
     }
   }
 
-  // ২. নেটওয়ার্ক রিকোয়েস্ট
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load Surah ${sId}`);
   
-  // ৩. অফলাইনের জন্য স্বয়ংক্রিয় ক্যাশ করা
   if (typeof window !== "undefined" && "caches" in window) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
       await cache.put(url, res.clone());
     } catch {
-      // ক্যাশ রাইট ব্যর্থ হলেও রিকোয়েস্ট বাধাগ্রস্ত হবে না
+      // Fallback
     }
   }
 
@@ -439,6 +320,10 @@ function SurahDetailPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const [isAudioDownloaded, setIsAudioDownloaded] = useState(false);
+  const [downloadingSurahAudio, setDownloadingSurahAudio] = useState(false);
+  const [audioProgress, setAudioProgress] = useState<number | null>(null);
 
   const [activeNoteAyah, setActiveNoteAyah] = useState<number | null>(null);
   const [ayahNotes, setAyahNotes] = useState<Record<string, string>>({});
@@ -488,7 +373,7 @@ function SurahDetailPage() {
     lexicon_modern_notes: "",
   });
 
-  const meta = SURAH_LIST[surahId - 1] || SURAH_LIST[0];
+  const meta = SURAH_META_MAP[surahId] || SURAH_META_MAP[1];
 
   const surahQuery = useQuery<SurahData>({
     queryKey: ["local-surah-cache", surahId],
@@ -496,6 +381,39 @@ function SurahDetailPage() {
     staleTime: Infinity,
     gcTime: 1000 * 60 * 60 * 24,
   });
+
+  const surahAudioUrls = useMemo(() => {
+    if (!surahQuery.data?.ayahs) return [];
+    const sStr = String(surahId).padStart(3, "0");
+    return surahQuery.data.ayahs.map((a) => {
+      const aStr = String(a.ayah).padStart(3, "0");
+      return `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+    });
+  }, [surahQuery.data, surahId]);
+
+  useEffect(() => {
+    if (surahAudioUrls.length > 0) {
+      isSurahAudioDownloaded(surahAudioUrls).then(setIsAudioDownloaded);
+    }
+  }, [surahAudioUrls]);
+
+  const handleDownloadThisSurahAudio = async () => {
+    if (surahAudioUrls.length === 0) return;
+    setDownloadingSurahAudio(true);
+    setAudioProgress(0);
+    try {
+      await downloadSurahAudio(surahAudioUrls, (done, total) => {
+        setAudioProgress(Math.round((done / total) * 100));
+      });
+      setIsAudioDownloaded(true);
+      toast.success(lang === "bn" ? `সুরা ${meta.name_bn}-এর সম্পূর্ণ অডিও অফলাইনে সংরক্ষিত হয়েছে!` : `Audio of Surah ${meta.name_bn} downloaded!`);
+    } catch (err) {
+      toast.error(lang === "bn" ? "অডিও ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Audio download failed, check connection");
+    } finally {
+      setDownloadingSurahAudio(false);
+      setTimeout(() => setAudioProgress(null), 3000);
+    }
+  };
 
   useEffect(() => {
     if (surahId < 114) {
@@ -561,7 +479,6 @@ function SurahDetailPage() {
     const aStr = String(ayahNum).padStart(3, "0");
     const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
 
-    // অফলাইন ক্যাশ চেক করে সোর্স তৈরি করা
     const audioUrl = await resolveAudioSrc(rawAudioUrl);
 
     const audio = new Audio(audioUrl);
@@ -569,7 +486,7 @@ function SurahDetailPage() {
     setPlayingAyah(ayahNum);
 
     audio.play().catch(() => {
-      toast.error("অডিও প্লে করতে সমস্যা হয়েছে (অফলাইন কপি নেই)");
+      toast.error(lang === "bn" ? "অডিও প্লে করতে সমস্যা হয়েছে (অফলাইন কপি নেই)" : "Audio playback failed (Offline copy unavailable)");
       setPlayingAyah(null);
     });
 
@@ -765,7 +682,7 @@ function SurahDetailPage() {
               value={searchJumpText}
               onChange={(e) => setSearchJumpText(e.target.value)}
               placeholder="৩৩/৪০ বা ১-১১৪..."
-              className="bg-transparent border-none outline-none text-xs w-24 sm:w-32 text-foreground placeholder:text-muted-foreground"
+              className="bg-transparent border-none outline-none text-xs w-20 sm:w-28 text-foreground placeholder:text-muted-foreground"
             />
             <button
               type="submit"
@@ -775,7 +692,33 @@ function SurahDetailPage() {
             </button>
           </form>
 
-          <div className="flex items-center gap-1 shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0">
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={downloadingSurahAudio || isAudioDownloaded}
+              onClick={handleDownloadThisSurahAudio}
+              className="h-7 px-2 text-[11px] font-medium"
+              title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "এই সুরার সম্পূর্ণ অডিও অফলাইনে সংরক্ষণ করুন"}
+            >
+              {downloadingSurahAudio ? (
+                <>
+                  <Loader2 className="size-3 mr-1 animate-spin text-primary" />
+                  <span>{audioProgress}%</span>
+                </>
+              ) : isAudioDownloaded ? (
+                <>
+                  <Check className="size-3 mr-1 text-emerald-500" />
+                  <span className="hidden sm:inline">সংরক্ষিত</span>
+                </>
+              ) : (
+                <>
+                  <Download className="size-3 mr-1 text-primary" />
+                  <span className="hidden sm:inline">অডিও</span>
+                </>
+              )}
+            </Button>
+
             {surahId > 1 && (
               <Button asChild variant="outline" size="sm" className="h-7 px-2 text-xs">
                 <Link to="/surah/$id" params={{ id: String(surahId - 1) }}>
@@ -830,10 +773,7 @@ function SurahDetailPage() {
                 hasNote ? "border-amber-400/50 shadow-amber-400/5" : "border-border/70"
               }`}
             >
-              {/* হেডার রো: নম্বর, প্লে, বুকমার্ক ও অ্যাকশন বাটনসমূহ */}
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
-                
-                {/* বামপাশে: আয়াত নম্বর, Play, Bookmark */}
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
                     <span>{surahId}:{ayah.ayah}</span>
@@ -864,7 +804,6 @@ function SurahDetailPage() {
                   </div>
                 </div>
 
-                {/* ডানপাশে: Copy, Share, Note & Admin Edit */}
                 <div className="flex items-center gap-1">
                   <button
                     type="button"
@@ -933,7 +872,6 @@ function SurahDetailPage() {
                 </div>
               </div>
 
-              {/* [১] শব্দে শব্দে আরবি টেক্সট */}
               <div
                 dir="rtl"
                 style={{ display: showArabic ? "flex" : "none" }}
@@ -979,7 +917,6 @@ function SurahDetailPage() {
                 ))}
               </div>
 
-              {/* [২] পুরো আয়াতের উচ্চারণ */}
               {ayah.transliteration && (
                 <div 
                   style={{ display: showTransliteration ? "block" : "none" }}
@@ -998,10 +935,7 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-3 pt-0.5">
-                
-                {/* সারি ১: প্রচলিত অনুবাদ */}
                 <div 
                   style={{ display: showConventionalBn ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
@@ -1018,7 +952,6 @@ function SurahDetailPage() {
                   </p>
                 </div>
 
-                {/* সারি ২: Conventional Translation (English) */}
                 <div 
                   style={{ display: showConventionalEn ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
@@ -1035,7 +968,6 @@ function SurahDetailPage() {
                   </p>
                 </div>
 
-                {/* সারি ৩: আধুনিক অনুবাদ */}
                 <div 
                   style={{ display: (isEditing || (showModernBn && hasModernBnData)) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
@@ -1064,7 +996,6 @@ function SurahDetailPage() {
                   )}
                 </div>
 
-                {/* সারি ৪: Modern Translation (English) */}
                 <div 
                   style={{ display: (isEditing || (showModernEn && hasModernEnData)) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
@@ -1094,7 +1025,6 @@ function SurahDetailPage() {
                 </div>
               </div>
 
-              {/* [৪] অভিধান / Lexicon */}
               <div 
                 style={{ display: showLexicon ? "block" : "none" }}
                 className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80"
@@ -1152,7 +1082,6 @@ function SurahDetailPage() {
                 )}
               </div>
 
-              {/* [৫] 📝 ব্যক্তিগত নোট কার্ড */}
               {hasNote && (
                 <div className="rounded-xl border border-amber-400/40 bg-amber-400/[0.04] p-4 space-y-2 transition-all">
                   <div className="flex items-center justify-between">
@@ -1191,7 +1120,6 @@ function SurahDetailPage() {
         })}
       </div>
 
-      {/* ব্যাক টু টপ বাটন */}
       {showBackToTop && (
         <button
           type="button"
@@ -1204,13 +1132,11 @@ function SurahDetailPage() {
         </button>
       )}
 
-      {/* শব্দ ও রুট সার্চ ডায়ালগ */}
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
         onClose={() => setSelectedWordInfo(null)}
       />
 
-      {/* 📝 ব্যক্তিগত নোট লেখার ডায়ালগ */}
       <Dialog open={activeNoteAyah !== null} onOpenChange={(open) => !open && setActiveNoteAyah(null)}>
         <DialogContent className="sm:max-w-md bg-card border-border/80">
           <DialogHeader>
@@ -1459,7 +1385,7 @@ function WordAndRootSearchDialog({
             </div>
           ) : (
             results.map((res, index) => {
-              const surahObj = SURAH_LIST[res.surah - 1];
+              const surahObj = SURAH_META_MAP[res.surah] || { name_bn: `সুরা ${res.surah}` };
               const cleanTargetWord = cleanArabicText(word.text_uthmani);
 
               return (
@@ -1470,7 +1396,7 @@ function WordAndRootSearchDialog({
                   <div className="flex items-center justify-between">
                     <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground font-mono">
                       <span className="size-2 rounded-full bg-primary" />
-                      {surahObj?.name_bn || `সুরা ${res.surah}`} ({res.surah}:{res.ayah})
+                      {surahObj.name_bn} ({res.surah}:{res.ayah})
                     </span>
                     
                     <button
