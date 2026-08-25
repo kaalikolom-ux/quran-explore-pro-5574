@@ -18,7 +18,7 @@ const emailSchema = z.string().trim().email("সঠিক ইমেইল এড
 
 function QuranLogoBadge({ className = "size-4.5" }: { className?: string }) {
   return (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-foreground text-background shadow-sm transition-transform duration-200 group-hover:scale-105">
+    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2A6F97]/15 text-[#2A6F97] border border-[#2A6F97]/25 shadow-xs transition-transform duration-200 group-hover:scale-105">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -106,7 +106,7 @@ export function SiteFooter() {
             <QuranLogoBadge />
             <div className="flex flex-col leading-none">
               <span 
-                className="text-lg sm:text-xl font-bold tracking-normal text-foreground select-none"
+                className="text-lg sm:text-xl font-bold tracking-normal text-[#2A6F97] select-none"
                 style={{ 
                   fontFamily: "'Kaushan Script', cursive",
                   background: "transparent"
@@ -162,7 +162,7 @@ export function SiteFooter() {
 
           {subscribed ? (
             <div className="flex items-center gap-2 rounded-xl bg-secondary p-3 text-xs text-foreground border border-border">
-              <CheckCircle2 className="size-4" />
+              <CheckCircle2 className="size-4 text-[#2A6F97]" />
               <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
             </div>
           ) : (
@@ -178,7 +178,7 @@ export function SiteFooter() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="h-10 rounded-xl px-4 text-xs shrink-0 bg-foreground hover:bg-foreground/90 text-background font-medium"
+                className="h-10 rounded-xl px-4 text-xs shrink-0 bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white font-medium shadow-xs"
               >
                 {loading ? "..." : <Send className="size-3.5" />}
               </Button>
@@ -194,7 +194,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontFamily: "'Kaushan Script', cursive" }}
-                className="text-foreground font-bold text-sm hover:underline transition-all inline-block"
+                className="text-[#2A6F97] font-bold text-sm hover:underline transition-all inline-block"
                 title="Developer Upwork Profile"
               >
                 Quran Explorer
