@@ -1,12 +1,24 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-import { Calendar, ChevronLeft, User, ArrowLeft, ArrowRight, EyeOff } from "lucide-react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  Calendar,
+  ChevronLeft,
+  User,
+  ArrowLeft,
+  ArrowRight,
+  EyeOff,
+  Eye,
+  Pencil,
+  ShieldCheck,
+} from "lucide-react";
+import { toast } from "sonner";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 150): string {
   if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
@@ -46,6 +58,8 @@ function ArticlePage() {
   const { lang, t } = usePrefs();
   const { isAdmin } = useIsAdmin();
   const initial = Route.useLoaderData();
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const query = useQuery({
     queryKey: ["article", slug],
@@ -64,13 +78,36 @@ function ArticlePage() {
   const listQuery = useQuery({
     queryKey: ["articles-list"],
     queryFn: async () => {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("articles")
         .select("id, slug, title_bn, title_en, published")
         .eq("published", true)
         .order("published_at", { ascending: false });
       return data || [];
     },
+  });
+
+  // সরাসরি পড়ার পেজ থেকে ড্রাফট বা পাবলিশ টগল করার মিউটেশন
+  const togglePublish = useMutation({
+    mutationFn: async (nextStatus: boolean) => {
+      if (!query.data?.id) return;
+      const { error } = await supabase
+        .from("articles")
+        .update({
+          published: nextStatus,
+          published_at: nextStatus ? new Date().toISOString() : null,
+        })
+        .eq("id", query.data.id);
+      if (error) throw error;
+    },
+    onSuccess: (_, nextStatus) => {
+      queryClient.invalidateQueries({ queryKey: ["article", slug] });
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles-list"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success(nextStatus ? "আর্টিকেল প্রকাশিত হয়েছে" : "আর্টিকেলটি খসড়া/ড্রাফট করা হয়েছে");
+    },
+    onError: (err: Error) => toast.error(err.message),
   });
 
   const article = query.data;
@@ -103,11 +140,58 @@ function ArticlePage() {
     (lang === "en" && article.author.name_en ? article.author.name_en : article.author.name_bn);
 
   return (
-    <article className="mx-auto w-full max-w-3xl px-4 py-12">
-      {!article.published && (
+    <article className="mx-auto w-full max-w-3xl px-4 py-8">
+      {/* শুধুমাত্র অ্যাডমিনের জন্য কুইক অ্যাকশন বার */}
+      {isAdmin && (
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#2271b1]/30 bg-[#2271b1]/5 p-3 sm:px-4 shadow-sm backdrop-blur-sm">
+          <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
+            <ShieldCheck className="size-4 text-[#2271b1]" />
+            <span>অ্যাডমিন কুইক কন্ট্রোল:</span>
+            <span
+              className={`rounded px-2 py-0.5 text-[10px] font-bold ${
+                article.published
+                  ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
+                  : "bg-amber-500/15 text-amber-600 dark:text-amber-400"
+              }`}
+            >
+              {article.published ? "প্রকাশিত (Live)" : "খসড়া (Draft)"}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] text-muted-foreground font-medium">
+                {article.published ? "Draft করুন" : "Publish করুন"}
+              </span>
+              <Switch
+                checked={article.published}
+                disabled={togglePublish.isPending}
+                onCheckedChange={(checked) => togglePublish.mutate(checked)}
+                title={article.published ? "ক্লিক করে খসড়া করুন" : "ক্লিক করে প্রকাশ করুন"}
+              />
+            </div>
+
+            <div className="h-4 w-px bg-border mx-0.5" />
+
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="h-7 px-2.5 text-xs gap-1.5 hover:bg-[#2271b1] hover:text-white"
+            >
+              <Link to="/admin">
+                <Pencil className="size-3" />
+                <span>এডিট করুন</span>
+              </Link>
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {!article.published && !isAdmin && (
         <div className="mb-6 flex items-center gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-xs text-amber-500 font-medium">
           <EyeOff className="size-4 shrink-0" />
-          <span>এটি একটি <strong>খসড়া (Draft)</strong> পোস্ট। শুধুমাত্র অ্যাডমিন হিসেবে আপনি এটি দেখতে পাচ্ছেন; সাধারণ ভিজিটরদের কাছে এটি লুকায়িত।</span>
+          <span>এটি একটি খসড়া (Draft) পোস্ট।</span>
         </div>
       )}
 
@@ -168,6 +252,7 @@ function ArticlePage() {
         dangerouslySetInnerHTML={{ __html: rawContent }}
       />
 
+      {/* নেভিগেশন কার্ডস */}
       <div className="mt-12 pt-8 border-t border-border/60">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {prevArticle ? (
