@@ -46,12 +46,14 @@ export function Typewriter({
   }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
 
   return (
-    <span className="inline-block">
-      {/* ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড ক্লিপ ফিল্টার */}
-      <span className="bg-gradient-to-r from-white/90 via-white/50 to-white/90 bg-clip-text text-transparent opacity-90 drop-shadow-sm">
+    <span className="inline-block overflow-visible py-1">
+      {/* bg-clip-text বাদ দিয়ে স্পষ্ট ও পূর্ণাঙ্গ গ্লিফ রেন্ডারিং */}
+      <span className="text-amber-300 drop-shadow-[0_2px_10px_rgba(251,191,36,0.3)]">
         {text}
       </span>
-      <span className="animate-pulse font-normal text-white/50 ms-0.5">|</span>
+      <span className="animate-pulse font-normal text-amber-300/80 ms-1 select-none">
+        |
+      </span>
     </span>
   );
 }
