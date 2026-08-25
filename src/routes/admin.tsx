@@ -226,7 +226,6 @@ function RichTextEditor({
           )}
         </div>
 
-        {/* HTML / Visual Toggle Button */}
         <Button
           type="button"
           size="sm"
@@ -342,7 +341,6 @@ function AdminPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#f0f0f1] text-[#2c3338] dark:bg-[#121212] dark:text-[#f0f0f1]">
-      {/* 1. WordPress Top Admin Bar */}
       <header className="sticky top-0 z-50 flex h-8 w-full items-center justify-between bg-[#1d2327] px-3 text-[#c3c4c7] select-none text-xs border-b border-[#2c3338]">
         <div className="flex items-center gap-4">
           <Link
@@ -377,9 +375,7 @@ function AdminPage() {
         </div>
       </header>
 
-      {/* 2. Main Admin Layout Area */}
       <div className="flex flex-1 overflow-hidden">
-        {/* WordPress Style Left Sidebar */}
         <aside className="w-64 shrink-0 bg-[#1d2327] text-[#c3c4c7] flex flex-col justify-between hidden md:flex border-r border-[#2c3338]">
           <div className="py-2 overflow-y-auto">
             {menuSections.map((section, idx) => (
@@ -421,10 +417,8 @@ function AdminPage() {
           </div>
         </aside>
 
-        {/* Admin Content Area */}
         <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-5xl">
-            {/* Mobile Navigation Dropdown */}
             <div className="mb-4 block md:hidden">
               <label htmlFor="mobile-admin-tab" className="block text-xs font-medium text-muted-foreground mb-1.5">
                 মেনু নির্বাচন করুন:
@@ -445,7 +439,6 @@ function AdminPage() {
               </select>
             </div>
 
-            {/* Dashboard Content Header & Breadcrumbs */}
             <div className="mb-6 flex items-center justify-between border-b border-border/80 pb-3">
               <div>
                 <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mb-1">
@@ -464,7 +457,6 @@ function AdminPage() {
               </div>
             </div>
 
-            {/* Tab Contents */}
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsContent value="articles" className="mt-0 focus-visible:outline-none">
                 <ArticlesAdmin />
@@ -672,6 +664,7 @@ function ArticlesAdmin() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
+  const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
   const categories = useCategories();
 
   const authors = useQuery({
@@ -695,12 +688,30 @@ function ArticlesAdmin() {
     },
   });
 
+  const togglePublish = useMutation({
+    mutationFn: async ({ id, nextStatus }: { id: string; nextStatus: boolean }) => {
+      const { error } = await supabase
+        .from("articles")
+        .update({
+          published: nextStatus,
+          published_at: nextStatus ? new Date().toISOString() : null,
+        })
+        .eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: (_, variables) => {
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success(variables.nextStatus ? "আর্টিকেল প্রকাশিত হয়েছে" : "আর্টিকেলটি খসড়া/ড্রাফট করা হয়েছে");
+    },
+    onError: (err: Error) => toast.error(err.message),
+  });
+
   const save = useMutation({
     mutationFn: async () => {
       const parsed = articleSchema.safeParse(form);
       if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য প্রদান করুন");
 
-      // Auto generate excerpts if empty
       const autoExcerptBn = parsed.data.excerpt_bn
         ? parsed.data.excerpt_bn
         : parsed.data.content_bn.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim();
@@ -756,6 +767,15 @@ function ArticlesAdmin() {
     onError: (error: Error) => toast.error(error.message),
   });
 
+  const filteredArticles = list.data?.filter((a) => {
+    if (statusFilter === "published") return a.published;
+    if (statusFilter === "draft") return !a.published;
+    return true;
+  });
+
+  const publishedCount = list.data?.filter((a) => a.published).length || 0;
+  const draftCount = list.data?.filter((a) => !a.published).length || 0;
+
   const field = (key: keyof typeof EMPTY, label: string, long = false) => (
     <div className="space-y-1.5">
       <Label htmlFor={key} className="text-xs font-semibold">{label}</Label>
@@ -797,7 +817,9 @@ function ArticlesAdmin() {
         <div className="flex items-center justify-between border-b border-border/60 pb-3">
           <h2 className="font-semibold text-base">{editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল লিখুন"}</h2>
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-muted-foreground">{published ? "প্রকাশিত (Published)" : "ড্রাফট (Draft)"}</span>
+            <span className={published ? "text-emerald-600 font-semibold" : "text-amber-600 font-semibold"}>
+              {published ? "প্রকাশিত (Published)" : "খসড়া (Draft)"}
+            </span>
             <Switch checked={published} onCheckedChange={setPublished} />
           </div>
         </div>
@@ -867,55 +889,117 @@ function ArticlesAdmin() {
         </div>
       </form>
 
-      <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">প্রকাশিত ও খসড়া আর্টিকেল তালিকা</h3>
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
+          <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
+          
+          <div className="flex items-center gap-1.5 text-xs">
+            <button
+              type="button"
+              onClick={() => setStatusFilter("all")}
+              className={`rounded px-2.5 py-1 transition-colors ${
+                statusFilter === "all"
+                  ? "bg-foreground text-background font-semibold"
+                  : "text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              সব ({list.data?.length || 0})
+            </button>
+            <span className="text-border">|</span>
+            <button
+              type="button"
+              onClick={() => setStatusFilter("published")}
+              className={`rounded px-2.5 py-1 transition-colors ${
+                statusFilter === "published"
+                  ? "bg-emerald-600 text-white font-semibold"
+                  : "text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              প্রকাশিত ({publishedCount})
+            </button>
+            <span className="text-border">|</span>
+            <button
+              type="button"
+              onClick={() => setStatusFilter("draft")}
+              className={`rounded px-2.5 py-1 transition-colors ${
+                statusFilter === "draft"
+                  ? "bg-amber-600 text-white font-semibold"
+                  : "text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              খসড়া / Drafts ({draftCount})
+            </button>
+          </div>
+        </div>
+
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-          {list.data?.map((a) => (
-            <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
-                <p className="text-[11px] text-muted-foreground">
-                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? "প্রকাশিত" : "খসড়া (Draft)"}</span>
-                </p>
+          {filteredArticles?.length === 0 ? (
+            <p className="p-4 text-xs text-muted-foreground text-center">কোনো আর্টিকেল পাওয়া যায়নি।</p>
+          ) : (
+            filteredArticles?.map((a) => (
+              <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
+                  <p className="text-[11px] text-muted-foreground">
+                    /{a.slug} ·{" "}
+                    <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-semibold"}>
+                      {a.published ? "প্রকাশিত" : "খসড়া (Draft)"}
+                    </span>
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] text-muted-foreground hidden sm:inline">
+                    {a.published ? "Live" : "Draft"}
+                  </span>
+                  <Switch
+                    checked={a.published}
+                    onCheckedChange={(checked) =>
+                      togglePublish.mutate({ id: a.id, nextStatus: checked })
+                    }
+                    title={a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"}
+                  />
+                </div>
+
+                <div className="flex items-center gap-1 ml-2 border-l border-border/60 pl-2">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7"
+                    aria-label="সম্পাদনা"
+                    onClick={() => {
+                      setEditingId(a.id);
+                      setPublished(a.published);
+                      setAuthorId(a.author_id ?? "");
+                      setCategoryId(a.category_id ?? "");
+                      setForm({
+                        slug: a.slug,
+                        title_bn: a.title_bn,
+                        title_en: a.title_en ?? "",
+                        excerpt_bn: a.excerpt_bn ?? "",
+                        excerpt_en: a.excerpt_en ?? "",
+                        content_bn: a.content_bn ?? "",
+                        content_en: a.content_en ?? "",
+                        cover_image_url: a.cover_image_url ?? "",
+                      });
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
+                    <Pencil className="size-3.5" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 text-destructive hover:bg-destructive/10"
+                    aria-label="মুছে ফেলুন"
+                    onClick={() => remove.mutate(a.id)}
+                  >
+                    <Trash2 className="size-3.5" />
+                  </Button>
+                </div>
               </div>
-              <div className="flex items-center gap-1">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-7 w-7"
-                  aria-label="সম্পাদনা"
-                  onClick={() => {
-                    setEditingId(a.id);
-                    setPublished(a.published);
-                    setAuthorId(a.author_id ?? "");
-                    setCategoryId(a.category_id ?? "");
-                    setForm({
-                      slug: a.slug,
-                      title_bn: a.title_bn,
-                      title_en: a.title_en ?? "",
-                      excerpt_bn: a.excerpt_bn ?? "",
-                      excerpt_en: a.excerpt_en ?? "",
-                      content_bn: a.content_bn ?? "",
-                      content_en: a.content_en ?? "",
-                      cover_image_url: a.cover_image_url ?? "",
-                    });
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
-                  <Pencil className="size-3.5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-7 w-7 text-destructive hover:bg-destructive/10"
-                  aria-label="মুছে ফেলুন"
-                  onClick={() => remove.mutate(a.id)}
-                >
-                  <Trash2 className="size-3.5" />
-                </Button>
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>

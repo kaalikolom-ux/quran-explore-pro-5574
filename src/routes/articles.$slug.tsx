@@ -1,16 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Calendar, ChevronLeft, User, ArrowLeft, ArrowRight } from "lucide-react";
+import { Calendar, ChevronLeft, User, ArrowLeft, ArrowRight, EyeOff } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
+import { useIsAdmin } from "@/lib/auth";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { Button } from "@/components/ui/button";
 
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 150): string {
-  if (excerpt && excerpt.trim().length > 0) {
-    return excerpt.trim();
-  }
+  if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
   if (!body) return "ইসলাম ও বিজ্ঞান বিষয়ক প্রবন্ধ।";
   const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
@@ -27,9 +26,7 @@ export const Route = createFileRoute("/articles/$slug")({
         { name: "description", content: desc },
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
-        ...(article?.cover_image_url
-          ? [{ property: "og:image", content: article.cover_image_url }]
-          : []),
+        ...(article?.cover_image_url ? [{ property: "og:image", content: article.cover_image_url }] : []),
       ],
     };
   },
@@ -38,8 +35,7 @@ export const Route = createFileRoute("/articles/$slug")({
       .from("articles")
       .select("*, author:authors(name_bn, name_en)")
       .eq("slug", params.slug)
-      .eq("published", true)
-      .single();
+      .maybeSingle();
     return data;
   },
   component: ArticlePage,
@@ -48,6 +44,7 @@ export const Route = createFileRoute("/articles/$slug")({
 function ArticlePage() {
   const { slug } = Route.useParams();
   const { lang, t } = usePrefs();
+  const { isAdmin } = useIsAdmin();
   const initial = Route.useLoaderData();
 
   const query = useQuery({
@@ -57,8 +54,7 @@ function ArticlePage() {
         .from("articles")
         .select("*, author:authors(name_bn, name_en)")
         .eq("slug", slug)
-        .eq("published", true)
-        .single();
+        .maybeSingle();
       if (error) throw error;
       return data;
     },
@@ -70,7 +66,7 @@ function ArticlePage() {
     queryFn: async () => {
       const { data } = await supabase
         .from("articles")
-        .select("id, slug, title_bn, title_en")
+        .select("id, slug, title_bn, title_en, published")
         .eq("published", true)
         .order("published_at", { ascending: false });
       return data || [];
@@ -80,11 +76,7 @@ function ArticlePage() {
   const article = query.data;
   const articles = listQuery.data || [];
 
-  const currentIndex = articles.findIndex((a) => a.slug === slug);
-  const prevArticle = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
-  const nextArticle = currentIndex > 0 ? articles[currentIndex - 1] : null;
-
-  if (!article) {
+  if (!article || (!article.published && !isAdmin)) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-20 text-center">
         <p className="text-muted-foreground">{t("notFound")}</p>
@@ -97,6 +89,10 @@ function ArticlePage() {
     );
   }
 
+  const currentIndex = articles.findIndex((a) => a.slug === slug);
+  const prevArticle = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
+  const nextArticle = currentIndex > 0 ? articles[currentIndex - 1] : null;
+
   const title = lang === "en" && article.title_en ? article.title_en : article.title_bn;
   const rawContent =
     lang === "en"
@@ -108,6 +104,13 @@ function ArticlePage() {
 
   return (
     <article className="mx-auto w-full max-w-3xl px-4 py-12">
+      {!article.published && (
+        <div className="mb-6 flex items-center gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-xs text-amber-500 font-medium">
+          <EyeOff className="size-4 shrink-0" />
+          <span>এটি একটি <strong>খসড়া (Draft)</strong> পোস্ট। শুধুমাত্র অ্যাডমিন হিসেবে আপনি এটি দেখতে পাচ্ছেন; সাধারণ ভিজিটরদের কাছে এটি লুকায়িত।</span>
+        </div>
+      )}
+
       <Button asChild variant="ghost" size="sm" className="mb-6 -ml-2">
         <Link to="/articles">
           <ChevronLeft className="size-4" /> {t("articles")}
@@ -152,7 +155,6 @@ function ArticlePage() {
         )}
       </div>
 
-      {/* কন্টেন্ট এরিয়া: সব ধরণের প্যারাগ্রাফের মাঝে সুস্পষ্ট মার্জিন গ্যারান্টি */}
       <div
         className="mt-8 text-base leading-relaxed text-foreground/90 font-serif 
                    [&>p]:mb-6 [&>p]:leading-8 [&>p]:tracking-normal
@@ -166,7 +168,6 @@ function ArticlePage() {
         dangerouslySetInnerHTML={{ __html: rawContent }}
       />
 
-      {/* নেভিগেশন কার্ডস */}
       <div className="mt-12 pt-8 border-t border-border/60">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {prevArticle ? (
