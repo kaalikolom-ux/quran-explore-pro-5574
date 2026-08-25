@@ -154,7 +154,7 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন: সকল মোডে স্থায়ী ডার্ক ব্যাকগ্রাউন্ড এবং উজ্জ্বল সাদা হেডার টেক্সট */}
+      {/* হিরো সেকশন */}
       <section className="hero-surface relative overflow-hidden text-white">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-amber-500/10 blur-3xl" />
@@ -177,15 +177,12 @@ function HomePage() {
             <Sparkles className="size-3.5 text-amber-400" /> {t("tagline")}
           </p>
 
-          <div className="mt-6 max-w-3xl space-y-2">
-            {/* মূল শিরোনাম: যেকোনো মোডে স্পষ্ট সাদা */}
+          <div className="mt-6 max-w-3xl">
             <h1 className="text-3xl font-bold leading-tight tracking-normal text-white sm:text-4xl md:text-5xl font-serif">
-              {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
-            </h1>
-
-            {/* টাইপিং এনিমেশন: অপটিমাইজড ফন্ট সাইজ যা মূল টাইটেলের নিচে ওভারল্যাপ হবে না */}
-            <div className="min-h-[2.5rem] flex items-center">
-              <span className="text-xl font-semibold tracking-normal text-amber-300 sm:text-2xl md:text-3xl font-serif">
+              <span>{lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}</span>
+              
+              {/* টাইপিং এনিমেশন: সরাসরি পারফেক্ট মার্জিনে ইন্টিগ্রেটেড */}
+              <span className="block mt-1 text-xl font-semibold tracking-normal text-amber-300 sm:text-2xl md:text-3xl leading-snug font-serif">
                 <Typewriter
                   words={
                     lang === "bn"
@@ -207,7 +204,7 @@ function HomePage() {
                   delayBetweenWords={1500}
                 />
               </span>
-            </div>
+            </h1>
           </div>
 
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
