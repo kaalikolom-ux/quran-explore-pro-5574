@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Pure Monochrome & Distinct Blockquote Style"
- * Prominent thick left border with straight quote geometry.
+ * Design system — "Pure Monochrome & Balanced Elevated Cards"
+ * Clean, symmetric border radius and depth for all cards and items.
  */
 
 @theme inline {
@@ -158,25 +158,21 @@
   line-height: 2.1;
 }
 
-/* Quote Style Row / Card Utility: Flat thick left border, rounded right side */
+/* Standard Clean Card Utility */
 @utility card-soft {
   background-color: var(--color-card);
-  border-top: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  border-left: 5px solid var(--color-foreground);
-  border-radius: 2px 14px 14px 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
   transition: all 0.2s ease-in-out;
 }
 
+/* Quote Card Utility (For explicit quote blocks where needed) */
 @utility quote-card {
   background-color: var(--color-card);
-  border-top: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  border-left: 5px solid var(--color-foreground);
-  border-radius: 2px 12px 12px 2px;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-foreground);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: 1rem;
 }
