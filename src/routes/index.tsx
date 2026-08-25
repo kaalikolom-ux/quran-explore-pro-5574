@@ -154,97 +154,93 @@ function HomePage() {
 
   return (
     <div>
-      <section className="hero-surface relative overflow-hidden border-b border-border/40">
+      {/* হিরো সেকশন: সকল মোডে স্থায়ী ডার্ক ব্যাকগ্রাউন্ড এবং উজ্জ্বল সাদা হেডার টেক্সট */}
+      <section className="hero-surface relative overflow-hidden text-white">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-amber-500/10 blur-3xl" />
           
           <div className="relative right-[-5%] lg:right-[6%] flex items-center justify-center opacity-70 lg:opacity-90 scale-90 sm:scale-100 lg:scale-110">
-            <div className="absolute h-[480px] w-[480px] rounded-full border border-foreground/5 dark:border-white/5" />
-            <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-foreground/10 dark:border-white/10" />
-            <div className="absolute h-[290px] w-[290px] rounded-full border border-foreground/10 dark:border-white/10" />
+            <div className="absolute h-[480px] w-[480px] rounded-full border border-white/5" />
+            <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-white/10" />
+            <div className="absolute h-[290px] w-[290px] rounded-full border border-white/10" />
 
             <div className="relative flex items-center justify-center">
-              <div className="absolute h-40 w-40 rounded-sm border border-amber-500/40 bg-amber-500/[0.04] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-6" />
-              <div className="absolute h-40 w-40 rotate-45 rounded-sm border border-amber-500/40 bg-amber-500/[0.04] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-[51deg]" />
-              <div className="relative z-10 h-6 w-6 rounded-full bg-amber-500/80 shadow-[0_0_25px_8px_rgba(251,191,36,0.45)]" />
+              <div className="absolute h-40 w-40 rounded-sm border border-amber-400/40 bg-amber-400/[0.03] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-6" />
+              <div className="absolute h-40 w-40 rotate-45 rounded-sm border border-amber-400/40 bg-amber-400/[0.03] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-[51deg]" />
+              <div className="relative z-10 h-6 w-6 rounded-full bg-amber-400/80 shadow-[0_0_25px_8px_rgba(251,191,36,0.4)]" />
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-20 sm:py-28">
-          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 dark:bg-white/5 dark:border-white/20 px-3.5 py-1 text-xs font-medium tracking-wide text-muted-foreground backdrop-blur-sm shadow-xs">
-            <Sparkles className="size-3.5 text-[#2A6F97] dark:text-amber-400" /> {t("tagline")}
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-16 sm:py-24 md:py-28">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-sm shadow-xs">
+            <Sparkles className="size-3.5 text-amber-400" /> {t("tagline")}
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl text-foreground font-serif">
-            {lang === "bn" ? (
-              <>
-                পবিত্র কুরআন — বুঝে পড়ুন <br />
-                <span className="inline-block mt-1 font-semibold text-[#2A6F97] dark:text-amber-300">
-                  <Typewriter
-                    words={[
-                      "শব্দে শব্দে অর্থসহ",
-                      "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
-                      "সহজ বাংলা অনুবাদে",
-                      "প্রামাণ্য তথ্যসূত্রসহ",
-                    ]}
-                    typingSpeed={90}
-                    deletingSpeed={50}
-                    delayBetweenWords={1500}
-                  />
-                </span>
-              </>
-            ) : (
-              <>
-                The Holy Quran — understand it <br />
-                <span className="inline-block mt-1 font-semibold text-[#2A6F97] dark:text-amber-300">
-                  <Typewriter
-                    words={[
-                      "word by word",
-                      "with scientific context",
-                      "in clear translation",
-                      "with authentic notes",
-                    ]}
-                    typingSpeed={80}
-                    deletingSpeed={40}
-                    delayBetweenWords={1500}
-                  />
-                </span>
-              </>
-            )}
-          </h1>
+          <div className="mt-6 max-w-3xl space-y-2">
+            {/* মূল শিরোনাম: যেকোনো মোডে স্পষ্ট সাদা */}
+            <h1 className="text-3xl font-bold leading-tight tracking-normal text-white sm:text-4xl md:text-5xl font-serif">
+              {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
+            </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">{t("heroSub")}</p>
+            {/* টাইপিং এনিমেশন: অপটিমাইজড ফন্ট সাইজ যা মূল টাইটেলের নিচে ওভারল্যাপ হবে না */}
+            <div className="min-h-[2.5rem] flex items-center">
+              <span className="text-xl font-semibold tracking-normal text-amber-300 sm:text-2xl md:text-3xl font-serif">
+                <Typewriter
+                  words={
+                    lang === "bn"
+                      ? [
+                          "শব্দে শব্দে অর্থসহ",
+                          "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
+                          "সহজ বাংলা অনুবাদে",
+                          "প্রামাণ্য তথ্যসূত্রসহ",
+                        ]
+                      : [
+                          "word by word",
+                          "with scientific context",
+                          "in clear translation",
+                          "with authentic notes",
+                        ]
+                  }
+                  typingSpeed={lang === "bn" ? 90 : 80}
+                  deletingSpeed={lang === "bn" ? 50 : 40}
+                  delayBetweenWords={1500}
+                />
+              </span>
+            </div>
+          </div>
+
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
           
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-border bg-card text-foreground shadow-xs backdrop-blur-sm transition-all duration-200 hover:bg-muted hover:border-foreground/30 hover:scale-[1.02]"
+              variant="ghost"
+              className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
-                <BookOpen className="size-4 mr-2 text-[#2A6F97] dark:text-primary" /> {t("readQuran")}
+                <BookOpen className="size-4 mr-2 text-amber-300" /> {t("readQuran")}
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-border bg-card text-foreground shadow-xs backdrop-blur-sm transition-all duration-200 hover:bg-muted hover:border-foreground/30 hover:scale-[1.02]"
+              variant="ghost"
+              className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/articles">
-                <FileText className="size-4 mr-2 text-[#2A6F97] dark:text-primary" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
+                <FileText className="size-4 mr-2 text-amber-300" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-border bg-card text-foreground shadow-xs backdrop-blur-sm transition-all duration-200 hover:bg-muted hover:border-foreground/30 hover:scale-[1.02]"
+              variant="ghost"
+              className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/settings">
-                <Settings className="size-4 mr-2 text-[#2A6F97] dark:text-primary" /> {lang === "bn" ? "সেটিংস" : "Settings"}
+                <Settings className="size-4 mr-2 text-amber-300" /> {lang === "bn" ? "সেটিংস" : "Settings"}
               </Link>
             </Button>
           </div>
