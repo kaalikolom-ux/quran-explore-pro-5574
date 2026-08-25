@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Midnight Navy & Warm Quranic Gold"
- * Matches Replit Quran Explore theme: Deep Navy Black & Golden Amber Highlights.
+ * Design system — "Pure Monochrome & Minimalist Slate"
+ * Deep Charcoal, Crisp White, Subtle Silver and Muted Grays.
  */
 
 @theme inline {
@@ -30,8 +30,6 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-gold: var(--gold);
-  --color-gold-foreground: var(--gold-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -52,99 +50,80 @@
   --font-sans: "Noto Serif Bengali", "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", "Noto Serif Bengali", ui-sans-serif, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", serif;
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.2), 0 8px 24px -6px rgba(0, 0, 0, 0.35);
-  --shadow-lift: 0 4px 14px rgba(0, 0, 0, 0.3), 0 18px 36px -10px rgba(0, 0, 0, 0.5);
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.15), 0 8px 24px -6px rgba(0, 0, 0, 0.25);
+  --shadow-lift: 0 4px 14px rgba(0, 0, 0, 0.25), 0 18px 36px -10px rgba(0, 0, 0, 0.45);
 }
 
 :root {
-  --chrome: oklch(0.2 0.015 250);
-  --chrome-foreground: oklch(0.98 0 0);
-  --radius: 0.85rem;
+  --chrome: #18181b;
+  --chrome-foreground: #fafafa;
+  --radius: 0.75rem;
 
-  /* Light / Day Mode (Clean Parchment & Warm Amber) */
-  --background: oklch(0.96 0.012 80);
-  --foreground: oklch(0.2 0.02 260);
-  --card: oklch(0.99 0.005 80);
-  --card-foreground: oklch(0.2 0.02 260);
-  --popover: oklch(0.99 0.005 80);
-  --popover-foreground: oklch(0.2 0.02 260);
-  --primary: oklch(0.74 0.16 70); /* Warm Gold */
-  --primary-foreground: oklch(0.15 0.03 260);
-  --secondary: oklch(0.92 0.015 80);
-  --secondary-foreground: oklch(0.25 0.02 260);
-  --muted: oklch(0.92 0.01 80);
-  --muted-foreground: oklch(0.5 0.02 260);
-  --accent: oklch(0.74 0.16 70);
-  --accent-foreground: oklch(0.15 0.03 260);
-  --gold: oklch(0.74 0.16 70);
-  --gold-foreground: oklch(0.15 0.03 260);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0.015 80);
-  --input: oklch(0.88 0.015 80);
-  --ring: oklch(0.74 0.16 70);
-  --sidebar: oklch(0.94 0.012 80);
-  --sidebar-foreground: oklch(0.2 0.02 260);
-  --sidebar-primary: oklch(0.74 0.16 70);
-  --sidebar-primary-foreground: oklch(0.15 0.03 260);
-  --sidebar-accent: oklch(0.9 0.015 80);
-  --sidebar-accent-foreground: oklch(0.2 0.02 260);
-  --sidebar-border: oklch(0.88 0.015 80);
-  --sidebar-ring: oklch(0.74 0.16 70);
-  --gradient-hero: linear-gradient(145deg, #f8f6f0 0%, #ede8dc 100%);
-  --gradient-gold: linear-gradient(135deg, #f5a623 0%, #e59819 100%);
+  /* Light Monochrome */
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #f4f4f5;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #e4e4e7;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #e4e4e7;
+  --accent-foreground: #18181b;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafafa;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #18181b;
+  --sidebar: #f4f4f5;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #e4e4e7;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: #18181b;
+  --gradient-hero: linear-gradient(180deg, #fafafa 0%, #f4f4f5 100%);
 }
 
 .dark {
-  --chrome: oklch(0.14 0.018 260);
-  --chrome-foreground: oklch(0.98 0 0);
-  --radius: 0.85rem;
+  --chrome: #09090b;
+  --chrome-foreground: #fafafa;
+  --radius: 0.75rem;
 
-  /* Dark Theme Matching Screenshot: Midnight Navy (#12151E) & Deep Card (#1B202D) */
-  --background: oklch(0.14 0.018 260);        /* Deep Navy Black */
-  --foreground: oklch(0.96 0.005 260);        /* Crisp White Text */
-  --card: oklch(0.19 0.022 260);              /* Elevated Card Navy */
-  --card-foreground: oklch(0.96 0.005 260);
-  --popover: oklch(0.19 0.022 260);
-  --popover-foreground: oklch(0.96 0.005 260);
-  
-  /* Primary & Accent: Vibrant Gold/Amber (#F5A623) */
-  --primary: oklch(0.75 0.16 70);             /* Golden Amber */
-  --primary-foreground: oklch(0.12 0.02 260);  /* Dark Contrast Text */
-  --secondary: oklch(0.24 0.025 260);         /* Subtle Button/Pill */
-  --secondary-foreground: oklch(0.95 0.005 260);
-  --muted: oklch(0.22 0.02 260);
-  --muted-foreground: oklch(0.68 0.015 260);  /* Muted Text */
-  --accent: oklch(0.75 0.16 70);
-  --accent-foreground: oklch(0.12 0.02 260);
-  --gold: oklch(0.75 0.16 70);
-  --gold-foreground: oklch(0.12 0.02 260);
-  --destructive: oklch(0.62 0.2 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  
-  /* Borders & Inputs */
-  --border: oklch(0.26 0.025 260 / 60%);     /* Subtle Navy Border */
-  --input: oklch(0.26 0.025 260 / 80%);
-  --ring: oklch(0.75 0.16 70);
-
-  /* Sidebar */
-  --sidebar: oklch(0.13 0.018 260);
-  --sidebar-foreground: oklch(0.95 0.005 260);
-  --sidebar-primary: oklch(0.75 0.16 70);
-  --sidebar-primary-foreground: oklch(0.12 0.02 260);
-  --sidebar-accent: oklch(0.22 0.025 260);
-  --sidebar-accent-foreground: oklch(0.95 0.005 260);
-  --sidebar-border: oklch(0.24 0.02 260 / 60%);
-  --sidebar-ring: oklch(0.75 0.16 70);
-
-  /* Gradients */
-  --gradient-hero: linear-gradient(
-    155deg,
-    oklch(0.17 0.025 260) 0%,
-    oklch(0.14 0.02 260) 50%,
-    oklch(0.11 0.015 260) 100%
-  );
-  --gradient-gold: linear-gradient(135deg, oklch(0.78 0.17 72), oklch(0.68 0.15 65));
+  /* Pure Dark Monochrome: Jet Black & Charcoal (#09090b / #18181b) */
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #d4d4d8;
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #fafafa;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #d4d4d8;
+  --gradient-hero: linear-gradient(180deg, #18181b 0%, #09090b 100%);
 }
 
 @layer base {
@@ -169,13 +148,7 @@
 
 @utility hero-surface {
   background-image: var(--gradient-hero);
-  color: oklch(0.97 0.005 260);
-}
-
-@utility gold-text {
-  background-image: var(--gradient-gold);
-  background-clip: text;
-  color: transparent;
+  color: var(--color-foreground);
 }
 
 @utility arabic {

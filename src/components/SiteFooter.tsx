@@ -12,13 +12,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const footerLinkClass =
-  "w-fit rounded-md border border-transparent px-3 py-1.5 text-chrome-foreground/70 transition-all duration-200 hover:bg-white/10 hover:text-chrome-foreground hover:translate-x-1";
+  "w-fit rounded-md border border-transparent px-3 py-1.5 text-muted-foreground transition-all duration-200 hover:bg-secondary hover:text-foreground hover:translate-x-1";
 
 const emailSchema = z.string().trim().email("সঠিক ইমেইল এড্রেস লিখুন");
 
 function QuranLogoBadge({ className = "size-4.5" }: { className?: string }) {
   return (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#F5A623] to-[#D97706] text-[#12151E] shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200">
+    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-foreground text-background shadow-sm transition-transform duration-200 group-hover:scale-105">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -97,16 +97,16 @@ export function SiteFooter() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-chrome text-chrome-foreground">
+    <footer className="border-t border-border bg-card text-card-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
         
-        {/* ১. পরিচিতি ও সোশ্যাল (হেডারের হুবহু গোল্ডেন লোগো ও ফন্ট) */}
+        {/* ১. পরিচিতি ও সোশ্যাল (Monochrome Style) */}
         <div>
-          <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-95 select-none">
+          <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none">
             <QuranLogoBadge />
             <div className="flex flex-col leading-none">
               <span 
-                className="text-lg sm:text-xl font-bold tracking-normal text-[#F5A623] drop-shadow-sm select-none"
+                className="text-lg sm:text-xl font-bold tracking-normal text-foreground select-none"
                 style={{ 
                   fontFamily: "'Kaushan Script', cursive",
                   background: "transparent"
@@ -114,18 +114,18 @@ export function SiteFooter() {
               >
                 Quran Explorer
               </span>
-              <span className="mt-1 text-[10px] text-chrome-foreground/60 font-normal tracking-wide">
+              <span className="mt-1 text-[10px] text-muted-foreground font-normal tracking-wide">
                 {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
               </span>
             </div>
           </Link>
-          <p className="mt-3 text-sm leading-relaxed text-chrome-foreground/70">{t("tagline")}</p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("tagline")}</p>
           <SocialLinks className="mt-5" />
         </div>
 
         {/* ২. গুরুত্বপূর্ণ লিংকসমূহ */}
         <nav className="flex flex-col gap-1 text-sm">
-          <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-[#F5A623]/80">
+          <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
             {lang === "en" ? "Navigation" : "মেনু লিংক"}
           </p>
           <Link to="/" className={footerLinkClass}>
@@ -148,12 +148,12 @@ export function SiteFooter() {
         </nav>
 
         {/* ৩. নিউজলেটার সাবস্ক্রিপশন ও কপিরাইট */}
-        <div className="space-y-4 text-sm text-chrome-foreground/80">
+        <div className="space-y-4 text-sm text-muted-foreground">
           <div>
-            <p className="font-semibold text-chrome-foreground">
+            <p className="font-semibold text-foreground">
               {lang === "en" ? "Subscribe to Newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"}
             </p>
-            <p className="mt-1 text-xs text-chrome-foreground/60">
+            <p className="mt-1 text-xs text-muted-foreground">
               {lang === "en"
                 ? "Get updates on new articles and scientific Quran translations."
                 : "নতুন আর্টিকেল এবং বিজ্ঞানভিত্তিক অনুবাদের আপডেট সরাসরি ইমেইলে পান।"}
@@ -161,7 +161,7 @@ export function SiteFooter() {
           </div>
 
           {subscribed ? (
-            <div className="flex items-center gap-2 rounded-xl bg-[#F5A623]/15 border border-[#F5A623]/30 p-3 text-xs text-[#F5A623]">
+            <div className="flex items-center gap-2 rounded-xl bg-secondary p-3 text-xs text-foreground border border-border">
               <CheckCircle2 className="size-4" />
               <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
             </div>
@@ -173,24 +173,24 @@ export function SiteFooter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="h-10 rounded-xl border-white/20 bg-white/5 text-chrome-foreground placeholder:text-chrome-foreground/40 focus-visible:ring-[#F5A623] text-xs"
+                className="h-10 rounded-xl border-border bg-background text-foreground placeholder:text-muted-foreground text-xs"
               />
               <Button
                 type="submit"
                 disabled={loading}
-                className="h-10 rounded-xl px-4 text-xs shrink-0 bg-[#F5A623] hover:bg-[#D97706] text-[#12151E] font-medium"
+                className="h-10 rounded-xl px-4 text-xs shrink-0 bg-foreground hover:bg-foreground/90 text-background font-medium"
               >
                 {loading ? "..." : <Send className="size-3.5" />}
               </Button>
             </form>
           )}
 
-          <div className="pt-2 text-xs text-chrome-foreground/60 border-t border-white/10">
+          <div className="pt-2 text-xs text-muted-foreground border-t border-border">
             <p>
               © {new Date().getFullYear()}{" "}
               <span 
                 style={{ fontFamily: "'Kaushan Script', cursive" }}
-                className="text-[#F5A623] font-bold text-sm"
+                className="text-foreground font-bold text-sm"
               >
                 Quran Explorer
               </span>{" "}
