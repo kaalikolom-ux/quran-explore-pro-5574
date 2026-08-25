@@ -6,7 +6,7 @@
 
 /*
  * Design system — "Eye-Comfort Elevated & Balanced Soft Tones"
- * Optimized contrast to reduce eye fatigue during long reading sessions.
+ * Fixed Dark Hero Surface across all themes.
  */
 
 @theme inline {
@@ -60,24 +60,24 @@
   --chrome-foreground: #f5f5f7;
   --radius: 0.75rem;
 
-  /* Light Mode (Soft Off-White & Charcoal Gray) */
-  --background: #f8f9fa;               /* সফট লাইট ব্যাকগ্রাউন্ড */
-  --foreground: #2d2d2d;               /* চোখের আরামদায়ক অফ-ব্ল্যাক টেক্সট */
+  /* Light Mode */
+  --background: #f8f9fa;
+  --foreground: #2d2d2d;
   --card: #ffffff;
   --card-foreground: #2d2d2d;
   --popover: #ffffff;
   --popover-foreground: #2d2d2d;
-  --primary: #2a6f97;                  /* সফট ব্লু অ্যাকসেন্ট */
+  --primary: #2a6f97;
   --primary-foreground: #f8f9fa;
   --secondary: #e9ecef;
   --secondary-foreground: #2d2d2d;
   --muted: #eef1f4;
-  --muted-foreground: #6c757d;         /* নরম সাপোর্টিং টেক্সট */
+  --muted-foreground: #6c757d;
   --accent: #e3eff6;
   --accent-foreground: #2a6f97;
   --destructive: #b02a37;
   --destructive-foreground: #ffffff;
-  --border: #dee2e6;                   /* মৃদু বর্ডার */
+  --border: #dee2e6;
   --input: #dee2e6;
   --ring: #2a6f97;
   --sidebar: #f5f5f7;
@@ -88,7 +88,9 @@
   --sidebar-accent-foreground: #2a6f97;
   --sidebar-border: #dee2e6;
   --sidebar-ring: #2a6f97;
-  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f1f3f5 100%);
+  
+  /* স্থায়ী ডিপ ডার্ক হিরো গ্রেডিয়েন্ট */
+  --gradient-hero: linear-gradient(180deg, #18181b 0%, #09090b 100%);
 }
 
 .dark {
@@ -96,14 +98,14 @@
   --chrome-foreground: #e4e4e7;
   --radius: 0.75rem;
 
-  /* Dark Mode (Deep Charcoal & Muted Off-White) */
-  --background: #141414;               /* কুচকুচে কালোর বদলে ডিপ চারকোল */
-  --foreground: #e4e4e7;               /* সফট হোয়াইট টেক্সট (নো গ্লেয়ার) */
-  --card: #1c1c1f;                     /* ইলিভেটেড সফট কার্ড */
+  /* Dark Mode */
+  --background: #141414;
+  --foreground: #e4e4e7;
+  --card: #1c1c1f;
   --card-foreground: #e4e4e7;
   --popover: #1c1c1f;
   --popover-foreground: #e4e4e7;
-  --primary: #4a90e2;                  /* রিডেবল ডার্ক অ্যাকসেন্ট ব্লু */
+  --primary: #4a90e2;
   --primary-foreground: #141414;
   --secondary: #26262b;
   --secondary-foreground: #e4e4e7;
@@ -124,7 +126,9 @@
   --sidebar-accent-foreground: #e4e4e7;
   --sidebar-border: rgba(255, 255, 255, 0.10);
   --sidebar-ring: #4a90e2;
-  --gradient-hero: linear-gradient(180deg, #1c1c1f 0%, #141414 100%);
+
+  /* স্থায়ী ডিপ ডার্ক হিরো গ্রেডিয়েন্ট */
+  --gradient-hero: linear-gradient(180deg, #18181b 0%, #09090b 100%);
 }
 
 @layer base {
@@ -149,7 +153,7 @@
 
 @utility hero-surface {
   background-image: var(--gradient-hero);
-  color: var(--color-foreground);
+  color: #ffffff;
 }
 
 @utility arabic {
