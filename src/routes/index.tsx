@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { ArrowRight, BookOpen, FileText, Search, Settings, Sparkles } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
@@ -28,7 +28,6 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
@@ -56,6 +55,140 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
   if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
   const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
+}
+
+/* জানালার গ্লাসে বৃষ্টির লাইভ অ্যানিমেশন কম্পোনেন্ট */
+function RainGlassCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
+    let height = (canvas.height = canvas.parentElement?.clientHeight || 600);
+
+    const handleResize = () => {
+      if (!canvas || !canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.clientWidth;
+      height = canvas.height = canvas.parentElement.clientHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // গ্লাসে জমে থাকা স্থির ছোট ফোঁটা
+    const staticDrops: { x: number; y: number; r: number; opacity: number }[] = [];
+    const staticCount = Math.floor((width * height) / 9000);
+    for (let i = 0; i < staticCount; i++) {
+      staticDrops.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 1.8 + 0.6,
+        opacity: Math.random() * 0.4 + 0.15,
+      });
+    }
+
+    // গড়িয়ে নিচে পড়া পানির ফোঁটা ও ট্রেইল
+    interface MovingDrop {
+      x: number;
+      y: number;
+      r: number;
+      speed: number;
+      trail: { x: number; y: number; r: number }[];
+    }
+
+    const movingDrops: MovingDrop[] = [];
+    const movingCount = Math.max(16, Math.floor(width / 45));
+
+    for (let i = 0; i < movingCount; i++) {
+      movingDrops.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 2.2 + 1.8,
+        speed: Math.random() * 0.8 + 0.35,
+        trail: [],
+      });
+    }
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // ১. স্থির ফোঁটা রেন্ডার
+      for (const d of staticDrops) {
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 215, 240, ${d.opacity})`;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(d.x - d.r * 0.3, d.y - d.r * 0.3, d.r * 0.35, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${d.opacity + 0.2})`;
+        ctx.fill();
+      }
+
+      // ২. গড়িয়ে পড়া বৃষ্টির ফোঁটা রেন্ডার
+      for (const drop of movingDrops) {
+        // ফোঁটা চলার ট্রেইল
+        for (let t = 0; t < drop.trail.length; t++) {
+          const pt = drop.trail[t];
+          const trailOpacity = (t / drop.trail.length) * 0.25;
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, pt.r * 0.6, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(160, 205, 235, ${trailOpacity})`;
+          ctx.fill();
+        }
+
+        // প্রধান চলমান ফোঁটা
+        ctx.beginPath();
+        ctx.arc(drop.x, drop.y, drop.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(195, 225, 245, 0.45)";
+        ctx.fill();
+
+        // ফোঁটার ওপর আলোর রিফ্লেকশন
+        ctx.beginPath();
+        ctx.arc(drop.x - drop.r * 0.3, drop.y - drop.r * 0.3, drop.r * 0.35, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
+        ctx.fill();
+
+        // ট্রেইলে পয়েন্ট যুক্ত করা
+        if (Math.random() > 0.4) {
+          drop.trail.push({ x: drop.x, y: drop.y, r: drop.r });
+          if (drop.trail.length > 12) drop.trail.shift();
+        }
+
+        // ফোঁটার স্বাভাবিক চলন ও কাঁপুনি
+        drop.y += drop.speed;
+        drop.x += (Math.random() - 0.5) * 0.4;
+
+        // নিচে চলে গেলে পুনরায় উপরে পাঠানো
+        if (drop.y > height + 20) {
+          drop.y = -10;
+          drop.x = Math.random() * width;
+          drop.speed = Math.random() * 0.8 + 0.35;
+          drop.trail = [];
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-70"
+    />
+  );
 }
 
 function HomePage() {
@@ -152,25 +285,19 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন: স্লেট ব্লু প্যাটার্ন টেক্সচার এবং মসৃণ নিচের গ্র্যাডিয়েন্ট জয়েন্টসহ */}
+      {/* হিরো সেকশন: লাইভ রেইন-গ্লাস ব্যাকগ্রাউন্ডসহ */}
       <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24">
-        {/* SVG ডার্ক স্লেট ওয়াটার স্প্ল্যাশ / রেইনড্রপ প্যাটার্ন লেয়ার */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%230b141d' fill-opacity='0.95'%3E%3Ccircle cx='20' cy='30' r='3.5'/%3E%3Ccircle cx='28' cy='45' r='1.5'/%3E%3Ccircle cx='85' cy='25' r='4'/%3E%3Ccircle cx='130' cy='60' r='2.5'/%3E%3Ccircle cx='70' cy='115' r='3.5'/%3E%3Ccircle cx='140' cy='135' r='2'/%3E%3Ccircle cx='45' cy='90' r='2'/%3E%3Ccircle cx='105' cy='85' r='3'/%3E%3Cpath d='M10 70 Q 25 65, 40 75 Q 30 85, 10 70 Z'/%3E%3Cpath d='M95 130 Q 115 120, 135 132 Q 118 145, 95 130 Z'/%3E%3Cpath d='M110 35 Q 130 28, 145 40 Q 130 48, 110 35 Z'/%3E%3Cpath d='M50 140 Q 65 130, 80 145 Q 60 155, 50 140 Z'/%3E%3Cpath d='M65 45 Q 75 40, 82 48 Q 72 55, 65 45 Z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundRepeat: "repeat",
-          }}
-        />
+        {/* রেইন গ্লাস ক্যানভাস */}
+        <RainGlassCanvas />
 
-        {/* ডিপ ব্লু ও সায়ান সফট অ্যাম্বিয়েন্ট গ্লো */}
+        {/* গভীর সফট অ্যাম্বিয়েন্ট ব্যাকগ্রাউন্ড গ্লো */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-[#2A6F97]/30 blur-[100px]" />
-          <div className="absolute left-[-10%] top-1/4 h-[400px] w-[400px] rounded-full bg-[#1b3a4b]/40 blur-[100px]" />
+          <div className="absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-[#2A6F97]/25 blur-[120px]" />
+          <div className="absolute left-[-10%] top-1/4 h-[400px] w-[400px] rounded-full bg-[#1b3a4b]/35 blur-[120px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
             <Sparkles className="size-3.5 text-[#60a5fa]" /> {t("tagline")}
           </p>
 
@@ -239,7 +366,7 @@ function HomePage() {
           </div>
         </div>
 
-        {/* নিচের সেকশনের সাথে মসৃণ গ্র্যাডিয়েন্ট জয়েন্ট */}
+        {/* নিচের সেকশনের সাথে গ্র্যাডিয়েন্ট জয়েন্ট */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
