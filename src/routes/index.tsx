@@ -51,11 +51,11 @@ function bnToEnDigits(str: string): string {
   return str.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
 }
 
-function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 120): string {
+function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 130): string {
   if (excerpt && excerpt.trim().length > 0) {
     return excerpt.trim();
   }
-  if (!body) return "";
+  if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
   const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
@@ -71,12 +71,12 @@ function HomePage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("id, slug, title_bn, title_en, excerpt_bn, excerpt_en, content_bn, content_en, body_bn, body_en, published_at, cover_image_url")
+        .select("*")
         .eq("published", true)
         .order("published_at", { ascending: false })
         .limit(3);
       if (error) throw error;
-      return data;
+      return data || [];
     },
   });
 
@@ -342,11 +342,13 @@ function HomePage() {
           </div>
           {articles.data && articles.data.length > 0 ? (
             <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {articles.data.map((a) => {
+              {articles.data.map((a: any) => {
+                const title = lang === "en" && a.title_en ? a.title_en : a.title_bn;
+                const rawBody = a.content_bn || a.body_bn || a.content_en || a.body_en || a.body || "";
                 const excerpt =
                   lang === "en"
-                    ? getCleanExcerpt(a.excerpt_en, a.content_en || (a as any).body_en)
-                    : getCleanExcerpt(a.excerpt_bn, a.content_bn || (a as any).body_bn);
+                    ? getCleanExcerpt(a.excerpt_en, rawBody)
+                    : getCleanExcerpt(a.excerpt_bn, rawBody);
 
                 return (
                   <Link
@@ -358,20 +360,18 @@ function HomePage() {
                     {a.cover_image_url && (
                       <img
                         src={a.cover_image_url}
-                        alt={a.title_bn}
+                        alt={title}
                         loading="lazy"
                         className="h-40 w-full object-cover"
                       />
                     )}
                     <div className="p-5">
                       <h3 className="text-base font-semibold">
-                        {lang === "en" && a.title_en ? a.title_en : a.title_bn}
+                        {title}
                       </h3>
-                      {excerpt && (
-                        <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                          {excerpt}
-                        </p>
-                      )}
+                      <p className="mt-2 line-clamp-3 text-sm text-muted-foreground leading-relaxed">
+                        {excerpt}
+                      </p>
                     </div>
                   </Link>
                 );
