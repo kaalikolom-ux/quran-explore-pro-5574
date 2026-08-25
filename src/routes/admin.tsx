@@ -44,7 +44,6 @@ import { Markdown } from "tiptap-markdown";
 
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
-import { usePrefs } from "@/lib/prefs";
 import { useCategories } from "@/lib/menu";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -65,7 +64,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
       { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
@@ -75,7 +74,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* RICH TEXT EDITOR COMPONENT (WITH MARKDOWN PASTE SUPPORT)                  */
+/* RICH TEXT EDITOR COMPONENT                                                 */
 /* ========================================================================== */
 function RichTextEditor({
   value,
@@ -108,7 +107,6 @@ function RichTextEditor({
 
   return (
     <div className="rounded border border-input bg-background">
-      {/* Editor Toolbar */}
       <div className="flex flex-wrap items-center gap-1 border-b border-border bg-muted/40 p-1.5">
         <Button
           type="button"
@@ -116,7 +114,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleBold().run()}
-          title="Bold"
+          title="বোল্ড"
         >
           <Bold className="size-4" />
         </Button>
@@ -126,7 +124,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          title="Italic"
+          title="ইটালিক"
         >
           <Italic className="size-4" />
         </Button>
@@ -137,7 +135,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          title="Heading 1"
+          title="হেডিং ১"
         >
           <Heading1 className="size-4" />
         </Button>
@@ -147,7 +145,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          title="Heading 2"
+          title="হেডিং ২"
         >
           <Heading2 className="size-4" />
         </Button>
@@ -157,7 +155,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          title="Heading 3"
+          title="হেডিং ৩"
         >
           <Heading3 className="size-4" />
         </Button>
@@ -168,7 +166,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
-          title="Bullet List"
+          title="বুলেট তালিকা"
         >
           <List className="size-4" />
         </Button>
@@ -178,7 +176,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          title="Numbered List"
+          title="সংখ্যানুক্রমিক তালিকা"
         >
           <ListOrdered className="size-4" />
         </Button>
@@ -188,7 +186,7 @@ function RichTextEditor({
           size="sm"
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          title="Blockquote"
+          title="উদ্ধৃতি"
         >
           <Quote className="size-4" />
         </Button>
@@ -200,7 +198,7 @@ function RichTextEditor({
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().undo().run()}
           disabled={!editor.can().undo()}
-          title="Undo"
+          title="পূর্বাবস্থায় ফেরান"
         >
           <Undo className="size-4" />
         </Button>
@@ -211,13 +209,12 @@ function RichTextEditor({
           className="h-8 w-8 p-0"
           onClick={() => editor.chain().focus().redo().run()}
           disabled={!editor.can().redo()}
-          title="Redo"
+          title="পুনরায় করুন"
         >
           <Redo className="size-4" />
         </Button>
       </div>
 
-      {/* Editor Content Area */}
       <div className="p-4">
         <EditorContent
           editor={editor}
@@ -232,37 +229,36 @@ function RichTextEditor({
 /* MAIN WORDPRESS-STYLE ADMIN PAGE                                           */
 /* ========================================================================== */
 function AdminPage() {
-  const { t } = usePrefs();
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
   const [activeTab, setActiveTab] = useState("articles");
 
   const menuSections = [
     {
-      group: "মূল মেনু",
+      group: "মূল কনটেন্ট মেনু",
       items: [
-        { value: "articles", label: "আর্টিকেলসমূহ", icon: FileText },
-        { value: "translations", label: "কুরআন অনুবাদ", icon: Languages },
-        { value: "posts", label: "লেখকবৃন্দ (Authors)", icon: Users },
-        { value: "categories", label: "ক্যাটাগরি", icon: FolderTree },
+        { value: "articles", label: "আর্টিকেল ও প্রবন্ধ", icon: FileText },
+        { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
+        { value: "posts", label: "লেখক ও গবেষকবৃন্দ", icon: Users },
+        { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
       ],
     },
     {
-      group: "ওয়েবসাইট উপাদান",
+      group: "ওয়েবসাইট ও পেজ লেআউট",
       items: [
-        { value: "pages", label: "পেইজসমূহ", icon: LayoutGrid },
-        { value: "menu", label: "নেভিগেশন মেনু", icon: MenuIcon },
-        { value: "messages", label: "বার্তা / ফিডব্যাক", icon: Mail },
-        { value: "subs", label: "সাবস্ক্রাইবার তালিকা", icon: Users },
+        { value: "pages", label: "স্থির পেজসমূহ (Pages)", icon: LayoutGrid },
+        { value: "menu", label: "হেডার ও নেভিগেশন মেনু", icon: MenuIcon },
+        { value: "messages", label: "ব্যবহারকারীর বার্তা / ফিডব্যাক", icon: Mail },
+        { value: "subs", label: "নিউজলেটার সাবস্ক্রাইবার", icon: Users },
       ],
     },
     {
-      group: "সিস্টেম ও রোল",
+      group: "সিস্টেম ও সিকিউরিটি কনফিগারেশন",
       items: [
         { value: "roles", label: "অ্যাডমিন ও ইউজার রোল", icon: Shield },
-        { value: "social", label: "সোশ্যাল মিডিয়া লিংক", icon: Share2 },
-        { value: "turnstile", label: "টার্নস্টাইল সিকিউরিটি", icon: KeyRound },
-        { value: "offline", label: "অফলাইন সিঙ্ক", icon: RefreshCw },
+        { value: "social", label: "সোশ্যাল মিডিয়া প্রোফাইল লিংক", icon: Share2 },
+        { value: "turnstile", label: "টার্নস্টাইল সিকিউরিটি কী", icon: KeyRound },
+        { value: "offline", label: "অফলাইন ডেটা সিঙ্ক ও ক্যাশ", icon: RefreshCw },
       ],
     },
   ];
@@ -307,7 +303,7 @@ function AdminPage() {
             target="_blank"
             className="hidden items-center gap-1 hover:text-[#72aee6] transition-colors sm:inline-flex text-[11px]"
           >
-            <span>ওয়েবসাইট ভিজিট করুন</span>
+            <span>ওয়েবসাইট ভিজিট করুন</span>
             <ExternalLink className="size-3" />
           </Link>
         </div>
@@ -330,8 +326,8 @@ function AdminPage() {
       {/* 2. Main Admin Layout Area */}
       <div className="flex flex-1 overflow-hidden">
         {/* WordPress Style Left Sidebar */}
-        <aside className="w-56 shrink-0 bg-[#1d2327] text-[#c3c4c7] flex flex-col justify-between hidden md:flex border-r border-[#2c3338]">
-          <div className="py-2">
+        <aside className="w-64 shrink-0 bg-[#1d2327] text-[#c3c4c7] flex flex-col justify-between hidden md:flex border-r border-[#2c3338]">
+          <div className="py-2 overflow-y-auto">
             {menuSections.map((section, idx) => (
               <div key={idx} className="mb-3">
                 <div className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#8c8f94]">
@@ -367,7 +363,7 @@ function AdminPage() {
           </div>
 
           <div className="border-t border-[#2c3338] p-3 text-[11px] text-[#8c8f94] text-center">
-            WP Admin Panel Mode
+            ওয়ার্ডপ্রেস স্টাইল অ্যাডমিন প্যানেল
           </div>
         </aside>
 
@@ -377,7 +373,7 @@ function AdminPage() {
             {/* Mobile Navigation Dropdown */}
             <div className="mb-4 block md:hidden">
               <label htmlFor="mobile-admin-tab" className="block text-xs font-medium text-muted-foreground mb-1.5">
-                মেনু সিলেক্ট করুন:
+                মেনু নির্বাচন করুন:
               </label>
               <select
                 id="mobile-admin-tab"
@@ -395,14 +391,21 @@ function AdminPage() {
               </select>
             </div>
 
-            {/* Dashboard Content Header */}
+            {/* Dashboard Content Header & Breadcrumbs */}
             <div className="mb-6 flex items-center justify-between border-b border-border/80 pb-3">
               <div>
+                <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mb-1">
+                  <span>ড্যাশবোর্ড</span>
+                  <span>/</span>
+                  <span className="font-semibold text-foreground">
+                    {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "মূল মেনু"}
+                  </span>
+                </div>
                 <h1 className="text-2xl font-bold tracking-tight text-foreground">
                   {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "ড্যাশবোর্ড"}
                 </h1>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
+                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
                 </p>
               </div>
             </div>
@@ -417,7 +420,10 @@ function AdminPage() {
               </TabsContent>
               <TabsContent value="posts" className="mt-0 focus-visible:outline-none">
                 <div className="space-y-4">
-                  <p className="text-sm text-muted-foreground">লেখক তালিকা ও ম্যানেজমেন্ট</p>
+                  <div className="border-b border-border/50 pb-2">
+                    <h2 className="text-base font-semibold">লেখক ও গবেষক ব্যবস্থাপনা</h2>
+                    <p className="text-xs text-muted-foreground">নতুন লেখক যুক্ত করুন এবং প্রোফাইল তথ্য পরিচালনা করুন।</p>
+                  </div>
                   <AuthorsAdmin />
                 </div>
               </TabsContent>
@@ -487,7 +493,7 @@ function RolesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
       setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -499,7 +505,7 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল রিমুভ করা হয়েছে");
+      toast.success("রোল মুছে ফেলা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -514,11 +520,11 @@ function RolesAdmin() {
         }}
       >
         <h2 className="font-semibold text-base flex items-center gap-2 border-b border-border/60 pb-2">
-          <Shield className="size-4 text-[#2271b1]" /> নতুন এডমিন বা ইউজার রোল অ্যাসাইন করুন
+          <Shield className="size-4 text-[#2271b1]" /> নতুন অ্যাডমিন বা ইউজার রোল অ্যাসাইন করুন
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5 sm:col-span-2">
-            <Label htmlFor="userId" className="text-xs font-semibold">User ID (Supabase Auth UID)</Label>
+            <Label htmlFor="userId" className="text-xs font-semibold">ব্যবহারকারী আইডি (Supabase Auth UID)</Label>
             <Input
               id="userId"
               placeholder="যেমন: e2a8b... (User UUID)"
@@ -532,25 +538,25 @@ function RolesAdmin() {
             </p>
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="roleSelect" className="text-xs font-semibold">রোল সিলেক্ট করুন</Label>
+            <Label htmlFor="roleSelect" className="text-xs font-semibold">রোল নির্বাচন করুন</Label>
             <select
               id="roleSelect"
               value={role}
               onChange={(e) => setRole(e.target.value as "admin" | "user")}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
+              <option value="admin">Admin (অ্যাডমিন)</option>
+              <option value="user">User (ব্যবহারকারী)</option>
             </select>
           </div>
         </div>
         <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
-          <UserCheck className="size-3.5 mr-1.5" /> রোল অ্যাসাইন করুন
+          <UserCheck className="size-3.5 mr-1.5" /> রোল সংরক্ষণ করুন
         </Button>
       </form>
 
       <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলগুলোর তালিকা:</h3>
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলসমূহের তালিকা:</h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {rolesList.data?.map((r) => (
             <div key={r.id} className="flex items-center justify-between p-3.5">
@@ -583,8 +589,8 @@ const articleSchema = z.object({
     .trim()
     .min(1)
     .max(120)
-    .regex(/^[a-z0-9-]+$/, "slug: lowercase letters, numbers and dashes only"),
-  title_bn: z.string().trim().min(1).max(200),
+    .regex(/^[a-z0-9-]+$/, "স্লাগে শুধুমাত্র ছোট হাতের ইংরেজি অক্ষর, সংখ্যা এবং ড্যাশ (-) ব্যবহার করা যাবে"),
+  title_bn: z.string().trim().min(1, "বাংলা শিরোনাম বাধ্যতামূলক").max(200),
   title_en: z.string().trim().max(200),
   excerpt_bn: z.string().trim().max(500),
   excerpt_en: z.string().trim().max(500),
@@ -638,7 +644,7 @@ function ArticlesAdmin() {
   const save = useMutation({
     mutationFn: async () => {
       const parsed = articleSchema.safeParse(form);
-      if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "Invalid input");
+      if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য প্রদান করুন");
       const payload = {
         ...parsed.data,
         title_en: parsed.data.title_en || null,
@@ -667,7 +673,7 @@ function ArticlesAdmin() {
       setForm({ ...EMPTY });
       setEditingId(null);
       setAuthorId("");
-      toast.success("আর্টিকেল সফলভাবে সংরক্ষিত হয়েছে");
+      toast.success("আর্টিকেল সফলভাবে সংরক্ষিত হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -680,7 +686,7 @@ function ArticlesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success("আর্টিকেল মুছে ফেলা হয়েছে");
+      toast.success("আর্টিকেল মুছে ফেলা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -724,7 +730,7 @@ function ArticlesAdmin() {
         }}
       >
         <div className="flex items-center justify-between border-b border-border/60 pb-3">
-          <h2 className="font-semibold text-base">{editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল তৈরি করুন"}</h2>
+          <h2 className="font-semibold text-base">{editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল লিখুন"}</h2>
           <div className="flex items-center gap-2 text-xs">
             <span className="text-muted-foreground">{published ? "প্রকাশিত (Published)" : "ড্রাফট (Draft)"}</span>
             <Switch checked={published} onCheckedChange={setPublished} />
@@ -739,19 +745,19 @@ function ArticlesAdmin() {
           {field("excerpt_bn", "সংক্ষিপ্ত বিবরণ (বাংলা)", true)}
           {field("excerpt_en", "সংক্ষিপ্ত বিবরণ (English)", true)}
         </div>
-        {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
-        {field("content_en", "মূল বিষয়বস্তু (English)", true)}
-        {field("cover_image_url", "কভার ইমেজ লিঙ্ক (Cover Image URL)")}
+        {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
+        {field("content_en", "মূল বিষয়বস্তু (English)", true)}
+        {field("cover_image_url", "কভার ইমেজ লিংক (Cover Image URL)")}
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="author" className="text-xs font-semibold">লেখক</Label>
+            <Label htmlFor="author" className="text-xs font-semibold">লেখক নির্বাচন</Label>
             <select
               id="author"
               value={authorId}
               onChange={(e) => setAuthorId(e.target.value)}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="">কোনো লেখক নেই</option>
+              <option value="">কোনো নির্দিষ্ট লেখক নেই</option>
               {authors.data?.map((a) => (
                 <option key={a.id} value={a.id}>
                   {a.name_bn}
@@ -760,7 +766,7 @@ function ArticlesAdmin() {
             </select>
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="article-category" className="text-xs font-semibold">ক্যাটাগরি</Label>
+            <Label htmlFor="article-category" className="text-xs font-semibold">ক্যাটাগরি নির্বাচন</Label>
             <select
               id="article-category"
               value={categoryId}
@@ -797,14 +803,14 @@ function ArticlesAdmin() {
       </form>
 
       <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">প্রকাশিত ও খসড়া আর্টিকেল তালিকা</h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {list.data?.map((a) => (
             <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
               <div className="min-w-0 flex-1">
                 <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
                 <p className="text-[11px] text-muted-foreground">
-                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? "প্রকাশিত" : "ড্রাফট"}</span>
+                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? "প্রকাশিত" : "খসড়া (Draft)"}</span>
                 </p>
               </div>
               <div className="flex items-center gap-1">
@@ -812,7 +818,7 @@ function ArticlesAdmin() {
                   variant="ghost"
                   size="icon"
                   className="h-7 w-7"
-                  aria-label="Edit"
+                  aria-label="সম্পাদনা"
                   onClick={() => {
                     setEditingId(a.id);
                     setPublished(a.published);
@@ -837,7 +843,7 @@ function ArticlesAdmin() {
                   variant="ghost"
                   size="icon"
                   className="h-7 w-7 text-destructive hover:bg-destructive/10"
-                  aria-label="Delete"
+                  aria-label="মুছে ফেলুন"
                   onClick={() => remove.mutate(a.id)}
                 >
                   <Trash2 className="size-3.5" />
@@ -855,7 +861,7 @@ const transSchema = z.object({
   surah: z.coerce.number().int().min(1).max(114),
   ayah: z.coerce.number().int().min(1).max(300),
   lang: z.enum(["bn", "en", "bn_std", "en_std"]),
-  text: z.string().trim().min(1).max(8000),
+  text: z.string().trim().min(1, "অনুবাদ টেক্সট প্রদান করুন").max(8000),
   note: z.string().trim().max(4000),
 });
 
@@ -884,7 +890,7 @@ function TranslationsAdmin() {
   const save = useMutation({
     mutationFn: async () => {
       const parsed = transSchema.safeParse({ surah, ayah, lang: lng, text, note });
-      if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "Invalid input");
+      if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য দিন");
       const { error } = await supabase.from("verse_translations").upsert(
         {
           surah: parsed.data.surah,
@@ -904,7 +910,7 @@ function TranslationsAdmin() {
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
       setText("");
       setNote("");
-      toast.success("অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
+      toast.success("অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -917,7 +923,7 @@ function TranslationsAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
-      toast.success("অনুবাদ মুছে ফেলা হয়েছে");
+      toast.success("অনুবাদ মুছে ফেলা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -945,7 +951,7 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="ayah" className="text-xs font-semibold">আয়াত নম্বর</Label>
+            <Label htmlFor="ayah" className="text-xs font-semibold">আয়াত নম্বর</Label>
             <Input
               id="ayah"
               type="number"
@@ -978,7 +984,7 @@ function TranslationsAdmin() {
             rows={4} 
             value={text} 
             onChange={(e) => setText(e.target.value)} 
-            placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
+            placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
             className="text-xs" 
           />
         </div>
@@ -1004,14 +1010,14 @@ function TranslationsAdmin() {
           {list.data?.map((v) => (
             <div key={v.id} className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors">
               <span className="rounded bg-[#2271b1]/10 px-2 py-0.5 text-[11px] font-bold text-[#2271b1]">
-                {v.surah}:{v.ayah} · {v.lang}
+                সূরা {v.surah} : আয়াত {v.ayah} · {v.lang}
               </span>
               <p className="min-w-0 flex-1 text-xs text-foreground leading-relaxed">{v.text}</p>
               <Button
                 variant="ghost"
                 size="icon"
                 className="h-7 w-7 text-destructive hover:bg-destructive/10"
-                aria-label="Delete"
+                aria-label="মুছে ফেলুন"
                 onClick={() => remove.mutate(v.id)}
               >
                 <Trash2 className="size-3.5" />
@@ -1042,7 +1048,7 @@ function SubscribersAdmin() {
   const copyToClipboard = (id: string) => {
     navigator.clipboard.writeText(id);
     setCopiedId(id);
-    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
+    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -1051,13 +1057,13 @@ function SubscribersAdmin() {
       <div>
         <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার তালিকা</h2>
         <p className="text-xs text-muted-foreground">
-          সাবস্ক্রাইবারের UUID দেখতে পাবেন এবং কপি করে এডমিন রোলে ব্যবহার করতে পারবেন।
+          সাবস্ক্রাইবারের UUID দেখতে পাবেন এবং কপি করে অ্যাডমিন রোলে ব্যবহার করতে পারবেন।
         </p>
       </div>
 
       <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
         {list.data?.length === 0 && (
-          <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
+          <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
         )}
         {list.data?.map((s) => (
           <div
@@ -1068,7 +1074,7 @@ function SubscribersAdmin() {
               <span className="font-semibold text-foreground">{s.email}</span>
               <div className="flex items-center gap-2">
                 <span className="font-mono text-[11px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
-                  UUID: {s.id}
+                  ইউজার আইডি: {s.id}
                 </span>
                 <button
                   type="button"
@@ -1077,11 +1083,11 @@ function SubscribersAdmin() {
                 >
                   {copiedId === s.id ? (
                     <>
-                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
+                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
                     </>
                   ) : (
                     <>
-                      <Copy className="size-3" /> কপি
+                      <Copy className="size-3" /> আইডি কপি
                     </>
                   )}
                 </button>
@@ -1090,7 +1096,7 @@ function SubscribersAdmin() {
 
             <div className="flex items-center gap-3">
               <span className="text-[11px] text-muted-foreground">
-                {new Date(s.created_at).toLocaleDateString("en-GB")}
+                তারিখ: {new Date(s.created_at).toLocaleDateString("en-GB")}
               </span>
             </div>
           </div>
