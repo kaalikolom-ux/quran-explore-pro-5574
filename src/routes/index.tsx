@@ -152,9 +152,8 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন: লাইভ স্মোক ও ক্লাউড অ্যানিমেশনসহ */}
+      {/* হিরো সেকশন */}
       <section className="relative overflow-hidden bg-[#111317] text-white pb-14 sm:pb-20">
-        {/* স্মোক ও ক্লাউড কী-ফ্রেম স্টাইল ইনজেকশন */}
         <style>{`
           @keyframes floatCloud1 {
             0% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
@@ -182,24 +181,12 @@ function HomePage() {
           .smoke-layer-4 { animation: floatCloud4 25s ease-in-out infinite; }
         `}</style>
 
-        {/* জীবন্ত স্মোক ও ক্লাউড কন্টেইনার (সব জ্যামিতিক উপাদান অপসারিত) */}
+        {/* স্মোক ও ক্লাউড কন্টেইনার */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden select-none">
-          {/* স্তর ১: নরম নীলচে ক্লাউড */}
-          <div
-            className="smoke-layer-1 absolute -right-24 -top-20 h-[520px] w-[520px] rounded-full bg-[#2A6F97] blur-[100px]"
-          />
-          {/* স্তর ২: উষ্ণ অ্যাম্বার গ্লো স্মোক */}
-          <div
-            className="smoke-layer-2 absolute right-[15%] top-1/4 h-[460px] w-[460px] rounded-full bg-amber-500/25 blur-[110px]"
-          />
-          {/* স্তর ৩: ডিপ মিস্ট ক্লাউড */}
-          <div
-            className="smoke-layer-3 absolute right-[30%] -bottom-16 h-[540px] w-[540px] rounded-full bg-[#1e293b] blur-[120px]"
-          />
-          {/* স্তর ৪: সফট বাম পাশের অ্যাম্বিয়েন্ট ক্লাউড */}
-          <div
-            className="smoke-layer-4 absolute left-[5%] top-10 h-[380px] w-[380px] rounded-full bg-[#2A6F97]/20 blur-[110px]"
-          />
+          <div className="smoke-layer-1 absolute -right-24 -top-20 h-[520px] w-[520px] rounded-full bg-[#2A6F97] blur-[100px]" />
+          <div className="smoke-layer-2 absolute right-[15%] top-1/4 h-[460px] w-[460px] rounded-full bg-amber-500/25 blur-[110px]" />
+          <div className="smoke-layer-3 absolute right-[30%] -bottom-16 h-[540px] w-[540px] rounded-full bg-[#1e293b] blur-[120px]" />
+          <div className="smoke-layer-4 absolute left-[5%] top-10 h-[380px] w-[380px] rounded-full bg-[#2A6F97]/20 blur-[110px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
@@ -207,12 +194,14 @@ function HomePage() {
             <Sparkles className="size-3.5 text-amber-400" /> {t("tagline")}
           </p>
 
-          <div className="mt-6 flex max-w-3xl flex-col gap-3">
+          {/* টাইটেল এবং টাইপরাইটার (উচ্চতা ও বাংলা ই-কারের জন্য পর্যাপ্ত সেপারেশন নিশ্চিত) */}
+          <div className="mt-6 max-w-3xl">
             <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
               {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
             </h1>
 
-            <div className="text-xl font-semibold leading-normal text-amber-300 sm:text-2xl md:text-3xl font-serif">
+            {/* ই-কার বা ঊর্ধ্বমাত্রার অক্ষরের জন্য স্পষ্ট প্যাডিং ও লাইন-হাইট */}
+            <div className="pt-3 sm:pt-4 text-xl font-semibold leading-[1.8] text-amber-300 sm:text-2xl md:text-3xl font-serif overflow-visible">
               <Typewriter
                 words={
                   lang === "bn"
@@ -236,7 +225,7 @@ function HomePage() {
             </div>
           </div>
 
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
           
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
