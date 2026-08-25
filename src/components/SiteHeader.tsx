@@ -19,7 +19,7 @@ import { toast } from "sonner";
 
 function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
   return (
-    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-foreground text-background shadow-sm transition-transform duration-200 group-hover:scale-105">
+    <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl bg-[#2A6F97]/15 text-[#2A6F97] border border-[#2A6F97]/25 shadow-xs transition-transform duration-200 group-hover:scale-105">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -104,14 +104,14 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur-md transition-colors">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
         
-        {/* লোগো ও ব্র্যান্ডিং (Monochrome Style) */}
-        <Link to="/" className="group flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none">
-          <QuranLogoBadge className="size-5" />
-          <div className="flex flex-col leading-none">
+        {/* লোগো ও ব্র্যান্ডিং (মোবাইলে সিঙ্গেল-লাইন ও রেসপনসিভ) */}
+        <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0 select-none">
+          <QuranLogoBadge className="size-4.5 sm:size-5" />
+          <div className="flex flex-col justify-center leading-none min-w-0">
             <span 
-              className="text-lg sm:text-xl font-bold tracking-normal text-foreground select-none"
+              className="text-base sm:text-xl font-bold tracking-tight text-[#2A6F97] whitespace-nowrap select-none"
               style={{ 
                 fontFamily: "'Kaushan Script', cursive",
                 background: "transparent"
@@ -119,13 +119,14 @@ export function SiteHeader() {
             >
               Quran Explorer
             </span>
-            <span className="text-[10px] text-muted-foreground font-normal tracking-wide mt-1">
+            {/* সাব-ট্যাগলাইন মোবাইলে হাইড থাকবে যাতে হেডার ভেঙে নিচে না নামে */}
+            <span className="hidden sm:block text-[10px] text-muted-foreground font-normal tracking-wide mt-0.5 whitespace-nowrap">
               {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
             </span>
           </div>
         </Link>
 
-        {/* সাধারণ ন্যাভিগেশন মেনু */}
+        {/* সাধারণ ন্যাভিগেশন মেনু (ডেস্কটপ) */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -147,19 +148,19 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* ডানদিকের অ্যাকশন আইকনসমূহ */}
-        <div className="flex items-center gap-1.5">
+        {/* ডানদিকের অ্যাকশন আইকনসমূহ (মোবাইল অপটিমাইজড গ্যাপ ও সাইজ) */}
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
           
           {user && (
             <Link
               to="/admin"
               title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
               aria-label="Admin Panel"
-              className={`flex size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer ${
-                currentPath.startsWith("/admin") ? "border-foreground font-bold" : ""
+              className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer ${
+                currentPath.startsWith("/admin") ? "border-[#2A6F97] text-[#2A6F97] font-bold" : ""
               }`}
             >
-              <AdminGearIcon className="size-4" />
+              <AdminGearIcon className="size-3.5 sm:size-4" />
             </Link>
           )}
 
@@ -169,18 +170,18 @@ export function SiteHeader() {
               onClick={handleLogout}
               title={lang === "bn" ? "লগআউট করুন" : "Log out"}
               aria-label="Logout"
-              className="flex size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+              className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
             >
-              <LogoutDoorIcon className="size-4" />
+              <LogoutDoorIcon className="size-3.5 sm:size-4" />
             </button>
           ) : (
             <Link
               to="/auth"
               title={lang === "bn" ? "লগইন করুন" : "Sign In"}
               aria-label="Login"
-              className="flex size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
+              className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
             >
-              <LoginDoorIcon className="size-4" />
+              <LoginDoorIcon className="size-3.5 sm:size-4" />
             </Link>
           )}
 
@@ -188,34 +189,35 @@ export function SiteHeader() {
             type="button"
             onClick={toggleLang}
             title={lang === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
-            className="flex h-8 items-center gap-1 rounded-lg border border-border bg-card px-2 text-xs font-medium text-foreground hover:bg-secondary transition-colors cursor-pointer"
+            className="flex h-7.5 sm:h-8 items-center gap-1 rounded-lg border border-border bg-card px-1.5 sm:px-2 text-xs font-medium text-foreground hover:bg-secondary transition-colors cursor-pointer"
           >
-            <Languages className="size-3.5 text-muted-foreground" />
-            <span className="uppercase font-mono text-[11px]">{lang}</span>
+            <Languages className="size-3 sm:size-3.5 text-muted-foreground" />
+            <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
           </button>
 
           <button
             type="button"
             onClick={() => updatePref("dark", !prefs.dark)}
             title={prefs.dark ? "লাইট মোড" : "ডার্ক মোড"}
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
+            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
           >
-            {prefs.dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            {prefs.dark ? <Sun className="size-3.5 sm:size-4" /> : <Moon className="size-3.5 sm:size-4" />}
           </button>
 
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground md:hidden hover:bg-secondary transition-colors cursor-pointer"
+            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground md:hidden hover:bg-secondary transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+            {mobileOpen ? <X className="size-3.5 sm:size-4" /> : <Menu className="size-3.5 sm:size-4" />}
           </button>
         </div>
       </div>
 
+      {/* মোবাইল ড্রপডাউন মেনু */}
       {mobileOpen && (
-        <div className="border-b border-border bg-card p-4 md:hidden space-y-1 animate-in slide-in-from-top duration-200">
+        <div className="border-b border-border bg-card p-4 md:hidden space-y-1 animate-in slide-in-from-top duration-200 shadow-md">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
@@ -230,7 +232,7 @@ export function SiteHeader() {
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >
-                <Icon className="size-4" />
+                <Icon className="size-4 text-[#2A6F97]" />
                 <span>{item.label}</span>
               </Link>
             );
@@ -243,7 +245,7 @@ export function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground bg-muted/40 transition-all"
               >
-                <AdminGearIcon className="size-4" />
+                <AdminGearIcon className="size-4 text-[#2A6F97]" />
                 <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
               </Link>
             )}
@@ -266,7 +268,7 @@ export function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground bg-secondary transition-all"
               >
-                <LoginDoorIcon className="size-4" />
+                <LoginDoorIcon className="size-4 text-[#2A6F97]" />
                 <span>{lang === "bn" ? "লগইন করুন" : "Login"}</span>
               </Link>
             )}
