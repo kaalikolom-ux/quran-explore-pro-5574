@@ -152,46 +152,26 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন */}
-      <section className="relative overflow-hidden bg-[#111317] text-white pb-14 sm:pb-20">
-        <style>{`
-          @keyframes floatCloud1 {
-            0% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
-            50% { transform: translate(-45px, -35px) scale(1.25); opacity: 0.6; }
-            100% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
-          }
-          @keyframes floatCloud2 {
-            0% { transform: translate(0px, 0px) scale(1.2); opacity: 0.4; }
-            50% { transform: translate(50px, 40px) scale(0.9); opacity: 0.2; }
-            100% { transform: translate(0px, 0px) scale(1.2); opacity: 0.4; }
-          }
-          @keyframes floatCloud3 {
-            0% { transform: translate(0px, 0px) scale(0.85); opacity: 0.25; }
-            50% { transform: translate(-30px, 40px) scale(1.3); opacity: 0.5; }
-            100% { transform: translate(0px, 0px) scale(0.85); opacity: 0.25; }
-          }
-          @keyframes floatCloud4 {
-            0% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
-            50% { transform: translate(35px, -30px) scale(1.15); opacity: 0.45; }
-            100% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
-          }
-          .smoke-layer-1 { animation: floatCloud1 16s ease-in-out infinite; }
-          .smoke-layer-2 { animation: floatCloud2 22s ease-in-out infinite; }
-          .smoke-layer-3 { animation: floatCloud3 19s ease-in-out infinite; }
-          .smoke-layer-4 { animation: floatCloud4 25s ease-in-out infinite; }
-        `}</style>
+      {/* হিরো সেকশন: স্লেট ব্লু প্যাটার্ন টেক্সচার এবং মসৃণ নিচের গ্র্যাডিয়েন্ট জয়েন্টসহ */}
+      <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24">
+        {/* SVG ডার্ক স্লেট ওয়াটার স্প্ল্যাশ / রেইনড্রপ প্যাটার্ন লেয়ার */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%230b141d' fill-opacity='0.95'%3E%3Ccircle cx='20' cy='30' r='3.5'/%3E%3Ccircle cx='28' cy='45' r='1.5'/%3E%3Ccircle cx='85' cy='25' r='4'/%3E%3Ccircle cx='130' cy='60' r='2.5'/%3E%3Ccircle cx='70' cy='115' r='3.5'/%3E%3Ccircle cx='140' cy='135' r='2'/%3E%3Ccircle cx='45' cy='90' r='2'/%3E%3Ccircle cx='105' cy='85' r='3'/%3E%3Cpath d='M10 70 Q 25 65, 40 75 Q 30 85, 10 70 Z'/%3E%3Cpath d='M95 130 Q 115 120, 135 132 Q 118 145, 95 130 Z'/%3E%3Cpath d='M110 35 Q 130 28, 145 40 Q 130 48, 110 35 Z'/%3E%3Cpath d='M50 140 Q 65 130, 80 145 Q 60 155, 50 140 Z'/%3E%3Cpath d='M65 45 Q 75 40, 82 48 Q 72 55, 65 45 Z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat",
+          }}
+        />
 
-        {/* স্মোক ও ক্লাউড কন্টেইনার */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden select-none">
-          <div className="smoke-layer-1 absolute -right-24 -top-20 h-[520px] w-[520px] rounded-full bg-[#2A6F97] blur-[100px]" />
-          <div className="smoke-layer-2 absolute right-[15%] top-1/4 h-[460px] w-[460px] rounded-full bg-amber-500/25 blur-[110px]" />
-          <div className="smoke-layer-3 absolute right-[30%] -bottom-16 h-[540px] w-[540px] rounded-full bg-[#1e293b] blur-[120px]" />
-          <div className="smoke-layer-4 absolute left-[5%] top-10 h-[380px] w-[380px] rounded-full bg-[#2A6F97]/20 blur-[110px]" />
+        {/* ডিপ ব্লু ও সায়ান সফট অ্যাম্বিয়েন্ট গ্লো */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-[#2A6F97]/30 blur-[100px]" />
+          <div className="absolute left-[-10%] top-1/4 h-[400px] w-[400px] rounded-full bg-[#1b3a4b]/40 blur-[100px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-sm shadow-xs">
-            <Sparkles className="size-3.5 text-[#2A6F97] dark:text-[#4a90e2]" /> {t("tagline")}
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
+            <Sparkles className="size-3.5 text-[#60a5fa]" /> {t("tagline")}
           </p>
 
           <div className="mt-6 max-w-3xl">
@@ -233,7 +213,7 @@ function HomePage() {
               className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
-                <BookOpen className="size-4 mr-2 text-[#2A6F97] dark:text-[#4a90e2]" /> {t("readQuran")}
+                <BookOpen className="size-4 mr-2 text-[#60a5fa]" /> {t("readQuran")}
               </Link>
             </Button>
             <Button
@@ -243,7 +223,7 @@ function HomePage() {
               className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/articles">
-                <FileText className="size-4 mr-2 text-[#2A6F97] dark:text-[#4a90e2]" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
+                <FileText className="size-4 mr-2 text-[#60a5fa]" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
               </Link>
             </Button>
             <Button
@@ -253,14 +233,14 @@ function HomePage() {
               className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/settings">
-                <Settings className="size-4 mr-2 text-[#2A6F97] dark:text-[#4a90e2]" /> {lang === "bn" ? "সেটিংস" : "Settings"}
+                <Settings className="size-4 mr-2 text-[#60a5fa]" /> {lang === "bn" ? "সেটিংস" : "Settings"}
               </Link>
             </Button>
           </div>
         </div>
 
-        {/* গ্রেডিয়েন্ট শেইড ডিভাইডার */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-b from-transparent to-[var(--background)]" />
+        {/* নিচের সেকশনের সাথে মসৃণ গ্র্যাডিয়েন্ট জয়েন্ট */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
       {/* সুরা তালিকা */}
