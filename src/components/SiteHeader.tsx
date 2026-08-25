@@ -17,6 +17,25 @@ import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
+function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
+  return (
+    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#F5A623] to-[#D97706] text-[#12151E] shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+      >
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+      </svg>
+    </div>
+  );
+}
+
 function AdminGearIcon({ className = "size-4.5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -87,11 +106,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b border-border/80 bg-background/95 backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         
-        {/* লোগো ও ব্র্যান্ডিং */}
-        <Link to="/" className="group flex items-center gap-2 transition-opacity hover:opacity-90">
+        {/* লোগো ও ব্র্যান্ডিং (Golden Amber SVG + Kaushan Script) */}
+        <Link to="/" className="group flex items-center gap-2.5 transition-opacity hover:opacity-95 select-none">
+          <QuranLogoBadge className="size-5" />
           <div className="flex flex-col leading-none">
             <span 
-              className="text-lg sm:text-xl font-bold tracking-normal text-foreground select-none"
+              className="text-lg sm:text-xl font-bold tracking-normal text-[#F5A623] drop-shadow-sm select-none"
               style={{ 
                 fontFamily: "'Kaushan Script', cursive",
                 background: "transparent"
@@ -99,7 +119,7 @@ export function SiteHeader() {
             >
               Quran Explorer
             </span>
-            <span className="text-[10px] text-muted-foreground font-normal tracking-wide mt-0.5">
+            <span className="text-[10px] text-muted-foreground font-normal tracking-wide mt-1">
               {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
             </span>
           </div>
