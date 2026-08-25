@@ -100,7 +100,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-card text-card-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
         
-        {/* ১. পরিচিতি ও সোশ্যাল (Monochrome Style) */}
+        {/* ১. পরিচিতি ও সোশ্যাল */}
         <div>
           <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none">
             <QuranLogoBadge />
@@ -147,7 +147,7 @@ export function SiteFooter() {
           </Link>
         </nav>
 
-        {/* ৩. নিউজলেটার সাবস্ক্রিপশন ও কপিরাইট */}
+        {/* ৩. নিউজলেটার সাবস্ক্রিপশন ও কপিরাইট ক্রেডিট */}
         <div className="space-y-4 text-sm text-muted-foreground">
           <div>
             <p className="font-semibold text-foreground">
@@ -185,15 +185,20 @@ export function SiteFooter() {
             </form>
           )}
 
+          {/* কপিরাইট ও Upwork প্রোফাইল লিংক */}
           <div className="pt-2 text-xs text-muted-foreground border-t border-border">
             <p>
               © {new Date().getFullYear()}{" "}
-              <span 
+              <a 
+                href="https://www.upwork.com/freelancers/~01e6f18d96f1c7294f"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ fontFamily: "'Kaushan Script', cursive" }}
-                className="text-foreground font-bold text-sm"
+                className="text-foreground font-bold text-sm hover:underline transition-all inline-block"
+                title="Developer Upwork Profile"
               >
                 Quran Explorer
-              </span>{" "}
+              </a>{" "}
               — {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}
             </p>
           </div>
