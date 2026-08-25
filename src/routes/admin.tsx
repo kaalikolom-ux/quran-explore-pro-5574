@@ -35,6 +35,8 @@ import {
   LogOut,
   User as UserIcon,
   ChevronRight,
+  Code2,
+  Eye,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -64,7 +66,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
       { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
@@ -74,7 +76,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* RICH TEXT EDITOR COMPONENT                                                 */
+/* DUAL-MODE (VISUAL + HTML) RICH TEXT EDITOR COMPONENT                       */
 /* ========================================================================== */
 function RichTextEditor({
   value,
@@ -83,6 +85,8 @@ function RichTextEditor({
   value: string;
   onChange: (val: string) => void;
 }) {
+  const [isHtmlMode, setIsHtmlMode] = useState(false);
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -98,129 +102,179 @@ function RichTextEditor({
   });
 
   useEffect(() => {
-    if (editor && editor.getHTML() !== value) {
+    if (editor && !isHtmlMode && editor.getHTML() !== value) {
       editor.commands.setContent(value || "");
     }
-  }, [value, editor]);
-
-  if (!editor) return null;
+  }, [value, editor, isHtmlMode]);
 
   return (
-    <div className="rounded border border-input bg-background">
-      <div className="flex flex-wrap items-center gap-1 border-b border-border bg-muted/40 p-1.5">
+    <div className="rounded border border-input bg-background overflow-hidden">
+      <div className="flex flex-wrap items-center justify-between gap-1 border-b border-border bg-muted/40 p-1.5">
+        <div className="flex flex-wrap items-center gap-1">
+          {!isHtmlMode && editor ? (
+            <>
+              <Button
+                type="button"
+                variant={editor.isActive("bold") ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleBold().run()}
+                title="বোল্ড"
+              >
+                <Bold className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant={editor.isActive("italic") ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleItalic().run()}
+                title="ইটালিক"
+              >
+                <Italic className="size-4" />
+              </Button>
+              <div className="h-4 w-px bg-border mx-1" />
+              <Button
+                type="button"
+                variant={editor.isActive("heading", { level: 1 }) ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+                title="হেডিং ১"
+              >
+                <Heading1 className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant={editor.isActive("heading", { level: 2 }) ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                title="হেডিং ২"
+              >
+                <Heading2 className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant={editor.isActive("heading", { level: 3 }) ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+                title="হেডিং ৩"
+              >
+                <Heading3 className="size-4" />
+              </Button>
+              <div className="h-4 w-px bg-border mx-1" />
+              <Button
+                type="button"
+                variant={editor.isActive("bulletList") ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleBulletList().run()}
+                title="বুলেট তালিকা"
+              >
+                <List className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant={editor.isActive("orderedList") ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                title="সংখ্যানুক্রমিক তালিকা"
+              >
+                <ListOrdered className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant={editor.isActive("blockquote") ? "secondary" : "ghost"}
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().toggleBlockquote().run()}
+                title="উদ্ধৃতি"
+              >
+                <Quote className="size-4" />
+              </Button>
+              <div className="h-4 w-px bg-border mx-1" />
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().undo().run()}
+                disabled={!editor.can().undo()}
+                title="পূর্বাবস্থায় ফেরান"
+              >
+                <Undo className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="h-8 w-8 p-0"
+                onClick={() => editor.chain().focus().redo().run()}
+                disabled={!editor.can().redo()}
+                title="পুনরায় করুন"
+              >
+                <Redo className="size-4" />
+              </Button>
+            </>
+          ) : (
+            <span className="text-[11px] font-mono text-muted-foreground px-2 py-1">
+              &lt;HTML Code Editor Mode&gt;
+            </span>
+          )}
+        </div>
+
+        {/* HTML / Visual Toggle Button */}
         <Button
           type="button"
-          variant={editor.isActive("bold") ? "secondary" : "ghost"}
           size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleBold().run()}
-          title="বোল্ড"
+          variant="outline"
+          onClick={() => {
+            const nextMode = !isHtmlMode;
+            setIsHtmlMode(nextMode);
+            if (!nextMode && editor) {
+              editor.commands.setContent(value || "");
+            }
+          }}
+          className={`h-7 px-2.5 text-[11px] gap-1.5 transition-all ${
+            isHtmlMode
+              ? "bg-[#2271b1]/15 text-[#2271b1] border-[#2271b1]/40 font-semibold"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+          title={isHtmlMode ? "ভিজ্যুয়াল এডিটরে ফিরুন" : "সরাসরি HTML কোড সম্পাদনা করুন"}
         >
-          <Bold className="size-4" />
-        </Button>
-        <Button
-          type="button"
-          variant={editor.isActive("italic") ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleItalic().run()}
-          title="ইটালিক"
-        >
-          <Italic className="size-4" />
-        </Button>
-        <div className="h-4 w-px bg-border mx-1" />
-        <Button
-          type="button"
-          variant={editor.isActive("heading", { level: 1 }) ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          title="হেডিং ১"
-        >
-          <Heading1 className="size-4" />
-        </Button>
-        <Button
-          type="button"
-          variant={editor.isActive("heading", { level: 2 }) ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          title="হেডিং ২"
-        >
-          <Heading2 className="size-4" />
-        </Button>
-        <Button
-          type="button"
-          variant={editor.isActive("heading", { level: 3 }) ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          title="হেডিং ৩"
-        >
-          <Heading3 className="size-4" />
-        </Button>
-        <div className="h-4 w-px bg-border mx-1" />
-        <Button
-          type="button"
-          variant={editor.isActive("bulletList") ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleBulletList().run()}
-          title="বুলেট তালিকা"
-        >
-          <List className="size-4" />
-        </Button>
-        <Button
-          type="button"
-          variant={editor.isActive("orderedList") ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          title="সংখ্যানুক্রমিক তালিকা"
-        >
-          <ListOrdered className="size-4" />
-        </Button>
-        <Button
-          type="button"
-          variant={editor.isActive("blockquote") ? "secondary" : "ghost"}
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          title="উদ্ধৃতি"
-        >
-          <Quote className="size-4" />
-        </Button>
-        <div className="h-4 w-px bg-border mx-1" />
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().undo().run()}
-          disabled={!editor.can().undo()}
-          title="পূর্বাবস্থায় ফেরান"
-        >
-          <Undo className="size-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => editor.chain().focus().redo().run()}
-          disabled={!editor.can().redo()}
-          title="পুনরায় করুন"
-        >
-          <Redo className="size-4" />
+          {isHtmlMode ? (
+            <>
+              <Eye className="size-3.5" />
+              <span>ভিজ্যুয়াল এডিটর</span>
+            </>
+          ) : (
+            <>
+              <Code2 className="size-3.5" />
+              <span>HTML কোড এডিটর</span>
+            </>
+          )}
         </Button>
       </div>
 
-      <div className="p-4">
-        <EditorContent
-          editor={editor}
-          className="prose prose-sm dark:prose-invert max-w-none min-h-[220px] focus:outline-none [&_.tiptap]:focus:outline-none"
+      {isHtmlMode ? (
+        <textarea
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="<p>এখানে সরাসরি HTML কোড লিখুন বা পেস্ট করুন...</p>"
+          rows={10}
+          className="w-full bg-background p-4 font-mono text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none leading-relaxed resize-y border-none"
         />
-      </div>
+      ) : (
+        <div className="p-4">
+          <EditorContent
+            editor={editor}
+            className="prose prose-sm dark:prose-invert max-w-none min-h-[220px] focus:outline-none [&_.tiptap]:focus:outline-none"
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -238,13 +292,13 @@ function AdminPage() {
       group: "মূল কনটেন্ট মেনু",
       items: [
         { value: "articles", label: "আর্টিকেল ও প্রবন্ধ", icon: FileText },
-        { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
+        { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
         { value: "posts", label: "লেখক ও গবেষকবৃন্দ", icon: Users },
-        { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
+        { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
       ],
     },
     {
-      group: "ওয়েবসাইট ও পেজ লেআউট",
+      group: "ওয়েবসাইট ও পেজ লেআউট",
       items: [
         { value: "pages", label: "স্থির পেজসমূহ (Pages)", icon: LayoutGrid },
         { value: "menu", label: "হেডার ও নেভিগেশন মেনু", icon: MenuIcon },
@@ -256,7 +310,7 @@ function AdminPage() {
       group: "সিস্টেম ও সিকিউরিটি কনফিগারেশন",
       items: [
         { value: "roles", label: "অ্যাডমিন ও ইউজার রোল", icon: Shield },
-        { value: "social", label: "সোশ্যাল মিডিয়া প্রোফাইল লিংক", icon: Share2 },
+        { value: "social", label: "সোশ্যাল মিডিয়া প্রোফাইল লিংক", icon: Share2 },
         { value: "turnstile", label: "টার্নস্টাইল সিকিউরিটি কী", icon: KeyRound },
         { value: "offline", label: "অফলাইন ডেটা সিঙ্ক ও ক্যাশ", icon: RefreshCw },
       ],
@@ -303,7 +357,7 @@ function AdminPage() {
             target="_blank"
             className="hidden items-center gap-1 hover:text-[#72aee6] transition-colors sm:inline-flex text-[11px]"
           >
-            <span>ওয়েবসাইট ভিজিট করুন</span>
+            <span>ওয়েবসাইট ভিজিট করুন</span>
             <ExternalLink className="size-3" />
           </Link>
         </div>
@@ -405,7 +459,7 @@ function AdminPage() {
                   {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "ড্যাশবোর্ড"}
                 </h1>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
+                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
                 </p>
               </div>
             </div>
@@ -493,7 +547,7 @@ function RolesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
       setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -505,7 +559,7 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল মুছে ফেলা হয়েছে");
+      toast.success("রোল মুছে ফেলা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -645,11 +699,21 @@ function ArticlesAdmin() {
     mutationFn: async () => {
       const parsed = articleSchema.safeParse(form);
       if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য প্রদান করুন");
+
+      // Auto generate excerpts if empty
+      const autoExcerptBn = parsed.data.excerpt_bn
+        ? parsed.data.excerpt_bn
+        : parsed.data.content_bn.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim();
+
+      const autoExcerptEn = parsed.data.excerpt_en
+        ? parsed.data.excerpt_en
+        : parsed.data.content_en ? parsed.data.content_en.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim() : null;
+
       const payload = {
         ...parsed.data,
         title_en: parsed.data.title_en || null,
-        excerpt_bn: parsed.data.excerpt_bn || null,
-        excerpt_en: parsed.data.excerpt_en || null,
+        excerpt_bn: autoExcerptBn || null,
+        excerpt_en: autoExcerptEn || null,
         content_bn: parsed.data.content_bn || null,
         content_en: parsed.data.content_en || null,
         cover_image_url: parsed.data.cover_image_url || null,
@@ -659,6 +723,7 @@ function ArticlesAdmin() {
         published_at: published ? new Date().toISOString() : null,
         created_by: user!.id,
       };
+
       if (editingId) {
         const { error } = await supabase.from("articles").update(payload).eq("id", editingId);
         if (error) throw error;
@@ -673,7 +738,7 @@ function ArticlesAdmin() {
       setForm({ ...EMPTY });
       setEditingId(null);
       setAuthorId("");
-      toast.success("আর্টিকেল সফলভাবে সংরক্ষিত হয়েছে");
+      toast.success("আর্টিকেল সফলভাবে সংরক্ষিত হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -686,7 +751,7 @@ function ArticlesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success("আর্টিকেল মুছে ফেলা হয়েছে");
+      toast.success("আর্টিকেল মুছে ফেলা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -698,7 +763,7 @@ function ArticlesAdmin() {
         key.startsWith("content") ? (
           <RichTextEditor
             value={form[key]}
-            onChange={(val) => setForm({ ...form, [key]: val })}
+            onChange={(val) => setForm((prev) => ({ ...prev, [key]: val }))}
           />
         ) : (
           <Textarea
@@ -745,8 +810,8 @@ function ArticlesAdmin() {
           {field("excerpt_bn", "সংক্ষিপ্ত বিবরণ (বাংলা)", true)}
           {field("excerpt_en", "সংক্ষিপ্ত বিবরণ (English)", true)}
         </div>
-        {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
-        {field("content_en", "মূল বিষয়বস্তু (English)", true)}
+        {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
+        {field("content_en", "মূল বিষয়বস্তু (English)", true)}
         {field("cover_image_url", "কভার ইমেজ লিংক (Cover Image URL)")}
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
@@ -803,14 +868,14 @@ function ArticlesAdmin() {
       </form>
 
       <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">প্রকাশিত ও খসড়া আর্টিকেল তালিকা</h3>
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">প্রকাশিত ও খসড়া আর্টিকেল তালিকা</h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {list.data?.map((a) => (
             <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
               <div className="min-w-0 flex-1">
                 <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
                 <p className="text-[11px] text-muted-foreground">
-                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? "প্রকাশিত" : "খসড়া (Draft)"}</span>
+                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? "প্রকাশিত" : "খসড়া (Draft)"}</span>
                 </p>
               </div>
               <div className="flex items-center gap-1">
@@ -910,7 +975,7 @@ function TranslationsAdmin() {
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
       setText("");
       setNote("");
-      toast.success("অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
+      toast.success("অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -923,7 +988,7 @@ function TranslationsAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
-      toast.success("অনুবাদ মুছে ফেলা হয়েছে");
+      toast.success("অনুবাদ মুছে ফেলা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -951,7 +1016,7 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="ayah" className="text-xs font-semibold">আয়াত নম্বর</Label>
+            <Label htmlFor="ayah" className="text-xs font-semibold">আয়াত নম্বর</Label>
             <Input
               id="ayah"
               type="number"
@@ -984,7 +1049,7 @@ function TranslationsAdmin() {
             rows={4} 
             value={text} 
             onChange={(e) => setText(e.target.value)} 
-            placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
+            placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
             className="text-xs" 
           />
         </div>
@@ -1010,7 +1075,7 @@ function TranslationsAdmin() {
           {list.data?.map((v) => (
             <div key={v.id} className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors">
               <span className="rounded bg-[#2271b1]/10 px-2 py-0.5 text-[11px] font-bold text-[#2271b1]">
-                সূরা {v.surah} : আয়াত {v.ayah} · {v.lang}
+                সূরা {v.surah} : আয়াত {v.ayah} · {v.lang}
               </span>
               <p className="min-w-0 flex-1 text-xs text-foreground leading-relaxed">{v.text}</p>
               <Button
@@ -1048,7 +1113,7 @@ function SubscribersAdmin() {
   const copyToClipboard = (id: string) => {
     navigator.clipboard.writeText(id);
     setCopiedId(id);
-    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
+    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -1063,7 +1128,7 @@ function SubscribersAdmin() {
 
       <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
         {list.data?.length === 0 && (
-          <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
+          <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
         )}
         {list.data?.map((s) => (
           <div
@@ -1083,7 +1148,7 @@ function SubscribersAdmin() {
                 >
                   {copiedId === s.id ? (
                     <>
-                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
+                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
                     </>
                   ) : (
                     <>
