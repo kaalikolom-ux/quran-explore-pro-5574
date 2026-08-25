@@ -19,7 +19,6 @@ export const Route = createFileRoute("/")({
         content:
           "আরবি, শব্দে শব্দে অর্থ, বাংলা (তাইসিরুল কুরআন) ও ইংরেজি (Pickthall) অনুবাদ এবং বিজ্ঞানভিত্তিক অনুবাদসহ কুরআন পড়ুন। বুকমার্ক ও আর্টিকেল সুবিধা।",
       },
-      // Open Graph / Facebook / WhatsApp
       { property: "og:type", content: "website" },
       { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
@@ -30,7 +29,6 @@ export const Route = createFileRoute("/")({
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
 
-      // Twitter Card
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
@@ -154,22 +152,54 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন */}
-      <section className="hero-surface relative overflow-hidden text-white pb-12 sm:pb-16">
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-amber-500/10 blur-3xl" />
-          
-          <div className="relative right-[-5%] lg:right-[6%] flex items-center justify-center opacity-70 lg:opacity-90 scale-90 sm:scale-100 lg:scale-110">
-            <div className="absolute h-[480px] w-[480px] rounded-full border border-white/5" />
-            <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-white/10" />
-            <div className="absolute h-[290px] w-[290px] rounded-full border border-white/10" />
+      {/* হিরো সেকশন: লাইভ স্মোক ও ক্লাউড অ্যানিমেশনসহ */}
+      <section className="relative overflow-hidden bg-[#111317] text-white pb-14 sm:pb-20">
+        {/* স্মোক ও ক্লাউড কী-ফ্রেম স্টাইল ইনজেকশন */}
+        <style>{`
+          @keyframes floatCloud1 {
+            0% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+            50% { transform: translate(-45px, -35px) scale(1.25); opacity: 0.6; }
+            100% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+          }
+          @keyframes floatCloud2 {
+            0% { transform: translate(0px, 0px) scale(1.2); opacity: 0.4; }
+            50% { transform: translate(50px, 40px) scale(0.9); opacity: 0.2; }
+            100% { transform: translate(0px, 0px) scale(1.2); opacity: 0.4; }
+          }
+          @keyframes floatCloud3 {
+            0% { transform: translate(0px, 0px) scale(0.85); opacity: 0.25; }
+            50% { transform: translate(-30px, 40px) scale(1.3); opacity: 0.5; }
+            100% { transform: translate(0px, 0px) scale(0.85); opacity: 0.25; }
+          }
+          @keyframes floatCloud4 {
+            0% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+            50% { transform: translate(35px, -30px) scale(1.15); opacity: 0.45; }
+            100% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+          }
+          .smoke-layer-1 { animation: floatCloud1 16s ease-in-out infinite; }
+          .smoke-layer-2 { animation: floatCloud2 22s ease-in-out infinite; }
+          .smoke-layer-3 { animation: floatCloud3 19s ease-in-out infinite; }
+          .smoke-layer-4 { animation: floatCloud4 25s ease-in-out infinite; }
+        `}</style>
 
-            <div className="relative flex items-center justify-center">
-              <div className="absolute h-40 w-40 rounded-sm border border-amber-400/40 bg-amber-400/[0.03] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-6" />
-              <div className="absolute h-40 w-40 rotate-45 rounded-sm border border-amber-400/40 bg-amber-400/[0.03] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-[51deg]" />
-              <div className="relative z-10 h-6 w-6 rounded-full bg-amber-400/80 shadow-[0_0_25px_8px_rgba(251,191,36,0.4)]" />
-            </div>
-          </div>
+        {/* জীবন্ত স্মোক ও ক্লাউড কন্টেইনার (সব জ্যামিতিক উপাদান অপসারিত) */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden select-none">
+          {/* স্তর ১: নরম নীলচে ক্লাউড */}
+          <div
+            className="smoke-layer-1 absolute -right-24 -top-20 h-[520px] w-[520px] rounded-full bg-[#2A6F97] blur-[100px]"
+          />
+          {/* স্তর ২: উষ্ণ অ্যাম্বার গ্লো স্মোক */}
+          <div
+            className="smoke-layer-2 absolute right-[15%] top-1/4 h-[460px] w-[460px] rounded-full bg-amber-500/25 blur-[110px]"
+          />
+          {/* স্তর ৩: ডিপ মিস্ট ক্লাউড */}
+          <div
+            className="smoke-layer-3 absolute right-[30%] -bottom-16 h-[540px] w-[540px] rounded-full bg-[#1e293b] blur-[120px]"
+          />
+          {/* স্তর ৪: সফট বাম পাশের অ্যাম্বিয়েন্ট ক্লাউড */}
+          <div
+            className="smoke-layer-4 absolute left-[5%] top-10 h-[380px] w-[380px] rounded-full bg-[#2A6F97]/20 blur-[110px]"
+          />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
@@ -242,7 +272,7 @@ function HomePage() {
           </div>
         </div>
 
-        {/* গ্রেডিয়েন্ট শেইড ডিভাইডার (হিরো থেকে পরবর্তী সেকশনে মসৃণ ট্রানজিশন) */}
+        {/* গ্রেডিয়েন্ট শেইড ডিভাইডার */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-b from-transparent to-[var(--background)]" />
       </section>
 
