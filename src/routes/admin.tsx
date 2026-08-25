@@ -21,6 +21,20 @@ import {
   LayoutGrid,
   Copy,
   Check,
+  FileText,
+  Languages,
+  Users,
+  FolderTree,
+  Menu as MenuIcon,
+  Globe,
+  Share2,
+  KeyRound,
+  Mail,
+  RefreshCw,
+  ExternalLink,
+  LogOut,
+  User as UserIcon,
+  ChevronRight,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -51,7 +65,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
       { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
@@ -93,9 +107,9 @@ function RichTextEditor({
   if (!editor) return null;
 
   return (
-    <div className="rounded-md border border-input bg-background">
+    <div className="rounded border border-input bg-background">
       {/* Editor Toolbar */}
-      <div className="flex flex-wrap items-center gap-1 border-b border-border bg-muted/40 p-2">
+      <div className="flex flex-wrap items-center gap-1 border-b border-border bg-muted/40 p-1.5">
         <Button
           type="button"
           variant={editor.isActive("bold") ? "secondary" : "ghost"}
@@ -207,134 +221,244 @@ function RichTextEditor({
       <div className="p-4">
         <EditorContent
           editor={editor}
-          className="prose prose-sm dark:prose-invert max-w-none min-h-[200px] focus:outline-none [&_.tiptap]:focus:outline-none"
+          className="prose prose-sm dark:prose-invert max-w-none min-h-[220px] focus:outline-none [&_.tiptap]:focus:outline-none"
         />
       </div>
     </div>
   );
 }
 
+/* ========================================================================== */
+/* MAIN WORDPRESS-STYLE ADMIN PAGE                                           */
+/* ========================================================================== */
 function AdminPage() {
   const { t } = usePrefs();
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
   const [activeTab, setActiveTab] = useState("articles");
 
-  const tabOptions = [
-    { value: "articles", label: t("articles") },
-    { value: "translations", label: t("translationsTab") },
-    { value: "posts", label: t("postSettings") },
-    { value: "categories", label: t("categoriesTab") },
-    { value: "roles", label: "অ্যাডমিন বা ইউজার রোল" },
-    { value: "menu", label: t("menuTab") },
-    { value: "pages", label: t("pagesTab") },
-    { value: "social", label: t("socialTab") },
-    { value: "turnstile", label: t("turnstileTab") },
-    { value: "messages", label: t("messagesTab") },
-    { value: "offline", label: t("offlineTab") },
-    { value: "subs", label: t("subscribersTab") },
+  const menuSections = [
+    {
+      group: "মূল মেনু",
+      items: [
+        { value: "articles", label: t("articles") || "আর্টিকেলসমূহ", icon: FileText },
+        { value: "translations", label: t("translationsTab") || "কুরআন অনুবাদ", icon: Languages },
+        { value: "posts", label: t("postSettings") || "লেখকবৃন্দ (Authors)", icon: Users },
+        { value: "categories", label: t("categoriesTab") || "ক্যাটাগরি", icon: FolderTree },
+      ],
+    },
+    {
+      group: "ওয়েবসাইট উপাদান",
+      items: [
+        { value: "pages", label: t("pagesTab") || "পেইজসমূহ", icon: LayoutGrid },
+        { value: "menu", label: t("menuTab") || "নেভিগেশন মেনু", icon: MenuIcon },
+        { value: "messages", label: t("messagesTab") || "বার্তা / ফিডব্যাক", icon: Mail },
+        { value: "subs", label: t("subscribersTab") || "সাবস্ক্রাইবার", icon: Users },
+      ],
+    },
+    {
+      group: "সিস্টেম ও রোল",
+      items: [
+        { value: "roles", label: "অ্যাডমিন ও ইউজার রোল", icon: Shield },
+        { value: "social", label: t("socialTab") || "সোশ্যাল মিডিয়া লিংক", icon: Share2 },
+        { value: "turnstile", label: t("turnstileTab") || "সিকিউরিটি / Turnstile", icon: KeyRound },
+        { value: "offline", label: t("offlineTab") || "অফলাইন সিঙ্ক", icon: RefreshCw },
+      ],
+    },
   ];
 
   if (loading || (user && roleLoading)) {
-    return <p className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground">{t("loading")}</p>;
-  }
-
-  if (!user) {
     return (
-      <div className="mx-auto max-w-md px-4 py-20 text-center">
-        <p className="text-sm text-muted-foreground">{t("adminOnly")}</p>
-        <Button asChild className="mt-4">
-          <Link to="/auth">{t("signIn")}</Link>
-        </Button>
+      <div className="flex h-screen items-center justify-center bg-[#1d2327]">
+        <p className="text-sm font-medium text-slate-300">ড্যাশবোর্ড লোড হচ্ছে...</p>
       </div>
     );
   }
 
-  if (!isAdmin) {
+  if (!user || !isAdmin) {
     return (
-      <div className="mx-auto max-w-md px-4 py-20 text-center">
-        <p className="text-sm text-muted-foreground">{t("adminOnly")}</p>
+      <div className="flex min-h-screen flex-col items-center justify-center bg-muted/20 px-4">
+        <div className="w-full max-w-sm rounded border bg-card p-6 text-center shadow-sm">
+          <Shield className="mx-auto mb-3 size-10 text-muted-foreground/60" />
+          <h2 className="text-lg font-semibold">অ্যাডমিন প্রবেশাধিকার সংরক্ষিত</h2>
+          <p className="mt-1 text-xs text-muted-foreground">{t("adminOnly")}</p>
+          <Button asChild className="mt-5 w-full">
+            <Link to="/auth">{t("signIn")}</Link>
+          </Button>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-12">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border/60 pb-6">
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight">{t("dashboard")}</h1>
-          <p className="text-xs text-muted-foreground mt-1">
-            কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল
-          </p>
+    <div className="flex min-h-screen flex-col bg-[#f0f0f1] text-[#2c3338] dark:bg-[#121212] dark:text-[#f0f0f1]">
+      {/* 1. WordPress Top Admin Bar */}
+      <header className="sticky top-0 z-50 flex h-8 w-full items-center justify-between bg-[#1d2327] px-3 text-[#c3c4c7] select-none text-xs border-b border-[#2c3338]">
+        <div className="flex items-center gap-4">
+          <Link
+            to="/"
+            className="flex items-center gap-1.5 font-semibold text-white hover:text-[#72aee6] transition-colors"
+          >
+            <Globe className="size-3.5 text-[#2271b1]" />
+            <span>কুরআন অন্বেষা</span>
+          </Link>
+          <Link
+            to="/"
+            target="_blank"
+            className="hidden items-center gap-1 hover:text-[#72aee6] transition-colors sm:inline-flex text-[11px]"
+          >
+            <span>ওয়েবসাইট ভিজিট করুন</span>
+            <ExternalLink className="size-3" />
+          </Link>
         </div>
 
-        {/* সার্বজনীন ড্রপডাউন মেনু */}
-        <div className="w-full sm:w-72">
-          <div className="relative">
-            <LayoutGrid className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-primary pointer-events-none" />
-            <select
-              value={activeTab}
-              onChange={(e) => setActiveTab(e.target.value)}
-              className="w-full h-11 appearance-none rounded-xl border border-border/80 bg-card pl-10 pr-9 text-sm font-semibold shadow-sm transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
-            >
-              {tabOptions.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-background text-foreground py-2">
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-            <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground text-xs font-mono">
-              ▼
+        <div className="flex items-center gap-4 text-[11px]">
+          <span className="hidden items-center gap-1.5 md:inline-flex">
+            <UserIcon className="size-3" /> {user.email}
+          </span>
+          <button
+            onClick={() => supabase.auth.signOut()}
+            className="flex items-center gap-1 hover:text-red-400 transition-colors"
+            title="লগআউট"
+          >
+            <LogOut className="size-3" />
+            <span>লগআউট</span>
+          </button>
+        </div>
+      </header>
+
+      {/* 2. Main Admin Layout Area */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* WordPress Style Left Sidebar */}
+        <aside className="w-56 shrink-0 bg-[#1d2327] text-[#c3c4c7] flex flex-col justify-between hidden md:flex border-r border-[#2c3338]">
+          <div className="py-2">
+            {menuSections.map((section, idx) => (
+              <div key={idx} className="mb-3">
+                <div className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#8c8f94]">
+                  {section.group}
+                </div>
+                <ul>
+                  {section.items.map((item) => {
+                    const Icon = item.icon;
+                    const isActive = activeTab === item.value;
+                    return (
+                      <li key={item.value}>
+                        <button
+                          type="button"
+                          onClick={() => setActiveTab(item.value)}
+                          className={`group flex w-full items-center justify-between px-4 py-2 text-left text-xs font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#2271b1] text-white shadow-inner font-semibold"
+                              : "hover:bg-[#2c3338] hover:text-[#72aee6]"
+                          }`}
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <Icon className={`size-4 ${isActive ? "text-white" : "text-[#8c8f94] group-hover:text-[#72aee6]"}`} />
+                            <span>{item.label}</span>
+                          </div>
+                          {isActive && <ChevronRight className="size-3.5 opacity-80" />}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-t border-[#2c3338] p-3 text-[11px] text-[#8c8f94] text-center">
+            WP Admin Panel Mode
+          </div>
+        </aside>
+
+        {/* Admin Content Area */}
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+          <div className="mx-auto max-w-5xl">
+            {/* Mobile Navigation Dropdown */}
+            <div className="mb-4 block md:hidden">
+              <label htmlFor="mobile-admin-tab" className="block text-xs font-medium text-muted-foreground mb-1.5">
+                মেনু সিলেক্ট করুন:
+              </label>
+              <select
+                id="mobile-admin-tab"
+                value={activeTab}
+                onChange={(e) => setActiveTab(e.target.value)}
+                className="w-full rounded border border-border bg-card p-2.5 text-xs font-medium shadow-sm"
+              >
+                {menuSections.flatMap((section) =>
+                  section.items.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))
+                )}
+              </select>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
-        <TabsContent value="articles" className="mt-0">
-          <ArticlesAdmin />
-        </TabsContent>
-        <TabsContent value="translations" className="mt-0">
-          <TranslationsAdmin />
-        </TabsContent>
-        <TabsContent value="posts" className="mt-0">
-          <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">{t("authorsTab")}</p>
-            <AuthorsAdmin />
+            {/* Dashboard Content Header */}
+            <div className="mb-6 flex items-center justify-between border-b border-border/80 pb-3">
+              <div>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">
+                  {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "ড্যাশবোর্ড"}
+                </h1>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
+                </p>
+              </div>
+            </div>
+
+            {/* Tab Contents */}
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+              <TabsContent value="articles" className="mt-0 focus-visible:outline-none">
+                <ArticlesAdmin />
+              </TabsContent>
+              <TabsContent value="translations" className="mt-0 focus-visible:outline-none">
+                <TranslationsAdmin />
+              </TabsContent>
+              <TabsContent value="posts" className="mt-0 focus-visible:outline-none">
+                <div className="space-y-4">
+                  <p className="text-sm text-muted-foreground">{t("authorsTab")}</p>
+                  <AuthorsAdmin />
+                </div>
+              </TabsContent>
+              <TabsContent value="categories" className="mt-0 focus-visible:outline-none">
+                <CategoriesAdmin />
+              </TabsContent>
+              <TabsContent value="roles" className="mt-0 focus-visible:outline-none">
+                <RolesAdmin />
+              </TabsContent>
+              <TabsContent value="menu" className="mt-0 focus-visible:outline-none">
+                <MenuAdmin />
+              </TabsContent>
+              <TabsContent value="pages" className="mt-0 focus-visible:outline-none">
+                <PagesAdmin />
+              </TabsContent>
+              <TabsContent value="social" className="mt-0 focus-visible:outline-none">
+                <SocialLinksAdmin />
+              </TabsContent>
+              <TabsContent value="turnstile" className="mt-0 focus-visible:outline-none">
+                <TurnstileAdmin />
+              </TabsContent>
+              <TabsContent value="messages" className="mt-0 focus-visible:outline-none">
+                <MessagesAdmin />
+              </TabsContent>
+              <TabsContent value="offline" className="mt-0 focus-visible:outline-none">
+                <OfflineSyncAdmin />
+              </TabsContent>
+              <TabsContent value="subs" className="mt-0 focus-visible:outline-none">
+                <SubscribersAdmin />
+              </TabsContent>
+            </Tabs>
           </div>
-        </TabsContent>
-        <TabsContent value="categories" className="mt-0">
-          <CategoriesAdmin />
-        </TabsContent>
-        <TabsContent value="roles" className="mt-0">
-          <RolesAdmin />
-        </TabsContent>
-        <TabsContent value="menu" className="mt-0">
-          <MenuAdmin />
-        </TabsContent>
-        <TabsContent value="pages" className="mt-0">
-          <PagesAdmin />
-        </TabsContent>
-        <TabsContent value="social" className="mt-0">
-          <SocialLinksAdmin />
-        </TabsContent>
-        <TabsContent value="turnstile" className="mt-0">
-          <TurnstileAdmin />
-        </TabsContent>
-        <TabsContent value="messages" className="mt-0">
-          <MessagesAdmin />
-        </TabsContent>
-        <TabsContent value="offline" className="mt-0">
-          <OfflineSyncAdmin />
-        </TabsContent>
-        <TabsContent value="subs" className="mt-0">
-          <SubscribersAdmin />
-        </TabsContent>
-      </Tabs>
+        </main>
+      </div>
     </div>
   );
 }
 
+/* ========================================================================== */
+/* SUB-COMPONENTS                                                             */
+/* ========================================================================== */
 function RolesAdmin() {
   const queryClient = useQueryClient();
   const [userId, setUserId] = useState("");
@@ -363,7 +487,7 @@ function RolesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
       setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -375,75 +499,79 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল রিমুভ করা হয়েছে");
+      toast.success("রোল রিমুভ করা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <form
-        className="card-soft space-y-4 p-6"
+        className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
         onSubmit={(e) => {
           e.preventDefault();
           addRole.mutate();
         }}
       >
-        <h2 className="font-semibold text-lg flex items-center gap-2">
-          <Shield className="size-5 text-primary" /> নতুন এডমিন বা রোল যুক্ত করুন
+        <h2 className="font-semibold text-base flex items-center gap-2 border-b border-border/60 pb-2">
+          <Shield className="size-4 text-[#2271b1]" /> নতুন এডমিন বা ইউজার রোল অ্যাসাইন করুন
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
-          <div className="space-y-2 sm:col-span-2">
-            <Label htmlFor="userId">User ID (Supabase Auth UID)</Label>
+          <div className="space-y-1.5 sm:col-span-2">
+            <Label htmlFor="userId" className="text-xs font-semibold">User ID (Supabase Auth UID)</Label>
             <Input
               id="userId"
               placeholder="যেমন: e2a8b... (User UUID)"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
               required
+              className="h-9 text-xs"
             />
             <p className="text-[11px] text-muted-foreground">
-              💡 আপনি সাবস্ক্রাইবার তালিকা থেকে সরাসরি UUID কপি করে এখানে পেস্ট করতে পারেন।
+              💡 সাবস্ক্রাইবার তালিকা থেকে সরাসরি UUID কপি করে এখানে ব্যবহার করতে পারেন।
             </p>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="roleSelect">রোল সিলেক্ট করুন</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="roleSelect" className="text-xs font-semibold">রোল সিলেক্ট করুন</Label>
             <select
               id="roleSelect"
               value={role}
               onChange={(e) => setRole(e.target.value as "admin" | "user")}
-              className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
               <option value="admin">Admin</option>
               <option value="user">User</option>
             </select>
           </div>
         </div>
-        <Button type="submit" disabled={addRole.isPending}>
-          <UserCheck className="size-4 mr-2" /> রোল অ্যাসাইন করুন
+        <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
+          <UserCheck className="size-3.5 mr-1.5" /> রোল অ্যাসাইন করুন
         </Button>
       </form>
 
-      <div className="space-y-3">
-        <h3 className="font-medium text-sm text-muted-foreground">বর্তমান রোলগুলোর তালিকা:</h3>
-        {rolesList.data?.map((r) => (
-          <div key={r.id} className="card-soft flex items-center justify-between p-4">
-            <div>
-              <p className="text-sm font-medium font-mono">{r.user_id}</p>
-              <span className="inline-block mt-1 rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
-                {r.role}
-              </span>
+      <div className="space-y-2">
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলগুলোর তালিকা:</h3>
+        <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
+          {rolesList.data?.map((r) => (
+            <div key={r.id} className="flex items-center justify-between p-3.5">
+              <div>
+                <p className="text-xs font-mono font-medium text-foreground">{r.user_id}</p>
+                <span className="inline-block mt-1 rounded bg-[#2271b1]/10 px-2 py-0.5 text-[10px] font-bold text-[#2271b1]">
+                  {r.role}
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Delete Role"
+                className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                onClick={() => removeRole.mutate(r.id)}
+              >
+                <UserX className="size-4" />
+              </Button>
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Delete Role"
-              onClick={() => removeRole.mutate(r.id)}
-            >
-              <UserX className="size-4 text-destructive" />
-            </Button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -559,8 +687,8 @@ function ArticlesAdmin() {
   });
 
   const field = (key: keyof typeof EMPTY, label: string, long = false) => (
-    <div className="space-y-2">
-      <Label htmlFor={key}>{label}</Label>
+    <div className="space-y-1.5">
+      <Label htmlFor={key} className="text-xs font-semibold">{label}</Label>
       {long ? (
         key.startsWith("content") ? (
           <RichTextEditor
@@ -573,6 +701,7 @@ function ArticlesAdmin() {
             rows={3}
             value={form[key]}
             onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+            className="text-xs"
           />
         )
       ) : (
@@ -580,23 +709,24 @@ function ArticlesAdmin() {
           id={key}
           value={form[key]}
           onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+          className="h-9 text-xs"
         />
       )}
     </div>
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <form
-        className="card-soft space-y-4 p-6"
+        className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
         onSubmit={(e) => {
           e.preventDefault();
           save.mutate();
         }}
       >
-        <div className="flex items-center justify-between">
-          <h2 className="font-semibold">{editingId ? t("edit") : t("newArticle")}</h2>
-          <div className="flex items-center gap-2 text-sm">
+        <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <h2 className="font-semibold text-base">{editingId ? t("edit") : t("newArticle")}</h2>
+          <div className="flex items-center gap-2 text-xs">
             <span className="text-muted-foreground">{published ? t("published") : t("draft")}</span>
             <Switch checked={published} onCheckedChange={setPublished} />
           </div>
@@ -613,46 +743,49 @@ function ArticlesAdmin() {
         {field("content_bn", t("contentBn"), true)}
         {field("content_en", t("contentEn"), true)}
         {field("cover_image_url", t("coverImage"))}
-        <div className="space-y-2">
-          <Label htmlFor="author">{t("author")}</Label>
-          <select
-            id="author"
-            value={authorId}
-            onChange={(e) => setAuthorId(e.target.value)}
-            className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
-          >
-            <option value="">{t("noAuthor")}</option>
-            {authors.data?.map((a) => (
-              <option key={a.id} value={a.id}>
-                {a.name_bn}
-              </option>
-            ))}
-          </select>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <Label htmlFor="author" className="text-xs font-semibold">{t("author")}</Label>
+            <select
+              id="author"
+              value={authorId}
+              onChange={(e) => setAuthorId(e.target.value)}
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
+            >
+              <option value="">{t("noAuthor")}</option>
+              {authors.data?.map((a) => (
+                <option key={a.id} value={a.id}>
+                  {a.name_bn}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="article-category" className="text-xs font-semibold">{t("category")}</Label>
+            <select
+              id="article-category"
+              value={categoryId}
+              onChange={(e) => setCategoryId(e.target.value)}
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
+            >
+              <option value="">{t("noCategory")}</option>
+              {categories.data?.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name_bn}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="article-category">{t("category")}</Label>
-          <select
-            id="article-category"
-            value={categoryId}
-            onChange={(e) => setCategoryId(e.target.value)}
-            className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
-          >
-            <option value="">{t("noCategory")}</option>
-            {categories.data?.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name_bn}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex gap-2">
-          <Button type="submit" disabled={save.isPending}>
-            <Plus className="size-4" /> {t("save")}
+        <div className="flex items-center gap-2 pt-2">
+          <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
+            <Plus className="size-3.5 mr-1" /> {t("save")}
           </Button>
           {editingId && (
             <Button
               type="button"
               variant="outline"
+              size="sm"
               onClick={() => {
                 setEditingId(null);
                 setForm({ ...EMPTY });
@@ -664,49 +797,56 @@ function ArticlesAdmin() {
         </div>
       </form>
 
-      <div className="space-y-3">
-        {list.data?.map((a) => (
-          <div key={a.id} className="card-soft flex items-center gap-3 p-4">
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium">{a.title_bn}</p>
-              <p className="text-xs text-muted-foreground">
-                /{a.slug} · {a.published ? t("published") : t("draft")}
-              </p>
+      <div className="space-y-2">
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
+        <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
+          {list.data?.map((a) => (
+            <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
+                <p className="text-[11px] text-muted-foreground">
+                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? t("published") : t("draft")}</span>
+                </p>
+              </div>
+              <div className="flex items-center gap-1">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-7 w-7"
+                  aria-label={t("edit")}
+                  onClick={() => {
+                    setEditingId(a.id);
+                    setPublished(a.published);
+                    setAuthorId(a.author_id ?? "");
+                    setCategoryId(a.category_id ?? "");
+                    setForm({
+                      slug: a.slug,
+                      title_bn: a.title_bn,
+                      title_en: a.title_en ?? "",
+                      excerpt_bn: a.excerpt_bn ?? "",
+                      excerpt_en: a.excerpt_en ?? "",
+                      content_bn: a.content_bn ?? "",
+                      content_en: a.content_en ?? "",
+                      cover_image_url: a.cover_image_url ?? "",
+                    });
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  <Pencil className="size-3.5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-7 w-7 text-destructive hover:bg-destructive/10"
+                  aria-label={t("delete")}
+                  onClick={() => remove.mutate(a.id)}
+                >
+                  <Trash2 className="size-3.5" />
+                </Button>
+              </div>
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label={t("edit")}
-              onClick={() => {
-                setEditingId(a.id);
-                setPublished(a.published);
-                setAuthorId(a.author_id ?? "");
-                setCategoryId(a.category_id ?? "");
-                setForm({
-                  slug: a.slug,
-                  title_bn: a.title_bn,
-                  title_en: a.title_en ?? "",
-                  excerpt_bn: a.excerpt_bn ?? "",
-                  excerpt_en: a.excerpt_en ?? "",
-                  content_bn: a.content_bn ?? "",
-                  content_en: a.content_en ?? "",
-                  cover_image_url: a.cover_image_url ?? "",
-                });
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              <Pencil className="size-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label={t("delete")}
-              onClick={() => remove.mutate(a.id)}
-            >
-              <Trash2 className="size-4 text-destructive" />
-            </Button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -784,17 +924,17 @@ function TranslationsAdmin() {
   });
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <form
-        className="card-soft space-y-4 p-6"
+        className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
         onSubmit={(e) => {
           e.preventDefault();
           save.mutate();
         }}
       >
         <div className="grid gap-4 sm:grid-cols-3">
-          <div className="space-y-2">
-            <Label htmlFor="surah">{t("surahNumber")}</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="surah" className="text-xs font-semibold">{t("surahNumber")}</Label>
             <Input
               id="surah"
               type="number"
@@ -802,10 +942,11 @@ function TranslationsAdmin() {
               max={114}
               value={surah}
               onChange={(e) => setSurah(e.target.value)}
+              className="h-9 text-xs"
             />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="ayah">{t("ayahNumber")}</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="ayah" className="text-xs font-semibold">{t("ayahNumber")}</Label>
             <Input
               id="ayah"
               type="number"
@@ -813,15 +954,16 @@ function TranslationsAdmin() {
               max={300}
               value={ayah}
               onChange={(e) => setAyah(e.target.value)}
+              className="h-9 text-xs"
             />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="lng">{t("translationType")}</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="lng" className="text-xs font-semibold">{t("translationType")}</Label>
             <select
               id="lng"
               value={lng}
               onChange={(e) => setLng(e.target.value as typeof lng)}
-              className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
               <option value="bn">{t("sciBn")}</option>
               <option value="en">{t("sciEn")}</option>
@@ -830,36 +972,40 @@ function TranslationsAdmin() {
             </select>
           </div>
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="text">{t("translationText")}</Label>
-          <Textarea id="text" rows={5} value={text} onChange={(e) => setText(e.target.value)} />
+        <div className="space-y-1.5">
+          <Label htmlFor="text" className="text-xs font-semibold">{t("translationText")}</Label>
+          <Textarea id="text" rows={4} value={text} onChange={(e) => setText(e.target.value)} className="text-xs" />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="note">{t("note")}</Label>
-          <Textarea id="note" rows={3} value={note} onChange={(e) => setNote(e.target.value)} />
+        <div className="space-y-1.5">
+          <Label htmlFor="note" className="text-xs font-semibold">{t("note")}</Label>
+          <Textarea id="note" rows={2} value={note} onChange={(e) => setNote(e.target.value)} className="text-xs" />
         </div>
-        <Button type="submit" disabled={save.isPending}>
+        <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
           {t("save")}
         </Button>
       </form>
 
-      <div className="space-y-3">
-        {list.data?.map((v) => (
-          <div key={v.id} className="card-soft flex items-start gap-3 p-4">
-            <span className="rounded-full bg-accent px-2.5 py-1 text-xs text-accent-foreground">
-              {v.surah}:{v.ayah} · {v.lang}
-            </span>
-            <p className="min-w-0 flex-1 text-sm">{v.text}</p>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label={t("delete")}
-              onClick={() => remove.mutate(v.id)}
-            >
-              <Trash2 className="size-4 text-destructive" />
-            </Button>
-          </div>
-        ))}
+      <div className="space-y-2">
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">সংরক্ষিত অনুবাদ তালিকা:</h3>
+        <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
+          {list.data?.map((v) => (
+            <div key={v.id} className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+              <span className="rounded bg-[#2271b1]/10 px-2 py-0.5 text-[11px] font-bold text-[#2271b1]">
+                {v.surah}:{v.ayah} · {v.lang}
+              </span>
+              <p className="min-w-0 flex-1 text-xs text-foreground leading-relaxed">{v.text}</p>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-7 w-7 text-destructive hover:bg-destructive/10"
+                aria-label={t("delete")}
+                onClick={() => remove.mutate(v.id)}
+              >
+                <Trash2 className="size-3.5" />
+              </Button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -867,7 +1013,6 @@ function TranslationsAdmin() {
 
 function SubscribersAdmin() {
   const { t } = usePrefs();
-  const queryClient = useQueryClient();
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const list = useQuery({
@@ -891,34 +1036,32 @@ function SubscribersAdmin() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between px-1">
-        <div>
-          <h2 className="text-lg font-semibold">নিউজলেটার সাবস্ক্রাইবার তালিকা</h2>
-          <p className="text-xs text-muted-foreground">
-            সাবস্ক্রাইবারের UUID দেখতে পাবেন এবং কপি করে এডমিন রোলে ব্যবহার করতে পারবেন।
-          </p>
-        </div>
+      <div>
+        <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার তালিকা</h2>
+        <p className="text-xs text-muted-foreground">
+          সাবস্ক্রাইবারের UUID দেখতে পাবেন এবং কপি করে এডমিন রোলে ব্যবহার করতে পারবেন।
+        </p>
       </div>
 
-      <div className="card-soft divide-y divide-border">
+      <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
         {list.data?.length === 0 && (
-          <p className="p-4 text-sm text-muted-foreground">{t("noArticles")}</p>
+          <p className="p-4 text-xs text-muted-foreground">{t("noArticles")}</p>
         )}
         {list.data?.map((s) => (
           <div
             key={s.id}
-            className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 text-sm"
+            className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 text-xs hover:bg-muted/30 transition-colors"
           >
             <div className="space-y-1">
-              <span className="font-medium text-foreground">{s.email}</span>
+              <span className="font-semibold text-foreground">{s.email}</span>
               <div className="flex items-center gap-2">
-                <span className="font-mono text-[11px] text-muted-foreground bg-muted/70 px-2 py-0.5 rounded border border-border/50 select-all">
+                <span className="font-mono text-[11px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
                   UUID: {s.id}
                 </span>
                 <button
                   type="button"
                   onClick={() => copyToClipboard(s.id)}
-                  className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-[11px] text-[#2271b1] hover:underline font-medium"
                 >
                   {copiedId === s.id ? (
                     <>
@@ -934,7 +1077,7 @@ function SubscribersAdmin() {
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-[11px] text-muted-foreground">
                 {new Date(s.created_at).toLocaleDateString("en-GB")}
               </span>
             </div>
