@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Pure Monochrome & Minimalist Slate"
- * Deep Charcoal, Crisp White, Subtle Silver and Muted Grays.
+ * Design system — "Pure Monochrome & Elevated Depth"
+ * High contrast depth separation for Cards and Rows in both Light & Dark modes.
  */
 
 @theme inline {
@@ -50,8 +50,10 @@
   --font-sans: "Noto Serif Bengali", "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", "Noto Serif Bengali", ui-sans-serif, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", serif;
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.15), 0 8px 24px -6px rgba(0, 0, 0, 0.25);
-  --shadow-lift: 0 4px 14px rgba(0, 0, 0, 0.25), 0 18px 36px -10px rgba(0, 0, 0, 0.45);
+  
+  /* Enhanced Elevated Shadows */
+  --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.04), 0 6px 16px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 4px 8px rgba(0, 0, 0, 0.06), 0 12px 28px -4px rgba(0, 0, 0, 0.12);
 }
 
 :root {
@@ -59,10 +61,10 @@
   --chrome-foreground: #fafafa;
   --radius: 0.75rem;
 
-  /* Light Monochrome */
-  --background: #ffffff;
-  --foreground: #09090b;
-  --card: #f4f4f5;
+  /* Light Mode with High Depth Contrast */
+  --background: #f1f1f4;              /* Subtle Off-White / Soft Gray Page Base */
+  --foreground: #09090b;              /* Dark Solid Text */
+  --card: #ffffff;                    /* Pure White Pop-out Card */
   --card-foreground: #09090b;
   --popover: #ffffff;
   --popover-foreground: #09090b;
@@ -70,24 +72,24 @@
   --primary-foreground: #fafafa;
   --secondary: #e4e4e7;
   --secondary-foreground: #18181b;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  --muted: #e4e4e7;
+  --muted-foreground: #52525b;
   --accent: #e4e4e7;
   --accent-foreground: #18181b;
   --destructive: #7f1d1d;
   --destructive-foreground: #fafafa;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
+  --border: #d4d4d8;                  /* Visible Crisp Border */
+  --input: #d4d4d8;
   --ring: #18181b;
-  --sidebar: #f4f4f5;
+  --sidebar: #fafafa;
   --sidebar-foreground: #09090b;
   --sidebar-primary: #18181b;
   --sidebar-primary-foreground: #fafafa;
   --sidebar-accent: #e4e4e7;
   --sidebar-accent-foreground: #18181b;
-  --sidebar-border: #e4e4e7;
+  --sidebar-border: #d4d4d8;
   --sidebar-ring: #18181b;
-  --gradient-hero: linear-gradient(180deg, #fafafa 0%, #f4f4f5 100%);
+  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
 }
 
 .dark {
@@ -95,35 +97,35 @@
   --chrome-foreground: #fafafa;
   --radius: 0.75rem;
 
-  /* Pure Dark Monochrome: Jet Black & Charcoal (#09090b / #18181b) */
-  --background: #09090b;
+  /* Dark Mode with Pronounced Layer Depth */
+  --background: #08080a;              /* Deep Pitch Base */
   --foreground: #fafafa;
-  --card: #18181b;
+  --card: #151518;                    /* Clearly Elevated Layer */
   --card-foreground: #fafafa;
-  --popover: #18181b;
+  --popover: #151518;
   --popover-foreground: #fafafa;
   --primary: #fafafa;
   --primary-foreground: #09090b;
-  --secondary: #27272a;
+  --secondary: #222227;               /* Word/Lexicon Tag Background */
   --secondary-foreground: #fafafa;
-  --muted: #27272a;
+  --muted: #222227;
   --muted-foreground: #a1a1aa;
-  --accent: #27272a;
+  --accent: #222227;
   --accent-foreground: #fafafa;
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
-  --border: #27272a;
-  --input: #27272a;
+  --border: rgba(255, 255, 255, 0.12); /* Subtle Glow Border */
+  --input: rgba(255, 255, 255, 0.14);
   --ring: #d4d4d8;
-  --sidebar: #09090b;
+  --sidebar: #0e0e11;
   --sidebar-foreground: #fafafa;
   --sidebar-primary: #fafafa;
   --sidebar-primary-foreground: #09090b;
-  --sidebar-accent: #27272a;
+  --sidebar-accent: #222227;
   --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #27272a;
+  --sidebar-border: rgba(255, 255, 255, 0.12);
   --sidebar-ring: #d4d4d8;
-  --gradient-hero: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+  --gradient-hero: linear-gradient(180deg, #151518 0%, #08080a 100%);
 }
 
 @layer base {
