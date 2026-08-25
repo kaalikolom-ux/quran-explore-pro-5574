@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
-import { ArrowRight, BookOpen, Search, Settings, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Search, Settings, Sparkles } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
@@ -216,6 +216,16 @@ function HomePage() {
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
                 <BookOpen className="size-4 mr-2" /> {t("readQuran")}
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="ghost"
+              className="bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:shadow-md hover:scale-[1.02]"
+            >
+              <Link to="/articles">
+                <FileText className="size-4 mr-2" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
               </Link>
             </Button>
             <Button
