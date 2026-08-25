@@ -55,7 +55,7 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
   if (excerpt && excerpt.trim().length > 0) {
     return excerpt.trim();
   }
-  if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
+  if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
   const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
@@ -154,33 +154,33 @@ function HomePage() {
 
   return (
     <div>
-      <section className="hero-surface relative overflow-hidden">
+      <section className="hero-surface relative overflow-hidden border-b border-border/40">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-primary/10 blur-3xl" />
           
           <div className="relative right-[-5%] lg:right-[6%] flex items-center justify-center opacity-70 lg:opacity-90 scale-90 sm:scale-100 lg:scale-110">
-            <div className="absolute h-[480px] w-[480px] rounded-full border border-white/5" />
-            <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-white/10" />
-            <div className="absolute h-[290px] w-[290px] rounded-full border border-white/10" />
+            <div className="absolute h-[480px] w-[480px] rounded-full border border-foreground/5 dark:border-white/5" />
+            <div className="absolute h-[380px] w-[380px] rounded-full border border-dashed border-foreground/10 dark:border-white/10" />
+            <div className="absolute h-[290px] w-[290px] rounded-full border border-foreground/10 dark:border-white/10" />
 
             <div className="relative flex items-center justify-center">
-              <div className="absolute h-40 w-40 rounded-sm border border-amber-400/40 bg-amber-400/[0.02] shadow-[0_0_20px_rgba(251,191,36,0.1)] transition-transform duration-700 hover:rotate-6" />
-              <div className="absolute h-40 w-40 rotate-45 rounded-sm border border-amber-400/40 bg-amber-400/[0.02] shadow-[0_0_20px_rgba(251,191,36,0.1)] transition-transform duration-700 hover:rotate-[51deg]" />
-              <div className="relative z-10 h-6 w-6 rounded-full bg-amber-400/70 shadow-[0_0_25px_8px_rgba(251,191,36,0.4)]" />
+              <div className="absolute h-40 w-40 rounded-sm border border-amber-500/40 bg-amber-500/[0.04] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-6" />
+              <div className="absolute h-40 w-40 rotate-45 rounded-sm border border-amber-500/40 bg-amber-500/[0.04] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-transform duration-700 hover:rotate-[51deg]" />
+              <div className="relative z-10 h-6 w-6 rounded-full bg-amber-500/80 shadow-[0_0_25px_8px_rgba(251,191,36,0.45)]" />
             </div>
           </div>
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-20 sm:py-28">
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-1 text-xs font-medium tracking-wide bg-white/5 backdrop-blur-sm">
-            <Sparkles className="size-3.5" /> {t("tagline")}
+          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 dark:bg-white/5 dark:border-white/20 px-3.5 py-1 text-xs font-medium tracking-wide text-muted-foreground backdrop-blur-sm shadow-xs">
+            <Sparkles className="size-3.5 text-[#2A6F97] dark:text-amber-400" /> {t("tagline")}
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+          <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl text-foreground font-serif">
             {lang === "bn" ? (
               <>
                 পবিত্র কুরআন — বুঝে পড়ুন <br />
-                <span className="inline-block mt-1 font-semibold text-amber-300/95">
+                <span className="inline-block mt-1 font-semibold text-[#2A6F97] dark:text-amber-300">
                   <Typewriter
                     words={[
                       "শব্দে শব্দে অর্থসহ",
@@ -197,7 +197,7 @@ function HomePage() {
             ) : (
               <>
                 The Holy Quran — understand it <br />
-                <span className="inline-block mt-1 font-semibold text-amber-300/95">
+                <span className="inline-block mt-1 font-semibold text-[#2A6F97] dark:text-amber-300">
                   <Typewriter
                     words={[
                       "word by word",
@@ -214,37 +214,37 @@ function HomePage() {
             )}
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80">{t("heroSub")}</p>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">{t("heroSub")}</p>
           
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
               size="lg"
-              variant="ghost"
-              className="bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:shadow-md hover:scale-[1.02]"
+              variant="outline"
+              className="border-border bg-card text-foreground shadow-xs backdrop-blur-sm transition-all duration-200 hover:bg-muted hover:border-foreground/30 hover:scale-[1.02]"
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
-                <BookOpen className="size-4 mr-2" /> {t("readQuran")}
+                <BookOpen className="size-4 mr-2 text-[#2A6F97] dark:text-primary" /> {t("readQuran")}
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
-              variant="ghost"
-              className="bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:shadow-md hover:scale-[1.02]"
+              variant="outline"
+              className="border-border bg-card text-foreground shadow-xs backdrop-blur-sm transition-all duration-200 hover:bg-muted hover:border-foreground/30 hover:scale-[1.02]"
             >
               <Link to="/articles">
-                <FileText className="size-4 mr-2" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
+                <FileText className="size-4 mr-2 text-[#2A6F97] dark:text-primary" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
-              variant="ghost"
-              className="bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:shadow-md hover:scale-[1.02]"
+              variant="outline"
+              className="border-border bg-card text-foreground shadow-xs backdrop-blur-sm transition-all duration-200 hover:bg-muted hover:border-foreground/30 hover:scale-[1.02]"
             >
               <Link to="/settings">
-                <Settings className="size-4 mr-2" /> {lang === "bn" ? "সেটিংস" : "Settings"}
+                <Settings className="size-4 mr-2 text-[#2A6F97] dark:text-primary" /> {lang === "bn" ? "সেটিংস" : "Settings"}
               </Link>
             </Button>
           </div>
@@ -255,7 +255,7 @@ function HomePage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-2xl font-semibold text-foreground">
               {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
             </h2>
 
@@ -310,7 +310,7 @@ function HomePage() {
                       {localNumber(c.id, lang)}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate font-medium">
+                      <span className="block truncate font-medium text-foreground">
                         {c.name_simple}
                         {targetAyah && (
                           <span className="ml-2 text-xs font-semibold text-primary">
@@ -335,8 +335,8 @@ function HomePage() {
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold">{t("latestArticles")}</h2>
-            <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary">
+            <h2 className="text-2xl font-semibold text-foreground">{t("latestArticles")}</h2>
+            <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
               {t("articles")} <ArrowRight className="size-4" />
             </Link>
           </div>
@@ -366,7 +366,7 @@ function HomePage() {
                       />
                     )}
                     <div className="p-5">
-                      <h3 className="text-base font-semibold">
+                      <h3 className="text-base font-semibold text-foreground">
                         {title}
                       </h3>
                       <p className="mt-2 line-clamp-3 text-sm text-muted-foreground leading-relaxed">
@@ -386,7 +386,7 @@ function HomePage() {
       {/* নিউজলেটার */}
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
-          <h2 className="text-xl font-semibold">{t("newsletter")}</h2>
+          <h2 className="text-xl font-semibold text-foreground">{t("newsletter")}</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">{t("newsletterSub")}</p>
           <div className="mt-6">
             <NewsletterForm />
