@@ -155,7 +155,7 @@ function HomePage() {
   return (
     <div>
       {/* হিরো সেকশন */}
-      <section className="hero-surface relative overflow-hidden text-white">
+      <section className="hero-surface relative overflow-hidden text-white pb-12 sm:pb-16">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-amber-500/10 blur-3xl" />
           
@@ -172,12 +172,11 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-16 sm:py-24 md:py-28">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-sm shadow-xs">
             <Sparkles className="size-3.5 text-amber-400" /> {t("tagline")}
           </p>
 
-          {/* টাইটেল এবং টাইপরাইটার ফ্লেক্স-কল ও নির্দিষ্ট ফাঁকা দূরত্বের সাথে */}
           <div className="mt-6 flex max-w-3xl flex-col gap-3">
             <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
               {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
@@ -242,10 +241,13 @@ function HomePage() {
             </Button>
           </div>
         </div>
+
+        {/* গ্রেডিয়েন্ট শেইড ডিভাইডার (হিরো থেকে পরবর্তী সেকশনে মসৃণ ট্রানজিশন) */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-b from-transparent to-[var(--background)]" />
       </section>
 
       {/* সুরা তালিকা */}
-      <section className="mx-auto w-full max-w-6xl px-4 py-14">
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">
