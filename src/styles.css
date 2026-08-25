@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Pure Monochrome & Elevated Quote Block Cards"
- * High contrast depth with elegant left accent border resembling quotes.
+ * Design system — "Pure Monochrome & Distinct Blockquote Style"
+ * Prominent thick left border with straight quote geometry.
  */
 
 @theme inline {
@@ -51,9 +51,8 @@
   --font-display: "Outfit", "Noto Serif Bengali", ui-sans-serif, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", serif;
   
-  /* Elevated Layer Shadows */
-  --shadow-soft: 0 2px 5px rgba(0, 0, 0, 0.04), 0 8px 18px -3px rgba(0, 0, 0, 0.09);
-  --shadow-lift: 0 4px 10px rgba(0, 0, 0, 0.07), 0 14px 30px -4px rgba(0, 0, 0, 0.14);
+  --shadow-soft: 0 2px 5px rgba(0, 0, 0, 0.04), 0 8px 18px -3px rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 4px 10px rgba(0, 0, 0, 0.06), 0 14px 28px -4px rgba(0, 0, 0, 0.12);
 }
 
 :root {
@@ -159,22 +158,25 @@
   line-height: 2.1;
 }
 
-/* Quote Style Row / Card Utility */
+/* Quote Style Row / Card Utility: Flat thick left border, rounded right side */
 @utility card-soft {
   background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-left-width: 4px;
-  border-left-color: var(--color-foreground);
-  border-radius: var(--radius-xl);
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-foreground);
+  border-radius: 2px 14px 14px 2px;
   box-shadow: var(--shadow-soft);
   transition: all 0.2s ease-in-out;
 }
 
 @utility quote-card {
   background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-foreground);
-  border-radius: var(--radius-lg);
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-foreground);
+  border-radius: 2px 12px 12px 2px;
   box-shadow: var(--shadow-soft);
   padding: 1rem;
 }
