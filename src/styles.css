@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Pure Monochrome & Balanced Elevated Cards"
- * Clean, symmetric border radius and depth for all cards and items.
+ * Design system — "Eye-Comfort Elevated & Balanced Soft Tones"
+ * Optimized contrast to reduce eye fatigue during long reading sessions.
  */
 
 @theme inline {
@@ -51,80 +51,80 @@
   --font-display: "Outfit", "Noto Serif Bengali", ui-sans-serif, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", serif;
   
-  --shadow-soft: 0 2px 5px rgba(0, 0, 0, 0.04), 0 8px 18px -3px rgba(0, 0, 0, 0.08);
-  --shadow-lift: 0 4px 10px rgba(0, 0, 0, 0.06), 0 14px 28px -4px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.03), 0 8px 18px -3px rgba(0, 0, 0, 0.05);
+  --shadow-lift: 0 4px 10px rgba(0, 0, 0, 0.04), 0 14px 28px -4px rgba(0, 0, 0, 0.08);
 }
 
 :root {
-  --chrome: #18181b;
-  --chrome-foreground: #fafafa;
+  --chrome: #1f2428;
+  --chrome-foreground: #f5f5f7;
   --radius: 0.75rem;
 
-  /* Light Mode */
-  --background: #f1f1f4;
-  --foreground: #09090b;
+  /* Light Mode (Soft Off-White & Charcoal Gray) */
+  --background: #f8f9fa;               /* সফট লাইট ব্যাকগ্রাউন্ড */
+  --foreground: #2d2d2d;               /* চোখের আরামদায়ক অফ-ব্ল্যাক টেক্সট */
   --card: #ffffff;
-  --card-foreground: #09090b;
+  --card-foreground: #2d2d2d;
   --popover: #ffffff;
-  --popover-foreground: #09090b;
-  --primary: #18181b;
-  --primary-foreground: #fafafa;
-  --secondary: #e4e4e7;
-  --secondary-foreground: #18181b;
-  --muted: #e4e4e7;
-  --muted-foreground: #52525b;
-  --accent: #e4e4e7;
-  --accent-foreground: #18181b;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fafafa;
-  --border: #d4d4d8;
-  --input: #d4d4d8;
-  --ring: #18181b;
-  --sidebar: #fafafa;
-  --sidebar-foreground: #09090b;
-  --sidebar-primary: #18181b;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #e4e4e7;
-  --sidebar-accent-foreground: #18181b;
-  --sidebar-border: #d4d4d8;
-  --sidebar-ring: #18181b;
-  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
+  --popover-foreground: #2d2d2d;
+  --primary: #2a6f97;                  /* সফট ব্লু অ্যাকসেন্ট */
+  --primary-foreground: #f8f9fa;
+  --secondary: #e9ecef;
+  --secondary-foreground: #2d2d2d;
+  --muted: #eef1f4;
+  --muted-foreground: #6c757d;         /* নরম সাপোর্টিং টেক্সট */
+  --accent: #e3eff6;
+  --accent-foreground: #2a6f97;
+  --destructive: #b02a37;
+  --destructive-foreground: #ffffff;
+  --border: #dee2e6;                   /* মৃদু বর্ডার */
+  --input: #dee2e6;
+  --ring: #2a6f97;
+  --sidebar: #f5f5f7;
+  --sidebar-foreground: #2d2d2d;
+  --sidebar-primary: #2a6f97;
+  --sidebar-primary-foreground: #f8f9fa;
+  --sidebar-accent: #e9ecef;
+  --sidebar-accent-foreground: #2a6f97;
+  --sidebar-border: #dee2e6;
+  --sidebar-ring: #2a6f97;
+  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f1f3f5 100%);
 }
 
 .dark {
-  --chrome: #09090b;
-  --chrome-foreground: #fafafa;
+  --chrome: #121212;
+  --chrome-foreground: #e4e4e7;
   --radius: 0.75rem;
 
-  /* Dark Mode */
-  --background: #08080a;
-  --foreground: #fafafa;
-  --card: #151518;
-  --card-foreground: #fafafa;
-  --popover: #151518;
-  --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #09090b;
-  --secondary: #222227;
-  --secondary-foreground: #fafafa;
-  --muted: #222227;
-  --muted-foreground: #a1a1aa;
-  --accent: #222227;
-  --accent-foreground: #fafafa;
+  /* Dark Mode (Deep Charcoal & Muted Off-White) */
+  --background: #141414;               /* কুচকুচে কালোর বদলে ডিপ চারকোল */
+  --foreground: #e4e4e7;               /* সফট হোয়াইট টেক্সট (নো গ্লেয়ার) */
+  --card: #1c1c1f;                     /* ইলিভেটেড সফট কার্ড */
+  --card-foreground: #e4e4e7;
+  --popover: #1c1c1f;
+  --popover-foreground: #e4e4e7;
+  --primary: #4a90e2;                  /* রিডেবল ডার্ক অ্যাকসেন্ট ব্লু */
+  --primary-foreground: #141414;
+  --secondary: #26262b;
+  --secondary-foreground: #e4e4e7;
+  --muted: #222226;
+  --muted-foreground: #9ca3af;
+  --accent: #1e293b;
+  --accent-foreground: #60a5fa;
   --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: rgba(255, 255, 255, 0.12);
-  --input: rgba(255, 255, 255, 0.14);
-  --ring: #d4d4d8;
-  --sidebar: #0e0e11;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #fafafa;
-  --sidebar-primary-foreground: #09090b;
-  --sidebar-accent: #222227;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgba(255, 255, 255, 0.12);
-  --sidebar-ring: #d4d4d8;
-  --gradient-hero: linear-gradient(180deg, #151518 0%, #08080a 100%);
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #4a90e2;
+  --sidebar: #18181b;
+  --sidebar-foreground: #e4e4e7;
+  --sidebar-primary: #4a90e2;
+  --sidebar-primary-foreground: #141414;
+  --sidebar-accent: #26262b;
+  --sidebar-accent-foreground: #e4e4e7;
+  --sidebar-border: rgba(255, 255, 255, 0.10);
+  --sidebar-ring: #4a90e2;
+  --gradient-hero: linear-gradient(180deg, #1c1c1f 0%, #141414 100%);
 }
 
 @layer base {
@@ -167,11 +167,11 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* Quote Card Utility (For explicit quote blocks where needed) */
+/* Quote Card Utility */
 @utility quote-card {
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-foreground);
+  border-left: 4px solid var(--color-primary);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: 1rem;
