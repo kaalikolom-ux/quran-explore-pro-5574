@@ -106,9 +106,6 @@ function ArticlePage() {
     article.author &&
     (lang === "en" && article.author.name_en ? article.author.name_en : article.author.name_bn);
 
-  // HTML ট্যাগ আছে কিনা চেক করা
-  const isHtml = /<[a-z][\s\S]*>/i.test(rawContent);
-
   return (
     <article className="mx-auto w-full max-w-3xl px-4 py-12">
       <Button asChild variant="ghost" size="sm" className="mb-6 -ml-2">
@@ -155,25 +152,19 @@ function ArticlePage() {
         )}
       </div>
 
-      {/* মূল বিষয়বস্তু: প্রতিটি প্যারাগ্রাফকে আলাদা ব্লকে রূপান্তর */}
-      <div className="mt-8 text-base leading-relaxed space-y-6 text-foreground/90 font-serif">
-        {isHtml ? (
-          <div
-            className="prose prose-neutral dark:prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: rawContent }}
-          />
-        ) : (
-          rawContent.split(/\n\s*\n/).map((para: string, idx: number) => {
-            const trimmed = para.trim();
-            if (!trimmed) return null;
-            return (
-              <p key={idx} className="leading-8 tracking-normal">
-                {trimmed}
-              </p>
-            );
-          })
-        )}
-      </div>
+      {/* কন্টেন্ট এরিয়া: সব ধরণের প্যারাগ্রাফের মাঝে সুস্পষ্ট মার্জিন গ্যারান্টি */}
+      <div
+        className="mt-8 text-base leading-relaxed text-foreground/90 font-serif 
+                   [&>p]:mb-6 [&>p]:leading-8 [&>p]:tracking-normal
+                   [&>h1]:text-2xl [&>h1]:font-bold [&>h1]:mt-8 [&>h1]:mb-4
+                   [&>h2]:text-xl [&>h2]:font-bold [&>h2]:mt-6 [&>h2]:mb-3
+                   [&>h3]:text-lg [&>h3]:font-semibold [&>h3]:mt-5 [&>h3]:mb-2
+                   [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul>li]:mb-1.5
+                   [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol>li]:mb-1.5
+                   [&>blockquote]:border-l-4 [&>blockquote]:border-primary/60 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-6 [&>blockquote]:text-muted-foreground"
+        style={{ whiteSpace: rawContent.includes("<p>") ? "normal" : "pre-line" }}
+        dangerouslySetInnerHTML={{ __html: rawContent }}
+      />
 
       {/* নেভিগেশন কার্ডস */}
       <div className="mt-12 pt-8 border-t border-border/60">
