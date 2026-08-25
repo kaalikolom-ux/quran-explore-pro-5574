@@ -377,6 +377,8 @@ function SurahDetailPage() {
 
   const [editingAyah, setEditingAyah] = useState<number | null>(null);
   const [editForm, setEditForm] = useState({
+    conventional_bn: "",
+    conventional_en: "",
     modern_translation_bn: "",
     modern_translation_en: "",
     lexicon_modern_notes: "",
@@ -566,7 +568,6 @@ function SurahDetailPage() {
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
-  // একনাগাড়ে পুরো সুরা প্লে করার হ্যান্ডলার
   const playAyahSequentially = useCallback(async (ayahNum: number) => {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -581,7 +582,6 @@ function SurahDetailPage() {
     audioRef.current = audio;
     setPlayingAyah(ayahNum);
 
-    // যে আয়াত বাজছে সেখানে নিজে থেকে স্ক্রল করা
     scrollToAyah(ayahNum);
 
     audio.play().catch(() => {
@@ -594,9 +594,8 @@ function SurahDetailPage() {
       if (ayahNum < totalAyahs) {
         playAyahSequentially(ayahNum + 1);
       } else {
-        // সুরার শেষ আয়াত শেষ হলে
         if (isLoopingSurah) {
-          playAyahSequentially(1); // লুপ মোড অন থাকলে আবার ১ নম্বর থেকে শুরু
+          playAyahSequentially(1);
         } else {
           setPlayingAyah(null);
           toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
@@ -607,13 +606,11 @@ function SurahDetailPage() {
 
   const handleToggleSurahPlay = () => {
     if (playingAyah !== null) {
-      // যদি ইতিমধ্যেই চলে তবে পজ/বন্ধ করা
       if (audioRef.current) {
         audioRef.current.pause();
       }
       setPlayingAyah(null);
     } else {
-      // পুরো সুরা শুরু থেকে বাজানো
       playAyahSequentially(1);
     }
   };
@@ -627,7 +624,6 @@ function SurahDetailPage() {
     }
   };
 
-  // পেজ পরিবর্তন হলে অডিও বন্ধ করা
   useEffect(() => {
     return () => {
       if (audioRef.current) {
@@ -760,6 +756,8 @@ function SurahDetailPage() {
   const handleStartEdit = (ayah: QuranAyah) => {
     setEditingAyah(ayah.ayah);
     setEditForm({
+      conventional_bn: ayah.conventional_bn || (ayah as any).translation_bn || "",
+      conventional_en: ayah.conventional_en || (ayah as any).translation_en || "",
       modern_translation_bn: ayah.modern_translation_bn || "",
       modern_translation_en: ayah.modern_translation_en || "",
       lexicon_modern_notes: ayah.lexicon_modern_notes || "",
@@ -770,11 +768,16 @@ function SurahDetailPage() {
     if (surahQuery.data) {
       const target = surahQuery.data.ayahs.find((a) => a.ayah === ayahNumber);
       if (target) {
+        target.conventional_bn = editForm.conventional_bn.trim();
+        (target as any).translation_bn = editForm.conventional_bn.trim();
+        target.conventional_en = editForm.conventional_en.trim();
+        (target as any).translation_en = editForm.conventional_en.trim();
         target.modern_translation_bn = editForm.modern_translation_bn.trim();
         target.modern_translation_en = editForm.modern_translation_en.trim();
         target.lexicon_modern_notes = editForm.lexicon_modern_notes.trim();
       }
     }
+    toast.success("আয়াতের সকল অনুবাদ ও তথ্য সংরক্ষণ করা হয়েছে");
     setEditingAyah(null);
   };
 
@@ -795,14 +798,13 @@ function SurahDetailPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-3 sm:px-4 py-3 space-y-6">
       
-      {/* ফ্লোটিং স্টিকি হেডার (Mobile ও Desktop রেসপনসিভ ফিক্সড) */}
+      {/* ফ্লোটিং স্টিকি হেডার */}
       <div className="sticky top-2 sm:top-16 z-40 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl p-2.5 sm:px-4 sm:py-2.5 shadow-md transition-all">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
           
-          {/* হেডারের শীর্ষ অংশ (সুরার নাম এবং সার্চ বক্স) */}
+          {/* হেডারের শীর্ষ অংশ */}
           <div className="flex items-center justify-between gap-2 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
-              {/* নম্বর ব্যাজ */}
               <span className="inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-md bg-muted font-bold text-xs text-foreground font-mono shrink-0">
                 {formatNumber(surahId, lang)}
               </span>
@@ -819,7 +821,6 @@ function SurahDetailPage() {
               </div>
             </div>
 
-            {/* আয়াত/সুরায় যাওয়ার সার্চ ফর্ম */}
             <form
               onSubmit={handleJumpSubmit}
               className="flex items-center gap-1 bg-muted/50 border border-border/70 rounded-lg px-2 py-1 focus-within:border-foreground/30 transition-all shrink-0"
@@ -841,10 +842,9 @@ function SurahDetailPage() {
             </form>
           </div>
 
-          {/* বাটনের অংশ (স্ক্রিন থেকে বাইরে না যাওয়ার জন্য ফ্লেক্স র‍্যাপ ও স্ক্রোল সাপোর্ট) */}
+          {/* বাটনের অংশ */}
           <div className="flex items-center justify-between sm:justify-end gap-1.5 shrink-0 overflow-x-auto no-scrollbar pt-1 sm:pt-0 border-t sm:border-t-0 border-border/30">
             <div className="flex items-center gap-1.5">
-              {/* ১. সম্পূর্ণ সুরা প্লে / পজ বাটন */}
               <Button
                 size="sm"
                 variant={isSurahPlaying ? "default" : "outline"}
@@ -867,7 +867,6 @@ function SurahDetailPage() {
                 )}
               </Button>
 
-              {/* ২. সুরা লুপ / রিপিট টগল বাটন */}
               <Button
                 size="sm"
                 variant="outline"
@@ -890,7 +889,6 @@ function SurahDetailPage() {
                 <Repeat className={`size-3.5 ${isLoopingSurah ? "text-primary stroke-[2.5]" : ""}`} />
               </Button>
 
-              {/* ৩. ওয়েব অফলাইন ক্যাশ বাটন */}
               <Button
                 size="sm"
                 variant="outline"
@@ -917,7 +915,6 @@ function SurahDetailPage() {
                 )}
               </Button>
 
-              {/* ৪. ডিভাইসে সরাসরি সুরার MP3 ফাইল ডাউনলোড বাটন */}
               <Button
                 size="sm"
                 variant="outline"
@@ -935,7 +932,6 @@ function SurahDetailPage() {
               </Button>
             </div>
 
-            {/* নেভিগেশন বোতাম */}
             <div className="flex items-center gap-1 shrink-0">
               {surahId > 1 && (
                 <Button asChild variant="outline" size="sm" className="h-7 px-2 text-xs">
@@ -1027,7 +1023,6 @@ function SurahDetailPage() {
                       <Bookmark className={`size-4 ${isBookmarked ? "fill-current" : ""}`} />
                     </button>
 
-                    {/* আয়াত অডিও ডাউনলোড বাটন */}
                     <button
                       type="button"
                       disabled={isThisAyahDownloading}
@@ -1185,38 +1180,66 @@ function SurahDetailPage() {
 
               {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-3 pt-0.5">
+                
+                {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
                 <div 
-                  style={{ display: showConventionalBn ? "block" : "none" }}
+                  style={{ display: (isEditing || showConventionalBn) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <FileText className="size-3.5 text-muted-foreground/80" />
                     <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
                   </div>
-                  <p 
-                    className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
-                    style={{ fontSize: `${translationFontSize}px` }}
-                  >
-                    {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
-                  </p>
+                  {isEditing ? (
+                    <Textarea
+                      value={editForm.conventional_bn}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, conventional_bn: e.target.value })
+                      }
+                      className="mt-1 bg-background"
+                      style={{ fontSize: `${translationFontSize}px` }}
+                      placeholder="প্রচলিত বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
+                    />
+                  ) : (
+                    <p 
+                      className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
+                      style={{ fontSize: `${translationFontSize}px` }}
+                    >
+                      {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
+                    </p>
+                  )}
                 </div>
 
+                {/* ২. Conventional Translation (English) */}
                 <div 
-                  style={{ display: showConventionalEn ? "block" : "none" }}
+                  style={{ display: (isEditing || showConventionalEn) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <Languages className="size-3.5 text-muted-foreground/80" />
                     <span>Conventional Translation (English)</span>
                   </div>
-                  <p 
-                    className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
-                    style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
-                  >
-                    {ayah.conventional_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
-                  </p>
+                  {isEditing ? (
+                    <Textarea
+                      value={editForm.conventional_en}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, conventional_en: e.target.value })
+                      }
+                      className="font-serif italic mt-1 bg-background"
+                      style={{ fontSize: `${translationFontSize}px` }}
+                      placeholder="Conventional English translation..."
+                    />
+                  ) : (
+                    <p 
+                      className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
+                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
+                    >
+                      {ayah.conventional_en || (ayah as any).translation_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
+                    </p>
+                  )}
                 </div>
 
+                {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
                 <div 
                   style={{ display: (isEditing || (showModernBn && hasModernBnData)) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
@@ -1245,6 +1268,7 @@ function SurahDetailPage() {
                   )}
                 </div>
 
+                {/* ৪. Modern Translation (English) */}
                 <div 
                   style={{ display: (isEditing || (showModernEn && hasModernEnData)) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
