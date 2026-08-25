@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { PrefsProvider } from "../lib/prefs";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
+import { AuthPromptModal } from "../components/AuthPromptModal";
 import { Toaster } from "../components/ui/sonner";
 import { supabase } from "../integrations/supabase/client";
 import { useQueryPersistence } from "../lib/query-persist";
@@ -203,6 +204,7 @@ function RootComponent() {
           </main>
           <SiteFooter />
         </div>
+        <AuthPromptModal />
         <Toaster />
       </PrefsProvider>
     </QueryClientProvider>
