@@ -65,7 +65,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
       { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
@@ -241,28 +241,28 @@ function AdminPage() {
     {
       group: "মূল মেনু",
       items: [
-        { value: "articles", label: t("articles") || "আর্টিকেলসমূহ", icon: FileText },
-        { value: "translations", label: t("translationsTab") || "কুরআন অনুবাদ", icon: Languages },
-        { value: "posts", label: t("postSettings") || "লেখকবৃন্দ (Authors)", icon: Users },
-        { value: "categories", label: t("categoriesTab") || "ক্যাটাগরি", icon: FolderTree },
+        { value: "articles", label: "আর্টিকেলসমূহ", icon: FileText },
+        { value: "translations", label: "কুরআন অনুবাদ", icon: Languages },
+        { value: "posts", label: "লেখকবৃন্দ (Authors)", icon: Users },
+        { value: "categories", label: "ক্যাটাগরি", icon: FolderTree },
       ],
     },
     {
-      group: "ওয়েবসাইট উপাদান",
+      group: "ওয়েবসাইট উপাদান",
       items: [
-        { value: "pages", label: t("pagesTab") || "পেইজসমূহ", icon: LayoutGrid },
-        { value: "menu", label: t("menuTab") || "নেভিগেশন মেনু", icon: MenuIcon },
-        { value: "messages", label: t("messagesTab") || "বার্তা / ফিডব্যাক", icon: Mail },
-        { value: "subs", label: t("subscribersTab") || "সাবস্ক্রাইবার", icon: Users },
+        { value: "pages", label: "পেইজসমূহ", icon: LayoutGrid },
+        { value: "menu", label: "নেভিগেশন মেনু", icon: MenuIcon },
+        { value: "messages", label: "বার্তা / ফিডব্যাক", icon: Mail },
+        { value: "subs", label: "সাবস্ক্রাইবার তালিকা", icon: Users },
       ],
     },
     {
       group: "সিস্টেম ও রোল",
       items: [
         { value: "roles", label: "অ্যাডমিন ও ইউজার রোল", icon: Shield },
-        { value: "social", label: t("socialTab") || "সোশ্যাল মিডিয়া লিংক", icon: Share2 },
-        { value: "turnstile", label: t("turnstileTab") || "সিকিউরিটি / Turnstile", icon: KeyRound },
-        { value: "offline", label: t("offlineTab") || "অফলাইন সিঙ্ক", icon: RefreshCw },
+        { value: "social", label: "সোশ্যাল মিডিয়া লিংক", icon: Share2 },
+        { value: "turnstile", label: "টার্নস্টাইল সিকিউরিটি", icon: KeyRound },
+        { value: "offline", label: "অফলাইন সিঙ্ক", icon: RefreshCw },
       ],
     },
   ];
@@ -281,9 +281,9 @@ function AdminPage() {
         <div className="w-full max-w-sm rounded border bg-card p-6 text-center shadow-sm">
           <Shield className="mx-auto mb-3 size-10 text-muted-foreground/60" />
           <h2 className="text-lg font-semibold">অ্যাডমিন প্রবেশাধিকার সংরক্ষিত</h2>
-          <p className="mt-1 text-xs text-muted-foreground">{t("adminOnly")}</p>
+          <p className="mt-1 text-xs text-muted-foreground">শুধুমাত্র অনুমোদিত অ্যাডমিন এই প্যানেলে প্রবেশ করতে পারবেন।</p>
           <Button asChild className="mt-5 w-full">
-            <Link to="/auth">{t("signIn")}</Link>
+            <Link to="/auth">লগইন করুন</Link>
           </Button>
         </div>
       </div>
@@ -307,7 +307,7 @@ function AdminPage() {
             target="_blank"
             className="hidden items-center gap-1 hover:text-[#72aee6] transition-colors sm:inline-flex text-[11px]"
           >
-            <span>ওয়েবসাইট ভিজিট করুন</span>
+            <span>ওয়েবসাইট ভিজিট করুন</span>
             <ExternalLink className="size-3" />
           </Link>
         </div>
@@ -402,7 +402,7 @@ function AdminPage() {
                   {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "ড্যাশবোর্ড"}
                 </h1>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
+                  ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
                 </p>
               </div>
             </div>
@@ -487,7 +487,7 @@ function RolesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
       setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -499,7 +499,7 @@ function RolesAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল রিমুভ করা হয়েছে");
+      toast.success("রোল রিমুভ করা হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -1030,7 +1030,7 @@ function SubscribersAdmin() {
   const copyToClipboard = (id: string) => {
     navigator.clipboard.writeText(id);
     setCopiedId(id);
-    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
+    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -1065,7 +1065,7 @@ function SubscribersAdmin() {
                 >
                   {copiedId === s.id ? (
                     <>
-                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
+                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
                     </>
                   ) : (
                     <>
