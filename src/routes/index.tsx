@@ -51,6 +51,15 @@ function bnToEnDigits(str: string): string {
   return str.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
 }
 
+function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 120): string {
+  if (excerpt && excerpt.trim().length > 0) {
+    return excerpt.trim();
+  }
+  if (!body) return "";
+  const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+  return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
+}
+
 function HomePage() {
   const { t, lang } = usePrefs();
   const [term, setTerm] = useState("");
@@ -62,7 +71,7 @@ function HomePage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("id, slug, title_bn, title_en, excerpt_bn, excerpt_en, published_at, cover_image_url")
+        .select("id, slug, title_bn, title_en, excerpt_bn, excerpt_en, content_bn, content_en, body_bn, body_en, published_at, cover_image_url")
         .eq("published", true)
         .order("published_at", { ascending: false })
         .limit(3);
@@ -333,31 +342,40 @@ function HomePage() {
           </div>
           {articles.data && articles.data.length > 0 ? (
             <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {articles.data.map((a) => (
-                <Link
-                  key={a.id}
-                  to="/articles/$slug"
-                  params={{ slug: a.slug }}
-                  className="card-soft flex flex-col overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
-                >
-                  {a.cover_image_url && (
-                    <img
-                      src={a.cover_image_url}
-                      alt={a.title_bn}
-                      loading="lazy"
-                      className="h-40 w-full object-cover"
-                    />
-                  )}
-                  <div className="p-5">
-                    <h3 className="text-base font-semibold">
-                      {lang === "en" && a.title_en ? a.title_en : a.title_bn}
-                    </h3>
-                    <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                      {lang === "en" && a.excerpt_en ? a.excerpt_en : a.excerpt_bn}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+              {articles.data.map((a) => {
+                const excerpt =
+                  lang === "en"
+                    ? getCleanExcerpt(a.excerpt_en, a.content_en || (a as any).body_en)
+                    : getCleanExcerpt(a.excerpt_bn, a.content_bn || (a as any).body_bn);
+
+                return (
+                  <Link
+                    key={a.id}
+                    to="/articles/$slug"
+                    params={{ slug: a.slug }}
+                    className="card-soft flex flex-col overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+                  >
+                    {a.cover_image_url && (
+                      <img
+                        src={a.cover_image_url}
+                        alt={a.title_bn}
+                        loading="lazy"
+                        className="h-40 w-full object-cover"
+                      />
+                    )}
+                    <div className="p-5">
+                      <h3 className="text-base font-semibold">
+                        {lang === "en" && a.title_en ? a.title_en : a.title_bn}
+                      </h3>
+                      {excerpt && (
+                        <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                          {excerpt}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           ) : (
             <p className="mt-6 text-sm text-muted-foreground">{t("noArticles")}</p>
