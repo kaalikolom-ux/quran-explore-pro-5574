@@ -191,17 +191,15 @@ function HomePage() {
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-sm shadow-xs">
-            <Sparkles className="size-3.5 text-amber-400" /> {t("tagline")}
+            <Sparkles className="size-3.5 text-[#2A6F97] dark:text-[#4a90e2]" /> {t("tagline")}
           </p>
 
-          {/* টাইটেল এবং টাইপরাইটার (উচ্চতা ও বাংলা ই-কারের জন্য পর্যাপ্ত সেপারেশন নিশ্চিত) */}
           <div className="mt-6 max-w-3xl">
             <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
               {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
             </h1>
 
-            {/* ই-কার বা ঊর্ধ্বমাত্রার অক্ষরের জন্য স্পষ্ট প্যাডিং ও লাইন-হাইট */}
-            <div className="pt-3 sm:pt-4 text-xl font-semibold leading-[1.8] text-amber-300 sm:text-2xl md:text-3xl font-serif overflow-visible">
+            <div className="mt-4 sm:mt-5 text-xl font-semibold sm:text-2xl md:text-3xl font-serif overflow-visible">
               <Typewriter
                 words={
                   lang === "bn"
@@ -225,7 +223,7 @@ function HomePage() {
             </div>
           </div>
 
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
           
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
@@ -235,7 +233,7 @@ function HomePage() {
               className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
-                <BookOpen className="size-4 mr-2 text-amber-300" /> {t("readQuran")}
+                <BookOpen className="size-4 mr-2 text-[#2A6F97] dark:text-[#4a90e2]" /> {t("readQuran")}
               </Link>
             </Button>
             <Button
@@ -245,7 +243,7 @@ function HomePage() {
               className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/articles">
-                <FileText className="size-4 mr-2 text-amber-300" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
+                <FileText className="size-4 mr-2 text-[#2A6F97] dark:text-[#4a90e2]" /> {lang === "bn" ? "আর্টিকেল" : "Articles"}
               </Link>
             </Button>
             <Button
@@ -255,7 +253,7 @@ function HomePage() {
               className="border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02]"
             >
               <Link to="/settings">
-                <Settings className="size-4 mr-2 text-amber-300" /> {lang === "bn" ? "সেটিংস" : "Settings"}
+                <Settings className="size-4 mr-2 text-[#2A6F97] dark:text-[#4a90e2]" /> {lang === "bn" ? "সেটিংস" : "Settings"}
               </Link>
             </Button>
           </div>
