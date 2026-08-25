@@ -417,7 +417,7 @@ function AdminPage() {
               </TabsContent>
               <TabsContent value="posts" className="mt-0 focus-visible:outline-none">
                 <div className="space-y-4">
-                  <p className="text-sm text-muted-foreground">{t("authorsTab")}</p>
+                  <p className="text-sm text-muted-foreground">লেখক তালিকা ও ম্যানেজমেন্ট</p>
                   <AuthorsAdmin />
                 </div>
               </TabsContent>
@@ -605,7 +605,6 @@ const EMPTY = {
 };
 
 function ArticlesAdmin() {
-  const { t } = usePrefs();
   const { user } = useSession();
   const queryClient = useQueryClient();
   const [form, setForm] = useState({ ...EMPTY });
@@ -668,7 +667,7 @@ function ArticlesAdmin() {
       setForm({ ...EMPTY });
       setEditingId(null);
       setAuthorId("");
-      toast.success(t("saved"));
+      toast.success("আর্টিকেল সফলভাবে সংরক্ষিত হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -681,7 +680,7 @@ function ArticlesAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success(t("delete"));
+      toast.success("আর্টিকেল মুছে ফেলা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -725,34 +724,34 @@ function ArticlesAdmin() {
         }}
       >
         <div className="flex items-center justify-between border-b border-border/60 pb-3">
-          <h2 className="font-semibold text-base">{editingId ? t("edit") : t("newArticle")}</h2>
+          <h2 className="font-semibold text-base">{editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল তৈরি করুন"}</h2>
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-muted-foreground">{published ? t("published") : t("draft")}</span>
+            <span className="text-muted-foreground">{published ? "প্রকাশিত (Published)" : "ড্রাফট (Draft)"}</span>
             <Switch checked={published} onCheckedChange={setPublished} />
           </div>
         </div>
-        {field("slug", t("slug"))}
+        {field("slug", "স্লাগ (URL Slug)")}
         <div className="grid gap-4 sm:grid-cols-2">
-          {field("title_bn", t("titleBn"))}
-          {field("title_en", t("titleEn"))}
+          {field("title_bn", "শিরোনাম (বাংলা)")}
+          {field("title_en", "শিরোনাম (English)")}
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          {field("excerpt_bn", t("excerptBn"), true)}
-          {field("excerpt_en", t("excerptEn"), true)}
+          {field("excerpt_bn", "সংক্ষিপ্ত বিবরণ (বাংলা)", true)}
+          {field("excerpt_en", "সংক্ষিপ্ত বিবরণ (English)", true)}
         </div>
-        {field("content_bn", t("contentBn"), true)}
-        {field("content_en", t("contentEn"), true)}
-        {field("cover_image_url", t("coverImage"))}
+        {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
+        {field("content_en", "মূল বিষয়বস্তু (English)", true)}
+        {field("cover_image_url", "কভার ইমেজ লিঙ্ক (Cover Image URL)")}
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="author" className="text-xs font-semibold">{t("author")}</Label>
+            <Label htmlFor="author" className="text-xs font-semibold">লেখক</Label>
             <select
               id="author"
               value={authorId}
               onChange={(e) => setAuthorId(e.target.value)}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="">{t("noAuthor")}</option>
+              <option value="">কোনো লেখক নেই</option>
               {authors.data?.map((a) => (
                 <option key={a.id} value={a.id}>
                   {a.name_bn}
@@ -761,14 +760,14 @@ function ArticlesAdmin() {
             </select>
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="article-category" className="text-xs font-semibold">{t("category")}</Label>
+            <Label htmlFor="article-category" className="text-xs font-semibold">ক্যাটাগরি</Label>
             <select
               id="article-category"
               value={categoryId}
               onChange={(e) => setCategoryId(e.target.value)}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="">{t("noCategory")}</option>
+              <option value="">কোনো ক্যাটাগরি নেই</option>
               {categories.data?.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name_bn}
@@ -779,7 +778,7 @@ function ArticlesAdmin() {
         </div>
         <div className="flex items-center gap-2 pt-2">
           <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
-            <Plus className="size-3.5 mr-1" /> {t("save")}
+            <Plus className="size-3.5 mr-1" /> সংরক্ষণ করুন
           </Button>
           {editingId && (
             <Button
@@ -791,7 +790,7 @@ function ArticlesAdmin() {
                 setForm({ ...EMPTY });
               }}
             >
-              {t("cancel")}
+              বাতিল
             </Button>
           )}
         </div>
@@ -805,7 +804,7 @@ function ArticlesAdmin() {
               <div className="min-w-0 flex-1">
                 <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
                 <p className="text-[11px] text-muted-foreground">
-                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? t("published") : t("draft")}</span>
+                  /{a.slug} · <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{a.published ? "প্রকাশিত" : "ড্রাফট"}</span>
                 </p>
               </div>
               <div className="flex items-center gap-1">
@@ -813,7 +812,7 @@ function ArticlesAdmin() {
                   variant="ghost"
                   size="icon"
                   className="h-7 w-7"
-                  aria-label={t("edit")}
+                  aria-label="Edit"
                   onClick={() => {
                     setEditingId(a.id);
                     setPublished(a.published);
@@ -838,7 +837,7 @@ function ArticlesAdmin() {
                   variant="ghost"
                   size="icon"
                   className="h-7 w-7 text-destructive hover:bg-destructive/10"
-                  aria-label={t("delete")}
+                  aria-label="Delete"
                   onClick={() => remove.mutate(a.id)}
                 >
                   <Trash2 className="size-3.5" />
@@ -861,7 +860,6 @@ const transSchema = z.object({
 });
 
 function TranslationsAdmin() {
-  const { t } = usePrefs();
   const { user } = useSession();
   const queryClient = useQueryClient();
   const [surah, setSurah] = useState("1");
@@ -906,7 +904,7 @@ function TranslationsAdmin() {
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
       setText("");
       setNote("");
-      toast.success(t("saved"));
+      toast.success("অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -919,6 +917,7 @@ function TranslationsAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
+      toast.success("অনুবাদ মুছে ফেলা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -934,7 +933,7 @@ function TranslationsAdmin() {
       >
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
-            <Label htmlFor="surah" className="text-xs font-semibold">{t("surahNumber")}</Label>
+            <Label htmlFor="surah" className="text-xs font-semibold">সূরা নম্বর</Label>
             <Input
               id="surah"
               type="number"
@@ -946,7 +945,7 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="ayah" className="text-xs font-semibold">{t("ayahNumber")}</Label>
+            <Label htmlFor="ayah" className="text-xs font-semibold">আয়াত নম্বর</Label>
             <Input
               id="ayah"
               type="number"
@@ -958,30 +957,44 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="lng" className="text-xs font-semibold">{t("translationType")}</Label>
+            <Label htmlFor="lng" className="text-xs font-semibold">অনুবাদ টাইপ</Label>
             <select
               id="lng"
               value={lng}
               onChange={(e) => setLng(e.target.value as typeof lng)}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="bn">{t("sciBn")}</option>
-              <option value="en">{t("sciEn")}</option>
-              <option value="bn_std">{t("stdBn")}</option>
-              <option value="en_std">{t("stdEn")}</option>
+              <option value="bn">বিজ্ঞানভিত্তিক (বাংলা)</option>
+              <option value="en">বিজ্ঞানভিত্তিক (English)</option>
+              <option value="bn_std">প্রচলিত অনুবাদ (বাংলা)</option>
+              <option value="en_std">প্রচলিত অনুবাদ (English)</option>
             </select>
           </div>
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="text" className="text-xs font-semibold">{t("translationText")}</Label>
-          <Textarea id="text" rows={4} value={text} onChange={(e) => setText(e.target.value)} className="text-xs" />
+          <Label htmlFor="text" className="text-xs font-semibold">অনুবাদ টেক্সট</Label>
+          <Textarea 
+            id="text" 
+            rows={4} 
+            value={text} 
+            onChange={(e) => setText(e.target.value)} 
+            placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
+            className="text-xs" 
+          />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="note" className="text-xs font-semibold">{t("note")}</Label>
-          <Textarea id="note" rows={2} value={note} onChange={(e) => setNote(e.target.value)} className="text-xs" />
+          <Label htmlFor="note" className="text-xs font-semibold">বিশেষ টীকা / নোট (ঐচ্ছিক)</Label>
+          <Textarea 
+            id="note" 
+            rows={2} 
+            value={note} 
+            onChange={(e) => setNote(e.target.value)} 
+            placeholder="প্রাসঙ্গিক ব্যাখ্যা বা তথ্যসূত্র..."
+            className="text-xs" 
+          />
         </div>
         <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
-          {t("save")}
+          <Plus className="size-3.5 mr-1" /> সংরক্ষণ করুন
         </Button>
       </form>
 
@@ -998,7 +1011,7 @@ function TranslationsAdmin() {
                 variant="ghost"
                 size="icon"
                 className="h-7 w-7 text-destructive hover:bg-destructive/10"
-                aria-label={t("delete")}
+                aria-label="Delete"
                 onClick={() => remove.mutate(v.id)}
               >
                 <Trash2 className="size-3.5" />
@@ -1012,7 +1025,6 @@ function TranslationsAdmin() {
 }
 
 function SubscribersAdmin() {
-  const { t } = usePrefs();
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const list = useQuery({
@@ -1045,7 +1057,7 @@ function SubscribersAdmin() {
 
       <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
         {list.data?.length === 0 && (
-          <p className="p-4 text-xs text-muted-foreground">{t("noArticles")}</p>
+          <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
         )}
         {list.data?.map((s) => (
           <div
