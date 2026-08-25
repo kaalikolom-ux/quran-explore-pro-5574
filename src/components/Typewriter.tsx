@@ -47,11 +47,11 @@ export function Typewriter({
 
   return (
     <span className="inline-block overflow-visible py-1">
-      {/* bg-clip-text বাদ দিয়ে স্পষ্ট ও পূর্ণাঙ্গ গ্লিফ রেন্ডারিং */}
-      <span className="text-amber-300 drop-shadow-[0_2px_10px_rgba(251,191,36,0.3)]">
+      {/* অক্ষরের মাথা না কেটে সফট ট্রান্সপারেন্ট হোয়াইট লুক */}
+      <span className="text-white/70 drop-shadow-sm">
         {text}
       </span>
-      <span className="animate-pulse font-normal text-amber-300/80 ms-1 select-none">
+      <span className="animate-pulse font-normal text-white/50 ms-1 select-none">
         |
       </span>
     </span>
