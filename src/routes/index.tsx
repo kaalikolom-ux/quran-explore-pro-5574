@@ -177,37 +177,37 @@ function HomePage() {
             <Sparkles className="size-3.5 text-amber-400" /> {t("tagline")}
           </p>
 
-          <div className="mt-6 max-w-3xl">
-            <h1 className="text-3xl font-bold leading-tight tracking-normal text-white sm:text-4xl md:text-5xl font-serif">
-              <span>{lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}</span>
-              
-              {/* টাইপিং এনিমেশন: সরাসরি পারফেক্ট মার্জিনে ইন্টিগ্রেটেড */}
-              <span className="block mt-1 text-xl font-semibold tracking-normal text-amber-300 sm:text-2xl md:text-3xl leading-snug font-serif">
-                <Typewriter
-                  words={
-                    lang === "bn"
-                      ? [
-                          "শব্দে শব্দে অর্থসহ",
-                          "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
-                          "সহজ বাংলা অনুবাদে",
-                          "প্রামাণ্য তথ্যসূত্রসহ",
-                        ]
-                      : [
-                          "word by word",
-                          "with scientific context",
-                          "in clear translation",
-                          "with authentic notes",
-                        ]
-                  }
-                  typingSpeed={lang === "bn" ? 90 : 80}
-                  deletingSpeed={lang === "bn" ? 50 : 40}
-                  delayBetweenWords={1500}
-                />
-              </span>
+          {/* টাইটেল এবং টাইপরাইটার ফ্লেক্স-কল ও নির্দিষ্ট ফাঁকা দূরত্বের সাথে */}
+          <div className="mt-6 flex max-w-3xl flex-col gap-3">
+            <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
+              {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
             </h1>
+
+            <div className="text-xl font-semibold leading-normal text-amber-300 sm:text-2xl md:text-3xl font-serif">
+              <Typewriter
+                words={
+                  lang === "bn"
+                    ? [
+                        "শব্দে শব্দে অর্থসহ",
+                        "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
+                        "সহজ বাংলা অনুবাদে",
+                        "প্রামাণ্য তথ্যসূত্রসহ",
+                      ]
+                    : [
+                        "word by word",
+                        "with scientific context",
+                        "in clear translation",
+                        "with authentic notes",
+                      ]
+                }
+                typingSpeed={lang === "bn" ? 90 : 80}
+                deletingSpeed={lang === "bn" ? 50 : 40}
+                delayBetweenWords={1500}
+              />
+            </div>
           </div>
 
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
           
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
