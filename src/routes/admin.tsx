@@ -45,6 +45,8 @@ import {
   AlertCircle,
   X,
   Loader2,
+  CheckSquare,
+  Square,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -82,7 +84,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* INLINE IMPORT MODAL (স্বয়ংসম্পূর্ণ ইমপোর্ট উইন্ডো)                          */
+/* INLINE IMPORT MODAL (ওয়ার্ডপ্রেস ও ব্লগার ইমপোর্টার)                       */
 /* ========================================================================== */
 function InlineImportModal({
   type,
@@ -231,7 +233,7 @@ function InlineImportModal({
               {type === "wordpress" ? "ওয়ার্ডপ্রেস (WordPress) থেকে ইমপোর্ট" : "ব্লগার (Blogger) থেকে ইমপোর্ট"}
             </h3>
           </div>
-          <button onClick={onClose} className="rounded-md p-1 text-muted-foreground hover:bg-muted">
+          <button onClick={onClose} className="rounded-md p-1 text-muted-foreground hover:bg-muted cursor-pointer">
             <X className="size-4" />
           </button>
         </div>
@@ -242,7 +244,7 @@ function InlineImportModal({
             <p className="font-semibold text-sm text-foreground">
               {importedCount} টি পোস্ট সফলভাবে ইমপোর্ট করা হয়েছে!
             </p>
-            <Button onClick={onClose} className="bg-[#2271b1] text-white text-xs">
+            <Button onClick={onClose} className="bg-[#2271b1] text-white text-xs cursor-pointer">
               ঠিক আছে
             </Button>
           </div>
@@ -273,7 +275,7 @@ function InlineImportModal({
             )}
 
             <div className="flex items-center justify-end gap-2 pt-2">
-              <Button type="button" variant="outline" size="sm" onClick={onClose} className="text-xs">
+              <Button type="button" variant="outline" size="sm" onClick={onClose} className="text-xs cursor-pointer">
                 বাতিল
               </Button>
               <Button
@@ -281,7 +283,7 @@ function InlineImportModal({
                 size="sm"
                 disabled={!file || isProcessing}
                 onClick={handleImport}
-                className="bg-[#2271b1] hover:bg-[#135e96] text-white text-xs"
+                className="bg-[#2271b1] hover:bg-[#135e96] text-white text-xs cursor-pointer"
               >
                 {isProcessing ? (
                   <>
@@ -341,7 +343,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("bold") ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleBold().run()}
                 title="বোল্ড"
               >
@@ -351,7 +353,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("italic") ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleItalic().run()}
                 title="ইটালিক"
               >
@@ -362,7 +364,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("heading", { level: 1 }) ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
                 title="হেডিং ১"
               >
@@ -372,7 +374,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("heading", { level: 2 }) ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
                 title="হেডিং ২"
               >
@@ -382,7 +384,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("heading", { level: 3 }) ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
                 title="হেডিং ৩"
               >
@@ -393,7 +395,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("bulletList") ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleBulletList().run()}
                 title="বুলেট তালিকা"
               >
@@ -403,7 +405,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("orderedList") ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleOrderedList().run()}
                 title="সংখ্যানুক্রমিক তালিকা"
               >
@@ -413,7 +415,7 @@ function RichTextEditor({
                 type="button"
                 variant={editor.isActive("blockquote") ? "secondary" : "ghost"}
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().toggleBlockquote().run()}
                 title="উদ্ধৃতি"
               >
@@ -424,7 +426,7 @@ function RichTextEditor({
                 type="button"
                 variant="ghost"
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().undo().run()}
                 disabled={!editor.can().undo()}
                 title="পূর্বাবস্থায় ফেরান"
@@ -435,7 +437,7 @@ function RichTextEditor({
                 type="button"
                 variant="ghost"
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
                 onClick={() => editor.chain().focus().redo().run()}
                 disabled={!editor.can().redo()}
                 title="পুনরায় করুন"
@@ -461,7 +463,7 @@ function RichTextEditor({
               editor.commands.setContent(value || "");
             }
           }}
-          className={`h-7 px-2.5 text-[11px] gap-1.5 transition-all ${
+          className={`h-7 px-2.5 text-[11px] gap-1.5 transition-all cursor-pointer ${
             isHtmlMode
               ? "bg-[#2271b1]/15 text-[#2271b1] border-[#2271b1]/40 font-semibold"
               : "text-muted-foreground hover:text-foreground"
@@ -798,7 +800,7 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
 }
 
 /* ========================================================================== */
-/* ARTICLES ADMIN                                                             */
+/* ARTICLES ADMIN WITH BULK SELECTION & BULK ACTIONS                          */
 /* ========================================================================== */
 const articleSchema = z.object({
   slug: z
@@ -836,6 +838,13 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
+  
+  // বাল্ক সিলেকশন স্টেট
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [bulkAction, setBulkAction] = useState<string>("");
+  const [bulkAuthorId, setBulkAuthorId] = useState<string>("");
+  const [bulkCategoryId, setBulkCategoryId] = useState<string>("");
+
   const categories = useCategories();
 
   const authors = useQuery({
@@ -874,6 +883,53 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
       toast.success(variables.nextStatus ? "আর্টিকেল প্রকাশিত হয়েছে" : "আর্টিকেলটি খসড়া/ড্রাফট করা হয়েছে");
+    },
+    onError: (err: Error) => toast.error(err.message),
+  });
+
+  // বাল্ক অ্যাকশন মিউটেশন
+  const executeBulkAction = useMutation({
+    mutationFn: async () => {
+      if (selectedIds.length === 0) throw new Error("অনুগ্রহ করে অন্তত একটি পোস্ট নির্বাচন করুন");
+      if (!bulkAction) throw new Error("বাল্ক অ্যাকশন নির্বাচন করুন");
+
+      if (bulkAction === "delete") {
+        const { error } = await supabase.from("articles").delete().in("id", selectedIds);
+        if (error) throw error;
+      } else if (bulkAction === "publish") {
+        const { error } = await supabase
+          .from("articles")
+          .update({ published: true, published_at: new Date().toISOString() })
+          .in("id", selectedIds);
+        if (error) throw error;
+      } else if (bulkAction === "draft") {
+        const { error } = await supabase
+          .from("articles")
+          .update({ published: false, published_at: null })
+          .in("id", selectedIds);
+        if (error) throw error;
+      } else if (bulkAction === "change-author") {
+        const { error } = await supabase
+          .from("articles")
+          .update({ author_id: bulkAuthorId || null })
+          .in("id", selectedIds);
+        if (error) throw error;
+      } else if (bulkAction === "change-category") {
+        const { error } = await supabase
+          .from("articles")
+          .update({ category_id: bulkCategoryId || null })
+          .in("id", selectedIds);
+        if (error) throw error;
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      setSelectedIds([]);
+      setBulkAction("");
+      setBulkAuthorId("");
+      setBulkCategoryId("");
+      toast.success("বাল্ক অ্যাকশন সফলভাবে সম্পন্ন হয়েছে!");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -944,10 +1000,26 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     if (statusFilter === "published") return a.published;
     if (statusFilter === "draft") return !a.published;
     return true;
-  });
+  }) || [];
 
   const publishedCount = list.data?.filter((a) => a.published).length || 0;
   const draftCount = list.data?.filter((a) => !a.published).length || 0;
+
+  // সিলেক্ট অল হ্যান্ডলার
+  const isAllSelected = filteredArticles.length > 0 && selectedIds.length === filteredArticles.length;
+  const toggleSelectAll = () => {
+    if (isAllSelected) {
+      setSelectedIds([]);
+    } else {
+      setSelectedIds(filteredArticles.map((a) => a.id));
+    }
+  };
+
+  const toggleSelectOne = (id: string) => {
+    setSelectedIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+    );
+  };
 
   const field = (key: keyof typeof EMPTY, label: string, long = false) => (
     <div className="space-y-1.5">
@@ -1101,7 +1173,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
             type="submit" 
             disabled={save.isPending} 
             size="sm" 
-            className={`text-white transition-all ${
+            className={`text-white transition-all cursor-pointer ${
               published
                 ? "bg-[#2271b1] hover:bg-[#135e96]"
                 : "bg-amber-600 hover:bg-amber-700"
@@ -1125,6 +1197,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               type="button"
               variant="outline"
               size="sm"
+              className="cursor-pointer"
               onClick={() => {
                 setEditingId(null);
                 setForm({ ...EMPTY });
@@ -1139,6 +1212,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         </div>
       </form>
 
+      {/* আর্টিকেল তালিকা ও বাল্ক অ্যাকশন বার */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
           <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
@@ -1182,73 +1256,154 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           </div>
         </div>
 
+        {/* বাল্ক অ্যাকশন কন্ট্রোল বার */}
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-card p-2.5 shadow-xs">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleSelectAll}
+              className="flex items-center gap-1.5 rounded px-2 py-1 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground cursor-pointer"
+            >
+              {isAllSelected ? (
+                <CheckSquare className="size-4 text-[#2271b1]" />
+              ) : (
+                <Square className="size-4 text-muted-foreground" />
+              )}
+              <span>সব সিলেক্ট করুন ({selectedIds.length}/{filteredArticles.length})</span>
+            </button>
+
+            <div className="h-4 w-px bg-border mx-1" />
+
+            <select
+              value={bulkAction}
+              onChange={(e) => setBulkAction(e.target.value)}
+              className="h-8 rounded border border-border bg-background px-2.5 text-xs text-foreground focus:outline-none cursor-pointer"
+            >
+              <option value="">বাল্ক অ্যাকশন নির্বাচন করুন...</option>
+              <option value="publish">🟢 একসাথে প্রকাশিত করুন</option>
+              <option value="draft">🟡 একসাথে খসড়া (Draft) করুন</option>
+              <option value="change-author">👤 একসাথে লেখক পরিবর্তন করুন</option>
+              <option value="change-category">📁 একসাথে ক্যাটাগরি পরিবর্তন করুন</option>
+              <option value="delete">🗑️ একসাথে মুছে ফেলুন (Delete)</option>
+            </select>
+
+            {bulkAction === "change-author" && (
+              <select
+                value={bulkAuthorId}
+                onChange={(e) => setBulkAuthorId(e.target.value)}
+                className="h-8 rounded border border-border bg-background px-2 text-xs"
+              >
+                <option value="">লেখক বাছাই করুন</option>
+                {authors.data?.map((a) => (
+                  <option key={a.id} value={a.id}>{a.name_bn}</option>
+                ))}
+              </select>
+            )}
+
+            {bulkAction === "change-category" && (
+              <select
+                value={bulkCategoryId}
+                onChange={(e) => setBulkCategoryId(e.target.value)}
+                className="h-8 rounded border border-border bg-background px-2 text-xs"
+              >
+                <option value="">ক্যাটাগরি বাছাই করুন</option>
+                {categories.data?.map((c) => (
+                  <option key={c.id} value={c.id}>{c.name_bn}</option>
+                ))}
+              </select>
+            )}
+
+            <Button
+              type="button"
+              size="sm"
+              disabled={selectedIds.length === 0 || !bulkAction || executeBulkAction.isPending}
+              onClick={() => executeBulkAction.mutate()}
+              className="h-8 bg-[#2271b1] hover:bg-[#135e96] text-white text-xs px-3 cursor-pointer"
+            >
+              {executeBulkAction.isPending ? "প্রয়োগ হচ্ছে..." : "প্রয়োগ করুন (Apply)"}
+            </Button>
+          </div>
+        </div>
+
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-          {filteredArticles?.length === 0 ? (
+          {filteredArticles.length === 0 ? (
             <p className="p-4 text-xs text-muted-foreground text-center">কোনো আর্টিকেল পাওয়া যায়নি।</p>
           ) : (
-            filteredArticles?.map((a) => (
-              <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
-                  <p className="text-[11px] text-muted-foreground">
-                    /{a.slug} ·{" "}
-                    <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-semibold"}>
-                      {a.published ? "প্রকাশিত" : "খসড়া (Draft)"}
-                    </span>
-                  </p>
-                </div>
+            filteredArticles.map((a) => {
+              const isChecked = selectedIds.includes(a.id);
 
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] text-muted-foreground hidden sm:inline">
-                    {a.published ? "Live" : "Draft"}
-                  </span>
-                  <Switch
-                    checked={a.published}
-                    onCheckedChange={(checked) =>
-                      togglePublish.mutate({ id: a.id, nextStatus: checked })
-                    }
-                    title={a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"}
+              return (
+                <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+                  {/* সিলেকশন চেকবক্স */}
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => toggleSelectOne(a.id)}
+                    className="size-4 rounded border-border accent-[#2271b1] cursor-pointer"
                   />
-                </div>
 
-                <div className="flex items-center gap-1 ml-2 border-l border-border/60 pl-2">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-7 w-7"
-                    aria-label="সম্পাদনা"
-                    onClick={() => {
-                      setEditingId(a.id);
-                      setPublished(a.published);
-                      setAuthorId(a.author_id ?? "");
-                      setCategoryId(a.category_id ?? "");
-                      setForm({
-                        slug: a.slug,
-                        title_bn: a.title_bn,
-                        title_en: a.title_en ?? "",
-                        excerpt_bn: a.excerpt_bn ?? "",
-                        excerpt_en: a.excerpt_en ?? "",
-                        content_bn: a.content_bn ?? "",
-                        content_en: a.content_en ?? "",
-                        cover_image_url: a.cover_image_url ?? "",
-                      });
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                  >
-                    <Pencil className="size-3.5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-7 w-7 text-destructive hover:bg-destructive/10"
-                    aria-label="মুছে ফেলুন"
-                    onClick={() => remove.mutate(a.id)}
-                  >
-                    <Trash2 className="size-3.5" />
-                  </Button>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
+                    <p className="text-[11px] text-muted-foreground">
+                      /{a.slug} ·{" "}
+                      <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-semibold"}>
+                        {a.published ? "প্রকাশিত" : "খসড়া (Draft)"}
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] text-muted-foreground hidden sm:inline">
+                      {a.published ? "Live" : "Draft"}
+                    </span>
+                    <Switch
+                      checked={a.published}
+                      onCheckedChange={(checked) =>
+                        togglePublish.mutate({ id: a.id, nextStatus: checked })
+                      }
+                      title={a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"}
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-1 ml-2 border-l border-border/60 pl-2">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 cursor-pointer"
+                      aria-label="সম্পাদনা"
+                      onClick={() => {
+                        setEditingId(a.id);
+                        setPublished(a.published);
+                        setAuthorId(a.author_id ?? "");
+                        setCategoryId(a.category_id ?? "");
+                        setForm({
+                          slug: a.slug,
+                          title_bn: a.title_bn,
+                          title_en: a.title_en ?? "",
+                          excerpt_bn: a.excerpt_bn ?? "",
+                          excerpt_en: a.excerpt_en ?? "",
+                          content_bn: a.content_bn ?? "",
+                          content_en: a.content_en ?? "",
+                          cover_image_url: a.cover_image_url ?? "",
+                        });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                    >
+                      <Pencil className="size-3.5" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
+                      aria-label="মুছে ফেলুন"
+                      onClick={() => remove.mutate(a.id)}
+                    >
+                      <Trash2 className="size-3.5" />
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>
@@ -1398,7 +1553,7 @@ function TranslationsAdmin() {
             className="text-xs" 
           />
         </div>
-        <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
+        <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white cursor-pointer">
           <Plus className="size-3.5 mr-1" /> সংরক্ষণ করুন
         </Button>
       </form>
@@ -1415,7 +1570,7 @@ function TranslationsAdmin() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-7 w-7 text-destructive hover:bg-destructive/10"
+                className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
                 aria-label="মুছে ফেলুন"
                 onClick={() => remove.mutate(v.id)}
               >
@@ -1514,7 +1669,7 @@ function RolesAdmin() {
             </select>
           </div>
         </div>
-        <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
+        <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white cursor-pointer">
           <UserCheck className="size-3.5 mr-1.5" /> রোল সংরক্ষণ করুন
         </Button>
       </form>
@@ -1534,7 +1689,7 @@ function RolesAdmin() {
                 variant="ghost"
                 size="icon"
                 aria-label="Delete Role"
-                className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                className="h-8 w-8 text-destructive hover:bg-destructive/10 cursor-pointer"
                 onClick={() => removeRole.mutate(r.id)}
               >
                 <UserX className="size-4" />
