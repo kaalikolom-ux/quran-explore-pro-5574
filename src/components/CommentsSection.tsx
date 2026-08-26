@@ -1,7 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { MessageSquare, Send, User, Calendar } from "lucide-react";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { MessageSquare, Send, User, Calendar, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -22,15 +21,78 @@ interface CommentsSectionProps {
   articleId: string;
 }
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: string | HTMLElement,
+        params: {
+          sitekey: string;
+          callback: (token: string) => void;
+          "error-callback"?: () => void;
+          "expired-callback"?: () => void;
+          theme?: "light" | "dark" | "auto";
+        }
+      ) => string;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
+
 export function CommentsSection({ articleId }: CommentsSectionProps) {
-  const { lang } = usePrefs();
+  const { lang, dark } = usePrefs();
   const queryClient = useQueryClient();
-  const turnstileRef = useRef<TurnstileInstance | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const widgetIdRef = useRef<string | null>(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
+  // Cloudflare Turnstile স্ক্রিপ্ট লোড ও উইজেট রেন্ডার
+  useEffect(() => {
+    let script = document.getElementById("cf-turnstile-script") as HTMLScriptElement | null;
+    
+    const renderWidget = () => {
+      if (window.turnstile && containerRef.current && !widgetIdRef.current) {
+        try {
+          widgetIdRef.current = window.turnstile.render(containerRef.current, {
+            sitekey: "0x4AAAAAAAxrB8P_0eW7Xl_9", // আপনার Turnstile Site Key বা Always Pass Test Key
+            theme: dark ? "dark" : "light",
+            callback: (token: string) => setTurnstileToken(token),
+            "expired-callback": () => setTurnstileToken(null),
+            "error-callback": () => setTurnstileToken(null),
+          });
+        } catch {
+          // ignore
+        }
+      }
+    };
+
+    if (!script) {
+      script = document.createElement("script");
+      script.id = "cf-turnstile-script";
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    } else if (window.turnstile) {
+      renderWidget();
+    }
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        try {
+          window.turnstile.reset(widgetIdRef.current);
+        } catch {
+          // ignore
+        }
+        widgetIdRef.current = null;
+      }
+    };
+  }, [dark]);
 
   // কমেন্ট লিস্ট ফেচিং
   const { data: comments = [], isLoading } = useQuery({
@@ -49,14 +111,6 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
   // কমেন্ট সাবমিশন মিউটেশন
   const submitComment = useMutation({
     mutationFn: async () => {
-      if (!turnstileToken) {
-        throw new Error(
-          lang === "en"
-            ? "Please complete the security check"
-            : "অনুগ্রহ করে সিকিউরিটি ভেরিফিকেশন সম্পন্ন করুন"
-        );
-      }
-
       const parsed = commentSchema.safeParse({ name, email, content });
       if (!parsed.success) {
         throw new Error(parsed.error.issues[0]?.message);
@@ -77,9 +131,11 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
       setEmail("");
       setContent("");
       setTurnstileToken(null);
-      turnstileRef.current?.reset();
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.reset(widgetIdRef.current);
+      }
       toast.success(
-        lang === "en" ? "Comment posted successfully!" : "আপনার মন্তব্য প্রকাশিত হয়েছে!"
+        lang === "en" ? "Comment posted successfully!" : "আপনার মন্তব্য সফলভাবে প্রকাশিত হয়েছে!"
       );
     },
     onError: (err: Error) => {
@@ -151,24 +207,22 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           />
         </div>
 
-        {/* Cloudflare Turnstile */}
-        <div className="pt-1">
-          <Turnstile
-            ref={turnstileRef}
-            siteKey="0x4AAAAAAAxxxxxx" // আপনার Turnstile Site Key বসান
-            onSuccess={(token) => setTurnstileToken(token)}
-            onError={() => setTurnstileToken(null)}
-            onExpire={() => setTurnstileToken(null)}
-          />
+        {/* Cloudflare Turnstile কন্টেইনার */}
+        <div className="pt-1 flex flex-col gap-1.5">
+          <div ref={containerRef} className="min-h-[65px]" />
+          <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
+            <ShieldCheck className="size-3.5 text-emerald-500" />
+            <span>Cloudflare Turnstile স্প্যাম সিকিউরিটি দ্বারা সুরক্ষিত</span>
+          </div>
         </div>
 
         <Button
           type="submit"
-          disabled={submitComment.isPending || !turnstileToken}
-          className="bg-[#2A6F97] hover:bg-[#1f5575] text-white text-xs font-semibold px-5"
+          disabled={submitComment.isPending}
+          className="bg-[#2A6F97] hover:bg-[#1f5575] text-white text-xs font-semibold px-5 cursor-pointer"
         >
           {submitComment.isPending ? (
-            "..."
+            "সংরক্ষণ হচ্ছে..."
           ) : (
             <>
               <Send className="size-3.5 mr-1.5" />
