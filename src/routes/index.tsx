@@ -57,19 +57,20 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
 
-/* জানালার গ্লাসে বৃষ্টির লাইভ অ্যানিমেশন কম্পোনেন্ট */
+/* হাই-পারফরম্যান্স লাইটওয়েট রেইন গ্লাস ক্যানভাস */
 function RainGlassCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let animationFrameId: number;
+    const isMobile = window.innerWidth < 768;
     let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
-    let height = (canvas.height = canvas.parentElement?.clientHeight || 600);
+    let height = (canvas.height = canvas.parentElement?.clientHeight || 550);
 
     const handleResize = () => {
       if (!canvas || !canvas.parentElement) return;
@@ -77,21 +78,20 @@ function RainGlassCanvas() {
       height = canvas.height = canvas.parentElement.clientHeight;
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
 
-    // গ্লাসে জমে থাকা স্থির ছোট ফোঁটা
+    // ফোঁটা সংখ্যা অপটিমাইজেশন (মোবাইলে ব্যাটারি ও ফ্রেম ড্রপ বাঁচানোর জন্য)
     const staticDrops: { x: number; y: number; r: number; opacity: number }[] = [];
-    const staticCount = Math.floor((width * height) / 9000);
+    const staticCount = Math.floor((width * height) / (isMobile ? 22000 : 10000));
     for (let i = 0; i < staticCount; i++) {
       staticDrops.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: Math.random() * 1.8 + 0.6,
-        opacity: Math.random() * 0.4 + 0.15,
+        r: Math.random() * 1.5 + 0.6,
+        opacity: Math.random() * 0.35 + 0.15,
       });
     }
 
-    // গড়িয়ে নিচে পড়া পানির ফোঁটা ও ট্রেইল
     interface MovingDrop {
       x: number;
       y: number;
@@ -101,14 +101,14 @@ function RainGlassCanvas() {
     }
 
     const movingDrops: MovingDrop[] = [];
-    const movingCount = Math.max(16, Math.floor(width / 45));
+    const movingCount = isMobile ? 6 : Math.max(14, Math.floor(width / 50));
 
     for (let i = 0; i < movingCount; i++) {
       movingDrops.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: Math.random() * 2.2 + 1.8,
-        speed: Math.random() * 0.8 + 0.35,
+        r: Math.random() * 2 + 1.6,
+        speed: Math.random() * 0.75 + 0.35,
         trail: [],
       });
     }
@@ -116,7 +116,7 @@ function RainGlassCanvas() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // ১. স্থির ফোঁটা রেন্ডার
+      // ১. স্থির ফোঁটা
       for (const d of staticDrops) {
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
@@ -129,45 +129,39 @@ function RainGlassCanvas() {
         ctx.fill();
       }
 
-      // ২. গড়িয়ে পড়া বৃষ্টির ফোঁটা রেন্ডার
+      // ২. চলমান ফোঁটা
       for (const drop of movingDrops) {
-        // ফোঁটা চলার ট্রেইল
         for (let t = 0; t < drop.trail.length; t++) {
           const pt = drop.trail[t];
-          const trailOpacity = (t / drop.trail.length) * 0.25;
+          const trailOpacity = (t / drop.trail.length) * 0.22;
           ctx.beginPath();
           ctx.arc(pt.x, pt.y, pt.r * 0.6, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(160, 205, 235, ${trailOpacity})`;
           ctx.fill();
         }
 
-        // প্রধান চলমান ফোঁটা
         ctx.beginPath();
         ctx.arc(drop.x, drop.y, drop.r, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(195, 225, 245, 0.45)";
         ctx.fill();
 
-        // ফোঁটার ওপর আলোর রিফ্লেকশন
         ctx.beginPath();
         ctx.arc(drop.x - drop.r * 0.3, drop.y - drop.r * 0.3, drop.r * 0.35, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
         ctx.fill();
 
-        // ট্রেইলে পয়েন্ট যুক্ত করা
         if (Math.random() > 0.4) {
           drop.trail.push({ x: drop.x, y: drop.y, r: drop.r });
-          if (drop.trail.length > 12) drop.trail.shift();
+          if (drop.trail.length > 10) drop.trail.shift();
         }
 
-        // ফোঁটার স্বাভাবিক চলন ও কাঁপুনি
         drop.y += drop.speed;
-        drop.x += (Math.random() - 0.5) * 0.4;
+        drop.x += (Math.random() - 0.5) * 0.35;
 
-        // নিচে চলে গেলে পুনরায় উপরে পাঠানো
         if (drop.y > height + 20) {
           drop.y = -10;
           drop.x = Math.random() * width;
-          drop.speed = Math.random() * 0.8 + 0.35;
+          drop.speed = Math.random() * 0.75 + 0.35;
           drop.trail = [];
         }
       }
@@ -186,7 +180,7 @@ function RainGlassCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-70"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-65"
     />
   );
 }
@@ -285,15 +279,13 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন: লাইভ রেইন-গ্লাস ব্যাকগ্রাউন্ডসহ */}
-      <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24">
-        {/* রেইন গ্লাস ক্যানভাস */}
+      {/* হিরো সেকশন: ফিক্সড ডাইমেনশন ও স্মুথ লেআউট স্টেবিলিটি */}
+      <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
         <RainGlassCanvas />
 
-        {/* গভীর সফট অ্যাম্বিয়েন্ট ব্যাকগ্রাউন্ড গ্লো */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-[#2A6F97]/25 blur-[120px]" />
-          <div className="absolute left-[-10%] top-1/4 h-[400px] w-[400px] rounded-full bg-[#1b3a4b]/35 blur-[120px]" />
+          <div className="absolute -right-20 -top-20 h-[450px] w-[450px] rounded-full bg-[#2A6F97]/25 blur-[120px]" />
+          <div className="absolute left-[-10%] top-1/4 h-[350px] w-[350px] rounded-full bg-[#1b3a4b]/35 blur-[120px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
@@ -306,7 +298,8 @@ function HomePage() {
               {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
             </h1>
 
-            <div className="mt-4 sm:mt-5 text-xl font-semibold sm:text-2xl md:text-3xl font-serif overflow-visible">
+            {/* ফিক্সড মিনিমাম হাইট দিয়ে CLS প্রতিরোধ */}
+            <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
               <Typewriter
                 words={
                   lang === "bn"
@@ -450,7 +443,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* আর্টিকেল সেকশন */}
+      {/* আর্টিকেল সেকশন: অপটিমাইজড ইমেজ ও ডাইমেনশন */}
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
@@ -481,6 +474,9 @@ function HomePage() {
                         src={a.cover_image_url}
                         alt={title}
                         loading="lazy"
+                        decoding="async"
+                        width="380"
+                        height="160"
                         className="h-40 w-full object-cover"
                       />
                     )}
