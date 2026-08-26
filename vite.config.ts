@@ -6,35 +6,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    build: {
-      target: "esnext",
-      minify: "esbuild",
-      cssCodeSplit: true,
-      sourcemap: false,
-      chunkSizeWarningLimit: 600,
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            // ১. ভারী এডিটর প্যাকেজ আলাদা চাঙ্কে রাখা (হিরো পেজের লোড স্পিড বাড়াবে)
-            if (id.includes("@tiptap") || id.includes("prosemirror")) {
-              return "editor-bundle";
-            }
-            // ২. কোর রাউটিং ও কুয়েরি লাইব্রেরি আলাদা রাখা
-            if (id.includes("@tanstack/react-query") || id.includes("@tanstack/react-router")) {
-              return "router-query";
-            }
-            // ৩. ব্যাকএন্ড কানেক্টর
-            if (id.includes("@supabase/supabase-js")) {
-              return "supabase";
-            }
-            // ৪. রিঅ্যাক্ট কোর ভেন্ডর
-            if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
-              return "react-core";
-            }
-          },
-        },
-      },
-    },
     plugins: [
       VitePWA({
         strategies: "generateSW",
@@ -69,7 +40,7 @@ export default defineConfig({
                 cacheName: "quran-assets",
                 expiration: {
                   maxEntries: 200,
-                  maxAgeSeconds: 60 * 60 * 24 * 365, // ১ বছর ক্যাশ
+                  maxAgeSeconds: 60 * 60 * 24 * 365,
                 },
                 cacheableResponse: {
                   statuses: [0, 200],
