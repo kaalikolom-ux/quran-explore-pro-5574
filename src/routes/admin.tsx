@@ -47,6 +47,7 @@ import {
   Loader2,
   CheckSquare,
   Square,
+  RotateCcw,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -84,7 +85,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* INLINE IMPORT MODAL (ওয়ার্ডপ্রেস ও ব্লগার ইমপোর্টার)                       */
+/* INLINE IMPORT MODAL                                                        */
 /* ========================================================================== */
 function InlineImportModal({
   type,
@@ -130,9 +131,7 @@ function InlineImportModal({
       const xmlDoc = parser.parseFromString(text, "text/xml");
 
       const parseError = xmlDoc.querySelector("parsererror");
-      if (parseError) {
-        throw new Error("XML ফাইলটি সঠিক নয় বা ক্ষতিগ্রস্থ।");
-      }
+      if (parseError) throw new Error("XML ফাইলটি সঠিক নয় বা ক্ষতিগ্রস্থ।");
 
       const articlesToInsert: any[] = [];
 
@@ -171,6 +170,7 @@ function InlineImportModal({
               published: status === "publish",
               published_at: new Date(postDate).toISOString(),
               created_by: user!.id,
+              deleted_at: null,
             });
           }
         });
@@ -199,14 +199,13 @@ function InlineImportModal({
               published: !isDraft,
               published_at: new Date(publishedAt).toISOString(),
               created_by: user!.id,
+              deleted_at: null,
             });
           }
         });
       }
 
-      if (articlesToInsert.length === 0) {
-        throw new Error("ফাইলটিতে কোনো পোস্ট পাওয়া যায়নি।");
-      }
+      if (articlesToInsert.length === 0) throw new Error("ফাইলটিতে কোনো পোস্ট পাওয়া যায়নি।");
 
       const { error } = await supabase.from("articles").insert(articlesToInsert);
       if (error) throw error;
@@ -800,7 +799,7 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
 }
 
 /* ========================================================================== */
-/* ARTICLES ADMIN WITH BULK SELECTION & BULK ACTIONS                          */
+/* ARTICLES ADMIN WITH TRASH, RESTORE & BULK SELECTION                        */
 /* ========================================================================== */
 const articleSchema = z.object({
   slug: z
@@ -837,7 +836,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [editingId, setEditingId] = useState<string | null>(null);
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
+  
+  // ফিল্টার স্টেট: সব, প্রকাশিত, খসড়া, ট্র্যাশ
+  const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft" | "trash">("all");
   
   // বাল্ক সিলেকশন স্টেট
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -887,13 +888,73 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onError: (err: Error) => toast.error(err.message),
   });
 
-  // বাল্ক অ্যাকশন মিউটেশন
+  // সফট ডিলিট (ট্র্যাশে পাঠানো)
+  const moveToTrash = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase
+        .from("articles")
+        .update({ deleted_at: new Date().toISOString() })
+        .eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success("আর্টিকেল ট্র্যাশ বক্সে পাঠানো হয়েছে");
+    },
+    onError: (error: Error) => toast.error(error.message),
+  });
+
+  // রিস্টোর করা (ট্র্যাশ থেকে ফিরিয়ে আনা)
+  const restoreFromTrash = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase
+        .from("articles")
+        .update({ deleted_at: null })
+        .eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success("আর্টিকেল সফলভাবে পুনরুদ্ধার (Restore) করা হয়েছে");
+    },
+    onError: (error: Error) => toast.error(error.message),
+  });
+
+  // স্থায়ীভাবে মুছে ফেলা (Permanent Delete)
+  const permanentDelete = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("articles").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success("আর্টিকেল চিরতরে মুছে ফেলা হয়েছে");
+    },
+    onError: (error: Error) => toast.error(error.message),
+  });
+
+  // বাল্ক অ্যাকশন হ্যান্ডলার
   const executeBulkAction = useMutation({
     mutationFn: async () => {
       if (selectedIds.length === 0) throw new Error("অনুগ্রহ করে অন্তত একটি পোস্ট নির্বাচন করুন");
       if (!bulkAction) throw new Error("বাল্ক অ্যাকশন নির্বাচন করুন");
 
-      if (bulkAction === "delete") {
+      if (bulkAction === "trash") {
+        const { error } = await supabase
+          .from("articles")
+          .update({ deleted_at: new Date().toISOString() })
+          .in("id", selectedIds);
+        if (error) throw error;
+      } else if (bulkAction === "restore") {
+        const { error } = await supabase
+          .from("articles")
+          .update({ deleted_at: null })
+          .in("id", selectedIds);
+        if (error) throw error;
+      } else if (bulkAction === "permanent-delete") {
         const { error } = await supabase.from("articles").delete().in("id", selectedIds);
         if (error) throw error;
       } else if (bulkAction === "publish") {
@@ -960,6 +1021,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         category_id: categoryId || null,
         published_at: published ? new Date().toISOString() : null,
         created_by: user!.id,
+        deleted_at: null,
       };
 
       if (editingId) {
@@ -983,29 +1045,22 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onError: (error: Error) => toast.error(error.message),
   });
 
-  const remove = useMutation({
-    mutationFn: async (id: string) => {
-      const { error } = await supabase.from("articles").delete().eq("id", id);
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
-      queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success("আর্টিকেল মুছে ফেলা হয়েছে");
-    },
-    onError: (error: Error) => toast.error(error.message),
-  });
+  const allList = list.data || [];
+  const activeArticles = allList.filter((a) => !a.deleted_at);
+  const trashArticles = allList.filter((a) => a.deleted_at);
 
-  const filteredArticles = list.data?.filter((a) => {
-    if (statusFilter === "published") return a.published;
-    if (statusFilter === "draft") return !a.published;
-    return true;
-  }) || [];
+  const filteredArticles = (statusFilter === "trash"
+    ? trashArticles
+    : activeArticles.filter((a) => {
+        if (statusFilter === "published") return a.published;
+        if (statusFilter === "draft") return !a.published;
+        return true;
+      })) || [];
 
-  const publishedCount = list.data?.filter((a) => a.published).length || 0;
-  const draftCount = list.data?.filter((a) => !a.published).length || 0;
+  const publishedCount = activeArticles.filter((a) => a.published).length;
+  const draftCount = activeArticles.filter((a) => !a.published).length;
+  const trashCount = trashArticles.length;
 
-  // সিলেক্ট অল হ্যান্ডলার
   const isAllSelected = filteredArticles.length > 0 && selectedIds.length === filteredArticles.length;
   const toggleSelectAll = () => {
     if (isAllSelected) {
@@ -1212,7 +1267,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         </div>
       </form>
 
-      {/* আর্টিকেল তালিকা ও বাল্ক অ্যাকশন বার */}
+      {/* আর্টিকেল তালিকা ও ট্র্যাশ ফিল্টার বার */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
           <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
@@ -1220,19 +1275,25 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           <div className="flex items-center gap-1.5 text-xs">
             <button
               type="button"
-              onClick={() => setStatusFilter("all")}
+              onClick={() => {
+                setStatusFilter("all");
+                setSelectedIds([]);
+              }}
               className={`rounded px-2.5 py-1 transition-colors cursor-pointer ${
                 statusFilter === "all"
                   ? "bg-foreground text-background font-semibold"
                   : "text-muted-foreground hover:bg-muted"
               }`}
             >
-              সব ({list.data?.length || 0})
+              সব ({activeArticles.length})
             </button>
             <span className="text-border">|</span>
             <button
               type="button"
-              onClick={() => setStatusFilter("published")}
+              onClick={() => {
+                setStatusFilter("published");
+                setSelectedIds([]);
+              }}
               className={`rounded px-2.5 py-1 transition-colors cursor-pointer ${
                 statusFilter === "published"
                   ? "bg-emerald-600 text-white font-semibold"
@@ -1244,7 +1305,10 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
             <span className="text-border">|</span>
             <button
               type="button"
-              onClick={() => setStatusFilter("draft")}
+              onClick={() => {
+                setStatusFilter("draft");
+                setSelectedIds([]);
+              }}
               className={`rounded px-2.5 py-1 transition-colors cursor-pointer ${
                 statusFilter === "draft"
                   ? "bg-amber-600 text-white font-semibold"
@@ -1252,6 +1316,22 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               }`}
             >
               খসড়া / Drafts ({draftCount})
+            </button>
+            <span className="text-border">|</span>
+            <button
+              type="button"
+              onClick={() => {
+                setStatusFilter("trash");
+                setSelectedIds([]);
+              }}
+              className={`rounded px-2.5 py-1 transition-colors cursor-pointer flex items-center gap-1 ${
+                statusFilter === "trash"
+                  ? "bg-destructive text-white font-semibold"
+                  : "text-muted-foreground hover:bg-muted hover:text-destructive"
+              }`}
+            >
+              <Trash2 className="size-3" />
+              <span>মুছে ফেলা / Trash ({trashCount})</span>
             </button>
           </div>
         </div>
@@ -1274,18 +1354,30 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
 
             <div className="h-4 w-px bg-border mx-1" />
 
-            <select
-              value={bulkAction}
-              onChange={(e) => setBulkAction(e.target.value)}
-              className="h-8 rounded border border-border bg-background px-2.5 text-xs text-foreground focus:outline-none cursor-pointer"
-            >
-              <option value="">বাল্ক অ্যাকশন নির্বাচন করুন...</option>
-              <option value="publish">🟢 একসাথে প্রকাশিত করুন</option>
-              <option value="draft">🟡 একসাথে খসড়া (Draft) করুন</option>
-              <option value="change-author">👤 একসাথে লেখক পরিবর্তন করুন</option>
-              <option value="change-category">📁 একসাথে ক্যাটাগরি পরিবর্তন করুন</option>
-              <option value="delete">🗑️ একসাথে মুছে ফেলুন (Delete)</option>
-            </select>
+            {statusFilter === "trash" ? (
+              <select
+                value={bulkAction}
+                onChange={(e) => setBulkAction(e.target.value)}
+                className="h-8 rounded border border-border bg-background px-2.5 text-xs text-foreground focus:outline-none cursor-pointer"
+              >
+                <option value="">বাল্ক অ্যাকশন নির্বাচন করুন...</option>
+                <option value="restore">🔄 একসাথে ফিরিয়ে আনুন (Restore)</option>
+                <option value="permanent-delete">🗑️ চিরতরে মুছে ফেলুন (Delete Permanently)</option>
+              </select>
+            ) : (
+              <select
+                value={bulkAction}
+                onChange={(e) => setBulkAction(e.target.value)}
+                className="h-8 rounded border border-border bg-background px-2.5 text-xs text-foreground focus:outline-none cursor-pointer"
+              >
+                <option value="">বাল্ক অ্যাকশন নির্বাচন করুন...</option>
+                <option value="publish">🟢 একসাথে প্রকাশিত করুন</option>
+                <option value="draft">🟡 একসাথে খসড়া (Draft) করুন</option>
+                <option value="change-author">👤 একসাথে লেখক পরিবর্তন করুন</option>
+                <option value="change-category">📁 একসাথে ক্যাটাগরি পরিবর্তন করুন</option>
+                <option value="trash">🗑️ ট্র্যাশে পাঠান (Move to Trash)</option>
+              </select>
+            )}
 
             {bulkAction === "change-author" && (
               <select
@@ -1327,14 +1419,15 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
 
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {filteredArticles.length === 0 ? (
-            <p className="p-4 text-xs text-muted-foreground text-center">কোনো আর্টিকেল পাওয়া যায়নি।</p>
+            <p className="p-4 text-xs text-muted-foreground text-center">
+              {statusFilter === "trash" ? "ট্র্যাশ বক্সে কোনো আর্টিকেল নেই।" : "কোনো আর্টিকেল পাওয়া যায়নি।"}
+            </p>
           ) : (
             filteredArticles.map((a) => {
               const isChecked = selectedIds.includes(a.id);
 
               return (
                 <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
-                  {/* সিলেকশন চেকবক্স */}
                   <input
                     type="checkbox"
                     checked={isChecked}
@@ -1346,60 +1439,94 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                     <p className="truncate text-xs font-semibold text-foreground">{a.title_bn}</p>
                     <p className="text-[11px] text-muted-foreground">
                       /{a.slug} ·{" "}
-                      <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-semibold"}>
-                        {a.published ? "প্রকাশিত" : "খসড়া (Draft)"}
-                      </span>
+                      {a.deleted_at ? (
+                        <span className="text-destructive font-medium">মুছে ফেলা হয়েছে (In Trash)</span>
+                      ) : (
+                        <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-semibold"}>
+                          {a.published ? "প্রকাশিত" : "খসড়া (Draft)"}
+                        </span>
+                      )}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] text-muted-foreground hidden sm:inline">
-                      {a.published ? "Live" : "Draft"}
-                    </span>
-                    <Switch
-                      checked={a.published}
-                      onCheckedChange={(checked) =>
-                        togglePublish.mutate({ id: a.id, nextStatus: checked })
-                      }
-                      title={a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"}
-                    />
-                  </div>
+                  {statusFilter !== "trash" && (
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] text-muted-foreground hidden sm:inline">
+                        {a.published ? "Live" : "Draft"}
+                      </span>
+                      <Switch
+                        checked={a.published}
+                        onCheckedChange={(checked) =>
+                          togglePublish.mutate({ id: a.id, nextStatus: checked })
+                        }
+                        title={a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"}
+                      />
+                    </div>
+                  )}
 
                   <div className="flex items-center gap-1 ml-2 border-l border-border/60 pl-2">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-7 w-7 cursor-pointer"
-                      aria-label="সম্পাদনা"
-                      onClick={() => {
-                        setEditingId(a.id);
-                        setPublished(a.published);
-                        setAuthorId(a.author_id ?? "");
-                        setCategoryId(a.category_id ?? "");
-                        setForm({
-                          slug: a.slug,
-                          title_bn: a.title_bn,
-                          title_en: a.title_en ?? "",
-                          excerpt_bn: a.excerpt_bn ?? "",
-                          excerpt_en: a.excerpt_en ?? "",
-                          content_bn: a.content_bn ?? "",
-                          content_en: a.content_en ?? "",
-                          cover_image_url: a.cover_image_url ?? "",
-                        });
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                    >
-                      <Pencil className="size-3.5" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
-                      aria-label="মুছে ফেলুন"
-                      onClick={() => remove.mutate(a.id)}
-                    >
-                      <Trash2 className="size-3.5" />
-                    </Button>
+                    {statusFilter === "trash" ? (
+                      <>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 text-emerald-600 hover:bg-emerald-500/10 cursor-pointer"
+                          aria-label="পুনরুদ্ধার করুন"
+                          title="পুনরুদ্ধার করুন (Restore)"
+                          onClick={() => restoreFromTrash.mutate(a.id)}
+                        >
+                          <RotateCcw className="size-3.5" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
+                          aria-label="চিরতরে মুছে ফেলুন"
+                          title="চিরতরে মুছে ফেলুন"
+                          onClick={() => permanentDelete.mutate(a.id)}
+                        >
+                          <Trash2 className="size-3.5" />
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 cursor-pointer"
+                          aria-label="সম্পাদনা"
+                          onClick={() => {
+                            setEditingId(a.id);
+                            setPublished(a.published);
+                            setAuthorId(a.author_id ?? "");
+                            setCategoryId(a.category_id ?? "");
+                            setForm({
+                              slug: a.slug,
+                              title_bn: a.title_bn,
+                              title_en: a.title_en ?? "",
+                              excerpt_bn: a.excerpt_bn ?? "",
+                              excerpt_en: a.excerpt_en ?? "",
+                              content_bn: a.content_bn ?? "",
+                              content_en: a.content_en ?? "",
+                              cover_image_url: a.cover_image_url ?? "",
+                            });
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                        >
+                          <Pencil className="size-3.5" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
+                          aria-label="ট্র্যাশে পাঠান"
+                          title="ট্র্যাশে পাঠান"
+                          onClick={() => moveToTrash.mutate(a.id)}
+                        >
+                          <Trash2 className="size-3.5" />
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </div>
               );
