@@ -37,6 +37,7 @@ import {
   ChevronRight,
   Code2,
   Eye,
+  Save,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -749,7 +750,9 @@ function ArticlesAdmin() {
       setForm({ ...EMPTY });
       setEditingId(null);
       setAuthorId("");
-      toast.success("আর্টিকেল সফলভাবে সংরক্ষিত হয়েছে");
+      setCategoryId("");
+      setPublished(true);
+      toast.success(published ? "আর্টিকেল সফলভাবে প্রকাশিত হয়েছে" : "আর্টিকেল সফলভাবে খসড়া (Draft) হিসেবে সংরক্ষিত হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -814,15 +817,29 @@ function ArticlesAdmin() {
           save.mutate();
         }}
       >
-        <div className="flex items-center justify-between border-b border-border/60 pb-3">
-          <h2 className="font-semibold text-base">{editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল লিখুন"}</h2>
-          <div className="flex items-center gap-2 text-xs">
-            <span className={published ? "text-emerald-600 font-semibold" : "text-amber-600 font-semibold"}>
-              {published ? "প্রকাশিত (Published)" : "খসড়া (Draft)"}
-            </span>
-            <Switch checked={published} onCheckedChange={setPublished} />
+        {/* টপ হেডার ও স্ট্যাটাস ড্রপডাউন */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3">
+          <h2 className="font-semibold text-base">
+            {editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল লিখুন"}
+          </h2>
+          
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-medium text-muted-foreground">স্ট্যাটাস:</span>
+            <select
+              value={published ? "published" : "draft"}
+              onChange={(e) => setPublished(e.target.value === "published")}
+              className={`h-8 rounded-md border px-2.5 text-xs font-semibold transition-colors focus:outline-none cursor-pointer ${
+                published 
+                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" 
+                  : "border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400"
+              }`}
+            >
+              <option value="published" className="bg-card text-foreground">🟢 প্রকাশিত (Published)</option>
+              <option value="draft" className="bg-card text-foreground">🟡 খসড়া (Draft)</option>
+            </select>
           </div>
         </div>
+
         {field("slug", "স্লাগ (URL Slug)")}
         <div className="grid gap-4 sm:grid-cols-2">
           {field("title_bn", "শিরোনাম (বাংলা)")}
@@ -835,7 +852,8 @@ function ArticlesAdmin() {
         {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
         {field("content_en", "মূল বিষয়বস্তু (English)", true)}
         {field("cover_image_url", "কভার ইমেজ লিংক (Cover Image URL)")}
-        <div className="grid gap-4 sm:grid-cols-2">
+        
+        <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
             <Label htmlFor="author" className="text-xs font-semibold">লেখক নির্বাচন</Label>
             <select
@@ -852,6 +870,7 @@ function ArticlesAdmin() {
               ))}
             </select>
           </div>
+          
           <div className="space-y-1.5">
             <Label htmlFor="article-category" className="text-xs font-semibold">ক্যাটাগরি নির্বাচন</Label>
             <select
@@ -868,11 +887,46 @@ function ArticlesAdmin() {
               ))}
             </select>
           </div>
+
+          <div className="space-y-1.5">
+            <Label htmlFor="post-status" className="text-xs font-semibold">পোস্ট দৃশ্যমানতা / স্ট্যাটাস</Label>
+            <select
+              id="post-status"
+              value={published ? "published" : "draft"}
+              onChange={(e) => setPublished(e.target.value === "published")}
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
+            >
+              <option value="published">🟢 প্রকাশিত (Published)</option>
+              <option value="draft">🟡 খসড়া (Draft)</option>
+            </select>
+          </div>
         </div>
+
+        {/* সেভ বাটন: স্ট্যাটাস অনুযায়ী ডাইনামিক ডিজাইন */}
         <div className="flex items-center gap-2 pt-2">
-          <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
-            <Plus className="size-3.5 mr-1" /> সংরক্ষণ করুন
+          <Button 
+            type="submit" 
+            disabled={save.isPending} 
+            size="sm" 
+            className={`text-white transition-all ${
+              published
+                ? "bg-[#2271b1] hover:bg-[#135e96]"
+                : "bg-amber-600 hover:bg-amber-700"
+            }`}
+          >
+            {published ? (
+              <>
+                <Plus className="size-3.5 mr-1" />
+                {editingId ? "আপডেট ও প্রকাশ করুন" : "প্রকাশ করুন (Publish)"}
+              </>
+            ) : (
+              <>
+                <Save className="size-3.5 mr-1" />
+                {editingId ? "খসড়া আপডেট করুন" : "খসড়া সংরক্ষণ করুন (Save Draft)"}
+              </>
+            )}
           </Button>
+
           {editingId && (
             <Button
               type="button"
@@ -881,6 +935,9 @@ function ArticlesAdmin() {
               onClick={() => {
                 setEditingId(null);
                 setForm({ ...EMPTY });
+                setPublished(true);
+                setAuthorId("");
+                setCategoryId("");
               }}
             >
               বাতিল
