@@ -6,13 +6,42 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    build: {
+      target: "esnext",
+      minify: "esbuild",
+      cssCodeSplit: true,
+      sourcemap: false,
+      chunkSizeWarningLimit: 600,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            // ১. ভারী এডিটর প্যাকেজ আলাদা চাঙ্কে রাখা (হিরো পেজের লোড স্পিড বাড়াবে)
+            if (id.includes("@tiptap") || id.includes("prosemirror")) {
+              return "editor-bundle";
+            }
+            // ২. কোর রাউটিং ও কুয়েরি লাইব্রেরি আলাদা রাখা
+            if (id.includes("@tanstack/react-query") || id.includes("@tanstack/react-router")) {
+              return "router-query";
+            }
+            // ৩. ব্যাকএন্ড কানেক্টর
+            if (id.includes("@supabase/supabase-js")) {
+              return "supabase";
+            }
+            // ৪. রিঅ্যাক্ট কোর ভেন্ডর
+            if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
+              return "react-core";
+            }
+          },
+        },
+      },
+    },
     plugins: [
       VitePWA({
         strategies: "generateSW",
         registerType: "autoUpdate",
         injectRegister: "auto",
         filename: "sw.js",
-        devOptions: { enabled: true },
+        devOptions: { enabled: false },
         manifest: false,
         workbox: {
           skipWaiting: true,
@@ -24,9 +53,9 @@ export default defineConfig({
             {
               urlPattern: ({ request }) => request.mode === "navigate",
               handler: "NetworkFirst",
-              options: { 
+              options: {
                 cacheName: "quran-pages",
-                networkTimeoutSeconds: 3,
+                networkTimeoutSeconds: 2,
                 cacheableResponse: {
                   statuses: [0, 200],
                 },
@@ -36,7 +65,16 @@ export default defineConfig({
               urlPattern: ({ url, sameOrigin }) =>
                 sameOrigin && url.pathname.startsWith("/assets/"),
               handler: "CacheFirst",
-              options: { cacheName: "quran-assets" },
+              options: {
+                cacheName: "quran-assets",
+                expiration: {
+                  maxEntries: 200,
+                  maxAgeSeconds: 60 * 60 * 24 * 365, // ১ বছর ক্যাশ
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
             },
             {
               urlPattern: /\/data\/quran\/surahs\/.*\.json$/,
@@ -69,7 +107,13 @@ export default defineConfig({
             {
               urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\//,
               handler: "StaleWhileRevalidate",
-              options: { cacheName: "quran-fonts" },
+              options: {
+                cacheName: "quran-fonts",
+                expiration: {
+                  maxEntries: 30,
+                  maxAgeSeconds: 60 * 60 * 24 * 365,
+                },
+              },
             },
           ],
         },
