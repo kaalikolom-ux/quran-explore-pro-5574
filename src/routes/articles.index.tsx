@@ -1,14 +1,22 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
-import { FileText, EyeOff } from "lucide-react";
+import { useState, useEffect } from "react";
+import { FileText, EyeOff, User, X } from "lucide-react";
+import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
-import { useCategories } from "@/lib/menu";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+const searchSchema = z.object({
+  category: z.string().optional(),
+  author: z.string().optional(),
+});
 
 export const Route = createFileRoute("/articles/")({
+  validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: "আর্টিকেল — কুরআন অন্বেষা" },
@@ -30,17 +38,49 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
 function ArticlesIndexPage() {
   const { lang, t } = usePrefs();
   const { isAdmin } = useIsAdmin();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const searchParams = useSearch({ from: "/articles/" });
+
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.category || null);
+  const [selectedAuthor, setSelectedAuthor] = useState<string | null>(searchParams.author || null);
   const [showDraftsOnly, setShowDraftsOnly] = useState(false);
 
-  const categories = useCategories();
+  useEffect(() => {
+    if (searchParams.author) setSelectedAuthor(searchParams.author);
+    if (searchParams.category) setSelectedCategory(searchParams.category);
+  }, [searchParams.author, searchParams.category]);
 
+  // সরাসরি ক্যাটাগরি ফেচ করা (যাতে মিসিং না হয়)
+  const categoriesQuery = useQuery({
+    queryKey: ["categories-list"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .order("sort_order", { ascending: true });
+      if (error) return [];
+      return data || [];
+    },
+  });
+
+  // লেখক তালিকা ফেচ
+  const authorsQuery = useQuery({
+    queryKey: ["authors-list"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("authors")
+        .select("id, name_bn, name_en");
+      if (error) return [];
+      return data || [];
+    },
+  });
+
+  // আর্টিকেল ফেচ
   const query = useQuery({
     queryKey: ["articles", isAdmin],
     queryFn: async () => {
       let q = supabase
         .from("articles")
-        .select("*, author:authors(name_bn, name_en), category:categories(name_bn, name_en, slug)")
+        .select("*, author:authors(id, name_bn, name_en), category:categories(id, name_bn, name_en, slug)")
         .order("created_at", { ascending: false });
 
       if (!isAdmin) {
@@ -60,24 +100,59 @@ function ArticlesIndexPage() {
       return !a.published;
     }
     if (!isAdmin && !a.published) return false;
-    if (selectedCategory) {
-      return a.category_id === selectedCategory && a.published;
+    if (selectedCategory && a.category_id !== selectedCategory) {
+      return false;
     }
-    return a.published;
+    if (selectedAuthor && a.author_id !== selectedAuthor) {
+      return false;
+    }
+    return true;
   });
 
   const draftCount = allArticles.filter((a) => !a.published).length;
+  const activeAuthorObj = authorsQuery.data?.find((ath) => ath.id === selectedAuthor);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground font-serif">
-          {t("articles")}
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।
-        </p>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground font-serif">
+            {t("articles")}
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।
+          </p>
+        </div>
+
+        <div>
+          <Button asChild variant="outline" size="sm" className="text-xs cursor-pointer">
+            <Link to="/authors">
+              <User className="size-3.5 mr-1.5" />
+              <span>লেখক ও গবেষকবৃন্দ</span>
+            </Link>
+          </Button>
+        </div>
       </div>
+
+      {/* যদি নির্দিষ্ট লেখক দ্বারা ফিল্টার হয়ে থাকে */}
+      {selectedAuthor && activeAuthorObj && (
+        <div className="mb-6 flex items-center justify-between p-3 rounded-xl border border-primary/30 bg-primary/5 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-muted-foreground">লেখক ফিল্টার:</span>
+            <Badge variant="secondary" className="gap-1.5 py-1 px-2.5 bg-card border border-border">
+              <User className="size-3 text-primary" />
+              <span>{lang === "en" && activeAuthorObj.name_en ? activeAuthorObj.name_en : activeAuthorObj.name_bn}</span>
+            </Badge>
+          </div>
+          <button
+            type="button"
+            onClick={() => setSelectedAuthor(null)}
+            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
+          >
+            <X className="size-3.5" /> ফিল্টার সরান
+          </button>
+        </div>
+      )}
 
       {/* ক্যাটাগরি ও ড্রাফট ফিল্টার বার */}
       <div className="mb-8 flex flex-wrap items-center gap-2">
@@ -96,7 +171,7 @@ function ArticlesIndexPage() {
           সকল ক্যাটাগরি
         </button>
 
-        {categories.data?.map((cat) => (
+        {categoriesQuery.data?.map((cat) => (
           <button
             key={cat.id}
             type="button"
@@ -153,11 +228,9 @@ function ArticlesIndexPage() {
             const dateStr = a.published_at || a.created_at;
 
             return (
-              <Link
+              <div
                 key={a.id}
-                to="/articles/$slug"
-                params={{ slug: a.slug }}
-                className="card-soft group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] cursor-pointer"
+                className="card-soft group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
               >
                 {/* খসড়া ব্যাজ */}
                 {!a.published && (
@@ -168,7 +241,11 @@ function ArticlesIndexPage() {
                 )}
 
                 {/* ইমেজ কভার বা বিসমিল্লাহ হেডার বক্স */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted/30 flex items-center justify-center border-b border-border/40">
+                <Link
+                  to="/articles/$slug"
+                  params={{ slug: a.slug }}
+                  className="relative aspect-[16/10] w-full overflow-hidden bg-muted/30 flex items-center justify-center border-b border-border/40 cursor-pointer block"
+                >
                   {a.cover_image_url ? (
                     <img
                       src={a.cover_image_url}
@@ -182,15 +259,17 @@ function ArticlesIndexPage() {
                       بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                     </div>
                   )}
-                </div>
+                </Link>
 
                 {/* কন্টেন্ট এরিয়া: বিসমিল্লাহর ঠিক নিচে শিরোনাম ও এক্সার্পট */}
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
                     <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                      {title}
+                      <Link to="/articles/$slug" params={{ slug: a.slug }}>
+                        {title}
+                      </Link>
                     </h3>
-                    
+
                     <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-muted-foreground font-normal">
                       {excerpt}
                     </p>
@@ -207,14 +286,20 @@ function ArticlesIndexPage() {
                           })
                         : ""}
                     </span>
+
                     {a.author && (
-                      <span className="font-medium text-foreground/80">
+                      <Link
+                        to="/authors/$id"
+                        params={{ id: a.author.id }}
+                        className="font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer"
+                        title="লেখকের সকল পোস্ট দেখুন"
+                      >
                         {lang === "en" && a.author.name_en ? a.author.name_en : a.author.name_bn}
-                      </span>
+                      </Link>
                     )}
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
