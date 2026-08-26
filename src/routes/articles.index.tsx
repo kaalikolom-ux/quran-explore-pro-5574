@@ -7,7 +7,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
 import { useCategories } from "@/lib/menu";
-import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/articles/")({
   head: () => ({
@@ -20,6 +19,13 @@ export const Route = createFileRoute("/articles/")({
   }),
   component: ArticlesIndexPage,
 });
+
+function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 120): string {
+  if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
+  if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
+  const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+  return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
+}
 
 function ArticlesIndexPage() {
   const { lang, t } = usePrefs();
@@ -55,7 +61,6 @@ function ArticlesIndexPage() {
     if (showDraftsOnly) {
       return !a.published;
     }
-    // নরমাল মোডে সাধারণ পোস্ট
     if (!isAdmin && !a.published) return false;
     if (selectedCategory) {
       return a.category_id === selectedCategory && a.published;
@@ -84,7 +89,7 @@ function ArticlesIndexPage() {
             setSelectedCategory(null);
             setShowDraftsOnly(false);
           }}
-          className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all ${
+          className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all cursor-pointer ${
             !selectedCategory && !showDraftsOnly
               ? "bg-foreground text-background shadow-sm"
               : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -101,7 +106,7 @@ function ArticlesIndexPage() {
               setSelectedCategory(cat.id);
               setShowDraftsOnly(false);
             }}
-            className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all ${
+            className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all cursor-pointer ${
               selectedCategory === cat.id && !showDraftsOnly
                 ? "bg-foreground text-background shadow-sm"
                 : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -119,7 +124,7 @@ function ArticlesIndexPage() {
               setShowDraftsOnly(true);
               setSelectedCategory(null);
             }}
-            className={`flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
               showDraftsOnly
                 ? "bg-amber-500 text-slate-950 shadow-sm"
                 : "bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 border border-amber-500/30"
@@ -143,6 +148,11 @@ function ArticlesIndexPage() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredArticles.map((a) => {
             const title = lang === "en" && a.title_en ? a.title_en : a.title_bn;
+            const rawBody = a.content_bn || a.body_bn || a.content_en || a.body_en || "";
+            const excerpt =
+              lang === "en"
+                ? getCleanExcerpt(a.excerpt_en, rawBody)
+                : getCleanExcerpt(a.excerpt_bn, rawBody);
             const dateStr = a.published_at || a.created_at;
 
             return (
@@ -150,7 +160,7 @@ function ArticlesIndexPage() {
                 key={a.id}
                 to="/articles/$slug"
                 params={{ slug: a.slug }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-lg"
+                className="card-soft group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] cursor-pointer"
               >
                 {/* খসড়া ব্যাজ */}
                 {!a.published && (
@@ -165,10 +175,12 @@ function ArticlesIndexPage() {
                     <img
                       src={a.cover_image_url}
                       alt={title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
-                    <div className="text-2xl font-amiri text-muted-foreground/40 select-none">
+                    <div className="text-2xl font-serif text-muted-foreground/40 select-none">
                       بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                     </div>
                   )}
@@ -179,6 +191,11 @@ function ArticlesIndexPage() {
                     <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
                       {title}
                     </h3>
+                    
+                    {/* Excerpt যোগ করা হলো */}
+                    <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-muted-foreground">
+                      {excerpt}
+                    </p>
                   </div>
 
                   <div className="mt-4 flex items-center justify-between text-[11px] text-muted-foreground pt-3 border-t border-border/40">
@@ -192,7 +209,9 @@ function ArticlesIndexPage() {
                         : ""}
                     </span>
                     {a.author && (
-                      <span>{lang === "en" && a.author.name_en ? a.author.name_en : a.author.name_bn}</span>
+                      <span className="font-medium">
+                        {lang === "en" && a.author.name_en ? a.author.name_en : a.author.name_bn}
+                      </span>
                     )}
                   </div>
                 </div>
