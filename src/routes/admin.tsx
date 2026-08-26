@@ -48,6 +48,7 @@ import {
   CheckSquare,
   Square,
   RotateCcw,
+  SlidersHorizontal,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -85,7 +86,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* INLINE IMPORT MODAL                                                        */
+/* ADVANCED IMPORT MODAL WITH SELECT/DESELECT FIELDS                          */
 /* ========================================================================== */
 function InlineImportModal({
   type,
@@ -96,10 +97,34 @@ function InlineImportModal({
 }) {
   const { user } = useSession();
   const queryClient = useQueryClient();
+  const categories = useCategories();
+  
   const [file, setFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [importedCount, setImportedCount] = useState<number | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  // ইমপোর্ট ফিল্ড সিলেকশন অপশন
+  const [importOptions, setImportOptions] = useState({
+    keepPermalink: true,
+    keepAuthor: true,
+    keepCategory: true,
+    keepTags: true,
+    keepCoverImage: true,
+    keepDateAndStatus: true,
+  });
+
+  const [fallbackAuthorId, setFallbackAuthorId] = useState<string>("");
+  const [fallbackCategoryId, setFallbackCategoryId] = useState<string>("");
+
+  const authors = useQuery({
+    queryKey: ["authors"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("authors").select("id, name_bn, name_en").order("name_bn");
+      if (error) return [];
+      return data || [];
+    },
+  });
 
   const generateSlug = (title: string, fallback: string) => {
     const slug = title
@@ -134,6 +159,8 @@ function InlineImportModal({
       if (parseError) throw new Error("XML ফাইলটি সঠিক নয় বা ক্ষতিগ্রস্থ।");
 
       const articlesToInsert: any[] = [];
+      const dbAuthors = authors.data || [];
+      const dbCategories = categories.data || [];
 
       if (type === "wordpress") {
         const items = xmlDoc.querySelectorAll("item");
@@ -149,26 +176,52 @@ function InlineImportModal({
               "";
             const postDate = item.querySelector("post_date")?.textContent || new Date().toISOString();
             const postName = item.querySelector("post_name")?.textContent;
-            const excerpt =
-              item.getElementsByTagNameNS("*", "encoded")[1]?.textContent ||
-              item.querySelector("excerpt")?.textContent ||
-              "";
+            const creator = item.getElementsByTagNameNS("*", "creator")[0]?.textContent || "";
 
-            const cleanExcerpt = excerpt
-              ? excerpt.replace(/<[^>]*>?/gm, "").slice(0, 160)
-              : content.replace(/<[^>]*>?/gm, "").slice(0, 160);
+            // ক্যাটাগরি ও ট্যাগ সংগ্রহ
+            const categoryElements = item.querySelectorAll('category[domain="category"]');
+            const tagElements = item.querySelectorAll('category[domain="post_tag"]');
+            
+            const rawCategory = categoryElements.length > 0 ? categoryElements[0].textContent : "";
+            const rawTags: string[] = [];
+            tagElements.forEach((t) => {
+              if (t.textContent) rawTags.push(t.textContent.trim());
+            });
+
+            // লেখক ম্যাপিং
+            let resolvedAuthorId = fallbackAuthorId || null;
+            if (importOptions.keepAuthor && creator) {
+              const matched = dbAuthors.find(
+                (a) => a.name_bn?.toLowerCase() === creator.toLowerCase() || a.name_en?.toLowerCase() === creator.toLowerCase()
+              );
+              if (matched) resolvedAuthorId = matched.id;
+            }
+
+            // ক্যাটাগরি ম্যাপিং
+            let resolvedCategoryId = fallbackCategoryId || null;
+            if (importOptions.keepCategory && rawCategory) {
+              const matched = dbCategories.find(
+                (c) => c.name_bn?.toLowerCase() === rawCategory.toLowerCase() || c.name_en?.toLowerCase() === rawCategory.toLowerCase()
+              );
+              if (matched) resolvedCategoryId = matched.id;
+            }
+
+            const cleanExcerpt = content.replace(/<[^>]*>?/gm, "").slice(0, 160);
 
             articlesToInsert.push({
               title_bn: title,
               title_en: title,
-              slug: postName || generateSlug(title, String(index)),
+              slug: importOptions.keepPermalink && postName ? postName : generateSlug(title, String(index)),
               content_bn: content,
               content_en: content,
               excerpt_bn: cleanExcerpt.trim(),
               excerpt_en: cleanExcerpt.trim(),
-              cover_image_url: extractFirstImage(content),
-              published: status === "publish",
-              published_at: new Date(postDate).toISOString(),
+              cover_image_url: importOptions.keepCoverImage ? extractFirstImage(content) : null,
+              author_id: resolvedAuthorId,
+              category_id: resolvedCategoryId,
+              tags: importOptions.keepTags ? rawTags : [],
+              published: importOptions.keepDateAndStatus ? status === "publish" : true,
+              published_at: importOptions.keepDateAndStatus ? new Date(postDate).toISOString() : new Date().toISOString(),
               created_by: user!.id,
               deleted_at: null,
             });
@@ -182,8 +235,36 @@ function InlineImportModal({
             const title = entry.querySelector("title")?.textContent || "শিরোনামহীন পোস্ট";
             const content = entry.querySelector("content")?.textContent || "";
             const publishedAt = entry.querySelector("published")?.textContent || new Date().toISOString();
+            const authorName = entry.querySelector("author > name")?.textContent || "";
             const draftElement = entry.querySelector("app\\:control > app\\:draft, draft");
             const isDraft = draftElement?.textContent === "yes";
+
+            // ব্লগার ট্যাগ/লেবেল
+            const categoryElements = entry.querySelectorAll('category[scheme="http://www.blogger.com/atom/ns#"]');
+            const rawTags: string[] = [];
+            categoryElements.forEach((cat) => {
+              const term = cat.getAttribute("term");
+              if (term && !term.includes("#")) rawTags.push(term.trim());
+            });
+
+            // প্রথম ট্যাগকে ক্যাটাগরি হিসেবে বিবেচনা
+            let resolvedCategoryId = fallbackCategoryId || null;
+            if (importOptions.keepCategory && rawTags.length > 0) {
+              const firstLabel = rawTags[0];
+              const matched = dbCategories.find(
+                (c) => c.name_bn?.toLowerCase() === firstLabel.toLowerCase() || c.name_en?.toLowerCase() === firstLabel.toLowerCase()
+              );
+              if (matched) resolvedCategoryId = matched.id;
+            }
+
+            // লেখক ম্যাপিং
+            let resolvedAuthorId = fallbackAuthorId || null;
+            if (importOptions.keepAuthor && authorName) {
+              const matched = dbAuthors.find(
+                (a) => a.name_bn?.toLowerCase() === authorName.toLowerCase() || a.name_en?.toLowerCase() === authorName.toLowerCase()
+              );
+              if (matched) resolvedAuthorId = matched.id;
+            }
 
             const cleanExcerpt = content.replace(/<[^>]*>?/gm, "").slice(0, 160);
 
@@ -195,9 +276,12 @@ function InlineImportModal({
               content_en: content,
               excerpt_bn: cleanExcerpt.trim(),
               excerpt_en: cleanExcerpt.trim(),
-              cover_image_url: extractFirstImage(content),
-              published: !isDraft,
-              published_at: new Date(publishedAt).toISOString(),
+              cover_image_url: importOptions.keepCoverImage ? extractFirstImage(content) : null,
+              author_id: resolvedAuthorId,
+              category_id: resolvedCategoryId,
+              tags: importOptions.keepTags ? rawTags : [],
+              published: importOptions.keepDateAndStatus ? !isDraft : true,
+              published_at: importOptions.keepDateAndStatus ? new Date(publishedAt).toISOString() : new Date().toISOString(),
               created_by: user!.id,
               deleted_at: null,
             });
@@ -224,12 +308,12 @@ function InlineImportModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
-      <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4">
+      <div className="w-full max-w-lg rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between border-b border-border/60 pb-3">
           <div className="flex items-center gap-2">
             <FileCode className="size-5 text-[#2271b1]" />
             <h3 className="font-bold text-sm text-foreground">
-              {type === "wordpress" ? "ওয়ার্ডপ্রেস (WordPress) থেকে ইমপোর্ট" : "ব্লগার (Blogger) থেকে ইমপোর্ট"}
+              {type === "wordpress" ? "ওয়ার্ডপ্রেস (WordPress) থেকে পোস্ট ইমপোর্ট" : "ব্লগার (Blogger) থেকে পোস্ট ইমপোর্ট"}
             </h3>
           </div>
           <button onClick={onClose} className="rounded-md p-1 text-muted-foreground hover:bg-muted cursor-pointer">
@@ -249,8 +333,8 @@ function InlineImportModal({
           </div>
         ) : (
           <div className="space-y-4">
-            <div className="rounded-lg border border-dashed border-border p-6 text-center bg-muted/20">
-              <Upload className="mx-auto size-8 text-muted-foreground/60 mb-2" />
+            <div className="rounded-lg border border-dashed border-border p-5 text-center bg-muted/20">
+              <Upload className="mx-auto size-7 text-muted-foreground/60 mb-2" />
               <label htmlFor="xml-upload-modal" className="cursor-pointer block text-xs font-semibold text-[#2271b1] hover:underline">
                 XML ফাইল সিলেক্ট করুন
               </label>
@@ -264,6 +348,107 @@ function InlineImportModal({
               <p className="text-[11px] text-muted-foreground mt-1">
                 {file ? file.name : type === "wordpress" ? "WordPress Export .xml ফাইল" : "Blogger Backup .xml ফাইল"}
               </p>
+            </div>
+
+            {/* সিলেকশন ও ফিল্ড ম্যাপিং অপশনসমূহ */}
+            <div className="rounded-lg border border-border/70 bg-muted/10 p-4 space-y-3 text-xs">
+              <div className="flex items-center gap-1.5 font-semibold text-foreground border-b border-border/40 pb-1.5">
+                <SlidersHorizontal className="size-3.5 text-[#2271b1]" />
+                <span>ইমপোর্ট সেটিংস ও ফিল্ড নির্বাচন:</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={importOptions.keepPermalink}
+                    onChange={(e) => setImportOptions({ ...importOptions, keepPermalink: e.target.checked })}
+                    className="rounded accent-[#2271b1] size-3.5"
+                  />
+                  <span>আসল পার্মালিঙ্ক / স্লাগ রাখুন</span>
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={importOptions.keepAuthor}
+                    onChange={(e) => setImportOptions({ ...importOptions, keepAuthor: e.target.checked })}
+                    className="rounded accent-[#2271b1] size-3.5"
+                  />
+                  <span>আসল লেখক ম্যাপিং করুন</span>
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={importOptions.keepCategory}
+                    onChange={(e) => setImportOptions({ ...importOptions, keepCategory: e.target.checked })}
+                    className="rounded accent-[#2271b1] size-3.5"
+                  />
+                  <span>ক্যাটাগরি স্বয়ংক্রিয় ম্যাচ করুন</span>
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={importOptions.keepTags}
+                    onChange={(e) => setImportOptions({ ...importOptions, keepTags: e.target.checked })}
+                    className="rounded accent-[#2271b1] size-3.5"
+                  />
+                  <span>ট্যাগসমূহ (Tags) ইমপোর্ট করুন</span>
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={importOptions.keepCoverImage}
+                    onChange={(e) => setImportOptions({ ...importOptions, keepCoverImage: e.target.checked })}
+                    className="rounded accent-[#2271b1] size-3.5"
+                  />
+                  <span>প্রথম ছবি কভার হিসেবে নিন</span>
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={importOptions.keepDateAndStatus}
+                    onChange={(e) => setImportOptions({ ...importOptions, keepDateAndStatus: e.target.checked })}
+                    className="rounded accent-[#2271b1] size-3.5"
+                  />
+                  <span>আসল প্রকাশের তারিখ ও স্ট্যাটাস</span>
+                </label>
+              </div>
+
+              {/* ডিফল্ট লেখক ও ক্যাটাগরি ড্রপডাউন */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-border/40">
+                <div className="space-y-1">
+                  <label className="text-[11px] font-medium text-muted-foreground">ডিফল্ট লেখক (যদি না মিলে):</label>
+                  <select
+                    value={fallbackAuthorId}
+                    onChange={(e) => setFallbackAuthorId(e.target.value)}
+                    className="h-8 w-full rounded border border-border bg-background px-2 text-xs"
+                  >
+                    <option value="">কোনো নির্দিষ্ট লেখক নেই</option>
+                    {authors.data?.map((a) => (
+                      <option key={a.id} value={a.id}>{a.name_bn}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-[11px] font-medium text-muted-foreground">ডিফল্ট ক্যাটাগরি (যদি না মিলে):</label>
+                  <select
+                    value={fallbackCategoryId}
+                    onChange={(e) => setFallbackCategoryId(e.target.value)}
+                    className="h-8 w-full rounded border border-border bg-background px-2 text-xs"
+                  >
+                    <option value="">কোনো ক্যাটাগরি নেই</option>
+                    {categories.data?.map((c) => (
+                      <option key={c.id} value={c.id}>{c.name_bn}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
 
             {errorMsg && (
@@ -888,7 +1073,6 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onError: (err: Error) => toast.error(err.message),
   });
 
-  // সফট ডিলিট (ট্র্যাশে পাঠানো)
   const moveToTrash = useMutation({
     mutationFn: async (id: string) => {
       const { error } = await supabase
@@ -905,7 +1089,6 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onError: (error: Error) => toast.error(error.message),
   });
 
-  // রিস্টোর করা (ট্র্যাশ থেকে ফিরিয়ে আনা)
   const restoreFromTrash = useMutation({
     mutationFn: async (id: string) => {
       const { error } = await supabase
@@ -922,7 +1105,6 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onError: (error: Error) => toast.error(error.message),
   });
 
-  // স্থায়ীভাবে মুছে ফেলা (Permanent Delete)
   const permanentDelete = useMutation({
     mutationFn: async (id: string) => {
       const { error } = await supabase.from("articles").delete().eq("id", id);
@@ -936,7 +1118,6 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onError: (error: Error) => toast.error(error.message),
   });
 
-  // বাল্ক অ্যাকশন হ্যান্ডলার
   const executeBulkAction = useMutation({
     mutationFn: async () => {
       if (selectedIds.length === 0) throw new Error("অনুগ্রহ করে অন্তত একটি পোস্ট নির্বাচন করুন");
