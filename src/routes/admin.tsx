@@ -86,7 +86,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* ADVANCED IMPORT MODAL WITH SELECT/DESELECT FIELDS                          */
+/* ADVANCED IMPORT MODAL WITH AUTO-CREATE CATEGORIES                          */
 /* ========================================================================== */
 function InlineImportModal({
   type,
@@ -98,13 +98,12 @@ function InlineImportModal({
   const { user } = useSession();
   const queryClient = useQueryClient();
   const categories = useCategories();
-  
+
   const [file, setFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [importedCount, setImportedCount] = useState<number | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  // ইমপোর্ট ফিল্ড সিলেকশন অপশন
   const [importOptions, setImportOptions] = useState({
     keepPermalink: true,
     keepAuthor: true,
@@ -158,9 +157,55 @@ function InlineImportModal({
       const parseError = xmlDoc.querySelector("parsererror");
       if (parseError) throw new Error("XML ফাইলটি সঠিক নয় বা ক্ষতিগ্রস্থ।");
 
-      const articlesToInsert: any[] = [];
       const dbAuthors = authors.data || [];
       const dbCategories = categories.data || [];
+
+      // ১. ফাইলের সমস্ত ক্যাটাগরি এক্সট্র্যাক্ট করে নতুনগুলো স্বয়ংক্রিয় ডাটাবেজে তৈরি করা
+      const detectedCategories = new Set<string>();
+
+      if (type === "wordpress") {
+        xmlDoc.querySelectorAll('item category[domain="category"]').forEach((el) => {
+          const val = el.textContent?.trim();
+          if (val && val !== "Uncategorized") detectedCategories.add(val);
+        });
+      } else if (type === "blogger") {
+        xmlDoc.querySelectorAll('entry category[scheme="http://www.blogger.com/atom/ns#"]').forEach((el) => {
+          const term = el.getAttribute("term");
+          if (term && !term.includes("#")) detectedCategories.add(term.trim());
+        });
+      }
+
+      const categoryMap = new Map<string, string>();
+      dbCategories.forEach((c) => {
+        categoryMap.set(c.name_bn.toLowerCase(), c.id);
+        if (c.name_en) categoryMap.set(c.name_en.toLowerCase(), c.id);
+      });
+
+      if (importOptions.keepCategory && detectedCategories.size > 0) {
+        for (const catName of detectedCategories) {
+          if (!categoryMap.has(catName.toLowerCase())) {
+            const catSlug = generateSlug(catName, "cat");
+            const { data: newCat } = await supabase
+              .from("categories")
+              .insert({
+                name_bn: catName,
+                name_en: catName,
+                slug: catSlug,
+                show_in_menu: false,
+                sort_order: 10,
+              })
+              .select("id, name_bn")
+              .maybeSingle();
+
+            if (newCat) {
+              categoryMap.set(newCat.name_bn.toLowerCase(), newCat.id);
+            }
+          }
+        }
+      }
+
+      // ২. আর্টিকেল প্রসেস ও ইনসার্ট
+      const articlesToInsert: any[] = [];
 
       if (type === "wordpress") {
         const items = xmlDoc.querySelectorAll("item");
@@ -178,17 +223,15 @@ function InlineImportModal({
             const postName = item.querySelector("post_name")?.textContent;
             const creator = item.getElementsByTagNameNS("*", "creator")[0]?.textContent || "";
 
-            // ক্যাটাগরি ও ট্যাগ সংগ্রহ
             const categoryElements = item.querySelectorAll('category[domain="category"]');
             const tagElements = item.querySelectorAll('category[domain="post_tag"]');
-            
-            const rawCategory = categoryElements.length > 0 ? categoryElements[0].textContent : "";
+
+            const rawCategory = categoryElements.length > 0 ? categoryElements[0].textContent?.trim() : "";
             const rawTags: string[] = [];
             tagElements.forEach((t) => {
               if (t.textContent) rawTags.push(t.textContent.trim());
             });
 
-            // লেখক ম্যাপিং
             let resolvedAuthorId = fallbackAuthorId || null;
             if (importOptions.keepAuthor && creator) {
               const matched = dbAuthors.find(
@@ -197,13 +240,9 @@ function InlineImportModal({
               if (matched) resolvedAuthorId = matched.id;
             }
 
-            // ক্যাটাগরি ম্যাপিং
             let resolvedCategoryId = fallbackCategoryId || null;
-            if (importOptions.keepCategory && rawCategory) {
-              const matched = dbCategories.find(
-                (c) => c.name_bn?.toLowerCase() === rawCategory.toLowerCase() || c.name_en?.toLowerCase() === rawCategory.toLowerCase()
-              );
-              if (matched) resolvedCategoryId = matched.id;
+            if (importOptions.keepCategory && rawCategory && categoryMap.has(rawCategory.toLowerCase())) {
+              resolvedCategoryId = categoryMap.get(rawCategory.toLowerCase()) || null;
             }
 
             const cleanExcerpt = content.replace(/<[^>]*>?/gm, "").slice(0, 160);
@@ -239,7 +278,6 @@ function InlineImportModal({
             const draftElement = entry.querySelector("app\\:control > app\\:draft, draft");
             const isDraft = draftElement?.textContent === "yes";
 
-            // ব্লগার ট্যাগ/লেবেল
             const categoryElements = entry.querySelectorAll('category[scheme="http://www.blogger.com/atom/ns#"]');
             const rawTags: string[] = [];
             categoryElements.forEach((cat) => {
@@ -247,17 +285,14 @@ function InlineImportModal({
               if (term && !term.includes("#")) rawTags.push(term.trim());
             });
 
-            // প্রথম ট্যাগকে ক্যাটাগরি হিসেবে বিবেচনা
             let resolvedCategoryId = fallbackCategoryId || null;
             if (importOptions.keepCategory && rawTags.length > 0) {
               const firstLabel = rawTags[0];
-              const matched = dbCategories.find(
-                (c) => c.name_bn?.toLowerCase() === firstLabel.toLowerCase() || c.name_en?.toLowerCase() === firstLabel.toLowerCase()
-              );
-              if (matched) resolvedCategoryId = matched.id;
+              if (categoryMap.has(firstLabel.toLowerCase())) {
+                resolvedCategoryId = categoryMap.get(firstLabel.toLowerCase()) || null;
+              }
             }
 
-            // লেখক ম্যাপিং
             let resolvedAuthorId = fallbackAuthorId || null;
             if (importOptions.keepAuthor && authorName) {
               const matched = dbAuthors.find(
@@ -297,7 +332,10 @@ function InlineImportModal({
       setImportedCount(articlesToInsert.length);
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success(`${articlesToInsert.length}টি পোস্ট সফলভাবে ইমপোর্ট হয়েছে!`);
+      queryClient.invalidateQueries({ queryKey: ["categories-all"] });
+      queryClient.invalidateQueries({ queryKey: ["categories-list"] });
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
+      toast.success(`${articlesToInsert.length}টি পোস্ট ও সংশ্লিষ্ট ক্যাটাগরি সফলভাবে ইমপোর্ট হয়েছে!`);
     } catch (err: any) {
       setErrorMsg(err.message || "ইমপোর্ট করার সময় সমস্যা হয়েছে");
       toast.error(err.message || "ইমপোর্ট ব্যর্থ হয়েছে");
@@ -350,7 +388,6 @@ function InlineImportModal({
               </p>
             </div>
 
-            {/* সিলেকশন ও ফিল্ড ম্যাপিং অপশনসমূহ */}
             <div className="rounded-lg border border-border/70 bg-muted/10 p-4 space-y-3 text-xs">
               <div className="flex items-center gap-1.5 font-semibold text-foreground border-b border-border/40 pb-1.5">
                 <SlidersHorizontal className="size-3.5 text-[#2271b1]" />
@@ -385,7 +422,7 @@ function InlineImportModal({
                     onChange={(e) => setImportOptions({ ...importOptions, keepCategory: e.target.checked })}
                     className="rounded accent-[#2271b1] size-3.5"
                   />
-                  <span>ক্যাটাগরি স্বয়ংক্রিয় ম্যাচ করুন</span>
+                  <span>ক্যাটাগরি স্বয়ংক্রিয় তৈরি ও ম্যাচ</span>
                 </label>
 
                 <label className="flex items-center gap-2 cursor-pointer">
@@ -419,7 +456,6 @@ function InlineImportModal({
                 </label>
               </div>
 
-              {/* ডিফল্ট লেখক ও ক্যাটাগরি ড্রপডাউন */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-border/40">
                 <div className="space-y-1">
                   <label className="text-[11px] font-medium text-muted-foreground">ডিফল্ট লেখক (যদি না মিলে):</label>
@@ -1021,11 +1057,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [editingId, setEditingId] = useState<string | null>(null);
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
-  
-  // ফিল্টার স্টেট: সব, প্রকাশিত, খসড়া, ট্র্যাশ
+
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft" | "trash">("all");
-  
-  // বাল্ক সিলেকশন স্টেট
+
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [bulkAction, setBulkAction] = useState<string>("");
   const [bulkAuthorId, setBulkAuthorId] = useState<string>("");
@@ -1354,7 +1388,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         {field("content_bn", "মূল বিষয়বস্তু (বাংলা)", true)}
         {field("content_en", "মূল বিষয়বস্তু (English)", true)}
         {field("cover_image_url", "কভার ইমেজ লিংক (Cover Image URL)")}
-        
+
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
             <Label htmlFor="author" className="text-xs font-semibold">লেখক নির্বাচন</Label>
@@ -1372,7 +1406,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               ))}
             </select>
           </div>
-          
+
           <div className="space-y-1.5">
             <Label htmlFor="article-category" className="text-xs font-semibold">ক্যাটাগরি নির্বাচন</Label>
             <select
@@ -1452,7 +1486,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
           <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
-          
+
           <div className="flex items-center gap-1.5 text-xs">
             <button
               type="button"
