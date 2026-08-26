@@ -43,7 +43,6 @@ function ArticlesIndexPage() {
         .select("*, author:authors(name_bn, name_en), category:categories(name_bn, name_en, slug)")
         .order("created_at", { ascending: false });
 
-      // ইউজার অ্যাডমিন না হলে শুধুমাত্র পাবলিশড পোস্ট আসবে
       if (!isAdmin) {
         q = q.eq("published", true);
       }
@@ -56,7 +55,6 @@ function ArticlesIndexPage() {
 
   const allArticles = query.data || [];
 
-  // ফিল্টারিং লজিক
   const filteredArticles = allArticles.filter((a) => {
     if (showDraftsOnly) {
       return !a.published;
@@ -116,7 +114,6 @@ function ArticlesIndexPage() {
           </button>
         ))}
 
-        {/* শুধুমাত্র অ্যাডমিন হলে ড্রাফট ট্যাব প্রদর্শিত হবে */}
         {isAdmin && (
           <button
             type="button"
@@ -170,7 +167,8 @@ function ArticlesIndexPage() {
                   </div>
                 )}
 
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted/40 flex items-center justify-center">
+                {/* ইমেজ কভার বা বিসমিল্লাহ হেডার বক্স */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted/30 flex items-center justify-center border-b border-border/40">
                   {a.cover_image_url ? (
                     <img
                       src={a.cover_image_url}
@@ -180,25 +178,26 @@ function ArticlesIndexPage() {
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
-                    <div className="text-2xl font-serif text-muted-foreground/40 select-none">
+                    <div className="text-2xl font-serif text-muted-foreground/60 select-none tracking-wide text-center px-4">
                       بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                     </div>
                   )}
                 </div>
 
+                {/* কন্টেন্ট এরিয়া: বিসমিল্লাহর ঠিক নিচে শিরোনাম ও এক্সার্পট */}
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
                     <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
                       {title}
                     </h3>
                     
-                    {/* Excerpt যোগ করা হলো */}
-                    <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-muted-foreground">
+                    <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-muted-foreground font-normal">
                       {excerpt}
                     </p>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between text-[11px] text-muted-foreground pt-3 border-t border-border/40">
+                  {/* তারিখ ও লেখক সেকশন */}
+                  <div className="mt-5 flex items-center justify-between text-[11px] text-muted-foreground pt-3 border-t border-border/50">
                     <span>
                       {dateStr
                         ? new Date(dateStr).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
@@ -209,7 +208,7 @@ function ArticlesIndexPage() {
                         : ""}
                     </span>
                     {a.author && (
-                      <span className="font-medium">
+                      <span className="font-medium text-foreground/80">
                         {lang === "en" && a.author.name_en ? a.author.name_en : a.author.name_bn}
                       </span>
                     )}
