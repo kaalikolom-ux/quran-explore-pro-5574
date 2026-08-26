@@ -49,6 +49,7 @@ import {
   Square,
   RotateCcw,
   SlidersHorizontal,
+  Tag as TagIcon,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -68,6 +69,7 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { OfflineSyncAdmin } from "@/components/OfflineSyncAdmin";
 import { AuthorsAdmin } from "@/components/AuthorsAdmin";
 import { CategoriesAdmin } from "@/components/CategoriesAdmin";
+import { TagsAdmin } from "@/components/TagsAdmin";
 import { MenuAdmin } from "@/components/MenuAdmin";
 import { PagesAdmin } from "@/components/PagesAdmin";
 import { SocialLinksAdmin } from "@/components/SocialLinksAdmin";
@@ -86,7 +88,7 @@ export const Route = createFileRoute("/admin")({
 });
 
 /* ========================================================================== */
-/* ADVANCED IMPORT MODAL WITH AUTO-CREATE CATEGORIES                          */
+/* ADVANCED IMPORT MODAL WITH AUTO-CREATE AUTHORS & CATEGORIES                */
 /* ========================================================================== */
 function InlineImportModal({
   type,
@@ -160,21 +162,31 @@ function InlineImportModal({
       const dbAuthors = authors.data || [];
       const dbCategories = categories.data || [];
 
-      // ১. ফাইলের সমস্ত ক্যাটাগরি এক্সট্র্যাক্ট করে নতুনগুলো স্বয়ংক্রিয় ডাটাবেজে তৈরি করা
+      // ১. ক্যাটাগরি ও লেখক সংগ্রহ
       const detectedCategories = new Set<string>();
+      const detectedAuthors = new Set<string>();
 
       if (type === "wordpress") {
-        xmlDoc.querySelectorAll('item category[domain="category"]').forEach((el) => {
-          const val = el.textContent?.trim();
-          if (val && val !== "Uncategorized") detectedCategories.add(val);
+        xmlDoc.querySelectorAll("item").forEach((item) => {
+          item.querySelectorAll('category[domain="category"]').forEach((el) => {
+            const val = el.textContent?.trim();
+            if (val && val !== "Uncategorized") detectedCategories.add(val);
+          });
+          const creator = item.getElementsByTagNameNS("*", "creator")[0]?.textContent?.trim();
+          if (creator) detectedAuthors.add(creator);
         });
       } else if (type === "blogger") {
-        xmlDoc.querySelectorAll('entry category[scheme="http://www.blogger.com/atom/ns#"]').forEach((el) => {
-          const term = el.getAttribute("term");
-          if (term && !term.includes("#")) detectedCategories.add(term.trim());
+        xmlDoc.querySelectorAll("entry").forEach((entry) => {
+          entry.querySelectorAll('category[scheme="http://www.blogger.com/atom/ns#"]').forEach((el) => {
+            const term = el.getAttribute("term");
+            if (term && !term.includes("#")) detectedCategories.add(term.trim());
+          });
+          const aName = entry.querySelector("author > name")?.textContent?.trim();
+          if (aName) detectedAuthors.add(aName);
         });
       }
 
+      // ২. ক্যাটাগরি ম্যাপিং ও অটো-ইনসার্ট
       const categoryMap = new Map<string, string>();
       dbCategories.forEach((c) => {
         categoryMap.set(c.name_bn.toLowerCase(), c.id);
@@ -204,7 +216,35 @@ function InlineImportModal({
         }
       }
 
-      // ২. আর্টিকেল প্রসেস ও ইনসার্ট
+      // ৩. লেখক ম্যাপিং ও অটো-ইনসার্ট
+      const authorMap = new Map<string, string>();
+      dbAuthors.forEach((a) => {
+        authorMap.set(a.name_bn.toLowerCase(), a.id);
+        if (a.name_en) authorMap.set(a.name_en.toLowerCase(), a.id);
+      });
+
+      if (importOptions.keepAuthor && detectedAuthors.size > 0) {
+        for (const authName of detectedAuthors) {
+          if (!authorMap.has(authName.toLowerCase())) {
+            const { data: newAuth } = await supabase
+              .from("authors")
+              .insert({
+                name_bn: authName,
+                name_en: authName,
+                bio_bn: "লেখক ও গবেষক",
+                bio_en: "Author & Contributor",
+              })
+              .select("id, name_bn")
+              .maybeSingle();
+
+            if (newAuth) {
+              authorMap.set(newAuth.name_bn.toLowerCase(), newAuth.id);
+            }
+          }
+        }
+      }
+
+      // ৪. আর্টিকেল প্রসেস ও ইনসার্ট
       const articlesToInsert: any[] = [];
 
       if (type === "wordpress") {
@@ -221,7 +261,7 @@ function InlineImportModal({
               "";
             const postDate = item.querySelector("post_date")?.textContent || new Date().toISOString();
             const postName = item.querySelector("post_name")?.textContent;
-            const creator = item.getElementsByTagNameNS("*", "creator")[0]?.textContent || "";
+            const creator = item.getElementsByTagNameNS("*", "creator")[0]?.textContent?.trim() || "";
 
             const categoryElements = item.querySelectorAll('category[domain="category"]');
             const tagElements = item.querySelectorAll('category[domain="post_tag"]');
@@ -233,11 +273,8 @@ function InlineImportModal({
             });
 
             let resolvedAuthorId = fallbackAuthorId || null;
-            if (importOptions.keepAuthor && creator) {
-              const matched = dbAuthors.find(
-                (a) => a.name_bn?.toLowerCase() === creator.toLowerCase() || a.name_en?.toLowerCase() === creator.toLowerCase()
-              );
-              if (matched) resolvedAuthorId = matched.id;
+            if (importOptions.keepAuthor && creator && authorMap.has(creator.toLowerCase())) {
+              resolvedAuthorId = authorMap.get(creator.toLowerCase()) || null;
             }
 
             let resolvedCategoryId = fallbackCategoryId || null;
@@ -274,7 +311,7 @@ function InlineImportModal({
             const title = entry.querySelector("title")?.textContent || "শিরোনামহীন পোস্ট";
             const content = entry.querySelector("content")?.textContent || "";
             const publishedAt = entry.querySelector("published")?.textContent || new Date().toISOString();
-            const authorName = entry.querySelector("author > name")?.textContent || "";
+            const authorName = entry.querySelector("author > name")?.textContent?.trim() || "";
             const draftElement = entry.querySelector("app\\:control > app\\:draft, draft");
             const isDraft = draftElement?.textContent === "yes";
 
@@ -294,11 +331,8 @@ function InlineImportModal({
             }
 
             let resolvedAuthorId = fallbackAuthorId || null;
-            if (importOptions.keepAuthor && authorName) {
-              const matched = dbAuthors.find(
-                (a) => a.name_bn?.toLowerCase() === authorName.toLowerCase() || a.name_en?.toLowerCase() === authorName.toLowerCase()
-              );
-              if (matched) resolvedAuthorId = matched.id;
+            if (importOptions.keepAuthor && authorName && authorMap.has(authorName.toLowerCase())) {
+              resolvedAuthorId = authorMap.get(authorName.toLowerCase()) || null;
             }
 
             const cleanExcerpt = content.replace(/<[^>]*>?/gm, "").slice(0, 160);
@@ -335,7 +369,10 @@ function InlineImportModal({
       queryClient.invalidateQueries({ queryKey: ["categories-all"] });
       queryClient.invalidateQueries({ queryKey: ["categories-list"] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
-      toast.success(`${articlesToInsert.length}টি পোস্ট ও সংশ্লিষ্ট ক্যাটাগরি সফলভাবে ইমপোর্ট হয়েছে!`);
+      queryClient.invalidateQueries({ queryKey: ["authors"] });
+      queryClient.invalidateQueries({ queryKey: ["authors-all"] });
+      queryClient.invalidateQueries({ queryKey: ["authors-directory-list"] });
+      toast.success(`${articlesToInsert.length}টি পোস্ট, লেখক ও ক্যাটাগরি সফলভাবে ইমপোর্ট হয়েছে!`);
     } catch (err: any) {
       setErrorMsg(err.message || "ইমপোর্ট করার সময় সমস্যা হয়েছে");
       toast.error(err.message || "ইমপোর্ট ব্যর্থ হয়েছে");
@@ -412,7 +449,7 @@ function InlineImportModal({
                     onChange={(e) => setImportOptions({ ...importOptions, keepAuthor: e.target.checked })}
                     className="rounded accent-[#2271b1] size-3.5"
                   />
-                  <span>আসল লেখক ম্যাপিং করুন</span>
+                  <span>লেখক স্বয়ংক্রিয় তৈরি ও ম্যাচ</span>
                 </label>
 
                 <label className="flex items-center gap-2 cursor-pointer">
@@ -742,6 +779,7 @@ function AdminPage() {
         { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
         { value: "posts", label: "লেখক ও গবেষকবৃন্দ", icon: Users },
         { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
+        { value: "tags", label: "ট্যাগসমূহ (Tags)", icon: TagIcon },
       ],
     },
     {
@@ -931,6 +969,9 @@ function AdminPage() {
               <TabsContent value="categories" className="mt-0 focus-visible:outline-none">
                 <CategoriesAdmin />
               </TabsContent>
+              <TabsContent value="tags" className="mt-0 focus-visible:outline-none">
+                <TagsAdmin />
+              </TabsContent>
               <TabsContent value="roles" className="mt-0 focus-visible:outline-none">
                 <RolesAdmin />
               </TabsContent>
@@ -1020,7 +1061,7 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
 }
 
 /* ========================================================================== */
-/* ARTICLES ADMIN WITH TRASH, RESTORE & BULK SELECTION                        */
+/* ARTICLES ADMIN WITH TRASH, RESTORE, TAGS & BULK SELECTION                  */
 /* ========================================================================== */
 const articleSchema = z.object({
   slug: z
@@ -1057,6 +1098,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [editingId, setEditingId] = useState<string | null>(null);
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
+  const [tagsInput, setTagsInput] = useState<string>("");
 
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft" | "trash">("all");
 
@@ -1223,6 +1265,12 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         ? parsed.data.excerpt_en
         : parsed.data.content_en ? parsed.data.content_en.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim() : null;
 
+      // কমা দিয়ে আলাদা করা ট্যাগ অ্যারে রূপান্তর
+      const parsedTags = tagsInput
+        .split(",")
+        .map((t) => t.trim())
+        .filter((t) => t.length > 0);
+
       const payload = {
         ...parsed.data,
         title_en: parsed.data.title_en || null,
@@ -1234,6 +1282,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         published,
         author_id: authorId || null,
         category_id: categoryId || null,
+        tags: parsedTags,
         published_at: published ? new Date().toISOString() : null,
         created_by: user!.id,
         deleted_at: null,
@@ -1254,6 +1303,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       setEditingId(null);
       setAuthorId("");
       setCategoryId("");
+      setTagsInput("");
       setPublished(true);
       toast.success(published ? "আর্টিকেল সফলভাবে প্রকাশিত হয়েছে" : "আর্টিকেল সফলভাবে খসড়া (Draft) হিসেবে সংরক্ষিত হয়েছে");
     },
@@ -1389,6 +1439,20 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         {field("content_en", "মূল বিষয়বস্তু (English)", true)}
         {field("cover_image_url", "কভার ইমেজ লিংক (Cover Image URL)")}
 
+        {/* ট্যাগ ইনপুট ফিল্ড */}
+        <div className="space-y-1.5">
+          <Label htmlFor="article-tags" className="text-xs font-semibold">
+            ট্যাগসমূহ (কমা দিয়ে আলাদা করুন)
+          </Label>
+          <Input
+            id="article-tags"
+            value={tagsInput}
+            onChange={(e) => setTagsInput(e.target.value)}
+            placeholder="যেমন: বিজ্ঞান, কুরআন, মহাবিশ্ব, তাদাব্বুর"
+            className="h-9 text-xs"
+          />
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
             <Label htmlFor="author" className="text-xs font-semibold">লেখক নির্বাচন</Label>
@@ -1474,6 +1538,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                 setPublished(true);
                 setAuthorId("");
                 setCategoryId("");
+                setTagsInput("");
               }}
             >
               বাতিল
@@ -1715,6 +1780,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                             setPublished(a.published);
                             setAuthorId(a.author_id ?? "");
                             setCategoryId(a.category_id ?? "");
+                            setTagsInput(Array.isArray(a.tags) ? a.tags.join(", ") : "");
                             setForm({
                               slug: a.slug,
                               title_bn: a.title_bn,
