@@ -5,7 +5,6 @@ import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
-import { isUserAdmin } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -40,6 +39,25 @@ function AuthPage() {
   const [sent, setSent] = useState(false);
   const [resetSent, setResetSent] = useState(false);
 
+  async function checkAdminAndRedirect(userId: string) {
+    try {
+      const { data } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", userId)
+        .eq("role", "admin")
+        .maybeSingle();
+
+      if (data) {
+        navigate({ to: "/admin" });
+        return;
+      }
+    } catch {
+      // fallback to bookmarks
+    }
+    navigate({ to: "/bookmarks" });
+  }
+
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -54,16 +72,15 @@ function AuthPage() {
         setResetSent(true);
         return;
       }
+
       const parsed = schema.safeParse({ email, password });
       if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? t("error"));
+
       if (mode === "in") {
         const { data, error } = await supabase.auth.signInWithPassword(parsed.data);
         if (error) throw error;
-        
-        // এডমিন ইমেইল হলে সরাসরি এডমিন প্যানেলে, অন্যথায় বুকমার্কে রিডাইরেক্ট
-        const userEmail = data.user?.email;
-        if (isUserAdmin(userEmail)) {
-          navigate({ to: "/admin" });
+        if (data.user) {
+          await checkAdminAndRedirect(data.user.id);
         } else {
           navigate({ to: "/bookmarks" });
         }
@@ -73,13 +90,8 @@ function AuthPage() {
           options: { emailRedirectTo: window.location.origin },
         });
         if (error) throw error;
-        if (data.session) {
-          const userEmail = data.user?.email;
-          if (isUserAdmin(userEmail)) {
-            navigate({ to: "/admin" });
-          } else {
-            navigate({ to: "/bookmarks" });
-          }
+        if (data.session && data.user) {
+          await checkAdminAndRedirect(data.user.id);
         } else {
           setSent(true);
         }
@@ -143,6 +155,7 @@ function AuthPage() {
 
         {mode === "in" && !resetSent && (
           <button
+            type="button"
             className="mt-4 w-full text-sm text-muted-foreground hover:text-primary hover:underline cursor-pointer"
             onClick={() => {
               setSent(false);
@@ -155,6 +168,7 @@ function AuthPage() {
         )}
 
         <button
+          type="button"
           className="mt-3 w-full text-sm text-primary hover:underline cursor-pointer"
           onClick={() => {
             setSent(false);
