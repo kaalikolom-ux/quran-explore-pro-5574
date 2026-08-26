@@ -1,299 +1,258 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import {
-  Calendar,
-  ChevronLeft,
-  User,
-  ArrowLeft,
-  ArrowRight,
-  EyeOff,
-  Pencil,
-  ShieldCheck,
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { 
+  Calendar, 
+  User, 
+  Layers, 
+  Tag as TagIcon, 
+  ArrowLeft, 
+  Share2, 
+  Bookmark, 
+  BookmarkCheck,
+  Check,
+  BookOpen
 } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
-import { useIsAdmin } from "@/lib/auth";
-import { BookmarkButton } from "@/components/BookmarkButton";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
+import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
 
-function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 150): string {
-  if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
-  if (!body) return "ইসলাম ও বিজ্ঞান বিষয়ক প্রবন্ধ।";
-  const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
-  return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
-}
-
 export const Route = createFileRoute("/articles/$slug")({
-  head: ({ loaderData }) => {
-    const article = loaderData;
-    const title = article ? `${article.title_bn} — কুরআন অন্বেষা` : "আর্টিকেল — কুরআন অন্বেষা";
-    const desc = getCleanExcerpt(article?.excerpt_bn, article?.content_bn || article?.body_bn);
-    return {
-      meta: [
-        { title },
-        { name: "description", content: desc },
-        { property: "og:title", content: title },
-        { property: "og:description", content: desc },
-        ...(article?.cover_image_url ? [{ property: "og:image", content: article.cover_image_url }] : []),
-      ],
-    };
-  },
-  loader: async ({ params }) => {
-    const { data } = await supabase
-      .from("articles")
-      .select("*, author:authors(name_bn, name_en)")
-      .eq("slug", params.slug)
-      .maybeSingle();
-    return data;
-  },
-  component: ArticlePage,
+  component: SingleArticlePage,
 });
 
-function ArticlePage() {
+function SingleArticlePage() {
   const { slug } = Route.useParams();
-  const { lang, t } = usePrefs();
-  const { isAdmin } = useIsAdmin();
-  const initial = Route.useLoaderData();
-  const queryClient = useQueryClient();
-  const navigate = useNavigate();
+  const { lang, dark } = usePrefs();
+  const [copied, setCopied] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
-  const query = useQuery({
-    queryKey: ["article", slug],
+  // ১. সিঙ্গেল আর্টিকেল বিস্তারিত ফেচ (লেখক ও ক্যাটাগরির রিলেশনসহ)
+  const { data: article, isLoading } = useQuery({
+    queryKey: ["article-single-detail", slug],
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("*, author:authors(name_bn, name_en)")
+        .select("*, author:authors(id, name_bn, name_en, image_url, bio_bn, bio_en), category:categories(id, name_bn, name_en, slug)")
         .eq("slug", slug)
         .maybeSingle();
-      if (error) throw error;
+
+      if (error) return null;
       return data;
     },
-    initialData: initial ?? undefined,
   });
 
-  const listQuery = useQuery({
-    queryKey: ["articles-list"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("articles")
-        .select("id, slug, title_bn, title_en, published")
-        .eq("published", true)
-        .order("published_at", { ascending: false });
-      return data || [];
-    },
-  });
+  // শেয়ার হ্যান্ডলার
+  const handleShare = () => {
+    if (typeof window === "undefined") return;
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    toast.success(lang === "en" ? "Article link copied to clipboard!" : "আর্টিকেলের লিংক ক্লিপবোর্ডে কপি হয়েছে!");
+    setTimeout(() => setCopied(false), 2500);
+  };
 
-  // সরাসরি পড়ার পেজ থেকে ড্রাফট বা পাবলিশ টগল করার মিউটেশন
-  const togglePublish = useMutation({
-    mutationFn: async (nextStatus: boolean) => {
-      if (!query.data?.id) return;
-      const { error } = await supabase
-        .from("articles")
-        .update({
-          published: nextStatus,
-          published_at: nextStatus ? new Date().toISOString() : null,
-        })
-        .eq("id", query.data.id);
-      if (error) throw error;
-    },
-    onSuccess: (_, nextStatus) => {
-      queryClient.invalidateQueries({ queryKey: ["article", slug] });
-      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
-      queryClient.invalidateQueries({ queryKey: ["articles-list"] });
-      queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success(nextStatus ? "আর্টিকেল প্রকাশিত হয়েছে" : "আর্টিকেলটি খসড়া/ড্রাফট করা হয়েছে");
-    },
-    onError: (err: Error) => toast.error(err.message),
-  });
+  // বুকমার্ক টগল
+  const toggleBookmark = () => {
+    setIsBookmarked(!isBookmarked);
+    toast.success(
+      isBookmarked 
+        ? (lang === "en" ? "Removed from bookmarks" : "বুকমার্ক থেকে সরানো হয়েছে")
+        : (lang === "en" ? "Saved to bookmarks" : "বুকমার্কে সংরক্ষণ করা হয়েছে")
+    );
+  };
 
-  const article = query.data;
-  const articles = listQuery.data || [];
-
-  if (!article || (!article.published && !isAdmin)) {
+  if (isLoading) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <p className="text-muted-foreground">{t("notFound")}</p>
-        <Button asChild className="mt-4" variant="outline">
+      <div className="mx-auto max-w-3xl px-4 py-20 text-center text-xs text-muted-foreground">
+        আর্টিকেল লোড হচ্ছে...
+      </div>
+    );
+  }
+
+  if (!article) {
+    return (
+      <div className="mx-auto max-w-md px-4 py-24 text-center space-y-4">
+        <BookOpen className="mx-auto size-12 text-muted-foreground/40" />
+        <h2 className="text-lg font-bold text-foreground">আর্টিকেলটি খুঁজে পাওয়া যায়নি</h2>
+        <p className="text-xs text-muted-foreground">পোস্টটি মুছে ফেলা হয়ে থাকতে পারে অথবা লিংকটি ভুল।</p>
+        <Button asChild variant="outline" size="sm">
           <Link to="/articles">
-            <ChevronLeft className="size-4" /> {t("articles")}
+            <ArrowLeft className="size-3.5 mr-1.5" /> সকল আর্টিকেল
           </Link>
         </Button>
       </div>
     );
   }
 
-  const currentIndex = articles.findIndex((a) => a.slug === slug);
-  const prevArticle = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
-  const nextArticle = currentIndex > 0 ? articles[currentIndex - 1] : null;
-
   const title = lang === "en" && article.title_en ? article.title_en : article.title_bn;
-  const rawContent =
-    lang === "en"
-      ? article.content_en || article.body_en || ""
-      : article.content_bn || article.body_bn || "";
-  const authorName =
-    article.author &&
-    (lang === "en" && article.author.name_en ? article.author.name_en : article.author.name_bn);
+  const content = lang === "en" && article.content_en ? article.content_en : article.content_bn;
+  const author = article.author;
+  const authorName = author
+    ? lang === "en" && author.name_en ? author.name_en : author.name_bn
+    : null;
+
+  const category = article.category;
+  const categoryName = category
+    ? lang === "en" && category.name_en ? category.name_en : category.name_bn
+    : null;
+
+  const tagsList: string[] = Array.isArray(article.tags) ? article.tags : [];
 
   return (
-    <article className="mx-auto w-full max-w-3xl px-4 py-8">
-      {/* শুধুমাত্র অ্যাডমিনের জন্য কুইক অ্যাকশন বার */}
-      {isAdmin && (
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#2271b1]/30 bg-[#2271b1]/5 p-3 sm:px-4 shadow-sm backdrop-blur-sm">
-          <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
-            <ShieldCheck className="size-4 text-[#2271b1]" />
-            <span>অ্যাডমিন কুইক কন্ট্রোল:</span>
-            <span
-              className={`rounded px-2 py-0.5 text-[10px] font-bold ${
-                article.published
-                  ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
-                  : "bg-amber-500/15 text-amber-600 dark:text-amber-400"
-              }`}
-            >
-              {article.published ? "প্রকাশিত (Live)" : "খসড়া (Draft)"}
-            </span>
-          </div>
+    <article className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+      {/* টপ নেভিগেশন ও একশন বাটন */}
+      <div className="flex items-center justify-between gap-4 mb-8">
+        <Button asChild variant="ghost" size="sm" className="-ml-2 text-xs text-muted-foreground hover:text-foreground">
+          <Link to="/articles">
+            <ArrowLeft className="size-3.5 mr-1.5" /> {lang === "en" ? "Back to Articles" : "সকল আর্টিকেল"}
+          </Link>
+        </Button>
 
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[11px] text-muted-foreground font-medium">
-                {article.published ? "Draft করুন" : "Publish করুন"}
+        <div className="flex items-center gap-1.5">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={toggleBookmark}
+            className="h-8 px-2.5 text-xs gap-1.5 cursor-pointer"
+            title="বুকমার্ক করুন"
+          >
+            {isBookmarked ? (
+              <>
+                <BookmarkCheck className="size-3.5 text-emerald-500" />
+                <span className="hidden sm:inline">সংরক্ষিত</span>
+              </>
+            ) : (
+              <>
+                <Bookmark className="size-3.5 text-muted-foreground" />
+                <span className="hidden sm:inline">বুকমার্ক</span>
+              </>
+            )}
+          </Button>
+
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={handleShare}
+            className="h-8 px-2.5 text-xs gap-1.5 cursor-pointer"
+            title="লিংক কপি করুন"
+          >
+            {copied ? (
+              <>
+                <Check className="size-3.5 text-emerald-500" />
+                <span className="hidden sm:inline">কপি হয়েছে</span>
+              </>
+            ) : (
+              <>
+                <Share2 className="size-3.5 text-muted-foreground" />
+                <span className="hidden sm:inline">শেয়ার</span>
+              </>
+            )}
+          </Button>
+        </div>
+      </div>
+
+      {/* মেটা হেডার ও ক্যাটাগরি ব্যাজ (ক্লিকেবল ও হোভার ইফেক্টসহ) */}
+      <header className="space-y-4 mb-8">
+        {category && (
+          <div className="flex items-center gap-2">
+            <Link
+              to="/articles"
+              search={{ category: category.id }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#2A6F97]/10 dark:bg-[#58b4e8]/15 border border-[#2A6F97]/30 dark:border-[#58b4e8]/40 px-3 py-1 text-xs font-bold text-[#1c5576] dark:text-[#58b4e8] transition-all hover:bg-[#2A6F97] hover:text-white dark:hover:bg-[#58b4e8] dark:hover:text-slate-950 cursor-pointer shadow-xs group"
+              title={`${categoryName} ক্যাটাগরির সকল লেখা পড়ুন`}
+            >
+              <Layers className="size-3.5 transition-transform group-hover:scale-110" />
+              <span>{categoryName}</span>
+            </Link>
+          </div>
+        )}
+
+        <h1 className="text-2xl sm:text-4xl font-bold font-serif leading-tight text-foreground tracking-tight">
+          {title}
+        </h1>
+
+        {/* লেখক ও প্রকাশের তারিখ ইনফো বার */}
+        <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-2 border-b border-border/60 pb-4">
+          {author && (
+            <Link
+              to="/authors/$id"
+              params={{ id: author.id }}
+              className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors cursor-pointer group"
+              title={`${authorName} এর সকল লেখা দেখুন`}
+            >
+              {author.image_url ? (
+                <img
+                  src={author.image_url}
+                  alt={authorName || ""}
+                  className="size-5 rounded-full object-cover border border-border"
+                />
+              ) : (
+                <User className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
+              )}
+              <span className="underline decoration-muted-foreground/40 underline-offset-4 group-hover:decoration-primary">
+                {authorName}
               </span>
-              <Switch
-                checked={article.published}
-                disabled={togglePublish.isPending}
-                onCheckedChange={(checked) => togglePublish.mutate(checked)}
-                title={article.published ? "ক্লিক করে খসড়া করুন" : "ক্লিক করে প্রকাশ করুন"}
-              />
-            </div>
+            </Link>
+          )}
 
-            <div className="h-4 w-px bg-border mx-0.5" />
-
-            <Button
-              asChild
-              size="sm"
-              variant="outline"
-              className="h-7 px-2.5 text-xs gap-1.5 hover:bg-[#2271b1] hover:text-white"
-            >
-              <Link to="/admin">
-                <Pencil className="size-3" />
-                <span>এডিট করুন</span>
-              </Link>
-            </Button>
-          </div>
+          {article.published_at && (
+            <span className="inline-flex items-center gap-1">
+              <Calendar className="size-3.5" />
+              {new Date(article.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          )}
         </div>
-      )}
+      </header>
 
-      {!article.published && !isAdmin && (
-        <div className="mb-6 flex items-center gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-xs text-amber-500 font-medium">
-          <EyeOff className="size-4 shrink-0" />
-          <span>এটি একটি খসড়া (Draft) পোস্ট।</span>
-        </div>
-      )}
-
-      <Button asChild variant="ghost" size="sm" className="mb-6 -ml-2">
-        <Link to="/articles">
-          <ChevronLeft className="size-4" /> {t("articles")}
-        </Link>
-      </Button>
-
+      {/* কভার ছবি */}
       {article.cover_image_url && (
-        <img
-          src={article.cover_image_url}
-          alt={title}
-          className="mb-8 h-64 w-full rounded-2xl object-cover shadow-sm sm:h-80 border border-border"
-        />
+        <div className="mb-8 overflow-hidden rounded-2xl border border-border/70 shadow-sm">
+          <img
+            src={article.cover_image_url}
+            alt={title}
+            className="w-full h-auto max-h-[440px] object-cover"
+          />
+        </div>
       )}
 
-      <div className="flex items-center justify-between gap-4">
-        <h1 className="text-3xl font-bold leading-tight sm:text-4xl text-foreground font-serif">{title}</h1>
-        <BookmarkButton
-          target={{
-            kind: "article",
-            slug: article.slug,
-            label: title,
-          }}
-        />
-      </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-b border-border pb-6">
-        {article.published_at && (
-          <span className="inline-flex items-center gap-1">
-            <Calendar className="size-3.5" />
-            {new Date(article.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </span>
-        )}
-        {authorName && (
-          <span className="inline-flex items-center gap-1">
-            <User className="size-3.5" />
-            {authorName}
-          </span>
-        )}
-      </div>
-
+      {/* মূল লেখার বিষয়বস্তু */}
       <div
-        className="mt-8 text-base leading-relaxed text-foreground/90 font-serif 
-                   [&>p]:mb-6 [&>p]:leading-8 [&>p]:tracking-normal
-                   [&>h1]:text-2xl [&>h1]:font-bold [&>h1]:mt-8 [&>h1]:mb-4
-                   [&>h2]:text-xl [&>h2]:font-bold [&>h2]:mt-6 [&>h2]:mb-3
-                   [&>h3]:text-lg [&>h3]:font-semibold [&>h3]:mt-5 [&>h3]:mb-2
-                   [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul>li]:mb-1.5
-                   [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol>li]:mb-1.5
-                   [&>blockquote]:border-l-4 [&>blockquote]:border-primary/60 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-6 [&>blockquote]:text-muted-foreground"
-        style={{ whiteSpace: rawContent.includes("<p>") ? "normal" : "pre-line" }}
-        dangerouslySetInnerHTML={{ __html: rawContent }}
+        className="prose prose-base sm:prose-lg dark:prose-invert max-w-none leading-relaxed font-serif break-words mb-10"
+        dangerouslySetInnerHTML={{ __html: content || "" }}
       />
 
-      {/* নেভিগেশন কার্ডস */}
-      <div className="mt-12 pt-8 border-t border-border/60">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {prevArticle ? (
-            <Link
-              to="/articles/$slug"
-              params={{ slug: prevArticle.slug }}
-              className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/40 hover:shadow-md"
-            >
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors group-hover:text-foreground mb-2">
-                <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
-                <span>{lang === "en" ? "Previous Article" : "পূর্ববর্তী লেখা"}</span>
-              </div>
-              <h4 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover:text-primary transition-colors">
-                {lang === "en" && prevArticle.title_en ? prevArticle.title_en : prevArticle.title_bn}
-              </h4>
-            </Link>
-          ) : (
-            <div className="hidden sm:block" />
-          )}
-
-          {nextArticle ? (
-            <Link
-              to="/articles/$slug"
-              params={{ slug: nextArticle.slug }}
-              className="group relative flex flex-col justify-between items-end text-right rounded-2xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/40 hover:shadow-md"
-            >
-              <div className="flex items-center justify-end gap-1.5 text-xs font-semibold text-muted-foreground transition-colors group-hover:text-foreground mb-2">
-                <span>{lang === "en" ? "Next Article" : "পরবর্তী লেখা"}</span>
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </div>
-              <h4 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover:text-primary transition-colors">
-                {lang === "en" && nextArticle.title_en ? nextArticle.title_en : nextArticle.title_bn}
-              </h4>
-            </Link>
-          ) : (
-            <div className="hidden sm:block" />
-          )}
+      {/* পোস্টের নিচের ট্যাগসমূহ (ক্লিকেবল ট্যাগ ব্যাজ) */}
+      {tagsList.length > 0 && (
+        <div className="my-8 pt-6 border-t border-border/60">
+          <div className="flex items-center gap-2 mb-3">
+            <TagIcon className="size-4 text-primary" />
+            <span className="text-xs font-bold text-foreground uppercase tracking-wider">ট্যাগসমূহ:</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {tagsList.map((tag, idx) => (
+              <Badge
+                key={idx}
+                variant="secondary"
+                className="px-3 py-1 text-xs font-medium bg-muted/60 hover:bg-primary hover:text-white transition-all cursor-pointer select-none rounded-lg border border-border"
+              >
+                #{tag}
+              </Badge>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* কমেন্ট সেকশন */}
+      {/* কমেন্ট ও ফিডব্যাক সেকশন */}
       <CommentsSection articleId={article.id} />
     </article>
   );
