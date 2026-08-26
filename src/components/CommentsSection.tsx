@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { MessageSquare, Send, User, Calendar, ShieldCheck } from "lucide-react";
+import { MessageSquare, Send, User, Calendar, ShieldCheck, Reply, CornerDownRight, X } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 const commentSchema = z.object({
   name: z.string().trim().min(2, "নাম ন্যূনতম ২ অক্ষরের হতে হবে").max(80),
   email: z.string().trim().email("সঠিক ইমেইল এড্রেস প্রদান করুন").max(120),
-  content: z.string().trim().min(3, "মন্তব্য লিখুন").max(2000),
+  content: z.string().trim().min(2, "মন্তব্য লিখুন").max(2000),
 });
 
 interface CommentsSectionProps {
@@ -30,6 +30,11 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
+  const [replyingTo, setReplyingTo] = useState<{ id: string; name: string } | null>(null);
+  const [replyContent, setReplyContent] = useState("");
+  const [replyName, setReplyName] = useState("");
+  const [replyEmail, setReplyEmail] = useState("");
+
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
 
@@ -37,7 +42,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
     setIsClient(true);
   }, []);
 
-  // অ্যাডমিন ড্যাশবোর্ড / ডেটাবেজ থেকে ডায়নামিক সাইট কী ফেচ
+  // ডেটাবেজ থেকে Turnstile Site Key ফেচিং
   const { data: turnstileSiteKey, isLoading: isKeyLoading } = useQuery({
     queryKey: ["site-setting-turnstile-site-key"],
     queryFn: async () => {
@@ -48,19 +53,15 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           .eq("key", "turnstile_site_key")
           .maybeSingle();
 
-        if (error) {
-          console.error("Failed to fetch turnstile key:", error);
-          return null;
-        }
+        if (error) return null;
         return data?.value || null;
-      } catch (err) {
-        console.error("Error querying site settings:", err);
+      } catch {
         return null;
       }
     },
   });
 
-  // Turnstile Widget Loader (শুধুমাত্র ডেটাবেজ থেকে আসল সাইট কী পাওয়ার পর রেন্ডার হবে)
+  // Turnstile Widget Loader
   useEffect(() => {
     if (!isClient || typeof window === "undefined" || !turnstileSiteKey) return;
 
@@ -75,8 +76,8 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
             "expired-callback": () => setTurnstileToken(null),
             "error-callback": () => setTurnstileToken(null),
           });
-        } catch (e) {
-          console.error("Turnstile render error:", e);
+        } catch {
+          // ignore
         }
       }
     };
@@ -116,7 +117,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           .from("comments")
           .select("*")
           .eq("article_id", articleId)
-          .order("created_at", { ascending: false });
+          .order("created_at", { ascending: true });
         if (error) return [];
         return data || [];
       } catch {
@@ -126,9 +127,25 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
     enabled: Boolean(articleId),
   });
 
+  // কমেন্ট / রিপ্লাই সাবমিশন
   const submitComment = useMutation({
-    mutationFn: async () => {
-      const parsed = commentSchema.safeParse({ name, email, content });
+    mutationFn: async ({
+      author_name,
+      author_email,
+      commentText,
+      parent_id,
+    }: {
+      author_name: string;
+      author_email: string;
+      commentText: string;
+      parent_id?: string | null;
+    }) => {
+      const parsed = commentSchema.safeParse({
+        name: author_name,
+        email: author_email,
+        content: commentText,
+      });
+
       if (!parsed.success) {
         throw new Error(parsed.error.issues[0]?.message);
       }
@@ -138,6 +155,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         author_name: parsed.data.name,
         author_email: parsed.data.email,
         content: parsed.data.content,
+        parent_id: parent_id || null,
       });
 
       if (error) throw error;
@@ -147,13 +165,17 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
       setName("");
       setEmail("");
       setContent("");
+      setReplyingTo(null);
+      setReplyContent("");
+      setReplyName("");
+      setReplyEmail("");
       setTurnstileToken(null);
       const w = window as any;
       if (widgetIdRef.current && w.turnstile) {
         w.turnstile.reset(widgetIdRef.current);
       }
       toast.success(
-        lang === "en" ? "Comment posted successfully!" : "আপনার মন্তব্য সফলভাবে প্রকাশিত হয়েছে!"
+        lang === "en" ? "Comment submitted successfully!" : "মন্তব্য সফলভাবে প্রকাশিত হয়েছে!"
       );
     },
     onError: (err: Error) => {
@@ -161,12 +183,37 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
     },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleMainSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    submitComment.mutate();
+    submitComment.mutate({
+      author_name: name,
+      author_email: email,
+      commentText: content,
+      parent_id: null,
+    });
+  };
+
+  const handleReplySubmit = (e: React.FormEvent, parentId: string) => {
+    e.preventDefault();
+    submitComment.mutate({
+      author_name: replyName,
+      author_email: replyEmail,
+      commentText: replyContent,
+      parent_id: parentId,
+    });
   };
 
   if (!isClient) return null;
+
+  // প্যারেন্ট কমেন্ট ও রিপ্লাই পৃথক করা
+  const rootComments = comments.filter((c: any) => !c.parent_id);
+  const repliesMap = comments.reduce((acc: any, c: any) => {
+    if (c.parent_id) {
+      if (!acc[c.parent_id]) acc[c.parent_id] = [];
+      acc[c.parent_id].push(c);
+    }
+    return acc;
+  }, {});
 
   return (
     <section className="mt-14 border-t border-border/70 pt-10">
@@ -177,7 +224,8 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         </h3>
       </div>
 
-      <form onSubmit={handleSubmit} className="card-soft p-5 sm:p-6 mb-10 space-y-4">
+      {/* মূল কমেন্ট ফর্ম */}
+      <form onSubmit={handleMainSubmit} className="card-soft p-5 sm:p-6 mb-10 space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
             <Label htmlFor="author-name" className="text-xs font-semibold">
@@ -226,14 +274,14 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           />
         </div>
 
-        {/* Cloudflare Turnstile কন্টেইনার (ডাটাবেজ থেকে সাইট কী আসলেই শুধু উইজেট দেখাবে) */}
+        {/* Turnstile উইজেট */}
         <div className="pt-1 flex flex-col gap-1.5">
           {isKeyLoading ? (
-            <p className="text-[11px] text-muted-foreground">সিকিউরিটি চেক লোড হচ্ছে...</p>
+            <p className="text-[11px] text-muted-foreground">টার্নস্টাইল লোড হচ্ছে...</p>
           ) : turnstileSiteKey ? (
             <div ref={containerRef} className="min-h-[65px]" />
           ) : (
-            <p className="text-[11px] text-amber-500">
+            <p className="text-[11px] text-amber-500 font-medium">
               ⚠️ অ্যাডমিন ড্যাশবোর্ড থেকে Turnstile Site Key সংরক্ষণ করুন।
             </p>
           )}
@@ -260,35 +308,153 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         </Button>
       </form>
 
+      {/* কমেন্ট ও রিপ্লাই তালিকা */}
       {isLoading ? (
         <p className="text-xs text-muted-foreground">{lang === "en" ? "Loading comments..." : "মন্তব্য লোড হচ্ছে..."}</p>
-      ) : comments.length === 0 ? (
+      ) : rootComments.length === 0 ? (
         <p className="text-xs text-muted-foreground italic">
           {lang === "en" ? "No comments yet. Be the first to comment!" : "এখনো কোনো মন্তব্য করা হয়নি। প্রথম মন্তব্যটি আপনিই করুন!"}
         </p>
       ) : (
         <div className="space-y-4">
-          {comments.map((c: any) => (
-            <div key={c.id} className="rounded-xl border border-border/60 bg-card p-4 text-xs">
-              <div className="flex items-center justify-between border-b border-border/40 pb-2 mb-2">
-                <span className="font-semibold text-foreground inline-flex items-center gap-1.5">
-                  <User className="size-3.5 text-[#2A6F97] dark:text-[#58b4e8]" />
-                  {c.author_name}
-                </span>
-                <span className="text-[10px] text-muted-foreground inline-flex items-center gap-1">
-                  <Calendar className="size-3" />
-                  {new Date(c.created_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                </span>
+          {rootComments.map((c: any) => {
+            const replies = repliesMap[c.id] || [];
+            const isReplying = replyingTo?.id === c.id;
+
+            return (
+              <div key={c.id} className="rounded-xl border border-border/60 bg-card p-4 text-xs space-y-3">
+                <div className="flex items-center justify-between border-b border-border/40 pb-2">
+                  <span className="font-semibold text-foreground inline-flex items-center gap-1.5">
+                    <User className="size-3.5 text-[#2A6F97] dark:text-[#58b4e8]" />
+                    {c.author_name}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground inline-flex items-center gap-1">
+                    <Calendar className="size-3" />
+                    {new Date(c.created_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
+
+                <p className="text-foreground/90 leading-relaxed whitespace-pre-wrap font-serif">
+                  {c.content}
+                </p>
+
+                {/* উত্তর দেওয়ার টগল বাটন */}
+                <div className="flex items-center justify-end pt-1">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (isReplying) {
+                        setReplyingTo(null);
+                      } else {
+                        setReplyingTo({ id: c.id, name: c.author_name });
+                        setReplyName(name);
+                        setReplyEmail(email);
+                      }
+                    }}
+                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#2A6F97] hover:underline dark:text-[#58b4e8] cursor-pointer"
+                  >
+                    {isReplying ? (
+                      <>
+                        <X className="size-3" /> বাতিল
+                      </>
+                    ) : (
+                      <>
+                        <Reply className="size-3" /> উত্তর দিন (Reply)
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* ইনলাইন রিপ্লাই ফর্ম */}
+                {isReplying && (
+                  <form
+                    onSubmit={(e) => handleReplySubmit(e, c.id)}
+                    className="mt-3 rounded-lg border border-border/80 bg-muted/30 p-3 space-y-3"
+                  >
+                    <div className="flex items-center justify-between text-[11px] font-semibold text-muted-foreground">
+                      <span>উত্তর দিচ্ছেন: @{c.author_name}</span>
+                    </div>
+
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      <Input
+                        value={replyName}
+                        onChange={(e) => setReplyName(e.target.value)}
+                        placeholder="আপনার নাম *"
+                        required
+                        className="h-8 text-xs bg-card"
+                      />
+                      <Input
+                        type="email"
+                        value={replyEmail}
+                        onChange={(e) => setReplyEmail(e.target.value)}
+                        placeholder="আপনার ইমেইল *"
+                        required
+                        className="h-8 text-xs bg-card"
+                      />
+                    </div>
+
+                    <Textarea
+                      rows={2}
+                      value={replyContent}
+                      onChange={(e) => setReplyContent(e.target.value)}
+                      placeholder="আপনার উত্তর লিখুন..."
+                      required
+                      className="text-xs bg-card"
+                    />
+
+                    <div className="flex justify-end gap-2">
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        className="h-7 text-xs"
+                        onClick={() => setReplyingTo(null)}
+                      >
+                        বাতিল
+                      </Button>
+                      <Button
+                        type="submit"
+                        size="sm"
+                        disabled={submitComment.isPending}
+                        className="h-7 bg-[#2A6F97] text-white text-xs"
+                      >
+                        {submitComment.isPending ? "পাঠানো হচ্ছে..." : "উত্তর পোস্ট করুন"}
+                      </Button>
+                    </div>
+                  </form>
+                )}
+
+                {/* নেস্টেড রিপ্লাইসমূহ */}
+                {replies.length > 0 && (
+                  <div className="mt-3 space-y-2.5 border-l-2 border-[#2A6F97]/40 pl-3 pt-2">
+                    {replies.map((reply: any) => (
+                      <div key={reply.id} className="rounded-lg bg-muted/40 p-3 text-xs space-y-1">
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold text-foreground inline-flex items-center gap-1">
+                            <CornerDownRight className="size-3 text-[#2A6F97] dark:text-[#58b4e8]" />
+                            {reply.author_name}
+                          </span>
+                          <span className="text-[10px] text-muted-foreground">
+                            {new Date(reply.created_at).toLocaleDateString(
+                              lang === "en" ? "en-US" : "bn-BD",
+                              { year: "numeric", month: "short", day: "numeric" }
+                            )}
+                          </span>
+                        </div>
+                        <p className="text-foreground/90 font-serif leading-relaxed pt-0.5">
+                          {reply.content}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-              <p className="text-foreground/90 leading-relaxed whitespace-pre-wrap font-serif">
-                {c.content}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </section>
