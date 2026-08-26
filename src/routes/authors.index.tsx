@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { User, FileText, ChevronRight } from "lucide-react";
+import { User, FileText, ChevronRight, PenTool } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
@@ -24,7 +24,7 @@ function AuthorsDirectoryPage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("authors")
-        .select("*, articles:articles(id, published)")
+        .select("*, articles:articles(id, published, deleted_at)")
         .order("name_bn");
 
       if (error) return [];
@@ -34,7 +34,11 @@ function AuthorsDirectoryPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
+      {/* কলম আইকনসহ ডেডিকেটেড পেইজ হেডার */}
       <div className="mb-10 text-center max-w-2xl mx-auto space-y-2">
+        <div className="inline-flex items-center justify-center size-12 rounded-2xl bg-primary/10 text-primary mb-2 shadow-xs border border-primary/20">
+          <PenTool className="size-6" />
+        </div>
         <h1 className="text-3xl sm:text-4xl font-bold font-serif text-foreground">
           {lang === "en" ? "Authors & Contributors" : "লেখক ও গবেষকবৃন্দ"}
         </h1>
@@ -60,7 +64,7 @@ function AuthorsDirectoryPage() {
             const name = lang === "en" && author.name_en ? author.name_en : author.name_bn;
             const bio = lang === "en" && author.bio_en ? author.bio_en : author.bio_bn;
             const publishedCount =
-              author.articles?.filter((a: any) => a.published).length || 0;
+              author.articles?.filter((a: any) => a.published && !a.deleted_at).length || 0;
 
             return (
               <Link
