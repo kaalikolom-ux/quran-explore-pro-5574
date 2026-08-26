@@ -38,6 +38,7 @@ import {
   Code2,
   Eye,
   Save,
+  Download,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -62,6 +63,7 @@ import { PagesAdmin } from "@/components/PagesAdmin";
 import { SocialLinksAdmin } from "@/components/SocialLinksAdmin";
 import { TurnstileAdmin } from "@/components/TurnstileAdmin";
 import { MessagesAdmin } from "@/components/MessagesAdmin";
+import { ImportModal } from "@/components/ImportModal";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -76,9 +78,6 @@ export const Route = createFileRoute("/admin")({
   component: AdminPage,
 });
 
-/* ========================================================================== */
-/* DUAL-MODE (VISUAL + HTML) RICH TEXT EDITOR COMPONENT                       */
-/* ========================================================================== */
 function RichTextEditor({
   value,
   onChange,
@@ -279,9 +278,6 @@ function RichTextEditor({
   );
 }
 
-/* ========================================================================== */
-/* MAIN WORDPRESS-STYLE ADMIN PAGE                                           */
-/* ========================================================================== */
 function AdminPage() {
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
@@ -509,9 +505,6 @@ function AdminPage() {
   );
 }
 
-/* ========================================================================== */
-/* SUB-COMPONENTS                                                             */
-/* ========================================================================== */
 function RolesAdmin() {
   const queryClient = useQueryClient();
   const [userId, setUserId] = useState("");
@@ -666,6 +659,7 @@ function ArticlesAdmin() {
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
+  const [importType, setImportType] = useState<"wordpress" | "blogger" | null>(null);
   const categories = useCategories();
 
   const authors = useQuery({
@@ -810,6 +804,9 @@ function ArticlesAdmin() {
 
   return (
     <div className="space-y-6">
+      {/* ইমপোর্ট মডাল উইন্ডো */}
+      {importType && <ImportModal type={importType} onClose={() => setImportType(null)} />}
+
       <form
         className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
         onSubmit={(e) => {
@@ -817,26 +814,52 @@ function ArticlesAdmin() {
           save.mutate();
         }}
       >
-        {/* টপ হেডার ও স্ট্যাটাস ড্রপডাউন */}
+        {/* টপ হেডার ও পোস্ট ইমপোর্ট ড্রপডাউন */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3">
-          <h2 className="font-semibold text-base">
-            {editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল লিখুন"}
-          </h2>
-          
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-muted-foreground">স্ট্যাটাস:</span>
-            <select
-              value={published ? "published" : "draft"}
-              onChange={(e) => setPublished(e.target.value === "published")}
-              className={`h-8 rounded-md border px-2.5 text-xs font-semibold transition-colors focus:outline-none cursor-pointer ${
-                published 
-                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" 
-                  : "border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400"
-              }`}
-            >
-              <option value="published" className="bg-card text-foreground">🟢 প্রকাশিত (Published)</option>
-              <option value="draft" className="bg-card text-foreground">🟡 খসড়া (Draft)</option>
-            </select>
+          <div>
+            <h2 className="font-semibold text-base">
+              {editingId ? "আর্টিকেল সম্পাদনা করুন" : "নতুন আর্টিকেল লিখুন"}
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {/* পোস্ট ইমপোর্ট ড্রপডাউন */}
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-medium text-muted-foreground flex items-center gap-1">
+                <Download className="size-3.5 text-[#2271b1]" /> পোস্ট ইমপোর্ট:
+              </span>
+              <select
+                value=""
+                onChange={(e) => {
+                  if (e.target.value === "wordpress" || e.target.value === "blogger") {
+                    setImportType(e.target.value);
+                  }
+                }}
+                className="h-8 rounded-md border border-border bg-background px-2.5 text-xs font-medium text-foreground focus:outline-none cursor-pointer"
+              >
+                <option value="">নির্বাচন করুন...</option>
+                <option value="wordpress">ওয়ার্ডপ্রেস / WordPress (.xml)</option>
+                <option value="blogger">ব্লগার / Blogger (.xml)</option>
+              </select>
+            </div>
+
+            <div className="h-4 w-px bg-border mx-1" />
+
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-medium text-muted-foreground">স্ট্যাটাস:</span>
+              <select
+                value={published ? "published" : "draft"}
+                onChange={(e) => setPublished(e.target.value === "published")}
+                className={`h-8 rounded-md border px-2.5 text-xs font-semibold transition-colors focus:outline-none cursor-pointer ${
+                  published 
+                    ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" 
+                    : "border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400"
+                }`}
+              >
+                <option value="published" className="bg-card text-foreground">🟢 প্রকাশিত (Published)</option>
+                <option value="draft" className="bg-card text-foreground">🟡 খসড়া (Draft)</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -902,7 +925,6 @@ function ArticlesAdmin() {
           </div>
         </div>
 
-        {/* সেভ বাটন: স্ট্যাটাস অনুযায়ী ডাইনামিক ডিজাইন */}
         <div className="flex items-center gap-2 pt-2">
           <Button 
             type="submit" 
