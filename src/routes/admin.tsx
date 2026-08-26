@@ -39,6 +39,7 @@ import {
   Eye,
   Save,
   Download,
+  Upload,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -282,12 +283,14 @@ function AdminPage() {
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
   const [activeTab, setActiveTab] = useState("articles");
+  const [importModalType, setImportModalType] = useState<"wordpress" | "blogger" | null>(null);
 
   const menuSections = [
     {
       group: "মূল কনটেন্ট মেনু",
       items: [
         { value: "articles", label: "আর্টিকেল ও প্রবন্ধ", icon: FileText },
+        { value: "import", label: "পোস্ট ইমপোর্ট (Import)", icon: Download },
         { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
         { value: "posts", label: "লেখক ও গবেষকবৃন্দ", icon: Users },
         { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
@@ -338,6 +341,11 @@ function AdminPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#f0f0f1] text-[#2c3338] dark:bg-[#121212] dark:text-[#f0f0f1]">
+      {/* ইমপোর্ট মডাল */}
+      {importModalType && (
+        <ImportModal type={importModalType} onClose={() => setImportModalType(null)} />
+      )}
+
       <header className="sticky top-0 z-50 flex h-8 w-full items-center justify-between bg-[#1d2327] px-3 text-[#c3c4c7] select-none text-xs border-b border-[#2c3338]">
         <div className="flex items-center gap-4">
           <Link
@@ -456,7 +464,10 @@ function AdminPage() {
 
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsContent value="articles" className="mt-0 focus-visible:outline-none">
-                <ArticlesAdmin />
+                <ArticlesAdmin onOpenImport={(type) => setImportModalType(type)} />
+              </TabsContent>
+              <TabsContent value="import" className="mt-0 focus-visible:outline-none">
+                <ImportTab onSelectType={(type) => setImportModalType(type)} />
               </TabsContent>
               <TabsContent value="translations" className="mt-0 focus-visible:outline-none">
                 <TranslationsAdmin />
@@ -505,124 +516,65 @@ function AdminPage() {
   );
 }
 
-function RolesAdmin() {
-  const queryClient = useQueryClient();
-  const [userId, setUserId] = useState("");
-  const [role, setRole] = useState<"admin" | "user">("admin");
-
-  const rolesList = useQuery({
-    queryKey: ["admin-user-roles"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("user_roles")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data;
-    },
-  });
-
-  const addRole = useMutation({
-    mutationFn: async () => {
-      if (!userId.trim()) throw new Error("User ID প্রদান করুন");
-      const { error } = await supabase
-        .from("user_roles")
-        .upsert({ user_id: userId.trim(), role }, { onConflict: "user_id,role" });
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      setUserId("");
-      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
-    },
-    onError: (err: Error) => toast.error(err.message),
-  });
-
-  const removeRole = useMutation({
-    mutationFn: async (id: string) => {
-      const { error } = await supabase.from("user_roles").delete().eq("id", id);
-      if (error) throw error;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
-      toast.success("রোল মুছে ফেলা হয়েছে");
-    },
-    onError: (err: Error) => toast.error(err.message),
-  });
-
+/* ========================================================================== */
+/* IMPORT TAB COMPONENT (সাইডবারে ডেডিকেটেড ইমপোর্ট স্ক্রিন)                    */
+/* ========================================================================== */
+function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogger") => void }) {
   return (
     <div className="space-y-6">
-      <form
-        className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-          addRole.mutate();
-        }}
-      >
-        <h2 className="font-semibold text-base flex items-center gap-2 border-b border-border/60 pb-2">
-          <Shield className="size-4 text-[#2271b1]" /> নতুন অ্যাডমিন বা ইউজার রোল অ্যাসাইন করুন
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="space-y-1.5 sm:col-span-2">
-            <Label htmlFor="userId" className="text-xs font-semibold">ব্যবহারকারী আইডি (Supabase Auth UID)</Label>
-            <Input
-              id="userId"
-              placeholder="যেমন: e2a8b... (User UUID)"
-              value={userId}
-              onChange={(e) => setUserId(e.target.value)}
-              required
-              className="h-9 text-xs"
-            />
-            <p className="text-[11px] text-muted-foreground">
-              💡 সাবস্ক্রাইবার তালিকা থেকে সরাসরি UUID কপি করে এখানে ব্যবহার করতে পারেন।
-            </p>
-          </div>
-          <div className="space-y-1.5">
-            <Label htmlFor="roleSelect" className="text-xs font-semibold">রোল নির্বাচন করুন</Label>
-            <select
-              id="roleSelect"
-              value={role}
-              onChange={(e) => setRole(e.target.value as "admin" | "user")}
-              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
-            >
-              <option value="admin">Admin (অ্যাডমিন)</option>
-              <option value="user">User (ব্যবহারকারী)</option>
-            </select>
-          </div>
+      <div className="rounded border border-border bg-card p-6 shadow-sm space-y-4">
+        <div>
+          <h2 className="text-base font-semibold text-foreground">অন্যান্য প্ল্যাটফর্ম থেকে কনটেন্ট ইমপোর্ট করুন</h2>
+          <p className="text-xs text-muted-foreground mt-1">
+            আপনার ওয়ার্ডপ্রেস বা ব্লগারে প্রকাশিত পোস্টের এক্সপোর্টকৃত XML ফাইল থেকে সরাসরি সব আর্টিকেল একসাথে ইমপোর্ট করুন।
+          </p>
         </div>
-        <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
-          <UserCheck className="size-3.5 mr-1.5" /> রোল সংরক্ষণ করুন
-        </Button>
-      </form>
 
-      <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলসমূহের তালিকা:</h3>
-        <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-          {rolesList.data?.map((r) => (
-            <div key={r.id} className="flex items-center justify-between p-3.5">
-              <div>
-                <p className="text-xs font-mono font-medium text-foreground">{r.user_id}</p>
-                <span className="inline-block mt-1 rounded bg-[#2271b1]/10 px-2 py-0.5 text-[10px] font-bold text-[#2271b1]">
-                  {r.role}
-                </span>
-              </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Delete Role"
-                className="h-8 w-8 text-destructive hover:bg-destructive/10"
-                onClick={() => removeRole.mutate(r.id)}
-              >
-                <UserX className="size-4" />
-              </Button>
+        <div className="grid gap-4 sm:grid-cols-2 pt-2">
+          <div className="rounded-xl border border-border/80 bg-muted/20 p-5 flex flex-col justify-between space-y-4 hover:border-[#2271b1]/50 transition-all">
+            <div className="space-y-2">
+              <span className="inline-block rounded-md bg-[#2271b1]/10 px-2.5 py-1 text-xs font-bold text-[#2271b1]">
+                WordPress (WXR XML)
+              </span>
+              <h3 className="text-sm font-bold text-foreground">ওয়ার্ডপ্রেস থেকে ইমপোর্ট</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Tools &gt; Export থেকে ডাউনলোড করা <code>.xml</code> ফাইল আপলোড করে এক ক্লিকে সব পোস্ট ইমপোর্ট করুন।
+              </p>
             </div>
-          ))}
+            <Button
+              onClick={() => onSelectType("wordpress")}
+              className="w-full bg-[#2271b1] hover:bg-[#135e96] text-white text-xs"
+            >
+              <Upload className="size-3.5 mr-1.5" /> WordPress XML আপলোড করুন
+            </Button>
+          </div>
+
+          <div className="rounded-xl border border-border/80 bg-muted/20 p-5 flex flex-col justify-between space-y-4 hover:border-amber-500/50 transition-all">
+            <div className="space-y-2">
+              <span className="inline-block rounded-md bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
+                Blogger (Atom XML)
+              </span>
+              <h3 className="text-sm font-bold text-foreground">ব্লগার থেকে ইমপোর্ট</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Settings &gt; Back up content থেকে ডাউনলোড করা <code>.xml</code> ব্যাকআপ ফাইল দিয়ে পোস্টগুলো ইমপোর্ট করুন।
+              </p>
+            </div>
+            <Button
+              onClick={() => onSelectType("blogger")}
+              className="w-full bg-amber-600 hover:bg-amber-700 text-white text-xs"
+            >
+              <Upload className="size-3.5 mr-1.5" /> Blogger XML আপলোড করুন
+            </Button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
+/* ========================================================================== */
+/* ARTICLES ADMIN COMPONENT                                                   */
+/* ========================================================================== */
 const articleSchema = z.object({
   slug: z
     .string()
@@ -650,7 +602,7 @@ const EMPTY = {
   cover_image_url: "",
 };
 
-function ArticlesAdmin() {
+function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "blogger") => void }) {
   const { user } = useSession();
   const queryClient = useQueryClient();
   const [form, setForm] = useState({ ...EMPTY });
@@ -659,7 +611,6 @@ function ArticlesAdmin() {
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
-  const [importType, setImportType] = useState<"wordpress" | "blogger" | null>(null);
   const categories = useCategories();
 
   const authors = useQuery({
@@ -804,9 +755,6 @@ function ArticlesAdmin() {
 
   return (
     <div className="space-y-6">
-      {/* ইমপোর্ট মডাল উইন্ডো */}
-      {importType && <ImportModal type={importType} onClose={() => setImportType(null)} />}
-
       <form
         className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
         onSubmit={(e) => {
@@ -814,7 +762,6 @@ function ArticlesAdmin() {
           save.mutate();
         }}
       >
-        {/* টপ হেডার ও পোস্ট ইমপোর্ট ড্রপডাউন */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3">
           <div>
             <h2 className="font-semibold text-base">
@@ -823,16 +770,15 @@ function ArticlesAdmin() {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* পোস্ট ইমপোর্ট ড্রপডাউন */}
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-medium text-muted-foreground flex items-center gap-1">
-                <Download className="size-3.5 text-[#2271b1]" /> পোস্ট ইমপোর্ট:
+                <Download className="size-3.5 text-[#2271b1]" /> কুইক ইমপোর্ট:
               </span>
               <select
                 value=""
                 onChange={(e) => {
                   if (e.target.value === "wordpress" || e.target.value === "blogger") {
-                    setImportType(e.target.value);
+                    onOpenImport(e.target.value);
                   }
                 }}
                 className="h-8 rounded-md border border-border bg-background px-2.5 text-xs font-medium text-foreground focus:outline-none cursor-pointer"
@@ -1084,14 +1030,6 @@ function ArticlesAdmin() {
     </div>
   );
 }
-
-const transSchema = z.object({
-  surah: z.coerce.number().int().min(1).max(114),
-  ayah: z.coerce.number().int().min(1).max(300),
-  lang: z.enum(["bn", "en", "bn_std", "en_std"]),
-  text: z.string().trim().min(1, "অনুবাদ টেক্সট প্রদান করুন").max(8000),
-  note: z.string().trim().max(4000),
-});
 
 function TranslationsAdmin() {
   const { user } = useSession();
