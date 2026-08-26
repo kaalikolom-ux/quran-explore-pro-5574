@@ -291,12 +291,19 @@ function HomePage() {
             <Sparkles className="size-3.5 text-[#60a5fa]" /> {t("tagline")}
           </p>
 
-          <div className="mt-6 max-w-3xl">
+          {/* max-w-4xl ও whitespace ফিক্স যাতে ইংরেজি লাইন না ভাঙ্গে */}
+          <div className="mt-6 max-w-4xl">
             <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
-              {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
+              {lang === "bn" ? (
+                "পবিত্র কুরআন — বুঝে পড়ুন"
+              ) : (
+                <span>
+                  The Holy Quran — <span className="inline-block sm:inline whitespace-nowrap">understand it</span>
+                </span>
+              )}
             </h1>
 
-            {/* ফিক্সড মিনিমাম হাইট */}
+            {/* ফিক্সড মিনিমাম হাইট দিয়ে লেআউট শিফট প্রতিরোধ */}
             <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
               <Typewriter
                 words={
@@ -361,7 +368,7 @@ function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
-      {/* সুরা তালিকা ও সার্চ ফর্ম (কালার কনট্রাস্ট ফিক্সড) */}
+      {/* সুরা তালিকা ও সার্চ */}
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -386,7 +393,6 @@ function HomePage() {
                   }
                   className="w-full bg-transparent border-none outline-none text-sm text-foreground placeholder:text-muted-foreground"
                 />
-                {/* সার্চ বাটন: হাই কনট্রাস্ট সলিড বাটন ফিক্স */}
                 <button
                   type="submit"
                   className="rounded-lg bg-[#2A6F97] hover:bg-[#1f5575] text-white px-3 py-1 text-xs font-semibold transition-colors shrink-0 cursor-pointer shadow-xs"
@@ -394,7 +400,6 @@ function HomePage() {
                   যান
                 </button>
               </form>
-              {/* টেক্সট অপাসিটি বাদ দিয়ে সম্পূর্ণ স্পষ্ট কালার */}
               <p className="text-xs leading-normal text-muted-foreground px-1 font-medium">
                 {lang === "bn"
                   ? "💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।"
