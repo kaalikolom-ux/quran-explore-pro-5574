@@ -11,9 +11,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-// আপনার ক্লাউডফ্লেয়ার ড্যাশবোর্ডের আসল Site Key
-const TURNSTILE_SITE_KEY = "0x4AAAAAAAEcl9MvISJdu3ipW";
-
 const commentSchema = z.object({
   name: z.string().trim().min(2, "নাম ন্যূনতম ২ অক্ষরের হতে হবে").max(80),
   email: z.string().trim().email("সঠিক ইমেইল এড্রেস প্রদান করুন").max(120),
@@ -40,23 +37,46 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
     setIsClient(true);
   }, []);
 
-  // Turnstile Widget Loader
+  // অ্যাডমিন ড্যাশবোর্ড / ডেটাবেজ থেকে ডায়নামিক সাইট কী ফেচ
+  const { data: turnstileSiteKey, isLoading: isKeyLoading } = useQuery({
+    queryKey: ["site-setting-turnstile-site-key"],
+    queryFn: async () => {
+      try {
+        const { data, error } = await supabase
+          .from("site_settings")
+          .select("value")
+          .eq("key", "turnstile_site_key")
+          .maybeSingle();
+
+        if (error) {
+          console.error("Failed to fetch turnstile key:", error);
+          return null;
+        }
+        return data?.value || null;
+      } catch (err) {
+        console.error("Error querying site settings:", err);
+        return null;
+      }
+    },
+  });
+
+  // Turnstile Widget Loader (শুধুমাত্র ডেটাবেজ থেকে আসল সাইট কী পাওয়ার পর রেন্ডার হবে)
   useEffect(() => {
-    if (!isClient || typeof window === "undefined") return;
+    if (!isClient || typeof window === "undefined" || !turnstileSiteKey) return;
 
     const renderWidget = () => {
       const w = window as any;
       if (w.turnstile && containerRef.current && !widgetIdRef.current) {
         try {
           widgetIdRef.current = w.turnstile.render(containerRef.current, {
-            sitekey: TURNSTILE_SITE_KEY,
+            sitekey: turnstileSiteKey,
             theme: dark ? "dark" : "light",
             callback: (token: string) => setTurnstileToken(token),
             "expired-callback": () => setTurnstileToken(null),
             "error-callback": () => setTurnstileToken(null),
           });
-        } catch {
-          // ignore
+        } catch (e) {
+          console.error("Turnstile render error:", e);
         }
       }
     };
@@ -85,7 +105,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         widgetIdRef.current = null;
       }
     };
-  }, [dark, isClient]);
+  }, [dark, isClient, turnstileSiteKey]);
 
   // কমেন্ট লিস্ট ফেচিং
   const { data: comments = [], isLoading } = useQuery({
@@ -206,11 +226,21 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           />
         </div>
 
+        {/* Cloudflare Turnstile কন্টেইনার (ডাটাবেজ থেকে সাইট কী আসলেই শুধু উইজেট দেখাবে) */}
         <div className="pt-1 flex flex-col gap-1.5">
-          <div ref={containerRef} className="min-h-[65px]" />
+          {isKeyLoading ? (
+            <p className="text-[11px] text-muted-foreground">সিকিউরিটি চেক লোড হচ্ছে...</p>
+          ) : turnstileSiteKey ? (
+            <div ref={containerRef} className="min-h-[65px]" />
+          ) : (
+            <p className="text-[11px] text-amber-500">
+              ⚠️ অ্যাডমিন ড্যাশবোর্ড থেকে Turnstile Site Key সংরক্ষণ করুন।
+            </p>
+          )}
+
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
             <ShieldCheck className="size-3.5 text-emerald-500" />
-            <span>Cloudflare Turnstile দ্বারা সুরক্ষিত</span>
+            <span>Cloudflare Turnstile স্প্যাম সিকিউরিটি দ্বারা সুরক্ষিত</span>
           </div>
         </div>
 
