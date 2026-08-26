@@ -11,6 +11,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
+// আপনার ক্লাউডফ্লেয়ার ড্যাশবোর্ডের আসল Site Key
+const TURNSTILE_SITE_KEY = "0x4AAAAAAAEcl9MvISJdu3ipW";
+
 const commentSchema = z.object({
   name: z.string().trim().min(2, "নাম ন্যূনতম ২ অক্ষরের হতে হবে").max(80),
   email: z.string().trim().email("সঠিক ইমেইল এড্রেস প্রদান করুন").max(120),
@@ -19,24 +22,6 @@ const commentSchema = z.object({
 
 interface CommentsSectionProps {
   articleId: string;
-}
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (
-        container: string | HTMLElement,
-        params: {
-          sitekey: string;
-          callback: (token: string) => void;
-          "error-callback"?: () => void;
-          "expired-callback"?: () => void;
-          theme?: "light" | "dark" | "auto";
-        }
-      ) => string;
-      reset: (widgetId?: string) => void;
-    };
-  }
 }
 
 export function CommentsSection({ articleId }: CommentsSectionProps) {
@@ -49,16 +34,22 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
-  // Cloudflare Turnstile স্ক্রিপ্ট লোড ও উইজেট রেন্ডার
   useEffect(() => {
-    let script = document.getElementById("cf-turnstile-script") as HTMLScriptElement | null;
-    
+    setIsClient(true);
+  }, []);
+
+  // Turnstile Widget Loader
+  useEffect(() => {
+    if (!isClient || typeof window === "undefined") return;
+
     const renderWidget = () => {
-      if (window.turnstile && containerRef.current && !widgetIdRef.current) {
+      const w = window as any;
+      if (w.turnstile && containerRef.current && !widgetIdRef.current) {
         try {
-          widgetIdRef.current = window.turnstile.render(containerRef.current, {
-            sitekey: "0x4AAAAAAAxrB8P_0eW7Xl_9", // আপনার Turnstile Site Key বা Always Pass Test Key
+          widgetIdRef.current = w.turnstile.render(containerRef.current, {
+            sitekey: TURNSTILE_SITE_KEY,
             theme: dark ? "dark" : "light",
             callback: (token: string) => setTurnstileToken(token),
             "expired-callback": () => setTurnstileToken(null),
@@ -70,6 +61,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
       }
     };
 
+    let script = document.getElementById("cf-turnstile-script") as HTMLScriptElement | null;
     if (!script) {
       script = document.createElement("script");
       script.id = "cf-turnstile-script";
@@ -78,37 +70,42 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
       script.defer = true;
       script.onload = renderWidget;
       document.head.appendChild(script);
-    } else if (window.turnstile) {
+    } else {
       renderWidget();
     }
 
     return () => {
-      if (widgetIdRef.current && window.turnstile) {
+      const w = window as any;
+      if (widgetIdRef.current && w.turnstile) {
         try {
-          window.turnstile.reset(widgetIdRef.current);
+          w.turnstile.reset(widgetIdRef.current);
         } catch {
           // ignore
         }
         widgetIdRef.current = null;
       }
     };
-  }, [dark]);
+  }, [dark, isClient]);
 
   // কমেন্ট লিস্ট ফেচিং
   const { data: comments = [], isLoading } = useQuery({
     queryKey: ["comments", articleId],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("comments")
-        .select("*")
-        .eq("article_id", articleId)
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data;
+      try {
+        const { data, error } = await supabase
+          .from("comments")
+          .select("*")
+          .eq("article_id", articleId)
+          .order("created_at", { ascending: false });
+        if (error) return [];
+        return data || [];
+      } catch {
+        return [];
+      }
     },
+    enabled: Boolean(articleId),
   });
 
-  // কমেন্ট সাবমিশন মিউটেশন
   const submitComment = useMutation({
     mutationFn: async () => {
       const parsed = commentSchema.safeParse({ name, email, content });
@@ -131,8 +128,9 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
       setEmail("");
       setContent("");
       setTurnstileToken(null);
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.reset(widgetIdRef.current);
+      const w = window as any;
+      if (widgetIdRef.current && w.turnstile) {
+        w.turnstile.reset(widgetIdRef.current);
       }
       toast.success(
         lang === "en" ? "Comment posted successfully!" : "আপনার মন্তব্য সফলভাবে প্রকাশিত হয়েছে!"
@@ -148,6 +146,8 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
     submitComment.mutate();
   };
 
+  if (!isClient) return null;
+
   return (
     <section className="mt-14 border-t border-border/70 pt-10">
       <div className="flex items-center gap-2 mb-6">
@@ -157,7 +157,6 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         </h3>
       </div>
 
-      {/* কমেন্ট ফর্ম */}
       <form onSubmit={handleSubmit} className="card-soft p-5 sm:p-6 mb-10 space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
@@ -207,12 +206,11 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           />
         </div>
 
-        {/* Cloudflare Turnstile কন্টেইনার */}
         <div className="pt-1 flex flex-col gap-1.5">
           <div ref={containerRef} className="min-h-[65px]" />
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
             <ShieldCheck className="size-3.5 text-emerald-500" />
-            <span>Cloudflare Turnstile স্প্যাম সিকিউরিটি দ্বারা সুরক্ষিত</span>
+            <span>Cloudflare Turnstile দ্বারা সুরক্ষিত</span>
           </div>
         </div>
 
@@ -232,7 +230,6 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         </Button>
       </form>
 
-      {/* কমেন্ট তালিকা */}
       {isLoading ? (
         <p className="text-xs text-muted-foreground">{lang === "en" ? "Loading comments..." : "মন্তব্য লোড হচ্ছে..."}</p>
       ) : comments.length === 0 ? (
