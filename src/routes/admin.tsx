@@ -40,6 +40,11 @@ import {
   Save,
   Download,
   Upload,
+  FileCode,
+  CheckCircle2,
+  AlertCircle,
+  X,
+  Loader2,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -64,21 +69,239 @@ import { PagesAdmin } from "@/components/PagesAdmin";
 import { SocialLinksAdmin } from "@/components/SocialLinksAdmin";
 import { TurnstileAdmin } from "@/components/TurnstileAdmin";
 import { MessagesAdmin } from "@/components/MessagesAdmin";
-import { ImportModal } from "@/components/ImportModal";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { name: "description", content: "আর্টিকেল ও বিজ্ঞানভিত্তিক অনুবাদ ইনপুট দেওয়ার প্যানেল।" },
+      { name: "description", content: "আর্টিকেল ও কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
-      { property: "og:description", content: "কনটেন্ট ব্যবস্থাপনা প্যানেল।" },
     ],
   }),
   component: AdminPage,
 });
 
+/* ========================================================================== */
+/* INLINE IMPORT MODAL (স্বয়ংসম্পূর্ণ ইমপোর্ট উইন্ডো)                          */
+/* ========================================================================== */
+function InlineImportModal({
+  type,
+  onClose,
+}: {
+  type: "wordpress" | "blogger";
+  onClose: () => void;
+}) {
+  const { user } = useSession();
+  const queryClient = useQueryClient();
+  const [file, setFile] = useState<File | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [importedCount, setImportedCount] = useState<number | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const generateSlug = (title: string, fallback: string) => {
+    const slug = title
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .trim()
+      .replace(/\s+/g, "-")
+      .slice(0, 80);
+    return slug || `post-${fallback}-${Date.now().toString().slice(-4)}`;
+  };
+
+  const extractFirstImage = (htmlContent: string) => {
+    const match = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
+    return match ? match[1] : null;
+  };
+
+  const handleImport = async () => {
+    if (!file) {
+      toast.error("অনুগ্রহ করে একটি XML ফাইল নির্বাচন করুন");
+      return;
+    }
+
+    setIsProcessing(true);
+    setErrorMsg(null);
+
+    try {
+      const text = await file.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(text, "text/xml");
+
+      const parseError = xmlDoc.querySelector("parsererror");
+      if (parseError) {
+        throw new Error("XML ফাইলটি সঠিক নয় বা ক্ষতিগ্রস্থ।");
+      }
+
+      const articlesToInsert: any[] = [];
+
+      if (type === "wordpress") {
+        const items = xmlDoc.querySelectorAll("item");
+        items.forEach((item, index) => {
+          const postType = item.querySelector("post_type")?.textContent || "post";
+          const status = item.querySelector("status")?.textContent || "publish";
+
+          if (postType === "post" || postType === "") {
+            const title = item.querySelector("title")?.textContent || "শিরোনামহীন পোস্ট";
+            const content =
+              item.getElementsByTagNameNS("*", "encoded")[0]?.textContent ||
+              item.querySelector("content")?.textContent ||
+              "";
+            const postDate = item.querySelector("post_date")?.textContent || new Date().toISOString();
+            const postName = item.querySelector("post_name")?.textContent;
+            const excerpt =
+              item.getElementsByTagNameNS("*", "encoded")[1]?.textContent ||
+              item.querySelector("excerpt")?.textContent ||
+              "";
+
+            const cleanExcerpt = excerpt
+              ? excerpt.replace(/<[^>]*>?/gm, "").slice(0, 160)
+              : content.replace(/<[^>]*>?/gm, "").slice(0, 160);
+
+            articlesToInsert.push({
+              title_bn: title,
+              title_en: title,
+              slug: postName || generateSlug(title, String(index)),
+              content_bn: content,
+              content_en: content,
+              excerpt_bn: cleanExcerpt.trim(),
+              excerpt_en: cleanExcerpt.trim(),
+              cover_image_url: extractFirstImage(content),
+              published: status === "publish",
+              published_at: new Date(postDate).toISOString(),
+              created_by: user!.id,
+            });
+          }
+        });
+      } else if (type === "blogger") {
+        const entries = xmlDoc.querySelectorAll("entry");
+        entries.forEach((entry, index) => {
+          const idText = entry.querySelector("id")?.textContent || "";
+          if (idText.includes(".post-") || entry.querySelector('category[term*="#post"]')) {
+            const title = entry.querySelector("title")?.textContent || "শিরোনামহীন পোস্ট";
+            const content = entry.querySelector("content")?.textContent || "";
+            const publishedAt = entry.querySelector("published")?.textContent || new Date().toISOString();
+            const draftElement = entry.querySelector("app\\:control > app\\:draft, draft");
+            const isDraft = draftElement?.textContent === "yes";
+
+            const cleanExcerpt = content.replace(/<[^>]*>?/gm, "").slice(0, 160);
+
+            articlesToInsert.push({
+              title_bn: title,
+              title_en: title,
+              slug: generateSlug(title, String(index)),
+              content_bn: content,
+              content_en: content,
+              excerpt_bn: cleanExcerpt.trim(),
+              excerpt_en: cleanExcerpt.trim(),
+              cover_image_url: extractFirstImage(content),
+              published: !isDraft,
+              published_at: new Date(publishedAt).toISOString(),
+              created_by: user!.id,
+            });
+          }
+        });
+      }
+
+      if (articlesToInsert.length === 0) {
+        throw new Error("ফাইলটিতে কোনো পোস্ট পাওয়া যায়নি।");
+      }
+
+      const { error } = await supabase.from("articles").insert(articlesToInsert);
+      if (error) throw error;
+
+      setImportedCount(articlesToInsert.length);
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success(`${articlesToInsert.length}টি পোস্ট সফলভাবে ইমপোর্ট হয়েছে!`);
+    } catch (err: any) {
+      setErrorMsg(err.message || "ইমপোর্ট করার সময় সমস্যা হয়েছে");
+      toast.error(err.message || "ইমপোর্ট ব্যর্থ হয়েছে");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+      <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <div className="flex items-center gap-2">
+            <FileCode className="size-5 text-[#2271b1]" />
+            <h3 className="font-bold text-sm text-foreground">
+              {type === "wordpress" ? "ওয়ার্ডপ্রেস (WordPress) থেকে ইমপোর্ট" : "ব্লগার (Blogger) থেকে ইমপোর্ট"}
+            </h3>
+          </div>
+          <button onClick={onClose} className="rounded-md p-1 text-muted-foreground hover:bg-muted">
+            <X className="size-4" />
+          </button>
+        </div>
+
+        {importedCount !== null ? (
+          <div className="py-6 text-center space-y-3">
+            <CheckCircle2 className="mx-auto size-12 text-emerald-500" />
+            <p className="font-semibold text-sm text-foreground">
+              {importedCount} টি পোস্ট সফলভাবে ইমপোর্ট করা হয়েছে!
+            </p>
+            <Button onClick={onClose} className="bg-[#2271b1] text-white text-xs">
+              ঠিক আছে
+            </Button>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="rounded-lg border border-dashed border-border p-6 text-center bg-muted/20">
+              <Upload className="mx-auto size-8 text-muted-foreground/60 mb-2" />
+              <label htmlFor="xml-upload-modal" className="cursor-pointer block text-xs font-semibold text-[#2271b1] hover:underline">
+                XML ফাইল সিলেক্ট করুন
+              </label>
+              <input
+                id="xml-upload-modal"
+                type="file"
+                accept=".xml"
+                className="hidden"
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
+              />
+              <p className="text-[11px] text-muted-foreground mt-1">
+                {file ? file.name : type === "wordpress" ? "WordPress Export .xml ফাইল" : "Blogger Backup .xml ফাইল"}
+              </p>
+            </div>
+
+            {errorMsg && (
+              <div className="flex items-center gap-2 rounded-lg bg-destructive/10 p-3 text-xs text-destructive">
+                <AlertCircle className="size-4 shrink-0" />
+                <span>{errorMsg}</span>
+              </div>
+            )}
+
+            <div className="flex items-center justify-end gap-2 pt-2">
+              <Button type="button" variant="outline" size="sm" onClick={onClose} className="text-xs">
+                বাতিল
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                disabled={!file || isProcessing}
+                onClick={handleImport}
+                className="bg-[#2271b1] hover:bg-[#135e96] text-white text-xs"
+              >
+                {isProcessing ? (
+                  <>
+                    <Loader2 className="size-3.5 mr-1.5 animate-spin" /> ইমপোর্ট হচ্ছে...
+                  </>
+                ) : (
+                  "ইমপোর্ট শুরু করুন"
+                )}
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ========================================================================== */
+/* DUAL-MODE RICH TEXT EDITOR                                                */
+/* ========================================================================== */
 function RichTextEditor({
   value,
   onChange,
@@ -279,6 +502,9 @@ function RichTextEditor({
   );
 }
 
+/* ========================================================================== */
+/* MAIN ADMIN PAGE                                                            */
+/* ========================================================================== */
 function AdminPage() {
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
@@ -341,9 +567,8 @@ function AdminPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#f0f0f1] text-[#2c3338] dark:bg-[#121212] dark:text-[#f0f0f1]">
-      {/* ইমপোর্ট মডাল */}
       {importModalType && (
-        <ImportModal type={importModalType} onClose={() => setImportModalType(null)} />
+        <InlineImportModal type={importModalType} onClose={() => setImportModalType(null)} />
       )}
 
       <header className="sticky top-0 z-50 flex h-8 w-full items-center justify-between bg-[#1d2327] px-3 text-[#c3c4c7] select-none text-xs border-b border-[#2c3338]">
@@ -371,7 +596,7 @@ function AdminPage() {
           </span>
           <button
             onClick={() => supabase.auth.signOut()}
-            className="flex items-center gap-1 hover:text-red-400 transition-colors"
+            className="flex items-center gap-1 hover:text-red-400 transition-colors cursor-pointer"
             title="লগআউট"
           >
             <LogOut className="size-3" />
@@ -397,7 +622,7 @@ function AdminPage() {
                         <button
                           type="button"
                           onClick={() => setActiveTab(item.value)}
-                          className={`group flex w-full items-center justify-between px-4 py-2 text-left text-xs font-medium transition-colors ${
+                          className={`group flex w-full items-center justify-between px-4 py-2 text-left text-xs font-medium transition-colors cursor-pointer ${
                             isActive
                               ? "bg-[#2271b1] text-white shadow-inner font-semibold"
                               : "hover:bg-[#2c3338] hover:text-[#72aee6]"
@@ -517,7 +742,7 @@ function AdminPage() {
 }
 
 /* ========================================================================== */
-/* IMPORT TAB COMPONENT (সাইডবারে ডেডিকেটেড ইমপোর্ট স্ক্রিন)                    */
+/* IMPORT TAB                                                                 */
 /* ========================================================================== */
 function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogger") => void }) {
   return (
@@ -543,7 +768,7 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
             </div>
             <Button
               onClick={() => onSelectType("wordpress")}
-              className="w-full bg-[#2271b1] hover:bg-[#135e96] text-white text-xs"
+              className="w-full bg-[#2271b1] hover:bg-[#135e96] text-white text-xs cursor-pointer"
             >
               <Upload className="size-3.5 mr-1.5" /> WordPress XML আপলোড করুন
             </Button>
@@ -561,7 +786,7 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
             </div>
             <Button
               onClick={() => onSelectType("blogger")}
-              className="w-full bg-amber-600 hover:bg-amber-700 text-white text-xs"
+              className="w-full bg-amber-600 hover:bg-amber-700 text-white text-xs cursor-pointer"
             >
               <Upload className="size-3.5 mr-1.5" /> Blogger XML আপলোড করুন
             </Button>
@@ -573,7 +798,7 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
 }
 
 /* ========================================================================== */
-/* ARTICLES ADMIN COMPONENT                                                   */
+/* ARTICLES ADMIN                                                             */
 /* ========================================================================== */
 const articleSchema = z.object({
   slug: z
@@ -922,7 +1147,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
             <button
               type="button"
               onClick={() => setStatusFilter("all")}
-              className={`rounded px-2.5 py-1 transition-colors ${
+              className={`rounded px-2.5 py-1 transition-colors cursor-pointer ${
                 statusFilter === "all"
                   ? "bg-foreground text-background font-semibold"
                   : "text-muted-foreground hover:bg-muted"
@@ -934,7 +1159,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
             <button
               type="button"
               onClick={() => setStatusFilter("published")}
-              className={`rounded px-2.5 py-1 transition-colors ${
+              className={`rounded px-2.5 py-1 transition-colors cursor-pointer ${
                 statusFilter === "published"
                   ? "bg-emerald-600 text-white font-semibold"
                   : "text-muted-foreground hover:bg-muted"
@@ -946,7 +1171,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
             <button
               type="button"
               onClick={() => setStatusFilter("draft")}
-              className={`rounded px-2.5 py-1 transition-colors ${
+              className={`rounded px-2.5 py-1 transition-colors cursor-pointer ${
                 statusFilter === "draft"
                   ? "bg-amber-600 text-white font-semibold"
                   : "text-muted-foreground hover:bg-muted"
@@ -1055,6 +1280,14 @@ function TranslationsAdmin() {
 
   const save = useMutation({
     mutationFn: async () => {
+      const transSchema = z.object({
+        surah: z.coerce.number().int().min(1).max(114),
+        ayah: z.coerce.number().int().min(1).max(300),
+        lang: z.enum(["bn", "en", "bn_std", "en_std"]),
+        text: z.string().trim().min(1, "অনুবাদ টেক্সট প্রদান করুন").max(8000),
+        note: z.string().trim().max(4000),
+      });
+
       const parsed = transSchema.safeParse({ surah, ayah, lang: lng, text, note });
       if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য দিন");
       const { error } = await supabase.from("verse_translations").upsert(
@@ -1196,6 +1429,124 @@ function TranslationsAdmin() {
   );
 }
 
+function RolesAdmin() {
+  const queryClient = useQueryClient();
+  const [userId, setUserId] = useState("");
+  const [role, setRole] = useState<"admin" | "user">("admin");
+
+  const rolesList = useQuery({
+    queryKey: ["admin-user-roles"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  const addRole = useMutation({
+    mutationFn: async () => {
+      if (!userId.trim()) throw new Error("User ID প্রদান করুন");
+      const { error } = await supabase
+        .from("user_roles")
+        .upsert({ user_id: userId.trim(), role }, { onConflict: "user_id,role" });
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
+      setUserId("");
+      toast.success("ইউজার রোল সফলভাবে আপডেট হয়েছে!");
+    },
+    onError: (err: Error) => toast.error(err.message),
+  });
+
+  const removeRole = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("user_roles").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-user-roles"] });
+      toast.success("রোল মুছে ফেলা হয়েছে");
+    },
+    onError: (err: Error) => toast.error(err.message),
+  });
+
+  return (
+    <div className="space-y-6">
+      <form
+        className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
+        onSubmit={(e) => {
+          e.preventDefault();
+          addRole.mutate();
+        }}
+      >
+        <h2 className="font-semibold text-base flex items-center gap-2 border-b border-border/60 pb-2">
+          <Shield className="size-4 text-[#2271b1]" /> নতুন অ্যাডমিন বা ইউজার রোল অ্যাসাইন করুন
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div className="space-y-1.5 sm:col-span-2">
+            <Label htmlFor="userId" className="text-xs font-semibold">ব্যবহারকারী আইডি (Supabase Auth UID)</Label>
+            <Input
+              id="userId"
+              placeholder="যেমন: e2a8b... (User UUID)"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+              required
+              className="h-9 text-xs"
+            />
+            <p className="text-[11px] text-muted-foreground">
+              💡 সাবস্ক্রাইবার তালিকা থেকে সরাসরি UUID কপি করে এখানে ব্যবহার করতে পারেন।
+            </p>
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="roleSelect" className="text-xs font-semibold">রোল নির্বাচন করুন</Label>
+            <select
+              id="roleSelect"
+              value={role}
+              onChange={(e) => setRole(e.target.value as "admin" | "user")}
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
+            >
+              <option value="admin">Admin (অ্যাডমিন)</option>
+              <option value="user">User (ব্যবহারকারী)</option>
+            </select>
+          </div>
+        </div>
+        <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white">
+          <UserCheck className="size-3.5 mr-1.5" /> রোল সংরক্ষণ করুন
+        </Button>
+      </form>
+
+      <div className="space-y-2">
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলসমূহের তালিকা:</h3>
+        <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
+          {rolesList.data?.map((r) => (
+            <div key={r.id} className="flex items-center justify-between p-3.5">
+              <div>
+                <p className="text-xs font-mono font-medium text-foreground">{r.user_id}</p>
+                <span className="inline-block mt-1 rounded bg-[#2271b1]/10 px-2 py-0.5 text-[10px] font-bold text-[#2271b1]">
+                  {r.role}
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Delete Role"
+                className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                onClick={() => removeRole.mutate(r.id)}
+              >
+                <UserX className="size-4" />
+              </Button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SubscribersAdmin() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -1245,7 +1596,7 @@ function SubscribersAdmin() {
                 <button
                   type="button"
                   onClick={() => copyToClipboard(s.id)}
-                  className="inline-flex items-center gap-1 text-[11px] text-[#2271b1] hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-[11px] text-[#2271b1] hover:underline font-medium cursor-pointer"
                 >
                   {copiedId === s.id ? (
                     <>
