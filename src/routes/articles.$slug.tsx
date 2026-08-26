@@ -7,7 +7,6 @@ import {
   ArrowLeft,
   ArrowRight,
   EyeOff,
-  Eye,
   Pencil,
   ShieldCheck,
 } from "lucide-react";
@@ -19,6 +18,7 @@ import { useIsAdmin } from "@/lib/auth";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { CommentsSection } from "@/components/CommentsSection";
 
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 150): string {
   if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
@@ -87,7 +87,7 @@ function ArticlePage() {
     },
   });
 
-  // সরাসরি পড়ার পেজ থেকে ড্রাফট বা পাবলিশ টগল করার মিউটেশন
+  // সরাসরি পড়ার পেজ থেকে ড্রাফট বা পাবলিশ টগল করার মিউটেশন
   const togglePublish = useMutation({
     mutationFn: async (nextStatus: boolean) => {
       if (!query.data?.id) return;
@@ -210,7 +210,7 @@ function ArticlePage() {
       )}
 
       <div className="flex items-center justify-between gap-4">
-        <h1 className="text-3xl font-bold leading-tight sm:text-4xl text-foreground">{title}</h1>
+        <h1 className="text-3xl font-bold leading-tight sm:text-4xl text-foreground font-serif">{title}</h1>
         <BookmarkButton
           target={{
             kind: "article",
@@ -292,10 +292,9 @@ function ArticlePage() {
           )}
         </div>
       </div>
+
+      {/* কমেন্ট সেকশন */}
+      <CommentsSection articleId={article.id} />
     </article>
   );
 }
-import { CommentsSection } from "@/components/CommentsSection";
-
-// ... ArticlePage ফাংশনের রিটার্নে নেভিগেশন কার্ডসের ঠিক নিচে:
-<CommentsSection articleId={article.id} />
