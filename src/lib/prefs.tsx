@@ -126,6 +126,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       backToSignIn: { bn: "লগইনে ফিরে যান", en: "Back to Sign In" },
       resetSent: { bn: "পাসওয়ার্ড রিসেট লিংক আপনার ইমেইলে পাঠানো হয়েছে।", en: "Password reset link has been sent to your email." },
       email: { bn: "ইমেইল", en: "Email" },
+      Email: { bn: "ইমেইল এড্রেস", en: "Email Address" },
       password: { bn: "পাসওয়ার্ড", en: "Password" },
       error: { bn: "কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন", en: "Something went wrong, please try again" },
       darkMode: { bn: "ডার্ক মোড", en: "Dark Mode" },
@@ -154,6 +155,16 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       published: { bn: "প্রকাশিত", en: "Published" },
       visible: { bn: "প্রদর্শন", en: "Visible" },
       sortOrder: { bn: "ক্রমিক নম্বর (Sort Order)", en: "Sort Order" },
+
+      // Contact Form Specific
+      contactIntroTitle: { bn: "আমাদের সাথে সরাসরি যোগাযোগ করুন", en: "Get in touch with us directly" },
+      contactIntro: { bn: "কুরআন অন্বেষা সম্পর্কিত যেকোনো প্রশ্ন, মতামত, বা পরামর্শ পাঠাতে নিচের ফর্মটি পূরণ করুন।", en: "Fill out the form below for any questions, feedback, or suggestions regarding Quran Explorer." },
+      yourName: { bn: "আপনার নাম", en: "Your Name" },
+      subject: { bn: "বিষয় (Subject)", en: "Subject" },
+      messageLabel: { bn: "আপনার বার্তা / মন্তব্য", en: "Your Message" },
+      sendMessage: { bn: "বার্তা পাঠান", en: "Send Message" },
+      sending: { bn: "বার্তা পাঠানো হচ্ছে...", en: "Sending..." },
+      messageSent: { bn: "আপনার বার্তা সফলভাবে পাঠানো হয়েছে!", en: "Your message has been sent successfully!" },
 
       // Main Navigation Tabs
       translationsTab: { bn: "কুরআন অনুবাদ", en: "Verse Translations" },
@@ -234,7 +245,6 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       github: { bn: "GitHub", en: "GitHub" },
       telegram: { bn: "Telegram", en: "Telegram" },
       whatsapp: { bn: "WhatsApp", en: "WhatsApp" },
-      email: { bn: "Email", en: "Email" },
       website: { bn: "Website", en: "Website" },
 
       // Messages
