@@ -57,18 +57,20 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
 
-/* হাই-পারফরম্যান্স লাইটওয়েট রেইন গ্লাস ক্যানভাস */
+/* হাই-পারফরম্যান্স রেইন গ্লাস ক্যানভাস (মোবাইলে সিপিইউ লোড বাঁচাতে শুধু ডেস্কটপে চলবে) */
 function RainGlassCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    // মোবাইল স্ক্রিনে ক্যানভাস লুপ স্কিপ করে দ্রুত ফাস্ট-রেন্ডার নিশ্চিত করা
+    if (window.innerWidth < 768) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let animationFrameId: number;
-    const isMobile = window.innerWidth < 768;
     let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
     let height = (canvas.height = canvas.parentElement?.clientHeight || 550);
 
@@ -80,9 +82,8 @@ function RainGlassCanvas() {
 
     window.addEventListener("resize", handleResize, { passive: true });
 
-    // ফোঁটা সংখ্যা অপটিমাইজেশন (মোবাইলে ব্যাটারি ও ফ্রেম ড্রপ বাঁচানোর জন্য)
     const staticDrops: { x: number; y: number; r: number; opacity: number }[] = [];
-    const staticCount = Math.floor((width * height) / (isMobile ? 22000 : 10000));
+    const staticCount = Math.floor((width * height) / 10000);
     for (let i = 0; i < staticCount; i++) {
       staticDrops.push({
         x: Math.random() * width,
@@ -101,7 +102,7 @@ function RainGlassCanvas() {
     }
 
     const movingDrops: MovingDrop[] = [];
-    const movingCount = isMobile ? 6 : Math.max(14, Math.floor(width / 50));
+    const movingCount = Math.max(14, Math.floor(width / 50));
 
     for (let i = 0; i < movingCount; i++) {
       movingDrops.push({
@@ -180,7 +181,7 @@ function RainGlassCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-65"
+      className="pointer-events-none absolute inset-0 z-0 hidden md:block h-full w-full opacity-65"
     />
   );
 }
@@ -279,7 +280,7 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন: ফিক্সড ডাইমেনশন ও স্মুথ লেআউট স্টেবিলিটি */}
+      {/* হিরো সেকশন: ফিক্সড মিনিমাম হাইট ও লেআউট স্টেবিলিটি */}
       <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
         <RainGlassCanvas />
 
@@ -443,7 +444,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* আর্টিকেল সেকশন: অপটিমাইজড ইমেজ ও ডাইমেনশন */}
+      {/* আর্টিকেল সেকশন */}
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
