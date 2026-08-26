@@ -62,7 +62,6 @@ function RainGlassCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    // মোবাইল স্ক্রিনে ক্যানভাস লুপ স্কিপ করে দ্রুত ফাস্ট-রেন্ডার নিশ্চিত করা
     if (window.innerWidth < 768) return;
 
     const canvas = canvasRef.current;
@@ -117,7 +116,6 @@ function RainGlassCanvas() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // ১. স্থির ফোঁটা
       for (const d of staticDrops) {
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
@@ -130,7 +128,6 @@ function RainGlassCanvas() {
         ctx.fill();
       }
 
-      // ২. চলমান ফোঁটা
       for (const drop of movingDrops) {
         for (let t = 0; t < drop.trail.length; t++) {
           const pt = drop.trail[t];
@@ -280,7 +277,7 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন: ফিক্সড মিনিমাম হাইট ও লেআউট স্টেবিলিটি */}
+      {/* হিরো সেকশন */}
       <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
         <RainGlassCanvas />
 
@@ -299,7 +296,7 @@ function HomePage() {
               {lang === "bn" ? "পবিত্র কুরআন — বুঝে পড়ুন" : "The Holy Quran — understand it"}
             </h1>
 
-            {/* ফিক্সড মিনিমাম হাইট দিয়ে CLS প্রতিরোধ */}
+            {/* ফিক্সড মিনিমাম হাইট */}
             <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
               <Typewriter
                 words={
@@ -364,7 +361,7 @@ function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
-      {/* সুরা তালিকা */}
+      {/* সুরা তালিকা ও সার্চ ফর্ম (কালার কনট্রাস্ট ফিক্সড) */}
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -375,7 +372,7 @@ function HomePage() {
             <div className="w-full max-w-sm space-y-1.5">
               <form
                 onSubmit={handleSearchSubmit}
-                className="relative flex items-center rounded-xl border border-border/80 bg-card/70 px-3 py-1.5 shadow-xs focus-within:border-foreground/40 transition-all"
+                className="relative flex items-center rounded-xl border border-border bg-card px-3 py-1.5 shadow-xs focus-within:border-foreground/60 transition-all"
               >
                 <Search className="size-4 text-muted-foreground shrink-0 mr-2" />
                 <input
@@ -389,14 +386,16 @@ function HomePage() {
                   }
                   className="w-full bg-transparent border-none outline-none text-sm text-foreground placeholder:text-muted-foreground"
                 />
+                {/* সার্চ বাটন: হাই কনট্রাস্ট সলিড বাটন ফিক্স */}
                 <button
                   type="submit"
-                  className="rounded-lg bg-primary/15 hover:bg-primary/25 text-primary px-2.5 py-1 text-xs font-semibold transition-colors border border-primary/20 shrink-0 cursor-pointer"
+                  className="rounded-lg bg-[#2A6F97] hover:bg-[#1f5575] text-white px-3 py-1 text-xs font-semibold transition-colors shrink-0 cursor-pointer shadow-xs"
                 >
                   যান
                 </button>
               </form>
-              <p className="text-[11px] leading-tight text-muted-foreground/70 px-1">
+              {/* টেক্সট অপাসিটি বাদ দিয়ে সম্পূর্ণ স্পষ্ট কালার */}
+              <p className="text-xs leading-normal text-muted-foreground px-1 font-medium">
                 {lang === "bn"
                   ? "💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।"
                   : "💡 Search surah by name or no. (33). Search ayah like 33:40 and press Enter."}
@@ -426,12 +425,12 @@ function HomePage() {
                       <span className="block truncate font-medium text-foreground">
                         {c.name_simple}
                         {targetAyah && (
-                          <span className="ml-2 text-xs font-semibold text-primary">
+                          <span className="ml-2 text-xs font-semibold text-[#1c5576] dark:text-[#58b4e8]">
                             ({localNumber(targetAyah, lang)} নং আয়াত)
                           </span>
                         )}
                       </span>
-                      <span className="block truncate text-xs text-muted-foreground">
+                      <span className="block truncate text-xs text-muted-foreground font-medium">
                         {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
                       </span>
                     </span>
@@ -449,7 +448,7 @@ function HomePage() {
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">{t("latestArticles")}</h2>
-            <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+            <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-semibold">
               {t("articles")} <ArrowRight className="size-4" />
             </Link>
           </div>
@@ -494,7 +493,7 @@ function HomePage() {
               })}
             </div>
           ) : (
-            <p className="mt-6 text-sm text-muted-foreground">{t("noArticles")}</p>
+            <p className="mt-6 text-sm text-muted-foreground font-medium">{t("noArticles")}</p>
           )}
         </div>
       </section>
@@ -503,7 +502,7 @@ function HomePage() {
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
           <h2 className="text-xl font-semibold text-foreground">{t("newsletter")}</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">{t("newsletterSub")}</p>
+          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground font-medium">{t("newsletterSub")}</p>
           <div className="mt-6">
             <NewsletterForm />
           </div>

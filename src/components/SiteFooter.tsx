@@ -12,13 +12,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const footerLinkClass =
-  "w-fit rounded-md border border-transparent px-3 py-1.5 text-muted-foreground transition-all duration-200 hover:bg-secondary hover:text-foreground hover:translate-x-1";
+  "w-fit rounded-md border border-transparent px-3 py-1.5 text-muted-foreground transition-all duration-200 hover:bg-secondary hover:text-foreground hover:translate-x-1 font-medium";
 
 const emailSchema = z.string().trim().email("সঠিক ইমেইল এড্রেস লিখুন");
 
 function QuranLogoBadge({ className = "size-4.5" }: { className?: string }) {
   return (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2A6F97]/15 text-[#2A6F97] border border-[#2A6F97]/25 shadow-xs transition-transform duration-200 group-hover:scale-105">
+    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2A6F97]/15 dark:bg-[#58b4e8]/20 text-[#1c5576] dark:text-[#58b4e8] border border-[#2A6F97]/30 dark:border-[#58b4e8]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -106,7 +106,7 @@ export function SiteFooter() {
             <QuranLogoBadge />
             <div className="flex flex-col leading-none">
               <span 
-                className="text-lg sm:text-xl font-bold tracking-normal text-[#2A6F97] select-none"
+                className="text-lg sm:text-xl font-bold tracking-normal text-[#1c5576] dark:text-[#58b4e8] select-none"
                 style={{ 
                   fontFamily: "'Kaushan Script', cursive",
                   background: "transparent"
@@ -114,18 +114,18 @@ export function SiteFooter() {
               >
                 Quran Explorer
               </span>
-              <span className="mt-1 text-[10px] text-muted-foreground font-normal tracking-wide">
+              <span className="mt-1 text-[11px] text-muted-foreground font-medium tracking-wide">
                 {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
               </span>
             </div>
           </Link>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("tagline")}</p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground font-normal">{t("tagline")}</p>
           <SocialLinks className="mt-5" />
         </div>
 
         {/* ২. গুরুত্বপূর্ণ লিংকসমূহ */}
         <nav className="flex flex-col gap-1 text-sm">
-          <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
+          <p className="px-3 pb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">
             {lang === "en" ? "Navigation" : "মেনু লিংক"}
           </p>
           <Link to="/" className={footerLinkClass}>
@@ -162,7 +162,7 @@ export function SiteFooter() {
 
           {subscribed ? (
             <div className="flex items-center gap-2 rounded-xl bg-secondary p-3 text-xs text-foreground border border-border">
-              <CheckCircle2 className="size-4 text-[#2A6F97]" />
+              <CheckCircle2 className="size-4 text-[#1c5576] dark:text-[#58b4e8]" />
               <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
             </div>
           ) : (
@@ -178,14 +178,14 @@ export function SiteFooter() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="h-10 rounded-xl px-4 text-xs shrink-0 bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white font-medium shadow-xs"
+                className="h-10 rounded-xl px-4 text-xs shrink-0 bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white font-semibold shadow-xs"
               >
                 {loading ? "..." : <Send className="size-3.5" />}
               </Button>
             </form>
           )}
 
-          {/* কপিরাইট ও Upwork প্রোফাইল লিংক */}
+          {/* কপিরাইট ও Upwork প্রোফাইল লিংক (হাই-কনট্রাস্ট ফিক্স) */}
           <div className="pt-2 text-xs text-muted-foreground border-t border-border">
             <p>
               © {new Date().getFullYear()}{" "}
@@ -194,7 +194,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontFamily: "'Kaushan Script', cursive" }}
-                className="text-[#2A6F97] font-bold text-sm hover:underline transition-all inline-block"
+                className="text-[#1c5576] dark:text-[#58b4e8] font-bold text-sm hover:underline transition-all inline-block"
                 title="Developer Upwork Profile"
               >
                 Quran Explorer
