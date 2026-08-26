@@ -295,3 +295,7 @@ function ArticlePage() {
     </article>
   );
 }
+import { CommentsSection } from "@/components/CommentsSection";
+
+// ... ArticlePage ফাংশনের রিটার্নে নেভিগেশন কার্ডসের ঠিক নিচে:
+<CommentsSection articleId={article.id} />
