@@ -272,6 +272,7 @@ function HomePage() {
                 />
                 <button
                   type="submit"
+                  aria-label={lang === "bn" ? "সুরা বা আয়াত খুঁজুন" : "Search surah or ayah"}
                   className="rounded-lg bg-[#2A6F97] hover:bg-[#1f5575] text-white px-3 py-1 text-xs font-semibold transition-colors shrink-0 cursor-pointer shadow-xs"
                 >
                   যান

@@ -171,9 +171,12 @@ export function SiteFooter() {
               <Button
                 type="submit"
                 disabled={loading}
+                aria-label={lang === "en" ? "Subscribe to newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"}
+                title={lang === "en" ? "Subscribe to newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"}
                 className="h-10 rounded-xl px-4 text-xs shrink-0 bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white font-semibold shadow-xs"
               >
-                {loading ? "..." : <Send className="size-3.5" />}
+                {loading ? "..." : <Send className="size-3.5" aria-hidden="true" />}
+                <span className="sr-only">{lang === "en" ? "Subscribe" : "সাবস্ক্রাইব করুন"}</span>
               </Button>
             </form>
           )}
