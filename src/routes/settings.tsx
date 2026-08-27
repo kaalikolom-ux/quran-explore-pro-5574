@@ -132,6 +132,11 @@ function SettingsPage() {
       title: lang === "bn" ? "অভিধান / Lexicon" : "Lexicon / Vocabulary",
       desc: lang === "bn" ? "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণগত বিশ্লেষণ" : "Vocabulary, Arabic roots and grammatical notes",
     },
+    {
+      key: "showLexiconScientific",
+      title: lang === "bn" ? "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা" : "Scientific Meanings & Context",
+      desc: lang === "bn" ? "অভিধানে মূল ধাতুর আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট প্রদর্শন" : "Show scientific insights and contextual research in lexicon",
+    },
   ];
 
   return (

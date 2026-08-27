@@ -9,6 +9,7 @@ export type DisplayLayers = {
   showModernBn: boolean;
   showModernEn: boolean;
   showLexicon: boolean;
+  showLexiconScientific: boolean;
 };
 
 export type Prefs = DisplayLayers & {
@@ -31,6 +32,7 @@ export const DEFAULT_PREFS: Prefs = {
   showModernBn: true,
   showModernEn: true,
   showLexicon: true,
+  showLexiconScientific: true,
 };
 
 const STORAGE_KEY = "quran_explorer_unified_prefs_v1";
