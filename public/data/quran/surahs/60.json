@@ -14,8 +14,8 @@
           "transliteration": "yāayyuhā",
           "translation_bn": "ওহে",
           "root": "—",
-          "lemma": "يَـٰٓأَيُّهَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَيُّهَا",
+          "grammar_bn": "সম্বোধন পদ (Vocative)"
         },
         {
           "id": 392,
@@ -24,8 +24,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "যারা",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 393,
@@ -33,9 +33,9 @@
           "text_uthmani": "ءَامَنُوا۟",
           "transliteration": "āmanū",
           "translation_bn": "ঈমান এনেছ",
-          "root": "—",
-          "lemma": "ءَامَنُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "ءَامَنَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 394,
@@ -44,8 +44,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "নিষেধবাচক (Prohibition)"
         },
         {
           "id": 395,
@@ -53,9 +53,9 @@
           "text_uthmani": "تَتَّخِذُوا۟",
           "transliteration": "tattakhidhū",
           "translation_bn": "তোমরা গ্রহণ করো",
-          "root": "—",
-          "lemma": "تَتَّخِذُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "اخذ",
+          "lemma": "ٱتَّخَذَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 396,
@@ -63,9 +63,9 @@
           "text_uthmani": "عَدُوِّى",
           "transliteration": "ʿaduwwī",
           "translation_bn": "আমার শত্রুকে",
-          "root": "—",
-          "lemma": "عَدُوِّى",
-          "grammar_bn": "শব্দ"
+          "root": "عدو",
+          "lemma": "عَدُوّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 397,
@@ -73,9 +73,9 @@
           "text_uthmani": "وَعَدُوَّكُمْ",
           "transliteration": "waʿaduwwakum",
           "translation_bn": "ও তোমাদের শত্রুকে",
-          "root": "—",
-          "lemma": "وَعَدُوَّكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "عدو",
+          "lemma": "عَدُوّ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 398,
@@ -83,9 +83,9 @@
           "text_uthmani": "أَوْلِيَآءَ",
           "transliteration": "awliyāa",
           "translation_bn": "বন্ধুরূপে",
-          "root": "—",
-          "lemma": "أَوْلِيَآءَ",
-          "grammar_bn": "শব্দ"
+          "root": "ولي",
+          "lemma": "وَلِىّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 399,
@@ -93,9 +93,9 @@
           "text_uthmani": "تُلْقُونَ",
           "transliteration": "tul'qūna",
           "translation_bn": "তোমরা স্থাপন কর",
-          "root": "—",
-          "lemma": "تُلْقُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "لقي",
+          "lemma": "أَلْقَىٰ^",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 400,
@@ -104,8 +104,8 @@
           "transliteration": "ilayhim",
           "translation_bn": "তাদের সাথেে",
           "root": "—",
-          "lemma": "إِلَيْهِم",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 401,
@@ -113,9 +113,9 @@
           "text_uthmani": "بِٱلْمَوَدَّةِ",
           "transliteration": "bil-mawadati",
           "translation_bn": "বন্ধুত্ব",
-          "root": "—",
-          "lemma": "بِٱلْمَوَدَّةِ",
-          "grammar_bn": "শব্দ"
+          "root": "ودد",
+          "lemma": "مَّوَدَّة",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 402,
@@ -124,8 +124,8 @@
           "transliteration": "waqad",
           "translation_bn": "অথচ নিশ্চয়",
           "root": "—",
-          "lemma": "وَقَدْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "قَد\r",
+          "grammar_bn": "অবস্থাবাচক (Circumstantial)"
         },
         {
           "id": 403,
@@ -133,9 +133,9 @@
           "text_uthmani": "كَفَرُوا۟",
           "transliteration": "kafarū",
           "translation_bn": "ত্রা অস্বীকার করেছে",
-          "root": "—",
-          "lemma": "كَفَرُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "كفر",
+          "lemma": "كَفَرَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 404,
@@ -144,8 +144,8 @@
           "transliteration": "bimā",
           "translation_bn": "যা",
           "root": "—",
-          "lemma": "بِمَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 405,
@@ -153,9 +153,9 @@
           "text_uthmani": "جَآءَكُم",
           "transliteration": "jāakum",
           "translation_bn": "তোমাদের কাছে এসেছে",
-          "root": "—",
-          "lemma": "جَآءَكُم",
-          "grammar_bn": "শব্দ"
+          "root": "جيا",
+          "lemma": "جَا^ءَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 406,
@@ -164,8 +164,8 @@
           "transliteration": "mina",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "مِّنَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 407,
@@ -173,8 +173,8 @@
           "text_uthmani": "ٱلْحَقِّ",
           "transliteration": "l-ḥaqi",
           "translation_bn": "সত্য",
-          "root": "—",
-          "lemma": "ٱلْحَقِّ",
+          "root": "حقق",
+          "lemma": "حَقّ",
           "grammar_bn": "শব্দ"
         },
         {
@@ -183,9 +183,9 @@
           "text_uthmani": "يُخْرِجُونَ",
           "transliteration": "yukh'rijūna",
           "translation_bn": "তারা বহিষ্কার করেছে",
-          "root": "—",
-          "lemma": "يُخْرِجُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "خرج",
+          "lemma": "أَخْرَجَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 409,
@@ -193,8 +193,8 @@
           "text_uthmani": "ٱلرَّسُولَ",
           "transliteration": "l-rasūla",
           "translation_bn": "রসূলকে",
-          "root": "—",
-          "lemma": "ٱلرَّسُولَ",
+          "root": "رسل",
+          "lemma": "رَسُول",
           "grammar_bn": "শব্দ"
         },
         {
@@ -204,8 +204,8 @@
           "transliteration": "wa-iyyākum",
           "translation_bn": "এবং তোমাদেরকেও",
           "root": "—",
-          "lemma": "وَإِيَّاكُمْ ۙ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِيَّا",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 412,
@@ -214,8 +214,8 @@
           "transliteration": "an",
           "translation_bn": "একারণে যে",
           "root": "—",
-          "lemma": "أَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَن\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 413,
@@ -223,9 +223,9 @@
           "text_uthmani": "تُؤْمِنُوا۟",
           "transliteration": "tu'minū",
           "translation_bn": "তোমরা ঈমান এনেছো",
-          "root": "—",
-          "lemma": "تُؤْمِنُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "ءَامَنَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 414,
@@ -233,9 +233,9 @@
           "text_uthmani": "بِٱللَّهِ",
           "transliteration": "bil-lahi",
           "translation_bn": "আল্লাহর উপর",
-          "root": "—",
-          "lemma": "بِٱللَّهِ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 415,
@@ -243,9 +243,9 @@
           "text_uthmani": "رَبِّكُمْ",
           "transliteration": "rabbikum",
           "translation_bn": "তোমাদের রব",
-          "root": "—",
-          "lemma": "رَبِّكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "ربب",
+          "lemma": "رَبّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 416,
@@ -254,8 +254,8 @@
           "transliteration": "in",
           "translation_bn": "যদি",
           "root": "—",
-          "lemma": "إِن",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِن\r",
+          "grammar_bn": "শর্তবাচক (Conditional)"
         },
         {
           "id": 417,
@@ -263,9 +263,9 @@
           "text_uthmani": "كُنتُمْ",
           "transliteration": "kuntum",
           "translation_bn": "তোমরা",
-          "root": "—",
-          "lemma": "كُنتُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "كون",
+          "lemma": "كَانَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 418,
@@ -273,9 +273,9 @@
           "text_uthmani": "خَرَجْتُمْ",
           "transliteration": "kharajtum",
           "translation_bn": "বের হয়ে থাকো",
-          "root": "—",
-          "lemma": "خَرَجْتُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "خرج",
+          "lemma": "خَرَجَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 419,
@@ -283,9 +283,9 @@
           "text_uthmani": "جِهَـٰدًۭا",
           "transliteration": "jihādan",
           "translation_bn": "জিহাদে",
-          "root": "—",
-          "lemma": "جِهَـٰدًۭا",
-          "grammar_bn": "শব্দ"
+          "root": "جهد",
+          "lemma": "جِهَاد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 420,
@@ -294,8 +294,8 @@
           "transliteration": "fī",
           "translation_bn": "(মধ্যে)",
           "root": "—",
-          "lemma": "فِى",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 421,
@@ -303,9 +303,9 @@
           "text_uthmani": "سَبِيلِى",
           "transliteration": "sabīlī",
           "translation_bn": "আমার পথে",
-          "root": "—",
-          "lemma": "سَبِيلِى",
-          "grammar_bn": "শব্দ"
+          "root": "سبل",
+          "lemma": "سَبِيل",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 422,
@@ -313,9 +313,9 @@
           "text_uthmani": "وَٱبْتِغَآءَ",
           "transliteration": "wa-ib'tighāa",
           "translation_bn": "ও সন্ধানে",
-          "root": "—",
-          "lemma": "وَٱبْتِغَآءَ",
-          "grammar_bn": "শব্দ"
+          "root": "بغي",
+          "lemma": "ٱبْتِغَا^ء",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 423,
@@ -323,9 +323,9 @@
           "text_uthmani": "مَرْضَاتِى ۚ",
           "transliteration": "marḍātī",
           "translation_bn": "আমার সন্তুষ্টির",
-          "root": "—",
-          "lemma": "مَرْضَاتِى ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "رضو",
+          "lemma": "مَرْضَات",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 425,
@@ -333,9 +333,9 @@
           "text_uthmani": "تُسِرُّونَ",
           "transliteration": "tusirrūna",
           "translation_bn": "তোমরা গোপনে কর",
-          "root": "—",
-          "lemma": "تُسِرُّونَ",
-          "grammar_bn": "শব্দ"
+          "root": "سرر",
+          "lemma": "أَسَرَّ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 426,
@@ -344,8 +344,8 @@
           "transliteration": "ilayhim",
           "translation_bn": "তাদের সাথে",
           "root": "—",
-          "lemma": "إِلَيْهِم",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 427,
@@ -353,9 +353,9 @@
           "text_uthmani": "بِٱلْمَوَدَّةِ",
           "transliteration": "bil-mawadati",
           "translation_bn": "বন্ধুত্ব",
-          "root": "—",
-          "lemma": "بِٱلْمَوَدَّةِ",
-          "grammar_bn": "শব্দ"
+          "root": "ودد",
+          "lemma": "مَّوَدَّة",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 428,
@@ -373,9 +373,9 @@
           "text_uthmani": "أَعْلَمُ",
           "transliteration": "aʿlamu",
           "translation_bn": "সম্যক অবগত",
-          "root": "—",
-          "lemma": "أَعْلَمُ",
-          "grammar_bn": "শব্দ"
+          "root": "علم",
+          "lemma": "أَعْلَم",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 430,
@@ -384,8 +384,8 @@
           "transliteration": "bimā",
           "translation_bn": "যা কিছু",
           "root": "—",
-          "lemma": "بِمَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 431,
@@ -393,9 +393,9 @@
           "text_uthmani": "أَخْفَيْتُمْ",
           "transliteration": "akhfaytum",
           "translation_bn": "তোমরা গোপন কর",
-          "root": "—",
-          "lemma": "أَخْفَيْتُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "خفي",
+          "lemma": "أُخْفِىَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 432,
@@ -404,8 +404,8 @@
           "transliteration": "wamā",
           "translation_bn": "ও যা",
           "root": "—",
-          "lemma": "وَمَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 433,
@@ -413,9 +413,9 @@
           "text_uthmani": "أَعْلَنتُمْ ۚ",
           "transliteration": "aʿlantum",
           "translation_bn": "তোমরা প্রকাশ কর",
-          "root": "—",
-          "lemma": "أَعْلَنتُمْ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "علن",
+          "lemma": "أَعْلَن",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 435,
@@ -424,7 +424,7 @@
           "transliteration": "waman",
           "translation_bn": "এবং যে",
           "root": "—",
-          "lemma": "وَمَن",
+          "lemma": "مَن\r",
           "grammar_bn": "শব্দ"
         },
         {
@@ -433,9 +433,9 @@
           "text_uthmani": "يَفْعَلْهُ",
           "transliteration": "yafʿalhu",
           "translation_bn": "তা করবে",
-          "root": "—",
-          "lemma": "يَفْعَلْهُ",
-          "grammar_bn": "শব্দ"
+          "root": "فعل",
+          "lemma": "فَعَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 437,
@@ -444,8 +444,8 @@
           "transliteration": "minkum",
           "translation_bn": "তোমাদের মধ্যে",
           "root": "—",
-          "lemma": "مِنكُمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 438,
@@ -454,8 +454,8 @@
           "transliteration": "faqad",
           "translation_bn": "অতঃপর নিশ্চয়",
           "root": "—",
-          "lemma": "فَقَدْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "قَد\r",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 439,
@@ -463,9 +463,9 @@
           "text_uthmani": "ضَلَّ",
           "transliteration": "ḍalla",
           "translation_bn": "ভ্রষ্ট হয়েছে",
-          "root": "—",
+          "root": "ضلل",
           "lemma": "ضَلَّ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 440,
@@ -473,9 +473,9 @@
           "text_uthmani": "سَوَآءَ",
           "transliteration": "sawāa",
           "translation_bn": "সোজা",
-          "root": "—",
-          "lemma": "سَوَآءَ",
-          "grammar_bn": "শব্দ"
+          "root": "سوي",
+          "lemma": "سَوَا^ء",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 441,
@@ -483,8 +483,8 @@
           "text_uthmani": "ٱلسَّبِيلِ",
           "transliteration": "l-sabīli",
           "translation_bn": "পথ থেকে",
-          "root": "—",
-          "lemma": "ٱلسَّبِيلِ",
+          "root": "سبل",
+          "lemma": "سَبِيل",
           "grammar_bn": "শব্দ"
         },
         {
@@ -512,8 +512,8 @@
           "transliteration": "in",
           "translation_bn": "যদি",
           "root": "—",
-          "lemma": "إِن",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِن\r",
+          "grammar_bn": "শর্তবাচক (Conditional)"
         },
         {
           "id": 1317,
@@ -521,9 +521,9 @@
           "text_uthmani": "يَثْقَفُوكُمْ",
           "transliteration": "yathqafūkum",
           "translation_bn": "তোমাদের কাবু করতে পারে",
-          "root": "—",
-          "lemma": "يَثْقَفُوكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "ثقف",
+          "lemma": "ثُقِفُ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 1318,
@@ -531,9 +531,9 @@
           "text_uthmani": "يَكُونُوا۟",
           "transliteration": "yakūnū",
           "translation_bn": "তারা হয়",
-          "root": "—",
-          "lemma": "يَكُونُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "كون",
+          "lemma": "كَانَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 1319,
@@ -543,7 +543,7 @@
           "translation_bn": "তোমাদের জন্য",
           "root": "—",
           "lemma": "لَكُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 1320,
@@ -551,9 +551,9 @@
           "text_uthmani": "أَعْدَآءًۭ",
           "transliteration": "aʿdāan",
           "translation_bn": "শত্রু",
-          "root": "—",
-          "lemma": "أَعْدَآءًۭ",
-          "grammar_bn": "শব্দ"
+          "root": "عدو",
+          "lemma": "عَدُوّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 1321,
@@ -561,9 +561,9 @@
           "text_uthmani": "وَيَبْسُطُوٓا۟",
           "transliteration": "wayabsuṭū",
           "translation_bn": "ও তারা সম্প্রসারিত করে",
-          "root": "—",
-          "lemma": "وَيَبْسُطُوٓا۟",
-          "grammar_bn": "শব্দ"
+          "root": "بسط",
+          "lemma": "بَسَطَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 1322,
@@ -572,8 +572,8 @@
           "transliteration": "ilaykum",
           "translation_bn": "তোমাদের দিবে",
           "root": "—",
-          "lemma": "إِلَيْكُمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 1323,
@@ -581,9 +581,9 @@
           "text_uthmani": "أَيْدِيَهُمْ",
           "transliteration": "aydiyahum",
           "translation_bn": "তাদের হাতগুলো",
-          "root": "—",
-          "lemma": "أَيْدِيَهُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "يدي",
+          "lemma": "يَد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 1324,
@@ -591,9 +591,9 @@
           "text_uthmani": "وَأَلْسِنَتَهُم",
           "transliteration": "wa-alsinatahum",
           "translation_bn": "ও তাদের রসনাগুলো",
-          "root": "—",
-          "lemma": "وَأَلْسِنَتَهُم",
-          "grammar_bn": "শব্দ"
+          "root": "لسن",
+          "lemma": "لِسَان",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 1325,
@@ -601,9 +601,9 @@
           "text_uthmani": "بِٱلسُّوٓءِ",
           "transliteration": "bil-sūi",
           "translation_bn": "মন্দের সাথে",
-          "root": "—",
-          "lemma": "بِٱلسُّوٓءِ",
-          "grammar_bn": "শব্দ"
+          "root": "سوا",
+          "lemma": "سُو^ء",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 1326,
@@ -611,9 +611,9 @@
           "text_uthmani": "وَوَدُّوا۟",
           "transliteration": "wawaddū",
           "translation_bn": "ও তারা কামনা করে",
-          "root": "—",
-          "lemma": "وَوَدُّوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "ودد",
+          "lemma": "وَدَّ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 1327,
@@ -622,8 +622,8 @@
           "transliteration": "law",
           "translation_bn": "যদি",
           "root": "—",
-          "lemma": "لَوْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَو\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 1328,
@@ -631,9 +631,9 @@
           "text_uthmani": "تَكْفُرُونَ",
           "transliteration": "takfurūna",
           "translation_bn": "তোমরা কাফির হও",
-          "root": "—",
-          "lemma": "تَكْفُرُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "كفر",
+          "lemma": "كَفَرَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 1329,
@@ -660,8 +660,8 @@
           "transliteration": "lan",
           "translation_bn": "কখনো না",
           "root": "—",
-          "lemma": "لَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَن\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 2383,
@@ -669,9 +669,9 @@
           "text_uthmani": "تَنفَعَكُمْ",
           "transliteration": "tanfaʿakum",
           "translation_bn": "তোমাদের উপকার দেবে",
-          "root": "—",
-          "lemma": "تَنفَعَكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "نفع",
+          "lemma": "نَفَعَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2384,
@@ -679,9 +679,9 @@
           "text_uthmani": "أَرْحَامُكُمْ",
           "transliteration": "arḥāmukum",
           "translation_bn": "তোমাদের আত্মীয়দের",
-          "root": "—",
-          "lemma": "أَرْحَامُكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "رحم",
+          "lemma": "أَرْحَام",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 2385,
@@ -690,8 +690,8 @@
           "transliteration": "walā",
           "translation_bn": "এবং না",
           "root": "—",
-          "lemma": "وَلَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 2386,
@@ -699,9 +699,9 @@
           "text_uthmani": "أَوْلَـٰدُكُمْ ۚ",
           "transliteration": "awlādukum",
           "translation_bn": "তোমাদের সন্তানদের",
-          "root": "—",
-          "lemma": "أَوْلَـٰدُكُمْ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "ولد",
+          "lemma": "وَلَد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 2388,
@@ -709,9 +709,9 @@
           "text_uthmani": "يَوْمَ",
           "transliteration": "yawma",
           "translation_bn": "দিনে",
-          "root": "—",
-          "lemma": "يَوْمَ",
-          "grammar_bn": "শব্দ"
+          "root": "يوم",
+          "lemma": "يَوْم",
+          "grammar_bn": "কালবাচক (Time)"
         },
         {
           "id": 2389,
@@ -719,8 +719,8 @@
           "text_uthmani": "ٱلْقِيَـٰمَةِ",
           "transliteration": "l-qiyāmati",
           "translation_bn": "কিয়ামতের",
-          "root": "—",
-          "lemma": "ٱلْقِيَـٰمَةِ",
+          "root": "قوم",
+          "lemma": "قِيَٰمَة",
           "grammar_bn": "শব্দ"
         },
         {
@@ -729,9 +729,9 @@
           "text_uthmani": "يَفْصِلُ",
           "transliteration": "yafṣilu",
           "translation_bn": "বিচ্ছেদ করবেন তিনি",
-          "root": "—",
-          "lemma": "يَفْصِلُ",
-          "grammar_bn": "শব্দ"
+          "root": "فصل",
+          "lemma": "فَصَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2391,
@@ -739,9 +739,9 @@
           "text_uthmani": "بَيْنَكُمْ ۚ",
           "transliteration": "baynakum",
           "translation_bn": "তোমাদের মাঝে",
-          "root": "—",
-          "lemma": "بَيْنَكُمْ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "স্থানবাচক (Location)"
         },
         {
           "id": 2393,
@@ -749,8 +749,8 @@
           "text_uthmani": "وَٱللَّهُ",
           "transliteration": "wal-lahu",
           "translation_bn": "এবং আল্লাহ",
-          "root": "—",
-          "lemma": "وَٱللَّهُ",
+          "root": "اله",
+          "lemma": "ٱللَّه",
           "grammar_bn": "শব্দ"
         },
         {
@@ -760,8 +760,8 @@
           "transliteration": "bimā",
           "translation_bn": "যা",
           "root": "—",
-          "lemma": "بِمَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 2395,
@@ -769,9 +769,9 @@
           "text_uthmani": "تَعْمَلُونَ",
           "transliteration": "taʿmalūna",
           "translation_bn": "তোমরা কাজ কর",
-          "root": "—",
-          "lemma": "تَعْمَلُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "عمل",
+          "lemma": "عَمِلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2396,
@@ -779,9 +779,9 @@
           "text_uthmani": "بَصِيرٌۭ",
           "transliteration": "baṣīrun",
           "translation_bn": "সব দেখেন",
-          "root": "—",
-          "lemma": "بَصِيرٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "بصر",
+          "lemma": "بَصِير",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 2397,
@@ -808,8 +808,8 @@
           "transliteration": "qad",
           "translation_bn": "নিশ্চই",
           "root": "—",
-          "lemma": "قَدْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "قَد\r",
+          "grammar_bn": "নিশ্চয়তাবোধক (Certainty)"
         },
         {
           "id": 3740,
@@ -817,9 +817,9 @@
           "text_uthmani": "كَانَتْ",
           "transliteration": "kānat",
           "translation_bn": "রয়েছে",
-          "root": "—",
-          "lemma": "كَانَتْ",
-          "grammar_bn": "শব্দ"
+          "root": "كون",
+          "lemma": "كَانَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3741,
@@ -829,7 +829,7 @@
           "translation_bn": "তোমাদের জন্য",
           "root": "—",
           "lemma": "لَكُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3742,
@@ -837,9 +837,9 @@
           "text_uthmani": "أُسْوَةٌ",
           "transliteration": "us'watun",
           "translation_bn": "আদর্শ",
-          "root": "—",
-          "lemma": "أُسْوَةٌ",
-          "grammar_bn": "শব্দ"
+          "root": "اسو",
+          "lemma": "أُسْوَة",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3743,
@@ -847,9 +847,9 @@
           "text_uthmani": "حَسَنَةٌۭ",
           "transliteration": "ḥasanatun",
           "translation_bn": "উত্তম",
-          "root": "—",
-          "lemma": "حَسَنَةٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "حسن",
+          "lemma": "حَسَنَة",
+          "grammar_bn": "বিশেষণ (Adjective)"
         },
         {
           "id": 3744,
@@ -858,8 +858,8 @@
           "transliteration": "fī",
           "translation_bn": "মধ্যে",
           "root": "—",
-          "lemma": "فِىٓ",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3745,
@@ -868,8 +868,8 @@
           "transliteration": "ib'rāhīma",
           "translation_bn": "ইব্রাহীমের",
           "root": "—",
-          "lemma": "إِبْرَٰهِيمَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِبْرَاهِيم",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 3746,
@@ -878,8 +878,8 @@
           "transliteration": "wa-alladhīna",
           "translation_bn": "ও যারা",
           "root": "—",
-          "lemma": "وَٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3747,
@@ -888,8 +888,8 @@
           "transliteration": "maʿahu",
           "translation_bn": "তার সাথে",
           "root": "—",
-          "lemma": "مَعَهُۥٓ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَع",
+          "grammar_bn": "স্থানবাচক (Location)"
         },
         {
           "id": 3748,
@@ -898,8 +898,8 @@
           "transliteration": "idh",
           "translation_bn": "যখন",
           "root": "—",
-          "lemma": "إِذْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِذ\r",
+          "grammar_bn": "কালবাচক (Time)"
         },
         {
           "id": 3749,
@@ -907,9 +907,9 @@
           "text_uthmani": "قَالُوا۟",
           "transliteration": "qālū",
           "translation_bn": "তারা বলেছিলো",
-          "root": "—",
-          "lemma": "قَالُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "قول",
+          "lemma": "قَالَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3750,
@@ -917,9 +917,9 @@
           "text_uthmani": "لِقَوْمِهِمْ",
           "transliteration": "liqawmihim",
           "translation_bn": "তাদের জাতিকে",
-          "root": "—",
-          "lemma": "لِقَوْمِهِمْ",
-          "grammar_bn": "শব্দ"
+          "root": "قوم",
+          "lemma": "قَوْم",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3751,
@@ -928,8 +928,8 @@
           "transliteration": "innā",
           "translation_bn": "\"আমরা নিশ্চই",
           "root": "—",
-          "lemma": "إِنَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "অভিঘাত পদ (Accusative)"
         },
         {
           "id": 3752,
@@ -937,9 +937,9 @@
           "text_uthmani": "بُرَءَٰٓؤُا۟",
           "transliteration": "buraāu",
           "translation_bn": "নিঃ সম্পর্ক",
-          "root": "—",
-          "lemma": "بُرَءَٰٓؤُا۟",
-          "grammar_bn": "শব্দ"
+          "root": "برا",
+          "lemma": "بَرِى^ء",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3753,
@@ -948,8 +948,8 @@
           "transliteration": "minkum",
           "translation_bn": "তোমাদের থেকে",
           "root": "—",
-          "lemma": "مِنكُمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3754,
@@ -958,8 +958,8 @@
           "transliteration": "wamimmā",
           "translation_bn": "ও যা থেকে",
           "root": "—",
-          "lemma": "وَمِمَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3755,
@@ -967,9 +967,9 @@
           "text_uthmani": "تَعْبُدُونَ",
           "transliteration": "taʿbudūna",
           "translation_bn": "তোমরা ইবাদত কর",
-          "root": "—",
-          "lemma": "تَعْبُدُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَبَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3756,
@@ -978,8 +978,8 @@
           "transliteration": "min",
           "translation_bn": "মধ্য হতে",
           "root": "—",
-          "lemma": "مِن",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3757,
@@ -987,9 +987,9 @@
           "text_uthmani": "دُونِ",
           "transliteration": "dūni",
           "translation_bn": "ছাড়া",
-          "root": "—",
-          "lemma": "دُونِ",
-          "grammar_bn": "শব্দ"
+          "root": "دون",
+          "lemma": "دُون",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3758,
@@ -997,9 +997,9 @@
           "text_uthmani": "ٱللَّهِ",
           "transliteration": "l-lahi",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهِ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 3759,
@@ -1007,9 +1007,9 @@
           "text_uthmani": "كَفَرْنَا",
           "transliteration": "kafarnā",
           "translation_bn": "আমরা অস্বীকার করছি",
-          "root": "—",
-          "lemma": "كَفَرْنَا",
-          "grammar_bn": "শব্দ"
+          "root": "كفر",
+          "lemma": "كَفَرَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3760,
@@ -1019,7 +1019,7 @@
           "translation_bn": "তোমাদেরকে",
           "root": "—",
           "lemma": "بِكُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3761,
@@ -1027,9 +1027,9 @@
           "text_uthmani": "وَبَدَا",
           "transliteration": "wabadā",
           "translation_bn": "ও সৃষ্টি হল",
-          "root": "—",
-          "lemma": "وَبَدَا",
-          "grammar_bn": "শব্দ"
+          "root": "بدو",
+          "lemma": "بَدَا",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3762,
@@ -1037,9 +1037,9 @@
           "text_uthmani": "بَيْنَنَا",
           "transliteration": "baynanā",
           "translation_bn": "আমাদের মাঝে",
-          "root": "—",
-          "lemma": "بَيْنَنَا",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "স্থানবাচক (Location)"
         },
         {
           "id": 3763,
@@ -1047,9 +1047,9 @@
           "text_uthmani": "وَبَيْنَكُمُ",
           "transliteration": "wabaynakumu",
           "translation_bn": "ও তোমাদের মাঝে",
-          "root": "—",
-          "lemma": "وَبَيْنَكُمُ",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3764,
@@ -1057,8 +1057,8 @@
           "text_uthmani": "ٱلْعَدَٰوَةُ",
           "transliteration": "l-ʿadāwatu",
           "translation_bn": "শত্রুতা",
-          "root": "—",
-          "lemma": "ٱلْعَدَٰوَةُ",
+          "root": "عدو",
+          "lemma": "عَدَٰوَة",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1067,9 +1067,9 @@
           "text_uthmani": "وَٱلْبَغْضَآءُ",
           "transliteration": "wal-baghḍāu",
           "translation_bn": "ও বিদ্বেষ",
-          "root": "—",
-          "lemma": "وَٱلْبَغْضَآءُ",
-          "grammar_bn": "শব্দ"
+          "root": "بغض",
+          "lemma": "بَغْضَا^ء",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3766,
@@ -1077,9 +1077,9 @@
           "text_uthmani": "أَبَدًا",
           "transliteration": "abadan",
           "translation_bn": "চিরকালের",
-          "root": "—",
+          "root": "ابد",
           "lemma": "أَبَدًا",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "কালবাচক (Time)"
         },
         {
           "id": 3767,
@@ -1088,8 +1088,8 @@
           "transliteration": "ḥattā",
           "translation_bn": "যতক্ষণ না",
           "root": "—",
-          "lemma": "حَتَّىٰ",
-          "grammar_bn": "শব্দ"
+          "lemma": "حَتَّىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3768,
@@ -1097,9 +1097,9 @@
           "text_uthmani": "تُؤْمِنُوا۟",
           "transliteration": "tu'minū",
           "translation_bn": "তোমরা ঈমান আনো",
-          "root": "—",
-          "lemma": "تُؤْمِنُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "ءَامَنَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3769,
@@ -1107,9 +1107,9 @@
           "text_uthmani": "بِٱللَّهِ",
           "transliteration": "bil-lahi",
           "translation_bn": "আল্লাহর উপর",
-          "root": "—",
-          "lemma": "بِٱللَّهِ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3770,
@@ -1117,9 +1117,9 @@
           "text_uthmani": "وَحْدَهُۥٓ",
           "transliteration": "waḥdahu",
           "translation_bn": "তার একার\"",
-          "root": "—",
-          "lemma": "وَحْدَهُۥٓ",
-          "grammar_bn": "শব্দ"
+          "root": "وحد",
+          "lemma": "وَحْد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3771,
@@ -1128,8 +1128,8 @@
           "transliteration": "illā",
           "translation_bn": "তবে ব্যাতিক্রম",
           "root": "—",
-          "lemma": "إِلَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَّا\r",
+          "grammar_bn": "ব্যাখ্যামূলক (Explanation)"
         },
         {
           "id": 3772,
@@ -1137,9 +1137,9 @@
           "text_uthmani": "قَوْلَ",
           "transliteration": "qawla",
           "translation_bn": "উক্তি",
-          "root": "—",
-          "lemma": "قَوْلَ",
-          "grammar_bn": "শব্দ"
+          "root": "قول",
+          "lemma": "قَوْل",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3773,
@@ -1148,8 +1148,8 @@
           "transliteration": "ib'rāhīma",
           "translation_bn": "ইব্রাহীমের",
           "root": "—",
-          "lemma": "إِبْرَٰهِيمَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِبْرَاهِيم",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 3774,
@@ -1157,9 +1157,9 @@
           "text_uthmani": "لِأَبِيهِ",
           "transliteration": "li-abīhi",
           "translation_bn": "তার বাপের জন্য",
-          "root": "—",
-          "lemma": "لِأَبِيهِ",
-          "grammar_bn": "শব্দ"
+          "root": "ابو",
+          "lemma": "أَبٌ",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3775,
@@ -1167,9 +1167,9 @@
           "text_uthmani": "لَأَسْتَغْفِرَنَّ",
           "transliteration": "la-astaghfiranna",
           "translation_bn": "\"আমি ক্ষমা চাইব অবশ্যই",
-          "root": "—",
-          "lemma": "لَأَسْتَغْفِرَنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "غفر",
+          "lemma": "ٱسْتَغْفَرَ",
+          "grammar_bn": "দৃঢ়তাবোধক (Emphatic)"
         },
         {
           "id": 3776,
@@ -1179,7 +1179,7 @@
           "translation_bn": "তোমার জন্য",
           "root": "—",
           "lemma": "لَكَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3777,
@@ -1188,8 +1188,8 @@
           "transliteration": "wamā",
           "translation_bn": "ও না",
           "root": "—",
-          "lemma": "وَمَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3778,
@@ -1197,9 +1197,9 @@
           "text_uthmani": "أَمْلِكُ",
           "transliteration": "amliku",
           "translation_bn": "আমি সাধ্য রাখি",
-          "root": "—",
-          "lemma": "أَمْلِكُ",
-          "grammar_bn": "শব্দ"
+          "root": "ملك",
+          "lemma": "مَلَكَتْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3779,
@@ -1209,7 +1209,7 @@
           "translation_bn": "তোমার জন্য",
           "root": "—",
           "lemma": "لَكَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3780,
@@ -1218,8 +1218,8 @@
           "transliteration": "mina",
           "translation_bn": "হতে",
           "root": "—",
-          "lemma": "مِنَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3781,
@@ -1227,9 +1227,9 @@
           "text_uthmani": "ٱللَّهِ",
           "transliteration": "l-lahi",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهِ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 3782,
@@ -1238,8 +1238,8 @@
           "transliteration": "min",
           "translation_bn": "কোন",
           "root": "—",
-          "lemma": "مِن",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3783,
@@ -1247,9 +1247,9 @@
           "text_uthmani": "شَىْءٍۢ ۖ",
           "transliteration": "shayin",
           "translation_bn": "কিছুই",
-          "root": "—",
-          "lemma": "شَىْءٍۢ ۖ",
-          "grammar_bn": "শব্দ"
+          "root": "شيا",
+          "lemma": "شَىْء",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3785,
@@ -1257,9 +1257,9 @@
           "text_uthmani": "رَّبَّنَا",
           "transliteration": "rabbanā",
           "translation_bn": "হে আমাদের রব",
-          "root": "—",
-          "lemma": "رَّبَّنَا",
-          "grammar_bn": "শব্দ"
+          "root": "ربب",
+          "lemma": "رَبّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3786,
@@ -1268,8 +1268,8 @@
           "transliteration": "ʿalayka",
           "translation_bn": "তোমার উপর",
           "root": "—",
-          "lemma": "عَلَيْكَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 3787,
@@ -1277,9 +1277,9 @@
           "text_uthmani": "تَوَكَّلْنَا",
           "transliteration": "tawakkalnā",
           "translation_bn": "আমরা ভরসা করেছি",
-          "root": "—",
-          "lemma": "تَوَكَّلْنَا",
-          "grammar_bn": "শব্দ"
+          "root": "وكل",
+          "lemma": "تَوَكَّلْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3788,
@@ -1288,8 +1288,8 @@
           "transliteration": "wa-ilayka",
           "translation_bn": "ও তোমাার দিকে",
           "root": "—",
-          "lemma": "وَإِلَيْكَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3789,
@@ -1297,9 +1297,9 @@
           "text_uthmani": "أَنَبْنَا",
           "transliteration": "anabnā",
           "translation_bn": "আমরা অভিমুখী",
-          "root": "—",
-          "lemma": "أَنَبْنَا",
-          "grammar_bn": "শব্দ"
+          "root": "نوب",
+          "lemma": "أَنَابَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3790,
@@ -1308,8 +1308,8 @@
           "transliteration": "wa-ilayka",
           "translation_bn": "ও তোমার কাছেই",
           "root": "—",
-          "lemma": "وَإِلَيْكَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3791,
@@ -1317,8 +1317,8 @@
           "text_uthmani": "ٱلْمَصِيرُ",
           "transliteration": "l-maṣīru",
           "translation_bn": "প্রত্যাবর্তন স্থল",
-          "root": "—",
-          "lemma": "ٱلْمَصِيرُ",
+          "root": "صير",
+          "lemma": "مَصِير",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1345,9 +1345,9 @@
           "text_uthmani": "رَبَّنَا",
           "transliteration": "rabbanā",
           "translation_bn": "হে আমাদের রব",
-          "root": "—",
-          "lemma": "رَبَّنَا",
-          "grammar_bn": "শব্দ"
+          "root": "ربب",
+          "lemma": "رَبّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 5026,
@@ -1356,8 +1356,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "নিষেধবাচক (Prohibition)"
         },
         {
           "id": 5027,
@@ -1365,9 +1365,9 @@
           "text_uthmani": "تَجْعَلْنَا",
           "transliteration": "tajʿalnā",
           "translation_bn": "আমাদের বানিও",
-          "root": "—",
-          "lemma": "تَجْعَلْنَا",
-          "grammar_bn": "শব্দ"
+          "root": "جعل",
+          "lemma": "جَعَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 5028,
@@ -1375,9 +1375,9 @@
           "text_uthmani": "فِتْنَةًۭ",
           "transliteration": "fit'natan",
           "translation_bn": "ফিতনা",
-          "root": "—",
-          "lemma": "فِتْنَةًۭ",
-          "grammar_bn": "শব্দ"
+          "root": "فتن",
+          "lemma": "فِتْنَة",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 5029,
@@ -1386,8 +1386,8 @@
           "transliteration": "lilladhīna",
           "translation_bn": "তাদের জান্য যারা",
           "root": "—",
-          "lemma": "لِّلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 5030,
@@ -1395,9 +1395,9 @@
           "text_uthmani": "كَفَرُوا۟",
           "transliteration": "kafarū",
           "translation_bn": "কুফরি করেছে",
-          "root": "—",
-          "lemma": "كَفَرُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "كفر",
+          "lemma": "كَفَرَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 5031,
@@ -1405,8 +1405,8 @@
           "text_uthmani": "وَٱغْفِرْ",
           "transliteration": "wa-igh'fir",
           "translation_bn": "ও মাফ কর",
-          "root": "—",
-          "lemma": "وَٱغْفِرْ",
+          "root": "غفر",
+          "lemma": "غَفَرَ",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1417,7 +1417,7 @@
           "translation_bn": "আমাদের ,",
           "root": "—",
           "lemma": "لَنَا",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 5033,
@@ -1425,9 +1425,9 @@
           "text_uthmani": "رَبَّنَآ ۖ",
           "transliteration": "rabbanā",
           "translation_bn": "হে আমাদের রব",
-          "root": "—",
-          "lemma": "رَبَّنَآ ۖ",
-          "grammar_bn": "শব্দ"
+          "root": "ربب",
+          "lemma": "رَبّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 5035,
@@ -1436,8 +1436,8 @@
           "transliteration": "innaka",
           "translation_bn": "তুমি নিশ্চই",
           "root": "—",
-          "lemma": "إِنَّكَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "অভিঘাত পদ (Accusative)"
         },
         {
           "id": 5036,
@@ -1447,7 +1447,7 @@
           "translation_bn": "তুমিই",
           "root": "—",
           "lemma": "أَنتَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 5037,
@@ -1455,8 +1455,8 @@
           "text_uthmani": "ٱلْعَزِيزُ",
           "transliteration": "l-ʿazīzu",
           "translation_bn": "পরাক্রমশালী",
-          "root": "—",
-          "lemma": "ٱلْعَزِيزُ",
+          "root": "عزز",
+          "lemma": "عَزِيز",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1465,8 +1465,8 @@
           "text_uthmani": "ٱلْحَكِيمُ",
           "transliteration": "l-ḥakīmu",
           "translation_bn": "প্রজ্ঞাময়।\"",
-          "root": "—",
-          "lemma": "ٱلْحَكِيمُ",
+          "root": "حكم",
+          "lemma": "حَكِيم",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1494,8 +1494,8 @@
           "transliteration": "laqad",
           "translation_bn": "নিশ্চই",
           "root": "—",
-          "lemma": "لَقَدْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "قَد\r",
+          "grammar_bn": "দৃঢ়তাবোধক (Emphatic)"
         },
         {
           "id": 6275,
@@ -1503,9 +1503,9 @@
           "text_uthmani": "كَانَ",
           "transliteration": "kāna",
           "translation_bn": "আছে",
-          "root": "—",
+          "root": "كون",
           "lemma": "كَانَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 6276,
@@ -1515,7 +1515,7 @@
           "translation_bn": "তোমাদের জন্য",
           "root": "—",
           "lemma": "لَكُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 6277,
@@ -1524,8 +1524,8 @@
           "transliteration": "fīhim",
           "translation_bn": "তাদের মধ্যে",
           "root": "—",
-          "lemma": "فِيهِمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 6278,
@@ -1533,9 +1533,9 @@
           "text_uthmani": "أُسْوَةٌ",
           "transliteration": "us'watun",
           "translation_bn": "আদর্শ",
-          "root": "—",
-          "lemma": "أُسْوَةٌ",
-          "grammar_bn": "শব্দ"
+          "root": "اسو",
+          "lemma": "أُسْوَة",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 6279,
@@ -1543,9 +1543,9 @@
           "text_uthmani": "حَسَنَةٌۭ",
           "transliteration": "ḥasanatun",
           "translation_bn": "উত্তম",
-          "root": "—",
-          "lemma": "حَسَنَةٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "حسن",
+          "lemma": "حَسَنَة",
+          "grammar_bn": "বিশেষণ (Adjective)"
         },
         {
           "id": 6280,
@@ -1554,8 +1554,8 @@
           "transliteration": "liman",
           "translation_bn": "যে তার জন্য",
           "root": "—",
-          "lemma": "لِّمَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 6281,
@@ -1563,9 +1563,9 @@
           "text_uthmani": "كَانَ",
           "transliteration": "kāna",
           "translation_bn": "ছিল",
-          "root": "—",
+          "root": "كون",
           "lemma": "كَانَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 6282,
@@ -1573,9 +1573,9 @@
           "text_uthmani": "يَرْجُوا۟",
           "transliteration": "yarjū",
           "translation_bn": "আকাঙ্খা রাখে",
-          "root": "—",
-          "lemma": "يَرْجُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "رجو",
+          "lemma": "يَرْجُوا@",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 6283,
@@ -1583,9 +1583,9 @@
           "text_uthmani": "ٱللَّهَ",
           "transliteration": "l-laha",
           "translation_bn": "আল্লাহর",
-          "root": "—",
-          "lemma": "ٱللَّهَ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 6284,
@@ -1593,9 +1593,9 @@
           "text_uthmani": "وَٱلْيَوْمَ",
           "transliteration": "wal-yawma",
           "translation_bn": "ও দিনের",
-          "root": "—",
-          "lemma": "وَٱلْيَوْمَ",
-          "grammar_bn": "শব্দ"
+          "root": "يوم",
+          "lemma": "يَوْم",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 6285,
@@ -1603,8 +1603,8 @@
           "text_uthmani": "ٱلْـَٔاخِرَ ۚ",
           "transliteration": "l-ākhira",
           "translation_bn": "শেষ",
-          "root": "—",
-          "lemma": "ٱلْـَٔاخِرَ ۚ",
+          "root": "اخر",
+          "lemma": "ا^خِر",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1614,7 +1614,7 @@
           "transliteration": "waman",
           "translation_bn": "এবং যে",
           "root": "—",
-          "lemma": "وَمَن",
+          "lemma": "مَن\r",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1623,9 +1623,9 @@
           "text_uthmani": "يَتَوَلَّ",
           "transliteration": "yatawalla",
           "translation_bn": "মুখ ফিরাবে",
-          "root": "—",
-          "lemma": "يَتَوَلَّ",
-          "grammar_bn": "শব্দ"
+          "root": "ولي",
+          "lemma": "تَوَلَّىٰ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 6289,
@@ -1634,8 +1634,8 @@
           "transliteration": "fa-inna",
           "translation_bn": "নিশ্চ্চই তবে",
           "root": "—",
-          "lemma": "فَإِنَّ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 6290,
@@ -1643,9 +1643,9 @@
           "text_uthmani": "ٱللَّهَ",
           "transliteration": "l-laha",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهَ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 6291,
@@ -1655,7 +1655,7 @@
           "translation_bn": "তিনিই",
           "root": "—",
           "lemma": "هُوَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 6292,
@@ -1663,8 +1663,8 @@
           "text_uthmani": "ٱلْغَنِىُّ",
           "transliteration": "l-ghaniyu",
           "translation_bn": "অভাভহীন",
-          "root": "—",
-          "lemma": "ٱلْغَنِىُّ",
+          "root": "غني",
+          "lemma": "غَنِىّ",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1673,8 +1673,8 @@
           "text_uthmani": "ٱلْحَمِيدُ",
           "transliteration": "l-ḥamīdu",
           "translation_bn": "প্রসংসিত।",
-          "root": "—",
-          "lemma": "ٱلْحَمِيدُ",
+          "root": "حمد",
+          "lemma": "حَمِيد",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1701,9 +1701,9 @@
           "text_uthmani": "۞ عَسَى",
           "transliteration": "ʿasā",
           "translation_bn": "সম্ভবত",
-          "root": "—",
-          "lemma": "۞ عَسَى",
-          "grammar_bn": "শব্দ"
+          "root": "عسي",
+          "lemma": "عَسَى",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 7715,
@@ -1711,9 +1711,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "l-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 7716,
@@ -1722,8 +1722,8 @@
           "transliteration": "an",
           "translation_bn": "যে",
           "root": "—",
-          "lemma": "أَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَن\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 7717,
@@ -1731,9 +1731,9 @@
           "text_uthmani": "يَجْعَلَ",
           "transliteration": "yajʿala",
           "translation_bn": "সৃষ্টি করে দিবেন",
-          "root": "—",
-          "lemma": "يَجْعَلَ",
-          "grammar_bn": "শব্দ"
+          "root": "جعل",
+          "lemma": "جَعَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 7718,
@@ -1741,9 +1741,9 @@
           "text_uthmani": "بَيْنَكُمْ",
           "transliteration": "baynakum",
           "translation_bn": "তোমাদের মাঝে",
-          "root": "—",
-          "lemma": "بَيْنَكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "স্থানবাচক (Location)"
         },
         {
           "id": 7719,
@@ -1751,9 +1751,9 @@
           "text_uthmani": "وَبَيْنَ",
           "transliteration": "wabayna",
           "translation_bn": "ও মাঝে",
-          "root": "—",
-          "lemma": "وَبَيْنَ",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 7720,
@@ -1762,8 +1762,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "যাদের সাথে",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 7721,
@@ -1771,9 +1771,9 @@
           "text_uthmani": "عَادَيْتُم",
           "transliteration": "ʿādaytum",
           "translation_bn": "তোমরা শত্রুতা করেছো",
-          "root": "—",
-          "lemma": "عَادَيْتُم",
-          "grammar_bn": "শব্দ"
+          "root": "عدو",
+          "lemma": "عَادَيْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 7722,
@@ -1782,8 +1782,8 @@
           "transliteration": "min'hum",
           "translation_bn": "তাদের মধ্যে",
           "root": "—",
-          "lemma": "مِّنْهُم",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 7723,
@@ -1791,9 +1791,9 @@
           "text_uthmani": "مَّوَدَّةًۭ ۚ",
           "transliteration": "mawaddatan",
           "translation_bn": "বন্ধুত্ব",
-          "root": "—",
-          "lemma": "مَّوَدَّةًۭ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "ودد",
+          "lemma": "مَّوَدَّة",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 7725,
@@ -1801,8 +1801,8 @@
           "text_uthmani": "وَٱللَّهُ",
           "transliteration": "wal-lahu",
           "translation_bn": "এবং আল্লাহ",
-          "root": "—",
-          "lemma": "وَٱللَّهُ",
+          "root": "اله",
+          "lemma": "ٱللَّه",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1811,9 +1811,9 @@
           "text_uthmani": "قَدِيرٌۭ ۚ",
           "transliteration": "qadīrun",
           "translation_bn": "সর্বশক্তিমান",
-          "root": "—",
-          "lemma": "قَدِيرٌۭ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "قدر",
+          "lemma": "قَدِير",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 7728,
@@ -1821,9 +1821,9 @@
           "text_uthmani": "وَٱللَّهُ",
           "transliteration": "wal-lahu",
           "translation_bn": "ও আল্লাহ",
-          "root": "—",
-          "lemma": "وَٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 7729,
@@ -1831,9 +1831,9 @@
           "text_uthmani": "غَفُورٌۭ",
           "transliteration": "ghafūrun",
           "translation_bn": "ক্ষমাশীল",
-          "root": "—",
-          "lemma": "غَفُورٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "غفر",
+          "lemma": "غَفُور",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 7730,
@@ -1841,9 +1841,9 @@
           "text_uthmani": "رَّحِيمٌۭ",
           "transliteration": "raḥīmun",
           "translation_bn": "মেহেরবান",
-          "root": "—",
-          "lemma": "رَّحِيمٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "رحم",
+          "lemma": "رَّحِيم",
+          "grammar_bn": "বিশেষণ (Adjective)"
         },
         {
           "id": 7731,
@@ -1870,8 +1870,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 8886,
@@ -1879,9 +1879,9 @@
           "text_uthmani": "يَنْهَىٰكُمُ",
           "transliteration": "yanhākumu",
           "translation_bn": "তোমাদের নিষেধ করেন",
-          "root": "—",
-          "lemma": "يَنْهَىٰكُمُ",
-          "grammar_bn": "শব্দ"
+          "root": "نهي",
+          "lemma": "نَهَىٰ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 8887,
@@ -1889,9 +1889,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "l-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 8888,
@@ -1900,8 +1900,8 @@
           "transliteration": "ʿani",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "عَنِ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 8889,
@@ -1910,8 +1910,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "তাদের যারা",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 8890,
@@ -1920,8 +1920,8 @@
           "transliteration": "lam",
           "translation_bn": "নাই",
           "root": "—",
-          "lemma": "لَمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَم\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 8891,
@@ -1929,9 +1929,9 @@
           "text_uthmani": "يُقَـٰتِلُوكُمْ",
           "transliteration": "yuqātilūkum",
           "translation_bn": "যুদ্ধ করে তোমাদের সাথে",
-          "root": "—",
-          "lemma": "يُقَـٰتِلُوكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "قتل",
+          "lemma": "قَٰتَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 8892,
@@ -1940,8 +1940,8 @@
           "transliteration": "fī",
           "translation_bn": "ব্যাপারে",
           "root": "—",
-          "lemma": "فِى",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 8893,
@@ -1949,8 +1949,8 @@
           "text_uthmani": "ٱلدِّينِ",
           "transliteration": "l-dīni",
           "translation_bn": "দ্বীনের",
-          "root": "—",
-          "lemma": "ٱلدِّينِ",
+          "root": "دين",
+          "lemma": "دِين",
           "grammar_bn": "শব্দ"
         },
         {
@@ -1960,8 +1960,8 @@
           "transliteration": "walam",
           "translation_bn": "এবং নাই",
           "root": "—",
-          "lemma": "وَلَمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَم\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 8895,
@@ -1969,9 +1969,9 @@
           "text_uthmani": "يُخْرِجُوكُم",
           "transliteration": "yukh'rijūkum",
           "translation_bn": "তোমাদের বহিষ্কৃত করে",
-          "root": "—",
-          "lemma": "يُخْرِجُوكُم",
-          "grammar_bn": "শব্দ"
+          "root": "خرج",
+          "lemma": "أَخْرَجَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 8896,
@@ -1980,8 +1980,8 @@
           "transliteration": "min",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "مِّن",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 8897,
@@ -1989,9 +1989,9 @@
           "text_uthmani": "دِيَـٰرِكُمْ",
           "transliteration": "diyārikum",
           "translation_bn": "তোমাদের ঘরগুলোকে",
-          "root": "—",
-          "lemma": "دِيَـٰرِكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "دور",
+          "lemma": "دَار",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 8898,
@@ -2000,8 +2000,8 @@
           "transliteration": "an",
           "translation_bn": "যে",
           "root": "—",
-          "lemma": "أَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَن\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 8899,
@@ -2009,9 +2009,9 @@
           "text_uthmani": "تَبَرُّوهُمْ",
           "transliteration": "tabarrūhum",
           "translation_bn": "তোমরা তাদের সাথে নেকী কর",
-          "root": "—",
-          "lemma": "تَبَرُّوهُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "برر",
+          "lemma": "تَبَرُّ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 8900,
@@ -2019,9 +2019,9 @@
           "text_uthmani": "وَتُقْسِطُوٓا۟",
           "transliteration": "watuq'siṭū",
           "translation_bn": "ও তোমরা ন্যায় বিচার কর",
-          "root": "—",
-          "lemma": "وَتُقْسِطُوٓا۟",
-          "grammar_bn": "শব্দ"
+          "root": "قسط",
+          "lemma": "تُقْسِطُ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 8901,
@@ -2030,8 +2030,8 @@
           "transliteration": "ilayhim",
           "translation_bn": "তাদের সহিত",
           "root": "—",
-          "lemma": "إِلَيْهِمْ ۚ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 8903,
@@ -2040,8 +2040,8 @@
           "transliteration": "inna",
           "translation_bn": "নিশ্চয়",
           "root": "—",
-          "lemma": "إِنَّ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "অভিঘাত পদ (Accusative)"
         },
         {
           "id": 8904,
@@ -2049,9 +2049,9 @@
           "text_uthmani": "ٱللَّهَ",
           "transliteration": "l-laha",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهَ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 8905,
@@ -2059,9 +2059,9 @@
           "text_uthmani": "يُحِبُّ",
           "transliteration": "yuḥibbu",
           "translation_bn": "ভালোবাসেন",
-          "root": "—",
-          "lemma": "يُحِبُّ",
-          "grammar_bn": "শব্দ"
+          "root": "حبب",
+          "lemma": "أَحْبَبْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 8906,
@@ -2069,8 +2069,8 @@
           "text_uthmani": "ٱلْمُقْسِطِينَ",
           "transliteration": "l-muq'siṭīna",
           "translation_bn": "ন্যায়বিচারকারিদের",
-          "root": "—",
-          "lemma": "ٱلْمُقْسِطِينَ",
+          "root": "قسط",
+          "lemma": "مُقْسِطِين",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2098,8 +2098,8 @@
           "transliteration": "innamā",
           "translation_bn": "মূলতঃ",
           "root": "—",
-          "lemma": "إِنَّمَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "অভিঘাত পদ (Accusative)"
         },
         {
           "id": 10095,
@@ -2107,9 +2107,9 @@
           "text_uthmani": "يَنْهَىٰكُمُ",
           "transliteration": "yanhākumu",
           "translation_bn": "নিষেধ করেছেন",
-          "root": "—",
-          "lemma": "يَنْهَىٰكُمُ",
-          "grammar_bn": "শব্দ"
+          "root": "نهي",
+          "lemma": "نَهَىٰ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 10096,
@@ -2117,9 +2117,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "l-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 10097,
@@ -2128,8 +2128,8 @@
           "transliteration": "ʿani",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "عَنِ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 10098,
@@ -2138,8 +2138,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "যারা",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 10099,
@@ -2147,9 +2147,9 @@
           "text_uthmani": "قَـٰتَلُوكُمْ",
           "transliteration": "qātalūkum",
           "translation_bn": "যুদ্ধ করেছে তোমাদের বিরুদ্ধে",
-          "root": "—",
-          "lemma": "قَـٰتَلُوكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "قتل",
+          "lemma": "قَٰتَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 10100,
@@ -2158,8 +2158,8 @@
           "transliteration": "fī",
           "translation_bn": "ব্যাপারে",
           "root": "—",
-          "lemma": "فِى",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 10101,
@@ -2167,8 +2167,8 @@
           "text_uthmani": "ٱلدِّينِ",
           "transliteration": "l-dīni",
           "translation_bn": "দ্বীনের",
-          "root": "—",
-          "lemma": "ٱلدِّينِ",
+          "root": "دين",
+          "lemma": "دِين",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2177,9 +2177,9 @@
           "text_uthmani": "وَأَخْرَجُوكُم",
           "transliteration": "wa-akhrajūkum",
           "translation_bn": "ও যাদের বহিষ্কার করেছে",
-          "root": "—",
-          "lemma": "وَأَخْرَجُوكُم",
-          "grammar_bn": "শব্দ"
+          "root": "خرج",
+          "lemma": "أَخْرَجَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 10103,
@@ -2188,8 +2188,8 @@
           "transliteration": "min",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "مِّن",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 10104,
@@ -2197,9 +2197,9 @@
           "text_uthmani": "دِيَـٰرِكُمْ",
           "transliteration": "diyārikum",
           "translation_bn": "তোমাদের ঘরগুুলো",
-          "root": "—",
-          "lemma": "دِيَـٰرِكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "دور",
+          "lemma": "دَار",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 10105,
@@ -2207,9 +2207,9 @@
           "text_uthmani": "وَظَـٰهَرُوا۟",
           "transliteration": "waẓāharū",
           "translation_bn": "এবং  তারা সাহায্য করেছে",
-          "root": "—",
-          "lemma": "وَظَـٰهَرُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "ظهر",
+          "lemma": "ظَٰهَرُ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 10106,
@@ -2218,8 +2218,8 @@
           "transliteration": "ʿalā",
           "translation_bn": "ব্যাপারে",
           "root": "—",
-          "lemma": "عَلَىٰٓ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 10107,
@@ -2227,9 +2227,9 @@
           "text_uthmani": "إِخْرَاجِكُمْ",
           "transliteration": "ikh'rājikum",
           "translation_bn": "তোমাদের বহিিষ্কার",
-          "root": "—",
-          "lemma": "إِخْرَاجِكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "خرج",
+          "lemma": "إِخْرَاج",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 10108,
@@ -2238,8 +2238,8 @@
           "transliteration": "an",
           "translation_bn": "যে",
           "root": "—",
-          "lemma": "أَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَن\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 10109,
@@ -2247,9 +2247,9 @@
           "text_uthmani": "تَوَلَّوْهُمْ ۚ",
           "transliteration": "tawallawhum",
           "translation_bn": "তাদের সাথেে তোমরা বন্ধুত্ব কর",
-          "root": "—",
-          "lemma": "تَوَلَّوْهُمْ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "ولي",
+          "lemma": "تَوَلَّىٰ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 10111,
@@ -2258,7 +2258,7 @@
           "transliteration": "waman",
           "translation_bn": "এবং যে",
           "root": "—",
-          "lemma": "وَمَن",
+          "lemma": "مَن\r",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2267,9 +2267,9 @@
           "text_uthmani": "يَتَوَلَّهُمْ",
           "transliteration": "yatawallahum",
           "translation_bn": "তাদের(সাথে) বন্ধুত্ব করে",
-          "root": "—",
-          "lemma": "يَتَوَلَّهُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "ولي",
+          "lemma": "تَوَلَّىٰ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 10113,
@@ -2278,8 +2278,8 @@
           "transliteration": "fa-ulāika",
           "translation_bn": "অতঃপর ঐসব লোক",
           "root": "—",
-          "lemma": "فَأُو۟لَـٰٓئِكَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "أُولَٰ^ئِك",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 10114,
@@ -2289,7 +2289,7 @@
           "translation_bn": "তারা",
           "root": "—",
           "lemma": "هُمُ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 10115,
@@ -2297,8 +2297,8 @@
           "text_uthmani": "ٱلظَّـٰلِمُونَ",
           "transliteration": "l-ẓālimūna",
           "translation_bn": "যালিম",
-          "root": "—",
-          "lemma": "ٱلظَّـٰلِمُونَ",
+          "root": "ظلم",
+          "lemma": "ظَالِم",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2326,8 +2326,8 @@
           "transliteration": "yāayyuhā",
           "translation_bn": "ওহেে",
           "root": "—",
-          "lemma": "يَـٰٓأَيُّهَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَيُّهَا",
+          "grammar_bn": "সম্বোধন পদ (Vocative)"
         },
         {
           "id": 11300,
@@ -2336,8 +2336,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "যারা",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 11301,
@@ -2345,9 +2345,9 @@
           "text_uthmani": "ءَامَنُوٓا۟",
           "transliteration": "āmanū",
           "translation_bn": "ঈমান এনেছ",
-          "root": "—",
-          "lemma": "ءَامَنُوٓا۟",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "ءَامَنَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11302,
@@ -2356,8 +2356,8 @@
           "transliteration": "idhā",
           "translation_bn": "যখন",
           "root": "—",
-          "lemma": "إِذَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِذَا\r",
+          "grammar_bn": "কালবাচক (Time)"
         },
         {
           "id": 11303,
@@ -2365,9 +2365,9 @@
           "text_uthmani": "جَآءَكُمُ",
           "transliteration": "jāakumu",
           "translation_bn": "তোমাদের কাাছে আসবে",
-          "root": "—",
-          "lemma": "جَآءَكُمُ",
-          "grammar_bn": "শব্দ"
+          "root": "جيا",
+          "lemma": "جَا^ءَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11304,
@@ -2375,8 +2375,8 @@
           "text_uthmani": "ٱلْمُؤْمِنَـٰتُ",
           "transliteration": "l-mu'minātu",
           "translation_bn": "মুমিন মহিলারা",
-          "root": "—",
-          "lemma": "ٱلْمُؤْمِنَـٰتُ",
+          "root": "امن",
+          "lemma": "مُّؤْمِنَٰت",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2385,9 +2385,9 @@
           "text_uthmani": "مُهَـٰجِرَٰتٍۢ",
           "transliteration": "muhājirātin",
           "translation_bn": "মুহাজির হয়ে",
-          "root": "—",
-          "lemma": "مُهَـٰجِرَٰتٍۢ",
-          "grammar_bn": "শব্দ"
+          "root": "هجر",
+          "lemma": "مُهَٰجِرَٰت",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11306,
@@ -2395,9 +2395,9 @@
           "text_uthmani": "فَٱمْتَحِنُوهُنَّ ۖ",
           "transliteration": "fa-im'taḥinūhunna",
           "translation_bn": "তাদের তোমরা পরীক্ষা তখন",
-          "root": "—",
-          "lemma": "فَٱمْتَحِنُوهُنَّ ۖ",
-          "grammar_bn": "শব্দ"
+          "root": "محن",
+          "lemma": "ٱمْتَحَنَ",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 11308,
@@ -2405,9 +2405,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "l-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 11309,
@@ -2415,9 +2415,9 @@
           "text_uthmani": "أَعْلَمُ",
           "transliteration": "aʿlamu",
           "translation_bn": "খুব জানেন",
-          "root": "—",
-          "lemma": "أَعْلَمُ",
-          "grammar_bn": "শব্দ"
+          "root": "علم",
+          "lemma": "أَعْلَم",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11310,
@@ -2425,9 +2425,9 @@
           "text_uthmani": "بِإِيمَـٰنِهِنَّ ۖ",
           "transliteration": "biīmānihinna",
           "translation_bn": "তাদের ঈমান সম্পর্কে",
-          "root": "—",
-          "lemma": "بِإِيمَـٰنِهِنَّ ۖ",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "إِيمَٰن",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 11312,
@@ -2436,7 +2436,7 @@
           "transliteration": "fa-in",
           "translation_bn": "যদিি অতএব",
           "root": "—",
-          "lemma": "فَإِنْ",
+          "lemma": "إِن\r",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2445,9 +2445,9 @@
           "text_uthmani": "عَلِمْتُمُوهُنَّ",
           "transliteration": "ʿalim'tumūhunna",
           "translation_bn": "তাদের তোমরা জানতে পারো",
-          "root": "—",
-          "lemma": "عَلِمْتُمُوهُنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "علم",
+          "lemma": "عَلِمَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11314,
@@ -2455,9 +2455,9 @@
           "text_uthmani": "مُؤْمِنَـٰتٍۢ",
           "transliteration": "mu'minātin",
           "translation_bn": "মুমিন রূপে",
-          "root": "—",
-          "lemma": "مُؤْمِنَـٰتٍۢ",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "مُّؤْمِنَٰت",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11315,
@@ -2466,8 +2466,8 @@
           "transliteration": "falā",
           "translation_bn": "না তখন",
           "root": "—",
-          "lemma": "فَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 11316,
@@ -2475,9 +2475,9 @@
           "text_uthmani": "تَرْجِعُوهُنَّ",
           "transliteration": "tarjiʿūhunna",
           "translation_bn": "তাদেরকে ফেরত দিও",
-          "root": "—",
-          "lemma": "تَرْجِعُوهُنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "رجع",
+          "lemma": "رَجَعَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11317,
@@ -2486,8 +2486,8 @@
           "transliteration": "ilā",
           "translation_bn": "দিকে",
           "root": "—",
-          "lemma": "إِلَى",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 11318,
@@ -2495,8 +2495,8 @@
           "text_uthmani": "ٱلْكُفَّارِ ۖ",
           "transliteration": "l-kufāri",
           "translation_bn": "কাফিরদের",
-          "root": "—",
-          "lemma": "ٱلْكُفَّارِ ۖ",
+          "root": "كفر",
+          "lemma": "كَافِر",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2506,8 +2506,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 11321,
@@ -2517,7 +2517,7 @@
           "translation_bn": "তারা (মুমিন নারী)",
           "root": "—",
           "lemma": "هُنَّ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 11322,
@@ -2525,9 +2525,9 @@
           "text_uthmani": "حِلٌّۭ",
           "transliteration": "ḥillun",
           "translation_bn": "হালাল",
-          "root": "—",
-          "lemma": "حِلٌّۭ",
-          "grammar_bn": "শব্দ"
+          "root": "حلل",
+          "lemma": "حِلّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11323,
@@ -2537,7 +2537,7 @@
           "translation_bn": "তাদের জন্য (কাফিরদের)",
           "root": "—",
           "lemma": "لَّهُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 11324,
@@ -2546,8 +2546,8 @@
           "transliteration": "walā",
           "translation_bn": "ও না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 11325,
@@ -2557,7 +2557,7 @@
           "translation_bn": "তারা",
           "root": "—",
           "lemma": "هُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 11326,
@@ -2565,9 +2565,9 @@
           "text_uthmani": "يَحِلُّونَ",
           "transliteration": "yaḥillūna",
           "translation_bn": "হালাল",
-          "root": "—",
-          "lemma": "يَحِلُّونَ",
-          "grammar_bn": "শব্দ"
+          "root": "حلل",
+          "lemma": "حَلَلْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11327,
@@ -2577,7 +2577,7 @@
           "translation_bn": "তাদের জন্য(মুমিন নারী্দের)",
           "root": "—",
           "lemma": "لَهُنَّ ۖ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 11329,
@@ -2585,9 +2585,9 @@
           "text_uthmani": "وَءَاتُوهُم",
           "transliteration": "waātūhum",
           "translation_bn": "তাদের দাও তোমরা",
-          "root": "—",
-          "lemma": "وَءَاتُوهُم",
-          "grammar_bn": "শব্দ"
+          "root": "اتي",
+          "lemma": "ا^تَى",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 11330,
@@ -2596,8 +2596,8 @@
           "transliteration": "mā",
           "translation_bn": "যা",
           "root": "—",
-          "lemma": "مَّآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 11331,
@@ -2605,9 +2605,9 @@
           "text_uthmani": "أَنفَقُوا۟ ۚ",
           "transliteration": "anfaqū",
           "translation_bn": "তারা খরচ করেছে",
-          "root": "—",
-          "lemma": "أَنفَقُوا۟ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "نفق",
+          "lemma": "أَنفَقَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11333,
@@ -2616,7 +2616,7 @@
           "transliteration": "walā",
           "translation_bn": "এবং নাই",
           "root": "—",
-          "lemma": "وَلَا",
+          "lemma": "لَا",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2625,9 +2625,9 @@
           "text_uthmani": "جُنَاحَ",
           "transliteration": "junāḥa",
           "translation_bn": "গুনাহ",
-          "root": "—",
-          "lemma": "جُنَاحَ",
-          "grammar_bn": "শব্দ"
+          "root": "جنح",
+          "lemma": "جُنَاح",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11335,
@@ -2636,8 +2636,8 @@
           "transliteration": "ʿalaykum",
           "translation_bn": "তোমাদের উপর",
           "root": "—",
-          "lemma": "عَلَيْكُمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 11336,
@@ -2646,8 +2646,8 @@
           "transliteration": "an",
           "translation_bn": "যে",
           "root": "—",
-          "lemma": "أَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَن\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 11337,
@@ -2655,9 +2655,9 @@
           "text_uthmani": "تَنكِحُوهُنَّ",
           "transliteration": "tankiḥūhunna",
           "translation_bn": "তাদের তোমরা বিবাহ কর",
-          "root": "—",
-          "lemma": "تَنكِحُوهُنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "نكح",
+          "lemma": "نَكَحَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11338,
@@ -2666,8 +2666,8 @@
           "transliteration": "idhā",
           "translation_bn": "যখন",
           "root": "—",
-          "lemma": "إِذَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِذَا\r",
+          "grammar_bn": "কালবাচক (Time)"
         },
         {
           "id": 11339,
@@ -2675,9 +2675,9 @@
           "text_uthmani": "ءَاتَيْتُمُوهُنَّ",
           "transliteration": "ātaytumūhunna",
           "translation_bn": "তাদের তোমরা দাও",
-          "root": "—",
-          "lemma": "ءَاتَيْتُمُوهُنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "اتي",
+          "lemma": "ا^تَى",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11340,
@@ -2685,9 +2685,9 @@
           "text_uthmani": "أُجُورَهُنَّ ۚ",
           "transliteration": "ujūrahunna",
           "translation_bn": "তাদের মোহর",
-          "root": "—",
-          "lemma": "أُجُورَهُنَّ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "اجر",
+          "lemma": "أَجْر",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11342,
@@ -2696,8 +2696,8 @@
           "transliteration": "walā",
           "translation_bn": "এবং না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 11343,
@@ -2705,9 +2705,9 @@
           "text_uthmani": "تُمْسِكُوا۟",
           "transliteration": "tum'sikū",
           "translation_bn": "তোমরা ধরে রেখ",
-          "root": "—",
-          "lemma": "تُمْسِكُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "مسك",
+          "lemma": "أَمْسَكَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11344,
@@ -2715,9 +2715,9 @@
           "text_uthmani": "بِعِصَمِ",
           "transliteration": "biʿiṣami",
           "translation_bn": "বিবাহ বন্ধন",
-          "root": "—",
-          "lemma": "بِعِصَمِ",
-          "grammar_bn": "শব্দ"
+          "root": "عصم",
+          "lemma": "عِصَم",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 11345,
@@ -2725,8 +2725,8 @@
           "text_uthmani": "ٱلْكَوَافِرِ",
           "transliteration": "l-kawāfiri",
           "translation_bn": "কাফির স্ত্রীদের",
-          "root": "—",
-          "lemma": "ٱلْكَوَافِرِ",
+          "root": "كفر",
+          "lemma": "كَوَافِر",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2735,9 +2735,9 @@
           "text_uthmani": "وَسْـَٔلُوا۟",
           "transliteration": "wasalū",
           "translation_bn": "ও তোমরা চাও",
-          "root": "—",
-          "lemma": "وَسْـَٔلُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "سال",
+          "lemma": "سَأَلَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 11347,
@@ -2746,8 +2746,8 @@
           "transliteration": "mā",
           "translation_bn": "যা",
           "root": "—",
-          "lemma": "مَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 11348,
@@ -2755,9 +2755,9 @@
           "text_uthmani": "أَنفَقْتُمْ",
           "transliteration": "anfaqtum",
           "translation_bn": "তোমরা খরচ করেছ",
-          "root": "—",
-          "lemma": "أَنفَقْتُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "نفق",
+          "lemma": "أَنفَقَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11349,
@@ -2765,9 +2765,9 @@
           "text_uthmani": "وَلْيَسْـَٔلُوا۟",
           "transliteration": "walyasalū",
           "translation_bn": "ও তারা চেয়ে নিবে",
-          "root": "—",
-          "lemma": "وَلْيَسْـَٔلُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "سال",
+          "lemma": "سَأَلَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 11350,
@@ -2776,8 +2776,8 @@
           "transliteration": "mā",
           "translation_bn": "যা",
           "root": "—",
-          "lemma": "مَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 11351,
@@ -2785,9 +2785,9 @@
           "text_uthmani": "أَنفَقُوا۟ ۚ",
           "transliteration": "anfaqū",
           "translation_bn": "তারা খরচ করেছে",
-          "root": "—",
-          "lemma": "أَنفَقُوا۟ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "نفق",
+          "lemma": "أَنفَقَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11353,
@@ -2796,8 +2796,8 @@
           "transliteration": "dhālikum",
           "translation_bn": "এটা",
           "root": "—",
-          "lemma": "ذَٰلِكُمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ذَٰلِك",
+          "grammar_bn": "নির্দেশক সর্বনাম (Demonstrative)"
         },
         {
           "id": 11354,
@@ -2805,9 +2805,9 @@
           "text_uthmani": "حُكْمُ",
           "transliteration": "ḥuk'mu",
           "translation_bn": "নির্দেশ",
-          "root": "—",
-          "lemma": "حُكْمُ",
-          "grammar_bn": "শব্দ"
+          "root": "حكم",
+          "lemma": "حُكْم",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11355,
@@ -2815,9 +2815,9 @@
           "text_uthmani": "ٱللَّهِ ۖ",
           "transliteration": "l-lahi",
           "translation_bn": "আল্লাহর",
-          "root": "—",
-          "lemma": "ٱللَّهِ ۖ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 11357,
@@ -2825,9 +2825,9 @@
           "text_uthmani": "يَحْكُمُ",
           "transliteration": "yaḥkumu",
           "translation_bn": "তিনি ফয়সালা দেন",
-          "root": "—",
-          "lemma": "يَحْكُمُ",
-          "grammar_bn": "শব্দ"
+          "root": "حكم",
+          "lemma": "حَكَمَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 11358,
@@ -2835,9 +2835,9 @@
           "text_uthmani": "بَيْنَكُمْ ۚ",
           "transliteration": "baynakum",
           "translation_bn": "তোমাদের মাঝে",
-          "root": "—",
-          "lemma": "بَيْنَكُمْ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "স্থানবাচক (Location)"
         },
         {
           "id": 11360,
@@ -2845,9 +2845,9 @@
           "text_uthmani": "وَٱللَّهُ",
           "transliteration": "wal-lahu",
           "translation_bn": "এবং আল্লাহ",
-          "root": "—",
-          "lemma": "وَٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 11361,
@@ -2855,9 +2855,9 @@
           "text_uthmani": "عَلِيمٌ",
           "transliteration": "ʿalīmun",
           "translation_bn": "সরবজ্ঞ",
-          "root": "—",
-          "lemma": "عَلِيمٌ",
-          "grammar_bn": "শব্দ"
+          "root": "علم",
+          "lemma": "عَلِيم",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 11362,
@@ -2865,9 +2865,9 @@
           "text_uthmani": "حَكِيمٌۭ",
           "transliteration": "ḥakīmun",
           "translation_bn": "প্রজ্ঞাময়",
-          "root": "—",
-          "lemma": "حَكِيمٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "حكم",
+          "lemma": "حَكِيم",
+          "grammar_bn": "বিশেষণ (Adjective)"
         },
         {
           "id": 11363,
@@ -2894,7 +2894,7 @@
           "transliteration": "wa-in",
           "translation_bn": "এবং যদি",
           "root": "—",
-          "lemma": "وَإِن",
+          "lemma": "إِن\r",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2903,9 +2903,9 @@
           "text_uthmani": "فَاتَكُمْ",
           "transliteration": "fātakum",
           "translation_bn": "তোমাদের হাত ছাড়া হয়",
-          "root": "—",
-          "lemma": "فَاتَكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "فوت",
+          "lemma": "فَاتَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 12635,
@@ -2913,9 +2913,9 @@
           "text_uthmani": "شَىْءٌۭ",
           "transliteration": "shayon",
           "translation_bn": "কিছুু",
-          "root": "—",
-          "lemma": "شَىْءٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "شيا",
+          "lemma": "شَىْء",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 12636,
@@ -2924,8 +2924,8 @@
           "transliteration": "min",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "مِّنْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 12637,
@@ -2933,9 +2933,9 @@
           "text_uthmani": "أَزْوَٰجِكُمْ",
           "transliteration": "azwājikum",
           "translation_bn": "তোমাদের স্ত্রীদের",
-          "root": "—",
-          "lemma": "أَزْوَٰجِكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "زوج",
+          "lemma": "زَوْج",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 12638,
@@ -2944,8 +2944,8 @@
           "transliteration": "ilā",
           "translation_bn": "নিকট",
           "root": "—",
-          "lemma": "إِلَى",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 12639,
@@ -2953,8 +2953,8 @@
           "text_uthmani": "ٱلْكُفَّارِ",
           "transliteration": "l-kufāri",
           "translation_bn": "কাফিরদের",
-          "root": "—",
-          "lemma": "ٱلْكُفَّارِ",
+          "root": "كفر",
+          "lemma": "كَافِر",
           "grammar_bn": "শব্দ"
         },
         {
@@ -2963,9 +2963,9 @@
           "text_uthmani": "فَعَاقَبْتُمْ",
           "transliteration": "faʿāqabtum",
           "translation_bn": "তোমরা অতঃপর সুযোগ পাও",
-          "root": "—",
-          "lemma": "فَعَاقَبْتُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "عقب",
+          "lemma": "عَاقَبَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 12641,
@@ -2973,9 +2973,9 @@
           "text_uthmani": "فَـَٔاتُوا۟",
           "transliteration": "faātū",
           "translation_bn": "তবে তোমরা দাও",
-          "root": "—",
-          "lemma": "فَـَٔاتُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "اتي",
+          "lemma": "ا^تَى",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 12642,
@@ -2984,8 +2984,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "তাদের",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 12643,
@@ -2993,9 +2993,9 @@
           "text_uthmani": "ذَهَبَتْ",
           "transliteration": "dhahabat",
           "translation_bn": "চলে গেছে",
-          "root": "—",
-          "lemma": "ذَهَبَتْ",
-          "grammar_bn": "শব্দ"
+          "root": "ذهب",
+          "lemma": "ذَهَبَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 12644,
@@ -3003,9 +3003,9 @@
           "text_uthmani": "أَزْوَٰجُهُم",
           "transliteration": "azwājuhum",
           "translation_bn": "যাদেের স্ত্রী",
-          "root": "—",
-          "lemma": "أَزْوَٰجُهُم",
-          "grammar_bn": "শব্দ"
+          "root": "زوج",
+          "lemma": "زَوْج",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 12645,
@@ -3013,9 +3013,9 @@
           "text_uthmani": "مِّثْلَ",
           "transliteration": "mith'la",
           "translation_bn": "সমান",
-          "root": "—",
-          "lemma": "مِّثْلَ",
-          "grammar_bn": "শব্দ"
+          "root": "مثل",
+          "lemma": "مِثْل",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 12646,
@@ -3024,8 +3024,8 @@
           "transliteration": "mā",
           "translation_bn": "যা",
           "root": "—",
-          "lemma": "مَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 12647,
@@ -3033,9 +3033,9 @@
           "text_uthmani": "أَنفَقُوا۟ ۚ",
           "transliteration": "anfaqū",
           "translation_bn": "তারা খরচ করেছে",
-          "root": "—",
-          "lemma": "أَنفَقُوا۟ ۚ",
-          "grammar_bn": "শব্দ"
+          "root": "نفق",
+          "lemma": "أَنفَقَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 12649,
@@ -3043,8 +3043,8 @@
           "text_uthmani": "وَٱتَّقُوا۟",
           "transliteration": "wa-ittaqū",
           "translation_bn": "এবং তোমরা ভয় কর",
-          "root": "—",
-          "lemma": "وَٱتَّقُوا۟",
+          "root": "وقي",
+          "lemma": "ٱتَّقَىٰ",
           "grammar_bn": "শব্দ"
         },
         {
@@ -3053,9 +3053,9 @@
           "text_uthmani": "ٱللَّهَ",
           "transliteration": "l-laha",
           "translation_bn": "আল্লাহকে",
-          "root": "—",
-          "lemma": "ٱللَّهَ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 12651,
@@ -3064,8 +3064,8 @@
           "transliteration": "alladhī",
           "translation_bn": "যার",
           "root": "—",
-          "lemma": "ٱلَّذِىٓ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 12652,
@@ -3075,7 +3075,7 @@
           "translation_bn": "তোমরা",
           "root": "—",
           "lemma": "أَنتُم",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 12653,
@@ -3085,7 +3085,7 @@
           "translation_bn": "তার উপর",
           "root": "—",
           "lemma": "بِهِۦ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 12654,
@@ -3093,9 +3093,9 @@
           "text_uthmani": "مُؤْمِنُونَ",
           "transliteration": "mu'minūna",
           "translation_bn": "ঈমানদার",
-          "root": "—",
-          "lemma": "مُؤْمِنُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "مُؤْمِن",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 12655,
@@ -3122,8 +3122,8 @@
           "transliteration": "yāayyuhā",
           "translation_bn": "হে",
           "root": "—",
-          "lemma": "يَـٰٓأَيُّهَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَيُّهَا",
+          "grammar_bn": "সম্বোধন পদ (Vocative)"
         },
         {
           "id": 13950,
@@ -3131,8 +3131,8 @@
           "text_uthmani": "ٱلنَّبِىُّ",
           "transliteration": "l-nabiyu",
           "translation_bn": "নবী",
-          "root": "—",
-          "lemma": "ٱلنَّبِىُّ",
+          "root": "نبا",
+          "lemma": "نَّبِىّ",
           "grammar_bn": "শব্দ"
         },
         {
@@ -3142,8 +3142,8 @@
           "transliteration": "idhā",
           "translation_bn": "যখন",
           "root": "—",
-          "lemma": "إِذَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِذَا\r",
+          "grammar_bn": "কালবাচক (Time)"
         },
         {
           "id": 13952,
@@ -3151,9 +3151,9 @@
           "text_uthmani": "جَآءَكَ",
           "transliteration": "jāaka",
           "translation_bn": "তোমার কাছে আসবে",
-          "root": "—",
-          "lemma": "جَآءَكَ",
-          "grammar_bn": "শব্দ"
+          "root": "جيا",
+          "lemma": "جَا^ءَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13953,
@@ -3161,8 +3161,8 @@
           "text_uthmani": "ٱلْمُؤْمِنَـٰتُ",
           "transliteration": "l-mu'minātu",
           "translation_bn": "মুমিন নারীরা",
-          "root": "—",
-          "lemma": "ٱلْمُؤْمِنَـٰتُ",
+          "root": "امن",
+          "lemma": "مُّؤْمِنَٰت",
           "grammar_bn": "শব্দ"
         },
         {
@@ -3171,9 +3171,9 @@
           "text_uthmani": "يُبَايِعْنَكَ",
           "transliteration": "yubāyiʿ'naka",
           "translation_bn": "তোমার কাছে বয়াত করবে",
-          "root": "—",
-          "lemma": "يُبَايِعْنَكَ",
-          "grammar_bn": "শব্দ"
+          "root": "بيع",
+          "lemma": "بَايَعْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13955,
@@ -3182,8 +3182,8 @@
           "transliteration": "ʿalā",
           "translation_bn": "(এ কথার) উপর",
           "root": "—",
-          "lemma": "عَلَىٰٓ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 13956,
@@ -3192,8 +3192,8 @@
           "transliteration": "an",
           "translation_bn": "যে",
           "root": "—",
-          "lemma": "أَن",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَن\r",
+          "grammar_bn": "অধীনস্থ যোজক (Subordinating)"
         },
         {
           "id": 13957,
@@ -3202,8 +3202,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 13958,
@@ -3211,9 +3211,9 @@
           "text_uthmani": "يُشْرِكْنَ",
           "transliteration": "yush'rik'na",
           "translation_bn": "তারা শিরক করবে",
-          "root": "—",
-          "lemma": "يُشْرِكْنَ",
-          "grammar_bn": "শব্দ"
+          "root": "شرك",
+          "lemma": "أَشْرَكَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13959,
@@ -3221,9 +3221,9 @@
           "text_uthmani": "بِٱللَّهِ",
           "transliteration": "bil-lahi",
           "translation_bn": "আল্লাহর সাথে",
-          "root": "—",
-          "lemma": "بِٱللَّهِ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 13960,
@@ -3231,9 +3231,9 @@
           "text_uthmani": "شَيْـًۭٔا",
           "transliteration": "shayan",
           "translation_bn": "কোনকিছু",
-          "root": "—",
-          "lemma": "شَيْـًۭٔا",
-          "grammar_bn": "শব্দ"
+          "root": "شيا",
+          "lemma": "شَىْء",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 13961,
@@ -3242,8 +3242,8 @@
           "transliteration": "walā",
           "translation_bn": "এবং না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13962,
@@ -3251,9 +3251,9 @@
           "text_uthmani": "يَسْرِقْنَ",
           "transliteration": "yasriq'na",
           "translation_bn": "তারা চুরি করবে",
-          "root": "—",
-          "lemma": "يَسْرِقْنَ",
-          "grammar_bn": "শব্দ"
+          "root": "سرق",
+          "lemma": "سَرَقَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13963,
@@ -3262,8 +3262,8 @@
           "transliteration": "walā",
           "translation_bn": "আর না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13964,
@@ -3271,9 +3271,9 @@
           "text_uthmani": "يَزْنِينَ",
           "transliteration": "yaznīna",
           "translation_bn": "তারা জিনা করবে না",
-          "root": "—",
-          "lemma": "يَزْنِينَ",
-          "grammar_bn": "শব্দ"
+          "root": "زني",
+          "lemma": "يَزْنُ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13965,
@@ -3282,8 +3282,8 @@
           "transliteration": "walā",
           "translation_bn": "এবং না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13966,
@@ -3291,9 +3291,9 @@
           "text_uthmani": "يَقْتُلْنَ",
           "transliteration": "yaqtul'na",
           "translation_bn": "তারা হত্যা করবে",
-          "root": "—",
-          "lemma": "يَقْتُلْنَ",
-          "grammar_bn": "শব্দ"
+          "root": "قتل",
+          "lemma": "قَتَلَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13967,
@@ -3301,9 +3301,9 @@
           "text_uthmani": "أَوْلَـٰدَهُنَّ",
           "transliteration": "awlādahunna",
           "translation_bn": "তাআদের সন্তানদের",
-          "root": "—",
-          "lemma": "أَوْلَـٰدَهُنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "ولد",
+          "lemma": "وَلَد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 13968,
@@ -3312,8 +3312,8 @@
           "transliteration": "walā",
           "translation_bn": "ও না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13969,
@@ -3321,9 +3321,9 @@
           "text_uthmani": "يَأْتِينَ",
           "transliteration": "yatīna",
           "translation_bn": "তারা আনবে",
-          "root": "—",
-          "lemma": "يَأْتِينَ",
-          "grammar_bn": "শব্দ"
+          "root": "اتي",
+          "lemma": "أَتَى",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13970,
@@ -3331,9 +3331,9 @@
           "text_uthmani": "بِبُهْتَـٰنٍۢ",
           "transliteration": "bibuh'tānin",
           "translation_bn": "অপমান",
-          "root": "—",
-          "lemma": "بِبُهْتَـٰنٍۢ",
-          "grammar_bn": "শব্দ"
+          "root": "بهت",
+          "lemma": "بُهْتَٰن",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 13971,
@@ -3341,9 +3341,9 @@
           "text_uthmani": "يَفْتَرِينَهُۥ",
           "transliteration": "yaftarīnahu",
           "translation_bn": "তা তারা রচনা করে",
-          "root": "—",
-          "lemma": "يَفْتَرِينَهُۥ",
-          "grammar_bn": "শব্দ"
+          "root": "فري",
+          "lemma": "يَفْتَرِي",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13972,
@@ -3351,9 +3351,9 @@
           "text_uthmani": "بَيْنَ",
           "transliteration": "bayna",
           "translation_bn": "মাঝে",
-          "root": "—",
-          "lemma": "بَيْنَ",
-          "grammar_bn": "শব্দ"
+          "root": "بين",
+          "lemma": "بَيْن",
+          "grammar_bn": "স্থানবাচক (Location)"
         },
         {
           "id": 13973,
@@ -3361,9 +3361,9 @@
           "text_uthmani": "أَيْدِيهِنَّ",
           "transliteration": "aydīhinna",
           "translation_bn": "তাদের হাতগুলো",
-          "root": "—",
-          "lemma": "أَيْدِيهِنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "يدي",
+          "lemma": "يَد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 13974,
@@ -3371,9 +3371,9 @@
           "text_uthmani": "وَأَرْجُلِهِنَّ",
           "transliteration": "wa-arjulihinna",
           "translation_bn": "ও তাদের পাগুলো",
-          "root": "—",
-          "lemma": "وَأَرْجُلِهِنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "رجل",
+          "lemma": "رِجْل",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13975,
@@ -3382,8 +3382,8 @@
           "transliteration": "walā",
           "translation_bn": "এবং না",
           "root": "—",
-          "lemma": "وَلَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13976,
@@ -3391,9 +3391,9 @@
           "text_uthmani": "يَعْصِينَكَ",
           "transliteration": "yaʿṣīnaka",
           "translation_bn": "তোমরা তারা অবাধ্য হবে",
-          "root": "—",
-          "lemma": "يَعْصِينَكَ",
-          "grammar_bn": "শব্দ"
+          "root": "عصي",
+          "lemma": "عَصَا",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 13977,
@@ -3402,8 +3402,8 @@
           "transliteration": "fī",
           "translation_bn": "ক্ষেত্রে",
           "root": "—",
-          "lemma": "فِى",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 13978,
@@ -3411,9 +3411,9 @@
           "text_uthmani": "مَعْرُوفٍۢ ۙ",
           "transliteration": "maʿrūfin",
           "translation_bn": "সৎকাজের",
-          "root": "—",
-          "lemma": "مَعْرُوفٍۢ ۙ",
-          "grammar_bn": "শব্দ"
+          "root": "عرف",
+          "lemma": "مَّعْرُوف",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 13980,
@@ -3421,9 +3421,9 @@
           "text_uthmani": "فَبَايِعْهُنَّ",
           "transliteration": "fabāyiʿ'hunna",
           "translation_bn": "তাদের বয়াত নাও তবে",
-          "root": "—",
-          "lemma": "فَبَايِعْهُنَّ",
-          "grammar_bn": "শব্দ"
+          "root": "بيع",
+          "lemma": "بَايَعْ",
+          "grammar_bn": "ফলাফল পদ (Result)"
         },
         {
           "id": 13981,
@@ -3431,9 +3431,9 @@
           "text_uthmani": "وَٱسْتَغْفِرْ",
           "transliteration": "wa-is'taghfir",
           "translation_bn": "ও ক্ষমা চাও",
-          "root": "—",
-          "lemma": "وَٱسْتَغْفِرْ",
-          "grammar_bn": "শব্দ"
+          "root": "غفر",
+          "lemma": "ٱسْتَغْفَرَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 13982,
@@ -3443,7 +3443,7 @@
           "translation_bn": "তাদের জন্য (কাফিরদের)",
           "root": "—",
           "lemma": "لَهُنَّ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 13983,
@@ -3451,9 +3451,9 @@
           "text_uthmani": "ٱللَّهَ ۖ",
           "transliteration": "l-laha",
           "translation_bn": "আল্লাহর (কাছে)",
-          "root": "—",
-          "lemma": "ٱللَّهَ ۖ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 13985,
@@ -3462,8 +3462,8 @@
           "transliteration": "inna",
           "translation_bn": "নিশ্চই",
           "root": "—",
-          "lemma": "إِنَّ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "অভিঘাত পদ (Accusative)"
         },
         {
           "id": 13986,
@@ -3471,9 +3471,9 @@
           "text_uthmani": "ٱللَّهَ",
           "transliteration": "l-laha",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهَ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 13987,
@@ -3481,9 +3481,9 @@
           "text_uthmani": "غَفُورٌۭ",
           "transliteration": "ghafūrun",
           "translation_bn": "ক্ষমাশীল",
-          "root": "—",
-          "lemma": "غَفُورٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "غفر",
+          "lemma": "غَفُور",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 13988,
@@ -3491,9 +3491,9 @@
           "text_uthmani": "رَّحِيمٌۭ",
           "transliteration": "raḥīmun",
           "translation_bn": "মেহেরবান",
-          "root": "—",
-          "lemma": "رَّحِيمٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "رحم",
+          "lemma": "رَّحِيم",
+          "grammar_bn": "বিশেষণ (Adjective)"
         },
         {
           "id": 13989,
@@ -3520,8 +3520,8 @@
           "transliteration": "yāayyuhā",
           "translation_bn": "ওহে",
           "root": "—",
-          "lemma": "يَـٰٓأَيُّهَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَيُّهَا",
+          "grammar_bn": "সম্বোধন পদ (Vocative)"
         },
         {
           "id": 15094,
@@ -3530,8 +3530,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "যারা",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 15095,
@@ -3539,9 +3539,9 @@
           "text_uthmani": "ءَامَنُوا۟",
           "transliteration": "āmanū",
           "translation_bn": "ঈমান এনেছ",
-          "root": "—",
-          "lemma": "ءَامَنُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "ءَامَنَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 15096,
@@ -3550,8 +3550,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "নিষেধবাচক (Prohibition)"
         },
         {
           "id": 15097,
@@ -3559,9 +3559,9 @@
           "text_uthmani": "تَتَوَلَّوْا۟",
           "transliteration": "tatawallaw",
           "translation_bn": "তোমতা বন্ধুত্ব করো",
-          "root": "—",
-          "lemma": "تَتَوَلَّوْا۟",
-          "grammar_bn": "শব্দ"
+          "root": "ولي",
+          "lemma": "تَوَلَّىٰ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 15098,
@@ -3569,9 +3569,9 @@
           "text_uthmani": "قَوْمًا",
           "transliteration": "qawman",
           "translation_bn": "লোকদের (সংগে)",
-          "root": "—",
-          "lemma": "قَوْمًا",
-          "grammar_bn": "শব্দ"
+          "root": "قوم",
+          "lemma": "قَوْم",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 15099,
@@ -3579,9 +3579,9 @@
           "text_uthmani": "غَضِبَ",
           "transliteration": "ghaḍiba",
           "translation_bn": "গযব দিয়েছেন",
-          "root": "—",
+          "root": "غضب",
           "lemma": "غَضِبَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 15100,
@@ -3589,9 +3589,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "l-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 15101,
@@ -3600,8 +3600,8 @@
           "transliteration": "ʿalayhim",
           "translation_bn": "যাদের উপর",
           "root": "—",
-          "lemma": "عَلَيْهِمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "عَلَىٰ\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 15102,
@@ -3610,8 +3610,8 @@
           "transliteration": "qad",
           "translation_bn": "নিশ্চই",
           "root": "—",
-          "lemma": "قَدْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "قَد\r",
+          "grammar_bn": "নিশ্চয়তাবোধক (Certainty)"
         },
         {
           "id": 15103,
@@ -3619,9 +3619,9 @@
           "text_uthmani": "يَئِسُوا۟",
           "transliteration": "ya-isū",
           "translation_bn": "তারা নিরাশ হয়েছে",
-          "root": "—",
-          "lemma": "يَئِسُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "ياس",
+          "lemma": "يَئِسَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 15104,
@@ -3630,8 +3630,8 @@
           "transliteration": "mina",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "مِنَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 15105,
@@ -3639,8 +3639,8 @@
           "text_uthmani": "ٱلْـَٔاخِرَةِ",
           "transliteration": "l-ākhirati",
           "translation_bn": "পরকাল",
-          "root": "—",
-          "lemma": "ٱلْـَٔاخِرَةِ",
+          "root": "اخر",
+          "lemma": "ا^خِر",
           "grammar_bn": "শব্দ"
         },
         {
@@ -3650,8 +3650,8 @@
           "transliteration": "kamā",
           "translation_bn": "যেমন",
           "root": "—",
-          "lemma": "كَمَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 15107,
@@ -3659,9 +3659,9 @@
           "text_uthmani": "يَئِسَ",
           "transliteration": "ya-isa",
           "translation_bn": "নিরাশ হয়েছে",
-          "root": "—",
+          "root": "ياس",
           "lemma": "يَئِسَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 15108,
@@ -3669,8 +3669,8 @@
           "text_uthmani": "ٱلْكُفَّارُ",
           "transliteration": "l-kufāru",
           "translation_bn": "কাফিররা",
-          "root": "—",
-          "lemma": "ٱلْكُفَّارُ",
+          "root": "كفر",
+          "lemma": "كَافِر",
           "grammar_bn": "শব্দ"
         },
         {
@@ -3680,8 +3680,8 @@
           "transliteration": "min",
           "translation_bn": "থেকে",
           "root": "—",
-          "lemma": "مِنْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 15110,
@@ -3689,9 +3689,9 @@
           "text_uthmani": "أَصْحَـٰبِ",
           "transliteration": "aṣḥābi",
           "translation_bn": "অধিবাসীদের",
-          "root": "—",
-          "lemma": "أَصْحَـٰبِ",
-          "grammar_bn": "শব্দ"
+          "root": "صحب",
+          "lemma": "أَصْحَٰب",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 15111,
@@ -3699,8 +3699,8 @@
           "text_uthmani": "ٱلْقُبُورِ",
           "transliteration": "l-qubūri",
           "translation_bn": "কবরগু্লো",
-          "root": "—",
-          "lemma": "ٱلْقُبُورِ",
+          "root": "قبر",
+          "lemma": "قَبْر",
           "grammar_bn": "শব্দ"
         },
         {

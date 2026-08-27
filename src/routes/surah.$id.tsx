@@ -278,7 +278,7 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
-const SURAH_TEXT_CACHE = "quran-text-v1";
+const SURAH_TEXT_CACHE = "quran-text-v2";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   const url = `/data/quran/surahs/${sId}.json`;
@@ -1515,9 +1515,7 @@ function WordAndRootSearchDialog({
                   isMatch = cleanArabicText(w.text_uthmani) === cleanTargetWord;
                 } else if (searchType === "root" && activeRoot) {
                   const wRoot = extractIntelligentRoot(w);
-                  const wText = cleanArabicText(w.text_uthmani);
-                  const wLemma = cleanArabicText(w.lemma || "");
-                  isMatch = (wRoot === activeRoot) || wLemma.includes(activeRoot) || wText.includes(activeRoot);
+                  isMatch = wRoot === activeRoot;
                 }
 
                 if (isMatch) {

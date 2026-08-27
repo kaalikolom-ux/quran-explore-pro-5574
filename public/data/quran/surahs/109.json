@@ -13,9 +13,9 @@
           "text_uthmani": "قُلْ",
           "transliteration": "qul",
           "translation_bn": "বলো",
-          "root": "—",
-          "lemma": "قُلْ",
-          "grammar_bn": "শব্দ"
+          "root": "قول",
+          "lemma": "قَالَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 159,
@@ -24,8 +24,8 @@
           "transliteration": "yāayyuhā",
           "translation_bn": "\"হে",
           "root": "—",
-          "lemma": "يَـٰٓأَيُّهَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "أَيُّهَا",
+          "grammar_bn": "সম্বোধন পদ (Vocative)"
         },
         {
           "id": 160,
@@ -33,8 +33,8 @@
           "text_uthmani": "ٱلْكَـٰفِرُونَ",
           "transliteration": "l-kāfirūna",
           "translation_bn": "কাফিররা",
-          "root": "—",
-          "lemma": "ٱلْكَـٰفِرُونَ",
+          "root": "كفر",
+          "lemma": "كَٰفِرُون",
           "grammar_bn": "শব্দ"
         },
         {
@@ -62,8 +62,8 @@
           "transliteration": "lā",
           "translation_bn": "না",
           "root": "—",
-          "lemma": "لَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 943,
@@ -71,9 +71,9 @@
           "text_uthmani": "أَعْبُدُ",
           "transliteration": "aʿbudu",
           "translation_bn": "আমি ইবাদাত করি",
-          "root": "—",
-          "lemma": "أَعْبُدُ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَبَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 944,
@@ -82,8 +82,8 @@
           "transliteration": "mā",
           "translation_bn": "যার",
           "root": "—",
-          "lemma": "مَا",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 945,
@@ -91,9 +91,9 @@
           "text_uthmani": "تَعْبُدُونَ",
           "transliteration": "taʿbudūna",
           "translation_bn": "তোমরা ইবাদাত কর",
-          "root": "—",
-          "lemma": "تَعْبُدُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَبَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 946,
@@ -120,8 +120,8 @@
           "transliteration": "walā",
           "translation_bn": "এবং না",
           "root": "—",
-          "lemma": "وَلَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 2571,
@@ -131,7 +131,7 @@
           "translation_bn": "তোমরা",
           "root": "—",
           "lemma": "أَنتُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 2572,
@@ -139,9 +139,9 @@
           "text_uthmani": "عَـٰبِدُونَ",
           "transliteration": "ʿābidūna",
           "translation_bn": "ইবাদাতকারী",
-          "root": "—",
-          "lemma": "عَـٰبِدُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَابِد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 2573,
@@ -150,8 +150,8 @@
           "transliteration": "mā",
           "translation_bn": "যার",
           "root": "—",
-          "lemma": "مَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 2574,
@@ -159,9 +159,9 @@
           "text_uthmani": "أَعْبُدُ",
           "transliteration": "aʿbudu",
           "translation_bn": "আমি ইবাদাত করি",
-          "root": "—",
-          "lemma": "أَعْبُدُ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَبَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2575,
@@ -188,8 +188,8 @@
           "transliteration": "walā",
           "translation_bn": "আর না",
           "root": "—",
-          "lemma": "وَلَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 3993,
@@ -199,7 +199,7 @@
           "translation_bn": "আমি",
           "root": "—",
           "lemma": "أَنَا۠",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 3994,
@@ -207,9 +207,9 @@
           "text_uthmani": "عَابِدٌۭ",
           "transliteration": "ʿābidun",
           "translation_bn": "ইবাদাতকারী",
-          "root": "—",
-          "lemma": "عَابِدٌۭ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَابِد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 3995,
@@ -218,8 +218,8 @@
           "transliteration": "mā",
           "translation_bn": "যার",
           "root": "—",
-          "lemma": "مَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 3996,
@@ -227,9 +227,9 @@
           "text_uthmani": "عَبَدتُّمْ",
           "transliteration": "ʿabadttum",
           "translation_bn": "তোমরা ইবাদাত করেছ",
-          "root": "—",
-          "lemma": "عَبَدتُّمْ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَبَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 3997,
@@ -256,8 +256,8 @@
           "transliteration": "walā",
           "translation_bn": "আর না",
           "root": "—",
-          "lemma": "وَلَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَا\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 5291,
@@ -267,7 +267,7 @@
           "translation_bn": "তোমরা",
           "root": "—",
           "lemma": "أَنتُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 5292,
@@ -275,9 +275,9 @@
           "text_uthmani": "عَـٰبِدُونَ",
           "transliteration": "ʿābidūna",
           "translation_bn": "ইবাদাতকারী",
-          "root": "—",
-          "lemma": "عَـٰبِدُونَ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَابِد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 5293,
@@ -286,8 +286,8 @@
           "transliteration": "mā",
           "translation_bn": "যার",
           "root": "—",
-          "lemma": "مَآ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مَا\r",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 5294,
@@ -295,9 +295,9 @@
           "text_uthmani": "أَعْبُدُ",
           "transliteration": "aʿbudu",
           "translation_bn": "আমি ইবাদাত করি",
-          "root": "—",
-          "lemma": "أَعْبُدُ",
-          "grammar_bn": "শব্দ"
+          "root": "عبد",
+          "lemma": "عَبَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 5295,
@@ -325,7 +325,7 @@
           "translation_bn": "তোমাদের জন্য",
           "root": "—",
           "lemma": "لَكُمْ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 6551,
@@ -333,9 +333,9 @@
           "text_uthmani": "دِينُكُمْ",
           "transliteration": "dīnukum",
           "translation_bn": "তোমার ধর্ম",
-          "root": "—",
-          "lemma": "دِينُكُمْ",
-          "grammar_bn": "শব্দ"
+          "root": "دين",
+          "lemma": "دِين",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 6552,
@@ -345,7 +345,7 @@
           "translation_bn": "এবং আমার জন্য",
           "root": "—",
           "lemma": "وَلِىَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 6553,
@@ -353,9 +353,9 @@
           "text_uthmani": "دِينِ",
           "transliteration": "dīni",
           "translation_bn": "আমার ধর্ম\"",
-          "root": "—",
-          "lemma": "دِينِ",
-          "grammar_bn": "শব্দ"
+          "root": "دين",
+          "lemma": "دِين",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 6554,

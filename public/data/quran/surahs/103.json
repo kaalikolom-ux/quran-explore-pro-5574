@@ -13,9 +13,9 @@
           "text_uthmani": "وَٱلْعَصْرِ",
           "transliteration": "wal-ʿaṣri",
           "translation_bn": "শপথ মহাকালের",
-          "root": "—",
-          "lemma": "وَٱلْعَصْرِ",
-          "grammar_bn": "শব্দ"
+          "root": "عصر",
+          "lemma": "عَصْر",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 178,
@@ -42,8 +42,8 @@
           "transliteration": "inna",
           "translation_bn": "নিশ্চয়ই",
           "root": "—",
-          "lemma": "إِنَّ",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِنّ",
+          "grammar_bn": "অভিঘাত পদ (Accusative)"
         },
         {
           "id": 1057,
@@ -51,8 +51,8 @@
           "text_uthmani": "ٱلْإِنسَـٰنَ",
           "transliteration": "l-insāna",
           "translation_bn": "মানুষ",
-          "root": "—",
-          "lemma": "ٱلْإِنسَـٰنَ",
+          "root": "انس",
+          "lemma": "إِنسَٰن",
           "grammar_bn": "শব্দ"
         },
         {
@@ -62,8 +62,8 @@
           "transliteration": "lafī",
           "translation_bn": "অবশ্যই মধ্যে",
           "root": "—",
-          "lemma": "لَفِى",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "দৃঢ়তাবোধক (Emphatic)"
         },
         {
           "id": 1059,
@@ -71,9 +71,9 @@
           "text_uthmani": "خُسْرٍ",
           "transliteration": "khus'rin",
           "translation_bn": "ক্ষতির",
-          "root": "—",
-          "lemma": "خُسْرٍ",
-          "grammar_bn": "শব্দ"
+          "root": "خسر",
+          "lemma": "خُسْر",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 1060,
@@ -100,8 +100,8 @@
           "transliteration": "illā",
           "translation_bn": "(তাদের) ছাড়া",
           "root": "—",
-          "lemma": "إِلَّا",
-          "grammar_bn": "শব্দ"
+          "lemma": "إِلَّا\r",
+          "grammar_bn": "ব্যাখ্যামূলক (Explanation)"
         },
         {
           "id": 2214,
@@ -110,8 +110,8 @@
           "transliteration": "alladhīna",
           "translation_bn": "যারা",
           "root": "—",
-          "lemma": "ٱلَّذِينَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "ٱلَّذِى",
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 2215,
@@ -119,9 +119,9 @@
           "text_uthmani": "ءَامَنُوا۟",
           "transliteration": "āmanū",
           "translation_bn": "ঈমান এনেছে",
-          "root": "—",
-          "lemma": "ءَامَنُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "امن",
+          "lemma": "ءَامَنَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2216,
@@ -129,9 +129,9 @@
           "text_uthmani": "وَعَمِلُوا۟",
           "transliteration": "waʿamilū",
           "translation_bn": "এবং করেছে",
-          "root": "—",
-          "lemma": "وَعَمِلُوا۟",
-          "grammar_bn": "শব্দ"
+          "root": "عمل",
+          "lemma": "عَمِلَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 2217,
@@ -139,8 +139,8 @@
           "text_uthmani": "ٱلصَّـٰلِحَـٰتِ",
           "transliteration": "l-ṣāliḥāti",
           "translation_bn": "সৎকর্মের",
-          "root": "—",
-          "lemma": "ٱلصَّـٰلِحَـٰتِ",
+          "root": "صلح",
+          "lemma": "صَّٰلِحَٰت",
           "grammar_bn": "শব্দ"
         },
         {
@@ -149,9 +149,9 @@
           "text_uthmani": "وَتَوَاصَوْا۟",
           "transliteration": "watawāṣaw",
           "translation_bn": "এবং পরস্পরকে উপদেশ দিয়েছে",
-          "root": "—",
-          "lemma": "وَتَوَاصَوْا۟",
-          "grammar_bn": "শব্দ"
+          "root": "وصي",
+          "lemma": "تَوَاصَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 2219,
@@ -159,9 +159,9 @@
           "text_uthmani": "بِٱلْحَقِّ",
           "transliteration": "bil-ḥaqi",
           "translation_bn": "সত্যের",
-          "root": "—",
-          "lemma": "بِٱلْحَقِّ",
-          "grammar_bn": "শব্দ"
+          "root": "حقق",
+          "lemma": "حَقّ",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 2220,
@@ -169,9 +169,9 @@
           "text_uthmani": "وَتَوَاصَوْا۟",
           "transliteration": "watawāṣaw",
           "translation_bn": "ও পরস্পরকে উপদেশ দিয়েছে",
-          "root": "—",
-          "lemma": "وَتَوَاصَوْا۟",
-          "grammar_bn": "শব্দ"
+          "root": "وصي",
+          "lemma": "تَوَاصَ",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 2221,
@@ -179,9 +179,9 @@
           "text_uthmani": "بِٱلصَّبْرِ",
           "transliteration": "bil-ṣabri",
           "translation_bn": "ধৈর্যের",
-          "root": "—",
-          "lemma": "بِٱلصَّبْرِ",
-          "grammar_bn": "শব্দ"
+          "root": "صبر",
+          "lemma": "صَبْر",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 2222,

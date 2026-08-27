@@ -13,9 +13,9 @@
           "text_uthmani": "قُلْ",
           "transliteration": "qul",
           "translation_bn": "বলো",
-          "root": "—",
-          "lemma": "قُلْ",
-          "grammar_bn": "শব্দ"
+          "root": "قول",
+          "lemma": "قَالَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 7,
@@ -25,7 +25,7 @@
           "translation_bn": "\"তিনি",
           "root": "—",
           "lemma": "هُوَ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সর্বনাম (Pronoun)"
         },
         {
           "id": 8,
@@ -33,9 +33,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "l-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 9,
@@ -43,9 +43,9 @@
           "text_uthmani": "أَحَدٌ",
           "transliteration": "aḥadun",
           "translation_bn": "এক-অদ্বিতীয়",
-          "root": "—",
-          "lemma": "أَحَدٌ",
-          "grammar_bn": "শব্দ"
+          "root": "احد",
+          "lemma": "أَحَد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 10,
@@ -71,9 +71,9 @@
           "text_uthmani": "ٱللَّهُ",
           "transliteration": "al-lahu",
           "translation_bn": "আল্লাহ",
-          "root": "—",
-          "lemma": "ٱللَّهُ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "ٱللَّه",
+          "grammar_bn": "নামবাচক বিশেষ্য (Proper Noun)"
         },
         {
           "id": 917,
@@ -81,8 +81,8 @@
           "text_uthmani": "ٱلصَّمَدُ",
           "transliteration": "l-ṣamadu",
           "translation_bn": "অমুখাপেক্ষী",
-          "root": "—",
-          "lemma": "ٱلصَّمَدُ",
+          "root": "صمد",
+          "lemma": "صَّمَد",
           "grammar_bn": "শব্দ"
         },
         {
@@ -110,8 +110,8 @@
           "transliteration": "lam",
           "translation_bn": "নি",
           "root": "—",
-          "lemma": "لَمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَم\r",
+          "grammar_bn": "না-বোধক (Negative)"
         },
         {
           "id": 2747,
@@ -119,9 +119,9 @@
           "text_uthmani": "يَلِدْ",
           "transliteration": "yalid",
           "translation_bn": "তিনি (কাউকে) জন্ম দেন",
-          "root": "—",
-          "lemma": "يَلِدْ",
-          "grammar_bn": "শব্দ"
+          "root": "ولد",
+          "lemma": "وَلَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2748,
@@ -130,8 +130,8 @@
           "transliteration": "walam",
           "translation_bn": "এবং নি",
           "root": "—",
-          "lemma": "وَلَمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَم\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 2749,
@@ -139,9 +139,9 @@
           "text_uthmani": "يُولَدْ",
           "transliteration": "yūlad",
           "translation_bn": "তাঁকে জন্ম দেয়া হয়",
-          "root": "—",
-          "lemma": "يُولَدْ",
-          "grammar_bn": "শব্দ"
+          "root": "ولد",
+          "lemma": "وَلَدَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 2750,
@@ -168,8 +168,8 @@
           "transliteration": "walam",
           "translation_bn": "এবং নাই",
           "root": "—",
-          "lemma": "وَلَمْ",
-          "grammar_bn": "শব্দ"
+          "lemma": "لَم\r",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 4137,
@@ -177,9 +177,9 @@
           "text_uthmani": "يَكُن",
           "transliteration": "yakun",
           "translation_bn": "(হয়)",
-          "root": "—",
-          "lemma": "يَكُن",
-          "grammar_bn": "শব্দ"
+          "root": "كون",
+          "lemma": "كَانَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 4138,
@@ -189,7 +189,7 @@
           "translation_bn": "তাঁর",
           "root": "—",
           "lemma": "لَّهُۥ",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 4139,
@@ -197,9 +197,9 @@
           "text_uthmani": "كُفُوًا",
           "transliteration": "kufuwan",
           "translation_bn": "সমতুল্য/ সমান",
-          "root": "—",
-          "lemma": "كُفُوًا",
-          "grammar_bn": "শব্দ"
+          "root": "كفا",
+          "lemma": "كُفُو",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 4140,
@@ -207,9 +207,9 @@
           "text_uthmani": "أَحَدٌۢ",
           "transliteration": "aḥadun",
           "translation_bn": "কেউই\"",
-          "root": "—",
-          "lemma": "أَحَدٌۢ",
-          "grammar_bn": "শব্দ"
+          "root": "احد",
+          "lemma": "أَحَد",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 4141,

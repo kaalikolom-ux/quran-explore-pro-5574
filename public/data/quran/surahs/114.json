@@ -13,9 +13,9 @@
           "text_uthmani": "قُلْ",
           "transliteration": "qul",
           "translation_bn": "বলো",
-          "root": "—",
-          "lemma": "قُلْ",
-          "grammar_bn": "শব্দ"
+          "root": "قول",
+          "lemma": "قَالَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 116,
@@ -23,9 +23,9 @@
           "text_uthmani": "أَعُوذُ",
           "transliteration": "aʿūdhu",
           "translation_bn": "\"আমি আশ্রয় চাই",
-          "root": "—",
-          "lemma": "أَعُوذُ",
-          "grammar_bn": "শব্দ"
+          "root": "عوذ",
+          "lemma": "عُذْ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 117,
@@ -33,9 +33,9 @@
           "text_uthmani": "بِرَبِّ",
           "transliteration": "birabbi",
           "translation_bn": "রবের নিকট",
-          "root": "—",
-          "lemma": "بِرَبِّ",
-          "grammar_bn": "শব্দ"
+          "root": "ربب",
+          "lemma": "رَبّ",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 118,
@@ -43,8 +43,8 @@
           "text_uthmani": "ٱلنَّاسِ",
           "transliteration": "l-nāsi",
           "translation_bn": "মানুষের",
-          "root": "—",
-          "lemma": "ٱلنَّاسِ",
+          "root": "نوس",
+          "lemma": "نَّاس",
           "grammar_bn": "শব্দ"
         },
         {
@@ -71,9 +71,9 @@
           "text_uthmani": "مَلِكِ",
           "transliteration": "maliki",
           "translation_bn": "মহা অধিপতির (নিকট)",
-          "root": "—",
-          "lemma": "مَلِكِ",
-          "grammar_bn": "শব্দ"
+          "root": "ملك",
+          "lemma": "مَلِك",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 933,
@@ -81,8 +81,8 @@
           "text_uthmani": "ٱلنَّاسِ",
           "transliteration": "l-nāsi",
           "translation_bn": "মানুষের",
-          "root": "—",
-          "lemma": "ٱلنَّاسِ",
+          "root": "نوس",
+          "lemma": "نَّاس",
           "grammar_bn": "শব্দ"
         },
         {
@@ -109,9 +109,9 @@
           "text_uthmani": "إِلَـٰهِ",
           "transliteration": "ilāhi",
           "translation_bn": "ইলাহ্‌র (নিকট)",
-          "root": "—",
-          "lemma": "إِلَـٰهِ",
-          "grammar_bn": "শব্দ"
+          "root": "اله",
+          "lemma": "إِلَٰه",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 2820,
@@ -119,8 +119,8 @@
           "text_uthmani": "ٱلنَّاسِ",
           "transliteration": "l-nāsi",
           "translation_bn": "মানুষের",
-          "root": "—",
-          "lemma": "ٱلنَّاسِ",
+          "root": "نوس",
+          "lemma": "نَّاس",
           "grammar_bn": "শব্দ"
         },
         {
@@ -148,8 +148,8 @@
           "transliteration": "min",
           "translation_bn": "হতে",
           "root": "—",
-          "lemma": "مِن",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 4132,
@@ -157,9 +157,9 @@
           "text_uthmani": "شَرِّ",
           "transliteration": "sharri",
           "translation_bn": "অমঙ্গল",
-          "root": "—",
-          "lemma": "شَرِّ",
-          "grammar_bn": "শব্দ"
+          "root": "شرر",
+          "lemma": "شَرّ",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 4133,
@@ -167,8 +167,8 @@
           "text_uthmani": "ٱلْوَسْوَاسِ",
           "transliteration": "l-waswāsi",
           "translation_bn": "কুমন্ত্রণার",
-          "root": "—",
-          "lemma": "ٱلْوَسْوَاسِ",
+          "root": "وسوس",
+          "lemma": "وَسْوَاس",
           "grammar_bn": "শব্দ"
         },
         {
@@ -177,8 +177,8 @@
           "text_uthmani": "ٱلْخَنَّاسِ",
           "transliteration": "l-khanāsi",
           "translation_bn": "আত্নগোপনকারী",
-          "root": "—",
-          "lemma": "ٱلْخَنَّاسِ",
+          "root": "خنس",
+          "lemma": "خَنَّاس",
           "grammar_bn": "শব্দ"
         },
         {
@@ -207,7 +207,7 @@
           "translation_bn": "যে",
           "root": "—",
           "lemma": "ٱلَّذِى",
-          "grammar_bn": "শব্দ"
+          "grammar_bn": "সাপেক্ষ সর্বনাম (Relative)"
         },
         {
           "id": 5497,
@@ -215,9 +215,9 @@
           "text_uthmani": "يُوَسْوِسُ",
           "transliteration": "yuwaswisu",
           "translation_bn": "কুমন্ত্রণা দেয়",
-          "root": "—",
-          "lemma": "يُوَسْوِسُ",
-          "grammar_bn": "শব্দ"
+          "root": "وسوس",
+          "lemma": "وَسْوَسَ",
+          "grammar_bn": "ক্রিয়া (Verb)"
         },
         {
           "id": 5498,
@@ -226,8 +226,8 @@
           "transliteration": "fī",
           "translation_bn": "মধ্যে",
           "root": "—",
-          "lemma": "فِى",
-          "grammar_bn": "শব্দ"
+          "lemma": "فِى\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 5499,
@@ -235,9 +235,9 @@
           "text_uthmani": "صُدُورِ",
           "transliteration": "ṣudūri",
           "translation_bn": "অন্তরসমূহের",
-          "root": "—",
-          "lemma": "صُدُورِ",
-          "grammar_bn": "শব্দ"
+          "root": "صدر",
+          "lemma": "صَدْر",
+          "grammar_bn": "বিশেষ্য (Noun)"
         },
         {
           "id": 5500,
@@ -245,8 +245,8 @@
           "text_uthmani": "ٱلنَّاسِ",
           "transliteration": "l-nāsi",
           "translation_bn": "মানুষের",
-          "root": "—",
-          "lemma": "ٱلنَّاسِ",
+          "root": "نوس",
+          "lemma": "نَّاس",
           "grammar_bn": "শব্দ"
         },
         {
@@ -274,8 +274,8 @@
           "transliteration": "mina",
           "translation_bn": "মধ্য হতে",
           "root": "—",
-          "lemma": "مِنَ",
-          "grammar_bn": "শব্দ"
+          "lemma": "مِن\r",
+          "grammar_bn": "অব্যয় (Preposition)"
         },
         {
           "id": 6730,
@@ -283,8 +283,8 @@
           "text_uthmani": "ٱلْجِنَّةِ",
           "transliteration": "l-jinati",
           "translation_bn": "জিনের",
-          "root": "—",
-          "lemma": "ٱلْجِنَّةِ",
+          "root": "جنن",
+          "lemma": "جِنَّة",
           "grammar_bn": "শব্দ"
         },
         {
@@ -293,9 +293,9 @@
           "text_uthmani": "وَٱلنَّاسِ",
           "transliteration": "wal-nāsi",
           "translation_bn": "ও মানুষের",
-          "root": "—",
-          "lemma": "وَٱلنَّاسِ",
-          "grammar_bn": "শব্দ"
+          "root": "نوس",
+          "lemma": "نَّاس",
+          "grammar_bn": "সংযোজক অব্যয় (Conjunction)"
         },
         {
           "id": 6732,
