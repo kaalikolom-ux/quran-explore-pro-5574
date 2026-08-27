@@ -206,15 +206,16 @@ function HomePage() {
 
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
           
-          {/* ৪টি সমান সাইজের CTA বাটন (মোবাইলে ২ লাইনে ২x২ গ্রিড, ডেস্কটপে ৪ কলাম) */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 max-w-2xl mx-auto w-full">
+          {/* ৪টি সমান সাইজের Left-Aligned CTA বাটন (মোবাইলে ২ লাইনে ২x২ গ্রিড, ডেস্কটপে ৪ কলামে ১ লাইন) */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl w-full">
             <Button
               asChild
               size="lg"
-              className="h-11 sm:h-12 w-full rounded-xl bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-semibold shadow-md cursor-pointer border border-[#3b82f6]/40 flex items-center justify-center gap-2 px-3 text-sm sm:text-base transition-all duration-200 hover:scale-[1.02]"
+              variant="ghost"
+              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base font-semibold cursor-pointer"
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
-                <BookOpen className="size-4 shrink-0 text-white" />
+                <BookOpen className="size-4 shrink-0 text-[#60a5fa]" />
                 <span>{lang === "bn" ? "কুরআন" : "Quran"}</span>
               </Link>
             </Button>
@@ -223,7 +224,7 @@ function HomePage() {
               asChild
               size="lg"
               variant="ghost"
-              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base cursor-pointer"
+              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base font-semibold cursor-pointer"
             >
               <Link to="/lexicon">
                 <BookA className="size-4 shrink-0 text-[#60a5fa]" />
@@ -235,7 +236,7 @@ function HomePage() {
               asChild
               size="lg"
               variant="ghost"
-              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base cursor-pointer"
+              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base font-semibold cursor-pointer"
             >
               <Link to="/articles">
                 <FileText className="size-4 shrink-0 text-[#60a5fa]" />
@@ -247,7 +248,7 @@ function HomePage() {
               asChild
               size="lg"
               variant="ghost"
-              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base cursor-pointer"
+              className="h-11 sm:h-12 w-full rounded-xl border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white hover:border-white/30 hover:scale-[1.02] flex items-center justify-center gap-2 px-3 text-sm sm:text-base font-semibold cursor-pointer"
             >
               <Link to="/settings">
                 <Settings className="size-4 shrink-0 text-[#60a5fa]" />
