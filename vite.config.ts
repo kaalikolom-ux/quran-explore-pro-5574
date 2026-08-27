@@ -7,8 +7,6 @@ export default defineConfig({
   },
   vite: {
     build: {
-      // কোড মিনিফিকেশন ও পারফরম্যান্স বাড়াতে
-      minify: "esbuild",
       sourcemap: false,
       rollupOptions: {
         output: {
