@@ -4,6 +4,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState, useMemo } from "react";
 import {
   BookA,
+  BookOpen,
   Search,
   Sparkles,
   ExternalLink,
