@@ -22,6 +22,18 @@ import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
 
 export const Route = createFileRoute("/articles/$slug")({
+  head: ({ params }) => {
+    return {
+      meta: [
+        { title: `আর্টিকেল — কুরআন অন্বেষা` },
+        { name: "description", content: "কুরআনের গভীর গবেষণা ও সমসাময়িক প্রবন্ধ।" },
+        { property: "og:type", content: "article" },
+      ],
+      links: [
+        { rel: "canonical", href: `https://qurananwesha.com/articles/${params.slug}` }
+      ]
+    };
+  },
   component: SingleArticlePage,
 });
 
