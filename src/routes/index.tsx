@@ -179,27 +179,15 @@ function HomePage() {
               )}
             </h1>
 
-            {/* ফিক্সড মিনিমাম হাইট দিয়ে লেআউট শিফট প্রতিরোধ */}
             <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
               <Typewriter
-                words={
-                  lang === "bn"
-                    ? [
-                        "শব্দে শব্দে অর্থসহ",
-                        "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
-                        "সহজ বাংলা অনুবাদে",
-                        "প্রামাণ্য তথ্যসূত্রসহ",
-                      ]
-                    : [
-                        "word by word",
-                        "with scientific context",
-                        "in clear translation",
-                        "with authentic notes",
-                      ]
-                }
-                typingSpeed={lang === "bn" ? 90 : 80}
-                deletingSpeed={lang === "bn" ? 50 : 40}
-                delayBetweenWords={1500}
+                words={[
+                  "শব্দে শব্দে অর্থসহ",
+                  "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
+                  "সহজ ও প্রাঞ্জল অনুবাদে",
+                  "প্রামাণ্য তথ্যসূত্রসহ",
+                ]}
+                delayBetweenWords={2800}
               />
             </div>
           </div>
