@@ -21,6 +21,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
+import { GoogleTranslateWidget } from "@/components/GoogleTranslateWidget";
 
 function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
   return (
@@ -201,15 +202,7 @@ export function SiteHeader() {
             </Link>
           )}
 
-          <button
-            type="button"
-            onClick={toggleLang}
-            title={lang === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
-            className="flex h-7.5 sm:h-8 items-center gap-1 rounded-lg border border-border bg-card px-1.5 sm:px-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors cursor-pointer"
-          >
-            <Languages className="size-3 sm:size-3.5 text-muted-foreground" />
-            <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
-          </button>
+          <GoogleTranslateWidget />
 
           <button
             type="button"
