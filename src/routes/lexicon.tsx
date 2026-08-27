@@ -22,7 +22,7 @@ import {
 import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
-import { chaptersQuery, localNumber } from "@/lib/quran";
+import { localNumber } from "@/lib/quran";
 import { useIsAdmin } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import {
@@ -93,8 +93,34 @@ interface ScientificNote {
 type ScientificMap = Record<string, ScientificNote>;
 
 const ARABIC_ALPHABET = [
-  "সব", "ا", "ب", "ت", "ث", "ج", "ح", "خ", "দ", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "ম", "ن", "ه", "و", "ي"
+  "সব", "ا", "ب", "ت", "ث", "ج", "ح", "خ", "د", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م", "ن", "ه", "و", "ي"
 ];
+
+const SURAH_NAMES_BN: Record<number, string> = {
+  1: "আল-ফাতিহা", 2: "আল-বাকারাহ", 3: "আলে ইমরান", 4: "আন-নিসা", 5: "আল-মায়িদাহ",
+  6: "আল-আন'আম", 7: "আল-আ'রাফ", 8: "আল-আনফাল", 9: "আত-তাওবাহ", 10: "ইউনুস",
+  11: "হুদ", 12: "ইউসুফ", 13: "আর-রাদ", 14: "ইবরাহীম", 15: "আল-হিজর",
+  16: "আন-নাহল", 17: "বনী ইসরাঈল", 18: "আল-কাহফ", 19: "মারইয়াম", 20: "ত্বা-হা",
+  21: "আল-আম্বিয়া", 22: "আল-হাজ্জ", 23: "আল-মুমিনুন", 24: "আন-নূর", 25: "আল-ফুরকান",
+  26: "আশ-শু'আরা", 27: "আন-নামল", 28: "আল-কাসাস", 29: "আল-আনকাবুত", 30: "আর-রূম",
+  31: "লুকমান", 32: "আস-সাজদাহ", 33: "আল-আহযাব", 34: "সাবা", 35: "ফাতির",
+  36: "ইয়াসীন", 37: "আস-সাফফাত", 38: "সোয়াদ", 39: "আয-যুমার", 40: "গাফির",
+  41: "ফুসসিলাত", 42: "আশ-শুরা", 43: "আয-যুখরুফ", 44: "আদ-দুখান", 45: "আল-জাসিয়াহ",
+  46: "আল-আহকাফ", 47: "মুহাম্মদ", 48: "আল-ফাতহ", 49: "আল-হুজুরাত", 50: "ক্বাফ",
+  51: "আয-যারিয়াত", 52: "আত-তুর", 53: "আন-নাজম", 54: "আল-ক্বামার", 55: "আর-রাহমান",
+  56: "আল-ওয়াকিয়াহ", 57: "আল-হাদীদ", 58: "আল-মুজাদালাহ", 59: "আল-হাশর", 60: "আল-মুমতাহিনাহ",
+  61: "আস-সাফ", 62: "আল-জুমুআহ", 63: "আল-মুনাফিকুন", 64: "আত-তাগাবুন", 65: "আত-ত্বালাক",
+  66: "আত-তাহরীম", 67: "আল-মুলক", 68: "আল-কলম", 69: "আল-হাক্কাহ", 70: "আল-মাআরিজ",
+  71: "নূহ", 72: "আল-জ্বিন", 73: "আল-মুযযাম্মিল", 74: "আল-মুদ্দাসসির", 75: "আল-কিয়ামাহ",
+  76: "আল-ইনসান", 77: "আল-মুরসালাত", 78: "আন-নাবা", 79: "আন-নাযিয়াত", 80: "আবাসা",
+  81: "আত-তাকবীর", 82: "আল-ইনফিতার", 83: "আল-মুতাফফিফীন", 84: "আল-ইনশিক্বাক্ব", 85: "আল-বুরূজ",
+  86: "আত-ত্বারিক্ব", 87: "আল-আ'লা", 88: "আল-গাশিয়াহ", 89: "আল-ফাজর", 90: "আল-বালাদ",
+  91: "আশ-শামস", 92: "আল-লাইল", 93: "আদ-দুহা", 94: "আশ-শারহ", 95: "আত-তীন",
+  96: "আল-আলাক", 97: "আল-ক্বদর", 98: "আল-বাইয়িনাহ", 99: "আল-যিলযাল", 100: "আল-আদিয়াত",
+  101: "আল-ক্বারিআহ", 102: "আত-তাকাসুর", 103: "আল-আসর", 104: "আল-হুমাযাহ", 105: "আল-ফীল",
+  106: "কুরাইশ", 107: "আল-মাউন", 108: "আল-কাউসার", 109: "আল-কাফিরুন", 110: "আন-নাসর",
+  111: "আল-মাসাদ", 112: "আল-ইখলাস", 113: "আল-ফালাক", 114: "আন-নাস"
+};
 
 const LEXICON_CACHE_KEY = "quran-lexicon-v2";
 
@@ -170,16 +196,6 @@ function QuranLexiconPage() {
   // আয়াতসমূহ দেখার ডায়ালগ স্টেট (Ayahs Modal State)
   const [viewingAyahsRoot, setViewingAyahsRoot] = useState<LexiconEntry | null>(null);
 
-  // সুরার নাম ম্যাপিং
-  const chapters = useQuery(chaptersQuery(lang));
-  const chapterNameMap = useMemo(() => {
-    const map = new Map<number, string>();
-    (chapters.data || []).forEach((c) => {
-      map.set(c.id, c.name_simple);
-    });
-    return map;
-  }, [chapters.data]);
-
   // ১. মূল অভিধান ডাটাবেজ
   const { data: lexicon = [], isLoading } = useQuery<LexiconEntry[]>({
     queryKey: ["quran-lexicon-database-v2"],
@@ -193,6 +209,7 @@ function QuranLexiconPage() {
   const { data: scientificMap = INITIAL_SCIENTIFIC_SEED } = useQuery<ScientificMap>({
     queryKey: ["lexicon-scientific-map"],
     queryFn: async () => {
+      if (typeof window === "undefined") return INITIAL_SCIENTIFIC_SEED;
       try {
         const { data, error } = await supabase
           .from("site_settings")
@@ -209,6 +226,8 @@ function QuranLexiconPage() {
       }
     },
     staleTime: 60 * 1000,
+    enabled: typeof window !== "undefined",
+    initialData: INITIAL_SCIENTIFIC_SEED,
   });
 
   // ৩. বিজ্ঞানভিত্তিক অর্থ সংরক্ষণ মিউটেশন (Admin Save Mutation)
@@ -802,7 +821,7 @@ function QuranLexiconPage() {
                   {(viewingAyahsRoot.all_ayahs || []).map((ref, idx) => {
                     const surahNum = Array.isArray(ref) ? ref[0] : (ref as any).surah;
                     const ayahNum = Array.isArray(ref) ? ref[1] : (ref as any).ayah;
-                    const sName = chapterNameMap.get(surahNum) || `সুরা ${surahNum}`;
+                    const sName = SURAH_NAMES_BN[surahNum] || `সুরা ${surahNum}`;
                     return (
                       <Link
                         key={idx}
