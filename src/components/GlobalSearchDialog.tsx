@@ -1,4 +1,4 @@
-﻿// src/components/GlobalSearchDialog.tsx
+// src/components/GlobalSearchDialog.tsx
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
@@ -19,9 +19,15 @@ import {
 } from "lucide-react";
 
 import { usePrefs } from "@/lib/prefs";
-import { chaptersQuery, localNumber } from "@/lib/quran";
+import { localNumber } from "@/lib/quran";
 import { supabase } from "@/integrations/supabase/client";
 import { QURAN_THEMATIC_DATABASE, ThematicTopic } from "@/lib/quranThematicData";
+import {
+  searchQuranSurahs,
+  searchQuranTopics,
+  ALL_SURAHS_DATABASE,
+  SearchMatchedSurah
+} from "@/lib/quranSearchEngine";
 import {
   Dialog,
   DialogContent,
@@ -66,8 +72,6 @@ export function GlobalSearchDialog({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [open, onOpenChange]);
 
-  const chapters = useQuery(chaptersQuery(lang));
-
   // Articles search query
   const articlesQuery = useQuery({
     queryKey: ["global-search-articles"],
@@ -87,57 +91,24 @@ export function GlobalSearchDialog({
 
   // 1. Topic search matches
   const matchedTopics = useMemo(() => {
-    if (!cleanQ) return QURAN_THEMATIC_DATABASE.slice(0, 4); // Trending initial
-    return QURAN_THEMATIC_DATABASE.filter((t) => {
-      const matchTitle =
-        t.title_bn.toLowerCase().includes(cleanQ) ||
-        t.title_en.toLowerCase().includes(cleanQ);
-      const matchCategory =
-        t.category_bn.toLowerCase().includes(cleanQ) ||
-        t.category_en.toLowerCase().includes(cleanQ);
-      const matchDesc =
-        t.description_bn.toLowerCase().includes(cleanQ) ||
-        t.description_en.toLowerCase().includes(cleanQ);
-      const matchKeywords = t.keywords.some((k) =>
-        k.toLowerCase().includes(cleanQ)
-      );
-      return matchTitle || matchCategory || matchDesc || matchKeywords;
-    });
-  }, [cleanQ]);
+    if (!cleanQ) return QURAN_THEMATIC_DATABASE.slice(0, 4);
+    return searchQuranTopics(query);
+  }, [cleanQ, query]);
 
   // 2. Surah & Ayah reference matches
-  const matchedSurahs = useMemo(() => {
-    const list = chapters.data || [];
-    if (!cleanQ) return list.slice(0, 6);
-
-    // Check if input is a direct ayah query like "33:40" or "৩৩ঃ৪০"
-    const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
-    const normalizedDigits = cleanQ.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
-    const ayahMatch = normalizedDigits.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
-
-    if (ayahMatch) {
-      const sNum = Number(ayahMatch[1]);
-      const aNum = Number(ayahMatch[2]);
-      const found = list.filter((s) => s.id === sNum);
-      if (found.length > 0) {
-        return found.map((s) => ({ ...s, targetAyah: aNum }));
-      }
+  const { matchedSurahs, didYouMean } = useMemo(() => {
+    if (!cleanQ) {
+      return {
+        matchedSurahs: ALL_SURAHS_DATABASE.slice(0, 6) as SearchMatchedSurah[],
+        didYouMean: undefined,
+      };
     }
-
-    // Number match
-    if (/^\d+$/.test(normalizedDigits)) {
-      const sNum = Number(normalizedDigits);
-      return list.filter((s) => s.id === sNum);
-    }
-
-    // Name match
-    return list.filter(
-      (s) =>
-        s.name_simple.toLowerCase().includes(cleanQ) ||
-        s.translated_name.name.toLowerCase().includes(cleanQ) ||
-        s.name_arabic.includes(cleanQ)
-    );
-  }, [cleanQ, chapters.data]);
+    const searchRes = searchQuranSurahs(query);
+    return {
+      matchedSurahs: searchRes.matches,
+      didYouMean: searchRes.didYouMean,
+    };
+  }, [cleanQ, query]);
 
   // 3. Articles & Posts matches
   const matchedArticles = useMemo(() => {
@@ -275,6 +246,28 @@ export function GlobalSearchDialog({
         {/* সার্চ রেজাল্ট বডি */}
         <div className="max-h-[62vh] overflow-y-auto p-4 space-y-6">
           
+          {/* যদি স্পেলিং ভুল থাকে তবে Did you mean সাজেশন ব্যানার */}
+          {didYouMean && (
+            <div className="flex items-center justify-between p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-foreground">
+              <div className="flex items-center gap-2">
+                <Sparkles className="size-4 text-amber-500 shrink-0" />
+                <span className="text-muted-foreground">আপনি কি এটি খুঁজছেন?</span>
+                <button
+                  onClick={() => setQuery(didYouMean)}
+                  className="font-bold text-primary hover:underline cursor-pointer"
+                >
+                  "{didYouMean}"
+                </button>
+              </div>
+              <button
+                onClick={() => setQuery(didYouMean)}
+                className="text-[11px] font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded cursor-pointer transition-colors"
+              >
+                প্রয়োগ করুন
+              </button>
+            </div>
+          )}
+
           {/* যদি কিছু না লেখা থাকে: পপুলার সাজেশন চিপস */}
           {!cleanQ && (
             <div className="space-y-3">
@@ -354,11 +347,11 @@ export function GlobalSearchDialog({
               </p>
 
               <div className="grid gap-2 sm:grid-cols-3">
-                {matchedSurahs.map((s: any) => (
+                {matchedSurahs.map((s: SearchMatchedSurah) => (
                   <button
                     key={s.id}
                     onClick={() => handleSelectSurah(s.id, s.targetAyah)}
-                    className="flex items-center justify-between p-3 rounded-xl border border-border/70 bg-card hover:bg-muted/50 hover:border-foreground/30 transition-all text-left group cursor-pointer"
+                    className="flex items-center justify-between p-3 rounded-xl border border-border/70 bg-card hover:bg-muted/50 hover:border-primary/40 transition-all text-left group cursor-pointer"
                   >
                     <div className="min-w-0 flex items-center gap-2.5">
                       <span className="flex size-7 items-center justify-center rounded-lg bg-accent text-xs font-bold text-accent-foreground shrink-0">
@@ -366,7 +359,7 @@ export function GlobalSearchDialog({
                       </span>
                       <div className="min-w-0">
                         <span className="block text-sm font-semibold text-foreground truncate group-hover:text-primary transition-colors">
-                          {s.name_simple}
+                          {lang === "bn" ? s.name_bn : s.name_en}
                           {s.targetAyah && (
                             <span className="ml-1 text-xs font-bold text-primary">
                               ({localNumber(s.targetAyah, lang)} নং আয়াত)
@@ -374,7 +367,7 @@ export function GlobalSearchDialog({
                           )}
                         </span>
                         <span className="block text-[11px] text-muted-foreground truncate">
-                          {s.translated_name?.name} · {localNumber(s.verses_count, lang)} আয়াত
+                          {lang === "bn" ? s.meaning_bn : s.meaning_en} · {localNumber(s.total_verses, lang)} আয়াত
                         </span>
                       </div>
                     </div>

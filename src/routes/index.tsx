@@ -11,6 +11,7 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
+import { searchQuranSurahs, bnToEnDigits } from "@/lib/quranSearchEngine";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,10 +46,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-function bnToEnDigits(str: string): string {
-  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
-  return str.replace(/[০-৯]/g, (w) => String(bnDigits.indexOf(w)));
-}
 
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 130): string {
   if (excerpt && excerpt.trim().length > 0) {
@@ -86,76 +83,67 @@ function HomePage() {
     },
   });
 
-  const normalizedTerm = useMemo(() => {
-    return bnToEnDigits(term.trim().toLowerCase());
-  }, [term]);
-
-  const parsedAyahTarget = useMemo(() => {
-    const match = normalizedTerm.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
-    if (match) {
+  const { filtered, searchAyahTarget, homeDidYouMean } = useMemo(() => {
+    const list = chapters.data ?? [];
+    if (!term.trim()) {
       return {
-        surah: Number(match[1]),
-        ayah: Number(match[2]),
+        filtered: list,
+        searchAyahTarget: null,
+        homeDidYouMean: undefined,
       };
     }
-    return null;
-  }, [normalizedTerm]);
 
-  const filtered = useMemo(() => {
-    const list = chapters.data ?? [];
-    if (!normalizedTerm) return list;
+    const { matches, didYouMean } = searchQuranSurahs(term);
+    const chapterMap = new Map(list.map((c) => [c.id, c]));
 
-    if (parsedAyahTarget) {
-      return list.filter((c) => c.id === parsedAyahTarget.surah);
-    }
+    const matchedList = matches.map((m) => {
+      const existing = chapterMap.get(m.id);
+      if (existing) {
+        return { ...existing, targetAyah: m.targetAyah };
+      }
+      return {
+        id: m.id,
+        name_simple: m.name_en,
+        name_arabic: m.name_arabic,
+        verses_count: m.total_verses,
+        translated_name: { name: m.meaning_bn },
+        targetAyah: m.targetAyah,
+      };
+    });
 
-    const isNum = /^\d+$/.test(normalizedTerm);
-    if (isNum) {
-      return list.filter((c) => String(c.id) === normalizedTerm);
-    }
+    const targetAyah = matches.find((m) => m.targetAyah)?.targetAyah;
 
-    const rawQ = term.trim().toLowerCase();
-    return list.filter(
-      (c) =>
-        c.name_simple.toLowerCase().includes(rawQ) ||
-        c.translated_name.name.toLowerCase().includes(rawQ) ||
-        String(c.id) === normalizedTerm
-    );
-  }, [chapters.data, normalizedTerm, term, parsedAyahTarget]);
+    return {
+      filtered: matchedList,
+      searchAyahTarget: targetAyah ? { surah: matches[0]?.id, ayah: targetAyah } : null,
+      homeDidYouMean: didYouMean,
+    };
+  }, [chapters.data, term]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!normalizedTerm) return;
+    if (!term.trim()) return;
 
-    if (parsedAyahTarget) {
-      const { surah, ayah } = parsedAyahTarget;
-      if (surah >= 1 && surah <= 114) {
-        navigate({
-          to: "/surah/$id",
-          params: { id: String(surah) },
-          search: { ayah: Number(ayah) },
-        });
-        return;
-      }
-    }
-
-    if (/^\d+$/.test(normalizedTerm)) {
-      const sNum = Number(normalizedTerm);
-      if (sNum >= 1 && sNum <= 114) {
-        navigate({
-          to: "/surah/$id",
-          params: { id: String(sNum) },
-        });
-        return;
-      }
+    if (searchAyahTarget) {
+      navigate({
+        to: "/surah/$id",
+        params: { id: String(searchAyahTarget.surah) },
+        search: { ayah: Number(searchAyahTarget.ayah) },
+      });
+      return;
     }
 
     if (filtered.length > 0) {
       navigate({
         to: "/surah/$id",
         params: { id: String(filtered[0].id) },
+        search: (filtered[0] as any).targetAyah ? { ayah: (filtered[0] as any).targetAyah } : undefined,
       });
+      return;
     }
+
+    // Direct match not found in surahs, open modal with term
+    handleOpenSearchWith(term);
   };
 
   return (
