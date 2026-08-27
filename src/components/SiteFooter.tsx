@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
 
 const footerLinkClass =
   "w-fit rounded-md border border-transparent px-3 py-1.5 text-muted-foreground transition-all duration-200 hover:bg-secondary hover:text-foreground hover:translate-x-1 font-medium";
@@ -105,16 +106,7 @@ export function SiteFooter() {
           <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none shrink-0">
             <QuranLogoBadge />
             <div className="flex flex-col leading-none min-w-0">
-              <span 
-                className="font-logo text-xl sm:text-2xl font-normal tracking-normal text-[#1c5576] dark:text-[#58b4e8] select-none whitespace-nowrap inline-block transition-colors"
-                style={{ 
-                  fontFamily: "'Kaushan Script', cursive",
-                  fontWeight: 400,
-                  background: "transparent"
-                }}
-              >
-                Quran Explorer
-              </span>
+              <QuranExplorerLogo size="md" className="h-6 sm:h-7" />
               <span className="mt-1 text-[11px] text-muted-foreground font-medium tracking-wide whitespace-nowrap">
                 {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
               </span>
@@ -186,21 +178,20 @@ export function SiteFooter() {
             </form>
           )}
 
-          {/* কপিরাইট ও Upwork প্রোফাইল লিংক (হাই-কনট্রাস্ট ফিক্স) */}
+          {/* কপিরাইট ও Upwork প্রোফাইল লিংক */}
           <div className="pt-2 text-xs text-muted-foreground border-t border-border">
-            <p>
-              © {new Date().getFullYear()}{" "}
+            <p className="flex items-center gap-1.5 flex-wrap">
+              <span>© {new Date().getFullYear()}</span>
               <a 
                 href="https://www.upwork.com/freelancers/~01e6f18d96f1c7294f"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontFamily: "'Kaushan Script', cursive", fontWeight: 400 }}
-                className="font-logo text-[#1c5576] dark:text-[#58b4e8] font-normal text-base hover:underline transition-all inline-block whitespace-nowrap align-middle"
+                className="hover:opacity-80 transition-all inline-flex items-center"
                 title="Developer Upwork Profile"
               >
-                Quran Explorer
-              </a>{" "}
-              — {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}
+                <QuranExplorerLogo size="sm" className="h-5 sm:h-5.5" />
+              </a>
+              <span>— {lang === "en" ? "All rights reserved." : "সর্বস্বত্ব সংরক্ষিত।"}</span>
             </p>
           </div>
         </div>
