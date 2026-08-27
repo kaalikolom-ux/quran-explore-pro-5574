@@ -123,26 +123,34 @@ const SURAH_NAMES_BN: Record<number, string> = {
   111: "আল-মাসাদ", 112: "আল-ইখলাস", 113: "আল-ফালাক", 114: "আন-নাস"
 };
 
-const LEXICON_CACHE_KEY = "quran-lexicon-v2";
+const LEXICON_CACHE_KEY = "quran-lexicon-v3";
 
 const fetchLexiconData = async (): Promise<LexiconEntry[]> => {
-  if (typeof window === "undefined") return [];
   const url = "/data/quran/lexicon.json";
   try {
-    if ("caches" in window) {
-      const cache = await caches.open(LEXICON_CACHE_KEY);
-      const cached = await cache.match(url);
-      if (cached) {
-        return await cached.json();
-      }
+    if (typeof window !== "undefined" && "caches" in window) {
+      try {
+        const cache = await caches.open(LEXICON_CACHE_KEY);
+        const cached = await cache.match(url);
+        if (cached) {
+          const d = await cached.json();
+          if (Array.isArray(d) && d.length > 0) return d;
+        }
+      } catch {}
     }
     const res = await fetch(url);
-    if (!res.ok) return [];
-    if ("caches" in window) {
-      const cache = await caches.open(LEXICON_CACHE_KEY);
-      await cache.put(url, res.clone());
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const data = await res.json();
+    if (typeof window !== "undefined" && "caches" in window && Array.isArray(data) && data.length > 0) {
+      try {
+        const cache = await caches.open(LEXICON_CACHE_KEY);
+        const copy = new Response(JSON.stringify(data), {
+          headers: { "Content-Type": "application/json" }
+        });
+        await cache.put(url, copy);
+      } catch {}
     }
-    return await res.json();
+    return Array.isArray(data) ? data : [];
   } catch (err) {
     console.error("Lexicon fetch error:", err);
     return [];
@@ -199,18 +207,15 @@ function QuranLexiconPage() {
 
   // ১. মূল অভিধান ডাটাবেজ
   const { data: lexicon = [], isLoading } = useQuery<LexiconEntry[]>({
-    queryKey: ["quran-lexicon-database-v2"],
+    queryKey: ["quran-lexicon-database-v3"],
     queryFn: fetchLexiconData,
-    staleTime: Infinity,
-    enabled: typeof window !== "undefined",
-    initialData: [],
+    staleTime: 1000 * 60 * 60 * 24,
   });
 
   // ২. বিজ্ঞানভিত্তিক অর্থ ও রিসার্চ ডাটাবেজ (Supabase site_settings)
   const { data: scientificMap = INITIAL_SCIENTIFIC_SEED } = useQuery<ScientificMap>({
-    queryKey: ["lexicon-scientific-map"],
+    queryKey: ["lexicon-scientific-map-v2"],
     queryFn: async () => {
-      if (typeof window === "undefined") return INITIAL_SCIENTIFIC_SEED;
       try {
         const { data, error } = await supabase
           .from("site_settings")
@@ -227,8 +232,6 @@ function QuranLexiconPage() {
       }
     },
     staleTime: 60 * 1000,
-    enabled: typeof window !== "undefined",
-    initialData: INITIAL_SCIENTIFIC_SEED,
   });
 
   // ৩. বিজ্ঞানভিত্তিক অর্থ সংরক্ষণ মিউটেশন (Admin Save Mutation)
