@@ -102,19 +102,20 @@ export function SiteFooter() {
         
         {/* ১. পরিচিতি ও সোশ্যাল */}
         <div>
-          <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none">
+          <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none shrink-0">
             <QuranLogoBadge />
-            <div className="flex flex-col leading-none">
+            <div className="flex flex-col leading-none min-w-0">
               <span 
-                className="text-lg sm:text-xl font-bold tracking-normal text-[#1c5576] dark:text-[#58b4e8] select-none"
+                className="font-logo text-xl sm:text-2xl font-normal tracking-normal text-[#1c5576] dark:text-[#58b4e8] select-none whitespace-nowrap inline-block transition-colors"
                 style={{ 
                   fontFamily: "'Kaushan Script', cursive",
+                  fontWeight: 400,
                   background: "transparent"
                 }}
               >
                 Quran Explorer
               </span>
-              <span className="mt-1 text-[11px] text-muted-foreground font-medium tracking-wide">
+              <span className="mt-1 text-[11px] text-muted-foreground font-medium tracking-wide whitespace-nowrap">
                 {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
               </span>
             </div>
@@ -193,8 +194,8 @@ export function SiteFooter() {
                 href="https://www.upwork.com/freelancers/~01e6f18d96f1c7294f"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontFamily: "'Kaushan Script', cursive" }}
-                className="text-[#1c5576] dark:text-[#58b4e8] font-bold text-sm hover:underline transition-all inline-block"
+                style={{ fontFamily: "'Kaushan Script', cursive", fontWeight: 400 }}
+                className="font-logo text-[#1c5576] dark:text-[#58b4e8] font-normal text-base hover:underline transition-all inline-block whitespace-nowrap align-middle"
                 title="Developer Upwork Profile"
               >
                 Quran Explorer

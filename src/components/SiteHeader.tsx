@@ -108,14 +108,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
         
-        {/* লোগো ও ব্র্যান্ডিং (WCAG compliant high-contrast color) */}
+        {/* লোগো ও ব্র্যান্ডিং (Kaushan Script with Light/Dark Mode) */}
         <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0 select-none">
           <QuranLogoBadge className="size-4.5 sm:size-5" />
           <div className="flex flex-col justify-center leading-none min-w-0">
             <span 
-              className="text-base sm:text-xl font-bold tracking-tight text-[#1c5576] dark:text-[#58b4e8] whitespace-nowrap select-none"
+              className="font-logo text-xl sm:text-2xl font-normal tracking-normal text-[#1c5576] dark:text-[#58b4e8] whitespace-nowrap select-none inline-block transition-colors"
               style={{ 
                 fontFamily: "'Kaushan Script', cursive",
+                fontWeight: 400,
                 background: "transparent"
               }}
             >

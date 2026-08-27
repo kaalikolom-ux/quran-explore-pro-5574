@@ -49,6 +49,7 @@
   --font-sans: "Noto Serif Bengali", "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", "Noto Serif Bengali", ui-sans-serif, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", serif;
+  --font-kaushan: "Kaushan Script", cursive;
   
   --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.03), 0 8px 18px -3px rgba(0, 0, 0, 0.05);
   --shadow-lift: 0 4px 10px rgba(0, 0, 0, 0.04), 0 14px 28px -4px rgba(0, 0, 0, 0.08);
@@ -176,4 +177,9 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: 1rem;
+}
+
+.font-logo {
+  font-family: "Kaushan Script", cursive !important;
+  font-weight: 400 !important;
 }
