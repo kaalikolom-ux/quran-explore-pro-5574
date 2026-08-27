@@ -43,21 +43,14 @@ export default defineConfig({
           runtimeCaching: [
             {
               urlPattern: ({ request }) => request.mode === "navigate",
-              handler: "NetworkFirst",
-              options: {
-                cacheName: "quran-pages",
-                networkTimeoutSeconds: 2,
-                cacheableResponse: {
-                  statuses: [0, 200],
-                },
-              },
+              handler: "NetworkOnly",
             },
             {
               urlPattern: ({ url, sameOrigin }) =>
                 sameOrigin && url.pathname.startsWith("/assets/"),
               handler: "CacheFirst",
               options: {
-                cacheName: "quran-assets",
+                cacheName: "quran-assets-v3",
                 expiration: {
                   maxEntries: 200,
                   maxAgeSeconds: 60 * 60 * 24 * 365,
