@@ -13,17 +13,17 @@ import { Typewriter } from "@/components/Typewriter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন ও আর্টিকেল" },
+      { title: "Quran Explorer — Word by Word Quran in Bangla & English | কুরআন অন্বেষা" },
       {
         name: "description",
         content:
-          "আরবি, শব্দে শব্দে অর্থ, বাংলা (তাইসিরুল কুরআন) ও ইংরেজি (Pickthall) অনুবাদ এবং বিজ্ঞানভিত্তিক অনুবাদসহ কুরআন পড়ুন। বুকমার্ক ও আর্টিকেল সুবিধা।",
+          "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ এবং আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যাসহ সম্পূর্ণ কুরআন অধ্যয়ন করুন — কুরআন অন্বেষা (Quran Explorer)।",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
+      { property: "og:title", content: "Quran Explorer — Word by Word Quran in Bangla & English | কুরআন অন্বেষা" },
       {
         property: "og:description",
-        content: "শব্দে শব্দে অর্থ, প্রচলিত ও বিজ্ঞানভিত্তিক অনুবাদ একই পাতায়।",
+        content: "শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ ও বিজ্ঞানভিত্তিক গবেষণাসহ পবিত্র কুরআন অধ্যয়ন করুন।",
       },
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
