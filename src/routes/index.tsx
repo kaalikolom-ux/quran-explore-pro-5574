@@ -40,9 +40,6 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "/og-image.jpg" },
     ],
   }),
-  loader: ({ context }) => {
-    context.queryClient.ensureQueryData(chaptersQuery("bn"));
-  },
   component: HomePage,
 });
 
@@ -72,15 +69,20 @@ function HomePage() {
   const articles = useQuery({
     queryKey: ["articles", "published", "home"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("articles")
-        .select("*")
-        .eq("published", true)
-        .order("published_at", { ascending: false })
-        .limit(3);
-      if (error) throw error;
-      return data || [];
+      try {
+        const { data, error } = await supabase
+          .from("articles")
+          .select("*")
+          .eq("published", true)
+          .order("published_at", { ascending: false })
+          .limit(3);
+        if (error) return [];
+        return data || [];
+      } catch {
+        return [];
+      }
     },
+    staleTime: 60 * 1000,
   });
 
   const { filtered, searchAyahTarget, homeDidYouMean } = useMemo(() => {

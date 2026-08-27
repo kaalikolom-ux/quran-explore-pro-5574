@@ -85,17 +85,33 @@ async function mirrorVerses(surah: number): Promise<Verse[] | null> {
   }
 }
 
+import { ALL_SURAHS_DATABASE } from "./quranSearchEngine";
+
 export const chaptersQuery = (lang: "bn" | "en") =>
   queryOptions({
     queryKey: ["quran", "chapters", lang],
     staleTime: 1000 * 60 * 60 * 24,
     queryFn: async () => {
-      const mirrored = await mirrorChapters();
-      if (mirrored) return mirrored;
-      const data = await getJson<{ chapters: Chapter[] }>(
-        `${API}/chapters?language=${lang}`,
-      );
-      return data.chapters;
+      try {
+        const mirrored = await mirrorChapters();
+        if (mirrored && mirrored.length >= 114) return mirrored;
+        const data = await getJson<{ chapters: Chapter[] }>(
+          `${API}/chapters?language=${lang}`,
+        );
+        if (data?.chapters && data.chapters.length > 0) {
+          return data.chapters;
+        }
+      } catch (err) {
+        console.warn("Chapters API fallback activated:", err);
+      }
+      return ALL_SURAHS_DATABASE.map((s) => ({
+        id: s.id,
+        name_simple: s.name_en,
+        name_arabic: s.name_arabic,
+        verses_count: s.total_verses,
+        revelation_place: s.type === "Meccan" ? "makkah" : "madinah",
+        translated_name: { name: lang === "bn" ? s.meaning_bn : s.meaning_en },
+      }));
     },
   });
 
