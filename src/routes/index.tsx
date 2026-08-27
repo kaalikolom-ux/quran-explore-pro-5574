@@ -151,11 +151,15 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0c1824] via-[#112233] to-[#0a121a] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
+      {/* হিরো সেকশন - হেডার মেনুর সাথে স্মুথ গ্র্যাডিয়েন্ট ব্লেন্ড */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#020817] via-[#0d1e30] to-[#040810] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-[480px] w-[480px] rounded-full bg-[#1d4ed8]/15 blur-[130px]" />
-          <div className="absolute left-[-10%] top-1/4 h-[380px] w-[380px] rounded-full bg-[#0284c7]/20 blur-[130px]" />
+          {/* হেডারের সাথে স্মুথ ব্লেন্ডিং ওভারলে */}
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[var(--background)]/90 via-[var(--background)]/35 to-transparent z-0" />
+          {/* টপ সেন্টার অ্যাম্বিয়েন্ট গ্লো */}
+          <div className="absolute left-1/2 -top-24 -translate-x-1/2 h-[340px] w-[650px] rounded-full bg-[#1d4ed8]/15 blur-[140px]" />
+          <div className="absolute -right-20 top-1/4 h-[450px] w-[450px] rounded-full bg-[#0284c7]/15 blur-[130px]" />
+          <div className="absolute left-[-10%] top-1/3 h-[380px] w-[380px] rounded-full bg-[#1e3a8a]/20 blur-[130px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
