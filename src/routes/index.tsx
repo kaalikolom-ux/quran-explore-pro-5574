@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo, useState, useEffect, useRef } from "react";
+import { useMemo, useState } from "react";
 import { ArrowRight, BookOpen, FileText, Search, Settings, Sparkles } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
@@ -55,132 +55,6 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
   if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
   const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
-}
-
-/* হাই-পারফরম্যান্স রেইন গ্লাস ক্যানভাস (মোবাইলে সিপিইউ লোড বাঁচাতে শুধু ডেস্কটপে চলবে) */
-function RainGlassCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    if (window.innerWidth < 768) return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d", { alpha: true });
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
-    let height = (canvas.height = canvas.parentElement?.clientHeight || 550);
-
-    const handleResize = () => {
-      if (!canvas || !canvas.parentElement) return;
-      width = canvas.width = canvas.parentElement.clientWidth;
-      height = canvas.height = canvas.parentElement.clientHeight;
-    };
-
-    window.addEventListener("resize", handleResize, { passive: true });
-
-    const staticDrops: { x: number; y: number; r: number; opacity: number }[] = [];
-    const staticCount = Math.floor((width * height) / 10000);
-    for (let i = 0; i < staticCount; i++) {
-      staticDrops.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 1.5 + 0.6,
-        opacity: Math.random() * 0.35 + 0.15,
-      });
-    }
-
-    interface MovingDrop {
-      x: number;
-      y: number;
-      r: number;
-      speed: number;
-      trail: { x: number; y: number; r: number }[];
-    }
-
-    const movingDrops: MovingDrop[] = [];
-    const movingCount = Math.max(14, Math.floor(width / 50));
-
-    for (let i = 0; i < movingCount; i++) {
-      movingDrops.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 2 + 1.6,
-        speed: Math.random() * 0.75 + 0.35,
-        trail: [],
-      });
-    }
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      for (const d of staticDrops) {
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(180, 215, 240, ${d.opacity})`;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(d.x - d.r * 0.3, d.y - d.r * 0.3, d.r * 0.35, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${d.opacity + 0.2})`;
-        ctx.fill();
-      }
-
-      for (const drop of movingDrops) {
-        for (let t = 0; t < drop.trail.length; t++) {
-          const pt = drop.trail[t];
-          const trailOpacity = (t / drop.trail.length) * 0.22;
-          ctx.beginPath();
-          ctx.arc(pt.x, pt.y, pt.r * 0.6, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(160, 205, 235, ${trailOpacity})`;
-          ctx.fill();
-        }
-
-        ctx.beginPath();
-        ctx.arc(drop.x, drop.y, drop.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(195, 225, 245, 0.45)";
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(drop.x - drop.r * 0.3, drop.y - drop.r * 0.3, drop.r * 0.35, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
-        ctx.fill();
-
-        if (Math.random() > 0.4) {
-          drop.trail.push({ x: drop.x, y: drop.y, r: drop.r });
-          if (drop.trail.length > 10) drop.trail.shift();
-        }
-
-        drop.y += drop.speed;
-        drop.x += (Math.random() - 0.5) * 0.35;
-
-        if (drop.y > height + 20) {
-          drop.y = -10;
-          drop.x = Math.random() * width;
-          drop.speed = Math.random() * 0.75 + 0.35;
-          drop.trail = [];
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 hidden md:block h-full w-full opacity-65"
-    />
-  );
 }
 
 function HomePage() {
@@ -278,12 +152,10 @@ function HomePage() {
   return (
     <div>
       {/* হিরো সেকশন */}
-      <section className="relative overflow-hidden bg-[#182632] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
-        <RainGlassCanvas />
-
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0c1824] via-[#112233] to-[#0a121a] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-[450px] w-[450px] rounded-full bg-[#2A6F97]/25 blur-[120px]" />
-          <div className="absolute left-[-10%] top-1/4 h-[350px] w-[350px] rounded-full bg-[#1b3a4b]/35 blur-[120px]" />
+          <div className="absolute -right-20 -top-20 h-[480px] w-[480px] rounded-full bg-[#1d4ed8]/15 blur-[130px]" />
+          <div className="absolute left-[-10%] top-1/4 h-[380px] w-[380px] rounded-full bg-[#0284c7]/20 blur-[130px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
