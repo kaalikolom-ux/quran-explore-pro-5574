@@ -20,6 +20,8 @@ import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
+import { Route as AuthorsIndexRouteImport } from './routes/authors.index'
+import { Route as AuthorsIdRouteImport } from './routes/authors.$id'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as SurahIdRouteImport } from './routes/surah.$id'
 import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
@@ -80,6 +82,16 @@ const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
   path: '/articles/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthorsIndexRoute = AuthorsIndexRouteImport.update({
+  id: '/authors/',
+  path: '/authors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorsIdRoute = AuthorsIdRouteImport.update({
+  id: '/authors/$id',
+  path: '/authors/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PSlugRoute = PSlugRouteImport.update({
   id: '/p/$slug',
   path: '/p/$slug',
@@ -113,9 +125,11 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/authors/$id': typeof AuthorsIdRoute
   '/p/$slug': typeof PSlugRoute
   '/surah/$id': typeof SurahIdRoute
   '/articles/': typeof ArticlesIndexRoute
+  '/authors/': typeof AuthorsIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/api/public/recitation/$surah/$ayah': typeof ApiPublicRecitationSurahAyahRoute
 }
@@ -130,9 +144,11 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/authors/$id': typeof AuthorsIdRoute
   '/p/$slug': typeof PSlugRoute
   '/surah/$id': typeof SurahIdRoute
   '/articles': typeof ArticlesIndexRoute
+  '/authors': typeof AuthorsIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/api/public/recitation/$surah/$ayah': typeof ApiPublicRecitationSurahAyahRoute
 }
@@ -148,9 +164,11 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/authors/$id': typeof AuthorsIdRoute
   '/p/$slug': typeof PSlugRoute
   '/surah/$id': typeof SurahIdRoute
   '/articles/': typeof ArticlesIndexRoute
+  '/authors/': typeof AuthorsIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/api/public/recitation/$surah/$ayah': typeof ApiPublicRecitationSurahAyahRoute
 }
@@ -167,9 +185,11 @@ export interface FileRouteTypes {
     | '/settings'
     | '/sitemap.xml'
     | '/articles/$slug'
+    | '/authors/$id'
     | '/p/$slug'
     | '/surah/$id'
     | '/articles/'
+    | '/authors/'
     | '/api/public/contact'
     | '/api/public/recitation/$surah/$ayah'
   fileRoutesByTo: FileRoutesByTo
@@ -184,9 +204,11 @@ export interface FileRouteTypes {
     | '/settings'
     | '/sitemap.xml'
     | '/articles/$slug'
+    | '/authors/$id'
     | '/p/$slug'
     | '/surah/$id'
     | '/articles'
+    | '/authors'
     | '/api/public/contact'
     | '/api/public/recitation/$surah/$ayah'
   id:
@@ -201,9 +223,11 @@ export interface FileRouteTypes {
     | '/settings'
     | '/sitemap.xml'
     | '/articles/$slug'
+    | '/authors/$id'
     | '/p/$slug'
     | '/surah/$id'
     | '/articles/'
+    | '/authors/'
     | '/api/public/contact'
     | '/api/public/recitation/$surah/$ayah'
   fileRoutesById: FileRoutesById
@@ -219,9 +243,11 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
+  AuthorsIdRoute: typeof AuthorsIdRoute
   PSlugRoute: typeof PSlugRoute
   SurahIdRoute: typeof SurahIdRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
+  AuthorsIndexRoute: typeof AuthorsIndexRoute
   ApiPublicContactRoute: typeof ApiPublicContactRoute
   ApiPublicRecitationSurahAyahRoute: typeof ApiPublicRecitationSurahAyahRoute
 }
@@ -305,6 +331,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArticlesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/authors/': {
+      id: '/authors/'
+      path: '/authors'
+      fullPath: '/authors/'
+      preLoaderRoute: typeof AuthorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/authors/$id': {
+      id: '/authors/$id'
+      path: '/authors/$id'
+      fullPath: '/authors/$id'
+      preLoaderRoute: typeof AuthorsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/p/$slug': {
       id: '/p/$slug'
       path: '/p/$slug'
@@ -347,9 +387,11 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
+  AuthorsIdRoute: AuthorsIdRoute,
   PSlugRoute: PSlugRoute,
   SurahIdRoute: SurahIdRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,
+  AuthorsIndexRoute: AuthorsIndexRoute,
   ApiPublicContactRoute: ApiPublicContactRoute,
   ApiPublicRecitationSurahAyahRoute: ApiPublicRecitationSurahAyahRoute,
 }
