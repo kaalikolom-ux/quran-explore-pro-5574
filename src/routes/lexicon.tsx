@@ -80,7 +80,7 @@ interface LexiconEntry {
   grammar_types: string[];
   unique_words_count: number;
   derived_words: DerivedWord[];
-  all_ayahs: { surah: number; ayah: number }[];
+  all_ayahs?: (number[] | { surah: number; ayah: number })[];
 }
 
 interface ScientificNote {
@@ -93,8 +93,34 @@ interface ScientificNote {
 type ScientificMap = Record<string, ScientificNote>;
 
 const ARABIC_ALPHABET = [
-  "সব", "ا", "ب", "ت", "ث", "ج", "ح", "خ", "د", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ল", "ম", "ن", "ه", "و", "ي"
+  "সব", "ا", "ب", "ت", "ث", "ج", "ح", "خ", "দ", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "ম", "ن", "ه", "و", "ي"
 ];
+
+const LEXICON_CACHE_KEY = "quran-lexicon-v2";
+
+const fetchLexiconData = async (): Promise<LexiconEntry[]> => {
+  if (typeof window === "undefined") return [];
+  const url = "/data/quran/lexicon.json";
+  try {
+    if ("caches" in window) {
+      const cache = await caches.open(LEXICON_CACHE_KEY);
+      const cached = await cache.match(url);
+      if (cached) {
+        return await cached.json();
+      }
+    }
+    const res = await fetch(url);
+    if (!res.ok) return [];
+    if ("caches" in window) {
+      const cache = await caches.open(LEXICON_CACHE_KEY);
+      await cache.put(url, res.clone());
+    }
+    return await res.json();
+  } catch (err) {
+    console.error("Lexicon fetch error:", err);
+    return [];
+  }
+};
 
 // প্রাথমিক কিছু প্রখ্যাত বিজ্ঞানভিত্তিক রুট সিড ডাটা (Initial Seed Data)
 const INITIAL_SCIENTIFIC_SEED: ScientificMap = {
@@ -156,13 +182,11 @@ function QuranLexiconPage() {
 
   // ১. মূল অভিধান ডাটাবেজ
   const { data: lexicon = [], isLoading } = useQuery<LexiconEntry[]>({
-    queryKey: ["quran-lexicon-database"],
-    queryFn: async () => {
-      const res = await fetch("/data/quran/lexicon.json");
-      if (!res.ok) throw new Error("Failed to load lexicon data");
-      return res.json();
-    },
+    queryKey: ["quran-lexicon-database-v2"],
+    queryFn: fetchLexiconData,
     staleTime: Infinity,
+    enabled: typeof window !== "undefined",
+    initialData: [],
   });
 
   // ২. বিজ্ঞানভিত্তিক অর্থ ও রিসার্চ ডাটাবেজ (Supabase site_settings)
@@ -776,13 +800,15 @@ function QuranLexiconPage() {
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {(viewingAyahsRoot.all_ayahs || []).map((ref, idx) => {
-                    const sName = chapterNameMap.get(ref.surah) || `সুরা ${ref.surah}`;
+                    const surahNum = Array.isArray(ref) ? ref[0] : (ref as any).surah;
+                    const ayahNum = Array.isArray(ref) ? ref[1] : (ref as any).ayah;
+                    const sName = chapterNameMap.get(surahNum) || `সুরা ${surahNum}`;
                     return (
                       <Link
                         key={idx}
                         to="/surah/$id"
-                        params={{ id: String(ref.surah) }}
-                        search={{ ayah: ref.ayah }}
+                        params={{ id: String(surahNum) }}
+                        search={{ ayah: ayahNum }}
                         onClick={() => setViewingAyahsRoot(null)}
                         className="flex items-center justify-between p-2.5 rounded-xl border border-border/70 bg-card hover:bg-primary/10 hover:border-primary/50 text-foreground transition-all group cursor-pointer"
                       >
@@ -791,11 +817,11 @@ function QuranLexiconPage() {
                             {sName}
                           </span>
                           <span className="block text-[10px] text-muted-foreground font-mono">
-                            আয়াত {localNumber(ref.ayah, lang)}
+                            আয়াত {localNumber(ayahNum, lang)}
                           </span>
                         </div>
                         <span className="text-[11px] font-mono font-bold text-primary shrink-0 ml-1">
-                          {ref.surah}:{ref.ayah}
+                          {surahNum}:{ayahNum}
                         </span>
                       </Link>
                     );

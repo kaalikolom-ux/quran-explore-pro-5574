@@ -175,9 +175,9 @@ const lexiconList = Array.from(rootMap.values()).map((r) => {
   const allAyahs = Array.from(r.ayahSet)
     .map((str) => {
       const [surah, ayah] = str.split(":").map(Number);
-      return { surah, ayah };
+      return [surah, ayah];
     })
-    .sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
+    .sort((a, b) => a[0] - b[0] || a[1] - b[1]);
 
   return {
     root: r.root,
@@ -188,7 +188,7 @@ const lexiconList = Array.from(rootMap.values()).map((r) => {
     primary_meanings_bn: meaningsArr.join(", "),
     grammar_types: Array.from(r.grammarTags).slice(0, 3),
     unique_words_count: wordsArr.length,
-    derived_words: wordsArr.slice(0, 8),
+    derived_words: wordsArr.slice(0, 6),
     all_ayahs: allAyahs
   };
 });
@@ -196,6 +196,6 @@ const lexiconList = Array.from(rootMap.values()).map((r) => {
 // Sort by Arabic Alphabetical order
 lexiconList.sort((a, b) => a.root.localeCompare(b.root, "ar"));
 
-fs.writeFileSync(OUTPUT_FILE, JSON.stringify(lexiconList, null, 2), "utf-8");
+fs.writeFileSync(OUTPUT_FILE, JSON.stringify(lexiconList), "utf-8");
 
 console.log(`✅ কুরআনিক অভিধান সফলভাবে তৈরি হয়েছে! মোট ${lexiconList.length}টি মূল ধাতু (Roots) ও সহস্রাধিক শব্দ অন্তর্ভুক্ত হয়েছে।`);
