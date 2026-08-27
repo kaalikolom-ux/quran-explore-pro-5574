@@ -6,6 +6,26 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    build: {
+      // কোড মিনিফিকেশন ও পারফরম্যান্স বাড়াতে
+      minify: "esbuild",
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              if (id.includes("lucide-react")) {
+                return "vendor-icons";
+              }
+              if (id.includes("@tanstack")) {
+                return "vendor-tanstack";
+              }
+              return "vendor";
+            }
+          },
+        },
+      },
+    },
     plugins: [
       VitePWA({
         strategies: "generateSW",
@@ -19,7 +39,9 @@ export default defineConfig({
           clientsClaim: true,
           navigateFallback: "/",
           navigateFallbackDenylist: [/^\/~oauth/, /^\/api\//, /^\/_serverFn\//],
-          globPatterns: ["**/*.{js,css,html,woff2,png,svg,json}"],
+          // ওয়ার্নিং দূর করতে সঠিক গ্লোব প্যাটার্ন ফিক্স করা হলো
+          globPatterns: ["**/*.{js,css,html,json}"],
+          globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
           runtimeCaching: [
             {
               urlPattern: ({ request }) => request.mode === "navigate",
