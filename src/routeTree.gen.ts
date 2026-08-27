@@ -14,6 +14,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as LexiconRouteImport } from './routes/lexicon'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -50,6 +51,11 @@ const BookmarksRoute = BookmarksRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LexiconRoute = LexiconRouteImport.update({
+  id: '/lexicon',
+  path: '/lexicon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
+  '/lexicon': typeof LexiconRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/settings': typeof SettingsRoute
@@ -139,6 +146,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
+  '/lexicon': typeof LexiconRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/settings': typeof SettingsRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
+  '/lexicon': typeof LexiconRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/settings': typeof SettingsRoute
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/bookmarks'
     | '/contact'
+    | '/lexicon'
     | '/privacy'
     | '/reset-password'
     | '/settings'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/bookmarks'
     | '/contact'
+    | '/lexicon'
     | '/privacy'
     | '/reset-password'
     | '/settings'
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/bookmarks'
     | '/contact'
+    | '/lexicon'
     | '/privacy'
     | '/reset-password'
     | '/settings'
@@ -238,6 +250,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   BookmarksRoute: typeof BookmarksRoute
   ContactRoute: typeof ContactRoute
+  LexiconRoute: typeof LexiconRoute
   PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SettingsRoute: typeof SettingsRoute
@@ -287,6 +300,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lexicon': {
+      id: '/lexicon'
+      path: '/lexicon'
+      fullPath: '/lexicon'
+      preLoaderRoute: typeof LexiconRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -382,6 +402,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   BookmarksRoute: BookmarksRoute,
   ContactRoute: ContactRoute,
+  LexiconRoute: LexiconRoute,
   PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SettingsRoute: SettingsRoute,
