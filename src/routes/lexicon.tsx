@@ -1,4 +1,4 @@
-﻿// src/routes/lexicon.tsx
+// src/routes/lexicon.tsx
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState, useMemo } from "react";
@@ -22,7 +22,7 @@ import {
 import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
-import { localNumber } from "@/lib/quran";
+import { chaptersQuery, localNumber } from "@/lib/quran";
 import { useIsAdmin } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import {
@@ -80,6 +80,7 @@ interface LexiconEntry {
   grammar_types: string[];
   unique_words_count: number;
   derived_words: DerivedWord[];
+  all_ayahs: { surah: number; ayah: number }[];
 }
 
 interface ScientificNote {
@@ -139,6 +140,19 @@ function QuranLexiconPage() {
   const [editSummary, setEditSummary] = useState("");
   const [editDetails, setEditDetails] = useState("");
   const [editRefs, setEditRefs] = useState("");
+
+  // আয়াতসমূহ দেখার ডায়ালগ স্টেট (Ayahs Modal State)
+  const [viewingAyahsRoot, setViewingAyahsRoot] = useState<LexiconEntry | null>(null);
+
+  // সুরার নাম ম্যাপিং
+  const chapters = useQuery(chaptersQuery(lang));
+  const chapterNameMap = useMemo(() => {
+    const map = new Map<number, string>();
+    (chapters.data || []).forEach((c) => {
+      map.set(c.id, c.name_simple);
+    });
+    return map;
+  }, [chapters.data]);
 
   // ১. মূল অভিধান ডাটাবেজ
   const { data: lexicon = [], isLoading } = useQuery<LexiconEntry[]>({
@@ -562,14 +576,15 @@ function QuranLexiconPage() {
                       </span>
                     )}
 
-                    <Link
-                      to="/surah/$id"
-                      params={{ id: "1" }}
-                      className="text-xs text-primary font-semibold inline-flex items-center gap-1 hover:underline"
+                    {/* আয়াতসমূহ দেখার ডায়ালগ ওপেন বাটন */}
+                    <button
+                      type="button"
+                      onClick={() => setViewingAyahsRoot(item)}
+                      className="text-xs text-primary font-semibold inline-flex items-center gap-1.5 hover:underline cursor-pointer group/btn"
                     >
-                      <span>আয়াতসমূহ দেখুন</span>
-                      <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                      <span>{localNumber(item.ayahs_count, lang)}টি আয়াত দেখুন</span>
+                      <ArrowRight className="size-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
                   </div>
                 </div>
               );
@@ -716,6 +731,75 @@ function QuranLexiconPage() {
                     <Save className="size-3.5 mr-1" />
                     {saveScientificMutation.isPending ? "সংরক্ষণ হচ্ছে..." : "সংরক্ষণ করুন"}
                   </Button>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* ৭. আয়াতসমূহ প্রদর্শনের ইন্টারেক্টিভ ডায়ালগ (Ayahs Explorer Modal) */}
+      <Dialog
+        open={!!viewingAyahsRoot}
+        onOpenChange={(open) => !open && setViewingAyahsRoot(null)}
+      >
+        <DialogContent className="max-w-2xl p-6 bg-card border-border shadow-2xl rounded-2xl max-h-[85vh] flex flex-col">
+          <DialogHeader>
+            <DialogTitle className="flex items-center justify-between gap-2 text-lg font-bold text-foreground border-b border-border/60 pb-3">
+              <div className="flex items-center gap-2">
+                <BookOpen className="size-5 text-primary" />
+                <span>পবিত্র কুরআনে আয়াতের রেফারেন্সসমূহ</span>
+              </div>
+              {viewingAyahsRoot && (
+                <span className="arabic text-2xl text-primary font-bold">
+                  {viewingAyahsRoot.root_formatted}
+                </span>
+              )}
+            </DialogTitle>
+          </DialogHeader>
+
+          {viewingAyahsRoot && (
+            <div className="space-y-4 overflow-y-auto pr-1 flex-1">
+              <div className="flex flex-wrap items-center justify-between p-3 rounded-xl bg-muted/40 border border-border/50 text-xs gap-2">
+                <div>
+                  <span className="text-muted-foreground">মূল অর্থ: </span>
+                  <span className="font-semibold text-foreground">"{viewingAyahsRoot.primary_meanings_bn}"</span>
+                </div>
+                <div className="font-mono text-primary font-bold">
+                  মোট {localNumber(viewingAyahsRoot.total_occurrences, lang)} বার · {localNumber(viewingAyahsRoot.ayahs_count, lang)}টি আয়াতে
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-muted-foreground">
+                  নিচের যেকোনো আয়াতে ক্লিক করে সরাসরি পাঠ করুন:
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {(viewingAyahsRoot.all_ayahs || []).map((ref, idx) => {
+                    const sName = chapterNameMap.get(ref.surah) || `সুরা ${ref.surah}`;
+                    return (
+                      <Link
+                        key={idx}
+                        to="/surah/$id"
+                        params={{ id: String(ref.surah) }}
+                        search={{ ayah: ref.ayah }}
+                        onClick={() => setViewingAyahsRoot(null)}
+                        className="flex items-center justify-between p-2.5 rounded-xl border border-border/70 bg-card hover:bg-primary/10 hover:border-primary/50 text-foreground transition-all group cursor-pointer"
+                      >
+                        <div className="min-w-0">
+                          <span className="block text-xs font-semibold text-foreground group-hover:text-primary truncate">
+                            {sName}
+                          </span>
+                          <span className="block text-[10px] text-muted-foreground font-mono">
+                            আয়াত {localNumber(ref.ayah, lang)}
+                          </span>
+                        </div>
+                        <span className="text-[11px] font-mono font-bold text-primary shrink-0 ml-1">
+                          {ref.surah}:{ref.ayah}
+                        </span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>

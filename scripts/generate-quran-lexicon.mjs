@@ -1,4 +1,4 @@
-﻿// scripts/generate-quran-lexicon.mjs
+// scripts/generate-quran-lexicon.mjs
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -172,6 +172,13 @@ const lexiconList = Array.from(rootMap.values()).map((r) => {
   const wordsArr = Array.from(r.words.values()).sort((a, b) => b.count - a.count);
   const meaningsArr = Array.from(r.meaningsBn).filter(Boolean).slice(0, 5);
 
+  const allAyahs = Array.from(r.ayahSet)
+    .map((str) => {
+      const [surah, ayah] = str.split(":").map(Number);
+      return { surah, ayah };
+    })
+    .sort((a, b) => a.surah - b.surah || a.ayah - b.ayah);
+
   return {
     root: r.root,
     root_formatted: r.root.split("").join(" "),
@@ -181,7 +188,8 @@ const lexiconList = Array.from(rootMap.values()).map((r) => {
     primary_meanings_bn: meaningsArr.join(", "),
     grammar_types: Array.from(r.grammarTags).slice(0, 3),
     unique_words_count: wordsArr.length,
-    derived_words: wordsArr.slice(0, 8)
+    derived_words: wordsArr.slice(0, 8),
+    all_ayahs: allAyahs
   };
 });
 
