@@ -22,10 +22,10 @@ export function AuthPromptModal() {
         // ২. চেক করা ইউজার এই সেশনে বা সম্প্রতি পপ-আপটি বন্ধ করেছে কিনা
         const dismissed = localStorage.getItem("auth_prompt_dismissed");
         if (!dismissed) {
-          // ভিজিটের ৩ সেকেন্ড পর পপ-আপ ওপেন হবে (যাতে ইউজার এক্সপেরিয়েন্স ভালো থাকে)
+          // ভিজিটের ১ মিনিট (৬০,০০০ মিলিসেকেন্ড) পর পপ-আপ ওপেন হবে
           const timer = setTimeout(() => {
             setIsOpen(true);
-          }, 3000);
+          }, 60000);
 
           return () => clearTimeout(timer);
         }
@@ -55,7 +55,7 @@ export function AuthPromptModal() {
 
           <p className="text-xs text-muted-foreground leading-relaxed px-2">
             {lang === "bn"
-              ? "কুরআন অন্বেষার সম্পূর্ণ সম্ভাবনা উপভোগ করুন। আপনার ব্যক্তিগত অধ্যায়ন যাত্রা শুরু করুন আজই।"
+              ? "কুরআন অন্বেষার সম্পূর্ণ সম্ভাবনা উপভোগ করুন। আপনার ব্যক্তিগত অধ্যায়ন যাত্রা শুরু করুন আজই।"
               : "Unlock the full potential of Quran Explorer. Start your personalized Quran study journey today."}
           </p>
         </div>
@@ -103,7 +103,7 @@ export function AuthPromptModal() {
             onClick={handleDismiss}
             className="text-xs text-muted-foreground hover:text-foreground h-8"
           >
-            {lang === "bn" ? "পরে করব / ভিজিটর হিসেবে চালিয়ে যান" : "Maybe Later / Continue as Guest"}
+            {lang === "bn" ? "পরে করব / ভিজিটর হিসেবে চালিয়ে যান" : "Maybe Later / Continue as Guest"}
           </Button>
         </div>
       </DialogContent>
