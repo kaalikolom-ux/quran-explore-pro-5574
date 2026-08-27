@@ -108,10 +108,10 @@ export function SiteHeader() {
 
   return (
     <header 
-      className={`sticky top-0 z-40 w-full backdrop-blur-md transition-all duration-200 ${
+      className={`sticky top-0 z-40 w-full transition-all duration-200 ${
         isHomePage 
-          ? "border-b border-transparent bg-[#020817]/75 dark:bg-[#020817]/75" 
-          : "border-b border-border bg-background/95"
+          ? "border-b border-transparent bg-[#030712]/60 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none" 
+          : "border-b border-border bg-background/95 backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
