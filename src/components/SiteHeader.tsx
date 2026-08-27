@@ -2,7 +2,8 @@ import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
 import React, { useEffect, useState } from "react";
 import { 
   Home,
-  FileText, 
+  FileText,
+  BookA, 
   PenTool,
   Bookmark, 
   Settings, 
@@ -100,6 +101,7 @@ export function SiteHeader() {
 
   const navItems = [
     { to: "/", label: lang === "bn" ? "হোম" : "Home", icon: Home },
+    { to: "/lexicon", label: lang === "bn" ? "অভিধান" : "Lexicon", icon: BookA },
     { to: "/articles", label: lang === "bn" ? "আর্টিকেল" : "Articles", icon: FileText },
     { to: "/authors", label: lang === "bn" ? "লেখকবৃন্দ" : "Authors", icon: PenTool },
     { to: "/bookmarks", label: lang === "bn" ? "বুকমার্ক" : "Bookmarks", icon: Bookmark },
