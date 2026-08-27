@@ -151,8 +151,11 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন - হেডারের সাথে ১০০% সিমলেস ডিপ নেভি ব্লু গ্র্যাডিয়েন্ট */}
+      {/* হিরো সেকশন */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#030712] via-[#0b1a2d] via-50% to-[#030712] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
+        {/* উপরের হেডারের সাথে গ্র্যাডিয়েন্ট জয়েন্ট */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-28 bg-gradient-to-b from-[var(--background)] via-[var(--background)]/70 to-transparent z-10" />
+
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           {/* সফট অ্যাম্বিয়েন্ট গ্লো */}
           <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[450px] w-[800px] rounded-full bg-[#1d4ed8]/12 blur-[150px]" />

@@ -104,16 +104,8 @@ export function SiteHeader() {
     { to: "/contact", label: lang === "bn" ? "যোগাযোগ" : "Contact", icon: Mail },
   ];
 
-  const isHomePage = currentPath === "/";
-
   return (
-    <header 
-      className={`sticky top-0 z-40 w-full transition-all duration-200 ${
-        isHomePage 
-          ? "border-b border-transparent bg-[#030712]/60 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none" 
-          : "border-b border-border bg-background/95 backdrop-blur-md"
-      }`}
-    >
+    <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
         
         {/* লোগো ও ব্র্যান্ডিং (WCAG compliant high-contrast color) */}
