@@ -306,8 +306,8 @@ function HomePage() {
             <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
           ) : (
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((c) => {
-                const targetAyah = parsedAyahTarget && parsedAyahTarget.surah === c.id ? parsedAyahTarget.ayah : undefined;
+              {filtered.map((c: any) => {
+                const targetAyah = c.targetAyah || (searchAyahTarget && searchAyahTarget.surah === c.id ? searchAyahTarget.ayah : undefined);
 
                 return (
                   <Link
