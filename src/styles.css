@@ -6,7 +6,6 @@
 
 /*
  * Design system — "Eye-Comfort Elevated & Balanced Soft Tones"
- * Fixed Dark Hero Surface with Organic Floating Cloud / Smoke Effect.
  */
 
 @theme inline {
@@ -89,7 +88,7 @@
   --sidebar-border: #dee2e6;
   --sidebar-ring: #2a6f97;
   
-  --gradient-hero: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
 }
 
 .dark {
@@ -126,7 +125,7 @@
   --sidebar-border: rgba(255, 255, 255, 0.10);
   --sidebar-ring: #4a90e2;
 
-  --gradient-hero: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
 }
 
 @layer base {
@@ -158,64 +157,6 @@
   font-family: var(--font-arabic);
   direction: rtl;
   line-height: 2.1;
-}
-
-/* Moving Cloud & Smoke Keyframes */
-@keyframes smoke-drift-1 {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-    opacity: 0.25;
-  }
-  50% {
-    transform: translate(-35px, -25px) scale(1.15);
-    opacity: 0.45;
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-    opacity: 0.25;
-  }
-}
-
-@keyframes smoke-drift-2 {
-  0% {
-    transform: translate(0px, 0px) scale(1.1);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(40px, 30px) scale(0.95);
-    opacity: 0.15;
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1.1);
-    opacity: 0.3;
-  }
-}
-
-@keyframes smoke-drift-3 {
-  0% {
-    transform: translate(0px, 0px) scale(0.9);
-    opacity: 0.2;
-  }
-  50% {
-    transform: translate(-25px, 25px) scale(1.2);
-    opacity: 0.4;
-  }
-  100% {
-    transform: translate(0px, 0px) scale(0.9);
-    opacity: 0.2;
-  }
-}
-
-.animate-smoke-1 {
-  animation: smoke-drift-1 18s ease-in-out infinite;
-}
-
-.animate-smoke-2 {
-  animation: smoke-drift-2 24s ease-in-out infinite;
-}
-
-.animate-smoke-3 {
-  animation: smoke-drift-3 20s ease-in-out infinite;
 }
 
 /* Standard Clean Card Utility */
