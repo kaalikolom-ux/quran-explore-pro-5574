@@ -12,12 +12,14 @@ import {
   Languages, 
   ShieldCheck,
   Menu,
-  X
+  X,
+  Search
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
+import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 
 function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
   return (
@@ -72,6 +74,7 @@ function LoginDoorIcon({ className = "size-4.5" }: { className?: string }) {
 export function SiteHeader() {
   const { prefs, updatePref, toggleLang, lang } = usePrefs();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
   const routerState = useRouterState();
   const navigate = useNavigate();
@@ -145,6 +148,23 @@ export function SiteHeader() {
         {/* অ্যাকশন আইকনসমূহ */}
         <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
           
+          {/* গ্লোবাল স্মার্ট সার্চ বাটন */}
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            title={lang === "bn" ? "কুরআন, বিষয় ও আর্টিকেল খুঁজুন (Ctrl + K)" : "Search Quran, Topics & Articles (Ctrl + K)"}
+            aria-label="Search"
+            className="flex items-center gap-1.5 h-7.5 sm:h-8 px-2 sm:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group"
+          >
+            <Search className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
+            <span className="hidden sm:inline font-medium text-[11px]">
+              {lang === "bn" ? "অনুসন্ধান..." : "Search..."}
+            </span>
+            <kbd className="hidden md:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground">
+              ⌘K
+            </kbd>
+          </button>
+          
           {user && (
             <Link
               to="/admin"
@@ -208,6 +228,9 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+
+      {/* গ্লোবাল সার্চ ডায়ালগ */}
+      <GlobalSearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* মোবাইল ড্রপডাউন মেনু */}
       {mobileOpen && (

@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
-import { ArrowRight, BookOpen, FileText, Search, Settings, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Search, Settings, Sparkles, Compass, Flame, Heart, Coins, ShieldAlert } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
@@ -9,6 +9,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
+import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
+import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,8 +62,15 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
 function HomePage() {
   const { t, lang } = usePrefs();
   const [term, setTerm] = useState("");
+  const [searchDialogOpen, setSearchDialogOpen] = useState(false);
+  const [searchDialogQuery, setSearchDialogQuery] = useState("");
   const chapters = useQuery(chaptersQuery(lang));
   const navigate = useNavigate();
+
+  const handleOpenSearchWith = (q: string) => {
+    setSearchDialogQuery(q);
+    setSearchDialogOpen(true);
+  };
 
   const articles = useQuery({
     queryKey: ["articles", "published", "home"],
@@ -326,6 +335,70 @@ function HomePage() {
         </div>
       </section>
 
+      {/* বিষয়ভিত্তিক কুরআন ও গবেষণা অন্বেষা (Thematic & Scientific Quran Explorer) */}
+      <section className="border-t border-border bg-gradient-to-b from-card/60 to-background py-14">
+        <div className="mx-auto w-full max-w-6xl px-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-md mb-2">
+                <Sparkles className="size-3.5 text-amber-500" />
+                {lang === "bn" ? "ভাবার্থ ও বিষয়ভিত্তিক অন্বেষা" : "Thematic & Conceptual Explorer"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
+                {lang === "bn" ? "কুরআনের বিষয়ভিত্তিক জ্ঞানভাণ্ডার" : "Thematic Quranic Knowledge Base"}
+              </h2>
+              <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
+                {lang === "bn"
+                  ? "বিজ্ঞান, সৃষ্টিতত্ত্ব, পারিবারিক অধিকার, অর্থনীতি, আত্মশুদ্ধি ও নবীদের জীবনী সম্পর্কিত আয়াতসমূহ সরাসরি অনুসন্ধান করুন।"
+                  : "Explore verses on science, cosmology, family ethics, economics, inner peace, and prophetic stories."}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => handleOpenSearchWith("")}
+              className="inline-flex items-center gap-2 rounded-xl bg-[#2A6F97] hover:bg-[#1f5575] text-white px-4 py-2 text-xs font-semibold shadow-xs transition-all cursor-pointer shrink-0"
+            >
+              <Search className="size-3.5" />
+              <span>{lang === "bn" ? "সকল বিষয় ও আর্টিকেল সার্চ" : "Search All Topics & Articles"}</span>
+            </button>
+          </div>
+
+          {/* থিমেটিক টপিক গ্রিড */}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {QURAN_THEMATIC_DATABASE.slice(0, 6).map((topic) => (
+              <div
+                key={topic.id}
+                onClick={() => handleOpenSearchWith(topic.title_bn.split(" ")[0])}
+                className="card-soft group flex flex-col justify-between p-5 hover:border-primary/50 hover:bg-primary/5 transition-all cursor-pointer"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[11px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-md">
+                      {lang === "en" ? topic.category_en : topic.category_bn}
+                    </span>
+                    <span className="text-[11px] text-muted-foreground font-mono">
+                      {topic.references.length}টি রেফারেন্স
+                    </span>
+                  </div>
+                  <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {lang === "en" ? topic.title_en : topic.title_bn}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                    {lang === "en" ? topic.description_en : topic.description_bn}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-medium text-primary">
+                  <span>{lang === "bn" ? "আয়াতসমূহ ও তাফসির দেখুন" : "View Verses & Insights"}</span>
+                  <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* আর্টিকেল সেকশন */}
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
@@ -391,6 +464,13 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* গ্লোবাল অমনিসার্চ ডায়ালগ */}
+      <GlobalSearchDialog
+        open={searchDialogOpen}
+        onOpenChange={setSearchDialogOpen}
+        initialQuery={searchDialogQuery}
+      />
     </div>
   );
 }
