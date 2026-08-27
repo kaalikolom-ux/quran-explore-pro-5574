@@ -57,7 +57,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           পাতাটি লোড হয়নি
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।
+          {error?.message || "কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।"}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button

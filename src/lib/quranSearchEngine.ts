@@ -1287,7 +1287,7 @@ export function normalizeQuranQuery(rawQuery: string): {
   let q = bnToEnDigits(rawQuery.trim().toLowerCase());
   
   // 1. Direct Verse Number Match e.g. "2:183", "2.183", "2/183", "2-183"
-  const directAyahMatch = q.match(/^(d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
+  const directAyahMatch = q.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
   if (directAyahMatch) {
     const s = Number(directAyahMatch[1]);
     const a = Number(directAyahMatch[2]);

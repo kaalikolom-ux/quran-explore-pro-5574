@@ -1,6 +1,7 @@
 import { queryOptions } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
+import { ALL_SURAHS_DATABASE } from "./quranSearchEngine";
 
 const API = "https://api.quran.com/api/v4";
 
@@ -85,8 +86,6 @@ async function mirrorVerses(surah: number): Promise<Verse[] | null> {
   }
 }
 
-import { ALL_SURAHS_DATABASE } from "./quranSearchEngine";
-
 export const chaptersQuery = (lang: "bn" | "en") =>
   queryOptions({
     queryKey: ["quran", "chapters", lang],
@@ -104,7 +103,7 @@ export const chaptersQuery = (lang: "bn" | "en") =>
       } catch (err) {
         console.warn("Chapters API fallback activated:", err);
       }
-      return ALL_SURAHS_DATABASE.map((s) => ({
+      return (ALL_SURAHS_DATABASE || []).map((s) => ({
         id: s.id,
         name_simple: s.name_en,
         name_arabic: s.name_arabic,
