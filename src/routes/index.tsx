@@ -24,7 +24,7 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
-import { searchQuranSurahs, bnToEnDigits } from "@/lib/quranSearchEngine";
+import { searchQuranSurahs, bnToEnDigits, ALL_SURAHS_DATABASE } from "@/lib/quranSearchEngine";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,6 +79,10 @@ function HomePage() {
   const [searchDialogQuery, setSearchDialogQuery] = useState("");
   const chapters = useQuery(chaptersQuery(lang));
   const navigate = useNavigate();
+
+  const surahMetaMap = useMemo(() => {
+    return new Map(ALL_SURAHS_DATABASE.map((s) => [s.id, s]));
+  }, []);
 
   const handleOpenSearchWith = (q: string) => {
     setSearchDialogQuery(q);
@@ -306,8 +310,13 @@ function HomePage() {
           {chapters.isLoading ? (
             <p className="mt-8 text-sm text-muted-foreground">লোড হচ্ছে...</p>
           ) : (
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((c: any) => {
+                const meta = surahMetaMap.get(c.id);
+                const nameBn = meta?.name_bn || c.name_simple;
+                const nameArabic = meta?.name_arabic || c.name_arabic;
+                const meaningBn = meta?.meaning_bn || c.translated_name?.name;
+                const versesCount = meta?.total_verses || c.verses_count;
                 const targetAyah =
                   c.targetAyah ||
                   (searchAyahTarget && searchAyahTarget.surah === c.id
@@ -320,26 +329,42 @@ function HomePage() {
                     to="/surah/$id"
                     params={{ id: String(c.id) }}
                     search={targetAyah ? { ayah: targetAyah } : undefined}
-                    className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer"
+                    className="group relative flex items-center justify-between gap-3.5 rounded-2xl border border-border/80 bg-card p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-[#ede1ca] dark:hover:bg-accent/70 hover:shadow-md cursor-pointer overflow-hidden"
                   >
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
-                      {localNumber(c.id, "bn")}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate font-medium text-foreground">
-                        {c.name_simple}
-                        {targetAyah && (
-                          <span className="ml-2 text-xs font-semibold text-[#1c5576] dark:text-[#58b4e8]">
-                            ({localNumber(targetAyah, "bn")} নং আয়াত)
-                          </span>
-                        )}
+                    {/* বাম পাশের ডায়মন্ড/রোটেটেড স্কয়ার নম্বর ব্যাজ */}
+                    <div className="flex items-center gap-3.5 min-w-0">
+                      <div className="relative flex size-10 shrink-0 items-center justify-center">
+                        <div className="absolute inset-0 rotate-45 rounded-lg border border-border/90 bg-muted/90 transition-all duration-300 group-hover:rotate-90 group-hover:border-primary group-hover:bg-primary/10 group-hover:scale-105" />
+                        <span className="relative z-10 font-bold text-xs sm:text-sm text-foreground/90 font-mono">
+                          {localNumber(c.id, "bn")}
+                        </span>
+                      </div>
+
+                      {/* সুরার নাম ও অর্থ */}
+                      <div className="min-w-0 flex-1 leading-tight">
+                        <h3 className="truncate text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {nameBn}
+                          {targetAyah && (
+                            <span className="ml-2 text-xs font-semibold text-primary">
+                              ({localNumber(targetAyah, "bn")} নং আয়াত)
+                            </span>
+                          )}
+                        </h3>
+                        <p className="truncate text-xs text-muted-foreground mt-1 font-medium">
+                          {meaningBn || `${localNumber(versesCount, "bn")} আয়াত`}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* ডান পাশের সুন্দর আরবি ক্যালিগ্রাফি ও আয়াত সংখ্যা */}
+                    <div className="text-right shrink-0">
+                      <span className="arabic text-xl font-medium text-foreground/90 group-hover:text-primary transition-colors block leading-none">
+                        {nameArabic}
                       </span>
-                      <span className="block truncate text-xs text-muted-foreground font-medium">
-                        {c.translated_name?.name || c.meaning_bn} ·{" "}
-                        {localNumber(c.verses_count, "bn")} আয়াত
+                      <span className="text-[11px] text-muted-foreground mt-1.5 block font-medium">
+                        {localNumber(versesCount, "bn")} আয়াত
                       </span>
-                    </span>
-                    <span className="arabic text-lg text-primary">{c.name_arabic}</span>
+                    </div>
                   </Link>
                 );
               })}

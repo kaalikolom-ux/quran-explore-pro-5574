@@ -69,40 +69,40 @@
 }
 
 :root {
-  --chrome: #1f2428;
-  --chrome-foreground: #f5f5f7;
+  --chrome: #26211c;
+  --chrome-foreground: #fbf7ee;
   --radius: 0.75rem;
 
-  /* Light Mode */
-  --background: #f8f9fa;
-  --foreground: #2d2d2d;
-  --card: #ffffff;
-  --card-foreground: #2d2d2d;
-  --popover: #ffffff;
-  --popover-foreground: #2d2d2d;
-  --primary: #2a6f97;
-  --primary-foreground: #f8f9fa;
-  --secondary: #e9ecef;
-  --secondary-foreground: #2d2d2d;
-  --muted: #eef1f4;
-  --muted-foreground: #6c757d;
-  --accent: #e3eff6;
-  --accent-foreground: #2a6f97;
+  /* Eye-Friendly Warm Light Mode (Quran.com signature warmth) */
+  --background: #fbf7ee;
+  --foreground: #2c231b;
+  --card: #f4ecdc;
+  --card-foreground: #2c231b;
+  --popover: #f6eedf;
+  --popover-foreground: #2c231b;
+  --primary: #246a48;
+  --primary-foreground: #fbf7ee;
+  --secondary: #eee3cf;
+  --secondary-foreground: #2c231b;
+  --muted: #eee4d1;
+  --muted-foreground: #796c5c;
+  --accent: #e5d8be;
+  --accent-foreground: #246a48;
   --destructive: #b02a37;
   --destructive-foreground: #ffffff;
-  --border: #dee2e6;
-  --input: #dee2e6;
-  --ring: #2a6f97;
-  --sidebar: #f5f5f7;
-  --sidebar-foreground: #2d2d2d;
-  --sidebar-primary: #2a6f97;
-  --sidebar-primary-foreground: #f8f9fa;
-  --sidebar-accent: #e9ecef;
-  --sidebar-accent-foreground: #2a6f97;
-  --sidebar-border: #dee2e6;
-  --sidebar-ring: #2a6f97;
+  --border: #e2d3bb;
+  --input: #e2d3bb;
+  --ring: #246a48;
+  --sidebar: #f5ece0;
+  --sidebar-foreground: #2c231b;
+  --sidebar-primary: #246a48;
+  --sidebar-primary-foreground: #fbf7ee;
+  --sidebar-accent: #e8dbca;
+  --sidebar-accent-foreground: #246a48;
+  --sidebar-border: #e2d3bb;
+  --sidebar-ring: #246a48;
 
-  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
+  --gradient-hero: linear-gradient(180deg, #1c2c36 0%, #223746 100%);
 }
 
 .dark {
