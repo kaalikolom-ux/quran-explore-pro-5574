@@ -1,24 +1,37 @@
 import { useState, useEffect } from "react";
 
 interface TypewriterProps {
-  words: string[];
+  words?: string[];
   typingSpeed?: number;
   deletingSpeed?: number;
   delayBetweenWords?: number;
 }
 
+const DEFAULT_WORDS = [
+  "প্রতিটি আয়াত ও শব্দের মর্মার্থ সরাসরি অনুধাবন করুন...",
+  "বিজ্ঞান, সৃষ্টিতত্ত্ব ও ইতিহাসের আলোকে কুরআন অধ্যয়ন...",
+  "সহজ বাংলা অনুবাদ ও সহিহ তাফসিরের সমন্বয়...",
+];
+
 export function Typewriter({
-  words,
+  words = DEFAULT_WORDS,
   typingSpeed = 90,
   deletingSpeed = 50,
-  delayBetweenWords = 1800,
+  delayBetweenWords = 2500,
 }: TypewriterProps) {
   const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(() => (words && words[0] ? words[0].length : 0));
   const [isDeleting, setIsDeleting] = useState(false);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    if (!words || words.length === 0) return;
+    // Delay animation start until after initial page paint to prevent forced reflow
+    const startTimer = setTimeout(() => setStarted(true), 2500);
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!started || !words || words.length === 0) return;
 
     if (subIndex === words[index].length + 1 && !isDeleting) {
       const timeout = setTimeout(() => setIsDeleting(true), delayBetweenWords);
@@ -39,7 +52,7 @@ export function Typewriter({
     );
 
     return () => clearTimeout(timeout);
-  }, [subIndex, index, isDeleting, words, typingSpeed, deletingSpeed, delayBetweenWords]);
+  }, [subIndex, index, isDeleting, words, typingSpeed, deletingSpeed, delayBetweenWords, started]);
 
   if (!words || words.length === 0) return null;
 
