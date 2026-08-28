@@ -198,3 +198,9 @@
 [data-arabic="true"] {
   font-family: var(--font-arabic);
 }
+
+/* Performance Optimization: Defer layout calculation for below-the-fold content */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
