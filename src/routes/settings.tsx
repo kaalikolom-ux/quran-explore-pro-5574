@@ -26,7 +26,7 @@ export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
 
-const SURAH_TEXT_CACHE = "quran-text-v1";
+const SURAH_TEXT_CACHE = "quran-text-v3";
 
 function SettingsPage() {
   const { prefs, updatePref, lang, themeMode, setThemeMode } = usePrefs();

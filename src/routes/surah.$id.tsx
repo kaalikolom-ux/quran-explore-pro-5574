@@ -278,17 +278,25 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
-const SURAH_TEXT_CACHE = "quran-text-v2";
+const SURAH_TEXT_CACHE = "quran-text-v3";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  const url = `/data/quran/surahs/${sId}.json`;
+  const url = `/data/quran/surahs/${sId}.json?v=3`;
   
   if (typeof window !== "undefined" && "caches" in window) {
     try {
+      // পুরানো v1 ও v2 ক্যাশ স্বয়ংক্রিয়ভাবে ক্লিয়ার করা যাতে নতুন ইংরেজি অনুবাদ অবিলম্বে লোড হয়
+      caches.delete("quran-text-v1").catch(() => {});
+      caches.delete("quran-text-v2").catch(() => {});
+
       const cache = await caches.open(SURAH_TEXT_CACHE);
       const cachedRes = await cache.match(url);
       if (cachedRes) {
-        return await cachedRes.json();
+        const cachedData = await cachedRes.json();
+        // নিশ্চিত করা যে ক্যাশ ডাটাতে নতুন ইংরেজি অনুবাদ বিদ্যমান আছে
+        if (cachedData?.ayahs && cachedData.ayahs.length > 0 && (cachedData.ayahs[0]?.translation_en || cachedData.ayahs[0]?.conventional_en)) {
+          return cachedData;
+        }
       }
     } catch {
       // Fallback
@@ -296,18 +304,25 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
   }
 
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to load Surah ${sId}`);
+  if (!res.ok) {
+    // ফলব্যাক রেসপন্স (কোয়েরি প্যারাম ছাড়া)
+    const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
+    if (!fallbackRes.ok) throw new Error(`Failed to load Surah ${sId}`);
+    return await fallbackRes.json();
+  }
   
+  const freshData = await res.json();
+
   if (typeof window !== "undefined" && "caches" in window) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
-      await cache.put(url, res.clone());
+      await cache.put(url, new Response(JSON.stringify(freshData)));
     } catch {
       // Fallback
     }
   }
 
-  return res.json();
+  return freshData;
 };
 
 function SurahDetailPage() {
