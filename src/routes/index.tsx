@@ -260,8 +260,8 @@ function HomePage() {
             </Button>
           </div>
 
-          {/* CTA বাটনগুলোর নীচে ১.৫ সেকেন্ড পরপর বার্স্ট করা অ্যানিমেটেড তারাবাত্তি নোটিশ */}
-          <div className="mt-5 max-w-xl flex items-center justify-start">
+          {/* CTA বাটনগুলোর নীচে ১.৫ সেকেন্ড পরপর বার্স্ট করা অ্যানিমেটেড তারাবাত্তি বক্স CTA */}
+          <div className="mt-4 max-w-xl w-full">
             <SparkleCtaNotice variant="hero" />
           </div>
         </div>
