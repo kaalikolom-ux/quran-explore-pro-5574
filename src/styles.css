@@ -236,3 +236,13 @@ body {
   translate: no !important;
   font-family: var(--font-arabic);
 }
+
+/* শুধুমাত্র বাংলাতেই টাইপিং টেক্সট দৃশ্যমান থাকবে, অন্য সব ভাষায় স্বয়ংক্রিয়ভাবে হাইড থাকবে */
+html.translated-ltr .typewriter-container,
+html.translated-rtl .typewriter-container,
+body.translated-ltr .typewriter-container,
+body.translated-rtl .typewriter-container,
+.translated-ltr .typewriter-container,
+.translated-rtl .typewriter-container {
+  display: none !important;
+}

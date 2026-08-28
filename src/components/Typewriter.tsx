@@ -11,9 +11,28 @@ export function Typewriter({
 }: TypewriterProps) {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
+  const [isTranslated, setIsTranslated] = useState(false);
+
+  // শুধুমাত্র বাংলা ভাষায় অ্যানিমেশন দৃশ্যমান হবে; অন্য যেকোনো ভাষায় হাইড থাকবে
+  useEffect(() => {
+    const checkTranslation = () => {
+      if (typeof document === "undefined") return;
+      const isTrans =
+        document.documentElement.classList.contains("translated-ltr") ||
+        document.documentElement.classList.contains("translated-rtl") ||
+        document.body.classList.contains("translated-ltr") ||
+        document.body.classList.contains("translated-rtl") ||
+        (document.cookie.includes("googtrans=/bn/") && !document.cookie.includes("googtrans=/bn/bn"));
+      setIsTranslated(Boolean(isTrans));
+    };
+
+    checkTranslation();
+    const timer = setInterval(checkTranslation, 300);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
-    if (!words || words.length === 0) return;
+    if (isTranslated || !words || words.length === 0) return;
 
     const interval = setInterval(() => {
       setFade(false);
@@ -24,9 +43,9 @@ export function Typewriter({
     }, delayBetweenWords);
 
     return () => clearInterval(interval);
-  }, [words, delayBetweenWords]);
+  }, [words, delayBetweenWords, isTranslated]);
 
-  if (!words || words.length === 0) return null;
+  if (isTranslated || !words || words.length === 0) return null;
 
   return (
     <span className="inline-flex items-center overflow-visible py-1">

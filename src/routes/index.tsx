@@ -172,7 +172,8 @@ function HomePage() {
               পবিত্র কুরআন — বুঝে পড়ুন
             </h1>
 
-            <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
+            {/* শুধুমাত্র বাংলা ভাষায় টাইপিং এনিমেটেড টেক্সট দৃশ্যমান থাকবে, অন্য সব ভাষায় হাইড থাকবে */}
+            <div className="typewriter-container mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
               <Typewriter
                 words={[
                   "শব্দে শব্দে অর্থসহ",
