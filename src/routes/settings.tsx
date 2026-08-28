@@ -180,30 +180,30 @@ function SettingsPage() {
           <button
             type="button"
             onClick={() => setThemeMode("sepia")}
-            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer ${
+            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer bg-[#fbf7ee] ${
               themeMode === "sepia"
-                ? "border-primary bg-primary/5 shadow-sm ring-1 ring-primary/30"
-                : "border-border/70 bg-card hover:border-primary/40 hover:bg-secondary/40"
+                ? "border-[#1f6f43] ring-2 ring-[#1f6f43]/40 shadow-md scale-[1.01]"
+                : "border-[#e2d3bb] hover:border-[#1f6f43]/60 shadow-xs"
             }`}
           >
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-foreground">
-                  <span className="size-3 sm:size-3.5 rounded-full bg-[#fbf7ee] border border-[#e2d3bb] inline-block shadow-xs shrink-0" />
+                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#2c231b]">
+                  <span className="size-3 sm:size-3.5 rounded-full bg-[#f4ecdc] border border-[#e2d3bb] inline-block shadow-xs shrink-0" />
                   {lang === "bn" ? "মুসহাফ সেপিয়া" : "Mushaf Sepia"}
                 </span>
-                <span className="self-start sm:self-auto rounded-full bg-amber-500/15 px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold text-amber-700 dark:text-amber-300">
+                <span className="self-start sm:self-auto rounded-full bg-[#ede2cf] px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold text-[#1f6f43] border border-[#e2d3bb]">
                   {lang === "bn" ? "চোখের প্রশান্তি" : "Eye Comfort"}
                 </span>
               </div>
-              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-muted-foreground leading-relaxed">
+              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#796c5c] leading-relaxed">
                 {lang === "bn"
-                  ? "মুদ্রিত কুরআনের মতো উষ্ণ পেপার টোন। আলো চোখে লাগে না।"
+                  ? "মুদ্রিত কুরআনের মতো উষ্ণ ক্রিম পেপার টোন। চোখে আলো লাগে না।"
                   : "Warm parchment cream tone with zero harsh glare."}
               </p>
             </div>
-            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-border/40 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
-              <span className="font-mono text-primary font-bold">
+            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-[#e2d3bb] pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
+              <span className="font-mono text-[#1f6f43] font-bold">
                 {themeMode === "sepia" ? "✓ " + (lang === "bn" ? "সক্রিয়" : "Active") : (lang === "bn" ? "নির্বাচন করুন" : "Select")}
               </span>
             </div>
@@ -213,30 +213,30 @@ function SettingsPage() {
           <button
             type="button"
             onClick={() => setThemeMode("slate")}
-            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer ${
+            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer bg-[#f1f5f9] ${
               themeMode === "slate"
-                ? "border-primary bg-primary/5 shadow-sm ring-1 ring-primary/30"
-                : "border-border/70 bg-card hover:border-primary/40 hover:bg-secondary/40"
+                ? "border-[#2563eb] ring-2 ring-[#2563eb]/40 shadow-md scale-[1.01]"
+                : "border-[#cbd5e1] hover:border-[#2563eb]/60 shadow-xs"
             }`}
           >
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-foreground">
-                  <span className="size-3 sm:size-3.5 rounded-full bg-[#f1f5f9] border border-[#cbd5e1] inline-block shadow-xs shrink-0" />
+                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#1e293b]">
+                  <span className="size-3 sm:size-3.5 rounded-full bg-[#e2e8f0] border border-[#cbd5e1] inline-block shadow-xs shrink-0" />
                   {lang === "bn" ? "নরম স্লেট" : "Soft Slate"}
                 </span>
-                <span className="self-start sm:self-auto rounded-full bg-blue-500/15 px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold text-blue-700 dark:text-blue-300">
+                <span className="self-start sm:self-auto rounded-full bg-[#dbeafe] px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold text-[#1e40af] border border-[#bfdbfe]">
                   {lang === "bn" ? "ব্লু-ফিল্টার" : "Blue Filter"}
                 </span>
               </div>
-              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-muted-foreground leading-relaxed">
+              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#64748b] leading-relaxed">
                 {lang === "bn"
                   ? "নরম কুল পেপার টোন। অতিরিক্ত নীল আলোর ক্লান্তি দূর করে।"
                   : "Cool pastel slate background, reducing fatigue."}
               </p>
             </div>
-            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-border/40 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
-              <span className="font-mono text-primary font-bold">
+            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-[#cbd5e1] pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
+              <span className="font-mono text-[#2563eb] font-bold">
                 {themeMode === "slate" ? "✓ " + (lang === "bn" ? "সক্রিয়" : "Active") : (lang === "bn" ? "নির্বাচন করুন" : "Select")}
               </span>
             </div>
@@ -246,28 +246,28 @@ function SettingsPage() {
           <button
             type="button"
             onClick={() => setThemeMode("dark")}
-            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer ${
+            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer bg-[#141414] ${
               themeMode === "dark"
-                ? "border-primary bg-primary/5 shadow-sm ring-1 ring-primary/30"
-                : "border-border/70 bg-card hover:border-primary/40 hover:bg-secondary/40"
+                ? "border-[#4a90e2] ring-2 ring-[#4a90e2]/40 shadow-md scale-[1.01]"
+                : "border-white/15 hover:border-[#4a90e2]/60 shadow-xs"
             }`}
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-foreground">
-                  <span className="size-3 sm:size-3.5 rounded-full bg-[#141414] border border-white/20 inline-block shadow-xs shrink-0" />
+                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#f4f4f5]">
+                  <span className="size-3 sm:size-3.5 rounded-full bg-[#1c1c1f] border border-white/25 inline-block shadow-xs shrink-0" />
                   {lang === "bn" ? "মিডনাইট ডার্ক" : "Midnight Dark"}
                 </span>
-                <Moon className="size-3.5 text-primary" />
+                <Moon className="size-3.5 text-[#4a90e2]" />
               </div>
-              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-muted-foreground leading-relaxed">
+              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#a1a1aa] leading-relaxed">
                 {lang === "bn"
                   ? "গভীর ডার্ক ব্যাকগ্রাউন্ড। রাতে পড়ার জন্য ও ওলেড ডিসপ্লেতে চমৎকার।"
                   : "Deep dark background, optimal for night reading."}
               </p>
             </div>
-            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-border/40 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
-              <span className="font-mono text-primary font-bold">
+            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-white/15 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
+              <span className="font-mono text-[#4a90e2] font-bold">
                 {themeMode === "dark" ? "✓ " + (lang === "bn" ? "সক্রিয়" : "Active") : (lang === "bn" ? "নির্বাচন করুন" : "Select")}
               </span>
             </div>
@@ -277,28 +277,28 @@ function SettingsPage() {
           <button
             type="button"
             onClick={() => setThemeMode("light")}
-            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer ${
+            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer bg-[#ffffff] ${
               themeMode === "light"
-                ? "border-primary bg-primary/5 shadow-sm ring-1 ring-primary/30"
-                : "border-border/70 bg-card hover:border-primary/40 hover:bg-secondary/40"
+                ? "border-[#2a6f97] ring-2 ring-[#2a6f97]/40 shadow-md scale-[1.01]"
+                : "border-[#dee2e6] hover:border-[#2a6f97]/60 shadow-xs"
             }`}
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-foreground">
-                  <span className="size-3 sm:size-3.5 rounded-full bg-[#ffffff] border border-[#dee2e6] inline-block shadow-xs shrink-0" />
+                <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#18181b]">
+                  <span className="size-3 sm:size-3.5 rounded-full bg-[#f8f9fa] border border-[#dee2e6] inline-block shadow-xs shrink-0" />
                   {lang === "bn" ? "স্বাভাবিক লাইট" : "Classic Light"}
                 </span>
-                <Sun className="size-3.5 text-amber-500" />
+                <Sun className="size-3.5 text-[#f59e0b]" />
               </div>
-              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-muted-foreground leading-relaxed">
+              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#52525b] leading-relaxed">
                 {lang === "bn"
                   ? "দিনের আলো ও সর্বোচ্চ স্পষ্টতার জন্য স্বাভাবিক সাদা মোড।"
                   : "Crisp white background for daylight environments."}
               </p>
             </div>
-            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-border/40 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
-              <span className="font-mono text-primary font-bold">
+            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-[#dee2e6] pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
+              <span className="font-mono text-[#2a6f97] font-bold">
                 {themeMode === "light" ? "✓ " + (lang === "bn" ? "সক্রিয়" : "Active") : (lang === "bn" ? "নির্বাচন করুন" : "Select")}
               </span>
             </div>
