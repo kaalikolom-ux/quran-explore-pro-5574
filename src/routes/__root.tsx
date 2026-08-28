@@ -123,6 +123,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#020817" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap",
+      },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
@@ -141,36 +147,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="bn">
       <head>
         <HeadContent />
-        <link rel="preload" as="style" href={appCss} />
-        <link
-          rel="stylesheet"
-          href={appCss}
-          media="print"
-          // @ts-expect-error non-blocking stylesheet
-          onLoad="this.media='all'"
-        />
-        <noscript>
-          <link rel="stylesheet" href={appCss} />
-        </noscript>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap"
-          media="print"
-          // @ts-expect-error non-blocking font swap
-          onLoad="this.media='all'"
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap"
-          />
-        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
