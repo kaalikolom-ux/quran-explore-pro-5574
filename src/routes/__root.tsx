@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -181,6 +181,19 @@ function OfflineBoot() {
   return null;
 }
 
+function DeferredAuthPromptModal() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    // Defer modal mounting until 30 seconds into session to eliminate initial JS execution
+    const timer = setTimeout(() => setReady(true), 30000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!ready) return null;
+  return <AuthPromptModal />;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -197,7 +210,7 @@ function RootComponent() {
           <SiteFooter />
         </div>
         <BackToTop />
-        <AuthPromptModal />
+        <DeferredAuthPromptModal />
         <Toaster />
       </PrefsProvider>
     </QueryClientProvider>

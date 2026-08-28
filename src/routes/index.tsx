@@ -507,12 +507,14 @@ function HomePage() {
         </div>
       </section>
 
-      {/* গ্লোবাল অমনিসার্চ ডায়ালগ */}
-      <GlobalSearchDialog
-        open={searchDialogOpen}
-        onOpenChange={setSearchDialogOpen}
-        initialQuery={searchDialogQuery}
-      />
+      {/* গ্লোবাল অমনিসার্চ ডায়ালগ (অন-ডিমান্ড মাউন্ট) */}
+      {searchDialogOpen && (
+        <GlobalSearchDialog
+          open={searchDialogOpen}
+          onOpenChange={setSearchDialogOpen}
+          initialQuery={searchDialogQuery}
+        />
+      )}
     </div>
   );
 }
