@@ -47,7 +47,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Indeed, We have granted you, [O Muhammad], al-Kawthar.",
+      "conventional_en": "Indeed, We have granted you, [O Muhammad], al-Kawthar."
     },
     {
       "surah": 108,
@@ -95,7 +97,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "So pray to your Lord and sacrifice [to Him alone].",
+      "conventional_en": "So pray to your Lord and sacrifice [to Him alone]."
     },
     {
       "surah": 108,
@@ -153,7 +157,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Indeed, your enemy is the one cut off.",
+      "conventional_en": "Indeed, your enemy is the one cut off."
     }
   ]
 }

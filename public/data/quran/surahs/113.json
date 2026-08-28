@@ -57,7 +57,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Say, \"I seek refuge in the Lord of daybreak",
+      "conventional_en": "Say, \"I seek refuge in the Lord of daybreak"
     },
     {
       "surah": 113,
@@ -115,7 +117,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "From the evil of that which He created",
+      "conventional_en": "From the evil of that which He created"
     },
     {
       "surah": 113,
@@ -183,7 +187,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And from the evil of darkness when it settles",
+      "conventional_en": "And from the evil of darkness when it settles"
     },
     {
       "surah": 113,
@@ -251,7 +257,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And from the evil of the blowers in knots",
+      "conventional_en": "And from the evil of the blowers in knots"
     },
     {
       "surah": 113,
@@ -319,7 +327,9 @@
           "lemma": "٥",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And from the evil of an envier when he envies.\"",
+      "conventional_en": "And from the evil of an envier when he envies.\""
     }
   ]
 }

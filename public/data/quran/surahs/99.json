@@ -57,7 +57,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "When the earth is shaken with its [final] earthquake",
+      "conventional_en": "When the earth is shaken with its [final] earthquake"
     },
     {
       "surah": 99,
@@ -105,7 +107,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And the earth discharges its burdens",
+      "conventional_en": "And the earth discharges its burdens"
     },
     {
       "surah": 99,
@@ -163,7 +167,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And man says, \"What is [wrong] with it?\" -",
+      "conventional_en": "And man says, \"What is [wrong] with it?\" -"
     },
     {
       "surah": 99,
@@ -211,7 +217,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "That Day, it will report its news",
+      "conventional_en": "That Day, it will report its news"
     },
     {
       "surah": 99,
@@ -269,7 +277,9 @@
           "lemma": "٥",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Because your Lord has commanded it.",
+      "conventional_en": "Because your Lord has commanded it."
     },
     {
       "surah": 99,
@@ -347,7 +357,9 @@
           "lemma": "٦",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "That Day, the people will depart separated [into categories] to be shown [the result of] their deeds.",
+      "conventional_en": "That Day, the people will depart separated [into categories] to be shown [the result of] their deeds."
     },
     {
       "surah": 99,
@@ -425,7 +437,9 @@
           "lemma": "٧",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "So whoever does an atom's weight of good will see it,",
+      "conventional_en": "So whoever does an atom's weight of good will see it,"
     },
     {
       "surah": 99,
@@ -503,7 +517,9 @@
           "lemma": "٨",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And whoever does an atom's weight of evil will see it.",
+      "conventional_en": "And whoever does an atom's weight of evil will see it."
     }
   ]
 }

@@ -67,7 +67,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Indeed, We sent the Qur'an down during the Night of Decree.",
+      "conventional_en": "Indeed, We sent the Qur'an down during the Night of Decree."
     },
     {
       "surah": 97,
@@ -135,7 +137,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And what can make you know what is the Night of Decree?",
+      "conventional_en": "And what can make you know what is the Night of Decree?"
     },
     {
       "surah": 97,
@@ -213,7 +217,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "The Night of Decree is better than a thousand months.",
+      "conventional_en": "The Night of Decree is better than a thousand months."
     },
     {
       "surah": 97,
@@ -321,7 +327,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "The angels and the Spirit descend therein by permission of their Lord for every matter.",
+      "conventional_en": "The angels and the Spirit descend therein by permission of their Lord for every matter."
     },
     {
       "surah": 97,
@@ -389,7 +397,9 @@
           "lemma": "٥",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Peace it is until the emergence of dawn.",
+      "conventional_en": "Peace it is until the emergence of dawn."
     }
   ]
 }

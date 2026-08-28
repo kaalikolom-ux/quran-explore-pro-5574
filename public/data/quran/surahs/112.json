@@ -57,7 +57,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Say, \"He is Allah, [who is] One,",
+      "conventional_en": "Say, \"He is Allah, [who is] One,"
     },
     {
       "surah": 112,
@@ -95,7 +97,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Allah, the Eternal Refuge.",
+      "conventional_en": "Allah, the Eternal Refuge."
     },
     {
       "surah": 112,
@@ -153,7 +157,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "He neither begets nor is born,",
+      "conventional_en": "He neither begets nor is born,"
     },
     {
       "surah": 112,
@@ -221,7 +227,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Nor is there to Him any equivalent.\"",
+      "conventional_en": "Nor is there to Him any equivalent.\""
     }
   ]
 }

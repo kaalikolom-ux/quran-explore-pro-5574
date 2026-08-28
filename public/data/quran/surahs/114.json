@@ -57,7 +57,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Say, \"I seek refuge in the Lord of mankind,",
+      "conventional_en": "Say, \"I seek refuge in the Lord of mankind,"
     },
     {
       "surah": 114,
@@ -95,7 +97,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "The Sovereign of mankind.",
+      "conventional_en": "The Sovereign of mankind."
     },
     {
       "surah": 114,
@@ -133,7 +137,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "The God of mankind,",
+      "conventional_en": "The God of mankind,"
     },
     {
       "surah": 114,
@@ -191,7 +197,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "From the evil of the retreating whisperer -",
+      "conventional_en": "From the evil of the retreating whisperer -"
     },
     {
       "surah": 114,
@@ -259,7 +267,9 @@
           "lemma": "٥",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Who whispers [evil] into the breasts of mankind -",
+      "conventional_en": "Who whispers [evil] into the breasts of mankind -"
     },
     {
       "surah": 114,
@@ -307,7 +317,9 @@
           "lemma": "٦",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "From among the jinn and mankind.\"",
+      "conventional_en": "From among the jinn and mankind.\""
     }
   ]
 }

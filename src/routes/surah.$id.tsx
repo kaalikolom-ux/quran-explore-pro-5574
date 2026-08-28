@@ -1234,7 +1234,7 @@ function SurahDetailPage() {
                       className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
                       style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
                     >
-                      {ayah.conventional_en || (ayah as any).translation_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
+                      {ayah.conventional_en || (ayah as any).translation_en || (lang === "bn" ? "ইংরেজি অনুবাদ লোড হচ্ছে..." : "Loading English translation...")}
                     </p>
                   )}
                 </div>

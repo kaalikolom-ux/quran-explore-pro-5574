@@ -67,7 +67,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "When the victory of Allah has come and the conquest,",
+      "conventional_en": "When the victory of Allah has come and the conquest,"
     },
     {
       "surah": 110,
@@ -155,7 +157,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And you see the people entering into the religion of Allah in multitudes,",
+      "conventional_en": "And you see the people entering into the religion of Allah in multitudes,"
     },
     {
       "surah": 110,
@@ -243,7 +247,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance.",
+      "conventional_en": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance."
     }
   ]
 }

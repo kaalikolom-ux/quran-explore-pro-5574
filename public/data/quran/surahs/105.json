@@ -87,7 +87,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Have you not considered, [O Muhammad], how your Lord dealt with the companions of the elephant?",
+      "conventional_en": "Have you not considered, [O Muhammad], how your Lord dealt with the companions of the elephant?"
     },
     {
       "surah": 105,
@@ -155,7 +157,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Did He not make their plan into misguidance?",
+      "conventional_en": "Did He not make their plan into misguidance?"
     },
     {
       "surah": 105,
@@ -213,7 +217,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And He sent against them birds in flocks,",
+      "conventional_en": "And He sent against them birds in flocks,"
     },
     {
       "surah": 105,
@@ -271,7 +277,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Striking them with stones of hard clay,",
+      "conventional_en": "Striking them with stones of hard clay,"
     },
     {
       "surah": 105,
@@ -319,7 +327,9 @@
           "lemma": "٥",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And He made them like eaten straw.",
+      "conventional_en": "And He made them like eaten straw."
     }
   ]
 }

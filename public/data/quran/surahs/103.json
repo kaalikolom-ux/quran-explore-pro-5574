@@ -27,7 +27,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "By time,",
+      "conventional_en": "By time,"
     },
     {
       "surah": 103,
@@ -85,7 +87,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Indeed, mankind is in loss,",
+      "conventional_en": "Indeed, mankind is in loss,"
     },
     {
       "surah": 103,
@@ -193,7 +197,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.",
+      "conventional_en": "Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience."
     }
   ]
 }

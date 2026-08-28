@@ -57,7 +57,9 @@
           "lemma": "١",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Have you seen the one who denies the Recompense?",
+      "conventional_en": "Have you seen the one who denies the Recompense?"
     },
     {
       "surah": 107,
@@ -115,7 +117,9 @@
           "lemma": "٢",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "For that is the one who drives away the orphan",
+      "conventional_en": "For that is the one who drives away the orphan"
     },
     {
       "surah": 107,
@@ -183,7 +187,9 @@
           "lemma": "٣",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And does not encourage the feeding of the poor.",
+      "conventional_en": "And does not encourage the feeding of the poor."
     },
     {
       "surah": 107,
@@ -221,7 +227,9 @@
           "lemma": "٤",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "So woe to those who pray",
+      "conventional_en": "So woe to those who pray"
     },
     {
       "surah": 107,
@@ -289,7 +297,9 @@
           "lemma": "٥",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "[But] who are heedless of their prayer -",
+      "conventional_en": "[But] who are heedless of their prayer -"
     },
     {
       "surah": 107,
@@ -337,7 +347,9 @@
           "lemma": "٦",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "Those who make show [of their deeds]",
+      "conventional_en": "Those who make show [of their deeds]"
     },
     {
       "surah": 107,
@@ -375,7 +387,9 @@
           "lemma": "٧",
           "grammar_bn": "মার্কার"
         }
-      ]
+      ],
+      "translation_en": "And withhold [simple] assistance.",
+      "conventional_en": "And withhold [simple] assistance."
     }
   ]
 }
