@@ -201,9 +201,7 @@ function HomePage() {
                         "with authentic notes",
                       ]
                 }
-                typingSpeed={lang === "bn" ? 90 : 80}
-                deletingSpeed={lang === "bn" ? 50 : 40}
-                delayBetweenWords={1500}
+                delayBetweenWords={4500}
               />
             </div>
           </div>
