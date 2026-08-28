@@ -2111,6 +2111,7 @@ function RolesAdmin() {
 }
 
 function SubscribersAdmin() {
+  const queryClient = useQueryClient();
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const list = useQuery({
@@ -2121,8 +2122,59 @@ function SubscribersAdmin() {
         .select("*")
         .order("created_at", { ascending: false });
       if (error) throw error;
-      return data;
+      return data || [];
     },
+  });
+
+  const categoriesQuery = useQuery({
+    queryKey: ["admin-categories"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .order("sort_order");
+      if (error) throw error;
+      return data || [];
+    },
+  });
+
+  const accessQuery = useQuery({
+    queryKey: ["all-category-user-access"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("category_user_access" as any)
+        .select("*");
+      if (error) return [];
+      return data || [];
+    },
+  });
+
+  const toggleAccess = useMutation({
+    mutationFn: async ({ categoryId, email, userId, existsId }: { categoryId: string; email?: string; userId?: string; existsId?: string }) => {
+      if (existsId) {
+        const { error } = await supabase
+          .from("category_user_access" as any)
+          .delete()
+          .eq("id", existsId);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase
+          .from("category_user_access" as any)
+          .insert({
+            category_id: categoryId,
+            email: email ? email.trim().toLowerCase() : null,
+            user_id: userId || null,
+          });
+        if (error) throw error;
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["all-category-user-access"] });
+      queryClient.invalidateQueries({ queryKey: ["category-access-users"] });
+      queryClient.invalidateQueries({ queryKey: ["user-category-access"] });
+      toast.success("ক্যাটাগরি অ্যাক্সেস পারমিশন আপডেট হয়েছে!");
+    },
+    onError: (err: Error) => toast.error(err.message),
   });
 
   const copyToClipboard = (id: string) => {
@@ -2132,12 +2184,15 @@ function SubscribersAdmin() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
+  const restrictedCategories = (categoriesQuery.data || []).filter((c: any) => c.is_restricted);
+  const allAccessList = accessQuery.data || [];
+
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার তালিকা</h2>
+        <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার ও অ্যাক্সেস নিয়ন্ত্রণ</h2>
         <p className="text-xs text-muted-foreground">
-          সাবস্ক্রাইবারের UUID দেখতে পাবেন এবং কপি করে অ্যাডমিন রোলে ব্যবহার করতে পারবেন।
+          গ্রাহকদের বিবরণ দেখুন এবং রেস্ট্রিকটেড ক্যাটাগরির অ্যাক্সেস পারমিশন পরিচালনা করুন।
         </p>
       </div>
 
@@ -2145,42 +2200,93 @@ function SubscribersAdmin() {
         {list.data?.length === 0 && (
           <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
         )}
-        {list.data?.map((s) => (
-          <div
-            key={s.id}
-            className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 text-xs hover:bg-muted/30 transition-colors"
-          >
-            <div className="space-y-1">
-              <span className="font-semibold text-foreground">{s.email}</span>
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-[11px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
-                  ইউজার আইডি: {s.id}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => copyToClipboard(s.id)}
-                  className="inline-flex items-center gap-1 text-[11px] text-[#2271b1] hover:underline font-medium cursor-pointer"
-                >
-                  {copiedId === s.id ? (
-                    <>
-                      <Check className="size-3 text-emerald-500" /> কপি হয়েছে
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="size-3" /> আইডি কপি
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
+        {list.data?.map((s: any) => {
+          const subscriberEmail = s.email?.toLowerCase();
+          const grantedForThisUser = allAccessList.filter(
+            (a: any) => (subscriberEmail && a.email?.toLowerCase() === subscriberEmail) || (s.id && a.user_id === s.id)
+          );
 
-            <div className="flex items-center gap-3">
-              <span className="text-[11px] text-muted-foreground">
-                তারিখ: {new Date(s.created_at).toLocaleDateString("en-GB")}
-              </span>
+          return (
+            <div
+              key={s.id}
+              className="flex flex-col gap-3 p-4 text-xs hover:bg-muted/30 transition-colors"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-foreground text-sm">{s.email}</span>
+                    <span className="text-[10px] text-muted-foreground font-mono">
+                      (তারিখ: {new Date(s.created_at).toLocaleDateString("en-GB")})
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[11px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
+                      আইডি: {s.id}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => copyToClipboard(s.id)}
+                      className="inline-flex items-center gap-1 text-[11px] text-[#2271b1] hover:underline font-medium cursor-pointer"
+                    >
+                      {copiedId === s.id ? (
+                        <>
+                          <Check className="size-3 text-emerald-500" /> কপি হয়েছে
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="size-3" /> আইডি কপি
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* রেস্ট্রিকটেড ক্যাটাগরি পারমিশন চেকলিস্ট */}
+              {restrictedCategories.length > 0 && (
+                <div className="mt-1 pt-2.5 border-t border-border/50">
+                  <span className="text-[11px] font-semibold text-muted-foreground block mb-1.5">
+                    রেস্ট্রিকটেড ক্যাটাগরি অ্যাক্সেস:
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {restrictedCategories.map((cat: any) => {
+                      const accessRecord = grantedForThisUser.find((a: any) => a.category_id === cat.id);
+                      const isGranted = Boolean(accessRecord);
+
+                      return (
+                        <button
+                          key={cat.id}
+                          type="button"
+                          onClick={() =>
+                            toggleAccess.mutate({
+                              categoryId: cat.id,
+                              email: s.email,
+                              userId: s.id,
+                              existsId: accessRecord?.id,
+                            })
+                          }
+                          className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11px] font-medium transition-all cursor-pointer ${
+                            isGranted
+                              ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-bold shadow-2xs"
+                              : "border-border/80 bg-card text-muted-foreground hover:border-amber-500/50 hover:bg-amber-500/5"
+                          }`}
+                        >
+                          {isGranted ? (
+                            <Check className="size-3 text-emerald-600 dark:text-emerald-400" />
+                          ) : (
+                            <Plus className="size-3 text-muted-foreground" />
+                          )}
+                          <span>{cat.name_bn}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

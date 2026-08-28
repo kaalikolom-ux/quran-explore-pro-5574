@@ -8,15 +8,20 @@ import {
   ArrowLeft, 
   Share2, 
   Bookmark, 
-  BookmarkCheck,
-  Check,
-  BookOpen
+  BookmarkCheck, 
+  Check, 
+  BookOpen,
+  Lock,
+  LogIn,
+  ShieldAlert,
+  Sparkles
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
+import { useCategoryAccess } from "@/lib/accessControl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
@@ -39,7 +44,8 @@ export const Route = createFileRoute("/articles/$slug")({
 
 function SingleArticlePage() {
   const { slug } = Route.useParams();
-  const { lang, dark } = usePrefs();
+  const { lang } = usePrefs();
+  const { isLoggedIn, canAccessCategory, isLoading: accessLoading } = useCategoryAccess();
   const [copied, setCopied] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -49,7 +55,7 @@ function SingleArticlePage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("*, author:authors(id, name_bn, name_en, image_url, bio_bn, bio_en), category:categories(id, name_bn, name_en, slug)")
+        .select("*, author:authors(id, name_bn, name_en, image_url, bio_bn, bio_en), category:categories(id, name_bn, name_en, slug, is_restricted)")
         .eq("slug", slug)
         .maybeSingle();
 
@@ -69,6 +75,10 @@ function SingleArticlePage() {
 
   // বুকমার্ক টগল
   const toggleBookmark = () => {
+    if (!isLoggedIn) {
+      toast.error(lang === "en" ? "Please log in to save bookmarks" : "বুকমার্ক সংরক্ষণের জন্য লগইন করুন");
+      return;
+    }
     setIsBookmarked(!isBookmarked);
     toast.success(
       isBookmarked 
@@ -77,7 +87,7 @@ function SingleArticlePage() {
     );
   };
 
-  if (isLoading) {
+  if (isLoading || accessLoading) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-20 text-center text-xs text-muted-foreground">
         আর্টিকেল লোড হচ্ছে...
@@ -100,7 +110,41 @@ function SingleArticlePage() {
     );
   }
 
+  // রেস্ট্রিকটেড ক্যাটাগরি পারমিশন চেক
+  const isCategoryRestricted = Boolean(article.category?.is_restricted);
+  const hasCategoryAccess = canAccessCategory(article.category);
+
+  // যদি ক্যাটাগরিটি রেস্ট্রিকটেড হয় এবং ইউজারের অ্যাক্সেস না থাকে -> সম্পূর্ণ হিডেন গার্ড
+  if (isCategoryRestricted && !hasCategoryAccess) {
+    return (
+      <div className="mx-auto max-w-md px-4 py-24 text-center space-y-4">
+        <div className="mx-auto size-14 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
+          <Lock className="size-6" />
+        </div>
+        <h2 className="text-lg font-bold text-foreground">অ্যাক্সেস সংরক্ষিত / রেস্ট্রিকটেড</h2>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          এই ক্যাটাগরির আর্টিকেলটি আপনার অ্যাকাউন্টের জন্য উন্মুক্ত নয়। আপনার প্রয়োজনীয় অনুমতি বা সহায়তার জন্য অ্যাডমিনের সাথে যোগাযোগ করুন।
+        </p>
+        <div className="pt-2 flex justify-center gap-3">
+          <Button asChild variant="outline" size="sm">
+            <Link to="/articles">
+              <ArrowLeft className="size-3.5 mr-1.5" /> সকল আর্টিকেল
+            </Link>
+          </Button>
+          {!isLoggedIn && (
+            <Button asChild size="sm">
+              <Link to="/auth" search={{ redirect: `/articles/${slug}` }}>
+                <LogIn className="size-3.5 mr-1.5" /> লগইন করুন
+              </Link>
+            </Button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   const title = lang === "en" && article.title_en ? article.title_en : article.title_bn;
+  const excerpt = lang === "en" && article.excerpt_en ? article.excerpt_en : article.excerpt_bn;
   const content = lang === "en" && article.content_en ? article.content_en : article.content_bn;
   const author = article.author;
   const authorName = author
@@ -169,7 +213,7 @@ function SingleArticlePage() {
         </div>
       </div>
 
-      {/* মেটা হেডার ও ক্যাটাগরি ব্যাজ (ক্লিকেবল ও হোভার ইফেক্টসহ) */}
+      {/* মেটা হেডার ও ক্যাটাগরি ব্যাজ */}
       <header className="space-y-4 mb-8">
         {category && (
           <div className="flex items-center gap-2">
@@ -179,7 +223,7 @@ function SingleArticlePage() {
               className="inline-flex items-center gap-1.5 rounded-full bg-[#2A6F97]/10 dark:bg-[#58b4e8]/15 border border-[#2A6F97]/30 dark:border-[#58b4e8]/40 px-3 py-1 text-xs font-bold text-[#1c5576] dark:text-[#58b4e8] transition-all hover:bg-[#2A6F97] hover:text-white dark:hover:bg-[#58b4e8] dark:hover:text-slate-950 cursor-pointer shadow-xs group"
               title={`${categoryName} ক্যাটাগরির সকল লেখা পড়ুন`}
             >
-              <Layers className="size-3.5 transition-transform group-hover:scale-110" />
+              {isCategoryRestricted ? <Lock className="size-3 text-amber-500" /> : <Layers className="size-3.5 transition-transform group-hover:scale-110" />}
               <span>{categoryName}</span>
             </Link>
           </div>
@@ -237,13 +281,49 @@ function SingleArticlePage() {
         </div>
       )}
 
-      {/* মূল লেখার বিষয়বস্তু */}
-      <div
-        className="prose prose-base sm:prose-lg dark:prose-invert max-w-none leading-relaxed font-serif break-words mb-10"
-        dangerouslySetInnerHTML={{ __html: content || "" }}
-      />
+      {/* লগইন প্রোটেকশন চেক: লগইন ছাড়া ভিজিটর সম্পূর্ণ আর্টিকেল পড়তে পারবে না */}
+      {!isLoggedIn ? (
+        <div className="space-y-6 mb-12">
+          {/* সংক্ষেপ বা ইন্ট্রো অংশ */}
+          {excerpt && (
+            <div className="p-4 rounded-xl border border-border/60 bg-card/60 text-sm leading-relaxed text-foreground/90 font-serif italic">
+              "{excerpt}"
+            </div>
+          )}
 
-      {/* পোস্টের নিচের ট্যাগসমূহ (ক্লিকেবল ট্যাগ ব্যাজ) */}
+          {/* লগইন ওয়াল কার্ড */}
+          <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-b from-card to-primary/5 p-8 text-center space-y-5 shadow-lg">
+            <div className="mx-auto size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <Lock className="size-6" />
+            </div>
+
+            <div className="space-y-2 max-w-md mx-auto">
+              <h2 className="text-lg font-bold text-foreground font-serif">
+                সম্পূর্ণ আর্টিকেলটি পড়ার জন্য লগইন করুন
+              </h2>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                কুরআন অন্বেষার গভীর গবেষণামূলক প্রবন্ধ ও তাদাব্বুর পাঠের জন্য আমাদের সাইটে সাইন-ইন বা একটি ফ্রি অ্যাকাউন্ট তৈরি করুন।
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <Button asChild size="default" className="gap-2 text-xs font-semibold px-6 cursor-pointer shadow-md">
+                <Link to="/auth" search={{ redirect: `/articles/${slug}` }}>
+                  <LogIn className="size-4" /> লগইন বা সাইন আপ করুন
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* মূল লেখার বিষয়বস্তু (শুধুমাত্র লগইনকৃত ইউজারদের জন্য) */
+        <div
+          className="prose prose-base sm:prose-lg dark:prose-invert max-w-none leading-relaxed font-serif break-words mb-10"
+          dangerouslySetInnerHTML={{ __html: content || "" }}
+        />
+      )}
+
+      {/* পোস্টের নিচের ট্যাগসমূহ */}
       {tagsList.length > 0 && (
         <div className="my-8 pt-6 border-t border-border/60">
           <div className="flex items-center gap-2 mb-3">
@@ -264,7 +344,7 @@ function SingleArticlePage() {
         </div>
       )}
 
-      {/* কমেন্ট ও ফিডব্যাক সেকশন */}
+      {/* কমেন্ট ও ফিডব্যাক সেকশন (শুধুমাত্র লগইন থাকলে) */}
       <CommentsSection articleId={article.id} />
     </article>
   );

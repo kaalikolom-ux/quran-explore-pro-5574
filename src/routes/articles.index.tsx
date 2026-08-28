@@ -1,12 +1,13 @@
 import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
-import { FileText, EyeOff, User, X } from "lucide-react";
+import { FileText, EyeOff, User, X, Lock, LogIn, Sparkles } from "lucide-react";
 import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
+import { useCategoryAccess } from "@/lib/accessControl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -38,6 +39,7 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
 function ArticlesIndexPage() {
   const { lang, t } = usePrefs();
   const { isAdmin } = useIsAdmin();
+  const { canAccessCategory, isLoggedIn, isLoading: accessLoading } = useCategoryAccess();
   const searchParams = useSearch({ from: "/articles/" });
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.category || null);
@@ -80,7 +82,7 @@ function ArticlesIndexPage() {
     queryFn: async () => {
       let q = supabase
         .from("articles")
-        .select("*, author:authors(id, name_bn, name_en), category:categories(id, name_bn, name_en, slug)")
+        .select("*, author:authors(id, name_bn, name_en), category:categories(id, name_bn, name_en, slug, is_restricted)")
         .order("created_at", { ascending: false });
 
       if (!isAdmin) {
@@ -95,7 +97,16 @@ function ArticlesIndexPage() {
 
   const allArticles = query.data || [];
 
+  // ক্যাটাগরি পারমিশন অনুযায়ী দৃশ্যমান ক্যাটাগরি ফিল্টার
+  const visibleCategories = (categoriesQuery.data || []).filter((cat) => canAccessCategory(cat));
+
+  // আর্টিকেল ফিল্টারিং (রেস্ট্রিকটেড ক্যাটাগরি লুকানো এবং সার্চ ফিল্টার কার্যকর করা)
   const filteredArticles = allArticles.filter((a) => {
+    // ১. রেস্ট্রিকটেড ক্যাটাগরির এক্সেস না থাকলে লুকানো
+    if (a.category && !canAccessCategory(a.category)) {
+      return false;
+    }
+
     if (showDraftsOnly) {
       return !a.published;
     }
@@ -134,6 +145,26 @@ function ArticlesIndexPage() {
         </div>
       </div>
 
+      {/* যদি ভিজিটর লগইন না করা থাকে - ফ্রেন্ডলি মেম্বারশিপ ব্যানার */}
+      {!isLoggedIn && (
+        <div className="mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5 shadow-xs">
+          <div className="space-y-1">
+            <h2 className="text-sm font-bold text-foreground flex items-center gap-1.5">
+              <Sparkles className="size-4 text-primary" />
+              <span>সম্পূর্ণ আর্টিকেল পাঠের জন্য লগইন করুন</span>
+            </h2>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              কুরআন অন্বেষার সমস্ত প্রবন্ধ ও গভীর গবেষণামূলক তাদাব্বুর পড়ার জন্য বিনামূল্যে অ্যাকাউন্ট খুলুন অথবা লগইন করুন।
+            </p>
+          </div>
+          <Button asChild size="sm" className="shrink-0 text-xs gap-1.5 cursor-pointer">
+            <Link to="/auth" search={{ redirect: "/articles" }}>
+              <LogIn className="size-3.5" /> লগইন বা সাইন আপ
+            </Link>
+          </Button>
+        </div>
+      )}
+
       {/* যদি নির্দিষ্ট লেখক দ্বারা ফিল্টার হয়ে থাকে */}
       {selectedAuthor && activeAuthorObj && (
         <div className="mb-6 flex items-center justify-between p-3 rounded-xl border border-primary/30 bg-primary/5 text-xs">
@@ -171,7 +202,7 @@ function ArticlesIndexPage() {
           সকল ক্যাটাগরি
         </button>
 
-        {categoriesQuery.data?.map((cat) => (
+        {visibleCategories.map((cat) => (
           <button
             key={cat.id}
             type="button"
@@ -179,13 +210,14 @@ function ArticlesIndexPage() {
               setSelectedCategory(cat.id);
               setShowDraftsOnly(false);
             }}
-            className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+            className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
               selectedCategory === cat.id && !showDraftsOnly
                 ? "bg-foreground text-background shadow-sm"
                 : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground"
             }`}
           >
-            {lang === "en" && cat.name_en ? cat.name_en : cat.name_bn}
+            {cat.is_restricted && <Lock className="size-3 text-amber-500" />}
+            <span>{lang === "en" && cat.name_en ? cat.name_en : cat.name_bn}</span>
           </button>
         ))}
 
@@ -226,19 +258,25 @@ function ArticlesIndexPage() {
                 ? getCleanExcerpt(a.excerpt_en, rawBody)
                 : getCleanExcerpt(a.excerpt_bn, rawBody);
             const dateStr = a.published_at || a.created_at;
+            const isRestrictedArticle = Boolean(a.category?.is_restricted);
 
             return (
               <div
                 key={a.id}
                 className="card-soft group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
               >
-                {/* খসড়া ব্যাজ */}
-                {!a.published && (
+                {/* খসড়া বা রেস্ট্রিকটেড ব্যাজ */}
+                {!a.published ? (
                   <div className="absolute top-3 right-3 z-10 flex items-center gap-1 rounded-md bg-amber-500/90 px-2 py-0.5 text-[10px] font-bold text-slate-950 shadow-sm backdrop-blur-sm">
                     <EyeOff className="size-3" />
                     <span>খসড়া / Draft</span>
                   </div>
-                )}
+                ) : isRestrictedArticle ? (
+                  <div className="absolute top-3 right-3 z-10 flex items-center gap-1 rounded-md bg-amber-500/90 px-2 py-0.5 text-[10px] font-bold text-slate-950 shadow-sm backdrop-blur-sm">
+                    <Lock className="size-3" />
+                    <span>এক্সক্লুসিভ</span>
+                  </div>
+                ) : null}
 
                 {/* ইমেজ কভার বা বিসমিল্লাহ হেডার বক্স */}
                 <Link
@@ -261,7 +299,7 @@ function ArticlesIndexPage() {
                   )}
                 </Link>
 
-                {/* কন্টেন্ট এরিয়া: বিসমিল্লাহর ঠিক নিচে শিরোনাম ও এক্সার্পট */}
+                {/* কন্টেন্ট এরিয়া */}
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
                     <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
