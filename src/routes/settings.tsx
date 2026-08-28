@@ -94,48 +94,38 @@ function SettingsPage() {
   const displayLayers: { key: keyof Prefs; title: string; desc: string }[] = [
     {
       key: "showArabic",
-      title: lang === "bn" ? "আরবি টেক্সট" : "Arabic Text",
-      desc: lang === "bn" ? "মূল কুরআন পাঠ প্রদর্শন" : "Display original Quranic text",
+      title: "আরবি টেক্সট",
+      desc: "মূল কুরআন পাঠ প্রদর্শন",
     },
     {
       key: "showWordByWord",
-      title: lang === "bn" ? "শব্দে শব্দে অর্থ" : "Word by Word Meaning",
-      desc: lang === "bn" ? "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" : "Meaning & transliteration under each word",
+      title: "শব্দে শব্দে অর্থ",
+      desc: "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ",
     },
     {
       key: "showTransliteration",
-      title: lang === "bn" ? "উচ্চারণ (Transliteration)" : "Ayah Transliteration",
-      desc: lang === "bn" ? "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" : "Full ayah phonetic reading guide",
+      title: "বাংলা উচ্চারণ (Transliteration)",
+      desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা",
     },
     {
       key: "showConventionalBn",
-      title: lang === "bn" ? "১. প্রচলিত অনুবাদ" : "1. Conventional Translation (BN)",
-      desc: lang === "bn" ? "মুহিউদ্দীন খান / তাইসিরুল কুরআন (Greentech)" : "Standard Bengali translation",
-    },
-    {
-      key: "showConventionalEn",
-      title: lang === "bn" ? "২. Conventional Translation" : "2. Conventional Translation (EN)",
-      desc: lang === "bn" ? "সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ (Greentech)" : "Sahih International translation",
+      title: "১. প্রচলিত বাংলা অনুবাদ",
+      desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন (Greentech)",
     },
     {
       key: "showModernBn",
-      title: lang === "bn" ? "৩. আধুনিক অনুবাদ" : "3. Modern Translation (BN)",
-      desc: lang === "bn" ? "আমাদের প্রাঞ্জল ও সহজবোধ্য আধুনিক বাংলা অনুবাদ" : "Contemporary contextual Bengali translation",
-    },
-    {
-      key: "showModernEn",
-      title: lang === "bn" ? "৪. Modern Translation" : "4. Modern Translation (EN)",
-      desc: lang === "bn" ? "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ" : "Contemporary contextual English translation",
+      title: "২. আধুনিক বিজ্ঞানভিত্তিক বাংলা অনুবাদ",
+      desc: "আমাদের প্রাঞ্জল ও সমসাময়িক বিজ্ঞানভিত্তিক বাংলা অনুবাদ",
     },
     {
       key: "showLexicon",
-      title: lang === "bn" ? "অভিধান / Lexicon" : "Lexicon / Vocabulary",
-      desc: lang === "bn" ? "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণগত বিশ্লেষণ" : "Vocabulary, Arabic roots and grammatical notes",
+      title: "কুরআনিক অভিধান",
+      desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণগত বিশ্লেষণ",
     },
     {
       key: "showLexiconScientific",
-      title: lang === "bn" ? "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা" : "Scientific Meanings & Context",
-      desc: lang === "bn" ? "অভিধানে মূল ধাতুর আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট প্রদর্শন" : "Show scientific insights and contextual research in lexicon",
+      title: "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা",
+      desc: "অভিধানে মূল ধাতুর আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট প্রদর্শন",
     },
   ];
 
@@ -145,17 +135,15 @@ function SettingsPage() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2">
             <Sliders className="size-6 text-primary" />
-            {lang === "bn" ? "সেটিংস ও পছন্দসমূহ" : "Settings & Preferences"}
+            সেটিংস ও পছন্দসমূহ
           </h1>
           <p className="text-xs text-muted-foreground mt-1">
-            {lang === "bn"
-              ? "অফলাইন ডাটা, ফন্ট সাইজ এবং ডিসপ্লে লেয়ার কাস্টমাইজ করুন"
-              : "Manage offline data, font scaling and customize display layers"}
+            অফলাইন ডাটা, ফন্ট সাইজ এবং ডিসপ্লে লেয়ার কাস্টমাইজ করুন
           </p>
         </div>
         <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
           <Check className="size-3" />
-          {lang === "bn" ? "স্বয়ংক্রিয় সংরক্ষিত" : "Auto saved"}
+          স্বয়ংক্রিয় সংরক্ষিত
         </span>
       </div>
 
@@ -163,14 +151,14 @@ function SettingsPage() {
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Type className="size-4 text-primary" />
-          <span>{lang === "bn" ? "ফন্ট সাইজ সেটিংস" : "Font Size Settings"}</span>
+          <span>ফন্ট সাইজ সেটিংস</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
               <Label className="text-xs font-semibold text-foreground">
-                {lang === "bn" ? "আরবি ফন্ট সাইজ" : "Arabic Font Size"}
+                আরবি ফন্ট সাইজ
               </Label>
               <span className="font-mono text-xs text-primary font-bold">{prefs.arabicFontSize}px</span>
             </div>
@@ -192,7 +180,7 @@ function SettingsPage() {
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
               <Label className="text-xs font-semibold text-foreground">
-                {lang === "bn" ? "অনুবাদ ফন্ট সাইজ" : "Translation Font Size"}
+                অনুবাদ ফন্ট সাইজ
               </Label>
               <span className="font-mono text-xs text-primary font-bold">{prefs.translationFontSize}px</span>
             </div>
@@ -217,7 +205,7 @@ function SettingsPage() {
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Database className="size-4 text-primary" />
-          <span>{lang === "bn" ? "অফলাইন ডাউনলোড ম্যানেজমেন্ট" : "Offline Data Management"}</span>
+          <span>অফলাইন ডাউনলোড ম্যানেজমেন্ট</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -225,10 +213,10 @@ function SettingsPage() {
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="text-sm font-semibold text-foreground">
-                  {lang === "bn" ? "১. সুরা ডাউনলোড (১১৪টি)" : "1. Download Surahs (114)"}
+                  ১. সুরা ডাউনলোড (১১৪টি)
                 </h3>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  {lang === "bn" ? "সম্পূর্ণ ১১৪টি সূরার লোকাল ডাটা ক্যাশ করুন" : "Cache all 114 surahs for full offline access"}
+                  সম্পূর্ণ ১১৪টি সূরার লোকাল ডাটা ক্যাশ করুন
                 </p>
               </div>
               <HardDrive className="size-5 text-muted-foreground" />
@@ -271,10 +259,10 @@ function SettingsPage() {
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="text-sm font-semibold text-foreground">
-                  {lang === "bn" ? "২. আয়াত ডাউনলোড (৬২৩৬টি)" : "2. Download Ayahs (6236)"}
+                  ২. আয়াত ডাউনলোড (৬২৩৬টি)
                 </h3>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  {lang === "bn" ? "শব্দে শব্দে অর্থ ও রুটসহ অফলাইন ডাটা সেভ করুন" : "Save all ayahs with words and roots"}
+                  শব্দে শব্দে অর্থ ও রুটসহ অফলাইন ডাটা সেভ করুন
                 </p>
               </div>
               <Download className="size-5 text-muted-foreground" />
@@ -319,7 +307,7 @@ function SettingsPage() {
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Layers className="size-4 text-primary" />
-          <span>{lang === "bn" ? "প্রদর্শন সেটিংস (Display Layers)" : "Display Layers"}</span>
+          <span>প্রদর্শন সেটিংস (Display Layers)</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

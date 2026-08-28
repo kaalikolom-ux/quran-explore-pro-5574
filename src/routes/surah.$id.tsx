@@ -785,9 +785,7 @@ function SurahDetailPage() {
   const showWordByWord = prefs.showWordByWord;
   const showTransliteration = prefs.showTransliteration;
   const showConventionalBn = prefs.showConventionalBn;
-  const showConventionalEn = prefs.showConventionalEn;
   const showModernBn = prefs.showModernBn;
-  const showModernEn = prefs.showModernEn;
   const showLexicon = prefs.showLexicon;
 
   const arabicFontSize = prefs.arabicFontSize || 28;
@@ -1178,7 +1176,7 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
+              {/* [৩] বাংলা অনুবাদের ২টি প্রামাণ্য সারি */}
               <div className="space-y-3 pt-0.5">
                 
                 {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
@@ -1188,7 +1186,7 @@ function SurahDetailPage() {
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <FileText className="size-3.5 text-muted-foreground/80" />
-                    <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
+                    <span>১. প্রচলিত বাংলা অনুবাদ</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1210,43 +1208,14 @@ function SurahDetailPage() {
                   )}
                 </div>
 
-                {/* ২. Conventional Translation (English) */}
-                <div 
-                  style={{ display: (isEditing || showConventionalEn) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                    <Languages className="size-3.5 text-muted-foreground/80" />
-                    <span>Conventional Translation (English)</span>
-                  </div>
-                  {isEditing ? (
-                    <Textarea
-                      value={editForm.conventional_en}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, conventional_en: e.target.value })
-                      }
-                      className="font-serif italic mt-1 bg-background"
-                      style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="Conventional English translation..."
-                    />
-                  ) : (
-                    <p 
-                      className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
-                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
-                    >
-                      {ayah.conventional_en || (ayah as any).translation_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
-                    </p>
-                  )}
-                </div>
-
-                {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
+                {/* ২. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা) */}
                 <div 
                   style={{ display: (isEditing || (showModernBn && hasModernBnData)) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90">
                     <BookMarked className="size-3.5 text-primary" />
-                    <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
+                    <span>২. আধুনিক বিজ্ঞানভিত্তিক বাংলা অনুবাদ</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1264,35 +1233,6 @@ function SurahDetailPage() {
                       style={{ fontSize: `${translationFontSize}px` }}
                     >
                       {ayah.modern_translation_bn}
-                    </p>
-                  )}
-                </div>
-
-                {/* ৪. Modern Translation (English) */}
-                <div 
-                  style={{ display: (isEditing || (showModernEn && hasModernEnData)) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90">
-                    <BookmarkCheck className="size-3.5 text-primary" />
-                    <span>Modern Translation (English)</span>
-                  </div>
-                  {isEditing ? (
-                    <Textarea
-                      value={editForm.modern_translation_en}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, modern_translation_en: e.target.value })
-                      }
-                      className="font-serif italic mt-1 bg-background"
-                      style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="Modern contemporary English translation..."
-                    />
-                  ) : (
-                    <p 
-                      className="italic text-foreground/90 font-serif leading-relaxed pl-5.5"
-                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
-                    >
-                      {ayah.modern_translation_en}
                     </p>
                   )}
                 </div>

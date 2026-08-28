@@ -5,15 +5,13 @@ export type DisplayLayers = {
   showWordByWord: boolean;
   showTransliteration: boolean;
   showConventionalBn: boolean;
-  showConventionalEn: boolean;
   showModernBn: boolean;
-  showModernEn: boolean;
   showLexicon: boolean;
   showLexiconScientific: boolean;
 };
 
 export type Prefs = DisplayLayers & {
-  lang: "bn" | "en";
+  lang: "bn";
   dark: boolean;
   arabicFontSize: number;
   translationFontSize: number;
@@ -28,9 +26,7 @@ export const DEFAULT_PREFS: Prefs = {
   showWordByWord: true,
   showTransliteration: true,
   showConventionalBn: true,
-  showConventionalEn: true,
   showModernBn: true,
-  showModernEn: true,
   showLexicon: true,
   showLexiconScientific: true,
 };
@@ -57,7 +53,7 @@ export function savePrefs(newPrefs: Prefs) {
 
 type PrefsContextType = {
   prefs: Prefs;
-  lang: "bn" | "en";
+  lang: "bn";
   dark: boolean;
   setDark: (dark: boolean) => void;
   toggleLang: () => void;
@@ -98,198 +94,135 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
   };
 
   const toggleLang = () => {
-    updatePref("lang", prefs.lang === "bn" ? "en" : "bn");
+    // Pure Bengali site - language remains Bengali
   };
 
   const setDark = (dark: boolean) => {
     updatePref("dark", dark);
   };
 
-  const t = (key: string) => {
-    const dict: Record<string, { bn: string; en: string }> = {
-      // General & Layout
-      siteName: { bn: "কুরআন অন্বেষা", en: "Quran Explorer" },
-      home: { bn: "হোম", en: "Home" },
-      readQuran: { bn: "কুরআন পড়ুন", en: "Read Quran" },
-      articles: { bn: "আর্টিকেল", en: "Articles" },
-      contact: { bn: "যোগাযোগ", en: "Contact" },
-      settings: { bn: "সেটিংস", en: "Settings" },
-      bookmarks: { bn: "বুকমার্ক", en: "Bookmarks" },
-      admin: { bn: "অ্যাডমিন", en: "Admin" },
-      adminOnly: { bn: "শুধুমাত্র অনুমোদিত অ্যাডমিন প্রবেশ করতে পারবেন।", en: "Access restricted to administrators only." },
-      signOut: { bn: "লগআউট", en: "Sign Out" },
-      signIn: { bn: "লগইন", en: "Sign In" },
-      createAccount: { bn: "অ্যাকাউন্ট তৈরি করুন", en: "Create Account" },
-      haveAccount: { bn: "ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন করুন", en: "Already have an account? Sign in" },
-      noAccount: { bn: "নতুন ব্যবহারকারী? অ্যাকাউন্ট খুলুন", en: "Don't have an account? Sign up" },
-      signInPrompt: { bn: "আপনার পছন্দের আয়াত ও আর্টিকেল সংরক্ষণ করতে সাইন ইন করুন", en: "Sign in to save and manage your bookmarks and notes" },
-      forgotPassword: { bn: "পাসওয়ার্ড ভুলে গেছেন?", en: "Forgot your password?" },
-      resetPassword: { bn: "পাসওয়ার্ড রিসেট", en: "Reset Password" },
-      sendResetLink: { bn: "রিসেট লিংক পাঠান", en: "Send Reset Link" },
-      backToSignIn: { bn: "লগইনে ফিরে যান", en: "Back to Sign In" },
-      resetSent: { bn: "পাসওয়ার্ড রিসেট লিংক আপনার ইমেইলে পাঠানো হয়েছে।", en: "Password reset link has been sent to your email." },
-      email: { bn: "ইমেইল", en: "Email" },
-      Email: { bn: "ইমেইল এড্রেস", en: "Email Address" },
-      password: { bn: "পাসওয়ার্ড", en: "Password" },
-      error: { bn: "কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন", en: "Something went wrong, please try again" },
-      darkMode: { bn: "ডার্ক মোড", en: "Dark Mode" },
-      language: { bn: "ভাষা", en: "Language" },
-      tagline: { bn: "শব্দে শব্দে কুরআন ও প্রামাণ্য অনুবাদ", en: "Word by Word Quran & Authentic Translation" },
-      heroSub: { bn: "কুরআনের প্রতিটি শব্দের ব্যাকরণগত ব্যুৎপত্তি, শাব্দিক ও ভাবানুবাদ একই পাতায়।", en: "Grammatical breakdown, word meaning, and translations in one place." },
-      surahs: { bn: "সুরাসমূহ", en: "Surahs" },
-      verses: { bn: "আয়াত", en: "Verses" },
-      loading: { bn: "লোড হচ্ছে...", en: "Loading..." },
-      latestArticles: { bn: "সাম্প্রতিক আর্টিকেল", en: "Latest Articles" },
-      noArticles: { bn: "কোনো আর্টিকেল পাওয়া যায়নি।", en: "No articles found." },
-      newsletter: { bn: "আমাদের নিউজলেটার সাবস্ক্রাইব করুন", en: "Subscribe to our Newsletter" },
-      newsletterSub: { bn: "কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।", en: "Get Quranic tadabbur and new analytical articles directly in your inbox." },
-      menuLinks: { bn: "মেনু লিংক", en: "Menu Links" },
-      rights: { bn: "সর্বস্বত্ব সংরক্ষিত।", en: "All rights reserved." },
-      allCategories: { bn: "সকল ক্যাটাগরি", en: "All Categories" },
-      dashboard: { bn: "ড্যাশবোর্ড", en: "Dashboard" },
-      dashboardSub: { bn: "কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল", en: "Content, settings and website management panel" },
-      save: { bn: "সংরক্ষণ করুন", en: "Save" },
-      saving: { bn: "সংরক্ষণ হচ্ছে...", en: "Saving..." },
-      saved: { bn: "সফলভাবে সংরক্ষিত হয়েছে", en: "Saved successfully" },
-      cancel: { bn: "বাতিল", en: "Cancel" },
-      delete: { bn: "মুছে ফেলা হয়েছে", en: "Deleted" },
-      edit: { bn: "সম্পাদনা", en: "Edit" },
-      draft: { bn: "খসড়া (Draft)", en: "Draft" },
-      published: { bn: "প্রকাশিত", en: "Published" },
-      visible: { bn: "প্রদর্শন", en: "Visible" },
-      sortOrder: { bn: "ক্রমিক নম্বর (Sort Order)", en: "Sort Order" },
-
-      // Contact Form Specific
-      contactIntroTitle: { bn: "আমাদের সাথে সরাসরি যোগাযোগ করুন", en: "Get in touch with us directly" },
-      contactIntro: { bn: "কুরআন অন্বেষা সম্পর্কিত যেকোনো প্রশ্ন, মতামত, বা পরামর্শ পাঠাতে নিচের ফর্মটি পূরণ করুন।", en: "Fill out the form below for any questions, feedback, or suggestions regarding Quran Explorer." },
-      yourName: { bn: "আপনার নাম", en: "Your Name" },
-      subject: { bn: "বিষয় (Subject)", en: "Subject" },
-      messageLabel: { bn: "আপনার বার্তা / মন্তব্য", en: "Your Message" },
-      sendMessage: { bn: "বার্তা পাঠান", en: "Send Message" },
-      sending: { bn: "বার্তা পাঠানো হচ্ছে...", en: "Sending..." },
-      messageSent: { bn: "আপনার বার্তা সফলভাবে পাঠানো হয়েছে!", en: "Your message has been sent successfully!" },
-
-      // Main Navigation Tabs
-      translationsTab: { bn: "কুরআন অনুবাদ", en: "Verse Translations" },
-      postSettings: { bn: "লেখক ও পোস্ট সেটিংস", en: "Post & Author Settings" },
-      authorsTab: { bn: "লেখকবৃন্দ", en: "Authors" },
-      categoriesTab: { bn: "ক্যাটাগরি", en: "Categories" },
-      menuTab: { bn: "নেভিগেশন মেনু", en: "Menu Settings" },
-      pagesTab: { bn: "পেইজসমূহ", en: "Pages" },
-      socialTab: { bn: "সোশ্যাল মিডিয়া লিংক", en: "Social Links" },
-      turnstileTab: { bn: "টার্নস্টাইল সিকিউরিটি ও ইমেইল", en: "Turnstile Security" },
-      messagesTab: { bn: "ব্যবহারকারীর বার্তা / ফিডব্যাক", en: "Messages" },
-      offlineTab: { bn: "অফলাইন ডেটা সিঙ্ক ও ক্যাশ", en: "Offline Sync" },
-      subscribersTab: { bn: "সাবস্ক্রাইবার তালিকা", en: "Subscribers" },
-
-      // Articles
-      newArticle: { bn: "নতুন আর্টিকেল", en: "New Article" },
-      editArticle: { bn: "আর্টিকেল এডিট করুন", en: "Edit Article" },
-      slug: { bn: "স্লাগ (URL)", en: "Slug (URL)" },
-      titleBn: { bn: "বাংলা শিরোনাম", en: "Bangla Title" },
-      titleEn: { bn: "ইংরেজি শিরোনাম", en: "English Title" },
-      excerptBn: { bn: "বাংলা সংক্ষিপ্ত বিবরণ", en: "Bangla Excerpt" },
-      excerptEn: { bn: "ইংরেজি সংক্ষিপ্ত বিবরণ", en: "English Excerpt" },
-      contentBn: { bn: "বাংলা মূল বিষয়বস্তু", en: "Bangla Content" },
-      contentEn: { bn: "ইংরেজি মূল বিষয়বস্তু", en: "English Content" },
-      coverImage: { bn: "কভার ছবির URL", en: "Cover Image URL" },
-      coverImageUrl: { bn: "কভার ছবির URL", en: "Cover Image URL" },
-      category: { bn: "ক্যাটাগরি", en: "Category" },
-      noCategory: { bn: "কোনো ক্যাটাগরি নেই", en: "No Category" },
-      author: { bn: "লেখক", en: "Author" },
-      noAuthor: { bn: "কোনো নির্দিষ্ট লেখক নেই", en: "No Author" },
-
-      // Authors
-      newAuthor: { bn: "নতুন লেখক যুক্ত করুন", en: "Add New Author" },
-      authorNameBn: { bn: "লেখকের নাম (বাংলা)", en: "Author Name (Bangla)" },
-      authorNameEn: { bn: "লেখকের নাম (English)", en: "Author Name (English)" },
-      authorImage: { bn: "লেখকের ছবি (URL)", en: "Author Photo (URL)" },
-      authorBioBn: { bn: "লেখকের পরিচিতি (বাংলা)", en: "Author Bio (Bangla)" },
-      authorBioEn: { bn: "লেখকের পরিচিতি (English)", en: "Author Bio (English)" },
-
-      // Categories
-      newCategory: { bn: "নতুন ক্যাটাগরি তৈরি করুন", en: "New Category" },
-      categoryNameBn: { bn: "ক্যাটাগরির নাম (বাংলা)", en: "Category Name (Bangla)" },
-      categoryNameEn: { bn: "ক্যাটাগরির নাম (English)", en: "Category Name (English)" },
-      showInMenu: { bn: "হেডার মেনুতে প্রদর্শন করুন", en: "Show in Menu" },
-
-      // Pages
-      newPage: { bn: "নতুন পেজ তৈরি করুন", en: "Create New Page" },
-      pageTitleBn: { bn: "পেজের শিরোনাম (বাংলা)", en: "Page Title (Bangla)" },
-      pageTitleEn: { bn: "পেজের শিরোনাম (English)", en: "Page Title (English)" },
-      pageSlug: { bn: "পেজ স্লাগ (URL Slug)", en: "Page Slug (URL)" },
-      pageContentBn: { bn: "পেজের বিষয়বস্তু (বাংলা)", en: "Page Content (Bangla)" },
-      pageContentEn: { bn: "পেজের বিষয়বস্তু (English)", en: "Page Content (English)" },
-      metaDescriptionBn: { bn: "মেটা বিবরণ (বাংলা)", en: "Meta Description (Bangla)" },
-      metaDescriptionEn: { bn: "মেটা বিবরণ (English)", en: "Meta Description (English)" },
-      addToHeaderMenu: { bn: "হেডার মেনুতে যুক্ত করুন", en: "Add to Header Menu" },
-      addToFooterMenu: { bn: "ফুটার মেনুতে যুক্ত করুন", en: "Add to Footer Menu" },
-
-      // Menu
-      newMenuItem: { bn: "নতুন মেনু আইটেম", en: "New Menu Item" },
-      menuLabelBn: { bn: "মেনুর নাম (বাংলা)", en: "Menu Label (Bangla)" },
-      menuLabelEn: { bn: "মেনুর নাম (English)", en: "Menu Label (English)" },
-      menuLink: { bn: "মেনু লিংক (URL/Path)", en: "Menu Link (URL)" },
-      menuLocation: { bn: "মেনুর অবস্থান", en: "Menu Location" },
-      headerMenu: { bn: "হেডার মেনু", en: "Header Menu" },
-      footerMenu: { bn: "ফুটার মেনু", en: "Footer Menu" },
-
-      // Social Links & Platforms
-      newSocialLink: { bn: "নতুন সোশ্যাল মিডিয়া লিংক", en: "New Social Link" },
-      platform: { bn: "প্ল্যাটফর্ম", en: "Platform" },
-      labelOptional: { bn: "লেবেল / নাম (ঐচ্ছিক)", en: "Label (Optional)" },
-      link: { bn: "প্রোফাইল লিংক (URL)", en: "Profile Link (URL)" },
-      facebook: { bn: "Facebook", en: "Facebook" },
-      instagram: { bn: "Instagram", en: "Instagram" },
-      twitter: { bn: "Twitter", en: "Twitter" },
-      x: { bn: "X (Twitter)", en: "X (Twitter)" },
-      youtube: { bn: "YouTube", en: "YouTube" },
-      linkedin: { bn: "LinkedIn", en: "LinkedIn" },
-      github: { bn: "GitHub", en: "GitHub" },
-      telegram: { bn: "Telegram", en: "Telegram" },
-      whatsapp: { bn: "WhatsApp", en: "WhatsApp" },
-      website: { bn: "Website", en: "Website" },
-
-      // Messages
-      noMessages: { bn: "কোনো নতুন বার্তা বা ফিডব্যাক নেই।", en: "No messages found." },
-
-      // Turnstile & Security & Email
-      turnstileHint: { bn: "Cloudflare Turnstile ও ইমেইল নোটিফিকেশন কনফিগারেশন সেট করুন।", en: "Configure Cloudflare Turnstile and email notifications." },
-      turnstileSiteKey: { bn: "Turnstile সাইট কী (Site Key)", en: "Turnstile Site Key" },
-      turnstileSecretKey: { bn: "Turnstile সিক্রেট কী (Secret Key)", en: "Turnstile Secret Key" },
-      contactFromEmail: { bn: "কন্টাক্ট সেন্ডার ইমেইল", en: "Contact Sender Email" },
-      contactSenderDomain: { bn: "ভেরিফায়েড সেন্ডার ডোমেইন", en: "Sender Domain" },
-
-      // Offline Sync & Audio Mirror
-      offlineSync: { bn: "কুরআন অফলাইন ডেটা সিঙ্ক", en: "Quran Offline Sync" },
-      offlineSyncHint: { bn: "ইন্টারনেট ছাড়া পড়ার জন্য কুরআনের সমস্ত সূরা ও অনুবাদ লোকাল ক্যাশে সংরক্ষণ করুন।", en: "Cache all Surahs and translations locally for offline reading." },
-      syncedSurahs: { bn: "সিঙ্ককৃত সূরা", en: "Synced Surahs" },
-      syncAll: { bn: "সব সূরা সিঙ্ক করুন", en: "Sync All Surahs" },
-      syncFirstTen: { bn: "প্রথম ১০টি সূরা সিঙ্ক করুন", en: "Sync First 10 Surahs" },
-      audioMirror: { bn: "অডিও ফাইল মিররিং ও ক্যাশিং", en: "Audio Mirroring & Cache" },
-      audioMirrorHint: { bn: "দ্রুত লোডিং ও অফলাইন শোনার সুবিধার্থে অডিও ফাইল ক্যাশ করুন।", en: "Mirror audio files for fast loading and offline playback." },
-      audioMirrorProgress: { bn: "অডিও সিঙ্ক অগ্রগতি", en: "Audio Mirror Progress" },
-      audioMirrorStart: { bn: "অডিও মিররিং শুরু করুন", en: "Start Audio Mirroring" },
-
-      // Verse Translation
-      surahNumber: { bn: "সূরা নম্বর", en: "Surah Number" },
-      ayahNumber: { bn: "আয়াত নম্বর", en: "Ayah Number" },
-      translationType: { bn: "অনুবাদ টাইপ", en: "Translation Type" },
-      translationText: { bn: "অনুবাদ টেক্সট", en: "Translation Text" },
-      note: { bn: "বিশেষ টীকা / নোট", en: "Special Note" },
-      sciBn: { bn: "বিজ্ঞানভিত্তিক (বাংলা)", en: "Scientific (Bangla)" },
-      sciEn: { bn: "বিজ্ঞানভিত্তিক (English)", en: "Scientific (English)" },
-      stdBn: { bn: "প্রচলিত অনুবাদ (বাংলা)", en: "Standard (Bangla)" },
-      stdEn: { bn: "প্রচলিত অনুবাদ (English)", en: "Standard (English)" },
+  const t = (key: string): string => {
+    const dict: Record<string, string> = {
+      siteName: "কুরআন অন্বেষা",
+      home: "হোম",
+      readQuran: "কুরআন পড়ুন",
+      articles: "আর্টিকেল",
+      contact: "যোগাযোগ",
+      settings: "সেটিংস",
+      bookmarks: "বুকমার্ক",
+      admin: "অ্যাডমিন",
+      adminOnly: "শুধুমাত্র অনুমোদিত অ্যাডমিন প্রবেশ করতে পারবেন।",
+      signOut: "লগআউট",
+      signIn: "লগইন",
+      createAccount: "অ্যাকাউন্ট তৈরি করুন",
+      haveAccount: "ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন করুন",
+      noAccount: "নতুন ব্যবহারকারী? অ্যাকাউন্ট খুলুন",
+      signInPrompt: "আপনার পছন্দের আয়াত ও আর্টিকেল সংরক্ষণ করতে সাইন ইন করুন",
+      forgotPassword: "পাসওয়ার্ড ভুলে গেছেন?",
+      resetPassword: "পাসওয়ার্ড রিসেট",
+      sendResetLink: "রিসেট লিংক পাঠান",
+      backToSignIn: "লগইনে ফিরে যান",
+      resetSent: "পাসওয়ার্ড রিসেট লিংক আপনার ইমেইলে পাঠানো হয়েছে।",
+      email: "ইমেইল",
+      Email: "ইমেইল এড্রেস",
+      password: "পাসওয়ার্ড",
+      error: "কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন",
+      darkMode: "ডার্ক মোড",
+      language: "ভাষা",
+      tagline: "শব্দে শব্দে কুরআন ও প্রামাণ্য অনুবাদ",
+      heroTitle: "পবিত্র কুরআন — বুঝে পড়ুন",
+      heroSub: "কুরআনের প্রতিটি শব্দের ব্যাকরণগত ব্যুৎপত্তি, শাব্দিক ও ভাবানুবাদ একই পাতায়।",
+      readSurah1: "সূরা ফাতিহা পড়ুন",
+      viewLexicon: "কুরআনিক অভিধান",
+      surahs: "সুরাসমূহ",
+      verses: "আয়াত",
+      loading: "লোড হচ্ছে...",
+      latestArticles: "সাম্প্রতিক আর্টিকেল",
+      noArticles: "কোনো আর্টিকেল পাওয়া যায়নি।",
+      newsletter: "আমাদের নিউজলেটার সাবস্ক্রাইব করুন",
+      newsletterSub: "কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।",
+      subscribe: "সাবস্ক্রাইব করুন",
+      emailPlaceholder: "আপনার ইমেইল লিখুন...",
+      searchPlaceholder: "সুরা বা আয়াত খুঁজুন...",
+      menuLinks: "মেনু লিংক",
+      rights: "সর্বস্বত্ব সংরক্ষিত।",
+      allCategories: "সকল ক্যাটাগরি",
+      dashboard: "ড্যাশবোর্ড",
+      dashboardSub: "কন্টেন্ট, সেটিংস ও ওয়েবসাইট ব্যবস্থাপনা প্যানেল",
+      save: "সংরক্ষণ করুন",
+      saving: "সংরক্ষণ হচ্ছে...",
+      saved: "সফলভাবে সংরক্ষিত হয়েছে",
+      cancel: "বাতিল",
+      delete: "মুছে ফেলুন",
+      edit: "সম্পাদনা",
+      draft: "খসড়া",
+      published: "প্রকাশিত",
+      visible: "প্রদর্শন",
+      sortOrder: "ক্রমিক নম্বর",
+      yourName: "আপনার নাম",
+      subject: "বিষয়",
+      messageLabel: "আপনার বার্তা / মন্তব্য",
+      sendMessage: "বার্তা পাঠান",
+      sending: "বার্তা পাঠানো হচ্ছে...",
+      messageSent: "আপনার বার্তা সফলভাবে পাঠানো হয়েছে!",
+      translationsTab: "কুরআন অনুবাদ",
+      postSettings: "লেখক ও পোস্ট সেটিংস",
+      authorsTab: "লেখকবৃন্দ",
+      categoriesTab: "ক্যাটাগরি",
+      menuTab: "নেভিগেশন মেনু",
+      pagesTab: "পেইজসমূহ",
+      socialTab: "সোশ্যাল মিডিয়া লিংক",
+      turnstileTab: "টার্নস্টাইল সিকিউরিটি ও ইমেইল",
+      messagesTab: "ব্যবহারকারীর বার্তা / ফিডব্যাক",
+      offlineTab: "অফলাইন ডেটা সিঙ্ক ও ক্যাশ",
+      subscribersTab: "সাবস্ক্রাইবার তালিকা",
+      newArticle: "নতুন আর্টিকেল",
+      editArticle: "আর্টিকেল এডিট করুন",
+      slug: "স্লাগ (URL)",
+      titleBn: "বাংলা শিরোনাম",
+      excerptBn: "বাংলা সংক্ষিপ্ত বিবরণ",
+      contentBn: "বাংলা মূল বিষয়বস্তু",
+      coverImage: "কভার ছবির URL",
+      category: "ক্যাটাগরি",
+      noCategory: "কোনো ক্যাটাগরি নেই",
+      author: "লেখক",
+      noAuthor: "কোনো নির্দিষ্ট লেখক নেই",
+      newAuthor: "নতুন লেখক যুক্ত করুন",
+      authorNameBn: "লেখকের নাম (বাংলা)",
+      authorImage: "লেখকের ছবি (URL)",
+      authorBioBn: "লেখকের পরিচিতি (বাংলা)",
+      newCategory: "নতুন ক্যাটাগরি তৈরি করুন",
+      categoryNameBn: "ক্যাটাগরির নাম (বাংলা)",
+      showInMenu: "হেডার মেনুতে প্রদর্শন করুন",
+      newPage: "নতুন পেজ তৈরি করুন",
+      pageTitleBn: "পেজের শিরোনাম (বাংলা)",
+      pageSlug: "পেজ স্লাগ (URL Slug)",
+      pageContentBn: "পেজের বিষয়বস্তু (বাংলা)",
+      metaDescriptionBn: "মেটা বিবরণ (বাংলা)",
+      addToHeaderMenu: "হেডার মেনুতে যুক্ত করুন",
+      addToFooterMenu: "ফুটার মেনুতে যুক্ত করুন",
+      newMenuItem: "নতুন মেনু আইটেম",
+      menuLabelBn: "মেনুর নাম (বাংলা)",
+      menuLink: "মেনু লিংক (URL/Path)",
+      menuLocation: "মেনুর অবস্থান",
+      headerMenu: "হেডার মেনু",
+      footerMenu: "ফুটার মেনু",
+      newSocialLink: "নতুন সোশ্যাল মিডিয়া লিংক",
+      platform: "প্ল্যাটফর্ম",
+      labelOptional: "লেবেল / নাম (ঐচ্ছিক)",
+      link: "প্রোফাইল লিংক (URL)",
+      noMessages: "কোনো নতুন বার্তা বা ফিডব্যাক নেই।",
+      turnstileHint: "Cloudflare Turnstile ও ইমেইল নোটিফিকেশন কনফিগারেশন সেট করুন।",
+      stdBn: "প্রচলিত অনুবাদ (বাংলা)",
     };
-    return dict[key]?.[prefs.lang] || key;
+    return dict[key] || key;
   };
 
   return (
     <PrefsContext.Provider
       value={{
         prefs,
-        lang: prefs.lang,
+        lang: "bn",
         dark: prefs.dark,
         setDark,
         toggleLang,
