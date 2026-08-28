@@ -90,8 +90,7 @@ function BookmarksPage() {
                         {isAyah ? "আয়াত" : "সুরা"}
                       </span>
                       <span className="text-xs text-muted-foreground font-mono">
-                        {surahId}
-                        {ayahNum ? `:${ayahNum}` : ""}
+                        {surahId}{ayahNum ? `:${ayahNum}` : ""}
                       </span>
                     </div>
                     <h3 className="mt-2 text-base font-medium truncate group-hover:text-primary transition-colors flex items-center gap-1.5">

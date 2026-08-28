@@ -7,13 +7,7 @@ export const Route = createFileRoute("/api/public/recitation/$surah/$ayah")({
       GET: async ({ params }) => {
         const surah = Number(params.surah);
         const ayah = Number((params.ayah ?? "").replace(/\.mp3$/, ""));
-        if (
-          !Number.isInteger(surah) ||
-          !Number.isInteger(ayah) ||
-          surah < 1 ||
-          surah > 114 ||
-          ayah < 1
-        ) {
+        if (!Number.isInteger(surah) || !Number.isInteger(ayah) || surah < 1 || surah > 114 || ayah < 1) {
           return new Response("Not found", { status: 404 });
         }
 

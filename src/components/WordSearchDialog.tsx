@@ -5,7 +5,12 @@ import { Sparkles, BookOpen } from "lucide-react";
 import { localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
 import { QuranWord } from "@/lib/quranService";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type Props = {
   selectedWord: {
@@ -46,7 +51,9 @@ export function WordSearchDialog({ selectedWord, onClose }: Props) {
               [{word.transliteration}]
             </p>
           )}
-          <p className="text-base font-semibold text-foreground/90 mt-1">"{word.translation_bn}"</p>
+          <p className="text-base font-semibold text-foreground/90 mt-1">
+            "{word.translation_bn}"
+          </p>
 
           {/* ৪. গ্রীনটেক রুট ও ক্রিয়ামূল কার্ড */}
           <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto mt-4">
@@ -59,7 +66,9 @@ export function WordSearchDialog({ selectedWord, onClose }: Props) {
 
             <div className="rounded-xl border border-border/70 bg-card p-2.5 text-center shadow-2xs">
               <span className="text-[11px] text-muted-foreground block mb-0.5">মূল (Root):</span>
-              <span className="arabic text-base font-bold text-amber-500">{word.root || "—"}</span>
+              <span className="arabic text-base font-bold text-amber-500">
+                {word.root || "—"}
+              </span>
             </div>
           </div>
 
@@ -92,8 +101,7 @@ export function WordSearchDialog({ selectedWord, onClose }: Props) {
 
         {/* অবস্থান তথ্য */}
         <div className="p-5 text-center text-xs text-muted-foreground">
-          অবস্থান: সুরা {localNumber(surah, lang)} : আয়াত {localNumber(ayah, lang)} · শব্দ নম্বর{" "}
-          {localNumber(word.position, lang)}
+          অবস্থান: সুরা {localNumber(surah, lang)} : আয়াত {localNumber(ayah, lang)} · শব্দ নম্বর {localNumber(word.position, lang)}
         </div>
       </DialogContent>
     </Dialog>

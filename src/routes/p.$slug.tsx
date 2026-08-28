@@ -26,9 +26,7 @@ function PageView() {
   const page = usePage(slug);
 
   if (page.isLoading) {
-    return (
-      <p className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground">{t("loading")}</p>
-    );
+    return <p className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground">{t("loading")}</p>;
   }
 
   if (!page.data) {

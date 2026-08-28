@@ -15,8 +15,8 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         try {
           const supabase = createClient<Database>(
-            process.env["SUPABASE_URL"]!,
-            process.env["SUPABASE_PUBLISHABLE_KEY"]!,
+            process.env['SUPABASE_URL']!,
+            process.env['SUPABASE_PUBLISHABLE_KEY']!,
             { auth: { storage: undefined, persistSession: false, autoRefreshToken: false } },
           );
           const { data } = await supabase

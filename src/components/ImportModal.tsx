@@ -68,8 +68,7 @@ export function ImportModal({ type, onClose }: ImportModalProps) {
               item.getElementsByTagNameNS("*", "encoded")[0]?.textContent ||
               item.querySelector("content")?.textContent ||
               "";
-            const postDate =
-              item.querySelector("post_date")?.textContent || new Date().toISOString();
+            const postDate = item.querySelector("post_date")?.textContent || new Date().toISOString();
             const postName = item.querySelector("post_name")?.textContent;
             const excerpt =
               item.getElementsByTagNameNS("*", "encoded")[1]?.textContent ||
@@ -104,8 +103,7 @@ export function ImportModal({ type, onClose }: ImportModalProps) {
           if (idText.includes(".post-") || entry.querySelector('category[term*="#post"]')) {
             const title = entry.querySelector("title")?.textContent || "শিরোনামহীন পোস্ট";
             const content = entry.querySelector("content")?.textContent || "";
-            const publishedAt =
-              entry.querySelector("published")?.textContent || new Date().toISOString();
+            const publishedAt = entry.querySelector("published")?.textContent || new Date().toISOString();
             const draftElement = entry.querySelector("app\\:control > app\\:draft, draft");
             const isDraft = draftElement?.textContent === "yes";
 
@@ -155,9 +153,7 @@ export function ImportModal({ type, onClose }: ImportModalProps) {
           <div className="flex items-center gap-2">
             <FileCode className="size-5 text-[#2271b1]" />
             <h3 className="font-bold text-sm text-foreground">
-              {type === "wordpress"
-                ? "ওয়ার্ডপ্রেস (WordPress) থেকে ইমপোর্ট"
-                : "ব্লগার (Blogger) থেকে ইমপোর্ট"}
+              {type === "wordpress" ? "ওয়ার্ডপ্রেস (WordPress) থেকে ইমপোর্ট" : "ব্লগার (Blogger) থেকে ইমপোর্ট"}
             </h3>
           </div>
           <button onClick={onClose} className="rounded-md p-1 text-muted-foreground hover:bg-muted">
@@ -179,10 +175,7 @@ export function ImportModal({ type, onClose }: ImportModalProps) {
           <div className="space-y-4">
             <div className="rounded-lg border border-dashed border-border p-6 text-center bg-muted/20">
               <Upload className="mx-auto size-8 text-muted-foreground/60 mb-2" />
-              <label
-                htmlFor="xml-upload"
-                className="cursor-pointer block text-xs font-semibold text-[#2271b1] hover:underline"
-              >
+              <label htmlFor="xml-upload" className="cursor-pointer block text-xs font-semibold text-[#2271b1] hover:underline">
                 XML ফাইল সিলেক্ট করুন
               </label>
               <input
@@ -193,11 +186,7 @@ export function ImportModal({ type, onClose }: ImportModalProps) {
                 onChange={(e) => setFile(e.target.files?.[0] || null)}
               />
               <p className="text-[11px] text-muted-foreground mt-1">
-                {file
-                  ? file.name
-                  : type === "wordpress"
-                    ? "WordPress Export .xml ফাইল"
-                    : "Blogger Backup .xml ফাইল"}
+                {file ? file.name : type === "wordpress" ? "WordPress Export .xml ফাইল" : "Blogger Backup .xml ফাইল"}
               </p>
             </div>
 
@@ -209,13 +198,7 @@ export function ImportModal({ type, onClose }: ImportModalProps) {
             )}
 
             <div className="flex items-center justify-end gap-2 pt-2">
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={onClose}
-                className="text-xs"
-              >
+              <Button type="button" variant="outline" size="sm" onClick={onClose} className="text-xs">
                 বাতিল
               </Button>
               <Button

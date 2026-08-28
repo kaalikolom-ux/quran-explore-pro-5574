@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -16,7 +16,7 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { AuthPromptModal } from "../components/AuthPromptModal";
 import { Toaster } from "../components/ui/sonner";
-import { BackToTop } from "../components/BackToTop";
+import { FloatingQuickNav } from "../components/FloatingQuickNav";
 import { supabase } from "../integrations/supabase/client";
 import { useQueryPersistence } from "../lib/query-persist";
 import { registerOfflineWorker } from "../lib/pwa";
@@ -53,7 +53,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">পাতাটি লোড হয়নি</h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          পাতাটি লোড হয়নি
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
           {error?.message || "কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।"}
         </p>
@@ -83,16 +85,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const jsonLdData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "কুরআন অন্বেষা — Quran Explorer",
-  alternateName: "Quran Anwesha",
-  url: "https://qurananwesha.com",
-  description: "পবিত্র কুরআনের শব্দে শব্দে অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ।",
-  inLanguage: ["bn", "ar", "en"],
-  potentialAction: {
+  "name": "কুরআন অন্বেষা — Quran Explorer",
+  "alternateName": "Quran Anwesha",
+  "url": "https://qurananwesha.com",
+  "description": "পবিত্র কুরআনের শব্দে শব্দে অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ।",
+  "inLanguage": ["bn", "ar", "en"],
+  "potentialAction": {
     "@type": "SearchAction",
-    target: "https://qurananwesha.com/surah/1?ayah={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
+    "target": "https://qurananwesha.com/surah/1?ayah={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -106,11 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "পবিত্র কুরআনের প্রতিটি শব্দের বাংলা অর্থ, উচ্চারণ, প্রামাণ্য অনুবাদ ও প্রাঞ্জল ব্যাখ্যা একই পাতায় পড়ুন।",
       },
-      {
-        name: "keywords",
-        content:
-          "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran",
-      },
+      { name: "keywords", content: "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran" },
       { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
         property: "og:description",
@@ -122,14 +120,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#020817" },
     ],
     links: [
-      {
-        rel: "preload",
-        href: "/fonts/font-1.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossOrigin: "anonymous",
-      },
       { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Scheherazade+New:wght@400;700&display=swap",
+      },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
@@ -181,19 +178,6 @@ function OfflineBoot() {
   return null;
 }
 
-function DeferredAuthPromptModal() {
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    // Defer modal mounting until 30 seconds into session to eliminate initial JS execution
-    const timer = setTimeout(() => setReady(true), 30000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!ready) return null;
-  return <AuthPromptModal />;
-}
-
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -209,8 +193,8 @@ function RootComponent() {
           </main>
           <SiteFooter />
         </div>
-        <BackToTop />
-        <DeferredAuthPromptModal />
+        <FloatingQuickNav />
+        <AuthPromptModal />
         <Toaster />
       </PrefsProvider>
     </QueryClientProvider>

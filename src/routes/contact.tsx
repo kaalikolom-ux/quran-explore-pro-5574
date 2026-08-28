@@ -195,7 +195,9 @@ function ContactPage() {
           />
         </div>
 
-        {captchaOn && <TurnstileWidget siteKey={turnstile.data!.site_key} onToken={setToken} />}
+        {captchaOn && (
+          <TurnstileWidget siteKey={turnstile.data!.site_key} onToken={setToken} />
+        )}
 
         <Button type="submit" disabled={sending}>
           <Send className="size-4" /> {sending ? t("sending") : t("sendMessage")}

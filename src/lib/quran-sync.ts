@@ -80,15 +80,15 @@ export async function syncSurah(surah: number) {
     };
   });
 
-  const { error } = await supabase.from("quran_verses").upsert(rows, { onConflict: "surah,ayah" });
+  const { error } = await supabase
+    .from("quran_verses")
+    .upsert(rows, { onConflict: "surah,ayah" });
   if (error) throw error;
 
-  const { error: stateError } = await supabase
-    .from("quran_sync_state")
-    .upsert(
-      { surah, verses_synced: rows.length, synced_at: new Date().toISOString() },
-      { onConflict: "surah" },
-    );
+  const { error: stateError } = await supabase.from("quran_sync_state").upsert(
+    { surah, verses_synced: rows.length, synced_at: new Date().toISOString() },
+    { onConflict: "surah" },
+  );
   if (stateError) throw stateError;
 
   return rows.length;

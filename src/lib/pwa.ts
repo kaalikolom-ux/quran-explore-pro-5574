@@ -46,7 +46,7 @@ export async function registerOfflineWorker() {
 
   try {
     const reg = await navigator.serviceWorker.register(SW_PATH, { scope: "/" });
-
+    
     // সাথে সাথে নতুন আপডেট চেক ও এক্টিভ করা
     if (reg.waiting) {
       reg.waiting.postMessage({ type: "SKIP_WAITING" });

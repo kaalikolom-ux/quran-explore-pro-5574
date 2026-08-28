@@ -30,7 +30,8 @@ export function useQueryPersistence() {
         shouldDehydrateQuery: (query) => {
           const key = query.queryKey[0];
           return (
-            query.state.status === "success" && (key === "quran" || key === "verse-translations")
+            query.state.status === "success" &&
+            (key === "quran" || key === "verse-translations")
           );
         },
       },

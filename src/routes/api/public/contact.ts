@@ -49,10 +49,10 @@ export const Route = createFileRoute("/api/public/contact")({
           const form = new URLSearchParams({ secret, response: parsed.token });
           const ip = request.headers.get("cf-connecting-ip");
           if (ip) form.set("remoteip", ip);
-          const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-            method: "POST",
-            body: form,
-          });
+          const verify = await fetch(
+            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            { method: "POST", body: form },
+          );
           const result = (await verify.json()) as { success?: boolean };
           if (!result.success) {
             return Response.json({ error: "captcha_failed" }, { status: 400 });

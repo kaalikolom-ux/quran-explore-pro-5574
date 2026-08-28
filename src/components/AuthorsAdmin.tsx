@@ -171,11 +171,7 @@ export function AuthorsAdmin() {
         {list.data?.map((a) => (
           <div key={a.id} className="card-soft flex items-center gap-3 p-4">
             {a.image_url ? (
-              <img
-                src={a.image_url}
-                alt={a.name_bn}
-                className="size-10 rounded-full object-cover"
-              />
+              <img src={a.image_url} alt={a.name_bn} className="size-10 rounded-full object-cover" />
             ) : (
               <span className="grid size-10 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground">
                 <UserRound className="size-5" />

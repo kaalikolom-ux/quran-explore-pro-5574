@@ -50,6 +50,7 @@ export function TranslationLayer({
   textClassName?: string;
   hideNoteField?: boolean;
 }) {
+
   const { t } = usePrefs();
   const { isAdmin } = useIsAdmin();
   const queryClient = useQueryClient();
@@ -150,3 +151,4 @@ export function TranslationLayer({
     </div>
   );
 }
+

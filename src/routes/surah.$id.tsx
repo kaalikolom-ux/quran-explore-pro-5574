@@ -30,30 +30,27 @@ import {
   CheckCircle2,
   FileAudio,
   Repeat,
-  Square,
+  Square
 } from "lucide-react";
 import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
-import {
-  resolveAudioSrc,
-  downloadSurahAudio,
-  isSurahAudioDownloaded,
-  AUDIO_CACHE,
-} from "@/lib/offline";
+import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded, AUDIO_CACHE } from "@/lib/offline";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type SurahSearchParams = {
   ayah?: number;
 };
 
-const SURAH_META_MAP: Record<
-  number,
-  { name_bn: string; name_ar: string; type: string; total: number }
-> = {
+const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: string; total: number }> = {
   1: { name_bn: "আল-ফাতিহা", name_ar: "الفاتحة", type: "মাক্কী", total: 7 },
   2: { name_bn: "আল-বাকারাহ", name_ar: "البقرة", type: "মাদানী", total: 286 },
   3: { name_bn: "আলে ইমরান", name_ar: "آل عمران", type: "মাদানী", total: 200 },
@@ -178,12 +175,7 @@ export const Route = createFileRoute("/surah/$id")({
   },
   head: ({ params }) => {
     const sId = Number(params.id) || 1;
-    const metaObj = SURAH_META_MAP[sId] || {
-      name_bn: `সুরা ${sId}`,
-      name_ar: "",
-      type: "কুরআন",
-      total: 0,
-    };
+    const metaObj = SURAH_META_MAP[sId] || { name_bn: `সুরা ${sId}`, name_ar: "", type: "কুরআন", total: 0 };
     const pageTitle = `সুরা ${metaObj.name_bn} (${metaObj.name_ar}) — শব্দে শব্দে অর্থ ও অনুবাদ | কুরআন অন্বেষা`;
     const pageDesc = `পবিত্র কুরআনের সুরা ${metaObj.name_bn} (${metaObj.type}, আয়াত ${metaObj.total}) এর প্রতিটি শব্দের বাংলা অর্থ, উচ্চারণ, প্রামাণ্য অনুবাদ ও গভীর ব্যাকরণগত ব্যাখ্যা পড়ুন।`;
 
@@ -195,7 +187,9 @@ export const Route = createFileRoute("/surah/$id")({
         { property: "og:description", content: pageDesc },
         { property: "og:type", content: "article" },
       ],
-      links: [{ rel: "canonical", href: `https://qurananwesha.com/surah/${sId}` }],
+      links: [
+        { rel: "canonical", href: `https://qurananwesha.com/surah/${sId}` }
+      ]
     };
   },
   component: SurahDetailPage,
@@ -234,16 +228,8 @@ export type SurahData = {
 
 function toEnglishNumber(str: string): string {
   const bnToEn: Record<string, string> = {
-    "০": "0",
-    "১": "1",
-    "২": "2",
-    "৩": "3",
-    "৪": "4",
-    "৫": "5",
-    "৬": "6",
-    "৭": "7",
-    "৮": "8",
-    "৯": "9",
+    "০": "0", "১": "1", "২": "2", "৩": "3", "৪": "4",
+    "৫": "5", "৬": "6", "৭": "7", "৮": "8", "৯": "9",
   };
   return str.replace(/[০-৯]/g, (d) => bnToEn[d] || d);
 }
@@ -274,42 +260,18 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   if (!base) return "";
 
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
-  if (
-    (base.startsWith("و") ||
-      base.startsWith("ف") ||
-      base.startsWith("ব") ||
-      base.startsWith("ل") ||
-      base.startsWith("س") ||
-      base.startsWith("ك")) &&
-    base.length > 4
-  ) {
+  if ((base.startsWith("و") || base.startsWith("ف") || base.startsWith("ব") || base.startsWith("ل") || base.startsWith("س") || base.startsWith("ك")) && base.length > 4) {
     base = base.slice(1);
   }
   if (base.startsWith("ال") && base.length > 4) base = base.slice(2);
 
-  if (
-    (base.endsWith("ون") ||
-      base.endsWith("ين") ||
-      base.endsWith("ات") ||
-      base.endsWith("هم") ||
-      base.endsWith("كم") ||
-      base.endsWith("না") ||
-      base.endsWith("হা")) &&
-    base.length > 4
-  ) {
+  if ((base.endsWith("ون") || base.endsWith("ين") || base.endsWith("ات") || base.endsWith("هم") || base.endsWith("كم") || base.endsWith("না") || base.endsWith("হা")) && base.length > 4) {
     base = base.slice(0, -2);
   } else if ((base.endsWith("ه") || base.endsWith("ي") || base.endsWith("ك")) && base.length > 3) {
     base = base.slice(0, -1);
   }
 
-  if (
-    (base.startsWith("م") ||
-      base.startsWith("ت") ||
-      base.startsWith("ي") ||
-      base.startsWith("ন") ||
-      base.startsWith("ا")) &&
-    base.length === 4
-  ) {
+  if ((base.startsWith("م") || base.startsWith("ت") || base.startsWith("ي") || base.startsWith("ন") || base.startsWith("ا")) && base.length === 4) {
     base = base.slice(1);
   }
 
@@ -320,7 +282,7 @@ const SURAH_TEXT_CACHE = "quran-text-v2";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   const url = `/data/quran/surahs/${sId}.json`;
-
+  
   if (typeof window !== "undefined" && "caches" in window) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
@@ -335,7 +297,7 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
 
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load Surah ${sId}`);
-
+  
   if (typeof window !== "undefined" && "caches" in window) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
@@ -401,7 +363,7 @@ function SurahDetailPage() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
@@ -479,17 +441,9 @@ function SurahDetailPage() {
       });
       setIsAudioDownloaded(true);
       await checkIndividualAyahCaches();
-      toast.success(
-        lang === "bn"
-          ? `সুরা ${meta.name_bn}-এর সম্পূর্ণ অডিও অফলাইনে সংরক্ষিত হয়েছে!`
-          : `Audio of Surah ${meta.name_bn} downloaded!`,
-      );
+      toast.success(lang === "bn" ? `সুরা ${meta.name_bn}-এর সম্পূর্ণ অডিও অফলাইনে সংরক্ষিত হয়েছে!` : `Audio of Surah ${meta.name_bn} downloaded!`);
     } catch (err) {
-      toast.error(
-        lang === "bn"
-          ? "অডিও ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন"
-          : "Audio download failed, check connection",
-      );
+      toast.error(lang === "bn" ? "অডিও ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Audio download failed, check connection");
     } finally {
       setDownloadingSurahAudio(false);
       setTimeout(() => setAudioProgress(null), 3000);
@@ -502,11 +456,7 @@ function SurahDetailPage() {
     const fullSurahUrl = `https://server8.mp3quran.net/afs/${sStr}.mp3`;
 
     try {
-      toast.info(
-        lang === "bn"
-          ? `সুরা ${meta.name_bn} MP3 ডাউনলোড শুরু হয়েছে...`
-          : `Downloading Surah ${meta.name_bn} MP3...`,
-      );
+      toast.info(lang === "bn" ? `সুরা ${meta.name_bn} MP3 ডাউনলোড শুরু হয়েছে...` : `Downloading Surah ${meta.name_bn} MP3...`);
       const response = await fetch(fullSurahUrl);
       if (!response.ok) throw new Error("File download failed");
       const blob = await response.blob();
@@ -518,11 +468,7 @@ function SurahDetailPage() {
       a.click();
       document.body.removeChild(a);
       window.URL.revokeObjectURL(downloadUrl);
-      toast.success(
-        lang === "bn"
-          ? `সুরা ${meta.name_bn} আপনার ডিভাইসে ডাউনলোড সম্পন্ন হয়েছে!`
-          : `Surah ${meta.name_bn} MP3 downloaded to device!`,
-      );
+      toast.success(lang === "bn" ? `সুরা ${meta.name_bn} আপনার ডিভাইসে ডাউনলোড সম্পন্ন হয়েছে!` : `Surah ${meta.name_bn} MP3 downloaded to device!`);
     } catch (err) {
       const a = document.createElement("a");
       a.href = fullSurahUrl;
@@ -601,7 +547,7 @@ function SurahDetailPage() {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth",
+          behavior: "smooth"
         });
 
         el.classList.add("ring-2", "ring-primary/40");
@@ -622,50 +568,41 @@ function SurahDetailPage() {
     }
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
-  const playAyahSequentially = useCallback(
-    async (ayahNum: number) => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
+  const playAyahSequentially = useCallback(async (ayahNum: number) => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
 
-      const sStr = String(surahId).padStart(3, "0");
-      const aStr = String(ayahNum).padStart(3, "0");
-      const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+    const sStr = String(surahId).padStart(3, "0");
+    const aStr = String(ayahNum).padStart(3, "0");
+    const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
 
-      const audioUrl = await resolveAudioSrc(rawAudioUrl);
-      const audio = new Audio(audioUrl);
-      audioRef.current = audio;
-      setPlayingAyah(ayahNum);
+    const audioUrl = await resolveAudioSrc(rawAudioUrl);
+    const audio = new Audio(audioUrl);
+    audioRef.current = audio;
+    setPlayingAyah(ayahNum);
 
-      scrollToAyah(ayahNum);
+    scrollToAyah(ayahNum);
 
-      audio.play().catch(() => {
-        toast.error(
-          lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`,
-        );
-        setPlayingAyah(null);
-      });
+    audio.play().catch(() => {
+      toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
+      setPlayingAyah(null);
+    });
 
-      audio.onended = () => {
-        const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
-        if (ayahNum < totalAyahs) {
-          playAyahSequentially(ayahNum + 1);
+    audio.onended = () => {
+      const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
+      if (ayahNum < totalAyahs) {
+        playAyahSequentially(ayahNum + 1);
+      } else {
+        if (isLoopingSurah) {
+          playAyahSequentially(1);
         } else {
-          if (isLoopingSurah) {
-            playAyahSequentially(1);
-          } else {
-            setPlayingAyah(null);
-            toast.success(
-              lang === "bn"
-                ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে`
-                : `Completed recitation of Surah ${meta.name_bn}`,
-            );
-          }
+          setPlayingAyah(null);
+          toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
         }
-      };
-    },
-    [surahId, surahQuery.data, meta.total, isLoopingSurah, lang],
-  );
+      }
+    };
+  }, [surahId, surahQuery.data, meta.total, isLoopingSurah, lang]);
 
   const handleToggleSurahPlay = () => {
     if (playingAyah !== null) {
@@ -723,21 +660,8 @@ function SurahDetailPage() {
 
   const handleCopyAyah = (ayah: QuranAyah) => {
     const arabicText = ayah.text_uthmani || ayah.words?.map((w) => w.text_uthmani).join(" ") || "";
-    const translationText =
-      ayah.conventional_bn ||
-      (ayah as any).translation_bn ||
-      ayah.words
-        ?.map((w) => w.translation_bn)
-        .filter(Boolean)
-        .join(" ") ||
-      "";
-    const transliterationText =
-      ayah.transliteration ||
-      ayah.words
-        ?.map((w) => w.transliteration)
-        .filter(Boolean)
-        .join(" ") ||
-      "";
+    const translationText = ayah.conventional_bn || (ayah as any).translation_bn || ayah.words?.map((w) => w.translation_bn).filter(Boolean).join(" ") || "";
+    const transliterationText = ayah.transliteration || ayah.words?.map((w) => w.transliteration).filter(Boolean).join(" ") || "";
 
     const fullCopyText = `${arabicText}
 
@@ -753,12 +677,10 @@ function SurahDetailPage() {
   const handleShareAyah = (ayahNum: number) => {
     const shareUrl = `${window.location.origin}/surah/${surahId}?ayah=${ayahNum}`;
     if (navigator.share) {
-      navigator
-        .share({
-          title: `সুরা ${meta.name_bn} - আয়াত ${ayahNum}`,
-          url: shareUrl,
-        })
-        .catch(() => {});
+      navigator.share({
+        title: `সুরা ${meta.name_bn} - আয়াত ${ayahNum}`,
+        url: shareUrl,
+      }).catch(() => {});
     } else {
       navigator.clipboard.writeText(shareUrl);
       toast.success("আয়াতের লিংক কপি করা হয়েছে");
@@ -774,7 +696,7 @@ function SurahDetailPage() {
     if (!activeNoteAyah) return;
     const cleanText = currentNoteText.trim();
     const updated = { ...ayahNotes };
-
+    
     if (cleanText) {
       updated[activeNoteAyah] = cleanText;
       toast.success(`আয়াত ${activeNoteAyah} এর নোট সংরক্ষিত হয়েছে`);
@@ -782,7 +704,7 @@ function SurahDetailPage() {
       delete updated[activeNoteAyah];
       toast.info(`আয়াত ${activeNoteAyah} এর নোট মুছে ফেলা হয়েছে`);
     }
-
+    
     setAyahNotes(updated);
     localStorage.setItem(`notes_surah_${surahId}`, JSON.stringify(updated));
     setActiveNoteAyah(null);
@@ -863,7 +785,9 @@ function SurahDetailPage() {
   const showWordByWord = prefs.showWordByWord;
   const showTransliteration = prefs.showTransliteration;
   const showConventionalBn = prefs.showConventionalBn;
+  const showConventionalEn = prefs.showConventionalEn;
   const showModernBn = prefs.showModernBn;
+  const showModernEn = prefs.showModernEn;
   const showLexicon = prefs.showLexicon;
 
   const arabicFontSize = prefs.arabicFontSize || 28;
@@ -873,9 +797,11 @@ function SurahDetailPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-3 sm:px-4 py-3 space-y-6">
+      
       {/* ফ্লোটিং স্টিকি হেডার */}
       <div className="sticky top-2 sm:top-16 z-40 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl p-2.5 sm:px-4 sm:py-2.5 shadow-md transition-all">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+          
           {/* হেডারের শীর্ষ অংশ */}
           <div className="flex items-center justify-between gap-2 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
@@ -948,11 +874,7 @@ function SurahDetailPage() {
                   const nextState = !isLoopingSurah;
                   setIsLoopingSurah(nextState);
                   if (nextState) {
-                    toast.success(
-                      lang === "bn"
-                        ? "লুপ মোড চালু হয়েছে (সুরা বারবার বাজবে)"
-                        : "Loop mode enabled",
-                    );
+                    toast.success(lang === "bn" ? "লুপ মোড চালু হয়েছে (সুরা বারবার বাজবে)" : "Loop mode enabled");
                   } else {
                     toast.info(lang === "bn" ? "লুপ মোড বন্ধ করা হয়েছে" : "Loop mode disabled");
                   }
@@ -962,13 +884,9 @@ function SurahDetailPage() {
                     ? "bg-primary/15 text-primary border-primary/50 shadow-2xs font-semibold"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
-                title={
-                  isLoopingSurah ? "লুপ বন্ধ করুন" : "সুরাটি শেষ হলে আবার শুরু থেকে বাজান (লুপ)"
-                }
+                title={isLoopingSurah ? "লুপ বন্ধ করুন" : "সুরাটি শেষ হলে আবার শুরু থেকে বাজান (লুপ)"}
               >
-                <Repeat
-                  className={`size-3.5 ${isLoopingSurah ? "text-primary stroke-[2.5]" : ""}`}
-                />
+                <Repeat className={`size-3.5 ${isLoopingSurah ? "text-primary stroke-[2.5]" : ""}`} />
               </Button>
 
               <Button
@@ -977,11 +895,7 @@ function SurahDetailPage() {
                 disabled={downloadingSurahAudio || isAudioDownloaded}
                 onClick={handleDownloadThisSurahAudio}
                 className="h-7 px-2 text-[11px] font-medium hidden md:inline-flex shrink-0"
-                title={
-                  isAudioDownloaded
-                    ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে"
-                    : "ওয়েব প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও ক্যাশ করুন"
-                }
+                title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "ওয়েব প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও ক্যাশ করুন"}
               >
                 {downloadingSurahAudio ? (
                   <>
@@ -1041,10 +955,7 @@ function SurahDetailPage() {
       {/* বিসমিল্লাহ */}
       {surahId !== 9 && surahId !== 1 && (
         <div className="text-center py-2" style={{ display: showArabic ? "block" : "none" }}>
-          <p
-            className="arabic text-foreground/90 font-medium"
-            style={{ fontSize: `${arabicFontSize + 2}px` }}
-          >
+          <p className="arabic text-foreground/90 font-medium" style={{ fontSize: `${arabicFontSize + 2}px` }}>
             بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
           </p>
         </div>
@@ -1068,31 +979,25 @@ function SurahDetailPage() {
           const noteContent = ayahNotes[ayah.ayah];
           const hasNote = Boolean(noteContent && noteContent.trim().length > 0);
 
-          const hasModernBnData = Boolean(
-            ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0,
-          );
-          const hasModernEnData = Boolean(
-            ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0,
-          );
+          const hasModernBnData = Boolean(ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0);
+          const hasModernEnData = Boolean(ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0);
 
           return (
             <div
               key={ayah.ayah}
               id={`ayah-${ayah.ayah}`}
               className={`scroll-mt-36 rounded-2xl border bg-card p-4 sm:p-5 space-y-4 shadow-sm transition-all duration-300 ${
-                isPlaying
+                isPlaying 
                   ? "border-primary/80 ring-2 ring-primary/20 bg-primary/[0.02] shadow-md"
-                  : hasNote
-                    ? "border-amber-400/50 shadow-amber-400/5 hover:border-border"
+                  : hasNote 
+                    ? "border-amber-400/50 shadow-amber-400/5 hover:border-border" 
                     : "border-border/70 hover:border-border"
               }`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
-                    <span>
-                      {surahId}:{ayah.ayah}
-                    </span>
+                    <span>{surahId}:{ayah.ayah}</span>
                   </div>
 
                   <div className="flex items-center gap-1 text-muted-foreground">
@@ -1104,11 +1009,7 @@ function SurahDetailPage() {
                         isPlaying ? "text-primary bg-primary/10" : ""
                       }`}
                     >
-                      {isPlaying ? (
-                        <Pause className="size-4 fill-current" />
-                      ) : (
-                        <Play className="size-4 fill-current" />
-                      )}
+                      {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="size-4 fill-current" />}
                     </button>
 
                     <button
@@ -1126,11 +1027,7 @@ function SurahDetailPage() {
                       type="button"
                       disabled={isThisAyahDownloading}
                       onClick={() => handleToggleAyahAudioDownload(ayah.ayah)}
-                      title={
-                        isAyahAudioSaved
-                          ? "অফলাইন অডিও সংরক্ষিত আছে (মুছতে ক্লিক করুন)"
-                          : "এই আয়াতের অডিও অফলাইনে সংরক্ষণ করুন"
-                      }
+                      title={isAyahAudioSaved ? "অফলাইন অডিও সংরক্ষিত আছে (মুছতে ক্লিক করুন)" : "এই আয়াতের অডিও অফলাইনে সংরক্ষণ করুন"}
                       className={`p-1.5 rounded-lg transition-colors hover:bg-muted cursor-pointer ${
                         isAyahAudioSaved
                           ? "text-emerald-500 bg-emerald-500/10"
@@ -1172,8 +1069,8 @@ function SurahDetailPage() {
                     onClick={() => handleOpenNote(ayah.ayah)}
                     title={hasNote ? "নোট দেখুন / এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
                     className={`p-1.5 rounded-lg transition-all cursor-pointer ${
-                      hasNote
-                        ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs"
+                      hasNote 
+                        ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs" 
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
@@ -1234,25 +1131,25 @@ function SurahDetailPage() {
                     }
                     className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
                   >
-                    <span
+                    <span 
                       className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
                       style={{ fontSize: `${arabicFontSize}px` }}
                     >
                       {word.text_uthmani}
                     </span>
-                    <span
-                      style={{
+                    <span 
+                      style={{ 
                         display: showWordByWord && word.transliteration ? "block" : "none",
-                        fontSize: `${Math.max(10, translationFontSize - 4)}px`,
+                        fontSize: `${Math.max(10, translationFontSize - 4)}px` 
                       }}
                       className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
                     >
                       {word.transliteration}
                     </span>
-                    <span
-                      style={{
+                    <span 
+                      style={{ 
                         display: showWordByWord && word.translation_bn ? "block" : "none",
-                        fontSize: `${Math.max(11, translationFontSize - 3)}px`,
+                        fontSize: `${Math.max(11, translationFontSize - 3)}px` 
                       }}
                       className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
                     >
@@ -1264,7 +1161,7 @@ function SurahDetailPage() {
 
               {/* [২] পুরো আয়াতের উচ্চারণ */}
               {ayah.transliteration && (
-                <div
+                <div 
                   style={{ display: showTransliteration ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
@@ -1272,7 +1169,7 @@ function SurahDetailPage() {
                     <Volume2 className="size-3.5 text-muted-foreground/80" />
                     <span>উচ্চারণ (Transliteration)</span>
                   </div>
-                  <p
+                  <p 
                     className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5.5"
                     style={{ fontSize: `${Math.max(12, translationFontSize - 2)}px` }}
                   >
@@ -1281,16 +1178,17 @@ function SurahDetailPage() {
                 </div>
               )}
 
-              {/* [৩] বাংলা অনুবাদের ২টি প্রামাণ্য সারি */}
+              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-3 pt-0.5">
+                
                 {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
-                <div
-                  style={{ display: isEditing || showConventionalBn ? "block" : "none" }}
+                <div 
+                  style={{ display: (isEditing || showConventionalBn) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <FileText className="size-3.5 text-muted-foreground/80" />
-                    <span>১. প্রচলিত বাংলা অনুবাদ</span>
+                    <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1303,27 +1201,52 @@ function SurahDetailPage() {
                       placeholder="প্রচলিত বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
                     />
                   ) : (
-                    <p
+                    <p 
                       className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
                       style={{ fontSize: `${translationFontSize}px` }}
                     >
-                      {ayah.conventional_bn ||
-                        (ayah as any).translation_bn ||
-                        "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
+                      {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
                     </p>
                   )}
                 </div>
 
-                {/* ২. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা) */}
-                <div
-                  style={{
-                    display: isEditing || (showModernBn && hasModernBnData) ? "block" : "none",
-                  }}
+                {/* ২. Conventional Translation (English) */}
+                <div 
+                  style={{ display: (isEditing || showConventionalEn) ? "block" : "none" }}
+                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+                >
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+                    <Languages className="size-3.5 text-muted-foreground/80" />
+                    <span>Conventional Translation (English)</span>
+                  </div>
+                  {isEditing ? (
+                    <Textarea
+                      value={editForm.conventional_en}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, conventional_en: e.target.value })
+                      }
+                      className="font-serif italic mt-1 bg-background"
+                      style={{ fontSize: `${translationFontSize}px` }}
+                      placeholder="Conventional English translation..."
+                    />
+                  ) : (
+                    <p 
+                      className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5"
+                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
+                    >
+                      {ayah.conventional_en || (ayah as any).translation_en || "In the name of Allah, the Entirely Merciful, the Especially Merciful."}
+                    </p>
+                  )}
+                </div>
+
+                {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
+                <div 
+                  style={{ display: (isEditing || (showModernBn && hasModernBnData)) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90">
                     <BookMarked className="size-3.5 text-primary" />
-                    <span>২. আধুনিক বিজ্ঞানভিত্তিক বাংলা অনুবাদ</span>
+                    <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1336,7 +1259,7 @@ function SurahDetailPage() {
                       placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
                     />
                   ) : (
-                    <p
+                    <p 
                       className="text-sm font-medium text-foreground leading-relaxed pl-5.5"
                       style={{ fontSize: `${translationFontSize}px` }}
                     >
@@ -1344,10 +1267,39 @@ function SurahDetailPage() {
                     </p>
                   )}
                 </div>
+
+                {/* ৪. Modern Translation (English) */}
+                <div 
+                  style={{ display: (isEditing || (showModernEn && hasModernEnData)) ? "block" : "none" }}
+                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+                >
+                  <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90">
+                    <BookmarkCheck className="size-3.5 text-primary" />
+                    <span>Modern Translation (English)</span>
+                  </div>
+                  {isEditing ? (
+                    <Textarea
+                      value={editForm.modern_translation_en}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, modern_translation_en: e.target.value })
+                      }
+                      className="font-serif italic mt-1 bg-background"
+                      style={{ fontSize: `${translationFontSize}px` }}
+                      placeholder="Modern contemporary English translation..."
+                    />
+                  ) : (
+                    <p 
+                      className="italic text-foreground/90 font-serif leading-relaxed pl-5.5"
+                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
+                    >
+                      {ayah.modern_translation_en}
+                    </p>
+                  )}
+                </div>
               </div>
 
               {/* [৪] অভিধান / Lexicon */}
-              <div
+              <div 
                 style={{ display: showLexicon ? "block" : "none" }}
                 className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80"
               >
@@ -1366,18 +1318,12 @@ function SurahDetailPage() {
                           key={idx}
                           className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/50 px-2.5 py-1 font-mono text-[11px]"
                         >
-                          <span className="arabic font-bold text-foreground text-sm">
-                            {w.text_uthmani}
-                          </span>
+                          <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
                           {wordRoot && (
-                            <span className="text-muted-foreground font-semibold">
-                              ({wordRoot})
-                            </span>
+                            <span className="text-muted-foreground font-semibold">({wordRoot})</span>
                           )}
                           {w.translation_bn && (
-                            <span className="text-muted-foreground/80 text-[10px]">
-                              · {w.translation_bn}
-                            </span>
+                            <span className="text-muted-foreground/80 text-[10px]">· {w.translation_bn}</span>
                           )}
                         </span>
                       );
@@ -1466,17 +1412,12 @@ function SurahDetailPage() {
         onClose={() => setSelectedWordInfo(null)}
       />
 
-      <Dialog
-        open={activeNoteAyah !== null}
-        onOpenChange={(open) => !open && setActiveNoteAyah(null)}
-      >
+      <Dialog open={activeNoteAyah !== null} onOpenChange={(open) => !open && setActiveNoteAyah(null)}>
         <DialogContent className="sm:max-w-md bg-card border-border/80">
           <DialogHeader>
             <DialogTitle className="text-base font-semibold flex items-center gap-2">
               <StickyNote className="size-4 text-amber-400" />
-              <span>
-                আয়াত {surahId}:{activeNoteAyah} এর ব্যক্তিগত নোট
-              </span>
+              <span>আয়াত {surahId}:{activeNoteAyah} এর ব্যক্তিগত নোট</span>
             </DialogTitle>
           </DialogHeader>
 
@@ -1540,7 +1481,7 @@ function WordAndRootSearchDialog({
     if (!selectedWord) return;
 
     const cacheKey = `${searchType}:${searchType === "word" ? cleanArabicText(selectedWord.word.text_uthmani) : activeRoot}`;
-
+    
     if (searchCacheMap.has(cacheKey)) {
       setResults(searchCacheMap.get(cacheKey)!);
       return;
@@ -1592,7 +1533,7 @@ function WordAndRootSearchDialog({
               }
             });
           } catch (e) {}
-        }),
+        })
       );
 
       if (isMounted) {
@@ -1627,6 +1568,7 @@ function WordAndRootSearchDialog({
   return (
     <Dialog open={!!selectedWord} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-h-[90vh] overflow-hidden flex flex-col sm:max-w-2xl p-0 gap-0 border border-border/80 shadow-2xl bg-card">
+        
         <DialogHeader className="p-5 pb-3 border-b border-border/60 bg-muted/20 text-center shrink-0">
           <div className="flex items-center justify-center gap-2 mb-1">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground">
@@ -1645,7 +1587,9 @@ function WordAndRootSearchDialog({
             </p>
           )}
           {word.translation_bn && (
-            <p className="text-sm font-medium text-foreground/90 mt-1">"{word.translation_bn}"</p>
+            <p className="text-sm font-medium text-foreground/90 mt-1">
+              "{word.translation_bn}"
+            </p>
           )}
 
           <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto mt-3">
@@ -1657,9 +1601,7 @@ function WordAndRootSearchDialog({
             </div>
 
             <div className="rounded-xl border border-border/70 bg-card p-2 text-center shadow-xs">
-              <span className="text-[10px] text-muted-foreground block mb-0.5">
-                মূল ধাতু (Root):
-              </span>
+              <span className="text-[10px] text-muted-foreground block mb-0.5">মূল ধাতু (Root):</span>
               <span className="arabic text-sm font-semibold text-foreground">
                 {activeRoot || "—"}
               </span>
@@ -1696,13 +1638,12 @@ function WordAndRootSearchDialog({
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           <div className="flex items-center justify-between text-xs text-muted-foreground px-1 border-b border-border/40 pb-2">
             <span>
-              {searchType === "word"
-                ? `হুবহু "${word.text_uthmani}" শব্দের ব্যবহার`
+              {searchType === "word" 
+                ? `হুবহু "${word.text_uthmani}" শব্দের ব্যবহার` 
                 : `মূল ধাতু "${activeRoot}" থেকে গঠিত সকল শব্দের ব্যবহার`}
             </span>
             <span className="font-semibold text-foreground bg-muted px-2 py-0.5 rounded-md">
-              {formatNumber(results.length, lang)} টি আয়াতে মোট{" "}
-              {formatNumber(totalWordOccurrences, lang)} বার
+              {formatNumber(results.length, lang)} টি আয়াতে মোট {formatNumber(totalWordOccurrences, lang)} বার
             </span>
           </div>
 
@@ -1730,7 +1671,7 @@ function WordAndRootSearchDialog({
                       <span className="size-2 rounded-full bg-primary" />
                       {surahObj.name_bn} ({res.surah}:{res.ayah})
                     </span>
-
+                    
                     <button
                       type="button"
                       onClick={() => handleJumpToAyah(res.surah, res.ayah)}
@@ -1741,8 +1682,8 @@ function WordAndRootSearchDialog({
                     </button>
                   </div>
 
-                  <div
-                    dir="rtl"
+                  <div 
+                    dir="rtl" 
                     className="flex flex-wrap items-center justify-start gap-x-2 gap-y-2 py-1 leading-loose"
                   >
                     {res.allWords.map((w, wIdx) => {
@@ -1753,10 +1694,7 @@ function WordAndRootSearchDialog({
                         const wRoot = extractIntelligentRoot(w);
                         const wText = cleanArabicText(w.text_uthmani);
                         const wLemma = cleanArabicText(w.lemma || "");
-                        isHighlighted =
-                          wRoot === activeRoot ||
-                          wLemma.includes(activeRoot) ||
-                          wText.includes(activeRoot);
+                        isHighlighted = (wRoot === activeRoot) || wLemma.includes(activeRoot) || wText.includes(activeRoot);
                       }
 
                       return (
@@ -1776,8 +1714,8 @@ function WordAndRootSearchDialog({
 
                   <div className="space-y-1.5 pt-1">
                     {res.matchedWords.map((mw, mIdx) => (
-                      <div
-                        key={mIdx}
+                      <div 
+                        key={mIdx} 
                         className="rounded-lg bg-muted/40 p-2 border border-border/40 flex items-center justify-between gap-2 text-xs"
                       >
                         <div className="flex items-center gap-2">

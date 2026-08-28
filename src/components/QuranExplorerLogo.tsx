@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 interface QuranExplorerLogoProps {
   className?: string;
@@ -21,6 +21,7 @@ export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorer
         width="235"
         height="44"
         className={`w-auto ${heightClass} object-contain dark:hidden block select-none`}
+        loading="eager"
         decoding="async"
       />
       {/* Dark Mode Logo */}
@@ -30,6 +31,7 @@ export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorer
         width="235"
         height="44"
         className={`w-auto ${heightClass} object-contain dark:block hidden select-none`}
+        loading="eager"
         decoding="async"
       />
     </div>

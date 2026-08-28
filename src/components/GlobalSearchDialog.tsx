@@ -15,7 +15,7 @@ import {
   CheckCircle2,
   Clock,
   HelpCircle,
-  Tag,
+  Tag
 } from "lucide-react";
 
 import { usePrefs } from "@/lib/prefs";
@@ -26,9 +26,14 @@ import {
   searchQuranSurahs,
   searchQuranTopics,
   ALL_SURAHS_DATABASE,
-  SearchMatchedSurah,
+  SearchMatchedSurah
 } from "@/lib/quranSearchEngine";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface GlobalSearchDialogProps {
   open: boolean;
@@ -73,9 +78,7 @@ export function GlobalSearchDialog({
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select(
-          "id, title_bn, title_en, slug, excerpt_bn, excerpt_en, cover_image_url, published_at, category:categories(name_bn, name_en)",
-        )
+        .select("id, title_bn, title_en, slug, excerpt_bn, excerpt_en, cover_image_url, published_at, category:categories(name_bn, name_en)")
         .eq("published", true)
         .order("published_at", { ascending: false });
       if (error) return [];
@@ -166,6 +169,7 @@ export function GlobalSearchDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl p-0 gap-0 border border-border/80 bg-card shadow-2xl overflow-hidden rounded-2xl">
+        
         {/* সার্চ হেডার ইনপুট বার */}
         <div className="flex items-center gap-3 px-4 py-3.5 border-b border-border/70 bg-muted/20">
           <Search className="size-5 text-primary shrink-0 animate-pulse" />
@@ -215,8 +219,7 @@ export function GlobalSearchDialog({
                 : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
             }`}
           >
-            <Sparkles className="size-3 text-amber-400" /> বিষয়ভিত্তিক অন্বেষা (
-            {matchedTopics.length})
+            <Sparkles className="size-3 text-amber-400" /> বিষয়ভিত্তিক অন্বেষা ({matchedTopics.length})
           </button>
           <button
             onClick={() => setActiveTab("surahs")}
@@ -242,6 +245,7 @@ export function GlobalSearchDialog({
 
         {/* সার্চ রেজাল্ট বডি */}
         <div className="max-h-[62vh] overflow-y-auto p-4 space-y-6">
+          
           {/* যদি স্পেলিং ভুল থাকে তবে Did you mean সাজেশন ব্যানার */}
           {didYouMean && (
             <div className="flex items-center justify-between p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-foreground">
@@ -289,8 +293,7 @@ export function GlobalSearchDialog({
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <p className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
-                  <Sparkles className="size-3.5 text-amber-400" /> বিষয়ভিত্তিক ভাবার্থ ও বিজ্ঞান (
-                  {matchedTopics.length})
+                  <Sparkles className="size-3.5 text-amber-400" /> বিষয়ভিত্তিক ভাবার্থ ও বিজ্ঞান ({matchedTopics.length})
                 </p>
               </div>
 
@@ -325,9 +328,7 @@ export function GlobalSearchDialog({
                             onClick={() => handleSelectSurah(ref.surah, ref.ayahs[0])}
                             className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-foreground hover:bg-primary hover:text-white transition-all cursor-pointer"
                           >
-                            <span>
-                              সুরা {ref.surah_name_bn} ({ref.ayah_range})
-                            </span>
+                            <span>সুরা {ref.surah_name_bn} ({ref.ayah_range})</span>
                           </button>
                         ))}
                       </div>
@@ -366,8 +367,7 @@ export function GlobalSearchDialog({
                           )}
                         </span>
                         <span className="block text-[11px] text-muted-foreground truncate">
-                          {lang === "bn" ? s.meaning_bn : s.meaning_en} ·{" "}
-                          {localNumber(s.total_verses, lang)} আয়াত
+                          {lang === "bn" ? s.meaning_bn : s.meaning_en} · {localNumber(s.total_verses, lang)} আয়াত
                         </span>
                       </div>
                     </div>
@@ -384,8 +384,7 @@ export function GlobalSearchDialog({
           {(activeTab === "all" || activeTab === "articles") && matchedArticles.length > 0 && (
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                <FileText className="size-3.5 text-primary" /> আর্টিকেল ও গবেষণাপত্র (
-                {matchedArticles.length})
+                <FileText className="size-3.5 text-primary" /> আর্টিকেল ও গবেষণাপত্র ({matchedArticles.length})
               </p>
 
               <div className="grid gap-2.5 sm:grid-cols-2">
@@ -427,30 +426,24 @@ export function GlobalSearchDialog({
           )}
 
           {/* ফলাফল পাওয়া না গেলে */}
-          {cleanQ &&
-            matchedTopics.length === 0 &&
-            matchedSurahs.length === 0 &&
-            matchedArticles.length === 0 && (
-              <div className="py-12 text-center space-y-3">
-                <HelpCircle className="size-10 text-muted-foreground mx-auto opacity-50" />
-                <p className="text-sm font-semibold text-foreground">
-                  "{query}" এর জন্য কোনো ফলাফল পাওয়া যায়নি
-                </p>
-                <p className="text-xs text-muted-foreground max-w-sm mx-auto">
-                  অন্য কোনো প্রতিশব্দ দিয়ে চেষ্টা করুন বা সরাসরি সুরার নাম (যেমন: বাকারা), নম্বর
-                  (যেমন: 2:183) অথবা সাধারণ বিষয় (যেমন: বিজ্ঞান, পিতা-মাতা, সুদ) লিখে সার্চ করুন।
-                </p>
-              </div>
-            )}
+          {cleanQ && matchedTopics.length === 0 && matchedSurahs.length === 0 && matchedArticles.length === 0 && (
+            <div className="py-12 text-center space-y-3">
+              <HelpCircle className="size-10 text-muted-foreground mx-auto opacity-50" />
+              <p className="text-sm font-semibold text-foreground">
+                "{query}" এর জন্য কোনো ফলাফল পাওয়া যায়নি
+              </p>
+              <p className="text-xs text-muted-foreground max-w-sm mx-auto">
+                অন্য কোনো প্রতিশব্দ দিয়ে চেষ্টা করুন বা সরাসরি সুরার নাম (যেমন: বাকারা), নম্বর (যেমন: 2:183) অথবা সাধারণ বিষয় (যেমন: বিজ্ঞান, পিতা-মাতা, সুদ) লিখে সার্চ করুন।
+              </p>
+            </div>
+          )}
+
         </div>
 
         {/* ফুটার টিপস */}
         <div className="px-4 py-2.5 border-t border-border/50 bg-muted/30 flex items-center justify-between text-[11px] text-muted-foreground">
           <div className="flex items-center gap-3">
-            <span>
-              💡 <strong>টিপ:</strong> সুরা বা নির্দিষ্ট আয়াতে যেতে{" "}
-              <code className="bg-muted px-1 rounded">2:183</code> লিখুন
-            </span>
+            <span>💡 <strong>টিপ:</strong> সুরা বা নির্দিষ্ট আয়াতে যেতে <code className="bg-muted px-1 rounded">2:183</code> লিখুন</span>
           </div>
           <span className="hidden sm:inline">Quran Explorer Global AI Search</span>
         </div>

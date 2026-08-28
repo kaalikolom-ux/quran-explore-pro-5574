@@ -1,20 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
-import {
-  ArrowRight,
-  BookOpen,
-  BookA,
-  FileText,
-  Search,
-  Settings,
-  Sparkles,
-  Compass,
-  Flame,
-  Heart,
-  Coins,
-  ShieldAlert,
-} from "lucide-react";
+import { ArrowRight, BookOpen, BookA, FileText, Search, Settings, Sparkles, Compass, Flame, Heart, Coins, ShieldAlert } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
@@ -24,7 +11,7 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
-import { searchQuranSurahs, bnToEnDigits, ALL_SURAHS_DATABASE } from "@/lib/quranSearchEngine";
+import { searchQuranSurahs, bnToEnDigits } from "@/lib/quranSearchEngine";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,14 +23,10 @@ export const Route = createFileRoute("/")({
           "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ এবং আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যাসহ সম্পূর্ণ কুরআন অধ্যয়ন করুন — কুরআন অন্বেষা (Quran Explorer)।",
       },
       { property: "og:type", content: "website" },
-      {
-        property: "og:title",
-        content: "Quran Explorer — Word by Word Quran in Bangla & English | কুরআন অন্বেষা",
-      },
+      { property: "og:title", content: "Quran Explorer — Word by Word Quran in Bangla & English | কুরআন অন্বেষা" },
       {
         property: "og:description",
-        content:
-          "শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ ও বিজ্ঞানভিত্তিক গবেষণাসহ পবিত্র কুরআন অধ্যয়ন করুন।",
+        content: "শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ ও বিজ্ঞানভিত্তিক গবেষণাসহ পবিত্র কুরআন অধ্যয়ন করুন।",
       },
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
@@ -60,15 +43,13 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 130): string {
   if (excerpt && excerpt.trim().length > 0) {
     return excerpt.trim();
   }
   if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
-  const clean = body
-    .replace(/<[^>]*>?/gm, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
 
@@ -79,10 +60,6 @@ function HomePage() {
   const [searchDialogQuery, setSearchDialogQuery] = useState("");
   const chapters = useQuery(chaptersQuery(lang));
   const navigate = useNavigate();
-
-  const surahMetaMap = useMemo(() => {
-    return new Map(ALL_SURAHS_DATABASE.map((s) => [s.id, s]));
-  }, []);
 
   const handleOpenSearchWith = (q: string) => {
     setSearchDialogQuery(q);
@@ -162,9 +139,7 @@ function HomePage() {
       navigate({
         to: "/surah/$id",
         params: { id: String(filtered[0].id) },
-        search: (filtered[0] as any).targetAyah
-          ? { ayah: (filtered[0] as any).targetAyah }
-          : undefined,
+        search: (filtered[0] as any).targetAyah ? { ayah: (filtered[0] as any).targetAyah } : undefined,
       });
       return;
     }
@@ -189,32 +164,48 @@ function HomePage() {
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
-            <Sparkles className="size-3.5 text-[#60a5fa]" /> শব্দে শব্দে কুরআন ও প্রামাণ্য অনুবাদ
+            <Sparkles className="size-3.5 text-[#60a5fa]" /> {t("tagline")}
           </p>
 
+          {/* max-w-4xl ও whitespace ফিক্স যাতে ইংরেজি লাইন না ভাঙ্গে */}
           <div className="mt-6 max-w-4xl">
             <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
-              পবিত্র কুরআন — বুঝে পড়ুন
+              {lang === "bn" ? (
+                "পবিত্র কুরআন — বুঝে পড়ুন"
+              ) : (
+                <span>
+                  The Holy Quran — <span className="inline-block sm:inline whitespace-nowrap">understand it</span>
+                </span>
+              )}
             </h1>
 
-            {/* শুধুমাত্র বাংলা ভাষায় টাইপিং এনিমেটেড টেক্সট দৃশ্যমান থাকবে, অন্য সব ভাষায় হাইড থাকবে */}
-            <div className="typewriter-container mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
+            {/* ফিক্সড মিনিমাম হাইট দিয়ে লেআউট শিফট প্রতিরোধ */}
+            <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
               <Typewriter
-                words={[
-                  "শব্দে শব্দে অর্থসহ",
-                  "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
-                  "সহজ ও প্রাঞ্জল অনুবাদে",
-                  "প্রামাণ্য তথ্যসূত্রসহ",
-                ]}
-                delayBetweenWords={2800}
+                words={
+                  lang === "bn"
+                    ? [
+                        "শব্দে শব্দে অর্থসহ",
+                        "বিজ্ঞানভিত্তিক ব্যাখ্যায়",
+                        "সহজ বাংলা অনুবাদে",
+                        "প্রামাণ্য তথ্যসূত্রসহ",
+                      ]
+                    : [
+                        "word by word",
+                        "with scientific context",
+                        "in clear translation",
+                        "with authentic notes",
+                      ]
+                }
+                typingSpeed={lang === "bn" ? 90 : 80}
+                deletingSpeed={lang === "bn" ? 50 : 40}
+                delayBetweenWords={1500}
               />
             </div>
           </div>
 
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
-            কুরআনের প্রতিটি শব্দের ব্যাকরণগত ব্যুৎপত্তি, শাব্দিক ও ভাবানুবাদ একই পাতায়।
-          </p>
-
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
+          
           {/* ৪টি সমান সাইজের Left-Aligned CTA বাটন (মোবাইলে ২ লাইনে ২x২ গ্রিড, ডেস্কটপে ৪ কলামে ১ লাইন) */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl w-full">
             <Button
@@ -225,7 +216,7 @@ function HomePage() {
             >
               <Link to="/surah/$id" params={{ id: "1" }}>
                 <BookOpen className="size-4 shrink-0 text-[#60a5fa]" />
-                <span>কুরআন</span>
+                <span>{lang === "bn" ? "কুরআন" : "Quran"}</span>
               </Link>
             </Button>
 
@@ -237,7 +228,7 @@ function HomePage() {
             >
               <Link to="/lexicon">
                 <BookA className="size-4 shrink-0 text-[#60a5fa]" />
-                <span>অভিধান</span>
+                <span>{lang === "bn" ? "অভিধান" : "Lexicon"}</span>
               </Link>
             </Button>
 
@@ -249,7 +240,7 @@ function HomePage() {
             >
               <Link to="/articles">
                 <FileText className="size-4 shrink-0 text-[#60a5fa]" />
-                <span>আর্টিকেল</span>
+                <span>{lang === "bn" ? "আর্টিকেল" : "Articles"}</span>
               </Link>
             </Button>
 
@@ -261,7 +252,7 @@ function HomePage() {
             >
               <Link to="/settings">
                 <Settings className="size-4 shrink-0 text-[#60a5fa]" />
-                <span>সেটিংস</span>
+                <span>{lang === "bn" ? "সেটিংস" : "Settings"}</span>
               </Link>
             </Button>
           </div>
@@ -271,12 +262,12 @@ function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
-      {/* ২. সুরার তালিকা ও ফিল্টার */}
+      {/* সুরা তালিকা ও সার্চ */}
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">
-              সুরাসমূহ <span className="text-muted-foreground">({localNumber(114, "bn")})</span>
+              {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
             </h2>
 
             <div className="w-full max-w-sm space-y-1.5">
@@ -289,39 +280,35 @@ function HomePage() {
                   type="text"
                   value={term}
                   onChange={(e) => setTerm(e.target.value)}
-                  placeholder="সুরা খুঁজুন... / আয়াত খুঁজুন..."
+                  placeholder={
+                    lang === "bn"
+                      ? "সুরা খুঁজুন... / আয়াত খুঁজুন..."
+                      : "Search Surah... / Ayah..."
+                  }
                   className="w-full bg-transparent border-none outline-none text-sm text-foreground placeholder:text-muted-foreground"
                 />
                 <button
                   type="submit"
-                  aria-label="সুরা বা আয়াত খুঁজুন"
+                  aria-label={lang === "bn" ? "সুরা বা আয়াত খুঁজুন" : "Search surah or ayah"}
                   className="rounded-lg bg-[#2A6F97] hover:bg-[#1f5575] text-white px-3 py-1 text-xs font-semibold transition-colors shrink-0 cursor-pointer shadow-xs"
                 >
                   যান
                 </button>
               </form>
               <p className="text-xs leading-normal text-muted-foreground px-1 font-medium">
-                💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে
-                ইন্টার চাপুন।
+                {lang === "bn"
+                  ? "💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।"
+                  : "💡 Search surah by name or no. (33). Search ayah like 33:40 and press Enter."}
               </p>
             </div>
           </div>
 
           {chapters.isLoading ? (
-            <p className="mt-8 text-sm text-muted-foreground">লোড হচ্ছে...</p>
+            <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
           ) : (
-            <div className="mt-6 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((c: any) => {
-                const meta = surahMetaMap.get(c.id);
-                const nameBn = meta?.name_bn || c.name_simple;
-                const nameArabic = meta?.name_arabic || c.name_arabic;
-                const meaningBn = meta?.meaning_bn || c.translated_name?.name;
-                const versesCount = meta?.total_verses || c.verses_count;
-                const targetAyah =
-                  c.targetAyah ||
-                  (searchAyahTarget && searchAyahTarget.surah === c.id
-                    ? searchAyahTarget.ayah
-                    : undefined);
+                const targetAyah = c.targetAyah || (searchAyahTarget && searchAyahTarget.surah === c.id ? searchAyahTarget.ayah : undefined);
 
                 return (
                   <Link
@@ -329,42 +316,25 @@ function HomePage() {
                     to="/surah/$id"
                     params={{ id: String(c.id) }}
                     search={targetAyah ? { ayah: targetAyah } : undefined}
-                    className="group relative flex items-center justify-between gap-3.5 rounded-2xl border border-border/80 bg-card p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-[#ede1ca] dark:hover:bg-accent/70 hover:shadow-md cursor-pointer overflow-hidden"
+                    className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer"
                   >
-                    {/* বাম পাশের ডায়মন্ড/রোটেটেড স্কয়ার নম্বর ব্যাজ */}
-                    <div className="flex items-center gap-3.5 min-w-0">
-                      <div className="relative flex size-10 shrink-0 items-center justify-center">
-                        <div className="absolute inset-0 rotate-45 rounded-lg border border-border/90 bg-muted/90 transition-all duration-300 group-hover:rotate-90 group-hover:border-primary group-hover:bg-primary/10 group-hover:scale-105" />
-                        <span className="relative z-10 font-bold text-xs sm:text-sm text-foreground/90 font-mono">
-                          {localNumber(c.id, "bn")}
-                        </span>
-                      </div>
-
-                      {/* সুরার নাম ও অর্থ */}
-                      <div className="min-w-0 flex-1 leading-tight">
-                        <h3 className="truncate text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                          {nameBn}
-                          {targetAyah && (
-                            <span className="ml-2 text-xs font-semibold text-primary">
-                              ({localNumber(targetAyah, "bn")} নং আয়াত)
-                            </span>
-                          )}
-                        </h3>
-                        <p className="truncate text-xs text-muted-foreground mt-1 font-medium">
-                          {meaningBn || `${localNumber(versesCount, "bn")} আয়াত`}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* ডান পাশের সুন্দর আরবি ক্যালিগ্রাফি ও আয়াত সংখ্যা */}
-                    <div className="text-right shrink-0">
-                      <span className="arabic text-xl font-medium text-foreground/90 group-hover:text-primary transition-colors block leading-none">
-                        {nameArabic}
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
+                      {localNumber(c.id, lang)}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate font-medium text-foreground">
+                        {c.name_simple}
+                        {targetAyah && (
+                          <span className="ml-2 text-xs font-semibold text-[#1c5576] dark:text-[#58b4e8]">
+                            ({localNumber(targetAyah, lang)} নং আয়াত)
+                          </span>
+                        )}
                       </span>
-                      <span className="text-[11px] text-muted-foreground mt-1.5 block font-medium">
-                        {localNumber(versesCount, "bn")} আয়াত
+                      <span className="block truncate text-xs text-muted-foreground font-medium">
+                        {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
                       </span>
-                    </div>
+                    </span>
+                    <span className="arabic text-lg text-primary">{c.name_arabic}</span>
                   </Link>
                 );
               })}
@@ -373,21 +343,22 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ৩. বিষয়ভিত্তিক কুরআন ও গবেষণা অন্বেষা (Thematic & Scientific Quran Explorer) */}
+      {/* বিষয়ভিত্তিক কুরআন ও গবেষণা অন্বেষা (Thematic & Scientific Quran Explorer) */}
       <section className="border-t border-border bg-gradient-to-b from-card/60 to-background py-14">
         <div className="mx-auto w-full max-w-6xl px-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-md mb-2">
                 <Sparkles className="size-3.5 text-amber-500" />
-                ভাবার্থ ও বিষয়ভিত্তিক অন্বেষা
+                {lang === "bn" ? "ভাবার্থ ও বিষয়ভিত্তিক অন্বেষা" : "Thematic & Conceptual Explorer"}
               </span>
               <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
-                কুরআনের বিষয়ভিত্তিক জ্ঞানভাণ্ডার
+                {lang === "bn" ? "কুরআনের বিষয়ভিত্তিক জ্ঞানভাণ্ডার" : "Thematic Quranic Knowledge Base"}
               </h2>
               <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-                বিজ্ঞান, সৃষ্টিতত্ত্ব, পারিবারিক অধিকার, অর্থনীতি, আত্মশুদ্ধি ও নবীদের জীবনী
-                সম্পর্কিত আয়াতসমূহ সরাসরি অনুসন্ধান করুন।
+                {lang === "bn"
+                  ? "বিজ্ঞান, সৃষ্টিতত্ত্ব, পারিবারিক অধিকার, অর্থনীতি, আত্মশুদ্ধি ও নবীদের জীবনী সম্পর্কিত আয়াতসমূহ সরাসরি অনুসন্ধান করুন।"
+                  : "Explore verses on science, cosmology, family ethics, economics, inner peace, and prophetic stories."}
               </p>
             </div>
 
@@ -397,7 +368,7 @@ function HomePage() {
               className="inline-flex items-center gap-2 rounded-xl bg-[#2A6F97] hover:bg-[#1f5575] text-white px-4 py-2 text-xs font-semibold shadow-xs transition-all cursor-pointer shrink-0"
             >
               <Search className="size-3.5" />
-              <span>সকল বিষয় ও আর্টিকেল সার্চ</span>
+              <span>{lang === "bn" ? "সকল বিষয় ও আর্টিকেল সার্চ" : "Search All Topics & Articles"}</span>
             </button>
           </div>
 
@@ -412,22 +383,22 @@ function HomePage() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="text-[11px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-md">
-                      {topic.category_bn}
+                      {lang === "en" ? topic.category_en : topic.category_bn}
                     </span>
                     <span className="text-[11px] text-muted-foreground font-mono">
                       {topic.references.length}টি রেফারেন্স
                     </span>
                   </div>
                   <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {topic.title_bn}
+                    {lang === "en" ? topic.title_en : topic.title_bn}
                   </h3>
                   <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                    {topic.description_bn}
+                    {lang === "en" ? topic.description_en : topic.description_bn}
                   </p>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-medium text-primary">
-                  <span>আয়াতসমূহ ও তাফসির দেখুন</span>
+                  <span>{lang === "bn" ? "আয়াতসমূহ ও তাফসির দেখুন" : "View Verses & Insights"}</span>
                   <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -436,25 +407,24 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ৪. আর্টিকেল সেকশন */}
+      {/* আর্টিকেল সেকশন */}
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-foreground">সাম্প্রতিক আর্টিকেল</h2>
-            <Link
-              to="/articles"
-              className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-semibold"
-            >
-              আর্টিকেল <ArrowRight className="size-4" />
+            <h2 className="text-2xl font-semibold text-foreground">{t("latestArticles")}</h2>
+            <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-semibold">
+              {t("articles")} <ArrowRight className="size-4" />
             </Link>
           </div>
           {articles.data && articles.data.length > 0 ? (
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {articles.data.map((a: any) => {
-                const title = a.title_bn || a.title_en;
-                const rawBody =
-                  a.content_bn || a.body_bn || a.content_en || a.body_en || a.body || "";
-                const excerpt = getCleanExcerpt(a.excerpt_bn, rawBody);
+                const title = lang === "en" && a.title_en ? a.title_en : a.title_bn;
+                const rawBody = a.content_bn || a.body_bn || a.content_en || a.body_en || a.body || "";
+                const excerpt =
+                  lang === "en"
+                    ? getCleanExcerpt(a.excerpt_en, rawBody)
+                    : getCleanExcerpt(a.excerpt_bn, rawBody);
 
                 return (
                   <Link
@@ -475,7 +445,9 @@ function HomePage() {
                       />
                     )}
                     <div className="p-5">
-                      <h3 className="text-base font-semibold text-foreground">{title}</h3>
+                      <h3 className="text-base font-semibold text-foreground">
+                        {title}
+                      </h3>
                       <p className="mt-2 line-clamp-3 text-sm text-muted-foreground leading-relaxed">
                         {excerpt}
                       </p>
@@ -485,36 +457,28 @@ function HomePage() {
               })}
             </div>
           ) : (
-            <p className="mt-6 text-sm text-muted-foreground font-medium">
-              কোনো আর্টিকেল পাওয়া যায়নি।
-            </p>
+            <p className="mt-6 text-sm text-muted-foreground font-medium">{t("noArticles")}</p>
           )}
         </div>
       </section>
 
-      {/* ৫. নিউজলেটার */}
+      {/* নিউজলেটার */}
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
-          <h2 className="text-xl font-semibold text-foreground">
-            আমাদের নিউজলেটার সাবস্ক্রাইব করুন
-          </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground font-medium">
-            কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{t("newsletter")}</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground font-medium">{t("newsletterSub")}</p>
           <div className="mt-6">
             <NewsletterForm />
           </div>
         </div>
       </section>
 
-      {/* গ্লোবাল অমনিসার্চ ডায়ালগ (অন-ডিমান্ড মাউন্ট) */}
-      {searchDialogOpen && (
-        <GlobalSearchDialog
-          open={searchDialogOpen}
-          onOpenChange={setSearchDialogOpen}
-          initialQuery={searchDialogQuery}
-        />
-      )}
+      {/* গ্লোবাল অমনিসার্চ ডায়ালগ */}
+      <GlobalSearchDialog
+        open={searchDialogOpen}
+        onOpenChange={setSearchDialogOpen}
+        initialQuery={searchDialogQuery}
+      />
     </div>
   );
 }
