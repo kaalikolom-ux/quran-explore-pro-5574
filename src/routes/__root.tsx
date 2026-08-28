@@ -16,7 +16,6 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { AuthPromptModal } from "../components/AuthPromptModal";
 import { Toaster } from "../components/ui/sonner";
-import { FloatingQuickNav } from "../components/FloatingQuickNav";
 import { supabase } from "../integrations/supabase/client";
 import { useQueryPersistence } from "../lib/query-persist";
 import { registerOfflineWorker } from "../lib/pwa";
@@ -193,7 +192,6 @@ function RootComponent() {
           </main>
           <SiteFooter />
         </div>
-        <FloatingQuickNav />
         <AuthPromptModal />
         <Toaster />
       </PrefsProvider>
