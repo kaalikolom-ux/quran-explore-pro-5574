@@ -42,7 +42,8 @@ export function getStoredPrefs(): Prefs {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return DEFAULT_PREFS;
-    return { ...DEFAULT_PREFS, ...JSON.parse(raw) };
+    const parsed = JSON.parse(raw);
+    return { ...DEFAULT_PREFS, ...parsed, lang: "bn" };
   } catch {
     return DEFAULT_PREFS;
   }
