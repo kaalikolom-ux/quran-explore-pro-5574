@@ -165,6 +165,28 @@ export function SiteHeader() {
             </kbd>
           </button>
           
+          <button
+            type="button"
+            onClick={toggleLang}
+            title={lang === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
+            className="flex h-7.5 sm:h-8 items-center gap-1 rounded-lg border border-border bg-card px-1.5 sm:px-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors cursor-pointer"
+          >
+            <Languages className="size-3 sm:size-3.5 text-muted-foreground" />
+            <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
+          </button>
+
+          {/* সেটিংস পেজ বাটন */}
+          <Link
+            to="/settings"
+            title={lang === "bn" ? "সেটিংস ও পছন্দসমূহ" : "Settings & Preferences"}
+            aria-label="Settings"
+            className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer ${
+              currentPath === "/settings" ? "border-primary text-primary font-bold bg-secondary" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Settings className="size-3.5 sm:size-4 hover:rotate-45 transition-transform" />
+          </Link>
+
           {user && (
             <Link
               to="/admin"
@@ -178,6 +200,7 @@ export function SiteHeader() {
             </Link>
           )}
 
+          {/* লগইন / লগআউট বাটন (ডান পাশের শেষে) */}
           {user ? (
             <button
               type="button"
@@ -198,27 +221,6 @@ export function SiteHeader() {
               <LoginDoorIcon className="size-3.5 sm:size-4" />
             </Link>
           )}
-
-          <button
-            type="button"
-            onClick={toggleLang}
-            title={lang === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
-            className="flex h-7.5 sm:h-8 items-center gap-1 rounded-lg border border-border bg-card px-1.5 sm:px-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors cursor-pointer"
-          >
-            <Languages className="size-3 sm:size-3.5 text-muted-foreground" />
-            <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
-          </button>
-
-          <Link
-            to="/settings"
-            title={lang === "bn" ? "সেটিংস ও পছন্দসমূহ" : "Settings & Preferences"}
-            aria-label="Settings"
-            className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer ${
-              currentPath === "/settings" ? "border-primary text-primary font-bold bg-secondary" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <Settings className="size-3.5 sm:size-4 hover:rotate-45 transition-transform" />
-          </Link>
 
           <button
             type="button"
