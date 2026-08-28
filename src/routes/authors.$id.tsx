@@ -27,17 +27,30 @@ function AuthorDetailPage() {
   const { id } = Route.useParams();
   const { lang } = usePrefs();
 
-  // ১. লেখকের বিস্তারিত প্রোফাইল ও সংশ্লিষ্ট আর্টিকেল ফেচ
+  // ১. লেখকের বিস্তারিত প্রোফাইল ও সংশ্লিষ্ট আর্টিকেল ফেচ (১০০% নির্ভরযোগ্য)
   const { data: author, isLoading } = useQuery({
     queryKey: ["author-detail-page", id],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data: authorData, error: authorErr } = await supabase
         .from("authors")
-        .select("*, articles:articles(*)")
+        .select("*")
         .eq("id", id)
         .maybeSingle();
-      if (error) return null;
-      return data;
+
+      if (authorErr || !authorData) return null;
+
+      // লেখকের সকল প্রকাশিত আর্টিকেল ফেচ
+      const { data: articlesData } = await supabase
+        .from("articles")
+        .select("*")
+        .eq("author_id", id)
+        .eq("published", true)
+        .order("published_at", { ascending: false });
+
+      return {
+        ...authorData,
+        articles: articlesData || [],
+      };
     },
   });
 
@@ -64,7 +77,7 @@ function AuthorDetailPage() {
 
   const name = lang === "en" && author.name_en ? author.name_en : author.name_bn;
   const bio = lang === "en" && author.bio_en ? author.bio_en : author.bio_bn;
-  const authorArticles = (author.articles || []).filter((a: any) => a.published && !a.deleted_at);
+  const authorArticles = author.articles || [];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:py-14 space-y-10">
@@ -103,80 +116,71 @@ function AuthorDetailPage() {
         </div>
       </div>
 
-      {/* লেখকের আর্টিকেলের তালিকা */}
+      {/* লেখকের প্রকাশিত আর্টিকেল তালিকা */}
       <div className="space-y-6">
-        <h2 className="text-xl font-bold font-serif text-foreground border-b border-border/60 pb-3">
+        <h2 className="text-lg font-bold text-foreground font-serif">
           {name} এর প্রকাশিত রচনাবলী ({authorArticles.length})
         </h2>
 
         {authorArticles.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-border p-12 text-center space-y-2">
-            <BookOpen className="mx-auto size-8 text-muted-foreground/50" />
-            <p className="text-xs text-muted-foreground">এই লেখকের কোনো প্রকাশিত আর্টিকেল পাওয়া যায়নি।</p>
+          <div className="rounded-xl border border-dashed border-border/70 p-10 text-center text-xs text-muted-foreground">
+            এই লেখকের কোনো প্রকাশিত আর্টিকেল পাওয়া যায়নি।
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {authorArticles.map((a: any) => {
-              const title = lang === "en" && a.title_en ? a.title_en : a.title_bn;
-              const rawBody = a.content_bn || a.body_bn || a.content_en || a.body_en || "";
-              const excerpt =
-                lang === "en"
-                  ? getCleanExcerpt(rawBody, a.excerpt_en)
-                  : getCleanExcerpt(rawBody, a.excerpt_bn);
-              const dateStr = a.published_at || a.created_at;
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {authorArticles.map((art: any) => {
+              const title = lang === "en" && art.title_en ? art.title_en : art.title_bn;
+              const excerpt = getCleanExcerpt(
+                lang === "en" ? art.content_en : art.content_bn,
+                lang === "en" ? art.excerpt_en : art.excerpt_bn
+              );
 
               return (
                 <div
-                  key={a.id}
+                  key={art.id}
                   className="card-soft group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-md"
                 >
                   <Link
                     to="/articles/$slug"
-                    params={{ slug: a.slug }}
+                    params={{ slug: art.slug }}
                     className="relative aspect-[16/10] w-full overflow-hidden bg-muted/30 flex items-center justify-center border-b border-border/40 cursor-pointer block"
                   >
-                    {a.cover_image_url ? (
+                    {art.cover_image_url ? (
                       <img
-                        src={a.cover_image_url}
+                        src={art.cover_image_url}
                         alt={title}
                         loading="lazy"
-                        decoding="async"
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="text-2xl font-serif text-muted-foreground/60 select-none tracking-wide text-center px-4">
+                      <div className="text-xl font-serif text-muted-foreground/60 select-none text-center px-4">
                         بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                       </div>
                     )}
                   </Link>
 
-                  <div className="flex flex-1 flex-col justify-between p-5">
+                  <div className="flex flex-1 flex-col justify-between p-4">
                     <div>
-                      <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                        <Link to="/articles/$slug" params={{ slug: a.slug }}>
+                      <h3 className="text-sm font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                        <Link to="/articles/$slug" params={{ slug: art.slug }}>
                           {title}
                         </Link>
                       </h3>
-                      <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-muted-foreground font-normal">
+                      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                         {excerpt}
                       </p>
                     </div>
 
-                    <div className="mt-5 flex items-center justify-between text-[11px] text-muted-foreground pt-3 border-t border-border/50">
+                    <div className="mt-4 pt-3 border-t border-border/50 text-[11px] text-muted-foreground flex items-center justify-between">
                       <span>
-                        {dateStr
-                          ? new Date(dateStr).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
-                              year: "numeric",
-                              month: "numeric",
-                              day: "numeric",
-                            })
+                        {art.published_at
+                          ? new Date(art.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD")
                           : ""}
                       </span>
-
                       <Link
                         to="/articles/$slug"
-                        params={{ slug: a.slug }}
-                        className="font-semibold text-primary hover:underline"
+                        params={{ slug: art.slug }}
+                        className="font-medium text-primary hover:underline"
                       >
                         পড়ুন →
                       </Link>

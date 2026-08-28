@@ -31,7 +31,7 @@ export const Route = createFileRoute("/articles/$slug")({
   head: ({ params }) => {
     return {
       meta: [
-        { title: `আর্টিকেল — কুরআন অন্বেষা` },
+        { title: "আর্টিকেল — কুরআন অন্বেষা" },
         { name: "description", content: "কুরআনের গভীর গবেষণা ও সমসাময়িক প্রবন্ধ।" },
         { property: "og:type", content: "article" },
       ],
@@ -50,18 +50,49 @@ function SingleArticlePage() {
   const [copied, setCopied] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  // ১. সিঙ্গেল আর্টিকেল বিস্তারিত ফেচ (লেখক ও ক্যাটাগরির রিলেশনসহ)
+  // ১. সিঙ্গেল আর্টিকেল বিস্তারিত ফেচ (১০০% নিরাপদ ও নির্ভরযোগ্য কুয়েরি)
   const { data: article, isLoading } = useQuery({
     queryKey: ["article-single-detail", slug],
     queryFn: async () => {
-      const { data, error } = await supabase
+      // প্রথমে আর্টিকেল ফেচ
+      const { data: art, error: artErr } = await supabase
         .from("articles")
-        .select("*, author:authors(id, name_bn, name_en, image_url, bio_bn, bio_en), category:categories(id, name_bn, name_en, slug, is_restricted)")
+        .select("*")
         .eq("slug", slug)
         .maybeSingle();
 
-      if (error) return null;
-      return data;
+      if (artErr || !art) {
+        console.warn("Article fetch notice:", artErr?.message);
+        return null;
+      }
+
+      // লেখক ফেচ (যদি author_id থাকে)
+      let author = null;
+      if (art.author_id) {
+        const { data: authData } = await supabase
+          .from("authors")
+          .select("id, name_bn, name_en, image_url, bio_bn, bio_en")
+          .eq("id", art.author_id)
+          .maybeSingle();
+        author = authData;
+      }
+
+      // ক্যাটাগরি ফেচ (যদি category_id থাকে)
+      let category = null;
+      if (art.category_id) {
+        const { data: catData } = await supabase
+          .from("categories")
+          .select("*")
+          .eq("id", art.category_id)
+          .maybeSingle();
+        category = catData;
+      }
+
+      return {
+        ...art,
+        author,
+        category,
+      };
     },
   });
 
@@ -161,113 +192,111 @@ function SingleArticlePage() {
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
-      {/* টপ নেভিগেশন ও একশন বাটন */}
-      <div className="flex items-center justify-between gap-4 mb-8">
-        <Button asChild variant="ghost" size="sm" className="-ml-2 text-xs text-muted-foreground hover:text-foreground">
+      {/* ব্যাক বাটন ও ক্যাটাগরি */}
+      <div className="mb-6 flex items-center justify-between gap-3 text-xs">
+        <Button asChild variant="ghost" size="sm" className="-ml-2 text-xs">
           <Link to="/articles">
-            <ArrowLeft className="size-3.5 mr-1.5" /> {lang === "en" ? "Back to Articles" : "সকল আর্টিকেল"}
+            <ArrowLeft className="size-3.5 mr-1" /> সকল আর্টিকেল
           </Link>
         </Button>
 
-        <div className="flex items-center gap-1.5">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={toggleBookmark}
-            className="h-8 px-2.5 text-xs gap-1.5 cursor-pointer"
-            title="বুকমার্ক করুন"
-          >
-            {isBookmarked ? (
-              <>
-                <BookmarkCheck className="size-3.5 text-emerald-500" />
-                <span className="hidden sm:inline">সংরক্ষিত</span>
-              </>
-            ) : (
-              <>
-                <Bookmark className="size-3.5 text-muted-foreground" />
-                <span className="hidden sm:inline">বুকমার্ক</span>
-              </>
-            )}
-          </Button>
-
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={handleShare}
-            className="h-8 px-2.5 text-xs gap-1.5 cursor-pointer"
-            title="লিংক কপি করুন"
-          >
-            {copied ? (
-              <>
-                <Check className="size-3.5 text-emerald-500" />
-                <span className="hidden sm:inline">কপি হয়েছে</span>
-              </>
-            ) : (
-              <>
-                <Share2 className="size-3.5 text-muted-foreground" />
-                <span className="hidden sm:inline">শেয়ার</span>
-              </>
-            )}
-          </Button>
+        <div className="flex items-center gap-2">
+          {category && (
+            <Link
+              to="/articles"
+              search={{ category: category.slug }}
+              className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline bg-primary/10 px-2.5 py-1 rounded-md"
+            >
+              <Layers className="size-3" />
+              <span>{categoryName}</span>
+              {isCategoryRestricted && (
+                <Lock className="size-3 text-amber-500 ml-0.5" title="রেস্ট্রিকটেড ক্যাটাগরি" />
+              )}
+            </Link>
+          )}
         </div>
       </div>
 
-      {/* মেটা হেডার ও ক্যাটাগরি ব্যাজ */}
-      <header className="space-y-4 mb-8">
-        {category && (
-          <div className="flex items-center gap-2">
-            <Link
-              to="/articles"
-              search={{ category: category.id }}
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#2A6F97]/10 dark:bg-[#58b4e8]/15 border border-[#2A6F97]/30 dark:border-[#58b4e8]/40 px-3 py-1 text-xs font-bold text-[#1c5576] dark:text-[#58b4e8] transition-all hover:bg-[#2A6F97] hover:text-white dark:hover:bg-[#58b4e8] dark:hover:text-slate-950 cursor-pointer shadow-xs group"
-              title={`${categoryName} ক্যাটাগরির সকল লেখা পড়ুন`}
-            >
-              {isCategoryRestricted ? <Lock className="size-3 text-amber-500" /> : <Layers className="size-3.5 transition-transform group-hover:scale-110" />}
-              <span>{categoryName}</span>
-            </Link>
-          </div>
-        )}
-
-        <h1 className="text-2xl sm:text-4xl font-bold font-serif leading-tight text-foreground tracking-tight">
+      {/* আর্টিকেল হেডার */}
+      <header className="mb-8 space-y-4">
+        <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground font-serif leading-tight">
           {title}
         </h1>
 
-        {/* লেখক ও প্রকাশের তারিখ ইনফো বার */}
-        <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-2 border-b border-border/60 pb-4">
-          {author && (
-            <Link
-              to="/authors/$id"
-              params={{ id: author.id }}
-              className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors cursor-pointer group"
-              title={`${authorName} এর সকল লেখা দেখুন`}
-            >
-              {author.image_url ? (
-                <img
-                  src={author.image_url}
-                  alt={authorName || ""}
-                  className="size-5 rounded-full object-cover border border-border"
-                />
-              ) : (
-                <User className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
-              )}
-              <span className="underline decoration-muted-foreground/40 underline-offset-4 group-hover:decoration-primary">
-                {authorName}
-              </span>
-            </Link>
-          )}
+        {/* লেখক, তারিখ ও অ্যাকশন বার */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-y border-border/60 py-3 text-xs text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-4">
+            {author && (
+              <Link
+                to="/authors/$id"
+                params={{ id: author.id }}
+                className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors cursor-pointer group"
+                title={`${authorName} এর সকল লেখা দেখুন`}
+              >
+                {author.image_url ? (
+                  <img
+                    src={author.image_url}
+                    alt={authorName || ""}
+                    className="size-5 rounded-full object-cover border border-border"
+                  />
+                ) : (
+                  <User className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
+                )}
+                <span className="underline decoration-muted-foreground/40 underline-offset-4 group-hover:decoration-primary">
+                  {authorName}
+                </span>
+              </Link>
+            )}
 
-          {article.published_at && (
-            <span className="inline-flex items-center gap-1">
-              <Calendar className="size-3.5" />
-              {new Date(article.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          )}
+            {article.published_at && (
+              <span className="inline-flex items-center gap-1">
+                <Calendar className="size-3.5" />
+                {new Date(article.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+            )}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleBookmark}
+              className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-xs hover:bg-secondary transition-colors cursor-pointer"
+            >
+              {isBookmarked ? (
+                <>
+                  <BookmarkCheck className="size-3.5 text-primary fill-primary" />
+                  <span className="text-primary font-semibold">{lang === "en" ? "Saved" : "সংরক্ষিত"}</span>
+                </>
+              ) : (
+                <>
+                  <Bookmark className="size-3.5" />
+                  <span>{lang === "en" ? "Save" : "বুকমার্ক"}</span>
+                </>
+              )}
+            </button>
+
+            <button
+              type="button"
+              onClick={handleShare}
+              className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-xs hover:bg-secondary transition-colors cursor-pointer"
+            >
+              {copied ? (
+                <>
+                  <Check className="size-3.5 text-primary" />
+                  <span className="text-primary font-semibold">{lang === "en" ? "Copied" : "কপি হয়েছে"}</span>
+                </>
+              ) : (
+                <>
+                  <Share2 className="size-3.5" />
+                  <span>{lang === "en" ? "Share" : "শেয়ার"}</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -282,75 +311,73 @@ function SingleArticlePage() {
         </div>
       )}
 
-      {/* লগইন প্রোটেকশন চেক: লগইন ছাড়া ভিজিটর সম্পূর্ণ আর্টিকেল পড়তে পারবে না */}
-      {!isLoggedIn ? (
-        <div className="space-y-6 mb-12">
-          {/* সংক্ষেপ বা ইন্ট্রো অংশ */}
-          {excerpt && (
-            <div className="p-4 rounded-xl border border-border/60 bg-card/60 text-sm leading-relaxed text-foreground/90 font-serif italic">
-              "{excerpt}"
+      {/* মূল লেখার বিষয়বস্তু */}
+      <div
+        className="prose prose-base sm:prose-lg dark:prose-invert max-w-none leading-relaxed font-serif break-words mb-10"
+        dangerouslySetInnerHTML={{ __html: content || "" }}
+      />
+
+      {/* ট্যাগসমূহ */}
+      {tagsList.length > 0 && (
+        <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-2">
+          <TagIcon className="size-3.5 text-muted-foreground mr-1" />
+          {tagsList.map((tag: string, index: number) => (
+            <Badge key={index} variant="secondary" className="text-[11px] font-normal">
+              #{tag}
+            </Badge>
+          ))}
+        </div>
+      )}
+
+      {/* লেখক পরিচিতি বক্স (যদি থাকে) */}
+      {author && (
+        <div className="mt-10 rounded-2xl border border-border/70 bg-card p-5 sm:p-6 flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+          {author.image_url ? (
+            <img
+              src={author.image_url}
+              alt={authorName || ""}
+              className="size-16 rounded-full object-cover border border-border shrink-0 shadow-sm"
+            />
+          ) : (
+            <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+              <User className="size-8" />
             </div>
           )}
-
-          {/* লগইন ওয়াল কার্ড */}
-          <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-b from-card to-primary/5 p-8 text-center space-y-5 shadow-lg">
-            <div className="mx-auto size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <Lock className="size-6" />
-            </div>
-
-            <div className="space-y-2 max-w-md mx-auto">
-              <h2 className="text-lg font-bold text-foreground font-serif">
-                সম্পূর্ণ আর্টিকেলটি পড়ার জন্য লগইন করুন
+          <div className="space-y-1.5 flex-1 min-w-0">
+            <div className="flex items-center justify-center sm:justify-between">
+              <h2 className="text-sm sm:text-base font-bold text-foreground font-serif">
+                {authorName}
               </h2>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                কুরআন অন্বেষার গভীর গবেষণামূলক প্রবন্ধ ও তাদাব্বুর পাঠের জন্য আমাদের সাইটে সাইন-ইন বা একটি ফ্রি অ্যাকাউন্ট তৈরি করুন।
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center gap-3 pt-2">
-              <Button asChild size="default" className="gap-2 text-xs font-semibold px-6 cursor-pointer shadow-md">
-                <Link to="/auth" search={{ redirect: `/articles/${slug}` }}>
-                  <LogIn className="size-4" /> {lang === "en" ? "Log In or Sign Up" : "লগইন বা সাইন আপ করুন"}
-                </Link>
-              </Button>
-
-              <div className="pt-2">
-                <SparkleCtaNotice variant="card" />
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* মূল লেখার বিষয়বস্তু (শুধুমাত্র লগইনকৃত ইউজারদের জন্য) */
-        <div
-          className="prose prose-base sm:prose-lg dark:prose-invert max-w-none leading-relaxed font-serif break-words mb-10"
-          dangerouslySetInnerHTML={{ __html: content || "" }}
-        />
-      )}
-
-      {/* পোস্টের নিচের ট্যাগসমূহ */}
-      {tagsList.length > 0 && (
-        <div className="my-8 pt-6 border-t border-border/60">
-          <div className="flex items-center gap-2 mb-3">
-            <TagIcon className="size-4 text-primary" />
-            <span className="text-xs font-bold text-foreground uppercase tracking-wider">ট্যাগসমূহ:</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {tagsList.map((tag, idx) => (
-              <Badge
-                key={idx}
-                variant="secondary"
-                className="px-3 py-1 text-xs font-medium bg-muted/60 hover:bg-primary hover:text-white transition-all cursor-pointer select-none rounded-lg border border-border"
+              <Link
+                to="/authors/$id"
+                params={{ id: author.id }}
+                className="hidden sm:inline-block text-xs font-semibold text-primary hover:underline"
               >
-                #{tag}
-              </Badge>
-            ))}
+                লেখকের সকল লেখা →
+              </Link>
+            </div>
+            {author.bio_bn && (
+              <p className="text-xs text-muted-foreground leading-relaxed font-serif">
+                {lang === "en" && author.bio_en ? author.bio_en : author.bio_bn}
+              </p>
+            )}
+            <div className="pt-1 sm:hidden">
+              <Link
+                to="/authors/$id"
+                params={{ id: author.id }}
+                className="text-xs font-semibold text-primary hover:underline"
+              >
+                লেখকের সকল লেখা →
+              </Link>
+            </div>
           </div>
         </div>
       )}
 
-      {/* কমেন্ট ও ফিডব্যাক সেকশন (শুধুমাত্র লগইন থাকলে) */}
-      <CommentsSection articleId={article.id} />
+      {/* মন্তব্য সেকশন */}
+      <div className="mt-12 pt-8 border-t border-border/60">
+        <CommentsSection articleId={article.id} />
+      </div>
     </article>
   );
 }
