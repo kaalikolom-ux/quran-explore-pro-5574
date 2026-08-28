@@ -152,7 +152,7 @@ function HomePage() {
     <div>
       {/* হিরো সেকশন */}
       <section className="relative overflow-hidden text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
-        {/* শুধুমাত্র পিওর ব্যাকগ্রাউন্ড ইমেজ (নো ওভারলে) */}
+        {/* শুধুমাত্র পিওর ব্যাকগ্রাউন্ড ইমেজ (হরিজোন্টালি মিরর করা যাতে বামে ডার্ক অংশ থাকে) */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero-bg.webp"
@@ -160,7 +160,7 @@ function HomePage() {
             aria-hidden="true"
             width="1920"
             height="1080"
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center -scale-x-100 select-none pointer-events-none"
             loading="eager"
             decoding="async"
           />
