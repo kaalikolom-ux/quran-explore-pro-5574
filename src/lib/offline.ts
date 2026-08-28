@@ -72,24 +72,3 @@ export async function removeSurahAudio(urls: string[]) {
   const cache = await caches.open(AUDIO_CACHE);
   await Promise.all(urls.map((u) => cache.delete(u)));
 }
-
-/** Automatically prefetch upcoming 3 ayahs audio in the background for zero-buffering playback */
-export async function prefetchNextAyahsAudio(urls: string[]) {
-  if (!cachesAvailable() || !urls || urls.length === 0) return;
-  try {
-    const cache = await caches.open(AUDIO_CACHE);
-    for (const url of urls.slice(0, 3)) {
-      if (!url) continue;
-      const hit = await cache.match(url);
-      if (!hit) {
-        fetch(url, { mode: "cors" })
-          .then((res) => {
-            if (res.ok) cache.put(url, res);
-          })
-          .catch(() => {});
-      }
-    }
-  } catch {
-    // Ignore prefetch network errors
-  }
-}

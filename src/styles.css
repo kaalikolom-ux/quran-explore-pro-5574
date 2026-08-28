@@ -1,4 +1,4 @@
-@import "./fonts.css";
+@import "../public/fonts/fonts.css";
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -197,10 +197,4 @@
 .arabic,
 [data-arabic="true"] {
   font-family: var(--font-arabic);
-}
-
-/* Performance Optimization: Defer layout calculation for below-the-fold content */
-.content-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 600px;
 }

@@ -86,57 +86,11 @@ async function mirrorVerses(surah: number): Promise<Verse[] | null> {
   }
 }
 
-/** Fetch local static surah json from /data/quran/surahs/${surah}.json for zero network latency */
-async function localSurahJson(surah: number): Promise<Verse[] | null> {
-  if (typeof window === "undefined") return null;
-  try {
-    const res = await fetch(`/data/quran/surahs/${surah}.json`);
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (!data || !data.ayahs || data.ayahs.length === 0) return null;
-    return data.ayahs.map((a: any) => ({
-      id: a.surah * 1000 + a.ayah,
-      verse_number: a.ayah,
-      verse_key: `${a.surah}:${a.ayah}`,
-      text_uthmani: a.words?.map((w: any) => w.text_uthmani).join(" ") || "",
-      words: (a.words || []).map((w: any) => ({
-        id: w.id,
-        position: w.position,
-        char_type_name: "word",
-        text_uthmani: w.text_uthmani,
-        translation: { text: w.translation_bn || "" },
-        transliteration: { text: w.transliteration || "" },
-        root: w.root,
-        lemma: w.lemma,
-        grammar_bn: w.grammar_bn,
-      })),
-      translations: [
-        { resource_id: BN_TRANSLATION_ID, text: a.translation_bn || "" },
-        { resource_id: EN_TRANSLATION_ID, text: a.translation_en || "" },
-      ],
-    }));
-  } catch {
-    return null;
-  }
-}
-
 export const chaptersQuery = (lang: "bn" | "en") =>
   queryOptions({
     queryKey: ["quran", "chapters", lang],
     staleTime: 1000 * 60 * 60 * 24,
     queryFn: async () => {
-      // 1. Instant load from local ALL_SURAHS_DATABASE
-      if (ALL_SURAHS_DATABASE && ALL_SURAHS_DATABASE.length === 114) {
-        return ALL_SURAHS_DATABASE.map((s) => ({
-          id: s.id,
-          name_simple: s.name_en,
-          name_arabic: s.name_arabic,
-          verses_count: s.total_verses,
-          revelation_place: s.type === "Meccan" ? "makkah" : "madinah",
-          translated_name: { name: lang === "bn" ? s.meaning_bn : s.meaning_en },
-        }));
-      }
-
       try {
         const mirrored = await mirrorChapters();
         if (mirrored && mirrored.length >= 114) return mirrored;
@@ -161,17 +115,10 @@ export const chaptersQuery = (lang: "bn" | "en") =>
 export const versesQuery = (surah: number, lang: "bn" | "en") =>
   queryOptions({
     queryKey: ["quran", "verses", surah, lang],
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 6,
     queryFn: async () => {
-      // 1. Instant load from local bundled json
-      const localData = await localSurahJson(surah);
-      if (localData && localData.length > 0) return localData;
-
-      // 2. Fallback to Supabase mirrored database
       const mirrored = await mirrorVerses(surah);
-      if (mirrored && mirrored.length > 0) return mirrored;
-
-      // 3. Fallback to Quran API
+      if (mirrored) return mirrored;
       const params = new URLSearchParams({
         words: "true",
         language: lang,
@@ -203,19 +150,35 @@ export function localNumber(value: number | string, lang: "bn" | "en") {
 
 // Mishary Rashid Al-Afasy (quran.com recitation id 7)
 export const AFASY_RECITATION_ID = 7;
+const AUDIO_BASE = "https://verses.quran.com/";
+
 export const audioQuery = (surah: number) =>
   queryOptions({
     queryKey: ["quran", "audio", AFASY_RECITATION_ID, surah],
     staleTime: 1000 * 60 * 60 * 24,
     queryFn: async () => {
-      // Direct local generation without ANY external API call (100% independent & offline-ready)
-      const meta = ALL_SURAHS_DATABASE.find((s) => s.id === surah);
-      const totalVerses = meta?.total_verses || 7;
-      const sStr = String(surah).padStart(3, "0");
+      try {
+        const { data: rows } = await supabase
+          .from("quran_verses")
+          .select("ayah, audio_url")
+          .eq("surah", surah)
+          .not("audio_url", "is", null)
+          .order("ayah");
+        if (rows && rows.length > 0) {
+          const mirroredMap: Record<number, string> = {};
+          for (const r of rows) if (r.audio_url) mirroredMap[r.ayah] = r.audio_url;
+          return mirroredMap;
+        }
+      } catch {
+        // fall through to the network API
+      }
+      const data = await getJson<{
+        audio_files: { verse_key: string; url: string }[];
+      }>(`${API}/recitations/${AFASY_RECITATION_ID}/by_chapter/${surah}?per_page=300`);
       const map: Record<number, string> = {};
-      for (let a = 1; a <= totalVerses; a++) {
-        const aStr = String(a).padStart(3, "0");
-        map[a] = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+      for (const f of data.audio_files) {
+        const ayah = Number(f.verse_key.split(":")[1]);
+        if (ayah) map[ayah] = `${AUDIO_BASE}${f.url}`;
       }
       return map;
     },

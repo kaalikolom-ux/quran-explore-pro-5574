@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import React, { useMemo, useState, lazy, Suspense } from "react";
+import { useMemo, useState } from "react";
 import {
   ArrowRight,
   BookOpen,
@@ -272,7 +272,7 @@ function HomePage() {
       </section>
 
       {/* ২. সুরার তালিকা ও ফিল্টার */}
-      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14 content-auto">
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">
@@ -374,7 +374,7 @@ function HomePage() {
       </section>
 
       {/* ৩. বিষয়ভিত্তিক কুরআন ও গবেষণা অন্বেষা (Thematic & Scientific Quran Explorer) */}
-      <section className="border-t border-border bg-gradient-to-b from-card/60 to-background py-14 content-auto">
+      <section className="border-t border-border bg-gradient-to-b from-card/60 to-background py-14">
         <div className="mx-auto w-full max-w-6xl px-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
@@ -437,7 +437,7 @@ function HomePage() {
       </section>
 
       {/* ৪. আর্টিকেল সেকশন */}
-      <section className="border-t border-border bg-secondary/40 content-auto">
+      <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">সাম্প্রতিক আর্টিকেল</h2>
@@ -493,7 +493,7 @@ function HomePage() {
       </section>
 
       {/* ৫. নিউজলেটার */}
-      <section className="mx-auto w-full max-w-3xl px-4 py-16 content-auto">
+      <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
           <h2 className="text-xl font-semibold text-foreground">
             আমাদের নিউজলেটার সাবস্ক্রাইব করুন

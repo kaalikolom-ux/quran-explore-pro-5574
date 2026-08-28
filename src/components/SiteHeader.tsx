@@ -19,6 +19,7 @@ import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
+import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 
 function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
   return (
