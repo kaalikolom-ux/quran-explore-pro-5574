@@ -88,6 +88,7 @@ async function mirrorVerses(surah: number): Promise<Verse[] | null> {
 
 /** Fetch local static surah json from /data/quran/surahs/${surah}.json for zero network latency */
 async function localSurahJson(surah: number): Promise<Verse[] | null> {
+  if (typeof window === "undefined") return null;
   try {
     const res = await fetch(`/data/quran/surahs/${surah}.json`);
     if (!res.ok) return null;

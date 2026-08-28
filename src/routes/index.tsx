@@ -22,12 +22,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
+import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
 import { searchQuranSurahs, bnToEnDigits, ALL_SURAHS_DATABASE } from "@/lib/quranSearchEngine";
-
-const GlobalSearchDialog = lazy(() =>
-  import("@/components/GlobalSearchDialog").then((m) => ({ default: m.GlobalSearchDialog }))
-);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -511,15 +508,11 @@ function HomePage() {
       </section>
 
       {/* গ্লোবাল অমনিসার্চ ডায়ালগ */}
-      {searchDialogOpen && (
-        <Suspense fallback={null}>
-          <GlobalSearchDialog
-            open={searchDialogOpen}
-            onOpenChange={setSearchDialogOpen}
-            initialQuery={searchDialogQuery}
-          />
-        </Suspense>
-      )}
+      <GlobalSearchDialog
+        open={searchDialogOpen}
+        onOpenChange={setSearchDialogOpen}
+        initialQuery={searchDialogQuery}
+      />
     </div>
   );
 }
