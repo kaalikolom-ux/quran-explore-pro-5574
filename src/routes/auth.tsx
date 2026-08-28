@@ -1,8 +1,8 @@
 import { createFileRoute, Link, useNavigate, useSearch } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
-import { Loader2 } from "lucide-react";
+import { Loader2, ShieldCheck, RefreshCw } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
@@ -34,6 +34,75 @@ const schema = z.object({
   email: z.string().trim().email().max(255),
   password: z.string().min(6).max(72),
 });
+
+interface MathChallenge {
+  num1: number;
+  num2: number;
+  operator: "+" | "-" | "×" | "÷";
+  answer: number;
+}
+
+function generateMathChallenge(): MathChallenge {
+  const operations: Array<"+" | "-" | "×" | "÷"> = ["+", "-", "×", "÷"];
+  const op = operations[Math.floor(Math.random() * operations.length)];
+
+  let num1 = 0;
+  let num2 = 0;
+  let answer = 0;
+
+  if (op === "+") {
+    // যোগফল যেন সর্বোচ্চ ৯ হয় (Single Digit: <= 9)
+    answer = Math.floor(Math.random() * 8) + 2; // 2..9
+    num1 = Math.floor(Math.random() * (answer - 1)) + 1; // 1..(answer-1)
+    num2 = answer - num1;
+  } else if (op === "-") {
+    // বিয়োগফল যেন একক সংখ্যা হয় (>= 0 এবং <= 9)
+    num1 = Math.floor(Math.random() * 9) + 1; // 1..9
+    num2 = Math.floor(Math.random() * num1); // 0..(num1-1)
+    answer = num1 - num2;
+  } else if (op === "×") {
+    // গুণফল যেন সর্বোচ্চ ৯ হয় (Single Digit: <= 9)
+    const pairs = [
+      [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9],
+      [2, 1], [2, 2], [2, 3], [2, 4],
+      [3, 1], [3, 2], [3, 3],
+      [4, 1], [4, 2],
+      [5, 1], [6, 1], [7, 1], [8, 1], [9, 1],
+    ];
+    const pair = pairs[Math.floor(Math.random() * pairs.length)];
+    num1 = pair[0];
+    num2 = pair[1];
+    answer = num1 * num2;
+  } else {
+    // ভাগফল যেন পূর্ণ একক সংখ্যা হয় (Single Digit: <= 9)
+    const divPairs = [
+      [2, 2], [4, 2], [6, 2], [8, 2],
+      [3, 3], [6, 3], [9, 3],
+      [4, 4], [8, 4],
+      [5, 5], [6, 6], [7, 7], [8, 8], [9, 9],
+    ];
+    const pair = divPairs[Math.floor(Math.random() * divPairs.length)];
+    num1 = pair[0];
+    num2 = pair[1];
+    answer = Math.floor(num1 / num2);
+  }
+
+  return { num1, num2, operator: op, answer };
+}
+
+function toBnDigits(num: number | string): string {
+  const bn = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  return String(num).replace(/\d/g, (d) => bn[parseInt(d, 10)]);
+}
+
+function toEnDigits(str: string): string {
+  const bn = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  let res = str;
+  bn.forEach((b, idx) => {
+    res = res.replaceAll(b, String(idx));
+  });
+  return res;
+}
 
 function GoogleIcon() {
   return (
@@ -77,6 +146,20 @@ function AuthPage() {
   const [oauthBusy, setOauthBusy] = useState<"google" | "github" | null>(null);
   const [sent, setSent] = useState(false);
   const [resetSent, setResetSent] = useState(false);
+
+  // গণিত সিকিউরিটি ক্যাপচা স্টেট
+  const [captcha, setCaptcha] = useState<MathChallenge>(() => generateMathChallenge());
+  const [captchaInput, setCaptchaInput] = useState("");
+
+  const refreshCaptcha = useCallback(() => {
+    setCaptcha(generateMathChallenge());
+    setCaptchaInput("");
+  }, []);
+
+  // মোড পরিবর্তন হলে নতুন গণিত ক্যাপচা জেনারেট
+  useEffect(() => {
+    refreshCaptcha();
+  }, [mode, refreshCaptcha]);
 
   const redirectUrl = search.redirect || "/bookmarks";
 
@@ -131,6 +214,19 @@ function AuthPage() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    
+    // ১. গণিত সিকিউরিটি ক্যাপচা যাচাইকরণ
+    const parsedUserAnswer = parseInt(toEnDigits(captchaInput.trim()), 10);
+    if (isNaN(parsedUserAnswer) || parsedUserAnswer !== captcha.answer) {
+      toast.error(
+        lang === "bn"
+          ? "গণিত সিকিউরিটি প্রশ্নের সঠিক উত্তর দিন।"
+          : "Please solve the math security question correctly."
+      );
+      refreshCaptcha();
+      return;
+    }
+
     setBusy(true);
     try {
       if (mode === "forgot") {
@@ -169,6 +265,7 @@ function AuthPage() {
       }
     } catch (error) {
       toast.error((error as Error).message);
+      refreshCaptcha();
     } finally {
       setBusy(false);
     }
@@ -253,6 +350,7 @@ function AuthPage() {
                 className="h-10 text-xs rounded-xl"
               />
             </div>
+
             {mode !== "forgot" && (
               <div className="space-y-1.5">
                 <Label htmlFor="password" className="text-xs">{t("password")}</Label>
@@ -269,6 +367,45 @@ function AuthPage() {
                 />
               </div>
             )}
+
+            {/* গণিত সিকিউরিটি ক্যাপচা (Math Security Logic: একক সংখ্যা যোগ, বিয়োগ, গুণ, ভাগ) */}
+            <div className="space-y-1.5 rounded-xl border border-border/70 bg-muted/20 p-3">
+              <div className="flex items-center justify-between text-xs">
+                <Label htmlFor="captcha" className="font-semibold text-foreground flex items-center gap-1.5">
+                  <ShieldCheck className="size-3.5 text-primary" />
+                  <span>{lang === "bn" ? "নিরাপত্তা প্রশ্ন (Human Verification)" : "Security Question (Verification)"}</span>
+                </Label>
+                <button
+                  type="button"
+                  onClick={refreshCaptcha}
+                  className="text-muted-foreground hover:text-primary transition-colors p-1 cursor-pointer flex items-center gap-1 text-[11px]"
+                  title={lang === "bn" ? "নতুন প্রশ্ন আনুন" : "Generate new question"}
+                >
+                  <RefreshCw className="size-3" />
+                  <span>{lang === "bn" ? "নতুন প্রশ্ন" : "Reload"}</span>
+                </button>
+              </div>
+
+              <div className="flex items-center gap-3 pt-1">
+                <div className="flex items-center justify-center rounded-lg bg-card border border-border px-3.5 py-1.5 font-mono text-sm font-bold text-foreground select-none shadow-xs tracking-wider">
+                  {lang === "bn"
+                    ? `${toBnDigits(captcha.num1)} ${captcha.operator} ${toBnDigits(captcha.num2)} = ?`
+                    : `${captcha.num1} ${captcha.operator} ${captcha.num2} = ?`}
+                </div>
+                <Input
+                  id="captcha"
+                  type="text"
+                  inputMode="numeric"
+                  required
+                  maxLength={2}
+                  placeholder={lang === "bn" ? "উত্তর লিখুন (যেমন: ৫)" : "Answer (e.g. 5)"}
+                  value={captchaInput}
+                  onChange={(e) => setCaptchaInput(e.target.value)}
+                  className="h-9 text-xs rounded-lg flex-1 font-mono"
+                />
+              </div>
+            </div>
+
             <Button
               type="submit"
               className="w-full h-10 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs cursor-pointer shadow-sm transition-all"
