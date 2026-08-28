@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "Kaushan Script";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kaushanscript/v19/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf")
-    format("truetype");
-}
-
+@import "../public/fonts/fonts.css";
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -55,13 +47,9 @@
   --color-chrome: var(--chrome);
   --color-chrome-foreground: var(--chrome-foreground);
 
-  --font-sans:
-    "Anek Bangla", "Noto Sans Bengali", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui,
-    -apple-system, sans-serif;
-  --font-display:
-    "Anek Bangla", "Noto Sans Bengali", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui,
-    sans-serif;
-  --font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
+  --font-sans: "Noto Sans Bengali", "Roboto", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Noto Sans Bengali", "Roboto", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", "Traditional Arabic", serif;
   --font-kaushan: "Kaushan Script", cursive;
 
   --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.03), 0 8px 18px -3px rgba(0, 0, 0, 0.05);

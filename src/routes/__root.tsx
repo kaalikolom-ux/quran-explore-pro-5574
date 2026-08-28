@@ -142,25 +142,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="bn">
       <head>
         <HeadContent />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap"
-          media="print"
-          // @ts-expect-error non-blocking font swap
-          onLoad="this.media='all'"
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700&family=Amiri:wght@400;700&display=swap"
-          />
-        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
