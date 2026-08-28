@@ -12,6 +12,7 @@ import { Typewriter } from "@/components/Typewriter";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
 import { searchQuranSurahs, bnToEnDigits } from "@/lib/quranSearchEngine";
+import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -257,6 +258,11 @@ function HomePage() {
                 <span>{lang === "bn" ? "সেটিংস" : "Settings"}</span>
               </Link>
             </Button>
+          </div>
+
+          {/* CTA বাটনগুলোর নীচে ১.৫ সেকেন্ড পরপর বার্স্ট করা অ্যানিমেটেড তারাবাত্তি নোটিশ */}
+          <div className="mt-5 max-w-xl flex items-center justify-start">
+            <SparkleCtaNotice variant="hero" />
           </div>
         </div>
 

@@ -25,6 +25,7 @@ import { useCategoryAccess } from "@/lib/accessControl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
+import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
 
 export const Route = createFileRoute("/articles/$slug")({
   head: ({ params }) => {
@@ -306,12 +307,16 @@ function SingleArticlePage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <div className="flex flex-col items-center justify-center gap-3 pt-2">
               <Button asChild size="default" className="gap-2 text-xs font-semibold px-6 cursor-pointer shadow-md">
                 <Link to="/auth" search={{ redirect: `/articles/${slug}` }}>
-                  <LogIn className="size-4" /> লগইন বা সাইন আপ করুন
+                  <LogIn className="size-4" /> {lang === "en" ? "Log In or Sign Up" : "লগইন বা সাইন আপ করুন"}
                 </Link>
               </Button>
+
+              <div className="pt-2">
+                <SparkleCtaNotice variant="card" />
+              </div>
             </div>
           </div>
         </div>

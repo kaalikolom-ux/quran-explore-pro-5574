@@ -10,6 +10,7 @@ import { useIsAdmin } from "@/lib/auth";
 import { useCategoryAccess } from "@/lib/accessControl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
 
 const searchSchema = z.object({
   category: z.string().optional(),
@@ -147,21 +148,27 @@ function ArticlesIndexPage() {
 
       {/* যদি ভিজিটর লগইন না করা থাকে - ফ্রেন্ডলি মেম্বারশিপ ব্যানার */}
       {!isLoggedIn && (
-        <div className="mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5 shadow-xs">
-          <div className="space-y-1">
-            <h2 className="text-sm font-bold text-foreground flex items-center gap-1.5">
-              <Sparkles className="size-4 text-primary" />
-              <span>সম্পূর্ণ আর্টিকেল পাঠের জন্য লগইন করুন</span>
-            </h2>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              কুরআন অন্বেষার সমস্ত প্রবন্ধ ও গভীর গবেষণামূলক তাদাব্বুর পড়ার জন্য বিনামূল্যে অ্যাকাউন্ট খুলুন অথবা লগইন করুন।
-            </p>
+        <div className="mb-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6 shadow-xs text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+            <div className="space-y-1">
+              <h2 className="text-sm font-bold text-foreground flex items-center justify-center sm:justify-start gap-1.5">
+                <Sparkles className="size-4 text-primary" />
+                <span>সম্পূর্ণ আর্টিকেল পাঠের জন্য লগইন করুন</span>
+              </h2>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                কুরআন অন্বেষার সমস্ত প্রবন্ধ ও গভীর গবেষণামূলক তাদাব্বুর পড়ার জন্য বিনামূল্যে অ্যাকাউন্ট খুলুন অথবা লগইন করুন।
+              </p>
+            </div>
+            <Button asChild size="sm" className="shrink-0 text-xs gap-1.5 cursor-pointer">
+              <Link to="/auth" search={{ redirect: "/articles" }}>
+                <LogIn className="size-3.5" /> লগইন বা সাইন আপ
+              </Link>
+            </Button>
           </div>
-          <Button asChild size="sm" className="shrink-0 text-xs gap-1.5 cursor-pointer">
-            <Link to="/auth" search={{ redirect: "/articles" }}>
-              <LogIn className="size-3.5" /> লগইন বা সাইন আপ
-            </Link>
-          </Button>
+
+          <div className="pt-1 w-full flex justify-center">
+            <SparkleCtaNotice variant="card" />
+          </div>
         </div>
       )}
 
