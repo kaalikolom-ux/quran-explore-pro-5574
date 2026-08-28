@@ -12,9 +12,12 @@ export type DisplayLayers = {
   showLexiconScientific: boolean;
 };
 
+export type ThemeMode = "dark" | "sepia" | "slate" | "light";
+
 export type Prefs = DisplayLayers & {
   lang: "bn" | "en";
   dark: boolean;
+  themeMode?: ThemeMode;
   arabicFontSize: number;
   translationFontSize: number;
 };
@@ -22,6 +25,7 @@ export type Prefs = DisplayLayers & {
 export const DEFAULT_PREFS: Prefs = {
   lang: "bn",
   dark: true,
+  themeMode: "dark",
   arabicFontSize: 28,
   translationFontSize: 15,
   showArabic: true,
@@ -58,7 +62,9 @@ type PrefsContextType = {
   prefs: Prefs;
   lang: "bn" | "en";
   dark: boolean;
+  themeMode: ThemeMode;
   setDark: (dark: boolean) => void;
+  setThemeMode: (mode: ThemeMode) => void;
   toggleLang: () => void;
   updatePref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void;
   t: (key: string) => string;
@@ -81,13 +87,22 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
+  const themeMode: ThemeMode = prefs.themeMode || (prefs.dark ? "dark" : "sepia");
+
   useEffect(() => {
-    if (prefs.dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    const root = document.documentElement;
+    root.classList.remove("dark", "theme-sepia", "theme-slate", "theme-light");
+
+    if (themeMode === "dark") {
+      root.classList.add("dark");
+    } else if (themeMode === "sepia") {
+      root.classList.add("theme-sepia");
+    } else if (themeMode === "slate") {
+      root.classList.add("theme-slate");
+    } else if (themeMode === "light") {
+      root.classList.add("theme-light");
     }
-  }, [prefs.dark]);
+  }, [themeMode]);
 
   const updatePref = <K extends keyof Prefs>(key: K, value: Prefs[K]) => {
     const current = getStoredPrefs();
@@ -101,7 +116,19 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
   };
 
   const setDark = (dark: boolean) => {
-    updatePref("dark", dark);
+    const newMode: ThemeMode = dark ? "dark" : (prefs.themeMode && prefs.themeMode !== "dark" ? prefs.themeMode : "sepia");
+    const current = getStoredPrefs();
+    const updated: Prefs = { ...current, dark, themeMode: newMode };
+    setPrefsState(updated);
+    savePrefs(updated);
+  };
+
+  const setThemeMode = (mode: ThemeMode) => {
+    const isDark = mode === "dark";
+    const current = getStoredPrefs();
+    const updated: Prefs = { ...current, dark: isDark, themeMode: mode };
+    setPrefsState(updated);
+    savePrefs(updated);
   };
 
   const t = (key: string) => {
@@ -290,7 +317,9 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
         prefs,
         lang: prefs.lang,
         dark: prefs.dark,
+        themeMode,
         setDark,
+        setThemeMode,
         toggleLang,
         updatePref,
         t,
@@ -305,11 +334,14 @@ export function usePrefs() {
   const context = useContext(PrefsContext);
   if (!context) {
     const fallbackPrefs = getStoredPrefs();
+    const fallbackMode = fallbackPrefs.themeMode || (fallbackPrefs.dark ? "dark" : "sepia");
     return {
       prefs: fallbackPrefs,
       lang: fallbackPrefs.lang,
       dark: fallbackPrefs.dark,
+      themeMode: fallbackMode,
       setDark: () => {},
+      setThemeMode: () => {},
       toggleLang: () => {},
       updatePref: () => {},
       t: (key: string) => key,

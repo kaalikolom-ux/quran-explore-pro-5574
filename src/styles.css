@@ -68,7 +68,102 @@
   --chrome-foreground: #f5f5f7;
   --radius: 0.75rem;
 
-  /* Light Mode */
+  /* Default Warm Paper (Mushaf Eye-Comfort Sepia) */
+  --background: #fbf7ee;
+  --foreground: #2c231b;
+  --card: #f4ecdc;
+  --card-foreground: #2c231b;
+  --popover: #f6eedf;
+  --popover-foreground: #2c231b;
+  --primary: #1f6f43;
+  --primary-foreground: #fbf7ee;
+  --secondary: #ede2cf;
+  --secondary-foreground: #2c231b;
+  --muted: #eee4d1;
+  --muted-foreground: #796c5c;
+  --accent: #e5d8be;
+  --accent-foreground: #1f6f43;
+  --destructive: #b02a37;
+  --destructive-foreground: #ffffff;
+  --border: #e2d3bb;
+  --input: #e2d3bb;
+  --ring: #1f6f43;
+  --sidebar: #f5ece0;
+  --sidebar-foreground: #2c231b;
+  --sidebar-primary: #1f6f43;
+  --sidebar-primary-foreground: #fbf7ee;
+  --sidebar-accent: #e8dbca;
+  --sidebar-accent-foreground: #1f6f43;
+  --sidebar-border: #e2d3bb;
+  --sidebar-ring: #1f6f43;
+
+  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
+}
+
+/* ১. মুসহাফ ওয়ার্ম পেপার / সেপিয়া (চোখের জন্য সেরা প্রশান্তিদায়ক থিম) */
+.theme-sepia {
+  --background: #fbf7ee;
+  --foreground: #2c231b;
+  --card: #f4ecdc;
+  --card-foreground: #2c231b;
+  --popover: #f6eedf;
+  --popover-foreground: #2c231b;
+  --primary: #1f6f43;
+  --primary-foreground: #fbf7ee;
+  --secondary: #ede2cf;
+  --secondary-foreground: #2c231b;
+  --muted: #eee4d1;
+  --muted-foreground: #796c5c;
+  --accent: #e5d8be;
+  --accent-foreground: #1f6f43;
+  --destructive: #b02a37;
+  --destructive-foreground: #ffffff;
+  --border: #e2d3bb;
+  --input: #e2d3bb;
+  --ring: #1f6f43;
+  --sidebar: #f5ece0;
+  --sidebar-foreground: #2c231b;
+  --sidebar-primary: #1f6f43;
+  --sidebar-primary-foreground: #fbf7ee;
+  --sidebar-accent: #e8dbca;
+  --sidebar-accent-foreground: #1f6f43;
+  --sidebar-border: #e2d3bb;
+  --sidebar-ring: #1f6f43;
+}
+
+/* ২. নরম স্লেট / মিস্ট (ব্লু-লাইট ফিল্টার ব্যাকগ্রাউন্ড) */
+.theme-slate {
+  --background: #f1f5f9;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #1e293b;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --accent: #dbeafe;
+  --accent-foreground: #2563eb;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #2563eb;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2e8f0;
+  --sidebar-accent-foreground: #2563eb;
+  --sidebar-border: #cbd5e1;
+  --sidebar-ring: #2563eb;
+}
+
+/* ৩. স্বাভাবিক লাইট মোড */
+.theme-light {
   --background: #f8f9fa;
   --foreground: #2d2d2d;
   --card: #ffffff;
@@ -96,16 +191,14 @@
   --sidebar-accent-foreground: #2a6f97;
   --sidebar-border: #dee2e6;
   --sidebar-ring: #2a6f97;
-  
-  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
 }
 
+/* ৪. ডিপ মিডনাইট ডার্ক মোড */
 .dark {
   --chrome: #121212;
   --chrome-foreground: #e4e4e7;
   --radius: 0.75rem;
 
-  /* Dark Mode */
   --background: #141414;
   --foreground: #e4e4e7;
   --card: #1c1c1f;
