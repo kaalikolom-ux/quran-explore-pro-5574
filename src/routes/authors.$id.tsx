@@ -16,10 +16,17 @@ export const Route = createFileRoute("/authors/$id")({
   component: AuthorDetailPage,
 });
 
-function getCleanExcerpt(content?: string | null, excerpt?: string | null, maxLength = 120): string {
+function getCleanExcerpt(
+  content?: string | null,
+  excerpt?: string | null,
+  maxLength = 120,
+): string {
   if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
   if (!content) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
-  const clean = content.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+  const clean = content
+    .replace(/<[^>]*>?/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
 
@@ -112,7 +119,9 @@ function AuthorDetailPage() {
         {authorArticles.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-border p-12 text-center space-y-2">
             <BookOpen className="mx-auto size-8 text-muted-foreground/50" />
-            <p className="text-xs text-muted-foreground">এই লেখকের কোনো প্রকাশিত আর্টিকেল পাওয়া যায়নি।</p>
+            <p className="text-xs text-muted-foreground">
+              এই লেখকের কোনো প্রকাশিত আর্টিকেল পাওয়া যায়নি।
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -165,11 +174,14 @@ function AuthorDetailPage() {
                     <div className="mt-5 flex items-center justify-between text-[11px] text-muted-foreground pt-3 border-t border-border/50">
                       <span>
                         {dateStr
-                          ? new Date(dateStr).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
-                              year: "numeric",
-                              month: "numeric",
-                              day: "numeric",
-                            })
+                          ? new Date(dateStr).toLocaleDateString(
+                              lang === "en" ? "en-US" : "bn-BD",
+                              {
+                                year: "numeric",
+                                month: "numeric",
+                                day: "numeric",
+                              },
+                            )
                           : ""}
                       </span>
 

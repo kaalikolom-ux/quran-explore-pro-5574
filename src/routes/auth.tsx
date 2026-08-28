@@ -64,7 +64,8 @@ function AuthPage() {
     try {
       if (mode === "forgot") {
         const parsedEmail = z.string().trim().email().max(255).safeParse(email);
-        if (!parsedEmail.success) throw new Error(parsedEmail.error.issues[0]?.message ?? t("error"));
+        if (!parsedEmail.success)
+          throw new Error(parsedEmail.error.issues[0]?.message ?? t("error"));
         const { error } = await supabase.auth.resetPasswordForEmail(parsedEmail.data, {
           redirectTo: `${window.location.origin}/reset-password`,
         });
@@ -147,8 +148,16 @@ function AuthPage() {
                 />
               </div>
             )}
-            <Button type="submit" className="w-full bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white" disabled={busy}>
-              {mode === "in" ? t("signIn") : mode === "up" ? t("createAccount") : t("sendResetLink")}
+            <Button
+              type="submit"
+              className="w-full bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white"
+              disabled={busy}
+            >
+              {mode === "in"
+                ? t("signIn")
+                : mode === "up"
+                  ? t("createAccount")
+                  : t("sendResetLink")}
             </Button>
           </form>
         )}

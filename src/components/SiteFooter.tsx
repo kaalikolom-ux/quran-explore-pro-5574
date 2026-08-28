@@ -60,9 +60,7 @@ export function SiteFooter() {
       if (error) {
         if (error.code === "23505") {
           toast.info(
-            lang === "en"
-              ? "You are already subscribed!"
-              : "আপনি ইতিমধ্যে সাবস্ক্রাইব করেছেন!"
+            lang === "en" ? "You are already subscribed!" : "আপনি ইতিমধ্যে সাবস্ক্রাইব করেছেন!",
           );
           setSubscribed(true);
           return;
@@ -88,7 +86,7 @@ export function SiteFooter() {
       toast.success(
         lang === "en"
           ? "Thank you for subscribing to our newsletter!"
-          : "নিউজলেটারে সাবস্ক্রাইব করার জন্য ধন্যবাদ!"
+          : "নিউজলেটারে সাবস্ক্রাইব করার জন্য ধন্যবাদ!",
       );
     } catch (err: any) {
       toast.error(err.message || "সাবস্ক্রিপশন ব্যর্থ হয়েছে");
@@ -100,10 +98,12 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-card text-card-foreground">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
-        
         {/* ১. পরিচিতি ও সোশ্যাল */}
         <div>
-          <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none shrink-0">
+          <Link
+            to="/"
+            className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none shrink-0"
+          >
             <QuranLogoBadge />
             <div className="flex flex-col leading-none min-w-0">
               <QuranExplorerLogo size="md" className="h-6 sm:h-7" />
@@ -112,7 +112,9 @@ export function SiteFooter() {
               </span>
             </div>
           </Link>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground font-normal">{t("tagline")}</p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground font-normal">
+            {t("tagline")}
+          </p>
           <SocialLinks className="mt-5" />
         </div>
 
@@ -156,7 +158,9 @@ export function SiteFooter() {
           {subscribed ? (
             <div className="flex items-center gap-2 rounded-xl bg-secondary p-3 text-xs text-foreground border border-border">
               <CheckCircle2 className="size-4 text-[#1c5576] dark:text-[#58b4e8]" />
-              <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
+              <span>
+                {lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}
+              </span>
             </div>
           ) : (
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
@@ -171,7 +175,9 @@ export function SiteFooter() {
               <Button
                 type="submit"
                 disabled={loading}
-                aria-label={lang === "en" ? "Subscribe to newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"}
+                aria-label={
+                  lang === "en" ? "Subscribe to newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"
+                }
                 title={lang === "en" ? "Subscribe to newsletter" : "নিউজলেটার সাবস্ক্রাইব করুন"}
                 className="h-10 rounded-xl px-4 text-xs shrink-0 bg-[#2A6F97] hover:bg-[#2A6F97]/90 text-white font-semibold shadow-xs"
               >
@@ -185,7 +191,7 @@ export function SiteFooter() {
           <div className="pt-2 text-xs text-muted-foreground border-t border-border">
             <p className="flex items-center gap-1.5 flex-wrap">
               <span>© {new Date().getFullYear()}</span>
-              <a 
+              <a
                 href="https://www.upwork.com/freelancers/~01e6f18d96f1c7294f"
                 target="_blank"
                 rel="noopener noreferrer"

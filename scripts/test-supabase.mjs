@@ -211,9 +211,12 @@ const dummy = `
 }
 `;
 
-fs.writeFileSync(path.join(process.cwd(), "src", "components", "FloatingQuickNav.tsx"), floatingNavCode, "utf8");
+fs.writeFileSync(
+  path.join(process.cwd(), "src", "components", "FloatingQuickNav.tsx"),
+  floatingNavCode,
+  "utf8",
+);
 console.log("Successfully created src/components/FloatingQuickNav.tsx");
-
 
 const fileContent = `// src/lib/quranSearchEngine.ts
 import { QURAN_THEMATIC_DATABASE, ThematicTopic } from "./quranThematicData";
@@ -1705,4 +1708,3 @@ export function searchQuranTopics(query: string): ThematicTopic[] {
   });
 }
 `;
-

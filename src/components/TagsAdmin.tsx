@@ -17,7 +17,10 @@ const tagSchema = z.object({
     .trim()
     .min(1, "স্লাগ বাধ্যতামূলক")
     .max(80)
-    .regex(/^[a-z0-9-]+$/, "স্লাগে শুধুমাত্র ছোট হাতের ইংরেজি অক্ষর, সংখ্যা এবং ড্যাশ (-) ব্যবহার করা যাবে"),
+    .regex(
+      /^[a-z0-9-]+$/,
+      "স্লাগে শুধুমাত্র ছোট হাতের ইংরেজি অক্ষর, সংখ্যা এবং ড্যাশ (-) ব্যবহার করা যাবে",
+    ),
 });
 
 const EMPTY_TAG = {
@@ -200,15 +203,22 @@ export function TagsAdmin() {
 
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {tagsQuery.data?.length === 0 ? (
-            <p className="p-4 text-xs text-muted-foreground text-center">কোনো ট্যাগ তৈরি করা হয়নি।</p>
+            <p className="p-4 text-xs text-muted-foreground text-center">
+              কোনো ট্যাগ তৈরি করা হয়নি।
+            </p>
           ) : (
             tagsQuery.data?.map((tag: any) => (
-              <div key={tag.id} className="flex items-center justify-between p-3.5 hover:bg-muted/30 transition-colors">
+              <div
+                key={tag.id}
+                className="flex items-center justify-between p-3.5 hover:bg-muted/30 transition-colors"
+              >
                 <div>
                   <span className="text-xs font-bold text-foreground inline-flex items-center gap-1.5">
                     <TagIcon className="size-3 text-[#2271b1]" />
                     {tag.name_bn}
-                    {tag.name_en && <span className="text-muted-foreground font-normal">({tag.name_en})</span>}
+                    {tag.name_en && (
+                      <span className="text-muted-foreground font-normal">({tag.name_en})</span>
+                    )}
                   </span>
                   <p className="text-[11px] text-muted-foreground mt-0.5 font-mono">/{tag.slug}</p>
                 </div>

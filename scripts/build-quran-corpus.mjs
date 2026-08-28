@@ -6,20 +6,57 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CORPUS_URL = "https://raw.githubusercontent.com/bnjasim/quranic-corpus/master/quranic-corpus-morphology-0.4.txt";
+const CORPUS_URL =
+  "https://raw.githubusercontent.com/bnjasim/quranic-corpus/master/quranic-corpus-morphology-0.4.txt";
 const SURAHS_DIR = path.join(__dirname, "../public/data/quran/surahs");
 
 const bwToArabicMap = {
-  "'": "ء", ">": "أ", "&": "ؤ", "<": "إ", "}": "ئ",
-  "A": "ا", "b": "ب", "p": "ة", "t": "ت", "v": "ث",
-  "j": "ج", "H": "ح", "x": "خ", "d": "د", "*": "ذ",
-  "r": "ر", "z": "ز", "s": "س", "$": "ش", "S": "ص",
-  "D": "ض", "T": "ط", "Z": "ظ", "E": "ع", "g": "غ",
-  "f": "ف", "q": "ق", "k": "ك", "l": "ل", "m": "م",
-  "n": "ن", "h": "ه", "w": "و", "Y": "ى", "y": "ي",
-  "{": "ٱ", "`": "ٰ", "~": "ّ", "o": "ْ", "a": "َ",
-  "u": "ُ", "i": "ِ", "F": "ً", "N": "ٌ", "K": "ٍ",
-  "_": "ـ"
+  "'": "ء",
+  ">": "أ",
+  "&": "ؤ",
+  "<": "إ",
+  "}": "ئ",
+  A: "ا",
+  b: "ب",
+  p: "ة",
+  t: "ت",
+  v: "ث",
+  j: "ج",
+  H: "ح",
+  x: "خ",
+  d: "د",
+  "*": "ذ",
+  r: "ر",
+  z: "ز",
+  s: "س",
+  $: "ش",
+  S: "ص",
+  D: "ض",
+  T: "ط",
+  Z: "ظ",
+  E: "ع",
+  g: "غ",
+  f: "ف",
+  q: "ق",
+  k: "ك",
+  l: "ل",
+  m: "م",
+  n: "ن",
+  h: "ه",
+  w: "و",
+  Y: "ى",
+  y: "ي",
+  "{": "ٱ",
+  "`": "ٰ",
+  "~": "ّ",
+  o: "ْ",
+  a: "َ",
+  u: "ُ",
+  i: "ِ",
+  F: "ً",
+  N: "ٌ",
+  K: "ٍ",
+  _: "ـ",
 };
 
 function bwToArabic(bwStr) {
@@ -31,46 +68,46 @@ function bwToArabic(bwStr) {
 }
 
 const posBanglaMap = {
-  "N": "বিশেষ্য (Noun)",
-  "PN": "নামবাচক বিশেষ্য (Proper Noun)",
-  "V": "ক্রিয়া (Verb)",
-  "ADJ": "বিশেষণ (Adjective)",
-  "PRON": "সর্বনাম (Pronoun)",
-  "DEM": "নির্দেশক সর্বনাম (Demonstrative)",
-  "REL": "সাপেক্ষ সর্বনাম (Relative)",
-  "LOC": "স্থানবাচক (Location)",
-  "T": "কালবাচক (Time)",
-  "P": "অব্যয় (Preposition)",
-  "CONJ": "সংযোজক অব্যয় (Conjunction)",
-  "INTG": "প্রশ্নবোধক (Interrogative)",
-  "NEG": "না-বোধক (Negative)",
-  "VOC": "সম্বোধন পদ (Vocative)",
-  "EMPH": "দৃঢ়তাবোধক (Emphatic)",
-  "CERT": "নিশ্চয়তাবোধক (Certainty)",
-  "COND": "শর্তবাচক (Conditional)",
-  "RES": "সীমাবদ্ধতা (Restriction)",
-  "EXP": "ব্যাখ্যামূলক (Explanation)",
-  "SUR": "আশ্চর্যসূচক (Surprise)",
-  "CIRC": "অবস্থাবাচক (Circumstantial)",
-  "SUB": "অধীনস্থ যোজক (Subordinating)",
-  "ACC": "অভিঘাত পদ (Accusative)",
-  "AMD": "সংশোধন পদ (Amendment)",
-  "ANS": "উত্তর পদ (Answer)",
-  "AVR": "অনিচ্ছা পদ (Aversion)",
-  "CAUS": "কারণবাচক (Cause)",
-  "COM": "সঙ্গতিবাচক (Comitative)",
-  "EQ": "সমতাবাচক (Equalization)",
-  "EXH": "উৎসাহবাচক (Exhortation)",
-  "FUT": "ভবিষ্যদ্বাচক (Future)",
-  "INC": "অসম্পূর্ণ (Inceptive)",
-  "INT": "উদ্দেশ্যবাচক (Intention)",
-  "LIP": "সম্ভাবনা পদ (Possibility)",
-  "LUT": "আকাঙ্ক্ষাবাচক (Desire)",
-  "PRO": "নিষেধবাচক (Prohibition)",
-  "PREV": "প্রতিরোধক (Preventive)",
-  "RET": "প্রত্যাহার পদ (Retraction)",
-  "RSLT": "ফলাফল পদ (Result)",
-  "SUP": "সম্পূরক পদ (Supplemental)"
+  N: "বিশেষ্য (Noun)",
+  PN: "নামবাচক বিশেষ্য (Proper Noun)",
+  V: "ক্রিয়া (Verb)",
+  ADJ: "বিশেষণ (Adjective)",
+  PRON: "সর্বনাম (Pronoun)",
+  DEM: "নির্দেশক সর্বনাম (Demonstrative)",
+  REL: "সাপেক্ষ সর্বনাম (Relative)",
+  LOC: "স্থানবাচক (Location)",
+  T: "কালবাচক (Time)",
+  P: "অব্যয় (Preposition)",
+  CONJ: "সংযোজক অব্যয় (Conjunction)",
+  INTG: "প্রশ্নবোধক (Interrogative)",
+  NEG: "না-বোধক (Negative)",
+  VOC: "সম্বোধন পদ (Vocative)",
+  EMPH: "দৃঢ়তাবোধক (Emphatic)",
+  CERT: "নিশ্চয়তাবোধক (Certainty)",
+  COND: "শর্তবাচক (Conditional)",
+  RES: "সীমাবদ্ধতা (Restriction)",
+  EXP: "ব্যাখ্যামূলক (Explanation)",
+  SUR: "আশ্চর্যসূচক (Surprise)",
+  CIRC: "অবস্থাবাচক (Circumstantial)",
+  SUB: "অধীনস্থ যোজক (Subordinating)",
+  ACC: "অভিঘাত পদ (Accusative)",
+  AMD: "সংশোধন পদ (Amendment)",
+  ANS: "উত্তর পদ (Answer)",
+  AVR: "অনিচ্ছা পদ (Aversion)",
+  CAUS: "কারণবাচক (Cause)",
+  COM: "সঙ্গতিবাচক (Comitative)",
+  EQ: "সমতাবাচক (Equalization)",
+  EXH: "উৎসাহবাচক (Exhortation)",
+  FUT: "ভবিষ্যদ্বাচক (Future)",
+  INC: "অসম্পূর্ণ (Inceptive)",
+  INT: "উদ্দেশ্যবাচক (Intention)",
+  LIP: "সম্ভাবনা পদ (Possibility)",
+  LUT: "আকাঙ্ক্ষাবাচক (Desire)",
+  PRO: "নিষেধবাচক (Prohibition)",
+  PREV: "প্রতিরোধক (Preventive)",
+  RET: "প্রত্যাহার পদ (Retraction)",
+  RSLT: "ফলাফল পদ (Result)",
+  SUP: "সম্পূরক পদ (Supplemental)",
 };
 
 async function main() {
@@ -112,7 +149,7 @@ async function main() {
       root: "",
       lemma: "",
       pos: "",
-      grammar_bn: ""
+      grammar_bn: "",
     };
 
     if (rootBw && !existing.root) {
@@ -184,7 +221,9 @@ async function main() {
     updatedSurahs++;
   }
 
-  console.log(`\n🎉 আলহামদুলিল্লাহ! ${updatedSurahs}টি সূরার মোট ${totalWordsUpdated}টি শব্দে ${rootsCount}টি প্রামাণ্য রুট সফলভাবে আপডেট হয়েছে!`);
+  console.log(
+    `\n🎉 আলহামদুলিল্লাহ! ${updatedSurahs}টি সূরার মোট ${totalWordsUpdated}টি শব্দে ${rootsCount}টি প্রামাণ্য রুট সফলভাবে আপডেট হয়েছে!`,
+  );
 }
 
 main().catch(console.error);

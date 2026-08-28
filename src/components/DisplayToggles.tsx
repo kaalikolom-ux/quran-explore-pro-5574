@@ -16,7 +16,6 @@ const ROWS: { key: LayerKey; label: string }[] = [
   { key: "lexicon", label: "lexicon" },
 ];
 
-
 export function DisplayToggles() {
   const { t, layers, toggleLayer } = usePrefs();
 

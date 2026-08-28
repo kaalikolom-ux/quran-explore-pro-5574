@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import React, { useState } from "react";
-import { 
-  Sliders, 
-  Download, 
-  Check, 
-  Type, 
-  HardDrive, 
+import {
+  Sliders,
+  Download,
+  Check,
+  Type,
+  HardDrive,
   RefreshCw,
   Layers,
-  Database
+  Database,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -34,7 +34,11 @@ function SettingsPage() {
 
   const handleDownloadAllSurahs = async () => {
     if (typeof window === "undefined" || !("caches" in window)) {
-      toast.error(lang === "bn" ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই" : "Offline storage not supported in your browser");
+      toast.error(
+        lang === "bn"
+          ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই"
+          : "Offline storage not supported in your browser",
+      );
       return;
     }
 
@@ -53,10 +57,18 @@ function SettingsPage() {
         }
         setSurahProgress(Math.round((i / 114) * 100));
       }
-      toast.success(lang === "bn" ? "১১৪টি সুরার ডাটা অফলাইনে সম্পূর্ণ সংরক্ষিত হয়েছে!" : "All 114 surahs cached offline successfully!");
+      toast.success(
+        lang === "bn"
+          ? "১১৪টি সুরার ডাটা অফলাইনে সম্পূর্ণ সংরক্ষিত হয়েছে!"
+          : "All 114 surahs cached offline successfully!",
+      );
     } catch (e) {
       console.error(e);
-      toast.error(lang === "bn" ? "ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Download failed, check connection");
+      toast.error(
+        lang === "bn"
+          ? "ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন"
+          : "Download failed, check connection",
+      );
     } finally {
       setDownloadingSurahs(false);
       setTimeout(() => setSurahProgress(null), 3000);
@@ -65,7 +77,11 @@ function SettingsPage() {
 
   const handleDownloadAllAyahs = async () => {
     if (typeof window === "undefined" || !("caches" in window)) {
-      toast.error(lang === "bn" ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই" : "Offline storage not supported in your browser");
+      toast.error(
+        lang === "bn"
+          ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই"
+          : "Offline storage not supported in your browser",
+      );
       return;
     }
 
@@ -81,7 +97,11 @@ function SettingsPage() {
         }
         setAyahProgress(Math.round((i / 114) * 100));
       }
-      toast.success(lang === "bn" ? "৬২৩৬টি আয়াত ও শব্দকোষ অফলাইনে সম্পূর্ণ সংরক্ষিত!" : "All 6236 ayahs & roots saved offline!");
+      toast.success(
+        lang === "bn"
+          ? "৬২৩৬টি আয়াত ও শব্দকোষ অফলাইনে সম্পূর্ণ সংরক্ষিত!"
+          : "All 6236 ayahs & roots saved offline!",
+      );
     } catch (e) {
       console.error(e);
       toast.error(lang === "bn" ? "সংরক্ষণে ত্রুটি হয়েছে" : "Failed to save offline");
@@ -157,10 +177,10 @@ function SettingsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
-              <Label className="text-xs font-semibold text-foreground">
-                আরবি ফন্ট সাইজ
-              </Label>
-              <span className="font-mono text-xs text-primary font-bold">{prefs.arabicFontSize}px</span>
+              <Label className="text-xs font-semibold text-foreground">আরবি ফন্ট সাইজ</Label>
+              <span className="font-mono text-xs text-primary font-bold">
+                {prefs.arabicFontSize}px
+              </span>
             </div>
             <Slider
               value={[prefs.arabicFontSize]}
@@ -171,7 +191,10 @@ function SettingsPage() {
               className="py-1 cursor-pointer"
             />
             <div className="text-center pt-2 border-t border-border/40">
-              <p className="arabic text-foreground font-normal leading-relaxed" style={{ fontSize: `${prefs.arabicFontSize}px` }}>
+              <p
+                className="arabic text-foreground font-normal leading-relaxed"
+                style={{ fontSize: `${prefs.arabicFontSize}px` }}
+              >
                 بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
               </p>
             </div>
@@ -179,10 +202,10 @@ function SettingsPage() {
 
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
-              <Label className="text-xs font-semibold text-foreground">
-                অনুবাদ ফন্ট সাইজ
-              </Label>
-              <span className="font-mono text-xs text-primary font-bold">{prefs.translationFontSize}px</span>
+              <Label className="text-xs font-semibold text-foreground">অনুবাদ ফন্ট সাইজ</Label>
+              <span className="font-mono text-xs text-primary font-bold">
+                {prefs.translationFontSize}px
+              </span>
             </div>
             <Slider
               value={[prefs.translationFontSize]}
@@ -193,7 +216,10 @@ function SettingsPage() {
               className="py-1 cursor-pointer"
             />
             <div className="text-center pt-3 border-t border-border/40">
-              <p className="text-muted-foreground leading-relaxed" style={{ fontSize: `${prefs.translationFontSize}px` }}>
+              <p
+                className="text-muted-foreground leading-relaxed"
+                style={{ fontSize: `${prefs.translationFontSize}px` }}
+              >
                 পরম করুণাময় অতি দয়ালু আল্লাহর নামে
               </p>
             </div>
@@ -212,9 +238,7 @@ function SettingsPage() {
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-sm font-semibold text-foreground">
-                  ১. সুরা ডাউনলোড (১১৪টি)
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">১. সুরা ডাউনলোড (১১৪টি)</h3>
                 <p className="text-xs text-muted-foreground mt-0.5">
                   সম্পূর্ণ ১১৪টি সূরার লোকাল ডাটা ক্যাশ করুন
                 </p>
@@ -229,7 +253,10 @@ function SettingsPage() {
                   <span>{surahProgress}%</span>
                 </div>
                 <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-                  <div className="h-full bg-primary transition-all duration-300" style={{ width: `${surahProgress}%` }} />
+                  <div
+                    className="h-full bg-primary transition-all duration-300"
+                    style={{ width: `${surahProgress}%` }}
+                  />
                 </div>
               </div>
             )}
@@ -258,9 +285,7 @@ function SettingsPage() {
           <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-sm font-semibold text-foreground">
-                  ২. আয়াত ডাউনলোড (৬২৩৬টি)
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">২. আয়াত ডাউনলোড (৬২৩৬টি)</h3>
                 <p className="text-xs text-muted-foreground mt-0.5">
                   শব্দে শব্দে অর্থ ও রুটসহ অফলাইন ডাটা সেভ করুন
                 </p>
@@ -275,7 +300,10 @@ function SettingsPage() {
                   <span>{ayahProgress}%</span>
                 </div>
                 <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-                  <div className="h-full bg-emerald-600 transition-all duration-300" style={{ width: `${ayahProgress}%` }} />
+                  <div
+                    className="h-full bg-emerald-600 transition-all duration-300"
+                    style={{ width: `${ayahProgress}%` }}
+                  />
                 </div>
               </div>
             )}
@@ -321,12 +349,13 @@ function SettingsPage() {
                 onClick={() => updatePref(layer.key, !isChecked)}
               >
                 <div className="space-y-0.5 select-none pointer-events-none">
-                  <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
+                  <Label
+                    htmlFor={layer.key}
+                    className="text-sm font-semibold text-foreground cursor-pointer"
+                  >
                     {layer.title}
                   </Label>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {layer.desc}
-                  </p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{layer.desc}</p>
                 </div>
 
                 <div onClick={(e) => e.stopPropagation()}>

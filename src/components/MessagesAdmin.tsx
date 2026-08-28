@@ -22,8 +22,7 @@ export function MessagesAdmin() {
     },
   });
 
-  const invalidate = () =>
-    queryClient.invalidateQueries({ queryKey: ["admin-contact-messages"] });
+  const invalidate = () => queryClient.invalidateQueries({ queryKey: ["admin-contact-messages"] });
 
   const markRead = useMutation({
     mutationFn: async (id: string) => {
@@ -82,10 +81,7 @@ export function MessagesAdmin() {
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="text-sm font-semibold text-foreground">{m.name}</p>
-                  <a
-                    href={`mailto:${m.email}`}
-                    className="text-xs text-primary hover:underline"
-                  >
+                  <a href={`mailto:${m.email}`} className="text-xs text-primary hover:underline">
                     {m.email}
                   </a>
                   {!m.is_read && (
@@ -108,7 +104,9 @@ export function MessagesAdmin() {
                 <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                   <span>{new Date(m.created_at).toLocaleString("en-GB")}</span>
                   <span>•</span>
-                  <span className={m.email_sent ? "text-emerald-500 font-medium" : "text-amber-500"}>
+                  <span
+                    className={m.email_sent ? "text-emerald-500 font-medium" : "text-amber-500"}
+                  >
                     {m.email_sent ? `✓ ${t("emailForwarded")}` : `○ ${t("emailNotForwarded")}`}
                   </span>
                 </div>
@@ -126,7 +124,7 @@ export function MessagesAdmin() {
               >
                 <a
                   href={`mailto:${m.email}?subject=Re: ${encodeURIComponent(
-                    m.subject || "কুরআন অন্বেষা যোগাযোগ"
+                    m.subject || "কুরআন অন্বেষা যোগাযোগ",
                   )}`}
                 >
                   <Reply className="size-4" />

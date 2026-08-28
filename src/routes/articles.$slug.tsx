@@ -1,16 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { 
-  Calendar, 
-  User, 
-  Layers, 
-  Tag as TagIcon, 
-  ArrowLeft, 
-  Share2, 
-  Bookmark, 
+import {
+  Calendar,
+  User,
+  Layers,
+  Tag as TagIcon,
+  ArrowLeft,
+  Share2,
+  Bookmark,
   BookmarkCheck,
   Check,
-  BookOpen
+  BookOpen,
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -29,9 +29,7 @@ export const Route = createFileRoute("/articles/$slug")({
         { name: "description", content: "কুরআনের গভীর গবেষণা ও সমসাময়িক প্রবন্ধ।" },
         { property: "og:type", content: "article" },
       ],
-      links: [
-        { rel: "canonical", href: `https://qurananwesha.com/articles/${params.slug}` }
-      ]
+      links: [{ rel: "canonical", href: `https://qurananwesha.com/articles/${params.slug}` }],
     };
   },
   component: SingleArticlePage,
@@ -49,7 +47,9 @@ function SingleArticlePage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("*, author:authors(id, name_bn, name_en, image_url, bio_bn, bio_en), category:categories(id, name_bn, name_en, slug)")
+        .select(
+          "*, author:authors(id, name_bn, name_en, image_url, bio_bn, bio_en), category:categories(id, name_bn, name_en, slug)",
+        )
         .eq("slug", slug)
         .maybeSingle();
 
@@ -63,7 +63,11 @@ function SingleArticlePage() {
     if (typeof window === "undefined") return;
     navigator.clipboard.writeText(window.location.href);
     setCopied(true);
-    toast.success(lang === "en" ? "Article link copied to clipboard!" : "আর্টিকেলের লিংক ক্লিপবোর্ডে কপি হয়েছে!");
+    toast.success(
+      lang === "en"
+        ? "Article link copied to clipboard!"
+        : "আর্টিকেলের লিংক ক্লিপবোর্ডে কপি হয়েছে!",
+    );
     setTimeout(() => setCopied(false), 2500);
   };
 
@@ -71,9 +75,13 @@ function SingleArticlePage() {
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked);
     toast.success(
-      isBookmarked 
-        ? (lang === "en" ? "Removed from bookmarks" : "বুকমার্ক থেকে সরানো হয়েছে")
-        : (lang === "en" ? "Saved to bookmarks" : "বুকমার্কে সংরক্ষণ করা হয়েছে")
+      isBookmarked
+        ? lang === "en"
+          ? "Removed from bookmarks"
+          : "বুকমার্ক থেকে সরানো হয়েছে"
+        : lang === "en"
+          ? "Saved to bookmarks"
+          : "বুকমার্কে সংরক্ষণ করা হয়েছে",
     );
   };
 
@@ -90,7 +98,9 @@ function SingleArticlePage() {
       <div className="mx-auto max-w-md px-4 py-24 text-center space-y-4">
         <BookOpen className="mx-auto size-12 text-muted-foreground/40" />
         <h2 className="text-lg font-bold text-foreground">আর্টিকেলটি খুঁজে পাওয়া যায়নি</h2>
-        <p className="text-xs text-muted-foreground">পোস্টটি মুছে ফেলা হয়ে থাকতে পারে অথবা লিংকটি ভুল।</p>
+        <p className="text-xs text-muted-foreground">
+          পোস্টটি মুছে ফেলা হয়ে থাকতে পারে অথবা লিংকটি ভুল।
+        </p>
         <Button asChild variant="outline" size="sm">
           <Link to="/articles">
             <ArrowLeft className="size-3.5 mr-1.5" /> সকল আর্টিকেল
@@ -104,12 +114,16 @@ function SingleArticlePage() {
   const content = lang === "en" && article.content_en ? article.content_en : article.content_bn;
   const author = article.author;
   const authorName = author
-    ? lang === "en" && author.name_en ? author.name_en : author.name_bn
+    ? lang === "en" && author.name_en
+      ? author.name_en
+      : author.name_bn
     : null;
 
   const category = article.category;
   const categoryName = category
-    ? lang === "en" && category.name_en ? category.name_en : category.name_bn
+    ? lang === "en" && category.name_en
+      ? category.name_en
+      : category.name_bn
     : null;
 
   const tagsList: string[] = Array.isArray(article.tags) ? article.tags : [];
@@ -118,9 +132,15 @@ function SingleArticlePage() {
     <article className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
       {/* টপ নেভিগেশন ও একশন বাটন */}
       <div className="flex items-center justify-between gap-4 mb-8">
-        <Button asChild variant="ghost" size="sm" className="-ml-2 text-xs text-muted-foreground hover:text-foreground">
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          className="-ml-2 text-xs text-muted-foreground hover:text-foreground"
+        >
           <Link to="/articles">
-            <ArrowLeft className="size-3.5 mr-1.5" /> {lang === "en" ? "Back to Articles" : "সকল আর্টিকেল"}
+            <ArrowLeft className="size-3.5 mr-1.5" />{" "}
+            {lang === "en" ? "Back to Articles" : "সকল আর্টিকেল"}
           </Link>
         </Button>
 
@@ -216,11 +236,14 @@ function SingleArticlePage() {
           {article.published_at && (
             <span className="inline-flex items-center gap-1">
               <Calendar className="size-3.5" />
-              {new Date(article.published_at).toLocaleDateString(lang === "en" ? "en-US" : "bn-BD", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {new Date(article.published_at).toLocaleDateString(
+                lang === "en" ? "en-US" : "bn-BD",
+                {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                },
+              )}
             </span>
           )}
         </div>
@@ -248,7 +271,9 @@ function SingleArticlePage() {
         <div className="my-8 pt-6 border-t border-border/60">
           <div className="flex items-center gap-2 mb-3">
             <TagIcon className="size-4 text-primary" />
-            <span className="text-xs font-bold text-foreground uppercase tracking-wider">ট্যাগসমূহ:</span>
+            <span className="text-xs font-bold text-foreground uppercase tracking-wider">
+              ট্যাগসমূহ:
+            </span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             {tagsList.map((tag, idx) => (

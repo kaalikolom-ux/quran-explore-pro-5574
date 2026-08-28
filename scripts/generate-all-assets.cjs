@@ -1,31 +1,32 @@
-﻿const fs = require('fs');
-const path = require('path');
-const { Resvg } = require('@resvg/resvg-js');
+﻿const fs = require("fs");
+const path = require("path");
+const { Resvg } = require("@resvg/resvg-js");
 
 async function main() {
-  const publicDir = path.join(__dirname, '..', 'public');
-  const fontsDir = path.join(publicDir, 'fonts');
+  const publicDir = path.join(__dirname, "..", "public");
+  const fontsDir = path.join(publicDir, "fonts");
   if (!fs.existsSync(fontsDir)) fs.mkdirSync(fontsDir, { recursive: true });
 
-  const fontPath = path.join(fontsDir, 'kaushan-script.ttf');
+  const fontPath = path.join(fontsDir, "kaushan-script.ttf");
   let fontBuffer;
   if (fs.existsSync(fontPath)) {
     fontBuffer = fs.readFileSync(fontPath);
   } else {
-    const fontUrl = 'https://fonts.gstatic.com/s/kaushanscript/v19/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf';
+    const fontUrl =
+      "https://fonts.gstatic.com/s/kaushanscript/v19/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf";
     const res = await fetch(fontUrl);
     fontBuffer = Buffer.from(await res.arrayBuffer());
     fs.writeFileSync(fontPath, fontBuffer);
   }
-  const fontBase64 = fontBuffer.toString('base64');
+  const fontBase64 = fontBuffer.toString("base64");
 
   function renderSvgToPng(svgString, width) {
     const resvg = new Resvg(svgString, {
-      fitTo: { mode: 'width', value: width },
+      fitTo: { mode: "width", value: width },
       font: {
         fontBuffers: [fontBuffer],
-        defaultFontFamily: 'Kaushan Script',
-      }
+        defaultFontFamily: "Kaushan Script",
+      },
     });
     const pngData = resvg.render();
     return pngData.asPng();
@@ -54,16 +55,16 @@ async function main() {
   }
 
   // 1. Write SVG Logos
-  const svgLight = createSvgLogo('#1c5576');
-  const svgDark = createSvgLogo('#58b4e8');
-  fs.writeFileSync(path.join(publicDir, 'logo-light.svg'), svgLight);
-  fs.writeFileSync(path.join(publicDir, 'logo-dark.svg'), svgDark);
+  const svgLight = createSvgLogo("#1c5576");
+  const svgDark = createSvgLogo("#58b4e8");
+  fs.writeFileSync(path.join(publicDir, "logo-light.svg"), svgLight);
+  fs.writeFileSync(path.join(publicDir, "logo-dark.svg"), svgDark);
 
   // 2. Render PNG Logos for all device resolutions (Mobile, Laptop, Desktop, Retina Mac/iOS)
-  fs.writeFileSync(path.join(publicDir, 'logo-light.png'), renderSvgToPng(svgLight, 480));
-  fs.writeFileSync(path.join(publicDir, 'logo-light@2x.png'), renderSvgToPng(svgLight, 960));
-  fs.writeFileSync(path.join(publicDir, 'logo-dark.png'), renderSvgToPng(svgDark, 480));
-  fs.writeFileSync(path.join(publicDir, 'logo-dark@2x.png'), renderSvgToPng(svgDark, 960));
+  fs.writeFileSync(path.join(publicDir, "logo-light.png"), renderSvgToPng(svgLight, 480));
+  fs.writeFileSync(path.join(publicDir, "logo-light@2x.png"), renderSvgToPng(svgLight, 960));
+  fs.writeFileSync(path.join(publicDir, "logo-dark.png"), renderSvgToPng(svgDark, 480));
+  fs.writeFileSync(path.join(publicDir, "logo-dark@2x.png"), renderSvgToPng(svgDark, 960));
 
   // 3. Deep Navy Blue Marble Favicon SVG
   const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
@@ -113,17 +114,17 @@ async function main() {
   </g>
 </svg>`;
 
-  fs.writeFileSync(path.join(publicDir, 'favicon.svg'), faviconSvg);
+  fs.writeFileSync(path.join(publicDir, "favicon.svg"), faviconSvg);
 
   // 4. Render Deep Navy Blue Marble Favicon PNGs
-  fs.writeFileSync(path.join(publicDir, 'favicon.png'), renderSvgToPng(faviconSvg, 512));
-  fs.writeFileSync(path.join(publicDir, 'apple-touch-icon.png'), renderSvgToPng(faviconSvg, 180));
+  fs.writeFileSync(path.join(publicDir, "favicon.png"), renderSvgToPng(faviconSvg, 512));
+  fs.writeFileSync(path.join(publicDir, "apple-touch-icon.png"), renderSvgToPng(faviconSvg, 180));
 
-  console.log('✅ Generated all PNG & SVG assets successfully!');
-  console.log('   - public/favicon.svg & public/favicon.png (Deep Navy Blue Marble)');
-  console.log('   - public/apple-touch-icon.png');
-  console.log('   - public/logo-light.svg & public/logo-light.png (@1x, @2x)');
-  console.log('   - public/logo-dark.svg & public/logo-dark.png (@1x, @2x)');
+  console.log("✅ Generated all PNG & SVG assets successfully!");
+  console.log("   - public/favicon.svg & public/favicon.png (Deep Navy Blue Marble)");
+  console.log("   - public/apple-touch-icon.png");
+  console.log("   - public/logo-light.svg & public/logo-light.png (@1x, @2x)");
+  console.log("   - public/logo-dark.svg & public/logo-dark.png (@1x, @2x)");
 }
 
 main().catch(console.error);

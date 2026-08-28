@@ -4,12 +4,7 @@ import { Bookmark, Sparkles, X, ShieldCheck, BookMarked, UserPlus } from "lucide
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 export function AuthPromptModal() {
   const { lang } = usePrefs();
@@ -42,7 +37,6 @@ export function AuthPromptModal() {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleDismiss()}>
       <DialogContent className="sm:max-w-md bg-card border border-border/80 shadow-2xl p-6 overflow-hidden">
-        
         {/* টপ ব্যাজ ও টাইটেল */}
         <div className="text-center space-y-2">
           <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-foreground text-background shadow-md">
@@ -66,21 +60,33 @@ export function AuthPromptModal() {
             <div className="rounded-md bg-foreground/10 p-1 text-foreground">
               <Bookmark className="size-3.5" />
             </div>
-            <span>{lang === "bn" ? "পছন্দের আয়াত ক্লাউডে বুকমার্ক ও সিঙ্ক" : "Save and cloud-sync your bookmarks"}</span>
+            <span>
+              {lang === "bn"
+                ? "পছন্দের আয়াত ক্লাউডে বুকমার্ক ও সিঙ্ক"
+                : "Save and cloud-sync your bookmarks"}
+            </span>
           </div>
 
           <div className="flex items-center gap-2.5">
             <div className="rounded-md bg-foreground/10 p-1 text-foreground">
               <BookMarked className="size-3.5" />
             </div>
-            <span>{lang === "bn" ? "ব্যক্তিগত নোট (তাদাব্বুর) সংরক্ষণ ও পরিচালনা" : "Keep personal reflection notes & Tadabbur"}</span>
+            <span>
+              {lang === "bn"
+                ? "ব্যক্তিগত নোট (তাদাব্বুর) সংরক্ষণ ও পরিচালনা"
+                : "Keep personal reflection notes & Tadabbur"}
+            </span>
           </div>
 
           <div className="flex items-center gap-2.5">
             <div className="rounded-md bg-foreground/10 p-1 text-foreground">
               <ShieldCheck className="size-3.5" />
             </div>
-            <span>{lang === "bn" ? "অগ্রিম ফিচার ও বিজ্ঞানভিত্তিক অনুবাদের আপডেট" : "Access all upcoming features & modern tafseer"}</span>
+            <span>
+              {lang === "bn"
+                ? "অগ্রিম ফিচার ও বিজ্ঞানভিত্তিক অনুবাদের আপডেট"
+                : "Access all upcoming features & modern tafseer"}
+            </span>
           </div>
         </div>
 
@@ -103,7 +109,9 @@ export function AuthPromptModal() {
             onClick={handleDismiss}
             className="text-xs text-muted-foreground hover:text-foreground h-8"
           >
-            {lang === "bn" ? "পরে করব / ভিজিটর হিসেবে চালিয়ে যান" : "Maybe Later / Continue as Guest"}
+            {lang === "bn"
+              ? "পরে করব / ভিজিটর হিসেবে চালিয়ে যান"
+              : "Maybe Later / Continue as Guest"}
           </Button>
         </div>
       </DialogContent>

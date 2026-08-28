@@ -159,7 +159,9 @@ export function TurnstileAdmin() {
             onChange={(e) => setForm({ ...form, to_email: e.target.value })}
             placeholder="contact+notabene.inc@gmail.com"
           />
-          <p className="text-[11px] text-muted-foreground">যোগাযোগ ফর্মের মেসেজগুলো এই ঠিকানায় যাবে</p>
+          <p className="text-[11px] text-muted-foreground">
+            যোগাযোগ ফর্মের মেসেজগুলো এই ঠিকানায় যাবে
+          </p>
         </div>
 
         <div className="space-y-2">
@@ -173,7 +175,9 @@ export function TurnstileAdmin() {
             onChange={(e) => setForm({ ...form, newsletter_email: e.target.value })}
             placeholder="newslater+notabene.inc@gmail.com"
           />
-          <p className="text-[11px] text-muted-foreground">নতুন সাবস্ক্রাইবার হলে এই ঠিকানায় নোটিফিকেশন যাবে</p>
+          <p className="text-[11px] text-muted-foreground">
+            নতুন সাবস্ক্রাইবার হলে এই ঠিকানায় নোটিফিকেশন যাবে
+          </p>
         </div>
       </div>
 

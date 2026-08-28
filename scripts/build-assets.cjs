@@ -1,17 +1,17 @@
-﻿const fs = require('fs');
-const path = require('path');
+﻿const fs = require("fs");
+const path = require("path");
 
 async function build() {
-  const fontUrl = 'https://fonts.gstatic.com/s/kaushanscript/v19/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf';
+  const fontUrl = "https://fonts.gstatic.com/s/kaushanscript/v19/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf";
   const res = await fetch(fontUrl);
   const fontBuffer = Buffer.from(await res.arrayBuffer());
-  const fontBase64 = fontBuffer.toString('base64');
+  const fontBase64 = fontBuffer.toString("base64");
 
-  const publicDir = path.join(__dirname, '..', 'public');
-  const fontsDir = path.join(publicDir, 'fonts');
+  const publicDir = path.join(__dirname, "..", "public");
+  const fontsDir = path.join(publicDir, "fonts");
   if (!fs.existsSync(fontsDir)) fs.mkdirSync(fontsDir, { recursive: true });
 
-  fs.writeFileSync(path.join(fontsDir, 'kaushan-script.ttf'), fontBuffer);
+  fs.writeFileSync(path.join(fontsDir, "kaushan-script.ttf"), fontBuffer);
 
   function createSvgLogo(fillColor) {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235 44" width="235" height="44">
@@ -37,8 +37,8 @@ async function build() {
   }
 
   // Write standalone SVGs
-  fs.writeFileSync(path.join(publicDir, 'logo-light.svg'), createSvgLogo('#1c5576'));
-  fs.writeFileSync(path.join(publicDir, 'logo-dark.svg'), createSvgLogo('#58b4e8'));
+  fs.writeFileSync(path.join(publicDir, "logo-light.svg"), createSvgLogo("#1c5576"));
+  fs.writeFileSync(path.join(publicDir, "logo-dark.svg"), createSvgLogo("#58b4e8"));
 
   // Create Deep Navy Blue Marble Favicon SVG
   // Deep navy blue marble background with soft luminous swirl & golden/cyan book emblem
@@ -89,9 +89,9 @@ async function build() {
   </g>
 </svg>`;
 
-  fs.writeFileSync(path.join(publicDir, 'favicon.svg'), faviconSvg);
+  fs.writeFileSync(path.join(publicDir, "favicon.svg"), faviconSvg);
 
-  console.log('✅ Generated public/logo-light.svg, public/logo-dark.svg, and public/favicon.svg');
+  console.log("✅ Generated public/logo-light.svg, public/logo-dark.svg, and public/favicon.svg");
 }
 
 build().catch(console.error);

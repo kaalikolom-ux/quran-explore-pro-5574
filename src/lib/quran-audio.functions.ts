@@ -33,7 +33,7 @@ export const audioMirrorStats = createServerFn({ method: "GET" }).handler(async 
  */
 export const mirrorAudioBatch = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: { surah: number; offset?: number; limit?: number }) => ({
+  .validator((input: { surah: number; offset?: number; limit?: number }) => ({
     surah: Math.max(1, Math.min(114, Math.trunc(input.surah))),
     offset: Math.max(0, Math.trunc(input.offset ?? 0)),
     limit: Math.max(1, Math.min(25, Math.trunc(input.limit ?? 15))),
@@ -64,7 +64,8 @@ export const mirrorAudioBatch = createServerFn({ method: "POST" })
 
       const remote = `${CDN}/${String(row.surah).padStart(3, "0")}${String(row.ayah).padStart(3, "0")}.mp3`;
       const res = await fetch(remote);
-      if (!res.ok) throw new Error(`Recitation download failed (${res.status}) for ${row.surah}:${row.ayah}`);
+      if (!res.ok)
+        throw new Error(`Recitation download failed (${res.status}) for ${row.surah}:${row.ayah}`);
       const bytes = new Uint8Array(await res.arrayBuffer());
 
       const { error: upErr } = await supabaseAdmin.storage

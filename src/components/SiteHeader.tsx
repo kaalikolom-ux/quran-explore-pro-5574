@@ -1,19 +1,19 @@
 import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
 import React, { useEffect, useState } from "react";
-import { 
+import {
   Home,
   FileText,
-  BookA, 
+  BookA,
   PenTool,
-  Bookmark, 
-  Settings, 
-  Mail, 
-  Moon, 
-  Sun, 
+  Bookmark,
+  Settings,
+  Mail,
+  Moon,
+  Sun,
   ShieldCheck,
   Menu,
   X,
-  Search
+  Search,
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
@@ -42,7 +42,15 @@ function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
 
 function AdminGearIcon({ className = "size-4.5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
       <circle cx="19" cy="11" r="2" />
@@ -53,7 +61,15 @@ function AdminGearIcon({ className = "size-4.5" }: { className?: string }) {
 
 function LogoutDoorIcon({ className = "size-4.5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
       <polyline points="16 17 21 12 16 7" />
       <line x1="21" y1="12" x2="9" y2="12" />
@@ -63,7 +79,15 @@ function LogoutDoorIcon({ className = "size-4.5" }: { className?: string }) {
 
 function LoginDoorIcon({ className = "size-4.5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
       <polyline points="10 17 15 12 10 7" />
       <line x1="15" y1="12" x2="3" y2="12" />
@@ -85,7 +109,9 @@ export function SiteHeader() {
       setUser(session?.user ?? null);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
     });
 
@@ -112,7 +138,6 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
-        
         {/* লোগো ও ব্র্যান্ডিং (Zero-Latency Standalone Kaushan Script Logo) */}
         <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0 select-none">
           <QuranLogoBadge className="size-4.5 sm:size-5" />
@@ -128,7 +153,8 @@ export function SiteHeader() {
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
+            const isActive =
+              currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
             return (
               <Link
                 key={item.to}
@@ -148,12 +174,15 @@ export function SiteHeader() {
 
         {/* অ্যাকশন আইকনসমূহ */}
         <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
-          
           {/* গ্লোবাল স্মার্ট সার্চ বাটন */}
           <button
             type="button"
             onClick={() => setSearchOpen(true)}
-            title={lang === "bn" ? "কুরআন, বিষয় ও আর্টিকেল খুঁজুন (Ctrl + K)" : "Search Quran, Topics & Articles (Ctrl + K)"}
+            title={
+              lang === "bn"
+                ? "কুরআন, বিষয় ও আর্টিকেল খুঁজুন (Ctrl + K)"
+                : "Search Quran, Topics & Articles (Ctrl + K)"
+            }
             aria-label="Search"
             className="flex items-center gap-1.5 h-7.5 sm:h-8 px-2 sm:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group"
           >
@@ -165,14 +194,16 @@ export function SiteHeader() {
               ⌘K
             </kbd>
           </button>
-          
+
           {user && (
             <Link
               to="/admin"
               title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
               aria-label="Admin Panel"
               className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer ${
-                currentPath.startsWith("/admin") ? "border-[#2A6F97] dark:border-[#58b4e8] text-[#1c5576] dark:text-[#58b4e8] font-bold" : ""
+                currentPath.startsWith("/admin")
+                  ? "border-[#2A6F97] dark:border-[#58b4e8] text-[#1c5576] dark:text-[#58b4e8] font-bold"
+                  : ""
               }`}
             >
               <AdminGearIcon className="size-3.5 sm:size-4" />
@@ -206,7 +237,11 @@ export function SiteHeader() {
             title={prefs.dark ? "লাইট মোড" : "ডার্ক মোড"}
             className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
           >
-            {prefs.dark ? <Sun className="size-3.5 sm:size-4" /> : <Moon className="size-3.5 sm:size-4" />}
+            {prefs.dark ? (
+              <Sun className="size-3.5 sm:size-4" />
+            ) : (
+              <Moon className="size-3.5 sm:size-4" />
+            )}
           </button>
 
           <button
@@ -215,7 +250,11 @@ export function SiteHeader() {
             className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground md:hidden hover:bg-secondary transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="size-3.5 sm:size-4" /> : <Menu className="size-3.5 sm:size-4" />}
+            {mobileOpen ? (
+              <X className="size-3.5 sm:size-4" />
+            ) : (
+              <Menu className="size-3.5 sm:size-4" />
+            )}
           </button>
         </div>
       </div>
@@ -228,7 +267,8 @@ export function SiteHeader() {
         <div className="border-b border-border bg-card p-4 md:hidden space-y-1 animate-in slide-in-from-top duration-200 shadow-md">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
+            const isActive =
+              currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
             return (
               <Link
                 key={item.to}

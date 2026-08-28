@@ -35,7 +35,7 @@ export function Typewriter({
       () => {
         setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
       },
-      isDeleting ? deletingSpeed : typingSpeed
+      isDeleting ? deletingSpeed : typingSpeed,
     );
 
     return () => clearTimeout(timeout);
@@ -45,12 +45,8 @@ export function Typewriter({
 
   return (
     <span className="inline-flex items-center overflow-visible py-1">
-      <span className="text-white/90 drop-shadow-sm">
-        {words[index].substring(0, subIndex)}
-      </span>
-      <span className="animate-pulse font-normal text-white/50 ms-1 select-none">
-        |
-      </span>
+      <span className="text-white/90 drop-shadow-sm">{words[index].substring(0, subIndex)}</span>
+      <span className="animate-pulse font-normal text-white/50 ms-1 select-none">|</span>
     </span>
   );
 }

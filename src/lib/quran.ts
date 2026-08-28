@@ -94,9 +94,7 @@ export const chaptersQuery = (lang: "bn" | "en") =>
       try {
         const mirrored = await mirrorChapters();
         if (mirrored && mirrored.length >= 114) return mirrored;
-        const data = await getJson<{ chapters: Chapter[] }>(
-          `${API}/chapters?language=${lang}`,
-        );
+        const data = await getJson<{ chapters: Chapter[] }>(`${API}/chapters?language=${lang}`);
         if (data?.chapters && data.chapters.length > 0) {
           return data.chapters;
         }
@@ -176,9 +174,7 @@ export const audioQuery = (surah: number) =>
       }
       const data = await getJson<{
         audio_files: { verse_key: string; url: string }[];
-      }>(
-        `${API}/recitations/${AFASY_RECITATION_ID}/by_chapter/${surah}?per_page=300`,
-      );
+      }>(`${API}/recitations/${AFASY_RECITATION_ID}/by_chapter/${surah}?per_page=300`);
       const map: Record<number, string> = {};
       for (const f of data.audio_files) {
         const ayah = Number(f.verse_key.split(":")[1]);

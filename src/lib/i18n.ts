@@ -53,7 +53,10 @@ export const dict: Dict = {
   subscribe: { bn: "সাবস্ক্রাইব", en: "Subscribe" },
   thanks: { bn: "ধন্যবাদ! আপনি তালিকায় যুক্ত হয়েছেন।", en: "Thanks! You are on the list." },
   ayah: { bn: "আয়াত", en: "Ayah" },
-  notAdded: { bn: "এই আয়াতের জন্য এখনো অনুবাদ যোগ করা হয়নি।", en: "No translation added for this verse yet." },
+  notAdded: {
+    bn: "এই আয়াতের জন্য এখনো অনুবাদ যোগ করা হয়নি।",
+    en: "No translation added for this verse yet.",
+  },
   signInPrompt: {
     bn: "বুকমার্ক করতে সাইন ইন করুন",
     en: "Sign in to bookmark",
@@ -204,8 +207,14 @@ export const dict: Dict = {
   messageLabel: { bn: "বার্তা", en: "Message" },
   sendMessage: { bn: "বার্তা পাঠান", en: "Send message" },
   sending: { bn: "পাঠানো হচ্ছে...", en: "Sending..." },
-  contactSent: { bn: "আপনার বার্তা পাঠানো হয়েছে। ধন্যবাদ!", en: "Your message has been sent. Thank you!" },
-  contactFailed: { bn: "বার্তা পাঠানো যায়নি। আবার চেষ্টা করুন।", en: "Could not send the message. Please try again." },
+  contactSent: {
+    bn: "আপনার বার্তা পাঠানো হয়েছে। ধন্যবাদ!",
+    en: "Your message has been sent. Thank you!",
+  },
+  contactFailed: {
+    bn: "বার্তা পাঠানো যায়নি। আবার চেষ্টা করুন।",
+    en: "Could not send the message. Please try again.",
+  },
   captchaRequired: { bn: "স্প্যাম যাচাই সম্পন্ন করুন।", en: "Please complete the spam check." },
   socialTab: { bn: "সোশ্যাল লিঙ্ক", en: "Social links" },
   turnstileTab: { bn: "Turnstile ও ইমেইল", en: "Turnstile & email" },
@@ -237,7 +246,6 @@ export const dict: Dict = {
   emailForwarded: { bn: "ইমেইলে পাঠানো হয়েছে", en: "Forwarded by email" },
   emailNotForwarded: { bn: "ইমেইলে পাঠানো হয়নি", en: "Not forwarded by email" },
 };
-
 
 export function translate(lang: Lang, key: keyof typeof dict | string): string {
   const entry = dict[key];

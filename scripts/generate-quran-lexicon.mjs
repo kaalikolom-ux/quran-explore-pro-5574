@@ -11,53 +11,85 @@ const OUTPUT_FILE = path.join(__dirname, "../public/data/quran/lexicon.json");
 
 // Transliteration English to Bangla phonetic pronunciation helper
 const enToBnPhonetic = {
-  "aa": "আ", "a": "আ", "b": "ব", "t": "ত", "th": "ছ", "th'": "ছ",
-  "j": "জ", "h": "হ", "ḥ": "হ", "kh": "খ", "d": "দ", "dh": "য",
-  "r": "র", "z": "য", "s": "স", "sh": "শ", "ṣ": "স", "ḍ": "দ",
-  "ṭ": "ত", "ẓ": "য", "ʿ": "‘", "gh": "গ", "f": "ফ", "q": "ক",
-  "k": "ক", "l": "ল", "m": "ম", "n": "ন", "w": "ওয়", "u": "উ",
-  "uu": "উ", "oo": "উ", "y": "ই", "i": "ই", "ee": "ঈ", "e": "এ",
-  "o": "ও", "al-": "আল-", "l-": "ল-"
+  aa: "আ",
+  a: "আ",
+  b: "ব",
+  t: "ত",
+  th: "ছ",
+  "th'": "ছ",
+  j: "জ",
+  h: "হ",
+  ḥ: "হ",
+  kh: "খ",
+  d: "দ",
+  dh: "য",
+  r: "র",
+  z: "য",
+  s: "স",
+  sh: "শ",
+  ṣ: "স",
+  ḍ: "দ",
+  ṭ: "ত",
+  ẓ: "য",
+  ʿ: "‘",
+  gh: "গ",
+  f: "ফ",
+  q: "ক",
+  k: "ক",
+  l: "ল",
+  m: "ম",
+  n: "ন",
+  w: "ওয়",
+  u: "উ",
+  uu: "উ",
+  oo: "উ",
+  y: "ই",
+  i: "ই",
+  ee: "ঈ",
+  e: "এ",
+  o: "ও",
+  "al-": "আল-",
+  "l-": "ল-",
 };
 
 function generateBanglaPronunciation(translit, textUthmani) {
   if (!translit) return "";
   let clean = translit.toLowerCase().trim();
-  
+
   // Custom common high-frequency replacements
   const commonMap = {
     "bis'mi": "বিসমি",
     "l-lahi": "লিল্লাহি",
-    "allah": "আল্লাহ",
-    "allahu": "আল্লাহু",
-    "allaha": "আল্লাহা",
-    "allahi": "আল্লাহি",
+    allah: "আল্লাহ",
+    allahu: "আল্লাহু",
+    allaha: "আল্লাহা",
+    allahi: "আল্লাহি",
     "al-raḥmāni": "আর-রহমানি",
     "l-raḥmāni": "র-রহমানি",
     "al-raḥīmi": "আর-রহিমি",
     "l-raḥīmi": "র-রহিমি",
     "al-ḥamdu": "আল-হামদু",
-    "lillahi": "লিল্লাহি",
-    "rabbi": "রব্বি",
-    "rabbu": "রব্বু",
-    "rabbaka": "রব্বাকা",
-    "rabbana": "রব্বানা",
-    "rabbihim": "রব্বিহিম",
+    lillahi: "লিল্লাহি",
+    rabbi: "রব্বি",
+    rabbu: "রব্বু",
+    rabbaka: "রব্বাকা",
+    rabbana: "রব্বানা",
+    rabbihim: "রব্বিহিম",
     "l-ʿālamīna": "ল-আলামীন",
     "al-ʿālamīna": "আল-আলামীন",
-    "māliki": "মালিকি",
-    "yawmi": "ইয়াওমি",
+    māliki: "মালিকি",
+    yawmi: "ইয়াওমি",
     "l-dīni": "দ-দীন",
     "al-dīni": "আদ-দীন",
-    "iyyāka": "ইয়্যাকা",
-    "naʿbudu": "না‘বুদু",
+    iyyāka: "ইয়্যাকা",
+    naʿbudu: "না‘বুদু",
     "wa-iyyāka": "ওয়া-ইয়্যাকা",
-    "nastaʿīnu": "নাসতা‘ঈন",
+    nastaʿīnu: "নাসতা‘ঈন",
     "ih'dinā": "ইহদিনা",
     "l-ṣirāṭa": "স-সিরাতা",
     "al-ṣirāṭa": "আস-সিরাতা",
     "l-mus'taqīma": "ল-মুসতাকীম",
-    "al-mus'taqīma": "আল-মুসতাকীম"
+    "al-mus'taqīma": "আল-মুসতাকীম",
   };
 
   if (commonMap[clean]) return commonMap[clean];
@@ -153,7 +185,7 @@ for (let sId = 1; sId <= 114; sId++) {
         pronunciation_bn: generateBanglaPronunciation(w.transliteration, w.text_uthmani),
         meaning_bn: w.translation_bn || "",
         count: 0,
-        sampleAyahs: []
+        sampleAyahs: [],
       };
 
       wEntry.count++;
@@ -189,7 +221,7 @@ const lexiconList = Array.from(rootMap.values()).map((r) => {
     grammar_types: Array.from(r.grammarTags).slice(0, 3),
     unique_words_count: wordsArr.length,
     derived_words: wordsArr.slice(0, 6),
-    all_ayahs: allAyahs
+    all_ayahs: allAyahs,
   };
 });
 
@@ -198,4 +230,6 @@ lexiconList.sort((a, b) => a.root.localeCompare(b.root, "ar"));
 
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify(lexiconList), "utf-8");
 
-console.log(`✅ কুরআনিক অভিধান সফলভাবে তৈরি হয়েছে! মোট ${lexiconList.length}টি মূল ধাতু (Roots) ও সহস্রাধিক শব্দ অন্তর্ভুক্ত হয়েছে।`);
+console.log(
+  `✅ কুরআনিক অভিধান সফলভাবে তৈরি হয়েছে! মোট ${lexiconList.length}টি মূল ধাতু (Roots) ও সহস্রাধিক শব্দ অন্তর্ভুক্ত হয়েছে।`,
+);

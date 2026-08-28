@@ -121,7 +121,10 @@ function InlineImportModal({
   const authors = useQuery({
     queryKey: ["authors"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("authors").select("id, name_bn, name_en").order("name_bn");
+      const { data, error } = await supabase
+        .from("authors")
+        .select("id, name_bn, name_en")
+        .order("name_bn");
       if (error) return [];
       return data || [];
     },
@@ -177,10 +180,12 @@ function InlineImportModal({
         });
       } else if (type === "blogger") {
         xmlDoc.querySelectorAll("entry").forEach((entry) => {
-          entry.querySelectorAll('category[scheme="http://www.blogger.com/atom/ns#"]').forEach((el) => {
-            const term = el.getAttribute("term");
-            if (term && !term.includes("#")) detectedCategories.add(term.trim());
-          });
+          entry
+            .querySelectorAll('category[scheme="http://www.blogger.com/atom/ns#"]')
+            .forEach((el) => {
+              const term = el.getAttribute("term");
+              if (term && !term.includes("#")) detectedCategories.add(term.trim());
+            });
           const aName = entry.querySelector("author > name")?.textContent?.trim();
           if (aName) detectedAuthors.add(aName);
         });
@@ -259,14 +264,17 @@ function InlineImportModal({
               item.getElementsByTagNameNS("*", "encoded")[0]?.textContent ||
               item.querySelector("content")?.textContent ||
               "";
-            const postDate = item.querySelector("post_date")?.textContent || new Date().toISOString();
+            const postDate =
+              item.querySelector("post_date")?.textContent || new Date().toISOString();
             const postName = item.querySelector("post_name")?.textContent;
-            const creator = item.getElementsByTagNameNS("*", "creator")[0]?.textContent?.trim() || "";
+            const creator =
+              item.getElementsByTagNameNS("*", "creator")[0]?.textContent?.trim() || "";
 
             const categoryElements = item.querySelectorAll('category[domain="category"]');
             const tagElements = item.querySelectorAll('category[domain="post_tag"]');
 
-            const rawCategory = categoryElements.length > 0 ? categoryElements[0].textContent?.trim() : "";
+            const rawCategory =
+              categoryElements.length > 0 ? categoryElements[0].textContent?.trim() : "";
             const rawTags: string[] = [];
             tagElements.forEach((t) => {
               if (t.textContent) rawTags.push(t.textContent.trim());
@@ -278,7 +286,11 @@ function InlineImportModal({
             }
 
             let resolvedCategoryId = fallbackCategoryId || null;
-            if (importOptions.keepCategory && rawCategory && categoryMap.has(rawCategory.toLowerCase())) {
+            if (
+              importOptions.keepCategory &&
+              rawCategory &&
+              categoryMap.has(rawCategory.toLowerCase())
+            ) {
               resolvedCategoryId = categoryMap.get(rawCategory.toLowerCase()) || null;
             }
 
@@ -287,7 +299,10 @@ function InlineImportModal({
             articlesToInsert.push({
               title_bn: title,
               title_en: title,
-              slug: importOptions.keepPermalink && postName ? postName : generateSlug(title, String(index)),
+              slug:
+                importOptions.keepPermalink && postName
+                  ? postName
+                  : generateSlug(title, String(index)),
               content_bn: content,
               content_en: content,
               excerpt_bn: cleanExcerpt.trim(),
@@ -297,7 +312,9 @@ function InlineImportModal({
               category_id: resolvedCategoryId,
               tags: importOptions.keepTags ? rawTags : [],
               published: importOptions.keepDateAndStatus ? status === "publish" : true,
-              published_at: importOptions.keepDateAndStatus ? new Date(postDate).toISOString() : new Date().toISOString(),
+              published_at: importOptions.keepDateAndStatus
+                ? new Date(postDate).toISOString()
+                : new Date().toISOString(),
               created_by: user!.id,
               deleted_at: null,
             });
@@ -310,12 +327,15 @@ function InlineImportModal({
           if (idText.includes(".post-") || entry.querySelector('category[term*="#post"]')) {
             const title = entry.querySelector("title")?.textContent || "শিরোনামহীন পোস্ট";
             const content = entry.querySelector("content")?.textContent || "";
-            const publishedAt = entry.querySelector("published")?.textContent || new Date().toISOString();
+            const publishedAt =
+              entry.querySelector("published")?.textContent || new Date().toISOString();
             const authorName = entry.querySelector("author > name")?.textContent?.trim() || "";
             const draftElement = entry.querySelector("app\\:control > app\\:draft, draft");
             const isDraft = draftElement?.textContent === "yes";
 
-            const categoryElements = entry.querySelectorAll('category[scheme="http://www.blogger.com/atom/ns#"]');
+            const categoryElements = entry.querySelectorAll(
+              'category[scheme="http://www.blogger.com/atom/ns#"]',
+            );
             const rawTags: string[] = [];
             categoryElements.forEach((cat) => {
               const term = cat.getAttribute("term");
@@ -350,7 +370,9 @@ function InlineImportModal({
               category_id: resolvedCategoryId,
               tags: importOptions.keepTags ? rawTags : [],
               published: importOptions.keepDateAndStatus ? !isDraft : true,
-              published_at: importOptions.keepDateAndStatus ? new Date(publishedAt).toISOString() : new Date().toISOString(),
+              published_at: importOptions.keepDateAndStatus
+                ? new Date(publishedAt).toISOString()
+                : new Date().toISOString(),
               created_by: user!.id,
               deleted_at: null,
             });
@@ -388,10 +410,15 @@ function InlineImportModal({
           <div className="flex items-center gap-2">
             <FileCode className="size-5 text-[#2271b1]" />
             <h3 className="font-bold text-sm text-foreground">
-              {type === "wordpress" ? "ওয়ার্ডপ্রেস (WordPress) থেকে পোস্ট ইমপোর্ট" : "ব্লগার (Blogger) থেকে পোস্ট ইমপোর্ট"}
+              {type === "wordpress"
+                ? "ওয়ার্ডপ্রেস (WordPress) থেকে পোস্ট ইমপোর্ট"
+                : "ব্লগার (Blogger) থেকে পোস্ট ইমপোর্ট"}
             </h3>
           </div>
-          <button onClick={onClose} className="rounded-md p-1 text-muted-foreground hover:bg-muted cursor-pointer">
+          <button
+            onClick={onClose}
+            className="rounded-md p-1 text-muted-foreground hover:bg-muted cursor-pointer"
+          >
             <X className="size-4" />
           </button>
         </div>
@@ -410,7 +437,10 @@ function InlineImportModal({
           <div className="space-y-4">
             <div className="rounded-lg border border-dashed border-border p-5 text-center bg-muted/20">
               <Upload className="mx-auto size-7 text-muted-foreground/60 mb-2" />
-              <label htmlFor="xml-upload-modal" className="cursor-pointer block text-xs font-semibold text-[#2271b1] hover:underline">
+              <label
+                htmlFor="xml-upload-modal"
+                className="cursor-pointer block text-xs font-semibold text-[#2271b1] hover:underline"
+              >
                 XML ফাইল সিলেক্ট করুন
               </label>
               <input
@@ -421,7 +451,11 @@ function InlineImportModal({
                 onChange={(e) => setFile(e.target.files?.[0] || null)}
               />
               <p className="text-[11px] text-muted-foreground mt-1">
-                {file ? file.name : type === "wordpress" ? "WordPress Export .xml ফাইল" : "Blogger Backup .xml ফাইল"}
+                {file
+                  ? file.name
+                  : type === "wordpress"
+                    ? "WordPress Export .xml ফাইল"
+                    : "Blogger Backup .xml ফাইল"}
               </p>
             </div>
 
@@ -436,7 +470,9 @@ function InlineImportModal({
                   <input
                     type="checkbox"
                     checked={importOptions.keepPermalink}
-                    onChange={(e) => setImportOptions({ ...importOptions, keepPermalink: e.target.checked })}
+                    onChange={(e) =>
+                      setImportOptions({ ...importOptions, keepPermalink: e.target.checked })
+                    }
                     className="rounded accent-[#2271b1] size-3.5"
                   />
                   <span>আসল পার্মালিঙ্ক / স্লাগ রাখুন</span>
@@ -446,7 +482,9 @@ function InlineImportModal({
                   <input
                     type="checkbox"
                     checked={importOptions.keepAuthor}
-                    onChange={(e) => setImportOptions({ ...importOptions, keepAuthor: e.target.checked })}
+                    onChange={(e) =>
+                      setImportOptions({ ...importOptions, keepAuthor: e.target.checked })
+                    }
                     className="rounded accent-[#2271b1] size-3.5"
                   />
                   <span>লেখক স্বয়ংক্রিয় তৈরি ও ম্যাচ</span>
@@ -456,7 +494,9 @@ function InlineImportModal({
                   <input
                     type="checkbox"
                     checked={importOptions.keepCategory}
-                    onChange={(e) => setImportOptions({ ...importOptions, keepCategory: e.target.checked })}
+                    onChange={(e) =>
+                      setImportOptions({ ...importOptions, keepCategory: e.target.checked })
+                    }
                     className="rounded accent-[#2271b1] size-3.5"
                   />
                   <span>ক্যাটাগরি স্বয়ংক্রিয় তৈরি ও ম্যাচ</span>
@@ -466,7 +506,9 @@ function InlineImportModal({
                   <input
                     type="checkbox"
                     checked={importOptions.keepTags}
-                    onChange={(e) => setImportOptions({ ...importOptions, keepTags: e.target.checked })}
+                    onChange={(e) =>
+                      setImportOptions({ ...importOptions, keepTags: e.target.checked })
+                    }
                     className="rounded accent-[#2271b1] size-3.5"
                   />
                   <span>ট্যাগসমূহ (Tags) ইমপোর্ট করুন</span>
@@ -476,7 +518,9 @@ function InlineImportModal({
                   <input
                     type="checkbox"
                     checked={importOptions.keepCoverImage}
-                    onChange={(e) => setImportOptions({ ...importOptions, keepCoverImage: e.target.checked })}
+                    onChange={(e) =>
+                      setImportOptions({ ...importOptions, keepCoverImage: e.target.checked })
+                    }
                     className="rounded accent-[#2271b1] size-3.5"
                   />
                   <span>প্রথম ছবি কভার হিসেবে নিন</span>
@@ -486,7 +530,9 @@ function InlineImportModal({
                   <input
                     type="checkbox"
                     checked={importOptions.keepDateAndStatus}
-                    onChange={(e) => setImportOptions({ ...importOptions, keepDateAndStatus: e.target.checked })}
+                    onChange={(e) =>
+                      setImportOptions({ ...importOptions, keepDateAndStatus: e.target.checked })
+                    }
                     className="rounded accent-[#2271b1] size-3.5"
                   />
                   <span>আসল প্রকাশের তারিখ ও স্ট্যাটাস</span>
@@ -495,7 +541,9 @@ function InlineImportModal({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-border/40">
                 <div className="space-y-1">
-                  <label className="text-[11px] font-medium text-muted-foreground">ডিফল্ট লেখক (যদি না মিলে):</label>
+                  <label className="text-[11px] font-medium text-muted-foreground">
+                    ডিফল্ট লেখক (যদি না মিলে):
+                  </label>
                   <select
                     value={fallbackAuthorId}
                     onChange={(e) => setFallbackAuthorId(e.target.value)}
@@ -503,13 +551,17 @@ function InlineImportModal({
                   >
                     <option value="">কোনো নির্দিষ্ট লেখক নেই</option>
                     {authors.data?.map((a) => (
-                      <option key={a.id} value={a.id}>{a.name_bn}</option>
+                      <option key={a.id} value={a.id}>
+                        {a.name_bn}
+                      </option>
                     ))}
                   </select>
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[11px] font-medium text-muted-foreground">ডিফল্ট ক্যাটাগরি (যদি না মিলে):</label>
+                  <label className="text-[11px] font-medium text-muted-foreground">
+                    ডিফল্ট ক্যাটাগরি (যদি না মিলে):
+                  </label>
                   <select
                     value={fallbackCategoryId}
                     onChange={(e) => setFallbackCategoryId(e.target.value)}
@@ -517,7 +569,9 @@ function InlineImportModal({
                   >
                     <option value="">কোনো ক্যাটাগরি নেই</option>
                     {categories.data?.map((c) => (
-                      <option key={c.id} value={c.id}>{c.name_bn}</option>
+                      <option key={c.id} value={c.id}>
+                        {c.name_bn}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -532,7 +586,13 @@ function InlineImportModal({
             )}
 
             <div className="flex items-center justify-end gap-2 pt-2">
-              <Button type="button" variant="outline" size="sm" onClick={onClose} className="text-xs cursor-pointer">
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={onClose}
+                className="text-xs cursor-pointer"
+              >
                 বাতিল
               </Button>
               <Button
@@ -561,13 +621,7 @@ function InlineImportModal({
 /* ========================================================================== */
 /* DUAL-MODE RICH TEXT EDITOR                                                */
 /* ========================================================================== */
-function RichTextEditor({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (val: string) => void;
-}) {
+function RichTextEditor({ value, onChange }: { value: string; onChange: (val: string) => void }) {
   const [isHtmlMode, setIsHtmlMode] = useState(false);
 
   const editor = useEditor({
@@ -816,7 +870,9 @@ function AdminPage() {
         <div className="w-full max-w-sm rounded border bg-card p-6 text-center shadow-sm">
           <Shield className="mx-auto mb-3 size-10 text-muted-foreground/60" />
           <h2 className="text-lg font-semibold">অ্যাডমিন প্রবেশাধিকার সংরক্ষিত</h2>
-          <p className="mt-1 text-xs text-muted-foreground">শুধুমাত্র অনুমোদিত অ্যাডমিন এই প্যানেলে প্রবেশ করতে পারবেন।</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            শুধুমাত্র অনুমোদিত অ্যাডমিন এই প্যানেলে প্রবেশ করতে পারবেন।
+          </p>
           <Button asChild className="mt-5 w-full">
             <Link to="/auth">লগইন করুন</Link>
           </Button>
@@ -889,7 +945,9 @@ function AdminPage() {
                           }`}
                         >
                           <div className="flex items-center gap-2.5">
-                            <Icon className={`size-4 ${isActive ? "text-white" : "text-[#8c8f94] group-hover:text-[#72aee6]"}`} />
+                            <Icon
+                              className={`size-4 ${isActive ? "text-white" : "text-[#8c8f94] group-hover:text-[#72aee6]"}`}
+                            />
                             <span>{item.label}</span>
                           </div>
                           {isActive && <ChevronRight className="size-3.5 opacity-80" />}
@@ -910,7 +968,10 @@ function AdminPage() {
         <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-5xl">
             <div className="mb-4 block md:hidden">
-              <label htmlFor="mobile-admin-tab" className="block text-xs font-medium text-muted-foreground mb-1.5">
+              <label
+                htmlFor="mobile-admin-tab"
+                className="block text-xs font-medium text-muted-foreground mb-1.5"
+              >
                 মেনু নির্বাচন করুন:
               </label>
               <select
@@ -924,7 +985,7 @@ function AdminPage() {
                     <option key={opt.value} value={opt.value}>
                       {opt.label}
                     </option>
-                  ))
+                  )),
                 )}
               </select>
             </div>
@@ -935,11 +996,13 @@ function AdminPage() {
                   <span>ড্যাশবোর্ড</span>
                   <span>/</span>
                   <span className="font-semibold text-foreground">
-                    {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "মূল মেনু"}
+                    {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)
+                      ?.label || "মূল মেনু"}
                   </span>
                 </div>
                 <h1 className="text-2xl font-bold tracking-tight text-foreground">
-                  {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label || "ড্যাশবোর্ড"}
+                  {menuSections.flatMap((s) => s.items).find((i) => i.value === activeTab)?.label ||
+                    "ড্যাশবোর্ড"}
                 </h1>
                 <p className="text-xs text-muted-foreground mt-0.5">
                   ওয়েবসাইট কনটেন্ট ও ডেটাবেজ কনফিগারেশন প্যানেল
@@ -961,7 +1024,9 @@ function AdminPage() {
                 <div className="space-y-4">
                   <div className="border-b border-border/50 pb-2">
                     <h2 className="text-base font-semibold">লেখক ও গবেষক ব্যবস্থাপনা</h2>
-                    <p className="text-xs text-muted-foreground">নতুন লেখক যুক্ত করুন এবং প্রোফাইল তথ্য পরিচালনা করুন।</p>
+                    <p className="text-xs text-muted-foreground">
+                      নতুন লেখক যুক্ত করুন এবং প্রোফাইল তথ্য পরিচালনা করুন।
+                    </p>
                   </div>
                   <AuthorsAdmin />
                 </div>
@@ -1012,9 +1077,12 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
     <div className="space-y-6">
       <div className="rounded border border-border bg-card p-6 shadow-sm space-y-4">
         <div>
-          <h2 className="text-base font-semibold text-foreground">অন্যান্য প্ল্যাটফর্ম থেকে কনটেন্ট ইমপোর্ট করুন</h2>
+          <h2 className="text-base font-semibold text-foreground">
+            অন্যান্য প্ল্যাটফর্ম থেকে কনটেন্ট ইমপোর্ট করুন
+          </h2>
           <p className="text-xs text-muted-foreground mt-1">
-            আপনার ওয়ার্ডপ্রেস বা ব্লগারে প্রকাশিত পোস্টের এক্সপোর্টকৃত XML ফাইল থেকে সরাসরি সব আর্টিকেল একসাথে ইমপোর্ট করুন।
+            আপনার ওয়ার্ডপ্রেস বা ব্লগারে প্রকাশিত পোস্টের এক্সপোর্টকৃত XML ফাইল থেকে সরাসরি সব
+            আর্টিকেল একসাথে ইমপোর্ট করুন।
           </p>
         </div>
 
@@ -1026,7 +1094,8 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
               </span>
               <h3 className="text-sm font-bold text-foreground">ওয়ার্ডপ্রেস থেকে ইমপোর্ট</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Tools &gt; Export থেকে ডাউনলোড করা <code>.xml</code> ফাইল আপলোড করে এক ক্লিকে সব পোস্ট ইমপোর্ট করুন।
+                Tools &gt; Export থেকে ডাউনলোড করা <code>.xml</code> ফাইল আপলোড করে এক ক্লিকে সব
+                পোস্ট ইমপোর্ট করুন।
               </p>
             </div>
             <Button
@@ -1044,7 +1113,8 @@ function ImportTab({ onSelectType }: { onSelectType: (type: "wordpress" | "blogg
               </span>
               <h3 className="text-sm font-bold text-foreground">ব্লগার থেকে ইমপোর্ট</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Settings &gt; Back up content থেকে ডাউনলোড করা <code>.xml</code> ব্যাকআপ ফাইল দিয়ে পোস্টগুলো ইমপোর্ট করুন।
+                Settings &gt; Back up content থেকে ডাউনলোড করা <code>.xml</code> ব্যাকআপ ফাইল দিয়ে
+                পোস্টগুলো ইমপোর্ট করুন।
               </p>
             </div>
             <Button
@@ -1069,7 +1139,10 @@ const articleSchema = z.object({
     .trim()
     .min(1)
     .max(120)
-    .regex(/^[a-z0-9-]+$/, "স্লাগে শুধুমাত্র ছোট হাতের ইংরেজি অক্ষর, সংখ্যা এবং ড্যাশ (-) ব্যবহার করা যাবে"),
+    .regex(
+      /^[a-z0-9-]+$/,
+      "স্লাগে শুধুমাত্র ছোট হাতের ইংরেজি অক্ষর, সংখ্যা এবং ড্যাশ (-) ব্যবহার করা যাবে",
+    ),
   title_bn: z.string().trim().min(1, "বাংলা শিরোনাম বাধ্যতামূলক").max(200),
   title_en: z.string().trim().max(200),
   excerpt_bn: z.string().trim().max(500),
@@ -1090,7 +1163,11 @@ const EMPTY = {
   cover_image_url: "",
 };
 
-function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "blogger") => void }) {
+function ArticlesAdmin({
+  onOpenImport,
+}: {
+  onOpenImport: (type: "wordpress" | "blogger") => void;
+}) {
   const { user } = useSession();
   const queryClient = useQueryClient();
   const [form, setForm] = useState({ ...EMPTY });
@@ -1144,7 +1221,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
-      toast.success(variables.nextStatus ? "আর্টিকেল প্রকাশিত হয়েছে" : "আর্টিকেলটি খসড়া/ড্রাফট করা হয়েছে");
+      toast.success(
+        variables.nextStatus ? "আর্টিকেল প্রকাশিত হয়েছে" : "আর্টিকেলটি খসড়া/ড্রাফট করা হয়েছে",
+      );
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -1167,10 +1246,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
 
   const restoreFromTrash = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase
-        .from("articles")
-        .update({ deleted_at: null })
-        .eq("id", id);
+      const { error } = await supabase.from("articles").update({ deleted_at: null }).eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => {
@@ -1255,15 +1331,26 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const save = useMutation({
     mutationFn: async () => {
       const parsed = articleSchema.safeParse(form);
-      if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য প্রদান করুন");
+      if (!parsed.success)
+        throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য প্রদান করুন");
 
       const autoExcerptBn = parsed.data.excerpt_bn
         ? parsed.data.excerpt_bn
-        : parsed.data.content_bn.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim();
+        : parsed.data.content_bn
+            .replace(/<[^>]*>?/gm, "")
+            .replace(/\s+/g, " ")
+            .slice(0, 160)
+            .trim();
 
       const autoExcerptEn = parsed.data.excerpt_en
         ? parsed.data.excerpt_en
-        : parsed.data.content_en ? parsed.data.content_en.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim() : null;
+        : parsed.data.content_en
+          ? parsed.data.content_en
+              .replace(/<[^>]*>?/gm, "")
+              .replace(/\s+/g, " ")
+              .slice(0, 160)
+              .trim()
+          : null;
 
       // কমা দিয়ে আলাদা করা ট্যাগ অ্যারে রূপান্তর
       const parsedTags = tagsInput
@@ -1305,7 +1392,11 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       setCategoryId("");
       setTagsInput("");
       setPublished(true);
-      toast.success(published ? "আর্টিকেল সফলভাবে প্রকাশিত হয়েছে" : "আর্টিকেল সফলভাবে খসড়া (Draft) হিসেবে সংরক্ষিত হয়েছে");
+      toast.success(
+        published
+          ? "আর্টিকেল সফলভাবে প্রকাশিত হয়েছে"
+          : "আর্টিকেল সফলভাবে খসড়া (Draft) হিসেবে সংরক্ষিত হয়েছে",
+      );
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -1314,19 +1405,21 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const activeArticles = allList.filter((a) => !a.deleted_at);
   const trashArticles = allList.filter((a) => a.deleted_at);
 
-  const filteredArticles = (statusFilter === "trash"
-    ? trashArticles
-    : activeArticles.filter((a) => {
-        if (statusFilter === "published") return a.published;
-        if (statusFilter === "draft") return !a.published;
-        return true;
-      })) || [];
+  const filteredArticles =
+    (statusFilter === "trash"
+      ? trashArticles
+      : activeArticles.filter((a) => {
+          if (statusFilter === "published") return a.published;
+          if (statusFilter === "draft") return !a.published;
+          return true;
+        })) || [];
 
   const publishedCount = activeArticles.filter((a) => a.published).length;
   const draftCount = activeArticles.filter((a) => !a.published).length;
   const trashCount = trashArticles.length;
 
-  const isAllSelected = filteredArticles.length > 0 && selectedIds.length === filteredArticles.length;
+  const isAllSelected =
+    filteredArticles.length > 0 && selectedIds.length === filteredArticles.length;
   const toggleSelectAll = () => {
     if (isAllSelected) {
       setSelectedIds([]);
@@ -1336,14 +1429,14 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   };
 
   const toggleSelectOne = (id: string) => {
-    setSelectedIds((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
+    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));
   };
 
   const field = (key: keyof typeof EMPTY, label: string, long = false) => (
     <div className="space-y-1.5">
-      <Label htmlFor={key} className="text-xs font-semibold">{label}</Label>
+      <Label htmlFor={key} className="text-xs font-semibold">
+        {label}
+      </Label>
       {long ? (
         key.startsWith("content") ? (
           <RichTextEditor
@@ -1414,13 +1507,17 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                 value={published ? "published" : "draft"}
                 onChange={(e) => setPublished(e.target.value === "published")}
                 className={`h-8 rounded-md border px-2.5 text-xs font-semibold transition-colors focus:outline-none cursor-pointer ${
-                  published 
-                    ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" 
+                  published
+                    ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
                     : "border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400"
                 }`}
               >
-                <option value="published" className="bg-card text-foreground">🟢 প্রকাশিত (Published)</option>
-                <option value="draft" className="bg-card text-foreground">🟡 খসড়া (Draft)</option>
+                <option value="published" className="bg-card text-foreground">
+                  🟢 প্রকাশিত (Published)
+                </option>
+                <option value="draft" className="bg-card text-foreground">
+                  🟡 খসড়া (Draft)
+                </option>
               </select>
             </div>
           </div>
@@ -1455,7 +1552,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
 
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
-            <Label htmlFor="author" className="text-xs font-semibold">লেখক নির্বাচন</Label>
+            <Label htmlFor="author" className="text-xs font-semibold">
+              লেখক নির্বাচন
+            </Label>
             <select
               id="author"
               value={authorId}
@@ -1472,7 +1571,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="article-category" className="text-xs font-semibold">ক্যাটাগরি নির্বাচন</Label>
+            <Label htmlFor="article-category" className="text-xs font-semibold">
+              ক্যাটাগরি নির্বাচন
+            </Label>
             <select
               id="article-category"
               value={categoryId}
@@ -1489,7 +1590,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="post-status" className="text-xs font-semibold">পোস্ট দৃশ্যমানতা / স্ট্যাটাস</Label>
+            <Label htmlFor="post-status" className="text-xs font-semibold">
+              পোস্ট দৃশ্যমানতা / স্ট্যাটাস
+            </Label>
             <select
               id="post-status"
               value={published ? "published" : "draft"}
@@ -1503,14 +1606,12 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         </div>
 
         <div className="flex items-center gap-2 pt-2">
-          <Button 
-            type="submit" 
-            disabled={save.isPending} 
-            size="sm" 
+          <Button
+            type="submit"
+            disabled={save.isPending}
+            size="sm"
             className={`text-white transition-all cursor-pointer ${
-              published
-                ? "bg-[#2271b1] hover:bg-[#135e96]"
-                : "bg-amber-600 hover:bg-amber-700"
+              published ? "bg-[#2271b1] hover:bg-[#135e96]" : "bg-amber-600 hover:bg-amber-700"
             }`}
           >
             {published ? (
@@ -1550,7 +1651,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       {/* আর্টিকেল তালিকা ও ট্র্যাশ ফিল্টার বার */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
-          <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
+          <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">
+            আর্টিকেল তালিকা
+          </h3>
 
           <div className="flex items-center gap-1.5 text-xs">
             <button
@@ -1629,7 +1732,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               ) : (
                 <Square className="size-4 text-muted-foreground" />
               )}
-              <span>সব সিলেক্ট করুন ({selectedIds.length}/{filteredArticles.length})</span>
+              <span>
+                সব সিলেক্ট করুন ({selectedIds.length}/{filteredArticles.length})
+              </span>
             </button>
 
             <div className="h-4 w-px bg-border mx-1" />
@@ -1667,7 +1772,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               >
                 <option value="">লেখক বাছাই করুন</option>
                 {authors.data?.map((a) => (
-                  <option key={a.id} value={a.id}>{a.name_bn}</option>
+                  <option key={a.id} value={a.id}>
+                    {a.name_bn}
+                  </option>
                 ))}
               </select>
             )}
@@ -1680,7 +1787,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               >
                 <option value="">ক্যাটাগরি বাছাই করুন</option>
                 {categories.data?.map((c) => (
-                  <option key={c.id} value={c.id}>{c.name_bn}</option>
+                  <option key={c.id} value={c.id}>
+                    {c.name_bn}
+                  </option>
                 ))}
               </select>
             )}
@@ -1700,14 +1809,19 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {filteredArticles.length === 0 ? (
             <p className="p-4 text-xs text-muted-foreground text-center">
-              {statusFilter === "trash" ? "ট্র্যাশ বক্সে কোনো আর্টিকেল নেই।" : "কোনো আর্টিকেল পাওয়া যায়নি।"}
+              {statusFilter === "trash"
+                ? "ট্র্যাশ বক্সে কোনো আর্টিকেল নেই।"
+                : "কোনো আর্টিকেল পাওয়া যায়নি।"}
             </p>
           ) : (
             filteredArticles.map((a) => {
               const isChecked = selectedIds.includes(a.id);
 
               return (
-                <div key={a.id} className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+                <div
+                  key={a.id}
+                  className="flex items-center gap-3 p-3.5 hover:bg-muted/30 transition-colors"
+                >
                   <input
                     type="checkbox"
                     checked={isChecked}
@@ -1720,9 +1834,17 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                     <p className="text-[11px] text-muted-foreground">
                       /{a.slug} ·{" "}
                       {a.deleted_at ? (
-                        <span className="text-destructive font-medium">মুছে ফেলা হয়েছে (In Trash)</span>
+                        <span className="text-destructive font-medium">
+                          মুছে ফেলা হয়েছে (In Trash)
+                        </span>
                       ) : (
-                        <span className={a.published ? "text-emerald-600 font-medium" : "text-amber-600 font-semibold"}>
+                        <span
+                          className={
+                            a.published
+                              ? "text-emerald-600 font-medium"
+                              : "text-amber-600 font-semibold"
+                          }
+                        >
                           {a.published ? "প্রকাশিত" : "খসড়া (Draft)"}
                         </span>
                       )}
@@ -1739,7 +1861,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                         onCheckedChange={(checked) =>
                           togglePublish.mutate({ id: a.id, nextStatus: checked })
                         }
-                        title={a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"}
+                        title={
+                          a.published ? "ক্লিক করে খসড়া/ড্রাফট করুন" : "ক্লিক করে প্রকাশ করুন"
+                        }
                       />
                     </div>
                   )}
@@ -1901,7 +2025,9 @@ function TranslationsAdmin() {
       >
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
-            <Label htmlFor="surah" className="text-xs font-semibold">সূরা নম্বর</Label>
+            <Label htmlFor="surah" className="text-xs font-semibold">
+              সূরা নম্বর
+            </Label>
             <Input
               id="surah"
               type="number"
@@ -1913,7 +2039,9 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="ayah" className="text-xs font-semibold">আয়াত নম্বর</Label>
+            <Label htmlFor="ayah" className="text-xs font-semibold">
+              আয়াত নম্বর
+            </Label>
             <Input
               id="ayah"
               type="number"
@@ -1925,7 +2053,9 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="lng" className="text-xs font-semibold">অনুবাদ টাইপ</Label>
+            <Label htmlFor="lng" className="text-xs font-semibold">
+              অনুবাদ টাইপ
+            </Label>
             <select
               id="lng"
               value={lng}
@@ -1940,37 +2070,51 @@ function TranslationsAdmin() {
           </div>
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="text" className="text-xs font-semibold">অনুবাদ টেক্সট</Label>
-          <Textarea 
-            id="text" 
-            rows={4} 
-            value={text} 
-            onChange={(e) => setText(e.target.value)} 
+          <Label htmlFor="text" className="text-xs font-semibold">
+            অনুবাদ টেক্সট
+          </Label>
+          <Textarea
+            id="text"
+            rows={4}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
-            className="text-xs" 
+            className="text-xs"
           />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="note" className="text-xs font-semibold">বিশেষ টীকা / নোট (ঐচ্ছিক)</Label>
-          <Textarea 
-            id="note" 
-            rows={2} 
-            value={note} 
-            onChange={(e) => setNote(e.target.value)} 
+          <Label htmlFor="note" className="text-xs font-semibold">
+            বিশেষ টীকা / নোট (ঐচ্ছিক)
+          </Label>
+          <Textarea
+            id="note"
+            rows={2}
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
             placeholder="প্রাসঙ্গিক ব্যাখ্যা বা তথ্যসূত্র..."
-            className="text-xs" 
+            className="text-xs"
           />
         </div>
-        <Button type="submit" disabled={save.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white cursor-pointer">
+        <Button
+          type="submit"
+          disabled={save.isPending}
+          size="sm"
+          className="bg-[#2271b1] hover:bg-[#135e96] text-white cursor-pointer"
+        >
           <Plus className="size-3.5 mr-1" /> সংরক্ষণ করুন
         </Button>
       </form>
 
       <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">সংরক্ষিত অনুবাদ তালিকা:</h3>
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">
+          সংরক্ষিত অনুবাদ তালিকা:
+        </h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {list.data?.map((v) => (
-            <div key={v.id} className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+            <div
+              key={v.id}
+              className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors"
+            >
               <span className="rounded bg-[#2271b1]/10 px-2 py-0.5 text-[11px] font-bold text-[#2271b1]">
                 সূরা {v.surah} : আয়াত {v.ayah} · {v.lang}
               </span>
@@ -2051,7 +2195,9 @@ function RolesAdmin() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5 sm:col-span-2">
-            <Label htmlFor="userId" className="text-xs font-semibold">ব্যবহারকারী আইডি (Supabase Auth UID)</Label>
+            <Label htmlFor="userId" className="text-xs font-semibold">
+              ব্যবহারকারী আইডি (Supabase Auth UID)
+            </Label>
             <Input
               id="userId"
               placeholder="যেমন: e2a8b... (User UUID)"
@@ -2065,7 +2211,9 @@ function RolesAdmin() {
             </p>
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="roleSelect" className="text-xs font-semibold">রোল নির্বাচন করুন</Label>
+            <Label htmlFor="roleSelect" className="text-xs font-semibold">
+              রোল নির্বাচন করুন
+            </Label>
             <select
               id="roleSelect"
               value={role}
@@ -2077,13 +2225,20 @@ function RolesAdmin() {
             </select>
           </div>
         </div>
-        <Button type="submit" disabled={addRole.isPending} size="sm" className="bg-[#2271b1] hover:bg-[#135e96] text-white cursor-pointer">
+        <Button
+          type="submit"
+          disabled={addRole.isPending}
+          size="sm"
+          className="bg-[#2271b1] hover:bg-[#135e96] text-white cursor-pointer"
+        >
           <UserCheck className="size-3.5 mr-1.5" /> রোল সংরক্ষণ করুন
         </Button>
       </form>
 
       <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলসমূহের তালিকা:</h3>
+        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">
+          বর্তমান রোলসমূহের তালিকা:
+        </h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
           {rolesList.data?.map((r) => (
             <div key={r.id} className="flex items-center justify-between p-3.5">

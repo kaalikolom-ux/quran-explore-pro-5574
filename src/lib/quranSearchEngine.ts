@@ -23,7 +23,17 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Opener",
     total_verses: 7,
     type: "Meccan",
-    aliases: ["ফাতিহা", "ফাতেহা", "ফাতিহাহ", "উম্মুল কুরআন", "উম্মুল কিতাব", "সাবউল মাছানি", "fatiha", "fatihah", "al-fatihah"]
+    aliases: [
+      "ফাতিহা",
+      "ফাতেহা",
+      "ফাতিহাহ",
+      "উম্মুল কুরআন",
+      "উম্মুল কিতাব",
+      "সাবউল মাছানি",
+      "fatiha",
+      "fatihah",
+      "al-fatihah",
+    ],
   },
   {
     id: 2,
@@ -34,7 +44,20 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Cow",
     total_verses: 286,
     type: "Medinan",
-    aliases: ["বাকারা", "বাকারাহ", "বাক্বারা", "গাভী", "বাছুর", "আয়াতুল কুরসি", "আয়াতুল কুরসী", "aytul kursi", "kursi", "baqara", "baqarah", "al-baqarah"]
+    aliases: [
+      "বাকারা",
+      "বাকারাহ",
+      "বাক্বারা",
+      "গাভী",
+      "বাছুর",
+      "আয়াতুল কুরসি",
+      "আয়াতুল কুরসী",
+      "aytul kursi",
+      "kursi",
+      "baqara",
+      "baqarah",
+      "al-baqarah",
+    ],
   },
   {
     id: 3,
@@ -45,7 +68,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Family of Imran",
     total_verses: 200,
     type: "Medinan",
-    aliases: ["ইমরান", "আলে ইমরান", "আলি ইমরান", "আল ইমরান", "imran", "ali imran", "aal imran"]
+    aliases: ["ইমরান", "আলে ইমরান", "আলি ইমরান", "আল ইমরান", "imran", "ali imran", "aal imran"],
   },
   {
     id: 4,
@@ -56,7 +79,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Women",
     total_verses: 176,
     type: "Medinan",
-    aliases: ["নিসা", "আন নিসা", "নারী", "মহিলা", "স্ত্রী", "nisa", "an-nisa", "women"]
+    aliases: ["নিসা", "আন নিসা", "নারী", "মহিলা", "স্ত্রী", "nisa", "an-nisa", "women"],
   },
   {
     id: 5,
@@ -67,7 +90,17 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Table Spread",
     total_verses: 120,
     type: "Medinan",
-    aliases: ["মায়িদাহ", "মায়েদা", "মায়িদা", "মায়েদা", "দস্তরখান", "খাবার", "maidah", "al-maidah", "maeda"]
+    aliases: [
+      "মায়িদাহ",
+      "মায়েদা",
+      "মায়িদা",
+      "মায়েদা",
+      "দস্তরখান",
+      "খাবার",
+      "maidah",
+      "al-maidah",
+      "maeda",
+    ],
   },
   {
     id: 6,
@@ -78,7 +111,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Cattle",
     total_verses: 165,
     type: "Meccan",
-    aliases: ["আনআম", "আন'আম", "গৃহপালিত পশু", "পশু", "anam", "al-anam"]
+    aliases: ["আনআম", "আন'আম", "গৃহপালিত পশু", "পশু", "anam", "al-anam"],
   },
   {
     id: 7,
@@ -89,7 +122,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Heights",
     total_verses: 206,
     type: "Meccan",
-    aliases: ["আরাফ", "আ'রাফ", "উঁচু স্থান", "araf", "al-araf"]
+    aliases: ["আরাফ", "আ'রাফ", "উঁচু স্থান", "araf", "al-araf"],
   },
   {
     id: 8,
@@ -100,7 +133,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Spoils of War",
     total_verses: 75,
     type: "Medinan",
-    aliases: ["আনফাল", "গনীমত", "যুদ্ধলব্ধ সম্পদ", "বদর", "anfal", "al-anfal"]
+    aliases: ["আনফাল", "গনীমত", "যুদ্ধলব্ধ সম্পদ", "বদর", "anfal", "al-anfal"],
   },
   {
     id: 9,
@@ -111,7 +144,18 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Repentance",
     total_verses: 129,
     type: "Medinan",
-    aliases: ["তাওবাহ", "তওবা", "তাওবা", "বারাআত", "অনুশোচনা", "ক্ষমা", "tawbah", "at-tawbah", "tawba", "repentance"]
+    aliases: [
+      "তাওবাহ",
+      "তওবা",
+      "তাওবা",
+      "বারাআত",
+      "অনুশোচনা",
+      "ক্ষমা",
+      "tawbah",
+      "at-tawbah",
+      "tawba",
+      "repentance",
+    ],
   },
   {
     id: 10,
@@ -122,7 +166,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Jonah",
     total_verses: 109,
     type: "Meccan",
-    aliases: ["ইউনুস", "ইউনুছ", "মাছের পেটে নবী", "নবী ইউনুস", "yunus", "jonah"]
+    aliases: ["ইউনুস", "ইউনুছ", "মাছের পেটে নবী", "নবী ইউনুস", "yunus", "jonah"],
   },
   {
     id: 11,
@@ -133,7 +177,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Hud",
     total_verses: 123,
     type: "Meccan",
-    aliases: ["হুদ", "হূদ", "নবী হুদ", "আদ জাতি", "hud"]
+    aliases: ["হুদ", "হূদ", "নবী হুদ", "আদ জাতি", "hud"],
   },
   {
     id: 12,
@@ -144,7 +188,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Joseph",
     total_verses: 111,
     type: "Meccan",
-    aliases: ["ইউসুফ", "ইউছুফ", "আহসানুল কাসাস", "নবী ইউসুফ", "জুলাইখা", "yusuf", "joseph"]
+    aliases: ["ইউসুফ", "ইউছুফ", "আহসানুল কাসাস", "নবী ইউসুফ", "জুলাইখা", "yusuf", "joseph"],
   },
   {
     id: 13,
@@ -155,7 +199,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Thunder",
     total_verses: 43,
     type: "Medinan",
-    aliases: ["রাদ", "বজ্রপাত", "মেঘের গর্জন", "rad", "ar-rad", "thunder"]
+    aliases: ["রাদ", "বজ্রপাত", "মেঘের গর্জন", "rad", "ar-rad", "thunder"],
   },
   {
     id: 14,
@@ -166,7 +210,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Abraham",
     total_verses: 52,
     type: "Meccan",
-    aliases: ["ইব্রাহিম", "ইবরাহীম", "ইবরাহিম", "খলিলুল্লাহ", "নবী ইব্রাহিম", "ibrahim", "abraham"]
+    aliases: ["ইব্রাহিম", "ইবরাহীম", "ইবরাহিম", "খলিলুল্লাহ", "নবী ইব্রাহিম", "ibrahim", "abraham"],
   },
   {
     id: 15,
@@ -177,7 +221,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Rocky Tract",
     total_verses: 99,
     type: "Meccan",
-    aliases: ["হিজর", "পাথুরে পাহাড়", "সামুদ জাতি", "hijr", "al-hijr"]
+    aliases: ["হিজর", "পাথুরে পাহাড়", "সামুদ জাতি", "hijr", "al-hijr"],
   },
   {
     id: 16,
@@ -188,7 +232,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Bee",
     total_verses: 128,
     type: "Meccan",
-    aliases: ["নাহল", "মৌমাছি", "মধু", "nahl", "an-nahl", "bee"]
+    aliases: ["নাহল", "মৌমাছি", "মধু", "nahl", "an-nahl", "bee"],
   },
   {
     id: 17,
@@ -199,7 +243,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Night Journey",
     total_verses: 111,
     type: "Meccan",
-    aliases: ["বনী ইসরাঈল", "বনি ইসরাইল", "ইসরা", "মিরাজ", "isra", "al-isra", "bani israel"]
+    aliases: ["বনী ইসরাঈল", "বনি ইসরাইল", "ইসরা", "মিরাজ", "isra", "al-isra", "bani israel"],
   },
   {
     id: 18,
@@ -210,7 +254,18 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Cave",
     total_verses: 110,
     type: "Meccan",
-    aliases: ["কাহফ", "কাহাফ", "গুহা", "আসহাবে কাহফ", "দাজ্জাল", "খিজির", "জুলকারনাইন", "kahf", "al-kahf", "cave"]
+    aliases: [
+      "কাহফ",
+      "কাহাফ",
+      "গুহা",
+      "আসহাবে কাহফ",
+      "দাজ্জাল",
+      "খিজির",
+      "জুলকারনাইন",
+      "kahf",
+      "al-kahf",
+      "cave",
+    ],
   },
   {
     id: 19,
@@ -221,7 +276,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Mary",
     total_verses: 98,
     type: "Meccan",
-    aliases: ["মারইয়াম", "মরিয়ম", "মারিয়াম", "ঈসা নবীর মাতা", "maryam", "mary"]
+    aliases: ["মারইয়াম", "মরিয়ম", "মারিয়াম", "ঈসা নবীর মাতা", "maryam", "mary"],
   },
   {
     id: 20,
@@ -232,7 +287,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Ta-Ha",
     total_verses: 135,
     type: "Meccan",
-    aliases: ["ত্বাহা", "তাহা", "তোহা", "ত্বা-হা", "মুসা ফেরাউন", "taha", "ta-ha"]
+    aliases: ["ত্বাহা", "তাহা", "তোহা", "ত্বা-হা", "মুসা ফেরাউন", "taha", "ta-ha"],
   },
   {
     id: 21,
@@ -243,7 +298,16 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Prophets",
     total_verses: 112,
     type: "Meccan",
-    aliases: ["আম্বিয়া", "আম্বিয়া", "নবীগণ", "বিগ ব্যাং", "রতক", "anbiya", "al-anbiya", "prophets"]
+    aliases: [
+      "আম্বিয়া",
+      "আম্বিয়া",
+      "নবীগণ",
+      "বিগ ব্যাং",
+      "রতক",
+      "anbiya",
+      "al-anbiya",
+      "prophets",
+    ],
   },
   {
     id: 22,
@@ -254,7 +318,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Pilgrimage",
     total_verses: 78,
     type: "Medinan",
-    aliases: ["হাজ্জ", "হজ", "হজ্জ", "কোরবানি", "কাবা", "hajj", "al-hajj"]
+    aliases: ["হাজ্জ", "হজ", "হজ্জ", "কোরবানি", "কাবা", "hajj", "al-hajj"],
   },
   {
     id: 23,
@@ -265,7 +329,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Believers",
     total_verses: 118,
     type: "Meccan",
-    aliases: ["মুমিনুন", "মুমিনগণ", "ভ্রূণতত্ত্ব", "বিশ্বাসী", "muminun", "al-muminun", "believers"]
+    aliases: [
+      "মুমিনুন",
+      "মুমিনগণ",
+      "ভ্রূণতত্ত্ব",
+      "বিশ্বাসী",
+      "muminun",
+      "al-muminun",
+      "believers",
+    ],
   },
   {
     id: 24,
@@ -276,7 +348,18 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Light",
     total_verses: 64,
     type: "Medinan",
-    aliases: ["নূর", "নুর", "আলো", "জ্যোতি", "পর্দা", "হিযাব", "ব্যভিচার", "nur", "an-nur", "light"]
+    aliases: [
+      "নূর",
+      "নুর",
+      "আলো",
+      "জ্যোতি",
+      "পর্দা",
+      "হিযাব",
+      "ব্যভিচার",
+      "nur",
+      "an-nur",
+      "light",
+    ],
   },
   {
     id: 25,
@@ -287,7 +370,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Criterion",
     total_verses: 77,
     type: "Meccan",
-    aliases: ["ফুরকান", "ফুরক্বান", "পার্থক্যকারী", "ইবাদুর রহমান", "furqan", "al-furqan"]
+    aliases: ["ফুরকান", "ফুরক্বান", "পার্থক্যকারী", "ইবাদুর রহমান", "furqan", "al-furqan"],
   },
   {
     id: 26,
@@ -298,7 +381,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Poets",
     total_verses: 227,
     type: "Meccan",
-    aliases: ["শুয়ারা", "শু'আরা", "কবিগণ", "shuara", "ash-shuara"]
+    aliases: ["শুয়ারা", "শু'আরা", "কবিগণ", "shuara", "ash-shuara"],
   },
   {
     id: 27,
@@ -309,7 +392,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Ant",
     total_verses: 93,
     type: "Meccan",
-    aliases: ["নামল", "পিপীলিকা", "পিঁপড়া", "সুলাইমান হুদহুদ", "বিলকিস", "naml", "an-naml", "ant"]
+    aliases: ["নামল", "পিপীলিকা", "পিঁপড়া", "সুলাইমান হুদহুদ", "বিলকিস", "naml", "an-naml", "ant"],
   },
   {
     id: 28,
@@ -320,7 +403,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Stories",
     total_verses: 88,
     type: "Meccan",
-    aliases: ["কাসাস", "ক্বাসাস", "কাহিনী", "কারুন", "মুসা", "qasas", "al-qasas"]
+    aliases: ["কাসাস", "ক্বাসাস", "কাহিনী", "কারুন", "মুসা", "qasas", "al-qasas"],
   },
   {
     id: 29,
@@ -331,7 +414,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Spider",
     total_verses: 69,
     type: "Meccan",
-    aliases: ["আনকাবুত", "মাকড়সা", "মাকড়সার জাল", "ankabut", "al-ankabut", "spider"]
+    aliases: ["আনকাবুত", "মাকড়সা", "মাকড়সার জাল", "ankabut", "al-ankabut", "spider"],
   },
   {
     id: 30,
@@ -342,7 +425,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Romans",
     total_verses: 60,
     type: "Meccan",
-    aliases: ["রূম", "রুম", "রোমান", "রোমবাসী", "rum", "ar-rum", "romans"]
+    aliases: ["রূম", "রুম", "রোমান", "রোমবাসী", "rum", "ar-rum", "romans"],
   },
   {
     id: 31,
@@ -353,7 +436,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Luqman",
     total_verses: 34,
     type: "Meccan",
-    aliases: ["লুকমান", "লোকমান", "পিতা পুত্রের উপদেশ", "luqman"]
+    aliases: ["লুকমান", "লোকমান", "পিতা পুত্রের উপদেশ", "luqman"],
   },
   {
     id: 32,
@@ -364,7 +447,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Prostration",
     total_verses: 30,
     type: "Meccan",
-    aliases: ["সাজদাহ", "সিজদাহ", "সেজদা", "sajdah", "as-sajdah"]
+    aliases: ["সাজদাহ", "সিজদাহ", "সেজদা", "sajdah", "as-sajdah"],
   },
   {
     id: 33,
@@ -375,7 +458,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Combined Forces",
     total_verses: 73,
     type: "Medinan",
-    aliases: ["আহযাব", "আহজাব", "খন্দকের যুদ্ধ", "খাতামুন্নাবিয়্যীন", "দুরুদ শরীফ", "ahzab", "al-ahzab"]
+    aliases: [
+      "আহযাব",
+      "আহজাব",
+      "খন্দকের যুদ্ধ",
+      "খাতামুন্নাবিয়্যীন",
+      "দুরুদ শরীফ",
+      "ahzab",
+      "al-ahzab",
+    ],
   },
   {
     id: 34,
@@ -386,7 +477,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Sheba",
     total_verses: 54,
     type: "Meccan",
-    aliases: ["সাবা", "শেবা", "দাউদ সুলাইমান", "saba", "sheba"]
+    aliases: ["সাবা", "শেবা", "দাউদ সুলাইমান", "saba", "sheba"],
   },
   {
     id: 35,
@@ -397,7 +488,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Originator",
     total_verses: 45,
     type: "Meccan",
-    aliases: ["ফাতির", "মালায়েকা", "স্রষ্টা", "ফেরেশতা", "fatir"]
+    aliases: ["ফাতির", "মালায়েকা", "স্রষ্টা", "ফেরেশতা", "fatir"],
   },
   {
     id: 36,
@@ -408,7 +499,17 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Ya-Sin",
     total_verses: 83,
     type: "Meccan",
-    aliases: ["ইয়াসিন", "ইয়াসীন", "ইয়াসিন", "ইয়াসীন", "কুরআনের দিল", "কুরআনের হৃদপিণ্ড", "yasin", "yaseen", "ya-sin"]
+    aliases: [
+      "ইয়াসিন",
+      "ইয়াসীন",
+      "ইয়াসিন",
+      "ইয়াসীন",
+      "কুরআনের দিল",
+      "কুরআনের হৃদপিণ্ড",
+      "yasin",
+      "yaseen",
+      "ya-sin",
+    ],
   },
   {
     id: 37,
@@ -419,7 +520,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Those who set the Ranks",
     total_verses: 182,
     type: "Meccan",
-    aliases: ["সাফফাত", "সারিবদ্ধ", "ইসমাঈল কোরবানি", "saffat", "as-saffat"]
+    aliases: ["সাফফাত", "সারিবদ্ধ", "ইসমাঈল কোরবানি", "saffat", "as-saffat"],
   },
   {
     id: 38,
@@ -430,7 +531,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Letter Sad",
     total_verses: 88,
     type: "Meccan",
-    aliases: ["সোয়াদ", "সাদ", "ছোয়াদ", "আইয়ুব নবী", "sad"]
+    aliases: ["সোয়াদ", "সাদ", "ছোয়াদ", "আইয়ুব নবী", "sad"],
   },
   {
     id: 39,
@@ -441,7 +542,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Troops",
     total_verses: 75,
     type: "Meccan",
-    aliases: ["যুমার", "জুমার", "দলসমূহ", "আল্লাহর রহমত থেকে নিরাশ হয়ো না", "zumar", "az-zumar"]
+    aliases: ["যুমার", "জুমার", "দলসমূহ", "আল্লাহর রহমত থেকে নিরাশ হয়ো না", "zumar", "az-zumar"],
   },
   {
     id: 40,
@@ -452,7 +553,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Forgiver",
     total_verses: 85,
     type: "Meccan",
-    aliases: ["গাফির", "মুমিন", "আল-মুমিন", "ক্ষমাশীল", "ghafir", "al-mumin"]
+    aliases: ["গাফির", "মুমিন", "আল-মুমিন", "ক্ষমাশীল", "ghafir", "al-mumin"],
   },
   {
     id: 41,
@@ -463,7 +564,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Explained in Detail",
     total_verses: 54,
     type: "Meccan",
-    aliases: ["ফুসসিলাত", "হা-মীম সিজদা", "fussilat", "ha mim sajdah"]
+    aliases: ["ফুসসিলাত", "হা-মীম সিজদা", "fussilat", "ha mim sajdah"],
   },
   {
     id: 42,
@@ -474,7 +575,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Consultation",
     total_verses: 53,
     type: "Meccan",
-    aliases: ["শুরা", "পরামর্শ", "shura", "ash-shura"]
+    aliases: ["শুরা", "পরামর্শ", "shura", "ash-shura"],
   },
   {
     id: 43,
@@ -485,7 +586,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Ornaments of Gold",
     total_verses: 89,
     type: "Meccan",
-    aliases: ["যুখরুফ", "জুখরুফ", "স্বর্ণালঙ্কার", "zukhruf", "az-zukhruf"]
+    aliases: ["যুখরুফ", "জুখরুফ", "স্বর্ণালঙ্কার", "zukhruf", "az-zukhruf"],
   },
   {
     id: 44,
@@ -496,7 +597,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Smoke",
     total_verses: 59,
     type: "Meccan",
-    aliases: ["দুখান", "ধোঁয়া", "ধোঁয়া", "কিয়ামতের নিদর্শন", "dukhan", "ad-dukhan", "smoke"]
+    aliases: ["দুখান", "ধোঁয়া", "ধোঁয়া", "কিয়ামতের নিদর্শন", "dukhan", "ad-dukhan", "smoke"],
   },
   {
     id: 45,
@@ -507,7 +608,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Kneeling",
     total_verses: 37,
     type: "Meccan",
-    aliases: ["জাসিয়াহ", "জাসিয়া", "নতজানু", "jathiyah", "al-jathiyah"]
+    aliases: ["জাসিয়াহ", "জাসিয়া", "নতজানু", "jathiyah", "al-jathiyah"],
   },
   {
     id: 46,
@@ -518,7 +619,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Wind-Curved Sandhills",
     total_verses: 35,
     type: "Meccan",
-    aliases: ["আহকাফ", "বালিয়াড়ি", "মাতাপিতার সেবা", "ahqaf", "al-ahqaf"]
+    aliases: ["আহকাফ", "বালিয়াড়ি", "মাতাপিতার সেবা", "ahqaf", "al-ahqaf"],
   },
   {
     id: 47,
@@ -529,7 +630,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Muhammad",
     total_verses: 38,
     type: "Medinan",
-    aliases: ["মুহাম্মদ", "মোহাম্মদ", "ক্বিতাল", "muhammad", "prophet"]
+    aliases: ["মুহাম্মদ", "মোহাম্মদ", "ক্বিতাল", "muhammad", "prophet"],
   },
   {
     id: 48,
@@ -540,7 +641,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Victory",
     total_verses: 29,
     type: "Medinan",
-    aliases: ["ফাতহ", "ফাতাহ", "বিজয়", "হুদায়বিয়ার সন্ধি", "fath", "al-fath", "victory"]
+    aliases: ["ফাতহ", "ফাতাহ", "বিজয়", "হুদায়বিয়ার সন্ধি", "fath", "al-fath", "victory"],
   },
   {
     id: 49,
@@ -551,7 +652,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Rooms",
     total_verses: 18,
     type: "Medinan",
-    aliases: ["হুজুরাত", "কক্ষসমূহ", "গীবত", "শিষ্টাচার", "ভ্রাতৃত্ব", "hujurat", "al-hujurat"]
+    aliases: ["হুজুরাত", "কক্ষসমূহ", "গীবত", "শিষ্টাচার", "ভ্রাতৃত্ব", "hujurat", "al-hujurat"],
   },
   {
     id: 50,
@@ -562,7 +663,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Letter Qaf",
     total_verses: 45,
     type: "Meccan",
-    aliases: ["কাফ", "ক্বাফ", "মৃত্যুর যন্ত্রণা", "qaf"]
+    aliases: ["কাফ", "ক্বাফ", "মৃত্যুর যন্ত্রণা", "qaf"],
   },
   {
     id: 51,
@@ -573,7 +674,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Winnowing Winds",
     total_verses: 60,
     type: "Meccan",
-    aliases: ["যারিয়াত", "যারিয়াহ", "মহাবিশ্ব সম্প্রসারণ", "dhariyat", "adh-dhariyat"]
+    aliases: ["যারিয়াত", "যারিয়াহ", "মহাবিশ্ব সম্প্রসারণ", "dhariyat", "adh-dhariyat"],
   },
   {
     id: 52,
@@ -584,7 +685,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Mount",
     total_verses: 49,
     type: "Meccan",
-    aliases: ["তুর", "তূর পাহাড়", "tur", "at-tur"]
+    aliases: ["তুর", "তূর পাহাড়", "tur", "at-tur"],
   },
   {
     id: 53,
@@ -595,7 +696,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Star",
     total_verses: 62,
     type: "Meccan",
-    aliases: ["নাজম", "নক্ষত্র", "তারা", "সিদরাতুল মুনতাহা", "মিরাজ", "najm", "an-najm", "star"]
+    aliases: ["নাজম", "নক্ষত্র", "তারা", "সিদরাতুল মুনতাহা", "মিরাজ", "najm", "an-najm", "star"],
   },
   {
     id: 54,
@@ -606,7 +707,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Moon",
     total_verses: 55,
     type: "Meccan",
-    aliases: ["কামার", "ক্বামার", "চাঁদ দ্বিখণ্ডিত", "qamar", "al-qamar", "moon"]
+    aliases: ["কামার", "ক্বামার", "চাঁদ দ্বিখণ্ডিত", "qamar", "al-qamar", "moon"],
   },
   {
     id: 55,
@@ -617,7 +718,16 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Beneficent",
     total_verses: 78,
     type: "Medinan",
-    aliases: ["রহমান", "রাহমান", "আর রহমান", "উরূসুল কুরআন", "কোন অনুগ্রহ অস্বীকার করবে", "সমুদ্রের অন্তরাল", "rahman", "ar-rahman"]
+    aliases: [
+      "রহমান",
+      "রাহমান",
+      "আর রহমান",
+      "উরূসুল কুরআন",
+      "কোন অনুগ্রহ অস্বীকার করবে",
+      "সমুদ্রের অন্তরাল",
+      "rahman",
+      "ar-rahman",
+    ],
   },
   {
     id: 56,
@@ -628,7 +738,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Inevitable",
     total_verses: 96,
     type: "Meccan",
-    aliases: ["ওয়াকিয়া", "ওয়াকিয়াহ", "ওয়াকিয়া", "ওয়াকিয়াহ", "কেয়ামত", "waqiah", "al-waqiah"]
+    aliases: ["ওয়াকিয়া", "ওয়াকিয়াহ", "ওয়াকিয়া", "ওয়াকিয়াহ", "কেয়ামত", "waqiah", "al-waqiah"],
   },
   {
     id: 57,
@@ -639,7 +749,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Iron",
     total_verses: 29,
     type: "Medinan",
-    aliases: ["হাদিদ", "হাদীদ", "লোহা", "লোহার উৎপত্তি", "hadid", "al-hadid", "iron"]
+    aliases: ["হাদিদ", "হাদীদ", "লোহা", "লোহার উৎপত্তি", "hadid", "al-hadid", "iron"],
   },
   {
     id: 58,
@@ -650,7 +760,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Pleading Woman",
     total_verses: 22,
     type: "Medinan",
-    aliases: ["মুজাদালাহ", "মুজাদিলা", "জিহার", "mujadila", "al-mujadila"]
+    aliases: ["মুজাদালাহ", "মুজাদিলা", "জিহার", "mujadila", "al-mujadila"],
   },
   {
     id: 59,
@@ -661,7 +771,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Exile",
     total_verses: 24,
     type: "Medinan",
-    aliases: ["হাশর", "সমাবেশ", "আল্লাহর সুন্দর নামসমূহ", "hashr", "al-hashr"]
+    aliases: ["হাশর", "সমাবেশ", "আল্লাহর সুন্দর নামসমূহ", "hashr", "al-hashr"],
   },
   {
     id: 60,
@@ -672,7 +782,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "She that is to be examined",
     total_verses: 13,
     type: "Medinan",
-    aliases: ["মুমতাহিনা", "মুমতাহিনাহ", "পরীক্ষিত নারী", "mumtahanah", "al-mumtahanah"]
+    aliases: ["মুমতাহিনা", "মুমতাহিনাহ", "পরীক্ষিত নারী", "mumtahanah", "al-mumtahanah"],
   },
   {
     id: 61,
@@ -683,7 +793,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Ranks",
     total_verses: 14,
     type: "Medinan",
-    aliases: ["সাফ", "সারিবদ্ধ", "ঈসা নবীর সুসংবাদ", "saff", "as-saff"]
+    aliases: ["সাফ", "সারিবদ্ধ", "ঈসা নবীর সুসংবাদ", "saff", "as-saff"],
   },
   {
     id: 62,
@@ -694,7 +804,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Congregation",
     total_verses: 11,
     type: "Medinan",
-    aliases: ["জুমুআহ", "জুমা", "জুম্মা", "শুক্রবার", "jumuah", "al-jumuah", "friday"]
+    aliases: ["জুমুআহ", "জুমা", "জুম্মা", "শুক্রবার", "jumuah", "al-jumuah", "friday"],
   },
   {
     id: 63,
@@ -705,7 +815,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Hypocrites",
     total_verses: 11,
     type: "Medinan",
-    aliases: ["মুনাফিকুন", "মুনাফিক", "কপট", "munafiqun", "al-munafiqun", "hypocrites"]
+    aliases: ["মুনাফিকুন", "মুনাফিক", "কপট", "munafiqun", "al-munafiqun", "hypocrites"],
   },
   {
     id: 64,
@@ -716,7 +826,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Mutual Disillusion",
     total_verses: 18,
     type: "Medinan",
-    aliases: ["তাগাবুন", "ক্ষতি লাভ", "taghabun", "at-taghabun"]
+    aliases: ["তাগাবুন", "ক্ষতি লাভ", "taghabun", "at-taghabun"],
   },
   {
     id: 65,
@@ -727,7 +837,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Divorce",
     total_verses: 12,
     type: "Medinan",
-    aliases: ["তালাক", "ত্বালাক", "বিবাহ বিচ্ছেদ", "ইদ্দত", "talaq", "at-talaq", "divorce"]
+    aliases: ["তালাক", "ত্বালাক", "বিবাহ বিচ্ছেদ", "ইদ্দত", "talaq", "at-talaq", "divorce"],
   },
   {
     id: 66,
@@ -738,7 +848,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Prohibition",
     total_verses: 12,
     type: "Medinan",
-    aliases: ["তাহরীম", "তাহরিম", "নিষিদ্ধকরণ", "আসিয়া মারিয়াম", "tahrim", "at-tahrim"]
+    aliases: ["তাহরীম", "তাহরিম", "নিষিদ্ধকরণ", "আসিয়া মারিয়াম", "tahrim", "at-tahrim"],
   },
   {
     id: 67,
@@ -749,7 +859,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Sovereignty",
     total_verses: 30,
     type: "Meccan",
-    aliases: ["মুলক", "মুলুক", "তাবারক", "কবরের আজাব থেকে মুক্তি", "রাজত্ব", "mulk", "al-mulk"]
+    aliases: ["মুলক", "মুলুক", "তাবারক", "কবরের আজাব থেকে মুক্তি", "রাজত্ব", "mulk", "al-mulk"],
   },
   {
     id: 68,
@@ -760,7 +870,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Pen",
     total_verses: 52,
     type: "Meccan",
-    aliases: ["কলম", "নূন", "লেখনী", "qalam", "al-qalam", "pen"]
+    aliases: ["কলম", "নূন", "লেখনী", "qalam", "al-qalam", "pen"],
   },
   {
     id: 69,
@@ -771,7 +881,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Reality",
     total_verses: 52,
     type: "Meccan",
-    aliases: ["হাক্কাহ", "হাক্কা", "সত্য ঘটনা", "haqqah", "al-haqqah"]
+    aliases: ["হাক্কাহ", "হাক্কা", "সত্য ঘটনা", "haqqah", "al-haqqah"],
   },
   {
     id: 70,
@@ -782,7 +892,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Ascending Stairways",
     total_verses: 44,
     type: "Meccan",
-    aliases: ["মাআরিজ", "সোপান", "ধৈর্য", "maarij", "al-maarij"]
+    aliases: ["মাআরিজ", "সোপান", "ধৈর্য", "maarij", "al-maarij"],
   },
   {
     id: 71,
@@ -793,7 +903,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Noah",
     total_verses: 28,
     type: "Meccan",
-    aliases: ["নূহ", "নুহ", "মহাপ্লাবন", "নূহ নবী", "nuh", "noah"]
+    aliases: ["নূহ", "নুহ", "মহাপ্লাবন", "নূহ নবী", "nuh", "noah"],
   },
   {
     id: 72,
@@ -804,7 +914,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Jinn",
     total_verses: 28,
     type: "Meccan",
-    aliases: ["জ্বিন", "জিন", "jinn", "al-jinn"]
+    aliases: ["জ্বিন", "জিন", "jinn", "al-jinn"],
   },
   {
     id: 73,
@@ -815,7 +925,14 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Enshrouded One",
     total_verses: 20,
     type: "Meccan",
-    aliases: ["মুযযাম্মিল", "মুজাম্মিল", "তাহাজ্জুদ নামাজ", "চাদরাবৃত", "muzzammil", "al-muzzammil"]
+    aliases: [
+      "মুযযাম্মিল",
+      "মুজাম্মিল",
+      "তাহাজ্জুদ নামাজ",
+      "চাদরাবৃত",
+      "muzzammil",
+      "al-muzzammil",
+    ],
   },
   {
     id: 74,
@@ -826,7 +943,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Cloaked One",
     total_verses: 56,
     type: "Meccan",
-    aliases: ["মুদ্দাসসির", "কম্বলাবৃত", "muddaththir", "al-muddaththir"]
+    aliases: ["মুদ্দাসসির", "কম্বলাবৃত", "muddaththir", "al-muddaththir"],
   },
   {
     id: 75,
@@ -837,7 +954,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Resurrection",
     total_verses: 40,
     type: "Meccan",
-    aliases: ["কিয়ামাহ", "কিয়ামত", "কেয়ামত", "আঙুলের ছাপ", "qiyamah", "al-qiyamah", "resurrection"]
+    aliases: [
+      "কিয়ামাহ",
+      "কিয়ামত",
+      "কেয়ামত",
+      "আঙুলের ছাপ",
+      "qiyamah",
+      "al-qiyamah",
+      "resurrection",
+    ],
   },
   {
     id: 76,
@@ -848,7 +973,16 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Human",
     total_verses: 31,
     type: "Medinan",
-    aliases: ["ইনসান", "দাহর", "মানবজাতি", "মানুষ", "জান্নাতের নেয়ামত", "insan", "al-insan", "human"]
+    aliases: [
+      "ইনসান",
+      "দাহর",
+      "মানবজাতি",
+      "মানুষ",
+      "জান্নাতের নেয়ামত",
+      "insan",
+      "al-insan",
+      "human",
+    ],
   },
   {
     id: 77,
@@ -859,7 +993,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Emissaries",
     total_verses: 50,
     type: "Meccan",
-    aliases: ["মুরসালাত", "বাতাস", "mursalat", "al-mursalat"]
+    aliases: ["মুরসালাত", "বাতাস", "mursalat", "al-mursalat"],
   },
   {
     id: 78,
@@ -870,7 +1004,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Tidings",
     total_verses: 40,
     type: "Meccan",
-    aliases: ["নাবা", "আম্মা পারা", "মহা সংবাদ", "পাহাড় পেরেক", "naba", "an-naba"]
+    aliases: ["নাবা", "আম্মা পারা", "মহা সংবাদ", "পাহাড় পেরেক", "naba", "an-naba"],
   },
   {
     id: 79,
@@ -881,7 +1015,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Those who drag forth",
     total_verses: 46,
     type: "Meccan",
-    aliases: ["নাযিয়াত", "নাজিয়াত", "ফেরেশতা", "naziat", "an-naziat"]
+    aliases: ["নাযিয়াত", "নাজিয়াত", "ফেরেশতা", "naziat", "an-naziat"],
   },
   {
     id: 80,
@@ -892,7 +1026,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "He Frowned",
     total_verses: 42,
     type: "Meccan",
-    aliases: ["আবাসা", "অন্ধ সাহাবী", "আব্দুল্লাহ ইবনে উম্মে মাকতুম", "abasa"]
+    aliases: ["আবাসা", "অন্ধ সাহাবী", "আব্দুল্লাহ ইবনে উম্মে মাকতুম", "abasa"],
   },
   {
     id: 81,
@@ -903,7 +1037,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Overthrowing",
     total_verses: 29,
     type: "Meccan",
-    aliases: ["তাকবীর", "তাকউইর", "সূর্য আলোহীন", "জীবন্ত প্রোথিত কন্যা", "takwir", "at-takwir"]
+    aliases: ["তাকবীর", "তাকউইর", "সূর্য আলোহীন", "জীবন্ত প্রোথিত কন্যা", "takwir", "at-takwir"],
   },
   {
     id: 82,
@@ -914,7 +1048,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Cleaving",
     total_verses: 19,
     type: "Meccan",
-    aliases: ["ইনফিতার", "আকাশ বিদীর্ণ", "কেরামান কাতিবীন", "infitar", "al-infitar"]
+    aliases: ["ইনফিতার", "আকাশ বিদীর্ণ", "কেরামান কাতিবীন", "infitar", "al-infitar"],
   },
   {
     id: 83,
@@ -925,7 +1059,14 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Defrauding",
     total_verses: 36,
     type: "Meccan",
-    aliases: ["মুতাফফিফীন", "মুতাফফিফিন", "মাপে কম", "ব্যবসা ওজনে কম", "mutaffifin", "al-mutaffifin"]
+    aliases: [
+      "মুতাফফিফীন",
+      "মুতাফফিফিন",
+      "মাপে কম",
+      "ব্যবসা ওজনে কম",
+      "mutaffifin",
+      "al-mutaffifin",
+    ],
   },
   {
     id: 84,
@@ -936,7 +1077,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Sundering",
     total_verses: 25,
     type: "Meccan",
-    aliases: ["ইনশিকাক", "ইনশিক্বাক্ব", "আমলনামা", "inshiqaq", "al-inshiqaq"]
+    aliases: ["ইনশিকাক", "ইনশিক্বাক্ব", "আমলনামা", "inshiqaq", "al-inshiqaq"],
   },
   {
     id: 85,
@@ -947,7 +1088,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Mansions of the Stars",
     total_verses: 22,
     type: "Meccan",
-    aliases: ["বুরূজ", "বুরুজ", "নক্ষত্রপুঞ্জ", "আসহাবে উখদুদ", "লাওহে মাহফুজ", "buruj", "al-buruj"]
+    aliases: [
+      "বুরূজ",
+      "বুরুজ",
+      "নক্ষত্রপুঞ্জ",
+      "আসহাবে উখদুদ",
+      "লাওহে মাহফুজ",
+      "buruj",
+      "al-buruj",
+    ],
   },
   {
     id: 86,
@@ -958,7 +1107,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Nightcommer",
     total_verses: 17,
     type: "Meccan",
-    aliases: ["ত্বারিক", "তারিক", "উজ্জ্বল নক্ষত্র", "পালসার", "tariq", "at-tariq"]
+    aliases: ["ত্বারিক", "তারিক", "উজ্জ্বল নক্ষত্র", "পালসার", "tariq", "at-tariq"],
   },
   {
     id: 87,
@@ -969,7 +1118,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Most High",
     total_verses: 19,
     type: "Meccan",
-    aliases: ["আলা", "আ'লা", "সাব্বিহিসমা", "ala", "al-ala"]
+    aliases: ["আলা", "আ'লা", "সাব্বিহিসমা", "ala", "al-ala"],
   },
   {
     id: 88,
@@ -980,7 +1129,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Overwhelming",
     total_verses: 26,
     type: "Meccan",
-    aliases: ["গাশিয়াহ", "গাশিয়া", "মহাপ্রলয়", "উট সৃষ্টি", "ghashiyah", "al-ghashiyah"]
+    aliases: ["গাশিয়াহ", "গাশিয়া", "মহাপ্রলয়", "উট সৃষ্টি", "ghashiyah", "al-ghashiyah"],
   },
   {
     id: 89,
@@ -991,7 +1140,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Dawn",
     total_verses: 30,
     type: "Meccan",
-    aliases: ["ফাজর", "ভোরবেলা", "দশ রাত", "ইরাম নগরী", "প্রশান্ত আত্মা", "fajr", "al-fajr"]
+    aliases: ["ফাজর", "ভোরবেলা", "দশ রাত", "ইরাম নগরী", "প্রশান্ত আত্মা", "fajr", "al-fajr"],
   },
   {
     id: 90,
@@ -1002,7 +1151,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The City",
     total_verses: 20,
     type: "Meccan",
-    aliases: ["বালাদ", "নগরী", "মক্কা", "balad", "al-balad"]
+    aliases: ["বালাদ", "নগরী", "মক্কা", "balad", "al-balad"],
   },
   {
     id: 91,
@@ -1013,7 +1162,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Sun",
     total_verses: 15,
     type: "Meccan",
-    aliases: ["শামস", "সূর্য", "আত্মার শুদ্ধি", "shams", "ash-shams", "sun"]
+    aliases: ["শামস", "সূর্য", "আত্মার শুদ্ধি", "shams", "ash-shams", "sun"],
   },
   {
     id: 92,
@@ -1024,7 +1173,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Night",
     total_verses: 21,
     type: "Meccan",
-    aliases: ["লাইল", "রাত্রি", "দানশীলতা", "layl", "al-layl", "night"]
+    aliases: ["লাইল", "রাত্রি", "দানশীলতা", "layl", "al-layl", "night"],
   },
   {
     id: 93,
@@ -1035,7 +1184,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Morning Hours",
     total_verses: 11,
     type: "Meccan",
-    aliases: ["দুহা", "দোহা", "সকালের আলো", "এতিম", "duha", "ad-duha"]
+    aliases: ["দুহা", "দোহা", "সকালের আলো", "এতিম", "duha", "ad-duha"],
   },
   {
     id: 94,
@@ -1046,7 +1195,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Relief",
     total_verses: 8,
     type: "Meccan",
-    aliases: ["ইনশিরাহ", "শারহ", "আলম নাশরাহ", "কষ্টের পর স্বস্তি", "sharh", "ash-sharh", "inshirah"]
+    aliases: [
+      "ইনশিরাহ",
+      "শারহ",
+      "আলম নাশরাহ",
+      "কষ্টের পর স্বস্তি",
+      "sharh",
+      "ash-sharh",
+      "inshirah",
+    ],
   },
   {
     id: 95,
@@ -1057,7 +1214,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Fig",
     total_verses: 8,
     type: "Meccan",
-    aliases: ["তীন", "তিন", "ডুমুর", "যয়তুন", "মানুষের সুন্দরতম অবয়ব", "tin", "at-tin", "fig"]
+    aliases: ["তীন", "তিন", "ডুমুর", "যয়তুন", "মানুষের সুন্দরতম অবয়ব", "tin", "at-tin", "fig"],
   },
   {
     id: 96,
@@ -1068,7 +1225,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Clot",
     total_verses: 19,
     type: "Meccan",
-    aliases: ["আলাক", "ইকরা", "প্রথম ওহী", "রক্তপিণ্ড", "কলমের জ্ঞান", "alaq", "al-alaq", "iqra"]
+    aliases: ["আলাক", "ইকরা", "প্রথম ওহী", "রক্তপিণ্ড", "কলমের জ্ঞান", "alaq", "al-alaq", "iqra"],
   },
   {
     id: 97,
@@ -1079,7 +1236,16 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Power",
     total_verses: 5,
     type: "Meccan",
-    aliases: ["কদর", "ক্বদর", "শবে কদর", "লাইলাতুল কদর", "হাজার মাসের চেয়ে উত্তম", "qadr", "al-qadr", "shab-e-qadr"]
+    aliases: [
+      "কদর",
+      "ক্বদর",
+      "শবে কদর",
+      "লাইলাতুল কদর",
+      "হাজার মাসের চেয়ে উত্তম",
+      "qadr",
+      "al-qadr",
+      "shab-e-qadr",
+    ],
   },
   {
     id: 98,
@@ -1090,7 +1256,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Clear Proof",
     total_verses: 8,
     type: "Medinan",
-    aliases: ["বাইয়িনাহ", "বাইয়িনা", "প্রমাণ", "bayyinah", "al-bayyinah"]
+    aliases: ["বাইয়িনাহ", "বাইয়িনা", "প্রমাণ", "bayyinah", "al-bayyinah"],
   },
   {
     id: 99,
@@ -1101,7 +1267,16 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Earthquake",
     total_verses: 8,
     type: "Medinan",
-    aliases: ["যিলযাল", "জিলজাল", "জালযালাহ", "ভূমিকম্প", "অণু পরিমাণ ভালো কাজ", "zalzalah", "az-zalzalah", "earthquake"]
+    aliases: [
+      "যিলযাল",
+      "জিলজাল",
+      "জালযালাহ",
+      "ভূমিকম্প",
+      "অণু পরিমাণ ভালো কাজ",
+      "zalzalah",
+      "az-zalzalah",
+      "earthquake",
+    ],
   },
   {
     id: 100,
@@ -1112,7 +1287,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Courser",
     total_verses: 11,
     type: "Meccan",
-    aliases: ["আদিয়াত", "ঘোড়া", "অশ্ব", "adiyat", "al-adiyat"]
+    aliases: ["আদিয়াত", "ঘোড়া", "অশ্ব", "adiyat", "al-adiyat"],
   },
   {
     id: 101,
@@ -1123,7 +1298,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Calamity",
     total_verses: 11,
     type: "Meccan",
-    aliases: ["কারিয়া", "ক্বারিআহ", "মহাবিপদ", "হাওয়িয়া", "qariah", "al-qariah"]
+    aliases: ["কারিয়া", "ক্বারিআহ", "মহাবিপদ", "হাওয়িয়া", "qariah", "al-qariah"],
   },
   {
     id: 102,
@@ -1134,7 +1309,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Rivalry in world increase",
     total_verses: 8,
     type: "Meccan",
-    aliases: ["তাকাসুর", "প্রাচুর্যের মোহ", "কবর দর্শন", "takathur", "at-takathur"]
+    aliases: ["তাকাসুর", "প্রাচুর্যের মোহ", "কবর দর্শন", "takathur", "at-takathur"],
   },
   {
     id: 103,
@@ -1145,7 +1320,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Declining Day",
     total_verses: 3,
     type: "Meccan",
-    aliases: ["আসর", "সময়", "মহাকাল", "ক্ষতির মধ্যে মানুষ", "সবর", "asr", "al-asr", "time"]
+    aliases: ["আসর", "সময়", "মহাকাল", "ক্ষতির মধ্যে মানুষ", "সবর", "asr", "al-asr", "time"],
   },
   {
     id: 104,
@@ -1156,7 +1331,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Traducer",
     total_verses: 9,
     type: "Meccan",
-    aliases: ["হুমাযাহ", "হুমাজা", "পরনিন্দুক", "হুতামাহ", "humazah", "al-humazah"]
+    aliases: ["হুমাযাহ", "হুমাজা", "পরনিন্দুক", "হুতামাহ", "humazah", "al-humazah"],
   },
   {
     id: 105,
@@ -1167,7 +1342,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Elephant",
     total_verses: 5,
     type: "Meccan",
-    aliases: ["ফীল", "ফিল", "হাতি", "আবাবিল পাখি", "আবরাহা", "fil", "al-fil", "elephant"]
+    aliases: ["ফীল", "ফিল", "হাতি", "আবাবিল পাখি", "আবরাহা", "fil", "al-fil", "elephant"],
   },
   {
     id: 106,
@@ -1178,7 +1353,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Quraysh",
     total_verses: 4,
     type: "Meccan",
-    aliases: ["কুরাইশ", "শীত ও গ্রীষ্মের সফর", "quraysh"]
+    aliases: ["কুরাইশ", "শীত ও গ্রীষ্মের সফর", "quraysh"],
   },
   {
     id: 107,
@@ -1189,7 +1364,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Small Kindnesses",
     total_verses: 7,
     type: "Meccan",
-    aliases: ["মাউন", "এতিমের হক", "লোক দেখানো নামাজ", "maun", "al-maun"]
+    aliases: ["মাউন", "এতিমের হক", "লোক দেখানো নামাজ", "maun", "al-maun"],
   },
   {
     id: 108,
@@ -1200,7 +1375,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Abundance",
     total_verses: 3,
     type: "Meccan",
-    aliases: ["কাউসার", "কাওসার", "প্রচুর কল্যাণ", "হওযে কাউসার", "কোরবানি", "kawthar", "al-kawthar"]
+    aliases: [
+      "কাউসার",
+      "কাওসার",
+      "প্রচুর কল্যাণ",
+      "হওযে কাউসার",
+      "কোরবানি",
+      "kawthar",
+      "al-kawthar",
+    ],
   },
   {
     id: 109,
@@ -1211,7 +1394,14 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Disbelievers",
     total_verses: 6,
     type: "Meccan",
-    aliases: ["কাফিরুন", "কাফেরুন", "লা আকবুদু মা তাবুফুন", "তোমাদের দীন তোমাদের", "kafirun", "al-kafirun"]
+    aliases: [
+      "কাফিরুন",
+      "কাফেরুন",
+      "লা আকবুদু মা তাবুফুন",
+      "তোমাদের দীন তোমাদের",
+      "kafirun",
+      "al-kafirun",
+    ],
   },
   {
     id: 110,
@@ -1222,7 +1412,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Divine Support",
     total_verses: 3,
     type: "Medinan",
-    aliases: ["নাসর", "ইযা যাআ নাসরুল্লাহ", "আল্লাহর সাহায্য", "মক্কা বিজয়", "nasr", "an-nasr", "help"]
+    aliases: [
+      "নাসর",
+      "ইযা যাআ নাসরুল্লাহ",
+      "আল্লাহর সাহায্য",
+      "মক্কা বিজয়",
+      "nasr",
+      "an-nasr",
+      "help",
+    ],
   },
   {
     id: 111,
@@ -1233,7 +1431,7 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Palm Fiber",
     total_verses: 5,
     type: "Meccan",
-    aliases: ["লাহাব", "মাসাদ", "তাব্বাত ইয়াদা", "আবু লাহাব", "masad", "al-masad", "lahab"]
+    aliases: ["লাহাব", "মাসাদ", "তাব্বাত ইয়াদা", "আবু লাহাব", "masad", "al-masad", "lahab"],
   },
   {
     id: 112,
@@ -1244,7 +1442,18 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Sincerity",
     total_verses: 4,
     type: "Meccan",
-    aliases: ["ইখলাস", "এখলাস", "কুলহু আল্লাহ", "কুল হু আল্লাহ", "তাওহীদ", "একত্ববাদ", "আল্লাহু সামাদ", "ikhlas", "al-ikhlas", "tawheed"]
+    aliases: [
+      "ইখলাস",
+      "এখলাস",
+      "কুলহু আল্লাহ",
+      "কুল হু আল্লাহ",
+      "তাওহীদ",
+      "একত্ববাদ",
+      "আল্লাহু সামাদ",
+      "ikhlas",
+      "al-ikhlas",
+      "tawheed",
+    ],
   },
   {
     id: 113,
@@ -1255,7 +1464,15 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "The Daybreak",
     total_verses: 5,
     type: "Meccan",
-    aliases: ["ফালাক", "ফালাক্ব", "প্রভাত", "কুল আউযু বিরাব্বিল ফালাক", "জাদু টোনা থেকে আশ্রয়", "falaq", "al-falaq"]
+    aliases: [
+      "ফালাক",
+      "ফালাক্ব",
+      "প্রভাত",
+      "কুল আউযু বিরাব্বিল ফালাক",
+      "জাদু টোনা থেকে আশ্রয়",
+      "falaq",
+      "al-falaq",
+    ],
   },
   {
     id: 114,
@@ -1266,8 +1483,16 @@ export const ALL_SURAHS_DATABASE: SurahMeta[] = [
     meaning_en: "Mankind",
     total_verses: 6,
     type: "Meccan",
-    aliases: ["নাস", "কুল আউযু বিরাব্বিন নাস", "ওয়াসওয়াসা", "শয়তান থেকে আশ্রয়", "nas", "an-nas", "mankind"]
-  }
+    aliases: [
+      "নাস",
+      "কুল আউযু বিরাব্বিন নাস",
+      "ওয়াসওয়াসা",
+      "শয়তান থেকে আশ্রয়",
+      "nas",
+      "an-nas",
+      "mankind",
+    ],
+  },
 ];
 
 // Helper: Convert Bengali digits to English digits
@@ -1285,7 +1510,7 @@ export function normalizeQuranQuery(rawQuery: string): {
   targetAyah?: number;
 } {
   let q = bnToEnDigits(rawQuery.trim().toLowerCase());
-  
+
   // 1. Direct Verse Number Match e.g. "2:183", "2.183", "2/183", "2-183"
   const directAyahMatch = q.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
   if (directAyahMatch) {
@@ -1297,7 +1522,7 @@ export function normalizeQuranQuery(rawQuery: string): {
         strippedPrefix: `${s}:${a}`,
         isAyahQuery: true,
         targetSurah: s,
-        targetAyah: a
+        targetAyah: a,
       };
     }
   }
@@ -1310,13 +1535,14 @@ export function normalizeQuranQuery(rawQuery: string): {
         clean: q,
         strippedPrefix: q,
         isAyahQuery: false,
-        targetSurah: num
+        targetSurah: num,
       };
     }
   }
 
   // 3. Remove conversational prefixes (সুরা, সূরা, সুরাহ, সূরাহ, surah, surat, ইত্যাদি)
-  const prefixRegex = /^(সুরাহ্|সুরাহ|সূরাহ|সূরা|সুরা|সুরত|surah|surat|sura|অধ্যায়|অধ্যায়|পারা|আয়াত|আয়াত|verse|ayah)\s+/i;
+  const prefixRegex =
+    /^(সুরাহ্|সুরাহ|সূরাহ|সূরা|সুরা|সুরত|surah|surat|sura|অধ্যায়|অধ্যায়|পারা|আয়াত|আয়াত|verse|ayah)\s+/i;
   let stripped = q.replace(prefixRegex, "").trim();
 
   // Check if query had format like "সুরা বাকারা ১৮৩" or "বাকারা ১৮৩"
@@ -1331,7 +1557,7 @@ export function normalizeQuranQuery(rawQuery: string): {
     clean: q,
     strippedPrefix: stripped,
     isAyahQuery: Boolean(parsedAyah),
-    targetAyah: parsedAyah
+    targetAyah: parsedAyah,
   };
 }
 
@@ -1371,13 +1597,13 @@ export function searchQuranSurahs(query: string): {
 
   // If directly resolved to surah number
   if (targetSurah && !targetAyah) {
-    const s = ALL_SURAHS_DATABASE.find(item => item.id === targetSurah);
+    const s = ALL_SURAHS_DATABASE.find((item) => item.id === targetSurah);
     return { matches: s ? [{ ...s, score: 100 }] : [] };
   }
 
   // If directly resolved to surah + ayah
   if (targetSurah && targetAyah) {
-    const s = ALL_SURAHS_DATABASE.find(item => item.id === targetSurah);
+    const s = ALL_SURAHS_DATABASE.find((item) => item.id === targetSurah);
     return { matches: s ? [{ ...s, targetAyah, score: 100 }] : [] };
   }
 
@@ -1386,8 +1612,12 @@ export function searchQuranSurahs(query: string): {
 
   for (const surah of ALL_SURAHS_DATABASE) {
     let score = 0;
-    const nameBnClean = surah.name_bn.replace(/^আল-|^আন-|^আত-|^আশ-|^আস-|^আদ-|^আয-/, "").toLowerCase();
-    const nameEnClean = surah.name_en.replace(/^Al-|^An-|^At-|^Ash-|^As-|^Ad-|^Az-|^Ar-/, "").toLowerCase();
+    const nameBnClean = surah.name_bn
+      .replace(/^আল-|^আন-|^আত-|^আশ-|^আস-|^আদ-|^আয-/, "")
+      .toLowerCase();
+    const nameEnClean = surah.name_en
+      .replace(/^Al-|^An-|^At-|^Ash-|^As-|^Ad-|^Az-|^Ar-/, "")
+      .toLowerCase();
 
     // 1. Exact Match on stripped query
     if (
@@ -1397,7 +1627,7 @@ export function searchQuranSurahs(query: string): {
       nameEnClean === strippedPrefix
     ) {
       score += 100;
-    } 
+    }
     // 2. Contains Match
     else if (
       surah.name_bn.toLowerCase().includes(strippedPrefix) ||
@@ -1406,13 +1636,14 @@ export function searchQuranSurahs(query: string): {
       surah.name_arabic.includes(strippedPrefix)
     ) {
       score += 70;
-    } 
+    }
     // 3. Alias / Keyword Match
     else if (
-      surah.aliases.some(alias =>
-        alias.toLowerCase() === strippedPrefix ||
-        alias.toLowerCase().includes(strippedPrefix) ||
-        strippedPrefix.includes(alias.toLowerCase())
+      surah.aliases.some(
+        (alias) =>
+          alias.toLowerCase() === strippedPrefix ||
+          alias.toLowerCase().includes(strippedPrefix) ||
+          strippedPrefix.includes(alias.toLowerCase()),
       )
     ) {
       score += 85;
@@ -1436,7 +1667,7 @@ export function searchQuranSurahs(query: string): {
       results.push({
         ...surah,
         targetAyah,
-        score
+        score,
       });
     }
   }
@@ -1446,7 +1677,7 @@ export function searchQuranSurahs(query: string): {
 
   return {
     matches: results,
-    didYouMean: results.length === 0 && bestFuzzyMatch ? bestFuzzyMatch.name : undefined
+    didYouMean: results.length === 0 && bestFuzzyMatch ? bestFuzzyMatch.name : undefined,
   };
 }
 
@@ -1457,7 +1688,7 @@ export function searchQuranTopics(query: string): ThematicTopic[] {
 
   const tokens = clean.split(/\s+/).filter(Boolean);
 
-  return QURAN_THEMATIC_DATABASE.filter(topic => {
+  return QURAN_THEMATIC_DATABASE.filter((topic) => {
     const tBn = topic.title_bn.toLowerCase();
     const tEn = topic.title_en.toLowerCase();
     const cBn = topic.category_bn.toLowerCase();
@@ -1475,12 +1706,12 @@ export function searchQuranTopics(query: string): ThematicTopic[] {
       dEn.includes(strippedPrefix);
 
     // 2. Keyword exact / token match
-    const matchKeywords = topic.keywords.some(k => {
+    const matchKeywords = topic.keywords.some((k) => {
       const kLower = k.toLowerCase();
       return (
         kLower.includes(strippedPrefix) ||
         strippedPrefix.includes(kLower) ||
-        tokens.some(tok => kLower.includes(tok))
+        tokens.some((tok) => kLower.includes(tok))
       );
     });
 

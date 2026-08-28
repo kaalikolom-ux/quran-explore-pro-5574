@@ -1,7 +1,20 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
-import { ArrowRight, BookOpen, BookA, FileText, Search, Settings, Sparkles, Compass, Flame, Heart, Coins, ShieldAlert } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  BookA,
+  FileText,
+  Search,
+  Settings,
+  Sparkles,
+  Compass,
+  Flame,
+  Heart,
+  Coins,
+  ShieldAlert,
+} from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
 import { usePrefs } from "@/lib/prefs";
@@ -23,10 +36,14 @@ export const Route = createFileRoute("/")({
           "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ এবং আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যাসহ সম্পূর্ণ কুরআন অধ্যয়ন করুন — কুরআন অন্বেষা (Quran Explorer)।",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Quran Explorer — Word by Word Quran in Bangla & English | কুরআন অন্বেষা" },
+      {
+        property: "og:title",
+        content: "Quran Explorer — Word by Word Quran in Bangla & English | কুরআন অন্বেষা",
+      },
       {
         property: "og:description",
-        content: "শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ ও বিজ্ঞানভিত্তিক গবেষণাসহ পবিত্র কুরআন অধ্যয়ন করুন।",
+        content:
+          "শব্দে শব্দে বাংলা অর্থ, ইংরেজি অনুবাদ ও বিজ্ঞানভিত্তিক গবেষণাসহ পবিত্র কুরআন অধ্যয়ন করুন।",
       },
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
@@ -43,13 +60,15 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 130): string {
   if (excerpt && excerpt.trim().length > 0) {
     return excerpt.trim();
   }
   if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
-  const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+  const clean = body
+    .replace(/<[^>]*>?/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
 
@@ -139,7 +158,9 @@ function HomePage() {
       navigate({
         to: "/surah/$id",
         params: { id: String(filtered[0].id) },
-        search: (filtered[0] as any).targetAyah ? { ayah: (filtered[0] as any).targetAyah } : undefined,
+        search: (filtered[0] as any).targetAyah
+          ? { ayah: (filtered[0] as any).targetAyah }
+          : undefined,
       });
       return;
     }
@@ -189,7 +210,7 @@ function HomePage() {
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
             কুরআনের প্রতিটি শব্দের ব্যাকরণগত ব্যুৎপত্তি, শাব্দিক ও ভাবানুবাদ একই পাতায়।
           </p>
-          
+
           {/* ৪টি সমান সাইজের Left-Aligned CTA বাটন (মোবাইলে ২ লাইনে ২x২ গ্রিড, ডেস্কটপে ৪ কলামে ১ লাইন) */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl w-full">
             <Button
@@ -276,7 +297,8 @@ function HomePage() {
                 </button>
               </form>
               <p className="text-xs leading-normal text-muted-foreground px-1 font-medium">
-                💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে ইন্টার চাপুন।
+                💡 সুরা খুঁজতে নাম বা নম্বর (৩৩ বা 33) লিখুন। আয়াত খুঁজতে ৩৩ঃ৪০ বা 33:40 লিখে
+                ইন্টার চাপুন।
               </p>
             </div>
           </div>
@@ -286,7 +308,11 @@ function HomePage() {
           ) : (
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((c: any) => {
-                const targetAyah = c.targetAyah || (searchAyahTarget && searchAyahTarget.surah === c.id ? searchAyahTarget.ayah : undefined);
+                const targetAyah =
+                  c.targetAyah ||
+                  (searchAyahTarget && searchAyahTarget.surah === c.id
+                    ? searchAyahTarget.ayah
+                    : undefined);
 
                 return (
                   <Link
@@ -309,7 +335,8 @@ function HomePage() {
                         )}
                       </span>
                       <span className="block truncate text-xs text-muted-foreground font-medium">
-                        {c.translated_name?.name || c.meaning_bn} · {localNumber(c.verses_count, "bn")} আয়াত
+                        {c.translated_name?.name || c.meaning_bn} ·{" "}
+                        {localNumber(c.verses_count, "bn")} আয়াত
                       </span>
                     </span>
                     <span className="arabic text-lg text-primary">{c.name_arabic}</span>
@@ -334,7 +361,8 @@ function HomePage() {
                 কুরআনের বিষয়ভিত্তিক জ্ঞানভাণ্ডার
               </h2>
               <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-                বিজ্ঞান, সৃষ্টিতত্ত্ব, পারিবারিক অধিকার, অর্থনীতি, আত্মশুদ্ধি ও নবীদের জীবনী সম্পর্কিত আয়াতসমূহ সরাসরি অনুসন্ধান করুন।
+                বিজ্ঞান, সৃষ্টিতত্ত্ব, পারিবারিক অধিকার, অর্থনীতি, আত্মশুদ্ধি ও নবীদের জীবনী
+                সম্পর্কিত আয়াতসমূহ সরাসরি অনুসন্ধান করুন।
               </p>
             </div>
 
@@ -388,7 +416,10 @@ function HomePage() {
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="flex items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">সাম্প্রতিক আর্টিকেল</h2>
-            <Link to="/articles" className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-semibold">
+            <Link
+              to="/articles"
+              className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-semibold"
+            >
               আর্টিকেল <ArrowRight className="size-4" />
             </Link>
           </div>
@@ -396,7 +427,8 @@ function HomePage() {
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {articles.data.map((a: any) => {
                 const title = a.title_bn || a.title_en;
-                const rawBody = a.content_bn || a.body_bn || a.content_en || a.body_en || a.body || "";
+                const rawBody =
+                  a.content_bn || a.body_bn || a.content_en || a.body_en || a.body || "";
                 const excerpt = getCleanExcerpt(a.excerpt_bn, rawBody);
 
                 return (
@@ -418,9 +450,7 @@ function HomePage() {
                       />
                     )}
                     <div className="p-5">
-                      <h3 className="text-base font-semibold text-foreground">
-                        {title}
-                      </h3>
+                      <h3 className="text-base font-semibold text-foreground">{title}</h3>
                       <p className="mt-2 line-clamp-3 text-sm text-muted-foreground leading-relaxed">
                         {excerpt}
                       </p>
@@ -430,7 +460,9 @@ function HomePage() {
               })}
             </div>
           ) : (
-            <p className="mt-6 text-sm text-muted-foreground font-medium">কোনো আর্টিকেল পাওয়া যায়নি।</p>
+            <p className="mt-6 text-sm text-muted-foreground font-medium">
+              কোনো আর্টিকেল পাওয়া যায়নি।
+            </p>
           )}
         </div>
       </section>
@@ -438,7 +470,9 @@ function HomePage() {
       {/* ৫. নিউজলেটার */}
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
         <div className="card-soft p-8 text-center">
-          <h2 className="text-xl font-semibold text-foreground">আমাদের নিউজলেটার সাবস্ক্রাইব করুন</h2>
+          <h2 className="text-xl font-semibold text-foreground">
+            আমাদের নিউজলেটার সাবস্ক্রাইব করুন
+          </h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground font-medium">
             কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।
           </p>

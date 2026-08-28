@@ -1,6 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { MessageSquare, Send, User, Calendar, ShieldCheck, Reply, CornerDownRight, X } from "lucide-react";
+import {
+  MessageSquare,
+  Send,
+  User,
+  Calendar,
+  ShieldCheck,
+  Reply,
+  CornerDownRight,
+  X,
+} from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -175,7 +184,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
         w.turnstile.reset(widgetIdRef.current);
       }
       toast.success(
-        lang === "en" ? "Comment submitted successfully!" : "মন্তব্য সফলভাবে প্রকাশিত হয়েছে!"
+        lang === "en" ? "Comment submitted successfully!" : "মন্তব্য সফলভাবে প্রকাশিত হয়েছে!",
       );
     },
     onError: (err: Error) => {
@@ -310,10 +319,14 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
 
       {/* কমেন্ট ও রিপ্লাই তালিকা */}
       {isLoading ? (
-        <p className="text-xs text-muted-foreground">{lang === "en" ? "Loading comments..." : "মন্তব্য লোড হচ্ছে..."}</p>
+        <p className="text-xs text-muted-foreground">
+          {lang === "en" ? "Loading comments..." : "মন্তব্য লোড হচ্ছে..."}
+        </p>
       ) : rootComments.length === 0 ? (
         <p className="text-xs text-muted-foreground italic">
-          {lang === "en" ? "No comments yet. Be the first to comment!" : "এখনো কোনো মন্তব্য করা হয়নি। প্রথম মন্তব্যটি আপনিই করুন!"}
+          {lang === "en"
+            ? "No comments yet. Be the first to comment!"
+            : "এখনো কোনো মন্তব্য করা হয়নি। প্রথম মন্তব্যটি আপনিই করুন!"}
         </p>
       ) : (
         <div className="space-y-4">
@@ -322,7 +335,10 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
             const isReplying = replyingTo?.id === c.id;
 
             return (
-              <div key={c.id} className="rounded-xl border border-border/60 bg-card p-4 text-xs space-y-3">
+              <div
+                key={c.id}
+                className="rounded-xl border border-border/60 bg-card p-4 text-xs space-y-3"
+              >
                 <div className="flex items-center justify-between border-b border-border/40 pb-2">
                   <span className="font-semibold text-foreground inline-flex items-center gap-1.5">
                     <User className="size-3.5 text-[#2A6F97] dark:text-[#58b4e8]" />
@@ -441,7 +457,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
                           <span className="text-[10px] text-muted-foreground">
                             {new Date(reply.created_at).toLocaleDateString(
                               lang === "en" ? "en-US" : "bn-BD",
-                              { year: "numeric", month: "short", day: "numeric" }
+                              { year: "numeric", month: "short", day: "numeric" },
                             )}
                           </span>
                         </div>

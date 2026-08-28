@@ -12,16 +12,18 @@ if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
-console.log("🚀 গ্রীনটেক ও সম্পূর্ণ কুরআন ডাটা (শব্দার্থ, রুট, পূর্ণ অনুবাদ ও উচ্চারণ) ডাউনলোড শুরু হচ্ছে...");
+console.log(
+  "🚀 গ্রীনটেক ও সম্পূর্ণ কুরআন ডাটা (শব্দার্থ, রুট, পূর্ণ অনুবাদ ও উচ্চারণ) ডাউনলোড শুরু হচ্ছে...",
+);
 
 async function downloadSurah(surahId) {
   try {
     // translations=161 (Taisirul Quran Bengali), 163 (Muhiuddin Khan)
     const res = await fetch(
-      `https://api.quran.com/api/v4/verses/by_chapter/${surahId}?language=bn&words=true&word_fields=text_uthmani,text_imlaei,location&translations=161&per_page=300`
+      `https://api.quran.com/api/v4/verses/by_chapter/${surahId}?language=bn&words=true&word_fields=text_uthmani,text_imlaei,location&translations=161&per_page=300`,
     );
     if (!res.ok) throw new Error(`Surah ${surahId} fetch failed`);
-    
+
     const json = await res.json();
     const processed = {
       surah: surahId,
@@ -58,10 +60,7 @@ async function downloadSurah(surahId) {
       }),
     };
 
-    fs.writeFileSync(
-      path.join(OUTPUT_DIR, `${surahId}.json`),
-      JSON.stringify(processed, null, 2)
-    );
+    fs.writeFileSync(path.join(OUTPUT_DIR, `${surahId}.json`), JSON.stringify(processed, null, 2));
   } catch (error) {
     console.error(`❌ সুরা ${surahId} ডাউনলোডে ত্রুটি:`, error.message);
   }

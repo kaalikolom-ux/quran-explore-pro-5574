@@ -12,7 +12,7 @@ export function FloatingQuickNav() {
   return (
     <>
       {/* Floating Quick Action Dock */}
-      <div 
+      <div
         className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-2 p-1.5 rounded-2xl bg-card/90 dark:bg-card/85 backdrop-blur-xl border border-border/80 shadow-[0_8px_30px_rgb(0,0,0,0.18)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)] transition-all duration-300 hover:border-primary/50 hover:shadow-xl"
         role="navigation"
         aria-label="Floating Quick Navigation"
@@ -26,7 +26,7 @@ export function FloatingQuickNav() {
         >
           <Search className="size-5 transition-transform group-hover/btn:scale-110" />
           <span className="sr-only">সার্চ</span>
-          
+
           {/* ছোট এআই নোটিফিকেশন ডট */}
           <span className="absolute -top-0.5 -right-0.5 flex size-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>

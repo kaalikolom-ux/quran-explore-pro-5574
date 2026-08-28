@@ -20,7 +20,10 @@ export const Route = createFileRoute("/articles/")({
   head: () => ({
     meta: [
       { title: "আর্টিকেল — কুরআন অন্বেষা" },
-      { name: "description", content: "কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।" },
+      {
+        name: "description",
+        content: "কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল সরাসরি আপনার ইনবক্সে পান।",
+      },
       { property: "og:title", content: "আর্টিকেল — কুরআন অন্বেষা" },
       { property: "og:description", content: "কুরআনের গভীর তাদাব্বুর ও নতুন গবেষণামূলক আর্টিকেল।" },
     ],
@@ -31,7 +34,10 @@ export const Route = createFileRoute("/articles/")({
 function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLength = 120): string {
   if (excerpt && excerpt.trim().length > 0) return excerpt.trim();
   if (!body) return "বিস্তারিত প্রবন্ধটি পড়তে ক্লিক করুন...";
-  const clean = body.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+  const clean = body
+    .replace(/<[^>]*>?/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
   return clean.length > maxLength ? `${clean.slice(0, maxLength)}...` : clean;
 }
 
@@ -40,7 +46,9 @@ function ArticlesIndexPage() {
   const { isAdmin } = useIsAdmin();
   const searchParams = useSearch({ from: "/articles/" });
 
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.category || null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    searchParams.category || null,
+  );
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(searchParams.author || null);
   const [showDraftsOnly, setShowDraftsOnly] = useState(false);
 
@@ -66,9 +74,7 @@ function ArticlesIndexPage() {
   const authorsQuery = useQuery({
     queryKey: ["authors-list"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("authors")
-        .select("id, name_bn, name_en");
+      const { data, error } = await supabase.from("authors").select("id, name_bn, name_en");
       if (error) return [];
       return data || [];
     },
@@ -80,7 +86,9 @@ function ArticlesIndexPage() {
     queryFn: async () => {
       let q = supabase
         .from("articles")
-        .select("*, author:authors(id, name_bn, name_en), category:categories(id, name_bn, name_en, slug)")
+        .select(
+          "*, author:authors(id, name_bn, name_en), category:categories(id, name_bn, name_en, slug)",
+        )
         .order("created_at", { ascending: false });
 
       if (!isAdmin) {
@@ -141,7 +149,11 @@ function ArticlesIndexPage() {
             <span className="font-semibold text-muted-foreground">লেখক ফিল্টার:</span>
             <Badge variant="secondary" className="gap-1.5 py-1 px-2.5 bg-card border border-border">
               <User className="size-3 text-primary" />
-              <span>{lang === "en" && activeAuthorObj.name_en ? activeAuthorObj.name_en : activeAuthorObj.name_bn}</span>
+              <span>
+                {lang === "en" && activeAuthorObj.name_en
+                  ? activeAuthorObj.name_en
+                  : activeAuthorObj.name_bn}
+              </span>
             </Badge>
           </div>
           <button

@@ -53,9 +53,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          পাতাটি লোড হয়নি
-        </h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">পাতাটি লোড হয়নি</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           {error?.message || "কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।"}
         </p>
@@ -85,16 +83,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const jsonLdData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "কুরআন অন্বেষা — Quran Explorer",
-  "alternateName": "Quran Anwesha",
-  "url": "https://qurananwesha.com",
-  "description": "পবিত্র কুরআনের শব্দে শব্দে অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ।",
-  "inLanguage": ["bn", "ar", "en"],
-  "potentialAction": {
+  name: "কুরআন অন্বেষা — Quran Explorer",
+  alternateName: "Quran Anwesha",
+  url: "https://qurananwesha.com",
+  description: "পবিত্র কুরআনের শব্দে শব্দে অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ।",
+  inLanguage: ["bn", "ar", "en"],
+  potentialAction: {
     "@type": "SearchAction",
-    "target": "https://qurananwesha.com/surah/1?ayah={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+    target: "https://qurananwesha.com/surah/1?ayah={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -108,7 +106,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "পবিত্র কুরআনের প্রতিটি শব্দের বাংলা অর্থ, উচ্চারণ, প্রামাণ্য অনুবাদ ও প্রাঞ্জল ব্যাখ্যা একই পাতায় পড়ুন।",
       },
-      { name: "keywords", content: "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran" },
+      {
+        name: "keywords",
+        content:
+          "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran",
+      },
       { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
       {
         property: "og:description",
