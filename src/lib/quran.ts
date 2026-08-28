@@ -202,35 +202,19 @@ export function localNumber(value: number | string, lang: "bn" | "en") {
 
 // Mishary Rashid Al-Afasy (quran.com recitation id 7)
 export const AFASY_RECITATION_ID = 7;
-const AUDIO_BASE = "https://verses.quran.com/";
-
 export const audioQuery = (surah: number) =>
   queryOptions({
     queryKey: ["quran", "audio", AFASY_RECITATION_ID, surah],
     staleTime: 1000 * 60 * 60 * 24,
     queryFn: async () => {
-      try {
-        const { data: rows } = await supabase
-          .from("quran_verses")
-          .select("ayah, audio_url")
-          .eq("surah", surah)
-          .not("audio_url", "is", null)
-          .order("ayah");
-        if (rows && rows.length > 0) {
-          const mirroredMap: Record<number, string> = {};
-          for (const r of rows) if (r.audio_url) mirroredMap[r.ayah] = r.audio_url;
-          return mirroredMap;
-        }
-      } catch {
-        // fall through to the network API
-      }
-      const data = await getJson<{
-        audio_files: { verse_key: string; url: string }[];
-      }>(`${API}/recitations/${AFASY_RECITATION_ID}/by_chapter/${surah}?per_page=300`);
+      // Direct local generation without ANY external API call (100% independent & offline-ready)
+      const meta = ALL_SURAHS_DATABASE.find((s) => s.id === surah);
+      const totalVerses = meta?.total_verses || 7;
+      const sStr = String(surah).padStart(3, "0");
       const map: Record<number, string> = {};
-      for (const f of data.audio_files) {
-        const ayah = Number(f.verse_key.split(":")[1]);
-        if (ayah) map[ayah] = `${AUDIO_BASE}${f.url}`;
+      for (let a = 1; a <= totalVerses; a++) {
+        const aStr = String(a).padStart(3, "0");
+        map[a] = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
       }
       return map;
     },
