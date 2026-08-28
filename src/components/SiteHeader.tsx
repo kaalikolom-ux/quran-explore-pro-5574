@@ -10,7 +10,6 @@ import {
   Mail, 
   Moon, 
   Sun, 
-  Languages, 
   ShieldCheck,
   Menu,
   X,
@@ -21,7 +20,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
-import { GoogleTranslateWidget } from "@/components/GoogleTranslateWidget";
 
 function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
   return (
@@ -201,8 +199,6 @@ export function SiteHeader() {
               <LoginDoorIcon className="size-3.5 sm:size-4" />
             </Link>
           )}
-
-          <GoogleTranslateWidget />
 
           <button
             type="button"

@@ -200,49 +200,8 @@
   font-weight: 400 !important;
 }
 
-/* Google Translate Suppression & Clean UI Integration */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-banner-frame,
-iframe.goog-te-banner-frame {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-}
-
-body {
-  top: 0px !important;
-  position: static !important;
-}
-
-.goog-tooltip,
-.goog-tooltip:hover {
-  display: none !important;
-}
-
-.goog-text-highlight {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-#goog-gt-tt,
-.goog-te-balloon-frame {
-  display: none !important;
-}
-
-/* Ensure Quran Arabic remains pristine and untouched by machine translation */
+/* Arabic Font Settings */
 .arabic,
 [data-arabic="true"] {
-  translate: no !important;
   font-family: var(--font-arabic);
-}
-
-/* শুধুমাত্র বাংলাতেই টাইপিং টেক্সট দৃশ্যমান থাকবে, অন্য সব ভাষায় স্বয়ংক্রিয়ভাবে হাইড থাকবে */
-html.translated-ltr .typewriter-container,
-html.translated-rtl .typewriter-container,
-body.translated-ltr .typewriter-container,
-body.translated-rtl .typewriter-container,
-.translated-ltr .typewriter-container,
-.translated-rtl .typewriter-container {
-  display: none !important;
 }
