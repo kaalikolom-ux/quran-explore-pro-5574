@@ -17,6 +17,7 @@ import { SiteFooter } from "../components/SiteFooter";
 import { AuthPromptModal } from "../components/AuthPromptModal";
 import { Toaster } from "../components/ui/sonner";
 import { FloatingQuickNav } from "../components/FloatingQuickNav";
+import { BackToTop } from "../components/BackToTop";
 import { supabase } from "../integrations/supabase/client";
 import { useQueryPersistence } from "../lib/query-persist";
 import { registerOfflineWorker } from "../lib/pwa";
@@ -196,6 +197,7 @@ function RootComponent() {
           <SiteFooter />
         </div>
         <FloatingQuickNav />
+        <BackToTop />
         <AuthPromptModal />
         <Toaster />
       </PrefsProvider>
