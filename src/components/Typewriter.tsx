@@ -9,50 +9,40 @@ interface TypewriterProps {
 
 export function Typewriter({
   words,
-  typingSpeed = 90,
-  deletingSpeed = 50,
-  delayBetweenWords = 1500,
+  delayBetweenWords = 2800,
 }: TypewriterProps) {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [isRolling, setIsRolling] = useState(false);
 
   useEffect(() => {
-    if (!words || words.length === 0) return;
+    if (!words || words.length <= 1) return;
 
-    const currentWord = words[wordIndex % words.length];
+    const timer = setInterval(() => {
+      // ১. বর্তমান লাইনটি স্মুথলি উপরে রোল আউট ও ফেড আউট হবে
+      setIsRolling(true);
 
-    const handleTyping = () => {
-      if (!isDeleting) {
-        if (text.length < currentWord.length) {
-          setText(currentWord.slice(0, text.length + 1));
-        } else {
-          setTimeout(() => setIsDeleting(true), delayBetweenWords);
-        }
-      } else {
-        if (text.length > 0) {
-          setText(currentWord.slice(0, text.length - 1));
-        } else {
-          setIsDeleting(false);
-          setWordIndex((prev) => (prev + 1) % words.length);
-        }
-      }
-    };
+      // ২. ৪০০ মিলিসেকেন্ড পর পরবর্তী লাইনটি নিচে থেকে স্মুথলি রোল ইন হবে
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % words.length);
+        setIsRolling(false);
+      }, 400);
+    }, delayBetweenWords);
 
-    const speed = isDeleting ? deletingSpeed : typingSpeed;
-    const timer = setTimeout(handleTyping, speed);
+    return () => clearInterval(timer);
+  }, [words, delayBetweenWords]);
 
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
+  if (!words || words.length === 0) return null;
 
   return (
-    <span className="inline-block overflow-visible py-1">
-      {/* অক্ষরের মাথা না কেটে সফট ট্রান্সপারেন্ট হোয়াইট লুক */}
-      <span className="text-white/70 drop-shadow-sm">
-        {text}
-      </span>
-      <span className="animate-pulse font-normal text-white/50 ms-1 select-none">
-        |
+    <span className="inline-flex items-center overflow-hidden py-1 min-h-[1.4em]">
+      <span
+        className={`inline-block text-white/85 drop-shadow-md transition-all duration-500 ease-out transform ${
+          isRolling
+            ? "opacity-0 -translate-y-4 scale-98 blur-[1px]"
+            : "opacity-100 translate-y-0 scale-100 blur-0"
+        }`}
+      >
+        {words[index % words.length]}
       </span>
     </span>
   );
