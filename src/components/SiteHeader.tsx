@@ -8,8 +8,6 @@ import {
   Bookmark, 
   Settings, 
   Mail, 
-  Moon, 
-  Sun, 
   Languages, 
   ShieldCheck,
   Menu,
@@ -211,14 +209,16 @@ export function SiteHeader() {
             <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
           </button>
 
-          <button
-            type="button"
-            onClick={() => updatePref("dark", !prefs.dark)}
-            title={prefs.dark ? "লাইট মোড" : "ডার্ক মোড"}
-            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
+          <Link
+            to="/settings"
+            title={lang === "bn" ? "সেটিংস ও পছন্দসমূহ" : "Settings & Preferences"}
+            aria-label="Settings"
+            className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer ${
+              currentPath === "/settings" ? "border-primary text-primary font-bold bg-secondary" : "text-muted-foreground hover:text-foreground"
+            }`}
           >
-            {prefs.dark ? <Sun className="size-3.5 sm:size-4" /> : <Moon className="size-3.5 sm:size-4" />}
-          </button>
+            <Settings className="size-3.5 sm:size-4 hover:rotate-45 transition-transform" />
+          </Link>
 
           <button
             type="button"
