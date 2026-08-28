@@ -151,8 +151,8 @@ function HomePage() {
   return (
     <div>
       {/* হিরো সেকশন */}
-      <section className="relative overflow-hidden bg-[#030712] text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
-        {/* ব্যাকগ্রাউন্ড রেইনড্রপ ওয়েবপি ইমেজ ও ডার্ক ব্লেন্ড ওভারলে */}
+      <section className="relative overflow-hidden text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
+        {/* শুধুমাত্র পিওর ব্যাকগ্রাউন্ড ইমেজ (নো ওভারলে) */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero-bg.webp"
@@ -160,22 +160,10 @@ function HomePage() {
             aria-hidden="true"
             width="1920"
             height="1080"
-            className="w-full h-full object-cover object-center opacity-35 select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
             loading="eager"
             decoding="async"
           />
-          {/* স্মুথ ডার্ক গ্রেডিয়েন্ট ব্লেন্ডিং যাতে টেক্সট ক্রিস্টাল ক্লিয়ার থাকে */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/75 via-[#08182b]/65 via-50% to-[#030712]" />
-        </div>
-
-        {/* উপরের হেডারের সাথে গ্র্যাডিয়েন্ট জয়েন্ট */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-28 bg-gradient-to-b from-[var(--background)] via-[var(--background)]/70 to-transparent z-10" />
-
-        <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-          {/* সফট অ্যাম্বিয়েন্ট গ্লো */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[450px] w-[800px] rounded-full bg-[#1d4ed8]/12 blur-[150px]" />
-          <div className="absolute -right-24 top-1/4 h-[450px] w-[450px] rounded-full bg-[#0284c7]/15 blur-[140px]" />
-          <div className="absolute -left-24 top-1/3 h-[400px] w-[400px] rounded-full bg-[#1e3a8a]/20 blur-[140px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
