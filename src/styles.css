@@ -64,40 +64,40 @@
 }
 
 :root {
-  --chrome: #1f2428;
-  --chrome-foreground: #f5f5f7;
+  --chrome: #0b1c21;
+  --chrome-foreground: #ecf8fa;
   --radius: 0.75rem;
 
-  /* Default Warm Paper (Mushaf Eye-Comfort Sepia) */
+  /* Default Warm Paper (Mushaf Eye-Comfort Sepia with Oceanic Teal Accent) */
   --background: #fbf7ee;
   --foreground: #2c231b;
   --card: #f4ecdc;
   --card-foreground: #2c231b;
   --popover: #f6eedf;
   --popover-foreground: #2c231b;
-  --primary: #1f6f43;
+  --primary: #125b68;
   --primary-foreground: #fbf7ee;
   --secondary: #ede2cf;
   --secondary-foreground: #2c231b;
   --muted: #eee4d1;
   --muted-foreground: #796c5c;
   --accent: #e5d8be;
-  --accent-foreground: #1f6f43;
+  --accent-foreground: #125b68;
   --destructive: #b02a37;
   --destructive-foreground: #ffffff;
   --border: #e2d3bb;
   --input: #e2d3bb;
-  --ring: #1f6f43;
+  --ring: #125b68;
   --sidebar: #f5ece0;
   --sidebar-foreground: #2c231b;
-  --sidebar-primary: #1f6f43;
+  --sidebar-primary: #125b68;
   --sidebar-primary-foreground: #fbf7ee;
   --sidebar-accent: #e8dbca;
-  --sidebar-accent-foreground: #1f6f43;
+  --sidebar-accent-foreground: #125b68;
   --sidebar-border: #e2d3bb;
-  --sidebar-ring: #1f6f43;
+  --sidebar-ring: #125b68;
 
-  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
+  --gradient-hero: linear-gradient(180deg, #051317 0%, #0d2329 100%);
 }
 
 /* ১. মুসহাফ ওয়ার্ম পেপার / সেপিয়া (চোখের জন্য সেরা প্রশান্তিদায়ক থিম) */
@@ -108,126 +108,126 @@
   --card-foreground: #2c231b;
   --popover: #f6eedf;
   --popover-foreground: #2c231b;
-  --primary: #1f6f43;
+  --primary: #125b68;
   --primary-foreground: #fbf7ee;
   --secondary: #ede2cf;
   --secondary-foreground: #2c231b;
   --muted: #eee4d1;
   --muted-foreground: #796c5c;
   --accent: #e5d8be;
-  --accent-foreground: #1f6f43;
+  --accent-foreground: #125b68;
   --destructive: #b02a37;
   --destructive-foreground: #ffffff;
   --border: #e2d3bb;
   --input: #e2d3bb;
-  --ring: #1f6f43;
+  --ring: #125b68;
   --sidebar: #f5ece0;
   --sidebar-foreground: #2c231b;
-  --sidebar-primary: #1f6f43;
+  --sidebar-primary: #125b68;
   --sidebar-primary-foreground: #fbf7ee;
   --sidebar-accent: #e8dbca;
-  --sidebar-accent-foreground: #1f6f43;
+  --sidebar-accent-foreground: #125b68;
   --sidebar-border: #e2d3bb;
-  --sidebar-ring: #1f6f43;
+  --sidebar-ring: #125b68;
 }
 
 /* ২. নরম স্লেট / মিস্ট (ব্লু-লাইট ফিল্টার ব্যাকগ্রাউন্ড) */
 .theme-slate {
-  --background: #f1f5f9;
-  --foreground: #1e293b;
+  --background: #eff6f8;
+  --foreground: #10262c;
   --card: #ffffff;
-  --card-foreground: #1e293b;
+  --card-foreground: #10262c;
   --popover: #ffffff;
-  --popover-foreground: #1e293b;
-  --primary: #2563eb;
+  --popover-foreground: #10262c;
+  --primary: #135d6c;
   --primary-foreground: #ffffff;
-  --secondary: #e2e8f0;
-  --secondary-foreground: #1e293b;
-  --muted: #e2e8f0;
-  --muted-foreground: #64748b;
-  --accent: #dbeafe;
-  --accent-foreground: #2563eb;
+  --secondary: #dfeef1;
+  --secondary-foreground: #10262c;
+  --muted: #dfeef1;
+  --muted-foreground: #557983;
+  --accent: #d2eaf0;
+  --accent-foreground: #0f515e;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #cbd5e1;
-  --input: #cbd5e1;
-  --ring: #2563eb;
-  --sidebar: #f8fafc;
-  --sidebar-foreground: #1e293b;
-  --sidebar-primary: #2563eb;
+  --border: #cadde2;
+  --input: #cadde2;
+  --ring: #135d6c;
+  --sidebar: #f4fafb;
+  --sidebar-foreground: #10262c;
+  --sidebar-primary: #135d6c;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e2e8f0;
-  --sidebar-accent-foreground: #2563eb;
-  --sidebar-border: #cbd5e1;
-  --sidebar-ring: #2563eb;
+  --sidebar-accent: #dfeef1;
+  --sidebar-accent-foreground: #135d6c;
+  --sidebar-border: #cadde2;
+  --sidebar-ring: #135d6c;
 }
 
 /* ৩. স্বাভাবিক লাইট মোড */
 .theme-light {
-  --background: #f8f9fa;
-  --foreground: #2d2d2d;
+  --background: #f3f8f9;
+  --foreground: #12282f;
   --card: #ffffff;
-  --card-foreground: #2d2d2d;
+  --card-foreground: #12282f;
   --popover: #ffffff;
-  --popover-foreground: #2d2d2d;
-  --primary: #2a6f97;
-  --primary-foreground: #f8f9fa;
-  --secondary: #e9ecef;
-  --secondary-foreground: #2d2d2d;
-  --muted: #eef1f4;
-  --muted-foreground: #6c757d;
-  --accent: #e3eff6;
-  --accent-foreground: #2a6f97;
+  --popover-foreground: #12282f;
+  --primary: #156676;
+  --primary-foreground: #f3f8f9;
+  --secondary: #e3eff2;
+  --secondary-foreground: #12282f;
+  --muted: #e7f2f5;
+  --muted-foreground: #5c7e87;
+  --accent: #d7ebf0;
+  --accent-foreground: #156676;
   --destructive: #b02a37;
   --destructive-foreground: #ffffff;
-  --border: #dee2e6;
-  --input: #dee2e6;
-  --ring: #2a6f97;
-  --sidebar: #f5f5f7;
-  --sidebar-foreground: #2d2d2d;
-  --sidebar-primary: #2a6f97;
-  --sidebar-primary-foreground: #f8f9fa;
-  --sidebar-accent: #e9ecef;
-  --sidebar-accent-foreground: #2a6f97;
-  --sidebar-border: #dee2e6;
-  --sidebar-ring: #2a6f97;
+  --border: #d0e3e7;
+  --input: #d0e3e7;
+  --ring: #156676;
+  --sidebar: #f7fbfc;
+  --sidebar-foreground: #12282f;
+  --sidebar-primary: #156676;
+  --sidebar-primary-foreground: #f3f8f9;
+  --sidebar-accent: #e3eff2;
+  --sidebar-accent-foreground: #156676;
+  --sidebar-border: #d0e3e7;
+  --sidebar-ring: #156676;
 }
 
-/* ৪. ডিপ মিডনাইট ডার্ক মোড */
+/* ৪. ডিপ মিডনাইট অ্যাকোয়া-পেট্রোলিয়াম ডার্ক মোড */
 .dark {
-  --chrome: #121212;
-  --chrome-foreground: #e4e4e7;
+  --chrome: #08171b;
+  --chrome-foreground: #ecf8fa;
   --radius: 0.75rem;
 
-  --background: #141414;
-  --foreground: #e4e4e7;
-  --card: #1c1c1f;
-  --card-foreground: #e4e4e7;
-  --popover: #1c1c1f;
-  --popover-foreground: #e4e4e7;
-  --primary: #4a90e2;
-  --primary-foreground: #141414;
-  --secondary: #26262b;
-  --secondary-foreground: #e4e4e7;
-  --muted: #222226;
-  --muted-foreground: #9ca3af;
-  --accent: #1e293b;
-  --accent-foreground: #60a5fa;
+  --background: #091a1f;
+  --foreground: #ecf8fa;
+  --card: #0f262d;
+  --card-foreground: #ecf8fa;
+  --popover: #0f262d;
+  --popover-foreground: #ecf8fa;
+  --primary: #2dd4bf;
+  --primary-foreground: #05181c;
+  --secondary: #16363f;
+  --secondary-foreground: #ecf8fa;
+  --muted: #132e36;
+  --muted-foreground: #7ea4ad;
+  --accent: #19404a;
+  --accent-foreground: #5eead4;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.10);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #4a90e2;
-  --sidebar: #18181b;
-  --sidebar-foreground: #e4e4e7;
-  --sidebar-primary: #4a90e2;
-  --sidebar-primary-foreground: #141414;
-  --sidebar-accent: #26262b;
-  --sidebar-accent-foreground: #e4e4e7;
-  --sidebar-border: rgba(255, 255, 255, 0.10);
-  --sidebar-ring: #4a90e2;
+  --border: rgba(94, 234, 212, 0.14);
+  --input: rgba(94, 234, 212, 0.16);
+  --ring: #2dd4bf;
+  --sidebar: #0b1e24;
+  --sidebar-foreground: #ecf8fa;
+  --sidebar-primary: #2dd4bf;
+  --sidebar-primary-foreground: #05181c;
+  --sidebar-accent: #16363f;
+  --sidebar-accent-foreground: #ecf8fa;
+  --sidebar-border: rgba(94, 234, 212, 0.14);
+  --sidebar-ring: #2dd4bf;
 
-  --gradient-hero: linear-gradient(180deg, #182632 0%, #1f3344 100%);
+  --gradient-hero: linear-gradient(180deg, #051317 0%, #0d2329 100%);
 }
 
 @layer base {

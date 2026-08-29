@@ -19,7 +19,7 @@ const emailSchema = z.string().trim().email("সঠিক ইমেইল এড
 
 function QuranLogoBadge({ className = "size-4.5" }: { className?: string }) {
   return (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2A6F97]/15 dark:bg-[#58b4e8]/20 text-[#1c5576] dark:text-[#58b4e8] border border-[#2A6F97]/30 dark:border-[#58b4e8]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
+    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#115360]/15 dark:bg-[#38d9c2]/20 text-[#115360] dark:text-[#38d9c2] border border-[#115360]/30 dark:border-[#38d9c2]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
       <svg
         viewBox="0 0 24 24"
         fill="none"
