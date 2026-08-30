@@ -674,6 +674,31 @@ function RichTextEditor({
               >
                 <Quote className="size-4" />
               </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="h-8 gap-1 px-2 text-xs font-medium cursor-pointer text-primary border-primary/30 hover:bg-primary/10"
+                onClick={() => {
+                  const cardTemplate = `
+                    <div style="border: 1px solid rgba(16, 185, 129, 0.3); background-color: rgba(16, 185, 129, 0.05); border-radius: 12px; padding: 16px; margin: 16px 0;">
+                      <p><strong>💾 ২. তথ্যের সংগ্রহ ও ব্যবহার</strong></p>
+                      <ul>
+                        <li><strong>ব্যক্তিগত নোট ও বুকমার্ক:</strong> আপনার সংরক্ষিত বুকমার্ক, পঠিত আয়াতের ট্র্যাকিং এবং ব্যক্তিগত তাদাব্বুর নোটসমূহ সম্পূর্ণভাবে আপনার ব্রাউজারের নিজস্ব মেমোরিতে (LocalStorage) সংরক্ষিত থাকে।</li>
+                        <li><strong>অ্যাকাউন্ট তথ্য (ঐচ্ছিক):</strong> আপনি যদি প্ল্যাটফর্মে সাইন-ইন করেন, তবে কেবল আপনার ইমেইল ঠিকানা অ্যাকাউন্ট পরিচালনার জন্য সুরক্ষিত ডাটাবেজে সংরক্ষিত থাকে।</li>
+                        <li><strong>যোগাযোগ ফর্ম ও বার্তা:</strong> আমাদের সাথে যোগাযোগ পেজের মাধ্যমে পাঠানো যেকোনো বার্তা কেবল প্রশ্নের উত্তর বা মতামত মূল্যায়নের কাজেই ব্যবহৃত হয়।</li>
+                      </ul>
+                    </div>
+                    <p></p>
+                  `;
+                  editor.chain().focus().insertContent(cardTemplate).run();
+                  toast.success("কার্ড বক্স যোগ করা হয়েছে! এবার আপনি ইচ্ছামতো টেক্সট লিখে নিন।");
+                }}
+                title="স্ক্রিনশটের মতো সুন্দর কার্ড বক্স যুক্ত করুন"
+              >
+                <LayoutGrid className="size-3.5" />
+                <span>কার্ড বক্স</span>
+              </Button>
               <div className="h-4 w-px bg-border mx-1" />
               <Button
                 type="button"
