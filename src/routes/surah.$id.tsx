@@ -1051,6 +1051,31 @@ function SurahDetailPage() {
         </div>
       )}
 
+      {/* অফলাইন বা লোড এরর স্টেট */}
+      {surahQuery.isError && (
+        <div className="py-12 px-4 text-center rounded-2xl border border-amber-500/30 bg-amber-500/5 space-y-4 max-w-md mx-auto my-6">
+          <AlertCircle className="size-10 text-amber-500 mx-auto" />
+          <div className="space-y-1.5">
+            <h3 className="text-base font-semibold text-foreground">সুরা {meta.name_bn} অফলাইনে পাওয়া যায়নি</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              এই সুরাটির ডাটা এখনো আপনার ডিভাইসের অফলাইন মেমরিতে সেভ করা হয়নি। অনলাইনে থাকা অবস্থায় সেটিংস থেকে <strong>"১১৪টি সুরা ডাউনলোড"</strong> বাটনে ক্লিক করে সব সুরা সংরক্ষণ করে নিন।
+            </p>
+          </div>
+          <div className="flex items-center justify-center gap-2 pt-2">
+            <Button asChild variant="outline" size="sm" className="text-xs">
+              <Link to="/settings">
+                সেটিংস পেজে যান
+              </Link>
+            </Button>
+            <Button asChild variant="default" size="sm" className="text-xs">
+              <Link to="/surah/$id" params={{ id: "1" }}>
+                সুরা আল-ফাতিহা পড়ুন
+              </Link>
+            </Button>
+          </div>
+        </div>
+      )}
+
       {/* আয়াতসমূহ */}
       <div className="space-y-6">
         {surahQuery.data?.ayahs?.map((ayah) => {
