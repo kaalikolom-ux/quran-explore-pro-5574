@@ -1,68 +1,108 @@
-# Quranic Insights Hub (wooniche) 📖✨
+# কুরআন অন্বেষা — Quran Explorer 📖✨
+> শব্দে শব্দে অর্থ, প্রচলিত ও আধুনিক অনুবাদ, বিজ্ঞানভিত্তিক বিশ্লেষণ এবং বিষয়ভিত্তিক আয়াত মেটা ডাটার সমন্বয়ে একটি আধুনিক কুরআন প্ল্যাটফর্ম।
 
-Welcome to **Quranic Insights Hub**, a high-performance, dynamic, and feature-rich Quran exploration platform built with cutting-edge web technologies. The web application is engineered to deliver a blazing-fast user experience combined with premium full-stack functionalities.
-
-🌐 **Live Website:** [https://wooniche.com](https://wooniche.com)  
-⚡ **Performance Score:** 99% - 100% (GTmetrix Grade A Performance)  
-🛠️ **Tech Stack:** Bun, Vite, React, Tailwind CSS, Supabase (PostgreSQL), Vercel, and Cloudflare.
-
----
-
-## 🚀 Key Features & Functionalities
-
-### 1. Advanced Quran Explorer
-
-- **Word-by-Word Translation:** Deep exploration of individual Quranic words and meanings.
-- **Multi-Translation Support:** Toggle seamlessly between authentic translations, including Bengali (Islamic Foundation) and English (Pickthall).
-- **Scientific Annotations:** A dedicated section mapping scientific perspectives and explanations linked to specific Quranic verses.
-- **Visibility Toggles:** Dynamic UI switches to show or hide any translation or annotation block in real-time.
-- **Audio Recitations:** High-quality streaming audio player integrated directly for every verse.
-
-### 2. Protected Admin Dashboard (`/auth`)
-
-- **Secure Authentication:** Row-Level Security (RLS) policies implemented via Supabase Auth to protect critical routes.
-- **Inline Translation Editor:** Admins can effortlessly update, refine, or edit Bengali and English translations via secure popup forms.
-- **Dynamic Global Settings:** Manage Cloudflare Turnstile API keys, dynamic notification email configurations, and Author profiles directly from the UI.
-- **Content Management System (CMS):** A dedicated administrative center to publish, edit, approve, or delete articles and user comments.
-
-### 3. Interactive Blog & User Engagement
-
-- **Optimized Post Grid:** Beautiful 3-column post layout featuring consistent card heights, modern hover transitions, and category-based sorting.
-- **Smart Pagination:** High-speed server-side data fetching from Supabase limiting posts to 6/9 per page to ensure fast load times.
-- **Author Profile Box:** Modern single-post footer layouts highlighting dynamic author bios, profile avatars, and background overviews.
-- **Social & Email Sharing:** Native social sharing matrix supporting one-click shares across Facebook, WhatsApp, Twitter/X, and Email.
-- **Anti-Spam Comment Engine:** Public comment threads secured by Cloudflare Turnstile with an automated 'Pending Review' state awaiting Admin approval.
+[![Website](https://img.shields.io/badge/Live-wooniche.com-00a86b?style=for-the-badge&logo=google-chrome&logoColor=white)](https://wooniche.com)
+[![Platform](https://img.shields.io/badge/Stack-React%20%7C%20TanStack%20%7C%20Supabase-3b82f6?style=for-the-badge)](https://wooniche.com)
+[![Cloudflare](https://img.shields.io/badge/Hosted%20on-Cloudflare%20Workers-f38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://wooniche.com)
+[![Performance](https://img.shields.io/badge/Performance-100%25%20Grade%20A-success?style=for-the-badge)](https://wooniche.com)
 
 ---
 
-## 🛠️ Security & Architecture (Hardening)
+## 🌟 মূল দর্শন ও পরিচিতি (Overview & Vision)
 
-The project architecture has been thoroughly optimized and audited for peak speed and security:
+**কুরআন অন্বেষা (Quran Explorer)** হলো একটি আধুনিক, দ্রুতগতির এবং বহুস্তরীয় (Multi-layered) কুরআন অধ্যয়ন ও গবেষণা প্ল্যাটফর্ম। ঐতিহ্যগত অনুবাদ পাঠের পাশাপাশি আধুনিক বিজ্ঞানমনস্ক গবেষক ও সাধারণ পাঠকদের জন্য কুরআনের গভীর ভাষাগত ও বৈজ্ঞানিক দিকগুলো সহজে উপলব্ধি করার উপযোগী করে এটি নির্মিত হয়েছে।
 
-- **Web Application Firewall (WAF):** Enhanced cloud security utilizing custom Cloudflare rules throttling malicious bot behavior and traffic.
-- **Enterprise SSL/TLS Layer:** Strict enforcement of HTTPS protocol via HSTS rules and Minimum TLS 1.2 constraints.
-- **AI Scraping Mitigation:** Fully optimized `robots.txt` configuration deployed on Cloudflare edge blocks automated LLM scraping bots from extracting data.
-
----
-
-## 🗄️ Database Schema Overview (Supabase)
-
-The core relational database is built over a clean PostgreSQL instance utilizing the following decoupled tables:
-
-- `public.user_roles`: Manages access permissions (Admin vs Regular User).
-- `public.verse_translations`: Houses precise ayah translations, lang strings, and scientific notes.
-- `public.articles`: Stores author posts, content bodies, and multilingual localization fields (`bn`/`en`).
-- `public.comments`: Holds user feedback tied directly to individual article IDs.
-- `public.bookmarks`: Secure internal bookmarking system scoped per user session ID.
-- `public.newsletter_subscribers`: Logs visitor emails for future mailing list campaigns.
+🌐 **অফিশিয়াল ওয়েবসাইট:** [https://wooniche.com](https://wooniche.com)  
+⚡ **হোস্টিং ও আর্কিটেকচার:** Cloudflare Edge Workers + Supabase PostgreSQL  
 
 ---
 
-## 🎨 Creative & Design Assets
+## 🚀 প্রধান বৈশিষ্ট্যসমূহ (Key Features)
 
-- **Custom Favicon:** Brand-specific `19.png` emblem customized and injected into the HTML root vector for clean browser identity.
-- **Minimalist UI:** Clean global language switchers and custom-styled icon matrices (Lucide React) keeping code footprints exceptionally light.
+### ১. ১০টি স্বাধীন কুরআন ডিসপ্লে লেয়ার (10 Independent Display Layers)
+ব্যবহারকারী তার সুবিধামতো যেকোনো লেয়ার চালু বা বন্ধ করতে পারেন:
+1. **আরবি টেক্সট (Arabic Mushaf):** স্পষ্ট ফন্ট ও সাইজ নিয়ন্ত্রণসহ মূল কুরআন পাঠ।
+2. **শব্দে শব্দে অর্থ (Word-by-Word):** প্রতিটি শব্দের নিচে বাংলা অর্থ ও উচ্চারণ।
+3. **উচ্চারণ (Transliteration):** সহজ বাংলা লিপিতে আয়াতের উচ্চারণ নির্দেশিকা।
+4. **১. প্রচলিত বাংলা অনুবাদ:** মাওলানা মুহিউদ্দীন খান / তাইসিরুল কুরআন (সহীহ মানদণ্ড)।
+5. **২. Conventional English:** আন্তর্জাতিকভাবে স্বীকৃত Sahih International অনুবাদ।
+6. **৩. আধুনিক বাংলা অনুবাদ:** প্রাঞ্জল, সমসাময়িক ও সহজবোধ্য আধুনিক বাংলা অনুবাদ।
+7. **৪. Modern English:** সমসাময়িক ইংরেজি অনুবাদ ও ব্যাখ্যা।
+8. **অভিধান / Lexicon:** শব্দকোষ, মূল ধাতু (Root Word) ও ব্যাকরণগত বিশ্লেষণ।
+9. **বিজ্ঞানভিত্তিক অর্থ ও গবেষণা:** অভিধানে মূল ধাতুর আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট।
+10. **আয়াত মেটা ডাটা (Topic & Meta):** আয়াতের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ।
 
 ---
 
-_Crafted with 💚 by Alam M_
+### ২. অ্যাডমিন মাস্টার কন্ট্রোল ও স্বতন্ত্র ইউজার পারমিশন (Access Control System)
+* **গ্লোবাল ভিজিটর কন্ট্রোল (Public Master Switch):** সাধারণ ভিজিটরদের জন্য কোন কোন অনুবাদ বা গবেষণা দৃশ্যমান থাকবে আর কোনটি প্রস্তুতাধীন হিসেবে লুকানো থাকবে—তা এডমিন এক ক্লিকেই গ্লোবালি নিয়ন্ত্রণ করতে পারেন।
+* **স্বতন্ত্র ইউজার প্রিভিলেজ (Per-User Granular Access):** কোনো অনুবাদ গ্লোবালি বন্ধ থাকলেও নির্দিষ্ট কোনো সাইন-আপ করা গ্রাহক বা গবেষককে আলাদাভাবে ১০টি লেয়ারের যেকোনোটি দেখার বিশেষ অনুমোদন দেওয়া যায়।
+* **রেস্ট্রিকটেড আর্টিকেল ক্যাটাগরি এক্সেস:** বিশেষ গবেষণা প্রবন্ধ নির্দিষ্ট ইউজারদের জন্য লক/আনলক করার সুবিধা।
+
+---
+
+### ৩. চক্ষু-বান্ধব থিম সিস্টেম (Eye-Comfort & Reading Experience)
+* 📜 **মুশাফ সেপিয়া (Warm Paper):** চোখের ক্লান্তি কমাতে ক্লাসিক হলুদাভ উষ্ণ বইয়ের পৃষ্ঠা।
+* 🪨 **প্রাকৃতিক স্লেট (Cool Paper):** দীর্ঘ সময় কুরআন পড়ার জন্য স্নিগ্ধ ও আরামদায়ক টোন।
+* 🌙 **মিডনাইট ডার্ক (OLED Dark):** রাতে পড়ার জন্য ও ওলেড ডিসপ্লেতে ব্যাটারি সাশ্রয়ী মোড।
+* ☀️ **স্বাভাবিক লাইট (Classic Light):** দিনের আলো ও সর্বোচ্চ স্পষ্টতার জন্য স্বাভাবিক সাদা মোড।
+* 🔍 **ফন্ট সাইজ স্কেলার:** আরবি ও অনুবাদ ফন্টের আকার আলাদাভাবে কাস্টমাইজ করার স্লাইডার।
+
+---
+
+### ৪. হাই-কোয়ালিটি অডিও প্লেয়ার ও নেভিগেশন
+* 🎧 **আয়াতভিত্তিক সিকোয়েনশিয়াল প্লেয়ার:** ক্লিক করলেই নিরবচ্ছিন্নভাবে পর্যায়ক্রমে আয়াত তেলাওয়াত।
+* 🔄 **সুরার লুপ ও অটো-স্ক্রোল:** অডিও বাজার সাথে সাথে চলমান আয়াতটি স্বয়ংক্রিয়ভাবে হাইলাইট ও স্ক্রল হওয়া।
+* 🌐 **মাল্টি-মিরর সিডিএন:** সর্বোচ্চ নির্ভরযোগ্যতার জন্য স্বয়ংক্রিয় ব্যাকআপ অডিও মিরর স্ট্রিমিং।
+* ⚡ **স্মার্ট জাম্প ও সার্চ:** সুরার নাম বা নম্বর লিখে সাথে সাথে যেকোনো আয়াতে জাম্প করার সার্চ ডায়লগ।
+
+---
+
+### ৫. ইসলামিক আর্টিকেল, ব্লগ ও লেখক প্যানেল (Full CMS)
+* ✍️ **উন্নত রিচ টেক্সট ও মার্কডাউন এডিটর:** লেখক ও গবেষকদের জন্য টিপট্যাপ (TipTap) চালিত পূর্ণাঙ্গ পাবলিশিং প্ল্যাটফর্ম।
+* 📚 **বিষয়ভিত্তিক ক্যাটাগরি ও ট্যাগ:** গবেষণাপত্র ও প্রবন্ধসমূহ সুবিন্যস্তভাবে ব্রাউজ করার ব্যবস্থা।
+* 👥 **লেখক ও গবেষক প্রোফাইল:** লেখকদের নিজস্ব বায়ো, সোশ্যাল লিংক ও প্রকাশিত লেখার তালিকা।
+* 🔒 **ক্লাউডফ্লেয়ার টার্নস্টাইল স্প্যাম সুরক্ষা:** বট ও স্প্যাম মন্তব্য রোধে স্মার্ট ভেরিফিকেশন।
+
+---
+
+## 🛠️ প্রযুক্তিগত কাঠামো (Tech Stack & Architecture)
+
+| স্তর | ব্যবহৃত প্রযুক্তি |
+| :--- | :--- |
+| **Frontend Framework** | [TanStack Start](https://tanstack.com/start) + [React 18](https://react.dev/) + [Vite](https://vitejs.dev/) |
+| **Styling & UI** | [Tailwind CSS](https://tailwindcss.com/) + Radix UI Primitives + Lucide Icons |
+| **Database & Auth** | [Supabase](https://supabase.com/) (PostgreSQL with Row Level Security) |
+| **Edge Deployment** | [Cloudflare Workers](https://workers.cloudflare.com/) (Serverless SSR + Global CDN) |
+| **State & Cache** | [TanStack Query](https://tanstack.com/query) + IndexedDB + LocalStorage |
+
+---
+
+## 🗄️ ডাটাবেজ স্কিমা সংক্ষেপ (Supabase PostgreSQL)
+
+* `public.profiles`: ব্যবহারকারীর প্রোফাইল তথ্য।
+* `public.user_roles`: অ্যাডমিন ও ব্যবহারকারীর অধিকার বিন্যাস।
+* `public.user_display_permissions`: প্রতি ইউজারের জন্য স্বতন্ত্র ১০টি ডিসপ্লে লেয়ারের অনুমোদন।
+* `public.ayah_metadata`: আয়াতের বিষয়ভিত্তিক বাংলা ও ইংরেজি মেটা ডাটা।
+* `public.verse_translations`: কুরআনের আধুনিক অনুবাদ ও বিজ্ঞানভিত্তিক গবেষণার নোট।
+* `public.categories` & `public.category_user_access`: আর্টিকেল ক্যাটাগরি ও রেস্ট্রিকটেড এক্সেস।
+* `public.articles`: গবেষণাপত্র ও ইসলামিক প্রবন্ধসমূহ।
+* `public.bookmarks`: ব্যবহারকারীর নিজস্ব বুকমার্কিং তালিকা।
+
+---
+
+## 🔒 ডেটা সুরক্ষা ও নির্ভুলতার নীতি (Data Integrity Principle)
+
+কুরআন অন্বেষা একটি **হাইব্রিড আর্কিটেকচার** অনুসরণ করে:
+1. **মূল কুরআন ও প্রচলিত অনুবাদ:** অপরিবর্তনশীল ও নির্ভুলভাবে Git-ব্যাকড স্ট্যাটিক সোর্স থেকে লোড হয়, যাতে ডাটাবেজের ত্রুটিতেও মূল কুরআন কখনো ক্ষতিগ্রস্ত না হয়।
+2. **গবেষণা, মেটা ডাটা ও পারমিশন:** ডাইনামিকালি Supabase ডাটাবেজ থেকে লাইভ লেয়ার হিসেবে সুপার-ইম্পোজ হয়।
+
+---
+
+## 👨‍💻 পরিচালনা ও অবদান (Credits & Contact)
+
+* **পরিকল্পনা ও ব্যবস্থাপনা:** [Alam M](https://wooniche.com)
+* **যোগাযোগ ও মতামত:** [wooniche.com/contact](https://wooniche.com/contact)
+
+---
+_কুরআন হোক আমাদের পথপ্রদর্শক ও অন্তরের আলো। 🤲_
