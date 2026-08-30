@@ -43,7 +43,18 @@ export default defineConfig({
           runtimeCaching: [
             {
               urlPattern: ({ request }) => request.mode === "navigate",
-              handler: "NetworkOnly",
+              handler: "NetworkFirst",
+              options: {
+                cacheName: "quran-pages-v1",
+                networkTimeoutSeconds: 3,
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 60 * 60 * 24 * 30,
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
             },
             {
               urlPattern: ({ url, sameOrigin }) =>
@@ -61,12 +72,12 @@ export default defineConfig({
               },
             },
             {
-              urlPattern: /\/data\/quran\/surahs\/.*\.json$/,
+              urlPattern: /\/data\/quran\/.*\.json$/,
               handler: "CacheFirst",
               options: {
-                cacheName: "quran-text-v1",
+                cacheName: "quran-text-v3",
                 expiration: {
-                  maxEntries: 150,
+                  maxEntries: 200,
                   maxAgeSeconds: 60 * 60 * 24 * 365,
                 },
                 cacheableResponse: {

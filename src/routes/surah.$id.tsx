@@ -32,12 +32,21 @@ import {
   Repeat,
   Square
 } from "lucide-react";
-import { toast } from "sonner";
-
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
 import { useIsAdmin } from "@/lib/auth";
-import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded, AUDIO_CACHE } from "@/lib/offline";
+import { 
+  resolveAudioSrc, 
+  downloadSurahAudio, 
+  isSurahAudioDownloaded, 
+  isAudioSavedOffline, 
+  saveAudioOffline, 
+  deleteAudioOffline, 
+  saveSurahOffline, 
+  getSurahOffline, 
+  AUDIO_CACHE, 
+  SURAH_TEXT_CACHE 
+} from "@/lib/offline";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -296,8 +305,6 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
-const SURAH_TEXT_CACHE = "quran-text-v3";
-
 const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   if (typeof window !== "undefined" && data?.ayahs) {
     data.ayahs.forEach((a) => {
@@ -315,47 +322,33 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
 };
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  const url = `/data/quran/surahs/${sId}.json?v=4`;
-  
-  if (typeof window !== "undefined" && "caches" in window) {
-    try {
-      caches.delete("quran-text-v1").catch(() => {});
-      caches.delete("quran-text-v2").catch(() => {});
-      caches.delete("quran-text-v3").catch(() => {});
-
-      const cache = await caches.open(SURAH_TEXT_CACHE);
-      const cachedRes = await cache.match(url);
-      if (cachedRes) {
-        const cachedData = await cachedRes.json();
-        if (cachedData?.ayahs && cachedData.ayahs.length > 0) {
-          return applyLocalMetaOverrides(sId, cachedData);
-        }
-      }
-    } catch {
-      // Fallback
-    }
+  // 1. Try offline storage first (IndexedDB + Cache Storage)
+  const offlineData = await getSurahOffline(sId);
+  if (offlineData?.ayahs && offlineData.ayahs.length > 0) {
+    return applyLocalMetaOverrides(sId, offlineData);
   }
 
-  const res = await fetch(url);
+  // 2. Fetch from network
+  const url = `/data/quran/surahs/${sId}.json?v=4`;
   let freshData: SurahData;
-  if (!res.ok) {
-    const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
-    if (!fallbackRes.ok) throw new Error(`Failed to load Surah ${sId}`);
-    freshData = await fallbackRes.json();
-  } else {
-    freshData = await res.json();
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
+      if (!fallbackRes.ok) throw new Error(`Failed to load Surah ${sId}`);
+      freshData = await fallbackRes.json();
+    } else {
+      freshData = await res.json();
+    }
+  } catch (err) {
+    if (offlineData) return applyLocalMetaOverrides(sId, offlineData);
+    throw err;
   }
   
   applyLocalMetaOverrides(sId, freshData);
 
-  if (typeof window !== "undefined" && "caches" in window) {
-    try {
-      const cache = await caches.open(SURAH_TEXT_CACHE);
-      await cache.put(url, new Response(JSON.stringify(freshData)));
-    } catch {
-      // Fallback
-    }
-  }
+  // 3. Save for offline access
+  await saveSurahOffline(sId, freshData);
 
   return freshData;
 };
@@ -454,16 +447,15 @@ function SurahDetailPage() {
   }, [surahQuery.data, surahId]);
 
   const checkIndividualAyahCaches = async () => {
-    if (typeof window === "undefined" || !("caches" in window) || !surahQuery.data?.ayahs) return;
+    if (!surahQuery.data?.ayahs) return;
     try {
-      const cache = await caches.open(AUDIO_CACHE);
       const sStr = String(surahId).padStart(3, "0");
       const found = new Set<number>();
       for (const a of surahQuery.data.ayahs) {
         const aStr = String(a.ayah).padStart(3, "0");
         const url = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
-        const match = await cache.match(url);
-        if (match) found.add(a.ayah);
+        const isSaved = await isAudioSavedOffline(url);
+        if (isSaved) found.add(a.ayah);
       }
       setCachedAyahs(found);
       if (found.size === surahQuery.data.ayahs.length && surahQuery.data.ayahs.length > 0) {
@@ -534,21 +526,16 @@ function SurahDetailPage() {
   };
 
   const handleToggleAyahAudioDownload = async (ayahNum: number) => {
-    if (typeof window === "undefined" || !("caches" in window)) {
-      toast.error("অফলাইন স্টোরেজ সাপোর্ট নেই");
-      return;
-    }
     const sStr = String(surahId).padStart(3, "0");
     const aStr = String(ayahNum).padStart(3, "0");
     const audioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
 
     setDownloadingAyahsMap((prev) => ({ ...prev, [ayahNum]: true }));
     try {
-      const cache = await caches.open(AUDIO_CACHE);
-      const exists = await cache.match(audioUrl);
+      const exists = await isAudioSavedOffline(audioUrl);
 
       if (exists) {
-        await cache.delete(audioUrl);
+        await deleteAudioOffline(audioUrl);
         setCachedAyahs((prev) => {
           const next = new Set(prev);
           next.delete(ayahNum);
@@ -559,7 +546,8 @@ function SurahDetailPage() {
       } else {
         const res = await fetch(audioUrl, { mode: "cors" });
         if (!res.ok) throw new Error("Audio download failed");
-        await cache.put(audioUrl, res.clone());
+        const blob = await res.blob();
+        await saveAudioOffline(audioUrl, blob);
         setCachedAyahs((prev) => new Set(prev).add(ayahNum));
         toast.success(`আয়াত ${ayahNum}-এর অডিও অফলাইনে সংরক্ষিত হয়েছে`);
       }

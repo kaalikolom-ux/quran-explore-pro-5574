@@ -21,6 +21,7 @@ import { toast } from "sonner";
 
 import { usePrefs, type Prefs, type ThemeMode } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
+import { saveSurahOffline } from "@/lib/offline";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -29,8 +30,6 @@ import { Slider } from "@/components/ui/slider";
 export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
-
-const SURAH_TEXT_CACHE = "quran-text-v3";
 
 function SettingsPage() {
   const { isAdmin } = useIsAdmin();
@@ -42,23 +41,15 @@ function SettingsPage() {
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
 
   const handleDownloadAllSurahs = async () => {
-    if (typeof window === "undefined" || !("caches" in window)) {
-      toast.error(lang === "bn" ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই" : "Offline storage not supported in your browser");
-      return;
-    }
-
     setDownloadingSurahs(true);
     setSurahProgress(0);
     try {
-      const cache = await caches.open(SURAH_TEXT_CACHE);
       for (let i = 1; i <= 114; i++) {
         const url = `/data/quran/surahs/${i}.json`;
-        const existing = await cache.match(url);
-        if (!existing) {
-          const res = await fetch(url);
-          if (res.ok) {
-            await cache.put(url, res.clone());
-          }
+        const res = await fetch(url);
+        if (res.ok) {
+          const data = await res.json();
+          await saveSurahOffline(i, data);
         }
         setSurahProgress(Math.round((i / 114) * 100));
       }
@@ -73,20 +64,15 @@ function SettingsPage() {
   };
 
   const handleDownloadAllAyahs = async () => {
-    if (typeof window === "undefined" || !("caches" in window)) {
-      toast.error(lang === "bn" ? "আপনার ব্রাউজারে অফলাইন স্টোরেজ সাপোর্ট নেই" : "Offline storage not supported in your browser");
-      return;
-    }
-
     setDownloadingAyahs(true);
     setAyahProgress(0);
     try {
-      const cache = await caches.open(SURAH_TEXT_CACHE);
       for (let i = 1; i <= 114; i++) {
         const url = `/data/quran/surahs/${i}.json`;
         const res = await fetch(url);
         if (res.ok) {
-          await cache.put(url, res.clone());
+          const data = await res.json();
+          await saveSurahOffline(i, data);
         }
         setAyahProgress(Math.round((i / 114) * 100));
       }
