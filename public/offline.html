@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কুরআন অন্বেষা — অফলাইন মোড</title>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#020817">
+  <style>
+    :root {
+      --bg: #030712;
+      --card: #0f172a;
+      --border: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #10b981;
+      --primary-hover: #059669;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-weight: 600;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    select {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 13px;
+      outline: none;
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover { background: var(--card); }
+    main {
+      flex: 1;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .surah-header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .surah-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .surah-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .ayah-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s;
+    }
+    .ayah-card.playing {
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+    }
+    .ayah-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ayah-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .arabic-text {
+      font-size: 26px;
+      line-height: 1.8;
+      text-align: right;
+      direction: rtl;
+      font-family: 'Amiri', 'Scheherazade New', serif;
+      color: #ffffff;
+      padding: 8px 0;
+    }
+    .trans-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+    .meta-text {
+      font-size: 11px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border-left: 3px solid var(--primary);
+    }
+    .empty-state {
+      text-align: center;
+      padding: 48px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .audio-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #091220;
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="brand">
+      📖 কুরআন অন্বেষা
+      <span class="badge">অফলাইন মোড</span>
+    </a>
+    <div class="controls">
+      <select id="surahSelect" onchange="loadSurah(this.value)">
+        <option value="1">১. আল-ফাতিহা</option>
+      </select>
+      <button class="btn" id="playAllBtn" onclick="togglePlaySurah()">
+        ▶ শুনুন
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="empty-state">
+      <p style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">অফলাইন কুরআন লোড হচ্ছে...</p>
+      <p style="font-size: 13px; color: var(--muted);">ইন্টারনেট ছাড়াই সংরক্ষিত ডাটাবেজ থেকে সুরা ওপেন করা হচ্ছে।</p>
+    </div>
+  </main>
+
+  <div class="audio-bar" id="audioBar" style="display: none;">
+    <div id="nowPlayingText" style="font-size: 13px; font-weight: 600;">আয়াত ১ বাজছে...</div>
+    <div style="display: flex; gap: 8px;">
+      <button class="btn btn-outline" onclick="stopAudio()">স্টপ</button>
+    </div>
+  </div>
+
+  <script>
+    const SURAH_NAMES = [
+      'আল-ফাতিহা', 'আল-বাকারা', 'আলে ইমরান', 'আন-নিসা', 'আল-মায়িদাহ', 'আল-আনআম', 'আল-আরাফ', 'আল-আনফাল', 'আত-তাওবাহ', 'ইউনুস',
+      'হুদ', 'ইউসুফ', 'আর-রাদ', 'ইব্রাহীম', 'আল-হিজর', 'আন-নাহল', 'বনী ইসরাঈল', 'আল-কাহফ', 'মারইয়াম', 'ত্বা-হা',
+      'আল-আম্বিয়া', 'আল-হাজ্জ', "আল-মু'মিনুন", 'আন-নূর', 'আল-ফুরকান', 'আশ-শুয়ারা', 'আন-নামল', 'আল-কাসাস', 'আল-আনকাবুত', 'আর-রূম',
+      'লুকমান', 'আস-সাজদাহ', 'আল-আহযাব', 'সাবা', 'ফাতির', 'ইয়াসীন', 'আস-সাফফাত', 'সোয়াদ', 'আজ-জুমার', 'গাফির',
+      'ফুসসিলাত', 'আশ-শূরা', 'আজ-জুখরুফ', 'আদ-দুখান', 'আল-জাসিয়াহ', 'আল-আহকাফ', 'মুহাম্মদ', 'আল-ফাতহ', 'আল-হুজুরাত', 'কাফ',
+      'আয-যারিয়াত', 'আত-তূর', 'আন-নাজম', 'আল-ক্বামার', 'আর-রাহমান', 'আল-ওয়াকিয়াহ', 'আল-হাদীদ', 'আল-মুজাদালাহ', 'আল-হাশর', 'আল-মুমতাহিনাহ',
+      'আস-সফ', 'আল-জুমুআহ', 'আল-মুনাফিকুন', 'আত-তাগাবুন', 'আত-ত্বালাক', 'আত-তাহরীম', 'আল-মুলক', 'আল-কলম', 'আল-হাক্কাহ', 'আল-মাআরিজ',
+      'নূহ', 'আল-জ্বিন', 'আল-মুযযাম্মিল', 'আল-মুদ্দাসসির', 'আল-কিয়ামাহ', 'আল-ইনসান', 'আল-মুরসালাত', 'আন-নাবা', 'আন-নাযিআত', 'আবাসা',
+      'আত-তাকবীর', 'আল-ইনফিতার', 'আল-মুতাফফিফীন', 'আল-ইনশিকাক', 'আল-বুরূজ', 'আত-ত্বারিক', "আল-আ'লা", 'আল-গাশিয়াহ', 'আল-ফাজর', 'আল-বালাদ',
+      'আশ-শামস', 'আল-লায়ল', 'আদ-দুহা', 'আল-ইনশিরাহ', 'আত-তীন', 'আল-আলাক', 'আল-কদর', 'আল-বায়্যিনাহ', 'আল-যিলযাল', 'আল-আদিয়াত',
+      'আল-কারিয়াহ', 'আত-তাকাসুর', 'আল-আসর', 'আল-হুমাযাহ', 'আল-ফীল', 'কুরাইশ', 'আল-মাউন', 'আল-কাউসার', 'আল-কাফিরুন', 'আন-নাসর',
+      'আল-লাহাব', 'আল-ইখলাস', 'আল-ফালাক', 'আন-নাস'
+    ];
+
+    const select = document.getElementById('surahSelect');
+    select.innerHTML = SURAH_NAMES.map((name, i) => '<option value="' + (i+1) + '">' + (i+1) + '. ' + name + '</option>').join('');
+
+    let currentSurahData = null;
+    let playingAyahNum = null;
+    let audioElement = new Audio();
+
+    function openDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open('quran_offline_storage_v2', 1);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains('offline_audio')) db.createObjectStore('offline_audio', { keyPath: 'url' });
+          if (!db.objectStoreNames.contains('offline_surahs')) db.createObjectStore('offline_surahs', { keyPath: 'id' });
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function getStoredSurah(id) {
+      try {
+        const db = await openDB();
+        const tx = db.transaction('offline_surahs', 'readonly');
+        const store = tx.objectStore('offline_surahs');
+        return new Promise(res => {
+          const req = store.get(Number(id));
+          req.onsuccess = () => res(req.result?.data || null);
+          req.onerror = () => res(null);
+        });
+      } catch { return null; }
+    }
+
+    async function getStoredAudio(url) {
+      try {
+        const db = await openDB();
+        const tx = db.transaction('offline_audio', 'readonly');
+        const store = tx.objectStore('offline_audio');
+        const item = await new Promise(res => {
+          const req = store.get(url);
+          req.onsuccess = () => res(req.result);
+          req.onerror = () => res(null);
+        });
+        if (item && item.buffer) {
+          const blob = new Blob([item.buffer], { type: 'audio/mpeg' });
+          return URL.createObjectURL(blob);
+        }
+      } catch {}
+      return url;
+    }
+
+    async function loadSurah(sId) {
+      sId = Number(sId) || 1;
+      select.value = sId;
+      const main = document.getElementById('content');
+      main.innerHTML = '<div class="empty-state"><p>সুরা লোড হচ্ছে...</p></div>';
+
+      let data = await getStoredSurah(sId);
+      if (!data) {
+        try {
+          const res = await fetch('/data/quran/surahs/' + sId + '.json');
+          if (res.ok) data = await res.json();
+        } catch {}
+      }
+
+      if (!data || !data.ayahs) {
+        main.innerHTML = '<div class="empty-state">' +
+          '<h2 style="color: #ef4444; margin-bottom: 8px;">সুরাটি অফলাইনে পাওয়া যায়নি</h2>' +
+          '<p style="color: var(--muted); font-size: 13px; margin-bottom: 16px;">' +
+            'অনলাইনে থাকা অবস্থায় সেটিংস পেজ থেকে "১১৪টি সুরা ডাউনলোড" বাটনে ক্লিক করে অফলাইন ব্যাকআপ নিন।' +
+          '</p>' +
+          '<a href="/" class="btn btn-outline" style="text-decoration: none;">অনলাইন হোমে যান</a>' +
+        '</div>';
+        return;
+      }
+
+      currentSurahData = data;
+      const name = SURAH_NAMES[sId - 1] || ('সুরা ' + sId);
+
+      let html = '<div class="surah-header">' +
+        '<div class="surah-title">' + sId + '. ' + name + '</div>' +
+        '<div class="surah-sub">মোট আয়াত: ' + data.ayahs.length + '</div>' +
+      '</div>';
+
+      data.ayahs.forEach(a => {
+        const trans = a.bn_khan || a.bn_tafsir || a.bn || '';
+        const meta = a.meta_bn ? ('<div class="meta-text">মেটা ডাটা: ' + a.meta_bn + '</div>') : '';
+        html += '<div class="ayah-card" id="ayah-card-' + a.ayah + '">' +
+          '<div class="ayah-header">' +
+            '<span class="ayah-num">আয়াত ' + a.ayah + '</span>' +
+            '<button class="btn btn-outline" style="padding: 4px 8px; font-size: 11px; cursor: pointer;" onclick="playAyah(' + a.ayah + ')">' +
+              '▶ প্লে' +
+            '</button>' +
+          '</div>' +
+          '<div class="arabic-text">' + (a.ar || '') + '</div>' +
+          (trans ? ('<div class="trans-text">' + trans + '</div>') : '') +
+          meta +
+        '</div>';
+      });
+
+      main.innerHTML = html;
+    }
+
+    async function playAyah(num) {
+      if (!currentSurahData) return;
+      playingAyahNum = num;
+      const sId = Number(select.value);
+      const sStr = String(sId).padStart(3, '0');
+      const aStr = String(num).padStart(3, '0');
+      const remoteUrl = 'https://everyayah.com/data/Alafasy_128kbps/' + sStr + aStr + '.mp3';
+
+      document.querySelectorAll('.ayah-card').forEach(c => c.classList.remove('playing'));
+      const activeCard = document.getElementById('ayah-card-' + num);
+      if (activeCard) {
+        activeCard.classList.add('playing');
+        activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      document.getElementById('audioBar').style.display = 'flex';
+      document.getElementById('nowPlayingText').innerText = 'আয়াত ' + num + ' বাজছে...';
+      document.getElementById('playAllBtn').innerText = '⏸ পজ';
+
+      const audioSrc = await getStoredAudio(remoteUrl);
+      audioElement.src = audioSrc;
+      audioElement.load();
+      audioElement.onended = () => {
+        if (num < currentSurahData.ayahs.length) {
+          playAyah(num + 1);
+        } else {
+          stopAudio();
+        }
+      };
+      audioElement.onerror = () => {
+        alert('আয়াত ' + num + ' এর অডিও অফলাইনে খুঁজে পাওয়া যায়নি। অনলাইনে গিয়ে [📥 অফলাইন অডিও] ডাউনলোড করুন।');
+        stopAudio();
+      };
+      try {
+        await audioElement.play();
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+
+    function togglePlaySurah() {
+      if (playingAyahNum !== null) {
+        stopAudio();
+      } else {
+        playAyah(1);
+      }
+    }
+
+    function stopAudio() {
+      audioElement.pause();
+      playingAyahNum = null;
+      document.getElementById('audioBar').style.display = 'none';
+      document.getElementById('playAllBtn').innerText = '▶ শুনুন';
+      document.querySelectorAll('.ayah-card').forEach(c => c.classList.remove('playing'));
+    }
+
+    loadSurah(1);
+
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>

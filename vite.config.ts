@@ -35,7 +35,7 @@ export default defineConfig({
         workbox: {
           skipWaiting: true,
           clientsClaim: true,
-          navigateFallback: "/",
+          navigateFallback: "/offline.html",
           navigateFallbackDenylist: [/^\/~oauth/, /^\/api\//, /^\/_serverFn\//],
           // ওয়ার্নিং দূর করতে সঠিক গ্লোব প্যাটার্ন ফিক্স করা হলো
           globPatterns: ["**/*.{js,css,html,json}"],
