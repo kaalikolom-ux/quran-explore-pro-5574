@@ -1974,8 +1974,37 @@ function TranslationsAdmin() {
   const [surah, setSurah] = useState("1");
   const [ayah, setAyah] = useState("1");
   const [lng, setLng] = useState<"bn" | "en" | "bn_std" | "en_std">("bn");
+  const [metaBn, setMetaBn] = useState("");
+  const [metaEn, setMetaEn] = useState("");
   const [text, setText] = useState("");
   const [note, setNote] = useState("");
+
+  // Load existing metadata whenever surah or ayah changes
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(`quran_ayah_meta_${surah}_${ayah}`);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setMetaBn(parsed.meta_bn || "");
+        setMetaEn(parsed.meta_en || "");
+        return;
+      }
+    } catch {}
+
+    fetch(`/data/quran/surahs/${surah}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        const a = d?.ayahs?.find((x: any) => String(x.ayah) === String(ayah));
+        if (a) {
+          setMetaBn(a.meta_bn || "");
+          setMetaEn(a.meta_en || "");
+        } else {
+          setMetaBn("");
+          setMetaEn("");
+        }
+      })
+      .catch(() => {});
+  }, [surah, ayah]);
 
   const list = useQuery({
     queryKey: ["admin-verse-translations", surah],
@@ -1992,36 +2021,71 @@ function TranslationsAdmin() {
 
   const save = useMutation({
     mutationFn: async () => {
-      const transSchema = z.object({
-        surah: z.coerce.number().int().min(1).max(114),
-        ayah: z.coerce.number().int().min(1).max(300),
-        lang: z.enum(["bn", "en", "bn_std", "en_std"]),
-        text: z.string().trim().min(1, "অনুবাদ টেক্সট প্রদান করুন").max(8000),
-        note: z.string().trim().max(4000),
-      });
+      const sNum = Number(surah);
+      const aNum = Number(ayah);
+      if (!sNum || sNum < 1 || sNum > 114) throw new Error("সঠিক সূরা নম্বর দিন (১-১১৪)");
+      if (!aNum || aNum < 1 || aNum > 300) throw new Error("সঠিক আয়াত নম্বর দিন");
 
-      const parsed = transSchema.safeParse({ surah, ayah, lang: lng, text, note });
-      if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক তথ্য দিন");
-      const { error } = await supabase.from("verse_translations").upsert(
-        {
-          surah: parsed.data.surah,
-          ayah: parsed.data.ayah,
-          lang: parsed.data.lang,
-          text: parsed.data.text,
-          note: parsed.data.note || null,
-          created_by: user!.id,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: "surah,ayah,lang" },
-      );
-      if (error) throw error;
+      let metaSaved = false;
+
+      // ১. মেটা ডাটা লোকাল ও ক্লাউডে সংরক্ষণ
+      if (metaBn.trim() || metaEn.trim()) {
+        try {
+          localStorage.setItem(`quran_ayah_meta_${sNum}_${aNum}`, JSON.stringify({
+            meta_bn: metaBn.trim(),
+            meta_en: metaEn.trim(),
+          }));
+          metaSaved = true;
+        } catch {}
+
+        try {
+          await supabase.from("ayah_metadata").upsert({
+            surah: sNum,
+            ayah: aNum,
+            meta_bn: metaBn.trim() || null,
+            meta_en: metaEn.trim() || null,
+            created_by: user?.id,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: "surah,ayah" });
+        } catch {}
+      }
+
+      // ২. অনুবাদ টেক্সট সংরক্ষণ (যদি প্রদান করা হয়)
+      if (text.trim()) {
+        const transSchema = z.object({
+          surah: z.coerce.number().int().min(1).max(114),
+          ayah: z.coerce.number().int().min(1).max(300),
+          lang: z.enum(["bn", "en", "bn_std", "en_std"]),
+          text: z.string().trim().min(1, "অনুবাদ টেক্সট প্রদান করুন").max(8000),
+          note: z.string().trim().max(4000),
+        });
+
+        const parsed = transSchema.safeParse({ surah: sNum, ayah: aNum, lang: lng, text, note });
+        if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক অনুবাদ তথ্য দিন");
+        const { error } = await supabase.from("verse_translations").upsert(
+          {
+            surah: parsed.data.surah,
+            ayah: parsed.data.ayah,
+            lang: parsed.data.lang,
+            text: parsed.data.text,
+            note: parsed.data.note || null,
+            created_by: user!.id,
+            updated_at: new Date().toISOString(),
+          },
+          { onConflict: "surah,ayah,lang" },
+        );
+        if (error) throw error;
+      } else if (!metaSaved) {
+        throw new Error("অনুবাদ টেক্সট অথবা মেটা ডাটা প্রদান করুন");
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
+      queryClient.invalidateQueries({ queryKey: ["local-surah-cache"] });
       setText("");
       setNote("");
-      toast.success("অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
+      toast.success("আয়াতের তথ্য ও মেটা ডাটা সফলভাবে সংরক্ষণ করা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -2088,8 +2152,43 @@ function TranslationsAdmin() {
             </select>
           </div>
         </div>
+
+        {/* মেটা ডাটা (Meta Data) বক্স */}
+        <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-500/10 p-4 space-y-3">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+            <Sparkles className="size-3.5" />
+            <span>আয়াতের মেটা ডাটা / Meta Data (নম্বরের পাশে দৃশ্যমান হবে)</span>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="metaBn" className="text-xs font-medium text-muted-foreground">
+                মেটা ডাটা (বাংলা)
+              </Label>
+              <Input
+                id="metaBn"
+                value={metaBn}
+                onChange={(e) => setMetaBn(e.target.value)}
+                placeholder="যেমন: সিস্টেমের মূল উৎসের পরিচয় ও করুণাময় গুণাবলী"
+                className="h-9 text-xs bg-background"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="metaEn" className="text-xs font-medium text-muted-foreground">
+                Meta Data (English)
+              </Label>
+              <Input
+                id="metaEn"
+                value={metaEn}
+                onChange={(e) => setMetaEn(e.target.value)}
+                placeholder="e.g. Root Directory Authentication"
+                className="h-9 text-xs bg-background"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-1.5">
-          <Label htmlFor="text" className="text-xs font-semibold">অনুবাদ টেক্সট</Label>
+          <Label htmlFor="text" className="text-xs font-semibold">অনুবাদ টেক্সট (ঐচ্ছিক যদি শুধু মেটা ডাটা সংরক্ষণ করেন)</Label>
           <Textarea 
             id="text" 
             rows={4} 
