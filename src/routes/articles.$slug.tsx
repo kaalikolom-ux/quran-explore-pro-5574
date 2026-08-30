@@ -98,35 +98,39 @@ function SingleArticlePage() {
     },
   });
 
-  // ২. পূর্ববর্তী ও পরবর্তী আর্টিকেল ফেচ (Next & Prev Article Navigation)
+  // ২. পূর্ববর্তী ও পরবর্তী আর্টিকেল ফেচ (Next & Prev Article Navigation - ১০০% নির্ভরযোগ্য)
   const { data: navArticles } = useQuery({
-    queryKey: ["article-prev-next-nav", article?.id, article?.published_at, article?.created_at],
+    queryKey: ["article-prev-next-nav", article?.id, slug],
     enabled: Boolean(article?.id),
     queryFn: async () => {
       if (!article) return { prev: null, next: null };
-      const currentPublishedAt = article.published_at || article.created_at;
 
-      // পূর্ববর্তী আর্টিকেল (যা বর্তমানটির আগে প্রকাশিত হয়েছে)
-      const { data: prev } = await supabase
+      // সব অ্যাক্টিভ প্রকাশিত আর্টিকেল ফেচ করা
+      const { data: allArticles, error } = await supabase
         .from("articles")
-        .select("id, slug, title_bn, title_en, published_at")
+        .select("id, slug, title_bn, title_en, created_at, published_at")
         .eq("published", true)
         .is("deleted_at", null)
-        .lt("published_at", currentPublishedAt)
-        .order("published_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
+        .order("created_at", { ascending: false });
 
-      // পরবর্তী আর্টিকেল (যা বর্তমানটির পরে প্রকাশিত হয়েছে)
-      const { data: next } = await supabase
-        .from("articles")
-        .select("id, slug, title_bn, title_en, published_at")
-        .eq("published", true)
-        .is("deleted_at", null)
-        .gt("published_at", currentPublishedAt)
-        .order("published_at", { ascending: true })
-        .limit(1)
-        .maybeSingle();
+      if (error || !allArticles || allArticles.length <= 1) {
+        return { prev: null, next: null };
+      }
+
+      // বর্তমান আর্টিকেলের পজিশন বের করা
+      const currentIndex = allArticles.findIndex(
+        (a) => a.id === article.id || a.slug === slug
+      );
+
+      if (currentIndex === -1) {
+        return { prev: null, next: null };
+      }
+
+      // যেহেতু created_at desc অনুযায়ী সাজানো:
+      // currentIndex - 1 হলো নতুন (পরবর্তী / Next) পোস্ট
+      // currentIndex + 1 হলো পুরানো (পূর্ববর্তী / Prev) পোস্ট
+      const next = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
+      const prev = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
 
       return {
         prev: prev || null,
