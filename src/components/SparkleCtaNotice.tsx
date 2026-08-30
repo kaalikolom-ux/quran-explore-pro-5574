@@ -37,13 +37,13 @@ export function SparkleCtaNotice({ className = "", variant = "hero" }: SparkleCt
         aria-hidden="true"
         className="pointer-events-none absolute -right-2 sm:-right-3 -top-2 text-cyan-300 dark:text-cyan-400 animate-star-fly-2 select-none z-10 text-sm"
       >
-        ✨
+        ✦
       </span>
       <span
         aria-hidden="true"
         className="pointer-events-none absolute -left-2 sm:-left-3 -bottom-2 text-teal-300 dark:text-teal-400 animate-star-fly-3 select-none z-10 text-sm"
       >
-        ✦
+        ★
       </span>
       <span
         aria-hidden="true"
@@ -52,19 +52,23 @@ export function SparkleCtaNotice({ className = "", variant = "hero" }: SparkleCt
         ★
       </span>
 
-      {/* বক্স টাইপ সেন্টার্ড CTA বাটন (ডেস্কটপ ও মোবাইলে শতভাগ নির্ভরযোগ্য ক্লিকেবল) */}
+      {/* বক্স টাইপ শতভাগ সেন্টার্ড CTA বাটন */}
       <button
         type="button"
         onClick={handleClick}
-        className={`group relative z-30 w-full flex items-center justify-center gap-2 sm:gap-2.5 rounded-xl border px-4 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-[1.015] active:scale-[0.99] animate-sparkle-burst cursor-pointer select-none text-center shadow-md ${
+        className={`group relative z-30 w-full flex items-center justify-center rounded-xl border px-3 sm:px-4 py-2.5 sm:py-3.5 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-[1.015] active:scale-[0.99] animate-sparkle-burst cursor-pointer select-none text-center shadow-md ${
           isHero
             ? "border-emerald-500/40 bg-emerald-950/40 hover:bg-emerald-900/60 hover:border-emerald-400 text-white backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.25)]"
             : "border-primary/40 bg-primary/10 hover:bg-primary/15 hover:border-primary text-primary shadow-xs"
         }`}
       >
-        <Sparkles className="size-3.5 sm:size-4 shrink-0 text-emerald-400 animate-pulse" />
-        <span className="leading-snug drop-shadow-xs font-serif">{text}</span>
-        <Sparkles className="size-3.5 sm:size-4 shrink-0 text-cyan-300 animate-pulse" />
+        <div className="flex items-center justify-center gap-2 sm:gap-2.5 w-full text-center mx-auto">
+          <Sparkles className="size-3.5 sm:size-4 shrink-0 text-emerald-400 animate-pulse" />
+          <span className="leading-normal drop-shadow-xs font-sans text-center font-medium">
+            {text}
+          </span>
+          <Sparkles className="size-3.5 sm:size-4 shrink-0 text-cyan-300 animate-pulse" />
+        </div>
       </button>
     </div>
   );
