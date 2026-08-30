@@ -2680,20 +2680,56 @@ function RolesAdmin() {
 function SubscribersAdmin() {
   const queryClient = useQueryClient();
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [selectedUserForPerms, setSelectedUserForPerms] = useState<{ id: string; email?: string } | null>(null);
+  const [selectedUserForPerms, setSelectedUserForPerms] = useState<{ id?: string; email?: string } | null>(null);
+  const [customEmailInput, setCustomEmailInput] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const list = useQuery({
-    queryKey: ["admin-subscribers"],
+  // ১. সমস্ত প্রোফাইল ও রেজিস্টার্ড ইউজার কুয়েরি
+  const profilesQuery = useQuery({
+    queryKey: ["admin-all-profiles"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("newsletter_subscribers")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data || [];
+      try {
+        const { data, error } = await supabase.from("profiles").select("*").order("created_at", { ascending: false });
+        if (error) return [];
+        return data || [];
+      } catch {
+        return [];
+      }
     },
   });
 
+  // ২. নিউজলেটার সাবস্ক্রাইবার
+  const list = useQuery({
+    queryKey: ["admin-subscribers"],
+    queryFn: async () => {
+      try {
+        const { data, error } = await supabase
+          .from("newsletter_subscribers")
+          .select("*")
+          .order("created_at", { ascending: false });
+        if (error) return [];
+        return data || [];
+      } catch {
+        return [];
+      }
+    },
+  });
+
+  // ৩. ইউজার রোলস
+  const rolesQuery = useQuery({
+    queryKey: ["admin-user-roles"],
+    queryFn: async () => {
+      try {
+        const { data, error } = await supabase.from("user_roles").select("*");
+        if (error) return [];
+        return data || [];
+      } catch {
+        return [];
+      }
+    },
+  });
+
+  // ৪. ক্যাটাগরি ও পারমিশনসমূহ
   const categoriesQuery = useQuery({
     queryKey: ["admin-categories"],
     queryFn: async () => {
@@ -2701,7 +2737,7 @@ function SubscribersAdmin() {
         .from("categories")
         .select("*")
         .order("sort_order");
-      if (error) throw error;
+      if (error) return [];
       return data || [];
     },
   });
@@ -2759,7 +2795,7 @@ function SubscribersAdmin() {
   const copyToClipboard = (id: string) => {
     navigator.clipboard.writeText(id);
     setCopiedId(id);
-    toast.success("UUID ক্লিপবোর্ডে কপি হয়েছে!");
+    toast.success("আইডি ক্লিপবোর্ডে কপি হয়েছে!");
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -2767,8 +2803,87 @@ function SubscribersAdmin() {
   const allAccessList = accessQuery.data || [];
   const customPermsList = displayPermsQuery.data || [];
 
+  // সব সোর্স থেকে ইউজারদের একত্রিত করা (Merge unique users from all sources)
+  const userMap = new Map<string, { id?: string; email: string; display_name?: string; source: string; created_at?: string }>();
+
+  // Profiles (Registered users)
+  (profilesQuery.data || []).forEach((p: any) => {
+    if (p.email) {
+      const em = p.email.trim().toLowerCase();
+      userMap.set(em, {
+        id: p.id,
+        email: em,
+        display_name: p.display_name,
+        source: "রেজিস্টার্ড ইউজার",
+        created_at: p.created_at,
+      });
+    }
+  });
+
+  // Newsletter subscribers
+  (list.data || []).forEach((s: any) => {
+    if (s.email) {
+      const em = s.email.trim().toLowerCase();
+      if (!userMap.has(em)) {
+        userMap.set(em, {
+          id: s.id,
+          email: em,
+          source: "নিউজলেটার গ্রাহক",
+          created_at: s.created_at,
+        });
+      }
+    }
+  });
+
+  // Custom Display Permissions
+  customPermsList.forEach((cp: any) => {
+    if (cp.email) {
+      const em = cp.email.trim().toLowerCase();
+      if (!userMap.has(em)) {
+        userMap.set(em, {
+          id: cp.user_id,
+          email: em,
+          source: "কাস্টম পারমিশনপ্রাপ্ত",
+          created_at: cp.created_at,
+        });
+      }
+    }
+  });
+
+  // User Roles
+  (rolesQuery.data || []).forEach((r: any) => {
+    if (r.user_id) {
+      const existing = Array.from(userMap.values()).find((u) => u.id === r.user_id);
+      if (!existing) {
+        userMap.set(r.user_id, {
+          id: r.user_id,
+          email: `UID: ${r.user_id.slice(0, 8)}...`,
+          source: `রোল: ${r.role}`,
+          created_at: r.created_at,
+        });
+      }
+    }
+  });
+
+  const allUsers = Array.from(userMap.values()).filter((u) => {
+    if (!searchTerm.trim()) return true;
+    const term = searchTerm.toLowerCase();
+    return u.email.toLowerCase().includes(term) || (u.display_name && u.display_name.toLowerCase().includes(term));
+  });
+
+  const handleOpenCustomEmailPerms = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!customEmailInput.trim()) {
+      toast.error("অনুগ্রহ করে একটি সঠিক ইমেইল বা ইউজার আইডি লিখুন");
+      return;
+    }
+    const cleanEmail = customEmailInput.trim().toLowerCase();
+    setSelectedUserForPerms({ email: cleanEmail });
+    setCustomEmailInput("");
+  };
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {selectedUserForPerms && (
         <UserPermissionsDialog
           user={selectedUserForPerms}
@@ -2776,42 +2891,100 @@ function SubscribersAdmin() {
         />
       )}
 
-      <div>
-        <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার ও ইউজার পারমিশন নিয়ন্ত্রণ</h2>
-        <p className="text-xs text-muted-foreground">
-          সাইন-আপ করা গ্রাহকদের বিবরণ দেখুন এবং প্রতিটি ইউজারের জন্য কুরআন ডিসপ্লে লেয়ার ও রেস্ট্রিকটেড ক্যাটাগরি পারমিশন কনফিগার করুন।
+      {/* হেডার ও বর্ণনা */}
+      <div className="border-b border-border/60 pb-3">
+        <h2 className="text-base font-semibold text-foreground flex items-center gap-2">
+          <SlidersHorizontal className="size-4 text-primary" />
+          গ্রাহক ও ইউজার পারমিশন নিয়ন্ত্রণ প্যানেল
+        </h2>
+        <p className="text-xs text-muted-foreground mt-0.5">
+          আপনার ওয়েবসাইটে সাইন-আপ করা যেকোনো গ্রাহক বা গবেষককে নির্দিষ্ট অনুবাদ, বিজ্ঞানভিত্তিক অর্থ ও মেটা ডাটা দেখার স্বতন্ত্র অনুমতি দিন।
         </p>
       </div>
 
-      <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-        {list.data?.length === 0 && (
-          <p className="p-4 text-xs text-muted-foreground">কোনো সাবস্ক্রাইবার পাওয়া যায়নি</p>
+      {/* সরাসরি ইমেইল দিয়ে তাৎক্ষণিক পারমিশন কনফিগারেশন কার্ড */}
+      <form
+        onSubmit={handleOpenCustomEmailPerms}
+        className="rounded-xl border border-primary/30 bg-primary/5 p-4 space-y-3 shadow-xs"
+      >
+        <div className="flex items-center gap-2 text-xs font-bold text-foreground">
+          <Plus className="size-3.5 text-primary" />
+          <span>যেকোনো ইমেইল বা আইডিতে সরাসরি পারমিশন দিন:</span>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Input
+            placeholder="যেমন: researcher@example.com বা ইউজার আইডি..."
+            value={customEmailInput}
+            onChange={(e) => setCustomEmailInput(e.target.value)}
+            className="h-9 text-xs flex-1 bg-background"
+          />
+          <Button type="submit" size="sm" className="h-9 text-xs px-4 cursor-pointer shrink-0">
+            <SlidersHorizontal className="size-3.5 mr-1.5" />
+            পারমিশন কনফিগার করুন
+          </Button>
+        </div>
+        <p className="text-[11px] text-muted-foreground leading-relaxed">
+          💡 ব্যবহারকারী এখনো রেজিস্টার না করে থাকলেও তার ইমেইল দিয়ে পারমিশন দিয়ে রাখতে পারবেন; তিনি যখনই ওই ইমেইল দিয়ে লগইন করবেন তখন থেকেই তার জন্য অনুমোদিত লেয়ারগুলো স্বয়ংক্রিয়ভাবে দৃশ্যমান হবে।
+        </p>
+      </form>
+
+      {/* সার্চ ও ফিল্টার বার */}
+      <div className="flex items-center justify-between gap-3 pt-2">
+        <div className="flex-1 max-w-sm">
+          <Input
+            placeholder="ইউজার ইমেইল দিয়ে সার্চ করুন..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="h-8 text-xs bg-card"
+          />
+        </div>
+        <span className="text-xs text-muted-foreground font-medium">
+          মোট ইউজার: {allUsers.length} জন
+        </span>
+      </div>
+
+      {/* ইউজারের তালিকা */}
+      <div className="divide-y divide-border rounded-xl border border-border bg-card shadow-xs overflow-hidden">
+        {allUsers.length === 0 && (
+          <div className="p-8 text-center space-y-2">
+            <p className="text-xs text-muted-foreground">এখনো কোনো ইউজার তালিকাভুক্ত নেই।</p>
+            <p className="text-[11px] text-muted-foreground">
+              ওপরের বক্সে যেকোনো ইমেইল লিখে সরাসরি <strong>'পারমিশন কনফিগার করুন'</strong> বাটনে চাপ দিন।
+            </p>
+          </div>
         )}
-        {list.data?.map((s: any) => {
-          const subscriberEmail = s.email?.toLowerCase();
+
+        {allUsers.map((s) => {
+          const userEmail = s.email?.toLowerCase();
           const grantedForThisUser = allAccessList.filter(
-            (a: any) => (subscriberEmail && a.email?.toLowerCase() === subscriberEmail) || (s.id && a.user_id === s.id)
+            (a: any) => (userEmail && a.email?.toLowerCase() === userEmail) || (s.id && a.user_id === s.id)
           );
 
           const customPermRecord = customPermsList.find(
-            (p: any) => (subscriberEmail && p.email?.toLowerCase() === subscriberEmail) || (s.id && p.user_id === s.id)
+            (p: any) => (userEmail && p.email?.toLowerCase() === userEmail) || (s.id && p.user_id === s.id)
           );
 
           return (
             <div
-              key={s.id}
-              className="flex flex-col gap-3 p-4 text-xs hover:bg-muted/30 transition-colors"
+              key={s.email}
+              className="flex flex-col gap-3 p-4 text-xs hover:bg-muted/20 transition-colors"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-bold text-foreground text-sm">{s.email}</span>
-                    <span className="text-[10px] text-muted-foreground font-mono">
-                      (তারিখ: {new Date(s.created_at).toLocaleDateString("en-GB")})
+                    {s.display_name && (
+                      <span className="text-xs text-muted-foreground font-medium">
+                        ({s.display_name})
+                      </span>
+                    )}
+
+                    <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full border border-border/50">
+                      {s.source}
                     </span>
 
                     {customPermRecord ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                         <Sliders className="size-2.5" /> কাস্টম পারমিশন সক্রিয়
                       </span>
                     ) : (
@@ -2821,26 +2994,28 @@ function SubscribersAdmin() {
                     )}
                   </div>
 
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-mono text-[11px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
-                      আইডি: {s.id}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => copyToClipboard(s.id)}
-                      className="inline-flex items-center gap-1 text-[11px] text-[#2271b1] hover:underline font-medium cursor-pointer"
-                    >
-                      {copiedId === s.id ? (
-                        <>
-                          <Check className="size-3 text-emerald-500" /> কপি হয়েছে
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="size-3" /> আইডি কপি
-                        </>
-                      )}
-                    </button>
-                  </div>
+                  {s.id && (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-mono text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
+                        আইডি: {s.id}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => copyToClipboard(s.id!)}
+                        className="inline-flex items-center gap-1 text-[10px] text-primary hover:underline font-medium cursor-pointer"
+                      >
+                        {copiedId === s.id ? (
+                          <>
+                            <Check className="size-3 text-emerald-500" /> কপি হয়েছে
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="size-3" /> কপি
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-2">
