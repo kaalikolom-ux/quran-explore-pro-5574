@@ -265,3 +265,71 @@ export async function getSurahOffline(surahId: number): Promise<any | null> {
     return null;
   }
 }
+
+/** Calculate total stored offline audio files and size */
+export async function getOfflineStorageStats(): Promise<{ audioCount: number; audioSizeBytes: number; surahCount: number }> {
+  let audioCount = 0;
+  let audioSizeBytes = 0;
+  let surahCount = 0;
+
+  try {
+    const db = await openOfflineDB();
+    const txAudio = db.transaction(AUDIO_STORE, "readonly");
+    const audioStore = txAudio.objectStore(AUDIO_STORE);
+    
+    await new Promise<void>((resolve) => {
+      const cursorReq = audioStore.openCursor();
+      cursorReq.onsuccess = (e: any) => {
+        const cursor = e.target.result;
+        if (cursor) {
+          audioCount++;
+          if (cursor.value.buffer) {
+            audioSizeBytes += cursor.value.buffer.byteLength || 0;
+          }
+          cursor.continue();
+        } else {
+          resolve();
+        }
+      };
+      cursorReq.onerror = () => resolve();
+    });
+
+    const txSurah = db.transaction(SURAH_STORE, "readonly");
+    const surahStore = txSurah.objectStore(SURAH_STORE);
+    surahCount = await new Promise<number>((resolve) => {
+      const countReq = surahStore.count();
+      countReq.onsuccess = () => resolve(countReq.result);
+      countReq.onerror = () => resolve(0);
+    });
+  } catch {}
+
+  return { audioCount, audioSizeBytes, surahCount };
+}
+
+/** Clear all stored audio from device */
+export async function clearAllOfflineAudio(): Promise<void> {
+  if (cachesAvailable()) {
+    try {
+      await caches.delete(AUDIO_CACHE);
+    } catch {}
+  }
+  try {
+    const db = await openOfflineDB();
+    const tx = db.transaction(AUDIO_STORE, "readwrite");
+    tx.objectStore(AUDIO_STORE).clear();
+  } catch {}
+}
+
+/** Clear all stored surahs from device */
+export async function clearAllOfflineSurahs(): Promise<void> {
+  if (cachesAvailable()) {
+    try {
+      await caches.delete(SURAH_TEXT_CACHE);
+    } catch {}
+  }
+  try {
+    const db = await openOfflineDB();
+    const tx = db.transaction(SURAH_STORE, "readwrite");
+    tx.objectStore(SURAH_STORE).clear();
+  } catch {}
+}

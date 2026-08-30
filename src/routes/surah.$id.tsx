@@ -63,7 +63,7 @@ type SurahSearchParams = {
   ayah?: number;
 };
 
-const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: string; total: number }> = {
+export const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: string; total: number }> = {
   1: { name_bn: "আল-ফাতিহা", name_ar: "الفاتحة", type: "মাক্কী", total: 7 },
   2: { name_bn: "আল-বাকারাহ", name_ar: "البقرة", type: "মাদানী", total: 286 },
   3: { name_bn: "আলে ইমরান", name_ar: "آل عمران", type: "মাদানী", total: 200 },

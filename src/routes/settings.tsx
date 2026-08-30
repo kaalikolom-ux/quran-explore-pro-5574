@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { 
   Sliders, 
   Download, 
@@ -15,13 +15,24 @@ import {
   Sparkles,
   Globe,
   ShieldCheck,
-  Lock
+  Lock,
+  Music,
+  Trash2,
+  CheckCircle2,
+  AlertCircle
 } from "lucide-react";
 import { toast } from "sonner";
 
 import { usePrefs, type Prefs, type ThemeMode } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
-import { saveSurahOffline } from "@/lib/offline";
+import { 
+  saveSurahOffline, 
+  downloadSurahAudio, 
+  getOfflineStorageStats, 
+  clearAllOfflineAudio, 
+  clearAllOfflineSurahs 
+} from "@/lib/offline";
+import { SURAH_META_MAP } from "./surah.$id";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -40,6 +51,23 @@ function SettingsPage() {
   const [surahProgress, setSurahProgress] = useState<number | null>(null);
   const [ayahProgress, setAyahProgress] = useState<number | null>(null);
 
+  // Audio download & storage inspection state
+  const [storageStats, setStorageStats] = useState<{ audioCount: number; audioSizeBytes: number; surahCount: number } | null>(null);
+  const [selectedAudioSurahId, setSelectedAudioSurahId] = useState(1);
+  const [downloadingAudioSurah, setDownloadingAudioSurah] = useState(false);
+  const [audioSurahProgress, setAudioSurahProgress] = useState<number | null>(null);
+
+  const refreshStorageStats = useCallback(async () => {
+    try {
+      const stats = await getOfflineStorageStats();
+      setStorageStats(stats);
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    refreshStorageStats();
+  }, [refreshStorageStats]);
+
   const handleDownloadAllSurahs = async () => {
     setDownloadingSurahs(true);
     setSurahProgress(0);
@@ -53,7 +81,8 @@ function SettingsPage() {
         }
         setSurahProgress(Math.round((i / 114) * 100));
       }
-      toast.success(lang === "bn" ? "১১৪টি সুরার ডাটা অফলাইনে সম্পূর্ণ সংরক্ষিত হয়েছে!" : "All 114 surahs cached offline successfully!");
+      toast.success(lang === "bn" ? "১১৪টি সুরার টেক্সট ডাটা অফলাইনে সংরক্ষিত হয়েছে!" : "All 114 surahs cached offline successfully!");
+      await refreshStorageStats();
     } catch (e) {
       console.error(e);
       toast.error(lang === "bn" ? "ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Download failed, check connection");
@@ -76,13 +105,57 @@ function SettingsPage() {
         }
         setAyahProgress(Math.round((i / 114) * 100));
       }
-      toast.success(lang === "bn" ? "৬২৩৬টি আয়াত ও শব্দকোষ অফলাইনে সম্পূর্ণ সংরক্ষিত!" : "All 6236 ayahs & roots saved offline!");
+      toast.success(lang === "bn" ? "৬২৩৬টি আয়াত ও শব্দকোষ অফলাইনে সংরক্ষিত!" : "All 6236 ayahs & roots saved offline!");
+      await refreshStorageStats();
     } catch (e) {
       console.error(e);
       toast.error(lang === "bn" ? "সংরক্ষণে ত্রুটি হয়েছে" : "Failed to save offline");
     } finally {
       setDownloadingAyahs(false);
       setTimeout(() => setAyahProgress(null), 3000);
+    }
+  };
+
+  const handleDownloadSelectedSurahAudio = async () => {
+    const meta = SURAH_META_MAP[selectedAudioSurahId];
+    if (!meta) return;
+    setDownloadingAudioSurah(true);
+    setAudioSurahProgress(0);
+    try {
+      const sStr = String(selectedAudioSurahId).padStart(3, "0");
+      const urls: string[] = [];
+      for (let a = 1; a <= meta.total; a++) {
+        const aStr = String(a).padStart(3, "0");
+        urls.push(`https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`);
+      }
+      await downloadSurahAudio(urls, (done, total) => {
+        setAudioSurahProgress(Math.round((done / total) * 100));
+      });
+      toast.success(lang === "bn" ? `সুরা ${meta.name_bn}-এর সম্পূর্ণ ${meta.total}টি অডিও অফলাইনে সংরক্ষিত হয়েছে!` : `Surah ${meta.name_bn} audio downloaded offline!`);
+      await refreshStorageStats();
+    } catch (e) {
+      console.error(e);
+      toast.error(lang === "bn" ? "অডিও ডাউনলোডে সমস্যা হয়েছে, ইন্টারনেট চেক করুন" : "Audio download failed");
+    } finally {
+      setDownloadingAudioSurah(false);
+      setTimeout(() => setAudioSurahProgress(null), 3000);
+    }
+  };
+
+  const handleClearAudioStorage = async () => {
+    if (confirm(lang === "bn" ? "আপনি কি ফোনের সব অফলাইন অডিও ফাইল মুছে ফেলতে চান?" : "Delete all offline audio?")) {
+      await clearAllOfflineAudio();
+      await refreshStorageStats();
+      toast.success(lang === "bn" ? "সব অফলাইন অডিও মুছে ফেলা হয়েছে" : "All offline audio cleared");
+    }
+  };
+
+  const handleClearAllStorage = async () => {
+    if (confirm(lang === "bn" ? "আপনি কি সম্পূর্ণ অফলাইন ডাটাবেজ (সুরা টেক্সট ও অডিও) রিসেট করতে চান?" : "Reset all offline data?")) {
+      await clearAllOfflineAudio();
+      await clearAllOfflineSurahs();
+      await refreshStorageStats();
+      toast.success(lang === "bn" ? "সম্পূর্ণ অফলাইন ডাটা রিসেট হয়েছে" : "All offline data reset");
     }
   };
 
@@ -454,6 +527,118 @@ function SettingsPage() {
                 </>
               )}
             </Button>
+          </div>
+
+          {/* ৩. সুরার অডিও ডাউনলোড */}
+          <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">
+                  {lang === "bn" ? "৩. সুরার অডিও ডাউনলোড (MP3)" : "3. Download Surah Audio"}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {lang === "bn" ? "অফলাইনে শোনার জন্য যেকোনো সুরার অডিও নামিয়ে রাখুন" : "Download surah MP3s for offline player"}
+                </p>
+              </div>
+              <Music className="size-5 text-primary" />
+            </div>
+
+            <div className="flex items-center gap-2">
+              <select
+                value={selectedAudioSurahId}
+                onChange={(e) => setSelectedAudioSurahId(Number(e.target.value))}
+                className="w-full bg-background border border-border rounded-lg px-2.5 py-1.5 text-xs text-foreground outline-none cursor-pointer"
+              >
+                {Object.entries(SURAH_META_MAP).map(([idStr, meta]) => (
+                  <option key={idStr} value={idStr}>
+                    {idStr}. {meta.name_bn} ({meta.total} আয়াত)
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {audioSurahProgress !== null && (
+              <div className="space-y-1">
+                <div className="flex justify-between text-[11px] text-muted-foreground">
+                  <span>অডিও ডাউনলোড হচ্ছে...</span>
+                  <span>{audioSurahProgress}%</span>
+                </div>
+                <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
+                  <div className="h-full bg-primary transition-all duration-300" style={{ width: `${audioSurahProgress}%` }} />
+                </div>
+              </div>
+            )}
+
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={downloadingAudioSurah}
+              onClick={handleDownloadSelectedSurahAudio}
+              className="w-full text-xs h-8 cursor-pointer border-primary/40 hover:bg-primary/10 text-primary"
+            >
+              {downloadingAudioSurah ? (
+                <>
+                  <RefreshCw className="size-3.5 mr-1.5 animate-spin" />
+                  ডাউনলোড হচ্ছে ({audioSurahProgress}%)
+                </>
+              ) : (
+                <>
+                  <Download className="size-3.5 mr-1.5" />
+                  সুরা {SURAH_META_MAP[selectedAudioSurahId]?.name_bn}-এর অডিও ডাউনলোড
+                </>
+              )}
+            </Button>
+          </div>
+
+          {/* ৪. লোকাল স্টোরেজ স্ট্যাটাস ও মেমরি */}
+          <div className="rounded-xl border border-border/70 bg-card p-4 space-y-3 shadow-xs">
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">
+                  {lang === "bn" ? "৪. অফলাইন স্টোরেজ স্ট্যাটাস" : "4. Offline Storage Status"}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {lang === "bn" ? "আপনার ডিভাইসে সংরক্ষিত অফলাইন ফাইলের পরিমাণ" : "Data stored on your device"}
+                </p>
+              </div>
+              <Database className="size-5 text-emerald-500" />
+            </div>
+
+            <div className="bg-muted/40 rounded-lg p-2.5 space-y-1.5 text-xs">
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">সংরক্ষিত সুরা টেক্সট:</span>
+                <span className="font-semibold text-foreground font-mono">
+                  {storageStats?.surahCount ?? 0} / ১১৪ টি
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">সংরক্ষিত অডিও ফাইল:</span>
+                <span className="font-semibold text-emerald-600 dark:text-emerald-400 font-mono">
+                  {storageStats?.audioCount ?? 0} টি ({(((storageStats?.audioSizeBytes ?? 0) / (1024 * 1024))).toFixed(1)} MB)
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 pt-1">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleClearAudioStorage}
+                className="flex-1 text-[11px] h-7.5 text-amber-600 dark:text-amber-400 border-amber-500/30 hover:bg-amber-500/10 cursor-pointer"
+              >
+                <Trash2 className="size-3 mr-1" />
+                অডিও মুছুন
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleClearAllStorage}
+                className="flex-1 text-[11px] h-7.5 text-destructive border-destructive/30 hover:bg-destructive/10 cursor-pointer"
+              >
+                <Trash2 className="size-3 mr-1" />
+                সব রিসেট
+              </Button>
+            </div>
           </div>
         </div>
       </div>
