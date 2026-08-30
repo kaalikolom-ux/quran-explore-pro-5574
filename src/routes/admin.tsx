@@ -1235,6 +1235,17 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           .update({ category_id: bulkCategoryId || null })
           .in("id", selectedIds);
         if (error) throw error;
+      } else if (bulkAction === "auto-slug") {
+        const targetArticles = (list.data || []).filter((a) => selectedIds.includes(a.id));
+        for (const art of targetArticles) {
+          if (!art.title_bn) continue;
+          const properSlug = bnToEnSlug(art.title_bn, String(art.id).slice(0, 6));
+          const { error } = await supabase
+            .from("articles")
+            .update({ slug: properSlug })
+            .eq("id", art.id);
+          if (error) console.error("Auto slug update error:", art.id, error);
+        }
       }
     },
     onSuccess: () => {
@@ -1744,6 +1755,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                 className="h-8 rounded border border-border bg-background px-2.5 text-xs text-foreground focus:outline-none cursor-pointer"
               >
                 <option value="">বাল্ক অ্যাকশন নির্বাচন করুন...</option>
+                <option value="auto-slug">✨ একসাথে স্লাগ/পার্মালিঙ্ক অটো জেনারেট করুন</option>
                 <option value="publish">🟢 একসাথে প্রকাশিত করুন</option>
                 <option value="draft">🟡 একসাথে খসড়া (Draft) করুন</option>
                 <option value="change-author">👤 একসাথে লেখক পরিবর্তন করুন</option>
