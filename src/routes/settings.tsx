@@ -475,15 +475,32 @@ function SettingsPage() {
         </div>
 
         {isAdmin && (
-          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-500/10 p-3.5 text-xs text-muted-foreground flex items-start gap-2.5">
-            <Globe className="size-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-            <div className="leading-relaxed">
-              <span className="font-semibold text-foreground">
-                {lang === "bn" ? "এডমিন মাস্টার কন্ট্রোল:" : "Admin Master Control:"}
-              </span>{" "}
-              {lang === "bn"
-                ? "আপনি যেভাবে অনুমোদন দেবেন, সাধারণ ভিজিটররা ঠিক ততটুকুই দেখতে পাবে। কোনো অনুবাদ বা মেটা ডাটা অপশন প্রস্তুতাধীন থাকলে তার নিচের ভিজিটর সুইচটি বন্ধ করে রাখুন—এতে কোনো ভিজিটর তা দেখতে পাবে না, কিন্তু এডমিন হিসেবে আপনি সবসময় দেখতে ও এডিট করতে পারবেন।"
-                : "You control exactly what public visitors see. Turn off public access for work-in-progress layers so visitors won't see them, while you as admin can always view and edit."}
+          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-500/10 p-4 text-xs text-muted-foreground space-y-3">
+            <div className="flex items-start gap-2.5">
+              <Globe className="size-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+              <div className="leading-relaxed flex-1">
+                <span className="font-semibold text-foreground">
+                  {lang === "bn" ? "এডমিন মাস্টার কন্ট্রোল:" : "Admin Master Control:"}
+                </span>{" "}
+                {lang === "bn"
+                  ? "আপনি যেভাবে অনুমোদন দেবেন, সাধারণ ভিজিটররা ঠিক ততটুকুই দেখতে পাবে। কোনো অনুবাদ বা মেটা ডাটা অপশন প্রস্তুতাধীন থাকলে তার নিচের ভিজিটর সুইচটি বন্ধ করে রাখুন—এতে সাধারণ ভিজিটর তা দেখতে পাবে না, কিন্তু এডমিন হিসেবে আপনি সবসময় দেখতে ও এডিট করতে পারবেন।"
+                  : "You control exactly what public visitors see. Turn off public access for work-in-progress layers so visitors won't see them, while you as admin can always view and edit."}
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-emerald-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <span className="text-[11px] text-foreground font-medium flex items-center gap-1.5">
+                <SlidersHorizontal className="size-3.5 text-emerald-600" />
+                {lang === "bn"
+                  ? "নির্দিষ্ট কোনো সাইন-আপ করা গ্রাহক/গবেষককে বিশেষ অংশ দেখার অনুমতি দিতে চান?"
+                  : "Want to grant specific signed-up visitors custom access to restricted layers?"}
+              </span>
+              <Button asChild size="sm" variant="outline" className="h-7 text-xs px-3 border-emerald-500/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/10 cursor-pointer shrink-0">
+                <Link to="/admin">
+                  <Users className="size-3.5 mr-1.5" />
+                  {lang === "bn" ? "গ্রাহক ও ইউজার পারমিশন প্যানেল" : "User Access Panel"}
+                </Link>
+              </Button>
             </div>
           </div>
         )}

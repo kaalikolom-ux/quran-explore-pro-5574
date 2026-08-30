@@ -838,12 +838,12 @@ function AdminPage() {
         { value: "pages", label: "স্থির পেজসমূহ (Pages)", icon: LayoutGrid },
         { value: "menu", label: "হেডার ও নেভিগেশন মেনু", icon: MenuIcon },
         { value: "messages", label: "ব্যবহারকারীর বার্তা / ফিডব্যাক", icon: Mail },
-        { value: "subs", label: "নিউজলেটার সাবস্ক্রাইবার", icon: Users },
       ],
     },
     {
-      group: "সিস্টেম ও সিকিউরিটি কনফিগারেশন",
+      group: "ইউজার এক্সেস ও সিকিউরিটি",
       items: [
+        { value: "subs", label: "গ্রাহক ও ইউজার পারমিশন নিয়ন্ত্রণ", icon: SlidersHorizontal },
         { value: "roles", label: "অ্যাডমিন ও ইউজার রোল", icon: Shield },
         { value: "social", label: "সোশ্যাল মিডিয়া প্রোফাইল লিংক", icon: Share2 },
         { value: "turnstile", label: "টার্নস্টাইল সিকিউরিটি কী", icon: KeyRound },
