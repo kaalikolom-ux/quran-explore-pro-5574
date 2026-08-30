@@ -41,7 +41,34 @@ export const DEFAULT_PREFS: Prefs = {
   showMetaData: true,
 };
 
+export type PublicDisplayPermissions = {
+  showArabic: boolean;
+  showWordByWord: boolean;
+  showTransliteration: boolean;
+  showConventionalBn: boolean;
+  showConventionalEn: boolean;
+  showModernBn: boolean;
+  showModernEn: boolean;
+  showLexicon: boolean;
+  showLexiconScientific: boolean;
+  showMetaData: boolean;
+};
+
+export const DEFAULT_PUBLIC_PERMISSIONS: PublicDisplayPermissions = {
+  showArabic: true,
+  showWordByWord: true,
+  showTransliteration: true,
+  showConventionalBn: true,
+  showConventionalEn: true,
+  showModernBn: true,
+  showModernEn: true,
+  showLexicon: true,
+  showLexiconScientific: true,
+  showMetaData: true,
+};
+
 const STORAGE_KEY = "quran_explorer_unified_prefs_v1";
+const PUBLIC_PERMS_STORAGE_KEY = "quran_explorer_public_display_permissions_v1";
 
 export function getStoredPrefs(): Prefs {
   if (typeof window === "undefined") return DEFAULT_PREFS;
@@ -60,8 +87,20 @@ export function savePrefs(newPrefs: Prefs) {
   window.dispatchEvent(new Event("prefs-updated"));
 }
 
+export function getStoredPublicPermissions(): PublicDisplayPermissions {
+  if (typeof window === "undefined") return DEFAULT_PUBLIC_PERMISSIONS;
+  try {
+    const raw = localStorage.getItem(PUBLIC_PERMS_STORAGE_KEY);
+    if (!raw) return DEFAULT_PUBLIC_PERMISSIONS;
+    return { ...DEFAULT_PUBLIC_PERMISSIONS, ...JSON.parse(raw) };
+  } catch {
+    return DEFAULT_PUBLIC_PERMISSIONS;
+  }
+}
+
 type PrefsContextType = {
   prefs: Prefs;
+  publicPermissions: PublicDisplayPermissions;
   lang: "bn" | "en";
   dark: boolean;
   themeMode: ThemeMode;
@@ -69,6 +108,7 @@ type PrefsContextType = {
   setThemeMode: (mode: ThemeMode) => void;
   toggleLang: () => void;
   updatePref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void;
+  updatePublicPermission: (key: keyof PublicDisplayPermissions, value: boolean) => Promise<void>;
   t: (key: string) => string;
 };
 
@@ -76,17 +116,43 @@ const PrefsContext = createContext<PrefsContextType | null>(null);
 
 export function PrefsProvider({ children }: { children: React.ReactNode }) {
   const [prefs, setPrefsState] = useState<Prefs>(getStoredPrefs);
+  const [publicPermissions, setPublicPermissions] = useState<PublicDisplayPermissions>(getStoredPublicPermissions);
 
   useEffect(() => {
     const handleUpdate = () => {
       setPrefsState(getStoredPrefs());
+      setPublicPermissions(getStoredPublicPermissions());
     };
     window.addEventListener("prefs-updated", handleUpdate);
+    window.addEventListener("public-perms-updated", handleUpdate);
     window.addEventListener("storage", handleUpdate);
     return () => {
       window.removeEventListener("prefs-updated", handleUpdate);
+      window.removeEventListener("public-perms-updated", handleUpdate);
       window.removeEventListener("storage", handleUpdate);
     };
+  }, []);
+
+  // Sync public permissions from Supabase site_settings
+  useEffect(() => {
+    import("@/integrations/supabase/client").then(({ supabase }) => {
+      supabase
+        .from("site_settings")
+        .select("value")
+        .eq("key", "public_display_permissions")
+        .maybeSingle()
+        .then(({ data }) => {
+          if (data?.value) {
+            try {
+              const parsed = typeof data.value === "string" ? JSON.parse(data.value) : data.value;
+              const merged = { ...DEFAULT_PUBLIC_PERMISSIONS, ...parsed };
+              setPublicPermissions(merged);
+              localStorage.setItem(PUBLIC_PERMS_STORAGE_KEY, JSON.stringify(merged));
+            } catch {}
+          }
+        })
+        .catch(() => {});
+    });
   }, []);
 
   const themeMode: ThemeMode = prefs.themeMode || (prefs.dark ? "dark" : "sepia");
@@ -111,6 +177,25 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     const updated = { ...current, [key]: value };
     setPrefsState(updated);
     savePrefs(updated);
+  };
+
+  const updatePublicPermission = async (key: keyof PublicDisplayPermissions, value: boolean) => {
+    const current = getStoredPublicPermissions();
+    const updated: PublicDisplayPermissions = { ...current, [key]: value };
+    setPublicPermissions(updated);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(PUBLIC_PERMS_STORAGE_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event("public-perms-updated"));
+    }
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.from("site_settings").upsert({
+        key: "public_display_permissions",
+        value: JSON.stringify(updated),
+        is_public: true,
+      }, { onConflict: "key" });
+    } catch {}
   };
 
   const toggleLang = () => {
@@ -317,6 +402,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     <PrefsContext.Provider
       value={{
         prefs,
+        publicPermissions,
         lang: prefs.lang,
         dark: prefs.dark,
         themeMode,
@@ -324,6 +410,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
         setThemeMode,
         toggleLang,
         updatePref,
+        updatePublicPermission,
         t,
       }}
     >
@@ -336,9 +423,11 @@ export function usePrefs() {
   const context = useContext(PrefsContext);
   if (!context) {
     const fallbackPrefs = getStoredPrefs();
+    const fallbackPublicPerms = getStoredPublicPermissions();
     const fallbackMode = fallbackPrefs.themeMode || (fallbackPrefs.dark ? "dark" : "sepia");
     return {
       prefs: fallbackPrefs,
+      publicPermissions: fallbackPublicPerms,
       lang: fallbackPrefs.lang,
       dark: fallbackPrefs.dark,
       themeMode: fallbackMode,
@@ -346,6 +435,7 @@ export function usePrefs() {
       setThemeMode: () => {},
       toggleLang: () => {},
       updatePref: () => {},
+      updatePublicPermission: async () => {},
       t: (key: string) => key,
     };
   }

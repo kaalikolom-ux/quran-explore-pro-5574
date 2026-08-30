@@ -36,6 +36,7 @@ import { toast } from "sonner";
 
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
+import { useIsAdmin } from "@/lib/auth";
 import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded, AUDIO_CACHE } from "@/lib/offline";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -363,12 +364,11 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, lang } = usePrefs();
+  const { prefs, publicPermissions, lang } = usePrefs();
   const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
+  const { isAdmin } = useIsAdmin();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-
-  const isAdmin = true;
 
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
@@ -857,14 +857,16 @@ function SurahDetailPage() {
     setEditingAyah(null);
   };
 
-  const showArabic = prefs.showArabic;
-  const showWordByWord = prefs.showWordByWord;
-  const showTransliteration = prefs.showTransliteration;
-  const showConventionalBn = prefs.showConventionalBn;
-  const showConventionalEn = prefs.showConventionalEn;
-  const showModernBn = prefs.showModernBn;
-  const showModernEn = prefs.showModernEn;
-  const showLexicon = prefs.showLexicon;
+  const showArabic = isAdmin ? prefs.showArabic : (prefs.showArabic && (publicPermissions.showArabic ?? true));
+  const showWordByWord = isAdmin ? prefs.showWordByWord : (prefs.showWordByWord && (publicPermissions.showWordByWord ?? true));
+  const showTransliteration = isAdmin ? prefs.showTransliteration : (prefs.showTransliteration && (publicPermissions.showTransliteration ?? true));
+  const showConventionalBn = isAdmin ? prefs.showConventionalBn : (prefs.showConventionalBn && (publicPermissions.showConventionalBn ?? true));
+  const showConventionalEn = isAdmin ? prefs.showConventionalEn : (prefs.showConventionalEn && (publicPermissions.showConventionalEn ?? true));
+  const showModernBn = isAdmin ? prefs.showModernBn : (prefs.showModernBn && (publicPermissions.showModernBn ?? true));
+  const showModernEn = isAdmin ? prefs.showModernEn : (prefs.showModernEn && (publicPermissions.showModernEn ?? true));
+  const showLexicon = isAdmin ? prefs.showLexicon : (prefs.showLexicon && (publicPermissions.showLexicon ?? true));
+  const showLexiconScientific = isAdmin ? prefs.showLexiconScientific : (prefs.showLexiconScientific && (publicPermissions.showLexiconScientific ?? true));
+  const showMetaData = isAdmin ? prefs.showMetaData : (prefs.showMetaData && (publicPermissions.showMetaData ?? true));
 
   const arabicFontSize = prefs.arabicFontSize || 28;
   const translationFontSize = prefs.translationFontSize || 15;
@@ -1078,7 +1080,7 @@ function SurahDetailPage() {
                   </div>
 
                   {/* মেটা ডাটা / Meta Data বক্স */}
-                  {prefs.showMetaData && (ayah.meta_bn || ayah.meta_en) && (
+                  {showMetaData && (ayah.meta_bn || ayah.meta_en) && (
                     <div className="flex-1 min-w-0 flex flex-col justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-500/15 px-2.5 py-1 transition-all">
                       <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 select-none leading-none">
                         {lang === "bn" ? "মেটা ডাটা" : "Meta Data"}

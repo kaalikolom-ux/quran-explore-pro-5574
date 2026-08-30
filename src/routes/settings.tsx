@@ -12,11 +12,15 @@ import {
   Eye,
   Sun,
   Moon,
-  Sparkles
+  Sparkles,
+  Globe,
+  ShieldCheck,
+  Lock
 } from "lucide-react";
 import { toast } from "sonner";
 
 import { usePrefs, type Prefs, type ThemeMode } from "@/lib/prefs";
+import { useIsAdmin } from "@/lib/auth";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -29,7 +33,8 @@ export const Route = createFileRoute("/settings")({
 const SURAH_TEXT_CACHE = "quran-text-v3";
 
 function SettingsPage() {
-  const { prefs, updatePref, lang, themeMode, setThemeMode } = usePrefs();
+  const { isAdmin } = useIsAdmin();
+  const { prefs, publicPermissions, updatePref, updatePublicPermission, lang, themeMode, setThemeMode } = usePrefs();
 
   const [downloadingSurahs, setDownloadingSurahs] = useState(false);
   const [downloadingAyahs, setDownloadingAyahs] = useState(false);
@@ -468,38 +473,122 @@ function SettingsPage() {
       </div>
 
       {/* ডিসপ্লে লেয়ার সেটিংস */}
-      <div className="space-y-3">
-        <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-          <Layers className="size-4 text-primary" />
-          <span>{lang === "bn" ? "প্রদর্শন সেটিংস (Display Layers)" : "Display Layers"}</span>
+      <div className="space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+          <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Layers className="size-4 text-primary" />
+            <span>{lang === "bn" ? "প্রদর্শন সেটিংস (Display Layers)" : "Display Layers"}</span>
+          </div>
+
+          {isAdmin && (
+            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full self-start sm:self-auto">
+              <ShieldCheck className="size-3.5" />
+              {lang === "bn" ? "এডমিন মোড: ভিজিটর অনুমোদন সক্রিয়" : "Admin Mode: Visitor Access Control"}
+            </span>
+          )}
         </div>
+
+        {isAdmin && (
+          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-500/10 p-3.5 text-xs text-muted-foreground flex items-start gap-2.5">
+            <Globe className="size-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+            <div className="leading-relaxed">
+              <span className="font-semibold text-foreground">
+                {lang === "bn" ? "এডমিন মাস্টার কন্ট্রোল:" : "Admin Master Control:"}
+              </span>{" "}
+              {lang === "bn"
+                ? "আপনি যেভাবে অনুমোদন দেবেন, সাধারণ ভিজিটররা ঠিক ততটুকুই দেখতে পাবে। কোনো অনুবাদ বা মেটা ডাটা অপশন প্রস্তুতাধীন থাকলে তার নিচের ভিজিটর সুইচটি বন্ধ করে রাখুন—এতে কোনো ভিজিটর তা দেখতে পাবে না, কিন্তু এডমিন হিসেবে আপনি সবসময় দেখতে ও এডিট করতে পারবেন।"
+                : "You control exactly what public visitors see. Turn off public access for work-in-progress layers so visitors won't see them, while you as admin can always view and edit."}
+            </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {displayLayers.map((layer) => {
             const isChecked = prefs[layer.key] === true;
+            const isPublicAllowed = publicPermissions[layer.key] ?? true;
+            const isRestrictedForVisitor = !isAdmin && !isPublicAllowed;
 
             return (
               <div
                 key={layer.key}
-                className="flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-xs transition-all hover:border-border cursor-pointer"
-                onClick={() => updatePref(layer.key, !isChecked)}
+                className={`flex flex-col justify-between rounded-xl border p-4 shadow-xs transition-all ${
+                  isRestrictedForVisitor
+                    ? "border-border/40 bg-muted/20 opacity-70"
+                    : "border-border/70 bg-card hover:border-border"
+                }`}
               >
-                <div className="space-y-0.5 select-none pointer-events-none">
-                  <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
-                    {layer.title}
-                  </Label>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {layer.desc}
-                  </p>
+                {/* শীর্ষ অংশ: লেয়ারের নাম ও ইউজারের নিজস্ব ডিসপ্লে টগল */}
+                <div
+                  className="flex items-start justify-between gap-3 cursor-pointer"
+                  onClick={() => {
+                    if (!isRestrictedForVisitor) {
+                      updatePref(layer.key, !isChecked);
+                    }
+                  }}
+                >
+                  <div className="space-y-1 select-none flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
+                        {layer.title}
+                      </Label>
+                      {isRestrictedForVisitor && (
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                          <Lock className="size-2.5" />
+                          {lang === "bn" ? "প্রস্তুতাধীন" : "Work in Progress"}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {layer.desc}
+                    </p>
+                  </div>
+
+                  <div onClick={(e) => e.stopPropagation()}>
+                    <Switch
+                      id={layer.key}
+                      disabled={isRestrictedForVisitor}
+                      checked={isChecked}
+                      onCheckedChange={(val) => updatePref(layer.key, val)}
+                    />
+                  </div>
                 </div>
 
-                <div onClick={(e) => e.stopPropagation()}>
-                  <Switch
-                    id={layer.key}
-                    checked={isChecked}
-                    onCheckedChange={(val) => updatePref(layer.key, val)}
-                  />
-                </div>
+                {/* এডমিন মাস্টার অংশ: ভিজিটরদের জন্য গ্লোবাল অনুমতি টগল সুইচ */}
+                {isAdmin && (
+                  <div 
+                    className="mt-3.5 pt-3 border-t border-border/50 flex items-center justify-between gap-2"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <Globe className={`size-3.5 shrink-0 ${isPublicAllowed ? "text-emerald-500" : "text-amber-500"}`} />
+                      <span className="text-xs font-semibold text-foreground/90 truncate">
+                        {lang === "bn" ? "ভিজিটর অনুমোদন:" : "Visitor Access:"}
+                      </span>
+                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
+                        isPublicAllowed 
+                          ? "text-emerald-600 bg-emerald-500/10 dark:text-emerald-400" 
+                          : "text-amber-600 bg-amber-500/10 dark:text-amber-400"
+                      }`}>
+                        {isPublicAllowed 
+                          ? (lang === "bn" ? "উন্মুক্ত" : "Allowed") 
+                          : (lang === "bn" ? "লুকানো (Hidden)" : "Restricted")}
+                      </span>
+                    </div>
+
+                    <Switch
+                      id={`admin-perm-${layer.key}`}
+                      checked={isPublicAllowed}
+                      onCheckedChange={async (val) => {
+                        await updatePublicPermission(layer.key, val);
+                        toast.success(
+                          lang === "bn" 
+                            ? `"${layer.title}" সাধারণ ভিজিটরদের জন্য ${val ? "উন্মুক্ত" : "লুকানো/স্থগিত"} করা হয়েছে`
+                            : `"${layer.title}" is now ${val ? "visible" : "hidden"} for public visitors`
+                        );
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             );
           })}
