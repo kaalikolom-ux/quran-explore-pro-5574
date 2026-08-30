@@ -1295,14 +1295,14 @@ function SurahDetailPage() {
                   </div>
                 )}
 
-                {/* ১. ইসলামিক ফাউন্ডেশন অনুবাদ (বাংলা) */}
+                {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
                 <div 
                   style={{ display: (isEditing || showConventionalBn) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <FileText className="size-3.5 text-muted-foreground/80" />
-                    <span>১. ইসলামিক ফাউন্ডেশন অনুবাদ (বাংলা)</span>
+                    <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1312,26 +1312,26 @@ function SurahDetailPage() {
                       }
                       className="mt-1 bg-background"
                       style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="ইসলামিক ফাউন্ডেশন বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
+                      placeholder="প্রচলিত বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
                     />
                   ) : (
                     <p 
                       className="text-sm font-normal text-foreground leading-relaxed pl-5.5"
                       style={{ fontSize: `${translationFontSize}px` }}
                     >
-                      {ayah.conventional_bn || (ayah as any).translation_bn || "ইসলামিক ফাউন্ডেশন বাংলা অনুবাদ লোড হচ্ছে..."}
+                      {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
                     </p>
                   )}
                 </div>
 
-                {/* ২. Marmaduke Pickthall অনুবাদ (English) */}
+                {/* ২. Conventional Translation (English) */}
                 <div 
                   style={{ display: (isEditing || showConventionalEn) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <Languages className="size-3.5 text-muted-foreground/80" />
-                    <span>২. Marmaduke Pickthall অনুবাদ (English)</span>
+                    <span>Conventional Translation (English)</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1341,7 +1341,7 @@ function SurahDetailPage() {
                       }
                       className="font-serif italic mt-1 bg-background"
                       style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="Marmaduke Pickthall English translation..."
+                      placeholder="Conventional English translation..."
                     />
                   ) : (
                     <p 

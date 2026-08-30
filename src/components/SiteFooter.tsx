@@ -119,16 +119,13 @@ export function SiteFooter() {
         {/* ২. গুরুত্বপূর্ণ লিংকসমূহ */}
         <nav className="flex flex-col gap-1 text-sm">
           <div className="mb-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-primary text-primary-foreground text-xs font-bold shadow-xs">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1dbb9b] dark:bg-[#2dd4bf] text-white dark:text-gray-950 font-bold text-xs shadow-xs select-none">
               <BookOpen className="size-3.5" />
               <span>{lang === "en" ? "Menu Links" : "মেনু লিংক"}</span>
             </span>
           </div>
           <Link to="/" className={footerLinkClass}>
             {t("home")}
-          </Link>
-          <Link to="/about" className={footerLinkClass}>
-            {lang === "en" ? "About Us" : "আমাদের সম্পর্কে"}
           </Link>
           <Link to="/surah/$id" params={{ id: "1" }} className={footerLinkClass}>
             {t("readQuran")}
@@ -141,9 +138,6 @@ export function SiteFooter() {
               {lang === "en" && m.label_en ? m.label_en : m.label_bn}
             </a>
           ))}
-          <Link to="/privacy" className={footerLinkClass}>
-            {lang === "en" ? "Privacy Policy" : "প্রাইভেসি পলিসি"}
-          </Link>
           <Link to="/contact" className={footerLinkClass}>
             {t("contact")}
           </Link>

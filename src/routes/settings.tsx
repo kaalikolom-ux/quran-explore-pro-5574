@@ -1,8 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import React, { useState } from "react";
 import { 
   Sliders, 
-  SlidersHorizontal,
   Download, 
   Check, 
   Type, 
@@ -105,13 +104,13 @@ function SettingsPage() {
     },
     {
       key: "showConventionalBn",
-      title: lang === "bn" ? "১. ইসলামিক ফাউন্ডেশন অনুবাদ" : "1. Islamic Foundation Translation",
-      desc: lang === "bn" ? "ইসলামিক ফাউন্ডেশন বাংলাদেশ ভিত্তিক নির্ভরযোগ্য ও প্রমিত বাংলা অনুবাদ" : "Islamic Foundation Bangladesh authentic Bengali translation",
+      title: lang === "bn" ? "১. প্রচলিত অনুবাদ" : "1. Conventional Translation (BN)",
+      desc: lang === "bn" ? "মুহিউদ্দীন খান / তাইসিরুল কুরআন (Greentech)" : "Standard Bengali translation",
     },
     {
       key: "showConventionalEn",
-      title: lang === "bn" ? "২. Marmaduke Pickthall অনুবাদ" : "2. Marmaduke Pickthall Translation",
-      desc: lang === "bn" ? "মুহাম্মদ মারমাডিউক পিকথল রচিত ঐতিহাসিক ও প্রামাণিক ইংরেজি অনুবাদ" : "Historical and authentic English translation by Muhammad Marmaduke Pickthall",
+      title: lang === "bn" ? "২. Conventional Translation" : "2. Conventional Translation (EN)",
+      desc: lang === "bn" ? "সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ (Greentech)" : "Sahih International translation",
     },
     {
       key: "showModernBn",

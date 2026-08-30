@@ -58,8 +58,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "In the name of Allah, the Beneficent, the Merciful",
-      "conventional_en": "In the name of Allah, the Beneficent, the Merciful",
+      "translation_en": "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
+      "conventional_en": "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
       "meta_bn": "সিস্টেমের মূল উৎসের পরিচয় ও করুণাময় গুণাবলী",
       "meta_en": "Root Directory Authentication"
     },
@@ -120,8 +120,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Praise be to Allah, Lord of the Worlds",
-      "conventional_en": "Praise be to Allah, Lord of the Worlds",
+      "translation_en": "[All] praise is [due] to Allah, Lord of the worlds -",
+      "conventional_en": "[All] praise is [due] to Allah, Lord of the worlds -",
       "meta_bn": "সমস্ত ডেটা-সিস্টেমের Root Directory-এর প্রশংসা",
       "meta_en": "Attribute Signal Broadcast"
     },
@@ -162,8 +162,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "The Beneficent, the Merciful",
-      "conventional_en": "The Beneficent, the Merciful",
+      "translation_en": "The Entirely Merciful, the Especially Merciful,",
+      "conventional_en": "The Entirely Merciful, the Especially Merciful,",
       "meta_bn": "সর্ব-ব্যাপী ও পার্সোনালাইজড করুণা",
       "meta_en": "Data-compassionate Declaration"
     },
@@ -214,8 +214,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Master of the Day of Judgment",
-      "conventional_en": "Master of the Day of Judgment",
+      "translation_en": "Sovereign of the Day of Recompense.",
+      "conventional_en": "Sovereign of the Day of Recompense.",
       "meta_bn": "চূড়ান্ত হিসাব-নিকাশের সময়কালের কর্তৃত্ব",
       "meta_en": "Final Phase Recognition"
     },
@@ -276,8 +276,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Thee (alone) we worship; Thee (alone) we ask for help",
-      "conventional_en": "Thee (alone) we worship; Thee (alone) we ask for help",
+      "translation_en": "It is You we worship and You we ask for help.",
+      "conventional_en": "It is You we worship and You we ask for help.",
       "meta_bn": "একমাত্র Root Directory-এর সাথে সংযোগ ও সহায়তা প্রার্থনা",
       "meta_en": "Full Synchronization Protocol"
     },
@@ -328,8 +328,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Show us the straight path",
-      "conventional_en": "Show us the straight path",
+      "translation_en": "Guide us to the straight path -",
+      "conventional_en": "Guide us to the straight path -",
       "meta_bn": "সঠিক পথপ্রদর্শনের আবেদন",
       "meta_en": "Optimized Pathway Request"
     },
@@ -440,8 +440,8 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "The path of those whom Thou hast favoured; Not the (path) of those who earn Thine anger nor of those who go astray",
-      "conventional_en": "The path of those whom Thou hast favoured; Not the (path) of those who earn Thine anger nor of those who go astray",
+      "translation_en": "The path of those upon whom You have bestowed favor, not of those who have evoked [Your] anger or of those who are astray.",
+      "conventional_en": "The path of those upon whom You have bestowed favor, not of those who have evoked [Your] anger or of those who are astray.",
       "meta_bn": "অনুগ্রহপ্রাপ্তদের পথ, Penalty ও Deviation এড়ানো",
       "meta_en": "Data-blessing Stream Allocation"
     }
