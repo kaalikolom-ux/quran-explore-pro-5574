@@ -1070,13 +1070,31 @@ function SurahDetailPage() {
                     : "border-border/70 hover:border-border"
               }`}
             >
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
-                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary shrink-0">
+              <div className="border-b border-border/40 pb-3 space-y-2.5">
+                {/* [শীর্ষ সারি] আয়াতের নম্বর ও মেটা ডাটা (Meta Data) */}
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="flex items-center gap-1.5 font-mono text-sm font-bold text-primary shrink-0">
                     <span>{surahId}:{ayah.ayah}</span>
                   </div>
 
-                  <div className="flex items-center gap-1 text-muted-foreground shrink-0">
+                  {/* মেটা ডাটা / Meta Data বক্স */}
+                  {prefs.showMetaData && (ayah.meta_bn || ayah.meta_en) && (
+                    <div className="flex-1 min-w-0 flex flex-col justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-500/15 px-2.5 py-1 transition-all">
+                      <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 select-none leading-none">
+                        {lang === "bn" ? "মেটা ডাটা" : "Meta Data"}
+                      </span>
+                      <p className="text-xs sm:text-[13px] font-medium text-foreground/95 truncate sm:whitespace-normal leading-snug mt-0.5">
+                        {lang === "bn"
+                          ? (ayah.meta_bn || ayah.meta_en)
+                          : (ayah.meta_en || ayah.meta_bn)}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* [নিচের সারি] অডিও/বুকমার্ক ও একশন বাটনসমূহ */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1 text-muted-foreground">
                     <button
                       type="button"
                       onClick={() => handlePlayAyah(ayah.ayah)}
@@ -1120,82 +1138,72 @@ function SurahDetailPage() {
                     </button>
                   </div>
 
-                  {/* মেটা ডাটা / Meta Data ব্যাজ (যদি থাকে এবং prefs.showMetaData অন থাকে) */}
-                  {prefs.showMetaData && (ayah.meta_bn || ayah.meta_en) && (
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-200 text-[11px] sm:text-xs font-medium max-w-full leading-relaxed shadow-2xs">
-                      <span className="shrink-0 text-emerald-600 dark:text-emerald-400 text-[10px] uppercase font-bold tracking-wider">🏷️</span>
-                      {ayah.meta_bn && <span className="font-semibold text-foreground/90">{ayah.meta_bn}</span>}
-                      {ayah.meta_bn && ayah.meta_en && <span className="text-muted-foreground/50 font-mono">/</span>}
-                      {ayah.meta_en && <span className="text-muted-foreground italic font-sans">{ayah.meta_en}</span>}
-                    </div>
-                  )}
-                </div>
+                  <div className="flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => handleCopyAyah(ayah)}
+                      title="আয়াত কপি করুন"
+                      className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                    >
+                      <Copy className="size-4" />
+                    </button>
 
-                <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    onClick={() => handleCopyAyah(ayah)}
-                    title="আয়াত কপি করুন"
-                    className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
-                  >
-                    <Copy className="size-4" />
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => handleShareAyah(ayah.ayah)}
+                      title="আয়াত শেয়ার করুন"
+                      className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                    >
+                      <Share2 className="size-4" />
+                    </button>
 
-                  <button
-                    type="button"
-                    onClick={() => handleShareAyah(ayah.ayah)}
-                    title="আয়াত শেয়ার করুন"
-                    className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
-                  >
-                    <Share2 className="size-4" />
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenNote(ayah.ayah)}
+                      title={hasNote ? "নোট দেখুন / এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
+                      className={`p-1.5 rounded-lg transition-all cursor-pointer ${
+                        hasNote 
+                          ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs" 
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      <StickyNote className={`size-4 ${hasNote ? "fill-amber-400/30" : ""}`} />
+                    </button>
 
-                  <button
-                    type="button"
-                    onClick={() => handleOpenNote(ayah.ayah)}
-                    title={hasNote ? "নোট দেখুন / এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
-                    className={`p-1.5 rounded-lg transition-all cursor-pointer ${
-                      hasNote 
-                        ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs" 
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    <StickyNote className={`size-4 ${hasNote ? "fill-amber-400/30" : ""}`} />
-                  </button>
-
-                  {isAdmin && (
-                    <div className="ml-2 border-l border-border/40 pl-2">
-                      {isEditing ? (
-                        <div className="flex items-center gap-1">
-                          <Button
-                            size="sm"
-                            variant="default"
-                            className="h-7 px-2 text-xs"
-                            onClick={() => handleSaveEdit(ayah.ayah)}
-                          >
-                            <Check className="size-3 mr-1" /> সংরক্ষণ
-                          </Button>
+                    {isAdmin && (
+                      <div className="ml-2 border-l border-border/40 pl-2">
+                        {isEditing ? (
+                          <div className="flex items-center gap-1">
+                            <Button
+                              size="sm"
+                              variant="default"
+                              className="h-7 px-2 text-xs"
+                              onClick={() => handleSaveEdit(ayah.ayah)}
+                            >
+                              <Check className="size-3 mr-1" /> সংরক্ষণ
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              className="h-7 px-2 text-xs"
+                              onClick={() => setEditingAyah(null)}
+                            >
+                              <X className="size-3.5" />
+                            </Button>
+                          </div>
+                        ) : (
                           <Button
                             size="sm"
                             variant="ghost"
-                            className="h-7 px-2 text-xs"
-                            onClick={() => setEditingAyah(null)}
+                            className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
+                            onClick={() => handleStartEdit(ayah)}
                           >
-                            <X className="size-3.5" />
+                            <Edit3 className="size-3 mr-1" /> এডিট
                           </Button>
-                        </div>
-                      ) : (
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
-                          onClick={() => handleStartEdit(ayah)}
-                        >
-                          <Edit3 className="size-3 mr-1" /> এডিট
-                        </Button>
-                      )}
-                    </div>
-                  )}
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
