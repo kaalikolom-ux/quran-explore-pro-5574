@@ -975,8 +975,10 @@ function SurahDetailPage() {
                 variant="outline"
                 disabled={downloadingSurahAudio || isAudioDownloaded}
                 onClick={handleDownloadThisSurahAudio}
-                className="h-7 px-2 text-[11px] font-medium hidden md:inline-flex shrink-0"
-                title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "ওয়েব প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও ক্যাশ করুন"}
+                className={`h-7 px-2 text-[11px] font-medium shrink-0 transition-all ${
+                  isAudioDownloaded ? "border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/10" : ""
+                }`}
+                title={isAudioDownloaded ? "এই সুরার সম্পূর্ণ অডিও অফলাইনে সংরক্ষিত আছে" : "অ্যাপ প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও অফলাইনে সংরক্ষণ করুন"}
               >
                 {downloadingSurahAudio ? (
                   <>
@@ -986,12 +988,12 @@ function SurahDetailPage() {
                 ) : isAudioDownloaded ? (
                   <>
                     <Check className="size-3 mr-1 text-emerald-500" />
-                    <span className="hidden sm:inline">ক্যাশড</span>
+                    <span>অফলাইন রেডি</span>
                   </>
                 ) : (
                   <>
-                    <CheckCircle2 className="size-3 mr-1 text-primary" />
-                    <span className="hidden sm:inline">ক্যাশ</span>
+                    <Download className="size-3 mr-1 text-primary" />
+                    <span>অফলাইন অডিও</span>
                   </>
                 )}
               </Button>
@@ -1001,15 +1003,15 @@ function SurahDetailPage() {
                 variant="outline"
                 disabled={downloadingFullMp3}
                 onClick={handleDownloadFullSurahMp3ToDevice}
-                className="h-7 px-2 text-[11px] font-medium bg-primary/5 hover:bg-primary/15 text-primary border-primary/30 shrink-0"
-                title={`সুরা ${meta.name_bn}-এর সম্পূর্ণ MP3 ফাইল আপনার মোবাইলে/কম্পিউটারে ডাউনলোড করুন`}
+                className="h-7 px-2 text-[11px] font-medium bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground shrink-0 hidden sm:inline-flex"
+                title={`সুরা ${meta.name_bn}-এর সম্পূর্ণ MP3 ফাইল আপনার ডিভাইসের ডাউনলোড ফোল্ডারে সেভ করুন`}
               >
                 {downloadingFullMp3 ? (
                   <Loader2 className="size-3 mr-1 animate-spin text-primary" />
                 ) : (
                   <FileAudio className="size-3 mr-1" />
                 )}
-                <span>MP3</span>
+                <span>MP3 ফাইল</span>
               </Button>
             </div>
 
