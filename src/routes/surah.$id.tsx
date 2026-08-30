@@ -37,7 +37,10 @@ import { toast } from "sonner";
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
 import { resolveAudioSrc, downloadSurahAudio, isSurahAudioDownloaded, AUDIO_CACHE } from "@/lib/offline";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
@@ -230,6 +233,8 @@ export type QuranAyah = {
   modern_translation_bn?: string;
   modern_translation_en?: string;
   lexicon_modern_notes?: string;
+  meta_bn?: string;
+  meta_en?: string;
   words: QuranWord[];
 };
 
@@ -292,22 +297,37 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
 
 const SURAH_TEXT_CACHE = "quran-text-v3";
 
+const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
+  if (typeof window !== "undefined" && data?.ayahs) {
+    data.ayahs.forEach((a) => {
+      try {
+        const saved = localStorage.getItem(`quran_ayah_meta_${sId}_${a.ayah}`);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed.meta_bn !== undefined) a.meta_bn = parsed.meta_bn;
+          if (parsed.meta_en !== undefined) a.meta_en = parsed.meta_en;
+        }
+      } catch {}
+    });
+  }
+  return data;
+};
+
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  const url = `/data/quran/surahs/${sId}.json?v=3`;
+  const url = `/data/quran/surahs/${sId}.json?v=4`;
   
   if (typeof window !== "undefined" && "caches" in window) {
     try {
-      // পুরানো v1 ও v2 ক্যাশ স্বয়ংক্রিয়ভাবে ক্লিয়ার করা যাতে নতুন ইংরেজি অনুবাদ অবিলম্বে লোড হয়
       caches.delete("quran-text-v1").catch(() => {});
       caches.delete("quran-text-v2").catch(() => {});
+      caches.delete("quran-text-v3").catch(() => {});
 
       const cache = await caches.open(SURAH_TEXT_CACHE);
       const cachedRes = await cache.match(url);
       if (cachedRes) {
         const cachedData = await cachedRes.json();
-        // নিশ্চিত করা যে ক্যাশ ডাটাতে নতুন ইংরেজি অনুবাদ বিদ্যমান আছে
-        if (cachedData?.ayahs && cachedData.ayahs.length > 0 && (cachedData.ayahs[0]?.translation_en || cachedData.ayahs[0]?.conventional_en)) {
-          return cachedData;
+        if (cachedData?.ayahs && cachedData.ayahs.length > 0) {
+          return applyLocalMetaOverrides(sId, cachedData);
         }
       }
     } catch {
@@ -316,14 +336,16 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
   }
 
   const res = await fetch(url);
+  let freshData: SurahData;
   if (!res.ok) {
-    // ফলব্যাক রেসপন্স (কোয়েরি প্যারাম ছাড়া)
     const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
     if (!fallbackRes.ok) throw new Error(`Failed to load Surah ${sId}`);
-    return await fallbackRes.json();
+    freshData = await fallbackRes.json();
+  } else {
+    freshData = await res.json();
   }
   
-  const freshData = await res.json();
+  applyLocalMetaOverrides(sId, freshData);
 
   if (typeof window !== "undefined" && "caches" in window) {
     try {
@@ -409,6 +431,8 @@ function SurahDetailPage() {
     modern_translation_bn: "",
     modern_translation_en: "",
     lexicon_modern_notes: "",
+    meta_bn: "",
+    meta_en: "",
   });
 
   const meta = SURAH_META_MAP[surahId] || SURAH_META_MAP[1];
@@ -788,10 +812,12 @@ function SurahDetailPage() {
       modern_translation_bn: ayah.modern_translation_bn || "",
       modern_translation_en: ayah.modern_translation_en || "",
       lexicon_modern_notes: ayah.lexicon_modern_notes || "",
+      meta_bn: ayah.meta_bn || "",
+      meta_en: ayah.meta_en || "",
     });
   };
 
-  const handleSaveEdit = (ayahNumber: number) => {
+  const handleSaveEdit = async (ayahNumber: number) => {
     if (surahQuery.data) {
       const target = surahQuery.data.ayahs.find((a) => a.ayah === ayahNumber);
       if (target) {
@@ -802,9 +828,32 @@ function SurahDetailPage() {
         target.modern_translation_bn = editForm.modern_translation_bn.trim();
         target.modern_translation_en = editForm.modern_translation_en.trim();
         target.lexicon_modern_notes = editForm.lexicon_modern_notes.trim();
+        target.meta_bn = editForm.meta_bn.trim();
+        target.meta_en = editForm.meta_en.trim();
+
+        // Local storage override
+        try {
+          localStorage.setItem(`quran_ayah_meta_${surahId}_${ayahNumber}`, JSON.stringify({
+            meta_bn: editForm.meta_bn.trim(),
+            meta_en: editForm.meta_en.trim(),
+          }));
+        } catch {}
+
+        // Cloud sync (Supabase verse_translations)
+        try {
+          if (editForm.meta_bn.trim()) {
+            await supabase.from("verse_translations").upsert({
+              surah: surahId,
+              ayah: ayahNumber,
+              lang: "bn",
+              note: editForm.meta_bn.trim(),
+              text: editForm.conventional_bn.trim(),
+            }, { onConflict: "surah,ayah,lang" });
+          }
+        } catch {}
       }
     }
-    toast.success("আয়াতের সকল অনুবাদ ও তথ্য সংরক্ষণ করা হয়েছে");
+    toast.success("আয়াতের মেটা ডাটা ও অনুবাদ সংরক্ষণ করা হয়েছে");
     setEditingAyah(null);
   };
 
@@ -1022,12 +1071,12 @@ function SurahDetailPage() {
               }`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/40 pb-2.5">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary">
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-primary shrink-0">
                     <span>{surahId}:{ayah.ayah}</span>
                   </div>
 
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex items-center gap-1 text-muted-foreground shrink-0">
                     <button
                       type="button"
                       onClick={() => handlePlayAyah(ayah.ayah)}
@@ -1070,6 +1119,16 @@ function SurahDetailPage() {
                       )}
                     </button>
                   </div>
+
+                  {/* মেটা ডাটা / Meta Data ব্যাজ (যদি থাকে এবং prefs.showMetaData অন থাকে) */}
+                  {prefs.showMetaData && (ayah.meta_bn || ayah.meta_en) && (
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-200 text-[11px] sm:text-xs font-medium max-w-full leading-relaxed shadow-2xs">
+                      <span className="shrink-0 text-emerald-600 dark:text-emerald-400 text-[10px] uppercase font-bold tracking-wider">🏷️</span>
+                      {ayah.meta_bn && <span className="font-semibold text-foreground/90">{ayah.meta_bn}</span>}
+                      {ayah.meta_bn && ayah.meta_en && <span className="text-muted-foreground/50 font-mono">/</span>}
+                      {ayah.meta_en && <span className="text-muted-foreground italic font-sans">{ayah.meta_en}</span>}
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-1">
@@ -1208,6 +1267,36 @@ function SurahDetailPage() {
               {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
               <div className="space-y-3 pt-0.5">
                 
+                {/* [এডমিন মোড] মেটা ডাটা (Meta Data) সম্পাদনা */}
+                {isEditing && (
+                  <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-500/10 p-3.5 space-y-2.5">
+                    <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                      <Sparkles className="size-3.5" />
+                      <span>আয়াতের মেটা ডাটা / Meta Data (নম্বরের পাশে দৃশ্যমান হবে)</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <div className="space-y-1">
+                        <Label className="text-[11px] font-medium text-muted-foreground">মেটা ডাটা (বাংলা)</Label>
+                        <Input
+                          value={editForm.meta_bn}
+                          onChange={(e) => setEditForm({ ...editForm, meta_bn: e.target.value })}
+                          placeholder="যেমন: সিস্টেমের মূল উৎসের পরিচয় ও করুণাময় গুণাবলী"
+                          className="h-8 text-xs bg-background"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <Label className="text-[11px] font-medium text-muted-foreground">Meta Data (English)</Label>
+                        <Input
+                          value={editForm.meta_en}
+                          onChange={(e) => setEditForm({ ...editForm, meta_en: e.target.value })}
+                          placeholder="e.g. Root Directory Authentication"
+                          className="h-8 text-xs bg-background"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
                 <div 
                   style={{ display: (isEditing || showConventionalBn) ? "block" : "none" }}

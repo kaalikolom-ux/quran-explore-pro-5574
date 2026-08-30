@@ -10,6 +10,7 @@ export type DisplayLayers = {
   showModernEn: boolean;
   showLexicon: boolean;
   showLexiconScientific: boolean;
+  showMetaData: boolean;
 };
 
 export type ThemeMode = "dark" | "sepia" | "slate" | "light";
@@ -37,6 +38,7 @@ export const DEFAULT_PREFS: Prefs = {
   showModernEn: true,
   showLexicon: true,
   showLexiconScientific: true,
+  showMetaData: true,
 };
 
 const STORAGE_KEY = "quran_explorer_unified_prefs_v1";

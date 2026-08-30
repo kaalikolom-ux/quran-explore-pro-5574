@@ -141,6 +141,11 @@ function SettingsPage() {
       title: lang === "bn" ? "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা" : "Scientific Meanings & Context",
       desc: lang === "bn" ? "অভিধানে মূল ধাতুর আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট প্রদর্শন" : "Show scientific insights and contextual research in lexicon",
     },
+    {
+      key: "showMetaData",
+      title: lang === "bn" ? "মেটা ডাটা / Meta Data" : "Ayah Meta Data",
+      desc: lang === "bn" ? "প্রতিটি আয়াতের নম্বরের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ প্রদর্শন" : "Display contextual topic and metadata next to ayah numbers",
+    },
   ];
 
   return (
