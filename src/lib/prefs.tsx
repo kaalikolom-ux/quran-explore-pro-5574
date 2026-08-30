@@ -101,6 +101,7 @@ export function getStoredPublicPermissions(): PublicDisplayPermissions {
 type PrefsContextType = {
   prefs: Prefs;
   publicPermissions: PublicDisplayPermissions;
+  userPermissions: PublicDisplayPermissions | null;
   lang: "bn" | "en";
   dark: boolean;
   themeMode: ThemeMode;
@@ -109,6 +110,7 @@ type PrefsContextType = {
   toggleLang: () => void;
   updatePref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void;
   updatePublicPermission: (key: keyof PublicDisplayPermissions, value: boolean) => Promise<void>;
+  isLayerAllowed: (layerKey: keyof PublicDisplayPermissions, isAdmin?: boolean) => boolean;
   t: (key: string) => string;
 };
 
@@ -117,6 +119,7 @@ const PrefsContext = createContext<PrefsContextType | null>(null);
 export function PrefsProvider({ children }: { children: React.ReactNode }) {
   const [prefs, setPrefsState] = useState<Prefs>(getStoredPrefs);
   const [publicPermissions, setPublicPermissions] = useState<PublicDisplayPermissions>(getStoredPublicPermissions);
+  const [userPermissions, setUserPermissions] = useState<PublicDisplayPermissions | null>(null);
 
   useEffect(() => {
     const handleUpdate = () => {
@@ -133,9 +136,10 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  // Sync public permissions from Supabase site_settings
+  // Sync public permissions and individual user permissions from Supabase
   useEffect(() => {
     import("@/integrations/supabase/client").then(({ supabase }) => {
+      // 1. Public permissions from site_settings
       supabase
         .from("site_settings")
         .select("value")
@@ -152,6 +156,40 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
           }
         })
         .catch(() => {});
+
+      // 2. Individual user permissions if logged in
+      const syncUserPermissions = async () => {
+        try {
+          const { data: sessionData } = await supabase.auth.getSession();
+          const uid = sessionData?.session?.user?.id;
+          if (uid) {
+            const { data } = await supabase
+              .from("user_display_permissions" as any)
+              .select("permissions")
+              .eq("user_id", uid)
+              .maybeSingle();
+            if (data && (data as any).permissions) {
+              setUserPermissions((data as any).permissions);
+            } else {
+              setUserPermissions(null);
+            }
+          } else {
+            setUserPermissions(null);
+          }
+        } catch {
+          setUserPermissions(null);
+        }
+      };
+
+      syncUserPermissions();
+
+      const { data: authSub } = supabase.auth.onAuthStateChange(() => {
+        syncUserPermissions();
+      });
+
+      return () => {
+        authSub?.subscription.unsubscribe();
+      };
     });
   }, []);
 
@@ -398,11 +436,20 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     return dict[key]?.[prefs.lang] || key;
   };
 
+  const isLayerAllowed = (layerKey: keyof PublicDisplayPermissions, isAdminUser: boolean = false): boolean => {
+    if (isAdminUser) return true;
+    if (userPermissions && userPermissions[layerKey] !== undefined) {
+      return userPermissions[layerKey];
+    }
+    return publicPermissions[layerKey] ?? true;
+  };
+
   return (
     <PrefsContext.Provider
       value={{
         prefs,
         publicPermissions,
+        userPermissions,
         lang: prefs.lang,
         dark: prefs.dark,
         themeMode,
@@ -411,6 +458,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
         toggleLang,
         updatePref,
         updatePublicPermission,
+        isLayerAllowed,
         t,
       }}
     >
@@ -428,6 +476,7 @@ export function usePrefs() {
     return {
       prefs: fallbackPrefs,
       publicPermissions: fallbackPublicPerms,
+      userPermissions: null,
       lang: fallbackPrefs.lang,
       dark: fallbackPrefs.dark,
       themeMode: fallbackMode,
@@ -436,6 +485,10 @@ export function usePrefs() {
       toggleLang: () => {},
       updatePref: () => {},
       updatePublicPermission: async () => {},
+      isLayerAllowed: (layerKey: keyof PublicDisplayPermissions, isAdminUser?: boolean) => {
+        if (isAdminUser) return true;
+        return fallbackPublicPerms[layerKey] ?? true;
+      },
       t: (key: string) => key,
     };
   }

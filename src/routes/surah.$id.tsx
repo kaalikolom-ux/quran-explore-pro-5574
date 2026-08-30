@@ -857,16 +857,16 @@ function SurahDetailPage() {
     setEditingAyah(null);
   };
 
-  const showArabic = isAdmin ? prefs.showArabic : (prefs.showArabic && (publicPermissions.showArabic ?? true));
-  const showWordByWord = isAdmin ? prefs.showWordByWord : (prefs.showWordByWord && (publicPermissions.showWordByWord ?? true));
-  const showTransliteration = isAdmin ? prefs.showTransliteration : (prefs.showTransliteration && (publicPermissions.showTransliteration ?? true));
-  const showConventionalBn = isAdmin ? prefs.showConventionalBn : (prefs.showConventionalBn && (publicPermissions.showConventionalBn ?? true));
-  const showConventionalEn = isAdmin ? prefs.showConventionalEn : (prefs.showConventionalEn && (publicPermissions.showConventionalEn ?? true));
-  const showModernBn = isAdmin ? prefs.showModernBn : (prefs.showModernBn && (publicPermissions.showModernBn ?? true));
-  const showModernEn = isAdmin ? prefs.showModernEn : (prefs.showModernEn && (publicPermissions.showModernEn ?? true));
-  const showLexicon = isAdmin ? prefs.showLexicon : (prefs.showLexicon && (publicPermissions.showLexicon ?? true));
-  const showLexiconScientific = isAdmin ? prefs.showLexiconScientific : (prefs.showLexiconScientific && (publicPermissions.showLexiconScientific ?? true));
-  const showMetaData = isAdmin ? prefs.showMetaData : (prefs.showMetaData && (publicPermissions.showMetaData ?? true));
+  const showArabic = isLayerAllowed("showArabic", isAdmin) && prefs.showArabic;
+  const showWordByWord = isLayerAllowed("showWordByWord", isAdmin) && prefs.showWordByWord;
+  const showTransliteration = isLayerAllowed("showTransliteration", isAdmin) && prefs.showTransliteration;
+  const showConventionalBn = isLayerAllowed("showConventionalBn", isAdmin) && prefs.showConventionalBn;
+  const showConventionalEn = isLayerAllowed("showConventionalEn", isAdmin) && prefs.showConventionalEn;
+  const showModernBn = isLayerAllowed("showModernBn", isAdmin) && prefs.showModernBn;
+  const showModernEn = isLayerAllowed("showModernEn", isAdmin) && prefs.showModernEn;
+  const showLexicon = isLayerAllowed("showLexicon", isAdmin) && prefs.showLexicon;
+  const showLexiconScientific = isLayerAllowed("showLexiconScientific", isAdmin) && prefs.showLexiconScientific;
+  const showMetaData = isLayerAllowed("showMetaData", isAdmin) && prefs.showMetaData;
 
   const arabicFontSize = prefs.arabicFontSize || 28;
   const translationFontSize = prefs.translationFontSize || 15;

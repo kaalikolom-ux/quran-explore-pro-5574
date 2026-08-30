@@ -34,7 +34,7 @@ const SURAH_TEXT_CACHE = "quran-text-v3";
 
 function SettingsPage() {
   const { isAdmin } = useIsAdmin();
-  const { prefs, publicPermissions, updatePref, updatePublicPermission, lang, themeMode, setThemeMode } = usePrefs();
+  const { prefs, publicPermissions, userPermissions, updatePref, updatePublicPermission, isLayerAllowed, lang, themeMode, setThemeMode } = usePrefs();
 
   const [downloadingSurahs, setDownloadingSurahs] = useState(false);
   const [downloadingAyahs, setDownloadingAyahs] = useState(false);
@@ -506,7 +506,8 @@ function SettingsPage() {
           {displayLayers.map((layer) => {
             const isChecked = prefs[layer.key] === true;
             const isPublicAllowed = publicPermissions[layer.key] ?? true;
-            const isRestrictedForVisitor = !isAdmin && !isPublicAllowed;
+            const isAllowedForMe = isLayerAllowed(layer.key, isAdmin);
+            const isRestrictedForVisitor = !isAdmin && !isAllowedForMe;
 
             return (
               <div

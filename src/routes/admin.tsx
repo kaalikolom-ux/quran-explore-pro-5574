@@ -49,6 +49,8 @@ import {
   Square,
   RotateCcw,
   SlidersHorizontal,
+  Sliders,
+  Lock,
   Tag as TagIcon,
   Sparkles,
 } from "lucide-react";
@@ -69,6 +71,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { OfflineSyncAdmin } from "@/components/OfflineSyncAdmin";
 import { AuthorsAdmin } from "@/components/AuthorsAdmin";
 import { CategoriesAdmin } from "@/components/CategoriesAdmin";
@@ -2240,10 +2250,278 @@ function TranslationsAdmin() {
   );
 }
 
+function UserPermissionsDialog({
+  user,
+  onClose,
+}: {
+  user: { id: string; email?: string } | null;
+  onClose: () => void;
+}) {
+  const queryClient = useQueryClient();
+  const [loading, setLoading] = useState(false);
+  const [notes, setNotes] = useState("");
+  const [permissions, setPermissions] = useState<Record<string, boolean>>({
+    showArabic: true,
+    showWordByWord: true,
+    showTransliteration: true,
+    showConventionalBn: true,
+    showConventionalEn: true,
+    showModernBn: true,
+    showModernEn: true,
+    showLexicon: true,
+    showLexiconScientific: true,
+    showMetaData: true,
+  });
+  const [hasCustomRecord, setHasCustomRecord] = useState(false);
+
+  useEffect(() => {
+    if (!user?.id) return;
+    setLoading(true);
+    supabase
+      .from("user_display_permissions" as any)
+      .select("*")
+      .eq("user_id", user.id)
+      .maybeSingle()
+      .then(({ data, error }) => {
+        if (data && (data as any).permissions) {
+          setPermissions({
+            showArabic: true,
+            showWordByWord: true,
+            showTransliteration: true,
+            showConventionalBn: true,
+            showConventionalEn: true,
+            showModernBn: true,
+            showModernEn: true,
+            showLexicon: true,
+            showLexiconScientific: true,
+            showMetaData: true,
+            ...((data as any).permissions || {}),
+          });
+          setNotes((data as any).notes || "");
+          setHasCustomRecord(true);
+        } else {
+          setHasCustomRecord(false);
+        }
+        setLoading(false);
+      });
+  }, [user?.id]);
+
+  const saveMutation = useMutation({
+    mutationFn: async () => {
+      if (!user?.id) return;
+      const { error } = await supabase
+        .from("user_display_permissions" as any)
+        .upsert({
+          user_id: user.id,
+          email: user.email ? user.email.trim().toLowerCase() : null,
+          permissions,
+          notes: notes.trim() || null,
+          updated_at: new Date().toISOString(),
+        }, { onConflict: "user_id" });
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-user-display-permissions"] });
+      toast.success(`ইউজার ${user?.email || user?.id} এর জন্য কাস্টম ডিসপ্লে পারমিশন সংরক্ষিত হয়েছে!`);
+      onClose();
+    },
+    onError: (err: any) => toast.error(err.message),
+  });
+
+  const resetMutation = useMutation({
+    mutationFn: async () => {
+      if (!user?.id) return;
+      const { error } = await supabase
+        .from("user_display_permissions" as any)
+        .delete()
+        .eq("user_id", user.id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-user-display-permissions"] });
+      toast.success("কাস্টম পারমিশন মুছে গ্লোবাল ডিফল্টে ফিরিয়ে নেওয়া হয়েছে");
+      onClose();
+    },
+    onError: (err: any) => toast.error(err.message),
+  });
+
+  if (!user) return null;
+
+  const displayLayersList: { key: string; title: string; desc: string; highlight?: boolean }[] = [
+    { key: "showArabic", title: "আরবি টেক্সট", desc: "মূল কুরআন পাঠ প্রদর্শন" },
+    { key: "showWordByWord", title: "শব্দে শব্দে অর্থ", desc: "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" },
+    { key: "showTransliteration", title: "উচ্চারণ নির্দেশিকা", desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" },
+    { key: "showConventionalBn", title: "১. প্রচলিত বাংলা অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
+    { key: "showConventionalEn", title: "২. Conventional English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
+    { key: "showModernBn", title: "৩. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
+    { key: "showModernEn", title: "৪. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
+    { key: "showLexicon", title: "অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
+    { key: "showLexiconScientific", title: "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
+    { key: "showMetaData", title: "মেটা ডাটা / Meta Data", desc: "আয়াতের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ", highlight: true },
+  ];
+
+  return (
+    <Dialog open={!!user} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="flex items-center gap-2 text-base font-bold">
+            <SlidersHorizontal className="size-5 text-primary" />
+            স্বতন্ত্র ইউজার ডিসপ্লে ও অ্যাক্সেস পারমিশন
+          </DialogTitle>
+          <DialogDescription className="text-xs">
+            ইউজার: <span className="font-semibold text-foreground">{user.email || "অজ্ঞাত"}</span>{" "}
+            (আইডি: <span className="font-mono">{user.id}</span>)
+          </DialogDescription>
+        </DialogHeader>
+
+        {loading ? (
+          <div className="py-8 flex justify-center items-center text-muted-foreground text-xs">
+            <Loader2 className="size-5 animate-spin mr-2" /> পারমিশন লোড হচ্ছে...
+          </div>
+        ) : (
+          <div className="space-y-4 py-2">
+            {/* কুইক প্রিসেট বাটন */}
+            <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-border/60">
+              <span className="text-[11px] font-semibold text-muted-foreground">কুইক প্রিসেট:</span>
+              <button
+                type="button"
+                onClick={() => {
+                  const allOn: Record<string, boolean> = {};
+                  displayLayersList.forEach((l) => (allOn[l.key] = true));
+                  setPermissions(allOn);
+                  toast.info("সবগুলো লেয়ার উন্মুক্ত করা হলো");
+                }}
+                className="px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20 border border-emerald-500/30 cursor-pointer"
+              >
+                🌟 সম্পূর্ণ উন্মুক্ত (Full Access)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setPermissions({
+                    showArabic: true,
+                    showWordByWord: true,
+                    showTransliteration: true,
+                    showConventionalBn: true,
+                    showConventionalEn: true,
+                    showModernBn: false,
+                    showModernEn: false,
+                    showLexicon: true,
+                    showLexiconScientific: false,
+                    showMetaData: false,
+                  });
+                  toast.info("শুধুমাত্র প্রচলিত কুরআন লেয়ারসমূহ সক্রিয় করা হলো");
+                }}
+                className="px-2 py-0.5 rounded text-[11px] font-medium bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 border border-blue-500/30 cursor-pointer"
+              >
+                📖 শুধুমাত্র প্রচলিত কুরআন (Standard)
+              </button>
+            </div>
+
+            {/* ১০টি লেয়ারের চেকলিস্ট */}
+            <div className="space-y-2">
+              <span className="text-xs font-semibold text-foreground block">
+                এই ইউজারের জন্য কুরআনের কোন কোন অংশ দৃশ্যমান হবে:
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {displayLayersList.map((layer) => {
+                  const isChecked = permissions[layer.key] ?? true;
+                  return (
+                    <div
+                      key={layer.key}
+                      className={`flex items-start justify-between gap-2.5 p-3 rounded-lg border transition-all cursor-pointer ${
+                        layer.highlight
+                          ? isChecked
+                            ? "border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-500/10"
+                            : "border-border/60 bg-card opacity-70"
+                          : isChecked
+                          ? "border-border bg-card"
+                          : "border-border/40 bg-muted/20 opacity-60"
+                      }`}
+                      onClick={() => setPermissions({ ...permissions, [layer.key]: !isChecked })}
+                    >
+                      <div className="space-y-0.5 select-none flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-xs font-semibold text-foreground truncate">{layer.title}</span>
+                          {layer.highlight && (
+                            <span className="text-[9px] px-1 py-0.2 rounded bg-amber-500/15 text-amber-600 font-bold">
+                              বিশেষ
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-[10px] text-muted-foreground line-clamp-1">{layer.desc}</p>
+                      </div>
+                      <div onClick={(e) => e.stopPropagation()}>
+                        <Switch
+                          id={`user-perm-${layer.key}`}
+                          checked={isChecked}
+                          onCheckedChange={(val) => setPermissions({ ...permissions, [layer.key]: val })}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* এডমিন নোটস */}
+            <div className="space-y-1 pt-2 border-t border-border/50">
+              <Label htmlFor="admin-perm-notes" className="text-xs font-semibold">
+                এডমিন নোট (ঐচ্ছিক):
+              </Label>
+              <Input
+                id="admin-perm-notes"
+                placeholder="যেমন: অনুমোদিত ইসলামিক গবেষক / বিশেষ রিভিউয়ার"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                className="h-8 text-xs"
+              />
+            </div>
+          </div>
+        )}
+
+        <DialogFooter className="flex items-center justify-between sm:justify-between gap-2 pt-2 border-t border-border/60">
+          {hasCustomRecord ? (
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              disabled={resetMutation.isPending}
+              onClick={() => resetMutation.mutate()}
+              className="text-destructive hover:bg-destructive/10 text-xs h-8 cursor-pointer"
+            >
+              <RotateCcw className="size-3 mr-1" /> গ্লোবাল ডিফল্টে রিসেট
+            </Button>
+          ) : (
+            <div />
+          )}
+
+          <div className="flex items-center gap-2">
+            <Button type="button" variant="outline" size="sm" onClick={onClose} className="h-8 text-xs cursor-pointer">
+              বাতিল
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              disabled={saveMutation.isPending || loading}
+              onClick={() => saveMutation.mutate()}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 h-8 text-xs cursor-pointer"
+            >
+              {saveMutation.isPending ? <Loader2 className="size-3 animate-spin mr-1" /> : <Check className="size-3 mr-1" />}
+              পারমিশন সংরক্ষণ করুন
+            </Button>
+          </div>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 function RolesAdmin() {
   const queryClient = useQueryClient();
   const [userId, setUserId] = useState("");
   const [role, setRole] = useState<"admin" | "user">("admin");
+  const [selectedUserForPerms, setSelectedUserForPerms] = useState<{ id: string; email?: string } | null>(null);
 
   const rolesList = useQuery({
     queryKey: ["admin-user-roles"],
@@ -2254,6 +2532,17 @@ function RolesAdmin() {
         .order("created_at", { ascending: false });
       if (error) throw error;
       return data;
+    },
+  });
+
+  const displayPermsQuery = useQuery({
+    queryKey: ["admin-user-display-permissions"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("user_display_permissions" as any)
+        .select("*");
+      if (error) return [];
+      return data || [];
     },
   });
 
@@ -2285,8 +2574,17 @@ function RolesAdmin() {
     onError: (err: Error) => toast.error(err.message),
   });
 
+  const customPermsList = displayPermsQuery.data || [];
+
   return (
     <div className="space-y-6">
+      {selectedUserForPerms && (
+        <UserPermissionsDialog
+          user={selectedUserForPerms}
+          onClose={() => setSelectedUserForPerms(null)}
+        />
+      )}
+
       <form
         className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
         onSubmit={(e) => {
@@ -2333,25 +2631,46 @@ function RolesAdmin() {
       <div className="space-y-2">
         <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">বর্তমান রোলসমূহের তালিকা:</h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-          {rolesList.data?.map((r) => (
-            <div key={r.id} className="flex items-center justify-between p-3.5">
-              <div>
-                <p className="text-xs font-mono font-medium text-foreground">{r.user_id}</p>
-                <span className="inline-block mt-1 rounded bg-[#2271b1]/10 px-2 py-0.5 text-[10px] font-bold text-[#2271b1]">
-                  {r.role}
-                </span>
+          {rolesList.data?.map((r) => {
+            const hasCustomPerms = customPermsList.some((p: any) => p.user_id === r.user_id);
+            return (
+              <div key={r.id} className="flex items-center justify-between p-3.5 flex-wrap gap-2">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <p className="text-xs font-mono font-medium text-foreground">{r.user_id}</p>
+                    <span className="inline-block rounded bg-[#2271b1]/10 px-2 py-0.5 text-[10px] font-bold text-[#2271b1]">
+                      {r.role}
+                    </span>
+                    {hasCustomPerms && (
+                      <span className="inline-flex items-center gap-1 rounded bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
+                        <Sliders className="size-2.5" /> কাস্টম পারমিশন
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-7 text-xs px-2.5 cursor-pointer"
+                    onClick={() => setSelectedUserForPerms({ id: r.user_id })}
+                  >
+                    <SlidersHorizontal className="size-3 mr-1" /> পারমিশন সেটিংস
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Delete Role"
+                    className="h-8 w-8 text-destructive hover:bg-destructive/10 cursor-pointer"
+                    onClick={() => removeRole.mutate(r.id)}
+                  >
+                    <UserX className="size-4" />
+                  </Button>
+                </div>
               </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Delete Role"
-                className="h-8 w-8 text-destructive hover:bg-destructive/10 cursor-pointer"
-                onClick={() => removeRole.mutate(r.id)}
-              >
-                <UserX className="size-4" />
-              </Button>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -2361,6 +2680,7 @@ function RolesAdmin() {
 function SubscribersAdmin() {
   const queryClient = useQueryClient();
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [selectedUserForPerms, setSelectedUserForPerms] = useState<{ id: string; email?: string } | null>(null);
 
   const list = useQuery({
     queryKey: ["admin-subscribers"],
@@ -2391,6 +2711,17 @@ function SubscribersAdmin() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("category_user_access" as any)
+        .select("*");
+      if (error) return [];
+      return data || [];
+    },
+  });
+
+  const displayPermsQuery = useQuery({
+    queryKey: ["admin-user-display-permissions"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("user_display_permissions" as any)
         .select("*");
       if (error) return [];
       return data || [];
@@ -2434,13 +2765,21 @@ function SubscribersAdmin() {
 
   const restrictedCategories = (categoriesQuery.data || []).filter((c: any) => c.is_restricted);
   const allAccessList = accessQuery.data || [];
+  const customPermsList = displayPermsQuery.data || [];
 
   return (
     <div className="space-y-4">
+      {selectedUserForPerms && (
+        <UserPermissionsDialog
+          user={selectedUserForPerms}
+          onClose={() => setSelectedUserForPerms(null)}
+        />
+      )}
+
       <div>
-        <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার ও অ্যাক্সেস নিয়ন্ত্রণ</h2>
+        <h2 className="text-base font-semibold">নিউজলেটার সাবস্ক্রাইবার ও ইউজার পারমিশন নিয়ন্ত্রণ</h2>
         <p className="text-xs text-muted-foreground">
-          গ্রাহকদের বিবরণ দেখুন এবং রেস্ট্রিকটেড ক্যাটাগরির অ্যাক্সেস পারমিশন পরিচালনা করুন।
+          সাইন-আপ করা গ্রাহকদের বিবরণ দেখুন এবং প্রতিটি ইউজারের জন্য কুরআন ডিসপ্লে লেয়ার ও রেস্ট্রিকটেড ক্যাটাগরি পারমিশন কনফিগার করুন।
         </p>
       </div>
 
@@ -2454,6 +2793,10 @@ function SubscribersAdmin() {
             (a: any) => (subscriberEmail && a.email?.toLowerCase() === subscriberEmail) || (s.id && a.user_id === s.id)
           );
 
+          const customPermRecord = customPermsList.find(
+            (p: any) => (subscriberEmail && p.email?.toLowerCase() === subscriberEmail) || (s.id && p.user_id === s.id)
+          );
+
           return (
             <div
               key={s.id}
@@ -2461,14 +2804,24 @@ function SubscribersAdmin() {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-bold text-foreground text-sm">{s.email}</span>
                     <span className="text-[10px] text-muted-foreground font-mono">
                       (তারিখ: {new Date(s.created_at).toLocaleDateString("en-GB")})
                     </span>
+
+                    {customPermRecord ? (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                        <Sliders className="size-2.5" /> কাস্টম পারমিশন সক্রিয়
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full border border-border/40">
+                        <Globe className="size-2.5" /> গ্লোবাল ডিফল্ট
+                      </span>
+                    )}
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-mono text-[11px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border/50 select-all">
                       আইডি: {s.id}
                     </span>
@@ -2489,13 +2842,25 @@ function SubscribersAdmin() {
                     </button>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-2">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="h-8 text-xs font-semibold px-3 border-emerald-500/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/10 cursor-pointer"
+                    onClick={() => setSelectedUserForPerms({ id: s.id, email: s.email })}
+                  >
+                    <SlidersHorizontal className="size-3.5 mr-1.5 text-emerald-600" />
+                    ডিসপ্লে ও অ্যাক্সেস পারমিশন
+                  </Button>
+                </div>
               </div>
 
               {/* রেস্ট্রিকটেড ক্যাটাগরি পারমিশন চেকলিস্ট */}
               {restrictedCategories.length > 0 && (
                 <div className="mt-1 pt-2.5 border-t border-border/50">
                   <span className="text-[11px] font-semibold text-muted-foreground block mb-1.5">
-                    রেস্ট্রিকটেড ক্যাটাগরি অ্যাক্সেস:
+                    রেস্ট্রিকটেড আর্টিকেল ক্যাটাগরি অ্যাক্সেস:
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {restrictedCategories.map((cat: any) => {
