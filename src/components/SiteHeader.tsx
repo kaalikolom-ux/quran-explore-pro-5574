@@ -10,6 +10,7 @@ import {
   Mail, 
   Languages, 
   ShieldCheck,
+  Info,
   Menu,
   X,
   Search
@@ -104,7 +105,7 @@ export function SiteHeader() {
     { to: "/authors", label: lang === "bn" ? "লেখকবৃন্দ" : "Authors", icon: PenTool },
     { to: "/bookmarks", label: lang === "bn" ? "বুকমার্ক" : "Bookmarks", icon: Bookmark },
     { to: "/settings", label: lang === "bn" ? "সেটিংস" : "Settings", icon: Settings },
-    { to: "/privacy", label: lang === "bn" ? "প্রাইভেসি" : "Privacy", icon: ShieldCheck },
+    { to: "/about", label: lang === "bn" ? "পরিচিতি" : "About", icon: Info },
     { to: "/contact", label: lang === "bn" ? "যোগাযোগ" : "Contact", icon: Mail },
   ];
 

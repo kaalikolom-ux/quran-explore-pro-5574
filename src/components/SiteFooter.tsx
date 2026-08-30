@@ -124,6 +124,9 @@ export function SiteFooter() {
           <Link to="/" className={footerLinkClass}>
             {t("home")}
           </Link>
+          <Link to="/about" className={footerLinkClass}>
+            {lang === "en" ? "About Us" : "আমাদের সম্পর্কে"}
+          </Link>
           <Link to="/surah/$id" params={{ id: "1" }} className={footerLinkClass}>
             {t("readQuran")}
           </Link>
@@ -135,6 +138,9 @@ export function SiteFooter() {
               {lang === "en" && m.label_en ? m.label_en : m.label_bn}
             </a>
           ))}
+          <Link to="/privacy" className={footerLinkClass}>
+            {lang === "en" ? "Privacy Policy" : "প্রাইভেসি পলিসি"}
+          </Link>
           <Link to="/contact" className={footerLinkClass}>
             {t("contact")}
           </Link>
