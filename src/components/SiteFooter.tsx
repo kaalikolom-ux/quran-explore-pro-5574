@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2, BookOpen } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -118,9 +118,12 @@ export function SiteFooter() {
 
         {/* ২. গুরুত্বপূর্ণ লিংকসমূহ */}
         <nav className="flex flex-col gap-1 text-sm">
-          <p className="px-3 pb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-            {lang === "en" ? "Navigation" : "মেনু লিংক"}
-          </p>
+          <div className="mb-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-primary text-primary-foreground text-xs font-bold shadow-xs">
+              <BookOpen className="size-3.5" />
+              <span>{lang === "en" ? "Menu Links" : "মেনু লিংক"}</span>
+            </span>
+          </div>
           <Link to="/" className={footerLinkClass}>
             {t("home")}
           </Link>

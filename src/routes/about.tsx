@@ -75,20 +75,20 @@ function AboutPage() {
     },
     {
       num: "০৪",
-      title_bn: "১. প্রচলিত বাংলা অনুবাদ",
-      title_en: "1. Conventional Bengali Translation",
-      desc_bn: "মাওলানা মুহিউদ্দীন খান / তাইসিরুল কুরআন ভিত্তিক সর্বজনগ্রাহ্য অনুবাদ।",
-      desc_en: "Widely accepted authentic classical translations (Mohiuddin Khan).",
-      badge: "প্রচলিত মানদণ্ড",
+      title_bn: "১. ইসলামিক ফাউন্ডেশন অনুবাদ",
+      title_en: "1. Islamic Foundation Translation",
+      desc_bn: "ইসলামিক ফাউন্ডেশন বাংলাদেশ ভিত্তিক নির্ভরযোগ্য ও প্রমিত বাংলা অনুবাদ।",
+      desc_en: "Authentic and standard Bengali translation by Islamic Foundation Bangladesh.",
+      badge: "বাংলা মানদণ্ড",
       icon: CheckCircle2,
       color: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
     },
     {
       num: "০৫",
-      title_bn: "২. Conventional English",
-      title_en: "2. Conventional English Translation",
-      desc_bn: "সহীহ ইন্টারন্যাশনাল (Sahih International) স্ট্যান্ডার্ড ইংরেজি অনুবাদ।",
-      desc_en: "Internationally standard Sahih International translation.",
+      title_bn: "২. সহীহ ইন্টারন্যাশনাল অনুবাদ",
+      title_en: "2. Sahih International Translation",
+      desc_bn: "আন্তর্জাতিকভাবে সর্বাধিক স্বীকৃত সহীহ ইন্টারন্যাশনাল ইংরেজি অনুবাদ।",
+      desc_en: "Internationally standard and acclaimed Sahih International English translation.",
       badge: "ইংরেজি মানদণ্ড",
       icon: Globe,
       color: "from-slate-500/20 to-zinc-500/10 border-slate-500/30",
@@ -264,7 +264,7 @@ function AboutPage() {
                 <tr className="hover:bg-muted/20 transition-colors">
                   <td className="p-3.5 sm:p-4 font-semibold text-foreground flex items-center gap-2">
                     <span className="size-2 rounded-full bg-amber-500" />
-                    {lang === "bn" ? "প্রচলিত অনুবাদ (Conventional)" : "Conventional Translation"}
+                    {lang === "bn" ? "ইসলামিক ফাউন্ডেশন / সহীহ ইন্টারন্যাশনাল" : "Islamic Foundation / Sahih International"}
                   </td>
                   <td className="p-3.5 sm:p-4 leading-relaxed">
                     {lang === "bn"
@@ -272,7 +272,7 @@ function AboutPage() {
                       : "Traditional literal phrasing and classical Islamic scholarship."}
                   </td>
                   <td className="p-3.5 sm:p-4 font-medium text-foreground">
-                    মুহিউদ্দীন খান / সহীহ ইন্টারন্যাশনাল
+                    ইসলামিক ফাউন্ডেশন বাংলাদেশ / Sahih International
                   </td>
                   <td className="p-3.5 sm:p-4">
                     {lang === "bn" ? "সাধারণ তিলাওয়াত ও ঐতিহ্যগত পাঠ" : "General recitation & traditional study"}
@@ -341,12 +341,12 @@ function AboutPage() {
             <Zap className="size-5" />
           </div>
           <h3 className="text-base font-bold text-foreground">
-            {lang === "bn" ? "জিরো-ল্যাটেন্সি ক্লাউড স্পিড" : "Edge-Accelerated Speed"}
+            {lang === "bn" ? "১.০০ সেকেন্ডে আল্ট্রাফাস্ট স্পিড" : "Edge-Accelerated Speed"}
           </h3>
           <p className="text-xs text-muted-foreground leading-relaxed">
             {lang === "bn"
-              ? "ক্লাউডফ্লেয়ার এজ নেটওয়ার্কের মাধ্যমে পরিচালিত হওয়ায় পৃথিবীর যেকোনো প্রান্ত থেকে ০.১ সেকেন্ডে পেজ লোড হয়।"
-              : "Delivered via Cloudflare Global Edge CDN ensuring instantaneous sub-second page loads."}
+              ? "ক্লাউডফ্লেয়ার এজ নেটওয়ার্কের মাধ্যমে পরিচালিত হওয়ায় পৃথিবীর যেকোনো প্রান্ত থেকে গড়ে ১.০০ সেকেন্ডের মধ্যে দ্রুততম পেজ লোড সম্পন্ন হয়।"
+              : "Delivered via Cloudflare Global Edge CDN ensuring instantaneous page loads within ~1.00 second."}
           </p>
         </div>
 

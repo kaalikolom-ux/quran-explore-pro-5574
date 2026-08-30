@@ -104,13 +104,13 @@ function SettingsPage() {
     },
     {
       key: "showConventionalBn",
-      title: lang === "bn" ? "১. প্রচলিত অনুবাদ" : "1. Conventional Translation (BN)",
-      desc: lang === "bn" ? "মুহিউদ্দীন খান / তাইসিরুল কুরআন (Greentech)" : "Standard Bengali translation",
+      title: lang === "bn" ? "১. ইসলামিক ফাউন্ডেশন অনুবাদ" : "1. Islamic Foundation Translation",
+      desc: lang === "bn" ? "ইসলামিক ফাউন্ডেশন বাংলাদেশ ভিত্তিক নির্ভরযোগ্য ও প্রমিত বাংলা অনুবাদ" : "Islamic Foundation Bangladesh authentic Bengali translation",
     },
     {
       key: "showConventionalEn",
-      title: lang === "bn" ? "২. Conventional Translation" : "2. Conventional Translation (EN)",
-      desc: lang === "bn" ? "সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ (Greentech)" : "Sahih International translation",
+      title: lang === "bn" ? "২. সহীহ ইন্টারন্যাশনাল অনুবাদ" : "2. Sahih International Translation",
+      desc: lang === "bn" ? "আন্তর্জাতিকভাবে সর্বাধিক স্বীকৃত সহীহ ইন্টারন্যাশনাল ইংরেজি অনুবাদ" : "Sahih International English translation",
     },
     {
       key: "showModernBn",
