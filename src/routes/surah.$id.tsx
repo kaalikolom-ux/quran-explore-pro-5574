@@ -608,39 +608,52 @@ function SurahDetailPage() {
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
   const playAyahSequentially = useCallback(async (ayahNum: number) => {
-    if (audioRef.current) {
-      audioRef.current.pause();
+    let audio = audioRef.current;
+    if (!audio) {
+      audio = new Audio();
+      audioRef.current = audio;
+    } else {
+      audio.pause();
     }
 
     const sStr = String(surahId).padStart(3, "0");
     const aStr = String(ayahNum).padStart(3, "0");
     const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
 
-    const audioUrl = await resolveAudioSrc(rawAudioUrl);
-    const audio = new Audio(audioUrl);
-    audioRef.current = audio;
     setPlayingAyah(ayahNum);
-
     scrollToAyah(ayahNum);
 
-    audio.play().catch(() => {
+    try {
+      const audioUrl = await resolveAudioSrc(rawAudioUrl);
+      audio.src = audioUrl;
+      audio.load();
+
+      audio.onended = () => {
+        const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
+        if (ayahNum < totalAyahs) {
+          playAyahSequentially(ayahNum + 1);
+        } else {
+          if (isLoopingSurah) {
+            playAyahSequentially(1);
+          } else {
+            setPlayingAyah(null);
+            toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
+          }
+        }
+      };
+
+      audio.onerror = (e) => {
+        console.warn("Audio playback error:", e);
+        toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
+        setPlayingAyah(null);
+      };
+
+      await audio.play();
+    } catch (err) {
+      console.warn("Audio play rejected:", err);
       toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
       setPlayingAyah(null);
-    });
-
-    audio.onended = () => {
-      const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
-      if (ayahNum < totalAyahs) {
-        playAyahSequentially(ayahNum + 1);
-      } else {
-        if (isLoopingSurah) {
-          playAyahSequentially(1);
-        } else {
-          setPlayingAyah(null);
-          toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
-        }
-      }
-    };
+    }
   }, [surahId, surahQuery.data, meta.total, isLoopingSurah, lang]);
 
   const handleToggleSurahPlay = () => {
@@ -650,6 +663,7 @@ function SurahDetailPage() {
       }
       setPlayingAyah(null);
     } else {
+      if (!audioRef.current) audioRef.current = new Audio();
       playAyahSequentially(1);
     }
   };
@@ -659,6 +673,7 @@ function SurahDetailPage() {
       if (audioRef.current) audioRef.current.pause();
       setPlayingAyah(null);
     } else {
+      if (!audioRef.current) audioRef.current = new Audio();
       playAyahSequentially(ayahNum);
     }
   };

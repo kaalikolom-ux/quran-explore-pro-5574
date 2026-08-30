@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 /** Cache Storage buckets */
 export const AUDIO_CACHE = "quran-audio-v1";
 export const SURAH_TEXT_CACHE = "quran-text-v3";
-const IDB_NAME = "quran_offline_storage_v1";
+const IDB_NAME = "quran_offline_storage_v2";
 const AUDIO_STORE = "offline_audio";
 const SURAH_STORE = "offline_surahs";
 
-/** IndexedDB helper for 100% reliable persistence in Web, PWA, and APK WebViews */
+/** IndexedDB helper with ArrayBuffer storage for 100% cross-platform support */
 function openOfflineDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     if (typeof window === "undefined" || !("indexedDB" in window)) {
       return reject(new Error("IndexedDB not supported"));
     }
-    const request = indexedDB.open(IDB_NAME, 2);
+    const request = indexedDB.open(IDB_NAME, 1);
     request.onupgradeneeded = (e: any) => {
       const db = e.target.result as IDBDatabase;
       if (!db.objectStoreNames.contains(AUDIO_STORE)) {
@@ -48,9 +48,18 @@ function cachesAvailable() {
   return typeof window !== "undefined" && "caches" in window;
 }
 
-/** Save audio blob to both Cache Storage and IndexedDB */
-export async function saveAudioOffline(url: string, blob: Blob): Promise<void> {
-  const audioBlob = blob.type === "audio/mpeg" ? blob : new Blob([await blob.arrayBuffer()], { type: "audio/mpeg" });
+/** Save audio binary data to both Cache Storage and IndexedDB (as ArrayBuffer) */
+export async function saveAudioOffline(url: string, data: Blob | ArrayBuffer): Promise<void> {
+  let arrayBuffer: ArrayBuffer;
+  let audioBlob: Blob;
+
+  if (data instanceof Blob) {
+    arrayBuffer = await data.arrayBuffer();
+    audioBlob = data.type === "audio/mpeg" ? data : new Blob([arrayBuffer], { type: "audio/mpeg" });
+  } else {
+    arrayBuffer = data;
+    audioBlob = new Blob([arrayBuffer], { type: "audio/mpeg" });
+  }
 
   // 1. Cache Storage
   if (cachesAvailable()) {
@@ -69,11 +78,11 @@ export async function saveAudioOffline(url: string, blob: Blob): Promise<void> {
     }
   }
 
-  // 2. IndexedDB (Critical for APK WebViews)
+  // 2. IndexedDB (Stores ArrayBuffer to avoid Safari/WebView DataCloneError)
   try {
     const db = await openOfflineDB();
     const tx = db.transaction(AUDIO_STORE, "readwrite");
-    tx.objectStore(AUDIO_STORE).put({ url, blob: audioBlob, timestamp: Date.now() });
+    tx.objectStore(AUDIO_STORE).put({ url, buffer: arrayBuffer, timestamp: Date.now() });
   } catch (e) {
     console.warn("IndexedDB audio save warning:", e);
   }
@@ -114,8 +123,10 @@ export async function resolveAudioSrc(url: string): Promise<string> {
       const hit = await cache.match(url);
       if (hit) {
         const buffer = await hit.arrayBuffer();
-        const blob = new Blob([buffer], { type: "audio/mpeg" });
-        return URL.createObjectURL(blob);
+        if (buffer && buffer.byteLength > 100) {
+          const blob = new Blob([buffer], { type: "audio/mpeg" });
+          return URL.createObjectURL(blob);
+        }
       }
     } catch (e) {
       console.warn("CacheStorage match warning:", e);
@@ -132,8 +143,8 @@ export async function resolveAudioSrc(url: string): Promise<string> {
       req.onsuccess = () => resolve(req.result);
       req.onerror = () => resolve(null);
     });
-    if (item && item.blob) {
-      const blob = item.blob.type === "audio/mpeg" ? item.blob : new Blob([await item.blob.arrayBuffer()], { type: "audio/mpeg" });
+    if (item && item.buffer && item.buffer.byteLength > 100) {
+      const blob = new Blob([item.buffer], { type: "audio/mpeg" });
       return URL.createObjectURL(blob);
     }
   } catch (e) {
@@ -152,6 +163,26 @@ export async function isSurahAudioDownloaded(urls: string[]): Promise<boolean> {
   return first && last;
 }
 
+/** Fetch audio file with fallback mirrors */
+async function fetchAudioBlob(url: string): Promise<Blob> {
+  const mirrors = [
+    url,
+    url.replace("everyayah.com/data", "audio.qurancdn.com"),
+    url.replace("https://everyayah.com/data/", "https://mirrors.quranicaudio.com/everyayah/"),
+  ];
+
+  for (const mirror of mirrors) {
+    try {
+      const res = await fetch(mirror, { mode: "cors" });
+      if (res.ok) {
+        const blob = await res.blob();
+        if (blob.size > 500) return blob;
+      }
+    } catch {}
+  }
+  throw new Error(`Failed to fetch audio from all mirrors for ${url}`);
+}
+
 /** Download every ayah recitation into offline storage */
 export async function downloadSurahAudio(
   urls: string[],
@@ -161,15 +192,8 @@ export async function downloadSurahAudio(
   for (const url of urls) {
     const isSaved = await isAudioSavedOffline(url);
     if (!isSaved) {
-      try {
-        const res = await fetch(url, { mode: "cors" });
-        if (res.ok) {
-          const blob = await res.blob();
-          await saveAudioOffline(url, blob);
-        }
-      } catch (e) {
-        console.warn("Audio download error for", url, e);
-      }
+      const blob = await fetchAudioBlob(url);
+      await saveAudioOffline(url, blob);
     }
     done += 1;
     onProgress?.(done, urls.length);
