@@ -357,7 +357,7 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, publicPermissions, lang } = usePrefs();
+  const { prefs, publicPermissions, userPermissions, isLayerAllowed, lang } = usePrefs();
   const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const { isAdmin } = useIsAdmin();
   const navigate = useNavigate();
