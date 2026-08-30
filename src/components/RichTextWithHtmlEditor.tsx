@@ -12,8 +12,10 @@ import {
   Redo,
   Code2,
   Eye,
+  Eraser,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 interface RichTextProps {
   label: string;
@@ -53,6 +55,78 @@ export function RichTextWithHtmlEditor({
     if (editorRef.current) {
       onChange(editorRef.current.innerHTML);
     }
+  };
+
+  // ব্লগার, ফেসবুক, ওয়ার্ড ইত্যাদি থেকে পেস্ট করার সময় বাজে ব্যাকগ্রাউন্ড ও ফন্ট কালার অটো-ক্লিন করা
+  const handlePaste = (e: React.ClipboardEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const clipboardData = e.clipboardData;
+    const htmlData = clipboardData.getData("text/html");
+    const textData = clipboardData.getData("text/plain");
+
+    if (htmlData) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlData, "text/html");
+
+      // সব উপাদান থেকে background-color, color, font-family মুছে ফেলা
+      doc.body.querySelectorAll("*").forEach((node) => {
+        if (node instanceof HTMLElement) {
+          node.style.backgroundColor = "";
+          node.style.background = "";
+          node.style.color = "";
+          node.style.fontFamily = "";
+          node.style.fontSize = "";
+          node.style.lineHeight = "";
+          node.removeAttribute("class");
+          if (!node.getAttribute("style")?.trim()) {
+            node.removeAttribute("style");
+          }
+        }
+      });
+
+      const cleanHtml = doc.body.innerHTML;
+      document.execCommand("insertHTML", false, cleanHtml);
+    } else if (textData) {
+      const formatted = textData
+        .split(/\r?\n\r?\n/)
+        .map((p) => `<p>${p.replace(/\r?\n/g, "<br>")}</p>`)
+        .join("");
+      document.execCommand("insertHTML", false, formatted);
+    }
+
+    if (editorRef.current) {
+      onChange(editorRef.current.innerHTML);
+    }
+  };
+
+  // পুরো লেখার ব্যাকগ্রাউন্ড ও অবাঞ্ছিত ফরম্যাট ক্লিন করার ফাংশন
+  const handleCleanFormatting = () => {
+    if (!editorRef.current) return;
+    const currentHtml = editorRef.current.innerHTML;
+    if (!currentHtml.trim()) return;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(currentHtml, "text/html");
+
+    doc.body.querySelectorAll("*").forEach((node) => {
+      if (node instanceof HTMLElement) {
+        node.style.backgroundColor = "";
+        node.style.background = "";
+        node.style.color = "";
+        node.style.fontFamily = "";
+        node.style.fontSize = "";
+        node.style.lineHeight = "";
+        node.removeAttribute("class");
+        if (!node.getAttribute("style")?.trim()) {
+          node.removeAttribute("style");
+        }
+      }
+    });
+
+    const cleaned = doc.body.innerHTML;
+    editorRef.current.innerHTML = cleaned;
+    onChange(cleaned);
+    toast.success("অপ্রয়োজনীয় ব্যাকগ্রাউন্ড ও ফন্ট ফরম্যাটিং ক্লিন করা হয়েছে!");
   };
 
   return (
@@ -173,6 +247,16 @@ export function RichTextWithHtmlEditor({
               >
                 <Redo className="size-3.5" />
               </button>
+              <div className="h-4 w-px bg-border/80 mx-1" />
+              <button
+                type="button"
+                onClick={handleCleanFormatting}
+                title="কপি-পেস্ট করা লেখার অনাকাঙ্ক্ষিত ব্যাকগ্রাউন্ড ও কালার ফরম্যাট ক্লিন করুন"
+                className="flex items-center gap-1 px-2 py-1 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-[11px] font-medium transition-colors cursor-pointer"
+              >
+                <Eraser className="size-3.5" />
+                <span>ফরম্যাট ক্লিন করুন</span>
+              </button>
             </>
           ) : (
             <span className="text-[11px] font-mono text-muted-foreground px-1">
@@ -196,6 +280,7 @@ export function RichTextWithHtmlEditor({
             contentEditable
             onInput={handleVisualInput}
             onBlur={handleVisualInput}
+            onPaste={handlePaste}
             style={{ minHeight }}
             data-placeholder={placeholder}
             className="p-4 text-sm text-foreground focus:outline-none leading-relaxed overflow-y-auto empty:before:text-muted-foreground/50 empty:before:content-[attr(data-placeholder)] [&>p]:mb-4 [&>h1]:text-2xl [&>h1]:font-bold [&>h1]:mb-3 [&>h2]:text-xl [&>h2]:font-bold [&>h2]:mb-2 [&>ul]:list-disc [&>ul]:pl-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>blockquote]:border-l-4 [&>blockquote]:border-primary/50 [&>blockquote]:pl-4 [&>blockquote]:italic"

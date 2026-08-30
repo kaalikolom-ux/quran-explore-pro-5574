@@ -288,6 +288,53 @@
   padding: 1rem;
 }
 
+/* ========================================================================== */
+/* CLEAN PASTED RICH TEXT CONTENT (Blogger, Facebook, Google Docs, MS Word)   */
+/* ========================================================================== */
+.prose,
+.prose *,
+.prose p,
+.prose span,
+.prose div,
+.prose font,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose li,
+.prose blockquote,
+.prose b,
+.prose strong,
+.prose i,
+.prose em {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+}
+
+.prose a {
+  color: var(--color-primary) !important;
+  text-decoration: underline;
+  background-color: transparent !important;
+}
+
+.prose img {
+  border-radius: var(--radius-lg);
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-primary) !important;
+  padding-left: 1rem !important;
+  font-style: italic;
+  opacity: 0.9;
+}
+
 .font-logo {
   font-family: "Kaushan Script", cursive !important;
   font-weight: 400 !important;
