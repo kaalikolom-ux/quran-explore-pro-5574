@@ -1,0 +1,114 @@
+name: Build Quran Explore Offline Android APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Bubblewrap CLI
+        run: npm install -g @bubblewrap/cli
+
+      - name: Initialize Android TWA Project
+        run: |
+          mkdir -p android-twa
+          cd android-twa
+          
+          # Generate signing key
+          keytool -genkey -v -keystore android.keystore -alias quran_key -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Quran Explore, OU=Mobile, O=Wooniche, L=Dhaka, ST=Dhaka, C=BD" \
+            -storepass password123 -keypass password123
+
+          cat << 'EOF' > twa-manifest.json
+          {
+            "packageId": "com.wooniche.quran",
+            "host": "wooniche.com",
+            "name": "কুরআন অন্বেষা — Quran Explorer",
+            "launcherName": "কুরআন",
+            "display": "standalone",
+            "themeColor": "#020817",
+            "themeColorDark": "#020817",
+            "navigationColor": "#020817",
+            "navigationColorDark": "#020817",
+            "navigationDividerColor": "#020817",
+            "navigationDividerColorDark": "#020817",
+            "backgroundColor": "#020817",
+            "enableNotifications": false,
+            "startUrl": "/",
+            "iconUrl": "https://wooniche.com/favicon.png",
+            "maskableIconUrl": "https://wooniche.com/favicon.png",
+            "splashScreenFadeOutDuration": 300,
+            "signingKey": {
+              "path": "android.keystore",
+              "alias": "quran_key"
+            },
+            "appVersionName": "1.0.0",
+            "appVersionCode": 1,
+            "shortcuts": [],
+            "generatorApp": "bubblewrap-cli",
+            "webManifestUrl": "https://wooniche.com/manifest.json",
+            "fallbackType": "customtabs",
+            "features": {},
+            "isChromeOSOnly": false,
+            "minSdkVersion": 21,
+            "orientation": "default",
+            "fingerprints": []
+          }
+          EOF
+
+          bubblewrap build --skipPwaValidation --signing.keyPassword password123 --signing.storePassword password123
+
+      - name: Find and Rename APK
+        run: |
+          mkdir -p dist-apk
+          find android-twa -name "*.apk" -exec cp {} dist-apk/Quran-Explore-Offline-v1.0.apk \;
+          ls -la dist-apk/
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Quran-Explore-Offline-APK
+          path: dist-apk/Quran-Explore-Offline-v1.0.apk
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
+        with:
+          tag_name: v1.0.0-offline
+          name: Quran Explore Offline APK v1.0.0
+          body: |
+            ## 📱 কুরআন অন্বেষা — অফলাইন অ্যান্ড্রয়েড APK (Offline Android Installer)
+            
+            এই APK ফাইলটি আপনার ফোনে ডাউনলোড করে ইনস্টল করুন। 
+            
+            ### ✨ মূল সুবিধা:
+            - **১০০% অফলাইন সাপোর্ট:** কোনো ইন্টারনেট ছাড়াই চলবে।
+            - **কোনো এরর স্ক্রিন নেই:** অ্যান্ড্রয়েডের "You're offline" বা "ইন্টারনেট সংযোগ নেই" স্ক্রিন চিরতরে বন্ধ।
+            - **অফলাইন অডিও ও সুরা প্লেব্যাক:** সুরা ও অডিও ফাইল ফোনে সেভ থাকলে সম্পূর্ণ ইন্টারনেট ছাড়াই চলবে।
+          files: dist-apk/Quran-Explore-Offline-v1.0.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
