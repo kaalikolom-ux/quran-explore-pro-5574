@@ -1,7 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import React, { useState } from "react";
 import { 
   Sliders, 
+  SlidersHorizontal,
+  Users,
   Download, 
   Check, 
   Type, 
