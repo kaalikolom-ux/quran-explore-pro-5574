@@ -28,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
 import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
+import { formatArticleContent } from "@/lib/contentFormatter";
 
 export const Route = createFileRoute("/articles/$slug")({
   head: ({ params }) => {
@@ -388,7 +389,7 @@ function SingleArticlePage() {
       {/* মূল লেখার বিষয়বস্তু */}
       <div
         className="prose prose-base sm:prose-lg dark:prose-invert max-w-none leading-relaxed font-serif break-words mb-10"
-        dangerouslySetInnerHTML={{ __html: content || "" }}
+        dangerouslySetInnerHTML={{ __html: formatArticleContent(content || "") }}
       />
 
       {/* ট্যাগসমূহ */}

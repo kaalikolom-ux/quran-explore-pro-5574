@@ -59,6 +59,7 @@ import StarterKit from "@tiptap/starter-kit";
 import { Markdown } from "tiptap-markdown";
 
 import { bnToEnSlug } from "@/lib/slugHelper";
+import { formatArticleContent } from "@/lib/contentFormatter";
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
 import { useCategories } from "@/lib/menu";
@@ -698,6 +699,24 @@ function RichTextEditor({
               >
                 <LayoutGrid className="size-3.5" />
                 <span>কার্ড বক্স</span>
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="h-8 gap-1 px-2 text-xs font-medium cursor-pointer text-amber-600 dark:text-amber-400 border-amber-500/30 hover:bg-amber-500/10"
+                onClick={() => {
+                  if (!editor) return;
+                  const current = editor.getHTML();
+                  const formatted = formatArticleContent(current);
+                  editor.commands.setContent(formatted);
+                  onChange(formatted);
+                  toast.success("অটো ফরম্যাট সম্পন্ন: ** এবং > চিহ্নগুলো সুন্দর বোল্ড ও কোটেশনে রূপান্তর হয়েছে!");
+                }}
+                title="** এবং > চিহ্নগুলো স্বয়ংক্রিয়ভাবে বোল্ড ও উদ্ধৃতি বক্সে রূপান্তর করুন"
+              >
+                <Sparkles className="size-3.5 text-amber-500" />
+                <span>অটো ফরম্যাট ক্লিন</span>
               </Button>
               <div className="h-4 w-px bg-border mx-1" />
               <Button
@@ -1346,8 +1365,8 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         title_en: parsed.data.title_en || null,
         excerpt_bn: autoExcerptBn || null,
         excerpt_en: autoExcerptEn || null,
-        content_bn: parsed.data.content_bn || null,
-        content_en: parsed.data.content_en || null,
+        content_bn: parsed.data.content_bn ? formatArticleContent(parsed.data.content_bn) : null,
+        content_en: parsed.data.content_en ? formatArticleContent(parsed.data.content_en) : null,
         cover_image_url: parsed.data.cover_image_url || null,
         published,
         author_id: authorId || null,
