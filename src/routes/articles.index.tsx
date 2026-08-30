@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
+import { createFileRoute, Link, useSearch, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { FileText, EyeOff, User, X, Lock, LogIn, Sparkles } from "lucide-react";
@@ -48,6 +48,7 @@ function ArticlesIndexPage() {
   const { isAdmin } = useIsAdmin();
   const { canAccessCategory, isLoggedIn, isLoading: accessLoading } = useCategoryAccess();
   const searchParams = useSearch({ from: "/articles/" });
+  const navigate = useNavigate();
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.category || null);
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(searchParams.author || null);
@@ -55,9 +56,9 @@ function ArticlesIndexPage() {
   const [showDraftsOnly, setShowDraftsOnly] = useState(false);
 
   useEffect(() => {
-    if (searchParams.author) setSelectedAuthor(searchParams.author);
-    if (searchParams.category) setSelectedCategory(searchParams.category);
-    if (searchParams.q) setSearchQuery(searchParams.q);
+    setSelectedAuthor(searchParams.author || null);
+    setSelectedCategory(searchParams.category || null);
+    setSearchQuery(searchParams.q || null);
   }, [searchParams.author, searchParams.category, searchParams.q]);
 
   // সরাসরি ক্যাটাগরি ফেচ করা
@@ -124,11 +125,33 @@ function ArticlesIndexPage() {
     // ১. ড্রাফট ফিল্টার
     if (isAdmin && showDraftsOnly && art.published) return false;
 
-    // ২. নির্দিষ্ট ক্যাটাগরি ফিল্টার
+    // ২. নির্দিষ্ট ক্যাটাগরি ফিল্টার (বাংলা নাম, ইংরেজি স্লাগ বা আইডি দিয়ে শতভাগ নির্ভুল ম্যাচিং)
     if (selectedCategory) {
-      const catObj = categories.find((c) => c.slug === selectedCategory);
-      if (catObj && art.category_id !== catObj.id && art.category?.slug !== selectedCategory) {
-        return false;
+      const decodedCat = decodeURIComponent(selectedCategory).trim().toLowerCase();
+      const catObj = categories.find(
+        (c) =>
+          c.slug?.toLowerCase() === decodedCat ||
+          c.name_bn?.toLowerCase() === decodedCat ||
+          (c.name_en && c.name_en.toLowerCase() === decodedCat) ||
+          c.id === selectedCategory
+      );
+
+      if (catObj) {
+        if (
+          art.category_id !== catObj.id &&
+          art.category?.slug?.toLowerCase() !== catObj.slug?.toLowerCase() &&
+          art.category?.id !== catObj.id &&
+          art.category?.name_bn?.toLowerCase() !== catObj.name_bn?.toLowerCase()
+        ) {
+          return false;
+        }
+      } else {
+        const artCatSlug = (art.category?.slug || "").toLowerCase();
+        const artCatNameBn = (art.category?.name_bn || "").toLowerCase();
+        const artCatNameEn = (art.category?.name_en || "").toLowerCase();
+        if (artCatSlug !== decodedCat && artCatNameBn !== decodedCat && artCatNameEn !== decodedCat) {
+          return false;
+        }
       }
     }
 
@@ -147,7 +170,7 @@ function ArticlesIndexPage() {
 
     // ৫. সার্চ কোয়েরি ফিল্টার (?q=...)
     if (searchQuery && searchQuery.trim()) {
-      const qLower = searchQuery.trim().toLowerCase();
+      const qLower = decodeURIComponent(searchQuery).trim().toLowerCase();
       const titleBn = (art.title_bn || "").toLowerCase();
       const titleEn = (art.title_en || "").toLowerCase();
       const excerptBn = (art.excerpt_bn || "").toLowerCase();
@@ -197,11 +220,14 @@ function ArticlesIndexPage() {
         <div className="mb-6 flex items-center justify-between p-3 rounded-xl border border-primary/30 bg-primary/5 text-xs">
           <div className="flex items-center gap-2">
             <Sparkles className="size-4 text-primary" />
-            <span>অনুসন্ধান ফলাফল: <strong>"{searchQuery}"</strong></span>
+            <span>অনুসন্ধান ফলাফল: <strong>"{decodeURIComponent(searchQuery)}"</strong></span>
           </div>
           <button
             type="button"
-            onClick={() => setSearchQuery(null)}
+            onClick={() => {
+              setSearchQuery(null);
+              navigate({ to: "/articles", search: (prev) => ({ ...prev, q: undefined }) });
+            }}
             className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
           >
             <X className="size-3.5" /> সার্চ মুছুন
@@ -218,7 +244,10 @@ function ArticlesIndexPage() {
           </div>
           <button
             type="button"
-            onClick={() => setSelectedAuthor(null)}
+            onClick={() => {
+              setSelectedAuthor(null);
+              navigate({ to: "/articles", search: (prev) => ({ ...prev, author: undefined }) });
+            }}
             className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
           >
             <X className="size-3.5" /> ফিল্টার মুছুন
@@ -231,7 +260,10 @@ function ArticlesIndexPage() {
         <div className="mb-8 flex flex-wrap items-center gap-2">
           <button
             type="button"
-            onClick={() => setSelectedCategory(null)}
+            onClick={() => {
+              setSelectedCategory(null);
+              navigate({ to: "/articles", search: (prev) => ({ ...prev, category: undefined }) });
+            }}
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
               selectedCategory === null
                 ? "bg-primary text-primary-foreground shadow-xs"
@@ -244,14 +276,18 @@ function ArticlesIndexPage() {
             .filter((cat) => canAccessCategory(cat))
             .map((cat) => {
               const name = lang === "en" && cat.name_en ? cat.name_en : cat.name_bn;
-              const isSelected = selectedCategory === cat.slug;
-              const count = allArticles.filter((a: any) => a.category_id === cat.id || a.category?.slug === cat.slug).length;
+              const isSelected = selectedCategory === cat.slug || selectedCategory === cat.name_bn;
+              const count = allArticles.filter((a: any) => a.category_id === cat.id || a.category?.slug === cat.slug || a.category?.name_bn === cat.name_bn).length;
 
               return (
                 <button
                   key={cat.id}
                   type="button"
-                  onClick={() => setSelectedCategory(isSelected ? null : cat.slug)}
+                  onClick={() => {
+                    const nextCat = isSelected ? undefined : cat.slug;
+                    setSelectedCategory(nextCat || null);
+                    navigate({ to: "/articles", search: (prev) => ({ ...prev, category: nextCat }) });
+                  }}
                   className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                     isSelected
                       ? "bg-primary text-primary-foreground shadow-xs"
