@@ -57,14 +57,84 @@ export function RichTextWithHtmlEditor({
     }
   };
 
-  // ব্লগার, ফেসবুক, ওয়ার্ড ইত্যাদি থেকে পেস্ট করার সময় বাজে ব্যাকগ্রাউন্ড ও ফন্ট কালার অটো-ক্লিন করা
+// ফেসবুক, হোয়াটসঅ্যাপ, ওয়ার্ড ও চ্যাটজিপিটি থেকে পেস্ট করা টেক্সট ও মার্কডাউনকে ক্লিন HTML-এ রূপান্তর
+function formatInlineText(str: string): string {
+  return str
+    // **bold** বা __bold__ -> <strong>
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/__(.*?)__/g, "<strong>$1</strong>")
+    // *italic* বা _italic_ -> <em>
+    .replace(/(?<!\*)\*(?!\*)(.*?)(?<!\*)\*(?!\*)/g, "<em>$1</em>")
+    // [text](url) -> <a>
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary underline">$1</a>')
+    // Standalone URLs -> <a>
+    .replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary underline">$2</a>');
+}
+
+function sanitizeAndFormatContent(rawText: string): string {
+  if (!rawText) return "";
+
+  // ১. অদৃশ্য ক্ষতিকর চিহ্ন, জিরো-উইডথ স্পেস ও অপ্রয়োজনীয় ক্যারেক্টার ক্লিন করা
+  const text = rawText
+    .replace(/[\u200B-\u200D\uFEFF\u200E\u200F\u202A-\u202E]/g, "")
+    .replace(/\u00A0/g, " ");
+
+  // ২. প্যারাগ্রাফ ও ব্লককোট আলাদা করা
+  const rawBlocks = text.split(/\r?\n\r?\n+/);
+  const htmlBlocks: string[] = [];
+
+  for (let block of rawBlocks) {
+    block = block.trim();
+    if (!block) continue;
+
+    // ব্লককোট হ্যান্ডলিং (> "...")
+    if (block.startsWith(">")) {
+      const quoteLines = block
+        .split(/\r?\n/)
+        .map((l) => formatInlineText(l.replace(/^>\s*/, "").trim()))
+        .filter(Boolean)
+        .join("<br>");
+      htmlBlocks.push(`<blockquote><p>${quoteLines}</p></blockquote>`);
+      continue;
+    }
+
+    // হেডিং হ্যান্ডলিং
+    if (block.startsWith("### ")) {
+      htmlBlocks.push(`<h3>${formatInlineText(block.replace(/^###\s+/, ""))}</h3>`);
+      continue;
+    }
+    if (block.startsWith("## ")) {
+      htmlBlocks.push(`<h2>${formatInlineText(block.replace(/^##\s+/, ""))}</h2>`);
+      continue;
+    }
+    if (block.startsWith("# ")) {
+      htmlBlocks.push(`<h1>${formatInlineText(block.replace(/^#\s+/, ""))}</h1>`);
+      continue;
+    }
+
+    // সাধারণ প্যারাগ্রাফ
+    const lines = block
+      .split(/\r?\n/)
+      .map((l) => formatInlineText(l.trim()))
+      .join("<br>");
+    htmlBlocks.push(`<p>${lines}</p>`);
+  }
+
+  return htmlBlocks.join("");
+}
+
+  // ব্লগার, ফেসবুক, ওয়ার্ড ইত্যাদি থেকে পেস্ট করার সময় বাজে ব্যাকগ্রাউন্ড ও অনাকাঙ্ক্ষিত চিহ্ন অটো-ক্লিন করা
   const handlePaste = (e: React.ClipboardEvent<HTMLDivElement>) => {
     e.preventDefault();
     const clipboardData = e.clipboardData;
-    const htmlData = clipboardData.getData("text/html");
     const textData = clipboardData.getData("text/plain");
+    const htmlData = clipboardData.getData("text/html");
 
-    if (htmlData) {
+    // যদি প্লেইন টেক্সটে মার্কডাউন সিনট্যাক্স (** বা > বা #) থাকে অথবা সরাসরি ফেসবুক থেকে কপি করা টেক্সট হয়
+    if (textData && (textData.includes("**") || textData.includes(">") || textData.includes("http") || !htmlData)) {
+      const cleanHtml = sanitizeAndFormatContent(textData);
+      document.execCommand("insertHTML", false, cleanHtml);
+    } else if (htmlData) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlData, "text/html");
 
@@ -84,14 +154,13 @@ export function RichTextWithHtmlEditor({
         }
       });
 
-      const cleanHtml = doc.body.innerHTML;
-      document.execCommand("insertHTML", false, cleanHtml);
-    } else if (textData) {
-      const formatted = textData
-        .split(/\r?\n\r?\n/)
-        .map((p) => `<p>${p.replace(/\r?\n/g, "<br>")}</p>`)
-        .join("");
-      document.execCommand("insertHTML", false, formatted);
+      // টেক্সটের মাঝে লুকিয়ে থাকা **bold** বা > কোটেশন কনভার্ট করা
+      let innerHtml = doc.body.innerHTML;
+      innerHtml = innerHtml
+        .replace(/[\u200B-\u200D\uFEFF\u200E\u200F\u202A-\u202E]/g, "")
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+      document.execCommand("insertHTML", false, innerHtml);
     }
 
     if (editorRef.current) {
@@ -102,31 +171,14 @@ export function RichTextWithHtmlEditor({
   // পুরো লেখার ব্যাকগ্রাউন্ড ও অবাঞ্ছিত ফরম্যাট ক্লিন করার ফাংশন
   const handleCleanFormatting = () => {
     if (!editorRef.current) return;
-    const currentHtml = editorRef.current.innerHTML;
-    if (!currentHtml.trim()) return;
+    const currentText = editorRef.current.innerText || editorRef.current.textContent || "";
+    if (!currentText.trim()) return;
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(currentHtml, "text/html");
-
-    doc.body.querySelectorAll("*").forEach((node) => {
-      if (node instanceof HTMLElement) {
-        node.style.backgroundColor = "";
-        node.style.background = "";
-        node.style.color = "";
-        node.style.fontFamily = "";
-        node.style.fontSize = "";
-        node.style.lineHeight = "";
-        node.removeAttribute("class");
-        if (!node.getAttribute("style")?.trim()) {
-          node.removeAttribute("style");
-        }
-      }
-    });
-
-    const cleaned = doc.body.innerHTML;
+    // সম্পূর্ণ টেক্সটকে ফ্রেশ ও ক্লিন HTML-এ কনভার্ট করা
+    const cleaned = sanitizeAndFormatContent(currentText);
     editorRef.current.innerHTML = cleaned;
     onChange(cleaned);
-    toast.success("অপ্রয়োজনীয় ব্যাকগ্রাউন্ড ও ফন্ট ফরম্যাটিং ক্লিন করা হয়েছে!");
+    toast.success("অপ্রয়োজনীয় চিহ্ন, ব্যাকগ্রাউন্ড ও ফরম্যাটিং নিখুঁতভাবে ক্লিন করা হয়েছে!");
   };
 
   return (
