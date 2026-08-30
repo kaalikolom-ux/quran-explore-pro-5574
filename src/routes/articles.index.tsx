@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 const searchSchema = z.object({
   category: z.string().optional(),
   author: z.string().optional(),
+  q: z.string().optional(),
 });
 
 export const Route = createFileRoute("/articles/")({
@@ -50,12 +51,14 @@ function ArticlesIndexPage() {
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.category || null);
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(searchParams.author || null);
+  const [searchQuery, setSearchQuery] = useState<string | null>(searchParams.q || null);
   const [showDraftsOnly, setShowDraftsOnly] = useState(false);
 
   useEffect(() => {
     if (searchParams.author) setSelectedAuthor(searchParams.author);
     if (searchParams.category) setSelectedCategory(searchParams.category);
-  }, [searchParams.author, searchParams.category]);
+    if (searchParams.q) setSearchQuery(searchParams.q);
+  }, [searchParams.author, searchParams.category, searchParams.q]);
 
   // সরাসরি ক্যাটাগরি ফেচ করা
   const categoriesQuery = useQuery({
@@ -142,6 +145,25 @@ function ArticlesIndexPage() {
       return false;
     }
 
+    // ৫. সার্চ কোয়েরি ফিল্টার (?q=...)
+    if (searchQuery && searchQuery.trim()) {
+      const qLower = searchQuery.trim().toLowerCase();
+      const titleBn = (art.title_bn || "").toLowerCase();
+      const titleEn = (art.title_en || "").toLowerCase();
+      const excerptBn = (art.excerpt_bn || "").toLowerCase();
+      const catNameBn = (art.category?.name_bn || "").toLowerCase();
+      const catSlug = (art.category?.slug || "").toLowerCase();
+      
+      const matches = 
+        titleBn.includes(qLower) || 
+        titleEn.includes(qLower) || 
+        excerptBn.includes(qLower) || 
+        catNameBn.includes(qLower) ||
+        catSlug.includes(qLower);
+
+      if (!matches) return false;
+    }
+
     return true;
   });
 
@@ -169,6 +191,23 @@ function ArticlesIndexPage() {
           </Button>
         </div>
       </div>
+
+      {/* যদি নির্দিষ্ট সার্চ কোয়েরি থাকে (?q=...) */}
+      {searchQuery && (
+        <div className="mb-6 flex items-center justify-between p-3 rounded-xl border border-primary/30 bg-primary/5 text-xs">
+          <div className="flex items-center gap-2">
+            <Sparkles className="size-4 text-primary" />
+            <span>অনুসন্ধান ফলাফল: <strong>"{searchQuery}"</strong></span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setSearchQuery(null)}
+            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
+          >
+            <X className="size-3.5" /> সার্চ মুছুন
+          </button>
+        </div>
+      )}
 
       {/* যদি নির্দিষ্ট লেখক দ্বারা ফিল্টার হয়ে থাকে */}
       {selectedAuthor && activeAuthorObj && (

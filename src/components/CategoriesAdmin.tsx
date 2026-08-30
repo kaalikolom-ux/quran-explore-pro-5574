@@ -430,10 +430,33 @@ export function CategoriesAdmin() {
             <Input
               id="cat-name-bn"
               value={form.name_bn}
-              onChange={(e) => setForm({ ...form, name_bn: e.target.value })}
+              onChange={(e) => {
+                const val = e.target.value;
+                const bnToEnMap: Record<string, string> = {
+                  "গল্প": "golpo",
+                  "কবিতা": "kobita",
+                  "স্মৃতিকথা": "smritikotha",
+                  "খসড়া": "khosra",
+                  "খসড়া": "khosra",
+                  "স্ট্যাটাস": "status",
+                  "প্রবন্ধ": "probondho",
+                  "উপন্যাস": "uponnash",
+                  "নাটক": "natok",
+                  "গান": "gan",
+                  "কুরআন": "quran",
+                  "হাদিস": "hadith",
+                  "তাদাব্বুর": "tadabbur",
+                };
+                const autoSlug = bnToEnMap[val.trim()] || "";
+                setForm((prev) => ({
+                  ...prev,
+                  name_bn: val,
+                  slug: !editingId && autoSlug ? autoSlug : prev.slug,
+                }));
+              }}
               required
               className="text-xs h-9"
-              placeholder="যেমন: তাদাব্বুরে কুরআন..."
+              placeholder="যেমন: গল্প, কবিতা, তাদাব্বুর..."
             />
           </div>
           <div className="space-y-1.5">
@@ -441,9 +464,17 @@ export function CategoriesAdmin() {
             <Input
               id="cat-name-en"
               value={form.name_en}
-              onChange={(e) => setForm({ ...form, name_en: e.target.value })}
+              onChange={(e) => {
+                const val = e.target.value;
+                const cleanSlug = val.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
+                setForm((prev) => ({
+                  ...prev,
+                  name_en: val,
+                  slug: !editingId && cleanSlug ? cleanSlug : prev.slug,
+                }));
+              }}
               className="text-xs h-9"
-              placeholder="e.g. Quran Tadabbur..."
+              placeholder="e.g. Story, Poem, Tadabbur..."
             />
           </div>
           <div className="space-y-1.5">
@@ -451,7 +482,7 @@ export function CategoriesAdmin() {
             <Input
               id="cat-slug"
               value={form.slug}
-              onChange={(e) => setForm({ ...form, slug: e.target.value })}
+              onChange={(e) => setForm({ ...form, slug: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, "") })}
               required
               className="text-xs h-9 font-mono"
               placeholder="quran-tadabbur"
