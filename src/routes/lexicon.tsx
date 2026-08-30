@@ -26,6 +26,7 @@ import { usePrefs } from "@/lib/prefs";
 import { localNumber } from "@/lib/quran";
 import { useIsAdmin } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
+import { Typewriter } from "@/components/Typewriter";
 import {
   Dialog,
   DialogContent,
@@ -368,32 +369,69 @@ function QuranLexiconPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       
-      {/* ১. পেইজ হিরো ব্যানার */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#030712] via-[#0b1a2d] to-[#030712] text-white py-14 sm:py-20">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[350px] w-[700px] rounded-full bg-[#1d4ed8]/15 blur-[140px]" />
-          <div className="absolute -right-20 top-1/3 h-[300px] w-[300px] rounded-full bg-[#0284c7]/15 blur-[120px]" />
+      {/* ১. পেইজ হিরো ব্যানার (হোমপেইজের মতো চমৎকার স্টাইল) */}
+      <section className="relative overflow-hidden text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[520px] contain-paint">
+        {/* শুধুমাত্র পিওর ব্যাকগ্রাউন্ড ইমেজ (হরিজোন্টালি মিরর করা যাতে বামে ডার্ক অংশ থাকে) */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero-bg.webp"
+            alt=""
+            aria-hidden="true"
+            width="1920"
+            height="1080"
+            className="w-full h-full object-cover object-center -scale-x-100 select-none pointer-events-none"
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-semibold tracking-wide text-white/90 backdrop-blur-md mb-4 shadow-xs">
-            <BookA className="size-4 text-[#60a5fa]" />
-            {lang === "bn" ? "শব্দে শব্দে কুরআনিক অভিধান, উচ্চারণ ও বিজ্ঞান" : "Quranic Lexicon & Scientific Research"}
-          </span>
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
+            <Sparkles className="size-3.5 text-[#60a5fa]" />
+            <span>{lang === "bn" ? "শব্দে শব্দে কুরআনিক অভিধান, উচ্চারণ ও বিজ্ঞান" : "Quranic Lexicon & Scientific Research"}</span>
+          </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-white leading-tight">
-            {lang === "bn" ? "কুরআনিক আরবি শব্দকোষ ও বিজ্ঞানভিত্তিক অর্থ" : "Quranic Arabic Lexicon & Scientific Notes"}
-          </h1>
+          <div className="mt-6 max-w-4xl">
+            <h1 className="text-3xl font-bold leading-normal text-white sm:text-4xl md:text-5xl font-serif">
+              {lang === "bn" ? (
+                "কুরআনিক আরবি শব্দকোষ ও বিজ্ঞান"
+              ) : (
+                "Quranic Arabic Lexicon & Science"
+              )}
+            </h1>
 
-          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-white/80 leading-relaxed font-normal">
+            {/* ফিক্সড মিনিমাম হাইট দিয়ে লেআউট শিফট প্রতিরোধ ও টাইপরাইটার অ্যানিমেশন */}
+            <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
+              <Typewriter
+                words={
+                  lang === "bn"
+                    ? [
+                        "১,৬৪২টি মূল ধাতু (Roots) সহ",
+                        "বাংলা উচ্চারণ ও ব্যুৎপত্তি",
+                        "বিজ্ঞানভিত্তিক গবেষণামূলক ব্যাখ্যায়",
+                        "শব্দের আয়াতভিত্তিক রেফারেন্সসহ",
+                      ]
+                    : [
+                        "1,642 Arabic root words",
+                        "with Bangla phonetics",
+                        "with scientific insights",
+                        "with contextual references",
+                      ]
+                }
+                delayBetweenWords={4500}
+              />
+            </div>
+          </div>
+
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
             {lang === "bn"
               ? "পবিত্র কুরআনের ১,৬৪২টি মূল ধাতু (Roots) ও শব্দের সহজ বাংলা উচ্চারণ, অর্থ এবং আধুনিক বিজ্ঞানভিত্তিক গবেষণামূলক ব্যাখ্যা।"
               : "Explore 1,642 Quranic roots with Bengali phonetics, meanings, grammar, and modern scientific contextual research."}
           </p>
 
           {/* প্রধান সার্চ ইনপুট */}
-          <div className="mt-8 max-w-2xl mx-auto">
-            <div className="relative flex items-center rounded-2xl border border-white/25 bg-black/40 px-4 py-2.5 backdrop-blur-md shadow-lg focus-within:border-[#60a5fa] focus-within:ring-2 focus-within:ring-[#60a5fa]/30 transition-all">
+          <div className="mt-8 max-w-2xl">
+            <div className="relative flex items-center rounded-2xl border border-white/25 bg-black/40 px-4 py-3 backdrop-blur-md shadow-lg focus-within:border-[#60a5fa] focus-within:ring-2 focus-within:ring-[#60a5fa]/30 transition-all">
               <Search className="size-5 text-[#60a5fa] shrink-0 mr-3" />
               <input
                 type="text"
@@ -408,8 +446,9 @@ function QuranLexiconPage() {
               />
               {searchTerm && (
                 <button
+                  type="button"
                   onClick={() => setSearchTerm("")}
-                  className="text-white/60 hover:text-white text-xs px-2 py-1 bg-white/10 rounded-md cursor-pointer"
+                  className="text-white/70 hover:text-white text-xs px-2.5 py-1 bg-white/10 hover:bg-white/20 rounded-md cursor-pointer transition-colors"
                 >
                   মুছুন
                 </button>
@@ -417,6 +456,9 @@ function QuranLexiconPage() {
             </div>
           </div>
         </div>
+
+        {/* নিচের সেকশনের সাথে গ্র্যাডিয়েন্ট জয়েন্ট */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
       {/* ২. বর্ণানুক্রমিক ফিল্টার বার */}
