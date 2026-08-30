@@ -33,12 +33,18 @@ jobs:
       - name: Install Bubblewrap CLI
         run: npm install -g @bubblewrap/cli
 
-      - name: Initialize Android TWA Project
+      - name: Configure and Build APK
+        env:
+          BUBBLEWRAP_KEYSTORE_PASSWORD: password123
+          BUBBLEWRAP_KEY_PASSWORD: password123
         run: |
+          # Configure bubblewrap with system paths
+          bubblewrap updateConfig --jdkPath="$JAVA_HOME" --androidSdkPath="$ANDROID_HOME"
+
           mkdir -p android-twa
           cd android-twa
           
-          # Generate signing key
+          # Generate keystore
           keytool -genkey -v -keystore android.keystore -alias quran_key -keyalg RSA -keysize 2048 -validity 10000 \
             -dname "CN=Quran Explore, OU=Mobile, O=Wooniche, L=Dhaka, ST=Dhaka, C=BD" \
             -storepass password123 -keypass password123
@@ -80,7 +86,7 @@ jobs:
           }
           EOF
 
-          bubblewrap build --skipPwaValidation --signing.keyPassword password123 --signing.storePassword password123
+          bubblewrap build --skipPwaValidation
 
       - name: Find and Rename APK
         run: |
