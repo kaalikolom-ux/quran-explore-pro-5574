@@ -63,7 +63,7 @@ type SurahSearchParams = {
   ayah?: number;
 };
 
-export const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: string; total: number }> = {
+const SURAH_META_MAP: Record<number, { name_bn: string; name_ar: string; type: string; total: number }> = {
   1: { name_bn: "আল-ফাতিহা", name_ar: "الفاتحة", type: "মাক্কী", total: 7 },
   2: { name_bn: "আল-বাকারাহ", name_ar: "البقرة", type: "মাদানী", total: 286 },
   3: { name_bn: "আলে ইমরান", name_ar: "آل عمران", type: "মাদানী", total: 200 },
@@ -608,52 +608,39 @@ function SurahDetailPage() {
   }, [surahQuery.isSuccess, search.ayah, surahId]);
 
   const playAyahSequentially = useCallback(async (ayahNum: number) => {
-    let audio = audioRef.current;
-    if (!audio) {
-      audio = new Audio();
-      audioRef.current = audio;
-    } else {
-      audio.pause();
+    if (audioRef.current) {
+      audioRef.current.pause();
     }
 
     const sStr = String(surahId).padStart(3, "0");
     const aStr = String(ayahNum).padStart(3, "0");
     const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
 
+    const audioUrl = await resolveAudioSrc(rawAudioUrl);
+    const audio = new Audio(audioUrl);
+    audioRef.current = audio;
     setPlayingAyah(ayahNum);
+
     scrollToAyah(ayahNum);
 
-    try {
-      const audioUrl = await resolveAudioSrc(rawAudioUrl);
-      audio.src = audioUrl;
-      audio.load();
-
-      audio.onended = () => {
-        const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
-        if (ayahNum < totalAyahs) {
-          playAyahSequentially(ayahNum + 1);
-        } else {
-          if (isLoopingSurah) {
-            playAyahSequentially(1);
-          } else {
-            setPlayingAyah(null);
-            toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
-          }
-        }
-      };
-
-      audio.onerror = (e) => {
-        console.warn("Audio playback error:", e);
-        toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
-        setPlayingAyah(null);
-      };
-
-      await audio.play();
-    } catch (err) {
-      console.warn("Audio play rejected:", err);
+    audio.play().catch(() => {
       toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
       setPlayingAyah(null);
-    }
+    });
+
+    audio.onended = () => {
+      const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
+      if (ayahNum < totalAyahs) {
+        playAyahSequentially(ayahNum + 1);
+      } else {
+        if (isLoopingSurah) {
+          playAyahSequentially(1);
+        } else {
+          setPlayingAyah(null);
+          toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
+        }
+      }
+    };
   }, [surahId, surahQuery.data, meta.total, isLoopingSurah, lang]);
 
   const handleToggleSurahPlay = () => {
@@ -663,7 +650,6 @@ function SurahDetailPage() {
       }
       setPlayingAyah(null);
     } else {
-      if (!audioRef.current) audioRef.current = new Audio();
       playAyahSequentially(1);
     }
   };
@@ -673,7 +659,6 @@ function SurahDetailPage() {
       if (audioRef.current) audioRef.current.pause();
       setPlayingAyah(null);
     } else {
-      if (!audioRef.current) audioRef.current = new Audio();
       playAyahSequentially(ayahNum);
     }
   };
@@ -975,10 +960,8 @@ function SurahDetailPage() {
                 variant="outline"
                 disabled={downloadingSurahAudio || isAudioDownloaded}
                 onClick={handleDownloadThisSurahAudio}
-                className={`h-7 px-2 text-[11px] font-medium shrink-0 transition-all ${
-                  isAudioDownloaded ? "border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/10" : ""
-                }`}
-                title={isAudioDownloaded ? "এই সুরার সম্পূর্ণ অডিও অফলাইনে সংরক্ষিত আছে" : "অ্যাপ প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও অফলাইনে সংরক্ষণ করুন"}
+                className="h-7 px-2 text-[11px] font-medium hidden md:inline-flex shrink-0"
+                title={isAudioDownloaded ? "এই সুরার অডিও অফলাইনে সংরক্ষিত আছে" : "ওয়েব প্লেয়ারের জন্য সম্পূর্ণ সুরার অডিও ক্যাশ করুন"}
               >
                 {downloadingSurahAudio ? (
                   <>
@@ -988,12 +971,12 @@ function SurahDetailPage() {
                 ) : isAudioDownloaded ? (
                   <>
                     <Check className="size-3 mr-1 text-emerald-500" />
-                    <span>অফলাইন রেডি</span>
+                    <span className="hidden sm:inline">ক্যাশড</span>
                   </>
                 ) : (
                   <>
-                    <Download className="size-3 mr-1 text-primary" />
-                    <span>অফলাইন অডিও</span>
+                    <CheckCircle2 className="size-3 mr-1 text-primary" />
+                    <span className="hidden sm:inline">ক্যাশ</span>
                   </>
                 )}
               </Button>
@@ -1003,15 +986,15 @@ function SurahDetailPage() {
                 variant="outline"
                 disabled={downloadingFullMp3}
                 onClick={handleDownloadFullSurahMp3ToDevice}
-                className="h-7 px-2 text-[11px] font-medium bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground shrink-0 hidden sm:inline-flex"
-                title={`সুরা ${meta.name_bn}-এর সম্পূর্ণ MP3 ফাইল আপনার ডিভাইসের ডাউনলোড ফোল্ডারে সেভ করুন`}
+                className="h-7 px-2 text-[11px] font-medium bg-primary/5 hover:bg-primary/15 text-primary border-primary/30 shrink-0"
+                title={`সুরা ${meta.name_bn}-এর সম্পূর্ণ MP3 ফাইল আপনার মোবাইলে/কম্পিউটারে ডাউনলোড করুন`}
               >
                 {downloadingFullMp3 ? (
                   <Loader2 className="size-3 mr-1 animate-spin text-primary" />
                 ) : (
                   <FileAudio className="size-3 mr-1" />
                 )}
-                <span>MP3 ফাইল</span>
+                <span>MP3</span>
               </Button>
             </div>
 
@@ -1048,31 +1031,6 @@ function SurahDetailPage() {
       {surahQuery.isLoading && (
         <div className="py-16 text-center text-sm text-muted-foreground animate-pulse">
           কুরআনের আয়াতসমূহ লোড হচ্ছে...
-        </div>
-      )}
-
-      {/* অফলাইন বা লোড এরর স্টেট */}
-      {surahQuery.isError && (
-        <div className="py-12 px-4 text-center rounded-2xl border border-amber-500/30 bg-amber-500/5 space-y-4 max-w-md mx-auto my-6">
-          <AlertCircle className="size-10 text-amber-500 mx-auto" />
-          <div className="space-y-1.5">
-            <h3 className="text-base font-semibold text-foreground">সুরা {meta.name_bn} অফলাইনে পাওয়া যায়নি</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              এই সুরাটির ডাটা এখনো আপনার ডিভাইসের অফলাইন মেমরিতে সেভ করা হয়নি। অনলাইনে থাকা অবস্থায় সেটিংস থেকে <strong>"১১৪টি সুরা ডাউনলোড"</strong> বাটনে ক্লিক করে সব সুরা সংরক্ষণ করে নিন।
-            </p>
-          </div>
-          <div className="flex items-center justify-center gap-2 pt-2">
-            <Button asChild variant="outline" size="sm" className="text-xs">
-              <Link to="/settings">
-                সেটিংস পেজে যান
-              </Link>
-            </Button>
-            <Button asChild variant="default" size="sm" className="text-xs">
-              <Link to="/surah/$id" params={{ id: "1" }}>
-                সুরা আল-ফাতিহা পড়ুন
-              </Link>
-            </Button>
-          </div>
         </div>
       )}
 
