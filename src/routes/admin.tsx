@@ -50,6 +50,7 @@ import {
   RotateCcw,
   SlidersHorizontal,
   Tag as TagIcon,
+  Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -57,6 +58,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Markdown } from "tiptap-markdown";
 
+import { bnToEnSlug } from "@/lib/slugHelper";
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
 import { useCategories } from "@/lib/menu";
@@ -128,13 +130,7 @@ function InlineImportModal({
   });
 
   const generateSlug = (title: string, fallback: string) => {
-    const slug = title
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "-")
-      .slice(0, 80);
-    return slug || `post-${fallback}-${Date.now().toString().slice(-4)}`;
+    return bnToEnSlug(title, fallback);
   };
 
   const extractFirstImage = (htmlContent: string) => {
@@ -1106,6 +1102,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [bulkAction, setBulkAction] = useState<string>("");
   const [bulkAuthorId, setBulkAuthorId] = useState<string>("");
   const [bulkCategoryId, setBulkCategoryId] = useState<string>("");
+  const [isAutoSlugging, setIsAutoSlugging] = useState(false);
 
   const categories = useCategories();
 
@@ -1251,6 +1248,43 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     },
     onError: (err: Error) => toast.error(err.message),
   });
+
+  const handleBulkAutoSlugGenerate = async () => {
+    if (!list.data || list.data.length === 0) {
+      toast.error("কোনো পোস্ট পাওয়া যায়নি");
+      return;
+    }
+    if (
+      !confirm(
+        "আপনি কি সমস্ত পোস্টের পার্মালিঙ্ক (Slug) বাংলা শিরোনাম অনুযায়ী স্বয়ংক্রিয়ভাবে ইংরেজি ফোনেটিকে (যেমন: 'duibar-mrityu-ebong-duibar-jibon') রূপান্তর করতে চান?"
+      )
+    ) {
+      return;
+    }
+
+    setIsAutoSlugging(true);
+    let updated = 0;
+    try {
+      for (const art of list.data) {
+        if (!art.title_bn) continue;
+        const properSlug = bnToEnSlug(art.title_bn, String(art.id).slice(0, 6));
+        if (art.slug !== properSlug) {
+          const { error } = await supabase
+            .from("articles")
+            .update({ slug: properSlug })
+            .eq("id", art.id);
+          if (!error) updated++;
+        }
+      }
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      toast.success(`সফলভাবে ${updated}টি পোস্টের পার্মালিঙ্ক বাংলা শিরোনাম অনুযায়ী আপডেট করা হয়েছে!`);
+    } catch (err: any) {
+      toast.error(`ইরোর: ${err?.message || "স্লাগ আপডেট ব্যর্থ হয়েছে"}`);
+    } finally {
+      setIsAutoSlugging(false);
+    }
+  };
 
   const save = useMutation({
     mutationFn: async () => {
@@ -1426,9 +1460,54 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           </div>
         </div>
 
-        {field("slug", "স্লাগ (URL Slug)")}
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between">
+            <Label htmlFor="article-slug" className="text-xs font-semibold">স্লাগ (URL Permalink Slug)</Label>
+            <button
+              type="button"
+              onClick={() => {
+                if (form.title_bn) {
+                  const autoSlug = bnToEnSlug(form.title_bn);
+                  setForm((prev) => ({ ...prev, slug: autoSlug }));
+                  toast.success(`স্লাগ তৈরি হয়েছে: ${autoSlug}`);
+                } else {
+                  toast.error("অনুগ্রহ করে আগে বাংলা শিরোনাম লিখুন");
+                }
+              }}
+              className="text-[11px] font-medium text-primary hover:underline flex items-center gap-1 cursor-pointer"
+            >
+              <Sparkles className="size-3 text-primary" /> শিরোনাম থেকে অটো স্লাগ তৈরি করুন
+            </button>
+          </div>
+          <Input
+            id="article-slug"
+            value={form.slug}
+            onChange={(e) => setForm({ ...form, slug: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, "") })}
+            placeholder="যেমন: duibar-mrityu-ebong-duibar-jibon"
+            className="h-9 text-xs font-mono"
+          />
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2">
-          {field("title_bn", "শিরোনাম (বাংলা)")}
+          <div className="space-y-1.5">
+            <Label htmlFor="title_bn" className="text-xs font-semibold">শিরোনাম (বাংলা)</Label>
+            <Input
+              id="title_bn"
+              value={form.title_bn}
+              onChange={(e) => {
+                const val = e.target.value;
+                setForm((prev) => {
+                  const shouldAutoSlug = !editingId && (!prev.slug || prev.slug.startsWith("post-") || prev.slug === bnToEnSlug(prev.title_bn));
+                  return {
+                    ...prev,
+                    title_bn: val,
+                    slug: shouldAutoSlug && val ? bnToEnSlug(val) : prev.slug,
+                  };
+                });
+              }}
+              className="h-9 text-xs"
+            />
+          </div>
           {field("title_en", "শিরোনাম (English)")}
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -1550,7 +1629,21 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       {/* আর্টিকেল তালিকা ও ট্র্যাশ ফিল্টার বার */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
-          <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
+          <div className="flex items-center gap-3">
+            <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">আর্টিকেল তালিকা</h3>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleBulkAutoSlugGenerate}
+              disabled={isAutoSlugging}
+              className="h-7 gap-1.5 px-2.5 text-xs font-medium text-primary border-primary/30 hover:bg-primary/10 cursor-pointer shadow-xs"
+              title="সব পোস্টের স্লাগ বাংলা শিরোনাম অনুযায়ী স্বয়ংক্রিয়ভাবে ফোনেটিক ইংরেজিতে রূপান্তর করুন"
+            >
+              <Sparkles className="size-3.5 text-primary" />
+              {isAutoSlugging ? "স্লাগ আপডেট হচ্ছে..." : "শিরোনাম অনুযায়ী সব স্লাগ অটো ফিক্স করুন"}
+            </Button>
+          </div>
 
           <div className="flex items-center gap-1.5 text-xs">
             <button

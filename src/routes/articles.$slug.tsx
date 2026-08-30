@@ -70,15 +70,29 @@ function SingleArticlePage() {
   const { data: article, isLoading } = useQuery({
     queryKey: ["article-single-detail", slug],
     queryFn: async () => {
-      // প্রথমে আর্টিকেল ফেচ
-      const { data: art, error: artErr } = await supabase
+      // প্রথমে সরাসরি slug দিয়ে ফেচ
+      let { data: art, error: artErr } = await supabase
         .from("articles")
         .select("*")
         .eq("slug", slug)
         .maybeSingle();
 
-      if (artErr || !art) {
-        console.warn("Article fetch notice:", artErr?.message);
+      // যদি slug সরাসরি না মিলে, তাহলে decoded slug বা id হিসেবে খোঁজা
+      if (!art) {
+        let cleanSlug = slug;
+        try {
+          cleanSlug = decodeURIComponent(slug);
+        } catch {}
+
+        const { data: fallbackArt } = await supabase
+          .from("articles")
+          .select("*")
+          .or(`slug.eq.${cleanSlug},id.eq.${cleanSlug}`)
+          .maybeSingle();
+        art = fallbackArt;
+      }
+
+      if (!art) {
         return null;
       }
 
