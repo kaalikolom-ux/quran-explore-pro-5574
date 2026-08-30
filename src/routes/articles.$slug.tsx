@@ -14,7 +14,9 @@ import {
   Lock,
   LogIn,
   ShieldAlert,
-  Sparkles
+  Sparkles,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -95,6 +97,46 @@ function SingleArticlePage() {
       };
     },
   });
+
+  // ২. পূর্ববর্তী ও পরবর্তী আর্টিকেল ফেচ (Next & Prev Article Navigation)
+  const { data: navArticles } = useQuery({
+    queryKey: ["article-prev-next-nav", article?.id, article?.published_at, article?.created_at],
+    enabled: Boolean(article?.id),
+    queryFn: async () => {
+      if (!article) return { prev: null, next: null };
+      const currentPublishedAt = article.published_at || article.created_at;
+
+      // পূর্ববর্তী আর্টিকেল (যা বর্তমানটির আগে প্রকাশিত হয়েছে)
+      const { data: prev } = await supabase
+        .from("articles")
+        .select("id, slug, title_bn, title_en, published_at")
+        .eq("published", true)
+        .is("deleted_at", null)
+        .lt("published_at", currentPublishedAt)
+        .order("published_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      // পরবর্তী আর্টিকেল (যা বর্তমানটির পরে প্রকাশিত হয়েছে)
+      const { data: next } = await supabase
+        .from("articles")
+        .select("id, slug, title_bn, title_en, published_at")
+        .eq("published", true)
+        .is("deleted_at", null)
+        .gt("published_at", currentPublishedAt)
+        .order("published_at", { ascending: true })
+        .limit(1)
+        .maybeSingle();
+
+      return {
+        prev: prev || null,
+        next: next || null,
+      };
+    },
+  });
+
+  const prevArticle = navArticles?.prev;
+  const nextArticle = navArticles?.next;
 
   // শেয়ার হ্যান্ডলার
   const handleShare = () => {
@@ -372,6 +414,52 @@ function SingleArticlePage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* আগের ও পরের পোস্ট নেভিগেশন (Prev / Next Article Navigation Cards) */}
+      {(prevArticle || nextArticle) && (
+        <nav
+          aria-label="আর্টিকেল নেভিগেশন"
+          className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-border/70"
+        >
+          {/* Previous Article Card */}
+          {prevArticle ? (
+            <Link
+              to="/articles/$slug"
+              params={{ slug: prevArticle.slug }}
+              className="group relative flex flex-col justify-between p-4 sm:p-5 rounded-2xl border border-border/70 bg-card hover:bg-card/90 hover:border-primary/50 transition-all duration-200 shadow-xs hover:shadow-md text-left cursor-pointer"
+            >
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-primary mb-2">
+                <ChevronLeft className="size-4 transition-transform group-hover:-translate-x-1" />
+                <span>{lang === "en" ? "Previous Article" : "পূর্ববর্তী আর্টিকেল"}</span>
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors font-serif line-clamp-2 leading-snug">
+                {lang === "en" && prevArticle.title_en ? prevArticle.title_en : prevArticle.title_bn}
+              </h3>
+            </Link>
+          ) : (
+            <div className="hidden sm:block" />
+          )}
+
+          {/* Next Article Card */}
+          {nextArticle ? (
+            <Link
+              to="/articles/$slug"
+              params={{ slug: nextArticle.slug }}
+              className="group relative flex flex-col justify-between p-4 sm:p-5 rounded-2xl border border-border/70 bg-card hover:bg-card/90 hover:border-primary/50 transition-all duration-200 shadow-xs hover:shadow-md text-left sm:text-right cursor-pointer"
+            >
+              <div className="flex items-center sm:justify-end gap-1.5 text-xs font-semibold text-primary mb-2">
+                <span>{lang === "en" ? "Next Article" : "পরবর্তী আর্টিকেল"}</span>
+                <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors font-serif line-clamp-2 leading-snug">
+                {lang === "en" && nextArticle.title_en ? nextArticle.title_en : nextArticle.title_bn}
+              </h3>
+            </Link>
+          ) : (
+            <div className="hidden sm:block" />
+          )}
+        </nav>
       )}
 
       {/* মন্তব্য সেকশন */}
