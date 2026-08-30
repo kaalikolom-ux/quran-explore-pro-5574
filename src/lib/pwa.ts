@@ -18,18 +18,6 @@ function previewContext() {
 export async function registerOfflineWorker() {
   if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
 
-  // Purge old HTML navigation caches so the browser never serves a stale error page
-  if ("caches" in window) {
-    try {
-      const keys = await caches.keys();
-      for (const k of keys) {
-        if (k.includes("quran-pages")) {
-          await caches.delete(k);
-        }
-      }
-    } catch {}
-  }
-
   if (previewContext()) {
     try {
       const registrations = await navigator.serviceWorker.getRegistrations();
