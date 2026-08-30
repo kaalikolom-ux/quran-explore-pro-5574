@@ -109,8 +109,8 @@ function SettingsPage() {
     },
     {
       key: "showConventionalEn",
-      title: lang === "bn" ? "২. সহীহ ইন্টারন্যাশনাল অনুবাদ" : "2. Sahih International Translation",
-      desc: lang === "bn" ? "আন্তর্জাতিকভাবে সর্বাধিক স্বীকৃত সহীহ ইন্টারন্যাশনাল ইংরেজি অনুবাদ" : "Sahih International English translation",
+      title: lang === "bn" ? "২. Marmaduke Pickthall অনুবাদ" : "2. Marmaduke Pickthall Translation",
+      desc: lang === "bn" ? "মুহাম্মদ মারমাডিউক পিকথল রচিত ঐতিহাসিক ও প্রামাণিক ইংরেজি অনুবাদ" : "Historical and authentic English translation by Muhammad Marmaduke Pickthall",
     },
     {
       key: "showModernBn",

@@ -1324,14 +1324,14 @@ function SurahDetailPage() {
                   )}
                 </div>
 
-                {/* ২. সহীহ ইন্টারন্যাশনাল অনুবাদ (English) */}
+                {/* ২. Marmaduke Pickthall অনুবাদ (English) */}
                 <div 
                   style={{ display: (isEditing || showConventionalEn) ? "block" : "none" }}
                   className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <Languages className="size-3.5 text-muted-foreground/80" />
-                    <span>২. সহীহ ইন্টারন্যাশনাল অনুবাদ (English)</span>
+                    <span>২. Marmaduke Pickthall অনুবাদ (English)</span>
                   </div>
                   {isEditing ? (
                     <Textarea
@@ -1341,7 +1341,7 @@ function SurahDetailPage() {
                       }
                       className="font-serif italic mt-1 bg-background"
                       style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="Sahih International English translation..."
+                      placeholder="Marmaduke Pickthall English translation..."
                     />
                   ) : (
                     <p 

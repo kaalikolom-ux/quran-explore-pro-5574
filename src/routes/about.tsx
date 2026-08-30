@@ -85,11 +85,11 @@ function AboutPage() {
     },
     {
       num: "০৫",
-      title_bn: "২. সহীহ ইন্টারন্যাশনাল অনুবাদ",
-      title_en: "2. Sahih International Translation",
-      desc_bn: "আন্তর্জাতিকভাবে সর্বাধিক স্বীকৃত সহীহ ইন্টারন্যাশনাল ইংরেজি অনুবাদ।",
-      desc_en: "Internationally standard and acclaimed Sahih International English translation.",
-      badge: "ইংরেজি মানদণ্ড",
+      title_bn: "২. Marmaduke Pickthall অনুবাদ",
+      title_en: "2. Marmaduke Pickthall Translation",
+      desc_bn: "মুহাম্মদ মারমাডিউক পিকথল (Marmaduke Pickthall) রচিত বিশ্বখ্যাত প্রমিত ইংরেজি অনুবাদ।",
+      desc_en: "World-renowned authentic English translation by Muhammad Marmaduke Pickthall.",
+      badge: "পিকথল মানদণ্ড",
       icon: Globe,
       color: "from-slate-500/20 to-zinc-500/10 border-slate-500/30",
     },
@@ -264,15 +264,15 @@ function AboutPage() {
                 <tr className="hover:bg-muted/20 transition-colors">
                   <td className="p-3.5 sm:p-4 font-semibold text-foreground flex items-center gap-2">
                     <span className="size-2 rounded-full bg-amber-500" />
-                    {lang === "bn" ? "ইসলামিক ফাউন্ডেশন / সহীহ ইন্টারন্যাশনাল" : "Islamic Foundation / Sahih International"}
+                    {lang === "bn" ? "ইসলামিক ফাউন্ডেশন / Marmaduke Pickthall" : "Islamic Foundation / Marmaduke Pickthall"}
                   </td>
                   <td className="p-3.5 sm:p-4 leading-relaxed">
                     {lang === "bn"
-                      ? "শব্দার্থের ঐতিহ্যবাহী আক্ষরিক রূপ ও প্রচলিত শাব্দিক বাক্যবিন্যাস।"
-                      : "Traditional literal phrasing and classical Islamic scholarship."}
+                      ? "শব্দার্থের ঐতিহ্যবাহী আক্ষরিক রূপ ও ক্লাসিক্যাল প্রমিত বাক্যবিন্যাস।"
+                      : "Traditional literal phrasing and classical scholarship."}
                   </td>
                   <td className="p-3.5 sm:p-4 font-medium text-foreground">
-                    ইসলামিক ফাউন্ডেশন বাংলাদেশ / Sahih International
+                    ইসলামিক ফাউন্ডেশন বাংলাদেশ / Marmaduke Pickthall
                   </td>
                   <td className="p-3.5 sm:p-4">
                     {lang === "bn" ? "সাধারণ তিলাওয়াত ও ঐতিহ্যগত পাঠ" : "General recitation & traditional study"}
