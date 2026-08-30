@@ -9,8 +9,22 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/authors/$id")({
   head: () => ({
     meta: [
-      { title: "লেখক প্রোফাইল ও রচনাবলী — কুরআন অন্বেষা" },
+      { title: "লেখক প্রোফাইল ও রচনাবলী — কুরআন অন্বেষা | Quran Explorer" },
       { name: "description", content: "নির্দিষ্ট লেখকের সকল প্রকাশিত আর্টিকেল ও প্রবন্ধ।" },
+      { property: "og:type", content: "profile" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+      { property: "og:title", content: "লেখক প্রোফাইল ও রচনাবলী — কুরআন অন্বেষা | Quran Explorer" },
+      { property: "og:description", content: "নির্দিষ্ট লেখকের সকল প্রকাশিত আর্টিকেল ও প্রবন্ধ।" },
+      { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "লেখক প্রোফাইল ও রচনাবলী — কুরআন অন্বেষা | Quran Explorer" },
+      { name: "twitter:description", content: "নির্দিষ্ট লেখকের সকল প্রকাশিত আর্টিকেল ও প্রবন্ধ।" },
+      { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
     ],
   }),
   component: AuthorDetailPage,

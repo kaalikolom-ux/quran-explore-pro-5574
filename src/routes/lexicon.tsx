@@ -46,16 +46,26 @@ export const Route = createFileRoute("/lexicon")({
           "পবিত্র কুরআনের ১,৬০০+ মূল ধাতু (Root), প্রতিটি আরবি শব্দের বাংলা উচ্চারণ, ঐতিহ্যগত ও আধুনিক বিজ্ঞানভিত্তিক অর্থ, ব্যাকরণ ও রেফারেন্সসহ সম্পূর্ণ অভিধান।",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "কুরআনিক অভিধান ও শব্দকোষ — কুরআন অন্বেষা" },
+      { property: "og:url", content: "https://wooniche.com/lexicon" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+      { property: "og:title", content: "কুরআনিক অভিধান ও শব্দকোষ — কুরআন অন্বেষা | Quran Explorer" },
       {
         property: "og:description",
         content: "পবিত্র কুরআনের প্রতিটি আরবি শব্দের বাংলা উচ্চারণ, ধাতু, বিজ্ঞানভিত্তিক অর্থ ও গবেষণা শিখুন।",
       },
-      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "কুরআনিক অভিধান ও শব্দকোষ — কুরআন অন্বেষা | Quran Explorer" },
+      { name: "twitter:description", content: "পবিত্র কুরআনের প্রতিটি আরবি শব্দের বাংলা উচ্চারণ, ধাতু, বিজ্ঞানভিত্তিক অর্থ ও গবেষণা শিখুন।" },
+      { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
     ],
     links: [
-      { rel: "canonical", href: "https://qurananwesha.com/lexicon" }
+      { rel: "canonical", href: "https://wooniche.com/lexicon" }
     ]
   }),
   component: QuranLexiconPage,

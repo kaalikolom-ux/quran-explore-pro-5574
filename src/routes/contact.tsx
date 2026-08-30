@@ -16,19 +16,31 @@ import { Textarea } from "@/components/ui/textarea";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "যোগাযোগ — কুরআন অন্বেষা / Contact — Quran Explorer" },
+      { title: "যোগাযোগ — কুরআন অন্বেষা | Contact — Quran Explorer" },
       {
         name: "description",
         content:
           "কুরআন অন্বেষা সম্পর্কে প্রশ্ন, অনুবাদ সংশোধনের প্রস্তাব বা মতামত পাঠান — আমরা প্রতিটি বার্তার উত্তর দিই।",
       },
-      { property: "og:title", content: "যোগাযোগ — কুরআন অন্বেষা" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://wooniche.com/contact" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+      { property: "og:title", content: "যোগাযোগ — কুরআন অন্বেষা | Contact — Quran Explorer" },
       {
         property: "og:description",
         content: "প্রশ্ন, পরামর্শ বা অনুবাদ সংশোধনের প্রস্তাব পাঠাতে যোগাযোগ করুন।",
       },
-      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://wooniche.com/contact" }
     ],
   }),
   component: ContactPage,

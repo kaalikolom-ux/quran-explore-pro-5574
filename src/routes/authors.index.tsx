@@ -8,9 +8,26 @@ import { usePrefs } from "@/lib/prefs";
 export const Route = createFileRoute("/authors/")({
   head: () => ({
     meta: [
-      { title: "লেখক ও গবেষকবৃন্দ — কুরআন অন্বেষা" },
+      { title: "লেখক ও গবেষকবৃন্দ — কুরআন অন্বেষা | Quran Explorer" },
       { name: "description", content: "কুরআন অন্বেষার সম্মানিত লেখক ও গবেষকবৃন্দের তালিকা।" },
-      { property: "og:title", content: "লেখক ও গবেষকবৃন্দ — কুরআন অন্বেষা" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://wooniche.com/authors" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+      { property: "og:title", content: "লেখক ও গবেষকবৃন্দ — কুরআন অন্বেষা | Quran Explorer" },
+      { property: "og:description", content: "কুরআন অন্বেষার সম্মানিত লেখক ও গবেষকবৃন্দের তালিকা।" },
+      { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "লেখক ও গবেষকবৃন্দ — কুরআন অন্বেষা | Quran Explorer" },
+      { name: "twitter:description", content: "কুরআন অন্বেষার সম্মানিত লেখক ও গবেষকবৃন্দের তালিকা।" },
+      { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://wooniche.com/authors" },
     ],
   }),
   component: AuthorsDirectoryPage,

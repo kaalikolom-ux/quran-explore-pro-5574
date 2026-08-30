@@ -33,13 +33,27 @@ export const Route = createFileRoute("/articles/$slug")({
   head: ({ params }) => {
     return {
       meta: [
-        { title: "আর্টিকেল — কুরআন অন্বেষা" },
+        { title: "আর্টিকেল — কুরআন অন্বেষা | Quran Explorer" },
         { name: "description", content: "কুরআনের গভীর গবেষণা ও সমসাময়িক প্রবন্ধ।" },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: `https://wooniche.com/articles/${params.slug}` },
+        { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+        { property: "og:title", content: "আর্টিকেল — কুরআন অন্বেষা | Quran Explorer" },
+        { property: "og:description", content: "পবিত্র কুরআনের গভীর গবেষণা ও সমসাময়িক প্রবন্ধ।" },
+        { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+        { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+        { property: "og:image:type", content: "image/jpeg" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "আর্টিকেল — কুরআন অন্বেষা | Quran Explorer" },
+        { name: "twitter:description", content: "পবিত্র কুরআনের গভীর গবেষণা ও সমসাময়িক প্রবন্ধ।" },
+        { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
       ],
       links: [
-        { rel: "canonical", href: `https://qurananwesha.com/articles/${params.slug}` }
-      ]
+        { rel: "canonical", href: `https://wooniche.com/articles/${params.slug}` },
+      ],
     };
   },
   component: SingleArticlePage,

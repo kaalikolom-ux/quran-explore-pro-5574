@@ -183,13 +183,25 @@ export const Route = createFileRoute("/surah/$id")({
       meta: [
         { title: pageTitle },
         { name: "description", content: pageDesc },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: `https://wooniche.com/surah/${sId}` },
+        { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
         { property: "og:title", content: pageTitle },
         { property: "og:description", content: pageDesc },
-        { property: "og:type", content: "article" },
+        { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+        { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+        { property: "og:image:type", content: "image/jpeg" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: pageTitle },
+        { name: "twitter:description", content: pageDesc },
+        { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
       ],
       links: [
-        { rel: "canonical", href: `https://qurananwesha.com/surah/${sId}` }
-      ]
+        { rel: "canonical", href: `https://wooniche.com/surah/${sId}` },
+      ],
     };
   },
   component: SurahDetailPage,

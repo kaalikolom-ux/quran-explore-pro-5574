@@ -6,11 +6,27 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "গোপনীয়তা নীতি (Privacy Policy) — কুরআন অন্বেষা" },
+      { title: "গোপনীয়তা নীতি (Privacy Policy) — কুরআন অন্বেষা | Quran Explorer" },
       {
         name: "description",
         content: "কুরআন অন্বেষা প্ল্যাটফর্মের গোপনীয়তা নীতি এবং ব্যবহারকারীর তথ্যের সুরক্ষা সংক্রান্ত বিস্তারিত বিবরণ।",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://wooniche.com/privacy" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+      { property: "og:title", content: "গোপনীয়তা নীতি (Privacy Policy) — কুরআন অন্বেষা | Quran Explorer" },
+      { property: "og:description", content: "কুরআন অন্বেষা প্ল্যাটফর্মের গোপনীয়তা নীতি এবং ব্যবহারকারীর তথ্যের সুরক্ষা সংক্রান্ত বিস্তারিত বিবরণ।" },
+      { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://wooniche.com/privacy" }
     ],
   }),
   component: PrivacyPolicyPage,

@@ -81,12 +81,12 @@ const jsonLdData = {
   "@type": "WebSite",
   "name": "কুরআন অন্বেষা — Quran Explorer",
   "alternateName": "Quran Anwesha",
-  "url": "https://qurananwesha.com",
+  "url": "https://wooniche.com",
   "description": "পবিত্র কুরআনের শব্দে শব্দে অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ।",
   "inLanguage": ["bn", "ar", "en"],
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://qurananwesha.com/surah/1?ayah={search_term_string}",
+    "target": "https://wooniche.com/surah/1?ayah={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -96,21 +96,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
+      { title: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন | Quran Explorer" },
       {
         name: "description",
         content:
           "পবিত্র কুরআনের প্রতিটি শব্দের বাংলা অর্থ, উচ্চারণ, প্রামাণ্য অনুবাদ ও প্রাঞ্জল ব্যাখ্যা একই পাতায় পড়ুন।",
       },
-      { name: "keywords", content: "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran" },
-      { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন" },
+      { name: "keywords", content: "কুরআন, শব্দে শব্দে কুরআন, কুরআন অনুবাদ, বাংলা কুরআন, আল কুরআন, Quran Bangla, Word by word Quran, Quran Explorer" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://wooniche.com/" },
+      { property: "og:site_name", content: "কুরআন অন্বেষা — Quran Explorer" },
+      { property: "og:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন | Quran Explorer" },
       {
         property: "og:description",
-        content: "শব্দে শব্দে অর্থ, প্রচলিত ও আধুনিক বাংলা অনুবাদ একই পাতায়।",
+        content: "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ একই পাতায়।",
       },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "কুরআন অন্বেষা" },
+      { property: "og:image", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://wooniche.com/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "পবিত্র কুরআন — বুঝে পড়ুন | কুরআন অন্বেষা" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "কুরআন অন্বেষা — শব্দে শব্দে অর্থসহ কুরআন | Quran Explorer" },
+      {
+        name: "twitter:description",
+        content: "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ একই পাতায়।",
+      },
+      { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
       { name: "theme-color", content: "#091a1f" },
     ],
     links: [
@@ -125,7 +138,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "canonical", href: "https://qurananwesha.com/" },
+      { rel: "canonical", href: "https://wooniche.com/" },
     ],
   }),
   shellComponent: RootShell,
