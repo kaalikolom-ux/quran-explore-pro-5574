@@ -871,7 +871,7 @@ function AdminPage() {
         <InlineImportModal type={importModalType} onClose={() => setImportModalType(null)} />
       )}
 
-      <header className="sticky top-0 z-50 flex h-8 w-full items-center justify-between bg-[#1d2327] px-3 text-[#c3c4c7] select-none text-xs border-b border-[#2c3338]">
+      <header className="sticky top-14 sm:top-16 z-30 flex h-8 w-full items-center justify-between bg-[#1d2327] px-3 text-[#c3c4c7] select-none text-xs border-b border-[#2c3338] shadow-xs">
         <div className="flex items-center gap-4">
           <Link
             to="/"
@@ -905,8 +905,8 @@ function AdminPage() {
         </div>
       </header>
 
-      <div className="flex flex-1 overflow-hidden">
-        <aside className="w-64 shrink-0 bg-[#1d2327] text-[#c3c4c7] flex flex-col justify-between hidden md:flex border-r border-[#2c3338]">
+      <div className="flex flex-1 min-h-[calc(100vh-5.5rem)] sm:min-h-[calc(100vh-6rem)]">
+        <aside className="w-64 shrink-0 bg-[#1d2327] text-[#c3c4c7] flex flex-col justify-between hidden md:flex border-r border-[#2c3338] sticky top-[5.5rem] sm:top-[6rem] h-[calc(100vh-5.5rem)] sm:h-[calc(100vh-6rem)] self-start">
           <div className="py-2 overflow-y-auto">
             {menuSections.map((section, idx) => (
               <div key={idx} className="mb-3">
