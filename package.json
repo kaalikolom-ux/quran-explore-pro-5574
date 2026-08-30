@@ -9,7 +9,10 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "npm run build && node ./scripts/deploy-cloudflare.mjs all",
+    "deploy:main": "npm run build && node ./scripts/deploy-cloudflare.mjs main",
+    "deploy:sub": "npm run build && node ./scripts/deploy-cloudflare.mjs sub"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
