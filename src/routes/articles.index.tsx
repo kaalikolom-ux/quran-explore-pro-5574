@@ -10,6 +10,7 @@ import { useIsAdmin } from "@/lib/auth";
 import { useCategoryAccess } from "@/lib/accessControl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { STATIC_ARTICLES, STATIC_CATEGORIES, STATIC_AUTHORS } from "@/lib/staticArticlesData";
 
 const searchSchema = z.object({
   category: z.string().optional(),
@@ -132,9 +133,29 @@ function ArticlesIndexPage() {
     },
   });
 
-  const allArticles = query.data || [];
-  const categories = categoriesQuery.data || [];
-  const authors = authorsQuery.data || [];
+  const rawDbArticles = query.data || [];
+  const allArticles = [
+    ...STATIC_ARTICLES.filter(
+      (sa) => !rawDbArticles.some((da: any) => da.slug === sa.slug || da.id === sa.id)
+    ),
+    ...rawDbArticles,
+  ];
+
+  const rawDbCategories = categoriesQuery.data || [];
+  const categories = [
+    ...STATIC_CATEGORIES.filter(
+      (sc) => !rawDbCategories.some((dc: any) => dc.slug === sc.slug || dc.id === sc.id)
+    ),
+    ...rawDbCategories,
+  ];
+
+  const rawDbAuthors = authorsQuery.data || [];
+  const authors = [
+    ...Object.values(STATIC_AUTHORS).filter(
+      (sa) => !rawDbAuthors.some((da: any) => da.id === sa.id)
+    ),
+    ...rawDbAuthors,
+  ];
 
   // ক্যাটাগরি ও লেখক ফিল্টারিং
   const filteredArticles = allArticles.filter((art: any) => {

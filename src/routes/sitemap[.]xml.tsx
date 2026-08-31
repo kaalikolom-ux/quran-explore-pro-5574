@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
 
 import type { Database } from "@/integrations/supabase/types";
+import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
 
 const BASE_URL = "https://quran-explore-pro.lovable.app";
 
@@ -12,6 +13,12 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls: string[] = [`${BASE_URL}/`, `${BASE_URL}/articles`];
 
         for (let i = 1; i <= 114; i += 1) urls.push(`${BASE_URL}/surah/${i}`);
+
+        for (const sa of STATIC_ARTICLES) {
+          if (sa.published && !urls.includes(`${BASE_URL}/articles/${sa.slug}`)) {
+            urls.push(`${BASE_URL}/articles/${sa.slug}`);
+          }
+        }
 
         try {
           const supabase = createClient<Database>(
@@ -25,7 +32,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             .eq("published", true)
             .order("published_at", { ascending: false })
             .limit(500);
-          for (const a of data ?? []) urls.push(`${BASE_URL}/articles/${a.slug}`);
+          for (const a of data ?? []) {
+            const artUrl = `${BASE_URL}/articles/${a.slug}`;
+            if (!urls.includes(artUrl)) {
+              urls.push(artUrl);
+            }
+          }
         } catch {
           // sitemap still serves static routes if the database is unreachable
         }

@@ -5,6 +5,7 @@ import { User, Calendar, BookOpen, ArrowLeft, FileText } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { Button } from "@/components/ui/button";
+import { STATIC_ARTICLES, STATIC_AUTHORS } from "@/lib/staticArticlesData";
 
 export const Route = createFileRoute("/authors/$id")({
   head: () => ({
@@ -51,19 +52,29 @@ function AuthorDetailPage() {
         .eq("id", id)
         .maybeSingle();
 
-      if (authorErr || !authorData) return null;
+      const staticAuthor = STATIC_AUTHORS[id];
+      const authorBase = authorData || staticAuthor;
+
+      if (!authorBase) return null;
 
       // লেখকের সকল প্রকাশিত আর্টিকেল ফেচ
-      const { data: articlesData } = await supabase
+      const { data: dbArticles } = await supabase
         .from("articles")
         .select("*")
         .eq("author_id", id)
         .eq("published", true)
         .order("published_at", { ascending: false });
 
+      const rawDb = dbArticles || [];
+      const staticAuthArticles = STATIC_ARTICLES.filter((a) => a.author_id === id);
+      const mergedArticles = [
+        ...staticAuthArticles.filter((sa) => !rawDb.some((da) => da.slug === sa.slug || da.id === sa.id)),
+        ...rawDb,
+      ];
+
       return {
-        ...authorData,
-        articles: articlesData || [],
+        ...authorBase,
+        articles: mergedArticles,
       };
     },
   });

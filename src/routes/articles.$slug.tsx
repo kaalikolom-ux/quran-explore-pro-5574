@@ -29,6 +29,7 @@ import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
 import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
 import { formatArticleContent } from "@/lib/contentFormatter";
+import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
 
 export const Route = createFileRoute("/articles/$slug")({
   head: ({ params }) => {
@@ -71,7 +72,20 @@ function SingleArticlePage() {
   const { data: article, isLoading } = useQuery({
     queryKey: ["article-single-detail", slug],
     queryFn: async () => {
-      // প্রথমে সরাসরি slug দিয়ে ফেচ
+      // প্রথমে স্ট্যাটিক রেজিস্ট্রি চেক
+      let cleanSlug = slug;
+      try {
+        cleanSlug = decodeURIComponent(slug);
+      } catch {}
+
+      const staticMatch = STATIC_ARTICLES.find(
+        (a) => a.slug === slug || a.slug === cleanSlug || a.id === slug || a.id === cleanSlug
+      );
+      if (staticMatch) {
+        return staticMatch;
+      }
+
+      // ডাটাবেজ থেকে slug দিয়ে ফেচ
       let { data: art, error: artErr } = await supabase
         .from("articles")
         .select("*")
@@ -80,11 +94,6 @@ function SingleArticlePage() {
 
       // যদি slug সরাসরি না মিলে, তাহলে decoded slug বা id হিসেবে খোঁজা
       if (!art) {
-        let cleanSlug = slug;
-        try {
-          cleanSlug = decodeURIComponent(slug);
-        } catch {}
-
         const { data: fallbackArt } = await supabase
           .from("articles")
           .select("*")
@@ -135,14 +144,29 @@ function SingleArticlePage() {
       if (!article) return { prev: null, next: null };
 
       // সব অ্যাক্টিভ প্রকাশিত আর্টিকেল ফেচ করা
-      const { data: allArticles, error } = await supabase
+      const { data: dbArticles, error } = await supabase
         .from("articles")
         .select("id, slug, title_bn, title_en, created_at, published_at")
         .eq("published", true)
         .is("deleted_at", null)
         .order("created_at", { ascending: false });
 
-      if (error || !allArticles || allArticles.length <= 1) {
+      const rawDb = dbArticles || [];
+      const allArticles = [
+        ...STATIC_ARTICLES.filter(
+          (sa) => !rawDb.some((da) => da.slug === sa.slug || da.id === sa.id)
+        ).map((sa) => ({
+          id: sa.id,
+          slug: sa.slug,
+          title_bn: sa.title_bn,
+          title_en: sa.title_en,
+          created_at: sa.created_at,
+          published_at: sa.published_at,
+        })),
+        ...rawDb,
+      ];
+
+      if (allArticles.length <= 1) {
         return { prev: null, next: null };
       }
 
