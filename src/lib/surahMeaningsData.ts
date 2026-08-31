@@ -939,8 +939,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Ad-Duha",
     "conventional_bn": "পূর্বাহ্ন",
     "conventional_en": "The Morning Brightness",
-    "scientific_bn": "হাই-ফ্রিকোয়েন্সি সিগন্যাল ফেজ",
-    "scientific_en": "High-Frequency Signal Phase"
+    "scientific_bn": "কসমিক সিগন্যাল স্যাটুরেশন লুপ ও কগনিটিভ আপগ্রেডেশন প্রটোকল",
+    "scientific_en": "Cosmic Signal Saturation Loop & Cognitive Upgradation Protocol"
   },
   "94": {
     "id": 94,
