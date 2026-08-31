@@ -1084,11 +1084,11 @@ function SurahDetailPage() {
             <div className="md:col-span-4 flex flex-col justify-between rounded-xl border border-amber-500/25 bg-amber-500/5 dark:bg-amber-500/10 p-3 sm:p-3.5 space-y-1.5">
               <div className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
                 <BookOpen className="size-3.5 shrink-0" />
-                <span className="text-[11px] font-bold uppercase tracking-wider">
+                <span className="text-[11px] font-semibold uppercase tracking-wider">
                   {lang === "bn" ? "প্রচলিত অর্থ" : "Popular Meaning"}
                 </span>
               </div>
-              <p className="text-sm font-bold text-foreground leading-snug">
+              <p className="text-sm font-normal text-foreground/90 leading-relaxed">
                 {lang === "bn"
                   ? (surahMeaning.conventional_bn || surahMeaning.conventional_en)
                   : (surahMeaning.conventional_en || surahMeaning.conventional_bn)}
@@ -1099,11 +1099,11 @@ function SurahDetailPage() {
             <div className="md:col-span-8 flex flex-col justify-between rounded-xl border border-primary/30 bg-primary/5 dark:bg-primary/10 p-3 sm:p-3.5 space-y-1.5">
               <div className="flex items-center gap-1.5 text-primary">
                 <Cpu className="size-3.5 shrink-0" />
-                <span className="text-[11px] font-bold uppercase tracking-wider">
+                <span className="text-[11px] font-semibold uppercase tracking-wider">
                   {lang === "bn" ? "বিজ্ঞানভিত্তিক গবেষণা ও গভীর অর্থ" : "Science-Based Deep Meaning"}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm font-semibold text-foreground/95 leading-relaxed">
+              <p className="text-xs sm:text-sm font-normal text-foreground/90 leading-relaxed">
                 {lang === "bn"
                   ? (surahMeaning.scientific_bn || surahMeaning.scientific_en)
                   : (surahMeaning.scientific_en || surahMeaning.scientific_bn)}
