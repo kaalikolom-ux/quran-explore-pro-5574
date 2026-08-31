@@ -1,7 +1,7 @@
 # Database & System Restore Guide (রিস্টোর নির্দেশিকা)
 
 **Project**: Quran Explore Pro (wooniche.com)  
-**Backup Snapshot Date**: 2026-08-31T15:44:02.172Z  
+**Backup Snapshot Date**: 2026-08-31T15:53:50.953Z  
 
 ---
 

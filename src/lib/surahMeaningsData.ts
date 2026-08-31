@@ -1029,8 +1029,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "At-Takathur",
     "conventional_bn": "প্রাচুর্যের প্রতিযোগিতা",
     "conventional_en": "Rivalry in Worldly Increase",
-    "scientific_bn": "কোয়ান্টিটেটিভ অ্যাকুমুলেশন ম্যানিয়া / ডেটা ওভারলোডিং বালাই (bug)",
-    "scientific_en": "Quantitative Accumulation Mania / Data Overloading Bug"
+    "scientific_bn": "মেটেরিয়ালিস্টিক ডাটা ওভারলোডিং ও এনার্জি অডিট প্রটোকল",
+    "scientific_en": "Materialistic Data Overloading & Energy Audit Protocol"
   },
   "103": {
     "id": 103,
