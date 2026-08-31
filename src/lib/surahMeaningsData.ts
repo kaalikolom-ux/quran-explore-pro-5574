@@ -19,8 +19,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Al-Fatihah",
     "conventional_bn": "উদ্বোধনী",
     "conventional_en": "The Opening",
-    "scientific_bn": "মাস্টার বুট লোডার / সিস্টেম ইনিশিয়ালাইজেশন প্রটোকল (যা ওওএস-এর মূল অপারেটিং কোড আনলক করে)",
-    "scientific_en": "Master Boot Loader / System Initialization Protocol (unlocks the core operating code of the OOS)"
+    "scientific_bn": "দ্য ওপেনিং প্রটোকল ও সিস্টেমিক কমিউনিকেশন ফ্রেমওয়ার্ক",
+    "scientific_en": "The Opening Protocol & Systemic Communication Framework"
   },
   "2": {
     "id": 2,
