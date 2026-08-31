@@ -344,20 +344,22 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   return data;
 };
 
+const APP_DATA_VERSION = "20260831_v2";
+
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  // 1. Try fresh network fetch first with cache busting
-  const url = `/data/quran/surahs/${sId}.json?v=${Date.now()}`;
+  // 1. Fetch from static JSON with versioned caching
+  const url = `/data/quran/surahs/${sId}.json?v=${APP_DATA_VERSION}`;
   try {
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     if (res.ok) {
       const freshData: SurahData = await res.json();
       applyLocalMetaOverrides(sId, freshData);
-      // Update offline storage with newest data
+      // Save for offline
       await saveSurahOffline(sId, freshData);
       return freshData;
     }
   } catch (err) {
-    console.warn(`Network fetch failed for Surah ${sId}, attempting offline fallback...`, err);
+    console.warn(`Network fetch failed for Surah ${sId}, checking offline fallback...`, err);
   }
 
   // 2. Offline fallback (IndexedDB + Cache Storage)

@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useDeferredValue } from "react";
 import { ArrowRight, BookOpen, BookA, FileText, Search, Settings, Sparkles, Compass, Flame, Heart, Coins, ShieldAlert } from "lucide-react";
 
 import { chaptersQuery, localNumber } from "@/lib/quran";
@@ -65,6 +65,7 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
 function HomePage() {
   const { t, lang } = usePrefs();
   const [term, setTerm] = useState("");
+  const deferredTerm = useDeferredValue(term);
   const [searchDialogOpen, setSearchDialogOpen] = useState(false);
   const [searchDialogQuery, setSearchDialogQuery] = useState("");
   const chapters = useQuery(chaptersQuery(lang));
@@ -96,7 +97,7 @@ function HomePage() {
 
   const { filtered, searchAyahTarget, homeDidYouMean } = useMemo(() => {
     const list = chapters.data ?? [];
-    if (!term.trim()) {
+    if (!deferredTerm.trim()) {
       return {
         filtered: list,
         searchAyahTarget: null,
@@ -104,7 +105,7 @@ function HomePage() {
       };
     }
 
-    const { matches, didYouMean } = searchQuranSurahs(term);
+    const { matches, didYouMean } = searchQuranSurahs(deferredTerm);
     const chapterMap = new Map(list.map((c) => [c.id, c]));
 
     const matchedList = matches.map((m) => {
@@ -129,7 +130,7 @@ function HomePage() {
       searchAyahTarget: targetAyah ? { surah: matches[0]?.id, ayah: targetAyah } : null,
       homeDidYouMean: didYouMean,
     };
-  }, [chapters.data, term]);
+  }, [chapters.data, deferredTerm]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();

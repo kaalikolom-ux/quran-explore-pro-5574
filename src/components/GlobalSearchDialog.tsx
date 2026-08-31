@@ -1,5 +1,4 @@
-// src/components/GlobalSearchDialog.tsx
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef, useDeferredValue } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -49,6 +48,7 @@ export function GlobalSearchDialog({
   const { lang, t } = usePrefs();
   const navigate = useNavigate();
   const [query, setQuery] = useState(initialQuery);
+  const deferredQuery = useDeferredValue(query);
   const [activeTab, setActiveTab] = useState<"all" | "topics" | "surahs" | "articles">("all");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -87,13 +87,13 @@ export function GlobalSearchDialog({
     staleTime: 60 * 1000,
   });
 
-  const cleanQ = query.trim().toLowerCase();
+  const cleanQ = deferredQuery.trim().toLowerCase();
 
   // 1. Topic search matches
   const matchedTopics = useMemo(() => {
     if (!cleanQ) return QURAN_THEMATIC_DATABASE.slice(0, 4);
-    return searchQuranTopics(query);
-  }, [cleanQ, query]);
+    return searchQuranTopics(deferredQuery);
+  }, [cleanQ, deferredQuery]);
 
   // 2. Surah & Ayah reference matches
   const { matchedSurahs, didYouMean } = useMemo(() => {
@@ -103,12 +103,12 @@ export function GlobalSearchDialog({
         didYouMean: undefined,
       };
     }
-    const searchRes = searchQuranSurahs(query);
+    const searchRes = searchQuranSurahs(deferredQuery);
     return {
       matchedSurahs: searchRes.matches,
       didYouMean: searchRes.didYouMean,
     };
-  }, [cleanQ, query]);
+  }, [cleanQ, deferredQuery]);
 
   // 3. Articles & Posts matches
   const matchedArticles = useMemo(() => {
