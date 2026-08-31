@@ -344,7 +344,7 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   return data;
 };
 
-const APP_DATA_VERSION = "20260831_v9";
+const APP_DATA_VERSION = "20260831_v10";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   // 1. Fetch from static JSON with versioned caching
@@ -379,6 +379,648 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
 
   throw new Error(`Failed to load Surah ${sId}`);
 };
+
+const AyahJumpSearchForm = React.memo(function AyahJumpSearchForm({
+  surahId,
+  totalAyahs,
+  onNavigate,
+  onScrollToAyah,
+}: {
+  surahId: number;
+  totalAyahs: number;
+  onNavigate: (targetSurah: number, targetAyah?: number) => void;
+  onScrollToAyah: (ayah: number) => void;
+}) {
+  const [text, setText] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const raw = text.trim();
+    if (!raw) return;
+
+    const normalized = toEnglishNumber(raw);
+    const match = normalized.match(/^(\d{1,3})[:\/ঃ\.\-](\d{1,3})$/);
+
+    if (match) {
+      const targetSurah = Number(match[1]);
+      const targetAyah = Number(match[2]);
+
+      if (targetSurah >= 1 && targetSurah <= 114) {
+        if (targetSurah === surahId) {
+          onScrollToAyah(targetAyah);
+        } else {
+          onNavigate(targetSurah, targetAyah);
+        }
+      }
+      setText("");
+      return;
+    }
+
+    const singleNum = Number(normalized);
+    if (!isNaN(singleNum) && singleNum > 0) {
+      if (singleNum <= totalAyahs && singleNum > 114) {
+        onScrollToAyah(singleNum);
+        setText("");
+        return;
+      }
+      if (singleNum <= 114) {
+        onNavigate(singleNum);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setText("");
+        return;
+      }
+      if (singleNum <= totalAyahs) {
+        onScrollToAyah(singleNum);
+        setText("");
+        return;
+      }
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center gap-1 bg-muted/50 border border-border/70 rounded-lg px-2 py-1 focus-within:border-foreground/30 transition-all shrink-0"
+    >
+      <Search className="size-3 text-muted-foreground shrink-0" />
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="৩৩/৪০ বা ১-১১৪..."
+        className="bg-transparent border-none outline-none text-xs w-16 sm:w-24 text-foreground placeholder:text-muted-foreground"
+      />
+      <button
+        type="submit"
+        className="rounded bg-background px-1.5 py-0.5 text-[10px] font-medium text-foreground hover:bg-muted transition-colors border border-border/50 cursor-pointer"
+      >
+        যান
+      </button>
+    </form>
+  );
+});
+
+interface AyahCardProps {
+  ayah: QuranAyah;
+  surahId: number;
+  isPlaying: boolean;
+  isBookmarked: boolean;
+  isAyahAudioSaved: boolean;
+  isThisAyahDownloading: boolean;
+  hasNote: boolean;
+  noteContent?: string;
+  isEditing: boolean;
+  isAdmin: boolean;
+  lang: "bn" | "en";
+  showArabic: boolean;
+  showWordByWord: boolean;
+  showTransliteration: boolean;
+  showConventionalBn: boolean;
+  showConventionalEn: boolean;
+  showModernBn: boolean;
+  showModernEn: boolean;
+  showLexicon: boolean;
+  showMetaData: boolean;
+  arabicFontSize: number;
+  translationFontSize: number;
+  editForm: {
+    conventional_bn: string;
+    conventional_en: string;
+    modern_translation_bn: string;
+    modern_translation_en: string;
+    lexicon_modern_notes: string;
+    meta_bn: string;
+    meta_en: string;
+  };
+  setEditForm: React.Dispatch<
+    React.SetStateAction<{
+      conventional_bn: string;
+      conventional_en: string;
+      modern_translation_bn: string;
+      modern_translation_en: string;
+      lexicon_modern_notes: string;
+      meta_bn: string;
+      meta_en: string;
+    }>
+  >;
+  onPlayAyah: (ayahNum: number) => void;
+  onToggleBookmark: (ayah: QuranAyah) => void;
+  onToggleAyahAudioDownload: (ayahNum: number) => void;
+  onCopyAyah: (ayah: QuranAyah) => void;
+  onShareAyah: (ayahNum: number) => void;
+  onOpenNote: (ayahNum: number) => void;
+  onDeleteNote: (ayahNum: number) => void;
+  onStartEdit: (ayah: QuranAyah) => void;
+  onSaveEdit: (ayahNum: number) => void;
+  onCancelEdit: () => void;
+  onSelectWord: (info: { surah: number; ayah: number; word: QuranWord }) => void;
+}
+
+const AyahCard = React.memo(function AyahCard({
+  ayah,
+  surahId,
+  isPlaying,
+  isBookmarked,
+  isAyahAudioSaved,
+  isThisAyahDownloading,
+  hasNote,
+  noteContent,
+  isEditing,
+  isAdmin,
+  lang,
+  showArabic,
+  showWordByWord,
+  showTransliteration,
+  showConventionalBn,
+  showConventionalEn,
+  showModernBn,
+  showModernEn,
+  showLexicon,
+  showMetaData,
+  arabicFontSize,
+  translationFontSize,
+  editForm,
+  setEditForm,
+  onPlayAyah,
+  onToggleBookmark,
+  onToggleAyahAudioDownload,
+  onCopyAyah,
+  onShareAyah,
+  onOpenNote,
+  onDeleteNote,
+  onStartEdit,
+  onSaveEdit,
+  onCancelEdit,
+  onSelectWord,
+}: AyahCardProps) {
+  const hasModernBnData = Boolean(
+    ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0
+  );
+  const hasModernEnData = Boolean(
+    ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0
+  );
+
+  return (
+    <div
+      id={`ayah-${ayah.ayah}`}
+      className={`scroll-mt-36 rounded-2xl border bg-card p-4 sm:p-5 space-y-4 shadow-sm transition-all duration-300 ${
+        isPlaying
+          ? "border-primary/80 ring-2 ring-primary/20 bg-primary/[0.02] shadow-md"
+          : hasNote
+          ? "border-amber-400/50 shadow-amber-400/5 hover:border-border"
+          : "border-border/70 hover:border-border"
+      }`}
+    >
+      <div className="border-b border-border/40 pb-3 space-y-2.5">
+        {/* [শীর্ষ সারি] আয়াতের নম্বর ও মেটা ডাটা (Meta Data) */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-1.5 font-mono text-sm font-bold text-primary shrink-0">
+            <span>{surahId}:{ayah.ayah}</span>
+          </div>
+
+          {/* মেটা ডাটা / Meta Data বক্স */}
+          {showMetaData && (ayah.meta_bn || ayah.meta_en) && (
+            <div className="flex-1 min-w-0 flex flex-col justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-500/15 px-2.5 py-1 transition-all">
+              <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 select-none leading-none">
+                {lang === "bn" ? "মেটা ডাটা" : "Meta Data"}
+              </span>
+              <p className="text-xs sm:text-[13px] font-medium text-foreground/95 truncate sm:whitespace-normal leading-snug mt-0.5">
+                {lang === "bn"
+                  ? (ayah.meta_bn || ayah.meta_en)
+                  : (ayah.meta_en || ayah.meta_bn)}
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* [নিচের সারি] অডিও/বুকমার্ক ও একশন বাটনসমূহ */}
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1 text-muted-foreground">
+            <button
+              type="button"
+              onClick={() => onPlayAyah(ayah.ayah)}
+              title={isPlaying ? "পজ করুন" : "এই আয়াত থেকে শুনুন"}
+              className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
+                isPlaying ? "text-primary bg-primary/10" : ""
+              }`}
+            >
+              {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="size-4 fill-current" />}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onToggleBookmark(ayah)}
+              title={isBookmarked ? "বুকমার্ক সরান" : "বুকমার্ক করুন"}
+              className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
+                isBookmarked ? "text-amber-500 fill-amber-500 bg-amber-500/10" : ""
+              }`}
+            >
+              <Bookmark className={`size-4 ${isBookmarked ? "fill-current" : ""}`} />
+            </button>
+
+            <button
+              type="button"
+              disabled={isThisAyahDownloading}
+              onClick={() => onToggleAyahAudioDownload(ayah.ayah)}
+              title={isAyahAudioSaved ? "অফলাইন অডিও সংরক্ষিত আছে (মুছতে ক্লিক করুন)" : "এই আয়াতের অডিও অফলাইনে সংরক্ষণ করুন"}
+              className={`p-1.5 rounded-lg transition-colors hover:bg-muted cursor-pointer ${
+                isAyahAudioSaved
+                  ? "text-emerald-500 bg-emerald-500/10"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {isThisAyahDownloading ? (
+                <Loader2 className="size-4 animate-spin text-primary" />
+              ) : isAyahAudioSaved ? (
+                <CheckCircle2 className="size-4" />
+              ) : (
+                <Download className="size-4" />
+              )}
+            </button>
+          </div>
+
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => onCopyAyah(ayah)}
+              title="আয়াত কপি করুন"
+              className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+            >
+              <Copy className="size-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onShareAyah(ayah.ayah)}
+              title="আয়াত শেয়ার করুন"
+              className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+            >
+              <Share2 className="size-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onOpenNote(ayah.ayah)}
+              title={hasNote ? "নোট দেখুন / এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
+              className={`p-1.5 rounded-lg transition-all cursor-pointer ${
+                hasNote
+                  ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              <StickyNote className={`size-4 ${hasNote ? "fill-amber-400/30" : ""}`} />
+            </button>
+
+            {isAdmin && (
+              <div className="ml-2 border-l border-border/40 pl-2">
+                {isEditing ? (
+                  <div className="flex items-center gap-1">
+                    <Button
+                      size="sm"
+                      variant="default"
+                      className="h-7 px-2 text-xs"
+                      onClick={() => onSaveEdit(ayah.ayah)}
+                    >
+                      <Check className="size-3 mr-1" /> সংরক্ষণ
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="h-7 px-2 text-xs"
+                      onClick={onCancelEdit}
+                    >
+                      <X className="size-3.5" />
+                    </Button>
+                  </div>
+                ) : (
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
+                    onClick={() => onStartEdit(ayah)}
+                  >
+                    <Edit3 className="size-3 mr-1" /> এডিট
+                  </Button>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* [১] শব্দে শব্দে আরবি টেক্সট */}
+      <div
+        dir="rtl"
+        style={{ display: showArabic ? "flex" : "none" }}
+        className="flex-wrap items-center justify-start gap-x-4 gap-y-4 py-2 border-b border-border/40"
+      >
+        {ayah.words.map((word) => (
+          <div
+            key={word.position}
+            onClick={() =>
+              onSelectWord({
+                surah: surahId,
+                ayah: ayah.ayah,
+                word,
+              })
+            }
+            className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
+          >
+            <span
+              className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
+              style={{ fontSize: `${arabicFontSize}px` }}
+            >
+              {word.text_uthmani}
+            </span>
+            <span
+              style={{
+                display: showWordByWord && word.transliteration ? "block" : "none",
+                fontSize: `${Math.max(10, translationFontSize - 4)}px`,
+              }}
+              className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
+            >
+              {word.transliteration}
+            </span>
+            <span
+              style={{
+                display: showWordByWord && word.translation_bn ? "block" : "none",
+                fontSize: `${Math.max(11, translationFontSize - 3)}px`,
+              }}
+              className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
+            >
+              {word.translation_bn}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* [২] পুরো আয়াতের উচ্চারণ */}
+      {ayah.transliteration && (
+        <div
+          style={{ display: showTransliteration ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+            <Volume2 className="size-3.5 text-muted-foreground/80" />
+            <span>উচ্চারণ (Transliteration)</span>
+          </div>
+          <p
+            className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5.5"
+            style={{ fontSize: `${Math.max(12, translationFontSize - 2)}px` }}
+          >
+            {ayah.transliteration}
+          </p>
+        </div>
+      )}
+
+      {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
+      <div className="space-y-3 pt-0.5">
+        {/* [এডমিন মোড] মেটা ডাটা (Meta Data) সম্পাদনা */}
+        {isEditing && (
+          <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-500/10 p-3.5 space-y-2.5">
+            <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+              <Sparkles className="size-3.5" />
+              <span>আয়াতের মেটা ডাটা / Meta Data (নম্বরের পাশে দৃশ্যমান হবে)</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="space-y-1">
+                <Label className="text-[11px] font-medium text-muted-foreground">মেটা ডাটা (বাংলা)</Label>
+                <Input
+                  value={editForm.meta_bn}
+                  onChange={(e) => setEditForm({ ...editForm, meta_bn: e.target.value })}
+                  placeholder="যেমন: সিস্টেমের মূল উৎসের পরিচয় ও করুণাময় গুণাবলী"
+                  className="h-8 text-xs bg-background"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label className="text-[11px] font-medium text-muted-foreground">Meta Data (English)</Label>
+                <Input
+                  value={editForm.meta_en}
+                  onChange={(e) => setEditForm({ ...editForm, meta_en: e.target.value })}
+                  placeholder="e.g. Root Directory Authentication"
+                  className="h-8 text-xs bg-background"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
+        <div
+          style={{ display: isEditing || showConventionalBn ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+            <FileText className="size-3.5 text-muted-foreground/80" />
+            <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
+          </div>
+          {isEditing ? (
+            <Textarea
+              value={editForm.conventional_bn}
+              onChange={(e) =>
+                setEditForm({ ...editForm, conventional_bn: e.target.value })
+              }
+              className="mt-1 bg-background font-normal"
+              style={{ fontSize: `${translationFontSize}px` }}
+              placeholder="প্রচলিত বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
+            />
+          ) : (
+            <p
+              className="text-sm font-normal text-foreground/90 leading-relaxed pl-5.5"
+              style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
+            >
+              {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
+            </p>
+          )}
+        </div>
+
+        {/* ২. Conventional Translation (English) */}
+        <div
+          style={{ display: isEditing || showConventionalEn ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+            <Languages className="size-3.5 text-muted-foreground/80" />
+            <span>Conventional Translation (English)</span>
+          </div>
+          {isEditing ? (
+            <Textarea
+              value={editForm.conventional_en}
+              onChange={(e) =>
+                setEditForm({ ...editForm, conventional_en: e.target.value })
+              }
+              className="font-serif italic mt-1 bg-background font-normal"
+              style={{ fontSize: `${translationFontSize}px` }}
+              placeholder="Conventional English translation..."
+            />
+          ) : (
+            <p
+              className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5 font-normal"
+              style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
+            >
+              {ayah.conventional_en || (ayah as any).translation_en || (lang === "bn" ? "ইংরেজি অনুবাদ লোড হচ্ছে..." : "Loading English translation...")}
+            </p>
+          )}
+        </div>
+
+        {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
+        <div
+          style={{ display: isEditing || (showModernBn && hasModernBnData) ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+            <BookMarked className="size-3.5 text-primary" />
+            <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
+          </div>
+          {isEditing ? (
+            <Textarea
+              value={editForm.modern_translation_bn}
+              onChange={(e) =>
+                setEditForm({ ...editForm, modern_translation_bn: e.target.value })
+              }
+              className="mt-1 bg-background font-normal text-muted-foreground"
+              style={{ fontSize: `${translationFontSize}px` }}
+              placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
+            />
+          ) : (
+            <p
+              className="text-xs sm:text-sm font-normal text-muted-foreground leading-relaxed pl-5.5"
+              style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
+            >
+              {ayah.modern_translation_bn}
+            </p>
+          )}
+        </div>
+
+        {/* ৪. Modern Translation (English) */}
+        <div
+          style={{ display: isEditing || (showModernEn && hasModernEnData) ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+            <BookmarkCheck className="size-3.5 text-primary" />
+            <span>Modern Translation (English)</span>
+          </div>
+          {isEditing ? (
+            <Textarea
+              value={editForm.modern_translation_en}
+              onChange={(e) =>
+                setEditForm({ ...editForm, modern_translation_en: e.target.value })
+              }
+              className="font-serif italic mt-1 bg-background font-normal text-muted-foreground"
+              style={{ fontSize: `${translationFontSize}px` }}
+              placeholder="Modern contemporary English translation..."
+            />
+          ) : (
+            <p
+              className="text-xs sm:text-sm font-normal text-muted-foreground font-serif italic leading-relaxed pl-5.5"
+              style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
+            >
+              {ayah.modern_translation_en}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* [৪] অভিধান / Lexicon */}
+      <div
+        style={{ display: showLexicon ? "block" : "none" }}
+        className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80"
+      >
+        <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+          <Layers className="size-3.5 text-muted-foreground/80" />
+          <span>অভিধান / Lexicon</span>
+        </div>
+
+        <div className="flex flex-wrap gap-1.5 pl-5.5">
+          {ayah.words
+            .filter((w) => w.text_uthmani)
+            .map((w, idx) => {
+              const wordRoot = extractIntelligentRoot(w);
+              return (
+                <span
+                  key={idx}
+                  className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/50 px-2.5 py-1 font-mono text-[11px]"
+                >
+                  <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
+                  {wordRoot && (
+                    <span className="text-muted-foreground font-semibold">({wordRoot})</span>
+                  )}
+                  {w.translation_bn && (
+                    <span className="text-muted-foreground/80 text-[10px]">· {w.translation_bn}</span>
+                  )}
+                </span>
+              );
+            })}
+        </div>
+
+        {isEditing ? (
+          <div className="mt-2 pt-2 border-t border-border/40 pl-5.5">
+            <label className="text-[11px] font-medium text-muted-foreground block mb-1">
+              আধুনিক অভিধান / Lexicon নোট:
+            </label>
+            <Textarea
+              value={editForm.lexicon_modern_notes}
+              onChange={(e) =>
+                setEditForm({ ...editForm, lexicon_modern_notes: e.target.value })
+              }
+              className="text-sm bg-background"
+              placeholder="শব্দের আধুনিক অর্থ, ব্যুৎপত্তি বা ব্যাকরণগত নোট..."
+            />
+          </div>
+        ) : (
+          ayah.lexicon_modern_notes && (
+            <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
+                {typeof ayah.lexicon_modern_notes === "string"
+                  ? ayah.lexicon_modern_notes
+                  : Array.isArray(ayah.lexicon_modern_notes)
+                  ? (ayah.lexicon_modern_notes as any[]).map((n) => typeof n === 'string' ? n : `${n.word ? n.word + ' — ' : ''}${n.meaning ? n.meaning + ': ' : ''}${n.scientific_note || ''}`).join('; ')
+                  : String(ayah.lexicon_modern_notes)}
+              </p>
+            </div>
+          )
+        )}
+      </div>
+
+      {/* [৫] ব্যক্তিগত নোট কার্ড */}
+      {hasNote && (
+        <div className="rounded-xl border border-amber-400/40 bg-amber-400/[0.04] p-4 space-y-2 transition-all">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
+              <StickyNote className="size-3.5" />
+              <span>আমার ব্যক্তিগত নোট / তাদাব্বুর</span>
+            </div>
+
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => onOpenNote(ayah.ayah)}
+                className="p-1 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                title="নোট এডিট করুন"
+              >
+                <Edit3 className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => onDeleteNote(ayah.ayah)}
+                className="p-1 rounded-md text-xs text-destructive/80 hover:text-destructive hover:bg-destructive/10 transition-colors cursor-pointer"
+                title="নোট মুছে ফেলুন"
+              >
+                <Trash2 className="size-3.5" />
+              </button>
+            </div>
+          </div>
+
+          <p className="text-sm text-foreground/95 leading-relaxed pl-5.5 whitespace-pre-wrap">
+            {noteContent}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+});
 
 function SurahDetailPage() {
   const { id } = Route.useParams();
@@ -482,8 +1124,6 @@ function SurahDetailPage() {
       behavior: "smooth"
     });
   };
-
-  const [searchJumpText, setSearchJumpText] = useState("");
 
   const [selectedWordInfo, setSelectedWordInfo] = useState<{
     surah: number;
@@ -717,7 +1357,18 @@ function SurahDetailPage() {
     };
   }, [surahId, surahQuery.data, meta.total, isLoopingSurah, lang]);
 
-  const handleToggleSurahPlay = () => {
+  const handleNavigate = useCallback(
+    (targetSurah: number, targetAyah?: number) => {
+      navigate({
+        to: "/surah/$id",
+        params: { id: String(targetSurah) },
+        search: targetAyah ? { ayah: targetAyah } : undefined,
+      });
+    },
+    [navigate]
+  );
+
+  const handleToggleSurahPlay = useCallback(() => {
     if (playingAyah !== null) {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -726,16 +1377,16 @@ function SurahDetailPage() {
     } else {
       playAyahSequentially(1);
     }
-  };
+  }, [playingAyah, playAyahSequentially]);
 
-  const handlePlayAyah = (ayahNum: number) => {
+  const handlePlayAyah = useCallback((ayahNum: number) => {
     if (playingAyah === ayahNum) {
       if (audioRef.current) audioRef.current.pause();
       setPlayingAyah(null);
     } else {
       playAyahSequentially(ayahNum);
     }
-  };
+  }, [playingAyah, playAyahSequentially]);
 
   useEffect(() => {
     return () => {
@@ -745,16 +1396,16 @@ function SurahDetailPage() {
     };
   }, [surahId]);
 
-  const isAyahBookmarked = (ayahNum: number) => {
+  const isAyahBookmarked = useCallback((ayahNum: number) => {
     return checkBookmarked({
       kind: "ayah",
       surah: surahId,
       ayah: ayahNum,
       label: "",
     });
-  };
+  }, [checkBookmarked, surahId]);
 
-  const handleToggleBookmark = (ayah: QuranAyah) => {
+  const handleToggleBookmark = useCallback((ayah: QuranAyah) => {
     const target: BookmarkTarget = {
       kind: "ayah",
       surah: surahId,
@@ -769,9 +1420,9 @@ function SurahDetailPage() {
     } else {
       toast.info(`আয়াত ${ayah.ayah} বুকমার্ক থেকে সরানো হয়েছে`);
     }
-  };
+  }, [surahId, meta.name_bn, toggleBm]);
 
-  const handleCopyAyah = (ayah: QuranAyah) => {
+  const handleCopyAyah = useCallback((ayah: QuranAyah) => {
     const arabicText = ayah.text_uthmani || ayah.words?.map((w) => w.text_uthmani).join(" ") || "";
     const translationText = ayah.conventional_bn || (ayah as any).translation_bn || ayah.words?.map((w) => w.translation_bn).filter(Boolean).join(" ") || "";
     const transliterationText = ayah.transliteration || ayah.words?.map((w) => w.transliteration).filter(Boolean).join(" ") || "";
@@ -785,9 +1436,9 @@ function SurahDetailPage() {
 
     navigator.clipboard.writeText(fullCopyText);
     toast.success("আয়াত সম্পূর্ণ কপি করা হয়েছে");
-  };
+  }, [meta.name_bn, surahId]);
 
-  const handleShareAyah = (ayahNum: number) => {
+  const handleShareAyah = useCallback((ayahNum: number) => {
     const shareUrl = `${window.location.origin}/surah/${surahId}?ayah=${ayahNum}`;
     if (navigator.share) {
       navigator.share({
@@ -798,12 +1449,12 @@ function SurahDetailPage() {
       navigator.clipboard.writeText(shareUrl);
       toast.success("আয়াতের লিংক কপি করা হয়েছে");
     }
-  };
+  }, [meta.name_bn, surahId]);
 
-  const handleOpenNote = (ayahNum: number) => {
+  const handleOpenNote = useCallback((ayahNum: number) => {
     setActiveNoteAyah(ayahNum);
     setCurrentNoteText(ayahNotes[ayahNum] || "");
-  };
+  }, [ayahNotes]);
 
   const handleSaveNote = () => {
     if (!activeNoteAyah) return;
@@ -823,50 +1474,15 @@ function SurahDetailPage() {
     setActiveNoteAyah(null);
   };
 
-  const handleDeleteNote = (ayahNum: number) => {
+  const handleDeleteNote = useCallback((ayahNum: number) => {
     const updated = { ...ayahNotes };
     delete updated[ayahNum];
     setAyahNotes(updated);
     localStorage.setItem(`notes_surah_${surahId}`, JSON.stringify(updated));
     toast.info("নোট মুছে ফেলা হয়েছে");
-  };
+  }, [ayahNotes, surahId]);
 
-  const handleJumpSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const raw = searchJumpText.trim();
-    if (!raw) return;
-
-    const normalized = toEnglishNumber(raw);
-    const match = normalized.match(/^(\d{1,3})[:\/ঃ\.\-](\d{1,3})$/);
-
-    if (match) {
-      const targetSurah = Number(match[1]);
-      const targetAyah = Number(match[2]);
-
-      if (targetSurah >= 1 && targetSurah <= 114) {
-        if (targetSurah === surahId) {
-          scrollToAyah(targetAyah);
-        } else {
-          navigate({
-            to: "/surah/$id",
-            params: { id: String(targetSurah) },
-            search: { ayah: targetAyah },
-          });
-        }
-      }
-      setSearchJumpText("");
-      return;
-    }
-
-    const singleSurah = Number(normalized);
-    if (singleSurah >= 1 && singleSurah <= 114) {
-      navigate({ to: "/surah/$id", params: { id: String(singleSurah) } });
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setSearchJumpText("");
-    }
-  };
-
-  const handleStartEdit = (ayah: QuranAyah) => {
+  const handleStartEdit = useCallback((ayah: QuranAyah) => {
     setEditingAyah(ayah.ayah);
     setEditForm({
       conventional_bn: ayah.conventional_bn || (ayah as any).translation_bn || "",
@@ -877,7 +1493,11 @@ function SurahDetailPage() {
       meta_bn: ayah.meta_bn || "",
       meta_en: ayah.meta_en || "",
     });
-  };
+  }, []);
+
+  const handleCancelEdit = useCallback(() => {
+    setEditingAyah(null);
+  }, []);
 
   const handleSaveEdit = async (ayahNumber: number) => {
     if (surahQuery.data) {
@@ -967,25 +1587,12 @@ function SurahDetailPage() {
               </div>
             </div>
 
-            <form
-              onSubmit={handleJumpSubmit}
-              className="flex items-center gap-1 bg-muted/50 border border-border/70 rounded-lg px-2 py-1 focus-within:border-foreground/30 transition-all shrink-0"
-            >
-              <Search className="size-3 text-muted-foreground shrink-0" />
-              <input
-                type="text"
-                value={searchJumpText}
-                onChange={(e) => setSearchJumpText(e.target.value)}
-                placeholder="৩৩/৪০ বা ১-১১৪..."
-                className="bg-transparent border-none outline-none text-xs w-16 sm:w-24 text-foreground placeholder:text-muted-foreground"
-              />
-              <button
-                type="submit"
-                className="rounded bg-background px-1.5 py-0.5 text-[10px] font-medium text-foreground hover:bg-muted transition-colors border border-border/50 cursor-pointer"
-              >
-                যান
-              </button>
-            </form>
+            <AyahJumpSearchForm
+              surahId={surahId}
+              totalAyahs={meta.total}
+              onNavigate={handleNavigate}
+              onScrollToAyah={scrollToAyah}
+            />
           </div>
 
           {/* বাটনের অংশ */}
@@ -1191,470 +1798,45 @@ function SurahDetailPage() {
           const noteContent = ayahNotes[ayah.ayah];
           const hasNote = Boolean(noteContent && noteContent.trim().length > 0);
 
-          const hasModernBnData = Boolean(ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0);
-          const hasModernEnData = Boolean(ayah.modern_translation_en && ayah.modern_translation_en.trim().length > 0);
-
           return (
-            <div
+            <AyahCard
               key={ayah.ayah}
-              id={`ayah-${ayah.ayah}`}
-              className={`scroll-mt-36 rounded-2xl border bg-card p-4 sm:p-5 space-y-4 shadow-sm transition-all duration-300 ${
-                isPlaying 
-                  ? "border-primary/80 ring-2 ring-primary/20 bg-primary/[0.02] shadow-md"
-                  : hasNote 
-                    ? "border-amber-400/50 shadow-amber-400/5 hover:border-border" 
-                    : "border-border/70 hover:border-border"
-              }`}
-            >
-              <div className="border-b border-border/40 pb-3 space-y-2.5">
-                {/* [শীর্ষ সারি] আয়াতের নম্বর ও মেটা ডাটা (Meta Data) */}
-                <div className="flex items-center gap-2.5 sm:gap-3">
-                  <div className="flex items-center gap-1.5 font-mono text-sm font-bold text-primary shrink-0">
-                    <span>{surahId}:{ayah.ayah}</span>
-                  </div>
-
-                  {/* মেটা ডাটা / Meta Data বক্স */}
-                  {showMetaData && (ayah.meta_bn || ayah.meta_en) && (
-                    <div className="flex-1 min-w-0 flex flex-col justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-500/15 px-2.5 py-1 transition-all">
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 select-none leading-none">
-                        {lang === "bn" ? "মেটা ডাটা" : "Meta Data"}
-                      </span>
-                      <p className="text-xs sm:text-[13px] font-medium text-foreground/95 truncate sm:whitespace-normal leading-snug mt-0.5">
-                        {lang === "bn"
-                          ? (ayah.meta_bn || ayah.meta_en)
-                          : (ayah.meta_en || ayah.meta_bn)}
-                      </p>
-                    </div>
-                  )}
-                </div>
-
-                {/* [নিচের সারি] অডিও/বুকমার্ক ও একশন বাটনসমূহ */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1 text-muted-foreground">
-                    <button
-                      type="button"
-                      onClick={() => handlePlayAyah(ayah.ayah)}
-                      title={isPlaying ? "পজ করুন" : "এই আয়াত থেকে শুনুন"}
-                      className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
-                        isPlaying ? "text-primary bg-primary/10" : ""
-                      }`}
-                    >
-                      {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="size-4 fill-current" />}
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleToggleBookmark(ayah)}
-                      title={isBookmarked ? "বুকমার্ক সরান" : "বুকমার্ক করুন"}
-                      className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
-                        isBookmarked ? "text-amber-500 fill-amber-500 bg-amber-500/10" : ""
-                      }`}
-                    >
-                      <Bookmark className={`size-4 ${isBookmarked ? "fill-current" : ""}`} />
-                    </button>
-
-                    <button
-                      type="button"
-                      disabled={isThisAyahDownloading}
-                      onClick={() => handleToggleAyahAudioDownload(ayah.ayah)}
-                      title={isAyahAudioSaved ? "অফলাইন অডিও সংরক্ষিত আছে (মুছতে ক্লিক করুন)" : "এই আয়াতের অডিও অফলাইনে সংরক্ষণ করুন"}
-                      className={`p-1.5 rounded-lg transition-colors hover:bg-muted cursor-pointer ${
-                        isAyahAudioSaved
-                          ? "text-emerald-500 bg-emerald-500/10"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      {isThisAyahDownloading ? (
-                        <Loader2 className="size-4 animate-spin text-primary" />
-                      ) : isAyahAudioSaved ? (
-                        <CheckCircle2 className="size-4" />
-                      ) : (
-                        <Download className="size-4" />
-                      )}
-                    </button>
-                  </div>
-
-                  <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() => handleCopyAyah(ayah)}
-                      title="আয়াত কপি করুন"
-                      className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
-                    >
-                      <Copy className="size-4" />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleShareAyah(ayah.ayah)}
-                      title="আয়াত শেয়ার করুন"
-                      className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
-                    >
-                      <Share2 className="size-4" />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleOpenNote(ayah.ayah)}
-                      title={hasNote ? "নোট দেখুন / এডিট করুন" : "ব্যক্তিগত নোট যুক্ত করুন"}
-                      className={`p-1.5 rounded-lg transition-all cursor-pointer ${
-                        hasNote 
-                          ? "text-amber-400 bg-amber-400/15 ring-1 ring-amber-400/40 shadow-xs" 
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                      }`}
-                    >
-                      <StickyNote className={`size-4 ${hasNote ? "fill-amber-400/30" : ""}`} />
-                    </button>
-
-                    {isAdmin && (
-                      <div className="ml-2 border-l border-border/40 pl-2">
-                        {isEditing ? (
-                          <div className="flex items-center gap-1">
-                            <Button
-                              size="sm"
-                              variant="default"
-                              className="h-7 px-2 text-xs"
-                              onClick={() => handleSaveEdit(ayah.ayah)}
-                            >
-                              <Check className="size-3 mr-1" /> সংরক্ষণ
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              className="h-7 px-2 text-xs"
-                              onClick={() => setEditingAyah(null)}
-                            >
-                              <X className="size-3.5" />
-                            </Button>
-                          </div>
-                        ) : (
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/40"
-                            onClick={() => handleStartEdit(ayah)}
-                          >
-                            <Edit3 className="size-3 mr-1" /> এডিট
-                          </Button>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* [১] শব্দে শব্দে আরবি টেক্সট */}
-              <div
-                dir="rtl"
-                style={{ display: showArabic ? "flex" : "none" }}
-                className="flex-wrap items-center justify-start gap-x-4 gap-y-4 py-2 border-b border-border/40"
-              >
-                {ayah.words.map((word) => (
-                  <div
-                    key={word.position}
-                    onClick={() =>
-                      setSelectedWordInfo({
-                        surah: surahId,
-                        ayah: ayah.ayah,
-                        word,
-                      })
-                    }
-                    className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
-                  >
-                    <span 
-                      className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
-                      style={{ fontSize: `${arabicFontSize}px` }}
-                    >
-                      {word.text_uthmani}
-                    </span>
-                    <span 
-                      style={{ 
-                        display: showWordByWord && word.transliteration ? "block" : "none",
-                        fontSize: `${Math.max(10, translationFontSize - 4)}px` 
-                      }}
-                      className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
-                    >
-                      {word.transliteration}
-                    </span>
-                    <span 
-                      style={{ 
-                        display: showWordByWord && word.translation_bn ? "block" : "none",
-                        fontSize: `${Math.max(11, translationFontSize - 3)}px` 
-                      }}
-                      className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
-                    >
-                      {word.translation_bn}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* [২] পুরো আয়াতের উচ্চারণ */}
-              {ayah.transliteration && (
-                <div 
-                  style={{ display: showTransliteration ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                    <Volume2 className="size-3.5 text-muted-foreground/80" />
-                    <span>উচ্চারণ (Transliteration)</span>
-                  </div>
-                  <p 
-                    className="text-xs italic text-foreground/90 font-serif leading-relaxed pl-5.5"
-                    style={{ fontSize: `${Math.max(12, translationFontSize - 2)}px` }}
-                  >
-                    {ayah.transliteration}
-                  </p>
-                </div>
-              )}
-
-              {/* [৩] অনুবাদের ৪টি পৃথক সারি */}
-              <div className="space-y-3 pt-0.5">
-                
-                {/* [এডমিন মোড] মেটা ডাটা (Meta Data) সম্পাদনা */}
-                {isEditing && (
-                  <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-500/10 p-3.5 space-y-2.5">
-                    <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-300">
-                      <Sparkles className="size-3.5" />
-                      <span>আয়াতের মেটা ডাটা / Meta Data (নম্বরের পাশে দৃশ্যমান হবে)</span>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                      <div className="space-y-1">
-                        <Label className="text-[11px] font-medium text-muted-foreground">মেটা ডাটা (বাংলা)</Label>
-                        <Input
-                          value={editForm.meta_bn}
-                          onChange={(e) => setEditForm({ ...editForm, meta_bn: e.target.value })}
-                          placeholder="যেমন: সিস্টেমের মূল উৎসের পরিচয় ও করুণাময় গুণাবলী"
-                          className="h-8 text-xs bg-background"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <Label className="text-[11px] font-medium text-muted-foreground">Meta Data (English)</Label>
-                        <Input
-                          value={editForm.meta_en}
-                          onChange={(e) => setEditForm({ ...editForm, meta_en: e.target.value })}
-                          placeholder="e.g. Root Directory Authentication"
-                          className="h-8 text-xs bg-background"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
-                <div 
-                  style={{ display: (isEditing || showConventionalBn) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-                    <FileText className="size-3.5 text-muted-foreground/80" />
-                    <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
-                  </div>
-                  {isEditing ? (
-                    <Textarea
-                      value={editForm.conventional_bn}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, conventional_bn: e.target.value })
-                      }
-                      className="mt-1 bg-background font-normal"
-                      style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="প্রচলিত বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
-                    />
-                  ) : (
-                    <p 
-                      className="text-sm font-normal text-foreground/90 leading-relaxed pl-5.5"
-                      style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
-                    >
-                      {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
-                    </p>
-                  )}
-                </div>
-
-                {/* ২. Conventional Translation (English) */}
-                <div 
-                  style={{ display: (isEditing || showConventionalEn) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-                    <Languages className="size-3.5 text-muted-foreground/80" />
-                    <span>Conventional Translation (English)</span>
-                  </div>
-                  {isEditing ? (
-                    <Textarea
-                      value={editForm.conventional_en}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, conventional_en: e.target.value })
-                      }
-                      className="font-serif italic mt-1 bg-background font-normal"
-                      style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="Conventional English translation..."
-                    />
-                  ) : (
-                    <p 
-                      className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5 font-normal"
-                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
-                    >
-                      {ayah.conventional_en || (ayah as any).translation_en || (lang === "bn" ? "ইংরেজি অনুবাদ লোড হচ্ছে..." : "Loading English translation...")}
-                    </p>
-                  )}
-                </div>
-
-                {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
-                <div 
-                  style={{ display: (isEditing || (showModernBn && hasModernBnData)) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                    <BookMarked className="size-3.5 text-primary" />
-                    <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
-                  </div>
-                  {isEditing ? (
-                    <Textarea
-                      value={editForm.modern_translation_bn}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, modern_translation_bn: e.target.value })
-                      }
-                      className="mt-1 bg-background font-normal text-muted-foreground"
-                      style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
-                    />
-                  ) : (
-                    <p 
-                      className="text-xs sm:text-sm font-normal text-muted-foreground leading-relaxed pl-5.5"
-                      style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
-                    >
-                      {ayah.modern_translation_bn}
-                    </p>
-                  )}
-                </div>
-
-                {/* ৪. Modern Translation (English) */}
-                <div 
-                  style={{ display: (isEditing || (showModernEn && hasModernEnData)) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
-                >
-                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                    <BookmarkCheck className="size-3.5 text-primary" />
-                    <span>Modern Translation (English)</span>
-                  </div>
-                  {isEditing ? (
-                    <Textarea
-                      value={editForm.modern_translation_en}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, modern_translation_en: e.target.value })
-                      }
-                      className="font-serif italic mt-1 bg-background font-normal text-muted-foreground"
-                      style={{ fontSize: `${translationFontSize}px` }}
-                      placeholder="Modern contemporary English translation..."
-                    />
-                  ) : (
-                    <p 
-                      className="text-xs sm:text-sm font-normal text-muted-foreground font-serif italic leading-relaxed pl-5.5"
-                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
-                    >
-                      {ayah.modern_translation_en}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* [৪] অভিধান / Lexicon */}
-              <div 
-                style={{ display: showLexicon ? "block" : "none" }}
-                className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-2.5 transition-colors hover:border-border/80"
-              >
-                <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                  <Layers className="size-3.5 text-muted-foreground/80" />
-                  <span>অভিধান / Lexicon</span>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 pl-5.5">
-                  {ayah.words
-                    .filter((w) => w.text_uthmani)
-                    .map((w, idx) => {
-                      const wordRoot = extractIntelligentRoot(w);
-                      return (
-                        <span
-                          key={idx}
-                          className="inline-flex items-center gap-1 rounded-lg border border-border/50 bg-background/50 px-2.5 py-1 font-mono text-[11px]"
-                        >
-                          <span className="arabic font-bold text-foreground text-sm">{w.text_uthmani}</span>
-                          {wordRoot && (
-                            <span className="text-muted-foreground font-semibold">({wordRoot})</span>
-                          )}
-                          {w.translation_bn && (
-                            <span className="text-muted-foreground/80 text-[10px]">· {w.translation_bn}</span>
-                          )}
-                        </span>
-                      );
-                    })}
-                </div>
-
-                {isEditing ? (
-                  <div className="mt-2 pt-2 border-t border-border/40 pl-5.5">
-                    <label className="text-[11px] font-medium text-muted-foreground block mb-1">
-                      আধুনিক অভিধান / Lexicon নোট:
-                    </label>
-                    <Textarea
-                      value={editForm.lexicon_modern_notes}
-                      onChange={(e) =>
-                        setEditForm({ ...editForm, lexicon_modern_notes: e.target.value })
-                      }
-                      className="text-sm bg-background"
-                      placeholder="শব্দের আধুনিক অর্থ, ব্যুৎপত্তি বা ব্যাকরণগত নোট..."
-                    />
-                  </div>
-                ) : (
-                  ayah.lexicon_modern_notes && (
-                    <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
-                        {typeof ayah.lexicon_modern_notes === "string"
-                          ? ayah.lexicon_modern_notes
-                          : Array.isArray(ayah.lexicon_modern_notes)
-                            ? (ayah.lexicon_modern_notes as any[]).map((n) => typeof n === 'string' ? n : `${n.word ? n.word + ' — ' : ''}${n.meaning ? n.meaning + ': ' : ''}${n.scientific_note || ''}`).join('; ')
-                            : String(ayah.lexicon_modern_notes)}
-                      </p>
-                    </div>
-                  )
-                )}
-              </div>
-
-              {/* [৫] ব্যক্তিগত নোট কার্ড */}
-              {hasNote && (
-                <div className="rounded-xl border border-amber-400/40 bg-amber-400/[0.04] p-4 space-y-2 transition-all">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
-                      <StickyNote className="size-3.5" />
-                      <span>আমার ব্যক্তিগত নোট / তাদাব্বুর</span>
-                    </div>
-
-                    <div className="flex items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => handleOpenNote(ayah.ayah)}
-                        className="p-1 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
-                        title="নোট এডিট করুন"
-                      >
-                        <Edit3 className="size-3.5" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleDeleteNote(ayah.ayah)}
-                        className="p-1 rounded-md text-xs text-destructive/80 hover:text-destructive hover:bg-destructive/10 transition-colors cursor-pointer"
-                        title="নোট মুছে ফেলুন"
-                      >
-                        <Trash2 className="size-3.5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <p className="text-sm text-foreground/95 leading-relaxed pl-5.5 whitespace-pre-wrap">
-                    {noteContent}
-                  </p>
-                </div>
-              )}
-            </div>
+              ayah={ayah}
+              surahId={surahId}
+              isPlaying={isPlaying}
+              isBookmarked={isBookmarked}
+              isAyahAudioSaved={isAyahAudioSaved}
+              isThisAyahDownloading={isThisAyahDownloading}
+              hasNote={hasNote}
+              noteContent={noteContent}
+              isEditing={isEditing}
+              isAdmin={isAdmin}
+              lang={lang}
+              showArabic={showArabic}
+              showWordByWord={showWordByWord}
+              showTransliteration={showTransliteration}
+              showConventionalBn={showConventionalBn}
+              showConventionalEn={showConventionalEn}
+              showModernBn={showModernBn}
+              showModernEn={showModernEn}
+              showLexicon={showLexicon}
+              showMetaData={showMetaData}
+              arabicFontSize={arabicFontSize}
+              translationFontSize={translationFontSize}
+              editForm={editForm}
+              setEditForm={setEditForm}
+              onPlayAyah={handlePlayAyah}
+              onToggleBookmark={handleToggleBookmark}
+              onToggleAyahAudioDownload={handleToggleAyahAudioDownload}
+              onCopyAyah={handleCopyAyah}
+              onShareAyah={handleShareAyah}
+              onOpenNote={handleOpenNote}
+              onDeleteNote={handleDeleteNote}
+              onStartEdit={handleStartEdit}
+              onSaveEdit={handleSaveEdit}
+              onCancelEdit={handleCancelEdit}
+              onSelectWord={setSelectedWordInfo}
+            />
           );
         })}
       </div>
