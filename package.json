@@ -10,9 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "deploy": "npm run build && node ./scripts/deploy-cloudflare.mjs all",
-    "deploy:main": "npm run build && node ./scripts/deploy-cloudflare.mjs main",
-    "deploy:sub": "npm run build && node ./scripts/deploy-cloudflare.mjs sub"
+    "deploy": "npm run build && node ./scripts/deploy-cloudflare.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
