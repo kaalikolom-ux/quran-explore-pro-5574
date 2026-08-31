@@ -316,13 +316,27 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
         const saved = localStorage.getItem(`quran_ayah_meta_${sId}_${a.ayah}`);
         if (saved) {
           const parsed = JSON.parse(saved);
-          if (parsed.meta_bn !== undefined) a.meta_bn = parsed.meta_bn;
-          if (parsed.meta_en !== undefined) a.meta_en = parsed.meta_en;
-          if (parsed.modern_translation_bn !== undefined) a.modern_translation_bn = parsed.modern_translation_bn;
-          if (parsed.modern_translation_en !== undefined) a.modern_translation_en = parsed.modern_translation_en;
-          if (parsed.lexicon_modern_notes !== undefined) a.lexicon_modern_notes = parsed.lexicon_modern_notes;
-          if (parsed.conventional_bn !== undefined) a.conventional_bn = parsed.conventional_bn;
-          if (parsed.conventional_en !== undefined) a.conventional_en = parsed.conventional_en;
+          if (parsed.meta_bn && typeof parsed.meta_bn === "string" && parsed.meta_bn.trim().length > 0) {
+            a.meta_bn = parsed.meta_bn.trim();
+          }
+          if (parsed.meta_en && typeof parsed.meta_en === "string" && parsed.meta_en.trim().length > 0) {
+            a.meta_en = parsed.meta_en.trim();
+          }
+          if (parsed.modern_translation_bn && typeof parsed.modern_translation_bn === "string" && parsed.modern_translation_bn.trim().length > 0) {
+            a.modern_translation_bn = parsed.modern_translation_bn.trim();
+          }
+          if (parsed.modern_translation_en && typeof parsed.modern_translation_en === "string" && parsed.modern_translation_en.trim().length > 0) {
+            a.modern_translation_en = parsed.modern_translation_en.trim();
+          }
+          if (parsed.lexicon_modern_notes && typeof parsed.lexicon_modern_notes === "string" && parsed.lexicon_modern_notes.trim().length > 0) {
+            a.lexicon_modern_notes = parsed.lexicon_modern_notes.trim();
+          }
+          if (parsed.conventional_bn && typeof parsed.conventional_bn === "string" && parsed.conventional_bn.trim().length > 0) {
+            a.conventional_bn = parsed.conventional_bn.trim();
+          }
+          if (parsed.conventional_en && typeof parsed.conventional_en === "string" && parsed.conventional_en.trim().length > 0) {
+            a.conventional_en = parsed.conventional_en.trim();
+          }
         }
       } catch {}
     });
@@ -491,7 +505,7 @@ function SurahDetailPage() {
   const surahQuery = useQuery<SurahData>({
     queryKey: ["local-surah-cache", surahId],
     queryFn: () => fetchSurahData(surahId),
-    staleTime: Infinity,
+    staleTime: 1000 * 60 * 5,
     gcTime: 1000 * 60 * 60 * 24,
   });
 
@@ -1593,7 +1607,11 @@ function SurahDetailPage() {
                     <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
                       <p className="text-xs text-muted-foreground leading-relaxed">
                         <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
-                        {ayah.lexicon_modern_notes}
+                        {typeof ayah.lexicon_modern_notes === "string"
+                          ? ayah.lexicon_modern_notes
+                          : Array.isArray(ayah.lexicon_modern_notes)
+                            ? (ayah.lexicon_modern_notes as any[]).map((n) => typeof n === 'string' ? n : `${n.word ? n.word + ' — ' : ''}${n.meaning ? n.meaning + ': ' : ''}${n.scientific_note || ''}`).join('; ')
+                            : String(ayah.lexicon_modern_notes)}
                       </p>
                     </div>
                   )
