@@ -31,12 +31,14 @@ import {
   FileAudio,
   Repeat,
   Square,
-  Cpu
+  Cpu,
+  Scale
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
 import { useIsAdmin } from "@/lib/auth";
 import { getSurahMeaning, saveCustomSurahMeaning, type SurahMeaningItem } from "@/lib/surahMeaningsData";
+import { getSurahConsistency, saveCustomSurahConsistency, type SurahConsistencyItem } from "@/lib/surahConsistencyData";
 import { 
   resolveAudioSrc, 
   downloadSurahAudio, 
@@ -388,6 +390,26 @@ function SurahDetailPage() {
   const [editMeaningScientificBn, setEditMeaningScientificBn] = useState("");
   const [editMeaningConventionalEn, setEditMeaningConventionalEn] = useState("");
   const [editMeaningScientificEn, setEditMeaningScientificEn] = useState("");
+
+  const [surahConsistency, setSurahConsistency] = useState<SurahConsistencyItem | null>(() => getSurahConsistency(surahId));
+  const [consistencyEditDialogOpen, setConsistencyEditDialogOpen] = useState(false);
+  const [editConsistencyBn, setEditConsistencyBn] = useState("");
+  const [editConsistencyEn, setEditConsistencyEn] = useState("");
+  const [editConsistencyTitleBn, setEditConsistencyTitleBn] = useState("");
+
+  useEffect(() => {
+    setSurahConsistency(getSurahConsistency(surahId));
+    const handleConsistencyUpdate = () => setSurahConsistency(getSurahConsistency(surahId));
+    window.addEventListener("surah-consistency-updated", handleConsistencyUpdate);
+    return () => window.removeEventListener("surah-consistency-updated", handleConsistencyUpdate);
+  }, [surahId]);
+
+  const handleSaveSurahConsistency = () => {
+    saveCustomSurahConsistency(surahId, editConsistencyBn, editConsistencyEn, editConsistencyTitleBn);
+    setSurahConsistency(getSurahConsistency(surahId));
+    setConsistencyEditDialogOpen(false);
+    toast.success(lang === "bn" ? "লজিক্যাল কনসিস্টেন্সি ডাটা সংরক্ষিত হয়েছে" : "Logical consistency updated successfully");
+  };
 
   useEffect(() => {
     setSurahMeaning(getSurahMeaning(surahId));
@@ -1604,6 +1626,60 @@ function SurahDetailPage() {
         })}
       </div>
 
+      {/* ⚖️ ৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য) সেকশন */}
+      <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-linear-to-br from-card via-muted/15 to-card p-4 sm:p-6 shadow-sm space-y-4">
+        <div className="flex items-center justify-between gap-2 border-b border-border/50 pb-3">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/25">
+              <Scale className="size-4" />
+            </span>
+            <div className="min-w-0">
+              <h3 className="text-sm sm:text-base font-bold text-foreground truncate">
+                {lang === "bn"
+                  ? (surahConsistency?.title_bn || "⚖️ ৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)")
+                  : (surahConsistency?.title_en || "⚖️ Verse 4:82 Logical Consistency Framework")}
+              </h3>
+              <p className="text-[11px] text-muted-foreground">
+                {lang === "bn"
+                  ? "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও বৈজ্ঞানিক সামঞ্জস্য বিশ্লেষণ"
+                  : "Internal non-contradiction & universal systemic harmony analysis"}
+              </p>
+            </div>
+          </div>
+
+          {isAdmin && (
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => {
+                setEditConsistencyTitleBn(surahConsistency?.title_bn || "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)");
+                setEditConsistencyBn(surahConsistency?.content_bn || "");
+                setEditConsistencyEn(surahConsistency?.content_en || "");
+                setConsistencyEditDialogOpen(true);
+              }}
+              className="h-6 px-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-md cursor-pointer shrink-0"
+            >
+              <Edit3 className="size-3 mr-1" />
+              <span>{lang === "bn" ? "কনসিস্টেন্সি এডিট" : "Edit Consistency"}</span>
+            </Button>
+          )}
+        </div>
+
+        {surahConsistency?.content_bn ? (
+          <div className="rounded-xl border border-primary/15 bg-primary/[0.03] p-4 sm:p-5">
+            <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed font-normal whitespace-pre-line">
+              {lang === "bn" ? surahConsistency.content_bn : (surahConsistency.content_en || surahConsistency.content_bn)}
+            </p>
+          </div>
+        ) : (
+          <div className="rounded-xl border border-dashed border-border/70 p-4 text-center text-xs text-muted-foreground">
+            {lang === "bn"
+              ? "এই সুরার ৪:৮২ লজিক্যাল কনসিস্টেন্সি গবেষণা কাজ চলমান রয়েছে..."
+              : "Verse 4:82 Logical Consistency research is currently under development for this Surah..."}
+          </div>
+        )}
+      </div>
+
       {showBackToTop && (
         <button
           type="button"
@@ -1735,6 +1811,62 @@ function SurahDetailPage() {
               <Button size="sm" onClick={handleSaveSurahMeaning} className="bg-primary text-primary-foreground cursor-pointer">
                 <Check className="size-3.5 mr-1" />
                 {lang === "bn" ? "সংরক্ষণ করুন" : "Save Meanings"}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* ৪:৮২ লজিক্যাল কনসিস্টেন্সি এডিট ডায়ালগ (এডমিন অনলি) */}
+      <Dialog open={consistencyEditDialogOpen} onOpenChange={setConsistencyEditDialogOpen}>
+        <DialogContent className="max-w-xl max-h-[85vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold flex items-center gap-2">
+              <Scale className="size-4 text-primary" />
+              <span>{lang === "bn" ? `সুরা ${meta.name_bn} — ৪:৮২ লজিক্যাল কনসিস্টেন্সি এডিট` : `Edit Surah ${meta.name_en} Consistency`}</span>
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="space-y-4 pt-2">
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-foreground">শিরোনাম (Title)</Label>
+              <Input
+                value={editConsistencyTitleBn}
+                onChange={(e) => setEditConsistencyTitleBn(e.target.value)}
+                placeholder="৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)"
+                className="text-sm font-medium"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-foreground">বাংলা বিশ্লেষণ (Bangla Content)</Label>
+              <Textarea
+                rows={6}
+                value={editConsistencyBn}
+                onChange={(e) => setEditConsistencyBn(e.target.value)}
+                placeholder="এই সুরার ৪:৮২ ভিত্তিক বৈজ্ঞানিক সামঞ্জস্য বিশ্লেষণ লিখুন..."
+                className="text-xs sm:text-sm font-normal leading-relaxed resize-none"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-foreground">English Analysis (Optional)</Label>
+              <Textarea
+                rows={4}
+                value={editConsistencyEn}
+                onChange={(e) => setEditConsistencyEn(e.target.value)}
+                placeholder="English logical consistency analysis..."
+                className="text-xs sm:text-sm font-normal leading-relaxed resize-none"
+              />
+            </div>
+
+            <div className="flex items-center justify-end gap-2 pt-2 border-t border-border/50">
+              <Button variant="outline" size="sm" onClick={() => setConsistencyEditDialogOpen(false)}>
+                {lang === "bn" ? "বাতিল" : "Cancel"}
+              </Button>
+              <Button size="sm" onClick={handleSaveSurahConsistency} className="bg-primary text-primary-foreground cursor-pointer">
+                <Check className="size-3.5 mr-1" />
+                {lang === "bn" ? "সংরক্ষণ করুন" : "Save Consistency"}
               </Button>
             </div>
           </div>
