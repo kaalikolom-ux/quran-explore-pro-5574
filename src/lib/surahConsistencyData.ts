@@ -9,6 +9,38 @@ export interface SurahConsistencyItem {
 }
 
 export const SURAH_CONSISTENCY_DATABASE: Record<number, SurahConsistencyItem> = {
+  2: {
+    surahId: 2,
+    title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",
+    title_en: "Logical Consistency Analysis (Verse 4:82 Framework)",
+    content_bn: `সূরা আন-নিসা (৪:৮২)-এর অভ্যন্তরীণ বৈপরীত্যহীনতা ও যৌক্তিক সামঞ্জস্যের মানদণ্ডে সূরা আল-বাকারার ২৮৬টি আয়াতের অতি-উচ্চ কসমোলজিক্যাল, কোয়ান্টাম, মনস্তাত্ত্বিক, জৈবিক ও ম্যাক্রো-ইকোনমিক আর্কিটেকচারে কোনো লজিক্যাল বা সায়েন্টিফিক বৈপরীত্য (Contradiction) নেই। এর মূল কনসিস্টেন্সি ফ্রেমওয়ার্কটি নিম্নরূপ:
+
+১. চেতনা, স্বাধীন ইচ্ছা ও অটোমেটেড ডাটা-লক (Free-will & System Feedback):
+মানুষের হৃদয়ে সিল পড়া (খাতামা), অন্তরের রোগ বৃদ্ধি বা অবচেতন বিভ্রান্তি কোনো খেয়ালী জবরদস্তি নয়; বরং ইউজার নোডের সত্য ব্লকিং (কুফর) ও দ্বিচারিতার (নিফাক) স্বয়ংক্রিয় থার্মোডাইনামিক ও নিউরো-প্লাস্টিক রি-অ্যাকশন।
+
+২. সৃষ্টিতত্ত্ব, ডাইমেনশনাল ট্রান্সফরমেশন ও কোয়ান্টাম মেকানিক্স:
+মানুষের অজৈব উপাদান থেকে জৈবিক চেতনায় রূপান্তর (অ্যাবায়োজেনেসিস), ইবলিসের প্লাজমা সত্ত্বা (১৮:৫০ সামঞ্জস্য) ও আদমের ডাইমেনশনাল ডাউনগ্রেড, স্পেস-টাইম টাইম-ডাইলেশন (আয়াত ২৫৯) এবং কোয়ান্টাম পার্টিকেল এনট্যাঙ্গেলমেন্ট ও রি-অ্যাসেম্বলিং (আয়াত ২৬০) মহাবিশ্বের পদার্থবিজ্ঞান ও তথ্য-সংরক্ষণ নীতির সাথে শতভাগ সুসংগত।
+
+৩. কসমিক কন্ট্রোল ম্যাট্রিক্স ও রিয়েল-টাইম অডিট:
+আয়াতুল কুরসীতে আল্লাহর ‘কুরসী’ কোনো পৌরাণিক সিংহাসন নয়, বরং সমগ্র সৃষ্টিকে জিরো-বাফারিং লসে ধারণকারী পরম সুপ্রীম কন্ট্রোল ও কমান্ড ম্যাট্রিক্স—যা মানুষের মনের গোপন ও প্রকাশ্য প্রতিটি নিউরাল ডাটা-লগকে রিয়েল-টাইম ক্লাউড অডিটে সংরক্ষণ করে (আয়াত ২৮৪)।
+
+৪. বায়ো-মেডিকেল ও সামাজিক সাইকোলজিক্যাল কোড:
+খাদ্য ও পানীয়ের বায়ো-কেমিক্যাল ফিল্টারিং (আয়াত ১৭৩), বিবাহ-তালাকের মনস্তাত্ত্বিক চেক-অ্যান্ড-ব্যালেন্স ও কগনিটিভ ব্রেক (আয়াত ২৩০), স্তন্যদানের অপ্টিমাইজড টাইম-উইন্ডো (আয়াত ২৩৩) এবং প্রতিরক্ষা ব্যবস্থার ফায়ারওয়াল প্রটোকল মানুষের জৈবিক ও সামাজিক স্থিতিশীলতা নিশ্চিত করে।
+
+৫. ম্যাক্রো-ইকোনমিক্স ও এন্ট্রপি ব্যালেন্স (ইনফাক বনাম রিবা):
+সম্পদের উন্মুক্ত প্রবাহ (সদকা/ইনফাক) ও ওপেন-সোর্স/এনক্রিপ্টেড অ্যানোনিমিটি মডেল সিস্টেমের পজিটিভ এনার্জি মাল্টিপ্লাই করে; বিপরীতে সুদের (রিবা) কৃত্রিম স্কার্সিটি ও পরজীবী শোষণ স্বয়ংক্রিয় কাউন্টার-ব্যালেন্সিং লুপে অর্থনৈতিক ও সামাজিক ব্যবস্থাকে সেলফ-ডিকম্পোজিশন বা ধ্বংসের মুখে ঠেলে দেয়।
+
+৬. মাস্টার ডাটা-লগিং ও ফল্ট-টলারেন্ট রিকভারি প্যাচ:
+আর্থিক লেনদেনের ডাবল-নোড মেমোরি রিডানড্যান্সি ও এরর কারেকশন (আয়াত ২৮২), ক্রিপ্টোগ্রাফিক সিকিউরিটি প্রুফ (আয়াত ২৮৩) এবং সমাপনী আয়াতে মানুষের প্রসেসিং ক্যাপাসিটি থ্রেশহোল্ড মেনে চূড়ান্ত ফল্ট-টলারেন্ট রিকভারি প্যাচ (আয়াত ২৮৬) প্রমাণ করে যে—মহাজাগতিক অপারেটিং সিস্টেমটি সর্বোচ্চ কাস্টমাইজড, গাণিতিক ও পূর্ণাঙ্গ অভ্যন্তরীণ সামঞ্জস্যে প্রতিষ্ঠিত।`,
+    content_en: `Under the non-contradiction and analytical consistency framework of Surah An-Nisa (4:82), the 286 verses of Surah Al-Baqarah demonstrate complete systemic coherence across cosmology, quantum information, neurobiology, and macroeconomics:
+
+1. Free-Will & Automated Feedback Loops: Hardened cognition and cognitive seals ('khatama') are mathematically deterministic outputs of deliberate truth-blocking ('kufr') and internal entropy, rather than arbitrary coercion.
+2. Cosmology, Quantum Assembly & Time Dilation: Human abiogenesis, dimensional state transformations, relativistic time-dilation (Ayah 259), and quantum particle re-assembly (Ayah 260) align seamlessly with universal physical conservation laws.
+3. Cosmic Control Matrix (Ayatul Kursi): The 'Kursi' represents the ultimate cosmic control and command fabric running with zero buffering loss, maintaining real-time auditability across all neural and quantum states.
+4. Bio-Medical & Sociological Equilibria: Biochemical dietary filters (Ayah 173), psychological deterrents in divorce and family structures (Ayah 230), and exact lactation windows (Ayah 233) optimize human biological and social health.
+5. Macroeconomic Entropy (Infaq vs. Riba): Open-source and encrypted resource distribution (Infaq) multiplies systemic stability, whereas parasitic usury (Riba) triggers natural economic instability and self-destruction.
+6. Master Data Logging & Fault-Tolerant Algorithm: Double-node parity bit verification (Ayah 282), collateralized security tokens (Ayah 283), and the concluding fault-tolerant recovery patch respecting processor capacity limits (Ayah 286) prove the flawless mathematical and systemic unity of the divine operating system.`
+  },
   104: {
     surahId: 104,
     title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",
