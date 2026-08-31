@@ -979,8 +979,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Al-Qadr",
     "conventional_bn": "ভাগ্য / মর্যাদা",
     "conventional_en": "The Decree / Power",
-    "scientific_bn": "প্রি-ডিফাইন্ড সিস্টেম ভেরিয়েবল / কোয়ান্টাম ডেটা-প্রোগ্রামিং উইন্ডো",
-    "scientific_en": "Pre-Defined System Variables / Quantum Data-Programming Window"
+    "scientific_bn": "কোয়ান্টাম ডেটা-ডাউনলিংক ও সোর্স কোড রিলিজ প্রটোকল",
+    "scientific_en": "Quantum Data-Downlink & Core Source Code Release Protocol"
   },
   "98": {
     "id": 98,

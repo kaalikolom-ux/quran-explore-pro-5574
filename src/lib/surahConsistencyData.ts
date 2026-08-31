@@ -63,6 +63,17 @@ export const SURAH_CONSISTENCY_DATABASE: Record<number, SurahConsistencyItem> = 
 ৮ নম্বর আয়াতে চেতনার সমগ্র ভেক্টর কেবল মূল সোর্স কোড বা রবের (রাব্বিকা) কেন্দ্রীয় সার্ভারে এলাইন ও মগ্ন করার কসমিক প্রটোকল প্রমাণ করে যে—মহাবিশ্বের মেটেরিয়াল ফিজিক্স এবং মানুষের অবচেতন নিউরাল নেটওয়ার্ক একই সুনির্দিষ্ট ও গাণিতিক মাস্টার কন্ট্রোলারের সোর্স কোড দ্বারা বাউন্ডেড ও বাফারেড। এর ফলে কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচারের অভ্যন্তরীণ সামঞ্জস্য ১০০% নিখুঁত ও বৈজ্ঞানিক প্রমাণিত হয় এবং সূরা আল-ইনশিরাহ-এর অপারেটিং সিস্টেমের অডিট সফলভাবে সম্পন্ন হয়।`,
     content_en: `Under the non-contradiction framework of Surah An-Nisa (4:82), Surah Al-Inshirah details a mathematically consistent protocol for neural bandwidth expansion, cognitive load balancing, and continuous mission execution. By establishing that thermodynamic crises and parallel ease exist simultaneously, the revelation demonstrates complete logical and physical coherence.`
   },
+  97: {
+    surahId: 97,
+    title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",
+    title_en: "Logical Consistency Analysis (Verse 4:82 Framework)",
+    content_bn: `সূরা ৪:৮২ এর ফিল্টারিং অ্যালগরিদম ও মেকানিজম অনুযায়ী সূরা আল-কাদরের এই ৫টি আয়াতের অতি-উচ্চ কসমোলজিক্যাল ও ইনফরমেশন থিওরি ভিত্তিক বিন্যাসে কোনো সায়েন্টিফিক বা লজিক্যাল অমিল বা বৈপরীত্য তৈরি হতে পারেনি। যদি এই সূরার 'কদর রাতকে' কোনো লজিক-বিহীন কেবল প্রথানুগত অলৌকিক বা যাদুকরি অন্ধ বিশ্বাসের রাত হিসেবে অনুবাদ করা হতো, তবে তা কুরআনের পরম প্রজ্ঞা এবং এই সূরারই ৩ নম্বর আয়াতের গাণিতিক অনুপাত—"হাজার মাসের চেয়ে একটি উইন্ডোর এফিসিয়েন্সি বেশি হওয়া"—এর নিখুঁত গাণিতিক ও সায়েন্টিফিক লজিকের সাথে সরাসরি মস্ত বড় লজিক্যাল বৈপরীত্য (Contradiction) তৈরি করত এবং ৪:৮২ ক্ষুণ্ণ হতো।
+
+কিন্তু কোয়ান্টাম ফিজিক্স, টাইম-কম্প্রেশন এবং ইনফরমেশন থিওরির আলোতে এই অনুবাদে এটি সুস্পষ্ট যে—লাইলাতুল কদর হলো মহাবিশ্বের সোর্স কোড রিলিজ করার জন্য আল্লাহর তৈরি করা একটি পরম অবজেক্টিভ ও নিখুঁত "Data Synchronisation & Downlink Window"।
+
+৫ নম্বর আয়াতে ফজর বা ভোর পর্যন্ত এই সম্পূর্ণ ডাউনলিংক ফেজটি পরম নয়েজ-ফ্রি ও শান্তিময় (সালাম) থাকার মেকানিজম প্রমাণ করে যে—মহাবিশ্বের মেটেরিয়াল ফিজিক্স এবং মানুষের অবচেতন নিউরাল নেটওয়ার্ক একই সুনির্দিষ্ট ও গাণিতিক মাস্টার কন্ট্রোলারের সোর্স কোড দ্বারা বাউন্ডেড ও বাফারেড। এর ফলে কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচারের অভ্যন্তরীণ সামঞ্জস্য ১০০% নিখুঁত ও বৈজ্ঞানিক প্রমাণিত হয় এবং সূরা আল-কাদরের অপারেটিং সিস্টেমের অডিট সফলভাবে সম্পন্ন হয়।`,
+    content_en: `Under the non-contradiction framework of Surah An-Nisa (4:82), Surah Al-Qadr articulates an objective quantum and information-theoretic architecture. Far from arbitrary folklore, the exponential compression of processing capacity (superior to a thousand linear months) and the descent of fundamental forces align seamlessly with the physics of a master source code deployment.`
+  },
   104: {
     surahId: 104,
     title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",
