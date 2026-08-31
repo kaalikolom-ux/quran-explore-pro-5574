@@ -139,6 +139,11 @@ function SettingsPage() {
       title: lang === "bn" ? "মেটা ডাটা / Meta Data" : "Ayah Meta Data",
       desc: lang === "bn" ? "প্রতিটি আয়াতের নম্বরের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ প্রদর্শন" : "Display contextual topic and metadata next to ayah numbers",
     },
+    {
+      key: "showSurahScientificMeaning",
+      title: lang === "bn" ? "সুরার নামের প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ" : "Surah Names: Conventional & Scientific Meaning",
+      desc: lang === "bn" ? "প্রতিটি সুরার শীর্ষে প্রচলিত অর্থ ও আধুনিক বিজ্ঞানভিত্তিক গবেষণামূলক অর্থ প্রদর্শন" : "Display conventional and scientific contextual meanings in surah headers",
+    },
   ];
 
   return (

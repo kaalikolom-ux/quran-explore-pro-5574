@@ -30,11 +30,13 @@ import {
   CheckCircle2,
   FileAudio,
   Repeat,
-  Square
+  Square,
+  Cpu
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
 import { useIsAdmin } from "@/lib/auth";
+import { getSurahMeaning, saveCustomSurahMeaning, type SurahMeaningItem } from "@/lib/surahMeaningsData";
 import { 
   resolveAudioSrc, 
   downloadSurahAudio, 
@@ -379,6 +381,25 @@ function SurahDetailPage() {
   const [activeNoteAyah, setActiveNoteAyah] = useState<number | null>(null);
   const [ayahNotes, setAyahNotes] = useState<Record<string, string>>({});
   const [currentNoteText, setCurrentNoteText] = useState("");
+
+  const [surahMeaning, setSurahMeaning] = useState<SurahMeaningItem | null>(() => getSurahMeaning(surahId));
+  const [meaningEditDialogOpen, setMeaningEditDialogOpen] = useState(false);
+  const [editMeaningConventional, setEditMeaningConventional] = useState("");
+  const [editMeaningScientific, setEditMeaningScientific] = useState("");
+
+  useEffect(() => {
+    setSurahMeaning(getSurahMeaning(surahId));
+    const handleUpdate = () => setSurahMeaning(getSurahMeaning(surahId));
+    window.addEventListener("surah-meanings-updated", handleUpdate);
+    return () => window.removeEventListener("surah-meanings-updated", handleUpdate);
+  }, [surahId]);
+
+  const handleSaveSurahMeaning = () => {
+    saveCustomSurahMeaning(surahId, editMeaningConventional, editMeaningScientific);
+    setSurahMeaning(getSurahMeaning(surahId));
+    setMeaningEditDialogOpen(false);
+    toast.success(lang === "bn" ? "সুরার প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ সংরক্ষিত হয়েছে" : "Surah meanings updated successfully");
+  };
 
   useEffect(() => {
     try {
@@ -1018,6 +1039,66 @@ function SurahDetailPage() {
         </div>
       </div>
 
+      {/* সুরার নামের প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ ব্যানার (Responsive Desktop & Mobile) */}
+      {isLayerAllowed("showSurahScientificMeaning", isAdmin) && prefs.showSurahScientificMeaning && surahMeaning && (
+        <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-linear-to-br from-card via-muted/20 to-card p-3.5 sm:p-5 shadow-xs space-y-3">
+          <div className="flex items-center justify-between gap-2 border-b border-border/50 pb-2.5">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
+                <Sparkles className="size-3.5" />
+              </span>
+              <span className="text-xs sm:text-sm font-bold text-foreground truncate">
+                {lang === "bn" ? `সুরা ${meta.name_bn}-এর নামের প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ` : `Meanings of Surah ${meta.name_en}`}
+              </span>
+            </div>
+
+            {isAdmin && (
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => {
+                  setEditMeaningConventional(surahMeaning.conventional_bn);
+                  setEditMeaningScientific(surahMeaning.scientific_bn);
+                  setMeaningEditDialogOpen(true);
+                }}
+                className="h-6 px-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-md cursor-pointer shrink-0"
+              >
+                <Edit3 className="size-3 mr-1" />
+                <span>{lang === "bn" ? "অর্থ এডিট" : "Edit Meanings"}</span>
+              </Button>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+            {/* প্রচলিত অর্থ (Conventional Meaning) */}
+            <div className="md:col-span-4 flex flex-col justify-between rounded-xl border border-amber-500/25 bg-amber-500/5 dark:bg-amber-500/10 p-3 sm:p-3.5 space-y-1.5">
+              <div className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
+                <BookOpen className="size-3.5 shrink-0" />
+                <span className="text-[11px] font-bold uppercase tracking-wider">
+                  {lang === "bn" ? "প্রচলিত অর্থ" : "Conventional Meaning"}
+                </span>
+              </div>
+              <p className="text-sm font-bold text-foreground leading-snug">
+                {surahMeaning.conventional_bn}
+              </p>
+            </div>
+
+            {/* বিজ্ঞানভিত্তিক অর্থ (Scientific Meaning) */}
+            <div className="md:col-span-8 flex flex-col justify-between rounded-xl border border-primary/30 bg-primary/5 dark:bg-primary/10 p-3 sm:p-3.5 space-y-1.5">
+              <div className="flex items-center gap-1.5 text-primary">
+                <Cpu className="size-3.5 shrink-0" />
+                <span className="text-[11px] font-bold uppercase tracking-wider">
+                  {lang === "bn" ? "বিজ্ঞানভিত্তিক গবেষণা ও গভীর অর্থ" : "Scientific Context & Deep Insight"}
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm font-semibold text-foreground/95 leading-relaxed">
+                {surahMeaning.scientific_bn}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* বিসমিল্লাহ */}
       {surahId !== 9 && surahId !== 1 && (
         <div className="text-center py-2" style={{ display: showArabic ? "block" : "none" }}>
@@ -1550,6 +1631,57 @@ function SurahDetailPage() {
               </Button>
               <Button size="sm" onClick={handleSaveNote}>
                 সংরক্ষণ করুন
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* সুরার প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ এডিট ডায়ালগ (এডমিন অনলি) */}
+      <Dialog open={meaningEditDialogOpen} onOpenChange={setMeaningEditDialogOpen}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold flex items-center gap-2">
+              <Sparkles className="size-4 text-primary" />
+              <span>{lang === "bn" ? `সুরা ${meta.name_bn}-এর প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ এডিট` : `Edit Surah ${meta.name_en} Meanings`}</span>
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="space-y-4 pt-2">
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                <BookOpen className="size-3.5 text-amber-500" />
+                <span>{lang === "bn" ? "প্রচলিত অর্থ (Conventional Meaning)" : "Conventional Meaning"}</span>
+              </Label>
+              <Input
+                value={editMeaningConventional}
+                onChange={(e) => setEditMeaningConventional(e.target.value)}
+                placeholder="যেমন: উদ্বোধনী"
+                className="text-sm font-medium"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                <Cpu className="size-3.5 text-primary" />
+                <span>{lang === "bn" ? "বিজ্ঞানভিত্তিক অর্থ (Scientific Meaning)" : "Scientific Meaning"}</span>
+              </Label>
+              <Textarea
+                rows={3}
+                value={editMeaningScientific}
+                onChange={(e) => setEditMeaningScientific(e.target.value)}
+                placeholder="যেমন: মাস্টার বুট লোডার / সিস্টেম ইনিশিয়ালাইজেশন প্রটোকল..."
+                className="text-xs sm:text-sm font-medium leading-relaxed resize-none"
+              />
+            </div>
+
+            <div className="flex items-center justify-end gap-2 pt-2 border-t border-border/50">
+              <Button variant="outline" size="sm" onClick={() => setMeaningEditDialogOpen(false)}>
+                {lang === "bn" ? "বাতিল" : "Cancel"}
+              </Button>
+              <Button size="sm" onClick={handleSaveSurahMeaning} className="bg-primary text-primary-foreground cursor-pointer">
+                <Check className="size-3.5 mr-1" />
+                {lang === "bn" ? "সংরক্ষণ করুন" : "Save Meanings"}
               </Button>
             </div>
           </div>
