@@ -1527,10 +1527,37 @@ function SurahDetailPage() {
           await saveSurahOffline(surahId, surahQuery.data);
         } catch {}
 
-        // Cloud sync (Supabase verse_translations)
+        // Cloud sync (Supabase quran_verses master table)
         try {
-          if (editForm.meta_bn.trim()) {
-            await supabase.from("verse_translations").upsert({
+          await (supabase as any).from("quran_verses").upsert({
+            surah: surahId,
+            ayah: ayahNumber,
+            text_uthmani: target.text_uthmani || target.words?.map(w => w.text_uthmani).join(" ") || "",
+            words: target.words || [],
+            transliteration: target.transliteration || "",
+            conventional_bn: editForm.conventional_bn.trim(),
+            conventional_en: editForm.conventional_en.trim(),
+            bn_text: editForm.conventional_bn.trim(),
+            en_text: editForm.conventional_en.trim(),
+            modern_translation_bn: editForm.modern_translation_bn.trim() || null,
+            modern_translation_en: editForm.modern_translation_en.trim() || null,
+            meta_bn: editForm.meta_bn.trim() || null,
+            meta_en: editForm.meta_en.trim() || null,
+            lexicon_modern_notes: editForm.lexicon_modern_notes.trim() || null,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: "surah,ayah" });
+
+          if (editForm.meta_bn.trim() || editForm.meta_en.trim()) {
+            await (supabase as any).from("ayah_metadata").upsert({
+              surah: surahId,
+              ayah: ayahNumber,
+              meta_bn: editForm.meta_bn.trim() || null,
+              meta_en: editForm.meta_en.trim() || null,
+            }, { onConflict: "surah,ayah" });
+          }
+
+          if (editForm.conventional_bn.trim()) {
+            await (supabase as any).from("verse_translations").upsert({
               surah: surahId,
               ayah: ayahNumber,
               lang: "bn",
@@ -1538,10 +1565,12 @@ function SurahDetailPage() {
               text: editForm.conventional_bn.trim(),
             }, { onConflict: "surah,ayah,lang" });
           }
-        } catch {}
+        } catch (cloudErr) {
+          console.warn("Supabase master sync notice:", cloudErr);
+        }
       }
     }
-    toast.success("আয়াতের মেটা ডাটা ও অনুবাদ সংরক্ষণ করা হয়েছে");
+    toast.success("আয়াতের মেটা ডাটা ও অনুবাদ ডাটাবেজ এবং লোকাল ক্যাশে সংরক্ষিত হয়েছে");
     setEditingAyah(null);
   };
 
