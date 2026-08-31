@@ -74,6 +74,17 @@ export const SURAH_CONSISTENCY_DATABASE: Record<number, SurahConsistencyItem> = 
 ৫ নম্বর আয়াতে ফজর বা ভোর পর্যন্ত এই সম্পূর্ণ ডাউনলিংক ফেজটি পরম নয়েজ-ফ্রি ও শান্তিময় (সালাম) থাকার মেকানিজম প্রমাণ করে যে—মহাবিশ্বের মেটেরিয়াল ফিজিক্স এবং মানুষের অবচেতন নিউরাল নেটওয়ার্ক একই সুনির্দিষ্ট ও গাণিতিক মাস্টার কন্ট্রোলারের সোর্স কোড দ্বারা বাউন্ডেড ও বাফারেড। এর ফলে কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচারের অভ্যন্তরীণ সামঞ্জস্য ১০০% নিখুঁত ও বৈজ্ঞানিক প্রমাণিত হয় এবং সূরা আল-কাদরের অপারেটিং সিস্টেমের অডিট সফলভাবে সম্পন্ন হয়।`,
     content_en: `Under the non-contradiction framework of Surah An-Nisa (4:82), Surah Al-Qadr articulates an objective quantum and information-theoretic architecture. Far from arbitrary folklore, the exponential compression of processing capacity (superior to a thousand linear months) and the descent of fundamental forces align seamlessly with the physics of a master source code deployment.`
   },
+  99: {
+    surahId: 99,
+    title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",
+    title_en: "Logical Consistency Analysis (Verse 4:82 Framework)",
+    content_bn: `সূরা ৪:৮২ এর ফিল্টারিং অ্যালগরিদম ও মেকানিজম অনুযায়ী সূরা আজ-জিলজালের এই ৮টি আয়াতের অতি-উচ্চ ভূ-তাত্ত্বিক ও কোয়ান্টাম ফিজিক্স ভিত্তিক বিন্যাসে কোনো সায়েন্টিফিক বা লজিক্যাল অমিল বা বৈপরীত্য তৈরি হতে পারেনি। যদি ৭ ও ৮ নম্বর আয়াতে "কণার ওজনের মাপে হিসাব করা ও দেখতে পাওয়াকে" কোনো পৌরাণিক ঈশ্বরের দাঁড়িপাল্লা নিয়ে মানুষের আমল ও পাপের স্থূল মেটেরিয়াল বাটখারা দিয়ে ওজন করার পৌরাণিক ট্রাডিশনে রূপান্তর করা হতো, তবে তা কুরআনের পরম প্রজ্ঞা এবং এই সূরারই ৪ নম্বর আয়াতের নিখুঁত বৈজ্ঞানিক কোড—"পৃথিবীর প্রতিটি পরমাণু নিজে ডাটা-লগ ব্রডকাস্ট করে খবর দেবে"—এর সাথে সরাসরি মস্ত বড় লজিক্যাল বৈপরীত্য (Contradiction) তৈরি করত এবং ৪:৮২ ক্ষুণ্ণ হতো।
+
+কিন্তু কোয়ান্টাম অডিট এবং ইনফরমেশন থিওরির আলোতে এই অনুবাদে এটি সুস্পষ্ট যে—এই বিচার ব্যবস্থা কোনো আদিম রূপক নয়, এটি হলো মহাবিশ্বের প্রতিটি কণার ব্যাক-এন্ডে রান করা আল্লাহর পরম গাণিতিক এবং "Algorithmic Accountability"।
+
+১ ও ২ নম্বর আয়াতে পৃথিবীর ভেতরের এন্ট্রপি রিলিজ ও ভর এক্সট্রাক্ট হওয়ার ফিজিক্যাল সিমুলেশন প্রমাণ করে যে—মহাবিশ্বের মেটেরিয়াল ফিজিক্স এবং মানুষের স্বাধীন ইচ্ছার প্রতিটি চয়েস একই সুনির্দিষ্ট ও গাণিতিক মাস্টার কন্ট্রোলারের সোর্স কোড দ্বারা পরিচালিত। এর ফলে কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচারের অভ্যন্তরীণ সামঞ্জস্য ১০০% নিখুঁত ও বৈজ্ঞানিক প্রমাণিত হয় এবং সূরা আজ-জিলজালের অপারেটিং সিস্টেমের অডিট সফলভাবে সম্পন্ন হয়।`,
+    content_en: `Under the non-contradiction framework of Surah An-Nisa (4:82), Surah Az-Zalzalah establishes a profound model of algorithmic accountability and quantum data logging. Far from crude anthropomorphism, the planetary geological purging and sub-atomic zero-loss ledger manifest complete physical and mathematical coherence.`
+  },
   104: {
     surahId: 104,
     title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",

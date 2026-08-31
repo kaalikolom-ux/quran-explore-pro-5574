@@ -999,8 +999,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Az-Zalzalah",
     "conventional_bn": "ভূমিকম্প",
     "conventional_en": "The Earthquake",
-    "scientific_bn": "মেগা সিসমিক ভাইব্রেশন / থার্মোডাইনামিক চাপ মুক্তির কোর",
-    "scientific_en": "Mega Seismic Vibration / Thermodynamic Pressure Release Core"
+    "scientific_bn": "ভূ-তাত্ত্বিক এন্ট্রপি রিলিজ ও কোয়ান্টাম মেমোরি এক্সট্রাকশন প্রটোকল",
+    "scientific_en": "Geological Entropy Release & Quantum Memory Extraction Protocol"
   },
   "100": {
     "id": 100,
