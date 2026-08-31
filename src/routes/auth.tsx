@@ -371,9 +371,7 @@ function AuthPage() {
 
               <div className="flex items-center gap-3 pt-1">
                 <div className="flex items-center justify-center rounded-lg bg-card border border-border px-3.5 py-1.5 font-mono text-sm font-bold text-foreground select-none shadow-xs tracking-wider">
-                  {lang === "bn"
-                    ? `${toBnDigits(captcha.num1)} ${captcha.operator} ${toBnDigits(captcha.num2)} = ?`
-                    : `${captcha.num1} ${captcha.operator} ${captcha.num2} = ?`}
+                  {`${captcha.num1} ${captcha.operator} ${captcha.num2} = ?`}
                 </div>
                 <Input
                   id="captcha"
@@ -381,7 +379,7 @@ function AuthPage() {
                   inputMode="numeric"
                   required
                   maxLength={2}
-                  placeholder={lang === "bn" ? "উত্তর লিখুন (যেমন: ৫)" : "Answer (e.g. 5)"}
+                  placeholder={lang === "bn" ? "উত্তর লিখুন (যেমন: 5)" : "Enter answer (e.g. 5)"}
                   value={captchaInput}
                   onChange={(e) => setCaptchaInput(e.target.value)}
                   className="h-9 text-xs rounded-lg flex-1 font-mono"
