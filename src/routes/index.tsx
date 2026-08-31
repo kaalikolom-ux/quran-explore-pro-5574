@@ -319,6 +319,15 @@ function HomePage() {
             </div>
           </div>
 
+          {/* অনুবাদ উন্নয়ন ও ৪:৮২ সম্পর্কিত নোটিশ বক্স */}
+          <div className="mt-5 rounded-xl border border-border/60 bg-muted/20 p-4 sm:p-5 transition-colors hover:border-border/80">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+              {lang === "bn"
+                ? "আধুনিক ও বিজ্ঞানভিত্তিক এই অনুবাদগুলোর কাজ এখনও চলমান। আমাদের বিশ্বাস, পরিমার্জন, সংশোধন ও উন্নতির এই প্রক্রিয়া ভবিষ্যতেও অব্যাহত থাকবে। যদি কোনো অনুবাদ কুরআনের ৪:৮২ আয়াতের মূলভাবের সঙ্গে সাংঘর্ষিক হয়, তাহলে সেই অনুবাদ গ্রহণযোগ্য বলে বিবেচিত হবে না। এই বিষয়ে আপনার জ্ঞানভিত্তিক ও চিন্তাশীল পরামর্শ সবসময়ই আমরা সাদরে গ্রহণ করি।"
+                : "The work on these modern, science-based translations is still ongoing. We believe that this process of revision, refinement, and improvement will continue over time. If any translation contradicts the core essence of verse 4:82 [of the Quran], it will be considered invalid. In this regard, your thoughtful, knowledge-based suggestions and feedback are always warmly welcomed."}
+            </p>
+          </div>
+
           {chapters.isLoading ? (
             <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
           ) : (
