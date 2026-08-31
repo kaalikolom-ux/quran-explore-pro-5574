@@ -920,8 +920,8 @@ function SurahDetailPage() {
   const showLexiconScientific = isLayerAllowed("showLexiconScientific", isAdmin) && prefs.showLexiconScientific;
   const showMetaData = isLayerAllowed("showMetaData", isAdmin) && prefs.showMetaData;
 
-  const arabicFontSize = prefs.arabicFontSize || 28;
-  const translationFontSize = prefs.translationFontSize || 15;
+  const arabicFontSize = prefs.arabicFontSize || 22;
+  const translationFontSize = prefs.translationFontSize || 12;
 
   const isSurahPlaying = playingAyah !== null;
 

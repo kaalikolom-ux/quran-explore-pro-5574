@@ -28,8 +28,8 @@ export const DEFAULT_PREFS: Prefs = {
   lang: "bn",
   dark: true,
   themeMode: "dark",
-  arabicFontSize: 28,
-  translationFontSize: 15,
+  arabicFontSize: 22,
+  translationFontSize: 12,
   showArabic: true,
   showWordByWord: true,
   showTransliteration: true,
@@ -79,7 +79,10 @@ export function getStoredPrefs(): Prefs {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return DEFAULT_PREFS;
-    return { ...DEFAULT_PREFS, ...JSON.parse(raw) };
+    const parsed = JSON.parse(raw);
+    if (parsed.arabicFontSize === 28) parsed.arabicFontSize = 22;
+    if (parsed.translationFontSize === 15) parsed.translationFontSize = 12;
+    return { ...DEFAULT_PREFS, ...parsed };
   } catch {
     return DEFAULT_PREFS;
   }
