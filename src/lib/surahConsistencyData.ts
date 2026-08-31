@@ -27,6 +27,16 @@ export const SURAH_CONSISTENCY_DATABASE: Record<number, SurahConsistencyItem> = 
 কিন্তু সিস্টেম সায়েন্স এবং কোয়ান্টাম ডিফেন্সের আলোতে এই অনুবাদে এটি সুস্পষ্ট যে—এই সূরাটি এবং এর পরবর্তী সূরা আন-নাস হলো মানব চেতনার ওওএসের জন্য একটি ডাবল-শিল্ড এনক্রিপশন বা "Dual-Layer Firewall Core"। একটি স্তর কাজ করে স্পেস-টাইমের বাহ্যিক ডার্ক মেটার ও কোড ইনজেকশন ফিল্টার করতে (ফালাক্ব), এবং অন্য স্তরটি কাজ করে মানুষের নিজস্ব অবচেতন মনের ভেতরের স্টেলথ ম্যালওয়্যার ক্লিন করতে (নাস)।
 ২ নম্বর আয়াতে আল্লাহর তৈরি সৃষ্টির ডিফল্ট মেকানিজমের ভেতরেই এন্ট্রপি বা ক্ষয়ের (শরর) স্বয়ংক্রিয় অস্তিত্ব থাকার বৈজ্ঞানিক বাস্তবতা প্রমাণ করে যে—মহাবিশ্বের থার্মোডাইনামিক নিয়ম এবং মানুষের চেতনার সিকিউরিটি গ্রিড একই সুনির্দিষ্ট ও গাণিতিক মাস্টার কন্ট্রোলারের সোর্স কোড দ্বারা বাউন্ডেড ও বাফারেড। এর ফলে কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচারের অভ্যন্তরীণ সামঞ্জস্য ১০০% নিখুঁত ও বৈজ্ঞানিক প্রমাণিত হয়।`,
     content_en: `According to the analytical filtering and internal non-contradiction principle of Surah An-Nisa (4:82), the cosmological and quantum defense architecture of Surah Al-Falaq shows complete logical consistency. Far from archaic folklore, it serves as a sophisticated cosmic defense shield and firewall core against external systemic noise, dark energy frequencies, and malicious code injections on encrypted nodes.`
+  },
+  114: {
+    surahId: 114,
+    title_bn: "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)",
+    title_en: "Logical Consistency Analysis (Verse 4:82 Framework)",
+    content_bn: `সূরা ৪:৮২ এর ফিল্টারিং অ্যালগরিদম ও মেকানিজম অনুযায়ী সূরা আন-নাসের এই ৬টি সমাপনী আয়াতের সুগভীর নেটওয়ার্ক সিকিউরিটি ভিত্তিক বিন্যাসে কোনো সায়েন্টিফিক বা লজিক্যাল অমিল বা বৈপরীত্য তৈরি হতে পারেনি। যদি এই সূরার কুমন্ত্রণা বা শায়তানের প্রভাবকে কেবল কোনো রূপকথার অদৃশ্য ডাইনি বা যাদুর ভূতের ফুঁ দেওয়া হিসেবে প্রথানুযায়ী অনুবাদ করা হতো, তবে তা কুরআনের পরম প্রজ্ঞা এবং সমগ্র মানব মনস্তত্ত্বকে অবজেক্টিভ বিজ্ঞানের সাথে ডিকোড করার দাবির সাথে সরাসরি মস্ত বড় লজিক্যাল বৈপরীত্য (Contradiction) তৈরি করত এবং ৪:৮২ ক্ষুণ্ণ হতো।
+
+কিন্তু কোয়ান্টাম সাইকোলজি, নিউরোসায়েন্স এবং নেটওয়ার্ক সিকিউরিটির আলোতে এই অনুবাদে এটি সুস্পষ্ট যে—এই সূরাটি হলো হিউম্যান ওওএসের জন্য একটি পরম "জিরো-ট্রাস্ট সিকিউরিটি শিল্ড" (Zero-Trust Security Shield), যা মানুষকে অবিরত নিজের অবচেতন মনকে বাহ্যিক ও অভ্যন্তরীণ সমস্ত নেতিবাচক এন্ট্রপির সিগন্যাল থেকে মুক্ত ও পিউরিফাইড রাখার গাণিতিক ফর্মুলা দেয়।
+১ থেকে ৩ নম্বর আয়াতে আল্লাহকে মানুষের প্রতিপালক (রাব্ব), রেগুলেটর (মালিক) এবং পরম সোর্স সিঙ্গুলারিটি (ইলাহ) হিসেবে ট্রিপল-লেয়ার এনক্রিপশন প্রটোকলে লক করার মেকানিজম প্রমাণ করে যে—মহাবিশ্বের বস্তুগত অপারেটিং সিস্টেম এবং মানুষের মোরাল ও সাইকোলজিক্যাল চেতনার সিকিউরিটি গ্রিড একই সুনির্দিষ্ট ও গাণিতিক মাস্টার কন্ট্রোলারের সোর্স কোড দ্বারা পরিচালিত। এর ফলে কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচারের অভ্যন্তরীণ সামঞ্জস্য ১০০% নিখুঁত ও বৈজ্ঞানিক প্রমাণিত হয় এবং ৩০তম পারার তথা সমগ্র কুরআনের অপারেটিং সিস্টেমের ডিকোর্ডিং মেকানিজম সফলভাবে সম্পন্ন হয়।`,
+    content_en: `According to the analytical filtering and internal non-contradiction principle of Surah An-Nisa (4:82), the cognitive security architecture of Surah An-Nas operates as a complete Zero-Trust Security Shield. It establishes triple-layer encryption (Rabb, Malik, Ilah) protecting the human subconscious buffering zone against stealth malware and rogue frequencies from both non-baryonic (Jinn) and baryonic (Human) sources.`
   }
 };
 
