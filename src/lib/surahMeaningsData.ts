@@ -959,8 +959,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "At-Tin",
     "conventional_bn": "ডুমুর",
     "conventional_en": "The Fig",
-    "scientific_bn": "বায়ো-ডেটা স্যাম্পল / প্ল্যান্ট জেনেটিক ইনফরমেশন",
-    "scientific_en": "Bio-Data Sample / Plant Genetic Information"
+    "scientific_bn": "বায়ো-কগনিটিভ অপ্টিমাইজেশন ও অ্যালগরিদমিক একাউন্টাবিলিটি প্রটোকল",
+    "scientific_en": "Bio-Cognitive Optimization & Algorithmic Accountability Protocol"
   },
   "96": {
     "id": 96,
