@@ -318,6 +318,11 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
           const parsed = JSON.parse(saved);
           if (parsed.meta_bn !== undefined) a.meta_bn = parsed.meta_bn;
           if (parsed.meta_en !== undefined) a.meta_en = parsed.meta_en;
+          if (parsed.modern_translation_bn !== undefined) a.modern_translation_bn = parsed.modern_translation_bn;
+          if (parsed.modern_translation_en !== undefined) a.modern_translation_en = parsed.modern_translation_en;
+          if (parsed.lexicon_modern_notes !== undefined) a.lexicon_modern_notes = parsed.lexicon_modern_notes;
+          if (parsed.conventional_bn !== undefined) a.conventional_bn = parsed.conventional_bn;
+          if (parsed.conventional_en !== undefined) a.conventional_en = parsed.conventional_en;
         }
       } catch {}
     });
@@ -326,35 +331,37 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
 };
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  // 1. Try offline storage first (IndexedDB + Cache Storage)
+  // 1. Try fresh network fetch first with cache busting
+  const url = `/data/quran/surahs/${sId}.json?v=${Date.now()}`;
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (res.ok) {
+      const freshData: SurahData = await res.json();
+      applyLocalMetaOverrides(sId, freshData);
+      // Update offline storage with newest data
+      await saveSurahOffline(sId, freshData);
+      return freshData;
+    }
+  } catch (err) {
+    console.warn(`Network fetch failed for Surah ${sId}, attempting offline fallback...`, err);
+  }
+
+  // 2. Offline fallback (IndexedDB + Cache Storage)
   const offlineData = await getSurahOffline(sId);
   if (offlineData?.ayahs && offlineData.ayahs.length > 0) {
     return applyLocalMetaOverrides(sId, offlineData);
   }
 
-  // 2. Fetch from network
-  const url = `/data/quran/surahs/${sId}.json?v=4`;
-  let freshData: SurahData;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
-      if (!fallbackRes.ok) throw new Error(`Failed to load Surah ${sId}`);
-      freshData = await fallbackRes.json();
-    } else {
-      freshData = await res.json();
-    }
-  } catch (err) {
-    if (offlineData) return applyLocalMetaOverrides(sId, offlineData);
-    throw err;
+  // 3. Last resort fallback
+  const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
+  if (fallbackRes.ok) {
+    const freshData: SurahData = await fallbackRes.json();
+    applyLocalMetaOverrides(sId, freshData);
+    await saveSurahOffline(sId, freshData);
+    return freshData;
   }
-  
-  applyLocalMetaOverrides(sId, freshData);
 
-  // 3. Save for offline access
-  await saveSurahOffline(sId, freshData);
-
-  return freshData;
+  throw new Error(`Failed to load Surah ${sId}`);
 };
 
 function SurahDetailPage() {
@@ -875,7 +882,13 @@ function SurahDetailPage() {
           localStorage.setItem(`quran_ayah_meta_${surahId}_${ayahNumber}`, JSON.stringify({
             meta_bn: editForm.meta_bn.trim(),
             meta_en: editForm.meta_en.trim(),
+            modern_translation_bn: editForm.modern_translation_bn.trim(),
+            modern_translation_en: editForm.modern_translation_en.trim(),
+            lexicon_modern_notes: editForm.lexicon_modern_notes.trim(),
+            conventional_bn: editForm.conventional_bn.trim(),
+            conventional_en: editForm.conventional_en.trim(),
           }));
+          await saveSurahOffline(surahId, surahQuery.data);
         } catch {}
 
         // Cloud sync (Supabase verse_translations)
