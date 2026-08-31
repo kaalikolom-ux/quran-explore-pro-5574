@@ -384,8 +384,10 @@ function SurahDetailPage() {
 
   const [surahMeaning, setSurahMeaning] = useState<SurahMeaningItem | null>(() => getSurahMeaning(surahId));
   const [meaningEditDialogOpen, setMeaningEditDialogOpen] = useState(false);
-  const [editMeaningConventional, setEditMeaningConventional] = useState("");
-  const [editMeaningScientific, setEditMeaningScientific] = useState("");
+  const [editMeaningConventionalBn, setEditMeaningConventionalBn] = useState("");
+  const [editMeaningScientificBn, setEditMeaningScientificBn] = useState("");
+  const [editMeaningConventionalEn, setEditMeaningConventionalEn] = useState("");
+  const [editMeaningScientificEn, setEditMeaningScientificEn] = useState("");
 
   useEffect(() => {
     setSurahMeaning(getSurahMeaning(surahId));
@@ -395,7 +397,13 @@ function SurahDetailPage() {
   }, [surahId]);
 
   const handleSaveSurahMeaning = () => {
-    saveCustomSurahMeaning(surahId, editMeaningConventional, editMeaningScientific);
+    saveCustomSurahMeaning(
+      surahId,
+      editMeaningConventionalBn,
+      editMeaningScientificBn,
+      editMeaningConventionalEn,
+      editMeaningScientificEn
+    );
     setSurahMeaning(getSurahMeaning(surahId));
     setMeaningEditDialogOpen(false);
     toast.success(lang === "bn" ? "সুরার প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ সংরক্ষিত হয়েছে" : "Surah meanings updated successfully");
@@ -1039,7 +1047,7 @@ function SurahDetailPage() {
         </div>
       </div>
 
-      {/* সুরার নামের প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ ব্যানার (Responsive Desktop & Mobile) */}
+      {/* সুরার নামের প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ ব্যানার (Responsive Desktop & Mobile & Bilingual) */}
       {isLayerAllowed("showSurahScientificMeaning", isAdmin) && prefs.showSurahScientificMeaning && surahMeaning && (
         <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-linear-to-br from-card via-muted/20 to-card p-3.5 sm:p-5 shadow-xs space-y-3">
           <div className="flex items-center justify-between gap-2 border-b border-border/50 pb-2.5">
@@ -1057,8 +1065,10 @@ function SurahDetailPage() {
                 size="sm"
                 variant="ghost"
                 onClick={() => {
-                  setEditMeaningConventional(surahMeaning.conventional_bn);
-                  setEditMeaningScientific(surahMeaning.scientific_bn);
+                  setEditMeaningConventionalBn(surahMeaning.conventional_bn || "");
+                  setEditMeaningScientificBn(surahMeaning.scientific_bn || "");
+                  setEditMeaningConventionalEn(surahMeaning.conventional_en || "");
+                  setEditMeaningScientificEn(surahMeaning.scientific_en || "");
                   setMeaningEditDialogOpen(true);
                 }}
                 className="h-6 px-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-md cursor-pointer shrink-0"
@@ -1070,29 +1080,33 @@ function SurahDetailPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
-            {/* প্রচলিত অর্থ (Conventional Meaning) */}
+            {/* প্রচলিত অর্থ (Conventional / Popular Meaning) */}
             <div className="md:col-span-4 flex flex-col justify-between rounded-xl border border-amber-500/25 bg-amber-500/5 dark:bg-amber-500/10 p-3 sm:p-3.5 space-y-1.5">
               <div className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
                 <BookOpen className="size-3.5 shrink-0" />
                 <span className="text-[11px] font-bold uppercase tracking-wider">
-                  {lang === "bn" ? "প্রচলিত অর্থ" : "Conventional Meaning"}
+                  {lang === "bn" ? "প্রচলিত অর্থ" : "Popular Meaning"}
                 </span>
               </div>
               <p className="text-sm font-bold text-foreground leading-snug">
-                {surahMeaning.conventional_bn}
+                {lang === "bn"
+                  ? (surahMeaning.conventional_bn || surahMeaning.conventional_en)
+                  : (surahMeaning.conventional_en || surahMeaning.conventional_bn)}
               </p>
             </div>
 
-            {/* বিজ্ঞানভিত্তিক অর্থ (Scientific Meaning) */}
+            {/* বিজ্ঞানভিত্তিক অর্থ (Science-Based Meaning) */}
             <div className="md:col-span-8 flex flex-col justify-between rounded-xl border border-primary/30 bg-primary/5 dark:bg-primary/10 p-3 sm:p-3.5 space-y-1.5">
               <div className="flex items-center gap-1.5 text-primary">
                 <Cpu className="size-3.5 shrink-0" />
                 <span className="text-[11px] font-bold uppercase tracking-wider">
-                  {lang === "bn" ? "বিজ্ঞানভিত্তিক গবেষণা ও গভীর অর্থ" : "Scientific Context & Deep Insight"}
+                  {lang === "bn" ? "বিজ্ঞানভিত্তিক গবেষণা ও গভীর অর্থ" : "Science-Based Deep Meaning"}
                 </span>
               </div>
               <p className="text-xs sm:text-sm font-semibold text-foreground/95 leading-relaxed">
-                {surahMeaning.scientific_bn}
+                {lang === "bn"
+                  ? (surahMeaning.scientific_bn || surahMeaning.scientific_en)
+                  : (surahMeaning.scientific_en || surahMeaning.scientific_bn)}
               </p>
             </div>
           </div>
@@ -1639,7 +1653,7 @@ function SurahDetailPage() {
 
       {/* সুরার প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ এডিট ডায়ালগ (এডমিন অনলি) */}
       <Dialog open={meaningEditDialogOpen} onOpenChange={setMeaningEditDialogOpen}>
-        <DialogContent className="max-w-lg">
+        <DialogContent className="max-w-xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-base font-bold flex items-center gap-2">
               <Sparkles className="size-4 text-primary" />
@@ -1648,31 +1662,70 @@ function SurahDetailPage() {
           </DialogHeader>
 
           <div className="space-y-4 pt-2">
-            <div className="space-y-1.5">
-              <Label className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                <BookOpen className="size-3.5 text-amber-500" />
-                <span>{lang === "bn" ? "প্রচলিত অর্থ (Conventional Meaning)" : "Conventional Meaning"}</span>
-              </Label>
-              <Input
-                value={editMeaningConventional}
-                onChange={(e) => setEditMeaningConventional(e.target.value)}
-                placeholder="যেমন: উদ্বোধনী"
-                className="text-sm font-medium"
-              />
+            {/* বাংলা সেকশন */}
+            <div className="rounded-xl border border-border/70 bg-muted/20 p-3.5 space-y-3">
+              <span className="text-xs font-bold text-foreground flex items-center gap-1.5 border-b border-border/40 pb-1.5">
+                <BookOpen className="size-3.5 text-primary" />
+                <span>বাংলা অর্থ (Bangla Meanings)</span>
+              </span>
+
+              <div className="space-y-1.5">
+                <Label className="text-[11px] font-semibold text-foreground/80">
+                  প্রচলিত অর্থ (Bangla Conventional)
+                </Label>
+                <Input
+                  value={editMeaningConventionalBn}
+                  onChange={(e) => setEditMeaningConventionalBn(e.target.value)}
+                  placeholder="যেমন: উদ্বোধনী"
+                  className="text-sm font-medium"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label className="text-[11px] font-semibold text-foreground/80">
+                  বিজ্ঞানভিত্তিক অর্থ (Bangla Science-Based)
+                </Label>
+                <Textarea
+                  rows={2}
+                  value={editMeaningScientificBn}
+                  onChange={(e) => setEditMeaningScientificBn(e.target.value)}
+                  placeholder="যেমন: মাস্টার বুট লোডার / সিস্টেম ইনিশিয়ালাইজেশন প্রটোকল..."
+                  className="text-xs sm:text-sm font-medium leading-relaxed resize-none"
+                />
+              </div>
             </div>
 
-            <div className="space-y-1.5">
-              <Label className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                <Cpu className="size-3.5 text-primary" />
-                <span>{lang === "bn" ? "বিজ্ঞানভিত্তিক অর্থ (Scientific Meaning)" : "Scientific Meaning"}</span>
-              </Label>
-              <Textarea
-                rows={3}
-                value={editMeaningScientific}
-                onChange={(e) => setEditMeaningScientific(e.target.value)}
-                placeholder="যেমন: মাস্টার বুট লোডার / সিস্টেম ইনিশিয়ালাইজেশন প্রটোকল..."
-                className="text-xs sm:text-sm font-medium leading-relaxed resize-none"
-              />
+            {/* ইংলিশ সেকশন */}
+            <div className="rounded-xl border border-border/70 bg-muted/20 p-3.5 space-y-3">
+              <span className="text-xs font-bold text-foreground flex items-center gap-1.5 border-b border-border/40 pb-1.5">
+                <Languages className="size-3.5 text-emerald-500" />
+                <span>English Meanings</span>
+              </span>
+
+              <div className="space-y-1.5">
+                <Label className="text-[11px] font-semibold text-foreground/80">
+                  Popular Meaning (English)
+                </Label>
+                <Input
+                  value={editMeaningConventionalEn}
+                  onChange={(e) => setEditMeaningConventionalEn(e.target.value)}
+                  placeholder="e.g. The Opening"
+                  className="text-sm font-medium"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label className="text-[11px] font-semibold text-foreground/80">
+                  Science-Based Meaning (English)
+                </Label>
+                <Textarea
+                  rows={2}
+                  value={editMeaningScientificEn}
+                  onChange={(e) => setEditMeaningScientificEn(e.target.value)}
+                  placeholder="e.g. Master Boot Loader / System Initialization Protocol..."
+                  className="text-xs sm:text-sm font-medium leading-relaxed resize-none"
+                />
+              </div>
             </div>
 
             <div className="flex items-center justify-end gap-2 pt-2 border-t border-border/50">
