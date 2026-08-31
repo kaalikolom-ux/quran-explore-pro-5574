@@ -1486,9 +1486,9 @@ function SurahDetailPage() {
                 {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
                 <div 
                   style={{ display: (isEditing || (showModernBn && hasModernBnData)) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
                 >
-                  <div className="flex items-center gap-2 text-xs font-medium text-foreground/85">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <BookMarked className="size-3.5 text-primary" />
                     <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
                   </div>
@@ -1498,13 +1498,13 @@ function SurahDetailPage() {
                       onChange={(e) =>
                         setEditForm({ ...editForm, modern_translation_bn: e.target.value })
                       }
-                      className="mt-1 bg-background font-normal"
+                      className="mt-1 bg-background font-normal text-muted-foreground"
                       style={{ fontSize: `${translationFontSize}px` }}
                       placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
                     />
                   ) : (
                     <p 
-                      className="text-sm font-normal text-foreground/90 leading-relaxed pl-5.5"
+                      className="text-xs sm:text-sm font-normal text-muted-foreground leading-relaxed pl-5.5"
                       style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
                     >
                       {ayah.modern_translation_bn}
@@ -1515,9 +1515,9 @@ function SurahDetailPage() {
                 {/* ৪. Modern Translation (English) */}
                 <div 
                   style={{ display: (isEditing || (showModernEn && hasModernEnData)) ? "block" : "none" }}
-                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
+                  className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
                 >
-                  <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                     <BookmarkCheck className="size-3.5 text-primary" />
                     <span>Modern Translation (English)</span>
                   </div>
@@ -1527,14 +1527,14 @@ function SurahDetailPage() {
                       onChange={(e) =>
                         setEditForm({ ...editForm, modern_translation_en: e.target.value })
                       }
-                      className="font-serif italic mt-1 bg-background"
+                      className="font-serif italic mt-1 bg-background font-normal text-muted-foreground"
                       style={{ fontSize: `${translationFontSize}px` }}
                       placeholder="Modern contemporary English translation..."
                     />
                   ) : (
                     <p 
-                      className="italic text-foreground/90 font-serif leading-relaxed pl-5.5"
-                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px` }}
+                      className="text-xs sm:text-sm font-normal text-muted-foreground font-serif italic leading-relaxed pl-5.5"
+                      style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
                     >
                       {ayah.modern_translation_en}
                     </p>
@@ -1640,23 +1640,21 @@ function SurahDetailPage() {
       </div>
 
       {/* ⚖️ ৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য) সেকশন */}
-      <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-linear-to-br from-card via-muted/15 to-card p-4 sm:p-6 shadow-sm space-y-4">
-        <div className="flex items-center justify-between gap-2 border-b border-border/50 pb-3">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/25">
-              <Scale className="size-4" />
-            </span>
-            <div className="min-w-0">
-              <h3 className="text-sm sm:text-base font-bold text-foreground truncate">
+      <div className="rounded-2xl border border-border/60 bg-muted/20 p-4 sm:p-5 space-y-2.5 transition-colors hover:border-border/80">
+        <div className="flex items-center justify-between gap-2 border-b border-border/30 pb-2.5">
+          <div className="flex items-center gap-2 min-w-0">
+            <Scale className="size-4 text-primary shrink-0" />
+            <div className="min-w-0 flex flex-wrap items-baseline gap-x-2">
+              <span className="text-xs sm:text-sm font-semibold text-foreground">
                 {lang === "bn"
-                  ? (surahConsistency?.title_bn || "⚖️ ৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)")
-                  : (surahConsistency?.title_en || "⚖️ Verse 4:82 Logical Consistency Framework")}
-              </h3>
-              <p className="text-[11px] text-muted-foreground">
+                  ? (surahConsistency?.title_bn || "৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য)")
+                  : (surahConsistency?.title_en || "Verse 4:82 Logical Consistency Framework")}
+              </span>
+              <span className="text-[11px] text-muted-foreground hidden sm:inline">
                 {lang === "bn"
-                  ? "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও বৈজ্ঞানিক সামঞ্জস্য বিশ্লেষণ"
-                  : "Internal non-contradiction & universal systemic harmony analysis"}
-              </p>
+                  ? "— কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও বৈজ্ঞানিক সামঞ্জস্য বিশ্লেষণ"
+                  : "— Internal non-contradiction & universal systemic harmony analysis"}
+              </span>
             </div>
           </div>
 
@@ -1679,13 +1677,13 @@ function SurahDetailPage() {
         </div>
 
         {surahConsistency?.content_bn ? (
-          <div className="rounded-xl border border-primary/15 bg-primary/[0.03] p-4 sm:p-5">
-            <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed font-normal whitespace-pre-line">
+          <div className="pt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal whitespace-pre-line">
               {lang === "bn" ? surahConsistency.content_bn : (surahConsistency.content_en || surahConsistency.content_bn)}
             </p>
           </div>
         ) : (
-          <div className="rounded-xl border border-dashed border-border/70 p-4 text-center text-xs text-muted-foreground">
+          <div className="p-3 text-center text-xs text-muted-foreground/70">
             {lang === "bn"
               ? "এই সুরার ৪:৮২ লজিক্যাল কনসিস্টেন্সি গবেষণা কাজ চলমান রয়েছে..."
               : "Verse 4:82 Logical Consistency research is currently under development for this Surah..."}
