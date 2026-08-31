@@ -1009,8 +1009,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Al-'Adiyat",
     "conventional_bn": "দৌড়ানো ঘোড়া",
     "conventional_en": "The Runners (war steeds)",
-    "scientific_bn": "এনার্জি-ভেক্টর বুস্টার / ডেটা-প্যাকেট এক্সিলারেটর",
-    "scientific_en": "Energy-Vector Booster / Data-Packet Accelerator"
+    "scientific_bn": "কাইনেটিক ইমপ্যাক্ট সিমুলেশন ও কোয়ান্টাম মেমোরি ডিক্রিপশন প্রটোকল",
+    "scientific_en": "Kinetic Impact Simulation & Quantum Memory Decryption Protocol"
   },
   "101": {
     "id": 101,
