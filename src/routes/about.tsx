@@ -320,6 +320,19 @@ function AboutPage() {
         </div>
       </div>
 
+      {/* অনুবাদ উন্নয়ন ও ৪:৮২ সম্পর্কিত নোটিশ বক্স */}
+      <div className="rounded-2xl border border-border/60 bg-muted/20 p-5 sm:p-6 transition-colors hover:border-border/80 space-y-2.5">
+        <div className="flex items-center gap-2 text-primary font-semibold text-xs sm:text-sm">
+          <Sparkles className="size-4 text-primary" />
+          <span>{lang === "bn" ? "অনুবাদ পরিমার্জন ও ৪:৮২ সামঞ্জস্য নীতি" : "Translation Refinement & 4:82 Consistency Principle"}</span>
+        </div>
+        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+          {lang === "bn"
+            ? "আধুনিক ও বিজ্ঞানভিত্তিক এই অনুবাদগুলোর কাজ এখনও চলমান। আমাদের বিশ্বাস, পরিমার্জন, সংশোধন ও উন্নতির এই প্রক্রিয়া ভবিষ্যতেও অব্যাহত থাকবে। যদি কোনো অনুবাদ কুরআনের ৪:৮২ আয়াতের মূলভাবের সঙ্গে সাংঘর্ষিক হয়, তাহলে সেই অনুবাদ গ্রহণযোগ্য বলে বিবেচিত হবে না। এই বিষয়ে আপনার জ্ঞানভিত্তিক ও চিন্তাশীল পরামর্শ সবসময়ই আমরা সাদরে গ্রহণ করি।"
+            : "The work on these modern, science-based translations is still ongoing. We believe that this process of revision, refinement, and improvement will continue over time. If any translation contradicts the core essence of verse 4:82 [of the Quran], it will be considered invalid. In this regard, your thoughtful, knowledge-based suggestions and feedback are always warmly welcomed."}
+        </p>
+      </div>
+
       {/* ৪. আমাদের মূল নীতি ও নিরাপত্তা */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="rounded-2xl border border-border bg-card p-5 space-y-2.5 shadow-xs">
