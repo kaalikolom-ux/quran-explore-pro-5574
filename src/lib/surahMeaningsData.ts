@@ -969,8 +969,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Al-'Alaq",
     "conventional_bn": "জমাট রক্ত",
     "conventional_en": "The Clot",
-    "scientific_bn": "প্রাইমারি বায়ো-ডেটা ক্লাস্টার / এমব্রায়নিক ডেভেলপমেন্ট ফেজ",
-    "scientific_en": "Primary Bio-Data Cluster / Embryonic Development Phase"
+    "scientific_bn": "কোর বুট-আপ ও নিউরাল ইগনিশন প্রটোকল",
+    "scientific_en": "Core Boot-Up & Neural Ignition Protocol"
   },
   "97": {
     "id": 97,

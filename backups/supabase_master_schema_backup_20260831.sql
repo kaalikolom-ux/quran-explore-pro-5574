@@ -1,7 +1,7 @@
 -- ==============================================================================
 -- MASTER SUPABASE DATABASE SCHEMA BACKUP
 -- Project: Quran Explore Pro (kaalikolom-ux / wooniche.com)
--- Backup Date: 2026-08-31T15:53:49.113Z
+-- Backup Date: 2026-08-31T15:58:04.591Z
 -- Total Source Migrations: 14
 -- ==============================================================================
 
