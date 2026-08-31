@@ -148,7 +148,48 @@ function AboutPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-4 py-8 sm:py-12 space-y-12 sm:space-y-16">
       
-      {/* ১. হিরো সেকশন */}
+      {/* ১. শীর্ষ নোটিশ বক্স (Red Sparkle Blast - Centered) */}
+      <div className="relative w-full max-w-4xl mx-auto">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-2 -top-2 text-red-400 dark:text-red-300 animate-star-fly-1 select-none z-10 text-sm"
+        >
+          ✦
+        </span>
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-2 -top-2 text-rose-400 dark:text-rose-300 animate-star-fly-2 select-none z-10 text-sm"
+        >
+          ✦
+        </span>
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-2 -bottom-2 text-red-500 dark:text-red-400 animate-star-fly-3 select-none z-10 text-sm"
+        >
+          ★
+        </span>
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-2 -bottom-2 text-rose-500 dark:text-rose-400 animate-star-fly-4 select-none z-10 text-sm"
+        >
+          ★
+        </span>
+
+        <div className="relative z-0 rounded-2xl border border-red-500/45 bg-red-950/25 p-5 sm:p-6 text-center backdrop-blur-md shadow-[0_0_22px_rgba(239,68,68,0.25)] animate-sparkle-burst transition-all duration-300 space-y-2.5">
+          <div className="flex items-center justify-center gap-2 text-red-400 dark:text-red-300 font-semibold text-xs sm:text-sm">
+            <Sparkles className="size-4 text-red-400 animate-pulse shrink-0" />
+            <span>{lang === "bn" ? "অনুবাদ পরিমার্জন ও ৪:৮২ সামঞ্জস্য নীতি" : "Translation Refinement & 4:82 Consistency Principle"}</span>
+            <Sparkles className="size-4 text-rose-400 animate-pulse shrink-0" />
+          </div>
+          <p className="text-xs sm:text-sm text-red-100/90 dark:text-red-100/90 leading-relaxed font-normal">
+            {lang === "bn"
+              ? "আধুনিক ও বিজ্ঞানভিত্তিক এই অনুবাদগুলোর কাজ এখনও চলমান। আমাদের বিশ্বাস, পরিমার্জন, সংশোধন ও উন্নতির এই প্রক্রিয়া ভবিষ্যতেও অব্যাহত থাকবে। যদি কোনো অনুবাদ কুরআনের ৪:৮২ আয়াতের মূলভাবের সঙ্গে সাংঘর্ষিক হয়, তাহলে সেই অনুবাদ গ্রহণযোগ্য বলে বিবেচিত হবে না। এই বিষয়ে আপনার জ্ঞানভিত্তিক ও চিন্তাশীল পরামর্শ সবসময়ই আমরা সাদরে গ্রহণ করি।"
+              : "The work on these modern, science-based translations is still ongoing. We believe that this process of revision, refinement, and improvement will continue over time. If any translation contradicts the core essence of verse 4:82 [of the Quran], it will be considered invalid. In this regard, your thoughtful, knowledge-based suggestions and feedback are always warmly welcomed."}
+          </p>
+        </div>
+      </div>
+
+      {/* ২. হিরো সেকশন */}
       <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-linear-to-b from-primary/10 via-primary/5 to-card p-6 sm:p-12 text-center shadow-md">
         <div className="mx-auto max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary">
@@ -317,47 +358,6 @@ function AboutPage() {
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
-
-      {/* অনুবাদ উন্নয়ন ও ৪:৮২ সম্পর্কিত নোটিশ বক্স (Red Sparkle Blast) */}
-      <div className="relative w-full">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-2 -top-2 text-red-400 dark:text-red-300 animate-star-fly-1 select-none z-10 text-sm"
-        >
-          ✦
-        </span>
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-2 -top-2 text-rose-400 dark:text-rose-300 animate-star-fly-2 select-none z-10 text-sm"
-        >
-          ✦
-        </span>
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-2 -bottom-2 text-red-500 dark:text-red-400 animate-star-fly-3 select-none z-10 text-sm"
-        >
-          ★
-        </span>
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-2 -bottom-2 text-rose-500 dark:text-rose-400 animate-star-fly-4 select-none z-10 text-sm"
-        >
-          ★
-        </span>
-
-        <div className="relative z-0 rounded-2xl border border-red-500/45 bg-red-950/25 p-5 sm:p-6 text-center backdrop-blur-md shadow-[0_0_22px_rgba(239,68,68,0.25)] animate-sparkle-burst transition-all duration-300 space-y-2.5">
-          <div className="flex items-center justify-center gap-2 text-red-400 dark:text-red-300 font-semibold text-xs sm:text-sm">
-            <Sparkles className="size-4 text-red-400 animate-pulse shrink-0" />
-            <span>{lang === "bn" ? "অনুবাদ পরিমার্জন ও ৪:৮২ সামঞ্জস্য নীতি" : "Translation Refinement & 4:82 Consistency Principle"}</span>
-            <Sparkles className="size-4 text-rose-400 animate-pulse shrink-0" />
-          </div>
-          <p className="text-xs sm:text-sm text-red-100/90 dark:text-red-100/90 leading-relaxed font-normal">
-            {lang === "bn"
-              ? "আধুনিক ও বিজ্ঞানভিত্তিক এই অনুবাদগুলোর কাজ এখনও চলমান। আমাদের বিশ্বাস, পরিমার্জন, সংশোধন ও উন্নতির এই প্রক্রিয়া ভবিষ্যতেও অব্যাহত থাকবে। যদি কোনো অনুবাদ কুরআনের ৪:৮২ আয়াতের মূলভাবের সঙ্গে সাংঘর্ষিক হয়, তাহলে সেই অনুবাদ গ্রহণযোগ্য বলে বিবেচিত হবে না। এই বিষয়ে আপনার জ্ঞানভিত্তিক ও চিন্তাশীল পরামর্শ সবসময়ই আমরা সাদরে গ্রহণ করি।"
-              : "The work on these modern, science-based translations is still ongoing. We believe that this process of revision, refinement, and improvement will continue over time. If any translation contradicts the core essence of verse 4:82 [of the Quran], it will be considered invalid. In this regard, your thoughtful, knowledge-based suggestions and feedback are always warmly welcomed."}
-          </p>
         </div>
       </div>
 
