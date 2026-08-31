@@ -949,8 +949,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "Ash-Sharh",
     "conventional_bn": "প্রসার / উন্মোচন",
     "conventional_en": "Expansion / Relief",
-    "scientific_bn": "ডেটা-ডিকম্প্রেশন / সিস্টেম এক্সপ্যানশন প্রটোকল",
-    "scientific_en": "Data-Decompression / System Expansion Protocol"
+    "scientific_bn": "নিউরাল ব্যান্ডউইথ সম্প্রসারণ ও কগনিটিভ অপ্টিমাইজেশন প্রটোকল",
+    "scientific_en": "Neural Bandwidth Expansion & Cognitive Optimization Protocol"
   },
   "95": {
     "id": 95,
