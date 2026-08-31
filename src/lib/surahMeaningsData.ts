@@ -1109,8 +1109,8 @@ export const SURAH_MEANINGS_DATABASE: Record<number, SurahMeaningItem> = {
     "name_en": "An-Nasr",
     "conventional_bn": "সাহায্য",
     "conventional_en": "The Help / Victory",
-    "scientific_bn": "সিস্টেম সাপোর্ট / ডেটা-বুস্টিং প্রটোকল",
-    "scientific_en": "System Support / Data-Boosting Protocol"
+    "scientific_bn": "গ্লোবাল ডেপ্লয়মেন্ট, সোর্স-সিনক্রোনাইজেশন এবং রিফ্রেশ প্রটোকল",
+    "scientific_en": "Global Deployment, Mass Integration & System Refresh Protocol"
   },
   "111": {
     "id": 111,
