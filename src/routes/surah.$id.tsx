@@ -344,7 +344,7 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   return data;
 };
 
-const APP_DATA_VERSION = "20260831_v3";
+const APP_DATA_VERSION = "20260831_v4";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   // 1. Fetch from static JSON with versioned caching
