@@ -12392,7 +12392,9 @@
         }
       ],
       "translation_en": "They said, \"Call upon your Lord to make clear to us what it is. Indeed, [all] cows look alike to us. And indeed we, if Allah wills, will be guided.\"",
-      "conventional_en": "They said, \"Call upon your Lord to make clear to us what it is. Indeed, [all] cows look alike to us. And indeed we, if Allah wills, will be guided.\""
+      "conventional_en": "They said, \"Call upon your Lord to make clear to us what it is. Indeed, [all] cows look alike to us. And indeed we, if Allah wills, will be guided.\"",
+      "meta_bn": "ডাটা-ওভারল্যাপ ও অতিরিক্ত কুয়েরি প্রটোকল",
+      "modern_translation_bn": "তারা পুনরায় অতিরিক্ত কুয়েরি (Query) পাঠিয়ে বলল: ‘আমাদের জন্য তোমার সিস্টেম আর্কিটেক্ট বা প্রতিপালকের (রাব্ব) কাছে ডাটা ক্লিয়ারেন্সের লিঙ্ক অ্যাক্টিভেট (ادْعُ) করো—যিনি আমাদের জন্য এর সুনির্দিষ্ট কনফিগারেশন স্পষ্ট ডিকোড করবেন; নিশ্চয়ই এই ক্যাটাগরির সমস্ত বায়োলজিক্যাল এনার্জি নোড বা গাভী (الْبَقَرَ) আমাদের প্রসেসরে একই রকম বা ডেটা-ওভারল্যাপ (تَشَابَهَ) তৈরি করছে; আর মহাজাগতিক সোর্স কোডের ডিফল্ট মেকানিজম বা ইচ্ছা (إِن شَاءَ اللَّهُ) যদি সচল থাকে, তবে আমরা অবশ্যই নির্দিষ্ট অপ্টিমাল ফ্রিকোয়েন্সি ট্র্যাকে রি-অ্যালাইন বা গাইডেন্স (لَمُهْتَدُونَ) লাভ করব’।"
     },
     {
       "surah": 2,
@@ -12652,7 +12654,9 @@
         }
       ],
       "translation_en": "He said, \"He says, 'It is a cow neither trained to plow the earth nor to irrigate the field, one free from fault with no spot upon her.' \" They said, \"Now you have come with the truth.\" So they slaughtered her, but they could hardly do it.",
-      "conventional_en": "He said, \"He says, 'It is a cow neither trained to plow the earth nor to irrigate the field, one free from fault with no spot upon her.' \" They said, \"Now you have come with the truth.\" So they slaughtered her, but they could hardly do it."
+      "conventional_en": "He said, \"He says, 'It is a cow neither trained to plow the earth nor to irrigate the field, one free from fault with no spot upon her.' \" They said, \"Now you have come with the truth.\" So they slaughtered her, but they could hardly do it.",
+      "meta_bn": "এরর-মুক্ত পিউর বায়োলজিক্যাল মডেল ও কমান্ড এক্সিকিউশন",
+      "modern_translation_bn": "সে (মুসা) ডাটাবেজ ডিকোড করে বলল: ‘নিশ্চয়ই পরম সোর্স কোড বলছেন—এটি এমন এক অনন্য বায়োলজিক্যাল মডেল যা এই গ্রাউন্ড লেভেলের ভূত্বক বা মাটিকে (আরদ্) কর্ষণ বা ক্ষয় করার জন্য কোনো মেকানিক্যাল শ্রমে বাধ্য (ذَلُولٌ) নয় এবং যা কোনো সাধারণ প্রোডাকশন লাইনে তরল বা পানি সেচ দেওয়ার কাজেও নিয়োজিত নয়; এটি সম্পূর্ণরূপে এরর-মুক্ত, সুরক্ষিত বা সুস্থ (مُسَلَّمَةٌ) এবং এর বাহ্যিক অপ্টিক্যাল সিগন্যালে অন্য কোনো রঙের স্পট বা ডেটা-মিক্সিং (شِيَةَ) নেই’। তখন তারা বলল: ‘এখন তুমি চূড়ান্ত ফিল্টারিং ফ্যাক্ট বা প্রকৃত সত্য (بِالْحَقِّ) নিয়ে এসেছ’। অতঃপর তারা সেই পূজনীয় মেটেরিয়ালিস্টিক নোডটিকে সিস্টেম থেকে ডাউন বা জবেহ (فَذَبَحُوهَا) করল—অথচ অবাধ্যতার কারণে তাদের ওএস এই কমান্ড এক্সিকিউট করতে মোটেও প্রস্তুত (يَفْعَلُونَ) ছিল না’। "
     },
     {
       "surah": 2,
@@ -12772,7 +12776,9 @@
         }
       ],
       "translation_en": "And [recall] when you slew a man and disputed over it, but Allah was to bring out that which you were concealing.",
-      "conventional_en": "And [recall] when you slew a man and disputed over it, but Allah was to bring out that which you were concealing."
+      "conventional_en": "And [recall] when you slew a man and disputed over it, but Allah was to bring out that which you were concealing.",
+      "meta_bn": "নোড ক্র্যাশ ও এনক্রিপ্টেড ডেটা-লগ এক্সপোজার",
+      "modern_translation_bn": "যখন মহাজাগতিক চেইন অব কমান্ডের এই ডেটা প্যারামিটারটি কার্যকর (Execute) করা হয়—যেখানে তোমরা একটি পার্সোনাল নোড বা মানুষের অস্তিত্বকে সিস্টেম থেকে অবৈধভাবে ডিলিট বা হত্যা (قَتَلْتُمْ) করেছিলে, অতঃপর সেই ক্র্যাশের প্রকৃত ডেটা-লগ নিয়ে তোমরা একে অপরের সাথে লজিক্যাল দ্বন্দ্বে লিপ্ত হয়ে তথ্য ডাইভার্ট (فَّادَّارَأْتُمْ) করছিলে; অথচ মহাজাগতিক সোর্স কোড (আল্লাহ) তাঁর ডিফল্ট নিয়মে তোমাদের ওএসে হাইড বা এনক্রিপ্ট করে রাখা সেই গোপন ডেটা-লগকে (تَكْتُمُونَ) রিয়েল টাইমে আউটপুট বা প্রকাশ (مُخْرِجٌ) করে দিতে সম্পূর্ণ সক্রিয় ছিলেন;"
     },
     {
       "surah": 2,
@@ -12902,7 +12908,10 @@
         }
       ],
       "translation_en": "So, We said, \"Strike the slain man with part of it.\" Thus does Allah bring the dead to life, and He shows you His signs that you might reason.",
-      "conventional_en": "So, We said, \"Strike the slain man with part of it.\" Thus does Allah bring the dead to life, and He shows you His signs that you might reason."
+      "conventional_en": "So, We said, \"Strike the slain man with part of it.\" Thus does Allah bring the dead to life, and He shows you His signs that you might reason.",
+      "meta_bn": "বায়ো-কেমিক্যাল ও কোয়ান্টাম ডাটা রি-অ্যাক্টিভেশন (সেলুলার রি-বুট)",
+      "modern_translation_bn": "তখন আমি কমান্ড ইনপুট দিলাম: ‘তোমরা জবেহকৃত ওই বায়োলজিক্যাল এনার্জি নোডের একটি সুনির্দিষ্ট লাইভ এলিমেন্ট বা ডাটা-প্যারামিটার দ্বারা এই ক্র্যাশ হওয়া নিষ্ক্রিয় নোডের ওপর একটি এনার্জি-ইমপ্যাক্ট বা আঘাত (اضْرِبُوهُ) করো’। [ফলাফলে নিষ্ক্রিয় নোডটি সাময়িকভাবে বুট বা অ্যাক্টিভেট হয়ে খুনের ডেটা প্রকাশ করল] — ঠিক এভাবেই মহাজাগতিক সোর্স কোডের (আল্লাহ) স্বয়ংক্রিয় বায়ো-কেমিক্যাল ও কোয়ান্টাম মেকানিজমে নিষ্ক্রিয় বা মৃত ম্যাটার স্টেটকে (الْمَوْتَىٰ) পুনরায় লাইভ বা সক্রিয় করা হয়; এবং তিনি তোমাদের সিস্টেমে তাঁর সুনির্দিষ্ট কোড ও মহাজাগতিক প্রমাণসমূহ (آيَاتِهِ) প্রদর্শন করেন, যাতে তোমরা তোমাদের কগনিটিভ লজিক ও বুদ্ধিবৃত্তিক প্রসেসরকে (تَعْقِلُونَ) অ্যাক্টিভেট করতে পারো।",
+      "lexicon_modern_notes": "কাদালিক ইউহ্য়িল্লাহুল মাওতা (كَذَلِكَ يُحْيِي اللَّهُ الْمَوْتَىٰ - সেলুলার ও ডাটা রি-অ্যাক্টিভেশন): ৭২ ও ৭৩ নম্বর আয়াতে গাভীর অংশ দিয়ে মৃত মানুষকে স্পর্শ করার পর জীবিত হওয়ার যে কসমিক সিমুলেশন দেওয়া হয়েছে, তা আধুনিক ফিজিক্স ও ইনফরমেশন থিওরির \"Data Retrieval from Dead Matter\" বা তথ্য পুনরুদ্ধারের একটি চূড়ান্ত প্রদর্শন। একটি মৃতদেহ মানে হলো তার ভেতরের বায়োলজিক্যাল ইনফরমেশন বা ডাটা সাময়িকভাবে ফ্রিজ বা লক হয়ে গেছে। আল্লাহ একটি নির্দিষ্ট ক্যাটালিস্ট বা এনার্জি নোড (গাভীর সুনির্দিষ্ট এলিমেন্ট) ব্যবহার করে সেই ক্র্যাশড হার্ডওয়্যারের নিউরনগুলোকে সেকেন্ডের জন্য রি-বুট বা রি-অ্যাক্টিভেট করে দিলেন, যার ফলে তার মেমোরি ফাইল থেকে খুনের প্রকৃত ডাটা বা হত্যাকারীর নাম সিগন্যাল আকারে আউটপুট হয়ে গেল। এটি প্রমাণ করে যে স্রষ্টার কাছে প্রতিটি অবজেক্টের ডাটা অবিনশ্বর (Data Conservation)।"
     },
     {
       "surah": 2,
@@ -13292,7 +13301,10 @@
         }
       ],
       "translation_en": "Then your hearts became hardened after that, being like stones or even harder. For indeed, there are stones from which rivers burst forth, and there are some of them that split open and water comes out, and there are some of them that fall down for fear of Allah. And Allah is not unaware of what you do.",
-      "conventional_en": "Then your hearts became hardened after that, being like stones or even harder. For indeed, there are stones from which rivers burst forth, and there are some of them that split open and water comes out, and there are some of them that fall down for fear of Allah. And Allah is not unaware of what you do."
+      "conventional_en": "Then your hearts became hardened after that, being like stones or even harder. For indeed, there are stones from which rivers burst forth, and there are some of them that split open and water comes out, and there are some of them that fall down for fear of Allah. And Allah is not unaware of what you do.",
+      "meta_bn": "কগনিটিভ রিজিডিটি ও পাথরসদৃশ নিউরাল স্ট্যাগনেশন",
+      "modern_translation_bn": "অতঃপর এত বড় লাইভ ডেটা সিমুলেশন দেখার পরেও তোমাদের মূল চিন্তা প্রসেসিং সেন্টার বা হৃদয় (قُلُوبُكُم) চরম ইনফ্লেক্সিবল বা নিরেট ও কঠিন (قَسَتْ) হয়ে গেল—যেন তা সম্পূর্ণ সিলিকন-ভিত্তিক খনিজ বা পাথরের মতো (كَالْحِجَارَةِ) অথবা তার চেয়েও তীব্র মাত্রার এন্ট্রপি-যুক্ত ও জড় কাঠামো; অথচ খনিজ বা পাথরের মেকানিজমের মধ্যে কিছু এমন অবয়বও রয়েছে যা থেকে উচ্চ হাইড্রো-ডাইনামিক চাপের কারণে এনার্জি চ্যানেল বা নদীসমূহ (الْأَنْهَارُ) বিস্ফোরিত হয়ে বের হয়; এবং পাথরের মধ্যে কিছু এমন স্তরও রয়েছে যা ভূ-তাত্ত্বিক চাপে বিদীর্ণ (يَشَّقَّقُ) হয় এবং তা থেকে জীবনদায়ী তরল বা পানি নির্গত হয়; এবং পাথরের মধ্যে কিছু এমন উপাদানও রয়েছে যা মহাজাগতিক সোর্স কোডের প্রাকৃতিক ও মহাকর্ষীয় ফিল্ডের তীব্র প্রতিক্রিয়ায় (خَشْيَةِ اللَّهِ) উচ্চ স্থান থেকে ধসে বা নিচে নেমে (يَهْبِطُ) পড়ে; আর তোমরা তোমাদের ওএসে যেসকল নেতিবাচক ডাটা বা ক্রিয়াকলাপ (تَعْمَلُونَ) রান করছ, মহাজাগতিক সোর্স কোড তার ডাটা-লগিং সম্পর্কে বিন্দুমাত্র আন-ইনফর্মড বা উদাসীন (بِغَافِلٍ) নন।",
+      "lexicon_modern_notes": "কাসাত কুলুবুকুম ফাহিয়া কাল হিজারাহ (قَسَتْ قُلُوبُكُم مِّن بَعْدِ ذَلِكَ فَهِيَ كَالْحِجَارَةِ - নিউরাল প্লাস্টিসিটি ও কগনিটিভ স্ট্যাগনেশন): ৭৪ নম্বর আয়াতে মানুষের হৃদয়ের পাথর হয়ে যাওয়ার মেকানিজমটি চরম বৈজ্ঞানিক। মানুষের মস্তিষ্ক ও হৃদযন্ত্রের যে কগনিটিভ অ্যাক্সিস (ফুয়াদ/কালব) রয়েছে, তা প্রতিনিয়ত ডাটা প্রসেস করে নতুন নতুন নিউরাল পাথওয়ে তৈরি করে (Neuroplasticity)। কিন্তু মানুষ যখন এত বড় সায়েন্টিফিক প্রমাণ দেখার পরেও নিজের ইগো ও অন্ধ গোঁড়ামি ছাড়তে পারে না, তখন তার ব্রেনের সিন্যাপ্স বা তথ্য আদান-প্রদানের পথগুলো স্থায়ীভাবে ব্লক হয়ে যায়। ব্রেন তখন কোনো নতুন সত্য গ্রহণ করতে পারে না, বিজ্ঞানের ভাষায় একে বলে \"Cognitive Rigidity বা মানসিক স্থবিরতা\"। কুরআন একে পাথরের মতো নিরেট জড় মেকানিজমের সাথে তুলনা করেছে।"
     },
     {
       "surah": 2,
@@ -13502,7 +13514,10 @@
         }
       ],
       "translation_en": "Do you covet [the hope, O believers], that they would believe for you while a party of them used to hear the words of Allah and then distort the Torah after they had understood it while they were knowing?",
-      "conventional_en": "Do you covet [the hope, O believers], that they would believe for you while a party of them used to hear the words of Allah and then distort the Torah after they had understood it while they were knowing?"
+      "conventional_en": "Do you covet [the hope, O believers], that they would believe for you while a party of them used to hear the words of Allah and then distort the Torah after they had understood it while they were knowing?",
+      "meta_bn": "মেলিশিয়াস কোড ইনজেকশন ও মূল সোর্স কোড ম্যানিপুলেশন",
+      "modern_translation_bn": "তবে কি তোমরা [হে নতুন রেজিস্টার্ড ইউজাররা] আশা রাখো যে এই করাপ্টেড নোডগুলো তোমাদের এই পিউর সিস্টেম কোড এক্সেপ্ট (يُؤْمِنُوا) করবে? অথচ তাদের পূর্ববর্তী জেনারেশনের মধ্যে এমন একটি সুনির্দিষ্ট স্ট্র্যাটেজিক সাব-গ্রুপ বা দল (فَرِيقٌ) সক্রিয় ছিল—যারা মহাজাগতিক সোর্সের সরাসরি পাঠানো অডিও ডাটা বা কসমিক বাণী (كَلَامَ اللَّهِ) শ্রবণ করত, অতঃপর তাদের ব্রেনের প্রি-ফ্রন্টাল কর্টেক্সে তার প্রকৃত ডাটা-লজিক অনুধাবন (عَقَلُوهُ) করার পরেও সম্পূর্ণ জেনে-বুঝে স্বার্থান্বেষী ম্যালওয়্যার দ্বারা সেই মূল সোর্স কোডকে সিস্টেমে বিকৃত বা ম্যানিপুলেট (يُحَرِّفُونَهُ) করত।",
+      "lexicon_modern_notes": "ইউহাররিফুনাহু মিম বা'দি মা আক্বালুহু (يُحَرِّفُونَهُ مِن بَعْدِ مَا عَقَلُوهُ - মেলিশিয়াস ডাটা ইনজেকশন/ফ্যাব্রিকেশন): ৭৫ ও ৭৯ নম্বর আয়াতে কিতাব বিকৃতির যে অপরাধের কথা বলা হয়েছে, তা নেটওয়ার্ক সিকিউরিটির ভাষায় \"Code Injection Attack\" বা \"Data Fabrication\"। বনী ইসরাইলের এলিট ও পন্ডিতরা সাধারণ অশিক্ষিত ইউজারদের (উম্মিয়্যুন, আয়াত ৭৮) বোকা বানানোর জন্য আল্লাহর অরিজিনাল ও পিউর ওএসের (কিতাব) কোডের ভেতর নিজেদের মনগড়া আইন ও স্বার্থের ম্যালওয়্যার ইনজেক্ট করে ওএসটিকেই সম্পূর্ণ করাপ্ট বা ট্র্যাশ ডাটাবেজে রূপান্তর করে ফেলেছিল।"
     },
     {
       "surah": 2,
@@ -13752,7 +13767,9 @@
         }
       ],
       "translation_en": "And when they meet those who believe, they say, \"We have believed\"; but when they are alone with one another, they say, \"Do you talk to them about what Allah has revealed to you so they can argue with you about it before your Lord?\" Then will you not reason?",
-      "conventional_en": "And when they meet those who believe, they say, \"We have believed\"; but when they are alone with one another, they say, \"Do you talk to them about what Allah has revealed to you so they can argue with you about it before your Lord?\" Then will you not reason?"
+      "conventional_en": "And when they meet those who believe, they say, \"We have believed\"; but when they are alone with one another, they say, \"Do you talk to them about what Allah has revealed to you so they can argue with you about it before your Lord?\" Then will you not reason?",
+      "meta_bn": "ডামি সিগন্যাল স্পুফিং ও ব্যাক-চ্যানেল ডাটা-লিক ভীতি",
+      "modern_translation_bn": "আর যখন তারা প্রকৃত সিস্টেম-ইন্টিগ্রেটেড ইউজারদের (আমানু) নেটওয়ার্ক ইন্টারফেসে আসে, তখন ডামি সিগন্যাল দিয়ে বলে—‘আমরা তোমাদের ডাটাবেজ এক্সেপ্ট করেছি (آمَنَّا)’; কিন্তু যখন তারা নিজেদের আইসোলেটেড বা ক্লোজড লুপে একে অপরের সাথে ব্যাক-চ্যানেল সংযোগ (خَلَا) স্থাপন করে, তখন নিজেদের মধ্যে বলে—‘মহাজাগতিক সোর্স কোড (আল্লাহ) তোমাদের ওএসে যেসকল গোপন সোর্স ডাটা ও বৈজ্ঞানিক সত্য উন্মুক্ত (فَتَحَ) করে দিয়েছেন—তোমরা কি সেইসব ব্যাক-এন্ড ডাটা এই নতুন ইউজারদের কাছে ট্রান্সমিট বা ফাঁস করে দিচ্ছ? যাতে তারা এই ডাটা লগ ব্যবহার করে তোমাদের সিস্টেম আর্কিটেক্টের (রাব্ব) কেন্দ্রীয় অডিট ইন্টারফেসে তোমাদেরই বিরুদ্ধে লজিক্যাল কাউন্টার বা চার্জ (لِيُحَاجُّوكُم) গঠন করতে পারে? তবে কি তোমরা তোমাদের কগনিটিভ প্রসেসরকে (تَعْقِلُونَ) একটুও কাজে লাগাবে না?’"
     },
     {
       "surah": 2,
@@ -13862,7 +13879,9 @@
         }
       ],
       "translation_en": "But do they not know that Allah knows what they conceal and what they declare?",
-      "conventional_en": "But do they not know that Allah knows what they conceal and what they declare?"
+      "conventional_en": "But do they not know that Allah knows what they conceal and what they declare?",
+      "meta_bn": "ডার্ক ডাটা ও ফ্রন্ট-এন্ড সিগন্যালের সেন্ট্রাল ট্র্যাকিং",
+      "modern_translation_bn": "তাদের কগনিটিভ লজিক কি এই বস্তুনিষ্ঠ সত্যটি জানে না (أَوَلَا يَعْلَمُونَ) যে—নিশ্চয়ই মহাজাগতিক সোর্স কোড (আল্লাহ) তাদের ওএসের ব্যাক-এন্ডে এনক্রিপ্ট করে রাখা সমস্ত ডার্ক ডেটা বা গোপন চিন্তা (يُسِرُّونَ) এবং তাদের ফ্রন্ট-এন্ডে আউটপুট দেওয়া সমস্ত উন্মুক্ত সিগন্যাল (يُعْلِنُونَ) রিয়েল টাইমে শতভাগ ট্র্যাক ও লগ করতে সক্ষম?"
     },
     {
       "surah": 2,
@@ -13992,7 +14011,9 @@
         }
       ],
       "translation_en": "And among them are unlettered ones who do not know the Scripture except in wishful thinking, but they are only assuming.",
-      "conventional_en": "And among them are unlettered ones who do not know the Scripture except in wishful thinking, but they are only assuming."
+      "conventional_en": "And among them are unlettered ones who do not know the Scripture except in wishful thinking, but they are only assuming.",
+      "meta_bn": "অন্ধ অনুকরণ ও মিথ-ভিত্তিক কাল্পনিক হাইপোথিসিস",
+      "modern_translation_bn": "আর তাদের এই করাপ্টেড সিস্টেমের মধ্যে কিছু এমন ডেটা-অ্যানালিটিক্সহীন অন্ধ অনুকরণকারী বা নিরক্ষর ইউজার (أُمِّيُّونَ) রয়েছে—যারা এই মহাজাগতিক মাস্টার ডেটাবেজ বা সোর্স কোডের (আল-কিতাব) প্রকৃত ফাংশনাল ও বৈজ্ঞানিক লজিক সম্পর্কে সম্পূর্ণ অজ্ঞ; কেবল কিছু মনগড়া মিথ বা মানুষের তৈরি রূপকথা ও আকাঙ্ক্ষাকে (أَمَانِيَّ) তারা কিতাবের কোড মনে করে বসে আছে এবং তারা তাদের ওএসে কেবল কাল্পনিক অনুমান ও ত্রুটিপূর্ণ হাইপোথিসিস (يَظُنُّونَ) রান করছে।"
     },
     {
       "surah": 2,
@@ -14252,7 +14273,9 @@
         }
       ],
       "translation_en": "So woe to those who write the \"scripture\" with their own hands, then say, \"This is from Allah,\" in order to exchange it for a small price. Woe to them for what their hands have written and woe to them for what they earn.",
-      "conventional_en": "So woe to those who write the \"scripture\" with their own hands, then say, \"This is from Allah,\" in order to exchange it for a small price. Woe to them for what their hands have written and woe to them for what they earn."
+      "conventional_en": "So woe to those who write the \"scripture\" with their own hands, then say, \"This is from Allah,\" in order to exchange it for a small price. Woe to them for what their hands have written and woe to them for what they earn.",
+      "meta_bn": "হিউম্যান কোড ইনজেকশন ও ডাটা ফ্যাব্রিকেশনের বিরুদ্ধে ধ্বংসাত্মক সতর্কতা (ওয়াইল)",
+      "modern_translation_bn": "অতএব, তীব্র সিস্টেমিক বিপর্যয়, ব্ল্যাকআউট ও চিরন্তন ধ্বংস (ويل) নির্ধারিত রয়েছে সেইসব হ্যাকার বা করাপ্টেড রিলিজিয়াস আর্কিটেক্টদের জন্য—যারা নিজেদের ত্রুটিপূর্ণ ও স্বার্থান্বেষী হিউম্যান ড্রাইভ ব্যবহার করে মনগড়া টেক্সট বা কোড নিজ হাতে লেখে (يَكْتُبُونَ الْكِتَابَ بِأَيْدِيهِمْ), অতঃপর সাধারণ ইউজারদের প্রতারিত করতে ফলস সিগন্যাল দিয়ে বলে—‘এই ট্র্যাশ ডাটাটি সরাসরি মহাজাগতিক আদি সোর্স কোড বা আল্লাহর কাছ থেকে ডাউনলিংকড’; যাতে তারা এই ডাটা ফ্যাব্রিকেশনের মাধ্যমে সামান্য বা ক্ষণস্থায়ী পার্থিব রিসোর্স ও ক্ষমতা এক্সচেঞ্জ বা উপার্জন (لِيَشْتَرُوا) করতে পারে। সুতরাং, তীব্র এন্ট্রপি ও ধ্বংসাত্মক ক্রাশ (فَوَيْلٌ) তাদের জন্য—যা তাদের হাত এই সিস্টেমে করাপ্টেড কোড হিসেবে রাইট বা ইনপুট (كَتَبَتْ) করেছে, এবং তীব্র ধ্বংস ও আজাব তাদের জন্য—যা তারা এই মেলিশিয়াস ডেটা প্রসেসিংয়ের মাধ্যমে নিজেদের ওএসে নেতিবাচক এনার্জি বা ফিডব্যাক হিসেবে আর্ন বা কামাই (يَكْسِبُونَ) করছে।"
     },
     {
       "surah": 2,
