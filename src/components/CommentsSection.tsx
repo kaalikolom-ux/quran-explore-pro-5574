@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { MessageSquare, Send, User, Calendar, ShieldCheck, Reply, CornerDownRight, X } from "lucide-react";
+import { MessageSquare, Send, User, Calendar, ShieldCheck, Reply, CornerDownRight, X, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -17,96 +17,137 @@ const commentSchema = z.object({
   content: z.string().trim().min(2, "মন্তব্য লিখুন").max(2000),
 });
 
+// ── Math Challenge helpers ──────────────────────────────────────────────────
+interface MathChallenge {
+  num1: number;
+  num2: number;
+  operator: "+" | "-" | "×" | "÷";
+  answer: number;
+}
+
+function generateMathChallenge(): MathChallenge {
+  const ops: Array<"+" | "-" | "×" | "÷"> = ["+", "-", "×", "÷"];
+  const op = ops[Math.floor(Math.random() * ops.length)];
+  let num1 = 0, num2 = 0, answer = 0;
+
+  if (op === "+") {
+    answer = Math.floor(Math.random() * 8) + 2;        // 2..9
+    num1   = Math.floor(Math.random() * (answer - 1)) + 1;
+    num2   = answer - num1;
+  } else if (op === "-") {
+    num1   = Math.floor(Math.random() * 9) + 1;        // 1..9
+    num2   = Math.floor(Math.random() * num1);          // 0..(num1-1)
+    answer = num1 - num2;
+  } else if (op === "×") {
+    const pairs: [number, number, number][] = [
+      [1,2,2],[1,3,3],[1,4,4],[1,5,5],[1,6,6],[1,7,7],[1,8,8],[1,9,9],
+      [2,2,4],[2,3,6],[2,4,8],[3,3,9],
+    ];
+    const [a, b, c] = pairs[Math.floor(Math.random() * pairs.length)];
+    num1 = a; num2 = b; answer = c;
+  } else {
+    const pairs: [number, number, number][] = [
+      [2,2,1],[3,3,1],[4,4,1],[6,3,2],[8,4,2],[9,3,3],[6,2,3],[8,2,4],[9,9,1],
+    ];
+    const [a, b, c] = pairs[Math.floor(Math.random() * pairs.length)];
+    num1 = a; num2 = b; answer = c;
+  }
+
+  return { num1, num2, operator: op, answer };
+}
+
+function toEnDigits(str: string): string {
+  const bn = ["০","১","২","৩","৪","৫","৬","৭","৮","৯"];
+  let res = str;
+  bn.forEach((b, idx) => { res = res.replaceAll(b, String(idx)); });
+  return res;
+}
+
+// ── Sub-component: MathCaptcha ──────────────────────────────────────────────
+function MathCaptcha({
+  value,
+  onChange,
+  onRefresh,
+  challenge,
+  lang,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  onRefresh: () => void;
+  challenge: MathChallenge;
+  lang: string;
+}) {
+  return (
+    <div className="space-y-1.5 rounded-xl border border-border/70 bg-muted/20 p-3">
+      <div className="flex items-center justify-between text-xs">
+        <Label className="font-semibold text-foreground flex items-center gap-1.5">
+          <ShieldCheck className="size-3.5 text-primary" />
+          <span>{lang === "bn" ? "নিরাপত্তা যাচাই (Human Verification)" : "Security Verification"}</span>
+        </Label>
+        <button
+          type="button"
+          onClick={onRefresh}
+          className="text-muted-foreground hover:text-primary transition-colors p-1 cursor-pointer flex items-center gap-1 text-[11px]"
+          title={lang === "bn" ? "নতুন প্রশ্ন আনুন" : "Generate new question"}
+        >
+          <RefreshCw className="size-3" />
+          <span>{lang === "bn" ? "নতুন প্রশ্ন" : "Reload"}</span>
+        </button>
+      </div>
+
+      <div className="flex items-center gap-3 pt-1">
+        <div className="flex items-center justify-center rounded-lg bg-card border border-border px-3.5 py-1.5 font-mono text-sm font-bold text-foreground select-none shadow-xs tracking-wider">
+          {`${challenge.num1} ${challenge.operator} ${challenge.num2} = ?`}
+        </div>
+        <Input
+          type="text"
+          inputMode="numeric"
+          required
+          maxLength={2}
+          placeholder={lang === "bn" ? "উত্তর লিখুন (যেমন: 5)" : "Enter answer (e.g. 5)"}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="h-9 text-xs rounded-lg flex-1 font-mono"
+        />
+      </div>
+    </div>
+  );
+}
+
+// ── Main Component ──────────────────────────────────────────────────────────
 interface CommentsSectionProps {
   articleId: string;
 }
 
 export function CommentsSection({ articleId }: CommentsSectionProps) {
-  const { lang, dark } = usePrefs();
+  const { lang } = usePrefs();
   const queryClient = useQueryClient();
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const widgetIdRef = useRef<string | null>(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [captcha, setCaptcha] = useState<MathChallenge>(() => generateMathChallenge());
+
   const [replyingTo, setReplyingTo] = useState<{ id: string; name: string } | null>(null);
   const [replyContent, setReplyContent] = useState("");
   const [replyName, setReplyName] = useState("");
   const [replyEmail, setReplyEmail] = useState("");
+  const [replyCaptchaInput, setReplyCaptchaInput] = useState("");
+  const [replyCaptcha, setReplyCaptcha] = useState<MathChallenge>(() => generateMathChallenge());
 
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
+  useEffect(() => { setIsClient(true); }, []);
 
-  useEffect(() => {
-    setIsClient(true);
+  const refreshCaptcha = useCallback(() => {
+    setCaptcha(generateMathChallenge());
+    setCaptchaInput("");
   }, []);
 
-  // ডেটাবেজ থেকে Turnstile Site Key ফেচিং
-  const { data: turnstileSiteKey, isLoading: isKeyLoading } = useQuery({
-    queryKey: ["site-setting-turnstile-site-key"],
-    queryFn: async () => {
-      try {
-        const { data, error } = await supabase
-          .from("site_settings")
-          .select("value")
-          .eq("key", "turnstile_site_key")
-          .maybeSingle();
-
-        if (error) return null;
-        return data?.value || null;
-      } catch {
-        return null;
-      }
-    },
-  });
-
-  // Turnstile Widget Loader
-  useEffect(() => {
-    if (!isClient || typeof window === "undefined" || !turnstileSiteKey) return;
-
-    const renderWidget = () => {
-      const w = window as any;
-      if (w.turnstile && containerRef.current && !widgetIdRef.current) {
-        try {
-          widgetIdRef.current = w.turnstile.render(containerRef.current, {
-            sitekey: turnstileSiteKey,
-            theme: dark ? "dark" : "light",
-            callback: (token: string) => setTurnstileToken(token),
-            "expired-callback": () => setTurnstileToken(null),
-            "error-callback": () => setTurnstileToken(null),
-          });
-        } catch {
-          // ignore
-        }
-      }
-    };
-
-    let script = document.getElementById("cf-turnstile-script") as HTMLScriptElement | null;
-    if (!script) {
-      script = document.createElement("script");
-      script.id = "cf-turnstile-script";
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-      script.async = true;
-      script.defer = true;
-      script.onload = renderWidget;
-      document.head.appendChild(script);
-    } else {
-      renderWidget();
-    }
-
-    return () => {
-      const w = window as any;
-      if (widgetIdRef.current && w.turnstile) {
-        try {
-          w.turnstile.reset(widgetIdRef.current);
-        } catch {
-          // ignore
-        }
-        widgetIdRef.current = null;
-      }
-    };
-  }, [dark, isClient, turnstileSiteKey]);
+  const refreshReplyCaptcha = useCallback(() => {
+    setReplyCaptcha(generateMathChallenge());
+    setReplyCaptchaInput("");
+  }, []);
 
   // কমেন্ট লিস্ট ফেচিং
   const { data: comments = [], isLoading } = useQuery({
@@ -160,19 +201,21 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
 
       if (error) throw error;
     },
-    onSuccess: () => {
+    onSuccess: (_, vars) => {
       queryClient.invalidateQueries({ queryKey: ["comments", articleId] });
-      setName("");
-      setEmail("");
-      setContent("");
-      setReplyingTo(null);
-      setReplyContent("");
-      setReplyName("");
-      setReplyEmail("");
-      setTurnstileToken(null);
-      const w = window as any;
-      if (widgetIdRef.current && w.turnstile) {
-        w.turnstile.reset(widgetIdRef.current);
+      if (vars.parent_id) {
+        setReplyingTo(null);
+        setReplyContent("");
+        setReplyName("");
+        setReplyEmail("");
+        setReplyCaptchaInput("");
+        setReplyCaptcha(generateMathChallenge());
+      } else {
+        setName("");
+        setEmail("");
+        setContent("");
+        setCaptchaInput("");
+        setCaptcha(generateMathChallenge());
       }
       toast.success(
         lang === "en" ? "Comment submitted successfully!" : "মন্তব্য সফলভাবে প্রকাশিত হয়েছে!"
@@ -183,24 +226,28 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
     },
   });
 
+  // ── Main form submit ────────────────────────────────────────────────────
   const handleMainSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    submitComment.mutate({
-      author_name: name,
-      author_email: email,
-      commentText: content,
-      parent_id: null,
-    });
+    const userAnswer = parseInt(toEnDigits(captchaInput.trim()), 10);
+    if (isNaN(userAnswer) || userAnswer !== captcha.answer) {
+      toast.error(lang === "bn" ? "নিরাপত্তা প্রশ্নের উত্তর ভুল হয়েছে। পুনরায় চেষ্টা করুন।" : "Incorrect answer. Please try again.");
+      refreshCaptcha();
+      return;
+    }
+    submitComment.mutate({ author_name: name, author_email: email, commentText: content, parent_id: null });
   };
 
+  // ── Reply form submit ───────────────────────────────────────────────────
   const handleReplySubmit = (e: React.FormEvent, parentId: string) => {
     e.preventDefault();
-    submitComment.mutate({
-      author_name: replyName,
-      author_email: replyEmail,
-      commentText: replyContent,
-      parent_id: parentId,
-    });
+    const userAnswer = parseInt(toEnDigits(replyCaptchaInput.trim()), 10);
+    if (isNaN(userAnswer) || userAnswer !== replyCaptcha.answer) {
+      toast.error(lang === "bn" ? "নিরাপত্তা প্রশ্নের উত্তর ভুল হয়েছে। পুনরায় চেষ্টা করুন।" : "Incorrect answer. Please try again.");
+      refreshReplyCaptcha();
+      return;
+    }
+    submitComment.mutate({ author_name: replyName, author_email: replyEmail, commentText: replyContent, parent_id: parentId });
   };
 
   if (!isClient) return null;
@@ -274,23 +321,14 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           />
         </div>
 
-        {/* Turnstile উইজেট */}
-        <div className="pt-1 flex flex-col gap-1.5">
-          {isKeyLoading ? (
-            <p className="text-[11px] text-muted-foreground">টার্নস্টাইল লোড হচ্ছে...</p>
-          ) : turnstileSiteKey ? (
-            <div ref={containerRef} className="min-h-[65px]" />
-          ) : (
-            <p className="text-[11px] text-amber-500 font-medium">
-              ⚠️ অ্যাডমিন ড্যাশবোর্ড থেকে Turnstile Site Key সংরক্ষণ করুন।
-            </p>
-          )}
-
-          <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
-            <ShieldCheck className="size-3.5 text-emerald-500" />
-            <span>Cloudflare Turnstile স্প্যাম সিকিউরিটি দ্বারা সুরক্ষিত</span>
-          </div>
-        </div>
+        {/* Math Challenge */}
+        <MathCaptcha
+          challenge={captcha}
+          value={captchaInput}
+          onChange={setCaptchaInput}
+          onRefresh={refreshCaptcha}
+          lang={lang}
+        />
 
         <Button
           type="submit"
@@ -298,7 +336,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
           className="bg-[#2A6F97] hover:bg-[#1f5575] text-white text-xs font-semibold px-5 cursor-pointer"
         >
           {submitComment.isPending ? (
-            "সংরক্ষণ হচ্ছে..."
+            lang === "bn" ? "সংরক্ষণ হচ্ছে..." : "Submitting..."
           ) : (
             <>
               <Send className="size-3.5 mr-1.5" />
@@ -342,7 +380,7 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
                   {c.content}
                 </p>
 
-                {/* উত্তর দেওয়ার টগল বাটন */}
+                {/* উত্তর দেওয়ার টগল বাটন */}
                 <div className="flex items-center justify-end pt-1">
                   <button
                     type="button"
@@ -353,18 +391,16 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
                         setReplyingTo({ id: c.id, name: c.author_name });
                         setReplyName(name);
                         setReplyEmail(email);
+                        setReplyCaptchaInput("");
+                        setReplyCaptcha(generateMathChallenge());
                       }
                     }}
                     className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#2A6F97] hover:underline dark:text-[#58b4e8] cursor-pointer"
                   >
                     {isReplying ? (
-                      <>
-                        <X className="size-3" /> বাতিল
-                      </>
+                      <><X className="size-3" /> বাতিল</>
                     ) : (
-                      <>
-                        <Reply className="size-3" /> উত্তর দিন (Reply)
-                      </>
+                      <><Reply className="size-3" /> উত্তর দিন (Reply)</>
                     )}
                   </button>
                 </div>
@@ -404,6 +440,15 @@ export function CommentsSection({ articleId }: CommentsSectionProps) {
                       placeholder="আপনার উত্তর লিখুন..."
                       required
                       className="text-xs bg-card"
+                    />
+
+                    {/* Reply Math Challenge */}
+                    <MathCaptcha
+                      challenge={replyCaptcha}
+                      value={replyCaptchaInput}
+                      onChange={setReplyCaptchaInput}
+                      onRefresh={refreshReplyCaptcha}
+                      lang={lang}
                     />
 
                     <div className="flex justify-end gap-2">
