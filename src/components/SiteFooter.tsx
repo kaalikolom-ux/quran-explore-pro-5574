@@ -19,7 +19,7 @@ const emailSchema = z.string().trim().email("সঠিক ইমেইল এড
 
 function QuranLogoBadge({ className = "size-4.5" }: { className?: string }) {
   return (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#115360]/15 dark:bg-[#38d9c2]/20 text-[#115360] dark:text-[#38d9c2] border border-[#115360]/30 dark:border-[#38d9c2]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
+    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#115360]/15 dark:bg-[#1a9e8f]/20 text-[#115360] dark:text-[#1a9e8f] border border-[#115360]/30 dark:border-[#1a9e8f]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -119,7 +119,7 @@ export function SiteFooter() {
         {/* ২. গুরুত্বপূর্ণ লিংকসমূহ */}
         <nav className="flex flex-col gap-1 text-sm">
           <div className="mb-2">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1dbb9b] dark:bg-[#2dd4bf] text-white dark:text-gray-950 font-bold text-xs shadow-xs select-none">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#1dbb9b] dark:bg-[#1a9e8f] text-white dark:text-gray-950 font-bold text-xs shadow-xs select-none">
               <BookOpen className="size-3.5" />
               <span>{lang === "en" ? "Menu Links" : "মেনু লিংক"}</span>
             </span>
@@ -164,7 +164,7 @@ export function SiteFooter() {
 
           {subscribed ? (
             <div className="flex items-center gap-2 rounded-xl bg-secondary p-3 text-xs text-foreground border border-border">
-              <CheckCircle2 className="size-4 text-[#1c5576] dark:text-[#58b4e8]" />
+              <CheckCircle2 className="size-4 text-[#1c5576] dark:text-[#3a8fa8]" />
               <span>{lang === "en" ? "Subscribed successfully!" : "সফলভাবে সাবস্ক্রাইব করা হয়েছে!"}</span>
             </div>
           ) : (
