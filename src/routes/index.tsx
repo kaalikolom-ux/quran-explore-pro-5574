@@ -63,7 +63,7 @@ function getCleanExcerpt(excerpt?: string | null, body?: string | null, maxLengt
 }
 
 function HomePage() {
-  const { t, lang } = usePrefs();
+  const { t, lang, themeMode } = usePrefs();
   const [term, setTerm] = useState("");
   const deferredTerm = useDeferredValue(term);
   const [searchDialogOpen, setSearchDialogOpen] = useState(false);
@@ -160,9 +160,20 @@ function HomePage() {
 
   return (
     <div>
-      {/* হিরো সেকশন */}
+  {/* হিরো সেকশন */}
+  {(() => {
+    const tm = themeMode ?? "dark";
+    const overlayClass =
+      tm === "sepia"
+        ? "absolute inset-0 z-[1] bg-gradient-to-br from-[#3d1f00]/75 via-[#5a2e00]/60 to-[#2d1500]/80"
+        : tm === "slate"
+        ? "absolute inset-0 z-[1] bg-gradient-to-br from-[#0c1f2e]/80 via-[#0f2d44]/65 to-[#071620]/85"
+        : tm === "light"
+        ? "absolute inset-0 z-[1] bg-gradient-to-br from-[#0a3d4a]/75 via-[#0d5060]/60 to-[#062530]/80"
+        : /* dark */ "absolute inset-0 z-[1] bg-gradient-to-br from-[#030712]/85 via-[#0b1a2d]/75 to-[#030b14]/90";
+    return (
       <section className="relative overflow-hidden text-white pb-16 sm:pb-24 min-h-[480px] sm:min-h-[540px] contain-paint">
-        {/* শুধুমাত্র পিওর ব্যাকগ্রাউন্ড ইমেজ (হরিজোন্টালি মিরর করা যাতে বামে ডার্ক অংশ থাকে) */}
+        {/* ব্যাকগ্রাউন্ড ইমেজ */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero-bg.webp"
@@ -175,6 +186,9 @@ function HomePage() {
             decoding="async"
           />
         </div>
+
+        {/* থিম-অনুযায়ী কালার ওভারলে */}
+        <div className={overlayClass} />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
@@ -278,6 +292,8 @@ function HomePage() {
         {/* নিচের সেকশনের সাথে গ্র্যাডিয়েন্ট জয়েন্ট */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
+    );
+  })()}
 
       {/* সুরা তালিকা ও সার্চ */}
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">

@@ -198,7 +198,7 @@ const INITIAL_SCIENTIFIC_SEED: ScientificMap = {
 };
 
 function QuranLexiconPage() {
-  const { lang, prefs } = usePrefs();
+  const { lang, prefs, themeMode } = usePrefs();
   const { isAdmin } = useIsAdmin();
   const queryClient = useQueryClient();
 
@@ -369,57 +369,89 @@ function QuranLexiconPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       
-      {/* ১. পেইজ হিরো ব্যানার (আগের অরিজিনাল সেন্টার্ড গ্লো স্টাইল) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#030712] via-[#0b1a2d] to-[#030712] text-white py-14 sm:py-20">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[350px] w-[700px] rounded-full bg-[#1d4ed8]/15 blur-[140px]" />
-          <div className="absolute -right-20 top-1/3 h-[300px] w-[300px] rounded-full bg-[#0284c7]/15 blur-[120px]" />
-        </div>
+      {/* ১. পেইজ হিরো ব্যানার — থিম-অনুযায়ী */}
+      {(() => {
+        const tm = themeMode ?? "dark";
+        const bgClass =
+          tm === "sepia"
+            ? "bg-gradient-to-b from-[#2d1500] via-[#3d2000] to-[#2d1500]"
+            : tm === "slate"
+            ? "bg-gradient-to-b from-[#071825] via-[#0d2a40] to-[#071825]"
+            : tm === "light"
+            ? "bg-gradient-to-b from-[#063444] via-[#0a4d62] to-[#063444]"
+            : /* dark */ "bg-gradient-to-b from-[#030712] via-[#0b1a2d] to-[#030712]";
 
-        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-semibold tracking-wide text-white/90 backdrop-blur-md mb-4 shadow-xs">
-            <BookA className="size-4 text-[#60a5fa]" />
-            {lang === "bn" ? "শব্দে শব্দে কুরআনিক অভিধান, উচ্চারণ ও বিজ্ঞান" : "Quranic Lexicon & Scientific Research"}
-          </span>
+        const glow1 =
+          tm === "sepia"
+            ? "bg-[#a05a00]/20"
+            : tm === "slate"
+            ? "bg-[#0369a1]/20"
+            : tm === "light"
+            ? "bg-[#0e7490]/20"
+            : "bg-[#1d4ed8]/15";
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-white leading-tight">
-            {lang === "bn" ? "কুরআনিক আরবি শব্দকোষ ও বিজ্ঞানভিত্তিক অর্থ" : "Quranic Arabic Lexicon & Scientific Notes"}
-          </h1>
+        const glow2 =
+          tm === "sepia"
+            ? "bg-[#c07000]/15"
+            : tm === "slate"
+            ? "bg-[#0284c7]/15"
+            : tm === "light"
+            ? "bg-[#0891b2]/15"
+            : "bg-[#0284c7]/15";
 
-          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-white/80 leading-relaxed font-normal">
-            {lang === "bn"
-              ? "পবিত্র কুরআনের ১,৬৪২টি মূল ধাতু (Roots) ও শব্দের সহজ বাংলা উচ্চারণ, অর্থ এবং আধুনিক বিজ্ঞানভিত্তিক গবেষণামূলক ব্যাখ্যা।"
-              : "Explore 1,642 Quranic roots with Bengali phonetics, meanings, grammar, and modern scientific contextual research."}
-          </p>
-
-          {/* প্রধান সার্চ ইনপুট */}
-          <div className="mt-8 max-w-2xl mx-auto">
-            <div className="relative flex items-center rounded-2xl border border-white/25 bg-black/40 px-4 py-2.5 backdrop-blur-md shadow-lg focus-within:border-[#60a5fa] focus-within:ring-2 focus-within:ring-[#60a5fa]/30 transition-all">
-              <Search className="size-5 text-[#60a5fa] shrink-0 mr-3" />
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={handleSearchChange}
-                placeholder={
-                  lang === "bn"
-                    ? "বাংলা উচ্চারণ (যেমন: রব্বি, রহমান), অর্থ, বিজ্ঞান বা আরবি রুট লিখুন..."
-                    : "Search by pronunciation, meaning, science, or Arabic root..."
-                }
-                className="w-full bg-transparent text-sm sm:text-base text-white placeholder:text-white/60 outline-none border-none font-medium"
-              />
-              {searchTerm && (
-                <button
-                  type="button"
-                  onClick={() => setSearchTerm("")}
-                  className="text-white/60 hover:text-white text-xs px-2 py-1 bg-white/10 rounded-md cursor-pointer"
-                >
-                  মুছুন
-                </button>
-              )}
+        return (
+          <section className={`relative overflow-hidden ${bgClass} text-white py-14 sm:py-20`}>
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              <div className={`absolute left-1/2 top-0 -translate-x-1/2 h-[350px] w-[700px] rounded-full ${glow1} blur-[140px]`} />
+              <div className={`absolute -right-20 top-1/3 h-[300px] w-[300px] rounded-full ${glow2} blur-[120px]`} />
             </div>
-          </div>
-        </div>
-      </section>
+
+            <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-semibold tracking-wide text-white/90 backdrop-blur-md mb-4 shadow-xs">
+                <BookA className="size-4 text-[#60a5fa]" />
+                {lang === "bn" ? "শব্দে শব্দে কুরআনিক অভিধান, উচ্চারণ ও বিজ্ঞান" : "Quranic Lexicon & Scientific Research"}
+              </span>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-white leading-tight">
+                {lang === "bn" ? "কুরআনিক আরবি শব্দকোষ ও বিজ্ঞানভিত্তিক অর্থ" : "Quranic Arabic Lexicon & Scientific Notes"}
+              </h1>
+
+              <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-white/80 leading-relaxed font-normal">
+                {lang === "bn"
+                  ? "পবিত্র কুরআনের ১,৬৪২টি মূল ধাতু (Roots) ও শব্দের সহজ বাংলা উচ্চারণ, অর্থ এবং আধুনিক বিজ্ঞানভিত্তিক গবেষণামূলক ব্যাখ্যা।"
+                  : "Explore 1,642 Quranic roots with Bengali phonetics, meanings, grammar, and modern scientific contextual research."}
+              </p>
+
+              {/* প্রধান সার্চ ইনপুট */}
+              <div className="mt-8 max-w-2xl mx-auto">
+                <div className="relative flex items-center rounded-2xl border border-white/25 bg-black/40 px-4 py-2.5 backdrop-blur-md shadow-lg focus-within:border-[#60a5fa] focus-within:ring-2 focus-within:ring-[#60a5fa]/30 transition-all">
+                  <Search className="size-5 text-[#60a5fa] shrink-0 mr-3" />
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    placeholder={
+                      lang === "bn"
+                        ? "বাংলা উচ্চারণ (যেমন: রব্বি, রহমান), অর্থ, বিজ্ঞান বা আরবি রুট লিখুন..."
+                        : "Search by pronunciation, meaning, science, or Arabic root..."
+                    }
+                    className="w-full bg-transparent text-sm sm:text-base text-white placeholder:text-white/60 outline-none border-none font-medium"
+                  />
+                  {searchTerm && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchTerm("")}
+                      className="text-white/60 hover:text-white text-xs px-2 py-1 bg-white/10 rounded-md cursor-pointer"
+                    >
+                      মুছুন
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ২. বর্ণানুক্রমিক ফিল্টার বার */}
       <div className="sticky top-14 sm:top-16 z-30 border-b border-border/80 bg-background/95 backdrop-blur-md py-3 shadow-xs">
