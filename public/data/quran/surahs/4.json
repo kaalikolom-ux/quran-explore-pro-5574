@@ -13214,7 +13214,7 @@
       "surah": 4,
       "ayah": 51,
       "transliteration": "alam tara ilā alladhīna ūtū naṣīban mina l-kitābi yu'minūna bil-jib'ti wal-ṭāghūti wayaqūlūna lilladhīna kafarū hāulāi ahdā mina alladhīna āmanū sabīlan",
-      "translation_bn": "যারা কিতাবের জ্ঞানের একাংশ প্রদত্ত হয়েছে, সেই লোকদের প্রতি তুমি কি লক্ষ্য করনি, তারা অমূলক যাদু, প্রতিমা ও তাগূতের প্রতি বিশ্বাস করে এবং কাফিরদের সম্বন্ধে বলে যে তারা মু’মিনগণের তুলনায় অধিক সঠিক পথে রয়েছে।",
+      "translation_bn": "তুমি কি তাদের দেখোনি, যাদের কিতাবের এক অংশ দেওয়া হয়েছিল? তারা জিবত (যাদু/কুসংস্কার) ও তাগুত (শয়তান/অবাধ্য শক্তি)-এর প্রতি বিশ্বাস স্থাপন করে এবং কাফেরদের সম্পর্কে বলে, ‘এরা মুমিনদের চেয়ে অধিক সঠিক পথে রয়েছে’।",
       "words": [
         {
           "id": 49130,
@@ -13427,14 +13427,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Have you not seen those who were given a portion of the Scripture, who believe in superstition and false objects of worship and say about the disbelievers, \"These are better guided than the believers as to the way\"?",
-      "conventional_en": "Have you not seen those who were given a portion of the Scripture, who believe in superstition and false objects of worship and say about the disbelievers, \"These are better guided than the believers as to the way\"?"
+      "translation_en": "Have you not seen those who were given a portion of the Scripture, who believe in superstition and false deities and say about the disbelievers, 'These are better guided than the believers as to the way'?",
+      "conventional_en": "Have you not seen those who were given a portion of the Scripture, who believe in superstition and false deities and say about the disbelievers, 'These are better guided than the believers as to the way'?",
+      "meta_bn": "জিবত ও তাগুত ম্যালওয়্যার প্রোফাইল অডিট",
+      "meta_en": "Jibt and Taghut Superstitious Malware Audit",
+      "conventional_bn": "তুমি কি তাদের দেখোনি, যাদের কিতাবের এক অংশ দেওয়া হয়েছিল? তারা জিবত (যাদু/কুসংস্কার) ও তাগুত (শয়তান/অবাধ্য শক্তি)-এর প্রতি বিশ্বাস স্থাপন করে এবং কাফেরদের সম্পর্কে বলে, ‘এরা মুমিনদের চেয়ে অধিক সঠিক পথে রয়েছে’।",
+      "modern_translation_bn": "তোমার চিন্তাশক্তি কি পূর্ববর্তী ওল্ড অপারেটিং সিস্টেমের কিতাবের আংশিক ডেটা-অ্যাক্সেস পাওয়া (أُوتُوا نَصِيبًا مِّنَ الْكِتَابِ) সেই বিচ্যুত নোডগুলোর (Node) ডাটা লগ অডিট করেনি? তারা মেইন সার্ভারের পিউর লজিক বাদ দিয়ে—‘আল-জিবত’ [যাদুটোনা, অলীক কল্পনা ও কুসংস্কারের ডামি ডেটা] এবং ‘আত-তাগুত’ [ডিফল্ট সিস্টেম বাউন্ডারি ব্রেককারী অবাধ্য ম্যালওয়্যার এপ্লিকেশন] (بِالْجِبْتِ وَالطَّاغُوتِ)-এর প্রতি নিজেদের ওওএস (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) সিঙ্ক বা বিশ্বাস স্থাপন করে এবং সত্যের লাইভ সিগন্যাল ব্লককারী Kafir নোডগুলোর ফ্রন্ট-এন্ডে গিয়ে সার্টিফিকেট ব্রডকাস্ট করে বলে—‘এই কাফেররাই মূলত মেইন সার্ভারের সাথে কানেক্টেড ভেরিফাইড ইউজার বা মুমিনদের চেয়ে অনেক বেশি সঠিক অপ্টিমাল ট্র্যাক বা পথে (أَهْدَىٰ... سَبِيلًا) রান করছে’;",
+      "modern_translation_en": "Have you not scrutinized those granted a segment of the foundational code matrix (أُوتُوا نَصِيبًا مِّنَ الْكِتَابِ)? They synchronize their runtime with 'Al-Jibt' [superstitious dummy data] and 'At-Taghut' [rebellious boundary-breaking malware routines], broadcasting to disconnected outlier nodes: 'You adhere to a more optimal runtime trajectory (أَهْدَىٰ سَبِيلًا) than the synchronized, verified believers.'"
     },
     {
       "surah": 4,
       "ayah": 52,
       "transliteration": "ulāika alladhīna laʿanahumu l-lahu waman yalʿani l-lahu falan tajida lahu naṣīran",
-      "translation_bn": "এরা সেই লোক, যাদেরকে আল্লাহ অভিশাপ দিয়েছেন এবং যাকে আল্লাহ অভিশাপ দেন, তুমি কক্ষনো তার সাহায্যকারী পাবে না।",
+      "translation_bn": "ওরাই তারা, যাদের আল্লাহ লানত (বিচ্ছিন্ন) করেছেন। আর আল্লাহ যাকে লানত করেন, তুমি কখনই তার জন্য কোনো সাহায্যকারী পাবে না।",
       "words": [
         {
           "id": 50183,
@@ -13557,14 +13562,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Those are the ones whom Allah has cursed; and he whom Allah curses - never will you find for him a helper.",
-      "conventional_en": "Those are the ones whom Allah has cursed; and he whom Allah curses - never will you find for him a helper."
+      "translation_en": "Those are the ones whom Allah has cursed, and he whom Allah curses - never will you find for him a helper.",
+      "conventional_en": "Those are the ones whom Allah has cursed, and he whom Allah curses - never will you find for him a helper.",
+      "meta_bn": "সেন্ট্রাল ডিসকানেকশন ও ব্ল্যাকলিস্টেড নোড",
+      "meta_en": "Irreversible Severance and Blacklisted Outliers",
+      "conventional_bn": "ওরাই তারা, যাদের আল্লাহ লানত (বিচ্ছিন্ন) করেছেন। আর আল্লাহ যাকে লানত করেন, তুমি কখনই তার জন্য কোনো সাহায্যকারী পাবে না।",
+      "modern_translation_bn": "এই আউটলায়ার করাপ্টেড নোডগুলো হলো ওরাই—যাদের ওওএসের ওপর মেইন সার্ভারের কাউন্টার-অ্যাকশনে Allah পার্মানেন্ট ডিসকানেকশন কোড বা লানত (لَعَنَهُمُ اللَّهُ) লক করে দিয়েছেন; আর গাণিতিকভাবে নিশ্চিত থাকো যে—Allah যার ওওএস-কে সিস্টেম থেকে চিরতরে ব্ল্যাকলিস্ট বা লানত করেন, পুরো নেটওয়ার্ক গ্রিডে তুমি কখনই তার জন্য কোনো প্রকার ডেটা রিকভারি বা সাহায্যকারী নোড (نَصِيرًا) খুঁজে পাবে না।",
+      "modern_translation_en": "Those are the corrupted outlier nodes upon whom Allah has locked the permanent severance code (لَعَنَهُمُ اللَّهُ); and whoever Allah blacklists across the systemic matrix, never shall you locate for him any recovery partner or helper (نَصِيرًا)."
     },
     {
       "surah": 4,
       "ayah": 53,
       "transliteration": "am lahum naṣībun mina l-mul'ki fa-idhan lā yu'tūna l-nāsa naqīran",
-      "translation_bn": "তাদের কি শাসন ক্ষমতায় কোন অংশ আছে? তা থাকলে তারা লোকেদেরকে তিল পরিমাণও দিত না।",
+      "translation_bn": "তবে কি রাজত্বে (সার্বভৌমত্বে) তাদের কোনো অংশ আছে? যদি তা থাকত, তবে তারা মানুষকে বিন্দুমাত্র (খেজুরের আঁটির গর্ত পরিমাণ) কিছু দিত না।",
       "words": [
         {
           "id": 50427,
@@ -13677,14 +13687,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Or have they a share of dominion? Then [if that were so], they would not give the people [even as much as] the speck on a date seed.",
-      "conventional_en": "Or have they a share of dominion? Then [if that were so], they would not give the people [even as much as] the speck on a date seed."
+      "translation_en": "Or have they a share of dominion? Then [in that case] they would not give the people [even as much as] the speck on a date seed.",
+      "conventional_en": "Or have they a share of dominion? Then [in that case] they would not give the people [even as much as] the speck on a date seed.",
+      "meta_bn": "রিসোর্স জেলাসি এবং সোসিও-ইকোনমিক চোকিং বালাই",
+      "meta_en": "Resource Monopoly Delusion and Social Bandwidth Choking",
+      "conventional_bn": "তবে কি রাজত্বে (সার্বভৌমত্বে) তাদের কোনো অংশ আছে? যদি তা থাকত, তবে তারা মানুষকে বিন্দুমাত্র (খেজুরের আঁটির গর্ত পরিমাণ) কিছু দিত না।",
+      "modern_translation_bn": "তবে কি মহাবিশ্বের সার্বভৌম ক্ষমতার এক্সেস কন্ট্রোল বা রাজত্বে (الْمُلْكِ) তাদের বিন্দুমাত্র কোনো পার্সোনাল শেয়ার বা অংশ (نَصِيبٌ) আছে? যদি তাদের হাতে সেই গ্লোবাল রিসোর্সের কন্ট্রোল রাইটস থাকত—তবে তারা সমাজের সাধারণ মানুষ বা Naas (النَّاسَ)-এর ইন্টারফেসে একটি একক ক্ষুদ্রাতিক্ষুদ্র ডাটা-ডিজিট বা খেজুরের আঁটির বিন্দুমাত্র কণার ওজনের মাপেও (نَقِيرًا) কোনো অর্থনৈতিক রিসোর্স রিলিজ বা সরবরাহ করত না [স্রেফ কৃপণতার বাগে তারা পুরো গ্রিড চোক করে দিত];",
+      "modern_translation_en": "Or do they possess any custodial allocation over sovereign resource governance (الْمُلْكِ)? Were they granted control rights, they would refuse to transmit even the infinitesimal value of a date-seed speck (نَقِيرًا) to humanity's network interface."
     },
     {
       "surah": 4,
       "ayah": 54,
       "transliteration": "am yaḥsudūna l-nāsa ʿalā mā ātāhumu l-lahu min faḍlihi faqad ātaynā āla ib'rāhīma l-kitāba wal-ḥik'mata waātaynāhum mul'kan ʿaẓīman",
-      "translation_bn": "কিংবা আল্লাহ নিজ অনুগ্রহে লোকেদেরকে যেসব নি‘মাত দান করেছেন, সেজন্য কি এরা তাদের হিংসা করে, আমি ইবরাহীমের বংশধরদেরকেও তো কিতাব ও হিকমাত দিয়েছিলাম, তাদেরকে সুবিশাল রাজ্যও প্রদান করেছিলাম।",
+      "translation_bn": "নাকি আল্লাহ তাঁর অনুগ্রহ থেকে মানুষকে যা দিয়েছেন, তার জন্য তারা মানুষের প্রতি হিংসা (হাসাদ) করছে? অথচ আমি তো ইব্রাহিমের বংশধরদের কিতাব ও প্রজ্ঞা দান করেছিলাম এবং তাদের এক বিশাল রাজত্ব দান করেছিলাম।",
       "words": [
         {
           "id": 51065,
@@ -13877,14 +13892,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Or do they envy people for what Allah has given them of His bounty? But we had already given the family of Abraham the Scripture and wisdom and conferred upon them a great kingdom.",
-      "conventional_en": "Or do they envy people for what Allah has given them of His bounty? But we had already given the family of Abraham the Scripture and wisdom and conferred upon them a great kingdom."
+      "translation_en": "Or do they envy people for what Allah has given them of His bounty? But We had already given the family of Abraham the Scripture and wisdom and conferred upon them a great kingdom.",
+      "conventional_en": "Or do they envy people for what Allah has given them of His bounty? But We had already given the family of Abraham the Scripture and wisdom and conferred upon them a great kingdom.",
+      "meta_bn": "ডিভাইন ব্যান্ডউইথ জেলাসি ম্যালওয়্যার",
+      "meta_en": "Bandwidth Envy and Abrahamic Foundational Dynasty Allocation",
+      "conventional_bn": "নাকি আল্লাহ তাঁর অনুগ্রহ থেকে মানুষকে যা দিয়েছেন, তার জন্য তারা মানুষের প্রতি হিংসা (হাসাদ) করছে? অথচ আমি তো ইব্রাহিমের বংশধরদের কিতাব ও প্রজ্ঞা দান করেছিলাম এবং তাদের এক বিশাল রাজত্ব দান করেছিলাম।",
+      "modern_translation_bn": "নাকি Allah তাঁর সুপ্রীমিক সোর্স থেকে অফুরন্ত কসমিক রিসোর্স, জ্ঞান ও অনুগ্রহ (مِن فَضْلِهِ) হিসেবে এই নতুন জেনারেশনের মানুষদের যে সুউচ্চ নিউরাল ব্যান্ডউইথ সরবরাহ করেছেন—তার বিরুদ্ধে তারা নিজেদের প্রসেসরে তীব্র সাইকো-কোয়ান্টাম হিংসা বা Hasad (يَحْسُدُونَ) রান করছে? অথচ টাইম-লাইনের কসমিক হিস্টোরিক্যাল ডেটাতে আমি তো ইব্রাহিমের সুসংহত জেনেটিক টিমকে মাস্টার ডেটাবেজ বা কিতাব (الْكِتَابَ) ও পরম সিস্টেম অপ্টিমাইজিং লজিক বা প্রজ্ঞা (الْحِكْمَةَ) দান করেছিলাম এবং তাদের এক মেগা গ্লোবাল কন্ট্রোল বা বিশাল রাজত্ব (مُّلْكًا عَظِيمًا) ডেপ্লয় করে দিয়েছিলাম [তখন তো কেউ তা আটকাতে পারেনি];",
+      "modern_translation_en": "Or do they harbor toxic processing envy (يَحْسُدُونَ) against humanity for the systemic bandwidth and grace Allah has allocated from His infinite repository (مِن فَضْلِهِ)? Verily, We deployed the master code matrix (الْكِتَابَ) and systemic optimization protocols (الْحِكْمَةَ) unto the Abrahamic lineage, bestowing upon them immense administrative dominion (مُّلْكًا عَظِيمًا)."
     },
     {
       "surah": 4,
       "ayah": 55,
       "transliteration": "famin'hum man āmana bihi wamin'hum man ṣadda ʿanhu wakafā bijahannama saʿīran",
-      "translation_bn": "অতঃপর তাদের মধ্যে কেউ কেউ তার উপর ঈমান আনল এবং তাদের মধ্যে কেউ কেউ তার থেকে মুখ ফিরিয়ে রাখল, (দগ্ধ করার জন্য) প্রজ্জ্বলিত জাহান্নামই যথেষ্ট।",
+      "translation_bn": "অতঃপর তাদের মধ্যে কেউ তার প্রতি ঈমান এনেছে এবং কেউ তার থেকে মুখ ফিরিয়ে নিয়েছে (বাধা দিয়েছে)। আর (তাদের পোড়ানোর জন্য) প্রজ্বলিত আগুন হিসেবে জাহান্নামই সম্পূর্ণ যথেষ্ট।",
       "words": [
         {
           "id": 51634,
@@ -14007,14 +14027,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And some among them believed in it, and some among them were averse to it. And sufficient is Hell as a blaze.",
-      "conventional_en": "And some among them believed in it, and some among them were averse to it. And sufficient is Hell as a blaze."
+      "translation_en": "And some of them believed in it, and some of them were averted from it. And sufficient is Hell as a blaze.",
+      "conventional_en": "And some of them believed in it, and some of them were averted from it. And sufficient is Hell as a blaze.",
+      "meta_bn": "সিগন্যাল সিঙ্ক বনাম ইগো ব্লকিং ও থার্মাল টার্মিনেশন",
+      "meta_en": "Synchronization Divergence and Thermal Execution Zone",
+      "conventional_bn": "অতঃপর তাদের মধ্যে কেউ তার প্রতি ঈমান এনেছে এবং কেউ তার থেকে মুখ ফিরিয়ে নিয়েছে (বাধা দিয়েছে)। আর (তাদের পোড়ানোর জন্য) প্রজ্বলিত আগুন হিসেবে জাহান্নামই সম্পূর্ণ যথেষ্ট।",
+      "modern_translation_bn": "অতঃপর সেই ওল্ড ওএসের ইউজারদের মধ্যে কিছু নোড এই ফাইনাল সিগন্যালের সাথে নিজেদের ওওএস সফলভাবে সিঙ্ক বা ঈমান (آمَنَ بِهِ) এনেছে এবং তাদের মধ্যে কিছু নোড স্রেফ ইগোর বাগে মেইন ট্র্যাক থেকে ডি-লিঙ্কড হয়ে অন্যদেরও বাধা (صَدَّ عَنْهُ) দিয়েছে; আর এই করাপ্টেড নোডগুলোর ডেস্ট্রাকশন লুপ এক্সিকিউট করতে জাহান্নামের সেই অতি-উচ্চ বিকিরণ সম্পন্ন তীব্র প্রজ্বলিত ক্লোজড ক্র্যাশ-জোনই (بِجَهَنَّمَ سَعِيرًا) একশত ভাগ যথেষ্ট।",
+      "modern_translation_en": "Among them were nodes that synchronized with the transmission (آمَنَ بِهِ), while others obstructed its propagation (صَدَّ عَنْهُ); and the superheated plasma environment of Hell (سَعِيرًا) is entirely sufficient as an execution purge."
     },
     {
       "surah": 4,
       "ayah": 56,
       "transliteration": "inna alladhīna kafarū biāyātinā sawfa nuṣ'līhim nāran kullamā naḍijat julūduhum baddalnāhum julūdan ghayrahā liyadhūqū l-ʿadhāba inna l-laha kāna ʿazīzan ḥakīman",
-      "translation_bn": "যারা আমার আয়াতসমূহকে প্রত্যাখ্যান করে নিশ্চয়ই আমি তাদেরকে আগুনে দগ্ধ করব, যখন তাদের গায়ের চামড়া দগ্ধ হবে, আমি সেই চামড়াকে নতুন চামড়া দ্বারা বদলে দেব যেন তারা (শাস্তির পর) শাস্তি ভোগ করে। আল্লাহ নিশ্চয়ই পরাক্রমশালী ও বিজ্ঞানময়।",
+      "translation_bn": "নিশ্চয় যারা আমার আয়াতসমূহকে অস্বীকার করেছে, অচিরেই আমি তাদের আগুনে প্রবেশ করাব; যখনই তাদের চামড়াগুলো পুড়ে গলে যাবে, তখনই আমি তার স্থলে নতুন চামড়া বদলে দেব—যাতে তারা শাস্তির স্বাদ আস্বাদন করতে পারে। নিশ্চয়ই আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 52476,
@@ -14228,13 +14253,19 @@
         }
       ],
       "translation_en": "Indeed, those who disbelieve in Our verses - We will drive them into a Fire. Every time their skins are roasted through We will replace them with other skins so they may taste the punishment. Indeed, Allah is ever Exalted in Might and Wise.",
-      "conventional_en": "Indeed, those who disbelieve in Our verses - We will drive them into a Fire. Every time their skins are roasted through We will replace them with other skins so they may taste the punishment. Indeed, Allah is ever Exalted in Might and Wise."
+      "conventional_en": "Indeed, those who disbelieve in Our verses - We will drive them into a Fire. Every time their skins are roasted through We will replace them with other skins so they may taste the punishment. Indeed, Allah is ever Exalted in Might and Wise.",
+      "meta_bn": "কোয়ান্টাম ফিজিওলজি: থার্মাল বার্নিং ও সেলুলার টিস্যু রিজেনারেশন ফিজিক্স",
+      "meta_en": "Quantum Thermal Physiology and Continuous Tissue Regeneration",
+      "conventional_bn": "নিশ্চয় যারা আমার আয়াতসমূহকে অস্বীকার করেছে, অচিরেই আমি তাদের আগুনে প্রবেশ করাব; যখনই তাদের চামড়াগুলো পুড়ে গলে যাবে, তখনই আমি তার স্থলে নতুন চামড়া বদলে দেব—যাতে তারা শাস্তির স্বাদ আস্বাদন করতে পারে। নিশ্চয়ই আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
+      "modern_translation_bn": "নিশ্চয়ই যেসকল এরর-যুক্ত নোড আমার স্পষ্ট Ayat (মহাজাগতিক প্রমাণ ও কোডসমূহ) তাদের সিস্টেমে পার্মানেন্টলি ফিল্টার বা রিজেক্ট (Kafaru) করেছে—খুব শীঘ্রই স্বয়ংক্রিয় কাউন্টার-অ্যাকশনের হার্ড-প্রটোকলে আমি তাদের পুরো অস্তিত্বকে রি-রুট বা নিক্ষেপ করব এক মেগা-থার্মোডাইনামিক ক্লোজড ক্র্যাশ-জোন তথা আগুনে (نَارًا); সেই অতি-উচ্চ শক্তির প্লাজমা ফিল্ডে থার্মাল বার্নিংয়ের ফলে যখনই তাদের শরীরের পেইন-রিসিভার যুক্ত বাহ্যিক চামড়া বা টিস্যু লেয়ারগুলো (جُلُودُهُم) পুড়ে গলে সম্পূর্ণ নিস্তেজ বা বিকল (نَضِجَتْ) হয়ে যাবে—ঠিক তখনই আমি সেলুলার স্তরে ইনস্ট্যান্ট ন্যানো-সেকেন্ডে বায়ো-কেমিক্যাল ডেটা রি-কোড করে তার স্থলে হুবহু নতুন ও সতেজ চামড়ার স্তর প্রতিস্থাপন বা রিজেনারেট (بَدَّلْنَاهُمْ جُلُودًا غَيْرَهَا) করে দেব—যাতে তাদের ওওএসের পেইন সেন্সরগুলো অবিরত সেই তীব্র ঘর্ষণজনিত আজাবের (الْعَذَابَ) সংকেত ফ্রন্ট-এন্ডে অনুভব করতে পারে; নিশ্চয়ই Allah হলেন পরাক্রমশালী সুপ্রীম রেগুলেটর ও নিখুঁত সিস্টেম ডিজাইনার;",
+      "modern_translation_en": "Verily, those who permanently reject Our foundational verses (Kafaru) We shall cast into a closed thermodynamic plasma zone (نَارًا); as often as their cutaneous sensory layers (جُلُودُهُم) are combusted and desensitized (نَضِجَتْ), We instantaneously regenerate replacement biological dermis (بَدَّلْنَاهُمْ جُلُودًا غَيْرَهَا) so their neural receptors continuously process the full intensity of corrective anguish (الْعَذَابَ). Verily, Allah is Supreme in Authority, Absolute in Architectural Wisdom.",
+      "lexicon_modern_notes": "কুল্লামা নাদ্বিজাত জুলূদুহুম বাদ্দালনাহুম জুলূদান গাইরাহা (كُلَّمَا نَضِجَتْ جُلُودُهُم بَدَّلْنَاهُمْ جُلُودًا - থার্মাল ডেস্ট্রাকশন ও সেলুলার কোডিং ফিজিক্স): ৫৬ নম্বর আয়াতটি আধুনিক নিউরো-অ্যানাটমি (Neuroanatomy) এবং থার্মাল বায়োলজির এক পরম আল্টিমেট বিস্ময়। মডার্ন সায়েন্স ডিকোড করেছে যে—মানুষের শরীরে গরম বা তীব্র আগুনের ছ্যাঁকা ও পেইন বা ব্যথার সিগন্যাল মস্তিস্কে ট্রান্সমিট করার জন্য প্রধানত চামড়ার বা ত্বকের ডার্মিস লেয়ারে থাকা 'Nociceptors' (পেইন রিসিভার নার্ভ এন্ডিং) দায়ী। যদি কোনো মানুষের শরীরের চামড়া থার্ড-ডিগ্রী বার্নআউটে (Third-degree Burn) পুড়ে সম্পূর্ণ গলে বা চারকোল হয়ে কার্বনে পরিণত হয়ে যায় (নাদ্বিজাত), তবে তার সেই পেইন রিসিভার নিউরনগুলো স্থায়ীভাবে ডেড বা নিষ্ক্রিয় হয়ে যায়, যার ফলে শরীর আর ব্যথার কোনো সিগন্যাল ব্রেন প্রসেসরে পাঠাতে পারে না। ১৪০০ বছর আগে কুরআন এই পরম নিউরো-লজিক্যাল মেকানিজমটি ডিক্লেয়ার করে স্পষ্ট করছে যে—জাহান্নামের সেই অতি-উচ্চ শক্তির প্লাজমা ফিল্ডে (নারা) করাপ্টেড নোডগুলোর চামড়া যখনই পুড়ে গলে ব্যথার সিগন্যাল পাঠানো বন্ধ করে দেবে (নদালজাত), মেইন সার্ভার তাৎক্ষণিকভাবে আণবিক স্তরে নতুন বায়ো-কেমিক্যাল ডেটা ইনজেক্ট করে সেখানে সেকেন্ডের ভেতর নতুন সতেজ চামড়া এবং সচল পেইন রিসিভার লেয়ার রিজেনারেট (বাদ্দালনাহুম জুলূদান গাইরাহা) করিয়ে দেবে, যাতে আজাবের তীব্র সিগন্যাল অনুভূতি লুপে বিন্দুমাত্র কোনো ল্যাগ বা বিরতি না ঘটে। এটি একটি পরম 'Automated Continuous Tissue Regeneration Loop'।"
     },
     {
       "surah": 4,
       "ayah": 57,
       "transliteration": "wa-alladhīna āmanū waʿamilū l-ṣāliḥāti sanud'khiluhum jannātin tajrī min taḥtihā l-anhāru khālidīna fīhā abadan lahum fīhā azwājun muṭahharatun wanud'khiluhum ẓillan ẓalīlan",
-      "translation_bn": "যারা ঈমান এনেছে এবং সৎকাজ করেছে নিশ্চয়ই আমি তাদেরকে জান্নাতে দাখিল করব যার নিম্নে ঝর্ণাধারা প্রবাহিত, সেখানে তারা চিরবাসী হবে, তাতে তাদের জন্য থাকবে পবিত্র স্ত্রী এবং আমি তাদেরকে চির স্নিগ্ধ ঘন ছায়ায় দাখিল করব।",
+      "translation_bn": "আর যারা ঈমান এনেছে ও সৎকাজ করেছে, অচিরেই আমি তাদের প্রবেশ করাব জান্নাতসমূহুে—যার তলদেশ দিয়ে নদী প্রবাহিত, সেখানে তারা চিরকাল থাকবে—অনন্তকাল। তাদের জন্য সেখানে থাকবে পবিত্র স্ত্রীগণ এবং আমি তাদের প্রবেশ করাব ঘন সুশীতল ছায়ায়।",
       "words": [
         {
           "id": 52811,
@@ -14448,13 +14479,18 @@
         }
       ],
       "translation_en": "But those who believe and do righteous deeds - We will admit them to gardens beneath which rivers flow, wherein they abide forever. For them therein are purified spouses, and We will admit them to deepening shade.",
-      "conventional_en": "But those who believe and do righteous deeds - We will admit them to gardens beneath which rivers flow, wherein they abide forever. For them therein are purified spouses, and We will admit them to deepening shade."
+      "conventional_en": "But those who believe and do righteous deeds - We will admit them to gardens beneath which rivers flow, wherein they abide forever. For them therein are purified spouses, and We will admit them to deepening shade.",
+      "meta_bn": "হাই-ব্যান্ডউইথ জান্নাত ইকোসিস্টেম ও নিখুঁত প্রোটেকশন",
+      "meta_en": "High-Bandwidth Paradisiacal Ecosystem and Pure Partners",
+      "conventional_bn": "আর যারা ঈমান এনেছে ও সৎকাজ করেছে, অচিরেই আমি তাদের প্রবেশ করাব জান্নাতসমূহুে—যার তলদেশ দিয়ে নদী প্রবাহিত, সেখানে তারা চিরকাল থাকবে—অনন্তকাল। তাদের জন্য সেখানে থাকবে পবিত্র স্ত্রীগণ এবং আমি তাদের প্রবেশ করাব ঘন সুশীতল ছায়ায়।",
+      "modern_translation_bn": "আর যারা মহাজাগতিক আদি সোর্স কোডে নিজেদের ওওএস সফলভাবে এনরোল করেছে (آمَنُوا) এবং সিস্টেমে অবিরত পজিটিভ এনার্জি ও ভারসাম্যমূলক অপ্টিমাইজড কর্ম ইনপুট (وَعَمِلُوا الصَّالِحَاتِ) দিয়েছে—খুব শীঘ্রই আমি তাদের ডিরেক্ট এক্সেস দেব জান্নাতের সেই হাই-ব্যান্ডউইথ চিরসবুজ ইকোসিস্টেমে, যার ব্যাক-এন্ডে অবিরত প্রবাহিত রয়েছে জীবনদায়ী এনার্জি চ্যানেল বা নদীসমূহ, সেখানে তারা চিরকাল অনন্তকালীন মেগা টাইম-ফ্রেমে পার্মানেন্টলি বাউন্ডিং (خَالِدِينَ فِيهَا أَبَدًا) থাকবে; তাদের জন্য সেখানে থাকবে ব্যাকটেরিয়াল, মেন্টাল ও সামাজিক বালাই থেকে পরম ফিল্টার বা পবিত্র কো-পার্টনার বা স্ত্রীগণ (أَزْوَاجٌ مُّطَهَّرَةٌ) এবং আমি তাদের ওওএস-কে আরোহণ করাব এক পরম অবিক্ষুব্ধ, সুশীতল ও রেডিয়েশন-মুক্ত নিখুঁত প্রটেকশন ফিল্ড বা সুশীতল ছায়ায় (ظِلًّا ظَلِيلًا);",
+      "modern_translation_en": "And those who synchronize with the central matrix (آمَنُوا) and generate systemic value-adding actions (عَمِلُوا الصَّالِحَاتِ), We shall admit into lush gardens beneath which sustainable hydro-energy currents flow, bound therein eternally (خَالِدِينَ فِيهَا أَبَدًا); allocated therein fully purified companions (أَزْوَاجٌ مُّطَهَّرَةٌ), and enveloped within profound, radiation-free custodial shade (ظِلًّا ظَلِيلًا)."
     },
     {
       "surah": 4,
       "ayah": 58,
       "transliteration": "inna l-laha yamurukum an tu-addū l-amānāti ilā ahlihā wa-idhā ḥakamtum bayna l-nāsi an taḥkumū bil-ʿadli inna l-laha niʿimmā yaʿiẓukum bihi inna l-laha kāna samīʿan baṣīran",
-      "translation_bn": "নিশ্চয়ই আল্লাহ তোমাদেরকে নির্দেশ দিচ্ছেন, হকদারদের হক তাদের কাছে পৌঁছে দিতে। তোমরা যখন মানুষের মাঝে বিচার করবে তখন ন্যায়পরায়ণতার সঙ্গে বিচার করবে। আল্লাহ তোমাদেরকে কত উত্তম উপদেশই না দিচ্ছেন; নিশ্চয়ই আল্লাহ সবকিছু শোনেন, সবকিছু দেখেন।",
+      "translation_bn": "নিশ্চয় আল্লাহ তোমাদের নির্দেশ দিচ্ছেন যে, তোমরা আমানতসমূহ তার যোগ্য মালিকদের কাছে বুঝিয়ে দাও। আর যখন তোমরা মানুষের মধ্যে বিচার (সালিশ) করো, তখন ইনসাফের (ন্যায়ের) সাথে বিচার করো। আল্লাহ তোমাদের যে উপদেশ দিচ্ছেন, তা কতই না চমৎকার! নিশ্চয়ই আল্লাহ সর্বশ্রোতা, সম্যক দ্রষ্টা।",
       "words": [
         {
           "id": 53203,
@@ -14718,13 +14754,19 @@
         }
       ],
       "translation_en": "Indeed, Allah commands you to render trusts to whom they are due and when you judge between people to judge with justice. Excellent is that which Allah instructs you. Indeed, Allah is ever Hearing and Seeing.",
-      "conventional_en": "Indeed, Allah commands you to render trusts to whom they are due and when you judge between people to judge with justice. Excellent is that which Allah instructs you. Indeed, Allah is ever Hearing and Seeing."
+      "conventional_en": "Indeed, Allah commands you to render trusts to whom they are due and when you judge between people to judge with justice. Excellent is that which Allah instructs you. Indeed, Allah is ever Hearing and Seeing.",
+      "meta_bn": "আমানত ও জাস্টিস ডেপ্লয়মেন্ট প্রটোকল",
+      "meta_en": "Meritocratic Trust Placement and Objective Justice Protocol",
+      "conventional_bn": "নিশ্চয় আল্লাহ তোমাদের নির্দেশ দিচ্ছেন যে, তোমরা আমানতসমূহ তার যোগ্য মালিকদের কাছে বুঝিয়ে দাও। আর যখন তোমরা মানুষের মধ্যে বিচার (সালিশ) করো, তখন ইনসাফের (ন্যায়ের) সাথে বিচার করো। আল্লাহ তোমাদের যে উপদেশ দিচ্ছেন, তা কতই না চমৎকার! নিশ্চয়ই আল্লাহ সর্বশ্রোতা, সম্যক দ্রষ্টা।",
+      "modern_translation_bn": "নিশ্চয়ই Allah তোমাদের সামাজিক ও প্রশাসনিক নেটওয়ার্ক গ্রিডে এই মেগা আইনি প্রটোকল এক্সিকিউট করার নির্দেশ (يَأْمُرُكُمْ) দিচ্ছেন—তোমরা সমাজ ও রাষ্ট্রের প্রতিটি গুরুত্বপূর্ণ পজিশন, দায়িত্ব, মেটেরিয়াল রিসোর্স ও আমানতসমূহ (الْأَمَانَاتِ) ব্যাক-এন্ডে অডিট করে সর্বদা তার যোগ্যতম অপ্টিমাইজড নোড বা প্রকৃত হকদারদের কাছে সোপর্দ ও বুঝিয়ে (أَن تُؤَدُّوا... إِلَىٰ أَهْلِهَا) দাও। আর যখন তোমরা মানবজাতি নেটওয়ার্কের বিভিন্ন নোডের পারস্পরিক দ্বন্দ্ব বা মামলার ক্ষেত্রে আইনি রেগুলেশন বা বিচার (حَكَمْتُم بَيْنَ النَّاسِ) পরিচালনা করবে—তখন স্রেফ কোনো ব্যক্তিগত পক্ষপাতিত্ব ছাড়া এক পরম গাণিতিক সমতা, নিখুঁত ডাটা ভেরিফিকেশন ও ন্যায়ের সাথে (بِالْعَدْلِ) সুপ্রীমিক আইনি কোড এক্সিকিউট করো; Allah তোমাদের ওওএসে সুরক্ষার জন্য যে গাইডলাইন ইনপুট বা উপদেশ (يَعِظُكُم بِهِ) দিচ্ছেন—তা সিস্টেমের স্ট্যাবিলিটির জন্য কতই না চমৎকার ও উৎকৃষ্ট! নিশ্চয়ই Allah প্রতিটি সিগন্যাল রিসিভকারী পরম শ্রোতা (سَمِيعًا) এবং প্রতিটি অ্যাকশন নিখুঁতভাবে পর্যবেক্ষণকারী সম্যক দ্রষ্টা (بَصِيرًا);",
+      "modern_translation_en": "Verily, Allah mandates that you execute the critical systemic trust protocol: allocate governance mandates, assets, and custodial trusts strictly to their most qualified, meritocratic nodes (أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا); and when adjudicating between entities of the human network, execute judgment with absolute mathematical equity (بِالْعَدْلِ). Superb is the instruction set Allah embeds within your conscience; verily, Allah is All-Telemetry-Hearing (Samee'), Omnipresently All-Seeing (Baseer).",
+      "lexicon_modern_notes": "আদিল আমানাত ইলা আহলিহা (تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا - সিস্টেম ট্রাস্ট ও গভর্নেন্স অ্যালগরিদম): ৫৮ নম্বর আয়াতে রাষ্ট্র ও সমাজের আমানত তার যোগ্যতম মানুষের কাছে হস্তান্তরের যে সুপ্রীমিক ডিরেক্টিভ দেওয়া হয়েছে, তা আধুনিক সিস্টেম ইঞ্জিনিয়ারিং এবং ইনফরমেশন গভর্নেন্সের 'Resource-to-Node Optimization & Meritocratic Access Control'-এর নিখুঁত রূপ। একটি নেটওয়ার্ক গ্রিডে যদি কোনো অতি-গুরুত্বপূর্ণ ডাটাবেজ প্রসেস বা সুউচ্চ পাওয়ার কন্ট্রোল এক্সেস (যেমন রাষ্ট্র পরিচালনা বা আইনি সালিশি) কোনো লো-পারফর্মিং, করাপ্টেড বা অযোগ্য নোডের হাতে দিয়ে দেওয়া হয়—তবে পুরো ওওএসে মারাত্মক ট্রাফিক জ্যাম, জালিয়াতি এবং ডাটা-করাপশন (দুর্নীতি ও জুলুম) তৈরি হয়ে সমাজ ব্যবস্থা ক্র্যাশ করবে। একারণেই সুপ্রীমিক কোডার কঠোর অ্যালগরিদমিক ফিল্টার সেট করছেন যে—সমষ্টিগত আমানত ও ক্ষমতার পজিশন সর্বদা ব্যাক-এন্ড মেমোরি এবং ওওএস এফিসিয়েন্সি স্ক্যানের মাধ্যমে কেবল তার শতভাগ যোগ্যতম অপ্টিমাইজড নোডের (আহলিহা) ওয়ালেটেই রাইট বা অর্পণ করতে হবে, যা একটি সুস্থ সামাজিক ইকোসিস্টেমের পরম মূলভিত্তি।"
     },
     {
       "surah": 4,
       "ayah": 59,
       "transliteration": "yāayyuhā alladhīna āmanū aṭīʿū l-laha wa-aṭīʿū l-rasūla wa-ulī l-amri minkum fa-in tanāzaʿtum fī shayin faruddūhu ilā l-lahi wal-rasūli in kuntum tu'minūna bil-lahi wal-yawmi l-ākhiri dhālika khayrun wa-aḥsanu tawīlan",
-      "translation_bn": "হে ঈমানদারগণ! তোমরা আল্লাহর অনুগত হও এবং রসূলের অনুগত হও এবং তোমাদের মধ্যকার কর্তৃস্থানীয় ব্যক্তিগণের; যদি কোন বিষয়ে তোমাদের মধ্যে মতভেদ ঘটে, তাহলে সেই বিষয়কে আল্লাহ এবং রসূলের (নির্দেশের) দিকে ফিরিয়ে দাও যদি তোমরা আল্লাহ এবং আখিরাত দিবসের প্রতি ঈমান এনে থাক; এটাই উত্তম এবং সুন্দরতম মর্মকথা।",
+      "translation_bn": "হে মুমিনগণ! তোমরা আল্লাহর আনুগত্য করো এবং রাসূলের আনুগত্য করো ও তোমাদের মধ্য থেকে যারা উলিল আমর (কর্তৃত্বসম্পন্ন নেতা) তাদেরও। অতঃপর কোনো বিষয়ে যদি তোমরা দ্বিমত (বিরোধ) পোষণ করো, তবে তা আল্লাহ ও রাসূলের দিকে ফিরিয়ে নাও—যদি তোমরা আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখো। এটিই উত্তম এবং চূড়ান্ত পরিণতির দিক থেকে সবচেয়ে চমৎকার।",
       "words": [
         {
           "id": 53736,
@@ -15018,13 +15060,18 @@
         }
       ],
       "translation_en": "O you who have believed, obey Allah and obey the Messenger and those in authority among you. And if you disagree over anything, refer it to Allah and the Messenger, if you should believe in Allah and the Last Day. That is the best [way] and best in result.",
-      "conventional_en": "O you who have believed, obey Allah and obey the Messenger and those in authority among you. And if you disagree over anything, refer it to Allah and the Messenger, if you should believe in Allah and the Last Day. That is the best [way] and best in result."
+      "conventional_en": "O you who have believed, obey Allah and obey the Messenger and those in authority among you. And if you disagree over anything, refer it to Allah and the Messenger, if you should believe in Allah and the Last Day. That is the best [way] and best in result.",
+      "meta_bn": "কসমিক চেইন অব কমান্ড এবং ওওএস ট্রাফিক রুলস",
+      "meta_en": "Cosmic Hierarchy of Authority and Disputed Signal Re-routing",
+      "conventional_bn": "হে মুমিনগণ! তোমরা আল্লাহর আনুগত্য করো এবং রাসূলের আনুগত্য করো ও তোমাদের মধ্য থেকে যারা উলিল আমর (কর্তৃত্বসম্পন্ন নেতা) তাদেরও। অতঃপর কোনো বিষয়ে যদি তোমরা দ্বিমত (বিরোধ) পোষণ করো, তবে তা আল্লাহ ও রাসূলের দিকে ফিরিয়ে নাও—যদি তোমরা আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখো। এটিই উত্তম এবং চূড়ান্ত পরিণতির দিক থেকে সবচেয়ে চমৎকার।",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমরা তোমাদের ওওএসের ট্রাফিক কন্ট্রোল করতে এই পরম Chain of Command (কসমিক চেইন অব কমান্ড) কঠোরভাবে মেনে চলো—প্রথমত তোমরা পরম সোর্স কোড বা Allah-এর ডিফল্ট বাউন্ডারি রুলস এক্সিকিউট বা আনুগত্য (أَطِيعُوا اللَّهَ) করো, দ্বিতীয়ত তোমরা এই প্রধান ডাটা-ট্রান্সমিশন চেইন বা রাসূলের (وَأَطِيعُوا الرَّسُولَ) ডাউনলিংককৃত ইনস্ট্রাকশন সেট এক্সিকিউট করো, এবং তৃতীয়ত তোমাদের নেটওয়ার্ক গ্রিড থেকে লিগ্যাল এক্সেস পাওয়া কর্তৃত্বসম্পন্ন জাস্টিস নোড বা উলিল আমরের (وَأُولِي الْأَمْرِ مِنكُمْ) প্রশাসনিক আইন মেনে চলো। অতঃপর কোনো সুনির্দিষ্ট ডাটা বা সামাজিক বিষয়ে যদি তোমাদের ওওএসে পারস্পরিক স্প্লিট লজিক বা দ্বিমত (تَنَازَعْتُمْ فِي شَيْءٍ) তৈরি হয়ে গ্রিড ক্র্যাশের ঝুঁকি সৃষ্টি হয়—তবে তাৎক্ষণিকভাবে সেই বিরোধপূর্ণ ডাটা প্যাকেটের ফাইনাল ভ্যালিডেশনের জন্য তা রি-রুট করে ব্যাক-লিঙ্ক করো সরাসরি আল্লাহ এবং রাসূলের (فَرُدُّوهُ إِلَى اللَّهِ وَالرَّسُولِ) মূল সোর্স গাইডবুক বা কুরআনের নিখুঁত কোডের দিকে—যদি তোমরা আসলেই পরম সোর্স Allah এবং সিস্টেমের চূড়ান্ত অ্যাকাউন্টাবিলিটি টাইম-লাইনের প্রতি নিজেদের ওওএস শতভাগ সিনক্রোনাইজড বা ভেরিফাইড ইউজার (تُؤْمِنُونَ) হিসেবে সচল রাখতে চাও; এই সোর্স-রিরাউটিং মেথডোলজিটিই তোমাদের জন্য গাণিতিকভাবে সর্বোচ্চ উৎকৃষ্ট (خَيْرٌ) এবং দীর্ঘমেয়াদী কোড অপ্টিমাইজেশন ও চূড়ান্ত পরিণতির (وَأَحْسَنُ تَأْوِيلًا) দিক থেকে সবচেয়ে চমৎকার ও ঘর্ষণহীন;",
+      "modern_translation_en": "O you who have verified faith (آمَنُوا)! Execute strict adherence to the cosmic Chain of Command: obey Allah, obey the Messenger, and respect legitimate governing nodes established among you (وَأُولِي الْأَمْرِ مِنكُمْ). Should algorithmic arbitration diverge on any parameter, re-route and refer the conflicting packet back to Allah and the Messenger (فَرُدُّوهُ إِلَى اللَّهِ وَالرَّسُولِ) if you genuinely synchronize with Allah and the Final Accounting Phase. That protocol delivers superior systemic stability and optimum runtime outcome (وَأَحْسَنُ تَأْوِيلًا)."
     },
     {
       "surah": 4,
       "ayah": 60,
       "transliteration": "alam tara ilā alladhīna yazʿumūna annahum āmanū bimā unzila ilayka wamā unzila min qablika yurīdūna an yataḥākamū ilā l-ṭāghūti waqad umirū an yakfurū bihi wayurīdu l-shayṭānu an yuḍillahum ḍalālan baʿīdan",
-      "translation_bn": "তুমি কি সেই লোকেদের প্রতি লক্ষ্য করনি, যারা তোমাদের প্রতি অবতীর্ণ কিতাবের এবং তোমার আগে অবতীর্ণ কিতাবের উপর ঈমান এনেছে বলে দাবী করে, কিন্তু তাগূতের কাছে বিচারপ্রার্থী হতে চায়, অথচ তাকে প্রত্যাখ্যান করার জন্য তাদেরকে নির্দেশ দেয়া হয়েছে, শয়ত্বান তাদেরকে পথভ্রষ্ট করে বহুদূরে নিয়ে যেতে চায়।",
+      "translation_bn": "তুমি কি তাদের দেখোনি, যারা দাবি করে যে—তোমার প্রতি যা নাজিল করা হয়েছে এবং তোমার পূর্বে যা নাজিল করা হয়েছিল, তার প্রতি তারা ঈমান এনেছে? তারা চায় যে, ‘তাগুত’ (অবাধ্য শক্তি)-এর কাছে নিজেদের বিচার নিয়ে যাক, অথচ তাদের নির্দেশ দেওয়া হয়েছিল তাকে অস্বীকার (কুফর) করার। আর শয়তান চায় যে, তাদের সুদূর পথভ্রষ্টতায় লিপ্ত করুক।",
       "words": [
         {
           "id": 54326,
@@ -15338,7 +15385,12 @@
         }
       ],
       "translation_en": "Have you not seen those who claim to have believed in what was revealed to you, [O Muhammad], and what was revealed before you? They wish to refer legislation to Taghut, while they were commanded to reject it; and Satan wishes to lead them far astray.",
-      "conventional_en": "Have you not seen those who claim to have believed in what was revealed to you, [O Muhammad], and what was revealed before you? They wish to refer legislation to Taghut, while they were commanded to reject it; and Satan wishes to lead them far astray."
+      "conventional_en": "Have you not seen those who claim to have believed in what was revealed to you, [O Muhammad], and what was revealed before you? They wish to refer legislation to Taghut, while they were commanded to reject it; and Satan wishes to lead them far astray.",
+      "meta_bn": "ডামি সোর্স এবং তাগুত কম্যুনিকেশন ট্র্যাপ বালাই",
+      "meta_en": "Hypocritical Arbitration Bypass and Taghut Misguidance Loop",
+      "conventional_bn": "তুমি কি তাদের দেখোনি, যারা দাবি করে যে—তোমার প্রতি যা নাজিল করা হয়েছে এবং তোমার পূর্বে যা নাজিল করা হয়েছিল, তার প্রতি তারা ঈমান এনেছে? তারা চায় যে, ‘তাগুত’ (অবাধ্য শক্তি)-এর কাছে নিজেদের বিচার নিয়ে যাক, অথচ তাদের নির্দেশ দেওয়া হয়েছিল তাকে অস্বীকার (কুফর) করার। আর শয়তান চায় যে, তাদের সুদূর পথভ্রষ্টতায় লিপ্ত করুক।",
+      "modern_translation_bn": "তোমার চিন্তাশক্তি কি সেই হিপোক্রিট ছদ্মবেশী নোডগুলোর ডাটা প্রোফাইল স্ক্যান করেনি—যারা মুখে নিজেদের ইন্টারফেসে দাবি (يَزْعُمُونَ) করে যে তারা তোমার এই পিউর রিসিভারে ডাউনলিংককৃত ফাইনাল ওওএস ম্যানুয়াল এবং তোমার পূর্বের টাইম-লাইনের ওওএসগুলোতে যা অবতীর্ণ করা হয়েছিল তার প্রতি শতভাগ সিঙ্ক বা ঈমান এনেছে? অথচ বাস্তব ব্যাক-এন্ড অ্যাকশনে তারা তীব্র চাতুর্যে এটিই চায় যে—তারা তাদের সামাজিক দ্বন্দ্ব ও আইনি ভ্যালিডেশনের জন্য আল্লাহর সোর্স কোড বাইপাস করে সরাসরি সেই ‘আত-তাগুত’ [ডিফল্ট সিস্টেম বাউন্ডারি ব্রেককারী অবাধ্য ডামি ম্যালওয়্যার প্ল্যাটফর্ম]-এর ডার্ক-চ্যানেলে বিচার বা রেফারেন্স (يَتَحَاكَمُوا إِلَى الطَّاغُوتِ) নিয়ে যাক—অথচ মেইন সার্ভারের সিকিউরিটি রুলসে তাদের কঠোর নির্দেশ দেওয়া হয়েছিল সেই অবাধ্য তাগুত সিগন্যালটিকে ওওএস থেকে সম্পূর্ণ ফিল্টার আউট বা রিজেক্ট (أَن يَكْفُرُوا بِهِ) করার। আর সেই ক্ষতিকারক বিচ্যুত এন্ট্রপি ফোর্স বা শায়তান (الشَّيْطَانُ) তীব্র কুচক্রান্তে এটিই চায় যে—তোমাদের ওওএস-কে এই পরম সোর্স কম্যুনিকেশন থেকে চিরতরে ডি-লিঙ্কড করে এক সুদূর, গভীর ও আন-রিস্টোরেবল পথভ্রষ্টতার ক্র্যাশ লুপে (أَن يُضِلَّهُمْ ضَلَالًا بَعِيدًا) লক করিয়ে দিতে;",
+      "modern_translation_en": "Have you not analyzed those who profess to believe in what has been revealed to you and what preceded you? In actuality, they seek arbitration through Taghut [rebellious illicit frameworks] despite being commanded to actively reject its validity; and Satan deliberately engineers to ensnare them within a profound, irreversible misguidance loop (ضَلَالًا بَعِيدًا)."
     },
     {
       "surah": 4,
