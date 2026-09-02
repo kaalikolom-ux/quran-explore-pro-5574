@@ -150,12 +150,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="bn">
+    <html lang="bn" className="dark">
       <head>
         <HeadContent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=JSON.parse(localStorage.getItem("quran_explorer_unified_prefs_v1")||"{}");var m=p.themeMode||(p.dark===false?"sepia":"dark");document.documentElement.classList.remove("dark","theme-sepia","theme-slate","theme-light");if(m==="dark"){document.documentElement.classList.add("dark");}else if(m==="sepia"){document.documentElement.classList.add("theme-sepia");}else if(m==="slate"){document.documentElement.classList.add("theme-slate");}else if(m==="light"){document.documentElement.classList.add("theme-light");}else{document.documentElement.classList.add("dark");}}catch(e){document.documentElement.classList.add("dark");}})();`,
+          }}
         />
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/20 selection:text-primary">

@@ -13,9 +13,13 @@ import {
   Info,
   Menu,
   X,
-  Search
+  Search,
+  Moon,
+  Sun,
+  BookOpen,
+  Sparkles
 } from "lucide-react";
-import { usePrefs } from "@/lib/prefs";
+import { usePrefs, type ThemeMode } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
@@ -72,13 +76,69 @@ function LoginDoorIcon({ className = "size-4.5" }: { className?: string }) {
 }
 
 export function SiteHeader() {
-  const { prefs, updatePref, toggleLang, lang } = usePrefs();
+  const { prefs, updatePref, toggleLang, lang, themeMode, setThemeMode } = usePrefs();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
   const routerState = useRouterState();
   const navigate = useNavigate();
   const currentPath = routerState.location.pathname;
+
+  const currentTheme: ThemeMode = themeMode || (prefs.dark ? "dark" : "sepia");
+
+  const cycleTheme = () => {
+    let next: ThemeMode = "dark";
+    if (currentTheme === "dark") next = "sepia";
+    else if (currentTheme === "sepia") next = "slate";
+    else if (currentTheme === "slate") next = "light";
+    else if (currentTheme === "light") next = "dark";
+
+    setThemeMode(next);
+
+    const themeNames: Record<ThemeMode, { bn: string; en: string }> = {
+      dark: { bn: "মিডনাইট ডার্ক", en: "Midnight Dark" },
+      sepia: { bn: "মুসহাফ সেপিয়া", en: "Mushaf Sepia" },
+      slate: { bn: "নরম স্লেট", en: "Soft Slate" },
+      light: { bn: "স্বাভাবিক লাইট", en: "Natural Light" },
+    };
+
+    toast.success(
+      lang === "bn"
+        ? `থিম: ${themeNames[next].bn}`
+        : `Theme: ${themeNames[next].en}`,
+      { duration: 1500 }
+    );
+  };
+
+  const getThemeDetails = () => {
+    switch (currentTheme) {
+      case "dark":
+        return {
+          icon: <Moon className="size-3.5 sm:size-4 text-[#58b4e8]" />,
+          name: lang === "bn" ? "মিডনাইট ডার্ক" : "Midnight Dark",
+          title: lang === "bn" ? "থিম: মিডনাইট ডার্ক (ক্লিক করলে মুসহাফ সেপিয়া হবে)" : "Theme: Midnight Dark (Click for Mushaf Sepia)",
+        };
+      case "sepia":
+        return {
+          icon: <BookOpen className="size-3.5 sm:size-4 text-[#1f6f43]" />,
+          name: lang === "bn" ? "মুসহাফ সেপিয়া" : "Mushaf Sepia",
+          title: lang === "bn" ? "থিম: মুসহাফ সেপিয়া (ক্লিক করলে নরম স্লেট হবে)" : "Theme: Mushaf Sepia (Click for Soft Slate)",
+        };
+      case "slate":
+        return {
+          icon: <Sparkles className="size-3.5 sm:size-4 text-[#2563eb]" />,
+          name: lang === "bn" ? "নরম স্লেট" : "Soft Slate",
+          title: lang === "bn" ? "থিম: নরম স্লেট (ক্লিক করলে স্বাভাবিক লাইট হবে)" : "Theme: Soft Slate (Click for Natural Light)",
+        };
+      case "light":
+      default:
+        return {
+          icon: <Sun className="size-3.5 sm:size-4 text-[#f59e0b]" />,
+          name: lang === "bn" ? "স্বাভাবিক লাইট" : "Natural Light",
+          title: lang === "bn" ? "থিম: স্বাভাবিক লাইট (ক্লিক করলে মিডনাইট ডার্ক হবে)" : "Theme: Natural Light (Click for Midnight Dark)",
+        };
+    }
+  };
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -176,6 +236,19 @@ export function SiteHeader() {
             <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
           </button>
 
+          {/* থিম পরিবর্তন বাটন (১ ক্লিকে চক্রাকারে ৪টি থিম পরিবর্তন) */}
+          <button
+            type="button"
+            onClick={cycleTheme}
+            title={getThemeDetails().title}
+            aria-label="Toggle Theme"
+            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer group"
+          >
+            <span className="transition-transform duration-200 group-hover:scale-115">
+              {getThemeDetails().icon}
+            </span>
+          </button>
+
           {/* সেটিংস পেজ বাটন */}
           <Link
             to="/settings"
@@ -261,6 +334,23 @@ export function SiteHeader() {
           })}
 
           <div className="pt-2 border-t border-border space-y-1">
+            {/* মোবাইল থিম পরিবর্তন বাটন */}
+            <button
+              type="button"
+              onClick={cycleTheme}
+              className="w-full flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted transition-all cursor-pointer"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="size-4 flex items-center justify-center">
+                  {getThemeDetails().icon}
+                </span>
+                <span>{lang === "bn" ? "থিম পরিবর্তন" : "Switch Theme"}</span>
+              </div>
+              <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
+                {getThemeDetails().name}
+              </span>
+            </button>
+
             {user && (
               <Link
                 to="/admin"
