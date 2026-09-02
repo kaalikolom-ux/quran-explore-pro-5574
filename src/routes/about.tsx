@@ -152,34 +152,48 @@ function AboutPage() {
       <div className="relative w-full max-w-4xl mx-auto">
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -left-2 -top-2 text-emerald-400 dark:text-emerald-300 animate-star-fly-1 select-none z-10 text-sm"
+          className="pointer-events-none absolute -left-2 -top-2 animate-star-fly-1 select-none z-10 text-sm"
+          style={{ color: "var(--sparkle-star1)" }}
         >
           ✦
         </span>
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -right-2 -top-2 text-cyan-300 dark:text-cyan-400 animate-star-fly-2 select-none z-10 text-sm"
+          className="pointer-events-none absolute -right-2 -top-2 animate-star-fly-2 select-none z-10 text-sm"
+          style={{ color: "var(--sparkle-star2)" }}
         >
           ✦
         </span>
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -left-2 -bottom-2 text-teal-300 dark:text-teal-400 animate-star-fly-3 select-none z-10 text-sm"
+          className="pointer-events-none absolute -left-2 -bottom-2 animate-star-fly-3 select-none z-10 text-sm"
+          style={{ color: "var(--sparkle-star3)" }}
         >
           ★
         </span>
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -right-2 -bottom-2 text-emerald-300 dark:text-emerald-400 animate-star-fly-4 select-none z-10 text-sm"
+          className="pointer-events-none absolute -right-2 -bottom-2 animate-star-fly-4 select-none z-10 text-sm"
+          style={{ color: "var(--sparkle-star4)" }}
         >
           ★
         </span>
 
-        <div className="relative z-0 rounded-3xl border border-emerald-500/40 bg-emerald-950/20 dark:bg-emerald-950/30 p-6 sm:p-8 text-center backdrop-blur-md shadow-[0_0_25px_rgba(16,185,129,0.2)] animate-sparkle-burst transition-all duration-300 space-y-3.5">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground flex items-center justify-center gap-2.5">
-            <Sparkles className="size-6 text-emerald-400 animate-pulse shrink-0" />
-            <span className="text-primary">{lang === "bn" ? "অনুবাদ পরিমার্জন ও ৪:৮২ সামঞ্জস্য নীতি" : "Translation Refinement & 4:82 Consistency Principle"}</span>
-            <Sparkles className="size-6 text-cyan-400 animate-pulse shrink-0" />
+        <div
+          className="relative z-0 rounded-3xl border p-6 sm:p-8 text-center backdrop-blur-md animate-sparkle-burst transition-all duration-300 space-y-3.5"
+          style={{
+            borderColor: "var(--sparkle-border)",
+            backgroundColor: "var(--sparkle-bg)",
+            boxShadow: "0 0 25px var(--sparkle-glow)",
+          }}
+        >
+          <h2
+            className="text-2xl sm:text-3xl font-bold tracking-tight flex items-center justify-center gap-2.5"
+            style={{ color: "var(--sparkle-text)" }}
+          >
+            <Sparkles className="size-6 animate-pulse shrink-0" style={{ color: "var(--sparkle-text)" }} />
+            <span>{lang === "bn" ? "অনুবাদ পরিমার্জন ও ৪:৮২ সামঞ্জস্য নীতি" : "Translation Refinement & 4:82 Consistency Principle"}</span>
+            <Sparkles className="size-6 animate-pulse shrink-0" style={{ color: "var(--sparkle-accent)" }} />
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-normal max-w-3xl mx-auto">
             {lang === "bn"

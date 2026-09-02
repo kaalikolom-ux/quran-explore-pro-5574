@@ -26,28 +26,32 @@ export function SparkleCtaNotice({ className = "", variant = "hero" }: SparkleCt
 
   return (
     <div className={`relative w-full max-w-xl mx-auto flex items-center justify-center ${className}`}>
-      {/* ১.৫ সেকেন্ড পরপর চারদিকে ছড়িয়ে পড়া তারাবাত্তির কণা (Emerald & Cyan Star Particles) */}
+      {/* ১.৫ সেকেন্ড পরপর চারদিকে ছড়িয়ে পড়া তারাবাত্তির কণা — থিম-অনুযায়ী রঙ */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -left-2 sm:-left-3 -top-2 text-emerald-400 dark:text-emerald-300 animate-star-fly-1 select-none z-10 text-sm"
+        className="pointer-events-none absolute -left-2 sm:-left-3 -top-2 animate-star-fly-1 select-none z-10 text-sm"
+        style={{ color: "var(--sparkle-star1)" }}
       >
         ✦
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -right-2 sm:-right-3 -top-2 text-cyan-300 dark:text-cyan-400 animate-star-fly-2 select-none z-10 text-sm"
+        className="pointer-events-none absolute -right-2 sm:-right-3 -top-2 animate-star-fly-2 select-none z-10 text-sm"
+        style={{ color: "var(--sparkle-star2)" }}
       >
         ✦
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -left-2 sm:-left-3 -bottom-2 text-teal-300 dark:text-teal-400 animate-star-fly-3 select-none z-10 text-sm"
+        className="pointer-events-none absolute -left-2 sm:-left-3 -bottom-2 animate-star-fly-3 select-none z-10 text-sm"
+        style={{ color: "var(--sparkle-star3)" }}
       >
         ★
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -right-2 sm:-right-3 -bottom-2 text-emerald-300 dark:text-emerald-400 animate-star-fly-4 select-none z-10 text-sm"
+        className="pointer-events-none absolute -right-2 sm:-right-3 -bottom-2 animate-star-fly-4 select-none z-10 text-sm"
+        style={{ color: "var(--sparkle-star4)" }}
       >
         ★
       </span>
@@ -58,16 +62,29 @@ export function SparkleCtaNotice({ className = "", variant = "hero" }: SparkleCt
         onClick={handleClick}
         className={`group relative z-30 w-full flex items-center justify-center rounded-xl border px-3 sm:px-4 py-2.5 sm:py-3.5 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-[1.015] active:scale-[0.99] animate-sparkle-burst cursor-pointer select-none text-center shadow-md ${
           isHero
-            ? "border-emerald-500/40 bg-emerald-950/40 hover:bg-emerald-900/60 hover:border-emerald-400 text-white backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.25)]"
-            : "border-primary/40 bg-primary/10 hover:bg-primary/15 hover:border-primary text-primary shadow-xs"
+            ? "backdrop-blur-md text-white"
+            : "shadow-xs"
         }`}
+        style={
+          isHero
+            ? {
+                borderColor: "var(--sparkle-border)",
+                backgroundColor: "var(--sparkle-bg)",
+                boxShadow: `0 0 20px var(--sparkle-glow)`,
+              }
+            : {
+                borderColor: "var(--sparkle-border)",
+                backgroundColor: "var(--sparkle-bg)",
+                color: "var(--sparkle-text)",
+              }
+        }
       >
         <div className="flex items-center justify-center gap-2 sm:gap-2.5 w-full text-center mx-auto">
-          <Sparkles className="size-3.5 sm:size-4 shrink-0 text-emerald-400 animate-pulse" />
+          <Sparkles className="size-3.5 sm:size-4 shrink-0 animate-pulse" style={{ color: "var(--sparkle-text)" }} />
           <span className="leading-normal drop-shadow-xs font-sans text-center font-medium">
             {text}
           </span>
-          <Sparkles className="size-3.5 sm:size-4 shrink-0 text-cyan-300 animate-pulse" />
+          <Sparkles className="size-3.5 sm:size-4 shrink-0 animate-pulse" style={{ color: "var(--sparkle-accent)" }} />
         </div>
       </button>
     </div>

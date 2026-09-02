@@ -98,6 +98,18 @@
   --sidebar-ring: #125b68;
 
   --gradient-hero: linear-gradient(180deg, #051317 0%, #0d2329 100%);
+
+  /* Sparkle burst animation colors — sepia default */
+  --sparkle-glow: rgba(18, 91, 104, 0.6);
+  --sparkle-glow-accent: rgba(20, 120, 100, 0.4);
+  --sparkle-border: rgba(18, 91, 104, 0.4);
+  --sparkle-bg: rgba(18, 91, 104, 0.08);
+  --sparkle-text: #125b68;
+  --sparkle-accent: #1a8a7a;
+  --sparkle-star1: #2a9d8f;
+  --sparkle-star2: #1a7a8f;
+  --sparkle-star3: #3aab9f;
+  --sparkle-star4: #2a8d7f;
 }
 
 /* ১. মুসহাফ ওয়ার্ম পেপার / সেপিয়া (চোখের জন্য সেরা প্রশান্তিদায়ক থিম) */
@@ -129,6 +141,17 @@
   --sidebar-accent-foreground: #125b68;
   --sidebar-border: #e2d3bb;
   --sidebar-ring: #125b68;
+
+  --sparkle-glow: rgba(180, 120, 20, 0.55);
+  --sparkle-glow-accent: rgba(200, 140, 40, 0.4);
+  --sparkle-border: rgba(160, 100, 20, 0.45);
+  --sparkle-bg: rgba(160, 100, 20, 0.1);
+  --sparkle-text: #8b5e0a;
+  --sparkle-accent: #a67212;
+  --sparkle-star1: #c08820;
+  --sparkle-star2: #b07818;
+  --sparkle-star3: #d09830;
+  --sparkle-star4: #a06810;
 }
 
 /* ২. নরম স্লেট / মিস্ট (ব্লু-লাইট ফিল্টার ব্যাকগ্রাউন্ড) */
@@ -160,6 +183,17 @@
   --sidebar-accent-foreground: #135d6c;
   --sidebar-border: #cadde2;
   --sidebar-ring: #135d6c;
+
+  --sparkle-glow: rgba(19, 93, 108, 0.55);
+  --sparkle-glow-accent: rgba(30, 120, 160, 0.4);
+  --sparkle-border: rgba(19, 93, 108, 0.4);
+  --sparkle-bg: rgba(19, 93, 108, 0.08);
+  --sparkle-text: #135d6c;
+  --sparkle-accent: #1888a0;
+  --sparkle-star1: #2098b0;
+  --sparkle-star2: #1878a0;
+  --sparkle-star3: #28a8c0;
+  --sparkle-star4: #1a88a0;
 }
 
 /* ৩. স্বাভাবিক লাইট মোড */
@@ -191,6 +225,17 @@
   --sidebar-accent-foreground: #156676;
   --sidebar-border: #d0e3e7;
   --sidebar-ring: #156676;
+
+  --sparkle-glow: rgba(21, 102, 118, 0.55);
+  --sparkle-glow-accent: rgba(14, 116, 144, 0.4);
+  --sparkle-border: rgba(21, 102, 118, 0.4);
+  --sparkle-bg: rgba(21, 102, 118, 0.08);
+  --sparkle-text: #156676;
+  --sparkle-accent: #0e7490;
+  --sparkle-star1: #1a9e8f;
+  --sparkle-star2: #0e8490;
+  --sparkle-star3: #20b0a0;
+  --sparkle-star4: #1a8e80;
 }
 
 /* ৪. ডিপ মিডনাইট অ্যাকোয়া-পেট্রোলিয়াম ডার্ক মোড */
@@ -228,6 +273,17 @@
   --sidebar-ring: #1a9e8f;
 
   --gradient-hero: linear-gradient(180deg, #030b0e 0%, #081820 100%);
+
+  --sparkle-glow: rgba(16, 185, 129, 0.6);
+  --sparkle-glow-accent: rgba(6, 182, 212, 0.45);
+  --sparkle-border: rgba(16, 185, 129, 0.4);
+  --sparkle-bg: rgba(16, 185, 129, 0.12);
+  --sparkle-text: #34d399;
+  --sparkle-accent: #22d3ee;
+  --sparkle-star1: #6ee7b7;
+  --sparkle-star2: #67e8f9;
+  --sparkle-star3: #5eead4;
+  --sparkle-star4: #6ee7b7;
 }
 
 @layer base {
@@ -366,27 +422,27 @@ blockquote::before {
   0% {
     opacity: 0.85;
     transform: scale(0.99);
-    filter: drop-shadow(0 0 0px rgba(16, 185, 129, 0));
+    filter: drop-shadow(0 0 0px transparent);
   }
   30% {
     opacity: 1;
     transform: scale(1.015);
-    filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.75)) drop-shadow(0 0 22px rgba(6, 182, 212, 0.5));
+    filter: drop-shadow(0 0 14px var(--sparkle-glow)) drop-shadow(0 0 22px var(--sparkle-glow-accent));
   }
   60% {
     opacity: 0.95;
     transform: scale(1);
-    filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4));
+    filter: drop-shadow(0 0 6px var(--sparkle-glow));
   }
   85% {
     opacity: 1;
     transform: scale(1.012);
-    filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8)) drop-shadow(0 0 18px rgba(56, 189, 248, 0.5));
+    filter: drop-shadow(0 0 12px var(--sparkle-glow)) drop-shadow(0 0 18px var(--sparkle-glow-accent));
   }
   100% {
     opacity: 0.85;
     transform: scale(0.99);
-    filter: drop-shadow(0 0 0px rgba(16, 185, 129, 0));
+    filter: drop-shadow(0 0 0px transparent);
   }
 }
 

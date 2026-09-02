@@ -279,7 +279,7 @@ function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
-      {/* সুরা তালিকা ও সার্চ */}
+          {/* সুরা তালিকা ও সার্চ */}
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
         <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -322,37 +322,51 @@ function HomePage() {
 
           {/* অনুবাদ উন্নয়ন ও ৪:৮২ সম্পর্কিত নোটিশ বক্স (Theme Sparkle Blast) */}
           <div className="relative mt-6 w-full">
-            {/* চার কোণায় উড়ে যাওয়া থিম তারাবাত্তি */}
+            {/* চার কোণায় উড়ে যাওয়া থিম তারাবাত্তি */}
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -left-2 -top-2 text-emerald-400 dark:text-emerald-300 animate-star-fly-1 select-none z-10 text-sm"
+              className="pointer-events-none absolute -left-2 -top-2 animate-star-fly-1 select-none z-10 text-sm"
+              style={{ color: "var(--sparkle-star1)" }}
             >
               ✦
             </span>
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -right-2 -top-2 text-cyan-300 dark:text-cyan-400 animate-star-fly-2 select-none z-10 text-sm"
+              className="pointer-events-none absolute -right-2 -top-2 animate-star-fly-2 select-none z-10 text-sm"
+              style={{ color: "var(--sparkle-star2)" }}
             >
               ✦
             </span>
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -left-2 -bottom-2 text-teal-300 dark:text-teal-400 animate-star-fly-3 select-none z-10 text-sm"
+              className="pointer-events-none absolute -left-2 -bottom-2 animate-star-fly-3 select-none z-10 text-sm"
+              style={{ color: "var(--sparkle-star3)" }}
             >
               ★
             </span>
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -right-2 -bottom-2 text-emerald-300 dark:text-emerald-400 animate-star-fly-4 select-none z-10 text-sm"
+              className="pointer-events-none absolute -right-2 -bottom-2 animate-star-fly-4 select-none z-10 text-sm"
+              style={{ color: "var(--sparkle-star4)" }}
             >
               ★
             </span>
 
-            <div className="relative z-0 rounded-2xl border border-emerald-500/40 bg-emerald-950/20 dark:bg-emerald-950/30 p-4 sm:p-5 text-center backdrop-blur-md shadow-[0_0_22px_rgba(16,185,129,0.2)] animate-sparkle-burst transition-all duration-300">
-              <div className="flex items-center justify-center gap-2 mb-2 text-emerald-500 dark:text-emerald-400 font-bold text-sm sm:text-base">
-                <Sparkles className="size-4 text-emerald-400 animate-pulse shrink-0" />
+            <div
+              className="relative z-0 rounded-2xl border p-4 sm:p-5 text-center backdrop-blur-md animate-sparkle-burst transition-all duration-300"
+              style={{
+                borderColor: "var(--sparkle-border)",
+                backgroundColor: "var(--sparkle-bg)",
+                boxShadow: "0 0 22px var(--sparkle-glow)",
+              }}
+            >
+              <div
+                className="flex items-center justify-center gap-2 mb-2 font-bold text-sm sm:text-base"
+                style={{ color: "var(--sparkle-text)" }}
+              >
+                <Sparkles className="size-4 animate-pulse shrink-0" style={{ color: "var(--sparkle-text)" }} />
                 <span>{lang === "bn" ? "অনুবাদ পরিমার্জন ও ৪:৮২ সামঞ্জস্য নীতি" : "Translation Refinement & 4:82 Consistency Principle"}</span>
-                <Sparkles className="size-4 text-cyan-400 animate-pulse shrink-0" />
+                <Sparkles className="size-4 animate-pulse shrink-0" style={{ color: "var(--sparkle-accent)" }} />
               </div>
               <p className="text-xs sm:text-sm text-foreground/90 dark:text-foreground/90 leading-relaxed font-normal">
                 {lang === "bn"
