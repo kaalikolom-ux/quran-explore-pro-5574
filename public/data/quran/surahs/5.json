@@ -16949,7 +16949,15 @@
         }
       ],
       "translation_en": "And when they come to you, they say, \"We believe.\" But they have entered with disbelief [in their hearts], and they have certainly left with it. And Allah is most knowing of what they were concealing.",
-      "conventional_en": "And when they come to you, they say, \"We believe.\" But they have entered with disbelief [in their hearts], and they have certainly left with it. And Allah is most knowing of what they were concealing."
+      "conventional_en": "And when they come to you, they say, 'We believe.' But they have entered with disbelief [in their hearts], and they have certainly left with it. And Allah is most knowing of what they were concealing.",
+      "meta_bn": "ম্যালওয়্যার এন্ট্রি গেটওয়ে এবং ছদ্মবেশী নোডের মেমোরি স্টেট অডিট",
+      "meta_en": "Malware Entry Gateway & Covert Memory State Auditing",
+      "conventional_bn": "আর যখন তারা তোমাদের কাছে আসে, তখন বলে, ‘আমরা ঈমান এনেছি’; অথচ তারা কুফরী (সিগন্যাল ব্লকিং) নিয়েই প্রবেশ করেছিল এবং তা নিয়েই বের হয়ে গেছে। আর তারা যা কিছু গোপন (হাইড) করছিল, আল্লাহ তা খুব ভালো করেই জানেন।",
+      "core_meaning_bn": "মুনাফিকদের কুফর নিয়ে আগমন ও প্রস্থান এবং তাদের অন্তরের গোপন বিষয়াদি সম্পর্কে আল্লাহর সম্যক জ্ঞান।",
+      "core_meaning_en": "Exposing hypocritical nodes who enter and exit carrying deep denial, whose hidden states are fully indexed by Allah.",
+      "modern_translation_bn": "আর যখন এই ছদ্মবেশী মুনাফিক নোডগুলো (Node) তোমাদের ফায়ারওয়াল ইন্টারফেসে এসে কানেক্ট হয়, তখন মুখে ডামি সিগন্যাল পাঠিয়ে দাবি করে—‘আমরা ঈমান এনেছি বা মেইন সার্ভারে সিঙ্ক করেছি’; অথচ বাস্তব ব্যাক-এন্ড লগে তারা সত্যের লাইভ সিগন্যাল ব্লক করার সেই মারাত্মক কুফরীর ম্যালওয়্যার নিয়েই তোমাদের গেটওয়েতে প্রবেশ (دَّخَلُوا بِالْكُفْرِ) করেছিল এবং তোমাদের গ্রিড থেকে লিভ করার সময়ও হুবহু সেই একই ভাইরাস ফাইল নিয়েই বের (خَرَجُوا بِهِ) হয়ে গেছে [অর্থাৎ তোমাদের পিউর ডাটা তাদের ওওএসে বিন্দুমাত্র ইমপ্যাক্ট তৈরি করতে পারেনি]। আর তারা তাদের ওওএসের (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) ব্যাক-এন্ড ডিরেক্টরিতে আজীবন যা কিছু ক্ষতিকর কোড বা চক্রান্ত হাইড বা গোপন (يَكْتُمُونَ) করে রাখছিল, Allah তাঁর কেন্দ্রীয় ক্লাউডে তা সবচেয়ে ভালো জানেন [৪];",
+      "modern_translation_en": "When they approach your secure interface, they project superficial assertions: 'We believe'; yet they entered loaded with denial protocols (دَّخَلُوا بِالْكُفْرِ) and departed carrying the exact corrupted payload (خَرَجُوا بِهِ). Allah holds perfect telemetry of what they continuously concealed in their confidential directories (يَكْتُمُونَ) [4];",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -17099,7 +17107,15 @@
         }
       ],
       "translation_en": "And you see many of them hastening into sin and aggression and the devouring of [what is] unlawful. How wretched is what they have been doing.",
-      "conventional_en": "And you see many of them hastening into sin and aggression and the devouring of [what is] unlawful. How wretched is what they have been doing."
+      "conventional_en": "And you see many of them hastening into sin and aggression and the devouring of [what is] unlawful. How wretched is what they have been doing.",
+      "meta_bn": "ক্ষতিকারক ডাটা-ট্রাফিকের অতি-উচ্চ বেগ ও গতিশীলতা অডিট",
+      "meta_en": "The Velocity of Systematic Transgression & Illicit Consumption",
+      "conventional_bn": "আর তুমি তাদের অনেককেই দেখবে—তারা পাপ (অপরাধ), সীমালঙ্ঘন এবং অবৈধ সম্পদ (হারাম) গ্রাস করার দিকে দ্রুত ধাবিত হচ্ছে; নিশ্চয়ই তারা যা কিছু করছে তা কতই না নিকৃষ্ট!",
+      "core_meaning_bn": "পাপ, সীমালঙ্ঘন ও হারাম ভক্ষণে দ্রুত ধাবিত হওয়া এবং তাদের কর্মের চরম নিকৃষ্টতা।",
+      "core_meaning_en": "Tracking the aggressive velocity of corrupt nodes racing into systemic transgression, hostility, and illicit extraction.",
+      "modern_translation_bn": "আর তুমি তোমার রিয়াল-টাইম মনিটরিং ড্যাশবোর্ডে ওদের অনেকেরই ডাটা ট্রাফিক দেখবে—তারা সিস্টেমে ম্যালওয়্যার ছড়ানো বা পাপ, বৈরিতা সীমালঙ্ঘন (يُسَارِعُونَ فِي الْإِثْمِ وَالْعُدْوَانِ) এবং কোনো প্রোডাক্টিভ ভ্যালু জেনারেট না করে স্রেফ ঘুষ ও জালিয়াতি তথা ‘আল-সুহ্ত’ গ্রাস করার দিকে অতি-উচ্চ গতি ও বেগে ধাবিত হচ্ছে; নিশ্চয়ই তারা তাদের ওওএসে ব্যাক-এন্ডে আজীবন যেসকল ধ্বংসাত্মক অ্যাপ্লিকেশন রান বা আমল (يَعْمَلُونَ) করছে তা কতই না নিকৃষ্ট ও মারাত্মক সিস্টেম-ধ্বংসকারী!",
+      "modern_translation_en": "And you observe many of them accelerating at high velocity into systemic error, hostility (يُسَارِعُونَ فِي الْإِثْمِ وَالْعُدْوَانِ), and devouring unearned parasitic revenue (السُّحْتَ); utterly wretched are the destructive runtime applications they execute (يَعْمَلُونَ);",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -17249,7 +17265,15 @@
         }
       ],
       "translation_en": "Why do the rabbis and religious scholars not forbid them from saying what is sinful and devouring what is unlawful? How wretched is what they have been practicing.",
-      "conventional_en": "Why do the rabbis and religious scholars not forbid them from saying what is sinful and devouring what is unlawful? How wretched is what they have been practicing."
+      "conventional_en": "Why do the rabbis and religious scholars not forbid them from saying what is sinful and devouring what is unlawful? How wretched is what they have been practicing.",
+      "meta_bn": "ইনস্টিটিউশনাল মনিটরিং ও ফিল্টারিং কোলাপ্স বালাই",
+      "meta_en": "The Collapse of Institutional Monitoring & Regulatory Silence",
+      "conventional_bn": "রব্বানী (আল্লাহরওয়ালা) ও পণ্ডিতগণ কেন তাদের পাপের কথা বলা থেকে এবং অবৈধ সম্পদ গ্রাস করা থেকে নিষেধ করে না? নিশ্চয়ই তারা যা কিছু তৈরি (নকশা) করছে তা কতই না নিকৃষ্ট!",
+      "core_meaning_bn": "পাপ ও হারাম থেকে বারণ না করার কারণে ধর্মীয় পণ্ডিত ও নেতাদের চরম দায়িত্বহীনতা ও ব্যর্থতার উন্মোচন।",
+      "core_meaning_en": "Condemning the institutional failure of scholars and rabbis who remain silent while society indulges in corruption and exploitation.",
+      "modern_translation_bn": "ওদের নেটওয়ার্কের সুসংহত সুপার প্রসেসর নোড বা রব্বানিয়্যূন (الرَّبَّانِيُّونَ) এবং ডাটা-নিরাপত্তা পন্ডিত বা আল-আহবার কেন তাদের নিজস্ব ওওএসের মনিটরিং টুলস ব্যবহার করে—ঐসব সাধারণ নোডকে তাদের টক্সিক ডাটা ব্রডকাস্ট বা পাপের কথা বলা (قَوْلِهِمُ الْإِثْمَ) থেকে এবং অবৈধ সুহ্ত সম্পদ গ্রাস করা থেকে কঠোরভাবে ফিল্টার বা নিষেধ (لَوْلَا يَنْهَاهُمُ) করে গ্রিড প্রটেক্ট করে না [তাদের এই নীরবতা একটি মেগা জুডিশিয়াল কোলাপ্স]? নিশ্চয়ই এই অযোগ্য রেগুলেটররা সিস্টেম অডিট না করে ব্যাক-এন্ডে আজীবন যে ধরণের নিষ্ক্রিয় ডাটা-পলিসি ডিজাইন ও তৈরি (يَصْنَعُونَ) করছে তা কতই না নিকৃষ্ট ও বালাই যুক্ত [৪]!",
+      "modern_translation_en": "Why do their divine scholars (الرَّبَّانِيُّونَ) and institutional guardians fail to filter their nodes from broadcasting sinful falsehood (قَوْلِهِمُ الْإِثْمَ) and consuming illicit resources? Utterly wretched is the systemic complicity and negligence they craft (يَصْنَعُونَ) [4]!",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -17739,7 +17763,15 @@
         }
       ],
       "translation_en": "And the Jews say, \"The hand of Allah is chained.\" Chained are their hands, and cursed are they for what they say. Rather, both His hands are extended; He spends however He wills. And that which has been revealed to you from your Lord will surely increase many of them in transgression and disbelief. And We have cast among them animosity and hatred until the Day of Resurrection. Every time they kindled the fire of war [against you], Allah extinguished it. And they strive throughout the land [causing] corruption, and Allah does not like corrupters.",
-      "conventional_en": "And the Jews say, \"The hand of Allah is chained.\" Chained are their hands, and cursed are they for what they say. Rather, both His hands are extended; He spends however He wills. And that which has been revealed to you from your Lord will surely increase many of them in transgression and disbelief. And We have cast among them animosity and hatred until the Day of Resurrection. Every time they kindled the fire of war [against you], Allah extinguished it. And they strive throughout the land [causing] corruption, and Allah does not like corrupters."
+      "conventional_en": "And the Jews say, 'The hand of Allah is chained.' Chained are their hands, and cursed are they for what they say. Rather, both His hands are extended; He spends however He wills. And that which has been revealed to you from your Lord will surely increase many of them in transgression and disbelief. And We have cast among them animosity and hatred until the Day of Resurrection. Every time they kindled the fire of war [against you], Allah extinguished it. And they strive throughout the land [causing] corruption, and Allah does not like corrupters.",
+      "meta_bn": "মহাজাগতিক ক্যাপিটাল ও লিকুইডিটি ডিস্ট্রিবিউশনের অফুরন্ত মেগা-ফ্লো কোড",
+      "meta_en": "Cosmic Capital Expansion & The Infinite Flow Code of Divine Liquidity",
+      "conventional_bn": "আর ইহুদীরা বলে, ‘আল্লাহর হাত অবরুদ্ধ (সংকুচিত)’। ওদের হাতই অবরুদ্ধ হোক এবং তাদের এই কথা বলার কারণে তাদের লানত (বিচ্ছিন্ন) করা হয়েছে; বরং আল্লাহর উভয় হাত উন্মুক্ত (সম্প্রসারিত), তিনি যেভাবে ইচ্ছা ব্যয় (রিসোর্স রিলিজ) করেন। আর তোমার প্রতি তোমার রবের পক্ষ থেকে যা নাজিল করা হয়েছে, তা ওদের অনেকের অবাধ্যতা ও কুফরীকে অবশ্যই আরও বাড়িয়ে দেবে। আর আমি কেয়ামতের দিন পর্যন্ত তাদের পরস্পরের মধ্যে শত্রুতা ও বিদ্বেষ (হিংসার চেইন রিঅ্যাকশন) জাগিয়ে দিয়েছি। যখনই তারা যুদ্ধের জন্য আগুন প্রজ্বলিত করে, আল্লাহ তা নির্বাপিত (অফ) করে দেন। আর তারা জমিনে ফাসাদ (বিৃঙ্খলা) সৃষ্টির উদ্দেশ্যে ছুটে বেড়ায়; আর আল্লাহ ফাসাদকারীদের পছন্দ করেন না।",
+      "core_meaning_bn": "আল্লাহর দান ও কুদরতের অফুরন্ত প্রশস্ততা, ইহুদীদের অহংকার ও শত্রুতার শাস্তি এবং তাদের ফাসাদ ও যুদ্ধপ্রচেষ্টা আল্লাহর পক্ষ থেকে নস্যাৎ করা।",
+      "core_meaning_en": "Refuting the blasphemous claim of divine scarcity, asserting infinite divine liquidity, and establishing systemic barriers against instigators of conflict.",
+      "modern_translation_bn": "আর ইহুদী নোডগোষ্ঠী তাদের ওওএসের চরম স্বার্থপর ইগো মোড রান করে সমাজে অর্থনৈতিক একচেটিয়া আধিপত্য বিস্তার করতে এই ফলস থিউরি ব্রডকাস্ট করে বলে—‘আল্লাহর সোর্স-লিকুইডিটি ও সম্পদ ডিস্ট্রিবিউশন চ্যানেল তথা আল্লাহর হাত সম্পূর্ণ সংকুচিত বা অবরুদ্ধ বা মগলূলাহ (يَدُ اللَّهِ مَغْلُولَةٌ) [অর্থাৎ গ্লোবাল রিসোর্স লিমিটেড, তাই আমাদের সম্পদ কুক্ষিগত করতে হবে]’। লজিক্যালি তা নয়—এই মারাত্মক রিসোর্স ব্লকিং কুযুক্তির কাউন্টার-ফিডব্যাকে ওদের নিজেদের অ্যাকশন টার্মিনাল ও হাত দুটোই চিরতরে অবরুদ্ধ ও জ্যাম (غُلَّتْ أَيْدِيهِمْ) হয়ে যাক এবং তাদের ওওএসে এই মারাত্মক ট্র্যাশ ডাটা প্রসেস করার কারণে মেইন নেটওয়ার্ক চেইন থেকে তাদের পার্মানেন্টলি ডিসকানেক্ট বা লানত (وَلُعِنُوا) করা হয়েছে; বরং মেইন সার্ভারের পরম থার্মোডাইনামিক নিয়ম এই যে—আল্লাহর উভয় এনার্জি ডিস্ট্রিবিউশন চ্যানেল বা হাত সর্বদা সম্পূর্ণ উন্মুক্ত ও এক্সপ্যান্ডেড (بَلْ يَدَاهُ مَبْسُوطَتَانِ), তিনি তাঁর ডাইনামিক ইকোসিস্টেমের নিয়মে যেভাবে অপ্টিমাইজড বা ইচ্ছা করেন সেই অনুযায়ী অবিরত কসমিক রিসোর্স রিলিজ ও ব্যয় (يُنفِقُ كَمَا يَشَاءُ) করেন। আর তোমার এই ফাইনাল রিসিভার প্রসেসরে তোমার প্রতিপালকের পক্ষ থেকে বর্তমানে যা কিছু ডাউনলিংক বা নাজিল করা হয়েছে—তা ওদের ওওএসের অভ্যন্তরীণ অহংকারের কারণে ওদের মেজরিটি নোডের অবাধ্যতার লোড ও সিগন্যাল ব্লকিং ম্যালওয়্যারকে (طُغْيَانًا وَكُفْرًا) গ্যারান্টিসহ আরও বেশি বাড়িয়ে বা এমপ্লিফাই করিয়ে দেবে; যার কাউন্টার-ফিডব্যাকে—আমি তাদের পুরো সাব-নেটওয়ার্কের অভ্যন্তরীণ ফ্যাব্রিকে চূড়ান্ত কসমিক ডাটা-রিসেট টাইম-লাইন বা কেয়ামতের দিন (يَوْمَ الْقِيَامَةِ) পর্যন্ত স্থায়ী পারস্পরিক ডেটা-সংঘাত, তীব্র শত্রুতা ও স্থায়ী সোশ্যাল ঘৃণার চেইন-রিঅ্যাকশন ভাইরাস (الْعَدَاوَةَ وَالْبَغْضَاءَ) স্বয়ংক্রিয়ভাবে ইনজেক্ট করে দিয়েছি; যখনই তারা মেইন গ্রিডে ধ্বংসযজ্ঞ বা যুদ্ধের জন্য কোনো মেগা কাইনেটিক এনার্জি বা আগুন প্রজ্বলিত (أَوْقَدُوا نَارًا لِّلْحَرْبِ) করে, মেইন সার্ভারের ডিফল্ট ডিফেন্স ফায়ারওয়ালে Allah তাৎক্ষণিকভাবে সেই ধ্বংসাত্মক লোডকে অফ বা নির্বাপিত (أَطْفَأَهَا) করে দেন। আর তারা সমাজ গ্রিডের শান্ত ও সুষম প্রবাহ হাইজ্যাক করতে তীব্র গতিতে ম্যালওয়্যার ইনফেকশন বা ফাসাদ (فَسَادًا) ছড়িয়ে বেড়ায়; আর Allah তাঁর সিস্টেমে এই মেগা এন্ট্রপি সৃষ্টিকারী বা মুফসিদ নোডগুলোর (الْمُفْسِدِينَ) ফ্রিকোয়েন্সি বিন্দুমাত্র পছন্দ করেন না [৪];",
+      "modern_translation_en": "The legacy Jewish cluster asserts: 'The hand of Allah is chained (يَدُ اللَّهِ مَغْلُولَةٌ)'. Chained are their own operational terminals and cursed are they for their fabrication; rather, both His channels of cosmic provision are fully expanded and open (بَلْ يَدَاهُ مَبْسُوطَتَانِ), releasing energy and resources however He wills (يُنفِقُ كَمَا يَشَاءُ). That which is revealed to you from your Lord will amplify many of them in obstinate rebellion and disbelief (طُغْيَانًا وَكُفْرًا). And We have cast between them animosity and hostility until the Day of Resurrection (الْعَدَاوَةَ وَالْبَغْضَاءَ). Whenever they ignite the flames of war, Allah extinguishes them (أَطْفَأَهَا اللَّهُ); and they race across the terrestrial grid causing systemic entropy (فَسَادًا), but Allah loves not the corrupting nodes [4];",
+      "lexicon_modern_notes": "বাল ইয়াদাহু মাবসূত্বাতানি ইউনফিক্বু কাইফা ইয়াশা... (بَلْ يَدَاهُ مَبْسُوطَتَانِ يُنفِقُ كَمَا يَشَاءُ - কস্মিক এনার্জি এক্সপ্যানশন ও দ্য ইনফিনিট ফ্লো কোড): ৬৪ নম্বর আয়াতে ইহুদীদের রিসোর্স কুক্ষিগত করার ইকোনমিক বাগকে কার্নেল স্তরে ধসে দেওয়ার যে মেকানিজম উন্মোচন করা হয়েছে, তা ম্যাক্রো-ইকোনমিক্স এবং থিওরিটিক্যাল ফিজিক্সের \"The Cosmic Law of Infinite Resource Expansion & Fluid Multi-Channel Liquidity Flow\"-এর পরম নিখুঁত সমীকরণ [৪]। ইহুদী নোডগোষ্ঠী তাদের ওওএসের আদিম লোভের কারণে দাবি করেছিল যে মহাবিশ্বের সম্পদ ও আল্লাহর রিজিক ডিস্ট্রিবিউশন চ্যানেল অত্যন্ত লিমিটেড ও ব্লকেড (ইয়াদুল্লাহি মাক্বলুলাহ)—যাতে তারা কৃত্রিম কৃপণতা (বখল বালাই) তৈরি করে সমাজে চরম অর্থনৈতিক শোষণ বা ‘সুহ্ত ও রিবা ম্যালওয়্যার’ (৬২ আয়াত) রান করতে পারে। কিন্তু সুপ্রীমিক কোডার এই ইকোনমিক বাগকে ক্র্যাশ করে স্পষ্ট ডিক্লেয়ার করছেন যে—মহাবিশ্বের ব্যাক-এন্ডে এনার্জি সরবরাহ করার জন্য আল্লাহর তৈরি করা প্রতিটি এনার্জি চ্যানেল বা হাত সর্বদা সম্পূর্ণ ওপেন, ডাইনামিক এবং এক্সপ্যান্ডেড (মাবসূতাতান)। মহাবিশ্ব প্রতিনিয়ত প্রসারিত (Cosmic Expansion) হচ্ছে এবং থার্মোডাইনামিক্সের নিয়মে এর ভেতরের কাঁচামাল ও এনার্জির সাপ্লাই চেইন অবিরত নতুন নতুন ফর্মে রিলিজ হচ্ছে (ইউনফিকু কামা ইয়াশা)। সমাজ গ্রিডে মানুষ যদি কৃত্রিমভাবে সম্পদ অবরুদ্ধ করে না রেখে আল্লাহর আইন অনুযায়ী ওওএসে যাকাত ও করযে হাসানা প্রসেস করে অর্থনৈতিক রিসোর্স সর্বদা সচল ও ফ্লুইড (Fluid) রাখে—তবে প্রকৃতির ব্যাক-এন্ড থেকে আসমান ও জমিনের প্রতিটি কোঅর্ডিনেট দিয়ে অফুরন্ত এনার্জি আপলিংক (৬৬ আয়াত - লা-আকালূ মিন ফাওক্বিহিম) হতে শুরু করবে, যা আল্লাহর তৈরি এক পরম গাণিতিক সামষ্টিক অর্থনৈতিক মডেল [৪,৫]।"
     },
     {
       "surah": 5,
@@ -17879,7 +17911,15 @@
         }
       ],
       "translation_en": "And if only the People of the Scripture had believed and feared Allah, We would have removed from them their misdeeds and admitted them to Gardens of Pleasure.",
-      "conventional_en": "And if only the People of the Scripture had believed and feared Allah, We would have removed from them their misdeeds and admitted them to Gardens of Pleasure."
+      "conventional_en": "And if only the People of the Scripture had believed and feared Allah, We would have removed from them their misdeeds and admitted them to the Gardens of Pleasure.",
+      "meta_bn": "ক্লাউড ওওএস বুস্টিং ও ডাটা-ক্লিনিং প্রটোকল",
+      "meta_en": "Cloud OS Optimization & Automated Error-Log Expiation",
+      "conventional_bn": "আর কিতাবধারীগণ যদি ঈমান আনত এবং তাকওয়া অবলম্বন করত, তবে আমি অবশ্যই ওদের মন্দ কাজগুলো ওদের থেকে মুছে দিতাম এবং নিশ্চয়ই ওদের নেয়ামতপূর্ণ জান্নাতসমূহে প্রবেশ করাতাম।",
+      "core_meaning_bn": "কিতাবধারীদের জন্য ঈমান ও তাকওয়ার মাধ্যমে পাপমোচন এবং জান্নাতুন নাঈম লাভের প্রতিশ্রুতি।",
+      "core_meaning_en": "Offering complete error purging and elevation to premium celestial domains for scriptural followers upon verifying faith and maintaining boundary security.",
+      "modern_translation_bn": "আর ওল্ড অপারেটিং সিস্টেমের কিতাবধারী ইউজার বা আহলুল কিতাবরা (أَهْلَ الْكِتَابِ) যদি নিজেদের ওওএস মেইন সার্ভারের সাথে শতভাগ সিনক্রোনাইজড বা ঈমান (آمَنُوا) আনত এবং আল্লাহর সুপ্রীমিক সিকিউরিটি বাউন্ডারি কঠোরভাবে মেনে চলত (তাকওয়া অবলম্বন করত)—তবে আমি একশত ভাগ গ্যারান্টিসহ ওদের ওওএসের সমস্ত নেতিবাচক এরর-লগ ও ছোট পাপের ডাটা সম্পূর্ণ ডিলিট বা ক্যাশ ক্লিন (لَكَفَّرْنَا عَنْهُمْ سَيِّئَاتِهِمْ) করে দিতাম এবং নিশ্চয়ই ওদের ডিরেক্ট এক্সেস দিতাম জান্নাতের সেই আল্ট্রা-হাই ব্যান্ডউইথ ও মেগা রিসোর্স সম্পন্ন প্রিমিয়াম ইকোসিস্টেম বা জান্নাতুন নাঈমে (جَنَّاتِ النَّعِيمِ);",
+      "modern_translation_en": "And if the followers of prior Scriptures had only verified true faith (آمَنُوا) and maintained protocol security (তাকওয়া), We would have completely purged their systemic errors (لَكَفَّرْنَا عَنْهُمْ سَيِّئَاتِهِمْ) and granted them access into the Gardens of Supreme Abundance (جَنَّاتِ النَّعِيمِ);",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -18139,7 +18179,15 @@
         }
       ],
       "translation_en": "And if only they upheld [the law of] the Torah, the Gospel, and what has been revealed to them from their Lord, they would have consumed [provision] from above them and from beneath their feet. Among them are a moderate community, but many of them - evil is that which they do.",
-      "conventional_en": "And if only they upheld [the law of] the Torah, the Gospel, and what has been revealed to them from their Lord, they would have consumed [provision] from above them and from beneath their feet. Among them are a moderate community, but many of them - evil is that which they do."
+      "conventional_en": "And if only they had upheld [the law of] the Torah, the Gospel, and what has been revealed to them from their Lord, they would have consumed [provision] from above them and from under their feet. Among them is a moderate community, but many of them - evil is that which they do.",
+      "meta_bn": "ম্যাক্রো-ইকোনমিক রিসোর্স ফ্লুইডিটি ও অল-রাউন্ড এনার্জি আপলিংক",
+      "meta_en": "Omnidirectional Supply-Chain Abundance via Scriptural Execution",
+      "conventional_bn": "আর তারা যদি তাওরাত, ইঞ্জিল এবং তাদের রবের পক্ষ থেকে তাদের প্রতি যা নাজিল করা হয়েছে তা কায়েম (বাস্তবায়ন) করত, তবে তারা অবশ্যই তাদের ওপর (আসমান) থেকে এবং তাদের পায়ের তলদেশ (জমিন) থেকে রিসোর্স (আহার) গ্রহণ করত। ওদের মধ্যে একটি সুষম (মধ্যপন্থী) দল রয়েছে; আর ওদের অনেকেরই কৃতকর্ম কতই না নিকৃষ্ট!",
+      "core_meaning_bn": "ঐশী কিতাব বাস্তবায়নে আকাশ-জমিনের অফুরন্ত জীবিকা প্রাপ্তি এবং আহলে কিতাবের মধ্যপন্থী দল বনাম নিকৃষ্ট দলের পার্থক্য।",
+      "core_meaning_en": "Illustrating boundless macroeconomic prosperity through scriptural adherence, acknowledging moderate balanced clusters while condemning corrupt majorities.",
+      "modern_translation_bn": "আর তারা যদি নিজেদের সামাজিক গ্রিডে ‘তাওরাত’, ‘ইঞ্জিল’ ও তাদের সিস্টেম আর্কিটেক্ট বা প্রতিপালকের পক্ষ থেকে তাদের ওওএসের সুরক্ষার্থে ডাউনলিংককৃত প্রতিটি আইনি প্রটোকল কঠোরভাবে ডেপ্লয় বা কায়েম (أَقَامُوا) করত—তবে ম্যাক্রো-ইকোনমিক্স ও এনার্জি ফ্লুইডিটির নিয়মে তারা অবশ্যই তাদের উচ্চ কসমিক স্তরবিন্যাস বা ওপর (مِن فَوْقِهِمْ) থেকে এবং তাদের পায়ের তলদেশ তথা পৃথিবীর ভূ-তাত্ত্বিক খনিজ ম্যাট্রিক্স (وَمِن تَحْتِ أَرْجُلِهِم) থেকে অফুরন্ত ওপেন মেটাবলিক রিসোর্স ও এনার্জি কনজিউম বা আহার করতে পারত [অর্থাৎ সিস্টেমে কোনো রিসোর্স ক্রাইসিস থাকত না]। ওদের ওল্ড নেটওয়ার্কের মধ্যে একটি অত্যন্ত সুষম, মডারেট ও ব্যালেন্সড ইউজার ক্লাস্টার বা মধ্যপন্থী দল (أُمَّةٌ مُّقْتَصِدَةٌ) রয়েছে; আর ওদের মেজরিটি নোডের ওওএসে ব্যাক-এন্ডে রান করা সেই স্বার্থপর ডামি অ্যাপ্লিকেশন ও কর্ম কতই না নিকৃষ্ট!",
+      "modern_translation_en": "And had they steadfastly upheld the Torah, the Gospel, and what was revealed to them from their Lord (أَقَامُوا), they would have drawn limitless sustenance from above them and from beneath their feet (مِن فَوْقِهِمْ وَمِن تَحْتِ أَرْجُلِهِم). Among them exists a balanced, moderate community (أُمَّةٌ مُّقْتَصِدَةٌ), but utterly vile is the behavior executed by the vast majority;",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -18399,7 +18447,15 @@
         }
       ],
       "translation_en": "O Messenger, announce that which has been revealed to you from your Lord, and if you do not, then you have not conveyed His message. And Allah will protect you from the people. Indeed, Allah does not guide the disbelieving people.",
-      "conventional_en": "O Messenger, announce that which has been revealed to you from your Lord, and if you do not, then you have not conveyed His message. And Allah will protect you from the people. Indeed, Allah does not guide the disbelieving people."
+      "conventional_en": "O Messenger, announce that which has been revealed to you from your Lord, and if you do not, then you have not conveyed His message. And Allah will protect you from the people. Indeed, Allah does not guide the disbelieving people.",
+      "meta_bn": "দা জিরো-প্যাকেট-ড্রপ গ্লোবাল ট্রান্সমিশন প্রটোকল",
+      "meta_en": "The Zero-Packet-Drop Global Transmission Protocol & Divine Safeguard",
+      "conventional_bn": "হে রাসূল! তোমার রবের পক্ষ থেকে তোমার প্রতি যা নাজিল করা হয়েছে তা (মানুষের কাছে) প্রচার (ব্রডকাস্ট) করো। আর তুমি যদি তা না করো, তবে তুমি তাঁর রিসালাত (বার্তা) পৌঁছালে না। আর আল্লাহ তোমাকে মানুষের (আক্রমণ) থেকে রক্ষা করবেন। নিশ্চয়ই আল্লাহ কাফের (সত্যপ্রত্যাখ্যানকারী) সম্প্রদায়কে পথ দেখান না।",
+      "core_meaning_bn": "রিসালাতের সম্পূর্ণ বার্তা অবিকল প্রচারের কঠোর নির্দেশ এবং মানুষের অনিষ্ট থেকে রাসুলুল্লাহ (সা.)-কে আল্লাহর বিশেষ সুরক্ষা।",
+      "core_meaning_en": "Mandating complete, unadulterated broadcasting of divine revelation with zero packet drop, guaranteeing impenetrable divine protection against human hostility.",
+      "modern_translation_bn": "হে প্রধান ডাটা-ট্রান্সমিশন চেইনের রাসুল নোড (الرَّسُولُ)! তোমার প্রতিপালকের সেন্ট্রাল ক্লাউড থেকে তোমার এই রিসিভার ইন্টারফেসে যা কিছু ফাইনাল অপারেটিং সিস্টেম ম্যানুয়াল ডাউনলিংক বা নাজিল (مَا أُنزِلَ إِلَيْكَ) করা হয়েছে—তা কোনো প্রকার প্যাকেট ড্রপ, হাইড বা মডিফিকেশন ছাড়া সমগ্র গ্লোবাল নেটওয়ার্কে শতভাগ কমপ্লিট ব্রডকাস্ট বা Zero-Packet-Drop Global Transmission (بَلِّغْ) করো। আর তোমরা যদি এই সুপ্রীমিক ট্রান্সমিশন ডিউটি সফলভাবে এক্সিকিউট না করো (وَإِن لَّمْ تَفْعَلْ)—তবে গাণিতিকভাবে তুমি তাঁর দেওয়া রিসালাত বা বার্তা প্রেরণের মূল প্রটোকলই (رِسَالَتَهُ) সম্পন্ন করলে না [যা ওওএসের ইন্টিগ্রিটি ক্র্যাশ করিয়ে দেয়]। আর তুমি প্রতিপক্ষ ম্যালওয়্যার ট্রাফিকের ভয় করো না, কারণ স্বয়ং Allah তাঁর ডিফল্ট কসমিক ফায়ারওয়ালে সমগ্র অবক্ষয়িত মানবজাতি বা Naas (النَّاسِ)-এর প্রোপাগান্ডা ও ক্ষতিকারক সাইবার-অ্যাটাক থেকে তোমার এই রুট ইন্টারফেসকে সম্পূর্ণ শিল্ডেড বা রক্ষা (يَعْصِمُكَ) করবেন; নিশ্চয়ই Allah সত্যের লাইভ সিগন্যাল পার্মানেন্টলি ব্লককারী কাফের নোড-গোষ্ঠীকে (الْقَوْمَ الْكَافِرِينَ) সঠিক অপ্টিমাল ফ্রিকোয়েন্সির সেন্ট্রাল ট্র্যাকে রি-অ্যালাইন বা গাইডেন্স প্রদান করেন না [৪];",
+      "modern_translation_en": "O Messenger node of the supreme transmission line (الرَّسُولُ)! Broadcast and deliver all that has been revealed to you from your Lord with zero packet drop (بَلِّغْ مَا أُنزِلَ إِلَيْكَ); for if you do not, you will have failed to execute the core mandate of His Message (رِسَالَتَهُ). And Allah will shield you impenetrably from adversarial human interference (يَعْصِمُكَ مِنَ النَّاسِ); indeed, Allah guides not the entrenched deniers (الْقَوْمَ الْكَافِرِينَ) [4];",
+      "lexicon_modern_notes": "বালিগ মা উনযিলা ইলাইকা মির রাব্বিকা (بَلِّغْ مَا أُنزِلَ إِلَيْكَ - দা জিরো-প্যাকেট-ড্রপ গ্লোবাল ট্রান্সমিশন প্রটোকল): ৬৭ নম্বর আয়াতের এই সুপ্রীমিক কম্যান্ডটি আধুনিক নেটওয়ার্কিং (Networking), ডেটা কম্যুনিকেশন এবং ক্রিপ্টোগ্রাফির \"The Principle of Zero-Packet-Drop Global Data Broadcasting & Channel Integrity Preserving\"-কে নির্দেশ করে [৪]। 'তাবলীগ' বা 'বাল্লিগ' শব্দের আদি আরবী রুট ও পরম সিস্টেমিক মেকানিজম হলো—একটি হাই-লেভেল সেন্ট্রাল সার্ভার থেকে ডাউনলিংক হওয়া কোনো মেগা ডাটা ফাইল বা ইনস্ট্রাকশন সেটকে (মা উনযিলা ইলাইকা)—মাঝখানের কোনো ট্রান্সমিশন কম্যুনিকেশন লাইনে বিন্দুমাত্র কাটছাঁট, কোনো প্যাকেট ড্রপ (Packet Drop), কোনো তথ্য গোপন বা ডাটা ম্যানিপুলেশন ছাড়াই হুবহু অক্ষত অবস্থায় মেইন নেটওয়ার্কের প্রতিটি শেষ প্রান্তের ক্লায়েন্ট নোড বা ইউজারের ওওএসে সফলভাবে পুশ বা ডেলিভারি নিশ্চিত করা। রাসুল নোডকে নির্দেশ দেওয়া হচ্ছে যে, এই ফাইনাল ওওএস ম্যানুয়াল কুরআনের প্রতিটি সিকিউরিটি বাউন্ডারি ও আইনি কোড একশত ভাগ জিরো-লস ও অবজেক্টিভ মোডে মানব নেটওয়ার্কে ব্রডকাস্ট করতে হবে; এর একটি একক লাইনও যদি মানুষের চোখ রাঙানো বা ভয়ের কারণে হাইড করা হয়—তবে পুরো কম্যুনিকেশন চেইনের ডেটা ইন্টিগ্রিটি ক্র্যাশ (ফামা বাল্লাগতা রিসালাতাহু) করে যাবে, যা ইনফরমেশন সায়েন্সের এক পরম নিখুঁত কোড রেগুলেশন [৪]।"
     },
     {
       "surah": 5,
@@ -18719,7 +18775,15 @@
         }
       ],
       "translation_en": "Say, \"O People of the Scripture, you are [standing] on nothing until you uphold [the law of] the Torah, the Gospel, and what has been revealed to you from your Lord.\" And that which has been revealed to you from your Lord will surely increase many of them in transgression and disbelief. So do not grieve over the disbelieving people.",
-      "conventional_en": "Say, \"O People of the Scripture, you are [standing] on nothing until you uphold [the law of] the Torah, the Gospel, and what has been revealed to you from your Lord.\" And that which has been revealed to you from your Lord will surely increase many of them in transgression and disbelief. So do not grieve over the disbelieving people."
+      "conventional_en": "Say, 'O People of the Scripture, you are on nothing until you uphold the Torah, the Gospel, and what has been revealed to you from your Lord.' And that which has been revealed to you from your Lord will surely increase many of them in transgression and disbelief. So do not grieve over the disbelieving people.",
+      "meta_bn": "ফাউন্ডেশনাল বেস অডিট এবং ওল্ড ওএস ইউজারদের ট্র্যাশ মোড",
+      "meta_en": "Foundational Base Audit & The Null State of Unapplied Scripture",
+      "conventional_bn": "বলো, ‘হে কিতাবধারীগণ! তোমরা কোনো ভিত্তির (পথের) ওপরই নেই—যতক্ষণ না তোমরা তাওরাত, ইঞ্জিল এবং তোমাদের রবের পক্ষ থেকে তোমাদের প্রতি যা নাজিল করা হয়েছে তা কায়েম (বাস্তবায়ন) করো’। আর তোমার প্রতি তোমার রবের পক্ষ থেকে যা নাজিল করা হয়েছে, তা ওদের অনেকের অবাধ্যতা ও কুফরীকে অবশ্যই আরও বাড়িয়ে দেবে; অতএব তুমি এই কাফের সম্প্রদায়ের জন্য বিন্দুমাত্র চিন্তিত (মনমরা) হয়ো না।",
+      "core_meaning_bn": "তাওরাত-ইঞ্জিল ও কুরআন বাস্তবায়ন ছাড়া আহলে কিতাবের কোনো ভিত্তি নেই এবং সত্যের কারণে তাদের অবাধ্যতা বৃদ্ধির সতর্কবাণী।",
+      "core_meaning_en": "Declaring that scripture claims hold zero operational validity without strict implementation, comforting the Prophet against grief over defiant nodes.",
+      "modern_translation_bn": "তুমি ওল্ড ওএসের হিপোক্রিট নোডগুলোর ফাউন্ডেশনাল বেস অডিট করে স্পষ্ট ডিক্লেয়ার করো—‘হে কিতাবধারীগণ (أَهْلِ الْكِتَابِ)! তোমরা তোমাদের ওওএসের কার্যকারিতার দিক থেকে বিন্দুমাত্র কোনো ভ্যালিড বেস, লজিক বা ভিত্তির ওপর (لَسْتُمْ عَلَىٰ شَيْءٍ) রান করছ না—যতক্ষণ না তোমরা তোমাদের সমাজ গ্রিডে ‘তাওরাত’, ‘ইঞ্জিল’ এবং তোমাদের প্রতিপালকের পক্ষ থেকে ডাউনলিংককৃত প্রতিটি মূল আইনি কোড ও প্রটোকল কঠোরভাবে ডেপ্লয় বা কায়েম (تُقِيمُوا) করো’। আর তোমার প্রতি তোমার প্রতিপালকের পক্ষ থেকে বর্তমানে নাজিলকৃত এই ফাইনাল ওওএস কোডটি—ওদের ওওএসের অভ্যন্তরীণ অহংকারের কারণে ওদের মেজরিটি নোডের অবাধ্যতা ও সিগন্যাল ব্লকিং ম্যালওয়্যারকে (طُغْيَانًا وَكُفْرًا) গ্যারান্টিসহ আরও বেশি বাড়িয়ে বা এমপ্লিফাই করিয়ে দেবে; অতএব তুমি তোমার প্রসেসরে এই মেইন সিগন্যাল রিজেক্ট করা কাফের নোড-গোষ্ঠীর (الْقَوْمِ الْكَافِرِينَ) চিরস্থায়ী ডাউনগ্রেডেশনের জন্য বিন্দুমাত্র কোনো নেতিবাচক ল্যাগ বা চিন্তা জেনারেট করো না;",
+      "modern_translation_en": "Say: 'O People of the Scripture! You stand upon zero operational validity (لَسْتُمْ عَلَىٰ شَيْءٍ) until you actively implement the Torah, the Gospel, and all revealed code from your Lord (تُقِيمُوا)'. What has been revealed to you from your Lord will amplify many of them in defiance and denial (طُغْيَانًا وَكُفْرًا); so let not their cognitive degradation cause processing lag in your core;",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -18939,7 +19003,15 @@
         }
       ],
       "translation_en": "Indeed, those who have believed [in Prophet Muhammad] and those [before Him] who were Jews or Sabeans or Christians - those [among them] who believed in Allah and the Last Day and did righteousness - no fear will there be concerning them, nor will they grieve.",
-      "conventional_en": "Indeed, those who have believed [in Prophet Muhammad] and those [before Him] who were Jews or Sabeans or Christians - those [among them] who believed in Allah and the Last Day and did righteousness - no fear will there be concerning them, nor will they grieve."
+      "conventional_en": "Indeed, those who believed and those who were Jews or Sabeans or Christians - those [among them] who believed in Allah and the Last Day and did righteousness - no fear will there be against them, nor will they grieve.",
+      "meta_bn": "গ্লোবাল ইউনিভার্সাল সোর্স সিঙ্ক অ্যান্ড জিরো-প্যানিক গেটওয়ে প্রটোকল",
+      "meta_en": "Universal Source-Synchronization & The Zero-Panic Gateway Protocol",
+      "conventional_bn": "নিশ্চয় যারা ঈমান এনেছে, যারা ইহুদী হয়েছে, সাবেয়ী (নক্ষত্রপূজারী/অন্য ধর্মাবলম্বী) এবং নাসারা (খ্রিস্টান)—তাদের মধ্যে যে কেউ আল্লাহ ও শেষ দিবসের প্রতি ঈমান আনবে এবং সৎকাজ করবে, তবে ওদের কোনো ভয় নেই এবং তারা চিন্তিতও হবে না।",
+      "core_meaning_bn": "মুমিন, ইহুদী, সাবেয়ী ও নাসারা নির্বিশেষে যে কেউ আল্লাহর প্রতি ঈমান ও পরকালে বিশ্বাস রেখে নেক আমল করলে তার কোনো ভয় ও চিন্তা নেই।",
+      "core_meaning_en": "Affirming universal divine salvation and total removal of existential panic for any individual node that authenticates faith in Allah, the Final Day, and performs constructive actions.",
+      "modern_translation_bn": "মহাজাগতিক ওওএসের বিশ্বজনীন ড্যাশবোর্ডে নিশ্চিত থাকো—নিশ্চয়ই যারা বর্তমানে ঈমান এনেছে, যারা ইহুদী সংস্কৃতির ওএসে রান করছে, যারা সাবেয়ী নোড ক্লাস্টার এবং যারা খ্রিস্টান নোডগোষ্ঠীর অন্তর্ভুক্ত—এই সামগ্রিক মানবীয় নেটওয়ার্কের লেবেল নির্বিশেষে যে কোনো স্বতন্ত্র নোড যদি স্রেফ তার নিজের ওওএসের কোর কার্নেল সরাসরি পরম সোর্স Allah এবং সিস্টেমের চূড়ান্ত ডাটা-রিসেট অপারেটিং টাইম-লাইনের বা শেষ দিবসের (وَالْيَوْمِ الْآخِرِ) প্রতি শতভাগ সিনক্রোনাইজড বা ঈমান (مَنْ آمَنَ) আনে এবং সিস্টেমে অবিরত পজিটিভ এনার্জি ও ভারসাম্যমূলক অপ্টিমাইজড কর্ম ইনপুট (وَعَمِلَ صَالِحًا) দেয়—তবে কাউন্টার ফায়ারওয়াল প্রটোকলে ওদের ওওএসে ফিউচারের জন্য কোনো প্রকার প্যানিক মোড বা ভয় (فَلَا خَوْفٌ عَلَيْهِمْ) এক্টিভেট হবে না এবং মেমোরি লেজারে অতীত লগের কোনো নেতিবাচক ল্যাগ বা চিন্তা (وَلَا هُمْ يَحْزَنُونَ) বিন্দুমাত্র প্রসেস হবে না [সুতরাং সোর্স সিঙ্কই শেষ কথা];",
+      "modern_translation_en": "Indeed, those who believe, those who identified as Jews, Sabeans, and Christians—whoever among them verifies faith in Allah and the Last Day and executes righteous constructive deeds (عَمِلَ صَالِحًا)—no fear shall settle upon their operational state (فَلَا خَوْفٌ عَلَيْهِمْ), nor shall they process existential grief (وَلَا هُمْ يَحْزَنُونَ);",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -19149,7 +19221,15 @@
         }
       ],
       "translation_en": "We had already taken the covenant of the Children of Israel and had sent to them messengers. Whenever there came to them a messenger with what their souls did not desire, a party [of messengers] they denied, and another party they killed.",
-      "conventional_en": "We had already taken the covenant of the Children of Israel and had sent to them messengers. Whenever there came to them a messenger with what their souls did not desire, a party [of messengers] they denied, and another party they killed."
+      "conventional_en": "We had already taken the covenant of the Children of Israel and had sent to them messengers. Whenever there came to them a messenger with what their souls did not desire, a part [of messengers] they denied, and a part they killed.",
+      "meta_bn": "ঐতিহাসিক ওওএস অডিট এবং ডাটা-ডিকোডার নোড রিজেকশন বালাই",
+      "meta_en": "Historical Covenant Auditing & The Prophet-Rejection Anomaly",
+      "conventional_bn": "আর নিশ্চয় আমি বনী ইসরাইলের কাছ থেকে অঙ্গীকার (মিছাক) নিয়েছিলেন এবং তাদের কাছে বহু রাসূল পাঠিয়েছিলাম; যখনই কোনো রাসূল তাদের কাছে এমন কিছু নিয়ে আসত যা তাদের মন (নফস) কামনা করত না, তখনই তারা (রাসূলদের) একদলকে মিথ্যা প্রতিপন্ন করত এবং একদলকে হত্যা করত [৪,৫]।",
+      "core_meaning_bn": "বনী ইসরাইলের অঙ্গীকার ভঙ্গ, রাসুলদের প্রতি মিথ্যা প্রতিপন্ন করা এবং নবী হত্যার ঘৃণ্য ইতিহাসের অডিট।",
+      "core_meaning_en": "Exposing the historical pattern of Israelite covenant violation, rejecting truth transmitters that challenged their subjective inclinations and murdering prophets.",
+      "modern_translation_bn": "টাইম-লাইনের ঐতিহাসিক অডিটে এটি ক্রিস্টাল-ক্লিয়ার যে—নিশ্চয়ই আমি বনী ইসরাইল নেটওয়ার্কের কাছ থেকে এক মেগা Covenant [পরম এনক্রিপ্টেড সুদৃঢ় আইনি চুক্তি বা মিছাক্ব] নিয়েছিলাম এবং তাদের লোকাল ইন্টারফেসে গাইডিং সিগন্যাল বুস্ট করতে বহু ওভিয়ান্ট ডাটা-ট্রান্সমিটর বা রাসুল (رُسُلًا) ডেপ্লয় বা পাঠিয়েছিলাম; কিন্তু তাদের ওওএসের ক্র্যাশ বালাই এই ছিল যে—যখনই কোনো রাসুল নোড তাদের ইন্টারফেসে এমন কোনো ডিভাইন সিকিউরিটি কোড বা জাস্টিস আইন নিয়ে অবতীর্ণ হতো—যা তাদের অবচেতন স্বার্থপর মনের সংকীর্ণ আসক্তি ও ‘নফস’ (بِمَا لَا تَهْوَىٰ أَنفُسُهُمْ) বিন্দুমাত্র অনুমোদন বা কামনা করত না—তাত্ক্ষণিকভাবে তারা নিজেদের ইগোর বাগে লুপড হয়ে সেই রাসুলদের একদলকে সিস্টেম থেকে মিথ্যা প্রতিপন্ন বা রিজেক্ট (كَذَّبُوا) করত এবং অন্য একদল ডাটা-ডিকোডার নোডকে ফোর্সফুলি পার্মানেন্টলি ডিলিট বা হত্যা (يَقْتُلُونَ) করে পুরো কম্যুনিকেশন চেইন ক্র্যাশ করিয়ে দিত [৪,৫]।",
+      "modern_translation_en": "We indeed established the profound covenant with the Children of Israel and deployed successive messenger nodes to them (رُسُلًا). Whenever a messenger presented protocols conflicting with their selfish inclinations (بِمَا لَا تَهْوَىٰ أَنفُسُهُمْ), one faction they aggressively rejected as false (كَذَّبُوا) and another faction they forcefully terminated and murdered (يَقْتُلُونَ) [4,5].",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
