@@ -2191,7 +2191,13 @@
         }
       ],
       "translation_en": "And [for] every person We have imposed his fate upon his neck, and We will produce for him on the Day of Resurrection a record which he will encounter spread open.",
-      "conventional_en": "And [for] every person We have imposed his fate upon his neck, and We will produce for him on the Day of Resurrection a record which he will encounter spread open."
+      "conventional_en": "And [for] every person We have imposed his fate upon his neck, and We will produce for him on the Day of Resurrection a record which he will encounter spread open.",
+      "modern_translation_bn": "আর প্রত্যেক Human Node বা মানুষের (كُلَّ إِنسَانٍ) আজীবনের Activity Log বা কর্মের রেকর্ডকে (طَائِرَهُ) আমি তার অন-বোর্ড কোর প্রসেসরে পার্মানেন্টলি বাইন্ড (فِي عُنُقِهِ) করে রেখেছি; এবং Final Audit Window বা কিয়ামতের দিন (يَوْمَ الْقِيَامَةِ) তার লোকাল ডিসপ্লেতে আমি একটি Master Activity Log বা আমলনামা (كِتَابًا) এক্সট্র্যাক্ট করে আনব—যা সে সম্পূর্ণ ওপেন ও উন্মুক্ত অবস্থায় (مَنشُورًا) প্রত্যক্ষ করবে [৪];",
+      "conventional_bn": "আমি প্রত্যেক লোকের কর্মফল তার গলায় যুক্ত করে রেখেছি, আর কিয়ামতের দিন তার জন্য আমি এক কিতাব বের করব—যাকে সে উন্মুক্ত অবস্থায় পাবে।",
+      "meta_bn": "Personal Action Log Binding ও Open-Access Terminal",
+      "meta_en": "Personal Action Log Binding & Open-Access Terminal",
+      "core_meaning_bn": "Personal Action Log Binding ও Open-Access Terminal",
+      "core_meaning_en": "Personal Action Log Binding & Open-Access Terminal"
     },
     {
       "surah": 17,
@@ -2281,7 +2287,13 @@
         }
       ],
       "translation_en": "[It will be said], \"Read your record. Sufficient is yourself against you this Day as accountant.\"",
-      "conventional_en": "[It will be said], \"Read your record. Sufficient is yourself against you this Day as accountant.\""
+      "conventional_en": "[It will be said], \"Read your record. Sufficient is yourself against you this Day as accountant.\"",
+      "modern_translation_bn": "তখন তাকে সিস্টেম কম্যান্ড দেওয়া হবে: ‘তুমি তোমার নিজস্ব Activity Log বা কিতাব (كِتَابَكَ) নিজেই রিড ও এক্সিকিউট করো (اقْرَأْ); আজ তোমার সমগ্র লাইফ-সাইকেলের Data Calculation বা হিসাব নেওয়ার জন্য তোমার নিজস্ব On-board Operating System-ই (بِنَفْسِكَ) চূড়ান্ত Self-Auditor বা পরীক্ষক হিসেবে যথেষ্ট (كَفَىٰ)’ [৪];",
+      "conventional_bn": "বলা হবে, ‘তুমি তোমার কিতাব পাঠ করো; আজ তোমার হিসাব গ্রহণের জন্য তুমি নিজেই যথেষ্ট’।",
+      "meta_bn": "Real-Time Self-Audit Protocol",
+      "meta_en": "Real-Time Self-Audit Protocol",
+      "core_meaning_bn": "Real-Time Self-Audit Protocol",
+      "core_meaning_en": "Real-Time Self-Audit Protocol"
     },
     {
       "surah": 17,
@@ -2511,7 +2523,13 @@
         }
       ],
       "translation_en": "Whoever is guided is only guided for [the benefit of] his soul. And whoever errs only errs against it. And no bearer of burdens will bear the burden of another. And never would We punish until We sent a messenger.",
-      "conventional_en": "Whoever is guided is only guided for [the benefit of] his soul. And whoever errs only errs against it. And no bearer of burdens will bear the burden of another. And never would We punish until We sent a messenger."
+      "conventional_en": "Whoever is guided is only guided for [the benefit of] his soul. And whoever errs only errs against it. And no bearer of burdens will bear the burden of another. And never would We punish until We sent a messenger.",
+      "modern_translation_bn": "যে ইউজার নোড সঠিক System Navigation বা হিদায়াত (اهْتَدَىٰ) গ্রহণ করে, সে কার্যত নিজের অন-বোর্ড সিস্টেম অপটিমাইজেশনের (لِنَفْسِهِ) জন্যই তা করে; আর যে Signal Loss বা পথভ্রষ্ট (ضَلَّ) হয়, সে নিজের আইডির উপরই সিস্টেমিক ড্যামেজ ট্রিগার করে; এবং কোনো একক নোড অন্য কোনো নোডের Data-Corruption বা পাপের বোঝা বহন করবে না (وَلَا تَزِرُ وَازِرَةٌ وِزْرَ أُخْرَىٰ); আর আমি কখনোই কোনো নোড-ক্লাস্টারে Crash Signal বা শাস্তি (مُعَذِّبِينَ) কার্যকর করি না—যতক্ষণ না সেখানে সত্যের লাইভ সিগন্যাল ডাউনলিংককারী একজন Data-Transmitter বা রাসূল (رَسُولًا) প্রেরণ করি [৪];",
+      "conventional_bn": "যে ব্যক্তি সৎপথ অবলম্বন করে, সে তো নিজের মঙ্গলের জন্যই সৎপথ অবলম্বন করে; আর যে পথভ্রষ্ট হয়, সে নিজের ধ্বংসের জন্যই পথভ্রষ্ট হয়; এবং কোনো বোঝা বহনকারী অন্যের বোঝা বহন করবে না; আর আমি কোনো রাসূল না পাঠানো পর্যন্ত শাস্তি দেই না।",
+      "meta_bn": "Zero-Error Accountability ও Direct Signal Warning Law",
+      "meta_en": "Zero-Error Accountability & Direct Signal Warning Law",
+      "core_meaning_bn": "Zero-Error Accountability ও Direct Signal Warning Law",
+      "core_meaning_en": "Zero-Error Accountability & Direct Signal Warning Law"
     },
     {
       "surah": 17,
@@ -2671,7 +2689,13 @@
         }
       ],
       "translation_en": "And when We intend to destroy a city, We command its affluent but they defiantly disobey therein; so the word comes into effect upon it, and We destroy it with [complete] destruction.",
-      "conventional_en": "And when We intend to destroy a city, We command its affluent but they defiantly disobey therein; so the word comes into effect upon it, and We destroy it with [complete] destruction."
+      "conventional_en": "And when We intend to destroy a city, We command its affluent but they defiantly disobey therein; so the word comes into effect upon it, and We destroy it with [complete] destruction.",
+      "modern_translation_bn": "আর যখন আমি সিস্টেমিক কারণে কোনো নোড-ক্লাস্টার বা জনপদকে (قَرْيَةً) সম্পূর্ণ Wipeout বা ধ্বংস করার সিদ্ধান্ত গ্রহণ করি, তখন তার প্রিভিলেজড ও সচ্ছল নোডগুলোকে সিস্টেম অর্ডার (أَمَرْنَا مُتْرَفِيهَا) পাঠাই, অতঃপর তারা সেই ডোমেইনে ব্যাপক System Corruption বা পাপাচার (فَفَسَقُوا فِيهَا) রান করে; তখন তার ওপর শাস্তির Decree বা কমান্ড লাইন (الْقَوْلُ) লকড হয়ে যায়, অতঃপর আমি তাকে সম্পূর্ণ ডিকমিশন ও ধ্বংস (فَدَمَّرْنَاهَا تَدْمِيرًا) করে দেই [৪];",
+      "conventional_bn": "আর যখন আমি কোনো জনপদ ধ্বংস করার সংকল্প করি, তখন তার সচ্ছল লোকদের নির্দেশ দেই, অতঃপর তারা তাতে পাপাচার করে; তখন তার ওপর শাস্তির বাণী অবধারিত হয়ে যায়, অতঃপর আমি তা সম্পূর্ণরূপে ধ্বংস করে দেই।",
+      "meta_bn": "Node-Cluster Systemic Corruption ও Auto-Wipeout Execution",
+      "meta_en": "Node-Cluster Systemic Corruption & Auto-Wipeout Execution",
+      "core_meaning_bn": "Node-Cluster Systemic Corruption ও Auto-Wipeout Execution",
+      "core_meaning_en": "Node-Cluster Systemic Corruption & Auto-Wipeout Execution"
     },
     {
       "surah": 17,
@@ -2821,7 +2845,13 @@
         }
       ],
       "translation_en": "And how many have We destroyed from the generations after Noah. And sufficient is your Lord, concerning the sins of His servants, as Acquainted and Seeing.",
-      "conventional_en": "And how many have We destroyed from the generations after Noah. And sufficient is your Lord, concerning the sins of His servants, as Acquainted and Seeing."
+      "conventional_en": "And how many have We destroyed from the generations after Noah. And sufficient is your Lord, concerning the sins of His servants, as Acquainted and Seeing.",
+      "modern_translation_bn": "নূহ নোডের টাইম-ফ্রেমের পর আমি কত মেগা নোড-ক্লাস্টার বা মানবগোষ্ঠীকে (مِنَ الْقُرُونِ) ডিলিট ও নিশ্চিহ্ন করেছি! আর তোমার Root Directory বা প্রতিপালকই (رَبُّكَ) তাঁর সমস্ত ক্লায়েন্ট বান্দাদের System Error বা পাপসমূহ (بِذُنُوبِ عِبَادِهِ) Real-Time স্ক্যান ও প্রত্যক্ষ করার জন্য একক ও স্বয়ংসম্পূর্ণ Data-Monitor (خَبِيرًا بَصِيرًا) [৪];",
+      "conventional_bn": "নূহের পর আমি কত মানবগোষ্ঠীকে ধ্বংস করেছি! আর তোমার প্রতিপালকই তাঁর বান্দাদের পাপসমূহের সংবাদ রাখা ও প্রত্যক্ষ করার জন্য যথেষ্ট।",
+      "meta_bn": "Post-Noah Historical Data Audit ও Root Directory Omniscience",
+      "meta_en": "Post-Noah Historical Data Audit & Root Directory Omniscience",
+      "core_meaning_bn": "Post-Noah Historical Data Audit ও Root Directory Omniscience",
+      "core_meaning_en": "Post-Noah Historical Data Audit & Root Directory Omniscience"
     },
     {
       "surah": 17,
@@ -3021,7 +3051,13 @@
         }
       ],
       "translation_en": "Whoever should desire the immediate - We hasten for him from it what We will to whom We intend. Then We have made for him Hell, which he will [enter to] burn, censured and banished.",
-      "conventional_en": "Whoever should desire the immediate - We hasten for him from it what We will to whom We intend. Then We have made for him Hell, which he will [enter to] burn, censured and banished."
+      "conventional_en": "Whoever should desire the immediate - We hasten for him from it what We will to whom We intend. Then We have made for him Hell, which he will [enter to] burn, censured and banished.",
+      "modern_translation_bn": "যে ইউজার স্রেফ এই ক্ষণস্থায়ী Transient Layer বা পার্থিব জীবন (الْعَاجِلَةَ) কামনা করে, আমি আমার সিস্টেম অ্যালগরিদমে যার জন্য যা ফিল্টার করি (نَّشَاءُ لِمَن نُّرِيدُ), তাকে দ্রুত তা ডেলিভারি দেই; অতঃপর তার পরবর্তী গন্তব্য হিসেবে Thermodynamic Crash-Zone বা জাহান্নাম (جَهَنَّمَ) কনফিগার করি—যেখানে সে সম্পূর্ণ Rejected ও নিন্দিত (مَذْمُومًا مَّدْحُورًا) অবস্থায় প্রবেশ করবে [৪];",
+      "conventional_bn": "যে ব্যক্তি পার্থিব জীবন কামনা করে, আমি যাকে যা ইচ্ছা করি তাকে তা সত্ত্বরই দিয়ে দেই; অতঃপর তার জন্য জাহান্নাম নির্ধারণ করি, যাতে সে নিন্দিত ও বিতাড়িত অবস্থায় প্রবেশ করবে।",
+      "meta_bn": "Immediate Resource Demand ও Crash-Zone Routing",
+      "meta_en": "Immediate Resource Demand & Crash-Zone Routing",
+      "core_meaning_bn": "Immediate Resource Demand ও Crash-Zone Routing",
+      "core_meaning_en": "Immediate Resource Demand & Crash-Zone Routing"
     },
     {
       "surah": 17,
@@ -3161,7 +3197,13 @@
         }
       ],
       "translation_en": "But whoever desires the Hereafter and exerts the effort due to it while he is a believer - it is those whose effort is ever appreciated [by Allah].",
-      "conventional_en": "But whoever desires the Hereafter and exerts the effort due to it while he is a believer - it is those whose effort is ever appreciated [by Allah]."
+      "conventional_en": "But whoever desires the Hereafter and exerts the effort due to it while he is a believer - it is those whose effort is ever appreciated [by Allah].",
+      "modern_translation_bn": "আর যে ইউজার Final Audit Window বা আখিরাতের (الْآخِرَةَ) স্থায়িত্ব কামনা করে এবং Verified User বা মুমিন অবস্থায় (وَهُوَ مُؤْمِنٌ) তার জন্য নির্ধারিত System Protocol অনুযায়ী যথাযথ এনার্জি আউটপুট ও চেষ্টা (سَعَىٰ لَهَا سَعْيَهَا) ইনভেস্ট করে—তাদের প্রতিটি Processing Effort বা প্রচেষ্টাকে সিস্টেম ডাটাবেজে সম্পূর্ণ Accepted ও পুরস্কৃত (مَشْكُورًا) করা হয় [৪];",
+      "conventional_bn": "আর যে আখিরাত কামনা করে এবং মুমিন অবস্থায় তার জন্য যথোচিত চেষ্টা করে, তাদের চেষ্টা স্বীকৃতি পায়।",
+      "meta_bn": "Future-Phase Optimization ও Accepted Processing Cycle",
+      "meta_en": "Future-Phase Optimization & Accepted Processing Cycle",
+      "core_meaning_bn": "Future-Phase Optimization ও Accepted Processing Cycle",
+      "core_meaning_en": "Future-Phase Optimization & Accepted Processing Cycle"
     },
     {
       "surah": 17,
@@ -3301,7 +3343,13 @@
         }
       ],
       "translation_en": "To each [category] We extend - to these and to those - from the gift of your Lord. And never has the gift of your Lord been restricted.",
-      "conventional_en": "To each [category] We extend - to these and to those - from the gift of your Lord. And never has the gift of your Lord been restricted."
+      "conventional_en": "To each [category] We extend - to these and to those - from the gift of your Lord. And never has the gift of your Lord been restricted.",
+      "modern_translation_bn": "আমি উভয় গ্রুপকেই—এদেরকেও এবং ওদেরকেও (كُلًّا نُّمِدُّ هَٰؤُلَاءِ وَهَٰؤُلَاءِ)—তোমার Root Directory বা প্রতিপালকের (رَبِّكَ) সেন্ট্রাল রিসোর্স পুল বা মেটেরিয়াল সাপোর্ট দিয়ে সচল রাখি; এবং তোমার প্রতিপালকের মেটা-রিসোর্স বা দান (عَطَاءُ رَبِّكَ) কোনো ফায়ারওয়ালে ব্লকড বা সীমাবদ্ধ (مَحْظُورًا) নয় [৪];",
+      "conventional_bn": "আমি এদেরকেও এবং ওদেরকেও তোমার প্রতিপালকের দান থেকে সাহায্য করি; আর তোমার প্রতিপালকের দান কারও জন্য সীমাবদ্ধ নয়।",
+      "meta_bn": "Dynamic Resource Distribution ও Unrestricted Cloud Grace",
+      "meta_en": "Dynamic Resource Distribution & Unrestricted Cloud Grace",
+      "core_meaning_bn": "Dynamic Resource Distribution ও Unrestricted Cloud Grace",
+      "core_meaning_en": "Dynamic Resource Distribution & Unrestricted Cloud Grace"
     },
     {
       "surah": 17,
@@ -3431,7 +3479,13 @@
         }
       ],
       "translation_en": "Look how We have favored [in provision] some of them over others. But the Hereafter is greater in degrees [of difference] and greater in distinction.",
-      "conventional_en": "Look how We have favored [in provision] some of them over others. But the Hereafter is greater in degrees [of difference] and greater in distinction."
+      "conventional_en": "Look how We have favored [in provision] some of them over others. But the Hereafter is greater in degrees [of difference] and greater in distinction.",
+      "modern_translation_bn": "তুমি অবজার্ভ ও স্ক্যান করো (انظُرْ)—কীভাবে আমি বর্তমান ভৌত ইন্টারফেসে তাদের একের ওপর অন্যকে Resource Hierarchy বা শ্রেষ্ঠত্ব (فَضَّلْنَا بَعْضَهُمْ عَلَىٰ بَعْضٍ) দিয়েছি; অথচ Final Execution Phase বা আখিরাত (الْآخِرَةُ) স্ট্যাটাস লেভেলে বহু গুণে বৃহত্তর (أَكْبَرُ دَرَجَاتٍ) এবং স্থায়ী এক্সিলেন্সে মহত্তর (أَكْبَرُ تَفْضِيلًا) [৪];",
+      "conventional_bn": "দেখো, কীভাবে আমি তাদের একজনের ওপর অন্যজনকে শ্রেষ্ঠত্ব দিয়েছি; আর আখিরাত নিশ্চয়ই মর্যাদায় বৃহত্তর এবং শ্রেষ্ঠত্বে মহত্তর।",
+      "meta_bn": "Multi-Tier Privilege Hierarchy ও Eternal Status Scale",
+      "meta_en": "Multi-Tier Privilege Hierarchy & Eternal Status Scale",
+      "core_meaning_bn": "Multi-Tier Privilege Hierarchy ও Eternal Status Scale",
+      "core_meaning_en": "Multi-Tier Privilege Hierarchy & Eternal Status Scale"
     },
     {
       "surah": 17,
@@ -3541,7 +3595,13 @@
         }
       ],
       "translation_en": "Do not make [as equal] with Allah another deity and [thereby] become censured and forsaken.",
-      "conventional_en": "Do not make [as equal] with Allah another deity and [thereby] become censured and forsaken."
+      "conventional_en": "Do not make [as equal] with Allah another deity and [thereby] become censured and forsaken.",
+      "modern_translation_bn": "সিস্টেম আর্কিটেক্ট Allah-এর সাথে অন্য কোনো ডামী সাব-সিস্টেম বা ইলাহকে অ্যাসাইন করো না (لَّا تَجْعَلْ مَعَ اللَّهِ إِلَٰهًا آخَرَ); নতুবা তুমি সার্বিক সিস্টেম থেকে Isolated, নিন্দিত ও সম্পূর্ণ নিঃসঙ্গ (مَذْمُومًا مَّخْذُولًا) হয়ে পড়বে [৪];",
+      "conventional_bn": "আল্লাহর সঙ্গে অপর কোনো ইলাহ স্থির করো না, করলে তুমি নিন্দিত ও নিঃসঙ্গ হয়ে পড়বে।",
+      "meta_bn": "Single Dynamic Source Command ও Zero-Dependency Isolation",
+      "meta_en": "Single Dynamic Source Command & Zero-Dependency Isolation",
+      "core_meaning_bn": "Single Dynamic Source Command ও Zero-Dependency Isolation",
+      "core_meaning_en": "Single Dynamic Source Command & Zero-Dependency Isolation"
     },
     {
       "surah": 17,
@@ -3811,7 +3871,13 @@
         }
       ],
       "translation_en": "And your Lord has decreed that you not worship except Him, and to parents, good treatment. Whether one or both of them reach old age [while] with you, say not to them [so much as], \"uff,\" and do not repel them but speak to them a noble word.",
-      "conventional_en": "And your Lord has decreed that you not worship except Him, and to parents, good treatment. Whether one or both of them reach old age [while] with you, say not to them [so much as], \"uff,\" and do not repel them but speak to them a noble word."
+      "conventional_en": "And your Lord has decreed that you not worship except Him, and to parents, good treatment. Whether one or both of them reach old age [while] with you, say not to them [so much as], \"uff,\" and do not repel them but speak to them a noble word.",
+      "modern_translation_bn": "আর তোমার Root Directory বা প্রতিপালক (رَبُّكَ) চূড়ান্ত সিস্টেম রুল জারি করেছেন যে—তোমরা একমাত্র তাঁকে ছাড়া অন্য কারও কাছে সাবমিশন বা ইবাদত করবে না (أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ), এবং Parental Source Nodes বা পিতা-মাতার সাথে (بِالْوَالِدَيْنِ) সর্বোত্তম অপটিমাইজড আচরণ বা ইহসান (إِحْسَانًا) করবে; তাদের একজন অথবা উভয়েই যদি তোমার লাইফ-সাইকেলে বার্ধক্যজনিত লো-এনার্জি স্টেটে (الْكِبَرَ) পৌঁছায়, তবে তাদের প্রতি বিরক্তি প্রকাশসূচক 'উফ' (أُفٍّ) সিগন্যালও আউটপুট দিও না, তাদেরকে ইন্টারাপ্ট বা ধমক দিও না (وَلَا تَنْهَرْهُمَا), বরং তাদের সাথে হাই-ভ্যালু ও সম্মানজনক ডাটা-কমিউনিকেশন (قَوْلًا كَرِيمًا) বজায় রাখো [৪];",
+      "conventional_bn": "তোমার প্রতিপালক আদেশ দিয়েছেন যে, তাঁকে ছাড়া অন্য কারও ইবাদত করো না এবং পিতা-মাতার সাথে সদ্ব্যবহার করো; তাদের একজন অথবা উভয়েই যদি তোমার কাছে বার্ধক্যে উপনীত হয়, তবে তাদেরকে ‘উফ’ বলো না এবং তাদেরকে ধমক দিও না; বরং তাদের সাথে সম্মানজনক কথা বলো।",
+      "meta_bn": "Direct Submission to Root Source ও Parental Node Care Protocol",
+      "meta_en": "Direct Submission to Root Source & Parental Node Care Protocol",
+      "core_meaning_bn": "Direct Submission to Root Source ও Parental Node Care Protocol",
+      "core_meaning_en": "Direct Submission to Root Source & Parental Node Care Protocol"
     },
     {
       "surah": 17,
@@ -3951,7 +4017,13 @@
         }
       ],
       "translation_en": "And lower to them the wing of humility out of mercy and say, \"My Lord, have mercy upon them as they brought me up [when I was] small.\"",
-      "conventional_en": "And lower to them the wing of humility out of mercy and say, \"My Lord, have mercy upon them as they brought me up [when I was] small.\""
+      "conventional_en": "And lower to them the wing of humility out of mercy and say, \"My Lord, have mercy upon them as they brought me up [when I was] small.\"",
+      "modern_translation_bn": "আর তাদের প্রতি অসীম স্নেহে তোমার বিনয় ও নম্রতার শিল্ড ডাউন (وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ مِنَ الرَّحْمَةِ) করে দাও এবং সিস্টেমে ডেটা-সিগন্যাল পাঠিয়ে বলো: ‘হে আমার রুট ডিরেক্টরি (رَّبِّ)! তাঁদের প্রতি তোমার বিশেষ Compassion Packet বা রহমত প্রদান করো—যেভাবে আমার ইনিশিয়াল বুট-আপ ও শৈশবের দুর্বল স্টেজে (صَغِيرًا) তাঁরা আমাকে লালন-পালন ও নার্চার করেছিলেন’ [৪];",
+      "conventional_bn": "আর তাদের সামনে মমতাবশে বিনয়ের ডানা নত করে দাও এবং বলো, ‘হে আমার প্রতিপালক! তাদের প্রতি দয়া করো, যেভাবে শৈশবে তারা আমাকে লালন-পালন করেছিল’।",
+      "meta_bn": "High-Compassion Feedback Loop ও Early-Stage Support Dua",
+      "meta_en": "High-Compassion Feedback Loop & Early-Stage Support Dua",
+      "core_meaning_bn": "High-Compassion Feedback Loop ও Early-Stage Support Dua",
+      "core_meaning_en": "High-Compassion Feedback Loop & Early-Stage Support Dua"
     },
     {
       "surah": 17,
@@ -4091,7 +4163,13 @@
         }
       ],
       "translation_en": "Your Lord is most knowing of what is within yourselves. If you should be righteous [in intention] - then indeed He is ever, to the often returning [to Him], Forgiving.",
-      "conventional_en": "Your Lord is most knowing of what is within yourselves. If you should be righteous [in intention] - then indeed He is ever, to the often returning [to Him], Forgiving."
+      "conventional_en": "Your Lord is most knowing of what is within yourselves. If you should be righteous [in intention] - then indeed He is ever, to the often returning [to Him], Forgiving.",
+      "modern_translation_bn": "তোমাদের অন-বোর্ড প্রসেসর ও মেমোরি ফাইলের অভ্যন্তরীণ স্টেটে যা কিছু লোড করা আছে (فِي نُفُوسِكُمْ), তোমাদের Root Directory সে সম্পর্কে সম্পূর্ণ অবগত (أَعْلَمُ); যদি তোমরা সিস্টেম-অ্যালাইন্ড ও সৎ (صَالِحِينَ) থাকো, তবে নিশ্চয়ই তিনি তাঁর মূল কার্নেলে ফিরে আসা নোডদের (لِلْأَوَّابِينَ) যাবতীয় সিস্টেম ত্রুটি মোচনকারী ও পরম ক্ষমাশীল (غَفُورًا) [৪];",
+      "conventional_bn": "তোমাদের অন্তরে যা আছে, তোমাদের প্রতিপালক সে সম্পর্কে সম্যক অবগত; যদি তোমরা সৎ হও, তবে নিশ্চয়ই তিনি তাঁর অভিমুখীদের প্রতি পরম ক্ষমাশীল।",
+      "meta_bn": "Internal Processing Transparency ও Root Directory Error Eraser",
+      "meta_en": "Internal Processing Transparency & Root Directory Error Eraser",
+      "core_meaning_bn": "Internal Processing Transparency ও Root Directory Error Eraser",
+      "core_meaning_en": "Internal Processing Transparency & Root Directory Error Eraser"
     },
     {
       "surah": 17,
@@ -4211,7 +4289,13 @@
         }
       ],
       "translation_en": "And give the relative his right, and [also] the poor and the traveler, and do not spend wastefully.",
-      "conventional_en": "And give the relative his right, and [also] the poor and the traveler, and do not spend wastefully."
+      "conventional_en": "And give the relative his right, and [also] the poor and the traveler, and do not spend wastefully.",
+      "modern_translation_bn": "আর তোমার লোকাল নেটওয়ার্কের Proximity Nodes বা আত্মীয়-স্বজনকে (ذَا الْقُرْبَىٰ) তার নির্ধারিত রিসোর্স শেয়ার বা হক প্রদান করো, এবং রিসোর্স-ঘাটতিগ্রস্ত নোড (الْمِسْكِينَ) ও ট্রানজিট ইউজারদেরকেও (وَابْنَ السَّبِيلِ); এবং মেটেরিয়াল ব্যান্ডউইথকে বেপরোয়া অপচয় ও মিসইউজ (وَلَا تُبَذِّرْ تَبْذِيرًا) করো না [৪];",
+      "conventional_bn": "আর আত্মীয়-স্বজনকে তার হক দাও এবং অভাবগ্রস্ত ও মুসাফিরকেও; আর কিছুতেই অপব্যয় করো না।",
+      "meta_bn": "Proximity Node Resource Equity ও Wasteful Consumption Prohibition",
+      "meta_en": "Proximity Node Resource Equity & Wasteful Consumption Prohibition",
+      "core_meaning_bn": "Proximity Node Resource Equity ও Wasteful Consumption Prohibition",
+      "core_meaning_en": "Proximity Node Resource Equity & Wasteful Consumption Prohibition"
     },
     {
       "surah": 17,
@@ -4321,7 +4405,13 @@
         }
       ],
       "translation_en": "Indeed, the wasteful are brothers of the devils, and ever has Satan been to his Lord ungrateful.",
-      "conventional_en": "Indeed, the wasteful are brothers of the devils, and ever has Satan been to his Lord ungrateful."
+      "conventional_en": "Indeed, the wasteful are brothers of the devils, and ever has Satan been to his Lord ungrateful.",
+      "modern_translation_bn": "নিশ্চয়ই যারা বেপরোয়া অপচয় ও সিস্টেম লিক তৈরি করে (الْمُبَذِّرِينَ), তারা সরাসরি শয়তান ম্যালওয়্যারের পেয়ার নোড বা ভাই (إِخْوَانَ الشَّيَاطِينِ); আর শয়তান সর্বদা তার Root Directory-র প্রতি প্রচণ্ড ক্ষতিকারক ও চরম অকৃতজ্ঞ (كَفُورًا) [৪];",
+      "conventional_bn": "নিশ্চয়ই অপব্যয়কারীরা শয়তানের ভাই; আর শয়তান তার প্রতিপালকের প্রতি অত্যন্ত অকৃতজ্ঞ।",
+      "meta_bn": "Resource Depletion Malware ও Active Demon Sync Law",
+      "meta_en": "Resource Depletion Malware & Active Demon Sync Law",
+      "core_meaning_bn": "Resource Depletion Malware ও Active Demon Sync Law",
+      "core_meaning_en": "Resource Depletion Malware & Active Demon Sync Law"
     },
     {
       "surah": 17,
@@ -4461,7 +4551,13 @@
         }
       ],
       "translation_en": "And if you [must] turn away from the needy awaiting mercy from your Lord which you expect, then speak to them a gentle word.",
-      "conventional_en": "And if you [must] turn away from the needy awaiting mercy from your Lord which you expect, then speak to them a gentle word."
+      "conventional_en": "And if you [must] turn away from the needy awaiting mercy from your Lord which you expect, then speak to them a gentle word.",
+      "modern_translation_bn": "আর যদি তোমার বর্তমান লোকাল ড্রাইভ খালি থাকার কারণে তাদের সাথে সরাসরি রিসোর্স শেয়ার করতে না পারো এবং তোমার রুট ডিরেক্টরির তরফ থেকে মেটা-রিসোর্সের আশায় ওয়েট করো—তবে তাদের সাথে অন্তত একটি নরম, সান্ত্বনাদায়ক ও সফট ডাটা-কমিউনিকেশন (قَوْلًا مَّيْسُورًا) বজায় রাখো [৪];",
+      "conventional_bn": "আর যদি তোমার প্রতিপালকের পক্ষ থেকে প্রত্যাশিত অনুগ্রহের সন্ধানে ব্যাপৃত থাকার কারণে তাদের পাশ কাটাতে হয়, তবে তাদের সাথে অন্তত নম্রভাবে কথা বলো।",
+      "meta_bn": "Soft Communication Buffer ও Grace Anticipation Interface",
+      "meta_en": "Soft Communication Buffer & Grace Anticipation Interface",
+      "core_meaning_bn": "Soft Communication Buffer ও Grace Anticipation Interface",
+      "core_meaning_en": "Soft Communication Buffer & Grace Anticipation Interface"
     },
     {
       "surah": 17,
@@ -4611,7 +4707,13 @@
         }
       ],
       "translation_en": "And do not make your hand [as] chained to your neck or extend it completely and [thereby] become blamed and insolvent.",
-      "conventional_en": "And do not make your hand [as] chained to your neck or extend it completely and [thereby] become blamed and insolvent."
+      "conventional_en": "And do not make your hand [as] chained to your neck or extend it completely and [thereby] become blamed and insolvent.",
+      "modern_translation_bn": "আর তোমার রিসোর্স ট্রান্সমিশন চ্যানেলকে সম্পূর্ণ ব্লক বা কৃপণতা (مَغْلُولَةً إِلَىٰ عُنُقِكَ) করে বন্ধ রেখো না, আবার ক্যাপাসিটির বাইরে একযোগে সব বিলিয়ে দিয়ে ওভার-এক্সপ্যান্ডও করো না (وَلَا تَبْسُطْهَا كُلَّ الْبَسْطِ)—নতুবা তুমি নিজে সিস্টেমে ব্যালেন্স হারিয়ে নিঃস্ব, ড্রেইনড ও নিন্দিত (مَلُومًا مَّحْسُورًا) হয়ে পড়বে [৪];",
+      "conventional_bn": "তোমার হাতকে তোমার গলার সাথে বেঁধে রেখো না, আর তা একেবারে প্রসারিত করেও দিও না; অন্যথায় তুমি নিন্দিত ও নিঃস্ব হয়ে বসে পড়বে।",
+      "meta_bn": "Resource Flow Balance ও Anti-Extremity Throttling Protocol",
+      "meta_en": "Resource Flow Balance & Anti-Extremity Throttling Protocol",
+      "core_meaning_bn": "Resource Flow Balance ও Anti-Extremity Throttling Protocol",
+      "core_meaning_en": "Resource Flow Balance & Anti-Extremity Throttling Protocol"
     },
     {
       "surah": 17,
@@ -4751,7 +4853,13 @@
         }
       ],
       "translation_en": "Indeed, your Lord extends provision for whom He wills and restricts [it]. Indeed He is ever, concerning His servants, Acquainted and Seeing.",
-      "conventional_en": "Indeed, your Lord extends provision for whom He wills and restricts [it]. Indeed He is ever, concerning His servants, Acquainted and Seeing."
+      "conventional_en": "Indeed, your Lord extends provision for whom He wills and restricts [it]. Indeed He is ever, concerning His servants, Acquainted and Seeing.",
+      "modern_translation_bn": "নিশ্চয়ই তোমার Root Directory তাঁর সামগ্রিক সিস্টেম ডিজাইনের ভারসাম্য রক্ষার্থে যার জন্য ইচ্ছা Bandwidth ও রিজিক (الرِّزْقَ) এক্সপ্যান্ড বা প্রশস্ত করেন (يَبْسُطُ) এবং যার জন্য ইচ্ছা পরিমিত বা সংকুচিত করেন (يَقْدِرُ); নিশ্চয়ই তিনি তাঁর সমস্ত ক্লায়েন্ট বান্দাদের স্টেট সম্পর্কে সম্পূর্ণ ওয়াকিবহাল ও সার্বক্ষণিক ডেটা-মনিটর (خَبِيرًا بَصِيرًا) [৪];",
+      "conventional_bn": "নিশ্চয়ই তোমার প্রতিপালক যার জন্য ইচ্ছা রিজিক প্রশস্ত করেন এবং সংকুচিত করেন; নিশ্চয়ই তিনি তাঁর বান্দাদের বিষয়ে সম্যক অবগত, প্রত্যক্ষকারী।",
+      "meta_bn": "Dynamic Bandwidth Allocation ও Full-Spectrum System Monitoring",
+      "meta_en": "Dynamic Bandwidth Allocation & Full-Spectrum System Monitoring",
+      "core_meaning_bn": "Dynamic Bandwidth Allocation ও Full-Spectrum System Monitoring",
+      "core_meaning_en": "Dynamic Bandwidth Allocation & Full-Spectrum System Monitoring"
     },
     {
       "surah": 17,
@@ -4901,7 +5009,13 @@
         }
       ],
       "translation_en": "And do not kill your children for fear of poverty. We provide for them and for you. Indeed, their killing is ever a great sin.",
-      "conventional_en": "And do not kill your children for fear of poverty. We provide for them and for you. Indeed, their killing is ever a great sin."
+      "conventional_en": "And do not kill your children for fear of poverty. We provide for them and for you. Indeed, their killing is ever a great sin.",
+      "modern_translation_bn": "আর রিসোর্স ঘাটতি বা দারিদ্র্যের কাল্পনিক অ্যালার্মে (خَشْيَةَ إِمْلَاقٍ) তোমরা তোমাদের ফিউচার জেনারেশন নোড বা সন্তানদের টার্মিনেট বা হত্যা করো না (وَلَا تَقْتُلُوا أَوْلَادَكُمْ); আমিই সেন্ট্রাল ক্লাউড থেকে তাদেরকে এবং তোমাদেরকে রিয়েল-টাইমে রিজিক ও এনার্জি সাপ্লাই দেই; নিশ্চয়ই তাদের লাইফ-সাইকেল টার্মিনেশন একটি বিরাট সিস্টেম ক্রাইম ও মহাপাপ (خِطْئًا كَبِيرًا) [৪];",
+      "conventional_bn": "আর দারিদ্র্যের ভয়ে তোমরা তোমাদের সন্তানদের হত্যা করো না; আমিই তাদেরকে এবং তোমাদেরকে রিজিক প্রদান করি; নিশ্চয়ই তাদেরকে হত্যা করা মহাপাপ।",
+      "meta_bn": "Starvation Paranoia Protection ও Direct Resource Sustenance Law",
+      "meta_en": "Starvation Paranoia Protection & Direct Resource Sustenance Law",
+      "core_meaning_bn": "Starvation Paranoia Protection ও Direct Resource Sustenance Law",
+      "core_meaning_en": "Starvation Paranoia Protection & Direct Resource Sustenance Law"
     },
     {
       "surah": 17,
@@ -5001,7 +5115,13 @@
         }
       ],
       "translation_en": "And do not approach unlawful sexual intercourse. Indeed, it is ever an immorality and is evil as a way.",
-      "conventional_en": "And do not approach unlawful sexual intercourse. Indeed, it is ever an immorality and is evil as a way."
+      "conventional_en": "And do not approach unlawful sexual intercourse. Indeed, it is ever an immorality and is evil as a way.",
+      "modern_translation_bn": "আর অবৈধ বায়োলজিক্যাল কানেকশন ও ব্যভিচারের (الزِّنَىٰ) প্রক্সিমিটি জোনেও প্রবেশ করো না; নিশ্চয়ই তা একটি হাই-লেভেল ডাটা-করাপশন (فَاحِشَةً) এবং সামাজিক ইকোসিস্টেমের জন্য এক চরম ধ্বংসাত্মক ও ত্রুটিপূর্ণ পথওয়ে (سَاءَ سَبِيلًا) [৪];",
+      "conventional_bn": "আর ব্যভিচারের কাছেও যেও না; নিশ্চয়ই তা এক অশ্লীল কাজ ও নিকৃষ্ট পথ।",
+      "meta_bn": "Illicit Data Coupling Blockade ও Destructive Path Warning",
+      "meta_en": "Illicit Data Coupling Blockade & Destructive Path Warning",
+      "core_meaning_bn": "Illicit Data Coupling Blockade ও Destructive Path Warning",
+      "core_meaning_en": "Illicit Data Coupling Blockade & Destructive Path Warning"
     },
     {
       "surah": 17,
@@ -5241,7 +5361,13 @@
         }
       ],
       "translation_en": "And do not kill the soul which Allah has forbidden, except by right. And whoever is killed unjustly - We have given his heir authority, but let him not exceed limits in [the matter of] taking life. Indeed, he has been supported [by the law].",
-      "conventional_en": "And do not kill the soul which Allah has forbidden, except by right. And whoever is killed unjustly - We have given his heir authority, but let him not exceed limits in [the matter of] taking life. Indeed, he has been supported [by the law]."
+      "conventional_en": "And do not kill the soul which Allah has forbidden, except by right. And whoever is killed unjustly - We have given his heir authority, but let him not exceed limits in [the matter of] taking life. Indeed, he has been supported [by the law].",
+      "modern_translation_bn": "আর যে Human Hardware বা প্রাণকে ধ্বংস করা আল্লাহ নিষিদ্ধ কোড হিসেবে লক করেছেন (حَرَّمَ اللَّهُ), সিস্টেমের আইনানুগ জাস্টিস প্রটোকল ছাড়া (إِلَّا بِالْحَقِّ) তাকে টার্মিনেট করো না; আর কাউকে সিস্টেমে অন্যায়ভাবে হত্যা করা হলে আমি তার লিগ্যাল অথরিটি নোড বা উত্তরাধিকারীকে (لِوَلِيِّهِ) আইনি প্রতিকারের সুপ্রীম অ্যাক্সেস (سُلْطَانًا) প্রদান করেছি—কাজেই সে যেন প্রতিশোধ গ্রহণে কোনো সীমালঙ্ঘন না করে (فَلَا يُسْرِف فِي الْقَتْلِ); নিশ্চয়ই সে সিস্টেমিক ল দ্বারা সম্পূর্ণরূপে সুরক্ষিত ও সাহায্যপ্রাপ্ত (مَنصُورًا) [৪];",
+      "conventional_bn": "আর যথার্থ কারণ ছাড়া এমন কোনো প্রাণকে হত্যা করো না যা আল্লাহ নিষিদ্ধ করেছেন; আর কাউকে অন্যায়ভাবে হত্যা করা হলে আমি তার উত্তরাধিকারীকে ক্ষমতা দিয়েছি, কাজেই সে যেন হত্যার ব্যাপারে বাড়াবাড়ি না করে; নিশ্চয়ই সে সাহায্যপ্রাপ্ত।",
+      "meta_bn": "Hardware Termination Prohibition, Legal Authority & Non-Transgression",
+      "meta_en": "Hardware Termination Prohibition, Legal Authority & Non-Transgression",
+      "core_meaning_bn": "Hardware Termination Prohibition, Legal Authority & Non-Transgression",
+      "core_meaning_en": "Hardware Termination Prohibition, Legal Authority & Non-Transgression"
     },
     {
       "surah": 17,
@@ -5431,7 +5557,13 @@
         }
       ],
       "translation_en": "And do not approach the property of an orphan, except in the way that is best, until he reaches maturity. And fulfill [every] commitment. Indeed, the commitment is ever [that about which one will be] questioned.",
-      "conventional_en": "And do not approach the property of an orphan, except in the way that is best, until he reaches maturity. And fulfill [every] commitment. Indeed, the commitment is ever [that about which one will be] questioned."
+      "conventional_en": "And do not approach the property of an orphan, except in the way that is best, until he reaches maturity. And fulfill [every] commitment. Indeed, the commitment is ever [that about which one will be] questioned.",
+      "modern_translation_bn": "আর Vulnerable Node বা এতিমদের ডেটা-অ্যাসেটের (مَالَ الْيَتِيمِ) কাছে কোনো ক্ষতিকারক ইনপুটে যেও না—যতক্ষণ না সে পূর্ণ ম্যাচিউরিটি বা সাবালকত্বে (أَشُدَّهُ) উপনীত হয়—একমাত্র তার সম্পদকে অপটিমাইজ ও বৃদ্ধি করার উদ্দেশ্য ব্যতীত; এবং প্রতিটি সিস্টেম কন্ট্রাক্ট ও ওয়াদাকে (بِالْعَهْدِ) শতভাগ পূর্ণ করো—নিশ্চয়ই প্রতিটি কমিটমেন্ট সম্পর্কে ফাইনাল অডিটে কঠোর জবাবদিহিতা (ম্যাস'ঊল) করা হবে [৪];",
+      "conventional_bn": "আর এতিমের সম্পদের কাছে যেও না, যতক্ষণ না সে বয়োপ্রাপ্ত হয়—উত্তম পন্থা ব্যতীত; এবং অঙ্গীকার পূর্ণ করো, নিশ্চয়ই অঙ্গীকার সম্পর্কে জবাবদিহি করতে হবে।",
+      "meta_bn": "Vulnerable Node Asset Protection ও Contract Verification Protocol",
+      "meta_en": "Vulnerable Node Asset Protection & Contract Verification Protocol",
+      "core_meaning_bn": "Vulnerable Node Asset Protection ও Contract Verification Protocol",
+      "core_meaning_en": "Vulnerable Node Asset Protection & Contract Verification Protocol"
     },
     {
       "surah": 17,
@@ -5561,7 +5693,13 @@
         }
       ],
       "translation_en": "And give full measure when you measure, and weigh with an even balance. That is the best [way] and best in result.",
-      "conventional_en": "And give full measure when you measure, and weigh with an even balance. That is the best [way] and best in result."
+      "conventional_en": "And give full measure when you measure, and weigh with an even balance. That is the best [way] and best in result.",
+      "modern_translation_bn": "আর বাণিজ্যিক লেনদেনে যখন পরিমাপ করবে, তখন ফুল মেজারমেন্ট (أَوْفُوا الْكَيْلَ) দেবে এবং জিরো-এরর সঠিক ও নিখুঁত স্কেলে (بِالْقِسْطَاسِ الْمُسْتَقِيمِ) ওজন করবে; এটি সার্বিক নেটওয়ার্ক ট্রাস্টের জন্য সর্বোত্তম (خَيْرٌ) এবং দীর্ঘমেয়াদি ফাইনাল রেজাল্টে পরম কল্যাণকর (أَحْسَنُ تَأْوِيلًا) [৪];",
+      "conventional_bn": "আর পরিমাপ করার সময় পূর্ণ মাপে দেবে এবং সঠিক দাঁড়িপাল্লায় ওজন করবে; এটাই উত্তম এবং পরিণামে উৎকৃষ্ট।",
+      "meta_bn": "Unbiased Metric Calibration ও Optimal Outcome Theorem",
+      "meta_en": "Unbiased Metric Calibration & Optimal Outcome Theorem",
+      "core_meaning_bn": "Unbiased Metric Calibration ও Optimal Outcome Theorem",
+      "core_meaning_en": "Unbiased Metric Calibration & Optimal Outcome Theorem"
     },
     {
       "surah": 17,
@@ -5741,7 +5879,13 @@
         }
       ],
       "translation_en": "And do not pursue that of which you have no knowledge. Indeed, the hearing, the sight and the heart - about all those [one] will be questioned.",
-      "conventional_en": "And do not pursue that of which you have no knowledge. Indeed, the hearing, the sight and the heart - about all those [one] will be questioned."
+      "conventional_en": "And do not pursue that of which you have no knowledge. Indeed, the hearing, the sight and the heart - about all those [one] will be questioned.",
+      "modern_translation_bn": "আর যে বিষয়ে তোমার কাছে নিশ্চিত ও প্রমাণিত Data Analysis বা জ্ঞান নেই (مَا لَيْسَ لَكَ بِهِ عِلْمٌ), তার পেছনে অন্ধভাবে ছুটিও না; নিশ্চয়ই তোমার অডিও সেন্সর বা কান (السَّمْعَ), অপটিক্যাল সেন্সর বা চোখ (الْبَصَرَ) এবং কোর প্রসেসিং কার্নেল বা হৃদয় (الْفُؤَادَ)—এদের প্রতিটি ইনপুট ডিভাইসের প্রতিটি ডেটা-লগ সম্পর্কে ফাইনাল স্ক্রীনিংয়ে পুঙ্খানুপুঙ্খ অডিট ও জবাবদিহি (مَسْئُولًا) গ্রহণ করা হবে [৪];",
+      "conventional_bn": "আর যে বিষয়ে তোমার কোনো জ্ঞান নেই, তার পেছনে ছুmetaটো না; নিশ্চয়ই কান, চোখ ও হৃদয়—এদের প্রতিটির বিষয়েই জবাবদিহি করতে হবে।",
+      "meta_bn": "Cognitive Perception Sensor Audit ও Speculation Rejection",
+      "meta_en": "Cognitive Perception Sensor Audit & Speculation Rejection",
+      "core_meaning_bn": "Cognitive Perception Sensor Audit ও Speculation Rejection",
+      "core_meaning_en": "Cognitive Perception Sensor Audit & Speculation Rejection"
     },
     {
       "surah": 17,
@@ -5891,7 +6035,13 @@
         }
       ],
       "translation_en": "And do not walk upon the earth exultantly. Indeed, you will never tear the earth [apart], and you will never reach the mountains in height.",
-      "conventional_en": "And do not walk upon the earth exultantly. Indeed, you will never tear the earth [apart], and you will never reach the mountains in height."
+      "conventional_en": "And do not walk upon the earth exultantly. Indeed, you will never tear the earth [apart], and you will never reach the mountains in height.",
+      "modern_translation_bn": "আর এই ভৌত গ্রাউন্ড প্ল্যাটফর্মে অহংকার ও ঔদ্ধত্যের সাথে (مَرَحًا) বিচরণ করো না; তোমার হার্ডওয়্যার লিমিটেশন এই যে—তুমি কখনই পৃথিবীকে ভেঙে বিদীর্ণ করতে পারবে না (لَن تَخْرِقَ الْأَرْضَ) এবং কোনোদিন উচ্চতায় জিওলজিক্যাল পর্বতের সমানও (الْجِبَالَ طُولًا) পৌঁছাতে পারবে না [৪];",
+      "conventional_bn": "আর যমীনে দম্ভভরে পদচারণা করো না; তুমি কখনই যমীনকে বিদীর্ণ করতে পারবে না এবং উচ্চতায় পর্বতের সমানও পৌঁছাতে পারবে না।",
+      "meta_bn": "Hardware Limit Realization ও Zero-Arrogance Movement",
+      "meta_en": "Hardware Limit Realization & Zero-Arrogance Movement",
+      "core_meaning_bn": "Hardware Limit Realization ও Zero-Arrogance Movement",
+      "core_meaning_en": "Hardware Limit Realization & Zero-Arrogance Movement"
     },
     {
       "surah": 17,
@@ -5981,7 +6131,13 @@
         }
       ],
       "translation_en": "All that - its evil is ever, in the sight of your Lord, detested.",
-      "conventional_en": "All that - its evil is ever, in the sight of your Lord, detested."
+      "conventional_en": "All that - its evil is ever, in the sight of your Lord, detested.",
+      "modern_translation_bn": "উল্লিখিত নীতিমালার প্রতিটি ম্যালিসিয়াস ইনপুট ও মন্দ ডেটা-অ্যাকশন (سَيِّئُهُ) তোমার Root Directory বা প্রতিপালকের সিস্টেমে চরমভাবে অপছন্দনীয় ও ব্লকড (مَكْرُوهًا) [৪];",
+      "conventional_bn": "এগুলোর মধ্যকার সব মন্দ বিষয়ই তোমার প্রতিপালকের কাছে অপছন্দনীয়।",
+      "meta_bn": "Malicious Code Prohibition ও Root Directory Disapproval",
+      "meta_en": "Malicious Code Prohibition & Root Directory Disapproval",
+      "core_meaning_bn": "Malicious Code Prohibition ও Root Directory Disapproval",
+      "core_meaning_en": "Malicious Code Prohibition & Root Directory Disapproval"
     },
     {
       "surah": 17,
@@ -6181,7 +6337,13 @@
         }
       ],
       "translation_en": "That is from what your Lord has revealed to you, [O Muhammad], of wisdom. And, [O mankind], do not make [as equal] with Allah another deity, lest you be thrown into Hell, blamed and banished.",
-      "conventional_en": "That is from what your Lord has revealed to you, [O Muhammad], of wisdom. And, [O mankind], do not make [as equal] with Allah another deity, lest you be thrown into Hell, blamed and banished."
+      "conventional_en": "That is from what your Lord has revealed to you, [O Muhammad], of wisdom. And, [O mankind], do not make [as equal] with Allah another deity, lest you be thrown into Hell, blamed and banished.",
+      "modern_translation_bn": "এগুলো সেই সুপ্রীম সিস্টেম উইজডম বা হিকমতের (مِنَ الْحِكْمَةِ) অন্তর্ভুক্ত—যা তোমার Root Directory সরাসরি ওহী ডাউনলিংকের (أَوْحَىٰ إِلَيْكَ) মাধ্যমে তোমাকে প্রদান করেছেন; আর সিস্টেম আর্কিটেক্ট Allah-এর সাথে অন্য কোনো ডামী সাব-সিস্টেম স্থির করো না—নতুবা তুমি সম্পূর্ণ নিন্দিত ও বিতাড়িত (مَلُومًا مَّدْحُورًا) হয়ে Thermodynamic Crash-Zone বা জাহান্নামে নিক্ষিপ্ত হবে [৪];",
+      "conventional_bn": "এগুলো সেই হিকমতের অন্তর্ভুক্ত, যা তোমার প্রতিপালক তোমার প্রতি ওহী করেছেন; আর আল্লাহর সাথে অন্য কোনো ইলাহ স্থির করো না, অন্যথায় তুমি নিন্দিত ও বিতাড়িত অবস্থায় জাহান্নামে নিক্ষিপ্ত হবে।",
+      "meta_bn": "System Wisdom Downlink ও Multi-Node Idolatry Penalty",
+      "meta_en": "System Wisdom Downlink & Multi-Node Idolatry Penalty",
+      "core_meaning_bn": "System Wisdom Downlink ও Multi-Node Idolatry Penalty",
+      "core_meaning_en": "System Wisdom Downlink & Multi-Node Idolatry Penalty"
     },
     {
       "surah": 17,
@@ -6311,7 +6473,13 @@
         }
       ],
       "translation_en": "Then, has your Lord chosen you for [having] sons and taken from among the angels daughters? Indeed, you say a grave saying.",
-      "conventional_en": "Then, has your Lord chosen you for [having] sons and taken from among the angels daughters? Indeed, you say a grave saying."
+      "conventional_en": "Then, has your Lord chosen you for [having] sons and taken from among the angels daughters? Indeed, you say a grave saying.",
+      "modern_translation_bn": "তোমাদের Root Directory কি তোমাদেরকে পুত্র নোড দ্বারা প্রিভিলেজড করেছেন এবং নিজের জন্য High-Dimensional Cosmic Forces বা মালাইকা নোডসমূহকে নারী আইডি হিসেবে সাব-অ্যাসাইন করেছেন? নিঃসন্দেহে তোমরা একটি অত্যন্ত মারাত্মক ও ডাহা বিভ্রান্তিকর Error Log বা কুৎসাপূর্ণ উক্তি (قَوْلًا عَظِيمًا) প্রচার করছ [৪]!",
+      "conventional_bn": "তোমাদের প্রতিপালক কি তোমাদের জন্য পুত্রদের বিশিষ্ট করেছেন এবং নিজের জন্য ফেরেশতাদের মধ্য থেকে কন্যা গ্রহণ করেছেন? নিশ্চয়ই তোমরা এক মারাত্মক কথা বলছ!",
+      "meta_bn": "False Data Attribute Rejection ও High-Dimensional Entity Logic",
+      "meta_en": "False Data Attribute Rejection & High-Dimensional Entity Logic",
+      "core_meaning_bn": "False Data Attribute Rejection ও High-Dimensional Entity Logic",
+      "core_meaning_en": "False Data Attribute Rejection & High-Dimensional Entity Logic"
     },
     {
       "surah": 17,
@@ -6431,7 +6599,13 @@
         }
       ],
       "translation_en": "And We have certainly diversified [the contents] in this Qur'an that mankind may be reminded, but it does not increase the disbelievers except in aversion.",
-      "conventional_en": "And We have certainly diversified [the contents] in this Qur'an that mankind may be reminded, but it does not increase the disbelievers except in aversion."
+      "conventional_en": "And We have certainly diversified [the contents] in this Qur'an that mankind may be reminded, but it does not increase the disbelievers except in aversion.",
+      "modern_translation_bn": "আর নিশ্চয়ই আমি এই Master Source Code বা কুরআনে (فِي هَٰذَا الْقُرْآنِ) সত্যের সমীকরণগুলোকে বহুমুখী ফর্মে বিন্যাস করেছি (صَرَّفْنَا)—যাতে তারা ডেটা রিসিভ ও রিফ্লেক্ট করে (لِيَذَّكَّرُوا); কিন্তু তা তাদের মধ্যে কেবল তীব্র বিমুখতা ও Signal Rejection-ই (نُفُورًا) বৃদ্ধি করে [৪];",
+      "conventional_bn": "আর আমি এই কুরআনে বিভিন্নভাবে বর্ণনা করেছি—যাতে তারা উপদেশ গ্রহণ করে; কিন্তু তা তাদের বিমুখতাই বৃদ্ধি করে।",
+      "meta_bn": "Source Code Multi-Dimensional Formatting ও Outlier Alienation",
+      "meta_en": "Source Code Multi-Dimensional Formatting & Outlier Alienation",
+      "core_meaning_bn": "Source Code Multi-Dimensional Formatting ও Outlier Alienation",
+      "core_meaning_en": "Source Code Multi-Dimensional Formatting & Outlier Alienation"
     },
     {
       "surah": 17,
@@ -6581,7 +6755,13 @@
         }
       ],
       "translation_en": "Say, [O Muhammad], \"If there had been with Him [other] gods, as they say, then they [each] would have sought to the Owner of the Throne a way.\"",
-      "conventional_en": "Say, [O Muhammad], \"If there had been with Him [other] gods, as they say, then they [each] would have sought to the Owner of the Throne a way.\""
+      "conventional_en": "Say, [O Muhammad], \"If there had been with Him [other] gods, as they say, then they [each] would have sought to the Owner of the Throne a way.\"",
+      "modern_translation_bn": "তুমি সিস্টেম ব্রডকাস্ট করে বলো: ‘যদি সিস্টেম আর্কিটেক্টের সাথে আরও কোনো সমান্তরাল সাব-সিস্টেম বা ইলাহ থাকত (آلِهَةٌ كَمَا يَقُولُونَ)—তবে তারা নিশ্চয়ই আরশের সুপ্রীম কন্ট্রোলারের (ذِي الْعَرْشِ) মূল সিংহাসন দখলের রুট বা উপায় অন্বেষণ করত’ [৪]!",
+      "conventional_bn": "বলো, ‘যদি তাঁর সাথে আরও ইলাহ থাকত—যেমন তারা বলে—তবে তারা আরশের অধিপতির দিকে পথ খুঁজত’!",
+      "meta_bn": "Single Dynamic Architecture Logic ও Zero-Rivalry Proof",
+      "meta_en": "Single Dynamic Architecture Logic & Zero-Rivalry Proof",
+      "core_meaning_bn": "Single Dynamic Architecture Logic ও Zero-Rivalry Proof",
+      "core_meaning_en": "Single Dynamic Architecture Logic & Zero-Rivalry Proof"
     },
     {
       "surah": 17,
@@ -6661,7 +6841,13 @@
         }
       ],
       "translation_en": "Exalted is He and high above what they say by great sublimity.",
-      "conventional_en": "Exalted is He and high above what they say by great sublimity."
+      "conventional_en": "Exalted is He and high above what they say by great sublimity.",
+      "modern_translation_bn": "তিনি সম্পূর্ণ ত্রুটিমুক্ত, পরম পবিত্র (سُبْحَانَهُ) এবং তারা যে সকল মিথ্যা গুণাবলি অ্যাসাইন করে—তা থেকে তিনি বহু ঊর্ধ্বে এক Infinite Altitude বা মহা মহিমান্বিত মর্যাদায় অধিষ্ঠিত (تَعَالَىٰ عَمَّا يَقُولُونَ عُلُوًّا كَبِيرًا) [৪];",
+      "conventional_bn": "তিনি পবিত্র, সমুন্নত এবং তারা যা বলে তা থেকে তিনি বহু ঊর্ধ্বে—মহিমান্বিত।",
+      "meta_bn": "Absolute Transcendent Purity ও Infinite Distance Theorem",
+      "meta_en": "Absolute Transcendent Purity & Infinite Distance Theorem",
+      "core_meaning_bn": "Absolute Transcendent Purity ও Infinite Distance Theorem",
+      "core_meaning_en": "Absolute Transcendent Purity & Infinite Distance Theorem"
     },
     {
       "surah": 17,
@@ -6891,7 +7077,13 @@
         }
       ],
       "translation_en": "The seven heavens and the earth and whatever is in them exalt Him. And there is not a thing except that it exalts [Allah] by His praise, but you do not understand their [way of] exalting. Indeed, He is ever Forbearing and Forgiving.",
-      "conventional_en": "The seven heavens and the earth and whatever is in them exalt Him. And there is not a thing except that it exalts [Allah] by His praise, but you do not understand their [way of] exalting. Indeed, He is ever Forbearing and Forgiving."
+      "conventional_en": "The seven heavens and the earth and whatever is in them exalt Him. And there is not a thing except that it exalts [Allah] by His praise, but you do not understand their [way of] exalting. Indeed, He is ever Forbearing and Forgiving.",
+      "modern_translation_bn": "সপ্ত মহাজাগতিক স্তরবিন্যাস (السَّمَاوَاتُ السَّبْعُ), এই ভৌত পৃথিবী (وَالْأَرْضُ) এবং তাদের মধ্যকার প্রতিটি পার্টিকেল অবিরাম তাঁর জন্য Frequency Refinement ও মহিমা ঘোষণা (تُسَبِّحُ لَهُ) করছে; এমন কোনো সিঙ্গেল এন্টিটি নেই যা তাঁর প্রশংসা সহকারে সিগন্যাল রিফাইন করে না (يُسَبِّحُ بِحَمْدِهِ)—কিন্তু তোমরা তাদের অন-বোর্ড রেজোন্যান্স ও তাসবীহ অনুধাবন করতে পারো না (لَّا تَفْقَهُونَ تَسْبِيحَهُمْ); নিশ্চয়ই তিনি পরম সহনশীল (حَلِيمًا) ও পরম ক্ষমাশীল (غَفُورًا) [৪];",
+      "conventional_bn": "সপ্ত আসমান, পৃথিবী এবং এদের মধ্যে যা কিছু আছে—সবই তাঁর পবিত্রতা ও মহিমা ঘোষণা করে; এবং এমন কোনো কিছু নেই যা তাঁর প্রশংসার সাথে পবিত্রতা ঘোষণা করে না; কিন্তু তোমরা তাদের পবিত্রতা ঘোষণা অনুধাবন করতে পারো না; নিশ্চয়ই তিনি পরম সহনশীল, পরম ক্ষমাশীল।",
+      "meta_bn": "Seven Cosmic Layers, Ground Platform & Universal Frequency Resonance",
+      "meta_en": "Seven Cosmic Layers, Ground Platform & Universal Frequency Resonance",
+      "core_meaning_bn": "Seven Cosmic Layers, Ground Platform & Universal Frequency Resonance",
+      "core_meaning_en": "Seven Cosmic Layers, Ground Platform & Universal Frequency Resonance"
     },
     {
       "surah": 17,
@@ -7031,7 +7223,13 @@
         }
       ],
       "translation_en": "And when you recite the Qur'an, We put between you and those who do not believe in the Hereafter a concealed partition.",
-      "conventional_en": "And when you recite the Qur'an, We put between you and those who do not believe in the Hereafter a concealed partition."
+      "conventional_en": "And when you recite the Qur'an, We put between you and those who do not believe in the Hereafter a concealed partition.",
+      "modern_translation_bn": "আর যখন তুমি এই Master Source Code বা কুরআন রিড ও তিলাওয়াত করো (قَرَأْتَ الْقُرْآنَ), তখন তোমার এবং Final Audit Window বা আখিরাতে অবিশ্বাসী আউটলায়ারদের মাঝে (لَا يُؤْمِنُونَ بِالْآخِرَةِ) আমি একটি অদৃশ্য সিকিউরিটি শিল্ড ও ফায়ারওয়াল (حِجَابًا مَّسْتُورًا) এক্সেকিউট করে দেই [৪];",
+      "conventional_bn": "আর যখন তুমি কুরআন তিলাওয়াত করো, তখন তোমার ও আখিরাতে অবিশ্বাসী লোকদের মাঝে আমি এক অদৃশ্য অন্তরাল স্থাপন করি।",
+      "meta_bn": "OOS Encryption Barrier ও Acoustic Firewall Deployment",
+      "meta_en": "OOS Encryption Barrier & Acoustic Firewall Deployment",
+      "core_meaning_bn": "OOS Encryption Barrier ও Acoustic Firewall Deployment",
+      "core_meaning_en": "OOS Encryption Barrier & Acoustic Firewall Deployment"
     },
     {
       "surah": 17,
@@ -7241,7 +7439,13 @@
         }
       ],
       "translation_en": "And We have placed over their hearts coverings, lest they understand it, and in their ears deafness. And when you mention your Lord alone in the Qur'an, they turn back in aversion.",
-      "conventional_en": "And We have placed over their hearts coverings, lest they understand it, and in their ears deafness. And when you mention your Lord alone in the Qur'an, they turn back in aversion."
+      "conventional_en": "And We have placed over their hearts coverings, lest they understand it, and in their ears deafness. And when you mention your Lord alone in the Qur'an, they turn back in aversion.",
+      "modern_translation_bn": "এবং তাদের কোর মেমোরির ওপর আমি কগনিটিভ এনক্রিপশন শিল্ড (أَكِنَّةً) স্থাপন করি যাতে তারা এর গভীর মিনিং ডিকোড করতে না পারে (أَن يَفْقَهُوهُ) এবং তাদের অডিও সেন্সরে কানেক্টিভিটি লস বা বধিরতা (وَقْرًا) দেই; আর যখন তুমি কুরআনে কেবল তোমার একক Root Directory-র কথা ডিক্লেয়ার করো (رَبَّكَ فِي الْقُرْآنِ وَحْدَهُ), তখন তারা চরম বিরক্তি ও বিমুখতায় পৃষ্ঠপ্রদর্শন করে সিস্টেম ডিসকানেক্ট করে (وَلَّوْا عَلَىٰ أَدْبَارِهِمْ نُفُورًا) [৪];",
+      "conventional_bn": "আর আমি তাদের অন্তরের ওপর আবরণ দিয়ে দেই যাতে তারা তা বুঝতে না পারে এবং তাদের কানে বধিরতা দেই; আর যখন তুমি কুরআনে কেবল তোমার এক প্রতিপালকের কথা উল্লেখ করো, তখন তারা বিমুখ হয়ে পেছনে ফিরে চলে যায়।",
+      "meta_bn": "Subconscious Cognitive Lock ও Anti-Idolatry Backlash",
+      "meta_en": "Subconscious Cognitive Lock & Anti-Idolatry Backlash",
+      "core_meaning_bn": "Subconscious Cognitive Lock ও Anti-Idolatry Backlash",
+      "core_meaning_en": "Subconscious Cognitive Lock & Anti-Idolatry Backlash"
     },
     {
       "surah": 17,
@@ -7451,7 +7655,13 @@
         }
       ],
       "translation_en": "We are most knowing of how they listen to it when they listen to you and [of] when they are in private conversation, when the wrongdoers say, \"You follow not but a man affected by magic.\"",
-      "conventional_en": "We are most knowing of how they listen to it when they listen to you and [of] when they are in private conversation, when the wrongdoers say, \"You follow not but a man affected by magic.\""
+      "conventional_en": "We are most knowing of how they listen to it when they listen to you and [of] when they are in private conversation, when the wrongdoers say, \"You follow not but a man affected by magic.\"",
+      "modern_translation_bn": "তারা যখন তোমার ট্রান্সমিশন ইন্টারফেসে আড়ি পেতে লিসেন করে (يَسْتَمِعُونَ بِهِ)، তখন তাদের ইন্টারনাল ইন্টেন্ট কী—তা আমি সম্পূর্ণ নিখুঁতভাবে জানি; এবং যখন তারা গোপনে কনস্পিরেসি বা ফিসফিস করে, তখন সেই সিস্টেম-ডিস্টোর্শনকারী জালেমরা বলে: ‘তোমরা তো স্রেফ এক অপটিক্যাল ইল্যুশন বা জাদুগ্রস্ত হিউম্যান নোডেরই (رَجُلًا مَّسْحُورًا) অনুসরণ করছ’ [৪]!",
+      "conventional_bn": "তারা যখন কান পেতে তোমার কথা শোনে, তখন তারা কী উদ্দেশ্যে শোনে তা আমি খুব ভালো করেই জানি; আর যখন তারা গোপনে পরামর্শ করে, তখন জালেমরা বলে, ‘তোমরা তো কেবল এক জাদুগ্রস্ত ব্যক্তিরই অনুসরণ করছ’!",
+      "meta_bn": "Eavesdropping Malware Detection ও Optical Illusion Accusation",
+      "meta_en": "Eavesdropping Malware Detection & Optical Illusion Accusation",
+      "core_meaning_bn": "Eavesdropping Malware Detection ও Optical Illusion Accusation",
+      "core_meaning_en": "Eavesdropping Malware Detection & Optical Illusion Accusation"
     },
     {
       "surah": 17,
@@ -7561,7 +7771,13 @@
         }
       ],
       "translation_en": "Look how they strike for you comparisons; but they have strayed, so they cannot [find] a way.",
-      "conventional_en": "Look how they strike for you comparisons; but they have strayed, so they cannot [find] a way."
+      "conventional_en": "Look how they strike for you comparisons; but they have strayed, so they cannot [find] a way.",
+      "modern_translation_bn": "তুমি স্ক্যান করে দেখো (انظُرْ)—তারা তোমার বিরুদ্ধে কী ধরণের ত্রুটিপূর্ণ অ্যানালজি ও উপমা (الْأَمْثَالَ) সেট করেছে! ফলে তারা নিজেরাই কমপ্লিটলি Signal Loss বা পথভ্রষ্ট (فَضَلُّوا) হয়েছে, কাজেই তারা সত্যের অপটিমাইজড পাথওয়ে খুঁজে পেতে কোনোভাবেই সক্ষম নয় (فَلَا يَسْتَطِيعُونَ سَبِيلًا) [৪];",
+      "conventional_bn": "দেখো, তারা তোমার জন্য কী ধরনের উপমা উপস্থাপন করে! ফলে তারা পথভ্রষ্ট হয়েছে, কাজেই তারা কোনো সঠিক পথ পেতে সক্ষম নয়।",
+      "meta_bn": "Distorted System Analogy ও Irreversible Signal Loss",
+      "meta_en": "Distorted System Analogy & Irreversible Signal Loss",
+      "core_meaning_bn": "Distorted System Analogy ও Irreversible Signal Loss",
+      "core_meaning_en": "Distorted System Analogy & Irreversible Signal Loss"
     },
     {
       "surah": 17,
@@ -7671,7 +7887,13 @@
         }
       ],
       "translation_en": "And they say, \"When we are bones and crumbled particles, will we [truly] be resurrected as a new creation?\"",
-      "conventional_en": "And they say, \"When we are bones and crumbled particles, will we [truly] be resurrected as a new creation?\""
+      "conventional_en": "And they say, \"When we are bones and crumbled particles, will we [truly] be resurrected as a new creation?\"",
+      "modern_translation_bn": "আর তারা তাদের ওওএসের অজ্ঞতায় বলে: ‘যখন আমাদের এই কার্বন হার্ডওয়্যার ভেঙে অস্থি ও ধূলিকণায় চূর্ণ-বিচূর্ণ (عِظَامًا وَرُفَاتًا) হয়ে যাবে—তখনও কি আমাদের মেমোরি ডেটাকে সম্পূর্ণ নিউ ফরম্যাটে রি-জেনারেট ও পুনরুত্থিত (خَلْقًا جَدِيدًا) করা সম্ভব’ [৪]?",
+      "conventional_bn": "আর তারা বলে, ‘আমরা যখন অস্থি ও চূর্ণ-বিচূর্ণ ধূলিকণায় পরিণত হব, তখনও কি আমরা নতুন সৃষ্টিরূপে পুনরুত্থিত হব’?",
+      "meta_bn": "Biological Entropy Disassembly ও Regeneration Doubt Bug",
+      "meta_en": "Biological Entropy Disassembly & Regeneration Doubt Bug",
+      "core_meaning_bn": "Biological Entropy Disassembly ও Regeneration Doubt Bug",
+      "core_meaning_en": "Biological Entropy Disassembly & Regeneration Doubt Bug"
     },
     {
       "surah": 17,
@@ -7741,7 +7963,13 @@
         }
       ],
       "translation_en": "Say, \"Be you stones or iron",
-      "conventional_en": "Say, \"Be you stones or iron"
+      "conventional_en": "Say, \"Be you stones or iron",
+      "modern_translation_bn": "তুমি জবাবে বলো: ‘তোমরা অতি-শক্তিশালী সিলিকন পাথর (حِجَارَةً) হয়ে যাও অথবা আল্ট্রা-ডেন্স লোহা (حَدِيدًا)—তাতেও সিস্টেমের রি-কনফিগারেশনে কোনো বাধা নেই’ [৪];",
+      "conventional_bn": "বলো, ‘তোমরা পাথর হয়ে যাও অথবা লোহা’—",
+      "meta_bn": "Inorganic Hard Material Reconfiguration Command",
+      "meta_en": "Inorganic Hard Material Reconfiguration Command",
+      "core_meaning_bn": "Inorganic Hard Material Reconfiguration Command",
+      "core_meaning_en": "Inorganic Hard Material Reconfiguration Command"
     },
     {
       "surah": 17,
@@ -8011,7 +8239,13 @@
         }
       ],
       "translation_en": "Or [any] creation of that which is great within your breasts.\" And they will say, \"Who will restore us?\" Say, \"He who brought you forth the first time.\" Then they will nod their heads toward you and say, \"When is that?\" Say, \"Perhaps it will be soon -",
-      "conventional_en": "Or [any] creation of that which is great within your breasts.\" And they will say, \"Who will restore us?\" Say, \"He who brought you forth the first time.\" Then they will nod their heads toward you and say, \"When is that?\" Say, \"Perhaps it will be soon -"
+      "conventional_en": "Or [any] creation of that which is great within your breasts.\" And they will say, \"Who will restore us?\" Say, \"He who brought you forth the first time.\" Then they will nod their heads toward you and say, \"When is that?\" Say, \"Perhaps it will be soon -",
+      "modern_translation_bn": "‘অথবা এমন কোনো কমপ্লেক্স ম্যাটার যা তোমাদের চিন্তাপ্রসেসরে আরও কঠিন মনে হয়!’ অতঃপর তারা প্রশ্ন করবে: ‘কে আমাদের পুনরায় লাইভ স্টেটে রিবুট করবে?’ তুমি বলবে: ‘সেই সুপ্রীমিক সোর্স—যিনি তোমাদের Initial Boot-Up বা প্রথমবার শূন্য থেকে সৃষ্টি (فَطَرَكُمْ أَوَّلَ مَرَّةٍ) করেছিলেন!’ তখন তারা বিস্ময়ে মাথা নেড়ে বলবে: ‘সেই ইভেন্ট কবে ঘটবে?’ তুমি বলো: ‘খুব সম্ভব সেই টাইম-উইন্ডো অত্যন্ত সন্নিকটে (عَسَىٰ أَن يَكُونَ قَرِيبًا)’ [৪]!",
+      "conventional_bn": "অথবা এমন কোনো সৃষ্টি যা তোমাদের ধারণায় আরও বেশি কঠিন; অতঃপর তারা বলবে, ‘কে আমাদের পুনরায় ফিরিয়ে আনবে?’ বলো, ‘তিনিই, যিনি তোমাদের প্রথমবার সৃষ্টি করেছেন’; তখন তারা তোমার সামনে মাথা নাড়বে এবং বলবে, ‘তা কবে হবে?’ বলো, ‘হতে পারে তা খুবই নিকটবর্তী’!",
+      "meta_bn": "Initial Boot-Up Source Theorem ও Time-Perception Metric",
+      "meta_en": "Initial Boot-Up Source Theorem & Time-Perception Metric",
+      "core_meaning_bn": "Initial Boot-Up Source Theorem ও Time-Perception Metric",
+      "core_meaning_en": "Initial Boot-Up Source Theorem & Time-Perception Metric"
     },
     {
       "surah": 17,
@@ -8121,7 +8355,13 @@
         }
       ],
       "translation_en": "On the Day He will call you and you will respond with praise of Him and think that you had not remained [in the world] except for a little.\"",
-      "conventional_en": "On the Day He will call you and you will respond with praise of Him and think that you had not remained [in the world] except for a little.\""
+      "conventional_en": "On the Day He will call you and you will respond with praise of Him and think that you had not remained [in the world] except for a little.\"",
+      "modern_translation_bn": "যেদিন তিনি ইউনিভার্সাল ওয়েক-আপ সিগন্যালে তোমাদের রিবুট কম্যান্ড (يَدْعُوكُمْ) পাঠাবেন, তখন তোমরা পরম প্রশংসার সাথে সিস্টেম রেসপন্স (فَتَسْتَجِيبُونَ بِحَمْدِهِ) দেবে; এবং তোমরা বুঝতে পারবে যে, পার্থিব ট্রানজিয়েন্ট স্টেজে তোমরা খুব অল্প সময়ের উইন্ডোতেই অবস্থান করেছিলে (إِن لَّبِثْتُمْ إِلَّا قَلِيلًا) [৪];",
+      "conventional_bn": "যেদিন তিনি তোমাদের ডাকবেন, অতঃপর তোমরা তাঁর প্রশংসার সাথে তাঁর ডাকে সাড়া দেবে এবং তোমরা ধারণা করবে যে, তোমরা অল্প সময়ই অবস্থান করেছিলে।",
+      "meta_bn": "Universal Wake-Up Signal ও Short Execution Window Realization",
+      "meta_en": "Universal Wake-Up Signal & Short Execution Window Realization",
+      "core_meaning_bn": "Universal Wake-Up Signal ও Short Execution Window Realization",
+      "core_meaning_en": "Universal Wake-Up Signal & Short Execution Window Realization"
     },
     {
       "surah": 17,
@@ -8301,7 +8541,13 @@
         }
       ],
       "translation_en": "And tell My servants to say that which is best. Indeed, Satan induces [dissension] among them. Indeed Satan is ever, to mankind, a clear enemy.",
-      "conventional_en": "And tell My servants to say that which is best. Indeed, Satan induces [dissension] among them. Indeed Satan is ever, to mankind, a clear enemy."
+      "conventional_en": "And tell My servants to say that which is best. Indeed, Satan induces [dissension] among them. Indeed Satan is ever, to mankind, a clear enemy.",
+      "modern_translation_bn": "আর আমার সিস্টেম-সিঙ্কড নোডদের ডিরেক্টিভ দাও—তারা যেন তাদের কমিউনিকেশনে সর্বোত্তম ও অপটিমাইজড বাক্য (الَّتِي هِيَ أَحْسَنُ) ব্যবহার করে; নিশ্চয়ই শয়তান ম্যালওয়্যার তাদের লোকাল নেটওয়ার্কে ফ্রিকোয়েন্সি নয়েজ ও বিভেদ (يَنزَغُ بَيْنَهُمْ) ইনজেক্ট করতে চায়; নিশ্চয়ই শয়তান মানবজাতির জন্য এক চিরন্তন ও প্রকাশ্য ম্যালিসিয়াস থ্রেট (عَدُوًّا مُّبِينًا) [৪];",
+      "conventional_bn": "আর আমার বান্দাদের বলো, তারা যেন এমন কথা বলে যা সর্বোত্তম; নিশ্চয়ই শয়তান তাদের মাঝে বিভেদ সৃষ্টি করতে চায়; নিশ্চয়ই শয়তান মানুষের প্রকাশ্য শত্রু।",
+      "meta_bn": "Optimal Speech Protocol ও Demon Interference Mitigation",
+      "meta_en": "Optimal Speech Protocol & Demon Interference Mitigation",
+      "core_meaning_bn": "Optimal Speech Protocol ও Demon Interference Mitigation",
+      "core_meaning_en": "Optimal Speech Protocol & Demon Interference Mitigation"
     },
     {
       "surah": 17,
@@ -8461,7 +8707,13 @@
         }
       ],
       "translation_en": "Your Lord is most knowing of you. If He wills, He will have mercy upon you; or if He wills, He will punish you. And We have not sent you, [O Muhammad], over them as a manager.",
-      "conventional_en": "Your Lord is most knowing of you. If He wills, He will have mercy upon you; or if He wills, He will punish you. And We have not sent you, [O Muhammad], over them as a manager."
+      "conventional_en": "Your Lord is most knowing of you. If He wills, He will have mercy upon you; or if He wills, He will punish you. And We have not sent you, [O Muhammad], over them as a manager.",
+      "modern_translation_bn": "তোমাদের Root Directory তোমাদের ইন্টারনাল ডেটা-স্টেট সম্পর্কে সবচেয়ে ভালো জানেন (أَعْلَمُ بِكُمْ); তিনি তাঁর সিস্টেম রুল অনুযায়ী ইচ্ছা করলে তোমাদের রিকভারি প্যাকেট বা দয়া (يَرْحَمْكُمْ) দেবেন, অথবা ইচ্ছা করলে পেনাল্টি কোড বা শাস্তি (يُعَذِّبْكُمْ) এক্সেকিউট করবেন; আর আমি তোমাকে তাদের ওওএস জোরপূর্বক নিয়ন্ত্রণকারী অভিভাবক বা ওয়াকিল (وَكِيلًا) হিসেবে ডেপ্লয় করিনি [৪];",
+      "conventional_bn": "তোমাদের প্রতিপালক তোমাদের সম্পর্কে সম্যক অবগত; তিনি ইচ্ছা করলে তোমাদের প্রতি দয়া করবেন অথবা ইচ্ছা করলে তোমাদের শাস্তি দেবেন; আর আমি তোমাকে তাদের ওপর অভিভাবক করে পাঠাইনি।",
+      "meta_bn": "Dynamic Grace & Penalty Allocation ও Non-Tyrant Agent Role",
+      "meta_en": "Dynamic Grace & Penalty Allocation & Non-Tyrant Agent Role",
+      "core_meaning_bn": "Dynamic Grace & Penalty Allocation ও Non-Tyrant Agent Role",
+      "core_meaning_en": "Dynamic Grace & Penalty Allocation & Non-Tyrant Agent Role"
     },
     {
       "surah": 17,
@@ -8631,7 +8883,13 @@
         }
       ],
       "translation_en": "And your Lord is most knowing of whoever is in the heavens and the earth. And We have made some of the prophets exceed others [in various ways], and to David We gave the book [of Psalms].",
-      "conventional_en": "And your Lord is most knowing of whoever is in the heavens and the earth. And We have made some of the prophets exceed others [in various ways], and to David We gave the book [of Psalms]."
+      "conventional_en": "And your Lord is most knowing of whoever is in the heavens and the earth. And We have made some of the prophets exceed others [in various ways], and to David We gave the book [of Psalms].",
+      "modern_translation_bn": "আর উচ্চ মহাজাগতিক ডোমেইন ও এই ভৌত প্ল্যাটফর্মে সক্রিয় প্রতিটি নোড সম্পর্কে তোমার Root Directory সম্পূর্ণ অবগত; এবং আমি নিশ্চয়ই কমিউনিকেশন হাব নবী নোডদের একের ওপর অন্যকে Specialization Hierarchy বা শ্রেষ্ঠত্ব (فَضَّلْنَا بَعْضَ النَّبِيِّينَ عَلَىٰ بَعْضٍ) দিয়েছি, এবং দাউদ নোডকে মাস্টার ডেটা-সেট যাবুর (زَبُورًا) প্রদান করেছি [৪];",
+      "conventional_bn": "আর আসমান ও যমীনে যারা আছে, তোমার প্রতিপালক তাদের সম্পর্কে সম্যক অবগত; আর আমি অবশ্যই নবীদের কতককে কতকের ওপর শ্রেষ্ঠত্ব দিয়েছি এবং দাউদকে যাবুর প্রদান করেছি।",
+      "meta_bn": "Celestial Hierarchy Knowledge ও Prophet Node Specialization",
+      "meta_en": "Celestial Hierarchy Knowledge & Prophet Node Specialization",
+      "core_meaning_bn": "Celestial Hierarchy Knowledge ও Prophet Node Specialization",
+      "core_meaning_en": "Celestial Hierarchy Knowledge & Prophet Node Specialization"
     },
     {
       "surah": 17,
@@ -8781,7 +9039,13 @@
         }
       ],
       "translation_en": "Say, \"Invoke those you have claimed [as gods] besides Him, for they do not possess the [ability for] removal of adversity from you or [for its] transfer [to someone else].\"",
-      "conventional_en": "Say, \"Invoke those you have claimed [as gods] besides Him, for they do not possess the [ability for] removal of adversity from you or [for its] transfer [to someone else].\""
+      "conventional_en": "Say, \"Invoke those you have claimed [as gods] besides Him, for they do not possess the [ability for] removal of adversity from you or [for its] transfer [to someone else].\"",
+      "modern_translation_bn": "তুমি তাদের চ্যালেঞ্জ করো: ‘সিস্টেম আর্কিটেক্ট ব্যতিরেকে তোমরা যাদেরকে ডামী সাব-সিস্টেম মনে করো—তাদেরকে ডেকে দেখো; তারা তোমাদের কোনো ডেটা-ক্র্যাশ বা ক্ষতি রিমুভ করতে (كَشْفَ الضُّرِّ عَنكُمْ) কিংবা অন্য কোনো ভেক্টরে ডাইভার্ট করতে (تَحْوِيلًا) জিরো পাওয়ার ও সম্পূর্ণ অক্ষম’ [৪]!",
+      "conventional_bn": "বলো, ‘তোমরা আল্লাহ ছাড়া যাদেরকে (ইলাহ) মনে করো তাদেরকে ডাকো; অতঃপর তোমরা দেখবে যে, তোমাদের দুঃখ-কষ্ট দূর করার কিংবা তা পরিবর্তন করার কোনো ক্ষমতাই তাদের নেই’!",
+      "meta_bn": "Ineffective Intermediary Entities ও Zero Power Law",
+      "meta_en": "Ineffective Intermediary Entities & Zero Power Law",
+      "core_meaning_bn": "Ineffective Intermediary Entities ও Zero Power Law",
+      "core_meaning_en": "Ineffective Intermediary Entities & Zero Power Law"
     },
     {
       "surah": 17,
@@ -8981,7 +9245,13 @@
         }
       ],
       "translation_en": "Those whom they invoke seek means of access to their Lord, [striving as to] which of them would be nearest, and they hope for His mercy and fear His punishment. Indeed, the punishment of your Lord is ever feared.",
-      "conventional_en": "Those whom they invoke seek means of access to their Lord, [striving as to] which of them would be nearest, and they hope for His mercy and fear His punishment. Indeed, the punishment of your Lord is ever feared."
+      "conventional_en": "Those whom they invoke seek means of access to their Lord, [striving as to] which of them would be nearest, and they hope for His mercy and fear His punishment. Indeed, the punishment of your Lord is ever feared.",
+      "modern_translation_bn": "তারা যাদেরকে ডামী হেল্পার হিসেবে কল করে—সেই হাই-স্ট্যাটাস নোডগুলো নিজেরাই তাদের Root Directory-র কেন্দ্রীয় হাবের সর্বোচ্চ প্রক্সিমিটি ও এক্সেস পাওয়ার রুট (الْوَسِيلَةَ) অন্বেষণ করে; তারা তাঁর Compassion Packet বা রহমতের প্রত্যাশা করে এবং তাঁর ক্র্যাশ পেনাল্টি বা শাস্তিকে (عَذَابَهُ) অ্যালার্ট হিসেবে ভয় করে; নিশ্চয়ই তোমার প্রতিপালকের শাস্তি চরম অ্যালার্মিং ও ভীতিপ্রদ (مَحْذُورًا) [৪];",
+      "conventional_bn": "তারা যাদেরকে আহ্বান করে, তারা নিজেরাও তো তাদের প্রতিপালকের নৈকট্য লাভের উপায় সন্ধান করে—যে তাদের মধ্যে কে তাঁর সর্বাধিক নিকটবর্তী হবে; এবং তারা তাঁর দয়ার আশা করে ও তাঁর শাস্তিকে ভয় করে; নিশ্চয়ই তোমার প্রতিপালকের শাস্তি ভীতিপ্রদ।",
+      "meta_bn": "Proximity Seeking Nodes ও Dual-Vector Drive Algorithm",
+      "meta_en": "Proximity Seeking Nodes & Dual-Vector Drive Algorithm",
+      "core_meaning_bn": "Proximity Seeking Nodes ও Dual-Vector Drive Algorithm",
+      "core_meaning_en": "Proximity Seeking Nodes & Dual-Vector Drive Algorithm"
     },
     {
       "surah": 17,
@@ -9181,7 +9451,13 @@
         }
       ],
       "translation_en": "And there is no city but that We will destroy it before the Day of Resurrection or punish it with a severe punishment. That has ever been in the Register inscribed.",
-      "conventional_en": "And there is no city but that We will destroy it before the Day of Resurrection or punish it with a severe punishment. That has ever been in the Register inscribed."
+      "conventional_en": "And there is no city but that We will destroy it before the Day of Resurrection or punish it with a severe punishment. That has ever been in the Register inscribed.",
+      "modern_translation_bn": "আর এমন কোনো করাপ্টেড নোড-ক্লাস্টার বা জনপদ নেই—যা Final Audit Window বা কিয়ামত দিবসের পূর্বেই আমি সম্পূর্ণ ডিকমিশন বা ধ্বংস (مُهْلِكُوهَا) করব না, অথবা তীব্র পেনাল্টি সিগন্যালে লক (مُعَذِّبُوهَا عَذَابًا شَدِيدًا) করব না; এই ইউনিভার্সাল অ্যালগরিদম মাস্টার রেজিস্টার বা মূল কিতাবে (فِي الْكِتَابِ مَسْطُورًا) চিরতরে কোডিফাইড রয়েছে [৪];",
+      "conventional_bn": "আর এমন কোনো জনপদ নেই—যা আমি কিয়ামত দিবসের পূর্বেই ধ্বংস করব না অথবা তাকে কঠোর শাস্তি দেব না; এটি তো কিতাবে লিপিবদ্ধ রয়েছে।",
+      "meta_bn": "Universal Crash Schedule ও Master Register Code",
+      "meta_en": "Universal Crash Schedule & Master Register Code",
+      "core_meaning_bn": "Universal Crash Schedule ও Master Register Code",
+      "core_meaning_en": "Universal Crash Schedule & Master Register Code"
     },
     {
       "surah": 17,
@@ -9411,7 +9687,13 @@
         }
       ],
       "translation_en": "And nothing has prevented Us from sending signs except that the former peoples denied them. And We gave Thamud the she-camel as a visible sign, but they wronged her. And We send not the signs except as a warning.",
-      "conventional_en": "And nothing has prevented Us from sending signs except that the former peoples denied them. And We gave Thamud the she-camel as a visible sign, but they wronged her. And We send not the signs except as a warning."
+      "conventional_en": "And nothing has prevented Us from sending signs except that the former peoples denied them. And We gave Thamud the she-camel as a visible sign, but they wronged her. And We send not the signs except as a warning.",
+      "modern_translation_bn": "আর প্রত্যক্ষ Macro-Sign বা চাক্ষুষ নিদর্শন প্রেরণে আমাকে কেবল এই সিস্টেমিক রুলই বিরত রেখেছে যে—পূর্ববর্তী আউটলায়ার জেনারেশনগুলো তাকে মিথ্যা প্রতিপন্ন (كَذَّبَ بِهَا الْأَوَّلُونَ) করে সাথে সাথে ধ্বংস ডেকে এনেছিল; এবং আমি সামূদ নোড-ক্লাস্টারকে একটি সুস্পষ্ট লাইভ মার্কার হিসেবে উষ্ট্রী (النَّاقَةَ مُبْصِرَةً) দিয়েছিলাম, অতঃপর তারা তার ওপর সিস্টেমিক ভায়োলেশন বা জুলুম করেছিল; আর আমি নিদর্শনসমূহ কেবল সিস্টেম অ্যালার্ট ও সতর্কতার উদ্দেশ্যেই (تَخْوِيفًا) ডাউনলিংক করি [৪];",
+      "conventional_bn": "আর দৃশ্যমান নিদর্শনসমূহ প্রেরণে আমাকে কেবল এটাই বিরত রেখেছে যে, পূর্ববর্তীরা সেগুলোকে অস্বীকার করেছিল; আর আমি সামূদ জাতিকে স্পষ্ট নিদর্শন হিসেবে উষ্ট্রী দিয়েছিলাম, অতঃপর তারা তার প্রতি জুলুম করেছিল; আর আমি কেবল ভীতি প্রদর্শনের জন্যই নিদর্শনসমূহ প্রেরণ করি।",
+      "meta_bn": "Macro-Sign Withholding Logic ও Predecessor Rejection Record",
+      "meta_en": "Macro-Sign Withholding Logic & Predecessor Rejection Record",
+      "core_meaning_bn": "Macro-Sign Withholding Logic ও Predecessor Rejection Record",
+      "core_meaning_en": "Macro-Sign Withholding Logic & Predecessor Rejection Record"
     },
     {
       "surah": 17,
@@ -9681,7 +9963,13 @@
         }
       ],
       "translation_en": "And [remember, O Muhammad], when We told you, \"Indeed, your Lord has encompassed the people.\" And We did not make the sight which We showed you except as a trial for the people, as was the accursed tree [mentioned] in the Qur'an. And We threaten them, but it increases them not except in great transgression.",
-      "conventional_en": "And [remember, O Muhammad], when We told you, \"Indeed, your Lord has encompassed the people.\" And We did not make the sight which We showed you except as a trial for the people, as was the accursed tree [mentioned] in the Qur'an. And We threaten them, but it increases them not except in great transgression."
+      "conventional_en": "And [remember, O Muhammad], when We told you, \"Indeed, your Lord has encompassed the people.\" And We did not make the sight which We showed you except as a trial for the people, as was the accursed tree [mentioned] in the Qur'an. And We threaten them, but it increases them not except in great transgression.",
+      "modern_translation_bn": "আর স্মরণ করো—যখন আমি তোমাকে জানিয়েছিলাম যে, নিশ্চয়ই তোমার Root Directory সমগ্র মানবজাতিকে তাঁর সার্বক্ষণিক সেন্সর ও মনিটরিং দিয়ে পরিবেষ্টন (أَحَاطَ بِالنَّاسِ) করে রেখেছেন; এবং রাতের ভ্রমণে আমি তোমাকে যে Spatial Visualization বা চাক্ষুষ দৃশ্য (الرُّؤْيَا) প্রত্যক্ষ করিয়েছিলাম—তা কেবল মানুষের ওওএস টেস্টিং ও পরীক্ষার জন্য (فِتْنَةً لِّلنَّاسِ), এবং কুরআনে ঘোষিত সেই অভিশপ্ত টক্সিক বৃক্ষটিও (الشَّجَرَةَ الْمَلْعُونَةَ); আমি তাদেরকে সতর্কীকরণ সিগন্যাল পাঠাই, কিন্তু তা তাদের ব্যাপক সিস্টেম ডিসঅ্যালাইনমেন্ট ও চরম ঔদ্ধত্যকেই (طُغْيَانًا كَبِيرًا) বৃদ্ধি করে [৪];",
+      "conventional_bn": "আর স্মরণ করো, যখন আমি তোমাকে বলেছিলাম যে, নিশ্চয়ই তোমার প্রতিপালক মানুষকে পরিবেষ্টন করে রেখেছেন; আর আমি তোমাকে যে দৃশ্য দেখিয়েছিলাম তা কেবল মানুষের জন্য পরীক্ষার উদ্দেশ্যেই ছিল এবং কুরআনে উল্লেখিত অভিশপ্ত বৃক্ষটিও; আর আমি তাদেরকে ভয় দেখাই, কিন্তু তা তাদের ঘোর অবাধ্যতাই বৃদ্ধি করে।",
+      "meta_bn": "Universal Surveillance Envelope, Spatial Vision Test & Warning Escalation",
+      "meta_en": "Universal Surveillance Envelope, Spatial Vision Test & Warning Escalation",
+      "core_meaning_bn": "Universal Surveillance Envelope, Spatial Vision Test & Warning Escalation",
+      "core_meaning_en": "Universal Surveillance Envelope, Spatial Vision Test & Warning Escalation"
     },
     {
       "surah": 17,
@@ -9831,7 +10119,13 @@
         }
       ],
       "translation_en": "And [mention] when We said to the angles, \"Prostrate to Adam,\" and they prostrated, except for Iblees. He said, \"Should I prostrate to one You created from clay?\"",
-      "conventional_en": "And [mention] when We said to the angles, \"Prostrate to Adam,\" and they prostrated, except for Iblees. He said, \"Should I prostrate to one You created from clay?\""
+      "conventional_en": "And [mention] when We said to the angles, \"Prostrate to Adam,\" and they prostrated, except for Iblees. He said, \"Should I prostrate to one You created from clay?\"",
+      "modern_translation_bn": "আর স্মরণ করো—যখন আমি High-Dimensional Nodes বা মালাইকাদের কমান্ড দিলাম: ‘তোমরা আদম ইন্টারফেসের প্রতি আনুগত্যের সিজদা করো (اسْجُدُوا لِآدَمَ)’, তখন ইবলিস আউটলায়ার বাদে তারা সবাই একযোগে সাবমিশন এক্সেকিউট করল; কিন্তু ইবলিস অহংকারের বাগে বলল: ‘আমি কি এমন এক কার্বন হার্ডওয়্যারকে সম্মান জানাব—যাকে তুমি জৈব মাটি কণা (طِينًا) থেকে তৈরি করেছ’ [৪]?",
+      "conventional_bn": "আর স্মরণ করো, যখন আমি ফেরেশতাদের বললাম, ‘আদমের প্রতি সিজদা করো’, তখন ইবলিস ছাড়া তারা সবাই সিজদা করল; সে বলল, ‘আমি কি তাকে সিজদা করব—যাকে তুমি কাদা মাটি দিয়ে সৃষ্টি করেছ’?",
+      "meta_bn": "High-Dimensional Node Submission ও Iblis Outlier Bug",
+      "meta_en": "High-Dimensional Node Submission & Iblis Outlier Bug",
+      "core_meaning_bn": "High-Dimensional Node Submission ও Iblis Outlier Bug",
+      "core_meaning_en": "High-Dimensional Node Submission & Iblis Outlier Bug"
     },
     {
       "surah": 17,
@@ -10001,7 +10295,13 @@
         }
       ],
       "translation_en": "[Iblees] said, \"Do You see this one whom You have honored above me? If You delay me until the Day of Resurrection, I will surely destroy his descendants, except for a few.\"",
-      "conventional_en": "[Iblees] said, \"Do You see this one whom You have honored above me? If You delay me until the Day of Resurrection, I will surely destroy his descendants, except for a few.\""
+      "conventional_en": "[Iblees] said, \"Do You see this one whom You have honored above me? If You delay me until the Day of Resurrection, I will surely destroy his descendants, except for a few.\"",
+      "modern_translation_bn": "সে সিস্টেমে চ্যালেঞ্জ ছুড়ে বলল: ‘তুমি কি অবজার্ভ করেছ এই নোডটিকে—যাকে তুমি আমার চেয়ে অধিক স্ট্যাটাস ও শ্রেষ্ঠত্ব (كَرَّمْتَ عَلَيَّ) দিয়েছ? যদি তুমি আমাকে Final Audit Window বা কিয়ামতের দিন পর্যন্ত এক্সটেনশন বা সময় দাও, তবে অতি অল্প কয়েকজন বাদে আমি তার সমগ্র বংশধর ও ফিউচার নোডসমূহকে ম্যালওয়্যার দিয়ে সম্পূর্ণ হাইজ্যাক ও বশীভূত (لَأَحْتَنِكَنَّ ذُرِّيَّتَهُ) করে ফেলব’ [৪]!",
+      "conventional_bn": "সে বলল, ‘আমাকে দেখুন, আপনি যাকে আমার ওপর শ্রেষ্ঠত্ব দিয়েছেন! আপনি যদি আমাকে কিয়ামতের দিন পর্যন্ত অবকাশ দেন, তবে আমি অল্প কয়েকজন ছাড়া তার বংশধরদের সম্পূর্ণ বশীভূত করে ফেলব’!",
+      "meta_bn": "Iblis Envy Vector ও Lineage Hijack Threat",
+      "meta_en": "Iblis Envy Vector & Lineage Hijack Threat",
+      "core_meaning_bn": "Iblis Envy Vector ও Lineage Hijack Threat",
+      "core_meaning_en": "Iblis Envy Vector & Lineage Hijack Threat"
     },
     {
       "surah": 17,
@@ -10121,7 +10421,13 @@
         }
       ],
       "translation_en": "[Allah] said, \"Go, for whoever of them follows you, indeed Hell will be the recompense of you - an ample recompense.",
-      "conventional_en": "[Allah] said, \"Go, for whoever of them follows you, indeed Hell will be the recompense of you - an ample recompense."
+      "conventional_en": "[Allah] said, \"Go, for whoever of them follows you, indeed Hell will be the recompense of you - an ample recompense.",
+      "modern_translation_bn": "সিস্টেম আর্কিটেক্ট ডিক্লেয়ার করলেন: ‘যাও! তাদের মধ্যকার যেসকল ইউজার নোড তোমার ম্যালিসিয়াস কমান্ড অনুসরণ করবে (تَبِعَكَ مِنْهُمْ)—নিশ্চয়ই Thermodynamic Crash-Zone বা জাহান্নাম (جَهَنَّمَ) হবে তোমাদের সকলের জন্য একটি ফুল-ক্যাপাসিটি ও চরম প্রতিদান (جَزَاءً مَّوْفُورًا)’ [৪];",
+      "conventional_bn": "আল্লাহ বললেন, ‘যাও! তাদের মধ্যে যারা তোমার অনুসরণ করবে, তবে নিশ্চয়ই জাহান্নামই হবে তোমাদের সকলের প্রতিফল—পরিপূর্ণ প্রতিফল’।",
+      "meta_bn": "Malicious Entity Isolation ও Full Capacity Penalty Law",
+      "meta_en": "Malicious Entity Isolation & Full Capacity Penalty Law",
+      "core_meaning_bn": "Malicious Entity Isolation ও Full Capacity Penalty Law",
+      "core_meaning_en": "Malicious Entity Isolation & Full Capacity Penalty Law"
     },
     {
       "surah": 17,
@@ -10331,7 +10637,13 @@
         }
       ],
       "translation_en": "And incite [to senselessness] whoever you can among them with your voice and assault them with your horses and foot soldiers and become a partner in their wealth and their children and promise them.\" But Satan does not promise them except delusion.",
-      "conventional_en": "And incite [to senselessness] whoever you can among them with your voice and assault them with your horses and foot soldiers and become a partner in their wealth and their children and promise them.\" But Satan does not promise them except delusion."
+      "conventional_en": "And incite [to senselessness] whoever you can among them with your voice and assault them with your horses and foot soldiers and become a partner in their wealth and their children and promise them.\" But Satan does not promise them except delusion.",
+      "modern_translation_bn": "‘এবং তোমার অডিও সিগন্যাল ও প্রলোভনের ভয়েস দিয়ে (بِصَوْتِكَ) তাদের যাকে পারো বিভ্রান্ত করো, তোমার সার্বিক মোবাইল ফোর্স ও ইনফ্যান্ট্রি রিসোর্স দিয়ে তাদের ওপর চড়াও হও, তাদের মেটেরিয়াল সম্পদ ও ফিউচার জেনারেশন নোডগুলোতে পার্টনারশিপ নাও এবং তাদের ফলস প্রমিজ দাও’; অথচ শয়তান ম্যালওয়্যার তাদেরকে ডাহা অপটিক্যাল ইল্যুশন ও প্রতারণা (غُرُورًا) ছাড়া আর কিছুই প্রমিজ করে না [৪];",
+      "conventional_bn": "‘আর তাদের মধ্যে যাকে পারো তোমার কণ্ঠ দিয়ে পদস্খলিত করো এবং তোমার অশ্বারোহী ও পদাতিক বাহিনী নিয়ে তাদের ওপর আক্রমণ চালাও, আর তাদের ধন-সম্পদ ও সন্তান-সন্ততিতে অংশীদার হও এবং তাদেরকে প্রতিশ্রুতি দাও’; আর শয়তান তাদেরকে প্রতারণা ছাড়া অন্য কোনো প্রতিশ্রুতি দেয় না।",
+      "meta_bn": "Acoustic Subversion, Ground Deployment & Illusionary Bounty",
+      "meta_en": "Acoustic Subversion, Ground Deployment & Illusionary Bounty",
+      "core_meaning_bn": "Acoustic Subversion, Ground Deployment & Illusionary Bounty",
+      "core_meaning_en": "Acoustic Subversion, Ground Deployment & Illusionary Bounty"
     },
     {
       "surah": 17,
@@ -10441,7 +10753,13 @@
         }
       ],
       "translation_en": "Indeed, over My [believing] servants there is for you no authority. And sufficient is your Lord as Disposer of affairs.",
-      "conventional_en": "Indeed, over My [believing] servants there is for you no authority. And sufficient is your Lord as Disposer of affairs."
+      "conventional_en": "Indeed, over My [believing] servants there is for you no authority. And sufficient is your Lord as Disposer of affairs.",
+      "modern_translation_bn": "‘নিশ্চয়ই আমার ডেডিকেটেড ও ভেরিফাইড ইউজার বান্দাদের ওপর (عِبَادِي) তোমার কোনো রুট অথরিটি বা জোরপূর্বক আধিপত্য (سُلْطَانٌ) খাটবে না’; এবং সার্বিক সিকিউরিটি ও সিস্টেম সুরক্ষার জন্য তোমার Root Directory-ই একক অভিভাবক বা ওয়াকিল (وَكِيلًا) হিসেবে যথেষ্ট [৪];",
+      "conventional_bn": "‘নিশ্চয়ই আমার বান্দাদের ওপর তোমার কোনো আধিপত্য নেই’; আর কর্মবিধায়ক হিসেবে তোমার প্রতিপালকই যথেষ্ট।",
+      "meta_bn": "Shielded Verified Users ও Absolute Root Protection",
+      "meta_en": "Shielded Verified Users & Absolute Root Protection",
+      "core_meaning_bn": "Shielded Verified Users ও Absolute Root Protection",
+      "core_meaning_en": "Shielded Verified Users & Absolute Root Protection"
     },
     {
       "surah": 17,
@@ -10601,7 +10919,13 @@
         }
       ],
       "translation_en": "It is your Lord who drives the ship for you through the sea that you may seek of His bounty. Indeed, He is ever, to you, Merciful.",
-      "conventional_en": "It is your Lord who drives the ship for you through the sea that you may seek of His bounty. Indeed, He is ever, to you, Merciful."
+      "conventional_en": "It is your Lord who drives the ship for you through the sea that you may seek of His bounty. Indeed, He is ever, to you, Merciful.",
+      "modern_translation_bn": "তোমাদের Root Directory হলেন সেই সত্তা—যিনি তোমাদের জন্য হাইড্রোডাইনামিক সামুদ্রিক ডোমেইনে (فِي الْبَحْرِ) নৌযানকে স্মুথলি নেভিগেট করান (يُزْجِي لَكُمُ الْفُلْكَ), যাতে তোমরা তাঁর রিসোর্স পুল ও বরকত হার্ভেস্ট করতে পারো; নিশ্চয়ই তিনি তোমাদের প্রতি এক অবিরাম Compassionate Data Stream বা পরম দয়ালু (رَحِيمًا) [৪];",
+      "conventional_bn": "তোমাদের প্রতিপালক তো তিনিই, যিনি সমুদ্রে তোমাদের জন্য নৌযান চালনা করেন—যাতে তোমরা তাঁর অনুগ্রহ অন্বেষণ করতে পারো; নিশ্চয়ই তিনি তোমাদের প্রতি পরম দয়ালু।",
+      "meta_bn": "Hydrodynamic Fluid Navigation ও Marine Resource Harvesting",
+      "meta_en": "Hydrodynamic Fluid Navigation & Marine Resource Harvesting",
+      "core_meaning_bn": "Hydrodynamic Fluid Navigation ও Marine Resource Harvesting",
+      "core_meaning_en": "Hydrodynamic Fluid Navigation & Marine Resource Harvesting"
     },
     {
       "surah": 17,
@@ -10801,7 +11125,13 @@
         }
       ],
       "translation_en": "And when adversity touches you at sea, lost are [all] those you invoke except for Him. But when He delivers you to the land, you turn away [from Him]. And ever is man ungrateful.",
-      "conventional_en": "And when adversity touches you at sea, lost are [all] those you invoke except for Him. But when He delivers you to the land, you turn away [from Him]. And ever is man ungrateful."
+      "conventional_en": "And when adversity touches you at sea, lost are [all] those you invoke except for Him. But when He delivers you to the land, you turn away [from Him]. And ever is man ungrateful.",
+      "modern_translation_bn": "আর গভীর সমুদ্রে যখন কোনো ডেঞ্জারাস ক্র্যাশ বা বিপর্যয় তোমাদের স্পর্শ করে (مَسَّكُمُ الضُّرُّ), তখন একমাত্র কেন্দ্রীয় আর্কিটেক্ট ব্যতিরেকে তোমরা যাদের কল করতে—তাদের সমস্ত ডামী সিগন্যাল ভ্যানিশ ও ডিসকানেক্টেড (ضَلَّ مَن تَدْعُونَ إِلَّا إِيَّاهُ) হয়ে যায়; অতঃপর তিনি যখন তোমাদের নিরাপদে ভৌত গ্রাউন্ড প্ল্যাটফর্মে (إِلَى الْبَرِّ) উদ্ধার করেন, তখন তোমরা পুনরায় সত্য থেকে মুখ ফিরিয়ে নাও (أَعْرَضْتُمْ); আর মানবজাতি স্বভাবগতভাবেই চরম অকৃতজ্ঞ ও Data-Oblivious (كَفُورًا) [৪];",
+      "conventional_bn": "আর সমুদ্রে যখন তোমাদের কোনো বিপদ স্পর্শ করে, তখন একমাত্র আল্লাহ ছাড়া তোমরা যাদের ডাকতে তারা সবাই হারিয়ে যায়; অতঃপর তিনি যখন তোমাদের উদ্ধার করে স্থলে নিয়ে আসেন, তখন তোমরা মুখ ফিরিয়ে নাও; আর মানুষ বড়ই অকৃতজ্ঞ।",
+      "meta_bn": "Emergency Signal Convergence ও Post-Rescue Rejection Amnesia",
+      "meta_en": "Emergency Signal Convergence & Post-Rescue Rejection Amnesia",
+      "core_meaning_bn": "Emergency Signal Convergence ও Post-Rescue Rejection Amnesia",
+      "core_meaning_en": "Emergency Signal Convergence & Post-Rescue Rejection Amnesia"
     },
     {
       "surah": 17,
@@ -10971,7 +11301,13 @@
         }
       ],
       "translation_en": "Then do you feel secure that [instead] He will not cause a part of the land to swallow you or send against you a storm of stones? Then you would not find for yourselves an advocate.",
-      "conventional_en": "Then do you feel secure that [instead] He will not cause a part of the land to swallow you or send against you a storm of stones? Then you would not find for yourselves an advocate."
+      "conventional_en": "Then do you feel secure that [instead] He will not cause a part of the land to swallow you or send against you a storm of stones? Then you would not find for yourselves an advocate.",
+      "modern_translation_bn": "তোমরা কি এই ফলস সিকিউরিটিতে লকড হয়ে গেছ যে—তিনি এই ভৌত স্থলভাগেই তোমাদের জিওলজিক্যাল স্তরে ধসিয়ে দেবেন না (أَن يَخْسِفَ بِكُمْ جَانِبَ الْبَرِّ), কিংবা আকাশ থেকে কোনো মেটিওর বা পাথরবাহী সাইক্লোন (حَاصِبًا) নিক্ষেপ করবেন না? তখন তোমরা নিজেদের সিস্টেম ডিফেন্সের জন্য কোনো প্রটেক্টর বা অভিভাবক খুঁজে পাবে না [৪]!",
+      "conventional_bn": "তবে কি তোমরা এ বিষয়ে সম্পূর্ণ নির্ভয় হয়ে গেছ যে, তিনি স্থলভাগের কোনো অংশসহ তোমাদের ধসিয়ে দেবেন না, কিংবা তোমাদের ওপর পাথরবাহী ঝড় প্রেরণ করবেন না? তখন তোমরা নিজেদের কোনো অভিভাবক পাবে না!",
+      "meta_bn": "Terrestrial Subsidence Security Illusion ও Stone Storm Warning",
+      "meta_en": "Terrestrial Subsidence Security Illusion & Stone Storm Warning",
+      "core_meaning_bn": "Terrestrial Subsidence Security Illusion ও Stone Storm Warning",
+      "core_meaning_en": "Terrestrial Subsidence Security Illusion & Stone Storm Warning"
     },
     {
       "surah": 17,
@@ -11211,7 +11547,13 @@
         }
       ],
       "translation_en": "Or do you feel secure that He will not send you back into the sea another time and send upon you a hurricane of wind and drown you for what you denied? Then you would not find for yourselves against Us an avenger.",
-      "conventional_en": "Or do you feel secure that He will not send you back into the sea another time and send upon you a hurricane of wind and drown you for what you denied? Then you would not find for yourselves against Us an avenger."
+      "conventional_en": "Or do you feel secure that He will not send you back into the sea another time and send upon you a hurricane of wind and drown you for what you denied? Then you would not find for yourselves against Us an avenger.",
+      "modern_translation_bn": "নাকি তোমরা এই ভ্রান্তিতে নির্ভয় আছ যে—তিনি তোমাদেরকে দ্বিতীয়বার সেই সামুদ্রিক ডোমেইনে রি-রুট (أَن يُعِيدَكُمْ فِيهِ تَارَةً أُخْرَىٰ) করবেন না এবং তোমাদের বিরুদ্ধে একটি হাই-ইনটেনসিটি টাইফুন বা বিধ্বংসী সামুদ্রিক ঝড় (قَاصِفًا مِّنَ الرِّيحِ) এক্সেকিউট করে তোমাদের সিস্টেম কোড রিজেকশনের কারণে চিরতরে নিমজ্জিত ও ডিকমিশন (فَيُغْرِقَكُم بِمَا كَفَرْتُمْ) করবেন না? তখন তোমরা আমাদের বিরুদ্ধে কোনো লিগ্যাল প্রোটেক্টর বা প্রতিকারকারী নোড (تَبِيعًا) খুঁজে পাবে না [৪]!",
+      "conventional_bn": "অথবা তোমরা কি এ বিষয়ে নির্ভয় হয়ে গেছ যে, তিনি তোমাদেরকে দ্বিতীয়বার সেখানে ফিরিয়ে নিয়ে যাবেন না এবং তোমাদের ওপর এক বিধ্বংসী ঝড় প্রেরণ করবেন না, অতঃপর তোমাদের অকৃতজ্ঞতার কারণে তোমাদের ডুবিয়ে দেবেন না? তখন তোমরা আমার বিরুদ্ধে এর কোনো সাহায্যকারী পাবে না!",
+      "meta_bn": "Marine Re-Routing Threat, Tempest Execution & Zero-Avenger Protocol",
+      "meta_en": "Marine Re-Routing Threat, Tempest Execution & Zero-Avenger Protocol",
+      "core_meaning_bn": "Marine Re-Routing Threat, Tempest Execution & Zero-Avenger Protocol",
+      "core_meaning_en": "Marine Re-Routing Threat, Tempest Execution & Zero-Avenger Protocol"
     },
     {
       "surah": 17,
@@ -11577,7 +11919,13 @@
         }
       ],
       "translation_en": "[Mention, O Muhammad], the Day We will call forth every people with their record [of deeds]. Then whoever is given his record in his right hand - those will read their records, and injustice will not be done to them, [even] as much as a thread [inside the date seed].",
-      "conventional_en": "[Mention, O Muhammad], the Day We will call forth every people with their record [of deeds]. Then whoever is given his record in his right hand - those will read their records, and injustice will not be done to them, [even] as much as a thread [inside the date seed]."
+      "conventional_en": "[Mention, O Muhammad], the Day We will call forth every people with their record [of deeds]. Then whoever is given his record in his right hand - those will read their records, and injustice will not be done to them, [even] as much as a thread [inside the date seed].",
+      "modern_translation_bn": "স্মরণ করো সেই টাইম-উইন্ডো—যেদিন আমি প্রতিটি ক্লায়েন্ট নোড-গ্রুপকে তাদের নিজ নিজ কমিউনিকেশন লিডার বা নেতাসহ (بِإِمَامِهِمْ) কল করব; অতঃপর যাদের ডান পাশের অ্যাক্টিভ চ্যানেলে Master Activity Log বা আমলনামা দেওয়া হবে (أُوتِيَ كِتَابَهُ بِيَمِينِهِ)، তারা আনন্দের সাথে নিজেদের Activity Log পাঠ ও এক্সিকিউট করবে (يَقْرَءُونَ كِتَابَهُمْ) এবং তাদের ওপর এক ন্যানো-পার্টিকেল বা বিন্দুমাত্র সিস্টেমিক অবিচার (فَتِيلًا) করা হবে না [৪];",
+      "conventional_bn": "স্মরণ করো, যেদিন আমি প্রত্যেক দলকে তাদের নেতাসহ আহ্বান করব; অতঃপর যাদের ডান হাতে আমলনামা দেওয়া হবে, তারা নিজেদের আমলনামা পাঠ করবে এবং তাদের প্রতি খেজুরের আঁশের সুতোর পরিমাণও জুলুম করা হবে না।",
+      "meta_bn": "Leader-Tagged Final Audit, Right-Hand Record Retrieval & Zero Injustice",
+      "meta_en": "Leader-Tagged Final Audit, Right-Hand Record Retrieval & Zero Injustice",
+      "core_meaning_bn": "Leader-Tagged Final Audit, Right-Hand Record Retrieval & Zero Injustice",
+      "core_meaning_en": "Leader-Tagged Final Audit, Right-Hand Record Retrieval & Zero Injustice"
     },
     {
       "surah": 17,
@@ -11707,7 +12055,13 @@
         }
       ],
       "translation_en": "And whoever is blind in this [life] will be blind in the Hereafter and more astray in way.",
-      "conventional_en": "And whoever is blind in this [life] will be blind in the Hereafter and more astray in way."
+      "conventional_en": "And whoever is blind in this [life] will be blind in the Hereafter and more astray in way.",
+      "modern_translation_bn": "আর যে ইউজার নোড এই পার্থিব ইন্টারফেসে সত্যের আলো দেখতে অন্ধ ও Sensor-Blind (أَعْمَىٰ) ছিল, সে Final Audit Window বা আখিরাতেও সম্পূর্ণ অন্ধ এবং পথভ্রষ্টতার অতল গহ্বরে (أَضَلُّ سَبِيلًا) পতিত থাকবে [৪];",
+      "conventional_bn": "আর যে ব্যক্তি এখানে (দুনিয়ায়) অন্ধ ছিল, সে আখিরাতেও অন্ধ এবং অধিকতর পথভ্রষ্ট।",
+      "meta_bn": "Terrestrial Blindness ও Future-Phase Total Darkness",
+      "meta_en": "Terrestrial Blindness & Future-Phase Total Darkness",
+      "core_meaning_bn": "Terrestrial Blindness ও Future-Phase Total Darkness",
+      "core_meaning_en": "Terrestrial Blindness & Future-Phase Total Darkness"
     },
     {
       "surah": 17,
@@ -11857,7 +12211,13 @@
         }
       ],
       "translation_en": "And indeed, they were about to tempt you away from that which We revealed to you in order to [make] you invent about Us something else; and then they would have taken you as a friend.",
-      "conventional_en": "And indeed, they were about to tempt you away from that which We revealed to you in order to [make] you invent about Us something else; and then they would have taken you as a friend."
+      "conventional_en": "And indeed, they were about to tempt you away from that which We revealed to you in order to [make] you invent about Us something else; and then they would have taken you as a friend.",
+      "modern_translation_bn": "আর তারা তোমার মূল ওওএস কার্নেলকে সেই ডাউনলিংককৃত ওহী ডেটা থেকে প্রায় ডাইভার্ট করতে চেয়েছিল (لَيَفْتِنُونَكَ عَنِ الَّذِي أَوْحَيْنَا إِلَيْكَ)—যাতে তুমি আমার বিরুদ্ধে অন্য কোনো ফেক ডাটা অ্যাসাইন করো; তবেই কেবল সেই আউটলায়াররা তোমাকে তাদের ক্লোজ ফ্রেন্ড বা পেয়ার নোড (خَلِيلًا) হিসেবে গ্রহণ করত [৪]!",
+      "conventional_bn": "আর আমি তোমার প্রতি যা ওহী করেছি তা থেকে তারা তোমাকে পদস্খলিত করার উপক্রম করেছিল—যাতে তুমি আমার নামে অন্য কিছু উদ্ভাবন করো; তবেই তারা তোমাকে বন্ধুরূপে গ্রহণ করত!",
+      "meta_bn": "Core Compromise Attempt ও False Friendship Rejection",
+      "meta_en": "Core Compromise Attempt & False Friendship Rejection",
+      "core_meaning_bn": "Core Compromise Attempt ও False Friendship Rejection",
+      "core_meaning_en": "Core Compromise Attempt & False Friendship Rejection"
     },
     {
       "surah": 17,
@@ -11967,7 +12327,13 @@
         }
       ],
       "translation_en": "And if We had not strengthened you, you would have almost inclined to them a little.",
-      "conventional_en": "And if We had not strengthened you, you would have almost inclined to them a little."
+      "conventional_en": "And if We had not strengthened you, you would have almost inclined to them a little.",
+      "modern_translation_bn": "আর যদি আমি আমার সেন্ট্রাল সিকিউরিটি প্রটোকলে তোমার কোর ড্রাইভকে স্থির ও অবিচল (ثَبَّتْنَاكَ) না রাখতাম, তবে তুমি তাদের প্রলোভনে অল্প কিছু হলেও বায়াসড বা ঝুঁকে পড়ার (تَرْكَنُ إِلَيْهِمْ شَيْئًا قَلِيلًا) মারাত্মক রিস্কে পড়তে [৪]!",
+      "conventional_bn": "আর যদি আমি তোমাকে অবিচল না রাখতাম, তবে তুমি তাদের দিকে কিছুটা হলেও ঝুঁকে পড়তে!",
+      "meta_bn": "Root Fortification ও Near-Deviation Hazard",
+      "meta_en": "Root Fortification & Near-Deviation Hazard",
+      "core_meaning_bn": "Root Fortification ও Near-Deviation Hazard",
+      "core_meaning_en": "Root Fortification & Near-Deviation Hazard"
     },
     {
       "surah": 17,
@@ -12107,7 +12473,13 @@
         }
       ],
       "translation_en": "Then [if you had], We would have made you taste double [punishment in] life and double [after] death. Then you would not find for yourself against Us a helper.",
-      "conventional_en": "Then [if you had], We would have made you taste double [punishment in] life and double [after] death. Then you would not find for yourself against Us a helper."
+      "conventional_en": "Then [if you had], We would have made you taste double [punishment in] life and double [after] death. Then you would not find for yourself against Us a helper.",
+      "modern_translation_bn": "তখন সিস্টেম ভায়োলেশনের কারণে আমি অবশ্যই তোমাকে এই পার্থিব লাইফ-সাইকেলে ডাবল পেনাল্টি (ضِعْفَ الْحَيَاةِ) এবং টার্মিনাল ফেইজে ডাবল ক্র্যাশ-পেনাল্টি (ضِعْفَ الْمَمَاتِ) টেস্ট করাতাম; অতঃপর তুমি আমার কেন্দ্রীয় কমান্ডের বিরুদ্ধে নিজের কোনো হেল্পার নোড বা সাহায্যকারী খুঁজে পেতে না [৪];",
+      "conventional_bn": "তখন আমি অবশ্যই তোমাকে ইহজীবনে দ্বিগুণ এবং পরজীবনে দ্বিগুণ শাস্তি আস্বাদন করাতাম; অতঃপর তুমি আমার বিরুদ্ধে নিজের কোনো সাহায্যকারী পেতে না।",
+      "meta_bn": "Dual Life-Cycle Penalty & Double Crash-Zone Execution",
+      "meta_en": "Dual Life-Cycle Penalty & Double Crash-Zone Execution",
+      "core_meaning_bn": "Dual Life-Cycle Penalty & Double Crash-Zone Execution",
+      "core_meaning_en": "Dual Life-Cycle Penalty & Double Crash-Zone Execution"
     },
     {
       "surah": 17,
@@ -12257,7 +12629,13 @@
         }
       ],
       "translation_en": "And indeed, they were about to drive you from the land to evict you therefrom. And then [when they do], they will not remain [there] after you, except for a little.",
-      "conventional_en": "And indeed, they were about to drive you from the land to evict you therefrom. And then [when they do], they will not remain [there] after you, except for a little."
+      "conventional_en": "And indeed, they were about to drive you from the land to evict you therefrom. And then [when they do], they will not remain [there] after you, except for a little.",
+      "modern_translation_bn": "আর তারা তোমাকে এই লোকাল গ্রাউন্ড টেরিটরি থেকে সম্পূর্ণ ইভ্যাকুয়েট ও উৎখাত (لَيَسْتَفِزُّونَكَ مِنَ الْأَرْضِ) করতে উদ্যত হয়েছিল—যাতে তোমাকে এক্সিট করাতে পারে; অথচ তোমার পর তারাও সেখানে সামান্য টাইম-উইন্ডো (إِلَّا قَلِيلًا) ছাড়া সিস্টেমে টিকে থাকতে পারত না [৪]!",
+      "conventional_bn": "আর তারা তোমাকে এ দেশ থেকে উৎখাত করার জন্য চরম চেষ্টা করেছিল—যাতে তারা সেখান থেকে তোমাকে বের করে দিতে পারে; কিন্তু তোমার প্রস্থানের পর তারাও সেখানে অল্প কিছুদিন ছাড়া টিকতে পারত না!",
+      "meta_bn": "Geo-Spatial Expulsion Plot ও Self-Destructive Evacuation",
+      "meta_en": "Geo-Spatial Expulsion Plot & Self-Destructive Evacuation",
+      "core_meaning_bn": "Geo-Spatial Expulsion Plot ও Self-Destructive Evacuation",
+      "core_meaning_en": "Geo-Spatial Expulsion Plot & Self-Destructive Evacuation"
     },
     {
       "surah": 17,
@@ -12387,7 +12765,13 @@
         }
       ],
       "translation_en": "[That is Our] established way for those We had sent before you of Our messengers; and you will not find in Our way any alteration.",
-      "conventional_en": "[That is Our] established way for those We had sent before you of Our messengers; and you will not find in Our way any alteration."
+      "conventional_en": "[That is Our] established way for those We had sent before you of Our messengers; and you will not find in Our way any alteration.",
+      "modern_translation_bn": "তোমার পূর্বে আমি যেসব Data-Transmitter বা রাসূল নোড (رُسُلِنَا) পাঠিয়েছিলাম—তাদের সবার ক্ষেত্রেও এটিই ছিল অপরিবর্তনীয় সিস্টেমিক নীতি বা সুন্নাহ (سُنَّةَ مَن قَدْ أَرْسَلْنَا)； এবং তুমি আমার সার্বজনীন সিস্টেম ল বা নীতিমালায় কোনো পরিবর্তন বা ডেভিয়েশন (لَا تَجِدُ لِسُنَّتِنَا تَحْوِيلًا) পাবে না [৪];",
+      "conventional_bn": "তোমার পূর্বে আমি যেসব রাসূল পাঠিয়েছিলাম তাদের ক্ষেত্রেও ছিল অনুরূপ নিয়ম; আর তুমি আমার নিয়মে কোনো পরিবর্তন পাবে না।",
+      "meta_bn": "Universal Historical Sunnah ও Constant Archival Law",
+      "meta_en": "Universal Historical Sunnah & Constant Archival Law",
+      "core_meaning_bn": "Universal Historical Sunnah ও Constant Archival Law",
+      "core_meaning_en": "Universal Historical Sunnah & Constant Archival Law"
     },
     {
       "surah": 17,
@@ -12547,7 +12931,13 @@
         }
       ],
       "translation_en": "Establish prayer at the decline of the sun [from its meridian] until the darkness of the night and [also] the Qur'an of dawn. Indeed, the recitation of dawn is ever witnessed.",
-      "conventional_en": "Establish prayer at the decline of the sun [from its meridian] until the darkness of the night and [also] the Qur'an of dawn. Indeed, the recitation of dawn is ever witnessed."
+      "conventional_en": "Establish prayer at the decline of the sun [from its meridian] until the darkness of the night and [also] the Qur'an of dawn. Indeed, the recitation of dawn is ever witnessed.",
+      "modern_translation_bn": "সূর্য হেলে পড়ার টাইম-স্লট থেকে (لِدُلُوكِ الشَّمْسِ) রাতের চরম অন্ধকার পর্যন্ত (إِلَىٰ غَسَقِ اللَّيْلِ) তোমার Real-Time Connection Protocol বা সালাত কায়েম করো (أَقِمِ الصَّلَاةَ), এবং ডন টাইমে ফজরের কুরআন পাঠের ইন্টারফেস ওপেন করো (قُرْآنَ الْفَجْرِ)； নিশ্চয়ই ফজরের কুরআন পাঠের সেশনটি High-Dimensional অ্যাঞ্জেলিক নোডদের দ্বারা সরাসরি প্রত্যক্ষ ও ডকুমেন্টেড (مَشْهُودًا) হয় [৪];",
+      "conventional_bn": "সূর্য হেলে পড়ার পর থেকে রাতের ঘন অন্ধকার পর্যন্ত সালাত কায়েম করো এবং ফজরের কুরআন পাঠও; নিশ্চয়ই ফজরের কুরআন পাঠ প্রত্যক্ষ করা হয়।",
+      "meta_bn": "Solar Meridian Transit to Night Darkness Connection Protocol & Dawn Code Focus",
+      "meta_en": "Solar Meridian Transit to Night Darkness Connection Protocol & Dawn Code Focus",
+      "core_meaning_bn": "Solar Meridian Transit to Night Darkness Connection Protocol & Dawn Code Focus",
+      "core_meaning_en": "Solar Meridian Transit to Night Darkness Connection Protocol & Dawn Code Focus"
     },
     {
       "surah": 17,
@@ -12687,7 +13077,13 @@
         }
       ],
       "translation_en": "And from [part of] the night, pray with it as additional [worship] for you; it is expected that your Lord will resurrect you to a praised station.",
-      "conventional_en": "And from [part of] the night, pray with it as additional [worship] for you; it is expected that your Lord will resurrect you to a praised station."
+      "conventional_en": "And from [part of] the night, pray with it as additional [worship] for you; it is expected that your Lord will resurrect you to a praised station.",
+      "modern_translation_bn": "আর রাতের নিস্তব্ধ উইন্ডোতে তাহাজ্জুদের ওভার-দ্য-এয়ার এক্সট্রা কানেক্টিভিটি (فَتَهَجَّدْ بِهِ نَافِلَةً لَّكَ) মেইনটেইন করো; যাতে অত্যন্ত সম্ভাবনাময়ভাবে তোমার Root Directory তোমাকে সার্বিক সিস্টেমে পরম প্রশংসিত স্ট্যাটাস হাব বা 'মাকামে মাহমুদ' (مَقَامًا مَّحْمُودًا)-এ আপগ্রেড করেন [৪];",
+      "conventional_bn": "আর রাতের কিছু অংশে তাহাজ্জুদ আদায় করো—যা তোমার জন্য এক অতিরিক্ত ইবাদত; আশা করা যায় তোমার প্রতিপালক তোমাকে ‘মাকামে মাহমুদ’ (প্রশংসিত স্থান)-এ উন্নীত করবেন।",
+      "meta_bn": "Night-Phase Supplemental Protocol & Praised System Elevation",
+      "meta_en": "Night-Phase Supplemental Protocol & Praised System Elevation",
+      "core_meaning_bn": "Night-Phase Supplemental Protocol & Praised System Elevation",
+      "core_meaning_en": "Night-Phase Supplemental Protocol & Praised System Elevation"
     },
     {
       "surah": 17,
@@ -12963,7 +13359,13 @@
         }
       ],
       "translation_en": "And say, \"Truth has come, and falsehood has departed. Indeed is falsehood, [by nature], ever bound to depart.\"",
-      "conventional_en": "And say, \"Truth has come, and falsehood has departed. Indeed is falsehood, [by nature], ever bound to depart.\""
+      "conventional_en": "And say, \"Truth has come, and falsehood has departed. Indeed is falsehood, [by nature], ever bound to depart.\"",
+      "modern_translation_bn": "আর তুমি সিস্টেম ডিক্লেয়ারেশন দিয়ে বলো: ‘পরম অবজেক্টিভ সত্য ও অরিজিনাল কোড ‘আল-হাক্ব’ ডাউনলিংক হয়েছে (جَاءَ الْحَقُّ) এবং সমস্ত মেলিশিয়াস ডেটা-বাগ বা মিথ্যা বিলুপ্ত হয়েছে (زَهَقَ الْبَاطِلُ)； নিশ্চয়ই মিথ্যা ও ম্যালওয়্যার নিজস্ব নেগেটিভ এন্ট্রপিতে বিলুপ্ত ও ধসে পড়তেই বাধ্য (إِنَّ الْبَاطِلَ كَانَ زَهُوقًا)’ [৪]!",
+      "conventional_bn": "আর বলো, ‘সত্য এসেছে এবং মিথ্যা বিলুপ্ত হয়েছে; নিশ্চয়ই মিথ্যা বিলুপ্ত হওয়ারই বিষয়’।",
+      "meta_bn": "Absolute Truth Manifestation ও Malware Annihilation Theorem",
+      "meta_en": "Absolute Truth Manifestation & Malware Annihilation Theorem",
+      "core_meaning_bn": "Absolute Truth Manifestation ও Malware Annihilation Theorem",
+      "core_meaning_en": "Absolute Truth Manifestation & Malware Annihilation Theorem"
     },
     {
       "surah": 17,
@@ -13113,7 +13515,13 @@
         }
       ],
       "translation_en": "And We send down of the Qur'an that which is healing and mercy for the believers, but it does not increase the wrongdoers except in loss.",
-      "conventional_en": "And We send down of the Qur'an that which is healing and mercy for the believers, but it does not increase the wrongdoers except in loss."
+      "conventional_en": "And We send down of the Qur'an that which is healing and mercy for the believers, but it does not increase the wrongdoers except in loss.",
+      "modern_translation_bn": "আর আমি এই Master Source Code বা কুরআনে এমন ডেটা-প্যাকেট ডাউনলিংক করি—যা Verified Users বা মুমিনদের জন্য ইন্টারনাল কিউরিং বা পরম আরোগ্য (شِفَاءٌ) এবং বিশেষ কম্প্যাশন বা রহমত (رَحْمَةٌ)； অথচ তা সিস্টেম-ভায়োলেশনকারী আউটলায়ার জালেমদের জন্য কেবল ক্ষতি ও ডাউনগ্রেডেশন-ই (خَسَارًا) বৃদ্ধি করে [৪];",
+      "conventional_bn": "আর আমি কুরআনে এমন কিছু নাযিল করি যা মুমিনদের জন্য আরোগ্য ও রহমত; কিন্তু তা জালেমদের কেবল ক্ষতিই বৃদ্ধি করে।",
+      "meta_bn": "Healing Source Downlink ও Malicious Node Loss Multiplication",
+      "meta_en": "Healing Source Downlink & Malicious Node Loss Multiplication",
+      "core_meaning_bn": "Healing Source Downlink ও Malicious Node Loss Multiplication",
+      "core_meaning_en": "Healing Source Downlink & Malicious Node Loss Multiplication"
     },
     {
       "surah": 17,
@@ -13253,7 +13661,13 @@
         }
       ],
       "translation_en": "And when We bestow favor upon the disbeliever, he turns away and distances himself; and when evil touches him, he is ever despairing.",
-      "conventional_en": "And when We bestow favor upon the disbeliever, he turns away and distances himself; and when evil touches him, he is ever despairing."
+      "conventional_en": "And when We bestow favor upon the disbeliever, he turns away and distances himself; and when evil touches him, he is ever despairing.",
+      "modern_translation_bn": "আর যখন আমি হিউম্যান নোডের ওপর মেটেরিয়াল রিসোর্স ও নেয়ামত ডাউনলিংক করি (أَنْعَمْنَا عَلَى الْإِنسَانِ), তখন সে সত্য থেকে মুখ ফিরিয়ে নেয় এবং ঔদ্ধত্যে সাইডলাইন হয়ে যায় (أَعْرَضَ وَنَأَىٰ بِجَانِبِهِ)； আর যখন কোনো সিস্টেম এরর বা বিপদ তাকে স্পর্শ করে (مَسَّهُ الشَّرُّ), তখন সে নিমেষেই চরম হতাশ ও কোলাপ্সড (يَئُوسًا) হয়ে পড়ে [৪];",
+      "conventional_bn": "আর যখন আমি মানুষের প্রতি অনুগ্রহ করি, তখন সে মুখ ফিরিয়ে নেয় এবং অহংকারে দূরে সরে যায়; আর যখন তাকে কোনো অনিষ্ট স্পর্শ করে, তখন সে সম্পূর্ণ হতাশ হয়ে পড়ে।",
+      "meta_bn": "High-Resource Alienation ও Sudden Crisis Despair Reflex",
+      "meta_en": "High-Resource Alienation & Sudden Crisis Despair Reflex",
+      "core_meaning_bn": "High-Resource Alienation ও Sudden Crisis Despair Reflex",
+      "core_meaning_en": "High-Resource Alienation & Sudden Crisis Despair Reflex"
     },
     {
       "surah": 17,
@@ -13383,7 +13797,13 @@
         }
       ],
       "translation_en": "Say, \"Each works according to his manner, but your Lord is most knowing of who is best guided in way.\"",
-      "conventional_en": "Say, \"Each works according to his manner, but your Lord is most knowing of who is best guided in way.\""
+      "conventional_en": "Say, \"Each works according to his manner, but your Lord is most knowing of who is best guided in way.\"",
+      "modern_translation_bn": "তুমি বলো: ‘প্রতিটি ইউজার নোড তার নিজস্ব ডিসপোজিশন ও কনফিগারেশন অনুযায়ী ডেটা-অ্যাকশন রান করে (كُلٌّ يَعْمَلُ عَلَىٰ شَاكِلَتِهِ)； অতঃপর তোমাদের Root Directory সবচেয়ে নিখুঁত জানেন—কে সিস্টেমের পরম অপটিমাইজড পাথওয়েতে (أَهْدَىٰ سَبِيلًا) সক্রিয় রয়েছে’ [৪];",
+      "conventional_bn": "বলো, ‘প্রত্যেকেই নিজ নিজ পদ্ধতি অনুযায়ী কাজ করে; অতঃপর তোমাদের প্রতিপালকই সবচেয়ে ভালো জানেন কে অধিকতর সঠিক পথে রয়েছে’।",
+      "meta_bn": "Dynamic User Node Execution Spectrum ও Root Directory Omniscience",
+      "meta_en": "Dynamic User Node Execution Spectrum & Root Directory Omniscience",
+      "core_meaning_bn": "Dynamic User Node Execution Spectrum ও Root Directory Omniscience",
+      "core_meaning_en": "Dynamic User Node Execution Spectrum & Root Directory Omniscience"
     },
     {
       "surah": 17,
@@ -13543,7 +13963,13 @@
         }
       ],
       "translation_en": "And they ask you, [O Muhammad], about the soul. Say, \"The soul is of the affair of my Lord. And mankind have not been given of knowledge except a little.\"",
-      "conventional_en": "And they ask you, [O Muhammad], about the soul. Say, \"The soul is of the affair of my Lord. And mankind have not been given of knowledge except a little.\""
+      "conventional_en": "And they ask you, [O Muhammad], about the soul. Say, \"The soul is of the affair of my Lord. And mankind have not been given of knowledge except a little.\"",
+      "modern_translation_bn": "আর তারা তোমার কাছে কসমিক এনার্জি ম্যাট্রিক্স ‘রূহ’ বা প্রাণশক্তি সম্পর্কে (عَنِ الرُّوحِ) ইনকোয়ারি পাঠায়; তুমি বলো: ‘রূহ হলো আমার Root Directory-র সরাসরি এক্সিকিউটিভ কমান্ডের (مِنْ أَمْرِ رَبِّي) অন্তর্ভুক্ত বিষয়； আর তোমাদের সীমিত হিউম্যান হার্ডওয়্যারকে এ বিষয়ে অতি সামান্য Bandwidth ও জ্ঞানই (قَلِيلًا) প্রদান করা হয়েছে’ [৪];",
+      "conventional_bn": "আর তারা তোমাকে ‘রূহ’ সম্পর্কে জিজ্ঞেস করে; বলো, ‘রূহ হলো আমার প্রতিপালকের আদেশঘটিত বিষয়; আর তোমাদেরকে অতি সামান্য জ্ঞানই দেওয়া হয়েছে’।",
+      "meta_bn": "Spirit Energy Matrix Query ও Limited Human Bandwidth",
+      "meta_en": "Spirit Energy Matrix Query & Limited Human Bandwidth",
+      "core_meaning_bn": "Spirit Energy Matrix Query ও Limited Human Bandwidth",
+      "core_meaning_en": "Spirit Energy Matrix Query & Limited Human Bandwidth"
     },
     {
       "surah": 17,
@@ -13693,7 +14119,13 @@
         }
       ],
       "translation_en": "And if We willed, We could surely do away with that which We revealed to you. Then you would not find for yourself concerning it an advocate against Us.",
-      "conventional_en": "And if We willed, We could surely do away with that which We revealed to you. Then you would not find for yourself concerning it an advocate against Us."
+      "conventional_en": "And if We willed, We could surely do away with that which We revealed to you. Then you would not find for yourself concerning it an advocate against Us.",
+      "modern_translation_bn": "আর যদি আমি চাই, তবে তোমার রিসিভার মেমোরিতে যা কিছু ওহী ডাউনলিংক করেছি—তা সম্পূর্ণরূপে রোলব্যাক ও প্রত্যাহার (لَنَذْهَبَنَّ بِالَّذِي أَوْحَيْنَا إِلَيْكَ) করে নিতে পারি; অতঃপর তুমি আমার সেন্ট্রাল কন্ট্রোলের বিরুদ্ধে কোনো রিকভারি ডিফেন্ডার বা ওয়াকিল (وَكِيلًا) খুঁজে পাবে না [৪]；",
+      "conventional_bn": "আর আমি ইচ্ছা করলে তোমার প্রতি যা ওহী করেছি তা অবশ্যই প্রত্যাহার করে নিতে পারি; অতঃপর তুমি এ বিষয়ে আমার বিরুদ্ধে কোনো কর্মবিধায়ক পাবে না।",
+      "meta_bn": "Total Revelation Rollback Authority & Unassisted Recovery Deficit",
+      "meta_en": "Total Revelation Rollback Authority & Unassisted Recovery Deficit",
+      "core_meaning_bn": "Total Revelation Rollback Authority & Unassisted Recovery Deficit",
+      "core_meaning_en": "Total Revelation Rollback Authority & Unassisted Recovery Deficit"
     },
     {
       "surah": 17,
@@ -13803,7 +14235,13 @@
         }
       ],
       "translation_en": "Except [We have left it with you] as a mercy from your Lord. Indeed, His favor upon you has ever been great.",
-      "conventional_en": "Except [We have left it with you] as a mercy from your Lord. Indeed, His favor upon you has ever been great."
+      "conventional_en": "Except [We have left it with you] as a mercy from your Lord. Indeed, His favor upon you has ever been great.",
+      "modern_translation_bn": "একমাত্র তোমার Root Directory-র অপার Compassion বা বিশেষ রহমত (رَحْمَةً مِّن رَّبِّكَ) ব্যতীত; নিশ্চয়ই তোমার ওপর তাঁর সুপ্রীম গ্রেস ও অনুগ্রহ এক অফুরন্ত মেগা-প্যাকেট (فَضْلَهُ كَانَ عَلَيْكَ كَبِيرًا) [৪]।",
+      "conventional_bn": "কিন্তু তোমার প্রতিপালকের অনুগ্রহস্বরূপ (তা প্রত্যাহার করা হয়নি); নিশ্চয়ই তোমার প্রতি তাঁর অনুগ্রহ অপরিসীম।",
+      "meta_bn": "Sovereign Root Grace & Infinite Divine Endowment",
+      "meta_en": "Sovereign Root Grace & Infinite Divine Endowment",
+      "core_meaning_bn": "Sovereign Root Grace & Infinite Divine Endowment",
+      "core_meaning_en": "Sovereign Root Grace & Infinite Divine Endowment"
     },
     {
       "surah": 17,
@@ -14013,7 +14451,13 @@
         }
       ],
       "translation_en": "Say, \"If mankind and the jinn gathered in order to produce the like of this Qur'an, they could not produce the like of it, even if they were to each other assistants.\"",
-      "conventional_en": "Say, \"If mankind and the jinn gathered in order to produce the like of this Qur'an, they could not produce the like of it, even if they were to each other assistants.\""
+      "conventional_en": "Say, \"If mankind and the jinn gathered in order to produce the like of this Qur'an, they could not produce the like of it, even if they were to each other assistants.\"",
+      "modern_translation_bn": "তুমি ওপেন চ্যালেঞ্জ দিয়ে বলো: ‘যদি সমগ্র হিউম্যান স্পেসিস ও অদৃশ্য শক্তি জ্বিনজাতি (الْإِنسُ وَالْجِنُّ) সম্মিলিতভাবে এই Master Source Code বা কুরআনের সমতুল্য কোনো প্রোগ্রাম রচনা করতে একযোগে প্রসেসিং পাওয়ার যুক্ত করে (بِمِثْلِ هَٰذَا الْقُرْآنِ)—তবুও তারা এর সমকক্ষ এক লাইন কোডও উৎপাদন করতে পারবে না (لَا يَأْتُونَ بِمِثْلِهِ), যদিও তারা পরস্পরের ব্যাক-এন্ড সাপোর্ট ও কোলাবোরেটর (ظَهِيرًا) হয়’ [৪]!",
+      "conventional_bn": "বলো, ‘যদি মানবজাতি ও জ্বিনজাতি এই কুরআনের মতো কিছু তৈরি করতে একত্র হয়, তবুও তারা এর অনুরূপ আনতে পারবে না—যদিও তারা একে অপরের সাহায্যকারী হয়’!",
+      "meta_bn": "Multi-Agent Collective Insufficiency ও Quranic Code Inimitability",
+      "meta_en": "Multi-Agent Collective Insufficiency & Quranic Code Inimitability",
+      "core_meaning_bn": "Multi-Agent Collective Insufficiency ও Quranic Code Inimitability",
+      "core_meaning_en": "Multi-Agent Collective Insufficiency & Quranic Code Inimitability"
     },
     {
       "surah": 17,
@@ -14173,7 +14617,13 @@
         }
       ],
       "translation_en": "And We have certainly diversified for the people in this Qur'an from every [kind] of example, but most of the people refused [anything] except disbelief.",
-      "conventional_en": "And We have certainly diversified for the people in this Qur'an from every [kind] of example, but most of the people refused [anything] except disbelief."
+      "conventional_en": "And We have certainly diversified for the people in this Qur'an from every [kind] of example, but most of the people refused [anything] except disbelief.",
+      "modern_translation_bn": "আর নিশ্চয়ই আমি এই Master Source Code বা কুরআনে মানবজাতির ওওএস অপটিমাইজেশনের জন্য প্রতিটি কোর ডাইমেনশনের বাস্তব উপমা ও প্যারাডাইম (مِن كُلِّ مَثَلٍ) বিশদভাবে ডিকোড করেছি； কিন্তু অধিকাংশ মানুষ কেবল তাদের সিস্টেম কোড রিজেকশন বা চরম অকৃতজ্ঞতাতেই (كُفُورًا) অটল রয়েছে [৪];",
+      "conventional_bn": "আর আমি অবশ্যই এই কুরআনে মানুষের জন্য প্রত্যেকটি বিষয়ের উপমা বিস্তারিত বর্ণনা করেছি; কিন্তু অধিকাংশ মানুষ কেবল অকৃতজ্ঞতা ও অস্বীকারই বেছে নিয়েছে।",
+      "meta_bn": "Universal Paradigm Exhaustion ও Chronic Human Outlier Trend",
+      "meta_en": "Universal Paradigm Exhaustion & Chronic Human Outlier Trend",
+      "core_meaning_bn": "Universal Paradigm Exhaustion ও Chronic Human Outlier Trend",
+      "core_meaning_en": "Universal Paradigm Exhaustion & Chronic Human Outlier Trend"
     },
     {
       "surah": 17,
@@ -14293,7 +14743,13 @@
         }
       ],
       "translation_en": "And they say, \"We will not believe you until you break open for us from the ground a spring.",
-      "conventional_en": "And they say, \"We will not believe you until you break open for us from the ground a spring."
+      "conventional_en": "And they say, \"We will not believe you until you break open for us from the ground a spring.",
+      "modern_translation_bn": "আর তারা অবাস্তব শর্ত জুড়ে বলে: ‘আমরা তোমার ডাউনলিংক ডেটাতে ততক্ষণ কোনো ভেরিফিকেশন দেব না (لَّن نُّؤْمِنَ لَكَ)—যতক্ষণ না তুমি আমাদের জন্য এই শুষ্ক মাটি ফুঁড়ে একটি লাইভ হাইড্রোলজিক্যাল ঝরনা (يَنبُوعًا) এক্সট্র্যাক্ট করে দাও’ [৪]!",
+      "conventional_bn": "আর তারা বলে, ‘আমরা কখনই তোমার প্রতি ঈমান আনব না—যতক্ষণ না তুমি আমাদের জন্য যমীন থেকে একটি ঝরনা প্রবাহিত করো’!",
+      "meta_bn": "Material Miracle Demands: Hydro-Geo Spring Extraction",
+      "meta_en": "Material Miracle Demands: Hydro-Geo Spring Extraction",
+      "core_meaning_bn": "Material Miracle Demands: Hydro-Geo Spring Extraction",
+      "core_meaning_en": "Material Miracle Demands: Hydro-Geo Spring Extraction"
     },
     {
       "surah": 17,
@@ -14423,7 +14879,13 @@
         }
       ],
       "translation_en": "Or [until] you have a garden of palm tress and grapes and make rivers gush forth within them in force [and abundance]",
-      "conventional_en": "Or [until] you have a garden of palm tress and grapes and make rivers gush forth within them in force [and abundance]"
+      "conventional_en": "Or [until] you have a garden of palm tress and grapes and make rivers gush forth within them in force [and abundance]",
+      "modern_translation_bn": "‘অথবা তোমার লোকাল ড্রাইভে খেজুর ও আঙ্গুরের একটি মেগা অর্গানিক গার্ডেন থাকবে এবং তুমি তার মধ্য দিয়ে সুইফটলি প্রবাহিত রিভার-গ্রিড চ্যানেল (الْأَنْهَارَ خِلَالَهَا تَفْجِيرًا) সৃষ্টি করে দেবে’ [৪]!",
+      "conventional_bn": "‘অথবা তোমার জন্য খেজুর ও আঙ্গুরের কোনো বাগান হবে, অতঃপর তুমি তার মধ্য দিয়ে নদীসমূহকে ব্যাপকভাবে প্রবাহিত করে দেবে’!",
+      "meta_bn": "Material Miracle Demands: Agro-Forestry & Flowing River Grid",
+      "meta_en": "Material Miracle Demands: Agro-Forestry & Flowing River Grid",
+      "core_meaning_bn": "Material Miracle Demands: Agro-Forestry & Flowing River Grid",
+      "core_meaning_en": "Material Miracle Demands: Agro-Forestry & Flowing River Grid"
     },
     {
       "surah": 17,
@@ -14563,7 +15025,13 @@
         }
       ],
       "translation_en": "Or you make the heaven fall upon us in fragments as you have claimed or you bring Allah and the angels before [us]",
-      "conventional_en": "Or you make the heaven fall upon us in fragments as you have claimed or you bring Allah and the angels before [us]"
+      "conventional_en": "Or you make the heaven fall upon us in fragments as you have claimed or you bring Allah and the angels before [us]",
+      "modern_translation_bn": "‘অথবা তোমার সিস্টেম ওয়ার্নিং অনুযায়ী মহাকাশের উচ্চ স্তরবিন্যাসকে ভেঙে আমাদের মাথায় খণ্ড-বিখণ্ড করে ফেলবে (تُسْقِطَ السَّمَاءَ كِسَفًا), কিংবা সুপ্রীম আর্কিটেক্ট Allah ও মালাইকা নোডসমূহকে আমাদের চোখের অপটিক্যাল রেঞ্জে সামনাসামনি উপস্থিত করবে (قَبِيلًا)’ [৪]!",
+      "conventional_bn": "‘অথবা তুমি যেমন দাবি করো, সে অনুযায়ী আকাশকে আমাদের ওপর খণ্ড-বিখণ্ড করে ফেলবে, কিংবা আল্লাহ ও ফেরেশতাদের আমাদের সামনে উপস্থিত করবে’!",
+      "meta_bn": "Material Miracle Demands: Sky Fragmentation & Divine Entity Visibility",
+      "meta_en": "Material Miracle Demands: Sky Fragmentation & Divine Entity Visibility",
+      "core_meaning_bn": "Material Miracle Demands: Sky Fragmentation & Divine Entity Visibility",
+      "core_meaning_en": "Material Miracle Demands: Sky Fragmentation & Divine Entity Visibility"
     },
     {
       "surah": 17,
@@ -14843,7 +15311,13 @@
         }
       ],
       "translation_en": "Or you have a house of gold or you ascend into the sky. And [even then], we will not believe in your ascension until you bring down to us a book we may read.\" Say, \"Exalted is my Lord! Was I ever but a human messenger?\"",
-      "conventional_en": "Or you have a house of gold or you ascend into the sky. And [even then], we will not believe in your ascension until you bring down to us a book we may read.\" Say, \"Exalted is my Lord! Was I ever but a human messenger?\""
+      "conventional_en": "Or you have a house of gold or you ascend into the sky. And [even then], we will not believe in your ascension until you bring down to us a book we may read.\" Say, \"Exalted is my Lord! Was I ever but a human messenger?\"",
+      "modern_translation_bn": "‘কিংবা তোমার জন্য স্বর্ণের তৈরি কোনো মেগা আর্কিটেকচার থাকবে, অথবা তুমি চোখের সামনে আকাশে আরোহণ করবে (تَرْقَىٰ فِي السَّمَاءِ)； আর তোমার আরোহণকেও আমরা সিকিউরড মানব না—যতক্ষণ না তুমি সরাসরি একটি রিডেবল ফিজিক্যাল কিতাব ডাউনলিংক করো!’ তুমি জবাবে বলো: ‘আমার Root Directory পরম পবিত্র ও ত্রুটিমুক্ত (سُبْحَانَ رَبِّي)! আমি তো একজন সাধারণ বায়োলজিক্যাল মানুষ ছাড়া আর কিছুই নই—যাকে সুপ্রীম সোর্সের Data-Transmitter বা রাসূল (رَسُولًا) হিসেবে অ্যাসাইন করা হয়েছে’ [৪]!",
+      "conventional_bn": "‘কিংবা তোমার একটি সোনার তৈরি ঘর থাকবে, অথবা তুমি আকাশে আরোহণ করবে; আর তোমার আরোহণকেও আমরা কখনই বিশ্বাস করব না—যতক্ষণ না তুমি আমাদের ওপর একটি কিতাব নাযিল করো যা আমরা পাঠ করব’। বলো, ‘আমার প্রতিপালক পরম পবিত্র! আমি তো একজন মানুষ ছাড়া আর কিছু নই—যাকে রাসূল করে পাঠানো হয়েছে’!",
+      "meta_bn": "Material Miracle Demands: Gold Architecture, Celestial Ascendance & Mortal Messenger Fact",
+      "meta_en": "Material Miracle Demands: Gold Architecture, Celestial Ascendance & Mortal Messenger Fact",
+      "core_meaning_bn": "Material Miracle Demands: Gold Architecture, Celestial Ascendance & Mortal Messenger Fact",
+      "core_meaning_en": "Material Miracle Demands: Gold Architecture, Celestial Ascendance & Mortal Messenger Fact"
     },
     {
       "surah": 17,
@@ -15013,7 +15487,13 @@
         }
       ],
       "translation_en": "And what prevented the people from believing when guidance came to them except that they said, \"Has Allah sent a human messenger?\"",
-      "conventional_en": "And what prevented the people from believing when guidance came to them except that they said, \"Has Allah sent a human messenger?\""
+      "conventional_en": "And what prevented the people from believing when guidance came to them except that they said, \"Has Allah sent a human messenger?\"",
+      "modern_translation_bn": "আর যখন মানুষের লোকাল রিসিভারে সত্যের হিদায়াত ও নেভিগেশন সিগন্যাল আসে, তখন তাদের ভেরিফিকেশন কমপ্লিট করতে কেবল এই বায়াসড কুযুক্তিই ব্লক করে যে—তারা অজ্ঞতায় বলে: ‘সিস্টেম আর্কিটেক্ট কি একজন সাধারণ কার্বন-বেসড মানুষকে (بَشَرًا) তাঁর Data-Transmitter বা রাসূল হিসেবে ডেপ্লয় করতে পারেন’ [৪]?",
+      "conventional_bn": "আর মানুষের কাছে যখন হিদায়াত আসে, তখন তাদেরকে ঈমান আনা থেকে কেবল তাদের এই কথাই বিরত রাখে যে, তারা বলে—‘আল্লাহ কি কোনো মানুষকে রাসূল করে পাঠিয়েছেন’?",
+      "meta_bn": "Mortal Messenger Paradox ও Anthropomorphic Bias Bug",
+      "meta_en": "Mortal Messenger Paradox & Anthropomorphic Bias Bug",
+      "core_meaning_bn": "Mortal Messenger Paradox ও Anthropomorphic Bias Bug",
+      "core_meaning_en": "Mortal Messenger Paradox & Anthropomorphic Bias Bug"
     },
     {
       "surah": 17,
@@ -15173,7 +15653,13 @@
         }
       ],
       "translation_en": "Say, \"If there were upon the earth angels walking securely, We would have sent down to them from the heaven an angel [as a] messenger.\"",
-      "conventional_en": "Say, \"If there were upon the earth angels walking securely, We would have sent down to them from the heaven an angel [as a] messenger.\""
+      "conventional_en": "Say, \"If there were upon the earth angels walking securely, We would have sent down to them from the heaven an angel [as a] messenger.\"",
+      "modern_translation_bn": "তুমি লজিক দিয়ে বলো: ‘যদি এই ভৌত পৃথিবীতে মালাইকা বা High-Dimensional নোডরা স্থায়ী বাসিন্দা হিসেবে শান্তিতে মুভ করত (مَلَائِكَةٌ يَمْشُونَ مُطْمَئِنِّينَ)—তবে নিশ্চয়ই আমি তাদের জন্য আকাশ থেকে তাদেরই লেভেলের কোনো এঞ্জেলিক নোডকে রাসূল হিসেবে ডাউনলিংক করতাম [কিন্তু মানুষের জন্য মানুষের ইন্টারফেসই একমাত্র কম্প্যাটিবল]’ [৪]!",
+      "conventional_bn": "বলো, ‘যদি যমীনে ফেরেশতারা শান্তভাবে বিচরণ করত, তবে অবশ্যই আমি আকাশ থেকে তাদের কাছে কোনো ফেরেশতাকেই রাসূল করে পাঠাতাম’।",
+      "meta_bn": "Celestial Node Demography ও Angelic Messenger Protocol",
+      "meta_en": "Celestial Node Demography & Angelic Messenger Protocol",
+      "core_meaning_bn": "Celestial Node Demography ও Angelic Messenger Protocol",
+      "core_meaning_en": "Celestial Node Demography & Angelic Messenger Protocol"
     },
     {
       "surah": 17,
@@ -15303,7 +15789,13 @@
         }
       ],
       "translation_en": "Say, \"Sufficient is Allah as Witness between me and you. Indeed he is ever, concerning His servants, Acquainted and Seeing.\"",
-      "conventional_en": "Say, \"Sufficient is Allah as Witness between me and you. Indeed he is ever, concerning His servants, Acquainted and Seeing.\""
+      "conventional_en": "Say, \"Sufficient is Allah as Witness between me and you. Indeed he is ever, concerning His servants, Acquainted and Seeing.\"",
+      "modern_translation_bn": "তুমি বলো: ‘আমার এবং তোমাদের সার্বিক ডাটা-এক্সচেঞ্জে কেন্দ্রীয় সেন্ট্রাল উইটনেস বা সাক্ষী (شَهِيدًا) হিসেবে একমাত্র Allah-ই যথেষ্ট； নিশ্চয়ই তিনি তাঁর সমস্ত ক্লায়েন্ট বান্দাদের ইন্টারনাল কোড ও বাহ্যিক অ্যাকশন সার্বক্ষণিক স্ক্যান ও মনিটরকারী (خَبِيرًا بَصِيرًا)’ [৪];",
+      "conventional_bn": "বলো, ‘আমার ও তোমাদের মধ্যে সাক্ষী হিসেবে আল্লাহই যথেষ্ট; নিশ্চয়ই তিনি তাঁর বান্দাদের বিষয়ে সম্যক অবগত, প্রত্যক্ষকারী’।",
+      "meta_bn": "Universal Central Witness ও Client-Node Surveillance",
+      "meta_en": "Universal Central Witness & Client-Node Surveillance",
+      "core_meaning_bn": "Universal Central Witness ও Client-Node Surveillance",
+      "core_meaning_en": "Universal Central Witness & Client-Node Surveillance"
     },
     {
       "surah": 17,
@@ -15593,7 +16085,13 @@
         }
       ],
       "translation_en": "And whoever Allah guides - he is the [rightly] guided; and whoever He sends astray - you will never find for them protectors besides Him, and We will gather them on the Day of Resurrection [fallen] on their faces - blind, dumb and deaf. Their refuge is Hell; every time it subsides We increase them in blazing fire.",
-      "conventional_en": "And whoever Allah guides - he is the [rightly] guided; and whoever He sends astray - you will never find for them protectors besides Him, and We will gather them on the Day of Resurrection [fallen] on their faces - blind, dumb and deaf. Their refuge is Hell; every time it subsides We increase them in blazing fire."
+      "conventional_en": "And whoever Allah guides - he is the [rightly] guided; and whoever He sends astray - you will never find for them protectors besides Him, and We will gather them on the Day of Resurrection [fallen] on their faces - blind, dumb and deaf. Their refuge is Hell; every time it subsides We increase them in blazing fire.",
+      "modern_translation_bn": "আর সিস্টেম আর্কিটেক্ট যার ওওএস-কে হিদায়াত ও সিগন্যাল দেন—সে-ই প্রকৃত অপটিমাইজড নোড (الْمُهْتَدِ)； আর যাদের ওওএস তিনি Signal Loss বা পথভ্রষ্টতায় ছেড়ে দেন—তুমি তাঁর সার্ভার ছাড়া তাদের কোনো প্রোটেক্টর খুঁজে পাবে না； এবং Final Audit Window বা কিয়ামতের দিন আমি তাদেরকে সম্পূর্ণ সেন্সর-লকড অবস্থায়—অন্ধ, বোবা ও বধিররূপে (عُمْيًا وَبُكْمًا وَصُمًّا)—মুখ থুবড়ে ফেলা স্টেটে গ্যাদার করব； তাদের ফাইনাল স্টোরেজ হবে Thermodynamic Crash-Zone বা জাহান্নাম (جَهَنَّمَ)—যখনই এর এনার্জি কিছুটা ড্রপ করবে, তখনই আমি তাদের জন্য রি-ইগনিশন ও লেলিহান শিখা (سَعِيرًا) বৃদ্ধি করে দেব [৪];",
+      "conventional_bn": "আর আল্লাহ যাকে পথ প্রদর্শন করেন, সে-ই তো পথপ্রাপ্ত; আর যাদের তিনি পথভ্রষ্ট করেন, তুমি কখনই তাঁর পরিবর্তে তাদের জন্য কোনো অভিভাবক পাবে না; আর কিয়ামতের দিন আমি তাদেরকে তাদের মুখের ওপর ভর দেওয়া অবস্থায় অন্ধ, মূক ও বধির করে সমবেত করব; তাদের আবাসস্থল হবে জাহান্নাম; যখনই তা কিছুটা স্তিমিত হবে, আমি তাদের জন্য প্রজ্বলিত অগ্নিশিখা বাড়িয়ে দেব।",
+      "meta_bn": "Real-Time Guidance Allocation, Sensory Lockout & Flame-Reignited Crash Zone",
+      "meta_en": "Real-Time Guidance Allocation, Sensory Lockout & Flame-Reignited Crash Zone",
+      "core_meaning_bn": "Real-Time Guidance Allocation, Sensory Lockout & Flame-Reignited Crash Zone",
+      "core_meaning_en": "Real-Time Guidance Allocation, Sensory Lockout & Flame-Reignited Crash Zone"
     },
     {
       "surah": 17,
@@ -15753,7 +16251,13 @@
         }
       ],
       "translation_en": "That is their recompense because they disbelieved in Our verses and said, \"When we are bones and crumbled particles, will we [truly] be resurrected [in] a new creation?\"",
-      "conventional_en": "That is their recompense because they disbelieved in Our verses and said, \"When we are bones and crumbled particles, will we [truly] be resurrected [in] a new creation?\""
+      "conventional_en": "That is their recompense because they disbelieved in Our verses and said, \"When we are bones and crumbled particles, will we [truly] be resurrected [in] a new creation?\"",
+      "modern_translation_bn": "এটাই তাদের সিস্টেমিক আউটপুট ও প্রতিদান (جَزَاؤُهُم)—কেননা তারা আমার কসমিক সাইন ও কমান্ড লাইনগুলোকে রিজেক্ট করেছিল (كَفَرُوا بِآيَاتِنَا) এবং যুক্তিহীন সন্দেহে বলেছিল: ‘যখন আমাদের হার্ডওয়্যার অস্থি ও চূর্ণ ধূলিকণায় মিশে যাবে—তখনও কি আমাদের মেমোরি ডেটাকে সম্পূর্ণ নিউ জেনারেশন ফরম্যাটে (خَلْقًا جَدِيدًا) রি-অ্যাক্টিভেট করা সম্ভব’ [৪]?",
+      "conventional_bn": "এটাই তাদের প্রতিফল, কারণ তারা আমার নিদর্শনসমূহ অস্বীকার করেছিল এবং বলেছিল, ‘আমরা যখন অস্থি ও চূর্ণ-বিচূর্ণ ধূলিকণায় পরিণত হব, তখনও কি আমরা নতুন সৃষ্টিরূপে পুনরুত্থিত হব’?",
+      "meta_bn": "Disassembled Bio-Hardware Doubt ও Universal Regeneration Skepticism",
+      "meta_en": "Disassembled Bio-Hardware Doubt & Universal Regeneration Skepticism",
+      "core_meaning_bn": "Disassembled Bio-Hardware Doubt ও Universal Regeneration Skepticism",
+      "core_meaning_en": "Disassembled Bio-Hardware Doubt & Universal Regeneration Skepticism"
     },
     {
       "surah": 17,
@@ -16003,7 +16507,13 @@
         }
       ],
       "translation_en": "Do they not see that Allah, who created the heavens and earth, is [the one] Able to create the likes of them? And He has appointed for them a term, about which there is no doubt. But the wrongdoers refuse [anything] except disbelief.",
-      "conventional_en": "Do they not see that Allah, who created the heavens and earth, is [the one] Able to create the likes of them? And He has appointed for them a term, about which there is no doubt. But the wrongdoers refuse [anything] except disbelief."
+      "conventional_en": "Do they not see that Allah, who created the heavens and earth, is [the one] Able to create the likes of them? And He has appointed for them a term, about which there is no doubt. But the wrongdoers refuse [anything] except disbelief.",
+      "modern_translation_bn": "তারা কি নিজেদের কগনিটিভ সেন্সরে স্ক্যান করে না যে—সেই সুপ্রীমিক আর্কিটেক্ট Allah, যিনি এই সুবিশাল মহাজাগতিক স্তরবিন্যাস ও গ্রাউন্ড প্ল্যাটফর্ম সৃষ্টি করেছেন (خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ), তিনি এই তুচ্ছ হিউম্যান নোডদের অনায়াসে পুনরায় রিক্রিয়েট করতে পরম সক্ষম (قَادِرٌ)？ এবং তিনি তাদের লাইফ-স্প্যানের জন্য একটি ত্রুটিহীন Deadline বা নির্দিষ্ট সময়সীমা (أَجَلًا لَّا رَيْبَ فِيهِ) নির্ধারণ করে রেখেছেন； তবুও আউটলায়ার জালেমরা কেবল সত্যকে রিজেক্ট করে কুফরিতেই অটল রয়েছে [৪];",
+      "conventional_bn": "তারা কি লক্ষ্য করে না যে, আল্লাহ—যিনি আসমানসমূহ ও যমীন সৃষ্টি করেছেন—তিনি তাদের অনুরূপ সৃষ্টি করতে পুরোপুরি সক্ষম? এবং তিনি তাদের জন্য একটি নির্দিষ্ট সময় নির্ধারণ করেছেন যাতে কোনো সন্দেহ নেই; তবুও জালেমরা কুফরি ছাড়া সবকিছুতেই অস্বীকার করেছে।",
+      "meta_bn": "Universal Architect Scale, Exact Timeline Deadline & Outlier Rejection",
+      "meta_en": "Universal Architect Scale, Exact Timeline Deadline & Outlier Rejection",
+      "core_meaning_bn": "Universal Architect Scale, Exact Timeline Deadline & Outlier Rejection",
+      "core_meaning_en": "Universal Architect Scale, Exact Timeline Deadline & Outlier Rejection"
     },
     {
       "surah": 17,
@@ -16163,7 +16673,13 @@
         }
       ],
       "translation_en": "Say [to them], \"If you possessed the depositories of the mercy of my Lord, then you would withhold out of fear of spending.\" And ever has man been stingy.",
-      "conventional_en": "Say [to them], \"If you possessed the depositories of the mercy of my Lord, then you would withhold out of fear of spending.\" And ever has man been stingy."
+      "conventional_en": "Say [to them], \"If you possessed the depositories of the mercy of my Lord, then you would withhold out of fear of spending.\" And ever has man been stingy.",
+      "modern_translation_bn": "তুমি তাদের সাইকোলজিক্যাল বাগ এক্সপোজ করে বলো: ‘যদি তোমরা আমার Root Directory-র অসীম মেটা-রিসোর্স ভাণ্ডারেরও (خَزَائِنَ رَحْمَةِ رَبِّي) সুপ্রীম অ্যাক্সেস পেতে—তবুও সম্পদ ড্রেইন বা শেষ হয়ে যাওয়ার কাল্পনিক আতঙ্কে (خَشْيَةَ الْإِنفَاقِ) তোমরা তা হোর্ডিং করে নিজের কাছে আটকে রাখতে’； আর মানব নোড স্বভাবগতভাবেই প্রচণ্ড সংকীর্ণমনা ও কৃপণ (قَتُورًا) [৪]!",
+      "conventional_bn": "বলো, ‘যদি তোমরা আমার প্রতিপালকের রহমতের ভাণ্ডারের মালিক হতে, তবে তোমরা নিঃশেষ হয়ে যাওয়ার ভয়ে অবশ্যই তা ধরে রাখতে’; আর মানুষ তো অতিশয় কৃপণ!",
+      "meta_bn": "Infinite Resource Hoarding Tendency ও Innate Narrowness Bug",
+      "meta_en": "Infinite Resource Hoarding Tendency & Innate Narrowness Bug",
+      "core_meaning_bn": "Infinite Resource Hoarding Tendency ও Innate Narrowness Bug",
+      "core_meaning_en": "Infinite Resource Hoarding Tendency & Innate Narrowness Bug"
     },
     {
       "surah": 17,
@@ -16363,7 +16879,13 @@
         }
       ],
       "translation_en": "And We had certainly given Moses nine evident signs, so ask the Children of Israel [about] when he came to them and Pharaoh said to him, \"Indeed I think, O Moses, that you are affected by magic.\"",
-      "conventional_en": "And We had certainly given Moses nine evident signs, so ask the Children of Israel [about] when he came to them and Pharaoh said to him, \"Indeed I think, O Moses, that you are affected by magic.\""
+      "conventional_en": "And We had certainly given Moses nine evident signs, so ask the Children of Israel [about] when he came to them and Pharaoh said to him, \"Indeed I think, O Moses, that you are affected by magic.\"",
+      "modern_translation_bn": "আর আমি নিশ্চয়ই মূসা নোডকে নয়টি সুস্পষ্ট Macro-Signs বা সৃষ্টিতাত্ত্বিক মার্কার (تِسْعَ آيَاتٍ بَيِّنَاتٍ) দিয়ে পাঠিয়েছিলাম； সুতরাং বনি ইসরাঈল নোড-ক্লাস্টারকে অডিট করে দেখো—যখন মূসা তাদের ডোমেইনে প্রবেশ করেছিল, তখন স্বৈরাচারী ফেরাউন নোড তাকে বলেছিল: ‘হে মূসা! আমি তো তোমাকে স্পষ্ট এক অপটিক্যাল ইল্যুশনে আক্রান্ত বা জাদুগ্রস্ত (مَسْحُورًا) মনে করি’ [৪]!",
+      "conventional_bn": "আর আমি অবশ্যই মূসাকে নয়টি স্পষ্ট নিদর্শন দিয়েছিলাম; সুতরাং বনি ইসরাঈলকে জিজ্ঞেস করো—যখন সে তাদের কাছে এসেছিল, তখন ফেরাউন তাকে বলেছিল, ‘হে মূসা! নিশ্চয়ই আমি তোমাকে জাদুগ্রস্ত মনে করি’।",
+      "meta_bn": "Nine Optical Macro-Signs Downlink ও Pharaoh Optical Delusion Accusation",
+      "meta_en": "Nine Optical Macro-Signs Downlink & Pharaoh Optical Delusion Accusation",
+      "core_meaning_bn": "Nine Optical Macro-Signs Downlink ও Pharaoh Optical Delusion Accusation",
+      "core_meaning_en": "Nine Optical Macro-Signs Downlink & Pharaoh Optical Delusion Accusation"
     },
     {
       "surah": 17,
@@ -16533,7 +17055,13 @@
         }
       ],
       "translation_en": "[Moses] said, \"You have already known that none has sent down these [signs] except the Lord of the heavens and the earth as evidence, and indeed I think, O Pharaoh, that you are destroyed.\"",
-      "conventional_en": "[Moses] said, \"You have already known that none has sent down these [signs] except the Lord of the heavens and the earth as evidence, and indeed I think, O Pharaoh, that you are destroyed.\""
+      "conventional_en": "[Moses] said, \"You have already known that none has sent down these [signs] except the Lord of the heavens and the earth as evidence, and indeed I think, O Pharaoh, that you are destroyed.\"",
+      "modern_translation_bn": "মূসা প্রত্যুত্তরে বলল: ‘তুমি তোমার কোর প্রসেসরে খুব ভালো করেই জানো যে—এই প্রতিটি স্পষ্ট অন্তর্দৃষ্টি ও মার্কার (بَصَائِرَ) আসমান ও যমীনের সুপ্রীম Root Directory ছাড়া অন্য কেউ ডাউনলিংক করেননি； আর হে ফেরাউন! আমি নিশ্চিত যে তুমি শীঘ্রই সিস্টেমে এক ধ্বংসাত্মক ক্র্যাশ ও নিশ্চিত পতনের (مَثْبُورًا) মুখোমুখি হতে যাচ্ছ’ [৪]!",
+      "conventional_bn": "মূসা বলল, ‘তুমি অবশ্যই জানো যে, এই চোখ-খুলে-দেওয়া নিদর্শনসমূহ আসমান ও যমীনের প্রতিপালক ছাড়া অন্য কেউ নাযিল করেননি; আর হে ফেরাউন! নিশ্চয়ই আমি তোমাকে ধ্বংসপ্রাপ্ত মনে করি’!",
+      "meta_bn": "Universal Lordship Recognition ও Pharaoh Terminal Collapse Forecast",
+      "meta_en": "Universal Lordship Recognition & Pharaoh Terminal Collapse Forecast",
+      "core_meaning_bn": "Universal Lordship Recognition ও Pharaoh Terminal Collapse Forecast",
+      "core_meaning_en": "Universal Lordship Recognition & Pharaoh Terminal Collapse Forecast"
     },
     {
       "surah": 17,
@@ -16643,7 +17171,13 @@
         }
       ],
       "translation_en": "So he intended to drive them from the land, but We drowned him and those with him all together.",
-      "conventional_en": "So he intended to drive them from the land, but We drowned him and those with him all together."
+      "conventional_en": "So he intended to drive them from the land, but We drowned him and those with him all together.",
+      "modern_translation_bn": "অতঃপর ফেরাউন নোড চেয়েছিল বনি ইসরাঈল নোডদেরকে এই ভৌত জমিন থেকে সম্পূর্ণ উৎখাত ও নিশ্চিহ্ন করে দিতে (أَن يَسْتَفِزَّهُم مِّنَ الْأَرْضِ)； কিন্তু পাল্টা এক্সিকিউশনে আমি তাকে এবং তার সমস্ত মিলিটারি কোলাবোরেটরদের একযোগে গভীর লিকুইড সমুদ্রে নিমজ্জিত ও চিরতরে ডিলিট (فَأَغْرَقْنَاهُ وَمَن مَّعَهُ جَمِيعًا) করে দিলাম [৪];",
+      "conventional_bn": "অতঃপর সে তাদেরকে সে দেশ থেকে উৎখাত করতে চাইল; তখন আমি তাকে এবং তার সাথে যারা ছিল তাদের সবাইকে পানিতে নিমজ্জিত করে ধ্বংস করলাম।",
+      "meta_bn": "Ground Expulsion Attempt ও Total Marine Annihilation",
+      "meta_en": "Ground Expulsion Attempt & Total Marine Annihilation",
+      "core_meaning_bn": "Ground Expulsion Attempt ও Total Marine Annihilation",
+      "core_meaning_en": "Ground Expulsion Attempt & Total Marine Annihilation"
     },
     {
       "surah": 17,
@@ -16803,7 +17337,13 @@
         }
       ],
       "translation_en": "And We said after Pharaoh to the Children of Israel, \"Dwell in the land, and when there comes the promise of the Hereafter, We will bring you forth in [one] gathering.\"",
-      "conventional_en": "And We said after Pharaoh to the Children of Israel, \"Dwell in the land, and when there comes the promise of the Hereafter, We will bring you forth in [one] gathering.\""
+      "conventional_en": "And We said after Pharaoh to the Children of Israel, \"Dwell in the land, and when there comes the promise of the Hereafter, We will bring you forth in [one] gathering.\"",
+      "modern_translation_bn": "আর তার পতনের পর আমি বনি ইসরাঈল নোড-ক্লাস্টারকে কম্যান্ড দিলাম: ‘তোমরা এই ভৌত ভূমিতে শান্তিপূর্ণভাবে সেটেল করো (اسْكُنُوا الْأَرْضَ)； অতঃপর যখন Final Audit Window বা পরকালের চূড়ান্ত ওয়াদা (وَعْدُ الْآخِرَةِ) বাস্তবায়িত হবে, তখন আমি তোমাদের সকল ক্লায়েন্ট নোডকে একযোগে ইন্টারউভেন কনভার্জেন্স বা সংমিশ্রিত কাফেলা হিসেবে (لَفِيفًا) কেন্দ্রীয় সার্ভারে গ্যাদার করব’ [৪];",
+      "conventional_bn": "আর তার পর আমি বনি ইসরাঈলকে বললাম, ‘তোমরা এ যমীনে বসবাস করো; অতঃপর যখন আখিরাতের ওয়াদা আসবে, তখন আমি তোমাদের সবাইকে এক সংমিশ্রিত দলবদ্ধরূপে উপস্থিত করব’।",
+      "meta_bn": "Post-Tyrant Ground Allocation & Interwoven Final Convergence",
+      "meta_en": "Post-Tyrant Ground Allocation & Interwoven Final Convergence",
+      "core_meaning_bn": "Post-Tyrant Ground Allocation & Interwoven Final Convergence",
+      "core_meaning_en": "Post-Tyrant Ground Allocation & Interwoven Final Convergence"
     },
     {
       "surah": 17,
@@ -16913,7 +17453,13 @@
         }
       ],
       "translation_en": "And with the truth We have sent the Qur'an down, and with the truth it has descended. And We have not sent you, [O Muhammad], except as a bringer of good tidings and a warner.",
-      "conventional_en": "And with the truth We have sent the Qur'an down, and with the truth it has descended. And We have not sent you, [O Muhammad], except as a bringer of good tidings and a warner."
+      "conventional_en": "And with the truth We have sent the Qur'an down, and with the truth it has descended. And We have not sent you, [O Muhammad], except as a bringer of good tidings and a warner.",
+      "modern_translation_bn": "আর আমি এই Master Source Code বা কুরআনকে পরম অবজেক্টিভ সত্য ‘আল-হাক্ব’ সহকারে ডাউনলিংক করেছি (وَبِالْحَقِّ أَنزَلْنَاهُ) এবং তা সম্পূর্ণ অবিকৃত বিশুদ্ধ সত্যরূপেই রেন্ডার হয়েছে； আর আমি তোমাকে কেবল পজিটিভ রিওয়ার্ডের ব্রডকাস্টার (مُبَشِّرًا) এবং সিস্টেম ক্র্যাশের ওয়ার্নিং অ্যালার্ম প্রদানকারী (نَذِيرًا) হিসেবেই ডেপ্লয় করেছি [৪];",
+      "conventional_bn": "আর আমি এই কুরআনকে সত্যসহকারে নাযিল করেছি এবং তা সত্যসহকারেই নাযিল হয়েছে; আর আমি তোমাকে কেবল সুসংবাদদাতা ও সতর্ককারীরূপেই প্রেরণ করেছি।",
+      "meta_bn": "Pure Truth Downlink & Dual Signal Transmitter Role",
+      "meta_en": "Pure Truth Downlink & Dual Signal Transmitter Role",
+      "core_meaning_bn": "Pure Truth Downlink & Dual Signal Transmitter Role",
+      "core_meaning_en": "Pure Truth Downlink & Dual Signal Transmitter Role"
     },
     {
       "surah": 17,
@@ -17023,7 +17569,13 @@
         }
       ],
       "translation_en": "And [it is] a Qur'an which We have separated [by intervals] that you might recite it to the people over a prolonged period. And We have sent it down progressively.",
-      "conventional_en": "And [it is] a Qur'an which We have separated [by intervals] that you might recite it to the people over a prolonged period. And We have sent it down progressively."
+      "conventional_en": "And [it is] a Qur'an which We have separated [by intervals] that you might recite it to the people over a prolonged period. And We have sent it down progressively.",
+      "modern_translation_bn": "আর এই Master Source Code-কে আমি সুপরিকল্পিত পার্ট বা খণ্ডে বিন্যাস করেছি (وَقُرْآنًا فَرَقْنَاهُ)—যাতে তুমি মানব নোডদের ওওএসে ধীরে ধীরে ও স্টেপ-বাই-স্টেপ ডাটা ইনজেস্ট করতে পারো (لِتَقْرَأَهُ عَلَى النَّاسِ عَلَىٰ مُكْثٍ), এবং আমি একে পর্যায়ক্রমে নিখুঁতভাবে ডাউনলিংক (وَنَزَّلْنَاهُ تَنزِيلًا) করেছি [৪];",
+      "conventional_bn": "আর আমি কুরআনকে খণ্ড খণ্ড করে নাযিল করেছি—যাতে তুমি বিরতি দিয়ে মানুষের কাছে তা পাঠ করতে পারো, এবং আমি তা পর্যায়ক্রমে নাযিল করেছি।",
+      "meta_bn": "Phased Transmission Partitioning ও Gradual Systemic Ingestion",
+      "meta_en": "Phased Transmission Partitioning & Gradual Systemic Ingestion",
+      "core_meaning_bn": "Phased Transmission Partitioning ও Gradual Systemic Ingestion",
+      "core_meaning_en": "Phased Transmission Partitioning & Gradual Systemic Ingestion"
     },
     {
       "surah": 17,
@@ -17223,7 +17775,13 @@
         }
       ],
       "translation_en": "Say, \"Believe in it or do not believe. Indeed, those who were given knowledge before it - when it is recited to them, they fall upon their faces in prostration,",
-      "conventional_en": "Say, \"Believe in it or do not believe. Indeed, those who were given knowledge before it - when it is recited to them, they fall upon their faces in prostration,"
+      "conventional_en": "Say, \"Believe in it or do not believe. Indeed, those who were given knowledge before it - when it is recited to them, they fall upon their faces in prostration,",
+      "modern_translation_bn": "তুমি বলো: ‘তোমরা এতে ট্রাস্ট ভেরিফিকেশন কোড যুক্ত করো কিংবা রিজেক্ট করো； নিশ্চয়ই যাদের পূর্বে অথেনটিক সোর্স নলেজ প্রদান করা হয়েছিল (أُوتُوا الْعِلْمَ مِن قَبْلِهِ)—যখন তাদের সামনে এই অরিজিনাল কোড তিলাওয়াত করা হয়, তখন তারা তাৎক্ষণিক শ্রদ্ধায় আনত হয়ে জমিনে সিজদায় লুটিয়ে পড়ে (يَخِرُّونَ لِلْأَذْقَانِ سُجَّدًا)’ [৪];",
+      "conventional_bn": "বলো, ‘তোমরা এতে ঈমান আনো বা না আনো; নিশ্চয়ই এর পূর্বে যাদের জ্ঞান দেওয়া হয়েছিল—যখন তাদের কাছে তা পাঠ করা হয়, তখন তারা সিজদায় লুটিয়ে পড়ে’।",
+      "meta_bn": "Prior-Knowledge Authenticated Nodes ও Deep Prostration Reflex",
+      "meta_en": "Prior-Knowledge Authenticated Nodes & Deep Prostration Reflex",
+      "core_meaning_bn": "Prior-Knowledge Authenticated Nodes ও Deep Prostration Reflex",
+      "core_meaning_en": "Prior-Knowledge Authenticated Nodes & Deep Prostration Reflex"
     },
     {
       "surah": 17,
@@ -17323,7 +17881,13 @@
         }
       ],
       "translation_en": "And they say, \"Exalted is our Lord! Indeed, the promise of our Lord has been fulfilled.\"",
-      "conventional_en": "And they say, \"Exalted is our Lord! Indeed, the promise of our Lord has been fulfilled.\""
+      "conventional_en": "And they say, \"Exalted is our Lord! Indeed, the promise of our Lord has been fulfilled.\"",
+      "modern_translation_bn": "এবং তারা সিস্টেমে অ্যানাউন্স করে: ‘আমাদের Root Directory পরম পবিত্র ও ত্রুটিমুক্ত (سُبْحَانَ رَبِّنَا)! নিশ্চয়ই আমাদের প্রতিপালকের প্রতিটি সিস্টেম প্রমিজ ও ওয়াদা (وَعْدُ رَبِّنَا) হুবহু সম্পন্ন ও এক্সেকিউটেড হতে বাধ্য (لَمَفْعُولًا)’ [৪];",
+      "conventional_bn": "এবং তারা বলে, ‘আমাদের প্রতিপালক পরম পবিত্র! আমাদের প্রতিপালকের ওয়াদা তো অবশ্যই বাস্তবায়িত হয়ে থাকে’।",
+      "meta_bn": "Divine Purity Resonance & Inevitable Promise Fulfillment",
+      "meta_en": "Divine Purity Resonance & Inevitable Promise Fulfillment",
+      "core_meaning_bn": "Divine Purity Resonance & Inevitable Promise Fulfillment",
+      "core_meaning_en": "Divine Purity Resonance & Inevitable Promise Fulfillment"
     },
     {
       "surah": 17,
@@ -17393,7 +17957,13 @@
         }
       ],
       "translation_en": "And they fall upon their faces weeping, and the Qur'an increases them in humble submission.",
-      "conventional_en": "And they fall upon their faces weeping, and the Qur'an increases them in humble submission."
+      "conventional_en": "And they fall upon their faces weeping, and the Qur'an increases them in humble submission.",
+      "modern_translation_bn": "আর তারা উচ্চ-অনুভূতির সিগন্যালে অশ্রমুক্ত নয়নে জমিনে সিজদায় লুটিয়ে পড়ে (يَخِرُّونَ لِلْأَذْقَانِ يَبْكُونَ), এবং এই মাস্টার ওওএস তাদের অন্তরের সার্বিক বিনয় ও নম্রতাকে (خُشُوعًا) বহুগুণে বৃদ্ধি করে দেয় [৪] [সাজদাহ]।",
+      "conventional_bn": "আর তারা কাঁদতে কাঁদতে মুখে ভর দিয়ে লুটিয়ে পড়ে এবং তা তাদের বিনয় ও ভক্তি আরও বৃদ্ধি করে।",
+      "meta_bn": "High-Emotion Prostration & Escalating Inner Humility",
+      "meta_en": "High-Emotion Prostration & Escalating Inner Humility",
+      "core_meaning_bn": "High-Emotion Prostration & Escalating Inner Humility",
+      "core_meaning_en": "High-Emotion Prostration & Escalating Inner Humility"
     },
     {
       "surah": 17,
