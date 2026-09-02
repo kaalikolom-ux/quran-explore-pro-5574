@@ -89,20 +89,8 @@ async function mirrorVerses(surah: number): Promise<Verse[] | null> {
 export const chaptersQuery = (lang: "bn" | "en") =>
   queryOptions({
     queryKey: ["quran", "chapters", lang],
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: Infinity,
     queryFn: async () => {
-      try {
-        const mirrored = await mirrorChapters();
-        if (mirrored && mirrored.length >= 114) return mirrored;
-        const data = await getJson<{ chapters: Chapter[] }>(
-          `${API}/chapters?language=${lang}`,
-        );
-        if (data?.chapters && data.chapters.length > 0) {
-          return data.chapters;
-        }
-      } catch (err) {
-        console.warn("Chapters API fallback activated:", err);
-      }
       return (ALL_SURAHS_DATABASE || []).map((s) => ({
         id: s.id,
         name_simple: s.name_en,
@@ -117,22 +105,30 @@ export const chaptersQuery = (lang: "bn" | "en") =>
 export const versesQuery = (surah: number, lang: "bn" | "en") =>
   queryOptions({
     queryKey: ["quran", "verses", surah, lang],
-    staleTime: 1000 * 60 * 60 * 6,
+    staleTime: Infinity,
     queryFn: async () => {
-      const mirrored = await mirrorVerses(surah);
-      if (mirrored) return mirrored;
-      const params = new URLSearchParams({
-        words: "true",
-        language: lang,
-        word_fields: "text_uthmani,transliteration",
-        fields: "text_uthmani",
-        translations: `${BN_TRANSLATION_ID},${EN_TRANSLATION_ID}`,
-        per_page: "300",
-      });
-      const data = await getJson<{ verses: Verse[] }>(
-        `${API}/verses/by_chapter/${surah}?${params.toString()}`,
-      );
-      return data.verses;
+      try {
+        const res = await fetch(`/data/quran/surahs/${surah}.json`);
+        if (res.ok) {
+          const sData = await res.json();
+          if (sData?.ayahs) {
+            return sData.ayahs.map((a: any) => ({
+              id: surah * 1000 + a.ayah,
+              verse_number: a.ayah,
+              verse_key: `${surah}:${a.ayah}`,
+              text_uthmani: a.text_uthmani,
+              words: a.words || [],
+              translations: [
+                { resource_id: BN_TRANSLATION_ID, text: a.conventional_bn || a.translation_bn || "" },
+                { resource_id: EN_TRANSLATION_ID, text: a.conventional_en || a.translation_en || "" },
+              ],
+            }));
+          }
+        }
+      } catch (err) {
+        console.warn("Local surah fetch error:", err);
+      }
+      return [];
     },
   });
 
