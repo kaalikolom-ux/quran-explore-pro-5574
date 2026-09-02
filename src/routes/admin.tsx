@@ -53,6 +53,7 @@ import {
   Lock,
   Tag as TagIcon,
   Sparkles,
+  BookOpen,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -88,6 +89,7 @@ import { PagesAdmin } from "@/components/PagesAdmin";
 import { SocialLinksAdmin } from "@/components/SocialLinksAdmin";
 import { TurnstileAdmin } from "@/components/TurnstileAdmin";
 import { MessagesAdmin } from "@/components/MessagesAdmin";
+import { QuranExportAdmin } from "@/components/QuranExportAdmin";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -827,6 +829,7 @@ function AdminPage() {
         { value: "articles", label: "আর্টিকেল ও প্রবন্ধ", icon: FileText },
         { value: "import", label: "পোস্ট ইমপোর্ট (Import)", icon: Download },
         { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
+        { value: "quran-export", label: "কুরআন PDF ও E-Book এক্সপোর্টার", icon: BookOpen },
         { value: "posts", label: "লেখক ও গবেষকবৃন্দ", icon: Users },
         { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
         { value: "tags", label: "ট্যাগসমূহ (Tags)", icon: TagIcon },
@@ -1006,6 +1009,9 @@ function AdminPage() {
               </TabsContent>
               <TabsContent value="translations" className="mt-0 focus-visible:outline-none">
                 <TranslationsAdmin />
+              </TabsContent>
+              <TabsContent value="quran-export" className="mt-0 focus-visible:outline-none">
+                <QuranExportAdmin />
               </TabsContent>
               <TabsContent value="posts" className="mt-0 focus-visible:outline-none">
                 <div className="space-y-4">
