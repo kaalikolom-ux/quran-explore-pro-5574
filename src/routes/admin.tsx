@@ -2359,7 +2359,6 @@ function UserPermissionsDialog({
     { key: "showLexicon", title: "৯. অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
     { key: "showLexiconScientific", title: "১০. লেক্সিকন নোট (Lexicon Notes)", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
     { key: "showLogicalConsistency", title: "১১. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)", desc: "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য", highlight: true },
-    { key: "showArabic", title: "আরবি টেক্সট", desc: "মূল কুরআন পাঠ প্রদর্শন" },
   ];
 
   return (

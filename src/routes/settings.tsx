@@ -144,11 +144,6 @@ function SettingsPage() {
       title: lang === "bn" ? "১১. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)" : "11. Logical Consistency Framework (4:82)",
       desc: lang === "bn" ? "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য বিশ্লেষণ" : "Display internal non-contradiction & universal systemic harmony analysis",
     },
-    {
-      key: "showArabic",
-      title: lang === "bn" ? "আরবি মূল পাঠ (Arabic Text)" : "Arabic Text",
-      desc: lang === "bn" ? "মূল কুরআন তিলাওয়াত ও আরবি হরফ প্রদর্শন" : "Display original Quranic Arabic script",
-    },
   ];
 
   return (
