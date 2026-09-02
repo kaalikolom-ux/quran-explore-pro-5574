@@ -65,6 +65,7 @@ import { bnToEnSlug } from "@/lib/slugHelper";
 import { formatArticleContent } from "@/lib/contentFormatter";
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
+import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
 import { useCategories } from "@/lib/menu";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -1182,21 +1183,42 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         .from("articles")
         .select("*")
         .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data;
+      if (error) {
+        console.error("Error fetching admin articles:", error);
+      }
+      const rawDbArticles = data || [];
+      const merged = [
+        ...STATIC_ARTICLES.filter(
+          (sa) => !rawDbArticles.some((da: any) => da.slug === sa.slug || da.id === sa.id)
+        ),
+        ...rawDbArticles,
+      ];
+      return merged;
     },
   });
 
   const togglePublish = useMutation({
     mutationFn: async ({ id, nextStatus }: { id: string; nextStatus: boolean }) => {
-      const { error } = await supabase
+      const artObj = (list.data || []).find((a) => a.id === id);
+      const { data: updated, error } = await supabase
         .from("articles")
         .update({
           published: nextStatus,
           published_at: nextStatus ? new Date().toISOString() : null,
         })
-        .eq("id", id);
-      if (error) throw error;
+        .eq("id", id)
+        .select();
+
+      if ((!updated || updated.length === 0) && artObj) {
+        const { error: upErr } = await supabase.from("articles").upsert({
+          ...artObj,
+          published: nextStatus,
+          published_at: nextStatus ? new Date().toISOString() : null,
+        }, { onConflict: "slug" });
+        if (upErr) throw upErr;
+      } else if (error) {
+        throw error;
+      }
     },
     onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
@@ -1394,8 +1416,11 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       };
 
       if (editingId) {
-        const { error } = await supabase.from("articles").update(payload).eq("id", editingId);
-        if (error) throw error;
+        const { data: updated, error } = await supabase.from("articles").update(payload).eq("id", editingId).select();
+        if ((!updated || updated.length === 0) || error) {
+          const { error: upsertErr } = await supabase.from("articles").upsert({ ...payload, slug: payload.slug }, { onConflict: "slug" });
+          if (upsertErr) throw upsertErr;
+        }
       } else {
         const { error } = await supabase.from("articles").insert(payload);
         if (error) throw error;
