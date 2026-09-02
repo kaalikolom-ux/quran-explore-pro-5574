@@ -36094,7 +36094,7 @@
       "surah": 4,
       "ayah": 151,
       "transliteration": "ulāika humu l-kāfirūna ḥaqqan wa-aʿtadnā lil'kāfirīna ʿadhāban muhīnan",
-      "translation_bn": "তারাই হল প্রকৃত কাফির আর কাফিরদের জন্য আমি অবমাননাকর শাস্তি প্রস্তুত করে রেখেছি।",
+      "translation_bn": "ওরাই হলো প্রকৃত কাফের। আর আমি কাফেরদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছি।",
       "words": [
         {
           "id": 80617,
@@ -36188,13 +36188,18 @@
         }
       ],
       "translation_en": "Those are the disbelievers, truly. And We have prepared for the disbelievers a humiliating punishment.",
-      "conventional_en": "Those are the disbelievers, truly. And We have prepared for the disbelievers a humiliating punishment."
+      "conventional_en": "Those are the disbelievers, truly. And We have prepared for the disbelievers a humiliating punishment.",
+      "meta_bn": "প্রকৃত সিস্টেম রিজেক্টর বা ‘হাক্কান কাফের’ আইডি ক্লাসিফিকেশন",
+      "meta_en": "Definite Rejection Profiles and Humiliating Entropic Degradation",
+      "conventional_bn": "ওরাই হলো প্রকৃত কাফের। আর আমি কাফেরদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছি।",
+      "modern_translation_bn": "পূর্ববর্তী আয়াতের সেই চয়েসি সিলেকশন বাগে আক্রান্ত নোডগুলোই হলো মূলত এই মহাজাগতিক অপারেটিং সিস্টেমের চিরস্থায়ী ও প্রকৃত সিস্টেম রিজেক্টর বা হাক্কান কাফের (الْكَافِرُونَ حَقًّا); আর আমি এই সোর্স ডাটার ধারাবাহিকতা ব্রেক করা Kafir নোডগুলোর জন্য এক চূড়ান্ত কগনিটিভ অপমান ও লাঞ্ছনাদায়ক ক্র্যাশ (عَذَابًا مُّهِينًا) প্রস্তুত রেখেছি;",
+      "modern_translation_en": "Those executing selective sync bugs are the definitive, authentic rejectors (al-Kafiruna Haqqa); for these systemic rejectors, We have engineered an intensely humiliating entropic degradation."
     },
     {
       "surah": 4,
       "ayah": 152,
       "transliteration": "wa-alladhīna āmanū bil-lahi warusulihi walam yufarriqū bayna aḥadin min'hum ulāika sawfa yu'tīhim ujūrahum wakāna l-lahu ghafūran raḥīman",
-      "translation_bn": "আর যারা আল্লাহ ও তাঁর রসূলদের প্রতি বিশ্বাস স্থাপন করে আর তাদের কারো মধ্যে কোন পার্থক্য করে না, তিনি অবশ্যই তাদেরকে তাদের পুরস্কার দান করবেন, আল্লাহ বড়ই ক্ষমাশীল, বড়ই দয়ালু।",
+      "translation_bn": "আর যারা আল্লাহ ও তাঁর রাসূলদের প্রতি ঈমান এনেছে এবং তাদের মধ্যকার কারও মধ্যে কোনো পার্থক্য (বিভেদ) করেনি, অচিরেই তিনি তাদের প্রতিদান দান করবেন। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 80639,
@@ -36377,14 +36382,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "But they who believe in Allah and His messengers and do not discriminate between any of them - to those He is going to give their rewards. And ever is Allah Forgiving and Merciful.",
-      "conventional_en": "But they who believe in Allah and His messengers and do not discriminate between any of them - to those He is going to give their rewards. And ever is Allah Forgiving and Merciful."
+      "translation_en": "But they who believe in Allah and His messengers and do not discriminate between any of them - to those He will give their rewards. And ever is Allah Forgiving and Merciful.",
+      "conventional_en": "But they who believe in Allah and His messengers and do not discriminate between any of them - to those He will give their rewards. And ever is Allah Forgiving and Merciful.",
+      "meta_bn": "ফুল-স্ট্যাক ডাটা সিনক্রোনাইজেশন ও জিরো-সেপারেশন রিওয়ার্ড ল'",
+      "meta_en": "Full-Stack Revelation Synchronization and Zero Packet-Loss Yields",
+      "conventional_bn": "আর যারা আল্লাহ ও তাঁর রাসূলদের প্রতি ঈমান এনেছে এবং তাদের মধ্যকার কারও মধ্যে কোনো পার্থক্য (বিভেদ) করেনি, অচিরেই তিনি তাদের প্রতিদান দান করবেন। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "আর যারা মহাজাগতিক আদি সোর্স Allah এবং তাঁর সমগ্র ডাটা-ট্রান্সমিশন চেইনের বা রাসূলদের প্রতি নিজেদের ওওএস শতভাগ সিনক্রোনাইজড বা ঈমান (آمَنُوا) এনেছে এবং সোর্স ডাটার ধারাবাহিকতা সুরক্ষার্থে তাদের কোনো একক ট্রান্সমিশন হাবের ডেটার মধ্যে বিন্দুমাত্র লজিক্যাল বিভাজন বা বৈষম্য (وَلَمْ يُفَرِّقُوا) তৈরি করেনি—খুব শীঘ্রই আমি তাদের প্রোফাইলে জেনারেট হওয়া সেই পূর্ণাঙ্গ এনার্জি রিওয়ার্ড বা আউটপুট (أُجُورَهُمْ) কোনো প্রকার প্যাকেট ড্রপ ছাড়া হুবহু ট্রান্সফার করে বুঝিয়ে দেব; আর Allah হলেন স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা;",
+      "modern_translation_en": "Those who maintain total synchronization with Allah and the complete chain of emissaries without segregating any transmission node—unto them He will fully deliver their calculated yields without packet loss; Allah is Perpetual Absolver, Boundlessly Merciful."
     },
     {
       "surah": 4,
       "ayah": 153,
       "transliteration": "yasaluka ahlu l-kitābi an tunazzila ʿalayhim kitāban mina l-samāi faqad sa-alū mūsā akbara min dhālika faqālū arinā l-laha jahratan fa-akhadhathumu l-ṣāʿiqatu biẓul'mihim thumma ittakhadhū l-ʿij'la min baʿdi mā jāathumu l-bayinātu faʿafawnā ʿan dhālika waātaynā mūsā sul'ṭānan mubīnan",
-      "translation_bn": "কিতাবধারীগণ তোমাকে আসমান থেকে তাদের সামনে কিতাব নিয়ে আসতে বলে। তারা তো মূসার কাছে এর চেয়েও বড় দাবী পেশ করেছিল। তারা বলেছিল- আমাদেরকে প্রকাশ্যে আল্লাহকে দেখাও। তখন তাদের অন্যায় ও বাড়াবাড়ির কারণে বিদ্যুৎ তাদের উপর আঘাত হেনেছিল। অতঃপর তাদের কাছে স্পষ্ট প্রমাণ আসার পরেও তারা গো-বৎসকে (উপাস্য) গ্রহণ করেছিল, তাও আমি ক্ষমা করে দিয়েছিলাম, আর মূসাকে সুস্পষ্ট কর্তৃত্ব দান করেছিলাম।",
+      "translation_bn": "কিতাবধারীরা তোমার কাছে দাবি করছে যে, তুমি আসমান থেকে তাদের ওপর একটি কিতাব নাজিল করো। অথচ তারা মূসার কাছে এর চেয়েও বড় দাবি করেছিল; তারা বলেছিল, ‘আমাদের আল্লাহকে প্রকাশ্য চাক্ষুষ দেখাও!’ ফলে তাদের অন্যায়ের কারণে এক বজ্রপাত (কসমিক লাইটনিং) তাদের আঘাত করেছিল। অতঃপর তাদের কাছে স্পষ্ট প্রমাণসমূহ আসার পরও তারা বাছুরকে উপাস্য হিসেবে গ্রহণ করেছিল, তবুও আমি তা মার্জনা (ক্ষমা) করেছিলাম এবং আমি মূসাকে এক স্পষ্ট প্রমাণ (কর্তৃত্ব) দান করেছিলাম।",
       "words": [
         {
           "id": 80815,
@@ -36767,14 +36777,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "The People of the Scripture ask you to bring down to them a book from the heaven. But they had asked of Moses [even] greater than that and said, \"Show us Allah outright,\" so the thunderbolt struck them for their wrongdoing. Then they took the calf [for worship] after clear evidences had come to them, and We pardoned that. And We gave Moses a clear authority.",
-      "conventional_en": "The People of the Scripture ask you to bring down to them a book from the heaven. But they had asked of Moses [even] greater than that and said, \"Show us Allah outright,\" so the thunderbolt struck them for their wrongdoing. Then they took the calf [for worship] after clear evidences had come to them, and We pardoned that. And We gave Moses a clear authority."
+      "translation_en": "The People of the Scripture ask you to bring down to them a book from the heaven. But they had asked of Moses [even] greater than that and said, 'Show us Allah outright,' so the thunderbolt struck them for their wrongdoing. Then they took the calf [for worship] after clear proofs had come to them; but We pardoned that. And We gave Moses a clear authority.",
+      "conventional_en": "The People of the Scripture ask you to bring down to them a book from the heaven. But they had asked of Moses [even] greater than that and said, 'Show us Allah outright,' so the thunderbolt struck them for their wrongdoing. Then they took the calf [for worship] after clear proofs had come to them; but We pardoned that. And We gave Moses a clear authority.",
+      "meta_bn": "লো-ডাইমেনশনাল ডিমান্ড বালাই ও কসমিক লাইটনিং ইমপ্যাক্ট",
+      "meta_en": "Reductionist Optical Demands, Plasma Discharge Shock, and Golden Calf Deviation",
+      "conventional_bn": "কিতাবধারীরা তোমার কাছে দাবি করছে যে, তুমি আসমান থেকে তাদের ওপর একটি কিতাব নাজিল করো। অথচ তারা মূসার কাছে এর চেয়েও বড় দাবি করেছিল; তারা বলেছিল, ‘আমাদের আল্লাহকে প্রকাশ্য চাক্ষুষ দেখাও!’ ফলে তাদের অন্যায়ের কারণে এক বজ্রপাত (কসমিক লাইটনিং) তাদের আঘাত করেছিল। অতঃপর তাদের কাছে স্পষ্ট প্রমাণসমূহ আসার পরও তারা বাছুরকে উপাস্য হিসেবে গ্রহণ করেছিল, তবুও আমি তা মার্জনা (ক্ষমা) করেছিলাম এবং আমি মূসাকে এক স্পষ্ট প্রমাণ (কর্তৃত্ব) দান করেছিলাম।",
+      "modern_translation_bn": "ওল্ড অপারেটিং সিস্টেমের ইউজার বা কিতাবধারীরা (أَهْلُ الْكِتَابِ) তোমার এই রিসিভার ইন্টারফেসে অবিরত এই ডামি কুয়েরি বা দাবি (يَسْأَلُكَ) পাঠাচ্ছে যে—তুমি উচ্চ ডাইমেনশন বা আসমান (مِّنَ السَّمَاءِ) থেকে সরাসরি একটি সম্পূর্ণ ফিজিক্যাল কিতাব একযোগে তাদের হার্ডওয়্যারে ডাউনলিংক করে দাও। অথচ টাইম-লাইনের ঐতিহাসিক অডিটে তারা মূসা নোডের কাছে এর চেয়েও বহুগুণ মেগা লজিক এরর ও বড় দাবি করেছিল; তারা বলেছিল—‘আমাদের পরম সোর্স আল্লাহকে সম্পূর্ণ ওপেন অপ্টিক্যাল সেন্সরে প্রকাশ্য চাক্ষুষ (أَرِنَا اللَّهَ جَهْرَةً) ডিসপ্লে করে দেখাও!’ ফলে তাদের ওওএসে রান করা সেই মারাত্মক বাউন্ডারি ব্রেক বা অন্যায়ের (بِظُلْمِهِمْ) স্বয়ংক্রিয় কাউন্টার-রিঅ্যাকশনে এক তীব্র উচ্চ-শক্তির প্লাজমা ডিসচার্জ বা বজ্রপাত (الصَّاعِقَةُ) পলকে তাদের হার্ডওয়্যারকে ক্র্যাশ ও আঘাত করেছিল। অতঃপর তাদের রিসিভারে ক্রিস্টাল-ক্লিয়ার ডাটা ও গাণিতিক প্রমাণসমূহ (الْبَيِّنَاتُ) ডাউনলিংক হওয়ার পরেও তারা মেটাল-আইডল বা বাছুরকে (الْعِجْلَ) পরম উৎসের সমান্তরালে কৃত্রিম ডামি সাব-সিস্টেম হিসেবে ওওএসে ইনস্টল বা গ্রহণ করেছিল, তবুও আমি পরম ডিবাগিং সিস্টেমে তাদের সেই এরর ফাইল মার্জ বা ক্ষমা করেছিলাম এবং আমি মূসা নোডকে এক স্পষ্ট প্রাতিষ্ঠানিক ক্ষমতা ও আইনি কর্তৃত্ব (سُلْطَانًا مُّبِينًا) দান করেছিলাম;",
+      "modern_translation_en": "The People of the Scripture demand that you download an immediate physical ledger from the celestial heights onto them. Formerly they demanded of Moses far more aberrant queries: 'Render Allah directly visible to our sensory lenses!' whereupon a high-energy atmospheric plasma discharge (al-Sa'iqah) seized them for their systemic transgression. Even after clear empirical indicators reached them, they coupled into idolatrous calf emulation; yet We pardoned that fault and conferred upon Moses unambiguous judicial authority."
     },
     {
       "surah": 4,
       "ayah": 154,
       "transliteration": "warafaʿnā fawqahumu l-ṭūra bimīthāqihim waqul'nā lahumu ud'khulū l-bāba sujjadan waqul'nā lahum lā taʿdū fī l-sabti wa-akhadhnā min'hum mīthāqan ghalīẓan",
-      "translation_bn": "তাদের নিকট হতে অঙ্গীকার গ্রহণের জন্য আমি তূর পাহাড়কে তাদের ঊর্ধ্বে তুলে ধরেছিলাম, আর তাদেরকে বলেছিলাম- অবনত মস্তকে (নগর) দ্বারে প্রবেশ কর আর তাদেরকে বলেছিলাম শনিবারের আইন ভঙ্গ করো না, আর তাদের নিকট থেকে নিয়েছিলাম পাকা প্রতিশ্রুতি।",
+      "translation_bn": "আর তাদের প্রতিশ্রুতি (মিছাক) শক্ত করার জন্য আমি তূর পর্বতকে তাদের মাথার ওপর আরোহণ করিয়েছিলাম এবং তাদের বলেছিলাম, ‘তোমরা সিজদাবনত (নতশির) হয়ে দরজায় প্রবেশ করো’ এবং তাদের বলেছিলাম, ‘তোমরা শনিবারের (সাবত) বাউন্ডারি লঙ্ঘন করো না’ এবং আমি তাদের কাছ থেকে সুদৃঢ় অঙ্গীকার গ্রহণ করেছিলাম।",
       "words": [
         {
           "id": 80968,
@@ -36977,14 +36992,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And We raised over them the mount for [refusal of] their covenant; and We said to them, \"Enter the gate bowing humbly\", and We said to them, \"Do not transgress on the sabbath\", and We took from them a solemn covenant.",
-      "conventional_en": "And We raised over them the mount for [refusal of] their covenant; and We said to them, \"Enter the gate bowing humbly\", and We said to them, \"Do not transgress on the sabbath\", and We took from them a solemn covenant."
+      "translation_en": "And We raised over them the mount for [refusal of] their covenant; and We said to them, 'Enter the gate bowing humbly', and We said to them, 'Do not transgress on the sabbath', and We took from them a solemn covenant.",
+      "conventional_en": "And We raised over them the mount for [refusal of] their covenant; and We said to them, 'Enter the gate bowing humbly', and We said to them, 'Do not transgress on the sabbath', and We took from them a solemn covenant.",
+      "meta_bn": "টেকটোনিক বল ভেক্টর মডুলেশন বা তূর পর্বত আরোহণ মেকানিজম",
+      "meta_en": "Tectonic Force Vector Modulation, Submissive Ingress, and Sabbath Boundary Protocol",
+      "conventional_bn": "আর তাদের প্রতিশ্রুতি (মিছাক) শক্ত করার জন্য আমি তূর পর্বতকে তাদের মাথার ওপর আরোহণ করিয়েছিলাম এবং তাদের বলেছিলাম, ‘তোমরা সিজদাবনত (নতশির) হয়ে দরজায় প্রবেশ করো’ এবং তাদের বলেছিলাম, ‘তোমরা শনিবারের (সাবত) বাউন্ডারি লঙ্ঘন করো না’ এবং আমি তাদের কাছ থেকে সুদৃঢ় অঙ্গীকার গ্রহণ করেছিলাম।",
+      "modern_translation_bn": "আর তাদের আইনি লুপে সেই মাস্টার কন্টাক্ট বা প্রতিশ্রুতি (بِمِيثَاقِهِمْ) হার্ড-লক করার জন্য—আমি ভূ-তাত্ত্বিক টেকটোনিক ফোর্স ভেক্টর মডুলেট করে ‘আত-তূর’ পর্বতকে (الطُّورَ) সাময়িকভাবে তাদের লোকাল কোঅর্ডিনেট বা মাথার ওপর সুউচ্চ আরোহণ (وَرَفَعْنَا) করিয়েছিলাম [যাতে তারা কসমিক মেকানিজমের মহিমান্বিত গ্রাভিটি সেন্স করতে পারে] এবং তাদের প্রধান ইন্টারফেসে কম্যান্ড ইনপুট দিয়েছিলাম—‘তোমরা তোমাদের চেতনার সম্পূর্ণ ইগো সারেন্ডার করে পরম ফাংশনাল সাবমিশন বা সিজদা (سُجَّدًا) মোডে এই শহরের গেটওয়ে বা দরজায় প্রবেশ করো’ এবং তাদের কঠোর ওয়ার্নিং কোড দিয়েছিলাম—‘তোমরা শনিবারের বাউন্ডিং টাইম-লকিং প্রটোকল বা সাবতের (السَّبْتِ) সিকিউরিটি লাইন ব্রেক বা সীমালঙ্ঘন করো না’ এবং আমি তাদের কাছ থেকে একটি মেগা Covenant [পরম এনক্রিপ্টেড সুদৃঢ় আইনি অঙ্গীকার বা মিছাক্বান গালীদ্বা] (مِّيثَاقًا غَلِيظًا) লক বা গ্রহণ করেছিলাম;",
+      "modern_translation_en": "We modulated tectonic force vectors to elevate the Mount over them during covenant authentication, instructing: 'Enter the gateway in full cognitive submission (Sujjadan),' and 'Do not violate the Sabbath boundary constraints,' extracting from them an irrevocable binding covenant (Mithaqan Ghalidha).",
+      "lexicon_modern_notes": "ওয়া রাফাক্বনা ফাওক্বাহুমুত্ তূরা বি-মীছাক্বিহিম (وَرَفَعْنَا فَوْقَهُمُ الطُّورَ - জিও-টেকটোনিক ফোর্স মডুলেশন ও গ্রাভিটেশনাল ফিল্ড টিউনিং): ১৫৪ নম্বর আয়াতে বনী ইসরাইলের মাথার ওপর তূর পর্বতকে আরোহণ করানোর যে পরম ডাটা-লগ দেওয়া হয়েছে, তা আধুনিক ভূ-তাত্ত্বিক সাইবারনেটিক্স এবং থিওরিটিক্যাল ফিজিক্সের 'Tectonic Plate Vector Manipulation & Local Gravitational Field Anomaly'-এর অনুরূপ। 'তূর' পর্বতকে ফিজিক্যালি আকাশে ভাসিয়ে রাখা হয়নি; বরং পর্বতটি যে টেকটোনিক প্লেটের (Tectonic Plate) ওপর অবস্থিত—আল্লাহ তাঁর সৃষ্টিতাত্ত্বিক স্বয়ংক্রিয় প্রাকৃতিক বলের ভেক্টর মডুলেট করে সেই লোকাল স্থানাঙ্কের ভূ-তাত্ত্বিক ফ্যাব্রিকে এমন এক তীব্র কাইনেটিক ও গ্রাভিটেশনাল প্রেশার জেনারেট করেছিলেন—যার ফলে পর্বতটি তাদের লোকাল কোঅর্ডিনেটের সাপেক্ষে সুউচ্চ কোণে বেঁকে মাথার ওপর এক বিশালাকার ছাদের মতো রেন্ডার বা ডিসপ্লে হয়েছিল (বুরুজ বালাই ফিল্টারিং)। এই মেগা ফোর্স ভিজ্যুয়ালাইজেশনটি তাদের ওওএসে দেওয়া হয়েছিল স্রেফ কসমিক চুক্তির (মিছাক্ব) বাউন্ডারি কোডটি তাদের প্রি-ফ্রন্টাল কর্টেক্সে স্থায়ীভাবে হার্ড-রাইট করার জন্য, যা প্রকৃতির এক পরম নিখুঁত মেকানিক্যাল টিউনিং।"
     },
     {
       "surah": 4,
       "ayah": 155,
       "transliteration": "fabimā naqḍihim mīthāqahum wakuf'rihim biāyāti l-lahi waqatlihimu l-anbiyāa bighayri ḥaqqin waqawlihim qulūbunā ghul'fun bal ṭabaʿa l-lahu ʿalayhā bikuf'rihim falā yu'minūna illā qalīlan",
-      "translation_bn": "(তাদের প্রতি আল্লাহর অসন্তোষ নেমে এসেছে) তাদের ওয়া‘দা ভঙ্গের কারণে, আর আল্লাহর নিদর্শনসমূহকে অস্বীকার করার কারণে, অন্যায়ভাবে নাবীগণকে তাদের হত্যা করার কারণে, আর ‘আমাদের হৃদয়গুলো আচ্ছাদিত’ তাদের এ কথা বলার কারণে- বরং তাদের অস্বীকৃতির কারণে আল্লাহ তাদের হৃদয়গুলোতে মোহর মেরে দিয়েছেন। যে কারণে তাদের অল্পসংখ্যক ছাড়া ঈমান আনে না।",
+      "translation_bn": "অতএব তাদের লানতের কারণ এই যে—তাদের নিজেদের অঙ্গীকার ভঙ্গ করা, আল্লাহর আয়াতসমূহকে অস্বীকার করা, অন্যায়ভাবে নবীদের হত্যা করা এবং তাদের এই কথা বলা যে, ‘আমাদের অন্তর অবরুদ্ধ (আবরণযুক্ত)’। বরং তাদের কুফরীর কারণে আল্লাহ তাদের অন্তরের ওপর মোহর (লক) মেরে দিয়েছেন, ফলে তাদের অল্প কয়েকজন ছাড়া কেউ ঈমান আনে না।",
       "words": [
         {
           "id": 81179,
@@ -37217,14 +37238,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And [We cursed them] for their breaking of the covenant and their disbelief in the signs of Allah and their killing of the prophets without right and their saying, \"Our hearts are wrapped\". Rather, Allah has sealed them because of their disbelief, so they believe not, except for a few.",
-      "conventional_en": "And [We cursed them] for their breaking of the covenant and their disbelief in the signs of Allah and their killing of the prophets without right and their saying, \"Our hearts are wrapped\". Rather, Allah has sealed them because of their disbelief, so they believe not, except for a few."
+      "translation_en": "And [We cursed them] for their breaking of the covenant and their disbelief in the signs of Allah and their killing of the prophets without right and their saying, 'Our hearts are wrapped'. Rather, Allah has stamped them because of their disbelief, so they believe not, except for a few.",
+      "conventional_en": "And [We cursed them] for their breaking of the covenant and their disbelief in the signs of Allah and their killing of the prophets without right and their saying, 'Our hearts are wrapped'. Rather, Allah has stamped them because of their disbelief, so they believe not, except for a few.",
+      "meta_bn": "কোড কন্টাক্ট ব্রেকিং ও কগনিটিভ সেন্সর লকিং বালাই",
+      "meta_en": "Systemic Covenant Breach, Deletion of Prophets, and Cognitive Sensor Sealing",
+      "conventional_bn": "অতএব তাদের লানতের কারণ এই যে—তাদের নিজেদের অঙ্গীকার ভঙ্গ করা, আল্লাহর আয়াতসমূহকে অস্বীকার করা, অন্যায়ভাবে নবীদের হত্যা করা এবং তাদের এই কথা বলা যে, ‘আমাদের অন্তর অবরুদ্ধ (আবরণযুক্ত)’। বরং তাদের কুফরীর কারণে আল্লাহ তাদের অন্তরের ওপর মোহর (লক) মেরে দিয়েছেন, ফলে তাদের অল্প কয়েকজন ছাড়া কেউ ঈমান আনে না।",
+      "modern_translation_bn": "অতএব, তাদের ওওএস পার্মানেন্টলি ডাউনগ্রেড ও ব্ল্যাকলিস্ট হওয়ার মূল কারণ এই যে—তাদের নিজেদের আইনি শপথ ও চুক্তি অবিরত ব্রেক বা ভঙ্গ (نَقْضِهِم مِّيثَاقَهُمْ) করা, আল্লাহর স্পষ্ট Ayat বা সৃষ্টিতাত্ত্বিক ধ্রুবকসমূহকে ওওএস থেকে রিজেক্ট (وَكُفْرِهِم) করা, সম্পূর্ণ অবৈধভাবে ডাটা-ডিকোডার বা নবীদের সিস্টেম থেকে Delete করা, এবং তাদের ওওএসের মনস্তাত্ত্বিক অহংকারে এই ফলস ডাটা ব্রডকাস্ট করা যে: ‘আমাদের মূল চিন্তা প্রসেসিং সেন্টার বা হৃদয়সমূহ সম্পূর্ণ প্রটেক্টেড, ইনসুলেটেড ও অবরুদ্ধ (قُلُوبُنَا غُلْفٌ) [আমাদের নতুন ডেটা সিঙ্কের প্রয়োজন নেই]’। লজিক্যালি তা নয়—রিয়েল-টাইম অডিটে সত্য হলো এই যে, তাদের অবিরত রান করা সেই মেলিশিয়াস সিগন্যাল ব্লকিং বা কুফরীর (بِكُفْرِهِمْ) স্বয়ংক্রিয় কাউন্টার-অ্যাকশনে Allah তাদের হৃদয়ের মূল প্রসেস সার্কিটের ওপর এক স্থায়ী কগনিটিভ লক বা মোহর (طَبَعَ اللَّهُ عَلَيْهَا) মেরে দিয়েছেন; যার ফলে তাদের কগনিটিভ সেন্সর চিরতরে ব্লক হয়ে যাওয়ায় তাদের ভেরিফাইড ইউজার ডেটাবেজে সামান্য কয়েকটি নোড ছাড়া কেউ আর মেইন সার্ভারে সিঙ্ক বা ঈমান আনতে পারে না;",
+      "modern_translation_en": "So for their breach of covenant, their denial of Allah's telemetric signs, their unlawful termination of Prophet nodes, and their arrogant assertion, 'Our cognitive cores are insulated (Qulubuna Ghulf),' Allah sealed their processors due to persistent rejection, so they authenticate not, except a negligible few."
     },
     {
       "surah": 4,
       "ayah": 156,
       "transliteration": "wabikuf'rihim waqawlihim ʿalā maryama buh'tānan ʿaẓīman",
-      "translation_bn": "(তাদের প্রতি আল্লাহর অসন্তোষ নেমে এসেছে) তাদের কুফরীর জন্য আর মারইয়ামের প্রতি তাদের গুরুতর অপবাদপূর্ণ কথা উচ্চারণের জন্য।",
+      "translation_bn": "এবং তাদের কুফরীর কারণে এবং মরিয়মের বিরুদ্ধে এক মস্ত বড় মিথ্যা অপবাদ রটনা করার কারণে—",
       "words": [
         {
           "id": 81219,
@@ -37298,13 +37324,18 @@
         }
       ],
       "translation_en": "And [We cursed them] for their disbelief and their saying against Mary a great slander,",
-      "conventional_en": "And [We cursed them] for their disbelief and their saying against Mary a great slander,"
+      "conventional_en": "And [We cursed them] for their disbelief and their saying against Mary a great slander,",
+      "meta_bn": "মরিয়ম নোডের প্রোফাইলে ফলস ডেটা-ইনজেকশন ক্রাইম",
+      "meta_en": "Malicious Slander and Systemic Calumny Against Maryam",
+      "conventional_bn": "এবং তাদের কুফরীর কারণে এবং মরিয়মের বিরুদ্ধে এক মস্ত বড় মিথ্যা অপবাদ রটনা করার কারণে—",
+      "modern_translation_bn": "এবং এটি তাদের কন্টিনিউয়াস সিগন্যাল ব্লকিংয়ের জন্য এবং মরিয়ম নোডের পিউর বায়ো-জেনেটিক প্রোফাইলের বিরুদ্ধে তাদের ডার্ক নেটওয়ার্কে এক মেগা ডেটা ফ্যাব্রিকেশন ও মস্ত বড় জালিয়াতি অপবাদ (بُهْتَانًا عَظِيمًا) জেনারেট করে সিস্টেম করাপ্ট করার কারণে—",
+      "modern_translation_en": "And on account of their persistent rejection and their broadcasting against Maryam an immense malicious slander (Buhtanan 'Adhima)—"
     },
     {
       "surah": 4,
       "ayah": 157,
       "transliteration": "waqawlihim innā qatalnā l-masīḥa ʿīsā ib'na maryama rasūla l-lahi wamā qatalūhu wamā ṣalabūhu walākin shubbiha lahum wa-inna alladhīna ikh'talafū fīhi lafī shakkin min'hu mā lahum bihi min ʿil'min illā ittibāʿa l-ẓani wamā qatalūhu yaqīnan",
-      "translation_bn": "আর ‘আমরা আল্লাহর রসূল মাসীহ ঈসা ইবনু মারইয়ামকে হত্যা করেছি’ তাদের এ উক্তির জন্য। কিন্তু তারা না তাকে হত্যা করেছে, না তাকে ক্রুশবিদ্ধ করেছে, কেবলমাত্র তাদের জন্য (এক লোককে) তার সদৃশ করা হয়েছিল, আর যারা এ বিষয়ে মতভেদ করেছিল তারাও এ সম্পর্কে সন্দেহে পতিত হয়েছিল। শুধু অমূলক ধারণার অনুসরণ ছাড়া এ ব্যাপারে তাদের কোন জ্ঞানই ছিল না। এটা নিশ্চিত সত্য যে, তারা তাকে হত্যা করেনি।",
+      "translation_bn": "এবং তাদের এই কথা বলার কারণে যে, ‘নিশ্চয়ই আমরা আল্লাহর রাসূল, মরিয়ম-পুত্র মসীহ ঈসাকে হত্যা করেছি’; অথচ তারা তাকে হত্যাও করেনি এবং তাকে ক্রুশবিদ্ধও করেনি, বরং তাদের জন্য (ঈসার) সদৃশ (হলোগ্রাফিক বিভ্রম) করা হয়েছিল। আর নিশ্চয় যারা এ বিষয়ে দ্বিমত (বিরোধ) পোষণ করেছে, তারা অবশ্যই এর প্রতি তীব্র সন্দেহের মধ্যে লিপ্ত রয়েছে। অনুমানের অনুসরণ করা ছাড়া এ বিষয়ে তাদের কাছে কোনো অবজেক্ট জ্ঞান (বিজ্ঞান) নেই। আর এটি নিশ্চিত যে তারা তাকে হত্যা করতে পারেনি।",
       "words": [
         {
           "id": 81444,
@@ -37657,14 +37688,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And [for] their saying, \"Indeed, we have killed the Messiah, Jesus, the son of Mary, the messenger of Allah.\" And they did not kill him, nor did they crucify him; but [another] was made to resemble him to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain.",
-      "conventional_en": "And [for] their saying, \"Indeed, we have killed the Messiah, Jesus, the son of Mary, the messenger of Allah.\" And they did not kill him, nor did they crucify him; but [another] was made to resemble him to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain."
+      "translation_en": "And [for] their saying, 'Indeed, we have killed the Messiah, Jesus, the son of Mary, the messenger of Allah.' And they did not kill him, nor did they crucify him; but [another] was made to resemble him to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain.",
+      "conventional_en": "And [for] their saying, 'Indeed, we have killed the Messiah, Jesus, the son of Mary, the messenger of Allah.' And they did not kill him, nor did they crucify him; but [another] was made to resemble him to them. And indeed, those who differ over it are in doubt about it. They have no knowledge of it except the following of assumption. And they did not kill him, for certain.",
+      "meta_bn": "ঈসা নোডের লোকাল ক্র্যাশ প্রতিরোধ: শুব্বিহা লাহুম বা হলোগ্রাফিক আইডেন্টিটি ইলিউশন মেকানিজম",
+      "meta_en": "The Holographic Decoy Matrix, Visual Spoofing Shield, and Refutation of Cross-Execution",
+      "conventional_bn": "এবং তাদের এই কথা বলার কারণে যে, ‘নিশ্চয়ই আমরা আল্লাহর রাসূল, মরিয়ম-পুত্র মসীহ ঈসাকে হত্যা করেছি’; অথচ তারা তাকে হত্যাও করেনি এবং তাকে ক্রুশবিদ্ধও করেনি, বরং তাদের জন্য (ঈসার) সদৃশ (হলোগ্রাফিক বিভ্রম) করা হয়েছিল। আর নিশ্চয় যারা এ বিষয়ে দ্বিমত (বিরোধ) পোষণ করেছে, তারা অবশ্যই এর প্রতি তীব্র সন্দেহের মধ্যে লিপ্ত রয়েছে। অনুমানের অনুসরণ করা ছাড়া এ বিষয়ে তাদের কাছে কোনো অবজেক্ট জ্ঞান (বিজ্ঞান) নেই। আর এটি নিশ্চিত যে তারা তাকে হত্যা করতে পারেনি।",
+      "modern_translation_bn": "এবং তাদের হ্যাকিং নেটওয়ার্কে অহংকারের সাথে এই ফলস ক্ল্যাম বা কথা বলার কারণে যে—‘নিশ্চয়ই আমরা আল্লাহর অফিশিয়াল ডাটা-ট্রান্সমিশন হাব—মরিয়ম-পুত্র মসীহ ঈসা নোডটিকে সিস্টেম থেকে চিরতরে Delete বা হত্যা (قَتَلْنَا) করে ফেলেছি’; অথচ মহাজাগতিক ব্যাক-এন্ড লেজারের পরম সত্য এই যে—তারা তাকে বিন্দুমাত্র ফিজিক্যালি হত্যাও করতে পারেনি (وَمَا قَتَلُوهُ) এবং তাকে কোনো ক্রুশবিদ্ধ করার ক্র্যাশ লুপেও (وَمَا صَلَبُوهُ) ফেলতে পারেনি; বরং আল্লাহর তৈরি স্বয়ংক্রিয় ডিফেন্স ফায়ারওয়াল তাদের লোকাল অপ্টিক্যাল রেডার হাইজ্যাক করে তাদের চোখের সামনে হুবহু ঈসা নোডের মতো একটি ডামি আইডি বা সদৃশ হলোগ্রাফিক ইলিউশন জেনারেট [The Holographic Identity Illusion & Phantasm Matrix] বা শুব্বিহা লাহুম (وَلَٰكِن شُبِّهَ لَهُمْ) করিয়ে দিয়েছিল [যার ফলে তারা ডামি নোড ক্র্যাশ করে বিভ্রান্তিতে পড়েছিল]। আর নিশ্চয়ই যারা বিবর্তনীয় টাইম-লাইনের ঘড়িতে ঈসা নোডের এই ফাইলটি নিয়ে পারস্পরিক স্প্লিট লজিক ও দ্বিমত (اخْتَلَفُوا فِيهِ) তৈরি করেছে—তারা অবশ্যই এই ডেটা স্ট্রাকচারের প্রতি এক তীব্র ফ্রিকোয়েন্সি ফ্ল্যাকচুয়েশন ও সন্দেহের (لَفِي شَكٍّ) মধ্যে লুপড হয়ে আছে; তাদের ওওএসের প্রসেসরে এ বিষয়ে বিন্দুমাত্র কোনো অবজেক্ট ডাটা, প্রমাণিত সোর্স কোড বা প্রকৃত জ্ঞান (عِلْمٍ) এক্সিস্ট করে না—স্রেফ নিজেদের তৈরি করা কাল্পনিক হাইপোথিসিস ও অনুমানের অন্ধ রেপ্লিকেশন বা অনুসরণ (إِلَّا اتِّبَاعَ الظَّنِّ) ছাড়া; আর এটি গাণিতিকভাবে একশত ভাগ পরম সত্য ও নিশ্চিত যে—তারা সেই পিউর ঈসা নোডটিকে বিন্দুমাত্র ডিলিট বা হত্যা করতে সম্পূর্ণ ব্যর্থ হয়েছে (وَمَا قَتَلُوهُ يَقِينًا);",
+      "modern_translation_en": "And for their boastful assertion: 'We executed the Messiah, Jesus son of Maryam, the Messenger of Allah.' Yet they never killed him, nor did they crucify him; rather, a dynamic holographic identity decoy was visually instantiated before their sensory spectrum (Shubbiha Lahum). Those who dispute his fate remain immersed in unverified doubt, possessing zero empirical telemetry except speculative modeling; with absolute certainty, they never terminated his life.",
+      "lexicon_modern_notes": "ওয়ালাকিন শুব্বিহা লাহুম (وَلَٰكِن شُبِّهَ لَهُمْ - হলোগ্রাফিক আইডেন্টিটি ইলিউশন ও অপ্টিক্যাল রেডার হাইজ্যাকিং): ১৫৭ নম্বর আয়াতের এই মহাজাগতিক সিকিউরিটি প্রটোকলটি আধুনিক অপটিক্স (Optics), কোয়ান্টাম হলোগ্রাফি এবং সাইবার ডিফেন্সের 'Advanced Visual Spoofing & Holographic Identity Decoy Matrix'-কে নির্দেশ করে। রোমান স্বৈরাচারী ও করাপ্টেড নোডগুলো যখন ঈসা নোডের লাইভ সিগন্যাল পার্মানেন্টলি ডিলিট (ক্রুশবিদ্ধ) করার জন্য একটি ফিজিক্যাল ক্র্যাশ লুপ ডিজাইন করেছিল—ঠিক তখনই আল্লাহর তৈরি স্বয়ংক্রিয় কসমিক ফায়ারওয়াল তাদের লোকাল অপ্টিক্যাল রেডার ও হিউম্যান ব্রেন প্রসেসরের ভিজ্যুয়াল সেন্সর হাইজ্যাক করে কাউন্টার প্রটোকল (শুব্বিহা লাহুম) রান করে দিল। এর ফলে হ্যাকার নোডগুলো লাইভ লাইট ওয়েভ মডুলেশনের (Light Wave Modulation) কারণে চোখের সামনে একটি ডামি হলো ফ্রেম বা ছদ্ম-আইডেন্টিটি ডিসপ্লে হতে দেখে ভাবল তারা ঈসাকেই ক্র্যাশ করছে, অথচ ব্যাক-এন্ডে ঈসার মূল লাইভ ফাইল ও ওওএস-কে আগেই ডাইমেনশনালি ক্লাউড সার্ভারে নিরাপদ স্থানান্তরের বা 'Dimensional Data Migration' (১৫৮ আয়াত - রাফাহুল্লাহু ইলাইহি) করিয়ে নেওয়া হয়েছিল। এটি মহাবিশ্বের একটি আল্টিমেট ডিফেন্স ফায়ারওয়াল অপারেশন।"
     },
     {
       "surah": 4,
       "ayah": 158,
       "transliteration": "bal rafaʿahu l-lahu ilayhi wakāna l-lahu ʿazīzan ḥakīman",
-      "translation_bn": "বরং আল্লাহ তাকে নিজের কাছে উঠিয়ে নিয়েছেন, আর আল্লাহ হলেন মহাপরাক্রমশালী, মহাবিজ্ঞানী।",
+      "translation_bn": "বরং আল্লাহ তাকে নিজের দিকে আরোহণ করিয়েছেন (তুলে নিয়েছেন)। আর আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 81529,
@@ -37758,13 +37795,18 @@
         }
       ],
       "translation_en": "Rather, Allah raised him to Himself. And ever is Allah Exalted in Might and Wise.",
-      "conventional_en": "Rather, Allah raised him to Himself. And ever is Allah Exalted in Might and Wise."
+      "conventional_en": "Rather, Allah raised him to Himself. And ever is Allah Exalted in Might and Wise.",
+      "meta_bn": "ডাইমেনশনাল ডাটা মাইগ্রেশন ও হাই-স্পিড আপলিংক প্রটোকল",
+      "meta_en": "Trans-Dimensional Extraction and Sovereign Elevation unto Divine Presence",
+      "conventional_bn": "বরং আল্লাহ তাকে নিজের দিকে আরোহণ করিয়েছেন (তুলে নিয়েছেন)। আর আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
+      "modern_translation_bn": "লজিক্যালি তা নয় (পরম সৃষ্টিতাত্ত্বিক অপারেশন হলো এই)—স্বয়ং Allah এই ত্রিমাত্রিক দৃশ্যমান স্পেস-টাইমের আলোক বর্ণালী থেকে ঈসার মূল লাইভ ওওএস, এনার্জি আইডি ও কনশাসনেসকে সম্পূর্ণ হাইড্রো-লকিং ফিল্টারে নিজের উচ্চ-শক্তির আদি ডাইমেনশনের দিকে নিরাপদ আপলিংক বা আরোহণ (بَّل رَّفَعَهُ اللَّهُ إِلَيْهِ) করিয়ে নিয়েছেন; আর Allah হলেন পরম ক্ষমতার অধিকারী সুপ্রীমিক রেগুলেটর ও নিখুঁত সিস্টেম ডিজাইনার;",
+      "modern_translation_en": "Nay, Allah elevated him trans-dimensionally unto His own sovereign domain (Rafa'ahullahu Ilayh); Allah is Almighty in power and All-Wise in execution."
     },
     {
       "surah": 4,
       "ayah": 159,
       "transliteration": "wa-in min ahli l-kitābi illā layu'minanna bihi qabla mawtihi wayawma l-qiyāmati yakūnu ʿalayhim shahīdan",
-      "translation_bn": "কিতাবওয়ালাদের মধ্যে এমন কেউ নেই যে, তার মৃত্যুর পূর্বে তার প্রতি অবশ্যই ঈমান আনবে না, আর ক্বিয়ামাতের দিন সে তাদের বিরুদ্ধে সাক্ষ্য দেবে।",
+      "translation_bn": "আর কিতাবধারীদের মধ্যে এমন কেউ থাকবে না, যে তার (ঈসার) মৃত্যুর পূর্বে তার প্রতি অবশ্যই ঈমান আনবে না; আর কেয়ামতের দিন সে তাদের ওপর সাক্ষী হবে।",
       "words": [
         {
           "id": 81685,
@@ -37918,13 +37960,18 @@
         }
       ],
       "translation_en": "And there is none from the People of the Scripture but that he will surely believe in Jesus before his death. And on the Day of Resurrection he will be against them a witness.",
-      "conventional_en": "And there is none from the People of the Scripture but that he will surely believe in Jesus before his death. And on the Day of Resurrection he will be against them a witness."
+      "conventional_en": "And there is none from the People of the Scripture but that he will surely believe in Jesus before his death. And on the Day of Resurrection he will be against them a witness.",
+      "meta_bn": "শাটডাউন প্রটোকলের পূর্বে গ্লোবাল সিঙ্ক ভেরিফিকেশন উইন্ডো",
+      "meta_en": "Pre-Termination Mandatory Alignment and Trans-Temporal Witness Role",
+      "conventional_bn": "আর কিতাবধারীদের মধ্যে এমন কেউ থাকবে না, যে তার (ঈসার) মৃত্যুর পূর্বে তার প্রতি অবশ্যই ঈমান আনবে না; আর কেয়ামতের দিন সে তাদের ওপর সাক্ষী হবে।",
+      "modern_translation_bn": "আর ওল্ড অপারেটিং সিস্টেমের কিতাবধারী ইউজার বা আহলুল কিতাবদের (أَهْلِ الْكِتَابِ) গ্লোবাল নেটওয়ার্ক গ্রিডে ফিউচারে এমন একটিও সক্রিয় নোড অবশিষ্ট থাকবে না—যে তার নিজস্ব হার্ডওয়্যারের ফাইনাল শাটডাউন বা মৃত্যুর (قَبْلَ مَوْتِهِ) পূর্ববর্তী উইন্ডোতে এই ঈসা নোডের প্রকৃত সৃষ্টিতাত্ত্বিক রুল ও ডাউনলিংককৃত পিউর কোডের প্রতি শতভাগ বাধ্য হয়ে পরম ভ্যালিডেশনে ঈমান (إِلَّا لَيُؤْمِنَنَّ بِهِ) না এনে এস্কেপ করতে পারবে; আর চূড়ান্ত কসমিক ডাটা-রিসেট টাইম-লাইনে (وَيَوْمِ الْقِيَامَةِ) সে স্বয়ং তাদের ওওএসের প্রতিটি ওল্ড ডাটা-ম্যানিপুলেশনের ওপর কেন্দ্রীয় কোরের প্রধান অবজেক্টিভ সাক্ষী (شَهِيدًا) হিসেবে ডিসপ্লে হবে;",
+      "modern_translation_en": "There remains not a single node among the People of the Scripture but shall irrevocably authenticate Jesus prior to the terminal physical shutdown; and on the Day of Resurrection, he shall stand as an incorruptible witness against their deviations."
     },
     {
       "surah": 4,
       "ayah": 160,
       "transliteration": "fabiẓul'min mina alladhīna hādū ḥarramnā ʿalayhim ṭayyibātin uḥillat lahum wabiṣaddihim ʿan sabīli l-lahi kathīran",
-      "translation_bn": "আমি ইয়াহূদীদের জন্য পবিত্র বস্তুসমূহ যা তাদের জন্য হালাল ছিল, তা হারাম করে দিয়েছি তাদের বাড়াবাড়ির কারণে আর বহু লোককে আল্লাহর পথে তাদের বাধা দেয়ার কারণে।",
+      "translation_bn": "অতএব ইহুদীদের এই অন্যায়ের (জুলুমের) কারণে—আমি তাদের জন্য এমন অনেক পবিত্র (ভাল) বস্তু নিষিদ্ধ (হারাম) করে দিয়েছিলাম যা তাদের জন্য হালাল (বৈধ) ছিল এবং আল্লাহর পথ থেকে তাদের বহু লোককে বাধা দেওয়ার কারণে—",
       "words": [
         {
           "id": 81853,
@@ -38077,8 +38124,13 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "For wrongdoing on the part of the Jews, We made unlawful for them [certain] good foods which had been lawful to them, and for their averting from the way of Allah many [people],",
-      "conventional_en": "For wrongdoing on the part of the Jews, We made unlawful for them [certain] good foods which had been lawful to them, and for their averting from the way of Allah many [people],"
+      "translation_en": "For wrongdoing on the part of the Jews We made unlawful for them [certain] good foods which had been lawful to them, and for their averting from the way of Allah many [people],",
+      "conventional_en": "For wrongdoing on the part of the Jews We made unlawful for them [certain] good foods which had been lawful to them, and for their averting from the way of Allah many [people],",
+      "meta_bn": "জুলুমের কাউন্টার-রিঅ্যাকশন: ইকোনমিক সোর্স ব্লকিং পেনাল্টি",
+      "meta_en": "Systemic Deprivation of Pure Sustenance Due to Persistent Aggression",
+      "conventional_bn": "অতএব ইহুদীদের এই অন্যায়ের (জুলুমের) কারণে—আমি তাদের জন্য এমন অনেক পবিত্র (ভাল) বস্তু নিষিদ্ধ (হারাম) করে দিয়েছিলাম যা তাদের জন্য হালাল (বৈধ) ছিল এবং আল্লাহর পথ থেকে তাদের বহু লোককে বাধা দেওয়ার কারণে—",
+      "modern_translation_bn": "অতএব ইহুদী নামক সেই ওল্ড ওএসের ইউজারদের (الَّذِينَ هَادُوا) ওওএসে ক্রমাগত রান করা সেই মারাত্মক বাউন্ডারি ব্রেক, শোষণ ও জুলুমের (فَبِظُلْمٍ) স্বয়ংক্রিয় কাউন্টার-ফিডব্যাকে—আমি তাদের সামাজিক গ্রিডে এমন অনেক পিউরিফাইড হাই-ভ্যালু ভালো রিসোর্স ও মেটাবলিক এনার্জি বা টাইয়্যিবাত (طَيِّبَاتٌ) সাময়িকভাবে রাইট-প্রোটেক্টেড বা নিষিদ্ধ (حُرِّمَتْ عَلَيْهِمْ) করে দিয়েছিলাম—যা অতীতে তাদের ডিফল্ট সিস্টেমে সম্পূর্ণ ওপেন বা অনুমোদিত (أُحِلَّتْ لَهُمْ) ছিল; এবং এটি তাদের নিজেদের ফ্রি-উইলের অপপ্রয়োগ করে আল্লাহর তৈরি করা এই পিউর অপ্টিমাল ট্র্যাক বা পথ থেকে বহু নোডকে জোরপূর্বক ডাইভার্ট বা বাধা (وَبِصَدِّهِمْ عَن سَبِيلِ اللَّهِ كَثِيرًا) দেওয়ার মারাত্মক ক্রাইম লুপের কারণে;",
+      "modern_translation_en": "Because of the systemic oppression perpetrated by the Judaic demographic and their aggressive obstruction of numerous nodes from Allah's open path, We rendered restricted unto them wholesome pure provisions (Tayyibat) that had formerly been made accessible to them."
     },
     {
       "surah": 4,

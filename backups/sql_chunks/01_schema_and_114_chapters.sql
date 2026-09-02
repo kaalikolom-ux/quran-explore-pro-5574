@@ -2,7 +2,7 @@
 -- MASTER QURAN DATA SEED SCRIPT FOR SUPABASE
 -- Project: Quran Explore Pro (kaalikolom-ux / wooniche.com)
 -- Total Surahs: 114
--- Generated: 2026-09-02T13:22:03.217Z
+-- Generated: 2026-09-02T13:27:01.273Z
 -- ==============================================================================
 
 -- 1. Ensure Table Structure
