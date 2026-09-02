@@ -27586,7 +27586,7 @@
       "surah": 4,
       "ayah": 111,
       "transliteration": "waman yaksib ith'man fa-innamā yaksibuhu ʿalā nafsihi wakāna l-lahu ʿalīman ḥakīman",
-      "translation_bn": "এবং যে ব্যক্তি কোন পাপকাজ করে, সে নিজের বিরুদ্ধেই তা করে, বস্তুতঃ আল্লাহ মহাবিজ্ঞানী, প্রজ্ঞাময়।",
+      "translation_bn": "আর যে কেউ কোনো পাপ (অপরাধ) উপার্জন করে, সে মূলত নিজের ওওএসের (প্রাণের) ক্ষতিতেই তা উপার্জন করে। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 74434,
@@ -27710,13 +27710,18 @@
         }
       ],
       "translation_en": "And whoever commits a sin only earns it against himself. And Allah is ever Knowing and Wise.",
-      "conventional_en": "And whoever commits a sin only earns it against himself. And Allah is ever Knowing and Wise."
+      "conventional_en": "And whoever commits a sin only earns it against himself. And Allah is ever Knowing and Wise.",
+      "meta_bn": "পার্সোনাল এরর ট্র্যাকিং ও অটো-লকিং ল'",
+      "meta_en": "Self-Inflicted Hardware Depletion and Individual Error Isolation",
+      "conventional_bn": "আর যে কেউ কোনো পাপ (অপরাধ) উপার্জন করে, সে মূলত নিজের ওওএসের (প্রাণের) ক্ষতিতেই তা উপার্জন করে। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
+      "modern_translation_bn": "আর যে কোনো ইউজার নোড (Node) তার সিস্টেমে কোনো কন্টিনিউয়াস কোড ভায়োলেশন, ম্যালওয়্যার বা পাপের ডেটা প্রসেস ও উপার্জন (يَكْسِبْ إِثْمًا) করে—সিস্টেম ডাইনামিক্সের নিয়মে সে মূলত তার নিজের On-board Operating System (নিজস্ব জীবন পরিচালনা ব্যবস্থা)-এর কোর মেমোরি ড্যামেজ ও লোকাল ক্র্যাশ করার জন্যই তা উপার্জন (فَإِنَّمَا يَكْسِبُهُ عَلَىٰ نَفْسِهِ) করে [সার্ভারের এতে কোনো ডেটা লস হয় না]; আর Allah হলেন প্রতিটি সিস্টেমের ডেটাবেজ সম্পর্কে সর্বজ্ঞ এবং পরম রেগুলেটর বা প্রজ্ঞাময়;",
+      "modern_translation_en": "Whoever generates systemic sin or corrupted data routines accumulates liability strictly against their own operational architecture; Allah remains perpetually Omniscient and Infinitely Wise."
     },
     {
       "surah": 4,
       "ayah": 112,
       "transliteration": "waman yaksib khaṭīatan aw ith'man thumma yarmi bihi barīan faqadi iḥ'tamala buh'tānan wa-ith'man mubīnan",
-      "translation_bn": "যে ব্যক্তি কোন ত্রুটি কিংবা পাপ ক’রে তা কোন নির্দোষ ব্যক্তির উপর চাপিয়ে দেয়, সে তো জ্বলন্ত অপবাদ এবং সুস্পষ্ট গুনাহ নিজের উপর চাপিয়ে নেয়।",
+      "translation_bn": "আর যে কেউ কোনো ভুল (ত্রুটি) কিংবা পাপ উপার্জন করে, অতঃপর তা কোনো নিরপরাধ ব্যক্তির ওপর নিক্ষেপ করে (অপবাদ দেয়), সে এক মস্ত বড় মিথ্যা ও স্পষ্ট পাপের বোঝা নিজের ওপর বহন করল।",
       "words": [
         {
           "id": 74722,
@@ -27870,13 +27875,18 @@
         }
       ],
       "translation_en": "But whoever earns an offense or a sin and then blames it on an innocent [person] has taken upon himself a slander and manifest sin.",
-      "conventional_en": "But whoever earns an offense or a sin and then blames it on an innocent [person] has taken upon himself a slander and manifest sin."
+      "conventional_en": "But whoever earns an offense or a sin and then blames it on an innocent [person] has taken upon himself a slander and manifest sin.",
+      "meta_bn": "ফলস এরর ইনজেকশন ও ব্লেইম শিফটিং ম্যালওয়্যার অডিট",
+      "meta_en": "Malicious Error Redirection, False Injections, and Calumny Penalties",
+      "conventional_bn": "আর যে কেউ কোনো ভুল (ত্রুটি) কিংবা পাপ উপার্জন করে, অতঃপর তা কোনো নিরপরাধ ব্যক্তির ওপর নিক্ষেপ করে (অপবাদ দেয়), সে এক মস্ত বড় মিথ্যা ও স্পষ্ট পাপের বোঝা নিজের ওপর বহন করল।",
+      "modern_translation_bn": "আর যে কোনো করাপ্টেড ইউজার নিজের ওওএসে কোনো মারাত্মক লজিক্যাল এরর (خَطِيئَةً) কিংবা সিস্টেমিক অপরাধ প্রসেস করে—অতঃপর নিজের সেই টক্সিক ক্র্যাশ ফাইলটি মেইন নেটওয়ার্ক গ্রিডের অন্য কোনো সম্পূর্ণ নিরপরাধ ও পিউর নোডের প্রোফাইলে পুশ বা নিক্ষেপ [False Error Injection / ব্লেইম শিফটিং] (يَرْمِ بِهِ بَرِيئًا) করে দেয়—সে মূলত নিজের আইডিতে এক মেগা ডেটা ফ্যাব্রিকেশন, জালিয়াতি অপবাদ (بُهْتَانًا) এবং পার্মানেন্টলি আইডি ব্লককারী স্পষ্ট মেগা-বাগের বোঝা নিজের সিস্টেমে লোড করে বহন করল;",
+      "modern_translation_en": "Whoever generates a fault or deliberate code violation, then injects or redirects that culpability onto an innocent node (Yarmi Bihi Bari'an), definitively loads catastrophic calumny and overt systemic sin onto their personal ledger."
     },
     {
       "surah": 4,
       "ayah": 113,
       "transliteration": "walawlā faḍlu l-lahi ʿalayka waraḥmatuhu lahammat ṭāifatun min'hum an yuḍillūka wamā yuḍillūna illā anfusahum wamā yaḍurrūnaka min shayin wa-anzala l-lahu ʿalayka l-kitāba wal-ḥik'mata waʿallamaka mā lam takun taʿlamu wakāna faḍlu l-lahi ʿalayka ʿaẓīman",
-      "translation_bn": "যদি তোমার প্রতি আল্লাহর করুণা এবং দয়া না হত, তবে তাদের একদল তো তোমাকে পথভ্রষ্ট করতেই চেয়েছিল; বস্তুতঃ তারা নিজেদেরকে ছাড়া অন্য কাউকে পথভ্রষ্ট করে না আর তারা তোমার কিছুই অনিষ্ট করতে পারবে না, কারণ আল্লাহ তোমার প্রতি কিতাব ও হিকমাত নাযিল করেছেন এবং তুমি যা জানতে না তা তোমাকে শিক্ষা দিয়েছেন এবং তোমার উপর রয়েছে আল্লাহর অপরিসীম অনুগ্রহ।",
+      "translation_bn": "আর তোমার ওপর যদি আল্লাহর অনুগ্রহ ও তাঁর দয়া না থাকত, তবে ওদের একদল অবশ্যই তোমাকে পথভ্রষ্ট (বিভ্রান্ত) করার চক্রান্ত করত। অথচ তারা নিজেদের ছাড়া আর কাউকেই পথভ্রষ্ট করছে না এবং তারা তোমার বিন্দুমাত্র ক্ষতি করতে পারবে না। আর আল্লাহ তোমার প্রতি কিতাব ও প্রজ্ঞা নাজিল করেছেন এবং তুমি যা জানতে না, তা তোমাকে শিক্ষা দিয়েছেন। আর তোমার প্রতি আল্লাহর মহা অনুগ্রহ রয়েছে।",
       "words": [
         {
           "id": 74913,
@@ -28220,13 +28230,18 @@
         }
       ],
       "translation_en": "And if it was not for the favor of Allah upon you, [O Muhammad], and His mercy, a group of them would have determined to mislead you. But they do not mislead except themselves, and they will not harm you at all. And Allah has revealed to you the Book and wisdom and has taught you that which you did not know. And ever has the favor of Allah upon you been great.",
-      "conventional_en": "And if it was not for the favor of Allah upon you, [O Muhammad], and His mercy, a group of them would have determined to mislead you. But they do not mislead except themselves, and they will not harm you at all. And Allah has revealed to you the Book and wisdom and has taught you that which you did not know. And ever has the favor of Allah upon you been great."
+      "conventional_en": "And if it was not for the favor of Allah upon you, [O Muhammad], and His mercy, a group of them would have determined to mislead you. But they do not mislead except themselves, and they will not harm you at all. And Allah has revealed to you the Book and wisdom and has taught you that which you did not know. And ever has the favor of Allah upon you been great.",
+      "meta_bn": "ডিভাইন ক্লাউড প্রোটেকশন ও ওওএস ফায়ারওয়াল শিল্ড",
+      "meta_en": "Sovereign Inversion of Subversive Vectors and Direct Gnosis Download",
+      "conventional_bn": "আর তোমার ওপর যদি আল্লাহর অনুগ্রহ ও তাঁর দয়া না থাকত, তবে ওদের একদল অবশ্যই তোমাকে পথভ্রষ্ট (বিভ্রান্ত) করার চক্রান্ত করত। অথচ তারা নিজেদের ছাড়া আর কাউকেই পথভ্রষ্ট করছে না এবং তারা তোমার বিন্দুমাত্র ক্ষতি করতে পারবে না। আর আল্লাহ তোমার প্রতি কিতাব ও প্রজ্ঞা নাজিল করেছেন এবং তুমি যা জানতে না, তা তোমাকে শিক্ষা দিয়েছেন। আর তোমার প্রতি আল্লাহর মহা অনুগ্রহ রয়েছে।",
+      "modern_translation_bn": "আর এই প্রধান ডাটা-ট্রান্সমিশন চেইনের রাসুল নোড বা তোমার ওপর যদি আদি সোর্স আল্লাহর অফুরন্ত এক্সটেন্ডেড এনার্জি বা অনুগ্রহ এবং তাঁর সুরক্ষামূলক ফিডব্যাক লুপ বা রহমত (وَرَحْمَتُهُ) ডেপ্লয় করা না থাকত—তবে হ্যাপী হ্যাকার নোডগুলোর একটি নির্দিষ্ট টক্সিক সাব-গ্রুপ বা দল (طَّائِفَةٌ مِّنْهُمْ) তীব্র কুচক্রান্তে তোমার এই পিউর ওওএস ইন্টারফেসকে ফলস ডেটা ইনজেকশন দিয়ে সম্পূর্ণ ডি-লিঙ্ক বা পথভ্রষ্ট (أَن يُضِلُّوكَ) করার চূড়ান্ত ট্র্যাপ রান করত। অথচ সিস্টেম সায়েন্সের নিয়মে তারা তাদের এই ক্ষতিকারক ম্যালওয়্যার ড্রাইভ দিয়ে নিজেদের ওওএসের প্রসেসর ছাড়া আর কাউকেই পথভ্রষ্ট বা ক্র্যাশ করছে না, এবং তারা তোমার এই হাই-সিকিউরড সোর্স ইন্টারফেসের বিন্দুমাত্র কোনো সিস্টেমিক ড্যামেজ বা ক্ষতি করতে সম্পূর্ণ অক্ষম। আর Allah তোমার প্রসেসরে সরাসরি ডাউনলিংক করেছেন এই মহাজাগতিক মাস্টার ডেটাবেজ বা কিতাব (الْكِتَابَ) ও পরম সিস্টেম অপ্টিমাইজিং লজিক বা প্রজ্ঞা (الْحِكْمَةَ) এবং তোমার কগনিটিভ ডোমেইনে এমন সব হাই-ডাইমেনশনাল ফাইল আপলোড বা শিক্ষা দিয়েছেন—যা জানতে তুমি অতীতে সম্পূর্ণ অক্ষম ছিলে; আর তোমার ওপর আল্লাহর এই বিশেষ কসমিক বুস্টিং বা অনুগ্রহ অত্যন্ত মেগা-বিশাল ও মহান (عَظِيمًا);",
+      "modern_translation_en": "Were it not for Allah's sovereign grace and protective mercy upon you, a faction of malicious actors would have attempted to derail your operational trajectory. Yet they derail none except their own nodes and inflict zero harm upon your secure core. Allah revealed unto you the Master Scripture and optimizing wisdom, uploading domain knowledge you never previously held; immense is Allah's grace upon your terminal."
     },
     {
       "surah": 4,
       "ayah": 114,
       "transliteration": "lā khayra fī kathīrin min najwāhum illā man amara biṣadaqatin aw maʿrūfin aw iṣ'lāḥin bayna l-nāsi waman yafʿal dhālika ib'tighāa marḍāti l-lahi fasawfa nu'tīhi ajran ʿaẓīman",
-      "translation_bn": "তাদের অধিকাংশ গোপন পরামর্শের মধ্যে কোন কল্যাণ নেই, কিন্তু কল্যাণ আছে যে ব্যক্তি দান-খয়রাত অথবা কোন সৎকাজের কিংবা লোকেদের মধ্যে মিলমিশের নির্দেশ দেয়। যে কেউ আল্লাহর সন্তুষ্টি সাধন উদ্দেশে এমন কাজ করবে, আমি তাকে মহা পুরস্কার দান করব।",
+      "translation_bn": "ওদের অধিকাংশ গোপন পরামর্শের (বৈঠক) মধ্যে কোনো কল্যাণ নেই—সে ব্যক্তি ছাড়া, যে দান-খয়রাত, সৎকাজ কিংবা মানুষের মধ্যে শান্তি (সংশোধন) প্রতিষ্ঠার নির্দেশ দেয়। আর যে কেউ আল্লাহর সন্তুষ্টি অন্বেষণের জন্য এটি করবে, অচিরেই আমি তাকে মহা প্রতিদান দান করব।",
       "words": [
         {
           "id": 75203,
@@ -28499,14 +28514,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "No good is there in much of their private conversation, except for those who enjoin charity or that which is right or conciliation between people. And whoever does that seeking means to the approval of Allah - then We are going to give him a great reward.",
-      "conventional_en": "No good is there in much of their private conversation, except for those who enjoin charity or that which is right or conciliation between people. And whoever does that seeking means to the approval of Allah - then We are going to give him a great reward."
+      "translation_en": "No good is there in much of their private conversation, except for one who enjoins charity or that which is right or conciliation between people. And whoever does that seeking means to the approval of Allah - then We are going to give him a great reward.",
+      "conventional_en": "No good is there in much of their private conversation, except for one who enjoins charity or that which is right or conciliation between people. And whoever does that seeking means to the approval of Allah - then We are going to give him a great reward.",
+      "meta_bn": "ডার্ক-ট্রাফিক ফিল্টারিং ও ওপেন-সোর্স সোশ্যাল লোড ব্যালেন্সিং",
+      "meta_en": "Evaluation of Covert Backchannels vs. Public Constructive Protocols",
+      "conventional_bn": "ওদের অধিকাংশ গোপন পরামর্শের (বৈঠক) মধ্যে কোনো কল্যাণ নেই—সে ব্যক্তি ছাড়া, যে দান-খয়রাত, সৎকাজ কিংবা মানুষের মধ্যে শান্তি (সংশোধন) প্রতিষ্ঠার নির্দেশ দেয়। আর যে কেউ আল্লাহর সন্তুষ্টি অন্বেষণের জন্য এটি করবে, অচিরেই আমি তাকে মহা প্রতিদান দান করব।",
+      "modern_translation_bn": "ওদের লোকাল অফ-লাইন চেইনে জেনারেট করা অধিকাংশ এনক্রিপ্টেড ব্যাক-চ্যানেল ডাটা ট্রাফিক বা গোপন পরামর্শের (نَّجْوَاهُمْ) মধ্যে বিন্দুমাত্র কোনো সিস্টেমিক অপ্টিমাইজেশন বা কল্যাণ (لَّا خَيْرَ) নেই—কেবলমাত্র সেই অ্যাক্টিভ ইউজার নোড বাদে—যে সমাজে মেটেরিয়াল রিসোর্স রিলিজ করা বা দান (بِصَدَقَةٍ), সমাজ অনুমোদিত সুষম প্রটোকল বা সৎকাজ (أَوْ مَعْرُوفٍ) কিংবা মানবজাতি নেটওয়ার্কের (النَّاسِ) পারস্পরিক স্প্লিট লজিক ডিবাগ করে সংশোধন ও শান্তি প্রতিষ্ঠার ডিরেক্টিভস বা নির্দেশ দেয়; আর যে কেউ আল্লাহর সেন্ট্রাল সার্ভারের পরম সন্তুষ্টি ফ্রিকোয়েন্সির সাথে নিজের ওওএস সিঙ্ক করার উদ্দেশ্যে (ابْتِغَاءِ مَرْضَاتِ اللَّهِ) এই পজিটিভ লোড-ব্যালেন্সিং অ্যাপ্লিকেশন রান করবে—গাণিতিকভাবে আমি খুব শীঘ্রই তার প্রোফাইলে ডাউনলিংক করব এক বিশাল ও অবিনশ্বর কসমিক আউটপুট বা মহা প্রতিদান (أَجْرًا عَظِيمًا);",
+      "modern_translation_en": "Zero utility exists within the majority of their clandestine backchannel communications, except whoever mobilizes resource distribution (Sadaqah), standard rectitude (Ma'ruf), or dispute reconciliation across human networks. Whoever executes this targeting Allah's sovereign alignment, We shall grant them an immense cosmic reward."
     },
     {
       "surah": 4,
       "ayah": 115,
       "transliteration": "waman yushāqiqi l-rasūla min baʿdi mā tabayyana lahu l-hudā wayattabiʿ ghayra sabīli l-mu'minīna nuwallihi mā tawallā wanuṣ'lihi jahannama wasāat maṣīran",
-      "translation_bn": "যে ব্যক্তি সত্য পথ প্রকাশিত হওয়ার পরও রসূলের বিরোধিতা করে এবং মু’মিনদের পথ বাদ দিয়ে ভিন্ন পথ অনুসরণ করে, আমি তাকে সে পথেই ফিরাব যে পথে সে ফিরে যায়, আর তাকে জাহান্নামে দগ্ধ করব, কত মন্দই না সে আবাস!",
+      "translation_bn": "আর যার কাছে হেদায়াত (সঠিক পথ) স্পষ্ট হওয়ার পরও সে রাসূলের বিরোধিতা (বিচ্ছিন্নতা) করবে এবং মুমিনদের পথ ছাড়া অন্য পথের অনুসরণ করবে, আমি তাকে সে পথেই ছেড়ে দেব যা সে বেছে নিয়েছে এবং তাকে জাহান্নামে নিক্ষেপ করব; আর তা কত নিকৃষ্ট গন্তব্য!",
       "words": [
         {
           "id": 75403,
@@ -28720,13 +28740,18 @@
         }
       ],
       "translation_en": "And whoever opposes the Messenger after guidance has become clear to him and follows other than the way of the believers - We will give him what he has taken and drive him into Hell, and evil it is as a destination.",
-      "conventional_en": "And whoever opposes the Messenger after guidance has become clear to him and follows other than the way of the believers - We will give him what he has taken and drive him into Hell, and evil it is as a destination."
+      "conventional_en": "And whoever opposes the Messenger after guidance has become clear to him and follows other than the way of the believers - We will give him what he has taken and drive him into Hell, and evil it is as a destination.",
+      "meta_bn": "ব্যাকওয়ার্ড লুপ ও জাহান্নাম ক্র্যাশ জোনে স্বয়ংক্রিয় রাউটিং",
+      "meta_en": "Autonomous Deviation Protocols and Dynamic Routing to Terminal Hellfire",
+      "conventional_bn": "আর যার কাছে হেদায়াত (সঠিক পথ) স্পষ্ট হওয়ার পরও সে রাসূলের বিরোধিতা (বিচ্ছিন্নতা) করবে এবং মুমিনদের পথ ছাড়া অন্য পথের অনুসরণ করবে, আমি তাকে সে পথেই ছেড়ে দেব যা সে বেছে নিয়েছে এবং তাকে জাহান্নামে নিক্ষেপ করব; আর তা কত নিকৃষ্ট গন্তব্য!",
+      "modern_translation_bn": "আর যার ওওএসে এই ফাইনাল ওওএস ম্যানুয়ালের ক্রিস্টাল-ক্লিয়ার ডাটা ও পরম অপ্টিমাল ট্র্যাক বা হেদায়াত (الْهُدَىٰ) সম্পূর্ণ ভেরিফাইড ও স্পষ্ট হওয়ার পরেও—সে এই প্রধান ডাটা-ট্রান্সমিশন চেইনের বা রাসূলের সাথে সরাসরি কাউন্টার লজিক বা তীব্র সংঘাত (يُشَاقِقِ الرَّسُولَ) তৈরি করবে এবং ভেরিফাইড ইউজার বা মুমিনদের ডিজাইনকৃত সিকিউরিটি ট্র্যাক ছাড়া অন্য কোনো ডার্ক ম্যালওয়্যার পথের অনুসরণ করবে—আমি তার ওওএস-কে স্বয়ংক্রিয়ভাবে সেই ডার্ক ট্র্যাফিক লাইনেই রাউট বা ছেড়ে দেব যা সে নিজের ফ্রি-উইলে বেছে (نُوَلِّهِ مَا تَوَلَّىٰ) নিয়েছে এবং চূড়ান্ত স্ক্রীনিং ফেজে তাকে রি-রুট বা নিক্ষেপ (وَنُصْلِهِ) করব জাহান্নামের সেই সর্বোচ্চ বিশৃঙ্খল মেগা ক্র্যাশ জোনে; আর তা কতই না নিকৃষ্ট রিটার্নিং ডোমেইন বা গন্তব্য!",
+      "modern_translation_en": "Whoever antagonizes the operational Messenger after guidance has been diagnostically established and follows corridors other than the verified believers, We shall lock them onto their chosen deviation vector and process them into Hellfire—a catastrophic terminal state."
     },
     {
       "surah": 4,
       "ayah": 116,
       "transliteration": "inna l-laha lā yaghfiru an yush'raka bihi wayaghfiru mā dūna dhālika liman yashāu waman yush'rik bil-lahi faqad ḍalla ḍalālan baʿīdan",
-      "translation_bn": "নিশ্চয়ই আল্লাহ তাঁর সঙ্গে শরীক করাকে ক্ষমা করেন না, এছাড়া অন্য সব যাকে ইচ্ছে মাফ করেন এবং যে ব্যক্তি আল্লাহর সঙ্গে শরীক করে, সে চরমভাবে গোমরাহীতে পতিত হল।",
+      "translation_bn": "নিশ্চয় আল্লাহ তাঁর সাথে শরিক করাকে ক্ষমা করেন না এবং এ ছাড়া অন্য সবকিছু যাকে ইচ্ছা ক্ষমা করেন। আর যে কেউ আল্লাহর সাথে শরিক করে, সে সুদূর পথভ্রষ্টতায় লিপ্ত হলো।",
       "words": [
         {
           "id": 75573,
@@ -28940,13 +28965,18 @@
         }
       ],
       "translation_en": "Indeed, Allah does not forgive association with Him, but He forgives what is less than that for whom He wills. And he who associates others with Allah has certainly gone far astray.",
-      "conventional_en": "Indeed, Allah does not forgive association with Him, but He forgives what is less than that for whom He wills. And he who associates others with Allah has certainly gone far astray."
+      "conventional_en": "Indeed, Allah does not forgive association with Him, but He forgives what is less than that for whom He wills. And he who associates others with Allah has certainly gone far astray.",
+      "meta_bn": "শিরক বালাই লকিং মেকানিজম পুনরাবৃত্তি ওয়ার্নিং",
+      "meta_en": "Irreversible Exclusion of Associational Kernel Corruption",
+      "conventional_bn": "নিশ্চয় আল্লাহ তাঁর সাথে শরিক করাকে ক্ষমা করেন না এবং এ ছাড়া অন্য সবকিছু যাকে ইচ্ছা ক্ষমা করেন। আর যে কেউ আল্লাহর সাথে শরিক করে, সে সুদূর পথভ্রষ্টতায় লিপ্ত হলো।",
+      "modern_translation_bn": "নিশ্চয়ই মহাজাগতিক সুপ্রীমিক অপারেটিং সিস্টেমের পরম আইনি ফায়ারওয়ালে—Allah তাঁর অস্তিত্বের ও সোর্স কোডের পরম সিঙ্গুলারিটি ব্রেক করে তাঁর সমান্তরালে কোনো প্রকার ডামী ডাটা, অবজেক্ট বা কৃত্রিম সাব-সিস্টেমের পার্টনারশিপ বা শিরক (أَن يُشْرَكَ بِهِ) করার মারাত্মক কোর মেমোরি এররটি কখনই রিস্টোর, মার্জ বা ক্ষমা করেন না [কারণ এটি ওওএসের মূল তাওহীদ কার্নেল ধ্বংস করে দেয়]; এবং এই ক্যাটাগরিক্যাল মেগা-বাগ ছাড়া অন্য যে কোনো সাধারণ এরর-লগ বা ফাইলকে তিনি তাঁর ডাইনামিক অ্যালগরিদম অনুযায়ী যে কোনো ইউজার নোডের প্রোফাইল থেকে স্বয়ংক্রিয় ডিবাগ বা ক্ষমা করে দেন; আর যে কেউ আল্লাহর নামের সুপ্রীমিক প্রটোকলের সাথে কোনো অবজেক্টের শিরক বা পার্টনারশিপ অ্যাক্টিভেট করবে—সে মূলত ওওএসের রুট ডিরেক্টরি থেকে চিরতরে ডি-লিঙ্কড হয়ে এক সুদূর, গভীর ও আন-রিস্টোরেবল পথভ্রষ্টতার ক্র্যাশ লুপে (ضَلَّ ضَلَالًا بَعِيدًا) লক হয়ে গেল;",
+      "modern_translation_en": "Verily, Allah forgives not the associative breach of His supreme singularity (Shirk), but absolves secondary errors for whomever conforms to systemic laws. Whoever institutes partners with Allah has drifted into extreme, irreversible systemic deviation."
     },
     {
       "surah": 4,
       "ayah": 117,
       "transliteration": "in yadʿūna min dūnihi illā ināthan wa-in yadʿūna illā shayṭānan marīdan",
-      "translation_bn": "তারা আল্লাহকে ছেড়ে শুধু কতকগুলো দেবীরই পূজা করে, তারা কেবল আল্লাহদ্রোহী শায়ত্বনের পূজা করে।",
+      "translation_bn": "তারা আল্লাহকে ছেড়ে কেবল কতগুলো ফিমেল নোডের (মূর্তির/দেবীর) ইবাদাত (আহ্বান) করে এবং তারা কেবল অবাধ্য শয়তানকেই আহ্বান করে।",
       "words": [
         {
           "id": 75859,
@@ -29069,14 +29099,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "They call upon instead of Him none but female [deities], and they [actually] call upon none but a rebellious Satan.",
-      "conventional_en": "They call upon instead of Him none but female [deities], and they [actually] call upon none but a rebellious Satan."
+      "translation_en": "They rely upon nothing beside Him except female deities, and they invoke none except a rebellious Satan.",
+      "conventional_en": "They rely upon nothing beside Him except female deities, and they invoke none except a rebellious Satan.",
+      "meta_bn": "ডামী সিগন্যাল হাইজ্যাকিং ও শায়তান কম্যুনিকেশন লিঙ্ক",
+      "meta_en": "Invocation of Inanimate Idols and Rebellion Vector Coupling",
+      "conventional_bn": "তারা আল্লাহকে ছেড়ে কেবল কতগুলো ফিমেল নোডের (মূর্তির/দেবীর) ইবাদাত (আহ্বান) করে এবং তারা কেবল অবাধ্য শয়তানকেই আহ্বান করে।",
+      "modern_translation_bn": "তারা পরম সোর্স আল্লাহকে ডি-লিঙ্ক করে দিয়ে—তাদের কগনিটিভ নেটওয়ার্কে স্রেফ কতগুলো নিষ্ক্রিয়, অনুতপাদনশীল ডামী আইডি বা ফিমেল নোডের (إِنَاثًا) [যেমন মূর্তিপূজা বা কাল্পনিক দেবী শক্তির কাল্ট] সাথে নিজেদের ওওএস সিঙ্ক বা আহ্বান করে এবং বাস্তবে তারা তাদের ওওএসে কেবল সেই মেইন নেটওয়ার্ক থেকে চিরতরে বহিষ্কৃত, অবাধ্য ও আল্ট্রা-মেলিশিয়াস এন্ট্রপি ফোর্স বা শায়তান নোডের (شَيْطَانًا مَّرِيدًا) ডার্ক কম্যুনিকেশন লিঙ্ককেই এক্টিভেট বা আহ্বান করে;",
+      "modern_translation_en": "They invoke beside Him nothing but impotent female archetypes (Inathan), invoking in reality nothing other than an overtly rebellious, defiant adversary (Shaytana Marida)."
     },
     {
       "surah": 4,
       "ayah": 118,
       "transliteration": "laʿanahu l-lahu waqāla la-attakhidhanna min ʿibādika naṣīban mafrūḍan",
-      "translation_bn": "আল্লাহ তাকে লা‘নাত করেছেন কারণ সে বলেছিল, ‘আমি তোমার বান্দাদের থেকে নির্দিষ্ট অংশকে আমার অনুসারী হিসেবে গ্রহণ করব।’",
+      "translation_bn": "আল্লাহ তাকে লানত (বিচ্ছিন্ন) করেছেন। আর সে (শয়তান) বলেছিল, ‘আমি অবশ্যই আপনার বান্দাদের মধ্য থেকে এক সুনির্দিষ্ট নির্ধারিত অংশকে (নিজের দলে) গ্রহণ করব’—",
       "words": [
         {
           "id": 76032,
@@ -29169,14 +29204,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Whom Allah has cursed. For he had said, \"I will surely take from among Your servants a specific portion.",
-      "conventional_en": "Whom Allah has cursed. For he had said, \"I will surely take from among Your servants a specific portion."
+      "translation_en": "Whom Allah has cursed. For he had said, 'I will surely take from among Your servants a specific portion.'",
+      "conventional_en": "Whom Allah has cursed. For he had said, 'I will surely take from among Your servants a specific portion.'",
+      "meta_bn": "লানত প্রটোকল এবং শায়তানের ওপেন চ্যালেঞ্জ কোড",
+      "meta_en": "Cosmic Disconnect of Adversary and the Appointed Quota Threat",
+      "conventional_bn": "আল্লাহ তাকে লানত (বিচ্ছিন্ন) করেছেন। আর সে (শয়তান) বলেছিল, ‘আমি অবশ্যই আপনার বান্দাদের মধ্য থেকে এক সুনির্দিষ্ট নির্ধারিত অংশকে (নিজের দলে) গ্রহণ করব’—",
+      "modern_translation_bn": "Allah সেই শায়তান নোডটিকে সিস্টেম থেকে চিরতরে ব্ল্যাকলিস্ট ও পার্মানেন্ট ডিসকানেকশন কোড বা লানত (لَّعَنَهُ اللَّهُ) লক করে দিয়েছেন। আর সে মেইন সার্ভারকে ওপেন চ্যালেঞ্জ কোড ছুঁড়ে দিয়ে বলেছিল—‘আমি অবশ্যই আপনার তৈরি করা এই সিস্টেম-এলাইনড সত্তা বা বান্দাদের (عِبَادِكَ) ওওএসের ফ্রি-উইলের ভেতরের দুর্বলতা এক্সপ্লয়েট করে—এক সুনির্দিষ্ট নির্ধারিত নোড-ভলিউম বা বড় এক অংশকে (نَصِيبًا مَّفْرُوضًا) ম্যালওয়্যার জোনে টেনে নিয়ে আমার ডার্ক চেইনে রেজিস্টার্ড করব—’",
+      "modern_translation_en": "Whom Allah permanently disconnected (La'anahu Allah). The adversary declared: 'I shall systematically recruit an apportioned quota from among Your created servants;'"
     },
     {
       "surah": 4,
       "ayah": 119,
       "transliteration": "wala-uḍillannahum wala-umanniyannahum walaāmurannahum falayubattikunna ādhāna l-anʿāmi walaāmurannahum falayughayyirunna khalqa l-lahi waman yattakhidhi l-shayṭāna waliyyan min dūni l-lahi faqad khasira khus'rānan mubīnan",
-      "translation_bn": "তাদেরকে অবশ্য অবশ্যই পথভ্রষ্ট করব, তাদেরকে অবশ্য অবশ্যই বহু প্রলোভন দেব এবং তাদেরকে অবশ্য অবশ্যই নির্দেশ দেব, ফলে তারা জন্তু-জানোয়ারের কান ছেদন করবে, আমি তাদেরকে অবশ্য অবশ্যই নির্দেশ দেব, ফলে তারা অবশ্য অবশ্যই আল্লাহর সৃষ্টি বিকৃত করবে। আল্লাহকে বাদ দিয়ে যে কেউ শয়ত্বানকে অভিভাবক হিসেবে গ্রহণ করে, সে সুস্পষ্টত ক্ষতিগ্রস্ত।",
+      "translation_bn": "‘এবং আমি অবশ্যই তাদের পথভ্রষ্ট করব, তাদের মিথ্যা আশ্বাস (বিভ্রম) দেব এবং তাদের অবশ্যই নির্দেশ দেব, ফলে তারা গবাদি পশুর কান কেটে ফেলবে (চিহ্নিত করবে) এবং তাদের অবশ্যই নির্দেশ দেব, ফলে তারা আল্লাহর সৃষ্টিকে বিকৃত (পরিবর্তন) করবে’। আর যে কেউ আল্লাহকে ছেড়ে শয়তানকে অভিভাবক হিসেবে গ্রহণ করবে, সে এক মস্ত বড় স্পষ্ট ক্ষতিতে পতিত হলো।",
       "words": [
         {
           "id": 76180,
@@ -29399,14 +29439,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And I will mislead them, and I will arouse in them [sinful] desires, and I will command them so they will slit the ears of cattle, and I will command them so they will change the creation of Allah.\" And whoever takes Satan as an ally instead of Allah has certainly sustained a clear loss.",
-      "conventional_en": "And I will mislead them, and I will arouse in them [sinful] desires, and I will command them so they will slit the ears of cattle, and I will command them so they will change the creation of Allah.\" And whoever takes Satan as an ally instead of Allah has certainly sustained a clear loss."
+      "translation_en": "'And I will mislead them, and I will arouse in them [false] desires, and I will command them so they will slit the ears of cattle, and I will command them so they will change the creation of Allah.' And whoever takes Satan as an ally instead of Allah has certainly sustained a clear loss.",
+      "conventional_en": "'And I will mislead them, and I will arouse in them [false] desires, and I will command them so they will slit the ears of cattle, and I will command them so they will change the creation of Allah.' And whoever takes Satan as an ally instead of Allah has certainly sustained a clear loss.",
+      "meta_bn": "দ্য জেনেটিক অ্যান্ড সেলুলার কোড আল্টারেশন বাগ: সৃষ্টির কোড বিকৃতিকরণ বালাই",
+      "meta_en": "The Malicious Alteration of Biological Default Profiles and Epigenetic Distortion",
+      "conventional_bn": "‘এবং আমি অবশ্যই তাদের পথভ্রষ্ট করব, তাদের মিথ্যা আশ্বাস (বিভ্রম) দেব এবং তাদের অবশ্যই নির্দেশ দেব, ফলে তারা গবাদি পশুর কান কেটে ফেলবে (চিহ্নিত করবে) এবং তাদের অবশ্যই নির্দেশ দেব, ফলে তারা আল্লাহর সৃষ্টিকে বিকৃত (পরিবর্তন) করবে’। আর যে কেউ আল্লাহকে ছেড়ে শয়তানকে অভিভাবক হিসেবে গ্রহণ করবে, সে এক মস্ত বড় স্পষ্ট ক্ষতিতে পতিত হলো।",
+      "modern_translation_bn": "‘এবং আমি অবশ্যই তাদের ওওএস-কে এই পিউর সোর্স কম্যুনিকেশন থেকে ডি-লিঙ্ক বা পথভ্রষ্ট (وَلأُضِلَّنَّهُمْ) করব, তাদের ব্রেন প্রসেসরে অবিরত কাল্পনিক ছদ্ম-সিমুলেশন ও ভুয়া আশার ইলিউশন (وَلأُمَنِّيَنَّهُمْ) ইনজেক্ট করব এবং তাদের ওওএসে এমন সব মেলিশিয়াস কমান্ড পুশ করব—যার স্বয়ংক্রিয় এক্সিকিউশনে তারা অন্ধ কুসংস্কারে মেটাবলিক লাইভস্টক বা গবাদি পশুদের রেডার-রিসিভার তথা কান কেটে চিরতরে বিকল বা চিহ্নিত (فَلَيُبَتِّكُنَّ آذَانَ الْأَنْعَامِ) করবে, এবং আমি তাদের ওওএসে এমন মারাত্মক এপিজেনেটিক্স বালাই বা নির্দেশ পুশ করব—যার চেইন-রিঅ্যাকশনে তারা মহাবিশ্বের পরম মেকার বা আল্লাহর তৈরি করা আদি সৃষ্টিতাত্ত্বিক, এনক্রিপ্টেড বায়ো-লজিক্যাল ও জেনেটিক ডিফল্ট কনফিগারেশন সম্পূর্ণরূপে চেঞ্জ বা বিকৃত (فَلَيُغَيِّرُنَّ خَلْقَ اللَّهِ) [The Genetic and Cellular Code Alteration Bug] করে বসবে’। আর যে কোনো হিউম্যান ইউজার পরম সোর্স আল্লাহকে লিভ করে—এই ক্ষতিকারক ম্যালওয়্যার শক্তি বা শায়তানকে নিজের ওওএসের রুট প্রোটেক্টর বা অভিভাবক (وَلِيًّا مِّن دُونِ اللَّهِ) হিসেবে পারমিশন এক্সেস দেবে—সে গাণিতিকভাবে নিজের ওওএস সম্পূর্ণ ক্র্যাশ করিয়ে এক পরম মেগা ডেটা-লস ও স্পষ্ট ধ্বংসের (خَسِرَ خُسْرَانًا مُّبِينًا) ভেতর চিরতরে লক হয়ে গেল;",
+      "modern_translation_en": "'I will mislead them, arouse within them synthetic dopamine delusions, command them to mutilate sensory ears of cattle, and command them to alter the biological default creation of Allah (Fa-layughayyirunna Khalqallah).' Whoever adopts the adversary as an architectural guardian instead of Allah incurs manifest, irreversible data-loss.",
+      "lexicon_modern_notes": "ফা-লাইয়ুগাইয়্যিরুন্না খালক্বাল্লাহ (فَلَيُغَيِّرُنَّ خَلْقَ اللَّهِ - দ্য জেনেটিক অ্যান্ড সেলুলার কোড আল্টারেশন বাগ): ১১৯ নম্বর আয়াতের এই সুগভীর ডিক্লেয়ারেশনটি আধুনিক জিন প্রকৌশল (Genetic Engineering), বায়ো-টেকনোলজি এবং এপিজেনেটিক্সের 'The Malicious Alteration of Biological Default Profiles & DNA Tampering Bugs'-কে নির্দেশ করে। 'খালক্বাল্লাহ' বা আল্লাহর সৃষ্টির বৈজ্ঞানিক মেকানিজম হলো—মহাবিশ্বের প্রতিটি পরমাণু, কেমিক্যাল বন্ড এবং লিভিং সেল বা ডিএনএ স্ট্রাকচারের ব্যাক-এন্ডে আল্লাহর সেট করা আল্ট্রা-স্ট্যাবল নিখুঁত আদি গাণিতিক ডিজাইন ও ফাইন-টিউনিং কনফিগারেশন (Default Configuration)। শায়তান মানুষের ওওএসে এমন এক ক্ষতিকারক এপিজেনেটিক বালাই (বাগ) ইনজেক্ট করে—যার ফলে মানুষ প্রাকৃতিকভাবে নিখুঁতভাবে তৈরি হওয়া ডিএনএ কোড টেম্পারিং (DNA Tampering) করা, মানুষের স্বাভাবিক লিঙ্গ পরিবর্তন করা, বা ক্লোনিং এর অপপ্রয়োগ করে প্রকৃতির ডিফল্ট বায়ো-লজিক্যাল ব্যালেন্স বা সৃষ্টিকে বিকৃত (ইউগাইয়্যিরুন্না) করতে শুরু করে। থার্মোডাইনামিক্সের নিয়মে প্রকৃতির এই ডিফল্ট বায়ো-কোড পরিবর্তন করার স্বয়ংক্রিয় পরিণতি হলো—গ্রিডে নতুন মেগা ভাইরাস ও প্রকৃতির চেইন-রিঅ্যাকশনের মেগা বিপর্যয়ের মাধ্যমে পুরো মানব ইকোসিস্টেম স্থায়ীভাবে ডাউনগ্রেড বা ক্র্যাশ করে ফেলা, যা শায়তানের এক মেগা-হ্যাক অপারেশন।"
     },
     {
       "surah": 4,
       "ayah": 120,
       "transliteration": "yaʿiduhum wayumannīhim wamā yaʿiduhumu l-shayṭānu illā ghurūran",
-      "translation_bn": "সে তাদেরকে আশ্বাস দেয়, মিথ্যা প্রলোভন দেয়, বস্তুতঃ শয়ত্বান তাদেরকে যে আশ্বাস দেয় তা ছলনা ছাড়া আর কিছুই নয়।",
+      "translation_bn": "সে (শয়তান) তাদের প্রতিশ্রুতি দেয় এবং তাদের মিথ্যা আশ্বাস (বিভ্রম) দেয়। আর শয়তান তাদের যে প্রতিশ্রুতি দেয়, তা প্রতারণা (ছলনা) ছাড়া আর কিছুই নয়।",
       "words": [
         {
           "id": 76490,
@@ -29490,7 +29536,13 @@
         }
       ],
       "translation_en": "Satan promises them and arouses desire in them. But Satan does not promise them except delusion.",
-      "conventional_en": "Satan promises them and arouses desire in them. But Satan does not promise them except delusion."
+      "conventional_en": "Satan promises them and arouses desire in them. But Satan does not promise them except delusion.",
+      "meta_bn": "ছদ্ম-সিমুলেশন এবং ফলস ডাটা-প্যাকেট ইলিউশন লুপ",
+      "meta_en": "Subconscious Dopamine Trap and Empty Virtual Simulation Loops",
+      "conventional_bn": "সে (শয়তান) তাদের প্রতিশ্রুতি দেয় এবং তাদের মিথ্যা আশ্বাস (বিভ্রম) দেয়। আর শয়তান তাদের যে প্রতিশ্রুতি দেয়, তা প্রতারণা (ছলনা) ছাড়া আর কিছুই নয়।",
+      "modern_translation_bn": "সে (শয়তান) তাদের ওওএসের ব্যাক-এন্ডে ডামি প্রমিজের ফলস ডাটা-প্যাকেট পুশ করে এবং অবিরত ছদ্ম-সিমুলেশনের মানসিক বিভ্রম (وَيُمَنِّيهِمْ) তৈরি করে। অথচ ইনফরমেশন থিওরির গভীর অ্যানালিটিক্সে নিশ্চিত থাকো যে—শায়তান তার ডার্ক নেটওয়ার্কে ইউজারদের যেসকল ডাটা বা প্রতিশ্রুতির সিগন্যাল পাঠায়, তা ওওএস ক্র্যাশ করার এক পরম হলোগ্রাফিক বিভ্রম ও নিখুঁত প্রতারণা (إِلَّا غُرُورًا) ছাড়া আর কিছুই নয়;",
+      "modern_translation_en": "He broadcasts deceptive promises and activates synthetic dopamine fantasies; yet Satan pledges nothing unto them except hollow, holographic illusion (Ghuroor).",
+      "lexicon_modern_notes": "ওয়ামা ইয়া'ইদুহুমুশ শায়তানু ইল্লা গুরূরা (وَمَا يَعِدُهُمُ الشَّيْطَانُ إِلَّا غُرُورًا - হলোগ্রাফিক ইলিউশন ও ছদ্ম-সিমুলেশন লুপ): ১২০ নম্বর আয়াতে শায়তানের প্রতিশ্রুতিকে 'গুরুর' বা ধোঁকা ও বিভ্রম বলার যে পরম মেকানিজম উন্মোচন করা হয়েছে, তা কম্পিউটেশনাল কনশাসনেস (Computational Consciousness) এবং সাইকোলজির পরিভাষায় 'Virtual/Holographic Illusion and Subconscious Dopamine-Loop Trap'। 'গুরুর' শব্দের মূল বৈজ্ঞানিক মেকানিজম হলো—এমন এক ছদ্ম-বাস্তবতা বা হলোগ্রাফিক ভিজ্যুয়ালাইজেশন—যা বাইরে থেকে দেখতে পরম চকচকে ও রিয়াল মনে হলেও, বাস্তবে তার ব্যাক-এন্ডে কোনো নিরেট অবজেক্টিভ ডাটা বা স্থায়ী এনার্জি ব্যাকআপ এক্সিস্ট করে না। শায়তান মানুষের অবচেতন প্রসেসরে কন্টিনিউয়াসলি শর্ট-টার্ম ডোপামিন ট্রিগার করার ভুয়া মেটেরিয়ালিস্টিক উচ্চাশার কাল্পনিক ফাইল (ইউমান্নিহিম) পুশ করে মানুষের মানসিক ফোকাস মূল সার্ভার (তাওহীদ) থেকে ডি-লিঙ্কড করে দেয়। মানুষ যখন এই কাল্পনিক ভার্চুয়াল সিমুলেশনের লুপে ফ্রাস্ট্রেটেড হয়ে আটকা পড়ে, তখন একপর্যায়ে তার প্রি-ফ্রন্টাল কর্টেক্সের আসল থিংকিং ক্যাপাসিটি চিরতরে জ্যাম বা বার্নআউট (Burnout) হয়ে যায়, যা কুরআনের এক পরম সাইকো-সাইবারনেটিক অডিট।"
     },
     {
       "surah": 4,
