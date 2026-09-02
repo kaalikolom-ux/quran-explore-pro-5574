@@ -438,7 +438,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       sciBn: { bn: "বিজ্ঞানভিত্তিক (বাংলা)", en: "Scientific (Bangla)" },
       sciEn: { bn: "বিজ্ঞানভিত্তিক (English)", en: "Scientific (English)" },
       stdBn: { bn: "প্রচলিত অনুবাদ (বাংলা)", en: "Standard (Bangla)" },
-      stdEn: { bn: "প্রচলিত অনুবাদ (English)", en: "Standard (English)" },
+      stdEn: { bn: "Surface Translation (English)", en: "Surface Translation (English)" },
     };
     return dict[key]?.[prefs.lang] || key;
   };

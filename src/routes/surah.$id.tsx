@@ -834,14 +834,14 @@ const AyahCard = React.memo(function AyahCard({
           )}
         </div>
 
-        {/* ২. Conventional Translation (English) */}
+        {/* ২. Surface Translation (English) */}
         <div
           style={{ display: isEditing || showConventionalEn ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
             <Languages className="size-3.5 text-muted-foreground/80" />
-            <span>Conventional Translation (English)</span>
+            <span>২. Surface Translation (English)</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -851,7 +851,7 @@ const AyahCard = React.memo(function AyahCard({
               }
               className="font-serif italic mt-1 bg-background font-normal"
               style={{ fontSize: `${translationFontSize}px` }}
-              placeholder="Conventional English translation..."
+              placeholder="Surface English translation..."
             />
           ) : (
             <p
@@ -899,7 +899,7 @@ const AyahCard = React.memo(function AyahCard({
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <BookmarkCheck className="size-3.5 text-primary" />
-            <span>Modern Translation (English)</span>
+            <span>৪. Modern Translation (English)</span>
           </div>
           {isEditing ? (
             <Textarea

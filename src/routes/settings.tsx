@@ -106,22 +106,22 @@ function SettingsPage() {
     },
     {
       key: "showConventionalBn",
-      title: lang === "bn" ? "১. প্রচলিত অনুবাদ" : "1. Conventional Translation (BN)",
+      title: lang === "bn" ? "১. প্রচলিত অনুবাদ (বাংলা)" : "1. Surface Translation (BN)",
       desc: lang === "bn" ? "মুহিউদ্দীন খান / তাইসিরুল কুরআন (Greentech)" : "Standard Bengali translation",
     },
     {
       key: "showConventionalEn",
-      title: lang === "bn" ? "২. Conventional Translation" : "2. Conventional Translation (EN)",
+      title: lang === "bn" ? "২. Surface Translation (English)" : "2. Surface Translation (EN)",
       desc: lang === "bn" ? "সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ (Greentech)" : "Sahih International translation",
     },
     {
       key: "showModernBn",
-      title: lang === "bn" ? "৩. আধুনিক অনুবাদ" : "3. Modern Translation (BN)",
+      title: lang === "bn" ? "৩. আধুনিক অনুবাদ (বাংলা)" : "3. Modern Translation (BN)",
       desc: lang === "bn" ? "আমাদের প্রাঞ্জল ও সহজবোধ্য আধুনিক বাংলা অনুবাদ" : "Contemporary contextual Bengali translation",
     },
     {
       key: "showModernEn",
-      title: lang === "bn" ? "৪. Modern Translation" : "4. Modern Translation (EN)",
+      title: lang === "bn" ? "৪. Modern Translation (English)" : "4. Modern Translation (EN)",
       desc: lang === "bn" ? "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ" : "Contemporary contextual English translation",
     },
     {

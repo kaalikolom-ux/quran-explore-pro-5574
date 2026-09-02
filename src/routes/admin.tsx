@@ -2155,10 +2155,10 @@ function TranslationsAdmin() {
               onChange={(e) => setLng(e.target.value as typeof lng)}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="bn">বিজ্ঞানভিত্তিক (বাংলা)</option>
-              <option value="en">বিজ্ঞানভিত্তিক (English)</option>
+              <option value="bn">বিজ্ঞানভিত্তিক / আধুনিক (বাংলা)</option>
+              <option value="en">Scientific / Modern (English)</option>
               <option value="bn_std">প্রচলিত অনুবাদ (বাংলা)</option>
-              <option value="en_std">প্রচলিত অনুবাদ (English)</option>
+              <option value="en_std">Surface Translation (English)</option>
             </select>
           </div>
         </div>
@@ -2352,7 +2352,7 @@ function UserPermissionsDialog({
     { key: "showWordByWord", title: "শব্দে শব্দে অর্থ", desc: "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" },
     { key: "showTransliteration", title: "উচ্চারণ নির্দেশিকা", desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" },
     { key: "showConventionalBn", title: "১. প্রচলিত বাংলা অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
-    { key: "showConventionalEn", title: "২. Conventional English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
+    { key: "showConventionalEn", title: "২. Surface English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
     { key: "showModernBn", title: "৩. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
     { key: "showModernEn", title: "৪. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
     { key: "showLexicon", title: "অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
