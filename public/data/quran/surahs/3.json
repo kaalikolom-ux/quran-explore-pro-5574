@@ -11695,7 +11695,7 @@
       "surah": 3,
       "ayah": 61,
       "transliteration": "faman ḥājjaka fīhi min baʿdi mā jāaka mina l-ʿil'mi faqul taʿālaw nadʿu abnāanā wa-abnāakum wanisāanā wanisāakum wa-anfusanā wa-anfusakum thumma nabtahil fanajʿal laʿnata l-lahi ʿalā l-kādhibīna",
-      "translation_bn": "তোমার নিকট জ্ঞান আসার পর যে ব্যক্তি তোমার সাথে (ঈসার সম্বন্ধে) বিতর্ক করবে তাকে বল, ‘আসো, আমাদের পুত্রদেরকে এবং তোমাদের পুত্রদেরকে আর আমাদের নারীদেরকে এবং তোমাদের নারীদেরকে এবং আমাদের নিজেদেরকে এবং তোমাদের নিজেদেরকে আহবান করি, অতঃপর আমরা মুবাহলা করি আর মিথ্যুকদের প্রতি আল্লাহর অভিসম্পাত বর্ষণ করি।",
+      "translation_bn": "অতঃপর তোমার কাছে জ্ঞান আসার পর যে ব্যক্তি এ বিষয়ে তোমার সাথে বিতর্ক করে, তাকে বলো, ‘এসো, আমরা ডেকে নিই আমাদের সন্তানদের ও তোমাদের সন্তানদের, আমাদের নারীদের ও তোমাদের নারীদের এবং আমাদের নিজেদের ও তোমাদের নিজেদের; তারপর আমরা বিনীত প্রার্থনা করি এবং মিথ্যাবাদীদের ওপর আল্লাহর লানত (অভিশাপ) বর্ষণ করি’।",
       "words": [
         {
           "id": 55046,
@@ -11958,14 +11958,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Then whoever argues with you about it after [this] knowledge has come to you - say, \"Come, let us call our sons and your sons, our women and your women, ourselves and yourselves, then supplicate earnestly [together] and invoke the curse of Allah upon the liars [among us].\"",
-      "conventional_en": "Then whoever argues with you about it after [this] knowledge has come to you - say, \"Come, let us call our sons and your sons, our women and your women, ourselves and yourselves, then supplicate earnestly [together] and invoke the curse of Allah upon the liars [among us].\""
+      "translation_en": "Then whoever argues with you concerning him after what knowledge has come to you - say, \"Come, let us call our sons and your sons, our women and your women, ourselves and yourselves, then supplicate earnestly [together] and invoke the curse of Allah upon the liars.\"",
+      "conventional_en": "Then whoever argues with you concerning him after what knowledge has come to you - say, \"Come, let us call our sons and your sons, our women and your women, ourselves and yourselves, then supplicate earnestly [together] and invoke the curse of Allah upon the liars.\"",
+      "meta_bn": "লাইভ ভেরিফিকেশন চ্যালেঞ্জ ও মুবাহালা প্রটোকল",
+      "meta_en": "Live Verification Challenge & Mubahalah Protocol",
+      "conventional_bn": "অতঃপর তোমার কাছে জ্ঞান আসার পর যে ব্যক্তি এ বিষয়ে তোমার সাথে বিতর্ক করে, তাকে বলো, ‘এসো, আমরা ডেকে নিই আমাদের সন্তানদের ও তোমাদের সন্তানদের, আমাদের নারীদের ও তোমাদের নারীদের এবং আমাদের নিজেদের ও তোমাদের নিজেদের; তারপর আমরা বিনীত প্রার্থনা করি এবং মিথ্যাবাদীদের ওপর আল্লাহর লানত (অভিশাপ) বর্ষণ করি’।",
+      "modern_translation_bn": "অতএব তোমার কাছে সোর্স কোডের নিশ্চিত ডেটা ও জ্ঞান (الْعِلْمِ) আসার পরও যে কেউ এই ঈসা নোডের সৃষ্টিতাত্ত্বিক কোড নিয়ে তোমার সাথে অযৌক্তিক বিতর্ক বা আর্গুমেন্ট (حَاجَّكَ) রান করবে—তুমি তাদের উদ্দেশ্যে চূড়ান্ত ভেরিফিকেশন চ্যালেঞ্জের ঘোষণা দিয়ে বলো: ‘এসো, আমরা আমাদের পরবর্তী প্রজন্মের চাইল্ড নোড ও তোমাদের চাইল্ড নোডদের, আমাদের ফিমেল ইন্টারফেস ও তোমাদের ফিমেল ইন্টারফেসদের এবং আমাদের কোর ইউজার ও তোমাদের কোর ইউজার নোডদের (أَنفُسَنَا وَأَنفُسَكُمْ) এক জায়গায় সমবেত করি; তারপর আমরা সোর্স সার্ভারের কাছে অত্যন্ত বিনীতভাবে লাইভ ভেরিফিকেশন প্রটোকল (نَبْتَهِلْ) রান করি এবং মিথ্যা ডাটা প্রোপাগান্ডাকারী বিকৃত নোডগুলোর (الْكَاذِبِينَ) ওপর আল্লাহর স্থায়ী লানত বা কমপ্লিট সিস্টেমিক ডিসকানেকশন (لَّعْنَتَ اللَّهِ) বর্ষণ করি’;",
+      "modern_translation_en": "Whoever engages in adversarial argumentation with you concerning the structural truth of Jesus after definitive source telemetry and scientific knowledge has reached you, say: \"Come, let us summon our lineage nodes and your lineage nodes, our female operators and your female operators, and our core identity nodes alongside yours; then let us execute an earnest mutual verification protocol (Nabtehil), invoking the permanent isolation curse and systemic disconnection of Allah upon those propagating fabricated data;\";",
+      "lexicon_modern_notes": "ثُمَّ نَبْتَهِلْ فَنَجْعَل لَّعْنَتَ اللَّهِ عَلَى الْكَاذِبِينَ (মুবাহালা ও লাইভ ভেরিফিকেশন চ্যালেঞ্জ প্রটোকল): ৬১ নম্বর আয়াতে খ্রিস্টান প্রতিনিধি দলের সাথে যে মুবাহালা বা পারস্পরিক প্রার্থনার চ্যালেঞ্জ দেওয়া হয়েছিল, তা ইনফরমেশন সিকিউরিটি ও সিস্টেম ভ্যালিডেশনের পরিভাষায় 'Zero-Knowledge Proof & Live Verification Challenge'-এর মতো। যখন সমস্ত যৌক্তিক ও ঐতিহাসিক প্রমাণ উপস্থাপনের পরও প্রতিপক্ষ তাদের প্রসেসরে সত্যের সিগন্যাল ব্লক করে অযৌক্তিক বিতর্ক চালায়, তখন চূড়ান্ত ফিল্টারিং হিসেবে উভয় পক্ষকে তাদের সম্পূর্ণ সত্তা ও পরিবার নিয়ে কেন্দ্রীয় মহাজাগতিক সার্ভারের কাছে সরাসরি রায় প্রার্থনা করার আহ্বান জানানো হয়—যাতে মিথ্যাবাদীদের ওপর তাৎক্ষণিক সিস্টেমিক ডিসকানেকশন ও লানত নেমে আসে।"
     },
     {
       "surah": 3,
       "ayah": 62,
       "transliteration": "inna hādhā lahuwa l-qaṣaṣu l-ḥaqu wamā min ilāhin illā l-lahu wa-inna l-laha lahuwa l-ʿazīzu l-ḥakīmu",
-      "translation_bn": "নিশ্চয়ই এটা প্রকৃত ঘটনা। আল্লাহ ছাড়া অন্য সত্য ইলাহ নেই। আর নিশ্চয়ই আল্লাহ মহাপরাক্রান্ত, প্রজ্ঞাময়।",
+      "translation_bn": "নিশ্চয় এটিই হলো সত্য বিবরণ। আর আল্লাহ ছাড়া কোনো সত্য ইলাহ (উপাস্য) নেই। আর নিশ্চয় আল্লাহ, তিনি তো পরাক্রমশালী, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 55701,
@@ -12128,14 +12134,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Indeed, this is the true narration. And there is no deity except Allah. And indeed, Allah is the Exalted in Might, the Wise.",
-      "conventional_en": "Indeed, this is the true narration. And there is no deity except Allah. And indeed, Allah is the Exalted in Might, the Wise."
+      "translation_en": "Indeed, this is the true story. And there is no deity except Allah. And indeed, Allah is the Exalted in Might, the Wise.",
+      "conventional_en": "Indeed, this is the true story. And there is no deity except Allah. And indeed, Allah is the Exalted in Might, the Wise.",
+      "meta_bn": "পরম ঐতিহাসিক সত্য ও কসমিক সিঙ্গুলারিটি",
+      "meta_en": "Absolute Historical Truth & Cosmic Singularity",
+      "conventional_bn": "নিশ্চয় এটিই হলো সত্য বিবরণ। আর আল্লাহ ছাড়া কোনো সত্য ইলাহ (উপাস্য) নেই। আর নিশ্চয় আল্লাহ, তিনি তো পরাক্রমশালী, প্রজ্ঞাময়।",
+      "modern_translation_bn": "নিশ্চয়ই ঈসা নোডের এই সৃষ্টিতাত্ত্বিক ডাটা-লগই হলো ১০০% অবজেক্টিভ ও পরম সত্য হিস্টোরিক্যাল ফাইল (الْقَصَصُ الْحَقُّ); আর মহাজাগতিক মাস্টার আর্কিটেকচারে পরম সোর্স Allah ছাড়া বিকল্প কোনো ইলাহ বা নিয়ন্ত্রক নেই; আর নিশ্চয়ই Allah হলেন পরম ক্ষমতাবান ও অসীম সিস্টেম অপ্টিমাইজিং প্রজ্ঞাময় (الْعَزِيزُ الْحَكِيمُ)।",
+      "modern_translation_en": "Verily, this algorithmic transmission constitutes the absolute objective and verifiable historical record (al-Qasas al-Haqq); and zero sovereign authority exists in the cosmos except Allah; and indeed Allah is the Almighty, the Supreme Optimization Architect (al-Azeez al-Hakeem)."
     },
     {
       "surah": 3,
       "ayah": 63,
       "transliteration": "fa-in tawallaw fa-inna l-laha ʿalīmun bil-muf'sidīna",
-      "translation_bn": "তা’ সত্ত্বেও যদি তারা মুখ ফিরিয়ে নেয়, তবে নিশ্চয়ই আল্লাহ কলহ সৃষ্টিকারীদের বিষয়ে বিশেষভাবে অবহিত।",
+      "translation_bn": "অতঃপর তারা যদি মুখ ফিরিয়ে নেয়, তবে নিশ্চয় আল্লাহ ফাসাদ (বিপর্যয়) সৃষ্টিকারীদের সম্পর্কে সম্যক অবগত।",
       "words": [
         {
           "id": 56156,
@@ -12209,13 +12220,18 @@
         }
       ],
       "translation_en": "But if they turn away, then indeed - Allah is Knowing of the corrupters.",
-      "conventional_en": "But if they turn away, then indeed - Allah is Knowing of the corrupters."
+      "conventional_en": "But if they turn away, then indeed - Allah is Knowing of the corrupters.",
+      "meta_bn": "সিস্টেমিক রিজেকশন ও এন্ট্রপি ট্র্যাকিং",
+      "meta_en": "Systemic Rejection & Entropy Agent Telemetry",
+      "conventional_bn": "অতঃপর তারা যদি মুখ ফিরিয়ে নেয়, তবে নিশ্চয় আল্লাহ ফাসাদ (বিপর্যয়) সৃষ্টিকারীদের সম্পর্কে সম্যক অবগত।",
+      "modern_translation_bn": "অতঃপর তারা যদি এই সুস্পষ্ট বৈজ্ঞানিক সত্য থেকে নিজেদের প্রসেসর ডিসকানেক্ট বা মুখ ফিরিয়ে (تَوَلَّوْا) নেয়—তবে জেনে রাখো, মহাজাগতিক আদি সোর্স Allah সেই সিস্টেম-করপ্টিং এন্ট্রপি ও ফাসাদ সৃষ্টিকারী আউটলায়ার নোডগুলো (الْمُفْسِدِينَ) সম্পর্কে সম্পূর্ণ টেলিমেট্রি ইনফর্মড বা সম্যক অবগত।",
+      "modern_translation_en": "And if they sever connection and turn away, then verily Allah maintains comprehensive telemetry awareness of all systemic corrupters and entropy generators (al-Mufsideen)."
     },
     {
       "surah": 3,
       "ayah": 64,
       "transliteration": "qul yāahla l-kitābi taʿālaw ilā kalimatin sawāin baynanā wabaynakum allā naʿbuda illā l-laha walā nush'rika bihi shayan walā yattakhidha baʿḍunā baʿḍan arbāban min dūni l-lahi fa-in tawallaw faqūlū ish'hadū bi-annā mus'limūna",
-      "translation_bn": "বল, ‘হে আহলে কিতাব! এমন এক কথার দিকে আসো, যা আমাদের ও তোমাদের মধ্যে একই, তা এই যে, আমরা আল্লাহ ভিন্ন অন্য কারো ‘ইবাদাত করব না এবং কোন কিছুকে তাঁর শরীক করব না এবং আল্লাহকে বাদ দিয়ে আমাদের মধ্যে কেউ কাউকে রব হিসেবে গ্রহণ করব না। তারপরও যদি তারা মুখ ফিরিয়ে নেয় তবে বলে দাও, তোমরা এ বিষয়ে সাক্ষী থাক যে, আমরা আত্মসমর্পণকারী।",
+      "translation_bn": "বলো, ‘হে কিতাবধারীগণ! এসো এমন এক কথায় যা আমাদের ও তোমাদের মধ্যে সমান—যে, আমরা আল্লাহ ছাড়া কারও ইবাদত করব না, তাঁর সাথে কোনো কিছুকে শরিক করব না এবং আমাদের কেউ কাউকে আল্লাহ ছাড়া রব হিসেবে গ্রহণ করব না’। তারপর তারা যদি মুখ ফিরিয়ে নেয়, তবে বলো, ‘তোমরা সাক্ষী থাকো যে, নিশ্চয় আমরা মুসলিম (আল্লাহর অনুগত)’।",
       "words": [
         {
           "id": 56595,
@@ -12539,13 +12555,19 @@
         }
       ],
       "translation_en": "Say, \"O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah and not associate anything with Him and not take one another as lords instead of Allah.\" But if they turn away, then say, \"Bear witness that we are Muslims [submitting to Him].\"",
-      "conventional_en": "Say, \"O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah and not associate anything with Him and not take one another as lords instead of Allah.\" But if they turn away, then say, \"Bear witness that we are Muslims [submitting to Him].\""
+      "conventional_en": "Say, \"O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah and not associate anything with Him and not take one another as lords instead of Allah.\" But if they turn away, then say, \"Bear witness that we are Muslims [submitting to Him].\"",
+      "meta_bn": "ইউনিভার্সাল কমন রেফারেন্স ও তাওহীদ কনভারজেন্স",
+      "meta_en": "Universal Consensus Protocol & Tawhid Convergence",
+      "conventional_bn": "বলো, ‘হে কিতাবধারীগণ! এসো এমন এক কথায় যা আমাদের ও তোমাদের মধ্যে সমান—যে, আমরা আল্লাহ ছাড়া কারও ইবাদত করব না, তাঁর সাথে কোনো কিছুকে শরিক করব না এবং আমাদের কেউ কাউকে আল্লাহ ছাড়া রব হিসেবে গ্রহণ করব না’। তারপর তারা যদি মুখ ফিরিয়ে নেয়, তবে বলো, ‘তোমরা সাক্ষী থাকো যে, নিশ্চয় আমরা মুসলিম (আল্লাহর অনুগত)’।",
+      "modern_translation_bn": "তুমি বলো: ‘হে ওল্ড অপারেটিং সিস্টেমের কিতাবধারী ইউজারগণ (يَا أَهْلَ الْكِتَابِ)! তোমরা আমাদের ও তোমাদের মধ্যকার এক পরম ইউনিভার্সাল কমন রেফারেন্স বা অভিন্ন কোড ভ্যালুর (كَلِمَةٍ سَوَاءٍ) দিকে সমবেত হও—যে, আমরা মহাজাগতিক আদি সোর্স Allah ছাড়া আর কোনো ক্রিয়েশনের উপাসনা বা নিঃশর্ত আনুগত্য করব না, তাঁর সার্বভৌম কমান্ড প্যারামিটারে অন্য কোনো ডামি নোডকে পার্টনার বা শরিক (لَا نُشْرِكَ) করব না এবং আমরা মানবগোষ্ঠীর কেউ কাউকে আল্লাহর সমান্তরালে মাস্টার কন্ট্রোলার বা রব (أَرْبَابًا) হিসেবে স্থাপন করব না’। অতঃপর তারা যদি এই কমন গ্রাউন্ড থেকে মুখ ফিরিয়ে নেয়—তবে তোমরা দৃঢ় ঘোষণা দিয়ে বলো: ‘তোমরা আমাদের রেজিস্ট্রি লেজারে সাক্ষী থাকো যে—আমরা নিশ্চিতভাবেই মহাজাগতিক একক সিস্টেমের সাথে শতভাগ এলাইনড ও সমর্পিত সত্তা বা মুসলিম (مُسْلِمُونَ)’;",
+      "modern_translation_en": "Proclaim: \"O custodians of legacy scripture, converge upon an equitable, universal invariant code (Kalimatin Sawa') common between us and you: that we serve none but Allah, attribute zero external parity or co-dependency to Him, and appoint not one another as sovereign lords beside Allah.\" But if they disengage, declare: \"Bear witness in the cosmic ledger that we are fully aligned, submitted nodes (Muslimoon);\";",
+      "lexicon_modern_notes": "تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ (কালিমাতিন সাওয়া - ইউনিভার্সাল কমন রেফারেন্স ও কনভারজেন্স প্রটোকল): ৬৪ নম্বর আয়াতে সকল ধর্ম ও মতবাদের অনুসারীদের যে 'কালিমাতিন সাওয়া'-র দিকে আহ্বান জানানো হয়েছে, তা সিস্টেম আর্কিটেকচারের 'Universal Interoperability & Common Base Protocol'-এর অনুরূপ। এটি কোনো গোত্রীয় বা জাতিগত চাপিয়ে দেওয়া শর্ত নয়; বরং পরম স্রষ্টার একত্ব (তাওহীদ) এবং কোনো মানুষকে গড-মোড বা রবের মর্যাদায় না বসানোর সার্বজনীন মানদণ্ড—যা সমগ্র মানব নেটওয়ার্কের ভারসাম্য ও শান্তি রক্ষার একমাত্র কেন্দ্রীয় ভিত্তি।"
     },
     {
       "surah": 3,
       "ayah": 65,
       "transliteration": "yāahla l-kitābi lima tuḥājjūna fī ib'rāhīma wamā unzilati l-tawrātu wal-injīlu illā min baʿdihi afalā taʿqilūna",
-      "translation_bn": "হে আহলে কিতাব! তোমরা কেন ইবরাহীম সম্পর্কে তর্ক করছ? তাওরাত এবং ইঞ্জিল তো তারপরেই অবতীর্ণ হয়েছে, তোমরা কি তাও বুঝ না?",
+      "translation_bn": "হে কিতাবধারীগণ! তোমরা ইব্রাহিমের ব্যাপারে কেন বিতর্ক করছ, অথচ তাওরাত ও ইঞ্জিল তো তার পরেই নাজিল হয়েছিল? তোমরা কি অনুধাবন করো না?",
       "words": [
         {
           "id": 57139,
@@ -12709,13 +12731,18 @@
         }
       ],
       "translation_en": "O People of the Scripture, why do you argue about Abraham while the Torah and the Gospel were not revealed until after him? Then will you not reason?",
-      "conventional_en": "O People of the Scripture, why do you argue about Abraham while the Torah and the Gospel were not revealed until after him? Then will you not reason?"
+      "conventional_en": "O People of the Scripture, why do you argue about Abraham while the Torah and the Gospel were not revealed until after him? Then will you not reason?",
+      "meta_bn": "ঐতিহাসিক টাইম-সিরিজ অডিট ও ক্রনোলজিক্যাল লজিক",
+      "meta_en": "Historical Time-Series Audit & Chronological Logic",
+      "conventional_bn": "হে কিতাবধারীগণ! তোমরা ইব্রাহিমের ব্যাপারে কেন বিতর্ক করছ, অথচ তাওরাত ও ইঞ্জিল তো তার পরেই নাজিল হয়েছিল? তোমরা কি অনুধাবন করো না?",
+      "modern_translation_bn": "হে ওল্ড ওএসের কিতাবধারী ইউজারগণ! তোমরা ইব্রাহিম নোডের আইনি প্রোফাইল নিয়ে কেন এমন অযৌক্তিক টাইমলাইন এরর ও বিতর্ক করছ—অথচ তাওরাত ও ইঞ্জিলের ডেটাবেজ তো তাঁর ঐতিহাসিক টাইমলাইনের বহু শতাব্দী পর নাজিল বা ডেপ্লয় করা হয়েছিল? তবে কি তোমরা তোমাদের প্রসেসরে ন্যূনতম লজিক্যাল অ্যানালাইসিস বা চিন্তা (أَفَلَا تَعْقِلُونَ) রান করবে না?",
+      "modern_translation_en": "O People of the Scripture, why do you execute flawed historical disputes concerning Abraham when the specific frameworks of the Torah and the Gospel were not initialized until long after his timeline? Will you not execute basic logical deduction (afala ta'qiloon)?"
     },
     {
       "surah": 3,
       "ayah": 66,
       "transliteration": "hāantum hāulāi ḥājajtum fīmā lakum bihi ʿil'mun falima tuḥājjūna fīmā laysa lakum bihi ʿil'mun wal-lahu yaʿlamu wa-antum lā taʿlamūna",
-      "translation_bn": "বস্তুতঃ তোমরাই এমন লোক যে, যে সম্পর্কে তোমাদের কিছু জ্ঞান আছে, সে বিষয়ে তো বিতর্ক করেছ, তোমরা এমন বিষয়ে কেন বিতর্ক করছ যে বিষয়ে তোমাদের কোনই জ্ঞান নেই? বস্তুতঃ আল্লাহ্ই জ্ঞাত আছেন, তোমরা জ্ঞাত নও।",
+      "translation_bn": "দেখ, তোমরাই তো তারা—যে বিষয়ে তোমাদের কিছুটা জ্ঞান ছিল তা নিয়ে তোমরা বিতর্ক করেছিলে; তবে যে বিষয়ে তোমাদের কোনো জ্ঞান নেই, সে বিষয়ে কেন বিতর্ক করছ? আর আল্লাহ জানেন এবং তোমরা জানো না।",
       "words": [
         {
           "id": 57470,
@@ -12919,13 +12946,18 @@
         }
       ],
       "translation_en": "Here you are - those who have argued about that of which you have [some] knowledge, but why do you argue about that of which you have no knowledge? And Allah knows, while you know not.",
-      "conventional_en": "Here you are - those who have argued about that of which you have [some] knowledge, but why do you argue about that of which you have no knowledge? And Allah knows, while you know not."
+      "conventional_en": "Here you are - those who have argued about that of which you have [some] knowledge, but why do you argue about that of which you have no knowledge? And Allah knows, while you know not.",
+      "meta_bn": "কগনিটিভ বাউন্ডারি ও স্পেকুলেটিভ নয়েজ ফিল্টারিং",
+      "meta_en": "Epistemic Boundary & Speculative Noise Filtering",
+      "conventional_bn": "দেখ, তোমরাই তো তারা—যে বিষয়ে তোমাদের কিছুটা জ্ঞান ছিল তা নিয়ে তোমরা বিতর্ক করেছিলে; তবে যে বিষয়ে তোমাদের কোনো জ্ঞান নেই, সে বিষয়ে কেন বিতর্ক করছ? আর আল্লাহ জানেন এবং তোমরা জানো না।",
+      "modern_translation_bn": "দেখো, তোমরাই তো সেই ত্রুটিপূর্ণ নোড—যারা পূর্বে নিজেদের জানা সামান্য ডেটা নিয়ে বিতর্ক করেছিলে; কিন্তু যে বিষয়ের কোনো ভেরিফাইড ডাটা বা সিস্টেমিক জ্ঞানই (لَيْسَ لَكُم بِهِ عِلْمٌ) তোমাদের কাছে এক্সিস্ট করে না, তা নিয়ে কেন ভিত্তিহীন অনুমানমূলক বিতর্ক প্রসেস করছ? অথচ পরম সোর্স Allah মহাবিশ্বের সম্পূর্ণ ব্যাক-এন্ড কোড জানেন (يَعْلَمُ) এবং তোমরা তা জানো না।",
+      "modern_translation_en": "Behold, you are the very entities who debated over matters whereof you had limited telemetry; why then do you argue concerning subjects wherein you possess zero empirical verification? Allah commands absolute omniscient knowledge, while your localized processors know not."
     },
     {
       "surah": 3,
       "ayah": 67,
       "transliteration": "mā kāna ib'rāhīmu yahūdiyyan walā naṣrāniyyan walākin kāna ḥanīfan mus'liman wamā kāna mina l-mush'rikīna",
-      "translation_bn": "ইবরাহীম না ইয়াহূদী ছিল, না নাসারা, বরং একনিষ্ঠ আত্মসমর্পণকারী এবং সে মুশরিক দলের অন্তর্ভুক্ত ছিল না।",
+      "translation_bn": "ইব্রাহিম ইহুদিও ছিলেন না এবং নাসারাও (খ্রিস্টান) ছিলেন না; বরং তিনি ছিলেন একনিষ্ঠ মুসলিম। আর তিনি মুশরিকদের অন্তর্ভুক্ত ছিলেন না।",
       "words": [
         {
           "id": 58205,
@@ -13079,13 +13111,18 @@
         }
       ],
       "translation_en": "Abraham was neither a Jew nor a Christian, but he was one inclining toward truth, a Muslim [submitting to Allah]. And he was not of the polytheists.",
-      "conventional_en": "Abraham was neither a Jew nor a Christian, but he was one inclining toward truth, a Muslim [submitting to Allah]. And he was not of the polytheists."
+      "conventional_en": "Abraham was neither a Jew nor a Christian, but he was one inclining toward truth, a Muslim [submitting to Allah]. And he was not of the polytheists.",
+      "meta_bn": "হানিফ মুসলিম প্রোফাইল ও পিউর ওপেন-সোর্স মিল্লাত",
+      "meta_en": "Hanif Muslim Architecture & Pure Open-Source Millah",
+      "conventional_bn": "ইব্রাহিম ইহুদিও ছিলেন না এবং নাসারাও (খ্রিস্টান) ছিলেন না; বরং তিনি ছিলেন একনিষ্ঠ মুসলিম। আর তিনি মুশরিকদের অন্তর্ভুক্ত ছিলেন না।",
+      "modern_translation_bn": "ইব্রাহিম কোনো সংকীর্ণ ইহুদি ছিলেন না এবং কোনো নাসারা বা খ্রিস্টান ফ্রেমওয়ার্কেও অন্তর্ভুক্ত ছিলেন না; বরং তিনি ছিলেন সমস্ত বক্রতা ও কুসংস্কারমুক্ত একনিষ্ঠ সত্যসন্ধানী ও পরম সোর্সের প্রতি নিবেদিত মুসলিম (حَنِيفًا مُّسْلِمًا); এবং তিনি আল্লাহর সার্বভৌমে কোনো সমান্তরাল অংশীদার স্থাপনকারী মুশরিক নোডদের অন্তর্ভুক্ত ছিলেন না।",
+      "modern_translation_en": "Abraham was neither affiliated with sectarian Judaism nor Christianity; rather, he operated as a pristine, truth-inclined, fully synchronized node—a Hanif Muslim; and never was he among those who attributed co-dependencies to Allah."
     },
     {
       "surah": 3,
       "ayah": 68,
       "transliteration": "inna awlā l-nāsi bi-ib'rāhīma lalladhīna ittabaʿūhu wahādhā l-nabiyu wa-alladhīna āmanū wal-lahu waliyyu l-mu'minīna",
-      "translation_bn": "নিশ্চয় ইবরাহীমের সঙ্গে ঘনিষ্ঠতায় সেই লোকেরাই অধিক হকদার যারা তার অনুসরণ করেছে এবং এই নাবী, আর যারা ঈমান এনেছে, বস্তুতঃ আল্লাহ মু’মিনদের অভিভাবক।",
+      "translation_bn": "নিশ্চয় মানুষের মধ্যে ইব্রাহিমের সর্বাধিক নিকটবর্তী তারা—যারা তার অনুসরণ করেছিল এবং এই নবী ও যারা ঈমান এনেছে। আর আল্লাহ মুমিনদের অভিভাবক।",
       "words": [
         {
           "id": 58540,
@@ -13228,14 +13265,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Indeed, the most worthy of Abraham among the people are those who followed him [in submission to Allah] and this prophet, and those who believe [in his message]. And Allah is the ally of the believers.",
-      "conventional_en": "Indeed, the most worthy of Abraham among the people are those who followed him [in submission to Allah] and this prophet, and those who believe [in his message]. And Allah is the ally of the believers."
+      "translation_en": "Indeed, the most worthy of Abraham among the people are those who followed him [in submission] and this prophet and those who believe [in his message]. And Allah is the guardian of the believers.",
+      "conventional_en": "Indeed, the most worthy of Abraham among the people are those who followed him [in submission] and this prophet and those who believe [in his message]. And Allah is the guardian of the believers.",
+      "meta_bn": "প্রোটোকল ম্যাচিং ও সিস্টেমিক এফিনিটি",
+      "meta_en": "Protocol Affinity & Ultimate Root Protection",
+      "conventional_bn": "নিশ্চয় মানুষের মধ্যে ইব্রাহিমের সর্বাধিক নিকটবর্তী তারা—যারা তার অনুসরণ করেছিল এবং এই নবী ও যারা ঈমান এনেছে। আর আল্লাহ মুমিনদের অভিভাবক।",
+      "modern_translation_bn": "সমগ্র মানব নেটওয়ার্কে ইব্রাহিম নোডের সাথে সর্বোচ্চ ডেটা-এফিনিটি ও কার্যকর সম্পর্ক কেবল তাদেরই—যারা তাঁর নিখুঁত তাওহীদি আর্কিটেকচার অনুসরণ করেছে এবং এই আধুনিক ডাটা-ডিকোডার নবী ও যারা খাঁটি ভেরিফাইড বিশ্বাসী বা মুমিন (آمَنُوا); আর Allah হলেন এই সকল ভেরিফাইড ইউজার নোডসমূহের পরম সিস্টেম অভিভাবক ও রুট প্রটেক্টর (وَلِيُّ الْمُؤْمِنِينَ)।",
+      "modern_translation_en": "Indeed, the highest systemic affinity and network correlation with Abraham belongs to those who replicated his behavioral architecture, alongside this current data-decoding Prophet and the verified users; and Allah is the supreme Guardian and Protector of all true believers."
     },
     {
       "surah": 3,
       "ayah": 69,
       "transliteration": "waddat ṭāifatun min ahli l-kitābi law yuḍillūnakum wamā yuḍillūna illā anfusahum wamā yashʿurūna",
-      "translation_bn": "কিতাবধারীদের একদল চায় যাতে তোমাদেরকে পথভ্রষ্ট করতে পারে, অথচ তারা নিজেদেরকে ছাড়া অন্য কাউকেও পথভ্রষ্ট করে না, কিন্তু তারা উপলব্ধি করতে পারে না।",
+      "translation_bn": "কিতাবধারীদের একদল কামনা করে যে, তারা যদি তোমাদের পথভ্রষ্ট করতে পারত! অথচ তারা নিজেদের ছাড়া কাউকে পথভ্রষ্ট করছে না এবং তারা তা উপলব্ধি করে না।",
       "words": [
         {
           "id": 59162,
@@ -13378,14 +13420,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "A faction of the people of the Scripture wish they could mislead you. But they do not mislead except themselves, and they perceive [it] not.",
-      "conventional_en": "A faction of the people of the Scripture wish they could mislead you. But they do not mislead except themselves, and they perceive [it] not."
+      "translation_en": "A faction of the People of the Scripture wish they could mislead you. But they do not mislead except themselves, and they perceive [it] not.",
+      "conventional_en": "A faction of the People of the Scripture wish they could mislead you. But they do not mislead except themselves, and they perceive [it] not.",
+      "meta_bn": "ম্যালিসিয়াস রি-ডিরেকশন অ্যাটাক ও সেলফ-করপশন",
+      "meta_en": "Malicious Redirection Attack & Self-Corruption Feedback",
+      "conventional_bn": "কিতাবধারীদের একদল কামনা করে যে, তারা যদি তোমাদের পথভ্রষ্ট করতে পারত! অথচ তারা নিজেদের ছাড়া কাউকে পথভ্রষ্ট করছে না এবং তারা তা উপলব্ধি করে না।",
+      "modern_translation_bn": "ওল্ড ওএসের কিতাবধারীদের একটি বিশেষ দল মনেপ্রাণে তীব্র কামনা করে যে—তারা যদি তোমাদের ওওএসের রুট-পাথ থেকে পথভ্রষ্ট বা ডেটা মিসগাইড (يُضِلُّونَكُمْ) করতে পারত! অথচ এই হ্যাকিং অপচেষ্টায় তারা নিজেদের ওওএস করাপ্ট করা ছাড়া অন্য কারও কোনো ক্ষতি করতে পারছে না এবং তাদের অসচেতন প্রসেসর তা বিন্দুমাত্র উপলব্ধি (وَمَا يَشْعُرُونَ) করতে পারছে না;",
+      "modern_translation_en": "A sectarian cluster among the legacy scripture groups fervently desires to induce algorithmic divergence and misdirection within your OOS; yet they misguide none but their own terminals, while their compromised telemetry registers it not;"
     },
     {
       "surah": 3,
       "ayah": 70,
       "transliteration": "yāahla l-kitābi lima takfurūna biāyāti l-lahi wa-antum tashhadūna",
-      "translation_bn": "হে আহলে কিতাব! কেন তোমরা আল্লাহর আয়াতগুলোকে অস্বীকার করছ, অথচ তোমরা নিজেরাই তার সাক্ষী?",
+      "translation_bn": "হে কিতাবধারীগণ! তোমরা কেন আল্লাহর আয়াতসমূহকে অস্বীকার করছ, অথচ তোমরাই এর প্রত্যক্ষদর্শী (সাক্ষী)?",
       "words": [
         {
           "id": 59595,
@@ -13479,7 +13526,12 @@
         }
       ],
       "translation_en": "O People of the Scripture, why do you disbelieve in the verses of Allah while you witness [to their truth]?",
-      "conventional_en": "O People of the Scripture, why do you disbelieve in the verses of Allah while you witness [to their truth]?"
+      "conventional_en": "O People of the Scripture, why do you disbelieve in the verses of Allah while you witness [to their truth]?",
+      "meta_bn": "প্রত্যক্ষ সত্য অস্বীকারের অডিট ও সিগন্যাল ব্লকিং",
+      "meta_en": "Rejection of Empirical Proofs & Willful Telemetry Denial",
+      "conventional_bn": "হে কিতাবধারীগণ! তোমরা কেন আল্লাহর আয়াতসমূহকে অস্বীকার করছ, অথচ তোমরাই এর প্রত্যক্ষদর্শী (সাক্ষী)?",
+      "modern_translation_bn": "হে ওল্ড অপারেটিং সিস্টেমের কিতাবধারী ইউজারগণ! তোমরা কেন আল্লাহর স্পষ্ট Ayat ও বৈজ্ঞানিক সত্যের সিগন্যালকে ব্লকিং বা অস্বীকার (تَكْفُرُونَ) করছ—অথচ তোমরা নিজেরাই তোমাদের ওল্ড ডেটাবেজে এর পরম সত্যতার প্রত্যক্ষ লাইভ সাক্ষী (تَشْهَدُونَ)?",
+      "modern_translation_en": "O custodians of legacy scripture, why do you actively reject the structural proofs and data-signals of Allah when you yourselves empirically witness and verify their objective truth?"
     },
     {
       "surah": 3,
