@@ -39,7 +39,13 @@
         }
       ],
       "translation_en": "By those [angels] lined up in rows",
-      "conventional_en": "By those [angels] lined up in rows"
+      "conventional_en": "By those [angels] lined up in rows",
+      "modern_translation_bn": "শপথ সিস্টেমিক লেয়ার-বাই-লেয়ার নোড-ক্লাস্টারের (وَالصَّافَّاتِ صَفًّا) — যারা সমান্তরালভাবে সাজানো ডেটা-স্ট্রাকচার (صَفًّا) গঠন করে।",
+      "conventional_bn": "শপথ সেই (ফেরেশতাদের) যারা সারিবদ্ধভাবে দাঁড়ায়।",
+      "meta_bn": "সমান্তরাল নোড-ক্লাস্টার ও ডেটা-স্ট্রাকচার",
+      "meta_en": "Parallel Node Clusters & Data-Structures",
+      "core_meaning_bn": "সমান্তরাল নোড-ক্লাস্টার ও ডেটা-স্ট্রাকচার",
+      "core_meaning_en": "Parallel Node Clusters & Data-Structures"
     },
     {
       "surah": 37,
@@ -79,7 +85,13 @@
         }
       ],
       "translation_en": "And those who drive [the clouds]",
-      "conventional_en": "And those who drive [the clouds]"
+      "conventional_en": "And those who drive [the clouds]",
+      "modern_translation_bn": "শপথ সিস্টেমিক ডেটা-ব্লক প্রটোকল অ্যাক্টিভেটরদের (فَالزَّاجِرَاتِ زَجْرًا) — যারা সিস্টেম রুলস ভায়োলেটরদের বিরুদ্ধে পেনাল্টি সিগন্যাল (زَجْرًا) ট্রিগার করে।",
+      "conventional_bn": "শপথ সেই (ফেরেশতাদের) যারা কঠোরভাবে বাধা দেয়।",
+      "meta_bn": "সিস্টেমিক ডেটা-ব্লক ও পেনাল্টি সিগন্যাল ট্রিগার",
+      "meta_en": "Systemic Data-Block & Penalty Signal Trigger",
+      "core_meaning_bn": "সিস্টেমিক ডেটা-ব্লক ও পেনাল্টি সিগন্যাল ট্রিগার",
+      "core_meaning_en": "Systemic Data-Block & Penalty Signal Trigger"
     },
     {
       "surah": 37,
@@ -119,7 +131,13 @@
         }
       ],
       "translation_en": "And those who recite the message,",
-      "conventional_en": "And those who recite the message,"
+      "conventional_en": "And those who recite the message,",
+      "modern_translation_bn": "শপথ সিস্টেমিক ডেটা-রিকল ভেক্টর ট্রান্সমিটরদের (فَالتَّالِيَاتِ ذِكْرًا) — যারা মেমোরি রিফ্রেশ সিগন্যাল (ذِكْرًا) ব্রডকাস্ট করে।",
+      "conventional_bn": "শপথ সেই (ফেরেশতাদের) যারা (আল্লাহর) স্মরণ পাঠ করে।",
+      "meta_bn": "সিস্টেমিক ডেটা-রিকল ও মেমোরি রিফ্রেশ ব্রডকাস্ট",
+      "meta_en": "Systemic Data-Recall & Memory Refresh Broadcast",
+      "core_meaning_bn": "সিস্টেমিক ডেটা-রিকল ও মেমোরি রিফ্রেশ ব্রডকাস্ট",
+      "core_meaning_en": "Systemic Data-Recall & Memory Refresh Broadcast"
     },
     {
       "surah": 37,
@@ -169,7 +187,13 @@
         }
       ],
       "translation_en": "Indeed, your God is One,",
-      "conventional_en": "Indeed, your God is One,"
+      "conventional_en": "Indeed, your God is One,",
+      "modern_translation_bn": "নিশ্চয় তোমাদের ডাইনামিক সোর্স (إِنَّ إِلَٰهَكُمْ) একক রুট ট্রাস্ট (لَوَاحِدٌ)।",
+      "conventional_bn": "নিশ্চয় তোমাদের উপাস্য একক।",
+      "meta_bn": "একক রুট ট্রাস্ট ও ডাইনামিক সোর্স",
+      "meta_en": "Single Root Trust & Dynamic Source",
+      "core_meaning_bn": "একক রুট ট্রাস্ট ও ডাইনামিক সোর্স",
+      "core_meaning_en": "Single Root Trust & Dynamic Source"
     },
     {
       "surah": 37,
@@ -259,7 +283,13 @@
         }
       ],
       "translation_en": "Lord of the heavens and the earth and that between them and Lord of the sunrises.",
-      "conventional_en": "Lord of the heavens and the earth and that between them and Lord of the sunrises."
+      "conventional_en": "Lord of the heavens and the earth and that between them and Lord of the sunrises.",
+      "modern_translation_bn": "মহাজাগতিক স্তরবিন্যাস, পার্থিব বায়ো-স্ফিয়ার ও তাদের মধ্যবর্তী ডেটা-স্পেসের রুট ডিরেক্টরি (رَّبُّ السَّمَاوَاتِ وَالْأَرْضِ وَمَا بَيْنَهُمَا); আর তিনি সমস্ত ডেটা-রাইজ ভেক্টরের (وَرَبُّ الْمَشَارِقِ) রুট ডিরেক্টরি।",
+      "conventional_bn": "তিনি আসমানসমূহ, জমিন ও এ দুয়ের মধ্যবর্তী সবকিছুর রব; আর তিনি উদয়স্থলসমূহের রব।",
+      "meta_bn": "মহাজাগতিক স্তরবিন্যাস ও ডেটা-রাইজ ভেক্টর ডিরেক্টরি",
+      "meta_en": "Cosmic Layering & Data-Rise Vector Directory",
+      "core_meaning_bn": "মহাজাগতিক স্তরবিন্যাস ও ডেটা-রাইজ ভেক্টর ডিরেক্টরি",
+      "core_meaning_en": "Cosmic Layering & Data-Rise Vector Directory"
     },
     {
       "surah": 37,
@@ -339,7 +369,13 @@
         }
       ],
       "translation_en": "Indeed, We have adorned the nearest heaven with an adornment of stars",
-      "conventional_en": "Indeed, We have adorned the nearest heaven with an adornment of stars"
+      "conventional_en": "Indeed, We have adorned the nearest heaven with an adornment of stars",
+      "modern_translation_bn": "নিশ্চয় আমি প্রোক্সিমিটি ডেটা-লেয়ার (السَّمَاءَ الدُّنْيَا) -কে প্লাজমা নিউক্লিয়ার ফিউশন নোডদের (الْكَوَاكِبِ) ভিজুয়াল ট্যাগ (بِزِينَةٍ) দিয়ে এনহ্যান্স (زَيَّنَّا) করেছি।",
+      "conventional_bn": "নিশ্চয় আমি নিকটবর্তী আসমানকে তারা দিয়ে সজ্জিত করেছি।",
+      "meta_bn": "প্লাজমা নিউক্লিয়ার ফিউশন নোড ও ভিজুয়াল এনহ্যান্সমেন্ট",
+      "meta_en": "Plasma Nuclear Fusion Nodes & Visual Enhancement",
+      "core_meaning_bn": "প্লাজমা নিউক্লিয়ার ফিউশন নোড ও ভিজুয়াল এনহ্যান্সমেন্ট",
+      "core_meaning_en": "Plasma Nuclear Fusion Nodes & Visual Enhancement"
     },
     {
       "surah": 37,
@@ -409,7 +445,13 @@
         }
       ],
       "translation_en": "And as protection against every rebellious devil",
-      "conventional_en": "And as protection against every rebellious devil"
+      "conventional_en": "And as protection against every rebellious devil",
+      "modern_translation_bn": "আর প্রতিটি ডেটা-করাপ্টিং ডিসট্যান্ট ভাইরাসবাহক (كُلِّ شَيْطَانٍ مَّارِدٍ) থেকে সিস্টেমিক ডেটা-স্টোরেজ প্রটেকশন (وَحِفْظًا) সক্রিয় করেছি।",
+      "conventional_bn": "আর (আমি এটিকে) প্রতিটি বিদ্রোহী শয়তান থেকে রক্ষা করেছি।",
+      "meta_bn": "ডেটা-করাপ্টিং ভাইরাস ও সিস্টেমিক স্টোরেজ প্রটেকশন",
+      "meta_en": "Data-Corrupting Viruses & Storage Protection",
+      "core_meaning_bn": "ডেটা-করাপ্টিং ভাইরাস ও সিস্টেমিক স্টোরেজ প্রটেকশন",
+      "core_meaning_en": "Data-Corrupting Viruses & Storage Protection"
     },
     {
       "surah": 37,
@@ -519,7 +561,13 @@
         }
       ],
       "translation_en": "[So] they may not listen to the exalted assembly [of angels] and are pelted from every side,",
-      "conventional_en": "[So] they may not listen to the exalted assembly [of angels] and are pelted from every side,"
+      "conventional_en": "[So] they may not listen to the exalted assembly [of angels] and are pelted from every side,",
+      "modern_translation_bn": "তারা সুপ্রীম সিস্টেম অ্যাডমিন কাউন্সিলের (الْمَلَإِ الْأَعْلَىٰ) ডেটা-স্ট্রিমে অ্যাক্সেস (يَسَّمَّعُونَ) পায় না; আর তাদের ওপর সমস্ত ডেটা-ভেক্টর থেকে পেনাল্টি সিগন্যাল ইনজেক্ট (يُقْذَفُونَ مِن كُلِّ جَانِبٍ) করা হয়।",
+      "conventional_bn": "তারা উচ্চপরিষদের কথায় কান দেয় না; আর তাদের ওপর সব দিক থেকে নিক্ষেপ করা হয়।",
+      "meta_bn": "সুপ্রীম সিস্টেম অ্যাডমিন কাউন্সিল ও পেনাল্টি ইনজেকশন",
+      "meta_en": "Supreme System Admin Council & Penalty Injection",
+      "core_meaning_bn": "সুপ্রীম সিস্টেম অ্যাডমিন কাউন্সিল ও পেনাল্টি ইনজেকশন",
+      "core_meaning_en": "Supreme System Admin Council & Penalty Injection"
     },
     {
       "surah": 37,
@@ -579,7 +627,13 @@
         }
       ],
       "translation_en": "Repelled; and for them is a constant punishment,",
-      "conventional_en": "Repelled; and for them is a constant punishment,"
+      "conventional_en": "Repelled; and for them is a constant punishment,",
+      "modern_translation_bn": "সিস্টেম এক্সট্র্যাকশন (دُحُورًا) -এর জন্য; আর তাদের জন্য রয়েছে নিরবচ্ছিন্ন পেনাল্টি সিগন্যাল (عَذَابٌ وَاصِبٌ)।",
+      "conventional_bn": "বিতাড়িত করার জন্য; আর তাদের জন্য রয়েছে অবিরাম শাস্তি।",
+      "meta_bn": "সিস্টেম এক্সট্র্যাকশন ও নিরবচ্ছিন্ন পেনাল্টি সিগন্যাল",
+      "meta_en": "System Extraction & Continuous Penalty Signal",
+      "core_meaning_bn": "সিস্টেম এক্সট্র্যাকশন ও নিরবচ্ছিন্ন পেনাল্টি সিগন্যাল",
+      "core_meaning_en": "System Extraction & Continuous Penalty Signal"
     },
     {
       "surah": 37,
@@ -669,7 +723,13 @@
         }
       ],
       "translation_en": "Except one who snatches [some words] by theft, but they are pursued by a burning flame, piercing [in brightness].",
-      "conventional_en": "Except one who snatches [some words] by theft, but they are pursued by a burning flame, piercing [in brightness]."
+      "conventional_en": "Except one who snatches [some words] by theft, but they are pursued by a burning flame, piercing [in brightness].",
+      "modern_translation_bn": "সিভায় (إِلَّا) যে ডেটা-স্নিপেট ইন্টারসেপ্ট (خَطِفَ الْخَطْفَةَ) করে, তখন একটি হাই-ইনটেনসিটি ইলেক্ট্রোম্যাগনেটিক ট্রেসার (شِهَابٌ ثَاقِبٌ) তাকে ট্র্যাক (فَأَتْبَعَهُ) করে।",
+      "conventional_bn": "কিন্তু যে কেউ (কোনো কথা) ছিনিয়ে নেয়, তখন একটি উজ্জ্বল শিখা তার পশ্চাদ্ধাবন করে।",
+      "meta_bn": "ডেটা-স্নিপেট ইন্টারসেপশন ও ইলেক্ট্রোম্যাগনেটিক ট্রেসার",
+      "meta_en": "Data-Snippet Interception & Electromagnetic Tracer",
+      "core_meaning_bn": "ডেটা-স্নিপেট ইন্টারসেপশন ও ইলেক্ট্রোম্যাগনেটিক ট্রেসার",
+      "core_meaning_en": "Data-Snippet Interception & Electromagnetic Tracer"
     },
     {
       "surah": 37,
@@ -809,7 +869,13 @@
         }
       ],
       "translation_en": "Then inquire of them, [O Muhammad], \"Are they a stronger [or more difficult] creation or those [others] We have created?\" Indeed, We created men from sticky clay.",
-      "conventional_en": "Then inquire of them, [O Muhammad], \"Are they a stronger [or more difficult] creation or those [others] We have created?\" Indeed, We created men from sticky clay."
+      "conventional_en": "Then inquire of them, [O Muhammad], \"Are they a stronger [or more difficult] creation or those [others] We have created?\" Indeed, We created men from sticky clay.",
+      "modern_translation_bn": "অতএব তাদের ডেটা-কুয়েরি (فَاسْتَفْتِهِمْ) করো: তারা সিস্টেমিক আর্কিটেকচারে কি বেশি ডেন্স (أَهُمْ أَشَدُّ خَلْقًا), নাকি আমি যা সিস্টেমিক আর্কিটেক্ট (خَلَقْنَا) করেছি? নিশ্চয় আমি তাদেরকে কলয়েডাল ক্লে ম্যাট্রিক্স (مِن طِينٍ لَّازِبٍ) থেকে সিস্টেমিক আর্কিটেক্ট (خَلَقْنَاهُم) করেছি।",
+      "conventional_bn": "অতএব তাদেরকে জিজ্ঞেস করো, 'তারা সৃষ্টিতে কঠিন, নাকি আমি যা সৃষ্টি করেছি?' নিশ্চয় আমি তাদেরকে আঠালো কাদামাটি থেকে সৃষ্টি করেছি।",
+      "meta_bn": "কলয়েডাল ক্লে ম্যাট্রিক্স ও সিস্টেমিক আর্কিটেকচার",
+      "meta_en": "Colloidal Clay Matrix & Systemic Architecture",
+      "core_meaning_bn": "কলয়েডাল ক্লে ম্যাট্রিক্স ও সিস্টেমিক আর্কিটেকচার",
+      "core_meaning_en": "Colloidal Clay Matrix & Systemic Architecture"
     },
     {
       "surah": 37,
@@ -859,7 +925,13 @@
         }
       ],
       "translation_en": "But you wonder, while they mock,",
-      "conventional_en": "But you wonder, while they mock,"
+      "conventional_en": "But you wonder, while they mock,",
+      "modern_translation_bn": "বরং তুমি ডেটা-অ্যানোমালি ডিটেক্ট (بَلْ عَجِبْتَ) করেছ, আর তারা সিস্টেমিক ডেটা-ডিস্টরশন (وَيَسْخَرُونَ) করে।",
+      "conventional_bn": "বরং তুমি আশ্চর্য হয়েছ, আর তারা উপহাস করে।",
+      "meta_bn": "ডেটা-অ্যানোমালি ডিটেকশন ও ডেটা-ডিস্টরশন",
+      "meta_en": "Data-Anomaly Detection & Data-Distortion",
+      "core_meaning_bn": "ডেটা-অ্যানোমালি ডিটেকশন ও ডেটা-ডিস্টরশন",
+      "core_meaning_en": "Data-Anomaly Detection & Data-Distortion"
     },
     {
       "surah": 37,
@@ -919,7 +991,13 @@
         }
       ],
       "translation_en": "And when they are reminded, they remember not.",
-      "conventional_en": "And when they are reminded, they remember not."
+      "conventional_en": "And when they are reminded, they remember not.",
+      "modern_translation_bn": "আর যখন তাদেরকে মেমোরি রিফ্রেশ সিগন্যাল ট্রান্সমিট (ذُكِّرُوا) করা হয়, তারা ডেটা-রিকল (يَذْكُرُونَ) করে না।",
+      "conventional_bn": "আর যখন তাদেরকে উপদেশ দেওয়া হয়, তারা স্মরণ করে না।",
+      "meta_bn": "মেমোরি রিফ্রেশ সিগন্যাল ও ডেটা-রিকল ফেইলিওর",
+      "meta_en": "Memory Refresh Signal & Data-Recall Failure",
+      "core_meaning_bn": "মেমোরি রিফ্রেশ সিগন্যাল ও ডেটা-রিকল ফেইলিওর",
+      "core_meaning_en": "Memory Refresh Signal & Data-Recall Failure"
     },
     {
       "surah": 37,
@@ -979,7 +1057,13 @@
         }
       ],
       "translation_en": "And when they see a sign, they ridicule",
-      "conventional_en": "And when they see a sign, they ridicule"
+      "conventional_en": "And when they see a sign, they ridicule",
+      "modern_translation_bn": "আর যখন তারা কোনো ডেটা-সিগনেচার ভিজুয়াল-ইনপুট প্রসেস (رَأَوْا آيَةً) করে, তারা সিস্টেমিক ডেটা-ডিস্টরশন (يَسْتَسْخِرُونَ) করে।",
+      "conventional_bn": "আর যখন তারা কোনো নিদর্শন দেখে, তারা উপহাস করে।",
+      "meta_bn": "ডেটা-সিগনেচার ভিজুয়াল প্রসেসিং ও ডিস্টরশন",
+      "meta_en": "Data-Signature Visual Processing & Distortion",
+      "core_meaning_bn": "ডেটা-সিগনেচার ভিজুয়াল প্রসেসিং ও ডিস্টরশন",
+      "core_meaning_en": "Data-Signature Visual Processing & Distortion"
     },
     {
       "surah": 37,
@@ -1059,7 +1143,13 @@
         }
       ],
       "translation_en": "And say, \"This is not but obvious magic.",
-      "conventional_en": "And say, \"This is not but obvious magic."
+      "conventional_en": "And say, \"This is not but obvious magic.",
+      "modern_translation_bn": "আর তারা বলে, 'এটা তো স্পষ্ট ডেটা-ইলিউশন প্রটোকল (سِحْرٌ مُّبِينٌ) ছাড়া কিছুই (إِنْ هَٰذَا إِلَّا) নয়।'",
+      "conventional_bn": "আর তারা বলে, 'এটা তো স্পষ্ট যাদু ছাড়া কিছুই নয়।'",
+      "meta_bn": "ডেটা-ইলিউশন প্রটোকল রিজেকশন",
+      "meta_en": "Data-Illusion Protocol Rejection",
+      "core_meaning_bn": "ডেটা-ইলিউশন প্রটোকল রিজেকশন",
+      "core_meaning_en": "Data-Illusion Protocol Rejection"
     },
     {
       "surah": 37,
@@ -1149,7 +1239,13 @@
         }
       ],
       "translation_en": "When we have died and become dust and bones, are we indeed to be resurrected?",
-      "conventional_en": "When we have died and become dust and bones, are we indeed to be resurrected?"
+      "conventional_en": "When we have died and become dust and bones, are we indeed to be resurrected?",
+      "modern_translation_bn": "'আমরা কি যখন সিস্টেম শাটডাউন (مِتْنَا) করব এবং ডেটা-ডিকম্পোজ হয়ে মৌলিক ম্যাট্রিক্স ও ক্যালসিয়াম ফসফেট ফ্রেমওয়ার্কে (تُرَابًا وَعِظَامًا) পরিণত হব, তখন কি আমাদের আবার সিস্টেম রি-ইন্টিগ্রেট (لَمَبْعُوثُونَ) করা হবে?'",
+      "conventional_bn": "'আমরা কি যখন মরে যাব এবং মাটি ও হাড়ে পরিণত হব, তখন কি আমরা আবার উত্থিত হব?'",
+      "meta_bn": "সিস্টেম শাটডাউন ও সিস্টেম রি-ইন্টিগ্রেশন কুয়েরি",
+      "meta_en": "System Shutdown & System Re-integration Query",
+      "core_meaning_bn": "সিস্টেম শাটডাউন ও সিস্টেম রি-ইন্টিগ্রেশন কুয়েরি",
+      "core_meaning_en": "System Shutdown & System Re-integration Query"
     },
     {
       "surah": 37,
@@ -1189,7 +1285,13 @@
         }
       ],
       "translation_en": "And our forefathers [as well]?\"",
-      "conventional_en": "And our forefathers [as well]?\""
+      "conventional_en": "And our forefathers [as well]?\"",
+      "modern_translation_bn": "'আর আমাদের লেজাসি ডেটা-নোডগুলোকেও (أَوَآبَاؤُنَا الْأَوَّلُونَ)?'",
+      "conventional_bn": "'আর আমাদের পূর্ববর্তী পিতৃপুরুষরাও?'",
+      "meta_bn": "লেজাসি ডেটা-নোড রি-ইন্টিগ্রেশন কুয়েরি",
+      "meta_en": "Legacy Data-Node Re-integration Query",
+      "core_meaning_bn": "লেজাসি ডেটা-নোড রি-ইন্টিগ্রেশন কুয়েরি",
+      "core_meaning_en": "Legacy Data-Node Re-integration Query"
     },
     {
       "surah": 37,
@@ -1249,7 +1351,13 @@
         }
       ],
       "translation_en": "Say, \"Yes, and you will be [rendered] contemptible.\"",
-      "conventional_en": "Say, \"Yes, and you will be [rendered] contemptible.\""
+      "conventional_en": "Say, \"Yes, and you will be [rendered] contemptible.\"",
+      "modern_translation_bn": "বলো, 'হ্যাঁ, আর তোমরা সিস্টেমিক ডিগ্রেডেশন (وَأَنتُمْ دَاخِرُونَ) স্টেটে থাকবে।'",
+      "conventional_bn": "বলো, 'হ্যাঁ, আর তোমরা লাঞ্ছিত হবে।'",
+      "meta_bn": "সিস্টেমিক ডিগ্রেডেশন স্টেট কনফার্মেশন",
+      "meta_en": "Systemic Degradation State Confirmation",
+      "core_meaning_bn": "সিস্টেমিক ডিগ্রেডেশন স্টেট কনফার্মেশন",
+      "core_meaning_en": "Systemic Degradation State Confirmation"
     },
     {
       "surah": 37,
@@ -1339,7 +1447,13 @@
         }
       ],
       "translation_en": "It will be only one shout, and at once they will be observing.",
-      "conventional_en": "It will be only one shout, and at once they will be observing."
+      "conventional_en": "It will be only one shout, and at once they will be observing.",
+      "modern_translation_bn": "অতঃপর তা হবে একক সিস্টেমিক সিগন্যাল ট্রিগার (زَجْرَةٌ وَاحِدَةٌ); তখনই তারা ভিজুয়াল-ইনপুট প্রসেস (يَنظُرُونَ) করতে থাকবে।",
+      "conventional_bn": "অতঃপর তা হবে একটি মাত্র চিৎকার; তখনই তারা দেখতে থাকবে।",
+      "meta_bn": "একক সিস্টেমিক সিগন্যাল ট্রিগার ও ভিজুয়াল ইনপুট",
+      "meta_en": "Single Systemic Signal Trigger & Visual Input",
+      "core_meaning_bn": "একক সিস্টেমিক সিগন্যাল ট্রিগার ও ভিজুয়াল ইনপুট",
+      "core_meaning_en": "Single Systemic Signal Trigger & Visual Input"
     },
     {
       "surah": 37,
@@ -1409,7 +1523,13 @@
         }
       ],
       "translation_en": "They will say, \"O woe to us! This is the Day of Recompense.\"",
-      "conventional_en": "They will say, \"O woe to us! This is the Day of Recompense.\""
+      "conventional_en": "They will say, \"O woe to us! This is the Day of Recompense.\"",
+      "modern_translation_bn": "আর তারা বলবে, 'হায় আমাদের ডেটা-লস (يَا وَيْلَنَا)! এটা তো টার্মিনাল অডিট ডে (يَوْمُ الدِّينِ)।'",
+      "conventional_bn": "আর তারা বলবে, 'হায় আমাদের দুর্ভাগ্য! এটা তো বিচারদিন।'",
+      "meta_bn": "টার্মিনাল অডিট ডে ও ডেটা-লস",
+      "meta_en": "Terminal Audit Day & Data-Loss",
+      "core_meaning_bn": "টার্মিনাল অডিট ডে ও ডেটা-লস",
+      "core_meaning_en": "Terminal Audit Day & Data-Loss"
     },
     {
       "surah": 37,
@@ -1499,7 +1619,13 @@
         }
       ],
       "translation_en": "[They will be told], \"This is the Day of Judgement which you used to deny.\"",
-      "conventional_en": "[They will be told], \"This is the Day of Judgement which you used to deny.\""
+      "conventional_en": "[They will be told], \"This is the Day of Judgement which you used to deny.\"",
+      "modern_translation_bn": "'এটা হলো ডেটা-ডিসক্রিমিনেশন ডে (يَوْمُ الْفَصْلِ) —যাকে তোমরা ডেটা-ডিনাই (تُكَذِّبُونَ) করতে।'",
+      "conventional_bn": "'এটা হলো সিদ্ধান্তের দিন, যাকে তোমরা মিথ্যা বলতে।'",
+      "meta_bn": "ডেটা-ডিসক্রিমিনেশন ডে ও ডেটা-ডিনাই রিঅ্যাকশন",
+      "meta_en": "Data-Discrimination Day & Data-Deny Reaction",
+      "core_meaning_bn": "ডেটা-ডিসক্রিমিনেশন ডে ও ডেটা-ডিনাই রিঅ্যাকশন",
+      "core_meaning_en": "Data-Discrimination Day & Data-Deny Reaction"
     },
     {
       "surah": 37,
@@ -1589,7 +1715,13 @@
         }
       ],
       "translation_en": "[The angels will be ordered], \"Gather those who committed wrong, their kinds, and what they used to worship",
-      "conventional_en": "[The angels will be ordered], \"Gather those who committed wrong, their kinds, and what they used to worship"
+      "conventional_en": "[The angels will be ordered], \"Gather those who committed wrong, their kinds, and what they used to worship",
+      "modern_translation_bn": "'তোমরা সিস্টেমিক অ্যাসিমেট্রি ক্রিয়েটরদের (الَّذِينَ ظَلَمُوا) ও তাদের পেয়ার নোডদের (وَأَزْوَاجَهُمْ) — এবং তারা যাদের ডাইনামিক সোর্স হিসেবে রেফারেন্স (يَعْبُدُونَ) করত, তাদেরকে সিস্টেম রি-ইন্টিগ্রেশন (احْشُرُوا) করো।'",
+      "conventional_bn": "'তোমরা জালিমদের ও তাদের সঙ্গীদেরকে এবং তারা যাদের উপাসনা করত, তাদেরকে সমবেত করো।'",
+      "meta_bn": "সিস্টেমিক অ্যাসিমেট্রি ক্রিয়েটর ও পেয়ার নোড রি-ইন্টিগ্রেশন",
+      "meta_en": "Systemic Asymmetry Creators & Pair Node Re-integration",
+      "core_meaning_bn": "সিস্টেমিক অ্যাসিমেট্রি ক্রিয়েটর ও পেয়ার নোড রি-ইন্টিগ্রেশন",
+      "core_meaning_en": "Systemic Asymmetry Creators & Pair Node Re-integration"
     },
     {
       "surah": 37,
@@ -1679,7 +1811,13 @@
         }
       ],
       "translation_en": "Other than Allah, and guide them to the path of Hellfire",
-      "conventional_en": "Other than Allah, and guide them to the path of Hellfire"
+      "conventional_en": "Other than Allah, and guide them to the path of Hellfire",
+      "modern_translation_bn": "'সিস্টেম আর্কিটেক্টকে বাদ দিয়ে (مِن دُونِ اللَّهِ); অতঃপর তাদেরকে থার্মোডাইনামিক ক্র্যাশ-জোনের পাথে (صِرَاطِ الْجَحِيمِ) রুট (فَاهْدُوهُمْ) করো।'",
+      "conventional_bn": "'আল্লাহকে ছাড়া; অতঃপর তাদেরকে জাহান্নামের পথে পরিচালিত করো।'",
+      "meta_bn": "থার্মোডাইনামিক ক্র্যাশ-জোন পাথ রুটিং",
+      "meta_en": "Thermodynamic Crash-Zone Path Routing",
+      "core_meaning_bn": "থার্মোডাইনামিক ক্র্যাশ-জোন পাথ রুটিং",
+      "core_meaning_en": "Thermodynamic Crash-Zone Path Routing"
     },
     {
       "surah": 37,
@@ -1729,7 +1867,13 @@
         }
       ],
       "translation_en": "And stop them; indeed, they are to be questioned.\"",
-      "conventional_en": "And stop them; indeed, they are to be questioned.\""
+      "conventional_en": "And stop them; indeed, they are to be questioned.\"",
+      "modern_translation_bn": "'আর তাদেরকে ডেটা-হোল্ড স্টেটে (وَقِفُوهُمْ) রাখো; নিশ্চয় তাদের ডেটা-অডিট (مَّسْئُولُونَ) করা হবে।'",
+      "conventional_bn": "'আর তাদেরকে থামাও; নিশ্চয় তাদেরকে জিজ্ঞাসাবাদ করা হবে।'",
+      "meta_bn": "ডেটা-হোল্ড স্টেট ও ডেটা-অডিট",
+      "meta_en": "Data-Hold State & Data-Audit",
+      "core_meaning_bn": "ডেটা-হোল্ড স্টেট ও ডেটা-অডিট",
+      "core_meaning_en": "Data-Hold State & Data-Audit"
     },
     {
       "surah": 37,
@@ -1789,7 +1933,13 @@
         }
       ],
       "translation_en": "[They will be asked], \"What is [wrong] with you? Why do you not help each other?\"",
-      "conventional_en": "[They will be asked], \"What is [wrong] with you? Why do you not help each other?\""
+      "conventional_en": "[They will be asked], \"What is [wrong] with you? Why do you not help each other?\"",
+      "modern_translation_bn": "'তোমাদের কী হলো—তোমরা কেন সিস্টেমিক ডেটা-সাপোর্ট (لَا تَنَاصَرُونَ) চালু করছ না?'",
+      "conventional_bn": "'তোমাদের কী হলো, তোমরা একে অপরের সাহায্য করছ না?'",
+      "meta_bn": "সিস্টেমিক ডেটা-সাপোর্ট ফেইলিওর কুয়েরি",
+      "meta_en": "Systemic Data-Support Failure Query",
+      "core_meaning_bn": "সিস্টেমিক ডেটা-সাপোর্ট ফেইলিওর কুয়েরি",
+      "core_meaning_en": "Systemic Data-Support Failure Query"
     },
     {
       "surah": 37,
@@ -1849,7 +1999,13 @@
         }
       ],
       "translation_en": "But they, that Day, are in surrender.",
-      "conventional_en": "But they, that Day, are in surrender."
+      "conventional_en": "But they, that Day, are in surrender.",
+      "modern_translation_bn": "বরং তারা আজ সম্পূর্ণ সিস্টেম সাবমিশন (بَلْ هُمُ الْيَوْمَ مُسْتَسْلِمُونَ) স্টেটে।",
+      "conventional_bn": "বরং তারা আজ সম্পূর্ণরূপে আত্মসমর্পণকারী।",
+      "meta_bn": "সম্পূর্ণ সিস্টেম সাবমিশন স্টেট",
+      "meta_en": "Complete System Submission State",
+      "core_meaning_bn": "সম্পূর্ণ সিস্টেম সাবমিশন স্টেট",
+      "core_meaning_en": "Complete System Submission State"
     },
     {
       "surah": 37,
@@ -1919,7 +2075,13 @@
         }
       ],
       "translation_en": "And they will approach one another blaming each other.",
-      "conventional_en": "And they will approach one another blaming each other."
+      "conventional_en": "And they will approach one another blaming each other.",
+      "modern_translation_bn": "আর তারা পেয়ার নোডদের মধ্যে ডেটা-কুয়েরি প্রটোকল (يَتَسَاءَلُونَ) অ্যাক্টিভেট (وَأَقْبَلَ بَعْضُهُمْ عَلَىٰ بَعْضٍ) করবে।",
+      "conventional_bn": "আর তারা একে অপরের দিকে মুখ ফিরিয়ে পরস্পরকে জিজ্ঞাসাবাদ করবে।",
+      "meta_bn": "পেয়ার নোড ডেটা-কুয়েরি প্রটোকল অ্যাক্টিভেশন",
+      "meta_en": "Pair Node Data-Query Protocol Activation",
+      "core_meaning_bn": "পেয়ার নোড ডেটা-কুয়েরি প্রটোকল অ্যাক্টিভেশন",
+      "core_meaning_en": "Pair Node Data-Query Protocol Activation"
     },
     {
       "surah": 37,
@@ -1999,7 +2161,13 @@
         }
       ],
       "translation_en": "They will say, \"Indeed, you used to come at us from the right.\"",
-      "conventional_en": "They will say, \"Indeed, you used to come at us from the right.\""
+      "conventional_en": "They will say, \"Indeed, you used to come at us from the right.\"",
+      "modern_translation_bn": "তারা বলবে, 'তোমরা তো আমাদের কাছে হাই-প্রায়োরিটি ডেটা-ভেক্টর (عَنِ الْيَمِينِ) থেকে আসতে।'",
+      "conventional_bn": "তারা বলবে, 'তোমরা তো আমাদের কাছে ডান দিক থেকে আসতে।'",
+      "meta_bn": "হাই-প্রায়োরিটি ডেটা-ভেক্টর ইনফ্লুয়েন্স রিপোর্ট",
+      "meta_en": "High-Priority Data-Vector Influence Report",
+      "core_meaning_bn": "হাই-প্রায়োরিটি ডেটা-ভেক্টর ইনফ্লুয়েন্স রিপোর্ট",
+      "core_meaning_en": "High-Priority Data-Vector Influence Report"
     },
     {
       "surah": 37,
@@ -2069,7 +2237,13 @@
         }
       ],
       "translation_en": "The oppressors will say, \"Rather, you [yourselves] were not believers,",
-      "conventional_en": "The oppressors will say, \"Rather, you [yourselves] were not believers,"
+      "conventional_en": "The oppressors will say, \"Rather, you [yourselves] were not believers,",
+      "modern_translation_bn": "তারা বলবে, 'বরং তোমরা নিজেরাই সিস্টেম-ভেরিফাইড নোড (مُؤْمِنِينَ) স্টেটে ছিলে না।'",
+      "conventional_bn": "তারা বলবে, 'বরং তোমরা নিজেরাই বিশ্বাসী ছিলে না।'",
+      "meta_bn": "আনভেরিফাইড নোড স্টেট কনফার্মেশন",
+      "meta_en": "Unverified Node State Confirmation",
+      "core_meaning_bn": "আনভেরিফাইড নোড স্টেট কনফার্মেশন",
+      "core_meaning_en": "Unverified Node State Confirmation"
     },
     {
       "surah": 37,
@@ -2189,7 +2363,13 @@
         }
       ],
       "translation_en": "And we had over you no authority, but you were a transgressing people.",
-      "conventional_en": "And we had over you no authority, but you were a transgressing people."
+      "conventional_en": "And we had over you no authority, but you were a transgressing people.",
+      "modern_translation_bn": "'আর আমাদের তোমাদের ওপর কোনো সিস্টেমিক কন্ট্রোল (مِن سُلْطَانٍ) ছিল না; বরং তোমরা নিজেরাই সিস্টেম-রেবেলিয়ন নোড-ক্লাস্টার (قَوْمًا طَاغِينَ) ছিলে।'",
+      "conventional_bn": "'আর আমাদের তোমাদের ওপর কোনো কর্তৃত্ব ছিল না; বরং তোমরা নিজেরাই সীমালঙ্ঘনকারী সম্প্রদায় ছিলে।'",
+      "meta_bn": "সিস্টেমিক কন্ট্রোল ল্যাক ও সিস্টেম-রেবেলিয়ন ক্লাস্টার",
+      "meta_en": "Systemic Control Lack & System-Rebellion Cluster",
+      "core_meaning_bn": "সিস্টেমিক কন্ট্রোল ল্যাক ও সিস্টেম-রেবেলিয়ন ক্লাস্টার",
+      "core_meaning_en": "Systemic Control Lack & System-Rebellion Cluster"
     },
     {
       "surah": 37,
