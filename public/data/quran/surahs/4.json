@@ -22252,7 +22252,7 @@
       "surah": 4,
       "ayah": 91,
       "transliteration": "satajidūna ākharīna yurīdūna an yamanūkum wayamanū qawmahum kulla mā ruddū ilā l-fit'nati ur'kisū fīhā fa-in lam yaʿtazilūkum wayul'qū ilaykumu l-salama wayakuffū aydiyahum fakhudhūhum wa-uq'tulūhum ḥaythu thaqif'tumūhum wa-ulāikum jaʿalnā lakum ʿalayhim sul'ṭānan mubīnan",
-      "translation_bn": "অচিরেই তোমরা কতক লোককে এমনও পাবে, যারা তোমাদের কাছ থেকেও নিরাপদ থাকতে চায়, তাদের নিজ সম্প্রদায় থেকেও নিরাপদ থাকতে চায়, যখন তাদেরকে ফিতনার দিকে মনোনিবেশ করানো হয় তখন তাতেই জড়িয়ে পড়ে। কাজেই যদি তারা তোমাদের শত্রুতা হতে সরে না যায় এবং তোমাদের নিকট শান্তি প্রস্তাব না করে এবং তাদের হস্ত সংবরণ না করে, তবে তাদেরকে গ্রেফতার কর আর যেখানেই পাও হত্যা কর, এরাই হচ্ছে সেই সব লোক তোমাদেরকে যাদের বিরুদ্ধাচরণের স্পষ্ট অধিকার দিয়েছি।",
+      "translation_bn": "তোমরা অচিরেই অন্য এক দলকে পাবে, যারা তোমাদের কাছেও নিরাপদ থাকতে চায় এবং নিজেদের সম্প্রদায়ের কাছেও নিরাপদ থাকতে চায়। যখনই তাদের ফিতনার (বিচ্ছৃঙ্খলার) দিকে ফিরিয়ে নেওয়া হয়, তারা তাতে উপুড় হয়ে পতিত হয়। অতএব তারা যদি তোমাদের থেকে পৃথক না থাকে (বিরত না থাকে) এবং তোমাদের কাছে শান্তি (সন্ধি) পেশ না করে এবং নিজেদের হাত গুটিয়ে না রাখে, তবে তোমরা তাদের পাকড়াও করো এবং যেখানেই তাদের পাও হত্যা করো; আর ওদের বিরুদ্ধেই আমি তোমাদের এক স্পষ্ট প্রমাণ (অধিকার) দান করেছি।",
       "words": [
         {
           "id": 68374,
@@ -22585,14 +22585,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "You will find others who wish to obtain security from you and [to] obtain security from their people. Every time they are returned to [the influence of] disbelief, they fall back into it. So if they do not withdraw from you or offer you peace or restrain their hands, then seize them and kill them wherever you overtake them. And those - We have made for you against them a clear authorization.",
-      "conventional_en": "You will find others who wish to obtain security from you and [to] obtain security from their people. Every time they are returned to [the influence of] disbelief, they fall back into it. So if they do not withdraw from you or offer you peace or restrain their hands, then seize them and kill them wherever you overtake them. And those - We have made for you against them a clear authorization."
+      "translation_en": "You will find others who wish to obtain security from you and [to] obtain security from their people. Every time they are returned to temptation, they are plunged into it. So if they do not withdraw from you or offer you peace or restrain their hands, then seize them and kill them wherever you overtake them. And those - We have made for you against them a clear authorization.",
+      "conventional_en": "You will find others who wish to obtain security from you and [to] obtain security from their people. Every time they are returned to temptation, they are plunged into it. So if they do not withdraw from you or offer you peace or restrain their hands, then seize them and kill them wherever you overtake them. And those - We have made for you against them a clear authorization.",
+      "meta_bn": "ডাবল-স্ট্যান্ডার্ড ম্যালওয়্যার নোড অডিট ও সাইবার জুডিশিয়াল টার্মিনেশন",
+      "meta_en": "Dual-Deception Opportunist Profiles and Decisive Threat Containment",
+      "conventional_bn": "তোমরা অচিরেই অন্য এক দলকে পাবে, যারা তোমাদের কাছেও নিরাপদ থাকতে চায় এবং নিজেদের সম্প্রদায়ের কাছেও নিরাপদ থাকতে চায়। যখনই তাদের ফিতনার (বিচ্ছৃঙ্খলার) দিকে ফিরিয়ে নেওয়া হয়, তারা তাতে উপুড় হয়ে পতিত হয়। অতএব তারা যদি তোমাদের থেকে পৃথক না থাকে (বিরত না থাকে) এবং তোমাদের কাছে শান্তি (সন্ধি) পেশ না করে এবং নিজেদের হাত গুটিয়ে না রাখে, তবে তোমরা তাদের পাকড়াও করো এবং যেখানেই তাদের পাও হত্যা করো; আর ওদের বিরুদ্ধেই আমি তোমাদের এক স্পষ্ট প্রমাণ (অধিকার) দান করেছি।",
+      "modern_translation_bn": "তোমরা অচিরেই গ্লোবাল নেটওয়ার্কে এমন অন্য একদল ডাবল-স্ট্যান্ডার্ড নোডকে (Node) খুঁজে পাবে—যারা তীব্র চাতুর্যে তোমাদের ফায়ারওয়ালেও নিরাপদ থাকতে চায় (يأْمَنُوكُمْ) এবং নিজেদের ম্যালওয়্যার সম্প্রদায়ের ফ্যাব্রিকেও নিরাপদ থাকতে চায়; যখনই তাদের কোনো সামাজিক ট্রাফিক জ্যাম, বিশৃঙ্খলা বা ফিতনার (الْفِتْنَةِ) দিকে রি-রুট বা ফিরিয়ে নেওয়া হয়, তারা মেন্টাল রেজিস্ট্যান্স হারিয়ে তাৎক্ষণিকভাবে তার ভেতর উপুড় হয়ে পতিত বা নিমজ্জিত (أُرْكِسُوا) হয়। অতএব তারা যদি তোমাদের এই লাইভ কমব্যাট জোন থেকে সম্পূর্ণরূপে দূরে বা বিরত (لَّمْ يَعْتَزِلُوكُمْ) না থাকে এবং তোমাদের ইন্টারফেসে শতভাগ জিরো-নয়েজ পরম শান্তি ও সন্ধির সিগন্যাল ‘আস-সালাম’ (السَّلَمَ) পেশ না করে এবং নিজেদের ক্ষতিকারক ডাটা-ইনপুট বা আক্রমণাত্মক হাত গুটিয়ে না রাখে (وَيَكُفُّوا أَيْدِيَهُمْ)—তবে তোমরা তোমাদের ডিফেন্স প্রটোকল এক্টিভেট করে তাদের শক্তভাবে পাকড়াও করো এবং তোমাদের সিকিউরিটি জ্যামিতিক গ্রিডের যেখানেই তাদের সচল পাবে তাৎক্ষণিকভাবে সিস্টেম থেকে চিরতরে ডিলিট বা ফিজিক্যালি হত্যা (وَاقْتُلُوهُمْ) করো; আর ওদের বিরুদ্ধেই আমি তোমাদের ওওএসে (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) এক পরম আইনি এক্সেস, কর্তৃত্ব ও স্পষ্ট প্রমাণ (سُلْطَانًا مُّبِينًا) ডেপ্লয় করেছি;",
+      "modern_translation_en": "You will discover opportunistic factions seeking security from your firewall while maintaining collusion with hostile networks. Whenever lured into ideological subversion (Al-Fitnah), they collapse completely into it. If they neither disengage, transmit peace (As-Salam), nor restrain hostile execution, seize and neutralize them wherever encountered; against them, We have granted you definitive defensive authority."
     },
     {
       "surah": 4,
       "ayah": 92,
       "transliteration": "wamā kāna limu'minin an yaqtula mu'minan illā khaṭa-an waman qatala mu'minan khaṭa-an fataḥrīru raqabatin mu'minatin wadiyatun musallamatun ilā ahlihi illā an yaṣṣaddaqū fa-in kāna min qawmin ʿaduwwin lakum wahuwa mu'minun fataḥrīru raqabatin mu'minatin wa-in kāna min qawmin baynakum wabaynahum mīthāqun fadiyatun musallamatun ilā ahlihi wataḥrīru raqabatin mu'minatin faman lam yajid faṣiyāmu shahrayni mutatābiʿayni tawbatan mina l-lahi wakāna l-lahu ʿalīman ḥakīman",
-      "translation_bn": "কোন মু’মিনকে হত্যা করা কোন মু’মিনের কাজ নয় তবে ভুলবশত হতে পারে, কেউ কোন মু’মিনকে ভুলক্রমে হত্যা করলে, একজন মু’মিন দাস মুক্ত করা বা তার পরিবারবর্গকে রক্তপণ দেয়া কর্তব্য, যদি না তারা ক্ষমা করে দেয়। যদি সে তোমাদের শত্রুপক্ষের লোক হয় এবং মু’মিন হয় তবে একজন মু’মিন গোলাম আযাদ করা কর্তব্য, আর যদি সে এমন গোত্রের লোক হয় যাদের মধ্যে ও তোমাদের মধ্যে চুক্তি রয়েছে তবে তার পরিবারকে রক্তপণ দেয়া এবং একজন মু’মিন গোলাম আযাদ করা কর্তব্য এবং যে ব্যক্তি সঙ্গতিহীন সে একাদিক্রমে দু’ মাস রোযা পালন করবে। এটাই হল আল্লাহর নিকট তাওবাহ করার ব্যবস্থা, আল্লাহ মহাজ্ঞানী, সুবিজ্ঞ।",
+      "translation_bn": "আর কোনো মুমিনের জন্য এটা সম্ভব নয় যে, সে অন্য কোনো মুমিনকে হত্যা করবে—ভুলবশত (خطأ) ছাড়া; আর যে কেউ কোনো মুমিনকে ভুলবশত হত্যা করবে, তবে (তার শাস্তি) একজন মুমিন ক্রীতদাস মুক্ত করা এবং মৃতের পরিবারের কাছে সমর্পিত রক্তপণ (দিয়াত) বুঝিয়ে দেওয়া—যদি না তারা তা সদকা (ক্ষমা) করে দেয়। আর সে যদি তোমাদের শত্রু সম্প্রদায়ের অন্তর্ভুক্ত হয়, অথচ সে মুমিন, তবে একজন মুমিন ক্রীতদাস মুক্ত করা ফরজ। আর সে যদি এমন সম্প্রদায়ের অন্তর্ভুক্ত হয় যাদের সাথে তোমাদের সুদৃঢ় চুক্তি (মিছাক) রয়েছে, তবে তার পরিবারের কাছে সমর্পিত রক্তপণ বুঝিয়ে দেওয়া এবং একজন মুমিন ক্রীতদাস মুক্ত করা। অতঃপর যে তা পাবে না, সে আল্লাহর পক্ষ থেকে তাওবা (ক্ষমা) হিসেবে টানা দুই মাস সিয়াম (রোজা) পালন করবে। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 68812,
@@ -23205,14 +23210,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And never is it for a believer to kill a believer except by mistake. And whoever kills a believer by mistake - then the freeing of a believing slave and a compensation payment presented to the deceased's family [is required] unless they give [up their right as] charity. But if the deceased was from a people at war with you and he was a believer - then [only] the freeing of a believing slave; and if he was from a people with whom you have a treaty - then a compensation payment presented to his family and the freeing of a believing slave. And whoever does not find [one or cannot afford to buy one] - then [instead], a fast for two months consecutively, [seeking] acceptance of repentance from Allah. And Allah is ever Knowing and Wise.",
-      "conventional_en": "And never is it for a believer to kill a believer except by mistake. And whoever kills a believer by mistake - then the freeing of a believing slave and a compensation payment presented to the deceased's family [is required] unless they give [up their right as] charity. But if the deceased was from a people at war with you and he was a believer - then [only] the freeing of a believing slave; and if he was from a people with whom you have a treaty - then a compensation payment presented to his family and the freeing of a believing slave. And whoever does not find [one or cannot afford to buy one] - then [instead], a fast for two months consecutively, [seeking] acceptance of repentance from Allah. And Allah is ever Knowing and Wise."
+      "translation_en": "And never is it for a believer to kill a believer except by mistake. And whoever kills a believer by mistake - then the freeing of a believing slave and a compensation payment presented to the deceased's family [is required] unless they remit it as charity. But if the deceased was from a people at war with you and he was a believer - then the freeing of a believing slave; and if he was from a people with whom you have a treaty - then a compensation payment presented to his family and the freeing of a believing slave. And whoever does not find [one or cannot afford to buy one] - then a fast for two months consecutively, [seeking] acceptance of repentance from Allah. And Allah is ever Knowing and Wise.",
+      "conventional_en": "And never is it for a believer to kill a believer except by mistake. And whoever kills a believer by mistake - then the freeing of a believing slave and a compensation payment presented to the deceased's family [is required] unless they remit it as charity. But if the deceased was from a people at war with you and he was a believer - then the freeing of a believing slave; and if he was from a people with whom you have a treaty - then a compensation payment presented to his family and the freeing of a believing slave. And whoever does not find [one or cannot afford to buy one] - then a fast for two months consecutively, [seeking] acceptance of repentance from Allah. And Allah is ever Knowing and Wise.",
+      "meta_bn": "ভুলবশত ইউজার ক্র্যাশ রিকভারি এবং গাণিতিক ক্ষতিপূরণ অ্যালগরিদম",
+      "meta_en": "Algorithmic Restitution and Involuntary Hardware Depletion Protocols",
+      "conventional_bn": "আর কোনো মুমিনের জন্য এটা সম্ভব নয় যে, সে অন্য কোনো মুমিনকে হত্যা করবে—ভুলবশত (خطأ) ছাড়া; আর যে কেউ কোনো মুমিনকে ভুলবশত হত্যা করবে, তবে (তার শাস্তি) একজন মুমিন ক্রীতদাস মুক্ত করা এবং মৃতের পরিবারের কাছে সমর্পিত রক্তপণ (দিয়াত) বুঝিয়ে দেওয়া—যদি না তারা তা সদকা (ক্ষমা) করে দেয়। আর সে যদি তোমাদের শত্রু সম্প্রদায়ের অন্তর্ভুক্ত হয়, অথচ সে মুমিন, তবে একজন মুমিন ক্রীতদাস মুক্ত করা ফরজ। আর সে যদি এমন সম্প্রদায়ের অন্তর্ভুক্ত হয় যাদের সাথে তোমাদের সুদৃঢ় চুক্তি (মিছাক) রয়েছে, তবে তার পরিবারের কাছে সমর্পিত রক্তপণ বুঝিয়ে দেওয়া এবং একজন মুমিন ক্রীতদাস মুক্ত করা। অতঃপর যে তা পাবে না, সে আল্লাহর পক্ষ থেকে তাওবা (ক্ষমা) হিসেবে টানা দুই মাস সিয়াম (রোজা) পালন করবে। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
+      "modern_translation_bn": "আর মহাজাগতিক আইনি ফ্যাব্রিকে কোনো ভেরিফাইড ইউজার বা মুমিনের পক্ষে এটি বিন্দুমাত্র লজিক্যাল বা সম্ভব নয় যে—সে অন্য কোনো মুমিন নোডের লাইভ ফাইল সিস্টেম থেকে সম্পূর্ণ ডিলিট বা হত্যা (أَن يَقْتُلَ) করবে—স্রেফ অনাকাঙ্ক্ষিত লজিক্যাল এরর বা ভুলবশত (إِلَّا خَطَأً) ছাড়া; আর তোমাদের গ্রিডের যে কোনো নোড যদি কোনো মুমিন নোডকে ভুলবশত ডিলিট বা ক্র্যাশ করিয়ে ফেলে—তবে সিস্টেমের ডিফল্ট রিকভারি প্রটোকল হলো: মেইন নেটওয়ার্কের অধীনস্থ অন্য একজন মুমিন অবদমিত নোড বা ক্রীতদাসকে সম্পূর্ণ স্বাধীন এক্সেস দিয়ে মুক্ত (فَتَحْرِيرُ رَقَبَةٍ مُّؤْمِنَةٍ) করা এবং মৃতের নিজস্ব লোকাল হোস্ট বা পরিবারের ওয়ালেটে এক পরম গাণিতিক আর্থিক ক্ষতিপূরণ বা রক্তপণ ‘দিয়াত’ (وَدِيَةٌ مُّسَلَّمَةٌ إِلَىٰ أَهْلِهِ) সাকসেসফুলি ট্রান্সফার করে বুঝিয়ে দেওয়া—যদি না মৃতের সেই পরিবার তা মেইন সার্ভারে ওপেন রিসোর্স বা দান (يَصَّدَّقُوا) করে মওকুফ করে দেয়। আর সেই ভুলবশত ক্র্যাশ হওয়া নোডটি যদি তোমাদের নেটওয়ার্কের বিপরীতমুখী ক্ষতিকারক আউটলায়ার বা শত্রু সম্প্রদায়ের (قَوْمٍ عَدُوٍّ) ডাটাবেজের অন্তর্ভুক্ত হয়, অথচ সে নিজে একজন ভেরিফাইড মুমিন—তবে কেবল একজন মুমিন অবদমিত নোডকে সিস্টেম থেকে স্বাধীন মুক্ত করা ফরজ। আর সে যদি এমন এক নিউট্রাল থার্ড-পার্টি সম্প্রদায়ের অন্তর্ভুক্ত হয় যাদের সাথে তোমাদের ওওএসের অলরেডি এক মেগা Covenant [এনক্রিপ্টেড সুদৃঢ় আইনি চুক্তি বা মিছাক্ব] (مِّيثَاقٌ) লকড করা আছে—তবে মৃতের পরিবারের ওয়ালেটে সেই নির্ধারিত পরম আর্থিক ক্ষতিপূরণ সমর্পণ করা এবং সাথে সাথে একজন মুমিন অবদমিত নোডকে সম্পূর্ণ স্বাধীন মুক্ত করা বাধ্যতামূলক। অতঃপর কোনো তত্ত্বাবধায়ক নোডের ওওএসে যদি সেই আর্থিক লিকুইডিটি বা সামর্থ্য না থাকে (فَمَن لَّمْ يَجِدْ)—তবে সে আল্লাহর কেন্দ্রীয় সার্ভার থেকে পরম সিস্টেম রিস্টোরেশন বা তাওবা (تَوْبَةً مِّنَ اللَّهِ) সচল করার ব্যাকআপ প্রটোকল হিসেবে—টানা দুই লুনার সাইকেল বা দুই মাস অবিরত সিয়াম বা রোজা (فَصِيَامُ شَهْرَيْنِ مُتَتَابِعَيْنِ) [নিজস্ব বায়ো-লজিক্যাল ও মেন্টাল রিফ্রেশমেন্ট প্রটোকল] এক্সিকিউট করবে। আর Allah হলেন প্রতিটি সিস্টেমের ডেটাবেজ সম্পর্কে সর্বজ্ঞ এবং পরম রেগুলেটর বা প্রজ্ঞাময়;",
+      "modern_translation_en": "It is structurally impermissible for a verified believer to terminate another believer, except through involuntary computational error. Whoever inadvertently terminates a believer must emancipate an enslaved believer and transmit standardized indemnity (Diyah) to the victim's kinship host, unless remitted as charity. If the victim was a believer residing within a hostile network, the emancipation of a believer suffices; if from a treaty-bound entity, both indemnity to the kin and emancipation are mandatory. Whosoever lacks capacity must execute consecutive two-month fasting cycles as divine restorative protocol. Allah is Omniscient, Infinitely Wise.",
+      "lexicon_modern_notes": "ফাতাহরীরু রাক্বাবাতীম মু'মিনাতিন ওয়া দিয়্যাতুম মুছাল্লামাতুন... (فَتَحْرِيرُ رَقَبَةٍ... وَدِيَةٌ مُّسَلَّمَةٌ - এক্সিডেন্টাল ডাটা ডেলিশন অ্যান্ড ফিন্যান্সিয়াল রিকভরি অ্যালগরিদম): ৯২ নম্বর আয়াতটি আধুনিক লাইবিলিটি ল' (Liability Law), সিস্টেম ইন্টিগ্রেশন এবং ফিন্যান্সিয়াল রিস্ক ম্যানেজমেন্টের 'The Algorithmic Compensation and Recovery System for Involuntary System Termination'-কে নির্দেশ করে। এই জটিল সামাজিক ইকোসিস্টেমে কোনো ভেরিফাইড ইউজার নোড যদি অন্য একটি পজিটিভ অ্যাক্টিভ নোডকে র্যান্ডম কোনো অনাকাঙ্ক্ষিত ভুল বা কগনিটিভ এররের কারণে সম্পূর্ণ ক্র্যাশ বা ফিজিক্যালি ডিলিট (হত্যা) করে ফেলে—তবে সামষ্টিক নেটওয়ার্ক গ্রিডে শক্তির এক বিশাল ঘাটতি বা ভ্যাকুয়াম (Vacuum) তৈরি হয়। এই এনার্জি লস এবং মেকানিক্যাল ক্র্যাশটি রিকভার করতে সুপ্রীমিক ফায়ারওয়াল দুই স্তরের একটি গাণিতিক রি-লোকেশন ও কমপেনসেশন লুপ রান করায়: ১. ক্রীড-লেভেল রিকভারি (تحرير رقبة): সমাজের উৎপাদনহীন, অবদমিত বা লকড থাকা অন্য একটি অসহায় মুমিন নোডকে সম্পূর্ণ ফাইনান্সিয়াল ও আইনি এক্সেস দিয়ে মেইন সচল ট্র্যাফিকে আপলিংক (স্বাধীন) করা—যাতে গ্রিডে মানুষের প্রোডাক্টিভ কর্মশক্তির নেটওয়ার্ক ব্যালেন্স পুনরুদ্ধার হয়। ২. লিকুইডিটি-লেভেল কমপেনসেশন (دية مسلمة): মৃতের ওয়ালেটের ওপর নির্ভরশীল কোল্যাটারাল নোড বা তার পরিবারের ব্যালেন্স ক্র্যাশ ঠেকাতে—হত্যাকারী নোডের পার্সোনাল ওয়ালেট থেকে একটি নির্দিষ্ট উচ্চ ভ্যালুর ডিজিটাল কারেন্সি বা আর্থিক সম্পদ (দিয়াত) সরাসরি মৃতের পরিবারের ওয়ালেটে রিস্টোর করে দেওয়া। এটি একটি পরম 'Automated Economic Load-Balancing Framework'।"
     },
     {
       "surah": 4,
       "ayah": 93,
       "transliteration": "waman yaqtul mu'minan mutaʿammidan fajazāuhu jahannamu khālidan fīhā waghaḍiba l-lahu ʿalayhi walaʿanahu wa-aʿadda lahu ʿadhāban ʿaẓīman",
-      "translation_bn": "যে ব্যক্তি কোন মু’মিনকে ইচ্ছাপূর্বক হত্যা করে, তার শাস্তি জাহান্নাম। যাতে স্থায়ীভাবে থাকবে, তার উপর আল্লাহর ক্রোধ ও অভিসম্পাত। আল্লাহ তার জন্য মহাশাস্তি নির্দিষ্ট করে রেখেছেন।",
+      "translation_bn": "আর যে কেউ ইচ্ছাকৃতভাবে কোনো মুমিনকে হত্যা করবে, তবে তার প্রতিদান হলো জাহান্নাম, সেখানে সে চিরকাল থাকবে এবং আল্লাহ তার প্রতি রাগান্বিত হয়েছেন ও তাকে লানত (বিচ্ছিন্ন) করেছেন এবং তার জন্য প্রস্তুত রেখেছেন মহাশাস্তি।",
       "words": [
         {
           "id": 69300,
@@ -23386,13 +23397,18 @@
         }
       ],
       "translation_en": "But whoever kills a believer intentionally - his recompense is Hell, wherein he will abide eternally, and Allah has become angry with him and has cursed him and has prepared for him a great punishment.",
-      "conventional_en": "But whoever kills a believer intentionally - his recompense is Hell, wherein he will abide eternally, and Allah has become angry with him and has cursed him and has prepared for him a great punishment."
+      "conventional_en": "But whoever kills a believer intentionally - his recompense is Hell, wherein he will abide eternally, and Allah has become angry with him and has cursed him and has prepared for him a great punishment.",
+      "meta_bn": "ইচ্ছাকৃত ইউজার ডেলিশন ও ইররিভার্সিবল সিস্টেম ক্র্যাশ মোড",
+      "meta_en": "Irreversible Catastrophic Penalties for Intentional Termination of Authorized Nodes",
+      "conventional_bn": "আর যে কেউ ইচ্ছাকৃতভাবে কোনো মুমিনকে হত্যা করবে, তবে তার প্রতিদান হলো জাহান্নাম, সেখানে সে চিরকাল থাকবে এবং আল্লাহ তার প্রতি রাগান্বিত হয়েছেন ও তাকে লানত (বিচ্ছিন্ন) করেছেন এবং তার জন্য প্রস্তুত রেখেছেন মহাশাস্তি।",
+      "modern_translation_bn": "আর যে কোনো করাপ্টেড ইউজার নোড নিজের ওওএসের সম্পূর্ণ স্বাধীন ইচ্ছার মারাত্মক অপপ্রয়োগ করে ইচ্ছাকৃতভাবে (مُّتَعَمِّدًا) কোনো ভেরিফাইড মুমিন নোডকে সিস্টেম থেকে চিরতরে ডিলিট বা হত্যা করবে—তবে কেন্দ্রীয় সার্ভারের স্বয়ংক্রিয় কাউন্টার-রিঅ্যাকশনে তার চূড়ান্ত গাণিতিক আউটপুট বা প্রতিদান হলো জাহান্নামের সেই মেগা ক্র্যাশ জোন, সেখানে সে চিরকাল পার্মানেন্টলি বাউন্ডিং বা ট্র্যাপড (خَالِدًا فِيهَا) থাকবে এবং Allah তার সেই ক্ষতিকারক মেলিশিয়াস অ্যাপ্লিকেশনের ওপর তীব্র থার্মোডাইনামিক রি-অ্যাকশন বা গজব ট্রিগার করবেন এবং তার পুরো আইডিকে মেইন নেটওয়ার্ক চেইন থেকে পার্মানেন্টলি ডিসকানেক্ট বা লানত (وَلَعَنَهُ) করে দেবেন এবং তার ওওএসের জন্য ব্যাক-এন্ডে প্রস্তুত রাখবেন এক বিশাল ও তীব্র মহাজাগতিক ক্র্যাশ বা মহাশাস্তি (عَذَابًا عَظِيمًا);",
+      "modern_translation_en": "Whoever deliberately executes premeditated termination upon a verified believer shall incur permanent containment within the Hellfire execution core; Allah's sovereign wrath and cosmic disconnect (La'nah) fall upon their identity, with colossal punitive consequences hardcoded for their runtime."
     },
     {
       "surah": 4,
       "ayah": 94,
       "transliteration": "yāayyuhā alladhīna āmanū idhā ḍarabtum fī sabīli l-lahi fatabayyanū walā taqūlū liman alqā ilaykumu l-salāma lasta mu'minan tabtaghūna ʿaraḍa l-ḥayati l-dun'yā faʿinda l-lahi maghānimu kathīratun kadhālika kuntum min qablu famanna l-lahu ʿalaykum fatabayyanū inna l-laha kāna bimā taʿmalūna khabīran",
-      "translation_bn": "হে মু’মিনগণ! যখন তোমরা আল্লাহর পথে যাত্রা করবে তখন কে বন্ধু আর কে শত্রু তা পরীক্ষা করে নেবে, কেউ তোমাদেরকে সালাম করলে তাকে বলো না, ‘তুমি মু’মিন নও’, তোমরা ইহজগতের সম্পদের আকাঙ্ক্ষা কর, বস্তুতঃ আল্লাহর নিকট তোমাদের জন্য প্রচুর গনীমত আছে। তোমরাও এর পূর্বে এ রকমই ছিলে (অর্থাৎ তোমারাও তাদের মতই তোমাদের ঈমানকে তোমাদের কওম থেকে গোপন করতে), তৎপর আল্লাহ তোমাদের প্রতি কৃপা করেছেন, কাজেই অগ্রে বিশেষভাবে পরীক্ষা করে নিবে; তোমরা যা কিছু কর, সে বিষয়ে আল্লাহ সবিশেষ অবহিত।",
+      "translation_bn": "হে মুমিনগণ! যখন তোমরা আল্লাহর রাস্তায় সফরে (যুদ্ধে) বের হবে, তখন তোমরা স্পষ্ট যাচাই (তদন্ত) করে নিও এবং যে তোমাদের কাছে শান্তি (সালাম) পেশ করে, তাকে বলো না যে, ‘তুমি মুমিন নও’—তোমরা পার্থিব জীবনের ক্ষণস্থায়ী সম্পদ অন্বেষণ করার জন্য এমনটি করো না; কারণ আল্লাহর কাছে প্রচুর গণিমত (সম্পদ) রয়েছে। তোমরাও তো ইতিপূর্বে এমন (অসহায়) ছিলে, অতঃপর আল্লাহ তোমাদের প্রতি অনুগ্রহ করেছেন; অতএব তোমরা স্পষ্ট যাচাই করে নিও। নিশ্চয়ই আল্লাহ তোমরা যা করো সে সম্পর্কে সম্যক অবগত।",
       "words": [
         {
           "id": 69317,
@@ -23795,14 +23811,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "O you who have believed, when you go forth [to fight] in the cause of Allah, investigate; and do not say to one who gives you [a greeting of] peace \"You are not a believer,\" aspiring for the goods of worldly life; for with Allah are many acquisitions. You [yourselves] were like that before; then Allah conferred His favor upon you, so investigate. Indeed Allah is ever, with what you do, Acquainted.",
-      "conventional_en": "O you who have believed, when you go forth [to fight] in the cause of Allah, investigate; and do not say to one who gives you [a greeting of] peace \"You are not a believer,\" aspiring for the goods of worldly life; for with Allah are many acquisitions. You [yourselves] were like that before; then Allah conferred His favor upon you, so investigate. Indeed Allah is ever, with what you do, Acquainted."
+      "translation_en": "O you who have believed, when you go forth in the cause of Allah, investigate; and do not say to one who gives you [a greeting of] peace 'You are not a believer,' aspiring of the goods of worldly life; for with Allah are many acquisitions. You were like that before; then Allah conferred His favor upon you, so investigate. Indeed Allah is ever, with what you do, Acquainted.",
+      "conventional_en": "O you who have believed, when you go forth in the cause of Allah, investigate; and do not say to one who gives you [a greeting of] peace 'You are not a believer,' aspiring of the goods of worldly life; for with Allah are many acquisitions. You were like that before; then Allah conferred His favor upon you, so investigate. Indeed Allah is ever, with what you do, Acquainted.",
+      "meta_bn": "সিগন্যাল ভেরিফিকেশন ফিল্টার এবং ভুয়া কাফের লেবেলিং বালাই প্রতিরোধ",
+      "meta_en": "Epistemological Verification Against Prejudicial Signal Mislabeling",
+      "conventional_bn": "হে মুমিনগণ! যখন তোমরা আল্লাহর রাস্তায় সফরে (যুদ্ধে) বের হবে, তখন তোমরা স্পষ্ট যাচাই (তদন্ত) করে নিও এবং যে তোমাদের কাছে শান্তি (সালাম) পেশ করে, তাকে বলো না যে, ‘তুমি মুমিন নও’—তোমরা পার্থিব জীবনের ক্ষণস্থায়ী সম্পদ অন্বেষণ করার জন্য এমনটি করো না; কারণ আল্লাহর কাছে প্রচুর গণিমত (সম্পদ) রয়েছে। তোমরাও তো ইতিপূর্বে এমন (অসহায়) ছিলে, অতঃপর আল্লাহ তোমাদের প্রতি অনুগ্রহ করেছেন; অতএব তোমরা স্পষ্ট যাচাই করে নিও। নিশ্চয়ই আল্লাহ তোমরা যা করো সে সম্পর্কে সম্যক অবগত।",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! যখন তোমরা মহাজাগতিক সোর্স কোডের বাউন্ডারি ও সত্যের সিকিউরিটি গ্রিডে (ফি সাবিলিল্লাহ) কোনো ডাইনামিক ট্রাভেলিং লুপ বা সফরে বের (ضَرَبْتُمْ) হবে—তখন তোমরা স্পট রেসপন্সের ক্ষেত্রে এক পরম Signal Verification Filter [নিখুঁত উপাত্ত যাচাইকরণ বা ফাতাবাইয়্যানূ] (فَتَبَيَّنُوا) সচল করো, এবং যে নোড তোমাদের ইন্টারফেসে এসে শতভাগ জিরো-নয়েজ পরম শান্তি ও প্রোটেকশনের সিগন্যাল ‘আস-সালাম’ (السَّلَمَ) ইনপুট বা পেশ করে—তোমরা স্রেফ নিজেদের স্বার্থের বাগে তাকে কুযুক্তি দিয়ে বলো না যে: ‘তুমি এই সিস্টেমের ভেরিফাইড ইউজার বা মুমিন নও (لَسْتَ مُؤْمِنًا)’—তোমরা এই লো-ডাইমেনশনাল ভৌত জীবনের অত্যন্ত ক্ষণস্থায়ী বস্তুগত ক্যাপিটাল বা গণিমত (عَرَضَ الْحَيَاةِ الدُّنْيَا) কুক্ষিগত করার ডার্ক ড্রাইভে এই ভুল লজিক রান করো না; কারণ আল্লাহর কেন্দ্রীয় ক্লাউড সার্ভারেই সংরক্ষিত রয়েছে অফুরন্ত ও এক্সপোনেনশিয়াল কসমিক মেগা-রিসোর্স (مَغَانِمُ كَثِيرَةٌ)। তোমরাও তো এই ওওএস আপগ্রেডেশনের পূর্ববর্তী সংস্করণে হুবহু এমনই ডাইরেকশনহীন ও অসহায় অবস্থায় রান করছিলে, অতঃপর Allah তোমাদের ওওএসে পরম অনুগ্রহ ও এই পিউর কোড ইনপুট করেছেন; অতএব তোমরা সামাজিক গ্রিডে সর্বদা পরম স্পষ্ট যাচাই ও ডাটা-ভেরিফিকেশন ফিল্টার সচল রাখো। নিশ্চয়ই Allah তোমরা ব্যাক-এন্ডে যা কিছু ডেটা-প্রসেসিং বা ক্রিয়াকলাপ রান করছ, সেই প্রতিটি মেকানিজম সম্পর্কে শতভাগ মেমোরি ইনফর্মড বা সম্যক অবগত (خَبِيرًا);",
+      "modern_translation_en": "O you who have verified faith! When traversing pathways for Allah's cause, activate meticulous data verification filters (Fatabayyanu). Do not allege to whoever transmits peace: 'You are not a believer,' seeking transient material dividends of this baseline life; for with Allah resides infinite abundance. You formerly occupied identical vulnerability until Allah favored you; therefore, verify thoroughly. Allah remains comprehensively aware of your internal processing."
     },
     {
       "surah": 4,
       "ayah": 95,
       "transliteration": "lā yastawī l-qāʿidūna mina l-mu'minīna ghayru ulī l-ḍarari wal-mujāhidūna fī sabīli l-lahi bi-amwālihim wa-anfusihim faḍḍala l-lahu l-mujāhidīna bi-amwālihim wa-anfusihim ʿalā l-qāʿidīna darajatan wakullan waʿada l-lahu l-ḥus'nā wafaḍḍala l-lahu l-mujāhidīna ʿalā l-qāʿidīna ajran ʿaẓīman",
-      "translation_bn": "অক্ষম নয় এমন বসে-থাকা মু’মিনরা আর জান-মাল দ্বারা আল্লাহর পথে জিহাদকারীগণ সমান নয়; নিজেদের ধন-প্রাণ দ্বারা জিহাদকারীদেরকে বসে-থাকা লোকেদের উপর আল্লাহ মর্যাদা দিয়েছেন। আল্লাহ সকলের জন্যই কল্যাণের ওয়াদা করেছেন এবং মুজাহিদদেরকে বসে-থাকা লোকেদের তুলনায় আল্লাহ মহাপুরস্কার দিয়ে মর্যাদা দান করেছেন।",
+      "translation_bn": "মুমিনদের মধ্যে যারা (যুদ্ধে না গিয়ে) বসে থাকে—কোনো ক্ষতি (অক্ষমতা) ছাড়া—তারা এবং যারা আল্লাহর রাস্তায় নিজেদের ধন-সম্পদ ও নিজেদের জীবন দিয়ে জিহাদ (সর্বোচ্চ চেষ্টা) করে, তারা কখনো সমান হতে পারে না। যারা নিজেদের ধন-সম্পদ ও জীবন দিয়ে জিহাদ করে, আল্লাহ তাদের সেই বসে থাকাদের ওপর সুউচ্চ মর্যাদা (স্তর) দিয়েছেন। আর আল্লাহ প্রত্যেকের জন্যই কল্যাণের (জান্নাতের) ওয়াদা করেছেন; আর আল্লাহ বসে থাকাদের ওপর জিহাদকারীদের মহা প্রতিদানে ভূষিত করেছেন—",
       "words": [
         {
           "id": 69746,
@@ -24145,14 +24166,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Not equal are those believers remaining [at home] - other than the disabled - and the mujahideen, [who strive and fight] in the cause of Allah with their wealth and their lives. Allah has preferred the mujahideen through their wealth and their lives over those who remain [behind], by degrees. And to both Allah has promised the best [reward]. But Allah has preferred the mujahideen over those who remain [behind] with a great reward -",
-      "conventional_en": "Not equal are those believers remaining [at home] - other than the disabled - and the mujahideen, [who strive and fight] in the cause of Allah with their wealth and their lives. Allah has preferred the mujahideen through their wealth and their lives over those who remain [behind], by degrees. And to both Allah has promised the best [reward]. But Allah has preferred the mujahideen over those who remain [behind] with a great reward -"
+      "translation_en": "Not equal are those believers remaining [at home] - other than the disabled - and the mujahideen, [who strive and fight] in the cause of Allah with their wealth and their lives. Allah has preferred the mujahideen through their wealth and their lives over those who remain [behind], by degrees. And to all Allah has promised the best [reward]. But Allah has preferred the mujahideen over those who remain [behind] with a great reward -",
+      "conventional_en": "Not equal are those believers remaining [at home] - other than the disabled - and the mujahideen, [who strive and fight] in the cause of Allah with their wealth and their lives. Allah has preferred the mujahideen through their wealth and their lives over those who remain [behind], by degrees. And to all Allah has promised the best [reward]. But Allah has preferred the mujahideen over those who remain [behind] with a great reward -",
+      "meta_bn": "নোড পারফরম্যান্স অডিট এবং রেজিলিয়েন্ট কম্ব্যাট নোড সুপিরিয়রিটি",
+      "meta_en": "Comparative Performance Auditing: Active Dedicated Striving vs. Passive Inactivity",
+      "conventional_bn": "মুমিনদের মধ্যে যারা (যুদ্ধে না গিয়ে) বসে থাকে—কোনো ক্ষতি (অক্ষমতা) ছাড়া—তারা এবং যারা আল্লাহর রাস্তায় নিজেদের ধন-সম্পদ ও নিজেদের জীবন দিয়ে জিহাদ (সর্বোচ্চ চেষ্টা) করে, তারা কখনো সমান হতে পারে না। যারা নিজেদের ধন-সম্পদ ও জীবন দিয়ে জিহাদ করে, আল্লাহ তাদের সেই বসে থাকাদের ওপর সুউচ্চ মর্যাদা (স্তর) দিয়েছেন। আর আল্লাহ প্রত্যেকের জন্যই কল্যাণের (জান্নাতের) ওয়াদা করেছেন; আর আল্লাহ বসে থাকাদের ওপর জিহাদকারীদের মহা প্রতিদানে ভূষিত করেছেন—",
+      "modern_translation_bn": "পরম অডিটিং লেজারে—ভেরিফাইড মুমিন ইউজারদের মধ্যে যারা কোনো প্রকার জেনুইন হার্ডওয়্যার ড্যামেজ, শারীরিক অক্ষমতা বা ত্রুটি (غَيْرُ أُولِي الضَّرَرِ) ছাড়াই স্রেফ অলসতার লুপে নিষ্ক্রিয় বসে থাকে (الْقَاعِدُونَ)—তারা এবং যারা মহাজাগতিক সোর্স কোডের বাউন্ডারি সুরক্ষার ফায়ারওয়াল গ্রিডে নিজেদের পুঞ্জীভূত মেটেরিয়াল ক্যাপিটাল ও নিজেদের সম্পূর্ণ ভৌত অস্তিত্বের শক্তি দিয়ে সর্বোচ্চ এনার্জি এফোর্ট ও যুদ্ধ বা জিহাদ (وَالْمُجَاهِدُونَ) করে—তারা গাণিতিকভাবে কখনই এক সমান বা এক ক্যাটাগরির (لَّا يَسْتَوِي) হতে পারে না; যারা নিজেদের সম্পদ ও জীবন দিয়ে এই সুপ্রীমিক ডিফেন্স প্রজেক্টে ডেডিকেটেড যুদ্ধ করে—Allah তাদের ওওএসের পারফরম্যান্স স্কোর সেই নিষ্ক্রিয় বসে থাকা নোডগুলোর ওপর এক সুউচ্চ সিস্টেম গ্রেড বা সুপিরিয়র মর্যাদা (فَضَّلَ اللَّهُ... دَرَجَةً) ডেপ্লয় করেছেন; যদিও আল্লাহর ইউনিভার্সাল সিস্টেমে রেজিস্টার্ড প্রতিটি অনুগত নোডের জন্যই তিনি একটি সুষম কল্যাণ ও জান্নাতের মাস্টার প্রমিজ (الْحُسْنَىٰ) লক করে রেখেছেন; কিন্তু নিষ্ক্রিয় বসে থাকাদের সাপেক্ষে আল্লাহ এই সর্বোচ্চ রেজিলিয়েন্ট কম্ব্যাট নোড বা জিহাদকারীদের ওওএস-কে এক বিশাল ও অবিনশ্বর কসমিক আউটপুট বা মহা প্রতিদানের (أَجْرًا عَظِيمًا) মাধ্যমে পরম শ্রেষ্ঠত্ব দিয়েছেন—",
+      "modern_translation_en": "Passive nodes among believers—exempting those possessing authentic physical damage (Ghayru Uli ad-Darar)—are not computationally equivalent to dedicated strivants who commit wealth and life in Allah's defense. Allah has elevated committed striving nodes by extraordinary hierarchical tiers over inactive nodes; though divine baseline welfare (Al-Husna) is secured for all, striving nodes receive colossal amplified yield over sedentary nodes."
     },
     {
       "surah": 4,
       "ayah": 96,
       "transliteration": "darajātin min'hu wamaghfiratan waraḥmatan wakāna l-lahu ghafūran raḥīman",
-      "translation_bn": "ওটা আল্লাহর নিকট হতে পদমর্যাদা, ক্ষমা ও দয়া; আল্লাহ বড়ই ক্ষমাশীল, পরম দয়াবান।",
+      "translation_bn": "তাঁর পক্ষ থেকে বিভিন্ন মর্যাদা (স্তর), ক্ষমা ও দয়া; আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 70100,
@@ -24245,14 +24271,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Degrees [of high position] from Him and forgiveness and mercy. And Allah is ever Forgiving and Merciful.",
-      "conventional_en": "Degrees [of high position] from Him and forgiveness and mercy. And Allah is ever Forgiving and Merciful."
+      "translation_en": "[Higher] degrees from Him and forgiveness and mercy. And Allah is ever Forgiving and Merciful.",
+      "conventional_en": "[Higher] degrees from Him and forgiveness and mercy. And Allah is ever Forgiving and Merciful.",
+      "meta_bn": "মাল্টি-লেয়ার গ্রেডেশন এবং স্বয়ংক্রিয় ত্রুটি মোচন",
+      "meta_en": "Hierarchical Cosmic Elevators, Systematic Pardon, and Sustained Mercy",
+      "conventional_bn": "তাঁর পক্ষ থেকে বিভিন্ন মর্যাদা (স্তর), ক্ষমা ও দয়া; আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "যা হলো তাঁর কেন্দ্রীয় সার্ভার থেকে সরাসরি প্রেরিত মাল্টি-লেয়ার সুউচ্চ মর্যাদা স্তরবিন্যাস (دَرَجَاتٍ), টোটাল ওওএস ক্লিনিং বা ক্ষমা এবং বিশেষায়িত কসমিক রহমতের আউটপুট লুপ; আর Allah হলেন স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা;",
+      "modern_translation_en": "High evolutionary tiers emanating from Him, total operational absolution, and stabilizing mercy; for Allah is perpetually Forgiving and Merciful."
     },
     {
       "surah": 4,
       "ayah": 97,
       "transliteration": "inna alladhīna tawaffāhumu l-malāikatu ẓālimī anfusihim qālū fīma kuntum qālū kunnā mus'taḍʿafīna fī l-arḍi qālū alam takun arḍu l-lahi wāsiʿatan fatuhājirū fīhā fa-ulāika mawāhum jahannamu wasāat maṣīran",
-      "translation_bn": "যারা নিজেদের আত্মার উপর যুলম করেছিল এমন লোকেদের প্রাণ হরণের সময় ফেরেশতারা তাদেরকে জিজ্ঞেস করে- ‘তোমরা কোন্ কাজে নিমজ্জিত ছিলে’? তারা বলে, ‘দুনিয়ায় আমরা দুর্বল ক্ষমতাহীন ছিলাম’, ফেরেশতারা বলে, ‘আল্লাহর যমীন কি প্রশস্ত ছিল না যাতে তোমরা হিজরাত করতে’? সুতরাং তাদের আবাসস্থল হবে জাহান্নাম এবং তা কতই না নিকৃষ্ট প্রত্যাবর্তন স্থান!",
+      "translation_bn": "নিশ্চয়ই যারা নিজেদের প্রতি জুলুম (অন্যায়) করছিল—যখন ফেরেশতারা তাদের প্রাণ হরণ (এক্সট্রাক্ট) করছিল—তখন তারা বলল, ‘তোমরা কী অবস্থায় ছিলে?’ তারা বলল, ‘আমরা জমিনে অসহায় অবদমিত ছিলাম’। ফেরেশতারা বলল, ‘আল্লাহর জমিন কি প্রশস্ত ছিল না—যাতে তোমরা তার মধ্যে হিজরত (দেশ ত্যাগ) করতে?’ অতএব ওদের বাসস্থান হলো জাহান্নাম এবং তা কত নিকৃষ্ট গন্তব্য!",
       "words": [
         {
           "id": 70399,
@@ -24535,14 +24566,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Indeed, those whom the angels take [in death] while wronging themselves - [the angels] will say, \"In what [condition] were you?\" They will say, \"We were oppressed in the land.\" The angels will say, \"Was not the earth of Allah spacious [enough] for you to emigrate therein?\" For those, their refuge is Hell - and evil it is as a destination.",
-      "conventional_en": "Indeed, those whom the angels take [in death] while wronging themselves - [the angels] will say, \"In what [condition] were you?\" They will say, \"We were oppressed in the land.\" The angels will say, \"Was not the earth of Allah spacious [enough] for you to emigrate therein?\" For those, their refuge is Hell - and evil it is as a destination."
+      "translation_en": "Indeed, those whom the angels take [in death] while wronging themselves - [the angels] will say, 'In what [condition] were you?' They will say, 'We were oppressed in the land.' The angels will say, 'Was not the earth of Allah spacious [enough] for you to emigrate therein?' For those, their refuge is Hell - and evil it is as a destination.",
+      "conventional_en": "Indeed, those whom the angels take [in death] while wronging themselves - [the angels] will say, 'In what [condition] were you?' They will say, 'We were oppressed in the land.' The angels will say, 'Was not the earth of Allah spacious [enough] for you to emigrate therein?' For those, their refuge is Hell - and evil it is as a destination.",
+      "meta_bn": "কগনিটিভ অলসতা এবং কসমিক ডাটা-মাইগ্রেশন অডিট",
+      "meta_en": "Systemic Interrogation of Complicit Passivity and Environmental Oppression",
+      "conventional_bn": "নিশ্চয়ই যারা নিজেদের প্রতি জুলুম (অন্যায়) করছিল—যখন ফেরেশতারা তাদের প্রাণ হরণ (এক্সট্রাক্ট) করছিল—তখন তারা বলল, ‘তোমরা কী অবস্থায় ছিলে?’ তারা বলল, ‘আমরা জমিনে অসহায় অবদমিত ছিলাম’। ফেরেশতারা বলল, ‘আল্লাহর জমিন কি প্রশস্ত ছিল না—যাতে তোমরা তার মধ্যে হিজরত (দেশ ত্যাগ) করতে?’ অতএব ওদের বাসস্থান হলো জাহান্নাম এবং তা কত নিকৃষ্ট গন্তব্য!",
+      "modern_translation_bn": "নিশ্চয়ই যেসকল ইউজার নোড নিজেদের ওওএসের স্বাধীন ইচ্ছা অপপ্রয়োগ করে ম্যালওয়্যার এনভায়রনমেন্টেই অলসভাবে লকড ছিল এবং নিজেদের ওওএস করাপ্ট করে নিজেদের প্রতি চরম জুলুম (ظَالِمِي أَنفُسِهِمْ) করছিল—যখন মহাবিশ্বের স্বয়ংক্রিয় কসমিক ফোর্সেস বা মালাইকা (الْمَلَائِكَةُ) তাদের ভৌত হার্ডওয়্যার শাটডাউনের ফাইনাল ফেজে তাদের লাইফ-ডেটা এক্সট্রাক্ট (تَوَفَّاهُمُ) করছিল—তখন সেই কসমিক এজেন্টরা তাদের ওওএসে এই ট্র্যাকিং কোয়েরি পুশ করল: ‘তোমরা মহাজাগতিক নেটওয়ার্কের কোন লো-এফিসিয়েন্সি মোডে বা কী অবস্থায় (فِيمَ كُنتُمْ) আজীবন রান করছিলে?’ তারা ফেক এক্সকিউজের এরর ডাটা দিয়ে উত্তর দিল: ‘আমরা তো এই ভৌত পৃথিবীর শোষক গ্রিডে চরম এনার্জি-সংকট ও অসহায় অবদমিত নোড (مُسْتَضْعَفِينَ فِي الْأَرْضِ) ছিলাম [তাই পিউর কোড রান করতে পারিনি]’। কসমিক এজেন্টরা তাদের এই ফলস লজিক ব্রেক করে কাউন্টার চ্যালেঞ্জ ছুঁড়ে দিল: ‘Allah-এর তৈরি করা এই বিশাল গ্লোবাল বায়ো-স্ফিয়ার বা পৃথিবী কি গাণিতিকভাবে এক বিশাল প্রশস্ত ব্যান্ডউইথ (أَلَمْ تَكُنْ أَرْضُ اللَّهِ وَاسِعَةً) সম্পন্ন ছিল না—যাতে তোমরা সেই ক্ষতিকারক টক্সিক ডোমেইন লিভ করে আল্লাহর পিউর জোনে এক মেগা কসমিক ডাটা-মাইগ্রেশন বা হিজরত (فَتُهَاجِرُوا فِيهَا) এক্সিকিউট করতে?’ অতএব [এই কগনিটিভ অলসতার বালাইয়ের ফলে] ওদের চূড়ান্ত রি-রাউটিং বেস বা বাসস্থান হলো জাহান্নামের সেই মেগা ক্র্যাশ জোন এবং তা কতই না নিকৃষ্ট গন্তব্য বা রিটার্নিং ডোমেইন!",
+      "modern_translation_en": "Verily, when cosmic executing agents extract the life-data of nodes who corrupted their runtime, they query: 'In what operational state were you running?' They reply: 'We were suppressed and powerless upon the earth.' The agents respond: 'Was not Allah's biosphere expansive enough for you to execute spatiotemporal data-migration (Hijrah)?' Their terminal destination is Hellfire—a catastrophic outcome."
     },
     {
       "surah": 4,
       "ayah": 98,
       "transliteration": "illā l-mus'taḍʿafīna mina l-rijāli wal-nisāi wal-wil'dāni lā yastaṭīʿūna ḥīlatan walā yahtadūna sabīlan",
-      "translation_bn": "কিন্তু যে সকল সহায়হীন পুরুষ, নারী ও বালক যারা উপায় বের করতে পারে না আর তারা পথও পায় না,",
+      "translation_bn": "তবে পুরুষ, নারী ও শিশুদের মধ্যে যারা প্রকৃতই অসহায়—যারা কোনো উপায় অবলম্বন করতে পারে না এবং কোনো পথও পায় না, তারা ছাড়া;",
       "words": [
         {
           "id": 70753,
@@ -24676,13 +24712,18 @@
         }
       ],
       "translation_en": "Except for the oppressed among men, women and children who cannot devise a plan nor are they directed to a way -",
-      "conventional_en": "Except for the oppressed among men, women and children who cannot devise a plan nor are they directed to a way -"
+      "conventional_en": "Except for the oppressed among men, women and children who cannot devise a plan nor are they directed to a way -",
+      "meta_bn": "আইনি ইমিউনিটি ও জেনুইন হার্ডওয়্যার বালাই এক্সেপশন",
+      "meta_en": "Structural Immunity for Entrapped and Capacity-Constrained Demographics",
+      "conventional_bn": "তবে পুরুষ, নারী ও শিশুদের মধ্যে যারা প্রকৃতই অসহায়—যারা কোনো উপায় অবলম্বন করতে পারে না এবং কোনো পথও পায় না, তারা ছাড়া;",
+      "modern_translation_bn": "কেবলমাত্র সেইসব প্রকৃত এনার্জি-শোষিত ও অসহায় অবদমিত (الْمُسْتَضْعَفِينَ) ইউজার নোড ক্লাস্টার ব্যতীত—যা পুরুষদের একাংশ, সমাজের পিছিয়ে পড়া দুর্বল অংশ বা Nisa (النِّسَاءِ) এবং নাবালক শিশু নোডগুলোর অন্তর্ভুক্ত—যাদের ভৌত হার্ডওয়্যারে কোনো স্ট্র্যাটেজিক মুভমেন্ট বা উপায় অবলম্বন করার বিন্দুমাত্র প্রসেসিং ক্যাপাসিটি নেই (لَا يَسْتَطِيعُونَ حِيلَةً) এবং ভৌগোলিক বা ডিজিটাল নেটওয়ার্ক হাইওয়েতে কোনো ডাটা-মাইগ্রেশনের সঠিক পথ খুঁজে পেতেও তারা সম্পূর্ণ অক্ষম—",
+      "modern_translation_en": "Exempted are genuinely vulnerable demographics among men, marginalized social dependents (Nisa), and juvenile nodes possessing zero resource capacity to devise extraction strategies or locate migration corridors."
     },
     {
       "surah": 4,
       "ayah": 99,
       "transliteration": "fa-ulāika ʿasā l-lahu an yaʿfuwa ʿanhum wakāna l-lahu ʿafuwwan ghafūran",
-      "translation_bn": "আশা আছে যে, আল্লাহ তাদেরকে ক্ষমা করবেন এবং আল্লাহ গুনাহ মোচনকারী, বড়ই ক্ষমাশীল।",
+      "translation_bn": "অতএব খুব শীঘ্রই আল্লাহ ওদের মার্জনা (ক্ষমা) করবেন। আর আল্লাহ পরম মার্জনাকারী, পরম ক্ষমাশীল।",
       "words": [
         {
           "id": 71023,
@@ -24796,13 +24837,18 @@
         }
       ],
       "translation_en": "For those it is expected that Allah will pardon them, and Allah is ever Pardoning and Forgiving.",
-      "conventional_en": "For those it is expected that Allah will pardon them, and Allah is ever Pardoning and Forgiving."
+      "conventional_en": "For those it is expected that Allah will pardon them, and Allah is ever Pardoning and Forgiving.",
+      "meta_bn": "স্বয়ংক্রিয় ক্লাউড মার্জিং প্রটোকল",
+      "meta_en": "Automated Exception Handling, Fault Erasure, and Cosmic Pardon",
+      "conventional_bn": "অতএব খুব শীঘ্রই আল্লাহ ওদের মার্জনা (ক্ষমা) করবেন। আর আল্লাহ পরম মার্জনাকারী, পরম ক্ষমাশীল।",
+      "modern_translation_bn": "অতএব এই জেনুইন হার্ডওয়্যার বালাই থাকা নোডগুলোর জন্য—খুব শীঘ্রই স্বয়ং Allah তাদের ওওএসের সেই নিষ্ক্রিয়তার এরর কোড সম্পূর্ণ স্ক্র্যাপ, রিসেট বা মার্জ (أَن يَعْفُوَ عَنْهُمْ) করে দেবেন [যেহেতু তাদের জেনুইন ক্যাপাসিটি লিমিটেশন ছিল]; আর Allah হলেন পরম ত্রুটি মার্জনাকারী এবং স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল;",
+      "modern_translation_en": "For such capacity-constrained nodes, Allah will execute automatic fault resets and systemic pardon; for Allah is the Supreme Pardoner and Absolute Eraser of vulnerabilities."
     },
     {
       "surah": 4,
       "ayah": 100,
       "transliteration": "waman yuhājir fī sabīli l-lahi yajid fī l-arḍi murāghaman kathīran wasaʿatan waman yakhruj min baytihi muhājiran ilā l-lahi warasūlihi thumma yud'rik'hu l-mawtu faqad waqaʿa ajruhu ʿalā l-lahi wakāna l-lahu ghafūran raḥīman",
-      "translation_bn": "যে ব্যক্তি আল্লাহর পথে হিজরাত করবে, সে পৃথিবীতে বহু আশ্রয়স্থল এবং প্রাচুর্য প্রাপ্ত হবে; এবং যে ব্যক্তি নিজের গৃহ হতে আল্লাহ ও তাঁর রসূলের দিকে হিজরাত করে বের হয়, অতঃপর মৃত্যু তাকে পেয়ে বসে তার সাওয়াব আল্লাহর জিম্মায় সাব্যস্ত হয়ে গেছে এবং আল্লাহ অতি ক্ষমাশীল, পরম দয়ালু।",
+      "translation_bn": "আর যে কেউ আল্লাহর রাস্তায় হিজরত (দেশ ত্যাগ) করবে, সে জমিনে বহু আশ্রয়স্থল ও প্রাচুর্য (ব্যান্ডউইথ) পাবে। আর যে কেউ আল্লাহ ও তাঁর রাসূলের উদ্দেশ্যে হিজরতকারী হিসেবে নিজের ঘরবাড়ি থেকে বের হবে, অতঃপর (পথেই) তার কাছে মৃত্যু উপস্থিত হবে, তবে আল্লাহর ওপরই তার প্রতিদান নির্ধারিত হয়ে গেল। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 71257,
@@ -25126,7 +25172,13 @@
         }
       ],
       "translation_en": "And whoever emigrates for the cause of Allah will find on the earth many [alternative] locations and abundance. And whoever leaves his home as an emigrant to Allah and His Messenger and then death overtakes him - his reward has already become incumbent upon Allah. And Allah is ever Forgiving and Merciful.",
-      "conventional_en": "And whoever emigrates for the cause of Allah will find on the earth many [alternative] locations and abundance. And whoever leaves his home as an emigrant to Allah and His Messenger and then death overtakes him - his reward has already become incumbent upon Allah. And Allah is ever Forgiving and Merciful."
+      "conventional_en": "And whoever emigrates for the cause of Allah will find on the earth many [alternative] locations and abundance. And whoever leaves his home as an emigrant to Allah and His Messenger and then death overtakes him - his reward has already become incumbent upon Allah. And Allah is ever Forgiving and Merciful.",
+      "meta_bn": "দ্য গ্লোবাল ডাটা-মাইগ্রেশন অ্যান্ড স্পেশাল এনার্জি প্রোভিশন অ্যালগরিদম",
+      "meta_en": "Spatiotemporal Migration Mechanics, Infinite Capacity Reserves, and Irreversible Rewards",
+      "conventional_bn": "আর যে কেউ আল্লাহর রাস্তায় হিজরত (দেশ ত্যাগ) করবে, সে জমিনে বহু আশ্রয়স্থল ও প্রাচুর্য (ব্যান্ডউইথ) পাবে। আর যে কেউ আল্লাহ ও তাঁর রাসূলের উদ্দেশ্যে হিজরতকারী হিসেবে নিজের ঘরবাড়ি থেকে বের হবে, অতঃপর (পথেই) তার কাছে মৃত্যু উপস্থিত হবে, তবে আল্লাহর ওপরই তার প্রতিদান নির্ধারিত হয়ে গেল। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "আর যে কোনো ইউজার নোড মহাজাগতিক সোর্স কোডের সত্য ও বাউন্ডারি সুরক্ষার ফায়ারওয়াল ট্র্যাকে (ফি সাবিলিল্লাহ) নিজের ওওএস-কে টক্সিক জোন থেকে স্থানান্তরিত বা মেগা ডাটা-মাইগ্রেশন (وَمَن يُهَاجِرْ) করবে—সে এই গ্লোবাল গ্রিড বা পৃথিবীতে (فِي الْأَرْضِ) বহু বিকল্প আউটপুট স্টেশন, নিরাপদ কসমিক আশ্রয়স্থল (مُرَاغَمًا كَثِيرًا) এবং এক বিশাল ও অফুরন্ত রিসোর্স ব্যান্ডউইথ বা প্রাচুর্য (وَسَعَةً) লাভ করবে। আর যে কোনো নোড তার পুরোনো কমফোর্ট জোন বা নিজের হোম-নোড (مِن بَيْتِهِ) থেকে সরাসরি পরম সোর্স Allah এবং তাঁর ডেপ্লয়কৃত প্রধান ডাটা-ট্রান্সমিশন চেইনের বা রাসূলের কেন্দ্রীয় কোরের দিকে নিজেকে মাইগ্রেট বা সমর্পিত (مُهَاجِرًا إِلَى اللَّهِ وَرَسُولِهِ) করে যাত্রা শুরু বা বের হবে, অতঃপর পথেই কসমিক টাইম-স্ট্যাম্পড এনক্যাপসুলেশনের নিয়মে তার ভৌত হার্ডওয়্যার হঠাৎ ফাইনাল শাটডাউন বা মৃত্যুর (الْمَوْتُ) মুখোমুখি হবে—তবে গাণিতিকভাবে নিশ্চিত থাকো যে, আল্লাহর কেন্দ্রীয় ক্লাউড লেজারেই তার সর্বোচ্চ এনার্জি রিওয়ার্ড বা আউটপুট স্কোর স্থায়ীভাবে রাইট বা নির্ধারিত (فَقَدْ وَقَعَ أَجْرُهُ عَلَى اللَّهِ) হয়ে গেল [তার কোনো ডেটা লস হবে না]; আর Allah হলেন স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা;",
+      "modern_translation_en": "Whoever executes migration in Allah's pathway shall discover expansive terrestrial sanctuaries (Muraghama) and boundless resource capacity. Whoever departs their home terminal as an emigrant dedicated unto Allah and His Messenger, and is subsequently overtaken by termination (Mawt)—their eternal reward is definitively locked into Allah's sovereign ledger; for Allah is perpetually Forgiving, Merciful.",
+      "lexicon_modern_notes": "ওয়ামান ইয়ুহাজীর ফী সাবিলিল্লাহ... ইয়াজিদ ফিল আরদ্বি মুরাগামাল কাছীরা (وَمَن يُهَاجِرْ... مُرَاغَمًا كَثِيرًا وَسَعَةً - কসমিক ডাটা-মাইগ্রেশন ও স্পেস-টাইম লোকোমোশন ফিজিক্স): ১০০ নম্বর আয়াতে হিজরত বা ডাটা-মাইগ্রেশনের যে পরম কসমিক রিওয়ার্ড মেকানিজম উন্মোচন করা হয়েছে, তা ডাইনামিক সিস্টেম থিওরি এবং হিউম্যান ইকোলজি সায়েন্সের 'Systemic De-localization & Spatiotemporal Resource Optimization'-এর অনুরূপ। 'হিজরত' স্রেফ কোনো সাধারণ বাড়ি বদল নয়; এটি হলো ওওএসের চিন্তাভাবনা ও কগনিটিভ সেটিংসকে চারপাশের টক্সিক ম্যালওয়্যার ও শোষণের এনভায়রনমেন্ট (জাহেলিয়াত গ্রিড) থেকে সম্পূর্ণ ডি-লোকালাইজ বা মুক্ত করে—পরম সোর্সের পিউর কার্নেল কোডের (তাওহীদ) ফ্রেমওয়ার্কে নিজের হার্ডওয়্যারকে রি-বুট করার এক অনন্য মেগা ড্রাইভ। মানুষ যখন নিজের ওওএস সুরক্ষার্থে এই স্পেসিও-টেম্পোরাল লোকোমোশন বা হিজরত এক্সিকিউট করে, তখন আল্লাহর তৈরি ফিজিক্সের নিয়মে সে এই গ্লোবাল গ্রিডে বহু নতুন অপ্টিমাইজড ডাটা-পোর্ট, নিরাপদ কসমিক আশ্রয় স্টেশন (মুরাগামান) এবং এক বিশাল এনার্জি ব্যান্ডউইথ (সায়াতান) লাভ করে—যা তার ওওএসের প্রসেসিং ক্ষমতাকে এক্সপোনেনশিয়াল বুস্ট করে দেয়।"
     },
     {
       "surah": 4,
