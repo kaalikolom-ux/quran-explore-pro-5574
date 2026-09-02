@@ -20,6 +20,7 @@ import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
+import { STATIC_CATEGORIES } from "@/lib/staticArticlesData";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -348,8 +349,25 @@ export function CategoriesAdmin() {
         .from("categories")
         .select("*")
         .order("sort_order");
-      if (error) throw error;
-      return (data || []) as CategoryItem[];
+      if (error) {
+        console.error("Error fetching admin categories:", error);
+      }
+      const rawDbCats = (data || []) as CategoryItem[];
+      const merged = [
+        ...STATIC_CATEGORIES.filter(
+          (sc) => !rawDbCats.some((dc: any) => dc.slug === sc.slug || dc.id === sc.id)
+        ).map((sc) => ({
+          id: sc.id,
+          slug: sc.slug,
+          name_bn: sc.name_bn,
+          name_en: sc.name_en || null,
+          sort_order: sc.sort_order || 0,
+          show_in_menu: true,
+          is_restricted: sc.is_restricted || false,
+        })),
+        ...rawDbCats,
+      ];
+      return merged as CategoryItem[];
     },
   });
 
@@ -375,8 +393,11 @@ export function CategoriesAdmin() {
       };
 
       if (editingId) {
-        const { error } = await supabase.from("categories").update(payload).eq("id", editingId);
-        if (error) throw error;
+        const { data: updated, error } = await supabase.from("categories").update(payload).eq("id", editingId).select();
+        if ((!updated || updated.length === 0) || error) {
+          const { error: upsertErr } = await supabase.from("categories").upsert({ ...payload, slug: payload.slug }, { onConflict: "slug" });
+          if (upsertErr) throw upsertErr;
+        }
       } else {
         const { error } = await supabase.from("categories").insert(payload);
         if (error) throw error;
