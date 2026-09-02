@@ -13712,12 +13712,15 @@
       ],
       "translation_en": "But if they intend to betray you - then they have already betrayed Allah before, and He empowered [you] over them. And Allah is Knowing and Wise.",
       "conventional_en": "But if they intend to betray you - then they have already betrayed Allah before, and He empowered [you] over them. And Allah is Knowing and Wise.",
-      "modern_translation_bn": "আর যদি সেই ক্যাপচারড বা যুদ্ধবন্দী আইডিগুলো পুনরায় ডার্ক কোড রান করে তোমার ওওএস রিকভারি মিশনের সাথে কোনো গোপন জালিকরণ বা খিয়ানত (خِيَانَتَكَ) করতে চায়, তবে তুমি ওওএস (OOS) লেভেলে প্যানিক করো না; কারণ নিশ্চয়ই তারা অতীত টাইম-লাইনের মক্কী গ্রিডে বসে মূল সোর্স কোডার আল্লাহ্র পিউর ডিরেক্টিভের সাথেও খিয়ানত (فَقَدْ خَانُوا اللَّهَ مِن قَبْلُ) করেছিল, যার স্বয়ংক্রিয় কাউন্টার-ফিডব্যাকে তিনি তাদের ওপর তোমাদের এক্সেস কন্ট্রোল ও পরম ক্ষমতা দিয়ে বিকল করে দিলেন; আর আল্লাহ সমস্ত হিডেন ফাইলের মেকানিজম জানা পরম সর্বজ্ঞ ও নিখুঁত সিস্টেম ডিজাইনার [৪];",
+      "modern_translation_bn": "আর যদি সেই ক্যাপচারড বা যুদ্ধবন্দী আইডিগুলো পুনরায় ডার্ক কোড রান করে তোমার ওওএস রিকভারি মিশনের সাথে কোনো গোপন জালিকরণ বা খিয়ানত (خِيَانَتَكَ) করতে চায়, তবে তুমি ওওএস (OOS) লেভেলে প্যানিক করো না; কারণ নিশ্চয়ই তারা অতীত টাইম-লাইনের মক্কী গ্রিডে বসে মূল সোর্স কোডার আল্লাহ্র পিউর ডিরেক্টিভের সাথেও খিয়ানত (فَقَدْ خَانُوا اللَّهَ مِن قَبْلُ) করেছিল, যার স্বয়ংক্রিয় কাউন্টার-ফিডব্যাকে তিনি তাদের ওপর তোমাদের এক্সেস কন্ট্রোল ও পরম ক্ষমতা দিয়ে বিকল করে দিলেন; আর আল্লাহ সমস্ত হিডেন ফাইলের মেকানিজম জানা পরম সর্বজ্ঞ ও নিখুঁত সিস্টেম ডিজাইনার [এটিই হলো The Central Anti-Tampering Protocol (কেন্দ্রীয় তথ্য বিকৃতি-রোধী প্রটোকল)] [৪];",
       "conventional_bn": "আর তারা যদি তোমার সাথে খিয়ানত (বিশ্বাসঘাতকতা) করতে চায়, তবে নিশ্চয়ই তারা পূর্বে আল্লাহর সাথেও খিয়ানত করেছিল, অতঃপর তিনি তাদের ওপর (তোমাকে) ক্ষমতাবান করলেন; আর আল্লাহ সর্বজ্ঞ, পরম প্রজ্ঞাময়।",
       "meta_bn": "The Central Anti-Tampering Protocol ও ট্রাস্ট ফাইল রিমুভাল",
       "meta_en": "The Central Anti-Tampering Protocol",
       "core_meaning_bn": "ট্রাস্ট ফাইল রিমুভাল",
-      "core_meaning_en": "The Central Anti-Tampering Protocol"
+      "core_meaning_en": "The Central Anti-Tampering Protocol",
+      "metadata": {
+        "theme": "The Central Anti-Tampering Protocol ও ট্রাস্ট ফাইল রিমুভাল"
+      }
     },
     {
       "surah": 8,
@@ -14193,7 +14196,10 @@
       "meta_bn": "The Macro-Network Interconnection Layer ও ডাটা মাইগ্রেশন প্রটোকল",
       "meta_en": "The Macro-Network Interconnection Layer",
       "core_meaning_bn": "ডাটা মাইগ্রেশন প্রটোকল",
-      "core_meaning_en": "The Macro-Network Interconnection Layer"
+      "core_meaning_en": "The Macro-Network Interconnection Layer",
+      "metadata": {
+        "theme": "The Macro-Network Interconnection Layer ও ডাটা মাইগ্রেশন প্রটোকল"
+      }
     },
     {
       "surah": 8,
@@ -14349,7 +14355,10 @@
       "meta_bn": "The Global Systemic Chaos Bug ও নেটওয়ার্ক আইসোলেশন বিধি",
       "meta_en": "The Global Systemic Chaos Bug",
       "core_meaning_bn": "নেটওয়ার্ক আইসোলেশন বিধি",
-      "core_meaning_en": "The Global Systemic Chaos Bug"
+      "core_meaning_en": "The Global Systemic Chaos Bug",
+      "metadata": {
+        "theme": "The Global Systemic Chaos Bug ও নেটওয়ার্ক আইসোলেশন বিধি"
+      }
     },
     {
       "surah": 8,
@@ -14550,12 +14559,15 @@
       ],
       "translation_en": "But those who have believed and emigrated and fought in the cause of Allah and those who gave shelter and aided - it is they who are the believers, truly. For them is forgiveness and noble provision.",
       "conventional_en": "But those who have believed and emigrated and fought in the cause of Allah and those who gave shelter and aided - it is they who are the believers, truly. For them is forgiveness and noble provision.",
-      "modern_translation_bn": "আর যারা পিউর ট্রাস্টে ঈমান এনেছে, মডিফাইড গ্রিডে ডাটা রিলোকেশন বা হিজরত সম্পন্ন করেছে এবং আল্লাহ্র সেই পিউর সরল ডাটালগে নিজেদের সম্পূর্ণ ব্যাকআপ সহকারে সর্বোচ্চ রেজিস্ট্যান্স লড়াই করেছে, আর যারা তাদের পরম ক্লাউড জোনে আশ্রয় দিয়েছে ও শক্তিশালী টেকনিক্যাল ব্যাকআপ দিয়ে সাহায্য করেছে—কস্মিক লেজারের ডাটা অ্যানালিটিক্সে স্রেফ ওরাই হলো পরম একশত ভাগ জেনুইন প্রকৃত মুমিন বা Authenticated Registered Users (الْمُؤْمِنُونَ حَقًّا); তাদের ওওএস প্রোফাইলের জন্য রিজার্ভড করা আছে আজীবনের এরর ফাইল রি-রাইট করার ক্লিনিং প্যাচ বা ক্ষমা (مَّغْفِرَةٌ) এবং এক পরম সম্মানজনক হাই-কোয়ালিটি কস্মিক রিজিক [৪];",
+      "modern_translation_bn": "আর যারা পিউর ট্রাস্টে ঈমান এনেছে, মডিফাইড গ্রিডে ডাটা রিলোকেশন বা হিজরত সম্পন্ন করেছে এবং আল্লাহ্র সেই পিউর সরল ডাটালগে নিজেদের সম্পূর্ণ ব্যাকআপ সহকারে সর্বোচ্চ রেজিস্ট্যান্স লড়াই করেছে, আর যারা তাদের পরম ক্লাউড জোনে আশ্রয় দিয়েছে ও শক্তিশালী টেকনিক্যাল ব্যাকআপ দিয়ে সাহায্য করেছে—কস্মিক লেজারের ডাটা অ্যানালিটিক্সে স্রেফ ওরাই হলো পরম একশত ভাগ জেনুইন প্রকৃত মুমিন বা The Authenticated Registered Users (الْمُؤْمِنُونَ حَقًّا); তাদের ওওএস প্রোফাইলের জন্য রিজার্ভড করা আছে আজীবনের এরর ফাইল রি-রাইট করার ক্লিনিং প্যাচ বা ক্ষমা (مَّغْفِرَةٌ) এবং এক পরম সম্মানজনক হাই-কোয়ালিটি কস্মিক রিজিক [৪];",
       "conventional_bn": "আর যারা ঈমান এনেছে, হিজরত (দেশান্তর) করেছে এবং আল্লাহর পথে জিহাদ (সর্বোচ্চ চেষ্টা) করেছে, আর যারা আশ্রয় দিয়েছে ও সাহায্য করেছে—ওরাই হলো প্রকৃত মুমিন; তাদের জন্য রয়েছে ক্ষমা (ক্লিনিং প্যাচ) এবং সম্মানজনক জীবিকা (রিজিক)।",
-      "meta_bn": "The Verified User Registration ও পিউর রিওয়ার্ড মেকানিজম",
+      "meta_bn": "The Authenticated Node Registry ও পিউর রিওয়ার্ড মেকানিজম",
       "meta_en": "The Verified User Registration",
       "core_meaning_bn": "পিউর রিওয়ার্ড মেকানিজম",
-      "core_meaning_en": "The Verified User Registration"
+      "core_meaning_en": "The Verified User Registration",
+      "metadata": {
+        "theme": "The Authenticated Node Registry ও পিউর রিওয়ার্ড মেকানিজম"
+      }
     },
     {
       "surah": 8,
@@ -14796,12 +14808,15 @@
       ],
       "translation_en": "And those who believed after [the initial emigration] and emigrated and fought with you - they are of you. But those of [blood] relationship are more entitled [to inheritance] in the decree of Allah. Indeed, Allah is Knowing of all things.",
       "conventional_en": "And those who believed after [the initial emigration] and emigrated and fought with you - they are of you. But those of [blood] relationship are more entitled [to inheritance] in the decree of Allah. Indeed, Allah is Knowing of all things.",
-      "modern_translation_bn": "আর যারা পরবর্তী সেশন বা উইন্ডোতে এসে ঈমান এনেছে (وَالَّذِينَ آمَنُوا مِن بَعْدُ), এবং লেট ডাটা রিলোকেশন বা হিজরত সম্পন্ন করে তোমাদের সাথে মার্জড হয়ে সর্বোচ্চ প্রতিরোধ লড়াইয়ে শামিল হয়েছে—সিস্টেম ক্যাটালগে ওরাও একশত ভাগ তোমাদেরই মূল নেটওয়ার্ক গ্রিড ও ক্লাস্টারের অন্তর্ভুক্ত; তবে ফিজিক্যাল প্ল্যাটফর্মে মেটেরিয়াল উত্তরাধিকার ও ইনসাফ বণ্টনের নিয়মে—স্বয়ং আল্লাহ্র ফিক্সড কস্মিক লেজার বা মাস্টার কিতাব অনুযায়ী (فِي كِتَابِ اللَّهِ) রক্তসম্পর্কীয় জেনেটিক চেইনে থাকা নিকটাত্মীয় নোডসমূহ বা ‘উলুল আরহাম’ (وَأُولُو الْأَرْحَامِ) একে অপরের ডাটা ও রিসোর্স বণ্টনে সবচেয়ে বেশি প্রাইমারি হকদার ও নিকটবর্তী; নিশ্চয়ই স্বয়ং আল্লাহ এই মহাবিশ্বের প্রতিটি ন্যানো অবজেক্ট এবং কোয়ান্টাম ডাটার নিখুঁত ব্যাক-এন্ড আর্কিটেকচার সম্পর্কে পরম একশত ভাগ পরিজ্ঞাত ও পরম সর্বজ্ঞ [এটিই হলো মহাবিশ্বের পরম The Adaptive Lineage Framework (অনুকূল বংশানুক্রমিক ফ্রেমওয়ার্ক বিধি)]।",
+      "modern_translation_bn": "আর যারা পরবর্তী সেশন বা উইন্ডোতে এসে ঈমান এনেছে (وَالَّذِينَ آمَنُوا مِن بَعْدُ), এবং লেট ডাটা রিলোকেশন বা হিজরত সম্পন্ন করে তোমাদের সাথে মার্জড হয়ে সর্বোচ্চ প্রতিরোধ লড়াইয়ে শামিল হয়েছে—সিস্টেম ক্যাটালগে ওরাও একশত ভাগ তোমাদেরই মূল নেটওয়ার্ক গ্রিড ও ক্লাস্টারের অন্তর্ভুক্ত; তবে ফিজিক্যাল প্ল্যাটফর্মে মেটেরিয়াল উত্তরাধিকার ও ইনসাফ বণ্টনের নিয়মে—স্বয়ং আল্লাহ্র ফিক্সড কস্মিক লেজার বা মাস্টার কিতাব অনুযায়ী (فِي كِتَابِ اللَّهِ) রক্তসম্পর্কীয় জেনেটিক চেইনে থাকা নিকটাত্মীয় নোডসমূহ বা ‘উলুল আরহাম’ (وَأُولُو الْأَرْحَامِ) একে অপরের ডাটা ও রিসোর্স বণ্টনে সবচেয়ে বেশি প্রাইমারি হকদার ও নিকটবর্তী; নিশ্চয়ই স্বয়ং আল্লাহ এই মহাবিশ্বের প্রতিটি ন্যানো অবজেক্ট এবং কোয়ান্টাম ডাটার নিখুঁত ব্যাক-এন্ড আর্কিটেকচার সম্পর্কে পরম একশত ভাগ পরিজ্ঞাত ও পরম সর্বজ্ঞ [এটিই হলো মহাবিশ্বের পরম The Adaptive Lineage Framework (অনুকূল বংশানুক্রমিক ফ্রেমওয়ার্ক বিধি)] [৪,৫]।",
       "conventional_bn": "আর যারা পরবর্তীতে ঈমান এনেছে, হিজরত করেছে এবং তোমাদের সাথে মিলে জিহাদ করেছে—ওরাও তোমাদেরই অন্তর্ভুক্ত; আর আল্লাহর কিতাব (লেজার) অনুযায়ী রক্তসম্পর্কীয় (নিকটাত্মীয়) রা একে অপরের অধিক হকদার (নিকটবর্তী); নিশ্চয়ই আল্লাহ প্রতিটি বিষয়ের পরম পরিজ্ঞাত [৪,৫]।",
       "meta_bn": "The Adaptive Lineage Framework ও মাস্টার লেজার ফিক্সড কোড",
       "meta_en": "The Adaptive Lineage Framework",
       "core_meaning_bn": "মাস্টার লেজার ফিক্সড কোড",
-      "core_meaning_en": "The Adaptive Lineage Framework"
+      "core_meaning_en": "The Adaptive Lineage Framework",
+      "metadata": {
+        "theme": "The Adaptive Lineage Framework ও মাস্টার লেজার ফিক্সড কোড"
+      }
     }
   ]
 }
