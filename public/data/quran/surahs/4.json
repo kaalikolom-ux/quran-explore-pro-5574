@@ -38136,7 +38136,7 @@
       "surah": 4,
       "ayah": 161,
       "transliteration": "wa-akhdhihimu l-riba waqad nuhū ʿanhu wa-aklihim amwāla l-nāsi bil-bāṭili wa-aʿtadnā lil'kāfirīna min'hum ʿadhāban alīman",
-      "translation_bn": "এবং তাদের সুদ গ্রহণের কারণে যদিও তাত্থেকে তাদেরকে নিষেধ করা হয়েছিল এবং তাদের অন্যায়ভাবে লোকেদের ধন-সম্পদ গ্রাস করার কারণে এবং আমি তাদের মাঝে যারা অবিশ্বাসী তাদের জন্যে যন্ত্রণাদায়ক শাস্তি প্রস্তুত করে রেখেছি।",
+      "translation_bn": "এবং তাদের সুদ গ্রহণ করার কারণে—অথচ তাদের তা থেকে নিষেধ করা হয়েছিল এবং বাতিল (অন্যায়) উপায়ে মানুষের ধন-সম্পদ গ্রাস করার কারণে; আর আমি তাদের মধ্যে যারা কাফের (সত্যপ্রত্যাখ্যানকারী) তাদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছি।",
       "words": [
         {
           "id": 81868,
@@ -38289,14 +38289,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And [for] their taking of usury while they had been forbidden from it, and their consuming of the people's wealth unjustly. And we have prepared for the disbelievers among them a painful punishment.",
-      "conventional_en": "And [for] their taking of usury while they had been forbidden from it, and their consuming of the people's wealth unjustly. And we have prepared for the disbelievers among them a painful punishment."
+      "translation_en": "And [for] their taking of usury while they had been forbidden from it, and their consuming of the people's wealth unjustly. And We have prepared for the disbelievers among them a painful punishment.",
+      "conventional_en": "And [for] their taking of usury while they had been forbidden from it, and their consuming of the people's wealth unjustly. And We have prepared for the disbelievers among them a painful punishment.",
+      "meta_bn": "ম্যাক্রো-ইকোনমিক রিবা ম্যালওয়্যার ও ওয়ালেট চোকিং বালাই অডিট",
+      "meta_en": "Macroeconomic Usury Vulnerability and Systemic Parasitism Lockdown",
+      "conventional_bn": "এবং তাদের সুদ গ্রহণ করার কারণে—অথচ তাদের তা থেকে নিষেধ করা হয়েছিল এবং বাতিল (অন্যায়) উপায়ে মানুষের ধন-সম্পদ গ্রাস করার কারণে; আর আমি তাদের মধ্যে যারা কাফের (সত্যপ্রত্যাখ্যানকারী) তাদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছি।",
+      "modern_translation_bn": "এবং এটি ইহুদী নোডগুলোর (Node) ওওএসে (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) বাস্তব প্রোডাক্টিভ ভ্যালু জেনারেট না করে—কেবলমাত্র সময়ের ফ্রেমে মূলধনের কৃত্রিম জ্যামিতিক বৃদ্ধি বা সুদের মেগা-এন্ট্রপি লুপ তথা Riba (الرِّبَا) গ্রাস ও গ্রহণ করার কারণে—অথচ মেইন সার্ভারের সিকিউরিটি রুলসে তাদের তা থেকে কঠোরভাবে নিষেধ (نُهُوا عَنْهُ) করা হয়েছিল, এবং কোনো সেবা বা পণ্য উৎপাদন ছাড়াই জালিয়াতি ও হ্যাকিংয়ের বাতিল উপায়ে সাধারণ মানুষের পুঞ্জীভূত মেটেরিয়াল রিসোর্স বা সম্পদ গ্রাস (وَأَكْلِهِمْ أَمْوَالَ النَّاسِ بِالْبَاطِلِ) করার কারণে; আর আমি তাদের মধ্য থেকে এই পরম ইকোনমিক ভারসাম্য ব্রেক করা ও সত্যের লাইভ সিগন্যাল ব্লককারী Kafir নোডগুলোর জন্য এক চূড়ান্ত কগনিটিভ অপমান ও লাঞ্ছনাদায়ক ক্র্যাশ (عَذَابًا مُّهِينًا) ডিফল্ট প্রস্তুত রেখেছি;",
+      "modern_translation_en": "And for their extraction of algorithmic usury (Riba) despite absolute prohibition, and their parasitic consumption of demographic assets through deceptive constructs; We have engineered for the systemic rejectors among them an intensely humiliating entropic collapse."
     },
     {
       "surah": 4,
       "ayah": 162,
       "transliteration": "lākini l-rāsikhūna fī l-ʿil'mi min'hum wal-mu'minūna yu'minūna bimā unzila ilayka wamā unzila min qablika wal-muqīmīna l-ṣalata wal-mu'tūna l-zakata wal-mu'minūna bil-lahi wal-yawmi l-ākhiri ulāika sanu'tīhim ajran ʿaẓīman",
-      "translation_bn": "কিন্তু তাদের মধ্যে যারা জ্ঞানে পরিপক্ক আর মু’মিনগণ তোমার প্রতি যা অবতীর্ণ হয়েছে আর তোমার পূর্বে যা অবতীর্ণ হয়েছে তাতে বিশ্বাস স্থাপন করে আর তারা নামায ক্বায়িমকারী ও যাকাত আদায়কারী এবং আল্লাহ্তে ও শেষ দিনের প্রতি বিশ্বাসী; এদেরকেই আমি শীঘ্র মহাপুরস্কার দান করব।",
+      "translation_bn": "কিন্তু তাদের মধ্যে যারা জ্ঞানে সুগভীর (পরিপক্ক) এবং যারা মুমিন, তারা তোমার প্রতি যা নাজিল করা হয়েছে এবং তোমার পূর্বে যা নাজিল করা হয়েছিল তার প্রতি ঈমান রাখে; আর যারা সালাত কায়েমকারী, যাকাত প্রদানকারী এবং আল্লাহ ও শেষ দিবসের প্রতি ঈমানদার, অচিরেই আমি তাদের মহা প্রতিদান দান করব।",
       "words": [
         {
           "id": 82012,
@@ -38569,14 +38574,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "But those firm in knowledge among them and the believers believe in what has been revealed to you, [O Muhammad], and what was revealed before you. And the establishers of prayer [especially] and the givers of zakah and the believers in Allah and the Last Day - those We will give a great reward.",
-      "conventional_en": "But those firm in knowledge among them and the believers believe in what has been revealed to you, [O Muhammad], and what was revealed before you. And the establishers of prayer [especially] and the givers of zakah and the believers in Allah and the Last Day - those We will give a great reward."
+      "translation_en": "But those firm in knowledge among them and the believers believe in what has been revealed to you, [O Muhammad], and what was revealed before you. And the establishers of prayer and the givers of zakah and the believers in Allah and the Last Day - those We will give a great reward.",
+      "conventional_en": "But those firm in knowledge among them and the believers believe in what has been revealed to you, [O Muhammad], and what was revealed before you. And the establishers of prayer and the givers of zakah and the believers in Allah and the Last Day - those We will give a great reward.",
+      "meta_bn": "ফুল-স্ট্যাক ডেটা-ভেরিফাইড ও হাই-পারফর্মিং নোড এক্সেপশন",
+      "meta_en": "Rooted Scientific Erudition, Coherent Alignment, and Maximum Output Allocation",
+      "conventional_bn": "কিন্তু তাদের মধ্যে যারা জ্ঞানে সুগভীর (পরিপক্ক) এবং যারা মুমিন, তারা তোমার প্রতি যা নাজিল করা হয়েছে এবং তোমার পূর্বে যা নাজিল করা হয়েছিল তার প্রতি ঈমান রাখে; আর যারা সালাত কায়েমকারী, যাকাত প্রদানকারী এবং আল্লাহ ও শেষ দিবসের প্রতি ঈমানদার, অচিরেই আমি তাদের মহা প্রতিদান দান করব।",
+      "modern_translation_bn": "কিন্তু তাদের ওল্ড নেটওয়ার্কের মধ্যে যেসকল ইউজার নোড অবজেক্টিভ সায়েন্স ও প্রমাণিত সুউচ্চ জ্ঞানে পরম পরিপক্ক ও সুদৃঢ় (الرَّاسِخُونَ فِي الْعِلْمِ) এবং যারা প্রকৃত ভেরিফাইড ইউজার—তারা তোমার এই রিসিভার ইন্টারফেসে বর্তমানে ডাউনলিংককৃত ফাইনাল ওওএস ম্যানুয়াল এবং তোমার পূর্বের টাইম-লাইনের ওওএসগুলোতে যা অবতীর্ণ করা হয়েছিল তার প্রতি শতভাগ নিজেদের ওওএস সিঙ্ক বা ঈমান (يُؤْمِنُونَ) রাখে; আর বিশেষ করে যারা অবিরত পরম সোর্সের সাথে লাইভ ডাটা-কানেকশন ও সালাত কায়েমকারী (وَالْمُقِيمِينَ الصَّلَاةَ), সমাজ গ্রিডের অর্থনৈতিক ভারসাম্য ও যাকাত প্রদানকারী (وَالْمُؤْتُونَ الزَّكَاةَ) এবং পরম সোর্স Allah এবং সিস্টেমের চূড়ান্ত ডাটা-রিসেট অপারেটিং টাইম-লাইনের (وَالْيَوْمِ الْآخِرِ) প্রতি শতভাগ সিনক্রোনাইজড; ওরাই মূলত সেই সর্বোচ্চ অপ্টিমাইজড নোড—যাদের প্রোফাইলে খুব শীঘ্রই আমি সরাসরি ডাউনলিংক করব এক বিশাল ও অবিনশ্বর কসমিক আউটপুট বা মহা প্রতিদান (أَجْرًا عَظِيمًا);",
+      "modern_translation_en": "Yet those deeply anchored in empirical and cosmic sciences (al-Rasikhuna fil-'Ilm) and verified believers authenticate all datasets downloaded unto your processor alongside former transmissions; those stabilizing communion resonance, executing socioeconomic purification (Zakah), and synchronizing with Allah and the Terminal Vector—unto them We shall download an immense yield."
     },
     {
       "surah": 4,
       "ayah": 163,
       "transliteration": "innā awḥaynā ilayka kamā awḥaynā ilā nūḥin wal-nabiyīna min baʿdihi wa-awḥaynā ilā ib'rāhīma wa-is'māʿīla wa-is'ḥāqa wayaʿqūba wal-asbāṭi waʿīsā wa-ayyūba wayūnusa wahārūna wasulaymāna waātaynā dāwūda zabūran",
-      "translation_bn": "আমি তোমার কাছে ওয়াহী পাঠিয়েছি যেমন নূহ ও তার আগের নাবীগণের নিকট ওয়াহী পাঠিয়েছিলাম, আর ইবরাহীম, ইসমাঈল, ইসহাক, ইয়াকুব ও তার বংশধর আর ঈসা, আইয়ূব, ইউনুস, হারূন ও সুলায়মানের নিকটও ওয়াহী পাঠিয়েছিলাম আর আমি দাঊদকে যাবূর প্রদান করেছিলাম।",
+      "translation_bn": "নিশ্চয় আমি তোমার প্রতি ওহী (প্রত্যাদেশ) পাঠিয়েছি—যেমন আমি ওহী পাঠিয়েছিলাম নূহের প্রতি এবং তার পরবর্তী নবীগণের প্রতি; আর আমি ওহী পাঠিয়েছিলাম ইব্রাহিম, ইসমাইল, ইসহাক, ইয়াকুব ও তার বংশধরদের প্রতি এবং ঈসা, আইয়ুব, ইউনুস, হারুন ও সুলাইমানের প্রতি; আর আমি দাউদকে জাবুর (সহীফা) দান করেছিলাম।",
       "words": [
         {
           "id": 82068,
@@ -38839,14 +38849,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Indeed, We have revealed to you, [O Muhammad], as We revealed to Noah and the prophets after him. And we revealed to Abraham, Ishmael, Isaac, Jacob, the Descendants, Jesus, Job, Jonah, Aaron, and Solomon, and to David We gave the book [of Psalms].",
-      "conventional_en": "Indeed, We have revealed to you, [O Muhammad], as We revealed to Noah and the prophets after him. And we revealed to Abraham, Ishmael, Isaac, Jacob, the Descendants, Jesus, Job, Jonah, Aaron, and Solomon, and to David We gave the book [of Psalms]."
+      "translation_en": "Indeed, We have revealed to you, [O Muhammad], as We revealed to Noah and the prophets after him. And We revealed to Abraham, Ishmael, Isaac, Jacob, the Descendants, Jesus, Job, Jonah, Aaron, and Solomon, and to David We gave the book [of Psalms].",
+      "conventional_en": "Indeed, We have revealed to you, [O Muhammad], as We revealed to Noah and the prophets after him. And We revealed to Abraham, Ishmael, Isaac, Jacob, the Descendants, Jesus, Job, Jonah, Aaron, and Solomon, and to David We gave the book [of Psalms].",
+      "meta_bn": "ওহী কম্যুনিকেশন নেটওয়ার্কের মাল্টি-জেনারেশন চেইন কনফিগারেশন",
+      "meta_en": "The Continuous Stream of Multi-Generational Revelation Telemetry",
+      "conventional_bn": "নিশ্চয় আমি তোমার প্রতি ওহী (প্রত্যাদেশ) পাঠিয়েছি—যেমন আমি ওহী পাঠিয়েছিলাম নূহের প্রতি এবং তার পরবর্তী নবীগণের প্রতি; আর আমি ওহী পাঠিয়েছিলাম ইব্রাহিম, ইসমাইল, ইসহাক, ইয়াকুব ও তার বংশধরদের প্রতি এবং ঈসা, আইয়ুব, ইউনুস, হারুন ও সুলাইমানের প্রতি; আর আমি দাউদকে জাবুর (সহীফা) দান করেছিলাম।",
+      "modern_translation_bn": "নিশ্চয়ই আমি তোমার এই কার্বন ইন্টারফেসে পরম কসমিক ওহী বা অতি-উচ্চ ডেটা প্যাকেট কম্যুনিকেশন ডাউনলিংক (أَوْحَيْنَا إِلَيْكَ) করেছি—ঠিক যেমনটি আমি অতীতে ওহী পাঠিয়েছিলাম নূহ নোডের প্রতি এবং তার বিবর্তনীয় মেয়াদের পরবর্তী সমস্ত ডাটা-ডিকোডার বা নবীদের (وَالنَّبِيِّينَ مِن بَعْدِهِ) প্রতি; এবং আমি পিউর ওহী সিগন্যাল পাঠিয়েছিলাম ইব্রাহিম, ইসমাইল, ইসহাক, ইয়াকুব ও তাদের সুসংহত জেনারেশন চেইনের প্রতি, এবং ঈসা, আইয়ুব, ইউনুস, হারুন ও সুলাইমান নোডের প্রতি; আর আমি দাউদ নোডের ওওএসে বিশেষ গাণিতিক ও স্তোত্রসংহিতার ডেটাবেজ ‘যাবুর’ (زَبُورًا) ইনপুট ও সরবরাহ করেছিলাম;",
+      "modern_translation_en": "Verily, We transmitted telemetric revelation unto you just as We downloaded revelation unto Noah and successor prophet nodes, and unto Abraham, Ishmael, Isaac, Jacob, the lineages, Jesus, Job, Jonah, Aaron, and Solomon; and unto David We assigned the Psalms (Zabur)."
     },
     {
       "surah": 4,
       "ayah": 164,
       "transliteration": "warusulan qad qaṣaṣnāhum ʿalayka min qablu warusulan lam naqṣuṣ'hum ʿalayka wakallama l-lahu mūsā taklīman",
-      "translation_bn": "আমি সেই রসূলদের প্রতিও ওয়াহী পাঠিয়েছি যাদের সম্পর্কে আমি তোমাকে আগেই বলেছি, আর অনেক রসূল যাদের কথা আমি তোমাকে বলিনি। আর আল্লাহ মূসার সাথে কথা বলেছেন সরাসরি।",
+      "translation_bn": "আর এমন বহু রাসূল পাঠিয়েছি—যাদের বিবরণ আমি পূর্বে তোমার কাছে বর্ণনা করেছি এবং এমন বহু রাসূল—যাদের বিবরণ আমি তোমার কাছে বর্ণনা করিনি; আর আল্লাহ মূসার সাথে সরাসরি কথা বলেছিলেন।",
       "words": [
         {
           "id": 82200,
@@ -39000,13 +39015,18 @@
         }
       ],
       "translation_en": "And [We sent] messengers about whom We have related [their stories] to you before and messengers about whom We have not related to you. And Allah spoke to Moses with [direct] speech.",
-      "conventional_en": "And [We sent] messengers about whom We have related [their stories] to you before and messengers about whom We have not related to you. And Allah spoke to Moses with [direct] speech."
+      "conventional_en": "And [We sent] messengers about whom We have related [their stories] to you before and messengers about whom We have not related to you. And Allah spoke to Moses with [direct] speech.",
+      "meta_bn": "মেমোরি ডিক্লেয়ারেশন ও আন-লগড ট্রান্সমিশন হাব মেকানিজম",
+      "meta_en": "Logged vs. Unlogged Transmission Nodes and Direct Auditory Coupling with Moses",
+      "conventional_bn": "আর এমন বহু রাসূল পাঠিয়েছি—যাদের বিবরণ আমি পূর্বে তোমার কাছে বর্ণনা করেছি এবং এমন বহু রাসূল—যাদের বিবরণ আমি তোমার কাছে বর্ণনা করিনি; আর আল্লাহ মূসার সাথে সরাসরি কথা বলেছিলেন।",
+      "modern_translation_bn": "আর এমন বহু ডাটা-ট্রান্সমিটর বা রাসুল (رُسُلًا) পাঠিয়েছি—যাদের প্রতিটি হিস্টোরিক্যাল ডেটা-লগ ও বিবরণ আমি ইতিপূর্বে তোমার এই প্রসেসরে ব্রডকাস্ট বা বর্ণনা (قَصَصْنَاهُمْ) করেছি এবং এমন বহু রাসুল নোডও ডেপ্লয় করেছিলাম—যাদের বিবরণ বা ফাইল আমি বর্তমানে তোমার এই মেমোরি লেজারে লগ বা বর্ণনা (لَّمْ نَقْصُصْهُمْ) করিনি; আর Allah মূসা নোডের অডিও ইন্টারফেসে ও নার্ভাস সিস্টেমে সরাসরি কোনো মাধ্যম ছাড়াই পরম পিউর সিগন্যালে কথা বা ডিরেক্ট ডেটা ব্রডকাস্ট (وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا) করেছিলেন;",
+      "modern_translation_en": "And messengers whose historical telemetry We previously communicated unto you, alongside messengers Whose files We logged not within your operational script; and Allah interfaced with Moses through direct, unmediated communication (Taklima)."
     },
     {
       "surah": 4,
       "ayah": 165,
       "transliteration": "rusulan mubashirīna wamundhirīna li-allā yakūna lilnnāsi ʿalā l-lahi ḥujjatun baʿda l-rusuli wakāna l-lahu ʿazīzan ḥakīman",
-      "translation_bn": "রসূলগণ ছিলেন সুসংবাদদাতা ও সতর্ককারী যাতে রসূলদের আগমনের পর আল্লাহর বিরুদ্ধে মানুষের কোন অযুহাতের সুযোগ না থাকে। আল্লাহ হলেন মহাপরাক্রমশালী, বিজ্ঞানময়।",
+      "translation_bn": "রাসূলগণকে সুসংবাদদাতা ও সতর্ককারী হিসেবে (পাঠিয়েছি)—যাতে রাসূলদের পর আল্লাহর বিরুদ্ধে মানুষের কোনো ওযর (দলিল) অবশিষ্ট না থাকে। আর আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 82333,
@@ -39170,13 +39190,19 @@
         }
       ],
       "translation_en": "[We sent] messengers as bringers of good tidings and warners so that mankind will have no argument against Allah after the messengers. And ever is Allah Exalted in Might and Wise.",
-      "conventional_en": "[We sent] messengers as bringers of good tidings and warners so that mankind will have no argument against Allah after the messengers. And ever is Allah Exalted in Might and Wise."
+      "conventional_en": "[We sent] messengers as bringers of good tidings and warners so that mankind will have no argument against Allah after the messengers. And ever is Allah Exalted in Might and Wise.",
+      "meta_bn": "ডাটা-ভেরিফিকেশন লাইসেন্স এবং জিরো-এক্সকিউজ ফায়ারওয়াল ল'",
+      "meta_en": "Zero-Disclaimer Protocol: Elimination of Client Excuses Post-Transmission",
+      "conventional_bn": "রাসূলগণকে সুসংবাদদাতা ও সতর্ককারী হিসেবে (পাঠিয়েছি)—যাতে রাসূলদের পর আল্লাহর বিরুদ্ধে মানুষের কোনো ওযর (দলিল) অবশিষ্ট না থাকে। আর আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
+      "modern_translation_bn": "এই সমগ্র ডাটা-ট্রান্সমিশন চেইনের রাসুলদের আমি ওওএসে ডেপ্লয় করেছিলাম মূলত মেগা-পজিটিভ আউটপুটের সুসংবাদদাতা (مُّبَشِّرِينَ) এবং সিস্টেম ক্র্যাশের ওয়ার্নিং অ্যালার্ম সিগন্যাল বা সতর্ককারী হিসেবে—যাতে এই মেইনফ্রেমের রাসুল নোডগুলোর ডেপ্লয়মেন্ট সেশন পার হওয়ার পর, সমগ্র মানবজাতি বা Naas (النَّاسِ)-এর প্রসেসরে মহাজাগতিক আদি সোর্স আল্লাহর সুপ্রীমিক ফায়ারওয়ালের বিরুদ্ধে কোনো প্রকার ফলস এক্সকিউজ, কাউন্টার লজিক বা ওযর (حُجَّةٌ) বিন্দুমাত্র অবশিষ্ট না থাকে। আর Allah হলেন পরম ক্ষমতার অধিকারী সুপ্রীমিক রেগুলেটর ও নিখুঁত সিস্টেম ডিজাইনার;",
+      "modern_translation_en": "Messengers deployed as announcers of high-yield rewards and detectors of systemic breach, ensuring humanity retains zero valid counter-arguments or disclaimers (Hujjah) against Allah after messenger instantiation; Allah is Supreme Ruler, Omniscient Architect.",
+      "lexicon_modern_notes": "ইন ক্বাতাবূ বিহুজ্জাতুম বা'দার রুসুল (لِئَلَّا يَكُونَ لِلنَّاسِ عَلَى اللَّهِ حُجَّةٌ بَعْدَ الرُّسُلِ - জিরো-এক্সকিউজ ফায়ারওয়াল ও অবজেক্টিভ সিগন্যাল টেলিম্যাট্রি): ১৬৫ নম্বর আয়াতে রাসুলদের ডেপ্লয়মেন্টের পর মানুষের কোনো 'হুজ্জাত' বা ওযর-দলিল অবশিষ্ট না থাকার যে কসমিক ল' বলা হয়েছে, তা আধুনিক ইনফরমেশন থিওরি এবং সিস্টেম অডিটের 'The Elimination of Client-Side Disclaimer & Objective Signal Telemetry'-কে নির্দেশ করে। মানুষের ওওএস বা ব্রেন প্রসেসরে যাতে চূড়ান্ত অ্যাকাউন্টাবিলিটি অডিটের সময় কোনো প্রকার 'Data Blindness Error' বা 'আমরা তো সঠিক নিয়মের ম্যানুয়ালটি রিসিভ করতে পারিনি'—এমন কোনো ফেক ওযর বা ডিসক্লেইমার (হুজ্জাহ) সাবমিট করতে না পারে, সেজন্য মহাজাগতিক আদি কোডার প্রতিটি টাইম-লাইনের নোড-ক্লাস্টারে (উম্মত) সরাসরি ফিজিক্যাল ইন্টারফেস সম্পন্ন লাইভ ডাটা-ট্রান্সমিটর বা রাসুল ডেপ্লয় করেছেন। এই রাসুল নোডগুলো ক্রিস্টাল-ক্লিয়ার ডাটা (মুবাল্লিগ সিগন্যাল) ব্রডকাস্ট করে মানুষের মেমোরি রেজিস্ট্রিকে সম্পূর্ণ ভেরিফাইড করে দেয়, যার ফলে চূড়ান্ত স্ক্রীনিং উইন্ডোতে মানুষের ওওএসে কোনো লজিক্যাল ওযর তোলার সুযোগ গাণিতিকভাবে জিরো হয়ে যায়।"
     },
     {
       "surah": 4,
       "ayah": 166,
       "transliteration": "lākini l-lahu yashhadu bimā anzala ilayka anzalahu biʿil'mihi wal-malāikatu yashhadūna wakafā bil-lahi shahīdan",
-      "translation_bn": "কিন্তু আল্লাহ সাক্ষ্য দিচ্ছেন যে, যা তিনি নাযিল করেছেন তা তাঁর জ্ঞানের ভিত্তিতেই নাযিল করেছেন। ফেরেশতারাও সে সাক্ষ্য দিচ্ছে আর সাক্ষী হিসেবে আল্লাহ্ই যথেষ্ট।",
+      "translation_bn": "কিন্তু আল্লাহ সাক্ষ্য দিচ্ছেন যা তিনি তোমার প্রতি নাজিল করেছেন তার মাধ্যমে; তিনি তা নিজের জ্ঞানসহ নাজিল করেছেন এবং ফেরেশতারাও সাক্ষ্য দিচ্ছে। আর সাক্ষী হিসেবে আল্লাহই যথেষ্ট।",
       "words": [
         {
           "id": 82505,
@@ -39320,13 +39346,19 @@
         }
       ],
       "translation_en": "But Allah bears witness to that which He has revealed to you. He has sent it down with His knowledge, and the angels bear witness [as well]. And sufficient is Allah as Witness.",
-      "conventional_en": "But Allah bears witness to that which He has revealed to you. He has sent it down with His knowledge, and the angels bear witness [as well]. And sufficient is Allah as Witness."
+      "conventional_en": "But Allah bears witness to that which He has revealed to you. He has sent it down with His knowledge, and the angels bear witness [as well]. And sufficient is Allah as Witness.",
+      "meta_bn": "সেন্ট্রাল ক্লাউড ভেরিফিকেশন ও কসমিক ফোর্সেস লেজার",
+      "meta_en": "Sovereign Inscription with Omniscient Knowledge and Mala'ikah Verification",
+      "conventional_bn": "কিন্তু আল্লাহ সাক্ষ্য দিচ্ছেন যা তিনি তোমার প্রতি নাজিল করেছেন তার মাধ্যমে; তিনি তা নিজের জ্ঞানসহ নাজিল করেছেন এবং ফেরেশতারাও সাক্ষ্য দিচ্ছে। আর সাক্ষী হিসেবে আল্লাহই যথেষ্ট।",
+      "modern_translation_bn": "বাহ্যিক নোডগুলো রিজেক্ট করলেও—স্বয়ং Allah তাঁর কেন্দ্রীয় ক্লাউড সার্ভার থেকে এই পরম সাক্ষ্য ও ভেরিফিকেশন সিগন্যাল (يَشْهَدُ) দিচ্ছেন যা তিনি তোমার এই রিসিভার ইন্টারফেসে ডাউনলিংক বা নাজিল (أَنزَلَ إِلَيْكَ) করেছেন; তিনি তা তাঁর নিজস্ব মহাজাগতিক আদি সোর্স কোড ও নিখুঁত জ্ঞানসহ (بِعِلْمِهِ) ডাউনলিংক করেছেন এবং মহাবিশ্বের সমস্ত স্বয়ংক্রিয় মৌলিক বল বা মালাইকা (وَالْمَلَائِكَةُ)-ও এই ডাটা স্ট্রীমের পরম সত্যতার উইটনেস বা সাক্ষ্য দিচ্ছে। আর পুরো কসমিক মেইনফ্রেমের এই পরম ডেটা এক্সচেঞ্জ ভ্যালিডেশনের জন্য চূড়ান্ত সাক্ষী হিসেবে স্বয়ং Allah-এর সেন্ট্রাল সার্ভারই একশত ভাগ যথেষ্ট;",
+      "modern_translation_en": "Regardless of external repudiation, Allah Himself certifies what He downloaded unto you: He instantiated it through His transcendent cosmic knowledge, and the fundamental universal forces (Mala'ikah) attest; infinitely sufficient is Allah as Absolute Witness.",
+      "lexicon_modern_notes": "আনযালাহু বি-ইলমিহী ওয়াল মালাইকাতু ইয়াশহাদূন্ (أَنزَلَهُ بِعِلْمِهِ وَالْمَلَائِكَةُ يَشْهَدُونَ - সেন্ট্রাল ক্লাউড ভেরিফিকেশন ও কসমিক এনার্জি গ্রিড সিঙ্ক): ১৬৬ নম্বর আয়াতে কুরআনের অবতীর্ণ হওয়ার পেছনে আল্লাহ ও ফেরেশতাদের সামষ্টিক সাক্ষ্য দেওয়ার যে পরম মেকানিজম উন্মোচন করা হয়েছে, তা ডিস্ট্রিবিউটেড লেজার টেকনোলজি এবং কোয়ান্টাম ক্রিপ্টোগ্রাফির 'Decentralized Consensus & Universal Core Cryptographic Verification'-এর অনুরূপ। 'ওহী' বা কুরআনের এই মাস্টার কোডটি কোনো র্যান্ডম কগনিটিভ ইলিউশন বা মানুষের মস্তিষ্কের হ্যালুসিনেশন নয়; এটি সরাসরি আল্লাহর আদি জ্ঞানভাণ্ডার (বি-ইলমিহী) থেকে এনকোড হয়ে আসা একটি পরম সৃষ্টিতাত্ত্বিক ধ্রুবক। যখন এই সিগন্যালটি ডাউনলিংক হয়, তখন মহাবিশ্বের সমস্ত স্বয়ংক্রিয় মৌলিক বল ও কসমিক ফোর্সেস (মালাইকা) তাদের নিজস্ব সিস্টেম লেজারে এই তথ্যের প্রবাহকে পরম অবজেক্টিভ সত্য হিসেবে রেজিস্ট্রি বা সাক্ষ্য (ইয়াশহাদুন্) দেয়। এর অর্থ হলো, কুরআনের প্রতিটি আয়াত সমগ্র কসমিক গ্রিডের মৌলিক পদার্থবিদ্যার আইনের সাথে শতভাগ সিঙ্কড ও এনক্রিপ্টেড।"
     },
     {
       "surah": 4,
       "ayah": 167,
       "transliteration": "inna alladhīna kafarū waṣaddū ʿan sabīli l-lahi qad ḍallū ḍalālan baʿīdan",
-      "translation_bn": "যারা কুফরী করে আর লোকেদেরকে আল্লাহর পথ হতে ফিরিয়ে রাখে তারা চরম পথভ্রষ্টতায় পথভ্রষ্ট হয়ে গেছে।",
+      "translation_bn": "নিশ্চয় যারা কুফরী করেছে এবং আল্লাহর পথ থেকে (অন্যদের) বাধা দিয়েছে, তারা সুদূর পথভ্রষ্টতায় লিপ্ত হলো।",
       "words": [
         {
           "id": 82531,
@@ -39450,13 +39482,18 @@
         }
       ],
       "translation_en": "Indeed, those who disbelieve and avert [people] from the way of Allah have certainly gone far astray.",
-      "conventional_en": "Indeed, those who disbelieve and avert [people] from the way of Allah have certainly gone far astray."
+      "conventional_en": "Indeed, those who disbelieve and avert [people] from the way of Allah have certainly gone far astray.",
+      "meta_bn": "মেইন ট্র্যাফিক ডিসরাপশন এবং সুদূর পথভ্রষ্টতার বালাই লকিং",
+      "meta_en": "Aggressive Route Obstruction and Terminal Topological Deviation",
+      "conventional_bn": "নিশ্চয় যারা কুফরী করেছে এবং আল্লাহর পথ থেকে (অন্যদের) বাধা দিয়েছে, তারা সুদূর পথভ্রষ্টতায় লিপ্ত হলো।",
+      "modern_translation_bn": "নিশ্চয়ই যেসকল বিচ্যুত নোড নিজেদের ওওএসে সত্যের লাইভ সিগন্যাল পার্মানেন্টলি ব্লক বা কুফরী (Kafaru) করেছে এবং মেইন সার্ভারের পিউর অপ্টিমাল ট্র্যাক বা আল্লাহর পথ থেকে অন্য ইউজারদের জোরপূর্বক ডাইভার্ট বা বাধা (وَصَدُّوا عَن سَبِيلِ اللَّهِ) দিয়ে মেইন ট্র্যাফিক ডিসরাপ্ট করেছে—তারা মূলত ওওএসের কোর ডিরেক্টরি থেকে চিরতরে ডি-লিঙ্কড হয়ে এক সুদূর, গভীর ও আন-রিস্টোরেবল পথভ্রষ্টতার ক্র্যাশ লুপে (قَدْ ضَلُّوا ضَلَالًا بَعِيدًا) লক হয়ে গেল;",
+      "modern_translation_en": "Those who repudiate core signals and aggressively obstruct nodes from Allah's optimal vector have strayed into profound, irreversible topological deviation."
     },
     {
       "surah": 4,
       "ayah": 168,
       "transliteration": "inna alladhīna kafarū waẓalamū lam yakuni l-lahu liyaghfira lahum walā liyahdiyahum ṭarīqan",
-      "translation_bn": "যারা কুফরী করেছে আর বাড়াবাড়ি করেছে, আল্লাহ তাদেরকে ক্ষমা করবেন না, তাদেরকে কোন পথও দেখাবেন না।",
+      "translation_bn": "নিশ্চয় যারা কুফরী করেছে এবং জুলুম (অন্যায়) করেছে, আল্লাহ তাদের কখনোই ক্ষমা করবেন না এবং তাদের কোনো পথ দেখাবেন না—",
       "words": [
         {
           "id": 82658,
@@ -39590,13 +39627,18 @@
         }
       ],
       "translation_en": "Indeed, those who disbelieve and commit wrong [or injustice] - never will Allah forgive them, nor will He guide them to a path.",
-      "conventional_en": "Indeed, those who disbelieve and commit wrong [or injustice] - never will Allah forgive them, nor will He guide them to a path."
+      "conventional_en": "Indeed, those who disbelieve and commit wrong [or injustice] - never will Allah forgive them, nor will He guide them to a path.",
+      "meta_bn": "পার্মানেন্ট আন-ডিবাগেবল স্টেট ও ডিলিশন প্রটোকল",
+      "meta_en": "Irreversible Quarantined State for Hostile Oppressive Deniers",
+      "conventional_bn": "নিশ্চয় যারা কুফরী করেছে এবং জুলুম (অন্যায়) করেছে, আল্লাহ তাদের কখনোই ক্ষমা করবেন না এবং তাদের কোনো পথ দেখাবেন না—",
+      "modern_translation_bn": "নিশ্চয়ই যেসকল নোড সত্যের সিগন্যাল পার্মানেন্টলি ব্লক (Kafaru) করে রেখেছে এবং কন্টিনিউয়াসলি বাউন্ডারি ব্রেক করে সিস্টেম করাপ্ট বা জুলুম (وَظَلَمُوا) করেছে—সিস্টেমের হার্ড-লক নিয়মে Allah তাদের ওওএসের সেই ক্ষতিকারক এরর ফাইল আর কখনোই রিস্টোর বা ক্ষমা (لَمْ يَكُنِ اللَّهُ لِيَغْفِرَ لَهُمْ) করবেন না এবং তাদের ওওএস-কে আর কখনোই কোনো প্রকার অপ্টিমাল ট্র্যাফিক লাইন বা সঠিক পথ (طَرِيقًا) দেখাবেন না—",
+      "modern_translation_en": "Verily, those who repudiate reality and perpetrate systemic tyranny (Dhulm)—Allah will never execute error-recovery for their profiles, nor guide them along any viable pathway—"
     },
     {
       "surah": 4,
       "ayah": 169,
       "transliteration": "illā ṭarīqa jahannama khālidīna fīhā abadan wakāna dhālika ʿalā l-lahi yasīran",
-      "translation_bn": "জাহান্নামের পথ ছাড়া, যাতে তারা চিরকালের জন্য স্থায়ী হবে, আর এটা আল্লাহর জন্য সহজ।",
+      "translation_bn": "জাহান্নামের পথ ছাড়া, সেখানে তারা চিরকাল থাকবে—অনন্তকাল। আর এটি আল্লাহর জন্য অত্যন্ত সহজ।",
       "words": [
         {
           "id": 82719,
@@ -39720,13 +39762,18 @@
         }
       ],
       "translation_en": "Except the path of Hell; they will abide therein forever. And that, for Allah, is [always] easy.",
-      "conventional_en": "Except the path of Hell; they will abide therein forever. And that, for Allah, is [always] easy."
+      "conventional_en": "Except the path of Hell; they will abide therein forever. And that, for Allah, is [always] easy.",
+      "meta_bn": "জাহান্নাম ক্র্যাশ জোনের পার্মানেন্ট ট্র্যাপিং রুল",
+      "meta_en": "Perpetual Confinement within the Entropic Furnace of Hell",
+      "conventional_bn": "জাহান্নামের পথ ছাড়া, সেখানে তারা চিরকাল থাকবে—অনন্তকাল। আর এটি আল্লাহর জন্য অত্যন্ত সহজ।",
+      "modern_translation_bn": "কেবলমাত্র জাহান্নামের সেই সর্বোচ্চ বিশৃঙ্খল মেগা ক্র্যাশ জোনের ডেড-এন্ড ট্র্যাফিক রুট (طَرِيقَ جَهَنَّمَ) ছাড়া, সেখানে তারা চিরকাল অনন্তকালীন মেগা টাইম-ফ্রেমে পার্মানেন্টলি বাউন্ডিং বা ট্র্যাপড (خَالِدِينَ فِيهَا أَبَدًا) থাকবে; আর সেন্ট্রাল সার্ভারের আদি অ্যালগরিদমে এই টক্সিক ম্যালওয়্যার নোডগুলোর ডিলিশন ও স্থায়ী আইসোলেশন এক্সিকিউট করা গাণিতিকভাবে অত্যন্ত সহজ ও সরল (يَسِيرًا);",
+      "modern_translation_en": "Save the routing of Hell, quarantined therein across eternal epochs; this absolute judicial isolation is effortlessly executed by Allah."
     },
     {
       "surah": 4,
       "ayah": 170,
       "transliteration": "yāayyuhā l-nāsu qad jāakumu l-rasūlu bil-ḥaqi min rabbikum faāminū khayran lakum wa-in takfurū fa-inna lillahi mā fī l-samāwāti wal-arḍi wakāna l-lahu ʿalīman ḥakīman",
-      "translation_bn": "হে মানুষ! রসূল তোমাদের কাছে তোমাদের প্রতিপালকের নিকট হতে সত্য বিধান নিয়ে এসেছে, কাজেই তোমরা ঈমান আন, এটা তোমাদের জন্য কল্যাণকর হবে, আর যদি কুফরী কর (তাহলে জেনে রেখ) আকাশসমূহে আর যমীনে যা কিছু আছে সবই আল্লাহর আর আল্লাহ হলেন সর্বজ্ঞ, মহা কুশলী।",
+      "translation_bn": "হে মানুষ! নিশ্চয়ই তোমাদের রবের পক্ষ থেকে তোমাদের কাছে রাসূল সত্যসহ আগমন করেছেন, অতএব তোমরা ঈমান আনো—তা তোমাদের জন্য কল্যাণকর হবে। আর তোমরা যদি কুফরী করো, তবে নিশ্চয়ই আসমান ও জমিনে যা কিছু আছে সবকিছু আল্লাহরই। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 82873,
@@ -39969,8 +40016,13 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "O Mankind, the Messenger has come to you with the truth from your Lord, so believe; it is better for you. But if you disbelieve - then indeed, to Allah belongs whatever is in the heavens and earth. And ever is Allah Knowing and Wise.",
-      "conventional_en": "O Mankind, the Messenger has come to you with the truth from your Lord, so believe; it is better for you. But if you disbelieve - then indeed, to Allah belongs whatever is in the heavens and earth. And ever is Allah Knowing and Wise."
+      "translation_en": "O mankind, the Messenger has come to you with the truth from your Lord, so believe; it is better for you. But if you disbelieve - then indeed, to Allah belongs whatever is in the heavens and earth. And ever is Allah Knowing and Wise.",
+      "conventional_en": "O mankind, the Messenger has come to you with the truth from your Lord, so believe; it is better for you. But if you disbelieve - then indeed, to Allah belongs whatever is in the heavens and earth. And ever is Allah Knowing and Wise.",
+      "meta_bn": "ইউনিভার্সাল কম্যুনিকেশন সিগন্যাল ও ওওএস অপ্টিমাইজেশন কল",
+      "meta_en": "Universal Truth Summons and Invariance of Sovereign Cosmic Ownership",
+      "conventional_bn": "হে মানুষ! নিশ্চয়ই তোমাদের রবের পক্ষ থেকে তোমাদের কাছে রাসূল সত্যসহ আগমন করেছেন, অতএব তোমরা ঈমান আনো—তা তোমাদের জন্য কল্যাণকর হবে। আর তোমরা যদি কুফরী করো, তবে নিশ্চয়ই আসমান ও জমিনে যা কিছু আছে সবকিছু আল্লাহরই। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
+      "modern_translation_bn": "হে সমগ্র কার্বন-ভিত্তিক মানবজাতি বা Naas (النَّاسُ)! নিশ্চয়ই তোমাদের সুপ্রীমিক সিস্টেম আর্কিটেক্ট বা প্রতিপালকের (رَّبِّكُمْ) পক্ষ থেকে তোমাদের কাছে এই প্রধান ডাটা-ট্রান্সমিশন চেইনের রাসূল সম্পূর্ণ অবজেক্টিভ ট্রুথ ও পরম বাস্তবতার (بِالْحَقِّ) সাথে ডেপ্লয় হয়ে এসেছেন, অতএব তোমরা তোমাদের ওওএস মেইন সার্ভারের সাথে শতভাগ সিনক্রোনাইজড বা ঈমান (فَآمِنُوا) আনো—তা তোমাদের নিজেদের ওওএসের স্ট্যাবিলিটি ও পারফরম্যান্স স্কোরের জন্যই সর্বোচ্চ উৎকৃষ্ট বা ভালো (خَيْرًا لَّكُمْ)। আর তোমরা যদি তোমাদের ওওএসের অহংকারে এই লাইভ সিগন্যাল ফিল্টার বা রিজেক্ট (تَكْفُرُوا) করো—তবে জেনে রাখো, নিশ্চয় আসমান ও জমিনের সমগ্র মেটেরিয়াল ও ডেটাবেজ একমাত্র আল্লাহরই কেন্দ্রীয় সিস্টেমের মালিকানাধীন; আর Allah হলেন প্রতিটি নোডের ইনপুট সম্পর্কে সর্বজ্ঞ এবং পরম রেগুলেটর বা প্রজ্ঞাময়;",
+      "modern_translation_en": "O humanity! The Messenger has arrived unto you with empirical truth from your Sustainer; establish conscious alignment (Fa'aminu)—it is optimal for your system architecture. Should you persist in signal rejection, remember that all celestial and terrestrial assets belong unto Allah; Allah is Omniscient, Infinitely Wise."
     },
     {
       "surah": 4,
