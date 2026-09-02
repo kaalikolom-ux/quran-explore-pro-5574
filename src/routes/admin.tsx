@@ -1156,6 +1156,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
   const [tagsInput, setTagsInput] = useState<string>("");
+  const [customPublishedAt, setCustomPublishedAt] = useState<string>("");
 
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft" | "trash">("all");
 
@@ -1410,7 +1411,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         author_id: authorId || null,
         category_id: categoryId || null,
         tags: parsedTags,
-        published_at: published ? new Date().toISOString() : null,
+        published_at: published
+          ? (customPublishedAt ? new Date(customPublishedAt).toISOString() : new Date().toISOString())
+          : null,
         created_by: user!.id,
         deleted_at: null,
       };
@@ -1434,6 +1437,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
       setAuthorId("");
       setCategoryId("");
       setTagsInput("");
+      setCustomPublishedAt("");
       setPublished(true);
       toast.success(published ? "আর্টিকেল সফলভাবে প্রকাশিত হয়েছে" : "আর্টিকেল সফলভাবে খসড়া (Draft) হিসেবে সংরক্ষিত হয়েছে");
     },
@@ -1628,7 +1632,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           />
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-1.5">
             <Label htmlFor="author" className="text-xs font-semibold">লেখক নির্বাচন</Label>
             <select
@@ -1664,7 +1668,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="post-status" className="text-xs font-semibold">পোস্ট দৃশ্যমানতা / স্ট্যাটাস</Label>
+            <Label htmlFor="post-status" className="text-xs font-semibold">পোস্ট স্ট্যাটাস</Label>
             <select
               id="post-status"
               value={published ? "published" : "draft"}
@@ -1674,6 +1678,29 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
               <option value="published">🟢 প্রকাশিত (Published)</option>
               <option value="draft">🟡 খসড়া (Draft)</option>
             </select>
+          </div>
+
+          <div className="space-y-1.5">
+            <Label htmlFor="post-published-at" className="text-xs font-semibold flex items-center justify-between">
+              <span>প্রকাশের তারিখ ও সময়</span>
+              {customPublishedAt && (
+                <button
+                  type="button"
+                  onClick={() => setCustomPublishedAt("")}
+                  className="text-[10px] text-muted-foreground hover:text-primary cursor-pointer"
+                  title="বর্তমান সময়ে রিসেট করুন"
+                >
+                  রিসেট
+                </button>
+              )}
+            </Label>
+            <Input
+              id="post-published-at"
+              type="datetime-local"
+              value={customPublishedAt}
+              onChange={(e) => setCustomPublishedAt(e.target.value)}
+              className="h-9 text-xs"
+            />
           </div>
         </div>
 
@@ -1714,6 +1741,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                 setAuthorId("");
                 setCategoryId("");
                 setTagsInput("");
+                setCustomPublishedAt("");
               }}
             >
               বাতিল
@@ -1971,6 +1999,8 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                             setAuthorId(a.author_id ?? "");
                             setCategoryId(a.category_id ?? "");
                             setTagsInput(Array.isArray(a.tags) ? a.tags.join(", ") : "");
+                            const pubDate = a.published_at || a.created_at;
+                            setCustomPublishedAt(pubDate ? new Date(pubDate).toISOString().slice(0, 16) : "");
                             setForm({
                               slug: a.slug,
                               title_bn: a.title_bn,
