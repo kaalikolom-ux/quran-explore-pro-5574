@@ -43,7 +43,7 @@ export interface StaticArticle {
 
 export const STATIC_CATEGORIES: StaticCategory[] = [
   {
-    id: "cat-scientific",
+    id: "7f3d2a1b-4c5e-4689-a012-3456789abcde",
     name_bn: "বিজ্ঞানভিত্তিক",
     name_en: "Scientific",
     slug: "scientific",
@@ -73,7 +73,7 @@ export const STATIC_ARTICLES: StaticArticle[] = [
     title_en: "Surah Al-Fatihah (1): The Cosmic Opening Protocol & Systemic Communication Framework",
     excerpt_bn: "সূরা আল-ফাতিহা মহাজাগতিক সিস্টেমের Root Directory Authentication, Attribute Signal Broadcast, Data-compassionate Declaration, Final Phase System Admin, Full Synchronization Protocol, Optimized Pathway Request ও Data-blessing Stream Allocation উপস্থাপন করে।",
     excerpt_en: "Surah Al-Fatihah decodes the Master Opening Protocol: Root Directory Authentication, Attribute Signal Broadcast, Global Data-Compassion, Final Phase System Admin, and Optimized Pathway Routing.",
-    category_id: "cat-scientific",
+    category_id: "7f3d2a1b-4c5e-4689-a012-3456789abcde",
     author_id: "38aa28c8-3535-4a1b-ba06-3d1e2792a9c1",
     published: true,
     published_at: "2026-08-31T22:25:00.000Z",
@@ -438,7 +438,7 @@ export const STATIC_ARTICLES: StaticArticle[] = [
     title_en: "Word Application & Balance in Scientific Quranic Translation: Literal vs Expository Understanding",
     excerpt_bn: "বিজ্ঞানভিত্তিক অনুবাদে অতিরিক্ত শব্দ প্রয়োগের ঝুঁকি, শব্দানুবাদ বনাম তাত্ত্বিক অনুবাদের পার্থক্য এবং ৪:৮২ ফিল্টারের অধীনে কঠোর আকিদাগত ও ভাষাগত ভারসাম্য রক্ষার মেথডোলজি।",
     excerpt_en: "The risk of verbosity in scientific translations, literal vs expository translation paradigms, and safeguarding the 4:82 consistency filter with theological rigor.",
-    category_id: "cat-scientific",
+    category_id: "7f3d2a1b-4c5e-4689-a012-3456789abcde",
     author_id: "38aa28c8-3535-4a1b-ba06-3d1e2792a9c1",
     published: true,
     published_at: "2026-09-03T00:30:00.000Z",
