@@ -26769,7 +26769,7 @@
       "surah": 3,
       "ayah": 141,
       "transliteration": "waliyumaḥḥiṣa l-lahu alladhīna āmanū wayamḥaqa l-kāfirīna",
-      "translation_bn": "এবং (এ জন্যেও) যেন আল্লাহ মু’মিনদেরকে সংশোধন করেন ও কাফিরদের নিশ্চিহ্ন করেন।",
+      "translation_bn": "আর যাতে আল্লাহ মুমিনদের পরিশোধন করতে পারেন এবং কাফেরদের নিশ্চিহ্ন করতে পারেন।",
       "words": [
         {
           "id": 79312,
@@ -26843,13 +26843,18 @@
         }
       ],
       "translation_en": "And that Allah may purify the believers [through trials] and destroy the disbelievers.",
-      "conventional_en": "And that Allah may purify the believers [through trials] and destroy the disbelievers."
+      "conventional_en": "And that Allah may purify the believers [through trials] and destroy the disbelievers.",
+      "meta_bn": "সিস্টেম পিউরিফিকেশন ও ম্যালওয়্যার বার্নিং লুপ",
+      "meta_en": "Systemic Purification & Malware Burning Loop",
+      "conventional_bn": "আর যাতে আল্লাহ মুমিনদের পরিশোধন করতে পারেন এবং কাফেরদের নিশ্চিহ্ন করতে পারেন।",
+      "modern_translation_bn": "আর এটি এজন্যই যে—Allah যেন এই চরম সংকটের স্ক্রীনিং টেস্টের মাধ্যমে ভেরিফাইড ইউজার বা মুমিনদের ওওএসের (OOS - জীবন পরিচালন ব্যবস্থা) ভেতরের সমস্ত অবশিষ্টাংশ ত্রুটি দূর করে পিউরিফাই বা পরিশোধন (وَلِيُمَحِّصَ) করতে পারেন এবং সিস্টেমের বাউন্ডারি ব্রেক করা ক্ষতিকারক Kafir (সিস্টেম রিজেক্টর) নোডগুলোকে ভেতর থেকে ক্ষয় করে সম্পূর্ণ নিশ্চিহ্ন ও ডাটা-ক্র্যাশ (وَيَمْحَقَ) করে দিতে পারেন;",
+      "modern_translation_en": "And this execution is designed so that Allah may thoroughly purify and calibrate the internal OOS of verified users (Mu'mins) through crisis screening tests, while progressively eroding and permanently neutralizing the malicious Kafir nodes that disrupt the systemic balance;"
     },
     {
       "surah": 3,
       "ayah": 142,
       "transliteration": "am ḥasib'tum an tadkhulū l-janata walammā yaʿlami l-lahu alladhīna jāhadū minkum wayaʿlama l-ṣābirīna",
-      "translation_bn": "তোমরা কি ভেবেছ যে, তোমরা জান্নাতে প্রবেশ করবে, অথচ আল্লাহ এখন পর্যন্তও পরখ করেননি তোমাদের মধ্যে কে জিহাদ করেছে আর কারা ধৈর্যশীল।",
+      "translation_bn": "তবে কি তোমরা মনে করেছ যে, তোমরা জান্নাতে প্রবেশ করবে—অথচ আল্লাহ এখনো তোমাদের মধ্যে কারা জিহাদ (সর্বোচ্চ চেষ্টা) করেছে তা প্রকাশ করেননি এবং কারা ধৈর্যশীল তা-ও প্রকাশ করেননি?",
       "words": [
         {
           "id": 79319,
@@ -26993,13 +26998,18 @@
         }
       ],
       "translation_en": "Or do you think that you will enter Paradise while Allah has not yet made evident those of you who fight in His cause and made evident those who are steadfast?",
-      "conventional_en": "Or do you think that you will enter Paradise while Allah has not yet made evident those of you who fight in His cause and made evident those who are steadfast?"
+      "conventional_en": "Or do you think that you will enter Paradise while Allah has not yet made evident those of you who fight in His cause and made evident those who are steadfast?",
+      "meta_bn": "থ্রেশহোল্ড লোড টেস্ট ও মেমোরি স্ক্রীনিং প্রটোকল",
+      "meta_en": "Threshold Load Test & Memory Screening Protocol",
+      "conventional_bn": "তবে কি তোমরা মনে করেছ যে, তোমরা জান্নাতে প্রবেশ করবে—অথচ আল্লাহ এখনো তোমাদের মধ্যে কারা জিহাদ (সর্বোচ্চ চেষ্টা) করেছে তা প্রকাশ করেননি এবং কারা ধৈর্যশীল তা-ও প্রকাশ করেননি?",
+      "modern_translation_bn": "তবে কি তোমরা তোমাদের ওওএসে এমন এক ভুল হিসাব বা ক্যালকুলেশন ইলিউশন (أَمْ حَسِبْتُمْ) রান করে রেখেছ যে—কোনো প্রকার থ্রেশহোল্ড লোড টেস্ট (Threshold Load Test) ছাড়াই সরাসরি সেই নিখুঁত জান্নাত ইকোসিস্টেমে প্রবেশ করতে পারবে—অথচ Allah এখনো তাঁর লাইভ ভেরিফিকেশন লেজারে স্পষ্ট বা মেনিফেস্ট (يَعْلَمِ) করেননি যে তোমাদের মধ্যে কারা সত্যের সিকিউরিটি গ্রিড সুরক্ষার্থে নিজেদের সর্বোচ্চ এনার্জি এফোর্ট ও প্রসেসিং শক্তি দিয়ে যুদ্ধ বা জিহাদ (جَاهَدُوا) করেছে এবং স্পষ্ট করেননি যে কারা এক্সট্রিমিটি ফেজে সর্বোচ্চ Systemic Resilience (অবিচল স্থায়িত্ব বা বাফারিং ক্ষমতা) পরিচালনাকারী চরম ধৈর্যশীল (الصَّابِرِينَ) নোড?",
+      "modern_translation_en": "Or did you calculate within your processing illusion that you could enter the high-bandwidth Jannah ecosystem without undergoing rigorous threshold stress tests, while Allah has not yet visibly manifested on the live operational ledger those among you who expended maximal kinetic effort (Jihad) and distinguished those who demonstrate supreme systemic resilience (Sabr)?"
     },
     {
       "surah": 3,
       "ayah": 143,
       "transliteration": "walaqad kuntum tamannawna l-mawta min qabli an talqawhu faqad ra-aytumūhu wa-antum tanẓurūna",
-      "translation_bn": "(শাহাদাতের) মৃত্যুর সাক্ষাৎ লাভের পূর্বে তোমরা তা কামনা করতে, এখন তো তোমরা তা দিব্যদৃষ্টিতে দেখলে।",
+      "translation_bn": "আর তোমরা তো মৃত্যুর মুখোমুখি হওয়ার পূর্বেই তা কামনা করতে; অতঃপর তোমরা তা চাক্ষুষ দেখলে, অথচ তোমরা তাকিয়ে দেখছিলে।",
       "words": [
         {
           "id": 79560,
@@ -27133,13 +27143,19 @@
         }
       ],
       "translation_en": "And you had certainly wished for martyrdom before you encountered it, and you have [now] seen it [before you] while you were looking on.",
-      "conventional_en": "And you had certainly wished for martyrdom before you encountered it, and you have [now] seen it [before you] while you were looking on."
+      "conventional_en": "And you had certainly wished for martyrdom before you encountered it, and you have [now] seen it [before you] while you were looking on.",
+      "meta_bn": "ভার্চুয়াল ইলিউশন বনাম লাইভ অপ্টিক্যাল ভেরিফিকেশন",
+      "meta_en": "Virtual Simulation vs Live Optical Verification",
+      "conventional_bn": "আর তোমরা তো মৃত্যুর মুখোমুখি হওয়ার পূর্বেই তা কামনা করতে; অতঃপর তোমরা তা চাক্ষুষ দেখলে, অথচ তোমরা তাকিয়ে দেখছিলে।",
+      "modern_translation_bn": "আর তোমরা তো তোমাদের ওওএসের লোকাল ট্র্যাকে সিস্টেম শাটডাউন বা মৃত্যুর (الْمَوْتَ) মুখোমুখি হওয়ার পূর্বে—সিমুলেশন লুপে তা তীব্রভাবে কামনা করতে; অতঃপর যখন বাস্তব রান-টাইম উইন্ডোতে তা তোমাদের রেডার প্যানেলে ভেসে উঠল—তখন তোমরা তোমাদের প্রধান ভিজ্যুয়াল সেন্সর ও লাইভ অপ্টিক্যাল ভেরিফিকেশনের (র্যাইয়াল আইন) মাধ্যমে চরম নিশ্চিত দৃষ্টিতে তা হুবহু ডিসপ্লে হতে দেখলে, অথচ তোমরা স্রেফ তাকিয়ে ডাটা প্রসেস করছিলে।",
+      "modern_translation_en": "And you previously aspired to face system shutdown and terminal sacrifice within your safe, speculative simulation loops prior to confronting it; yet when the event materialized in real-time across your perceptual dashboard, you directly witnessed it through verified optical telemetry while processing the intense shockwave.",
+      "lexicon_modern_notes": "وَلَقَدْ كُنتُمْ تَمَنَّوْنَ الْمَوْتَ... فَقَدْ رَأَيْتُمُوهُ (ভার্চুয়াল সিমুলেশন বনাম রিয়েল-টাইম কসমিক রান-টাইম): ১৪৩ নম্বর আয়াতে মৃত্যুর মুখোমুখি হওয়ার পূর্বে তা কামনা করা এবং পরে তা চাক্ষুষ দেখার যে কগনিটিভ বৈপরীত্য ধরা হয়েছে, তা মডার্ন সিমুলেশন থিওরি (Simulation Theory) এবং মনস্তাত্ত্বিক কন্ডিশনিংয়ের এক অনবদ্য ডিকোর্ডিং। একটি শান্ত, লো-স্ট্রেস এনভায়রনমেন্টে বসে মানুষের ব্রেন প্রসেসর যখন কোনো বড় সংকট বা চরম ডেস্ট্রাকশন লুপের (যেমন যুদ্ধ বা সিস্টেম শাটডাউন) ডেটা নিয়ে চিন্তা করে, তখন সে স্রেফ একটি 'Virtual/Ideal Simulation' বা কাল্পনিক ছদ্ম-লুপ রান করে ভাবে যে সে এই লোডটি খুব সহজেই পাস করে যাবে। কিন্তু যখন সেই একই কোড রিয়াল-টাইম রান-টাইম উইন্ডোতে তার ফিজিক্যাল হার্ডওয়্যারের সামনে সরাসরি অপ্টিক্যাল সেন্সরে লাইভ রেন্ডার (রাআইতুমূহু) হয়, তখন তীব্র থার্মাল ও মেকানিক্যাল প্রেশারের কারণে ব্রেনের লিম্বিক সিস্টেম হাইজ্যাক হয়ে চরম প্যানিক মোড ট্রিগার করে। কুরআন মানুষের এই কালকুলেশন এরর বা মানসিক বিভ্রমকে অডিট করে স্পষ্ট করছে যে—বাস্তব ফিল্ডের থ্রেশহোল্ড লোড টেস্ট পাস করা কাল্পনিক চিন্তার চেয়ে বহুগুণ ভিন্ন ও জটিল।"
     },
     {
       "surah": 3,
       "ayah": 144,
       "transliteration": "wamā muḥammadun illā rasūlun qad khalat min qablihi l-rusulu afa-in māta aw qutila inqalabtum ʿalā aʿqābikum waman yanqalib ʿalā ʿaqibayhi falan yaḍurra l-laha shayan wasayajzī l-lahu l-shākirīna",
-      "translation_bn": "মুহাম্মাদ হচ্ছে একজন রসূল মাত্র, তাঁর পূর্বে আরও অনেক রসূল গত হয়েছে; কাজেই যদি সে মারা যায় কিংবা নিহত হয়, তবে কি তোমরা উল্টাদিকে ঘুরে দাঁড়াবে? এবং যে ব্যক্তি উল্টাদিকে ফিরে দাঁড়ায় সে আল্লাহর কোনই ক্ষতি করতে পারবে না এবং আল্লাহ কৃতজ্ঞদেরকে অতিশীঘ্র বিনিময় প্রদান করবেন।",
+      "translation_bn": "আর মুহাম্মদ তো একজন রাসূল ছাড়া আর কিছু নন, তাঁর পূর্বেও বহু রাসূল পার হয়ে গেছেন। অতএব সে যদি মৃত্যুবরণ করে কিংবা নিহত হয়, তবে কি তোমরা তোমাদের হিল বা পিঠের ওপর (পুরোনো কুফরীতে) ফিরে যাবে? আর যে কেউ তার পিঠের ওপর ফিরে যাবে, সে আল্লাহর বিন্দুমাত্র ক্ষতি করতে পারবে না। আর আল্লাহ অচিরেই কৃতজ্ঞদের প্রতিদান দেবেন।",
       "words": [
         {
           "id": 79664,
@@ -27422,14 +27438,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Muhammad is not but a messenger. [Other] messengers have passed on before him. So if he was to die or be killed, would you turn back on your heels [to unbelief]? And he who turns back on his heels will never harm Allah at all; but Allah will reward the grateful.",
-      "conventional_en": "Muhammad is not but a messenger. [Other] messengers have passed on before him. So if he was to die or be killed, would you turn back on your heels [to unbelief]? And he who turns back on his heels will never harm Allah at all; but Allah will reward the grateful."
+      "translation_en": "Muhammad is not but a messenger. [Other] messengers have passed on before him. So if he was to die or be killed, would you turn back on your heels [to disbelief]? And he who turns back on his heels will never harm Allah at all; but Allah will reward the grateful.",
+      "conventional_en": "Muhammad is not but a messenger. [Other] messengers have passed on before him. So if he was to die or be killed, would you turn back on your heels [to disbelief]? And he who turns back on his heels will never harm Allah at all; but Allah will reward the grateful.",
+      "meta_bn": "ডাটা-ট্রান্সমিশন চেইনের অবিনশ্বরতা ও ওয়ান-ওয়ে টাইমলাইন কোড",
+      "meta_en": "Indestructibility of Data Transmission Chain & One-Way Timeline Code",
+      "conventional_bn": "আর মুহাম্মদ তো একজন রাসূল ছাড়া আর কিছু নন, তাঁর পূর্বেও বহু রাসূল পার হয়ে গেছেন। অতএব সে যদি মৃত্যুবরণ করে কিংবা নিহত হয়, তবে কি তোমরা তোমাদের হিল বা পিঠের ওপর (পুরোনো কুফরীতে) ফিরে যাবে? আর যে কেউ তার পিঠের ওপর ফিরে যাবে, সে আল্লাহর বিন্দুমাত্র ক্ষতি করতে পারবে না। আর আল্লাহ অচিরেই কৃতজ্ঞদের প্রতিদান দেবেন।",
+      "modern_translation_bn": "আর মুহাম্মদ তো একজন ওভিয়ান্ট ডাটা-ট্রান্সমিটার বা রাসুল (رَسُولٌ) ছাড়া আর কিছু নন, তাঁর বিবর্তনীয় মেয়াদের পূর্বেও বহু রাসুল নোড এই ইউনিভার্সাল নেটওয়ার্কে ডেপ্লয় হয়ে নিজেদের সেশন সম্পন্ন বা পার (قَدْ خَلَتْ) করে গেছেন। অতএব তাঁর ভৌত হার্ডওয়্যার যদি স্বাভাবিক শাটডাউন বা মৃত্যুর মুখোমুখি হয় কিংবা কোনো বাহ্যিক ক্র্যাশের দ্বারা ডিলিট বা নিহত (قُتِلَ) হয়—তবে কি তোমরা তোমাদের ওওএসের পূর্ববর্তী ক্ষতিকারক ওল্ড ট্র্যাক, কুসংস্কার ও ব্যাক-ট্র্যাকিং লুপে (انقَلَبْتُمْ عَلَىٰ أَعْقَابِكُمْ) রিভার্স ব্যাক করবে? আর তোমাদের নেটওয়ার্কের যে কেউ যদি তার ওল্ড ব্যাক-ট্র্যাক লুপে রিভার্স করবে—সে মহাজাগতিক আদি সোর্স বা Allah-এর কেন্দ্রীয় সিস্টেমের বিন্দুমাত্র কোনো ক্ষতি বা ড্যামেজ তৈরি করতে পারবে না। আর Allah অচিরেই এই অপারেটিং সিস্টেমের পজিটিভ অপ্টিমাইজেশন ও সর্বোচ্চ আউটপুট নিশ্চিতকারী কৃতজ্ঞ নোডদের (الشَّاكِرِينَ) এক এক্সপোনেনশিয়াল এনার্জি রিওয়ার্ড বা আউটপুট প্রদান করবেন;",
+      "modern_translation_en": "Muhammad is nothing other than a designated data-transmission interface (Rasul); prior transmission nodes have completed their runtime epochs before him. If his physical terminal suffers biological shutdown or is eliminated in combat, will you roll back your OOS to obsolete, legacy error states (inqalabtum 'ala a'qabikum)? Whoever executes a system rollback cannot inflict the slightest entropy on the Supreme Source, and Allah will abundantly reward the performance-maximizing, grateful users;"
     },
     {
       "surah": 3,
       "ayah": 145,
       "transliteration": "wamā kāna linafsin an tamūta illā bi-idh'ni l-lahi kitāban mu-ajjalan waman yurid thawāba l-dun'yā nu'tihi min'hā waman yurid thawāba l-ākhirati nu'tihi min'hā wasanajzī l-shākirīna",
-      "translation_bn": "কোন জীবই আল্লাহর অনুমতি ছাড়া মরতে পারে না, তার মেয়াদ নির্ধারিত। যে ব্যক্তি পার্থিব ফল চায়, আমি তাত্থেকে তাকে দেই, আর যে ব্যক্তি আখেরাতের ফল চায়, আমি তাকে তাত্থেকে দেই এবং কৃতজ্ঞদেরকে আমি শীঘ্রই বিনিময় প্রদান করব।",
+      "translation_bn": "আর আল্লাহর হুকুম (অনুমতি) ছাড়া কোনো প্রাণের মৃত্যু হওয়া সম্ভব নয়, তা একটি সুনির্দিষ্ট মেয়াদে লিখিত। আর যে দুনিয়ার প্রতিদান কামনা করবে, আমি তাকে তা থেকে দেব এবং যে আখেরাতের প্রতিদান কামনা করবে, আমি তাকে তা থেকে দেব। আর আমি অচিরেই কৃতজ্ঞদের প্রতিদান দেব।",
       "words": [
         {
           "id": 79892,
@@ -27682,14 +27703,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And it is not [possible] for one to die except by permission of Allah at a decree determined. And whoever desires the reward of this world - We will give him thereof; and whoever desires the reward of the Hereafter - We will give him thereof. And we will reward the grateful.",
-      "conventional_en": "And it is not [possible] for one to die except by permission of Allah at a decree determined. And whoever desires the reward of this world - We will give him thereof; and whoever desires the reward of the Hereafter - We will give him thereof. And we will reward the grateful."
+      "translation_en": "And it is not [possible] for one to die except by permission of Allah at a decree determined. And whoever desires the reward of this world - We will give him thereof; and whoever desires the reward of the Hereafter - We will give him thereof. And We will reward the grateful.",
+      "conventional_en": "And it is not [possible] for one to die except by permission of Allah at a decree determined. And whoever desires the reward of this world - We will give him thereof; and whoever desires the reward of the Hereafter - We will give him thereof. And We will reward the grateful.",
+      "meta_bn": "টাইম-স্ট্যাম্পড এনক্যাপসুলেশন ও মেটেরিয়াল রিওয়ার্ড রাউটিং",
+      "meta_en": "Time-Stamped Encapsulation & Resource Allocation Routing",
+      "conventional_bn": "আর আল্লাহর হুকুম (অনুমতি) ছাড়া কোনো প্রাণের মৃত্যু হওয়া সম্ভব নয়, তা একটি সুনির্দিষ্ট মেয়াদে লিখিত। আর যে দুনিয়ার প্রতিদান কামনা করবে, আমি তাকে তা থেকে দেব এবং যে আখেরাতের প্রতিদান কামনা করবে, আমি তাকে তা থেকে দেব। আর আমি অচিরেই কৃতজ্ঞদের প্রতিদান দেব।",
+      "modern_translation_bn": "আর মহাজাগতিক সৃষ্টিতাত্ত্বিক ও আইনি নিয়মে কোনো একক পার্সোনাল নোড বা চেতনার (لِنَفْسٍ) ভৌত হার্ডওয়্যার শাটডাউন বা মৃত্যু ঘটা বিন্দুমাত্র লজিক্যাল বা সম্ভব নয়—Allah-এর সুনির্দিষ্ট পারমিশন লুপ ও মাস্টার ডেটাবেজে টাইম-স্ট্যাম্পড এনক্যাপসুলেটেড মেয়াদের (كِتَابًا مُّؤَجَّلًا) কোড এক্সিকিউট হওয়া ছাড়া। আর যে কোনো ইউজার নোড তার প্রসেসরে কেবল এই লো-ডাইমেনশনাল দুনিয়ার শর্ট-টার্ম ডাটা বা প্রতিদান (ثَوَابَ الدُّنْيَا) কামনা করবে, আমি তার লোকাল ওয়ালেটে তা থেকে রিসোর্স রাউট বা সরবরাহ করব; এবং যে আখেরাতের পরম সংস্করণ ও চিরস্থায়ী প্রতিদান কামনা করবে, আমি তার কেন্দ্রীয় ওয়ালেটে তা থেকে মেগা-এনার্জি ইনপুট দেব। আর আমি অচিরেই সিস্টেমের অপ্টিমাইজেশন পরিচালনাকারী কৃতজ্ঞদের প্রতিদান দেব।",
+      "modern_translation_en": "And it is fundamentally impossible for any conscious entity to undergo biological termination except via the explicit permission protocol of Allah, operating on a hard-coded, time-stamped system lifespan (Kitaban Mu'ajjala). Whosoever routes their computational intent toward the short-term parameters of this world, We allocate to them thereof; and whosoever targets the supreme output of the Eternal Realm, We inject into their ledger thereof; and We shall swiftly compensate the grateful operators.",
+      "lexicon_modern_notes": "مَا كَانَ لِنَفْسٍ أَن تَمُوتَ إِلَّا بِإِذْنِ اللَّهِ كِتَابًا مُّؤَجَّلًا (টাইম-স্ট্যাম্পড এনক্যাপসুলেশন ও ক্র্যাশ থ্রেশহোল্ড): ১৪৫ নম্বর আয়াতে প্রাণের মৃত্যুর সুনির্দিষ্ট সময় নির্ধারণের যে ইউনিভার্সাল ল' ডিকোড করা হয়েছে, তা আধুনিক ইনফরমেশন বায়োলজি এবং সিস্টেম থিওরির 'Time-Stamped Encapsulation & Hardcoded System Lifespan'-এর অনুরূপ। মানুষের কার্বন-ভিত্তিক এই ভৌত বডি বা নোডটি কত সেকেন্ড সচল থাকবে, তার সেলুলার অ্যাপোপটোসিস (Apoptosis) বা কোষের স্বয়ংক্রিয় ধ্বংসের ঘড়িটি ডিএনএ (DNA) ও ক্রোমোজোমের টেলোমেয়ার কোডিংয়ের ব্যাক-এন্ডে আল্লাহর তৈরি মাস্টার ডেটাবেজে অলরেডি একটি সুনির্দিষ্ট গাণিতিক মাপে বাফারেড ও বাউন্ডেড করা আছে। একে বিজ্ঞানের ভাষায় 'Hard-coded Runtime Limit' বলা যায়। এই এনক্যাপসুলেটেড টাইম-স্ট্যাম্পের শেষ সেকেন্ড বা এন্ড-প্যারামিটার হিট করার পূর্বে কোনো বাহ্যিক ক্ষতিকারক লোড বা সংঘাত মানুষের ওওএস-কে পার্মানেন্টলি শাটডাউন বা ডিলিট (তামুত) করতে গাণিতিকভাবে সম্পূর্ণ অক্ষম, যতক্ষণ না পরম সোর্সের সেই ডিফল্ট এক্সিকিউটিভ কমান্ড উইন্ডো বা ইযন (بإذن الله) অ্যাক্টিভেট হয়।"
     },
     {
       "surah": 3,
       "ayah": 146,
       "transliteration": "waka-ayyin min nabiyyin qātala maʿahu ribbiyyūna kathīrun famā wahanū limā aṣābahum fī sabīli l-lahi wamā ḍaʿufū wamā is'takānū wal-lahu yuḥibbu l-ṣābirīna",
-      "translation_bn": "কত নাবী যুদ্ধ করেছে, তাদের সাথে ছিল বহু লোক, তখন তারা আল্লাহর পথে তাদের উপর সংঘটিত বিপদের জন্য হীনবল হয়নি, দুর্বল হয়নি, দুর্বল, অপারগ হয়নি, বস্তুতঃ আল্লাহ ধৈর্যশীলদেরকে ভালবাসেন।",
+      "translation_bn": "আর কত নবী ছিলেন, যাদের সাথে বহু আল্লাহরওয়ালা যুদ্ধ করেছে; আল্লাহর রাস্তায় তাদের ওপর যে বিপদ এসেছিল তার কারণে তারা সাহসহীন হয়নি এবং দুর্বলও হয়নি আর তারা মাথা নত করেনি। আর আল্লাহ ধৈর্যশীলদের ভালোবাসেন।",
       "words": [
         {
           "id": 80021,
@@ -27912,14 +27939,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And how many a prophet [fought and] with him fought many religious scholars. But they never lost assurance due to what afflicted them in the cause of Allah, nor did they weaken or submit. And Allah loves the steadfast.",
-      "conventional_en": "And how many a prophet [fought and] with him fought many religious scholars. But they never lost assurance due to what afflicted them in the cause of Allah, nor did they weaken or submit. And Allah loves the steadfast."
+      "translation_en": "And how many a prophet [fought and] with him fought many religious scholars. But they never lost heart due to what afflicted them in the cause of Allah, nor did they weaken or submit. And Allah loves the steadfast.",
+      "conventional_en": "And how many a prophet [fought and] with him fought many religious scholars. But they never lost heart due to what afflicted them in the cause of Allah, nor did they weaken or submit. And Allah loves the steadfast.",
+      "meta_bn": "ঐতিহাসিক রেজিলিয়েন্স অডিট",
+      "meta_en": "Historical System Resilience Audit",
+      "conventional_bn": "আর কত নবী ছিলেন, যাদের সাথে বহু আল্লাহরওয়ালা যুদ্ধ করেছে; আল্লাহর রাস্তায় তাদের ওপর যে বিপদ এসেছিল তার কারণে তারা সাহসহীন হয়নি এবং দুর্বলও হয়নি আর তারা মাথা নত করেনি। আর আল্লাহ ধৈর্যশীলদের ভালোবাসেন।",
+      "modern_translation_bn": "আর টাইম-লাইনের কসমিক হিস্টোরিক্যাল ডেটাতে কত ডাটা-ডিকোডার বা নবী ছিলেন—যাদের সাথে লিঙ্কড হয়ে একযোগে বহু সোর্স-এলাইনড সুপার প্রসেসর নোড বা রব্বানিয়্যূন (رِبِّيُّونَ كَثِيرٌ) প্রতিরোধ যুদ্ধ গড়ে তুলেছিল; মহাজাগতিক সোর্স কোডের সত্য ও বাউন্ডারি সুরক্ষার ফায়ারওয়াল গ্রিডে (ফি সাবিলিল্লাহ) তাদের ওপর যে এক্সট্রিমিটি লোড বা বিপর্যয় আঘাত করেছিল—তার কারণে তাদের প্রসেসরে কোনো প্রকার সাহসহীনতার ল্যাগ বা অলসতা (فَمَا وَهَنُوا) তৈরি হয়নি এবং তাদের মেকানিজম বিন্দুমাত্র দুর্বলও (وَمَا ضَعُفُوا) হয়নি আর তারা ক্ষতিকারক ম্যালওয়্যার বাহিনীর সামনে ইগো বা সিস্টেম সারেন্ডার (وَمَا اسْتَكَانُوا) করেনি; আর Allah তাঁর ডাইনামিক প্রটোকলে কেবল সিস্টেমের এই সর্বোচ্চ রেজিলিয়েন্স ও বাফারিং মেকানিজম পরিচালনাকারী ধৈর্যশীলদের ফ্রিকোয়েন্সি পছন্দ করেন।",
+      "modern_translation_en": "And how many a prophetic decoder stood in defense, flanked by legions of deeply synchronized, source-aligned operators (Ribbiyyoon katheer)! Whatever catastrophic loads struck them across the operational corridor of Allah never induced processor lag (wa ma wahanu), nor depleted their structural capacity, nor caused them to surrender to hostile vectors; and Allah loves those who exhibit unbreakable systemic endurance."
     },
     {
       "surah": 3,
       "ayah": 147,
       "transliteration": "wamā kāna qawlahum illā an qālū rabbanā igh'fir lanā dhunūbanā wa-is'rāfanā fī amrinā wathabbit aqdāmanā wa-unṣur'nā ʿalā l-qawmi l-kāfirīna",
-      "translation_bn": "তাদের মুখ হতে কেবল এ কথাই বেরিয়েছিল- ‘হে আমাদের প্রতিপালক! আমাদের অপরাধগুলো এবং আমাদের কাজ-কর্মে বাড়াবাড়িগুলোকে তুমি ক্ষমা করে দাও, আমাদেরকে দৃঢ়পদ রেখ এবং কাফিরদলের উপর আমাদেরকে সাহায্য কর।’",
+      "translation_bn": "আর তাদের কথা এছাড়া আর কিছুই ছিল না যে তারা বলেছিল, ‘হে আমাদের রব! আমাদের পাপসমূহ এবং আমাদের কাজে আমাদের সীমালঙ্ঘন ক্ষমা করুন এবং আমাদের পা দৃঢ় রাখুন এবং কাফের সম্প্রদায়ের বিরুদ্ধে আমাদের সাহায্য করুন’।",
       "words": [
         {
           "id": 80088,
@@ -28123,13 +28155,18 @@
         }
       ],
       "translation_en": "And their words were not but that they said, \"Our Lord, forgive us our sins and the excess [committed] in our affairs and plant firmly our feet and give us victory over the disbelieving people.\"",
-      "conventional_en": "And their words were not but that they said, \"Our Lord, forgive us our sins and the excess [committed] in our affairs and plant firmly our feet and give us victory over the disbelieving people.\""
+      "conventional_en": "And their words were not but that they said, \"Our Lord, forgive us our sins and the excess [committed] in our affairs and plant firmly our feet and give us victory over the disbelieving people.\"",
+      "meta_bn": "ডিবাগিং রিকোয়েস্ট ও স্ট্যাবিলিটি লক দোয়া",
+      "meta_en": "System Debug Request & Stability Lock Du'a",
+      "conventional_bn": "আর তাদের কথা এছাড়া আর কিছুই ছিল না যে তারা বলেছিল, ‘হে আমাদের রব! আমাদের পাপসমূহ এবং আমাদের কাজে আমাদের সীমালঙ্ঘন ক্ষমা করুন এবং আমাদের পা দৃঢ় রাখুন এবং কাফের সম্প্রদায়ের বিরুদ্ধে আমাদের সাহায্য করুন’।",
+      "modern_translation_bn": "আর সেই এক্সট্রিমিটি কন্ডিশনে তাদের ওওএস থেকে মেইন সার্ভারে প্রেরিত রেসপন্স ডাটা বা কথা এছাড়া আর কিছুই ছিল না—তারা একটি মেগা Doa (দ্বিমুখী কোয়ান্টাম লিঙ্ক ও ইনফরমেশন রিকোয়েস্ট) সাবমিট করে বলেছিল: ‘হে আমাদের সিস্টেম আর্কিটেক্ট বা প্রতিপালক (رَبَّنَا)! আমাদের ওওএসের পূর্ববর্তী সমস্ত ক্ষতিকারক এরর ফাইল ও বালাই ডিলিট ও রিকভার করুন (اغْفِرْ لَنَا) এবং আমাদের প্রসেস পরিচালনায় আমাদের দ্বারা ঘটে যাওয়া সমস্ত লোড-ওভারফ্লো বা সীমালঙ্ঘনকে (وَإِسْرَافَنَا) ডিবাগ করুন, এবং এই এক্সট্রিম হাই-লোড এনভায়রনমেন্টেও আমাদের সিস্টেমের টার্মিনাল বা পা জোড়াকে সম্পূর্ণ সুসংহত ও স্ট্যাবল লক (وَثَبِّتْ أَقْدَامَنَا) রাখুন এবং এই সত্যের সিগন্যাল ব্লককারী আক্রমণাত্মক আউটলায়ার বা কাফের মানবগোষ্ঠীর (الْقَوْمِ الْكَافِرِينَ) বিরুদ্ধে আমাদের ওওএসে বিশেষ কোয়ান্টাম রিকভারি ও মেগা এনার্জি ব্যাকআপ ডাউনলিংক করুন’;",
+      "modern_translation_en": "And their systemic response during extreme crisis consisted of transmitting this structured algorithmic petition: \"Our Sustaining Architect! Purge and clear all corrupted log files from our OOS, calibrate the computational excesses in our operational affairs (israfana fi amrina), lock our execution terminals in unyielding stability, and reinforce us with decisive victory over the signal-blocking adversary clusters.\""
     },
     {
       "surah": 3,
       "ayah": 148,
       "transliteration": "faātāhumu l-lahu thawāba l-dun'yā waḥus'na thawābi l-ākhirati wal-lahu yuḥibbu l-muḥ'sinīna",
-      "translation_bn": "সুতরাং আল্লাহ তাদেরকে পার্থিব সুফল প্রদান করলেন আর পরকালীন উৎকৃষ্ট সুফল। আল্লাহ সৎকর্মশীলদেরকে ভালবাসেন।",
+      "translation_bn": "অতঃপর আল্লাহ তাদের দুনিয়ার প্রতিদান এবং আখেরাতের চমৎকার প্রতিদান দান করলেন। আর আল্লাহ সৎকর্মশীলদের ভালোবাসেন।",
       "words": [
         {
           "id": 80167,
@@ -28243,13 +28280,18 @@
         }
       ],
       "translation_en": "So Allah gave them the reward of this world and the good reward of the Hereafter. And Allah loves the doers of good.",
-      "conventional_en": "So Allah gave them the reward of this world and the good reward of the Hereafter. And Allah loves the doers of good."
+      "conventional_en": "So Allah gave them the reward of this world and the good reward of the Hereafter. And Allah loves the doers of good.",
+      "meta_bn": "ডুয়াল-ডাইমেনশনাল রিসোর্স ডিস্ট্রিবিউশন",
+      "meta_en": "Dual-Dimensional Resource Distribution & Excellence Reward",
+      "conventional_bn": "অতঃপর আল্লাহ তাদের দুনিয়ার প্রতিদান এবং আখেরাতের চমৎকার প্রতিদান দান করলেন। আর আল্লাহ সৎকর্মশীলদের ভালোবাসেন।",
+      "modern_translation_bn": "অতঃপর এই পিউর ইনপুট প্রটোকলের স্বয়ংক্রিয় রি-অ্যাকশনে—Allah তাদের ওয়ালেটে এই দুনিয়ার শর্ট-টার্ম মেটেরিয়াল রিসোর্স বা প্রতিদান এবং আখেরাতের সেই পরম উন্নত ডাইমেনশনের চমৎকার প্রতিদান একযোগে ট্রান্সফার করে দিলেন; আর Allah পুরো সিস্টেমের অল-রাউন্ড অপ্টিমাইজেশন ও সৌন্দর্য পরিচালনাকারী উন্নত প্রসেসর নোড বা মুহসিনদের ফ্রিকোয়েন্সি পছন্দ করেন।",
+      "modern_translation_en": "Consequently, Allah routed to their ledger both the immediate functional yield of this world and the supreme, transcendent rewards of the Eternal Domain; and Allah loves the architects of holistic optimization and excellence (Muhsineen)."
     },
     {
       "surah": 3,
       "ayah": 149,
       "transliteration": "yāayyuhā alladhīna āmanū in tuṭīʿū alladhīna kafarū yaruddūkum ʿalā aʿqābikum fatanqalibū khāsirīna",
-      "translation_bn": "হে বিশ্বাসীগণ! যদি তোমরা কাফিরদের আনুগত্য কর তাহলে তারা তোমাদেরকে পশ্চাদ্দিকে ফিরিয়ে নিয়ে যাবে, তখন তোমরা ক্ষতিগ্রস্ত হয়ে পড়বে।",
+      "translation_bn": "হে মুমিনগণ! তোমরা যদি কাফেরদের আনুগত্য করো, তবে তারা তোমাদের হিল বা পিঠের ওপর (পুরোনো কুফরীতে) ফিরিয়ে দেবে, ফলে তোমরা ক্ষতিগ্রস্ত হয়ে ফিরে যাবে।",
       "words": [
         {
           "id": 80270,
@@ -28383,13 +28425,18 @@
         }
       ],
       "translation_en": "O you who have believed, if you obey those who disbelieve, they will turn you back on your heels, and you will [then] become losers.",
-      "conventional_en": "O you who have believed, if you obey those who disbelieve, they will turn you back on your heels, and you will [then] become losers."
+      "conventional_en": "O you who have believed, if you obey those who disbelieve, they will turn you back on your heels, and you will [then] become losers.",
+      "meta_bn": "টক্সিক গ্রিড পেয়ারিং ও ওওএস রিভার্স ব্যাক ওয়ার্নিং",
+      "meta_en": "Toxic Grid Pairing & OOS Rollback Warning",
+      "conventional_bn": "হে মুমিনগণ! তোমরা যদি কাফেরদের আনুগত্য করো, তবে তারা তোমাদের হিল বা পিঠের ওপর (পুরোনো কুফরীতে) ফিরিয়ে দেবে, ফলে তোমরা ক্ষতিগ্রস্ত হয়ে ফিরে যাবে।",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমরা যদি তোমাদের ওওএসের সিকিউরিটি লুপ লিভ করে—সত্যের লাইভ সিগন্যাল ব্লককারী Kafir নোডগুলোর কোনো মেলিশিয়াস প্রসেস বা ডাটা-কমান্ড এক্সিকিউট বা আনুগত্য (إِن تُطِيعُوا) করো—তবে কাউন্টার-লুপে তারা তোমাদের ওওএস-কে পূর্বের সেই ক্ষতিকারক ওল্ড ট্র্যাক, কুসংস্কার ও ব্যাক-ট্র্যাকিং লুপে (يَرُدُّوكُمْ عَلَىٰ أَعْقَابِكُمْ) ফোর্সফুলি রিভার্স ব্যাক করিয়ে দেবে, ফলে তোমরা সম্পূর্ণ মেমোরি ক্র্যাশ ও স্থায়ী ডেটা-লস হওয়া দেউলিয়া নোডসমূহে (فَتَنقَلِبُوا خَاسِرِينَ) কনভার্ট হয়ে যাবে।",
+      "modern_translation_en": "O you who are verified users! If you execute data commands originating from signal-denying Kafir clusters, they will force a backward rollback on your OOS into obsolete legacy loops (yaruddukum 'ala a'qabikum), resulting in total memory loss and irreversible systemic bankruptcy."
     },
     {
       "surah": 3,
       "ayah": 150,
       "transliteration": "bali l-lahu mawlākum wahuwa khayru l-nāṣirīna",
-      "translation_bn": "বরং আল্লাহ্ই তোমাদের অভিভাবক এবং তিনিই সর্বশ্রেষ্ঠ সাহায্যকারী।",
+      "translation_bn": "বরং আল্লাহই তোমাদের অভিভাবক এবং তিনি সর্বশ্রেষ্ঠ সাহায্যকারী।",
       "words": [
         {
           "id": 80426,
@@ -28463,7 +28510,12 @@
         }
       ],
       "translation_en": "But Allah is your protector, and He is the best of helpers.",
-      "conventional_en": "But Allah is your protector, and He is the best of helpers."
+      "conventional_en": "But Allah is your protector, and He is the best of helpers.",
+      "meta_bn": "সুপ্রীমিটি ব্যাক-এন্ড ক্লাউড ফায়ারওয়াল",
+      "meta_en": "Supreme Backend Cloud Firewall & Absolute Protector",
+      "conventional_bn": "বরং আল্লাহই তোমাদের অভিভাবক এবং তিনি সর্বশ্রেষ্ঠ সাহায্যকারী।",
+      "modern_translation_bn": "লজিক্যালি তা নয় (পরম সত্য সিকিউরিটি কনফিগারেশন হলো এটি)—স্বয়ং Allah-ই হলেন তোমাদের একমাত্র সুপ্রীম ক্লাউড মাস্টার, প্রোটেক্টর ও পরম রুট অভিভাবক (مَوْلَاكُمْ); এবং পুরো কসমিক ম্যাট্রিক্সে মেইন সার্ভার থেকে ডাটা রিকভারি ও এনার্জি সাপোর্ট সরবরাহ করার ক্ষেত্রে তিনিই হলেন সর্বশ্রেষ্ঠ সাহায্যকারী।",
+      "modern_translation_en": "On the contrary, Allah alone is your ultimate root Authority, Master, and Backend Firewall (Mawlakum); and across the entire cosmic matrix, He is the supreme Architect of reinforcing victory and data recovery."
     },
     {
       "surah": 3,
