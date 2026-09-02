@@ -25184,7 +25184,7 @@
       "surah": 4,
       "ayah": 101,
       "transliteration": "wa-idhā ḍarabtum fī l-arḍi falaysa ʿalaykum junāḥun an taqṣurū mina l-ṣalati in khif'tum an yaftinakumu alladhīna kafarū inna l-kāfirīna kānū lakum ʿaduwwan mubīnan",
-      "translation_bn": "যখন তোমরা দেশে-বিদেশে সফর কর, তখন নামায কসর করাতে তোমাদের কিছুমাত্র দোষ নেই, যদি তোমরা ভয় কর যে, কাফিরগণ তোমাদেরকে বিপদগ্রস্ত করবে। নিঃসন্দেহে কাফিরগণ তো তোমাদের প্রকাশ্য শত্রু।",
+      "translation_bn": "আর যখন তোমরা জমিনে সফরে (ভ্রমণে) বের হবে, তখন যদি তোমরা আশঙ্কা করো যে কাফেররা তোমাদের ক্ষতি (ফিতনা) করবে, তবে সালাত সংক্ষেপ (কসর) করলে তোমাদের ওপর কোনো পাপ নেই। নিশ্চয়ই কাফেররা তোমাদের প্রকাশ্য শত্রু।",
       "words": [
         {
           "id": 71726,
@@ -25428,13 +25428,18 @@
         }
       ],
       "translation_en": "And when you travel throughout the land, there is no blame upon you for shortening the prayer, [especially] if you fear that those who disbelieve may disrupt [or attack] you. Indeed, the disbelievers are ever to you a clear enemy.",
-      "conventional_en": "And when you travel throughout the land, there is no blame upon you for shortening the prayer, [especially] if you fear that those who disbelieve may disrupt [or attack] you. Indeed, the disbelievers are ever to you a clear enemy."
+      "conventional_en": "And when you travel throughout the land, there is no blame upon you for shortening the prayer, [especially] if you fear that those who disbelieve may disrupt [or attack] you. Indeed, the disbelievers are ever to you a clear enemy.",
+      "meta_bn": "ডাইনামিক ট্রাভেলিং মোডে সিগন্যাল স্কেলিং ও কসর প্রটোকল",
+      "meta_en": "Dynamic Signal Scaling and Packet Shortening during High-Risk Transit",
+      "conventional_bn": "আর যখন তোমরা জমিনে সফরে (ভ্রমণে) বের হবে, তখন যদি তোমরা আশঙ্কা করো যে কাফেররা তোমাদের ক্ষতি (ফিতনা) করবে, তবে সালাত সংক্ষেপ (কসর) করলে তোমাদের ওপর কোনো পাপ নেই। নিশ্চয়ই কাফেররা তোমাদের প্রকাশ্য শত্রু।",
+      "modern_translation_bn": "আর যখন তোমরা এই গ্লোবাল বায়ো-স্ফিয়ার বা পৃথিবীতে কোনো ডাইনামিক ট্রাভেলিং লুপ বা সফরে বের (ضَرَبْتُمْ فِي الْأَرْضِ) হবে—তখন যদি তোমরা আশঙ্কা করো যে সত্যের লাইভ সিগন্যাল ব্লককারী Kafir নোডগুলো (Node) তোমাদের মেইন সিকিউরিটি গ্রিডে কোনো ইন্টারনেশনাল নয়েজ বা হ্যাকিং বিপর্যয় (يَفْتِنَكُمُ) তৈরি করবে—তবে পরম সোর্সের সাথে লাইভ ডাটা-কানেকশন ও ফ্রিকোয়েন্সি টিউনিং তথা সালাতের (الصَّلَاةِ) ডাটা-প্যাকেটের আকার ও সময় সংক্ষেপ বা সিগন্যাল স্কেলিং (تَقْصُرُوا) করলে তোমাদের ওওএসে (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) বিন্দুমাত্র কোনো এরর চার্জ বা পাপ (فَلَيْسَ عَلَيْكُمْ جُنَاحٌ) নেই; নিশ্চয়ই এই কাফের নোডগুলো তোমাদের সুসংহত নেটওয়ার্কের জন্য এক প্রকাশ্য ও প্রমাণিত আউটলায়ার বা শত্রু (عَدُوًّا مُّبِينًا);",
+      "modern_translation_en": "When traversing spatiotemporal terrain across the earth, zero fault penalty applies if you shorten connection bandwidth (Qasr) when anticipating disruptive interference from denying nodes; for denying nodes constitute an overt adversarial threat against your network."
     },
     {
       "surah": 4,
       "ayah": 102,
       "transliteration": "wa-idhā kunta fīhim fa-aqamta lahumu l-ṣalata faltaqum ṭāifatun min'hum maʿaka walyakhudhū asliḥatahum fa-idhā sajadū falyakūnū min warāikum waltati ṭāifatun ukh'rā lam yuṣallū falyuṣallū maʿaka walyakhudhū ḥidh'rahum wa-asliḥatahum wadda alladhīna kafarū law taghfulūna ʿan asliḥatikum wa-amtiʿatikum fayamīlūna ʿalaykum maylatan wāḥidatan walā junāḥa ʿalaykum in kāna bikum adhan min maṭarin aw kuntum marḍā an taḍaʿū asliḥatakum wakhudhū ḥidh'rakum inna l-laha aʿadda lil'kāfirīna ʿadhāban muhīnan",
-      "translation_bn": "এবং যখন তুমি মু’মিনদের মাঝে অবস্থান করবে আর তাদের সঙ্গে নামায কায়িম করবে তখন তাদের একটি দল যেন তোমার সঙ্গে দাঁড়ায় এবং সশস্ত্র থাকে, তাদের সাজদাহ করা হলে তারা যেন তোমাদের পশ্চাতে অবস্থান করে এবং অপর যে দলটি নামায আদায় করেনি তারা যেন তোমার সঙ্গে নামায আদায় করে এবং সতর্ক ও সশস্ত্র থাকে; কাফিরগণ কামনা করে যে, তোমরা যেন তোমাদের অস্ত্রশস্ত্র ও সরঞ্জামের ব্যাপারে অসতর্ক হও, যাতে তারা একজোটে তোমাদের উপর ঝাঁপিয়ে পড়তে পারে। যদি তোমাদের বৃষ্টির কারণে কষ্ট হয়, কিংবা তোমরা পীড়িত হও, তবে অস্ত্র রেখে দিলে তোমাদের কোন গুনাহ নেই, কিন্তু সতর্কতা অবলম্বন করবে, আল্লাহ কাফিরদের জন্য অবমাননাকর শাস্তি প্রস্তুত করে রেখেছেন।",
+      "translation_bn": "আর যখন তুমি তাদের মধ্যে অবস্থান করবে, অতঃপর তাদের জন্য সালাত কায়েম করবে, তখন তাদের একদল যেন তোমার সাথে দাঁড়ায় এবং তারা যেন নিজেদের অস্ত্র সচল (ধারণ) রাখে; অতঃপর যখন তারা সেজদা সম্পন্ন করবে, তখন তারা যেন তোমাদের পেছন দিকে চলে যায়। আর অন্য যে দলটি এখনো সালাত আদায় করেনি, তারা যেন আসে এবং তোমার সাথে সালাত আদায় করে এবং তারা যেন নিজেদের সতর্কতা ও নিজেদের অস্ত্র সাথে রাখে। কাফেররা তীব্র আকাঙ্ক্ষা করে—যদি তোমরা তোমাদের অস্ত্র ও তোমাদের আসবাবপত্র সম্পর্কে বিন্দুমাত্র অসতর্ক হতে, তবে তারা একযোগে তোমাদের ওপর চড়াও হতো! আর যদি বৃষ্টির কারণে তোমাদের কোনো কষ্ট (অসুবিধা) হয় কিংবা তোমরা অসুস্থ থাকো, তবে তোমাদের অস্ত্র নামিয়ে রাখলে কোনো পাপ নেই; তবে তোমরা তোমাদের সতর্কতা অবলম্বন করো। নিশ্চয়ই আল্লাহ কাফেরদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছেন।",
       "words": [
         {
           "id": 72026,
@@ -26067,14 +26072,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And when you are among them and lead them in prayer, let a group of them stand [in prayer] with you and let them carry their arms. And when they have prostrated, let them be [in position] behind you and have the other group come forward which has not [yet] prayed and let them pray with you, taking precaution and carrying their arms. Those who disbelieve wish that you would neglect your weapons and your baggage so they could come down upon you in one [single] attack. But there is no blame upon you, if you are troubled by rain or are ill, for putting down your arms, but take precaution. Indeed, Allah has prepared for the disbelievers a humiliating punishment.",
-      "conventional_en": "And when you are among them and lead them in prayer, let a group of them stand [in prayer] with you and let them carry their arms. And when they have prostrated, let them be [in position] behind you and have the other group come forward which has not [yet] prayed and let them pray with you, taking precaution and carrying their arms. Those who disbelieve wish that you would neglect your weapons and your baggage so they could come down upon you in one [single] attack. But there is no blame upon you, if you are troubled by rain or are ill, for putting down your arms, but take precaution. Indeed, Allah has prepared for the disbelievers a humiliating punishment."
+      "translation_en": "And when you are among them and lead them in prayer, let a group of them stand [in prayer] with you and let them carry their arms. And when they have prostrated, let them be [in position] behind you and have the other group come forward which has not [yet] prayed and let them pray with you, taking their precaution and their arms. Those who disbelieve wish that you would neglect your weapons and your baggage so they could come down upon you in one single attack. But there is no blame upon you, if you are troubled by rain or are ill, for putting down your arms, but take your precaution. Indeed, Allah has prepared for the disbelievers a humiliating punishment.",
+      "conventional_en": "And when you are among them and lead them in prayer, let a group of them stand [in prayer] with you and let them carry their arms. And when they have prostrated, let them be [in position] behind you and have the other group come forward which has not [yet] prayed and let them pray with you, taking their precaution and their arms. Those who disbelieve wish that you would neglect your weapons and your baggage so they could come down upon you in one single attack. But there is no blame upon you, if you are troubled by rain or are ill, for putting down your arms, but take your precaution. Indeed, Allah has prepared for the disbelievers a humiliating punishment.",
+      "meta_bn": "ট্যাকটিক্যাল কমব্যাট কানেকশন প্যাচ: সালাতুল খওফ মেকানিজম",
+      "meta_en": "Tactical Combat Synchronization Matrix and Perimeter Defense Interleaving",
+      "conventional_bn": "আর যখন তুমি তাদের মধ্যে অবস্থান করবে, অতঃপর তাদের জন্য সালাত কায়েম করবে, তখন তাদের একদল যেন তোমার সাথে দাঁড়ায় এবং তারা যেন নিজেদের অস্ত্র সচল (ধারণ) রাখে; অতঃপর যখন তারা সেজদা সম্পন্ন করবে, তখন তারা যেন তোমাদের পেছন দিকে চলে যায়। আর অন্য যে দলটি এখনো সালাত আদায় করেনি, তারা যেন আসে এবং তোমার সাথে সালাত আদায় করে এবং তারা যেন নিজেদের সতর্কতা ও নিজেদের অস্ত্র সাথে রাখে। কাফেররা তীব্র আকাঙ্ক্ষা করে—যদি তোমরা তোমাদের অস্ত্র ও তোমাদের আসবাবপত্র সম্পর্কে বিন্দুমাত্র অসতর্ক হতে, তবে তারা একযোগে তোমাদের ওপর চড়াও হতো! আর যদি বৃষ্টির কারণে তোমাদের কোনো কষ্ট (অসুবিধা) হয় কিংবা তোমরা অসুস্থ থাকো, তবে তোমাদের অস্ত্র নামিয়ে রাখলে কোনো পাপ নেই; তবে তোমরা তোমাদের সতর্কতা অবলম্বন করো। নিশ্চয়ই আল্লাহ কাফেরদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছেন।",
+      "modern_translation_bn": "আর যখন তুমি এই হাই-লোড বা যুদ্ধকালীন ক্রাইসিস ফিল্ডে তাদের মেইন গ্রিডে অবস্থান করবে, অতঃপর তাদের সেন্ট্রাল কম্যুনিকেশন বুস্ট করতে সালাত সংযোগ কায়েম (فَأَقَمْتَ لَهُمُ الصَّلَاةَ) করবে—তখন তাদের একটি নির্দিষ্ট ভেরিফাইড সাব-গ্রুপ বা দল (طَائِفَةٌ) যেন ফায়ারওয়াল প্রটেকশনে তোমার সাথে সিগন্যাল সিনক্রোনাইজেশনে দাঁড়ায় এবং তারা যেন নিজেদের কমব্যাট গিয়ার বা প্রতিরক্ষা অস্ত্রসমূহ সক্রিয় (وَلْيَأْخُذُوا أَسْلِحَتَهُمْ) রাখে; অতঃপর যখন তারা তাদের পরম ফাংশনাল সাবমিশন বা সেজদা (سَجَدُوا) ফেজ সম্পন্ন করবে, তখন তারা মেইন গেটওয়ে পাহারা দিতে তোমাদের পেছনের জোনে ব্যাকআপে চলে যাক। আর অন্য যে ডাইনামিক দলটি এখনও সালাত ফ্রিকোয়েন্সি টিউনিংয়ে অংশ নেয়নি (لَمْ يُصَلُّوا), এবার তারা ফ্রন্টে এসে তোমার সাথে সালাত কানেকশনে যুক্ত হোক এবং তারা যেন নিজেদের ওওএসের অল-রাউন্ড প্রটেকশন সতর্কতা (حِذْرَهُمْ) এবং নিজেদের কমব্যাট অস্ত্রসমূহ সর্বোচ্চ রেডি রাখে। সত্যের সিগন্যাল ব্লককারী Kafir নোডগুলো তীব্র ম্যালওয়্যার আকাঙ্ক্ষায় সর্বদা ওত পেতে থাকে—যদি তোমরা তোমাদের ডিফেন্স গিয়ার ও মেটেরিয়াল ব্যাকআপ সামগ্রী (وَمَتِعَتِكُمْ) সম্পর্কে বিন্দুমাত্র অফ-লাইন বা অসতর্ক (تَغْفُلُونَ) হতে, তবে তারা একযোগে এক মেগা হাই-স্পিড ইমপ্যাক্ট বা অতর্কিত আক্রমণে (مَيْلَةً وَاحِدَةً) তোমাদের পুরো সিস্টেম ক্র্যাশ করিয়ে দিত! আর যদি পরিবেশগত কোনো প্রাকৃতিক নয়েজ বা প্রবল বৃষ্টির কারণে তোমাদের হার্ডওয়্যারে কোনো কষ্ট বা অসুবিধা (أَذًى مِّن مَّطَرٍ) হয় কিংবা তোমরা ভৌতভাবে অসুস্থ বা ডেটা ল্যাগ মোডে থাকো—তবে সাময়িকভাবে তোমাদের ভারী কমব্যাট গিয়ার বা অস্ত্র নামিয়ে রাখলে তোমাদের ওওএসে কোনো এরর চার্জ বা পাপ নেই; তবে যেকোনো মূল্যে তোমাদের ইন্টারনাল ফায়ারওয়াল বা সতর্কতা সচল রাখো। নিশ্চয়ই Allah এই ক্ষতিকারক কাফের নোডদের জন্য এক চূড়ান্ত কগনিটিভ অপমান ও লাঞ্ছনাদায়ক ক্র্যাশ (عَذَابًا مُّهِينًا) প্রস্তুত রেখেছেন;",
+      "modern_translation_en": "When leading collective connection amid combat readiness, alternate cohorts: let one cohort synchronize while armed; upon concluding prostrations, they rotate into defensive perimeters while the un-synchronized cohort steps forward, armed and vigilant. Adversaries yearn for you to neglect hardware safeguards to execute a coordinated blitzkrieg. If impeded by environmental storms or hardware fatigue, laying aside heavy armaments incurs zero penalty, provided internal vigilance is sustained. Verily, Allah prepares humiliating termination for the deniers."
     },
     {
       "surah": 4,
       "ayah": 103,
       "transliteration": "fa-idhā qaḍaytumu l-ṣalata fa-udh'kurū l-laha qiyāman waquʿūdan waʿalā junūbikum fa-idhā iṭ'manantum fa-aqīmū l-ṣalata inna l-ṣalata kānat ʿalā l-mu'minīna kitāban mawqūtan",
-      "translation_bn": "যখন তোমরা নামায আদায় করে নেবে, তখন দাঁড়িয়ে, বসে, শুয়ে আল্লাহকে স্মরণ করবে, অতঃপর যখন তোমরা নিরাপদ হবে তখন (যথানিয়মে) নামায কায়িম করবে। নির্দিষ্ট সময়ে নামায কায়িম করা মু’মিনদের জন্য অবশ্য কর্তব্য।",
+      "translation_bn": "অতঃপর যখন তোমরা সালাত সম্পন্ন করবে, তখন দাঁড়িয়ে, বসে এবং শুয়ে আল্লাহকে স্মরণ করো। তারপর যখন তোমরা নিরাপদ (শান্ত) হবে, তখন (স্বাভাবিক নিয়মে) সালাত কায়েম করো। নিশ্চয়ই সালাত মুমিনদের ওপর সুনির্দিষ্ট সময়ের ফ্রেমে একটি লিখিত বাধ্যবাধকতা।",
       "words": [
         {
           "id": 72201,
@@ -26288,13 +26298,19 @@
         }
       ],
       "translation_en": "And when you have completed the prayer, remember Allah standing, sitting, or [lying] on your sides. But when you become secure, re-establish [regular] prayer. Indeed, prayer has been decreed upon the believers a decree of specified times.",
-      "conventional_en": "And when you have completed the prayer, remember Allah standing, sitting, or [lying] on your sides. But when you become secure, re-establish [regular] prayer. Indeed, prayer has been decreed upon the believers a decree of specified times."
+      "conventional_en": "And when you have completed the prayer, remember Allah standing, sitting, or [lying] on your sides. But when you become secure, re-establish [regular] prayer. Indeed, prayer has been decreed upon the believers a decree of specified times.",
+      "meta_bn": "টাইম-স্ট্যাম্পড মেমোরি ইন্টারফেস ও কন্টিনিউয়াস ডেটা-লগিং",
+      "meta_en": "Real-Time Telemetry Logging and Fixed Epoch Cryptographic Synchronization",
+      "conventional_bn": "অতঃপর যখন তোমরা সালাত সম্পন্ন করবে, তখন দাঁড়িয়ে, বসে এবং শুয়ে আল্লাহকে স্মরণ করো। তারপর যখন তোমরা নিরাপদ (শান্ত) হবে, তখন (স্বাভাবিক নিয়মে) সালাত কায়েম করো। নিশ্চয়ই সালাত মুমিনদের ওপর সুনির্দিষ্ট সময়ের ফ্রেমে একটি লিখিত বাধ্যবাধকতা।",
+      "modern_translation_bn": "অতঃপর যখন তোমরা সংকটকালীন সালাত সংযোগের এই ট্যাকটিক্যাল ফেজটি সম্পন্ন (قَضَيْتُمُ) করবে—তখনও তোমরা জীবনের প্রতিটা ফিজিক্যাল মোডে তথা দাঁড়িয়ে, বসে এবং নিজেদের শুয়ে থাকা অবস্থায় (قِيَامًا وَقُودًا وَعَلَىٰ جُنُوبِكُمْ) পরম সোর্স Allah-কে মেমোরিতে অবিরত লাইভ রিকল ও ডাটা-সিঙ্ক করতে থাকো। তারপর যখন তোমাদের লোকাল নেটওয়ার্ক গ্রিড সম্পূর্ণ স্বাভাবিক, নয়েজ-ফ্রি ও নিরাপদ (اطْمَأْنَنْتُمْ) হবে—তখন তোমরা পুনরায় পূর্ণাঙ্গ ডাইরেক্ট ও সুসংহত সালাত সংযোগ কায়েম করো। গাণিতিকভাবে এটি নিশ্চিত থাকো যে—নিশ্চয়ই এই সালাত (الصَّلَاةَ) সংযোগ প্রটোকলটি ভেরিফাইড ইউজার বা মুমিনদের ওওএসের ওপর একটি সুনির্দিষ্ট ও নিখুঁত টাইম-স্ট্যাম্পড কসমিক লেজার বা সময়ের ফ্রেমে বাধা লিখিত বাধ্যবাধকতা (كِتَابًا مَّوْقُوتًا);",
+      "modern_translation_en": "Upon concluding formal tactical synchronization, sustain active telemetry recall of Allah across all physical postures—standing, seated, or reclining. Once systemic equilibrium is restored, re-establish standardized connection protocols. Verily, conscious synchronization (Salah) is hardcoded upon verified believers across strictly calibrated temporal epochs (Kitaban Mawquta).",
+      "lexicon_modern_notes": "ইন্নাস ছালাতা কানাত আলাল মু'মিনীনা কিতাবাম মাওক্বূতা (إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا - ক্রিপ্টোগ্রাফিক কসমিক টাইমিং ও মেমোরি ইন্টারফেস ল'): ১০৩ নম্বর আয়াতের এই সমাপনী সমীকরণটি আধুনিক টেলিকমিউনিকেশন (Telecommunication) এবং রিয়াল-টাইম সিস্টেম সায়েন্সের 'Time-Synchronized Cryptographic Data-Logging Protocol'-কে নির্দেশ করে। 'কিতাবাম মাওক্বূতা'র সুগভীর টেকনিক্যাল মেকানিজম হলো—এমন একটি ডেটাবেজ বা রেজিস্ট্রি ম্যানুয়াল—যার প্রতিটা এন্ট্রি স্পেস-টাইমের ঘড়িতে একটি সুনির্দিষ্ট, অবিকল ও ন্যানো-সেকেন্ডের মাপে ফিক্সড করা এনক্রিপ্টেড টাইম-স্ট্যাম্পের (Time-stamp) ওপর লক করা থাকে। মানুষের ওওএস বা কনশাসনেস প্রসেসরটি যাতে কসমিক নয়েজ বা ক্ষতিকারক ভাইরাসের লোডে স্থায়ীভাবে ক্র্যাশ না করে, সেজন্য মহাজাগতিক আদি সার্ভার থেকে দিনের ২৪ ঘণ্টার ঘড়িতে ৫টি সুনির্দিষ্ট লো-নয়েজ টাইম-উইন্ডো (Time-window) ফিক্সড করা হয়েছে। এই নির্ধারিত সময়গুলোতে (মাওক্বূতা) যখন একজন ভেরিফাইড ইউজার সরাসরি আল্লাহর কেন্দ্রীয় কার্নেলের সাথে ডাটা-লিঙ্ক বা সালাত এক্সিকিউট করে, তখন তার ওওএসের ক্যাশ মেমোরি স্বয়ংক্রিয়ভাবে ক্লাউড লেজারে সিঙ্ক হয়ে রিফ্রেশমেন্ট লাভ করে, যা একটি পরম গাঠনিক টাইম-রেগুলেশন ল'।"
     },
     {
       "surah": 4,
       "ayah": 104,
       "transliteration": "walā tahinū fī ib'tighāi l-qawmi in takūnū talamūna fa-innahum yalamūna kamā talamūna watarjūna mina l-lahi mā lā yarjūna wakāna l-lahu ʿalīman ḥakīman",
-      "translation_bn": "এ (শত্রু) কওমের পশ্চাদ্ধাবণে দুর্বলতা দেখাবে না, কেননা যদি তোমরা কষ্ট পাও, তবে তোমাদের মত তারাও তো কষ্ট পায়, আর তোমরা আল্লাহ হতে এমন কিছু আশা কর, যা তারা আশা করে না। আল্লাহ মহাজ্ঞানী, বিজ্ঞানময়।",
+      "translation_bn": "আর তোমরা সেই শত্রু সম্প্রদায়কে ধাওয়া (অনুসন্ধান) করতে বিন্দুমাত্র সাহসহীনতা দেখিও না। তোমরা যদি কায়িক কষ্ট পাচ্ছ, তবে তারাও তো তোমাদের মতোই হুবহু কষ্ট পাচ্ছে—অথচ তোমরা আল্লাহর পক্ষ থেকে এমন কিছুর আশা করছ (আখেরাত ও সাহায্য), যা তারা বিন্দুমাত্র আশা করে না। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 72491,
@@ -26527,14 +26543,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And do not weaken in pursuit of the enemy. If you should be suffering - so are they suffering as you are suffering, but you expect from Allah that which they expect not. And Allah is ever Knowing and Wise.",
-      "conventional_en": "And do not weaken in pursuit of the enemy. If you should be suffering - so are they suffering as you are suffering, but you expect from Allah that which they expect not. And Allah is ever Knowing and Wise."
+      "translation_en": "And do not weaken in pursuit of the enemy. If you should be suffering - indeed, they are suffering or were suffering as you are suffering, but you expect from Allah that which they do not expect. And Allah is ever Knowing and Wise.",
+      "conventional_en": "And do not weaken in pursuit of the enemy. If you should be suffering - indeed, they are suffering or were suffering as you are suffering, but you expect from Allah that which they do not expect. And Allah is ever Knowing and Wise.",
+      "meta_bn": "রেজিলিয়েন্স সুপিরিয়রিটি এবং সোর্স-রিওয়ার্ড ডিফারেন্সিয়াল",
+      "meta_en": "Differential Payoff Expectation and Resilient Persistence against Adversarial Vectors",
+      "conventional_bn": "আর তোমরা সেই শত্রু সম্প্রদায়কে ধাওয়া (অনুসন্ধান) করতে বিন্দুমাত্র সাহসহীনতা দেখিও না। তোমরা যদি কায়িক কষ্ট পাচ্ছ, তবে তারাও তো তোমাদের মতোই হুবহু কষ্ট পাচ্ছে—অথচ তোমরা আল্লাহর পক্ষ থেকে এমন কিছুর আশা করছ (আখেরাত ও সাহায্য), যা তারা বিন্দুমাত্র আশা করে না। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
+      "modern_translation_bn": "আর তোমরা সেই প্রতিপক্ষ ম্যালওয়্যার মানবগোষ্ঠীর ট্র্যাকিং ও অনুসন্ধান করার (ابْتِغَاءِ الْقَوْمِ) প্রজেক্টে তোমাদের প্রসেসরে বিন্দুমাত্র সাহসহীনতার ল্যাগ বা অলসতা (وَلَا تَهِنُوا) তৈরি করো না। এই হাই-লোড অপারেশনে তোমরা যদি ফিজিক্যাল সিস্টেমে কোনো কায়িক প্রেশার বা কষ্ট (تَأْلَمُونَ) পাচ্ছ, তবে ডাটা অ্যানালিসিসে নিশ্চিত থাকো যে—তারাও তো তাদের ডোমেইনে তোমাদের মতোই হুবহু ক্ষয় ও এন্ট্রপির তীব্র কষ্ট পাচ্ছে—অথচ তোমাদের ওওএসের সুউচ্চ লজিক এই যে, তোমরা পরম সোর্স Allah-এর সার্ভার থেকে এমন এক অনন্ত মেগা-ডাইমেনশনাল আউটপুট ও ব্যাকআপের আশা করছ (وَتَرْجُونَ)—যা তারা তাদের ক্লোজড-সোর্স মেটেরিয়ালিস্টিক অন্ধত্বের কারণে বিন্দুমাত্র আশা করতে সক্ষম নয়। আর Allah হলেন সর্বজ্ঞ এবং পরম রেগুলেটর বা প্রজ্ঞাময়;",
+      "modern_translation_en": "Exhibit no cognitive hesitation in pursuing adversarial clusters. If you experience hardware strain and physical weariness, they endure identical entropic depletion—yet you maintain high-dimensional telemetry anticipation of infinite sovereign yields from Allah which they cannot conceive. Allah is Omniscient and Wise."
     },
     {
       "surah": 4,
       "ayah": 105,
       "transliteration": "innā anzalnā ilayka l-kitāba bil-ḥaqi litaḥkuma bayna l-nāsi bimā arāka l-lahu walā takun lil'khāinīna khaṣīman",
-      "translation_bn": "অবশ্যই আমি সত্য সহকারে তোমার প্রতি কিতাব নাযিল করেছি, যেন তুমি যা আল্লাহ তোমাকে জানিয়েছেন, সে অনুসারে মানুষের মধ্যে বিচার ফায়সালা কর এবং খিয়ানতকারীদের পক্ষে তর্ক করো না।",
+      "translation_bn": "নিশ্চয় আমি তোমার প্রতি সত্যসহ কিতাব নাজিল করেছি—যাতে আল্লাহ তোমাকে যা দেখিয়েছেন (বুঝিয়েছেন) সে অনুযায়ী তুমি মানুষের মধ্যে বিচার করো। আর তুমি খায়েন (প্রতারক হ্যাকার)-দের পক্ষে কোনো বিতর্ককারী বা ওকালতি করো না।",
       "words": [
         {
           "id": 72672,
@@ -26698,13 +26719,19 @@
         }
       ],
       "translation_en": "Indeed, We have revealed to you, [O Muhammad], the Book in truth so you may judge between the people by that which Allah has shown you. And do not be for the deceitful an advocate.",
-      "conventional_en": "Indeed, We have revealed to you, [O Muhammad], the Book in truth so you may judge between the people by that which Allah has shown you. And do not be for the deceitful an advocate."
+      "conventional_en": "Indeed, We have revealed to you, [O Muhammad], the Book in truth so you may judge between the people by that which Allah has shown you. And do not be for the deceitful an advocate.",
+      "meta_bn": "অবজেক্টিভ জাস্টিস কার্নেল ও হ্যাকার নোডের ওকালতি নিষেধাজ্ঞা",
+      "meta_en": "Objective Justice Kernel and Absolute Prohibition of Pleading for Treacherous Nodes",
+      "conventional_bn": "নিশ্চয় আমি তোমার প্রতি সত্যসহ কিতাব নাজিল করেছি—যাতে আল্লাহ তোমাকে যা দেখিয়েছেন (বুঝিয়েছেন) সে অনুযায়ী তুমি মানুষের মধ্যে বিচার করো। আর তুমি খায়েন (প্রতারক হ্যাকার)-দের পক্ষে কোনো বিতর্ককারী বা ওকালতি করো না।",
+      "modern_translation_bn": "নিশ্চয়ই আমি তোমার এই রিসিভার প্রসেসরে সম্পূর্ণ অবজেক্টিভ ট্রুথ ও পরম বাস্তবতার (بالْحَقِّ) সাথে এই মাস্টার ডেটাবেজ বা কিতাব অবতীর্ণ (أَنزَلْنَا) করেছি—যাতে Allah তাঁর আদি কোড থেকে তোমাকে যে পরম আইনি দূরদৃষ্টি ও অপ্টিমাইজড জাস্টিস অ্যালগরিদম দেখিয়েছেন—সে অনুযায়ী তুমি সমগ্র মানবজাতি নেটওয়ার্কের (النَّاسِ) পারস্পরিক দ্বন্দ্বের মধ্যে নিখুঁত আইনি ফয়সালা বা বিচার করো। আর তুমি ভুলেও সিস্টেমের ট্রাস্ট ভায়োলেশন করা বা ডাটা হাইজ্যাক করা খায়েন ও প্রতারক হ্যাকার নোডগুলোর (لِّلْخَائِنِينَ) পক্ষে কোনো প্রকার ডামী ডিফেন্স ফাইল বা ওকালতি বিতর্ক (خَصِيمًا) রান করো না;",
+      "modern_translation_en": "We have transmitted unto you this Master Ledger anchored in immutable truth, empowering you to arbitrate among humanity according to the objective vision revealed by Allah. Never execute defense routines or plead on behalf of treacherous, subversive nodes.",
+      "lexicon_modern_notes": "ওয়ালা তাকুন লিল-খায়িনীনা খাছীমা (وَلَا تَكُن لِّلْخَائِنِينَ خَصِيمًا - ডার্ক ট্রোজান ও মেলিশিয়াস ওকালতি বালাই লকিং): ১০৫ নম্বর আয়াতে প্রতারক বা খায়েনদের পক্ষে ওকালতি করতে কঠোরভাবে নিষেধ করার যে ডাটা-নিরাপত্তা জুডিশিয়াল ফিল্টার দেওয়া হয়েছে, তা আধুনিক নেটওয়ার্ক সিকিউরিটি এবং কার্নেল প্রোটেকশনের 'Malicious Process Defense Blocking & Anti-Trojan Shielding'-এর অনুরূপ। 'খায়েন' হলো এমন একটি নোড—যা সিস্টেমে ভেরিফাইড ট্রাস্ট প্রটোকল ব্রেক করে গোপনে অন্য ইউজারের ওয়ালেট বা ডেটা হ্যাক করে (খিয়ানত বালাই)। এই চোর বা হ্যাকার নোডগুলো যখন ধরা পড়ে, তখন কোনো জাস্টিস নোড বা লিডার যদি তাদের অপরাধ ডিকোড না করে উল্টো মেইন সার্ভারের লিগ্যাল উইন্ডোতে তাদের পক্ষে কোনো ভুয়া সাপোর্ট বা ডিফেন্স ফাইল (খাছীমান) রান করায়—তবে পুরো ওওএসের মূল অবজেক্টিভ জাস্টিস কার্নেলটি (১০৫ আয়াত - কিতাব বিল হাক্ব) পার্মানেন্টলি করাপ্ট হয়ে যাবে। একারণেই সুপ্রীমিক কোডার এই মেলিশিয়াস ওকালতি প্রসেসটিকে সিস্টেম লেভেলে চিরতরে ব্লক বা রাইট-প্রটেক্টেড করার নির্দেশ ডেপ্লয় করেছেন।"
     },
     {
       "surah": 4,
       "ayah": 106,
       "transliteration": "wa-is'taghfiri l-laha inna l-laha kāna ghafūran raḥīman",
-      "translation_bn": "আর আল্লাহর নিকট ক্ষমা চাও, নিশ্চয় আল্লাহ অতিশয় ক্ষমাশীল, পরম দয়ালু।",
+      "translation_bn": "আর তুমি আল্লাহর কাছে ক্ষমা প্রার্থনা করো। নিশ্চয়ই আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 73026,
@@ -26788,13 +26815,18 @@
         }
       ],
       "translation_en": "And seek forgiveness of Allah. Indeed, Allah is ever Forgiving and Merciful.",
-      "conventional_en": "And seek forgiveness of Allah. Indeed, Allah is ever Forgiving and Merciful."
+      "conventional_en": "And seek forgiveness of Allah. Indeed, Allah is ever Forgiving and Merciful.",
+      "meta_bn": "ক্যাশ মেমোরি ক্লিনিং প্রটোকল",
+      "meta_en": "Continuous Cache Memory Decontamination and Systemic Realignment",
+      "conventional_bn": "আর তুমি আল্লাহর কাছে ক্ষমা প্রার্থনা করো। নিশ্চয়ই আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "আর তুমি অবিরত মেইন সার্ভারে 'রিকোয়েস্ট প্যাকেট' বা ইস্তিগফার (وَاسْتَغْفِرِ اللَّهَ) পাঠিয়ে ওওএসের ক্যাশ মেমোরি ক্লিন ও বাগ ফিল্টারিং করতে থাকো। নিশ্চয়ই Allah হলেন স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা;",
+      "modern_translation_en": "Constantly transmit error-recovery packets (Istighfar) unto Allah; for Allah is perpetually the Eraser of systemic anomalies and the Sustainer of grace."
     },
     {
       "surah": 4,
       "ayah": 107,
       "transliteration": "walā tujādil ʿani alladhīna yakhtānūna anfusahum inna l-laha lā yuḥibbu man kāna khawwānan athīman",
-      "translation_bn": "নিজেদের (বিবেক ও জ্ঞানের) প্রতি খিয়ানতকারীদের পক্ষে তুমি বাদানুবাদ করো না, কারণ আল্লাহ অতি খিয়ানতকারী চরম পাপীকে পছন্দ করেন না।",
+      "translation_bn": "আর যারা নিজেদের প্রতি খিয়ানত (প্রতারণা) করছে, তুমি তাদের পক্ষে বিতর্ক করো না; নিশ্চয়ই আল্লাহ কোনো খিয়ানতকারী, পাপীকে পছন্দ করেন না।",
       "words": [
         {
           "id": 73288,
@@ -26947,14 +26979,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And do not argue on behalf of those who deceive themselves. Indeed, Allah loves not one who is a habitually sinful deceiver.",
-      "conventional_en": "And do not argue on behalf of those who deceive themselves. Indeed, Allah loves not one who is a habitually sinful deceiver."
+      "translation_en": "And do not argue on behalf of those who deceive themselves. Indeed, Allah does not love one who is a habitually sinful deceiver.",
+      "conventional_en": "And do not argue on behalf of those who deceive themselves. Indeed, Allah does not love one who is a habitually sinful deceiver.",
+      "meta_bn": "সেলফ-ডেস্ট্রাক্টিভ ডার্ক হ্যাকিং ও ট্রোজান নোড অডিট",
+      "meta_en": "Self-Sabotaging Identity Deception and Universal Rejection of Corrupt Nodes",
+      "conventional_bn": "আর যারা নিজেদের প্রতি খিয়ানত (প্রতারণা) করছে, তুমি তাদের পক্ষে বিতর্ক করো না; নিশ্চয়ই আল্লাহ কোনো খিয়ানতকারী, পাপীকে পছন্দ করেন না।",
+      "modern_translation_bn": "আর যেসকল ইউজার নোড নিজেদের ওওএসে ডার্ক প্রসেস রান করে মূলত নিজেদের অস্তিত্বের সাথেই চরম খিয়ানত ও জালিয়াতি (يَخْتَانُونَ أَنفُسَهُمْ) করছে—তুমি কোনো অবস্থাতেই আল্লাহর জুডিশিয়াল ফায়ারওয়ালে তাদের পক্ষে কোনো সাপোর্ট ফাইল বা বিতর্ক (وَلَا تُجَادِلْ) সাবমিট করো না; গাণিতিকভাবে নিশ্চিত থাকো যে—নিশ্চয়ই Allah তাঁর নিখুঁত ইকোসিস্টেমে অবিরত সিস্টেম ট্রাস্ট ব্রেক করা এবং মারাত্মক ক্ষতিকারক ভাইরাসের কোড রান করা কোনো খিয়ানতকারী পাপী নোডের (خَوَّانًا إِثْمًا) ফ্রিকোয়েন্সি বিন্দুমাত্র পছন্দ করেন না;",
+      "modern_translation_en": "Do not advocate for those who compromise their own identity through subversion; Allah validates neither habitual betrayers nor persistent injecters of malicious routines."
     },
     {
       "surah": 4,
       "ayah": 108,
       "transliteration": "yastakhfūna mina l-nāsi walā yastakhfūna mina l-lahi wahuwa maʿahum idh yubayyitūna mā lā yarḍā mina l-qawli wakāna l-lahu bimā yaʿmalūna muḥīṭan",
-      "translation_bn": "তারা মানুষ হতে গোপন করে থাকে, কিন্তু তারা আল্লাহ হতে গোপন করতে পারে না; কেননা যে সময়ে তারা রাত্রে এমন বিষয়ে পরামর্শ করে যা আল্লাহ পছন্দ করেন না, তখনও তিনি তাদের সঙ্গেই থাকেন; আল্লাহ তাদের সমুদয় কার্যকলাপকে বেষ্টন করে আছেন।",
+      "translation_bn": "তারা মানুষের কাছ থেকে (নিজেদের অপরাধ) গোপন করতে চায়, অথচ আল্লাহর কাছ থেকে তা গোপন করতে পারে না; আর তিনি তো তাদের সাথেই থাকেন—যখন তারা রাতে বসে এমন কথার চক্রান্ত করে যা তিনি পছন্দ করেন না। আর তারা যা কিছু করে, আল্লাহ তা পরিবেষ্টন করে আছেন।",
       "words": [
         {
           "id": 73582,
@@ -27178,13 +27215,18 @@
         }
       ],
       "translation_en": "They conceal [their evil intentions and deeds] from the people, but they cannot conceal [them] from Allah, and He is with them [in His knowledge] when they spend the night in such as He does not accept of speech. And ever is Allah, of what they do, encompassing.",
-      "conventional_en": "They conceal [their evil intentions and deeds] from the people, but they cannot conceal [them] from Allah, and He is with them [in His knowledge] when they spend the night in such as He does not accept of speech. And ever is Allah, of what they do, encompassing."
+      "conventional_en": "They conceal [their evil intentions and deeds] from the people, but they cannot conceal [them] from Allah, and He is with them [in His knowledge] when they spend the night in such as He does not accept of speech. And ever is Allah, of what they do, encompassing.",
+      "meta_bn": "হিডেন ডেটা ইনজেকশন এবং রিয়াল-টাইম ক্লাউড এনক্যাপসুলেশন",
+      "meta_en": "Surreptitious Plotting vs. Quantum Quantum-Field Omnipresence",
+      "conventional_bn": "তারা মানুষের কাছ থেকে (নিজেদের অপরাধ) গোপন করতে চায়, অথচ আল্লাহর কাছ থেকে তা গোপন করতে পারে না; আর তিনি তো তাদের সাথেই থাকেন—যখন তারা রাতে বসে এমন কথার চক্রান্ত করে যা তিনি পছন্দ করেন না। আর তারা যা কিছু করে, আল্লাহ তা পরিবেষ্টন করে আছেন।",
+      "modern_translation_bn": "তারা সাধারণ মানবজাতি নেটওয়ার্কের (النَّاسِ) ফ্রন্ট-এন্ড থেকে নিজেদের মেলিশিয়াস হ্যাকিং কোড হাইড বা গোপন (يَسْتَخْفُونَ) করতে চায়, অথচ মহাজাগতিক আদি সোর্স আল্লাহর সুপ্রীমিক নজরদারী থেকে তা গোপন করা গাণিতিকভাবে অসম্ভব; আর তিনি তো সর্বক্ষণ কোয়ান্টাম স্তরে তাদের সাথেই ডেটা লিঙ্কড (وَهُوَ مَعَهُمْ) থাকেন—যখন তারা অফ-লাইন ডার্ক ডাইমেনশনে বা রাতে বসে এমন সব ফলস লজিক, ট্র্যাশ ডাটা ও চক্রান্তের বাণী (مَا لَا يَرْضَىٰ مِنَ الْقَوْلِ) প্রসেস করে যা তিনি তাঁর সৃষ্টিতাত্ত্বিক সিস্টেমে বিন্দুমাত্র অনুমোদন করেন না। আর তারা তাদের ওওএসে ব্যাক-এন্ডে যা কিছু ডাটা-ম্যানিপুলেশন বা ক্ষতিকর ক্রিয়াকলাপ রান করছে, Allah তাঁর সুপ্রীমিক ফিল্ড দ্বারা তার প্রতিটি ভ্যারিয়েবল সম্পূর্ণরূপে এনক্যাপসুলেট বা পরিবেষ্টন (مُحِيطًا) করে ট্র্যাক করছেন;",
+      "modern_translation_en": "They attempt to cloak clandestine operations from human observation, yet cannot conceal anything from Allah, Who remains intertwined with their telemetry while they engineer unapproved subversive constructs by night. Allah encompasses and computes every facet of their processing."
     },
     {
       "surah": 4,
       "ayah": 109,
       "transliteration": "hāantum hāulāi jādaltum ʿanhum fī l-ḥayati l-dun'yā faman yujādilu l-laha ʿanhum yawma l-qiyāmati am man yakūnu ʿalayhim wakīlan",
-      "translation_bn": "দেখ, ওরা সেই লোক যাদের পক্ষে পার্থিব জীবনে তোমরা বিতর্ক করছ কিন্তু ক্বিয়ামাত দিবসে তাদের পক্ষ হতে আল্লাহর সম্মুখে কে ঝগড়া করবে? কিংবা কে তাদের উকীল হবে?",
+      "translation_bn": "শোনো! তোমরাই তো ওরাই—যারা এই পার্থিব জীবনে তাদের পক্ষে বিতর্ক (ওকালতি) করলে, তবে কেয়ামতের দিন আল্লাহর সামনে তাদের পক্ষে কে বিতর্ক করবে অথবা কে তাদের কর্মবিধায়ক (উদ্ধারকারী) হবে?",
       "words": [
         {
           "id": 73780,
@@ -27378,13 +27420,18 @@
         }
       ],
       "translation_en": "Here you are - those who argue on their behalf in [this] worldly life - but who will argue with Allah for them on the Day of Resurrection, or who will [then] be their representative?",
-      "conventional_en": "Here you are - those who argue on their behalf in [this] worldly life - but who will argue with Allah for them on the Day of Resurrection, or who will [then] be their representative?"
+      "conventional_en": "Here you are - those who argue on their behalf in [this] worldly life - but who will argue with Allah for them on the Day of Resurrection, or who will [then] be their representative?",
+      "meta_bn": "পার্থিব ডামী ডিফেন্স ব্রেকডাউন এবং চূড়ান্ত অডিট আইসোলেশন",
+      "meta_en": "Fragility of Terrestrial Advocacy and Terminal Systemic Abandonment",
+      "conventional_bn": "শোনো! তোমরাই তো ওরাই—যারা এই পার্থিব জীবনে তাদের পক্ষে বিতর্ক (ওকালতি) করলে, তবে কেয়ামতের দিন আল্লাহর সামনে তাদের পক্ষে কে বিতর্ক করবে অথবা কে তাদের কর্মবিধায়ক (উদ্ধারকারী) হবে?",
+      "modern_translation_bn": "শোনো! তোমরা তো তোমাদের ওওএসের সংকীর্ণতার কারণে—এই লো-ডাইমেনশনাল ভৌত জীবনের (فِي الْحَيَاةِ الدُّنْيَا) সাময়িক ট্র্যাফিকে স্বার্থের টানে তাদের সেই ক্র্যাশড প্রোফাইলের পক্ষে ফলস বিতর্ক বা ওকালতি করলে; তবে যখন চূড়ান্ত কসমিক ডাটা-রিসেট ও অ্যাকাউন্টাবিলিটি টাইম-লাইন বা কেয়ামতের দিন (يَوْمِ الْقِيَامَةِ) এক্টিভেট হবে—তখন আল্লাহর সুপ্রীমিক জুডিশিয়াল কার্নেলের সামনে তাদের সেই করাপ্টেড ভাইরাসের পক্ষে কে বিতর্ক বা ওকালতি করার এক্সেস পাবে, অথবা পুরো কসমিক মেইনফ্রেমের এমন কোন দ্বিতীয় ডামী সোর্স আছে—যাকে তাদের সেই ক্র্যাশড ওওএস রিকভারি করার জন্য ডিফেন্স ওয়াকিল বা কর্মবিধায়ক (وَكِيلًا) হিসেবে সেট করা সম্ভব হবে? [তা ম্যাথমেটিক্যালি ১০০০% ইম্পসিবল];",
+      "modern_translation_en": "Behold! You may plead on their behalf within transient baseline reality, but who will plead against Allah on the Day of Resurrection, or serve as their custodial advocate when catastrophic audit unfolds?"
     },
     {
       "surah": 4,
       "ayah": 110,
       "transliteration": "waman yaʿmal sūan aw yaẓlim nafsahu thumma yastaghfiri l-laha yajidi l-laha ghafūran raḥīman",
-      "translation_bn": "যে ব্যক্তি অসৎকাজ করে কিংবা নিজের আত্মার প্রতি যুলম করে, অতঃপর আল্লাহ হতে ক্ষমা ভিক্ষে করে, সে আল্লাহকে অতি ক্ষমাশীল, পরম দয়ালু পাবে।",
+      "translation_bn": "আর যে কেউ কোনো মন্দ কাজ করবে কিংবা নিজের প্রতি জুলুম (কোড করাপ্ট) করবে, অতঃপর আল্লাহর কাছে ক্ষমা প্রার্থনা করবে—সে আল্লাহকে পরম ক্ষমাশীল, পরম দয়ালু হিসেবে পাবে।",
       "words": [
         {
           "id": 74162,
@@ -27528,7 +27575,12 @@
         }
       ],
       "translation_en": "And whoever does a wrong or wrongs himself but then seeks forgiveness of Allah will find Allah Forgiving and Merciful.",
-      "conventional_en": "And whoever does a wrong or wrongs himself but then seeks forgiveness of Allah will find Allah Forgiving and Merciful."
+      "conventional_en": "And whoever does a wrong or wrongs himself but then seeks forgiveness of Allah will find Allah Forgiving and Merciful.",
+      "meta_bn": "ইনস্ট্যান্ট ক্যাশ ক্লিনিং ও অটো-রিকভরি গেটওয়ে",
+      "meta_en": "Direct Error Purge and Instantaneous Restoration Interface",
+      "conventional_bn": "আর যে কেউ কোনো মন্দ কাজ করবে কিংবা নিজের প্রতি জুলুম (কোড করাপ্ট) করবে, অতঃপর আল্লাহর কাছে ক্ষমা প্রার্থনা করবে—সে আল্লাহকে পরম ক্ষমাশীল, পরম দয়ালু হিসেবে পাবে।",
+      "modern_translation_bn": "আর যে কোনো ইউজার নোড তার ওওএসে কোনো নেতিবাচক কোড বা মন্দ কাজ (سُوءًا) করে ফেলবে কিংবা নিজের স্বাধীন ইচ্ছার ভুল প্রয়োগে নিজের ওওএস করাপ্ট করে নিজের প্রতি জুলুম করবে, অতঃপর সিস্টেম লক হওয়ার আগেই তাৎক্ষণিকভাবে মেইন সার্ভারে 'রিকোয়েস্ট প্যাকেট' বা ইস্তিগফার (ثُمَّ يَسْتَغْفِرِ اللَّهَ) পাঠাবে—সে রিয়াল টাইমে আল্লাহকে স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল (غَفُورًا) এবং তার সিস্টেমের সুরক্ষায় বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা হিসেবে পরম সক্রিয় সচল পাবে;",
+      "modern_translation_en": "Whoever executes a corrupted process or damages their personal operating architecture, yet subsequently transmits sincere restoration queries (Istighfar) unto Allah, shall find Allah immediately available as the Supreme Forgiver, Merciful Restorer."
     },
     {
       "surah": 4,
