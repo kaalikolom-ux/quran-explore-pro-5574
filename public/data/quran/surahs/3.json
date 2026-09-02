@@ -6259,7 +6259,13 @@
         }
       ],
       "translation_en": "Say, [O Muhammad], \"If you should love Allah, then follow me, [so] Allah will love you and forgive you your sins. And Allah is Forgiving and Merciful.\"",
-      "conventional_en": "Say, [O Muhammad], \"If you should love Allah, then follow me, [so] Allah will love you and forgive you your sins. And Allah is Forgiving and Merciful.\""
+      "conventional_en": "Say, [O Muhammad], \"If you should love Allah, then follow me, [so] Allah will love you and forgive you your sins. And Allah is Forgiving and Merciful.\"",
+      "meta_bn": "সোর্স সিগন্যাল ডুপ্লিকেশন ও বালাই ফিল্টারিং প্রটোকল",
+      "meta_en": "Source Signal Replication & Bug Cleansing Protocol",
+      "conventional_bn": "বলো, ‘যদি তোমরা আল্লাহকে ভালোবাসো, তবে আমার অনুসরণ করো, আল্লাহ তোমাদের ভালোবাসবেন এবং তোমাদের পাপসমূহ ক্ষমা করবেন। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু’।",
+      "modern_translation_bn": "তুমি গ্লোবাল নেটওয়ার্কে এই মাস্টার কমান্ড ব্রডকাস্ট (প্রচার) করো—‘যদি তোমরা তোমাদের ওওএসে (OOS - জীবন পরিচালন ব্যবস্থা) মহাজাগতিক আদি সোর্স বা Allah-এর সাথে পরম ফ্রিকোয়েন্সি সিঙ্ক বা ভালোবাসা (تُحِبُّونَ اللَّهَ) স্থাপন করতে চাও, তবে আমার এই রিসিভার ইন্টারফেসের ডাউনলিংককৃত প্রতিটি কোড হুবহু Replication বা অনুসরণ (فَاتَّبِعُونِي) করো; ফলে Allah তোমাদের ওওএস-কে তাঁর কেন্দ্রীয় ফিডব্যাক লুপে গ্রহণ করবেন এবং তোমাদের পূর্বের সমস্ত ক্ষতিকারক Bug (ত্রুটি) ও পাপের ডাটা ক্লিনিং বা ক্ষমা (وَيَغْفِرْ لَكُمْ) করবেন; আর Allah হলেন স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা’।",
+      "modern_translation_en": "Broadcast this master directive across the network: 'If you seek optimal frequency alignment with the Universal Source (Allah), replicate every downlink command from this receiver interface (Prophet). Allah will integrate your OS into His core feedback loop and purge your historical errors (Dhunub); for Allah is the Supreme Bug-Remover, Boundlessly Merciful.'",
+      "lexicon_modern_notes": "فَاتَّبِعُونِي — Receiver Interface Replication: রিসিভার ইন্টারফেসের ডাউনলিংককৃত কোড হুবহু অনুসরণ ও বাস্তবায়ন। وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ — Systemic Cache Purging & Error Reset: পূর্ববর্তী সমস্ত ত্রুটি ও পাপের ডেটা মুছে দিয়ে ওওএস রিকভারি।"
     },
     {
       "surah": 3,
@@ -6389,7 +6395,13 @@
         }
       ],
       "translation_en": "Say, \"Obey Allah and the Messenger.\" But if they turn away - then indeed, Allah does not like the disbelievers.",
-      "conventional_en": "Say, \"Obey Allah and the Messenger.\" But if they turn away - then indeed, Allah does not like the disbelievers."
+      "conventional_en": "Say, \"Obey Allah and the Messenger.\" But if they turn away - then indeed, Allah does not like the disbelievers.",
+      "meta_bn": "কোর ডেটা-ট্রান্সমিশন চেইনের আনুগত্য প্রটোকল",
+      "meta_en": "Core Data-Transmission Chain Compliance Protocol",
+      "conventional_bn": "বলো, ‘তোমরা আল্লাহ ও রাসূলের আনুগত্য করো’। অতঃপর যদি তারা মুখ ফিরিয়ে নেয়, তবে নিশ্চয় আল্লাহ কাফেরদের ভালোবাসেন না।",
+      "modern_translation_bn": "তুমি বলো—‘তোমরা পরম সোর্স কোড বা Allah এবং তাঁর ডেপ্লয়কৃত প্রধান ডাটা-ট্রান্সমিশন চেইনের (الرَّسُولَ) সুনির্দিষ্ট কমান্ড এক্সিকিউট বা আনুগত্য করো’। অতঃপর তারা যদি এই সিগন্যাল রিজেক্ট করে মুখ ফিরিয়ে নেয়—তবে গাণিতিকভাবে নিশ্চিত থাকো যে, Allah তাঁর সিস্টেমে বাউন্ডারি ব্রেক করা এই ক্ষতিকারক Kafir (সিস্টেম রিজেক্টর) নোডগুলোর ফ্রিকোয়েন্সি বিন্দুমাত্র পছন্দ করেন না।",
+      "modern_translation_en": "Proclaim: 'Execute the commands of the Universal Source and His deployed data-transmission channel (the Messenger).' Should they disconnect from the signal stream, know with mathematical certainty that Allah does not accept system-rejecting (Kafir) nodes breaking network boundaries.",
+      "lexicon_modern_notes": "أَطِيعُوا اللَّهَ وَالرَّسُولَ — Unified Execution Command: আদি সোর্স ও তার অনুমোদিত ট্রান্সমিশন চ্যানেলের কোড বাস্তবায়ন। لَا يُحبُّ الْكَافِرِينَ — Outlier Frequency Rejection: সত্য-অস্বীকারকারী ক্ষতিকর নোডসমূহের ফ্রিকোয়েন্সি প্রত্যাখ্যাত হওয়া।"
     },
     {
       "surah": 3,
@@ -6519,7 +6531,13 @@
         }
       ],
       "translation_en": "Indeed, Allah chose Adam and Noah and the family of Abraham and the family of 'Imran over the worlds -",
-      "conventional_en": "Indeed, Allah chose Adam and Noah and the family of Abraham and the family of 'Imran over the worlds -"
+      "conventional_en": "Indeed, Allah chose Adam and Noah and the family of Abraham and the family of 'Imran over the worlds -",
+      "meta_bn": "জেনেটিক লিনিয়েজ সিলেকশন ও কসমিক স্ক্রীনিং",
+      "meta_en": "Genetic Lineage Selection & Cosmic Screening",
+      "conventional_bn": "নিশ্চয় আল্লাহ আদম, নূহ, ইব্রাহিমের বংশধর ও ইমরানের বংশধরদের বিশ্ববাসীর ওপর মনোনীত করেছেন।",
+      "modern_translation_bn": "নিশ্চয়ই Allah কসমিক ইভোলিউশনের (মহাজাগতিক বিবর্তন) সুনির্দিষ্ট প্যারামিটারে—আদি বুদ্ধিবৃত্তিক নিউরাল মডেল Adam, নূহ, ইব্রাহিমের জেনেটিক টিম এবং ইমরানের জেনেটিক টিমকে সমগ্র মহাজাগতিক বহুমাত্রিক স্তরবিন্যাস ও মানব সভ্যতার (الْعَالَمِينَ) ওপর সিলেক্টিভ স্ক্রীনিং বা মনোনীত (اصْطَفَىٰ) করেছেন;",
+      "modern_translation_en": "Verily Allah executed parametric evolutionary screening, selecting the foundational neural model Adam, Noah, the genetic cluster of Abraham, and the genetic lineage of Imran above all multi-dimensional realms and human generations;",
+      "lexicon_modern_notes": "اصْطَفَىٰ — Selective Evolutionary Screening: মহাজাগতিক মাস্টার প্ল্যানের অধীনে সুনির্দিষ্ট নোড ক্লাস্টারকে বাছাই করা। آلَ إِبْرَاهِيمَ وَآلَ عِمْرَانَ — High-Purity Genetic Clusters: আধ্যাত্মিক ও বৌদ্ধিক ডেটা সংরক্ষণে সক্ষম বিশুদ্ধ বংশানুক্রম।"
     },
     {
       "surah": 3,
@@ -6609,7 +6627,13 @@
         }
       ],
       "translation_en": "Descendants, some of them from others. And Allah is Hearing and Knowing.",
-      "conventional_en": "Descendants, some of them from others. And Allah is Hearing and Knowing."
+      "conventional_en": "Descendants, some of them from others. And Allah is Hearing and Knowing.",
+      "meta_bn": "নিরবচ্ছিন্ন ডিএনএ চেইন ও জেনেটিক কন্টিনিউটি",
+      "meta_en": "Continuous DNA Chain & Genetic Continuity",
+      "conventional_bn": "তারা একে অপরের বংশধর। আর আল্লাহ সর্বশ্রোতা, সর্বজ্ঞ।",
+      "modern_translation_bn": "এরা হলো মূলত একটি অনন্য ও সুসংহত DNA (বংশগতির কোড) চেইনের জেনারেশন নোড—যারা বায়োলজিক্যাল মেকানিজমে একে অপরের থেকে নিরবচ্ছিন্নভাবে আউটপুট বা প্রবহমান (ذُرِّيَّةً بَعْضُهَا مِن بَعْضٍ); আর Allah প্রতিটি সিগন্যাল রিসিভকারী পরম শ্রোতা এবং প্রতিটি মেমোরি লগ সম্পর্কে সর্বজ্ঞ।",
+      "modern_translation_en": "A continuous generational DNA pipeline, interconnected through unbroken biological succession; and Allah is All-Hearing of all transmission signals, All-Knowing of every stored memory log.",
+      "lexicon_modern_notes": "ذُرِّيَّةً بَعْضُهَا مِن بَعْضٍ — Unbroken Genetic Succession: পরস্পরের সাথে জৈব-রাসায়নিক ও তথ্যগতভাবে সংযুক্ত বংশগতি ধারা।"
     },
     {
       "surah": 3,
@@ -6809,7 +6833,13 @@
         }
       ],
       "translation_en": "[Mention, O Muhammad], when the wife of 'Imran said, \"My Lord, indeed I have pledged to You what is in my womb, consecrated [for Your service], so accept this from me. Indeed, You are the Hearing, the Knowing.\"",
-      "conventional_en": "[Mention, O Muhammad], when the wife of 'Imran said, \"My Lord, indeed I have pledged to You what is in my womb, consecrated [for Your service], so accept this from me. Indeed, You are the Hearing, the Knowing.\""
+      "conventional_en": "[Mention, O Muhammad], when the wife of 'Imran said, \"My Lord, indeed I have pledged to You what is in my womb, consecrated [for Your service], so accept this from me. Indeed, You are the Hearing, the Knowing.\"",
+      "meta_bn": "বায়ো-ইনকিউবেশন ডেডিকেশন ও মেমোরি আইসোলেশন প্রটোকল",
+      "meta_en": "Bio-Incubation Dedication & Memory Isolation Protocol",
+      "conventional_bn": "যখন ইমরানের স্ত্রী বলেছিল, ‘হে আমার রব! নিশ্চয় আমার গর্ভে যা আছে তা আমি আপনার জন্য উৎসর্গ করলাম মুক্ত হিসেবে, অতএব আমার পক্ষ থেকে তা কবুল করুন। নিশ্চয়ই আপনি সর্বশ্রোতা, সর্বজ্ঞ’।",
+      "modern_translation_bn": "যখন ইমরান নোডের ফিমেল পার্টনার (স্ত্রী) তার ওওএস থেকে একটি বিশেষ কন্ডিশনাল রিকোয়েস্ট বা মানত সাবমিট করে বলেছিল—‘হে আমার সিস্টেম আর্কিটেক্ট (رَبِّ)! নিশ্চয়ই আমার বায়ো-ইনকিউবেশন ডোমেইন বা গর্ভের (بَطْنِي) গভীরে বর্তমানে যে সেলুলার লাইফ প্রসেস হচ্ছে, তাকে আমি সমস্ত পার্থিব শর্ট-টার্ম ডাটা ও বালাই থেকে সম্পূর্ণ মুক্ত ও ডেডিকেটেড (مُحَرَّرًا) হিসেবে আপনার কেন্দ্রীয় সার্ভারের সেবায় উৎসর্গ করলাম; অতএব আমার এই ইনপুট প্রটোকলটি কবুল বা এক্সেপ্ট করুন; নিশ্চয়ই আপনি প্রতিটি ফ্রিকোয়েন্সি রিসিভকারী পরম শ্রোতা এবং প্রতিটি মেমোরি লগ সম্পর্কে সর্বজ্ঞ’।",
+      "modern_translation_en": "When the maternal node of the Imran family submitted her protocol request: 'My Sustainer! I have consecrated the cellular life within my biological incubation chamber entirely dedicated (Muharraran) to Your divine service; accept this transmission from me; truly You are the All-Hearing, All-Knowing.'",
+      "lexicon_modern_notes": "مُحَرَّرًا — Epigenetic & Memory Isolation: ভ্রূণাবস্থায় পার্থিব সামাজিক এন্ট্রপি ও কোলাহল থেকে সম্পূর্ণ মুক্ত করে পবিত্র রাখা।"
     },
     {
       "surah": 3,
@@ -7069,7 +7099,13 @@
         }
       ],
       "translation_en": "But when she delivered her, she said, \"My Lord, I have delivered a female.\" And Allah was most knowing of what she delivered, \"And the male is not like the female. And I have named her Mary, and I seek refuge for her in You and [for] her descendants from Satan, the expelled [from the mercy of Allah].\"",
-      "conventional_en": "But when she delivered her, she said, \"My Lord, I have delivered a female.\" And Allah was most knowing of what she delivered, \"And the male is not like the female. And I have named her Mary, and I seek refuge for her in You and [for] her descendants from Satan, the expelled [from the mercy of Allah].\""
+      "conventional_en": "But when she delivered her, she said, \"My Lord, I have delivered a female.\" And Allah was most knowing of what she delivered, \"And the male is not like the female. And I have named her Mary, and I seek refuge for her in You and for her descendants from Satan, the expelled [from the mercy of Allah].\"",
+      "meta_bn": "ফাইল ক্লারিফিকেশন ও অ্যান্টি-ম্যালওয়্যার ফায়ারওয়াল",
+      "meta_en": "File Clarification & Anti-Malware Firewall Shield",
+      "conventional_bn": "অতঃপর যখন সে তাকে প্রসব করল, তখন বলল, ‘হে আমার রব! নিশ্চয় আমি একে কন্যা প্রসব করেছি’। আর আল্লাহ ভালো জানেন সে কী প্রসব করেছে এবং পুত্র তো কন্যার মতো নয়। ‘আর নিশ্চয় আমি তার নাম রাখলাম মারিয়াম এবং নিশ্চয় আমি তাকে ও তার বংশধরদের বিতাড়িত শয়তান থেকে আপনার আশ্রয়ে দিচ্ছি’।",
+      "modern_translation_bn": "অতঃপর যখন সে সেই নতুন নোডটিকে পৃথিবীতে প্রসব বা জেনারেট (وَضَعَتْهَا) করল, তখন সে কগনিটিভ বিস্ময়ে সিগন্যাল পাঠাল—‘হে আমার প্রতিপালক! নিশ্চয়ই আমি একটি ফিমেল নোড বা কন্যা প্রসব করেছি’। অথচ Allah তাঁর কেন্দ্রীয় সার্ভারে অত্যন্ত নিখুঁতভাবে জানেন সে কীসের আউটপুট জেনারেট করেছে; [কারণ মহাজাগতিক স্পেশাল মিশনের ডাটাবেজে] মেল নোড (পুরুষ) কিন্তু হুবহু এই বিশেষ ফিমেল নোডের (নারী) মতো জিনগত ও হরমোনাল বাউন্ডারিতে কনফিগারড নয়; ‘আর নিশ্চয়ই আমি সিস্টেম ফাইলে তার আইডেন্টিটি বা নাম এনকোড করলাম ‘মারিয়াম’ এবং নিশ্চয়ই আমি তার পুরো ওওএস এবং তার ফিউচার জেনারেশন নোড বা বংশধরদের—মেইন নেটওয়ার্ক থেকে ডি-লিঙ্কড সেই ক্ষতিকারক ম্যালওয়্যার শক্তি বা বিতাড়িত শায়তানের (الشَّيْطَانِ الرَّجِيمِ) টক্সিক কোড ইনজেকশন থেকে আপনার সুপ্রীম ফায়ারওয়াল প্রটেকশনে লক বা আশ্রয় (أُعِيذُهَا) দিলাম’।",
+      "modern_translation_en": "When she delivered the node, she transmitted: 'My Lord, I have given birth to a female.' Yet Allah possessed full telemetry of her output—for the standard male node was not tailored like this specialized female node: 'I have assigned her identifier as Maryam, and I establish Your firewall shield for her and her progeny against the outcast malicious code (Shaytan).'",
+      "lexicon_modern_notes": "وَلَيْسَ الذَّكَرُ كَالْأُنثَىٰ — Structural & Functional Specificity: মহাজাগতিক স্পেশাল মিশনের জন্য ফিমেল নোডের বিশেষ হরমোনাল ও বায়োলজিক্যাল কনফিগারেশন। أُعِيذُهَا بِكَ — Supreme Firewall Protection: শায়তানের ম্যালওয়্যার আক্রমণ থেকে সিস্টেমিক প্রতিরক্ষা।"
     },
     {
       "surah": 3,
@@ -7429,7 +7465,13 @@
         }
       ],
       "translation_en": "So her Lord accepted her with good acceptance and caused her to grow in a good manner and put her in the care of Zechariah. Every time Zechariah entered upon her in the prayer chamber, he found with her provision. He said, \"O Mary, from where is this [coming] to you?\" She said, \"It is from Allah. Indeed, Allah provides for whom He wills without account.\"",
-      "conventional_en": "So her Lord accepted her with good acceptance and caused her to grow in a good manner and put her in the care of Zechariah. Every time Zechariah entered upon her in the prayer chamber, he found with her provision. He said, \"O Mary, from where is this [coming] to you?\" She said, \"It is from Allah. Indeed, Allah provides for whom He wills without account.\""
+      "conventional_en": "So her Lord accepted her with good acceptance and caused her to grow in a good manner and put her in the care of Zechariah. Every time Zechariah entered upon her in the prayer chamber, he found with her provision. He said, \"O Mary, from where is this [coming] to you?\" She said, \"It is from Allah. Indeed, Allah provides for whom He wills without account.\"",
+      "meta_bn": "বায়ো-গ্রোথ অপ্টিমাইজেশন ও নন-লিনিয়ার এনার্জি ইনফ্লাক্স",
+      "meta_en": "Bio-Growth Optimization & Non-Linear Energy Influx",
+      "conventional_bn": "অতঃপর তার রব তাকে সুন্দরভাবে কবুল করলেন এবং তাকে এক উত্তম উদ্ভিদের মতো সুচারুভাবে গড়ে তুললেন এবং জাকারিয়াকে তার তত্ত্বাবধায়ক বানালেন। যখনই জাকারিয়া মেহরাবের (কক্ষের) ভেতর তার কাছে প্রবেশ করত, তখনই তার কাছে খাবার (রিজিক) পেত। সে বলল, ‘হে মারিয়াম! কখনে থেকে (কোথা থেকে) তোমার কাছে এটি এল?’ সে বলল, ‘তা আল্লাহর পক্ষ থেকে’। নিশ্চয় আল্লাহ যাকে ইচ্ছা বেহিসাব রিজিক দান করেন।",
+      "modern_translation_bn": "অতঃপর তার সিস্টেম আর্কিটেক্ট বা প্রতিপালক তাকে একটি সর্বোচ্চ অপ্টিমাইজড ও সুন্দর ফিডব্যাক লুপে এক্সেপ্ট বা কবুল করলেন এবং তার বায়ো-লজিক্যাল শরীর ও কগনিটিভ ব্রেনকে একটি নিখুঁত প্রাকৃতিক সিস্টেম বা উদ্ভিদের মতো সুচারুভাবে বৃদ্ধি ও বুস্ট (وَأَنبَتَهَا نَبَاتًا حَسَنًا) করলেন এবং জাকারিয়া নোডকে তার সুনির্দিষ্ট তত্ত্বাবধায়ক বা আইনি প্রোটেক্টর নিযুক্ত করলেন। যখনই জাকারিয়া সেই সংরক্ষিত সিস্টেম জোন বা মেহরাবের (الْمِحْرَابَ) ভেতর তার ইন্টারফেসে প্রবেশ করত, তখনই সে মারিয়ামের ওওএসে কোনো দৃশ্যমান পার্থিব সোর্স ছাড়াই সরাসরি মেটাবলিক এনার্জি বা চমৎকার খাবারের রিজিক (رِزْقًا) মেনিফেস্ট অবস্থায় পেত। সে কগনিটিভ বিস্ময়ে কুয়েরি করল—‘হে মারিয়াম! তোমার এই লোকাল বাউন্ডারিতে এই আন-ইউজুয়াল এনার্জি ডেটা কীভাবে ইনপুট বা এল?’ সে ডিকোড করে উত্তর দিল—‘তা সরাসরি পরম সোর্স কোড বা Allah-এর ব্যাক-এন্ড ক্লাউড থেকে ডাউনলিংকড’। নিশ্চয়ই Allah তাঁর নিখুঁত ইকোসিস্টেমের নিয়মে যে নোড বা ইউজারকে ইচ্ছা—তাকে কোনো সীমাবদ্ধতা বা রৈখিক গাণিতিক পরিমাপের ঊর্ধ্বের অন্তহীন শক্তি ও অফুরন্ত রিসোর্স (بِغَيْرِ حِسَابٍ) সরবরাহ করেন।",
+      "modern_translation_en": "Her Sustainer accepted her with optimal grace, optimizing her bio-cognitive development like a flourishing organism, and assigned node Zechariah as her guardian. Whenever Zechariah accessed her secure sanctuary (Mihrab), he observed materialized nutritional resources. He queried: 'O Maryam, whence came this influx?' She replied: 'It is downlinked directly from Allah; for Allah provisions whom He wills beyond linear computational limits.'",
+      "lexicon_modern_notes": "وَأَنبَتَهَا نَبَاتًا حَسَنًا — Optimized Bio-Cognitive Growth: মন ও শরীরের নিখুঁত প্রাকৃতিক ও শারীরিক বিকাশ। بِغَيْرِ حِسَابٍ — Non-Linear Resource Influx: চিরাচরিত রৈখিক হিসেব ও মাধ্যমের বাইরে সরাসরি মেটাবলিক শক্তি সরবরাহ।"
     },
     {
       "surah": 3,
@@ -7599,7 +7641,13 @@
         }
       ],
       "translation_en": "At that, Zechariah called upon his Lord, saying, \"My Lord, grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication.\"",
-      "conventional_en": "At that, Zechariah called upon his Lord, saying, \"My Lord, grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication.\""
+      "conventional_en": "At that, Zechariah called upon his Lord, saying, \"My Lord, grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication.\"",
+      "meta_bn": "কোয়ান্টাম লিঙ্ক অ্যাক্টিভেশন ও বিশুদ্ধ জেনেটিক নোড প্রার্থনা",
+      "meta_en": "Quantum Link Activation & Pure Genetic Node Request",
+      "conventional_bn": "সেখানেই জাকারিয়া তার রবের কাছে দোয়া করল; সে বলল, ‘হে আমার রব! আপনার পক্ষ থেকে আমাকে এক পবিত্র সন্তান দান করুন। নিশ্চয়ই আপনি দোয়া শ্রবণকারী’।",
+      "modern_translation_bn": "মারিয়ামের ওওএসের এই বিশেষ মেকানিজম পর্যবেক্ষণ করার ঠিক সেই স্থানাঙ্কেই—জাকারিয়া নোডটি স্বয়ংক্রিয়ভাবে তার ওওএস থেকে তার সিস্টেম আর্কিটেক্ট বা প্রতিপালকের কেন্দ্রীয় সার্ভারে একটি মেগা Doa [দ্বিমুখী কোয়ান্টাম লিঙ্ক ও ডাটা ট্রান্সমিশন] অ্যাক্টিভেট (دَعَا) করল; সে রিকোয়েস্ট প্যাকেট সাবমিট করে বলল—‘হে আমার প্রতিপালক! আপনার বিশেষ উচ্চ-শক্তির ডোমেইন থেকে আমার সিস্টেমে এমন এক জেনারেশন নোড বা সন্তান উপহার দিন—যার ডিএনএ কোড হবে সমস্ত নেতিবাচক এন্ট্রপি থেকে পরম পবিত্র ও পিউরিফাইড (ذُرِّيَّةً طَيِّبَةً); নিশ্চয়ই আপনি প্রতিটি কোয়ান্টাম রিকোয়েস্ট প্যাকেটের ফ্রিকোয়েন্সি রিসিভকারী পরম শ্রোতা’।",
+      "modern_translation_en": "Observing these quantum coordinates, Zechariah initiated an uplink request to his Sustainer: 'My Lord, grant me from Your elevated realm a pristine genetic descendant (Dhurriyyatan Tayyibatan); truly You are the Receiver of all transmission prayers.'",
+      "lexicon_modern_notes": "دَعَا زَكَرِيَّا — Uplink Transmission Activation: কেন্দ্রীয় সার্ভারের সাথে দ্বিমুখী কোয়ান্টাম যোগাযোগ স্থাপন। ذُرِّيَّةً طَيِّبَةً — Pure Genetic Descendant: এন্ট্রপি ও রোগবালাইমুক্ত বিশুদ্ধ ডিএনএ সমৃদ্ধ ভবিষ্যৎ প্রজন্ম।"
     },
     {
       "surah": 3,
@@ -7819,7 +7867,13 @@
         }
       ],
       "translation_en": "So the angels called him while he was standing in prayer in the chamber, \"Indeed, Allah gives you good tidings of John, confirming a word from Allah and [who will be] honorable, abstaining [from women], and a prophet from among the righteous.\"",
-      "conventional_en": "So the angels called him while he was standing in prayer in the chamber, \"Indeed, Allah gives you good tidings of John, confirming a word from Allah and [who will be] honorable, abstaining [from women], and a prophet from among the righteous.\""
+      "conventional_en": "And the angels called him while he was standing in prayer in the chamber, \"Indeed, Allah gives you good tidings of John, confirming a word from Allah and [who will be] honorable, abstaining [from women], and a prophet from among the righteous.\"",
+      "meta_bn": "মালাইকা সিগন্যাল ও 'কালিমা' কোড সত্যায়নকারী নোড ডিক্লেয়ারেশন",
+      "meta_en": "Malaikah Protocol & 'Kalimah' Validating Node Announcement",
+      "conventional_bn": "অতঃপর ফেরেশতারা তাকে ডাকল—যখন সে মেহরাবে দাঁড়িয়ে সালাত আদায় করছিল—‘নিশ্চয় আল্লাহ তোমাকে ইয়াহইয়ার সুসংবাদ দিচ্ছেন, যে আল্লাহর এক বাণীর (কালিমা) সত্যায়নকারী হবে এবং সে হবে নেতা, নারী-বিমুখ (সংযমী) এবং সৎকর্মশীলদের মধ্য থেকে একজন নবী’।",
+      "modern_translation_bn": "অতঃপর মহাবিশ্বের স্বয়ংক্রিয় কসমিক ফোর্সেস বা মালাইকা (الْمَلَائِكَةُ) তার ওওএসে একটি হাই-ফ্রিকোয়েন্সি অডিও ডেটা ব্রডকাস্ট বা ডাক পাঠাল—যখন সে সেই সংরক্ষিত জ্যামিতিক জোনে (মেহরাবে) পরম সোর্সের সাথে লাইভ কানেকশন ও ফ্রিকোয়েন্সি টিউনিং বা সালাতে (يُصَلِّي) সক্রিয়ভাবে খাড়া ছিল—‘নিশ্চয়ই Allah তোমাকে ‘ইয়াহইয়া’ নামক একটি সম্পূর্ণ নতুন, আল্ট্রা-হাই পারফর্মিং নোডের ডেপ্লয়মেন্টের সুসংবাদ দিচ্ছেন; যে নোডটি সরাসরি Allah-এর সার্ভার থেকে রিলিজ হওয়া একটি বিশেষ কসমিক কমান্ড বা বাণীর (بِكَلِمَةٍ مِّنَ اللَّهِ) লাইভ সত্যায়নকারী হিসেবে রান করবে এবং সে হবে সমগ্র মানবজাতি নেটওয়ার্কের এক অনন্য লিডার বা নেতা, হরমোনাল ও বায়ো-সেক্সুয়াল আসক্তি থেকে সম্পূর্ণ বাউন্ডেড বা পরম সংযমী (وَحَصُورًا) এবং সিস্টেম-অপ্টিমাইজড সত্তা বা সৎকর্মশীলদের চেইনের একজন প্রধান ডাটা-ডিকোডার বা নবী’।",
+      "modern_translation_en": "The cosmic forces (Malaikah) transmitted to him while he stood tuned in synchronous connection (Salah) within the sanctuary: 'Allah conveys tidings of Yahya, validating a direct cosmic Command Code (Kalimah) from Allah, an eminent leader, rigorously self-disciplined (Hasur), and a prophet among the righteous.'",
+      "lexicon_modern_notes": "مُصَدِّقًا بِكَلِمَةٍ مِّنَ اللَّهِ — Kalimah Code Validator: স্রষ্টার ডাইরেক্ট এক্সিকিউটিভ কমান্ড কোডের বাস্তব প্রমাণ। حَصُورًا — Absolute Self-Control: হরমোনাল ও জৈবিক প্রবৃত্তি নিয়ন্ত্রণে উচ্চ সক্ষমতা।"
     },
     {
       "surah": 3,
@@ -8009,7 +8063,13 @@
         }
       ],
       "translation_en": "He said, \"My Lord, how will I have a boy when I have reached old age and my wife is barren?\" The angel said, \"Such is Allah; He does what He wills.\"",
-      "conventional_en": "He said, \"My Lord, how will I have a boy when I have reached old age and my wife is barren?\" The angel said, \"Such is Allah; He does what He wills.\""
+      "conventional_en": "He said, \"My Lord, how will I have a boy when I have reached old age and my wife is barren?\" He said, \"Such is Allah; He does what He wills.\"",
+      "meta_bn": "লিনিয়ার বায়ো-লজিক্যাল বাউন্ডারি ও এক্সিকিউটিভ কোড ইনজেকশন",
+      "meta_en": "Linear Biological Limits & Executive Code Injection",
+      "conventional_bn": "সে বলল, ‘হে আমার রব! কীভাবে আমার পুত্র সন্তান হবে, অথচ আমার বার্ধক্য এসে গেছে এবং আমার স্ত্রী বন্ধ্যা?’ সে বলল, ‘এভাবেই আল্লাহ যা ইচ্ছা তা-ই করেন’।",
+      "modern_translation_bn": "সে তার ওওএসের স্বাভাবিক কার্বন বাউন্ডারি ও লজিক থেকে কুয়েরি পাঠাল—‘হে আমার প্রতিপালক! কীভাবে আমার এই ফিজিক্যাল সিস্টেমে একটি নতুন মেল চাইল্ড নোড বা পুত্র সন্তান জেনারেট হওয়া সম্ভব—অথচ আমার ভৌত হার্ডওয়্যারে অলরেডি চরম বার্ধক্য, সেলুলার অবক্ষয় ও এন্ট্রপির শেষ সীমা (الْكِبَرُ) আঘাত করেছে এবং আমার ফিমেল পার্টনার বা স্ত্রীর জেনারেটিভ প্রোডাকশন ফিল্ডটি সম্পূর্ণ নিষ্ক্রিয়, ডিম্বাণু-শূন্য বা বন্ধ্যা (عَاقِرٌ)?’ পরম সোর্স থেকে ডেটা কারেকশন সিগন্যাল রিলিজ হলো—‘তোমার ওওএসের ত্রিমাত্রিক বায়ো-লজিক্যাল ল' বা বাউন্ডারি যাই হোক না কেন—মহাবিশ্বের আদি সোর্স কোড বা Allah ঠিক এভাবেই তাঁর কোয়ান্টাম মেকানিজমে নতুন কোড ইনজেকশন দিয়ে যা ইচ্ছা তা-ই স্বয়ংক্রিয়ভাবে এক্সিকিউট বা সম্পাদন (يَفْعَلُ مَا يَشَاءُ) করেন’।",
+      "modern_translation_en": "He queried from the perspective of standard biological bounds: 'My Lord, how shall a male offspring be generated for me when cellular aging has peaked and my partner is barren?' The response arrived: 'Thus does Allah execute whatever He determines through higher-order quantum commands.'",
+      "lexicon_modern_notes": "بَلَغَنِيَ الْكِبَرُ وَامْرَأَتِي عَاقِرٌ — Classical Biological Constraints: চরম বার্ধক্য ও বন্ধ্যাত্বের স্বাভাবিক জৈবিক সীমাবদ্ধতা। يَفْعَلُ مَا يَشَاءُ — Quantum Executive Override: লোকাল ফিজিক্স ও বায়োলজিকে ওভাররাইড করে নতুন কোড কার্যকর করার ক্ষমতা।"
     },
     {
       "surah": 3,
