@@ -35757,7 +35757,7 @@
       "surah": 3,
       "ayah": 181,
       "transliteration": "laqad samiʿa l-lahu qawla alladhīna qālū inna l-laha faqīrun wanaḥnu aghniyāu sanaktubu mā qālū waqatlahumu l-anbiyāa bighayri ḥaqqin wanaqūlu dhūqū ʿadhāba l-ḥarīqi",
-      "translation_bn": "আল্লাহ অবশ্যই তাদের উক্তি শ্রবণ করেছেন যারা বলে, ‘আল্লাহ দরিদ্র এবং আমরা ধনী’, তারা যা বলে তা আমি অবশ্যই লিপিবদ্ধ করে রাখব এবং (তাদের) অন্যায়ভাবে নাবীগণকে হত্যা করার বিষয়টিও (লিপিবদ্ধ করে রাখব) এবং আমি বলব- ‘জাহান্নামের দহন যন্ত্রণা ভোগ কর’।",
+      "translation_bn": "নিশ্চয় আল্লাহ তাদের কথা শুনেছেন, যারা বলেছে, ‘আল্লাহ তো দরিদ্র এবং আমরাই ধনী’। তারা যা বলেছে তা এবং অন্যায়ভাবে তাদের নবীদের হত্যা করার বিষয়টি আমি অবশ্যই লিখে রাখব এবং আমি বলব, ‘তোমরা দহনকারী আজাবের স্বাদ আস্বাদন করো’।",
       "words": [
         {
           "id": 83865,
@@ -35990,14 +35990,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Allah has certainly heard the statement of those [Jews] who said, \"Indeed, Allah is poor, while we are rich.\" We will record what they said and their killing of the prophets without right and will say, \"Taste the punishment of the Burning Fire.",
-      "conventional_en": "Allah has certainly heard the statement of those [Jews] who said, \"Indeed, Allah is poor, while we are rich.\" We will record what they said and their killing of the prophets without right and will say, \"Taste the punishment of the Burning Fire."
+      "translation_en": "Allah has certainly heard the statement of those who said, \"Indeed, Allah is poor, while we are rich.\" We will record what they said and their killing of the prophets without right and will say, \"Taste the punishment of the Burning Fire.\"",
+      "conventional_en": "Allah has certainly heard the statement of those who said, \"Indeed, Allah is poor, while we are rich.\" We will record what they said and their killing of the prophets without right and will say, \"Taste the punishment of the Burning Fire.\"",
+      "meta_bn": "ফলস ইকোনমিক লজিক ও সোর্স অবজেকশন অডিট",
+      "meta_en": "Financial Telemetry Tampering & Source Objection Audit",
+      "conventional_bn": "নিশ্চয় আল্লাহ তাদের কথা শুনেছেন, যারা বলেছে, ‘আল্লাহ তো দরিদ্র এবং আমরাই ধনী’। তারা যা বলেছে তা এবং অন্যায়ভাবে তাদের নবীদের হত্যা করার বিষয়টি আমি অবশ্যই লিখে রাখব এবং আমি বলব, ‘তোমরা দহনকারী আজাবের স্বাদ আস্বাদন করো’।",
+      "modern_translation_bn": "নিশ্চয়ই Allah তাঁর কেন্দ্রীয় রিসিভারে সেই বিচ্যুত নোডগুলোর (Node) ফলস ইকোনমিক লজিক ও কথা (قَوْلَ) রিসিভ করেছেন—যারা দাবি করেছিল: ‘Allah তো মূলত রিসোর্স-হীন বা দরিদ্র (فَقِيرٌ) [যেহেতু তিনি অবিরত ঋণ বা করযে হাসানা চান] এবং আমরাই হলাম প্রকৃত ক্যাপিটাল হোল্ডার বা ধনী (أَغْنِيَاءُ)’; তারা তাদের ওওএসে (OOS - জীবন পরিচালন ব্যবস্থা) যে মারাত্মক ট্র্যাশ ডাটা ব্রডকাস্ট করেছে তা এবং সম্পূর্ণ অবৈধভাবে ডাটা-ডিকোডার বা নবীদের সিস্টেম থেকে Delete বা হত্যা করার প্রতিটি হিস্টোরিক্যাল লগ আমি অবশ্যই হার্ড-লগ বা লিখে রাখব (سَنَكْتُبُ) এবং চূড়ান্ত স্ক্রীনিং ফেজে কমান্ড দেব—‘তোমরা তোমাদের ওওএসে জেনারেট করা সেই হাই-এন্ট্রপির স্বয়ংক্রিয় রি-অ্যাকশনে এই তীব্র পার্টিক্যাল বার্নিং বা দহনকারী আজাবের (عَذَابَ الْحَرِيقِ) স্বাদ আস্বাদন করো’;",
+      "modern_translation_en": "Allah has definitively received the statement of those aberrant nodes who asserted: \"Indeed, Allah is resource-deprived while we are the capital holders.\" We shall immutable-log every byte of their transmission alongside their illicit deletions of the prophet-decoders, issuing the final execution command: \"Taste the severe burning punishment of high-entropy combustion!\";"
     },
     {
       "surah": 3,
       "ayah": 182,
       "transliteration": "dhālika bimā qaddamat aydīkum wa-anna l-laha laysa biẓallāmin lil'ʿabīdi",
-      "translation_bn": "এটা তোমাদের আগেই পাঠানো কাজের বিনিময়, কারণ আল্লাহ স্বীয় বান্দাগণের প্রতি কোন প্রকার যুলম করেন না।",
+      "translation_bn": "এটি তোমাদের হাত যা পূর্বে পাঠিয়েছে তার কারণে। আর নিশ্চয় আল্লাহ বান্দাদের প্রতি বিন্দুমাত্র জুলুমকারী নন।",
       "words": [
         {
           "id": 83961,
@@ -36100,14 +36105,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "That is for what your hands have put forth and because Allah is not ever unjust to [His] servants.\"",
-      "conventional_en": "That is for what your hands have put forth and because Allah is not ever unjust to [His] servants.\""
+      "translation_en": "That is for what your hands have put forth and because Allah is not ever unjust to [His] servants.",
+      "conventional_en": "That is for what your hands have put forth and because Allah is not ever unjust to [His] servants.",
+      "meta_bn": "জিরো-এরর গাণিতিক প্রতিফল ও কর্মফল সমীকরণ",
+      "meta_en": "Zero-Error Algorithmic Recompense & Absolute Fairness",
+      "conventional_bn": "এটি তোমাদের হাত যা পূর্বে পাঠিয়েছে তার কারণে। আর নিশ্চয় আল্লাহ বান্দাদের প্রতি বিন্দুমাত্র জুলুমকারী নন।",
+      "modern_translation_bn": "এই মারাত্মক ক্র্যাশ ফেজটি মূলত তোমাদের নিজেদের অ্যাকশন টার্মিনাল বা হাত (أَيْدِيكُمْ) পূর্বে ইনপুট হিসেবে যা প্রসেস করে পাঠিয়েছে—হুবহু তারই গাণিতিক আউটপুট; আর নিশ্চয়ই Allah তাঁর অপারেটিং সিস্টেমের ডিফল্ট নিয়মে কোনো সিস্টেম-এলাইনড সত্তা বা বান্দাদের (لِّلْعَبِيدِ) প্রতি বিন্দুমাত্র কোনো গাণিতিক বৈষম্য বা জুলুমকারী নন।",
+      "modern_translation_en": "That consequence is strictly the deterministic output generated by your own operational input buffers (aydikum); and verily, Allah is never mathematically biased or unjust to His servant entities."
     },
     {
       "surah": 3,
       "ayah": 183,
       "transliteration": "alladhīna qālū inna l-laha ʿahida ilaynā allā nu'mina lirasūlin ḥattā yatiyanā biqur'bānin takuluhu l-nāru qul qad jāakum rusulun min qablī bil-bayināti wabi-alladhī qul'tum falima qataltumūhum in kuntum ṣādiqīna",
-      "translation_bn": "যারা ব’লে থাকে যে, ‘আল্লাহ আমাদের কাছে অঙ্গীকার নিয়েছেন, যেন আমরা আগুনে গ্রাস করে এমন কোন কুরবানী আমাদের সামনে না দেখানো পর্যন্ত কোন রসূলের প্রতি ঈমান না আনি’। বল, ‘আমার পূর্বে বহু রসূল বহু প্রমাণসহ তোমাদের নিকট এসেছিল এবং তোমাদের কথিত সেই মু’জিযা নিয়েও (এসেছিল)। যদি তোমরা সত্যবাদী হও, তাহলে কেন তোমরা তাদেরকে হত্যা করেছিলে?’",
+      "translation_bn": "যারা বলে, ‘নিশ্চয় আল্লাহ আমাদের অঙ্গীকার দিয়েছেন যে, আমরা কোনো রাসূলের প্রতি ঈমান আনব না—যতক্ষণ না সে আমাদের কাছে এমন কুরবানী নিয়ে আসে, যা আগুন গ্রাস (দহন) করবে’। বলো, ‘আমার পূর্বেও বহু রাসূল স্পষ্ট প্রমাণসমূহ এবং তোমরা যা বললে তা-ই নিয়ে তোমাদের কাছে এসেছিলেন; তবে তোমরা কেন তাদের হত্যা করেছিলে, যদি তোমরা সত্যবাদী হও?’",
       "words": [
         {
           "id": 83986,
@@ -36400,14 +36410,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "[They are] those who said, \"Indeed, Allah has taken our promise not to believe any messenger until he brings us an offering which fire [from heaven] will consume.\" Say, \"There have already come to you messengers before me with clear proofs and [even] that of which you speak. So why did you kill them, if you should be truthful?\"",
-      "conventional_en": "[They are] those who said, \"Indeed, Allah has taken our promise not to believe any messenger until he brings us an offering which fire [from heaven] will consume.\" Say, \"There have already come to you messengers before me with clear proofs and [even] that of which you speak. So why did you kill them, if you should be truthful?\""
+      "translation_en": "Those who said, \"Indeed, Allah has taken our promise not to believe any messenger until he brings us an offering which fire consumes.\" Say, \"There have already come to you messengers before me with clear proofs and with that which you said. Why then did you kill them, if you should be truthful?\"",
+      "conventional_en": "Those who said, \"Indeed, Allah has taken our promise not to believe any messenger until he brings us an offering which fire consumes.\" Say, \"There have already come to you messengers before me with clear proofs and with that which you said. Why then did you kill them, if you should be truthful?\"",
+      "meta_bn": "ফায়ার-কনজুমিং এনার্জি সিগন্যাল টেম্পারিং",
+      "meta_en": "Fire-Consuming Verification Demand & Historical Audit",
+      "conventional_bn": "যারা বলে, ‘নিশ্চয় আল্লাহ আমাদের অঙ্গীকার দিয়েছেন যে, আমরা কোনো রাসূলের প্রতি ঈমান আনব না—যতক্ষণ না সে আমাদের কাছে এমন কুরবানী নিয়ে আসে, যা আগুন গ্রাস (দহন) করবে’। বলো, ‘আমার পূর্বেও বহু রাসূল স্পষ্ট প্রমাণসমূহ এবং তোমরা যা বললে তা-ই নিয়ে তোমাদের কাছে এসেছিলেন; তবে তোমরা কেন তাদের হত্যা করেছিলে, যদি তোমরা সত্যবাদী হও?’",
+      "modern_translation_bn": "যেসকল করাপ্টেড ইউজার নোড ফলস এনক্রিপশন লজিক দিয়ে বলে—‘নিশ্চয়ই Allah আমাদের ওওএসে এই হার্ড-কোড কন্টাক্ট বা অঙ্গীকার (عَهِدَ إِلَيْنَا) দিয়েছেন যে, আমরা কোনো ডাটা-ট্রান্সমিটার বা রাসুলের পিউর সিগন্যাল এক্সেপ্ট বা ঈমান আনব না—যতক্ষণ না সে আমাদের ল্যাবরেটরিতে এমন এক বিশেষ এনার্জি-টোকেন বা কুরবানী নিয়ে আসে, যা থার্মোডাইনামিক এন্ট্রপির আগুন (النَّارُ) সরাসরি গ্রাস বা বার্ন করে দেয়’। তুমি তাদের এই চাতুর্য ডিকোড করে বলো—‘আমার বিবর্তনীয় মেয়াদের পূর্বেও বহু রাসুল নোড স্পষ্ট গাণিতিক প্রমাণসমূহ (بِالْبَيِّنَاتِ) এবং তোমরা যে বিশেষ এনার্জি সিগন্যালের কথা বললে তা-ই নিয়ে তোমাদের ইন্টারফেসে ডেপ্লয় হয়েছিলেন; তবে তোমরা কেন তাদের সিস্টেম থেকে ফোর্সফুলি ডিলিট বা হত্যা করেছিলে, যদি তোমরা তোমাদের দাবিতে ডেটা-ভেরিফাইড ও সত্যনিষ্ঠ (صَادِقِينَ) হয়ে থাকো?’",
+      "modern_translation_en": "Those who manufacture deceptive contractual assertions: \"Allah commanded us never to synchronize with any transmission interface unless it delivers a material offering consumed by thermodynamic fire.\" Retort: \"Messengers before my deployment cycle arrived delivering rigorous mathematical proofs alongside the exact phenomena you specified; why then did you terminate their operations if your claims are verified?\""
     },
     {
       "surah": 3,
       "ayah": 184,
       "transliteration": "fa-in kadhabūka faqad kudhiba rusulun min qablika jāū bil-bayināti wal-zuburi wal-kitābi l-munīri",
-      "translation_bn": "তারপরও যদি কাফিরগণ তোমাকে অস্বীকার করে, তবে তোমার পূর্বেও রসূলগণকে অস্বীকার করা হয়েছিল যারা স্পষ্ট নিদর্শন, অনেক সহীফা এবং দীপ্তিমান কিতাব নিয়ে এসেছিল।",
+      "translation_bn": "অতঃপর তারা যদি তোমাকে মিথ্যা প্রতিপন্ন করে, তবে তোমার পূর্বেও বহু রাসূলকে তারা মিথ্যা প্রতিপন্ন করেছিল—যারা স্পষ্ট প্রমাণসমূহ, সহীফাসমূহ (জ্ঞানের কিতাব) এবং আলোকময় কিতাব নিয়ে এসেছিলেন।",
       "words": [
         {
           "id": 84053,
@@ -36540,14 +36555,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Then if they deny you, [O Muhammad] - so were messengers denied before you, who brought clear proofs and written ordinances and the enlightening Scripture.",
-      "conventional_en": "Then if they deny you, [O Muhammad] - so were messengers denied before you, who brought clear proofs and written ordinances and the enlightening Scripture."
+      "translation_en": "Then if they deny you, so were messengers denied before you, who brought clear proofs and written ordinances and the enlightening Scripture.",
+      "conventional_en": "Then if they deny you, so were messengers denied before you, who brought clear proofs and written ordinances and the enlightening Scripture.",
+      "meta_bn": "রিজেকশন রেজিস্ট্রি ও হিস্টোরিক্যাল ওহী ধারাবাহিকতা",
+      "meta_en": "Signal Rejection Resilience & Historical Code Integrity",
+      "conventional_bn": "অতঃপর তারা যদি তোমাকে মিথ্যা প্রতিপন্ন করে, তবে তোমার পূর্বেও বহু রাসূলকে তারা মিথ্যা প্রতিপন্ন করেছিল—যারা স্পষ্ট প্রমাণসমূহ, সহীফাসমূহ (জ্ঞানের কিতাব) এবং আলোকময় কিতাব নিয়ে এসেছিলেন।",
+      "modern_translation_bn": "অতঃপর তারা যদি স্রেফ ইগোর ম্যালওয়্যারে তোমার এই লাইভ সিগন্যাল ডিলিট বা মিথ্যা প্রতিপন্ন (كَذَّبُوكَ) করে—তবে ধৈর্য হারিয়ো না, তোমার পূর্বের টাইম-লাইনের বহু রাসুল নোডকেও একইভাবে রিজেক্ট করা হয়েছিল—যারা স্বয়ংক্রিয়ভাবে জেনারেট করেছিলেন স্পষ্ট বৈজ্ঞানিক প্রমাণসমূহ (بِالْبَيِّنَاتِ), গাণিতিক সহীফাসমূহ (وَالزُّبُرِ) এবং পরম আলোকময় কসমিক মাস্টার ম্যানুয়াল বা কিতাব (الْكِتَابِ الْمُنِيرِ)।",
+      "modern_translation_en": "And if they reject your transmission through ego-driven denial, know that previous transmission arrays faced identical packet drops despite arriving with structural proofs, algorithmic scriptures (az-Zubur), and the illuminating Cosmic Manual (al-Kitab al-Muneer)."
     },
     {
       "surah": 3,
       "ayah": 185,
       "transliteration": "kullu nafsin dhāiqatu l-mawti wa-innamā tuwaffawna ujūrakum yawma l-qiyāmati faman zuḥ'ziḥa ʿani l-nāri wa-ud'khila l-janata faqad fāza wamā l-ḥayatu l-dun'yā illā matāʿu l-ghurūri",
-      "translation_bn": "প্রতিটি জীবন মৃত্যুর আস্বাদ গ্রহণ করবে এবং ক্বিয়ামাতের দিন তোমাদেরকে পূর্ণমাত্রায় বিনিময় দেয়া হবে। যে ব্যক্তিকে জাহান্নামের আগুন হতে রক্ষা করা হল এবং জান্নাতে দাখিল করা হল, অবশ্যই সে ব্যক্তি সফলকাম হল, কেননা পার্থিব জীবন ছলনার বস্তু ছাড়া আর কিছুই নয়।",
+      "translation_bn": "প্রত্যেক প্রাণকেই মৃত্যুর স্বাদ আস্বাদন করতে হবে। আর কেয়ামতের দিনই তোমাদের পূর্ণ প্রতিদান বুঝিয়ে দেওয়া হবে। অতঃপর যাকে আগুন থেকে দূরে রাখা হবে এবং জান্নাতে প্রবেশ করানো হবে, সে-ই সফলকাম (উত্তীর্ণ) হলো। আর পার্থিব জীবন তো ছলনাময় ভোগসামগ্রী ছাড়া আর কিছু নয়।",
       "words": [
         {
           "id": 84104,
@@ -36791,13 +36811,19 @@
         }
       ],
       "translation_en": "Every soul will taste death, and you will only be given your [full] compensation on the Day of Resurrection. So he who is drawn away from the Fire and admitted to Paradise has attained [his desire]. And what is the life of this world except the enjoyment of delusion.",
-      "conventional_en": "Every soul will taste death, and you will only be given your [full] compensation on the Day of Resurrection. So he who is drawn away from the Fire and admitted to Paradise has attained [his desire]. And what is the life of this world except the enjoyment of delusion."
+      "conventional_en": "Every soul will taste death, and you will only be given your [full] compensation on the Day of Resurrection. So he who is drawn away from the Fire and admitted to Paradise has attained [his desire]. And what is the life of this world except the enjoyment of delusion.",
+      "meta_bn": "দ্য ফিজিক্স অব সিস্টেম শাটডাউন ও মুক্তির বাউন্ডারি",
+      "meta_en": "System Shutdown Physics & Holographic Dimension Filter",
+      "conventional_bn": "প্রত্যেক প্রাণকেই মৃত্যুর স্বাদ আস্বাদন করতে হবে। আর কেয়ামতের দিনই তোমাদের পূর্ণ প্রতিদান বুঝিয়ে দেওয়া হবে। অতঃপর যাকে আগুন থেকে দূরে রাখা হবে এবং জান্নাতে প্রবেশ করানো হবে, সে-ই সফলকাম (উত্তীর্ণ) হলো। আর পার্থিব জীবন তো ছলনাময় ভোগসামগ্রী ছাড়া আর কিছু নয়।",
+      "modern_translation_bn": "মহাবিশ্বের ডিফল্ট থার্মোডাইনামিক আইনে—প্রতিটি স্বতন্ত্র সচেতন নোড বা চেতনাকেই (كُلُّ نَفْسٍ) তার ভৌত হার্ডওয়্যারের চূড়ান্ত শাটডাউন বা মৃত্যুর (الْمَوْتِ) স্বাদ আস্বাদন করতে হবে [এটি ইউনিভার্সাল এন্ট্রপি রুল]। আর চূড়ান্ত কসমিক ডাটা-রিসেট ও অ্যাকাউন্টাবিলিটি টাইম-লাইন বা কেয়ামতের দিনই (يَوْمَ الْكِيَامَةِ) তোমাদের প্রোফাইলের পূর্ণাঙ্গ এনার্জি রিওয়ার্ড বা আউটপুট কোনো প্রকার প্যাকেট ড্রপ ছাড়া হুবহু ট্রান্সফার (تُوَفَّىٰ أُجُورُكُمْ) করে বুঝিয়ে দেওয়া হবে। অতঃপর এই চূড়ান্ত ফিল্টারিং লুপে যার ওওএস-কে সেই তীব্র বিশৃঙ্খল ক্র্যাশ-জোন বা আগুন (النَّارِ) থেকে দূরে সরিয়ে বা কোয়ান্টাম শিফট (زُحْزِحَ) করানো হবে এবং সেই ঘর্ষণহীন নিখুঁত জান্নাত ইকোসিস্টেমে প্রবেশ করানো হবে, সে-ই মূলত চূড়ান্তভাবে সিস্টেম টেস্টে উত্তীর্ণ বা পরম সফল (فَقَدْ فَازَ); আর এই লো-ডাইমেনশনাল ভৌত জীবনের (الْحَيَاةُ الدُّنْيَا) ডাটা তো এক চরম বিভ্রম, ইলিউশন ও ছদ্ম-সিমুলেশনের ভোগসামগ্রী (مَتَاعُ الْغُرُورِ) ছাড়া আর কিছুই নয়।",
+      "modern_translation_en": "By fundamental thermodynamic law, every conscious runtime entity (kullu nafsin) will taste physical system shutdown and death (al-mawt); and your total energy yield will be completely settled without packet loss on the Day of Universal Audit. Whoever is shifted clear from the high-entropy crash field of Fire and transitioned into Paradise has attained supreme optimization; for the baseline terrestrial existence is nothing but a temporary holographic simulation and perceptual illusion (mata'ul ghuroor).",
+      "lexicon_modern_notes": "كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ (থার্মোডাইনামিক এন্ট্রপি ও সিস্টেম শাটডাউন ল'): ১৮৫ নম্বর আয়াতটি আধুনিক ফিজিক্স (Physics) এবং থার্মোডাইনামিকসের পরম ধ্রুবক 'The Second Law of Thermodynamics & Universal Entropy Increase'-কে নির্দেশ করে। এই ভৌত ত্রিমাত্রিক জগতের কার্বন ও ম্যাটার দিয়ে তৈরি প্রতিটি সচল সিস্টেম বা প্রাণ (নাফ্স) সময়ের ফ্রেমে অবিরত কাজ করতে করতে তার অভ্যন্তরীণ এনার্জি ক্ষয় করে একপর্যায়ে স্বয়ংক্রিয়ভাবে বিশৃঙ্খলা বা সর্বোচ্চ এন্ট্রপির শেষসীমায় পৌঁছাতে বাধ্য। একেই বিজ্ঞানের পরিভাষায় 'Systemic Shutdown / Molecular Decay' বা মৃত্যু (মাওত) বলা হয়। কুরআন স্পষ্ট করছে যে—এই ভৌত বডির শাটডাউন মহাবিশ্বের একটি ডিফল্ট ফিজিক্যাল বাউন্ডারি রুল। তবে মানুষের আসল 'নাফ্স' বা সচেতন ইনফরমেশন আইডিটি (Consciousness Identity) কিন্তু ভ্যানিশ হয় না, সেটি স্রেফ এই শাটডাউনের পর সেন্ট্রাল সার্ভারের রি-লোকেশন উইন্ডোতে (يوم القيامة) স্থানান্তরিত হয়।"
     },
     {
       "surah": 3,
       "ayah": 186,
       "transliteration": "latub'lawunna fī amwālikum wa-anfusikum walatasmaʿunna mina alladhīna ūtū l-kitāba min qablikum wamina alladhīna ashrakū adhan kathīran wa-in taṣbirū watattaqū fa-inna dhālika min ʿazmi l-umūri",
-      "translation_bn": "অবশ্যই তোমরা তোমাদের ধনের ও জানের ব্যাপারে পরীক্ষিত হবে এবং তোমরা নিশ্চয়ই তোমাদের আগের কিতাবধারীদের ও মুশরিকদের নিকট হতে দুঃখজনক অনেক কথা শুনবে এবং তোমরা যদি ধৈর্যধারণ কর আর তাকওয়া অবলম্বন কর, তবে অবশ্যই তা হবে দৃঢ় সংকল্পের কাজ।",
+      "translation_bn": "তোমরা অবশ্যই তোমাদের ধন-সম্পদে ও তোমাদের নিজেদের জীবনের ব্যাপারে পরীক্ষিত হবে এবং তোমরা অবশ্যই তোমাদের পূর্ববর্তী কিতাবধারীদের কাছ থেকে ও মুশরিকদের কাছ থেকে বহু কষ্টদায়ক (কটু) কথা শুনবে। আর তোমরা যদি ধৈর্য ধারণ করো এবং তাকওয়া অবলম্বন করো, তবে নিশ্চয়ই তা হবে সুদৃঢ় সংকল্পের কাজ।",
       "words": [
         {
           "id": 84210,
@@ -37050,14 +37076,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "You will surely be tested in your possessions and in yourselves. And you will surely hear from those who were given the Scripture before you and from those who associate others with Allah much abuse. But if you are patient and fear Allah - indeed, that is of the matters [worthy] of determination.",
-      "conventional_en": "You will surely be tested in your possessions and in yourselves. And you will surely hear from those who were given the Scripture before you and from those who associate others with Allah much abuse. But if you are patient and fear Allah - indeed, that is of the matters [worthy] of determination."
+      "translation_en": "You will surely be tested in your possessions and in yourselves. And you will surely hear from those who were given the Scripture before you and from those who associate others with Allah much abuse. But if you are patient and fear Allah - indeed, that is of the matters [requiring] determination.",
+      "conventional_en": "You will surely be tested in your possessions and in yourselves. And you will surely hear from those who were given the Scripture before you and from those who associate others with Allah much abuse. But if you are patient and fear Allah - indeed, that is of the matters [requiring] determination.",
+      "meta_bn": "ইনফরমেশন ট্রাফিক লোড এবং সাইকোলজিক্যাল স্ট্রেস টেস্ট",
+      "meta_en": "Information Traffic Stress-Testing & High Resilience",
+      "conventional_bn": "তোমরা অবশ্যই তোমাদের ধন-সম্পদে ও তোমাদের নিজেদের জীবনের ব্যাপারে পরীক্ষিত হবে এবং তোমরা অবশ্যই তোমাদের পূর্ববর্তী কিতাবধারীদের কাছ থেকে ও মুশরিকদের কাছ থেকে বহু কষ্টদায়ক (কটু) কথা শুনবে। আর তোমরা যদি ধৈর্য ধারণ করো এবং তাকওয়া অবলম্বন করো, তবে নিশ্চয়ই তা হবে সুদৃঢ় সংকল্পের কাজ।",
+      "modern_translation_bn": "তোমাদের ওওএসের স্ট্যাবিলিটি ও ব্যান্ডউইথ অডিটের জন্য—তোমাদের পুঞ্জীভূত মেটেরিয়াল রিসোর্স বা সম্পদ (أَمْوَالِكُمْ) এবং তোমাদের ভৌত অস্তিত্বের কার্বন প্যারামিটারের ওপর অবশ্যই এক মেগা সিস্টেমিক চাপ বা Stress Test (لَتُبْلَوُنَّ) রান করানো হবে; এবং তোমরা অবশ্যই তোমাদের পূর্ববর্তী ওল্ড ওএসের কিতাবধারী ইউজারদের ইন্টারফেস থেকে এবং আল্লাহর সমান্তরালে ডামি ডাটা স্থাপনকারী মুশরিক নোডদের কগনিটিভ নেটওয়ার্ক থেকে প্রচুর পরিমাণ টক্সিক প্রোপাগান্ডা সিগন্যাল ও ক্ষতিকারক নয়েজ বা কষ্ট (أَذًى كَثِيرًا) অবিরত অডিও রিসিভারে শুনবে। আর তোমরা যদি তোমাদের ওওএসে সর্বোচ্চ Systemic Resilience (অবিচল স্থায়িত্ব বা বাফারিং ক্ষমতা) সচল রাখো এবং বাউন্ডারি কোড মেনে ওওএস সুরক্ষিত রাখো (তাকওয়া অবলম্বন করো)—তবে নিশ্চয়ই তা হবে কসমিক অপারেটিং সিস্টেমের মূল ধারায় প্রসেসর কনফিগার করার সুদৃঢ় ও সর্বোচ্চ অপ্টিমাইজড সিদ্ধান্ত (عَزْمِ الْأُمُورِ);",
+      "modern_translation_en": "You will undeniably undergo comprehensive systemic stress-testing across your material resources and biological frameworks (la-tublawunna fi amwalikum wa anfusikum), and you will intercept substantial hostile noise and ideological distortion from legacy-scripture groups and polytheist clusters. Yet if you maintain robust systemic resilience (Sabr) and rigorous firewall integrity (Taqwa), that demonstrates paramount executive optimization ('azm al-umoor);"
     },
     {
       "surah": 3,
       "ayah": 187,
       "transliteration": "wa-idh akhadha l-lahu mīthāqa alladhīna ūtū l-kitāba latubayyinunnahu lilnnāsi walā taktumūnahu fanabadhūhu warāa ẓuhūrihim wa-ish'taraw bihi thamanan qalīlan fabi'sa mā yashtarūna",
-      "translation_bn": "(স্মরণ কর) আল্লাহ আহলে কিতাবদের নিকট থেকে অঙ্গীকার নিয়েছিলেন- তোমরা অবশ্যই তা (অর্থাৎ কিতাব) মানুষের কাছে স্পষ্টভাবে বর্ণনা করবে আর তা গোপন করবে না, কিন্তু তারা তা অগ্রাহ্য করল এবং সামান্য মূল্যে বিক্রি করল, তারা যা ক্রয় করল সে বস্তু কতই না মন্দ!",
+      "translation_bn": "আর যখন আল্লাহ কিতাবধারীদের কাছ থেকে অঙ্গীকার নিয়েছিলেন যে, ‘তোমরা অবশ্যই তা মানুষের কাছে স্পষ্ট বর্ণনা করবে এবং তা গোপন করবে না’, তখন তারা তা তাদের পিঠের পেছনে ছুড়ে ফেলেছিল এবং তার বিনিময়ে তুচ্ছ মূল্য ক্রয় করেছিল। অতএব তারা যা ক্রয় করছে তা কতই না নিকৃষ্ট!",
       "words": [
         {
           "id": 84288,
@@ -37281,13 +37312,18 @@
         }
       ],
       "translation_en": "And [mention, O Muhammad], when Allah took a covenant from those who were given the Scripture, [saying], \"You must make it clear to the people and not conceal it.\" But they threw it away behind their backs and exchanged it for a small price. And wretched is that which they purchased.",
-      "conventional_en": "And [mention, O Muhammad], when Allah took a covenant from those who were given the Scripture, [saying], \"You must make it clear to the people and not conceal it.\" But they threw it away behind their backs and exchanged it for a small price. And wretched is that which they purchased."
+      "conventional_en": "And [mention, O Muhammad], when Allah took a covenant from those who were given the Scripture, [saying], \"You must make it clear to the people and not conceal it.\" But they threw it away behind their backs and exchanged it for a small price. And wretched is that which they purchased.",
+      "meta_bn": "ডাটা হাইডিং এবং শর্ট-টার্ম এক্সচেঞ্জ বালাই",
+      "meta_en": "Source Code Concealment & Destructive Asset Liquidations",
+      "conventional_bn": "আর যখন আল্লাহ কিতাবধারীদের কাছ থেকে অঙ্গীকার নিয়েছিলেন যে, ‘তোমরা অবশ্যই তা মানুষের কাছে স্পষ্ট বর্ণনা করবে এবং তা গোপন করবে না’, তখন তারা তা তাদের পিঠের পেছনে ছুড়ে ফেলেছিল এবং তার বিনিময়ে তুচ্ছ মূল্য ক্রয় করেছিল। অতএব তারা যা ক্রয় করছে তা কতই না নিকৃষ্ট!",
+      "modern_translation_bn": "আর স্মরণ করো সেই ডেটা-লগ—যখন Allah পূর্ববর্তী ওএসের ডাটা এক্সেস পাওয়া ইউজার বা কিতাবধারীদের (الَّذِينَ أُوتُوا الْكِتَابَ) প্রধান ইন্টারফেসে এই হার্ড-কোড প্রটোকল বা অঙ্গীকার লক করেছিলেন যে—‘তোমরা অবশ্যই এই পিউর সোর্স কোডের মাস্টার ম্যানুয়াল সমগ্র মানবজাতি নেটওয়ার্কের (لِلنَّاسِ) সামনে স্পষ্ট বর্ণনা বা ডিকোড (لَتُبَيِّنُنَّهُ) করবে এবং ভুলেও তা সিস্টেমে হাইড বা এনক্রিপ্ট (وَلَا تَكْتُمُونَهُ) করে রাখবে না’, তখন তারা তাদের ইগোর ম্যালওয়্যারে সেই পিউর সোর্স ফাইলটি নিজেদের ব্যাক-এন্ড ডিরেক্টরির পেছনে ছুড়ে ধামাচাপা বা বর্জন (فَنَبَذُوهُ وَرَاءَ ظُهُورِهِمْ) দিল এবং তার সেই হাই-ভ্যালু ডিভাইন ডাটার বিনিময়ে এই ত্রিমাত্রিক ভৌত জগতের সামান্য শর্ট-টার্ম মেটেরিয়াল গেইন বা তুচ্ছ মূল্য (ثَمَنًا قَلِيلًا) এক্সচেঞ্জ বা ক্রয় করল। অতএব তারা তাদের ওওএসের জন্য যা কিছু ডামি ডাটা সিলেক্ট ও ক্রয় করছে তা কতই না নিকৃষ্ট!",
+      "modern_translation_en": "And recall when Allah bound the covenant with legacy scripture custodians: \"You shall openly render and broadcast this code to all humankind without encrypting or concealing it.\" Yet they cast the protocol behind their backlogs and liquidated it for trivial ephemeral hardware gains; wretched indeed is the transactional payload they purchased!"
     },
     {
       "surah": 3,
       "ayah": 188,
       "transliteration": "lā taḥsabanna alladhīna yafraḥūna bimā ataw wayuḥibbūna an yuḥ'madū bimā lam yafʿalū falā taḥsabannahum bimafāzatin mina l-ʿadhābi walahum ʿadhābun alīmun",
-      "translation_bn": "তোমরা এ সব লোককে আযাব থেকে সুরক্ষিত মনে করো না যারা নিজেদের কৃতকর্মের জন্য আনন্দিত এবং এমন কাজের জন্য প্রশংসিত হতে চায় মূলতঃ যা তারা করেনি, তাদের জন্য আছে যন্ত্রণাদায়ক শাস্তি।",
+      "translation_bn": "যারা নিজেদের কৃতকর্মের জন্য আনন্দ প্রকাশ করে এবং যা তারা করেনি এমন কাজের জন্য প্রশংসিত হতে পছন্দ করে, তুমি তাদের শাস্তি থেকে মুক্ত মনে করো না; আর ওদের জন্য রয়েছে যন্ত্রণাদায়ক শাস্তি।",
       "words": [
         {
           "id": 84447,
@@ -37501,13 +37537,18 @@
         }
       ],
       "translation_en": "And never think that those who rejoice in what they have perpetrated and like to be praised for what they did not do - never think them [to be] in safety from the punishment, and for them is a painful punishment.",
-      "conventional_en": "And never think that those who rejoice in what they have perpetrated and like to be praised for what they did not do - never think them [to be] in safety from the punishment, and for them is a painful punishment."
+      "conventional_en": "And never think that those who rejoice in what they have perpetrated and like to be praised for what they did not do - never think them [to be] in safety from the punishment, and for them is a painful punishment.",
+      "meta_bn": "ফলস ডাটা-পোস্টুরিং ও কগনিটিভ অহংকার বালাই",
+      "meta_en": "False Metric Claiming & Escape Route Invalidation",
+      "conventional_bn": "যারা নিজেদের কৃতকর্মের জন্য আনন্দ প্রকাশ করে এবং যা তারা করেনি এমন কাজের জন্য প্রশংসিত হতে পছন্দ করে, তুমি তাদের শাস্তি থেকে মুক্ত মনে করো না; আর ওদের জন্য রয়েছে যন্ত্রণাদায়ক শাস্তি।",
+      "modern_translation_bn": "তুমি তোমার ওওএসের ক্যালকুলেশনে ভুলেও এমন কোনো ভুল ধারণা বা ইলিউশন (لَا تَحْسَبَنَّ) রান করো না সেই হিপোক্রিট নোডগুলোর ব্যাপারে—যারা নিজেদের সিস্টেমে জেনারেট করা ডামি ডাটা বা লোকদেখানো কাজের জন্য চরম উল্লাস প্রকাশ করে এবং বাস্তবে তারা যে পজিティブ কোড বা অবদান সিস্টেমে ইনপুটই দেয়নি (بِمَا لَمْ يَفْعَلُوا) তার জন্য গ্লোবাল নেটওয়ার্কে প্রশংসিত বা ফলস রেটিং পেতে তীব্র পছন্দ করে; তুমি তাদের কোনো অবস্থাতেই এই সুপ্রীমিক এন্ট্রপি ক্র্যাশ বা আজাবের ফিল্টার থেকে মুক্ত বা এস্কেপ প্রটোকল হোল্ডার (بِمَفَازَةٍ مِّنَ الْعَذَابِ) মনে করো না; আর ওদের ওওএসের জন্য নির্ধারিত রয়েছে এক তীব্র মনস্তাত্ত্বিক ঘর্ষণ ও যন্ত্রণাদায়ক প্রতিক্রিয়া (عَذَابٌ أَلِيمٌ)।",
+      "modern_translation_en": "Compute not that those who exult in their counterfeit outputs while demanding systemic prestige for contributions they never executed are exempt from correction; compute not that they have escaped the crash radius of the punishment, for theirs is an excruciating systemic torment."
     },
     {
       "surah": 3,
       "ayah": 189,
       "transliteration": "walillahi mul'ku l-samāwāti wal-arḍi wal-lahu ʿalā kulli shayin qadīrun",
-      "translation_bn": "বস্তুতঃ আসমান ও যমীনে আছে আল্লাহরই রাজত্ব এবং আল্লাহ সকল জিনিসের উপর ক্ষমতাবান।",
+      "translation_bn": "আর আসমান ও জমিনের রাজত্ব একমাত্র আল্লাহরই। আর আল্লাহ সবকিছুর ওপর পূর্ণ ক্ষমতাবান।",
       "words": [
         {
           "id": 84539,
@@ -37611,13 +37652,18 @@
         }
       ],
       "translation_en": "And to Allah belongs the dominion of the heavens and the earth, and Allah is over all things competent.",
-      "conventional_en": "And to Allah belongs the dominion of the heavens and the earth, and Allah is over all things competent."
+      "conventional_en": "And to Allah belongs the dominion of the heavens and the earth, and Allah is over all things competent.",
+      "meta_bn": "ইউনিভার্সাল ডোমেইন কন্ট্রোল ও পরম সার্বভৌমত্ব",
+      "meta_en": "Universal Domain Governance & Omnipotent Control",
+      "conventional_bn": "আর আসমান ও জমিনের রাজত্ব একমাত্র আল্লাহরই। আর আল্লাহ সবকিছুর ওপর পূর্ণ ক্ষমতাবান।",
+      "modern_translation_bn": "আর উচ্চ মহাজাগতিক স্তরবিন্যাস (السَّمَاوَاتِ) এবং এই ভৌত জগত বা পৃথিবীর (الْأَرْضِ) প্রতিটি সার্বভৌম ক্ষমতার এক্সেস কন্ট্রোল ও রাজত্ব একমাত্র Allah-এর কেন্দ্রীয় সিস্টেমের মালিকানাধীন; আর Allah প্রতিটি অবজেক্ট, কোয়ান্টাম কণা ও সিস্টেম প্যারামিটারের ওপর সম্পূর্ণ নিয়ন্ত্রণকারী (قَدِيرٌ)।",
+      "modern_translation_en": "To Allah belongs absolute root governance across the multi-layered celestial stratifications and the terrestrial plane; and Allah commands exhaustive, omnipotent control over every systemic entity."
     },
     {
       "surah": 3,
       "ayah": 190,
       "transliteration": "inna fī khalqi l-samāwāti wal-arḍi wa-ikh'tilāfi al-layli wal-nahāri laāyātin li-ulī l-albābi",
-      "translation_bn": "নিশ্চয়ই আসমানসমূহ ও যমীনের সৃষ্টিতে এবং রাত্র ও দিনের আবর্তনে জ্ঞানবানদের জন্য বহু নিদর্শন আছে।",
+      "translation_bn": "নিশ্চয়ই আসমান ও জমিন সৃষ্টিতে এবং রাত ও দিনের আবর্তনের মধ্যে বুদ্ধিমানদের জন্য নিদর্শনসমূহ রয়েছে।",
       "words": [
         {
           "id": 84609,
@@ -37740,8 +37786,14 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding.",
-      "conventional_en": "Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding."
+      "translation_en": "Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding -",
+      "conventional_en": "Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding -",
+      "meta_bn": "প্রি-ফ্রন্টাল কর্টেক্সের কসমিক সিগন্যাল প্রসেসিং উইন্ডো",
+      "meta_en": "Pre-frontal Cortex Processing & Cosmic Telemetry Analysis",
+      "conventional_bn": "নিশ্চয়ই আসমান ও জমিন সৃষ্টিতে এবং রাত ও দিনের আবর্তনের মধ্যে বুদ্ধিমানদের জন্য নিদর্শনসমূহ রয়েছে।",
+      "modern_translation_bn": "নিশ্চয়ই উচ্চ মহাজাগতিক স্তরবিন্যাসের মহাজাগতিক ডিজাইন (خَلْقِ السَّمَاوَاتِ) ও পৃথিবীর গাঠনিক আর্কিটেকচার এবং স্পেস-টাইমের ঘড়িতে আলো ও অন্ধকারের পর্যায়ক্রমিক সাইকেল বা রাত ও দিনের নিখুঁত ডাইনামিক আবর্তনের (وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ) ব্যাক-এন্ড মেকানিজমে—প্রচুর পরিমাণ ক্রিস্টাল-ক্লিয়ার ডাটা-প্যারামিটার ও Ayat [মহাজাগতিক প্রমাণ ও বৈজ্ঞানিক সত্যসমূহ] মেনিফেস্ট হয়ে আছে কেবল সেই উচ্চ কগনিটিভ ব্রেন, প্রি-ফ্রন্টাল কর্টেক্স ও গভীর লজিক্যাল অ্যানালিটিক্সের অধিকারী প্রসেসরসমূহ বা Ulul Albab (أُولِي الْأَلْبَابِ)-দের জন্য।",
+      "modern_translation_en": "Verily, in the fundamental architectural genesis of the celestial spheres and the earth, and in the dynamic cyclical oscillation between night and day, reside unambiguous empirical telemetry markers (Ayat) for high-order neural processors endowed with core analytical intellect (Ulul Albab);",
+      "lexicon_modern_notes": "أُولِي الْأَلْبَابِ (প্রি-ফ্রন্টাল কর্টেক্সের হাই-পারফর্মিং ডাটা প্রসেসর নোড): ১৯০ নম্বর আয়াতে মহাবিশ্বের কোড ডিকোড করার জন্য যে বিশেষ কগনিটিভ প্রোফাইল ‘উলুল আলবাব’-এর কথা বলা হয়েছে, তা আধুনিক নিউরো-সায়েন্স (Neuroscience) এবং কগনিটিভ সাইকোলজির 'High-Level Cortical Processing & Executive Rationality'-এর পরম নিখুঁত রূপ। 'লুব্ব' (বহুবচনে আলবাব) শব্দের আদি আরবী অর্থ—যেকোনো ফলের খোসা ধুয়ে ফেলার পর ভেতরের একদম আসল, নিরেট, পুষ্টিকর ও অতি-মূল্যবান মজ্জা বা কোর অংশ। মানুষের সম্পূর্ণ ব্রেনের মজ্জা বা আসল চিন্তাকেন্দ্র হলো তার 'Pre-frontal Cortex'—যা মানুষের চোখ ও কানের রিসিভ করা সাধারণ ডাটাকে স্রেফ সুপারফিসিয়াল ইমোশনে প্রসেস না করে, তার ব্যাক-এন্ডের গভীর গাণিতিক লজিক, স্পেস-টাইমের টাইম-ডাইলেশন এবং মহাবিশ্বের নিখুঁত ফাইন-টিউনিংয়ের কোডগুলোকে ডিকোড করতে পারে। কুরআন এই সুউচ্চ বৈজ্ঞানিক মেন্টাল প্রসেসর নোডগুলোকে 'উলুল আলবাব' হিসেবে আইডি রেজিস্ট্রি দিয়েছে।"
     },
     {
       "surah": 3,
