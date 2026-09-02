@@ -1032,7 +1032,6 @@ function SurahDetailPage() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  const [showBackToTop, setShowBackToTop] = useState(false);
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
   const [isLoopingSurah, setIsLoopingSurah] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -1104,26 +1103,6 @@ function SurahDetailPage() {
       console.error(e);
     }
   }, [surahId]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 350) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
 
   const [selectedWordInfo, setSelectedWordInfo] = useState<{
     surah: number;
@@ -1925,18 +1904,6 @@ function SurahDetailPage() {
           </div>
         )}
       </div>
-
-      {showBackToTop && (
-        <button
-          type="button"
-          onClick={scrollToTop}
-          title="শীর্ষে যান"
-          aria-label="Back to top"
-          className="fixed bottom-6 right-6 z-40 flex size-11 items-center justify-center rounded-2xl border border-border/80 bg-card/65 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:bg-card/90 hover:border-foreground/30 active:scale-95 cursor-pointer"
-        >
-          <Navigation className="size-5 text-foreground/90 -rotate-45" />
-        </button>
-      )}
 
       <WordAndRootSearchDialog
         selectedWord={selectedWordInfo}
