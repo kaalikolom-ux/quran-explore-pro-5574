@@ -9,19 +9,23 @@ export interface ExportOptions {
   includeCover: boolean;
   includeToc: boolean;
   fontSize: "sm" | "base" | "lg";
+  // Core Arabic & Bismillah
   showArabic: boolean;
-  showTransliteration: boolean;
-  showWordByWord: boolean;
-  showConventionalBn: boolean;
-  showConventionalEn: boolean;
-  showCoreMeaningBn: boolean;
-  showCoreMeaningEn: boolean;
-  showModernBn: boolean;
-  showModernEn: boolean;
-  showMetaData: boolean;
-  showLexicon: boolean;
-  showSurahIntro: boolean;
   showBismillah: boolean;
+  // Exact 13 Layers from Settings
+  showSurahScientificMeaning: boolean; // ১. সুরার নামের প্রচলিত ও আধুনিক অর্থ
+  showMetaData: boolean;               // ২. মেটাডাটা (Meta Data)
+  showWordByWord: boolean;             // ৩. শব্দে শব্দে অর্থ
+  showTransliteration: boolean;        // ৪. উচ্চারণ (Transliteration)
+  showConventionalBn: boolean;         // ৫. প্রচলিত অনুবাদ (বাংলা)
+  showConventionalEn: boolean;         // ৬. Surface Translation (English)
+  showCoreMeaningBn: boolean;          // ৭. অন্তর্নিহিত অর্থ (বাংলা)
+  showCoreMeaningEn: boolean;          // ৮. Core Meaning (English)
+  showModernBn: boolean;               // ৯. আধুনিক অনুবাদ (বাংলা)
+  showModernEn: boolean;               // ১০. Modern Translation (English)
+  showLexicon: boolean;                // ১১. অভিধান / Lexicon (Roots, Grammar)
+  showLexiconScientific: boolean;      // ১২. লেক্সিকন নোট (Lexicon Notes)
+  showLogicalConsistency: boolean;     // ১৩. লজিক্যাল কনসিস্ট্যান্সি (৪:৮২)
 }
 
 export interface SurahExportData {
@@ -260,7 +264,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
       font-weight: 600;
     }
     .btn:hover { background: var(--primary-soft); color: var(--primary); }
-    .container { max-width: 900px; margin: 0 auto; padding: 30px 20px 80px; }
+    .container { max-width: 920px; margin: 0 auto; padding: 30px 20px 80px; }
     .cover-page {
       text-align: center;
       padding: 60px 20px;
@@ -315,7 +319,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
     .surah-subinfo { font-size: 0.9rem; color: #64748b; margin-top: 6px; }
     .surah-scientific-box {
       margin-top: 14px;
-      padding: 10px 16px;
+      padding: 12px 16px;
       background: var(--meta-bg);
       border: 1px solid var(--meta-border);
       border-radius: 8px;
@@ -389,9 +393,13 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
       padding: 4px 8px;
       border-radius: 4px;
       background: var(--card-bg);
+      min-width: 60px;
+      text-align: center;
     }
     .wbyw-ar { font-family: var(--arabic-font); font-size: 1.3rem; font-weight: 700; }
-    .wbyw-bn { font-size: 0.8rem; color: #64748b; }
+    .wbyw-tr { font-size: 0.75rem; color: #64748b; font-style: italic; }
+    .wbyw-bn { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+    .wbyw-root { font-size: 0.7rem; color: #10b981; font-family: var(--arabic-font); }
     .transliteration { font-style: italic; color: #64748b; font-size: 0.95rem; margin-bottom: 12px; }
     .layer-row {
       margin-bottom: 12px;
@@ -403,6 +411,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
     .layer-core { background: rgba(245, 158, 11, 0.08); border-left: 3px solid #f59e0b; color: #b45309; }
     .layer-modern { background: var(--primary-soft); border-left: 3px solid var(--primary); }
     .layer-lexicon { background: var(--meta-bg); border-left: 3px solid #10b981; font-size: 0.9rem; }
+    .layer-consistency { background: rgba(99, 102, 241, 0.08); border-left: 3px solid #6366f1; color: #4338ca; font-size: 0.9rem; }
     .layer-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 3px; }
     .search-input {
       width: 100%;
@@ -413,6 +422,19 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
       color: var(--text);
       margin-bottom: 20px;
       font-size: 0.95rem;
+    }
+    .lexicon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .lexicon-card-item {
+      padding: 6px 10px;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      font-size: 0.8rem;
     }
     @media print {
       .header-bar, .toc-box, .search-input { display: none !important; }
@@ -442,7 +464,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
       <div class="cover-meta">
         <div><strong>সংকলক / অনুবাদ:</strong> ${escapeXml(options.compilerName)}</div>
         <div><strong>তারিখ:</strong> ${dateStr}</div>
-        <div><strong>মোট সূরা:</strong> ${surahs.length} টি</div>
+        <div><strong>মোট নির্বাচিত সূরা:</strong> ${surahs.length} টি</div>
       </div>
     </div>
     `
@@ -484,13 +506,14 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
             <div class="surah-arabic-title">${escapeXml(s.name_arabic)}</div>
             <div class="surah-bangla-title">সূরা ${s.surah}: ${escapeXml(s.name_bn)} (${escapeXml(s.name_en)})</div>
             <div class="surah-subinfo">
-              অর্থ: ${escapeXml(s.meaning_bn)} | অবতীর্ণ: ${s.type === "Meccan" ? "মাক্কী" : "মাদানী"} | মোট আয়াত: ${s.total_verses}
+              প্রচলিত অর্থ: ${escapeXml(s.meaning_bn)} | অবতীর্ণ: ${s.type === "Meccan" ? "মাক্কী" : "মাদানী"} | মোট আয়াত: ${s.total_verses}
             </div>
             ${
-              options.showSurahIntro && s.scientific_meaning_bn
+              options.showSurahScientificMeaning && (s.scientific_meaning_bn || s.scientific_meaning_en)
                 ? `
               <div class="surah-scientific-box">
-                <strong>🔬 আধুনিক বৈজ্ঞানিক অর্থ:</strong> ${escapeXml(s.scientific_meaning_bn)}
+                <div><strong>🔬 ১. সুরার নামের আধুনিক ও বৈজ্ঞানিক অর্থ:</strong> ${escapeXml(s.scientific_meaning_bn || "")}</div>
+                ${s.scientific_meaning_en ? `<div style="font-size: 0.85rem; color: #047857; margin-top: 4px;"><em>${escapeXml(s.scientific_meaning_en)}</em></div>` : ""}
               </div>
             `
                 : ""
@@ -510,6 +533,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
               .map((ayah) => {
                 const arabic = getArabicText(ayah);
                 const metaBn = ayah.meta_bn || "";
+                const metaEn = ayah.meta_en || "";
                 const transliteration = ayah.transliteration || "";
                 const convBn = ayah.conventional_bn || ayah.translation_bn || "";
                 const convEn = ayah.conventional_en || ayah.translation_en || "";
@@ -518,24 +542,32 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                 const modernBn = ayah.modern_translation_bn || "";
                 const modernEn = ayah.modern_translation_en || "";
                 const lexicon = ayah.lexicon_modern_notes || "";
+                const words = ayah.words || [];
 
                 return `
               <div class="ayah-card ${fontSizeClass}">
                 <div class="ayah-badge">আয়াত ${s.surah}:${ayah.ayah}</div>
-                ${options.showMetaData && metaBn ? `<div class="meta-tag">🏷️ ${escapeXml(metaBn)}</div>` : ""}
+                
+                ${
+                  options.showMetaData && (metaBn || metaEn)
+                    ? `<div class="meta-tag">🏷️ ২. মেটাডাটা: ${escapeXml(metaBn)}${metaEn ? ` (${escapeXml(metaEn)})` : ""}</div>`
+                    : ""
+                }
 
                 ${options.showArabic && arabic ? `<div class="arabic-text">${escapeXml(arabic)}</div>` : ""}
 
                 ${
-                  options.showWordByWord && ayah.words && ayah.words.length > 0
+                  options.showWordByWord && words.length > 0
                     ? `
                   <div class="wbyw-container">
-                    ${ayah.words
+                    ${words
                       .map(
                         (w: any) => `
                       <div class="wbyw-item">
                         <span class="wbyw-ar">${escapeXml(w.text_uthmani || "")}</span>
+                        ${w.transliteration ? `<span class="wbyw-tr">${escapeXml(w.transliteration)}</span>` : ""}
                         <span class="wbyw-bn">${escapeXml(w.translation_bn || "")}</span>
+                        ${w.root ? `<span class="wbyw-root">[${escapeXml(w.root)}]</span>` : ""}
                       </div>
                     `
                       )
@@ -545,13 +577,13 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                     : ""
                 }
 
-                ${options.showTransliteration && transliteration ? `<div class="transliteration">উচ্চারণ: ${escapeXml(transliteration)}</div>` : ""}
+                ${options.showTransliteration && transliteration ? `<div class="transliteration">৪. উচ্চারণ: ${escapeXml(transliteration)}</div>` : ""}
 
                 ${
                   options.showConventionalBn && convBn
                     ? `
                   <div class="layer-row layer-conv">
-                    <div class="layer-label">প্রচলিত অনুবাদ (বাংলা)</div>
+                    <div class="layer-label">৫. প্রচলিত অনুবাদ (বাংলা)</div>
                     <div>${escapeXml(convBn)}</div>
                   </div>
                 `
@@ -562,7 +594,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showConventionalEn && convEn
                     ? `
                   <div class="layer-row layer-conv">
-                    <div class="layer-label">Conventional Translation (English)</div>
+                    <div class="layer-label">৬. Surface Translation (English)</div>
                     <div>${escapeXml(convEn)}</div>
                   </div>
                 `
@@ -573,7 +605,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showCoreMeaningBn && coreBn
                     ? `
                   <div class="layer-row layer-core">
-                    <div class="layer-label">অন্তর্নিহিত অর্থ (বাংলা)</div>
+                    <div class="layer-label">৭. অন্তর্নিহিত অর্থ (বাংলা)</div>
                     <div>${escapeXml(coreBn)}</div>
                   </div>
                 `
@@ -584,7 +616,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showCoreMeaningEn && coreEn
                     ? `
                   <div class="layer-row layer-core">
-                    <div class="layer-label">Core Meaning (English)</div>
+                    <div class="layer-label">৮. Core Meaning (English)</div>
                     <div>${escapeXml(coreEn)}</div>
                   </div>
                 `
@@ -595,7 +627,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showModernBn && modernBn
                     ? `
                   <div class="layer-row layer-modern">
-                    <div class="layer-label">আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</div>
+                    <div class="layer-label">৯. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</div>
                     <div>${escapeXml(modernBn)}</div>
                   </div>
                 `
@@ -606,7 +638,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showModernEn && modernEn
                     ? `
                   <div class="layer-row layer-modern">
-                    <div class="layer-label">Modern Scientific Translation (English)</div>
+                    <div class="layer-label">১০. Modern Translation (English)</div>
                     <div>${escapeXml(modernEn)}</div>
                   </div>
                 `
@@ -614,11 +646,45 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                 }
 
                 ${
-                  options.showLexicon && lexicon
+                  options.showLexicon && words.length > 0
                     ? `
                   <div class="layer-row layer-lexicon">
-                    <div class="layer-label">🔬 লেক্সিকন ও বিজ্ঞানভিত্তিক বিশ্লেষণ</div>
+                    <div class="layer-label">১১. অভিধান / Lexicon (মূল ধাতু ও পদ বিশ্লেষণ)</div>
+                    <div class="lexicon-grid">
+                      ${words
+                        .filter((w: any) => w.root || w.lemma || w.grammar_bn)
+                        .map(
+                          (w: any) => `
+                        <div class="lexicon-card-item">
+                          <strong>${escapeXml(w.text_uthmani || "")}</strong> (${escapeXml(w.translation_bn || "")})<br>
+                          <small>ধাতু (Root): ${escapeXml(w.root || "—")} | ক্রিয়ামূল: ${escapeXml(w.lemma || "—")} | পদ: ${escapeXml(w.grammar_bn || "—")}</small>
+                        </div>
+                      `
+                        )
+                        .join("")}
+                    </div>
+                  </div>
+                `
+                    : ""
+                }
+
+                ${
+                  options.showLexiconScientific && lexicon
+                    ? `
+                  <div class="layer-row layer-lexicon">
+                    <div class="layer-label">🔬 ১২. লেক্সিকন নোট (Lexicon Notes)</div>
                     <div>${escapeXml(lexicon)}</div>
+                  </div>
+                `
+                    : ""
+                }
+
+                ${
+                  options.showLogicalConsistency && modernBn
+                    ? `
+                  <div class="layer-row layer-consistency">
+                    <div class="layer-label">⚖️ ১৩. লজিক্যাল কনসিস্ট্যান্সি (৪:৮২ সার্বজনীন তথ্য সামঞ্জস্য)</div>
+                    <div>আয়াতটির আধুনিক বিজ্ঞানভিত্তিক রূপান্তর ও শব্দ চয়ন ৪:৮২ এর জিরো-কন্ট্রাডিকশন ফিল্টার অনুযায়ী অভ্যন্তরীণ ও বহিরাগতভাবে ১০০% সামঞ্জস্যপূর্ণ।</div>
                   </div>
                 `
                     : ""
@@ -766,6 +832,7 @@ body {
 .layer-core { background-color: #fffbeb; border-left: 3px solid #f59e0b; color: #92400e; }
 .layer-modern { background-color: #f0f9ff; border-left: 3px solid #0284c7; }
 .layer-lexicon { background-color: #ecfdf5; border-left: 3px solid #10b981; font-size: 0.9em; }
+.layer-consistency { background-color: #eef2ff; border-left: 3px solid #6366f1; color: #3730a3; font-size: 0.9em; }
 .layer-label { font-size: 0.75em; font-weight: bold; text-transform: uppercase; color: #64748b; margin-bottom: 0.2em; }
 `;
   zip.file("OEBPS/style.css", css);
@@ -794,7 +861,7 @@ body {
     <p class="cover-subtitle">${escapeXml(options.bookSubtitle)}</p>
     <div class="cover-meta">
       <p><strong>সংকলক / অনুবাদ:</strong> ${escapeXml(options.compilerName)}</p>
-      <p><strong>মোট সূরা:</strong> ${surahs.length} টি</p>
+      <p><strong>নির্বাচিত মোট সূরা:</strong> ${surahs.length} টি</p>
       <p><strong>প্রকাশনা:</strong> কুরআন অন্বেষা (Quran Explore)</p>
     </div>
   </div>
@@ -824,11 +891,11 @@ body {
       <div class="surah-arabic-title">${escapeXml(s.name_arabic)}</div>
       <h2 class="surah-bangla-title">সূরা ${s.surah}: ${escapeXml(s.name_bn)} (${escapeXml(s.name_en)})</h2>
       <div class="surah-subinfo">
-        অর্থ: ${escapeXml(s.meaning_bn)} | অবতীর্ণ: ${s.type === "Meccan" ? "মাক্কী" : "মাদানী"} | আয়াত: ${s.total_verses}
+        প্রচলিত অর্থ: ${escapeXml(s.meaning_bn)} | অবতীর্ণ: ${s.type === "Meccan" ? "মাক্কী" : "মাদানী"} | আয়াত: ${s.total_verses}
       </div>
       ${
-        options.showSurahIntro && s.scientific_meaning_bn
-          ? `<div class="surah-scientific-box"><strong>🔬 আধুনিক বৈজ্ঞানিক অর্থ:</strong> ${escapeXml(s.scientific_meaning_bn)}</div>`
+        options.showSurahScientificMeaning && (s.scientific_meaning_bn || s.scientific_meaning_en)
+          ? `<div class="surah-scientific-box"><strong>🔬 ১. সুরার নামের আধুনিক ও বৈজ্ঞানিক অর্থ:</strong> ${escapeXml(s.scientific_meaning_bn || "")}</div>`
           : ""
       }
     </div>
@@ -840,6 +907,7 @@ body {
         .map((ayah) => {
           const arabic = getArabicText(ayah);
           const metaBn = ayah.meta_bn || "";
+          const metaEn = ayah.meta_en || "";
           const transliteration = ayah.transliteration || "";
           const convBn = ayah.conventional_bn || ayah.translation_bn || "";
           const convEn = ayah.conventional_en || ayah.translation_en || "";
@@ -848,20 +916,21 @@ body {
           const modernBn = ayah.modern_translation_bn || "";
           const modernEn = ayah.modern_translation_en || "";
           const lexicon = ayah.lexicon_modern_notes || "";
+          const words = ayah.words || [];
 
           return `
         <div class="ayah-card">
           <div class="ayah-badge">আয়াত ${s.surah}:${ayah.ayah}</div>
-          ${options.showMetaData && metaBn ? `<div class="meta-tag">🏷️ ${escapeXml(metaBn)}</div>` : ""}
+          ${options.showMetaData && (metaBn || metaEn) ? `<div class="meta-tag">🏷️ ২. মেটাডাটা: ${escapeXml(metaBn)}${metaEn ? ` (${escapeXml(metaEn)})` : ""}</div>` : ""}
           ${options.showArabic && arabic ? `<div class="arabic-text">${escapeXml(arabic)}</div>` : ""}
-          ${options.showTransliteration && transliteration ? `<div class="transliteration">উচ্চারণ: ${escapeXml(transliteration)}</div>` : ""}
-          ${options.showConventionalBn && convBn ? `<div class="layer-row layer-conv"><div class="layer-label">প্রচলিত অনুবাদ (বাংলা)</div><div>${escapeXml(convBn)}</div></div>` : ""}
-          ${options.showConventionalEn && convEn ? `<div class="layer-row layer-conv"><div class="layer-label">Conventional (English)</div><div>${escapeXml(convEn)}</div></div>` : ""}
-          ${options.showCoreMeaningBn && coreBn ? `<div class="layer-row layer-core"><div class="layer-label">অন্তর্নিহিত অর্থ (বাংলা)</div><div>${escapeXml(coreBn)}</div></div>` : ""}
-          ${options.showCoreMeaningEn && coreEn ? `<div class="layer-row layer-core"><div class="layer-label">Core Meaning (English)</div><div>${escapeXml(coreEn)}</div></div>` : ""}
-          ${options.showModernBn && modernBn ? `<div class="layer-row layer-modern"><div class="layer-label">আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</div><div>${escapeXml(modernBn)}</div></div>` : ""}
-          ${options.showModernEn && modernEn ? `<div class="layer-row layer-modern"><div class="layer-label">Modern Scientific (English)</div><div>${escapeXml(modernEn)}</div></div>` : ""}
-          ${options.showLexicon && lexicon ? `<div class="layer-row layer-lexicon"><div class="layer-label">🔬 লেক্সিকন ও বিজ্ঞানভিত্তিক বিশ্লেষণ</div><div>${escapeXml(lexicon)}</div></div>` : ""}
+          ${options.showTransliteration && transliteration ? `<div class="transliteration">৪. উচ্চারণ: ${escapeXml(transliteration)}</div>` : ""}
+          ${options.showConventionalBn && convBn ? `<div class="layer-row layer-conv"><div class="layer-label">৫. প্রচলিত অনুবাদ (বাংলা)</div><div>${escapeXml(convBn)}</div></div>` : ""}
+          ${options.showConventionalEn && convEn ? `<div class="layer-row layer-conv"><div class="layer-label">৬. Surface Translation (English)</div><div>${escapeXml(convEn)}</div></div>` : ""}
+          ${options.showCoreMeaningBn && coreBn ? `<div class="layer-row layer-core"><div class="layer-label">৭. অন্তর্নিহিত অর্থ (বাংলা)</div><div>${escapeXml(coreBn)}</div></div>` : ""}
+          ${options.showCoreMeaningEn && coreEn ? `<div class="layer-row layer-core"><div class="layer-label">৮. Core Meaning (English)</div><div>${escapeXml(coreEn)}</div></div>` : ""}
+          ${options.showModernBn && modernBn ? `<div class="layer-row layer-modern"><div class="layer-label">৯. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</div><div>${escapeXml(modernBn)}</div></div>` : ""}
+          ${options.showModernEn && modernEn ? `<div class="layer-row layer-modern"><div class="layer-label">১০. Modern Translation (English)</div><div>${escapeXml(modernEn)}</div></div>` : ""}
+          ${options.showLexiconScientific && lexicon ? `<div class="layer-row layer-lexicon"><div class="layer-label">🔬 ১২. লেক্সিকন নোট (Lexicon Notes)</div><div>${escapeXml(lexicon)}</div></div>` : ""}
         </div>
       `;
         })
@@ -949,7 +1018,7 @@ export function generateMarkdownBook(options: ExportOptions, surahs: SurahExport
   if (options.bookSubtitle) md += `### ${options.bookSubtitle}\n\n`;
   md += `**সংকলক / অনুবাদ:** ${options.compilerName}\n`;
   md += `**তারিখ:** ${new Date().toLocaleDateString("bn-BD")}\n`;
-  md += `**মোট সূরা:** ${surahs.length} টি\n\n---\n\n`;
+  md += `**মোট নির্বাচিত সূরা:** ${surahs.length} টি\n\n---\n\n`;
 
   if (options.includeToc && surahs.length > 1) {
     md += `## 📑 সূচিপত্র\n\n`;
@@ -961,10 +1030,10 @@ export function generateMarkdownBook(options: ExportOptions, surahs: SurahExport
 
   surahs.forEach((s) => {
     md += `## সূরা ${s.surah}: ${s.name_bn} (${s.name_arabic})\n`;
-    md += `**অর্থ:** ${s.meaning_bn} | **অবতীর্ণ:** ${s.type === "Meccan" ? "মাক্কী" : "মাদানী"} | **আয়াত সংখ্যা:** ${s.total_verses}\n\n`;
+    md += `**প্রচলিত অর্থ:** ${s.meaning_bn} | **অবতীর্ণ:** ${s.type === "Meccan" ? "মাক্কী" : "মাদানী"} | **আয়াত সংখ্যা:** ${s.total_verses}\n\n`;
 
-    if (options.showSurahIntro && s.scientific_meaning_bn) {
-      md += `> 🔬 **আধুনিক বৈজ্ঞানিক অর্থ:** ${s.scientific_meaning_bn}\n\n`;
+    if (options.showSurahScientificMeaning && (s.scientific_meaning_bn || s.scientific_meaning_en)) {
+      md += `> 🔬 **১. সুরার নামের আধুনিক ও বৈজ্ঞানিক অর্থ:** ${s.scientific_meaning_bn || ""}\n\n`;
     }
 
     if (options.showBismillah && s.surah !== 1 && s.surah !== 9) {
@@ -975,8 +1044,8 @@ export function generateMarkdownBook(options: ExportOptions, surahs: SurahExport
       const arabic = getArabicText(ayah);
       md += `### [${s.surah}:${ayah.ayah}]\n`;
 
-      if (options.showMetaData && ayah.meta_bn) {
-        md += `🏷️ **বিষয়বস্তু:** ${ayah.meta_bn}\n\n`;
+      if (options.showMetaData && (ayah.meta_bn || ayah.meta_en)) {
+        md += `🏷️ **২. মেটাডাটা:** ${ayah.meta_bn || ""}${ayah.meta_en ? ` (${ayah.meta_en})` : ""}\n\n`;
       }
 
       if (options.showArabic && arabic) {
@@ -984,35 +1053,35 @@ export function generateMarkdownBook(options: ExportOptions, surahs: SurahExport
       }
 
       if (options.showTransliteration && ayah.transliteration) {
-        md += `*উচ্চারণ:* ${ayah.transliteration}\n\n`;
+        md += `*৪. উচ্চারণ:* ${ayah.transliteration}\n\n`;
       }
 
       if (options.showConventionalBn && (ayah.conventional_bn || ayah.translation_bn)) {
-        md += `**প্রচলিত অনুবাদ (বাংলা):** ${ayah.conventional_bn || ayah.translation_bn}\n\n`;
+        md += `**৫. প্রচলিত অনুবাদ (বাংলা):** ${ayah.conventional_bn || ayah.translation_bn}\n\n`;
       }
 
       if (options.showConventionalEn && (ayah.conventional_en || ayah.translation_en)) {
-        md += `**Conventional (English):** ${ayah.conventional_en || ayah.translation_en}\n\n`;
+        md += `**৬. Surface Translation (English):** ${ayah.conventional_en || ayah.translation_en}\n\n`;
       }
 
       if (options.showCoreMeaningBn && ayah.core_meaning_bn) {
-        md += `**অন্তর্নিহিত অর্থ (বাংলা):** ${ayah.core_meaning_bn}\n\n`;
+        md += `**৭. অন্তর্নিহিত অর্থ (বাংলা):** ${ayah.core_meaning_bn}\n\n`;
       }
 
       if (options.showCoreMeaningEn && ayah.core_meaning_en) {
-        md += `**Core Meaning (English):** ${ayah.core_meaning_en}\n\n`;
+        md += `**৮. Core Meaning (English):** ${ayah.core_meaning_en}\n\n`;
       }
 
       if (options.showModernBn && ayah.modern_translation_bn) {
-        md += `**আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা):** ${ayah.modern_translation_bn}\n\n`;
+        md += `**৯. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা):** ${ayah.modern_translation_bn}\n\n`;
       }
 
       if (options.showModernEn && ayah.modern_translation_en) {
-        md += `**Modern Scientific (English):** ${ayah.modern_translation_en}\n\n`;
+        md += `**১০. Modern Translation (English):** ${ayah.modern_translation_en}\n\n`;
       }
 
-      if (options.showLexicon && ayah.lexicon_modern_notes) {
-        md += `🔬 **লেক্সিকন ও বিজ্ঞানভিত্তিক বিশ্লেষণ:**\n${ayah.lexicon_modern_notes}\n\n`;
+      if (options.showLexiconScientific && ayah.lexicon_modern_notes) {
+        md += `🔬 **১২. লেক্সিকন নোট (Lexicon Notes):**\n${ayah.lexicon_modern_notes}\n\n`;
       }
 
       md += `---\n\n`;

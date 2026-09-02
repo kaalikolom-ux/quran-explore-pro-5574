@@ -21,10 +21,13 @@ import {
   RefreshCw,
   BookMarked,
   Share2,
+  Search,
+  Check,
+  X,
 } from "lucide-react";
 import { toast } from "sonner";
 
-import { ALL_SURAHS_DATABASE } from "@/lib/quranSearchEngine";
+import { ALL_SURAHS_DATABASE, SurahMeta } from "@/lib/quranSearchEngine";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,47 +44,10 @@ import {
   downloadBlob,
 } from "@/lib/quranExportEngine";
 
-// 30 Juz Surah Mapping for quick juz selection
-const JUZ_MAPPING: { juz: number; name: string; startSurah: number; endSurah: number }[] = [
-  { juz: 1, name: "পারা ১ (আলিফ লাম মীম)", startSurah: 1, endSurah: 2 },
-  { juz: 2, name: "পারা ২ (সায়াকুলু)", startSurah: 2, endSurah: 2 },
-  { juz: 3, name: "পারা ৩ (তিলকার রুসুল)", startSurah: 2, endSurah: 3 },
-  { juz: 4, name: "পারা ৪ (লান তানালু)", startSurah: 3, endSurah: 4 },
-  { juz: 5, name: "পারা ৫ (ওয়াল মুহসানাত)", startSurah: 4, endSurah: 4 },
-  { juz: 6, name: "পারা ৬ (লা ইউহিব্বুল্লাহ)", startSurah: 4, endSurah: 5 },
-  { juz: 7, name: "পারা ৭ (ওয়া ইজা সামিউ)", startSurah: 5, endSurah: 6 },
-  { juz: 8, name: "পারা ৮ (ওয়া লাও আন্নানা)", startSurah: 6, endSurah: 7 },
-  { juz: 9, name: "পারা ৯ (ক্বাল আল-মালাউ)", startSurah: 7, endSurah: 8 },
-  { juz: 10, name: "পারা ১০ (ওয়া'লামু)", startSurah: 8, endSurah: 9 },
-  { juz: 11, name: "পারা ১১ (ইয়া'তাযিরূন)", startSurah: 9, endSurah: 11 },
-  { juz: 12, name: "পারা ১২ (ওয়া মা মিন দা-ব্বাহ)", startSurah: 11, endSurah: 12 },
-  { juz: 13, name: "পারা ১৩ (ওয়া মা উবাররিউ)", startSurah: 12, endSurah: 14 },
-  { juz: 14, name: "পারা ১৪ (রুবা-মা)", startSurah: 15, endSurah: 16 },
-  { juz: 15, name: "পারা ১৫ (সুবহানাল্লাজি)", startSurah: 17, endSurah: 18 },
-  { juz: 16, name: "পারা ১৬ (ক্বালা আলাম)", startSurah: 18, endSurah: 20 },
-  { juz: 17, name: "পারা ১৭ (ইক্বতারা বা)", startSurah: 21, endSurah: 22 },
-  { juz: 18, name: "পারা ১৮ (ক্বাদ আফলাহা)", startSurah: 23, endSurah: 25 },
-  { juz: 19, name: "পারা ১৯ (ওয়া ক্বালাল্লাজিনা)", startSurah: 25, endSurah: 27 },
-  { juz: 20, name: "পারা ২০ (আম্মান খালাক্বা)", startSurah: 27, endSurah: 29 },
-  { juz: 21, name: "পারা ২১ (উতলু মা উহিয়া)", startSurah: 29, endSurah: 33 },
-  { juz: 22, name: "পারা ২২ (ওয়া মাই ইয়াক্বনুত)", startSurah: 33, endSurah: 36 },
-  { juz: 23, name: "পারা ২৩ (ওয়া মা লিয়া)", startSurah: 36, endSurah: 39 },
-  { juz: 24, name: "পারা ২৪ (ফামান আজলামু)", startSurah: 39, endSurah: 41 },
-  { juz: 25, name: "পারা ২৫ (ইলাইহি ইউরাদ্দু)", startSurah: 41, endSurah: 45 },
-  { juz: 26, name: "পারা ২৬ (হা-মীম)", startSurah: 46, endSurah: 51 },
-  { juz: 27, name: "পারা ২৭ (ক্বালা ফামা খত্ববুকুম)", startSurah: 51, endSurah: 57 },
-  { juz: 28, name: "পারা ২৮ (ক্বাদ সামি'আল্লাহু)", startSurah: 58, endSurah: 66 },
-  { juz: 29, name: "পারা ২৯ (তাবারাকাল্লাজি)", startSurah: 67, endSurah: 77 },
-  { juz: 30, name: "পারা ৩০ (আম্মা ইয়াতাসা-আলুন)", startSurah: 78, endSurah: 114 },
-];
-
 export function QuranExportAdmin() {
-  // Scope State
-  const [scopeMode, setScopeMode] = useState<"single" | "range" | "juz" | "all">("single");
-  const [selectedSurah, setSelectedSurah] = useState<number>(1);
-  const [rangeStart, setRangeStart] = useState<number>(1);
-  const [rangeEnd, setRangeEnd] = useState<number>(4);
-  const [selectedJuz, setSelectedJuz] = useState<number>(30);
+  // Surah Multi-Selection State (Set of selected Surah IDs)
+  const [selectedSurahIds, setSelectedSurahIds] = useState<Set<number>>(new Set([1, 2, 3, 4]));
+  const [surahSearchQuery, setSurahSearchQuery] = useState("");
 
   // Book Options State
   const [bookTitle, setBookTitle] = useState("আল-কুরআনুল কারীম — আধুনিক বিজ্ঞানভিত্তিক অনুবাদ ও তাদাব্বুর");
@@ -91,20 +57,24 @@ export function QuranExportAdmin() {
   const [includeToc, setIncludeToc] = useState(true);
   const [fontSize, setFontSize] = useState<"sm" | "base" | "lg">("base");
 
-  // Content Layer Toggles
+  // Core Arabic & Bismillah
   const [showArabic, setShowArabic] = useState(true);
-  const [showTransliteration, setShowTransliteration] = useState(true);
-  const [showWordByWord, setShowWordByWord] = useState(false);
-  const [showConventionalBn, setShowConventionalBn] = useState(true);
-  const [showConventionalEn, setShowConventionalEn] = useState(false);
-  const [showCoreMeaningBn, setShowCoreMeaningBn] = useState(true);
-  const [showCoreMeaningEn, setShowCoreMeaningEn] = useState(false);
-  const [showModernBn, setShowModernBn] = useState(true);
-  const [showModernEn, setShowModernEn] = useState(false);
-  const [showMetaData, setShowMetaData] = useState(true);
-  const [showLexicon, setShowLexicon] = useState(true);
-  const [showSurahIntro, setShowSurahIntro] = useState(true);
   const [showBismillah, setShowBismillah] = useState(true);
+
+  // Exact 13 Data Layers from Settings
+  const [showSurahScientificMeaning, setShowSurahScientificMeaning] = useState(true); // ১. সুরার নামের প্রচলিত ও আধুনিক অর্থ
+  const [showMetaData, setShowMetaData] = useState(true);                             // ২. মেটাডাটা (Meta Data)
+  const [showWordByWord, setShowWordByWord] = useState(false);                        // ৩. শব্দে শব্দে অর্থ
+  const [showTransliteration, setShowTransliteration] = useState(true);               // ৪. উচ্চারণ (Transliteration)
+  const [showConventionalBn, setShowConventionalBn] = useState(true);                 // ৫. প্রচলিত অনুবাদ (বাংলা)
+  const [showConventionalEn, setShowConventionalEn] = useState(false);                // ৬. Surface Translation (English)
+  const [showCoreMeaningBn, setShowCoreMeaningBn] = useState(true);                   // ৭. অন্তর্নিহিত অর্থ (বাংলা)
+  const [showCoreMeaningEn, setShowCoreMeaningEn] = useState(false);                  // ৮. Core Meaning (English)
+  const [showModernBn, setShowModernBn] = useState(true);                             // ৯. আধুনিক অনুবাদ (বাংলা)
+  const [showModernEn, setShowModernEn] = useState(false);                            // ১০. Modern Translation (English)
+  const [showLexicon, setShowLexicon] = useState(false);                              // ১১. অভিধান / Lexicon
+  const [showLexiconScientific, setShowLexiconScientific] = useState(true);          // ১২. লেক্সিকন নোট (Lexicon Notes)
+  const [showLogicalConsistency, setShowLogicalConsistency] = useState(true);        // ১৩. লজিক্যাল কনসিস্ট্যান্সি (৪:৮২)
 
   // Processing & Export State
   const [isProcessing, setIsProcessing] = useState(false);
@@ -113,34 +83,166 @@ export function QuranExportAdmin() {
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
   const [previewOpen, setPreviewOpen] = useState(false);
 
-  // Calculated target Surah IDs
-  const targetSurahIds = useMemo<number[]>(() => {
-    if (scopeMode === "single") return [selectedSurah];
-    if (scopeMode === "range") {
-      const start = Math.max(1, Math.min(rangeStart, rangeEnd));
-      const end = Math.min(114, Math.max(rangeStart, rangeEnd));
-      const list: number[] = [];
-      for (let i = start; i <= end; i++) list.push(i);
-      return list;
-    }
-    if (scopeMode === "juz") {
-      const found = JUZ_MAPPING.find((j) => j.juz === selectedJuz);
-      if (!found) return [1];
-      const list: number[] = [];
-      for (let i = found.startSurah; i <= found.endSurah; i++) list.push(i);
-      return list;
-    }
-    // "all"
-    return Array.from({ length: 114 }, (_, i) => i + 1);
-  }, [scopeMode, selectedSurah, rangeStart, rangeEnd, selectedJuz]);
+  // Filtered Surahs in selection list
+  const filteredSurahs = useMemo(() => {
+    const q = surahSearchQuery.toLowerCase().trim();
+    if (!q) return ALL_SURAHS_DATABASE;
+    return ALL_SURAHS_DATABASE.filter(
+      (s) =>
+        String(s.id).includes(q) ||
+        s.name_bn.toLowerCase().includes(q) ||
+        s.name_en.toLowerCase().includes(q) ||
+        s.name_arabic.includes(q) ||
+        s.meaning_bn.toLowerCase().includes(q) ||
+        s.aliases.some((a) => a.toLowerCase().includes(q))
+    );
+  }, [surahSearchQuery]);
+
+  // Target ordered Surah IDs
+  const sortedSelectedSurahIds = useMemo(() => {
+    return Array.from(selectedSurahIds).sort((a, b) => a - b);
+  }, [selectedSurahIds]);
 
   const targetSurahsMeta = useMemo(() => {
-    return targetSurahIds.map((id) => ALL_SURAHS_DATABASE.find((s) => s.id === id)).filter(Boolean) as SurahMeta[];
-  }, [targetSurahIds]);
+    return sortedSelectedSurahIds
+      .map((id) => ALL_SURAHS_DATABASE.find((s) => s.id === id))
+      .filter(Boolean) as SurahMeta[];
+  }, [sortedSelectedSurahIds]);
 
   const totalVersesInScope = useMemo(() => {
     return targetSurahsMeta.reduce((sum, s) => sum + s.total_verses, 0);
   }, [targetSurahsMeta]);
+
+  // Toggle individual surah
+  const toggleSurah = (id: number) => {
+    const next = new Set(selectedSurahIds);
+    if (next.has(id)) {
+      if (next.size === 1) {
+        toast.warning("কমপক্ষে ১টি সূরা নির্বাচিত থাকতে হবে!");
+        return;
+      }
+      next.delete(id);
+    } else {
+      next.add(id);
+    }
+    setSelectedSurahIds(next);
+  };
+
+  // Surah Presets
+  const selectAllSurahs = () => {
+    setSelectedSurahIds(new Set(Array.from({ length: 114 }, (_, i) => i + 1)));
+    toast.info("সব ১১৪টি সূরা নির্বাচন করা হয়েছে।");
+  };
+
+  const clearSurahSelection = () => {
+    setSelectedSurahIds(new Set([1]));
+    toast.info("সিলেকশন রিসেট করা হয়েছে (সূরা ১ আল-ফাতিহা নির্বাচিত)।");
+  };
+
+  const selectCompletedFour = () => {
+    setSelectedSurahIds(new Set([1, 2, 3, 4]));
+    toast.success("১০০% বিজ্ঞানভিত্তিক রূপান্তরকৃত প্রথম ৪টি সূরা (১, ২, ৩, ৪) নির্বাচিত!");
+  };
+
+  const selectMeccanSurahs = () => {
+    const meccan = ALL_SURAHS_DATABASE.filter((s) => s.type === "Meccan").map((s) => s.id);
+    setSelectedSurahIds(new Set(meccan));
+    toast.info(`${meccan.length}টি মাক্কী সূরা নির্বাচিত হয়েছে।`);
+  };
+
+  const selectMedinanSurahs = () => {
+    const medinan = ALL_SURAHS_DATABASE.filter((s) => s.type === "Medinan").map((s) => s.id);
+    setSelectedSurahIds(new Set(medinan));
+    toast.info(`${medinan.length}টি মাদানী সূরা নির্বাচিত হয়েছে।`);
+  };
+
+  const selectJuz30 = () => {
+    const juz30 = Array.from({ length: 37 }, (_, i) => 78 + i);
+    setSelectedSurahIds(new Set(juz30));
+    toast.info("৩০তম পারা (সূরা ৭৮ থেকে ১১৪) নির্বাচিত হয়েছে।");
+  };
+
+  const selectFirstTen = () => {
+    setSelectedSurahIds(new Set(Array.from({ length: 10 }, (_, i) => i + 1)));
+    toast.info("১ থেকে ১০ নম্বর সূরা নির্বাচিত হয়েছে।");
+  };
+
+  // Layer Presets
+  const selectAllLayers = () => {
+    setShowArabic(true);
+    setShowBismillah(true);
+    setShowSurahScientificMeaning(true);
+    setShowMetaData(true);
+    setShowWordByWord(true);
+    setShowTransliteration(true);
+    setShowConventionalBn(true);
+    setShowConventionalEn(true);
+    setShowCoreMeaningBn(true);
+    setShowCoreMeaningEn(true);
+    setShowModernBn(true);
+    setShowModernEn(true);
+    setShowLexicon(true);
+    setShowLexiconScientific(true);
+    setShowLogicalConsistency(true);
+    toast.info("সবগুলো ডাটা লেয়ার চালু করা হয়েছে।");
+  };
+
+  const deselectAllLayers = () => {
+    setShowArabic(true);
+    setShowBismillah(true);
+    setShowSurahScientificMeaning(false);
+    setShowMetaData(false);
+    setShowWordByWord(false);
+    setShowTransliteration(false);
+    setShowConventionalBn(false);
+    setShowConventionalEn(false);
+    setShowCoreMeaningBn(false);
+    setShowCoreMeaningEn(false);
+    setShowModernBn(false);
+    setShowModernEn(false);
+    setShowLexicon(false);
+    setShowLexiconScientific(false);
+    setShowLogicalConsistency(false);
+    toast.info("সব অনুবাদ ও লেয়ার ডিসিলেক্ট করা হয়েছে (শুধু আরবী মূল টেক্সট সক্রিয়)।");
+  };
+
+  const selectModernPreset = () => {
+    setShowArabic(true);
+    setShowBismillah(true);
+    setShowSurahScientificMeaning(true);
+    setShowMetaData(true);
+    setShowWordByWord(false);
+    setShowTransliteration(true);
+    setShowConventionalBn(true);
+    setShowConventionalEn(false);
+    setShowCoreMeaningBn(true);
+    setShowCoreMeaningEn(false);
+    setShowModernBn(true);
+    setShowModernEn(false);
+    setShowLexicon(false);
+    setShowLexiconScientific(true);
+    setShowLogicalConsistency(true);
+    toast.success("আধুনিক বিজ্ঞানভিত্তিক অনুবাদ ও তাদাব্বুর প্রিসেট সক্রিয়!");
+  };
+
+  const selectConventionalPreset = () => {
+    setShowArabic(true);
+    setShowBismillah(true);
+    setShowSurahScientificMeaning(false);
+    setShowMetaData(false);
+    setShowWordByWord(true);
+    setShowTransliteration(true);
+    setShowConventionalBn(true);
+    setShowConventionalEn(true);
+    setShowCoreMeaningBn(false);
+    setShowCoreMeaningEn(false);
+    setShowModernBn(false);
+    setShowModernEn(false);
+    setShowLexicon(true);
+    setShowLexiconScientific(false);
+    setShowLogicalConsistency(false);
+    toast.info("প্রচলিত অনুবাদ ও শব্দার্থ প্রিসেট সক্রিয়!");
+  };
 
   const exportOptions: ExportOptions = {
     bookTitle,
@@ -150,27 +252,34 @@ export function QuranExportAdmin() {
     includeToc,
     fontSize,
     showArabic,
-    showTransliteration,
+    showBismillah,
+    showSurahScientificMeaning,
+    showMetaData,
     showWordByWord,
+    showTransliteration,
     showConventionalBn,
     showConventionalEn,
     showCoreMeaningBn,
     showCoreMeaningEn,
     showModernBn,
     showModernEn,
-    showMetaData,
     showLexicon,
-    showSurahIntro,
-    showBismillah,
+    showLexiconScientific,
+    showLogicalConsistency,
   };
 
   const loadTargetSurahs = async (): Promise<SurahExportData[]> => {
+    if (sortedSelectedSurahIds.length === 0) {
+      toast.error("অনুগ্রহ করে কমপক্ষে একটি সূরা নির্বাচন করুন!");
+      throw new Error("No surahs selected");
+    }
+
     setIsProcessing(true);
     setProgressPercent(0);
     setProgressText("কুরআনের ডেটা লোড হচ্ছে...");
 
     try {
-      const data = await fetchBatchSurahsForExport(targetSurahIds, (loaded, total, currentName) => {
+      const data = await fetchBatchSurahsForExport(sortedSelectedSurahIds, (loaded, total, currentName) => {
         const p = Math.round((loaded / total) * 100);
         setProgressPercent(p);
         setProgressText(`${currentName} লোড হচ্ছে (${loaded}/${total})...`);
@@ -207,9 +316,9 @@ export function QuranExportAdmin() {
 
       const blob = await generateEpub(exportOptions, surahs);
       const filename =
-        scopeMode === "single"
-          ? `Quran_Surah_${selectedSurah}_${targetSurahsMeta[0]?.name_en || ""}.epub`
-          : `Al-Quran_EBook_${targetSurahIds.length}_Surahs.epub`;
+        sortedSelectedSurahIds.length === 1
+          ? `Quran_Surah_${sortedSelectedSurahIds[0]}_${targetSurahsMeta[0]?.name_en || ""}.epub`
+          : `Al-Quran_EBook_${sortedSelectedSurahIds.length}_Surahs.epub`;
 
       downloadBlob(blob, filename);
       toast.success("EPUB ই-বুক সফলভাবে ডাউনলোড হয়েছে!");
@@ -230,8 +339,8 @@ export function QuranExportAdmin() {
       const html = generateHtmlBook(exportOptions, surahs);
       const blob = new Blob([html], { type: "text/html;charset=utf-8" });
       const filename =
-        scopeMode === "single"
-          ? `Quran_Surah_${selectedSurah}_${targetSurahsMeta[0]?.name_en || ""}.html`
+        sortedSelectedSurahIds.length === 1
+          ? `Quran_Surah_${sortedSelectedSurahIds[0]}_${targetSurahsMeta[0]?.name_en || ""}.html`
           : `Al-Quran_Offline_Book.html`;
 
       downloadBlob(blob, filename);
@@ -250,8 +359,8 @@ export function QuranExportAdmin() {
       const md = generateMarkdownBook(exportOptions, surahs);
       const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
       const filename =
-        scopeMode === "single"
-          ? `Quran_Surah_${selectedSurah}_${targetSurahsMeta[0]?.name_en || ""}.md`
+        sortedSelectedSurahIds.length === 1
+          ? `Quran_Surah_${sortedSelectedSurahIds[0]}_${targetSurahsMeta[0]?.name_en || ""}.md`
           : `Al-Quran_Markdown_Book.md`;
 
       downloadBlob(blob, filename);
@@ -274,39 +383,6 @@ export function QuranExportAdmin() {
     }
   };
 
-  // Quick select presets
-  const selectAllLayers = () => {
-    setShowArabic(true);
-    setShowTransliteration(true);
-    setShowWordByWord(true);
-    setShowConventionalBn(true);
-    setShowConventionalEn(true);
-    setShowCoreMeaningBn(true);
-    setShowCoreMeaningEn(true);
-    setShowModernBn(true);
-    setShowModernEn(true);
-    setShowMetaData(true);
-    setShowLexicon(true);
-    setShowSurahIntro(true);
-    setShowBismillah(true);
-  };
-
-  const selectModernOnly = () => {
-    setShowArabic(true);
-    setShowTransliteration(false);
-    setShowWordByWord(false);
-    setShowConventionalBn(true);
-    setShowConventionalEn(false);
-    setShowCoreMeaningBn(true);
-    setShowCoreMeaningEn(false);
-    setShowModernBn(true);
-    setShowModernEn(false);
-    setShowMetaData(true);
-    setShowLexicon(true);
-    setShowSurahIntro(true);
-    setShowBismillah(true);
-  };
-
   return (
     <div className="space-y-6">
       {/* Header Banner */}
@@ -321,9 +397,7 @@ export function QuranExportAdmin() {
               </span>
             </div>
             <p className="text-xs text-muted-foreground max-w-2xl leading-relaxed">
-              পুরো কুরআন অথবা সুনির্দিষ্ট সূরা আধুনিক বিজ্ঞানভিত্তিক অনুবাদ, প্রচলিত অনুবাদ, আরবী হরফ, তাদাব্বুর ও লেক্সিকন
-              নোটসহ প্রিন্ট-রেডি <strong>PDF</strong>, স্ট্যান্ডার্ড <strong>EPUB 3.0 ই-বুক</strong>, কিংবা অফলাইন <strong>HTML বুক</strong> এ
-              রূপান্তর করে শেয়ার করুন।
+              পুরো কুরআন অথবা যেকোনো এক বা একাধিক সূরা নির্বাচন করে আপনার পছন্দমতো অনুবাদ ও তথ্যের লেয়ার বেছে নিয়ে প্রিন্ট-রেডি <strong>PDF</strong>, স্ট্যান্ডার্ড <strong>EPUB 3.0 ই-বুক</strong>, কিংবা অফলাইন <strong>HTML বুক</strong> তৈরি ও শেয়ার করুন।
             </p>
           </div>
 
@@ -355,154 +429,144 @@ export function QuranExportAdmin() {
         </div>
       )}
 
-      {/* Main Grid: Scope on Left, Options on Right */}
+      {/* Main Grid: Surah Multi-Selection (5 cols) & Content Layer Toggles (7 cols) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left Column: Scope & Surah Selection (5 cols) */}
+        {/* Left Column: Surah Multi-Selection (5 cols) */}
         <div className="lg:col-span-5 space-y-5">
-          {/* Scope Selector Box */}
+          {/* Surah Multi-Select Box */}
           <div className="rounded-xl border border-border bg-card p-5 shadow-xs space-y-4">
-            <div className="flex items-center gap-2 border-b border-border/60 pb-3">
-              <ListFilter className="size-4 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">১. কুরআনের পরিধি নির্বাচন</h3>
+            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+              <div className="flex items-center gap-2">
+                <ListFilter className="size-4 text-primary" />
+                <h3 className="font-bold text-sm text-foreground">১. সূরা নির্বাচন (এক বা একাধিক)</h3>
+              </div>
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary">
+                {sortedSelectedSurahIds.length} টি নির্বাচিত
+              </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => setScopeMode("single")}
-                className={`flex flex-col items-center justify-center p-3 rounded-lg border text-xs font-semibold transition-all cursor-pointer ${
-                  scopeMode === "single"
-                    ? "border-primary bg-primary/10 text-primary shadow-xs"
-                    : "border-border hover:bg-muted/40 text-muted-foreground"
-                }`}
-              >
-                <BookMarked className="size-4 mb-1" />
-                <span>সুনির্দিষ্ট একক সূরা</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setScopeMode("range")}
-                className={`flex flex-col items-center justify-center p-3 rounded-lg border text-xs font-semibold transition-all cursor-pointer ${
-                  scopeMode === "range"
-                    ? "border-primary bg-primary/10 text-primary shadow-xs"
-                    : "border-border hover:bg-muted/40 text-muted-foreground"
-                }`}
-              >
-                <Sliders className="size-4 mb-1" />
-                <span>কাস্টম সূরা পরিসীমা</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setScopeMode("juz")}
-                className={`flex flex-col items-center justify-center p-3 rounded-lg border text-xs font-semibold transition-all cursor-pointer ${
-                  scopeMode === "juz"
-                    ? "border-primary bg-primary/10 text-primary shadow-xs"
-                    : "border-border hover:bg-muted/40 text-muted-foreground"
-                }`}
-              >
-                <Layers className="size-4 mb-1" />
-                <span>পারা / জুয নির্বাচন</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setScopeMode("all")}
-                className={`flex flex-col items-center justify-center p-3 rounded-lg border text-xs font-semibold transition-all cursor-pointer ${
-                  scopeMode === "all"
-                    ? "border-primary bg-primary/10 text-primary shadow-xs"
-                    : "border-border hover:bg-muted/40 text-muted-foreground"
-                }`}
-              >
-                <Sparkles className="size-4 mb-1" />
-                <span>সম্পূর্ণ কুরআন (১-১১৪)</span>
-              </button>
+            {/* Quick Selection Presets */}
+            <div className="space-y-1.5">
+              <Label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
+                কুইক সিলেকশন প্রিসেট:
+              </Label>
+              <div className="flex flex-wrap gap-1.5">
+                <button
+                  type="button"
+                  onClick={selectCompletedFour}
+                  className="rounded-md bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-500/20 cursor-pointer"
+                >
+                  ✨ সম্পূর্ণ সূরা ১-৪ (১০০% সায়েন্টিফিক)
+                </button>
+                <button
+                  type="button"
+                  onClick={selectAllSurahs}
+                  className="rounded-md bg-primary/10 border border-primary/30 px-2.5 py-1 text-xs font-semibold text-primary hover:bg-primary/20 cursor-pointer"
+                >
+                  সব ১১৪টি সূরা
+                </button>
+                <button
+                  type="button"
+                  onClick={selectFirstTen}
+                  className="rounded-md bg-muted border border-border px-2 py-1 text-xs font-medium text-foreground hover:bg-muted/80 cursor-pointer"
+                >
+                  সূরা ১-১০
+                </button>
+                <button
+                  type="button"
+                  onClick={selectJuz30}
+                  className="rounded-md bg-muted border border-border px-2 py-1 text-xs font-medium text-foreground hover:bg-muted/80 cursor-pointer"
+                >
+                  ৩০তম পারা (৭৮-১১৪)
+                </button>
+                <button
+                  type="button"
+                  onClick={selectMeccanSurahs}
+                  className="rounded-md bg-muted border border-border px-2 py-1 text-xs font-medium text-foreground hover:bg-muted/80 cursor-pointer"
+                >
+                  মাক্কী (৮৬টি)
+                </button>
+                <button
+                  type="button"
+                  onClick={selectMedinanSurahs}
+                  className="rounded-md bg-muted border border-border px-2 py-1 text-xs font-medium text-foreground hover:bg-muted/80 cursor-pointer"
+                >
+                  মাদানী (২৮টি)
+                </button>
+                <button
+                  type="button"
+                  onClick={clearSurahSelection}
+                  className="rounded-md bg-destructive/10 border border-destructive/20 px-2 py-1 text-xs font-medium text-destructive hover:bg-destructive/20 cursor-pointer"
+                >
+                  রিসেট
+                </button>
+              </div>
             </div>
 
-            {/* Scope Specific Inputs */}
-            {scopeMode === "single" && (
-              <div className="space-y-2 pt-2 border-t border-border/40">
-                <Label htmlFor="single-surah-select" className="text-xs font-medium text-foreground">
-                  সূরা নির্বাচন করুন:
-                </Label>
-                <select
-                  id="single-surah-select"
-                  value={selectedSurah}
-                  onChange={(e) => setSelectedSurah(Number(e.target.value))}
-                  className="w-full rounded-lg border border-border bg-background p-2.5 text-xs font-medium shadow-xs"
+            {/* Search Input for Surahs */}
+            <div className="relative">
+              <Search className="absolute left-3 top-2.5 size-3.5 text-muted-foreground" />
+              <Input
+                value={surahSearchQuery}
+                onChange={(e) => setSurahSearchQuery(e.target.value)}
+                placeholder="🔍 সূরা নম্বর বা নাম দিয়ে খুঁজুন (যেমন: ফাতিহা, 2, নিসা)..."
+                className="pl-8 h-9 text-xs"
+              />
+              {surahSearchQuery && (
+                <button
+                  onClick={() => setSurahSearchQuery("")}
+                  className="absolute right-2.5 top-2.5 text-muted-foreground hover:text-foreground cursor-pointer"
                 >
-                  {ALL_SURAHS_DATABASE.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.id}. {s.name_bn} ({s.name_arabic}) — {s.meaning_bn} [{s.total_verses} আয়াত]
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
+                  <X className="size-3.5" />
+                </button>
+              )}
+            </div>
 
-            {scopeMode === "range" && (
-              <div className="grid grid-cols-2 gap-3 pt-2 border-t border-border/40">
-                <div className="space-y-1.5">
-                  <Label className="text-xs font-medium text-foreground">শুরুর সূরা:</Label>
-                  <select
-                    value={rangeStart}
-                    onChange={(e) => setRangeStart(Number(e.target.value))}
-                    className="w-full rounded-lg border border-border bg-background p-2 text-xs font-medium shadow-xs"
-                  >
-                    {ALL_SURAHS_DATABASE.map((s) => (
-                      <option key={s.id} value={s.id}>
-                        {s.id}. {s.name_bn}
-                      </option>
-                    ))}
-                  </select>
+            {/* Interactive Scrollable Surah Checkbox List */}
+            <div className="rounded-lg border border-border bg-background p-1.5 max-h-72 overflow-y-auto space-y-1 divide-y divide-border/40">
+              {filteredSurahs.length === 0 ? (
+                <div className="p-4 text-center text-xs text-muted-foreground">
+                  কোনো সূরা পাওয়া যায়নি।
                 </div>
+              ) : (
+                filteredSurahs.map((s) => {
+                  const isChecked = selectedSurahIds.has(s.id);
+                  return (
+                    <label
+                      key={s.id}
+                      className={`flex items-center justify-between p-2 rounded-md transition-colors cursor-pointer text-xs ${
+                        isChecked ? "bg-primary/10 text-primary font-medium" : "hover:bg-muted/40 text-foreground"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <input
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={() => toggleSurah(s.id)}
+                          className="rounded accent-primary size-4"
+                        />
+                        <div className="truncate">
+                          <span className="font-bold mr-1.5">{s.id}.</span>
+                          <span className="font-semibold">{s.name_bn}</span>
+                          <span className="text-[11px] text-muted-foreground ml-1 font-mono">({s.name_arabic})</span>
+                          <span className="text-[11px] text-muted-foreground ml-1.5">[{s.total_verses} আয়াত]</span>
+                        </div>
+                      </div>
 
-                <div className="space-y-1.5">
-                  <Label className="text-xs font-medium text-foreground">শেষের সূরা:</Label>
-                  <select
-                    value={rangeEnd}
-                    onChange={(e) => setRangeEnd(Number(e.target.value))}
-                    className="w-full rounded-lg border border-border bg-background p-2 text-xs font-medium shadow-xs"
-                  >
-                    {ALL_SURAHS_DATABASE.map((s) => (
-                      <option key={s.id} value={s.id}>
-                        {s.id}. {s.name_bn}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            )}
-
-            {scopeMode === "juz" && (
-              <div className="space-y-2 pt-2 border-t border-border/40">
-                <Label className="text-xs font-medium text-foreground">পারা / জুয নির্বাচন করুন:</Label>
-                <select
-                  value={selectedJuz}
-                  onChange={(e) => setSelectedJuz(Number(e.target.value))}
-                  className="w-full rounded-lg border border-border bg-background p-2.5 text-xs font-medium shadow-xs"
-                >
-                  {JUZ_MAPPING.map((j) => (
-                    <option key={j.juz} value={j.juz}>
-                      {j.name} (সূরা {j.startSurah} থেকে {j.endSurah})
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            {scopeMode === "all" && (
-              <div className="rounded-lg bg-primary/10 border border-primary/20 p-3 text-xs text-primary font-medium">
-                ✨ সম্পূর্ণ আল-কুরআনের ১১৪টি সূরার ৬,২৩৬টি আয়াত এক্সপোর্ট করা হবে।
-              </div>
-            )}
+                      <span className="shrink-0 text-[10px] uppercase font-bold text-muted-foreground/80 bg-muted px-1.5 py-0.5 rounded">
+                        {s.type === "Meccan" ? "মাক্কী" : "মাদানী"}
+                      </span>
+                    </label>
+                  );
+                })
+              )}
+            </div>
 
             {/* Scope Summary Badge */}
-            <div className="rounded-lg bg-muted/30 border border-border/60 p-3 text-xs space-y-1">
+            <div className="rounded-lg bg-muted/40 border border-border/70 p-3 text-xs space-y-1">
               <div className="flex items-center justify-between text-muted-foreground">
                 <span>নির্বাচিত মোট সূরা:</span>
-                <span className="font-bold text-foreground">{targetSurahIds.length} টি</span>
+                <span className="font-bold text-foreground">{sortedSelectedSurahIds.length} টি</span>
               </div>
               <div className="flex items-center justify-between text-muted-foreground">
                 <span>মোট আয়াত সংখ্যা:</span>
@@ -515,7 +579,7 @@ export function QuranExportAdmin() {
           <div className="rounded-xl border border-border bg-card p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2 border-b border-border/60 pb-3">
               <Settings2 className="size-4 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">২. বই ও কভারের তথ্য</h3>
+              <h3 className="font-bold text-sm text-foreground">২. বই ও কাভারের তথ্য</h3>
             </div>
 
             <div className="space-y-3 text-xs">
@@ -594,97 +658,170 @@ export function QuranExportAdmin() {
           </div>
         </div>
 
-        {/* Right Column: Content Layers & Export Actions (7 cols) */}
+        {/* Right Column: Exact 13 Data Layer Toggles & Export Action Buttons (7 cols) */}
         <div className="lg:col-span-7 space-y-5">
           {/* Content Layer Selector Box */}
           <div className="rounded-xl border border-border bg-card p-5 shadow-xs space-y-4">
             <div className="flex items-center justify-between border-b border-border/60 pb-3">
               <div className="flex items-center gap-2">
                 <Layers className="size-4 text-primary" />
-                <h3 className="font-bold text-sm text-foreground">৩. অনুবাদের লেয়ার ও কনটেন্ট নির্বাচন</h3>
+                <h3 className="font-bold text-sm text-foreground">৩. অনুবাদের লেয়ার ও ডাটা ফিল্টারিং (১৩টি লেয়ার)</h3>
               </div>
 
               <div className="flex items-center gap-1.5 text-[11px]">
                 <button
                   type="button"
-                  onClick={selectModernOnly}
-                  className="rounded px-2 py-0.5 bg-primary/10 text-primary font-medium hover:bg-primary/20 cursor-pointer"
+                  onClick={selectModernPreset}
+                  className="rounded px-2.5 py-1 bg-primary/10 text-primary font-bold hover:bg-primary/20 cursor-pointer"
+                  title="শুধু আধুনিক অনুবাদ ও তাদাব্বুর নোটসমূহ নির্বাচন করুন"
                 >
-                  স্ট্যান্ডার্ড প্রিসেট
+                  ✨ সায়েন্টিফিক প্রিসেট
                 </button>
                 <button
                   type="button"
                   onClick={selectAllLayers}
-                  className="rounded px-2 py-0.5 bg-muted text-muted-foreground font-medium hover:text-foreground cursor-pointer"
+                  className="rounded px-2 py-1 bg-muted text-muted-foreground font-semibold hover:text-foreground cursor-pointer"
+                  title="সবগুলো ডাটা লেয়ার অন করুন"
                 >
-                  সব লেয়ার
+                  সব সিলেক্ট
+                </button>
+                <button
+                  type="button"
+                  onClick={deselectAllLayers}
+                  className="rounded px-2 py-1 bg-destructive/10 text-destructive font-semibold hover:bg-destructive/20 cursor-pointer"
+                  title="সব অনুবাদ বন্ধ করে শুধু আরবী রাখুন"
+                >
+                  সব ডিসিলেক্ট
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors">
-                <span className="font-medium text-foreground">📖 আরবী হরফ (Uthmani Script)</span>
-                <Switch checked={showArabic} onCheckedChange={setShowArabic} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              {/* Layer 1 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-foreground">১. সুরার নামের প্রচলিত ও আধুনিক অর্থ</span>
+                  <p className="text-[11px] text-muted-foreground">প্রতিটি সুরার শীর্ষে বৈজ্ঞানিক ও প্রচলিত অর্থ</p>
+                </div>
+                <Switch checked={showSurahScientificMeaning} onCheckedChange={setShowSurahScientificMeaning} />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors">
-                <span className="font-medium text-foreground">🔤 উচ্চারণ (Transliteration)</span>
-                <Switch checked={showTransliteration} onCheckedChange={setShowTransliteration} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors">
-                <span className="font-medium text-foreground">🧩 শব্দে শব্দে অর্থ (Word by Word)</span>
-                <Switch checked={showWordByWord} onCheckedChange={setShowWordByWord} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors">
-                <span className="font-medium text-foreground">📜 প্রচলিত অনুবাদ (বাংলা)</span>
-                <Switch checked={showConventionalBn} onCheckedChange={setShowConventionalBn} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors">
-                <span className="font-medium text-foreground">🌐 Conventional (English)</span>
-                <Switch checked={showConventionalEn} onCheckedChange={setShowConventionalEn} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-amber-500/5 hover:bg-amber-500/10 cursor-pointer transition-colors">
-                <span className="font-medium text-amber-700 dark:text-amber-400">💡 অন্তর্নিহিত অর্থ (বাংলা)</span>
-                <Switch checked={showCoreMeaningBn} onCheckedChange={setShowCoreMeaningBn} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-amber-500/5 hover:bg-amber-500/10 cursor-pointer transition-colors">
-                <span className="font-medium text-amber-700 dark:text-amber-400">💡 Core Meaning (English)</span>
-                <Switch checked={showCoreMeaningEn} onCheckedChange={setShowCoreMeaningEn} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
-                <span className="font-semibold text-primary">🔬 আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</span>
-                <Switch checked={showModernBn} onCheckedChange={setShowModernBn} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
-                <span className="font-medium text-primary">🔬 Modern Scientific (English)</span>
-                <Switch checked={showModernEn} onCheckedChange={setShowModernEn} />
-              </label>
-
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-emerald-500/5 hover:bg-emerald-500/10 cursor-pointer transition-colors">
-                <span className="font-medium text-emerald-700 dark:text-emerald-400">🏷️ মেটাডাটা ও মূল বিষয়বস্তু ট্যাগ</span>
+              {/* Layer 2 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-foreground">২. মেটাডাটা (Meta Data)</span>
+                  <p className="text-[11px] text-muted-foreground">বিষযভিত্তিক মেটা ডাটা ও টপিক ট্যাগ</p>
+                </div>
                 <Switch checked={showMetaData} onCheckedChange={setShowMetaData} />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-emerald-500/5 hover:bg-emerald-500/10 cursor-pointer transition-colors">
-                <span className="font-medium text-emerald-700 dark:text-emerald-400">🔍 লেক্সিকন ও বিজ্ঞানভিত্তিক নোট</span>
+              {/* Layer 3 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-foreground">৩. শব্দে শব্দে অর্থ (Word by Word)</span>
+                  <p className="text-[11px] text-muted-foreground">প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও পদ</p>
+                </div>
+                <Switch checked={showWordByWord} onCheckedChange={setShowWordByWord} />
+              </label>
+
+              {/* Layer 4 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-foreground">৪. উচ্চারণ (Transliteration)</span>
+                  <p className="text-[11px] text-muted-foreground">সহজে পড়ার জন্য উচ্চারণের নির্দেশিকা</p>
+                </div>
+                <Switch checked={showTransliteration} onCheckedChange={setShowTransliteration} />
+              </label>
+
+              {/* Layer 5 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-foreground">৫. প্রচলিত অনুবাদ (বাংলা)</span>
+                  <p className="text-[11px] text-muted-foreground">মুহিউদ্দীন খান / তাইসিরুল কুরআন</p>
+                </div>
+                <Switch checked={showConventionalBn} onCheckedChange={setShowConventionalBn} />
+              </label>
+
+              {/* Layer 6 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-foreground">৬. Surface Translation (English)</span>
+                  <p className="text-[11px] text-muted-foreground">সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ</p>
+                </div>
+                <Switch checked={showConventionalEn} onCheckedChange={setShowConventionalEn} />
+              </label>
+
+              {/* Layer 7 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/10 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-amber-700 dark:text-amber-400">৭. অন্তর্নিহিত অর্থ (বাংলা)</span>
+                  <p className="text-[11px] text-muted-foreground">আয়াতের অন্তর্নিহিত ভাবার্থ ও মূল বার্তা</p>
+                </div>
+                <Switch checked={showCoreMeaningBn} onCheckedChange={setShowCoreMeaningBn} />
+              </label>
+
+              {/* Layer 8 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/10 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-amber-700 dark:text-amber-400">৮. Core Meaning (English)</span>
+                  <p className="text-[11px] text-muted-foreground">Core Underlying Meaning in English</p>
+                </div>
+                <Switch checked={showCoreMeaningEn} onCheckedChange={setShowCoreMeaningEn} />
+              </label>
+
+              {/* Layer 9 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-primary/40 bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-primary">৯. আধুনিক অনুবাদ (বাংলা)</span>
+                  <p className="text-[11px] text-muted-foreground">মহাজাগতিক ও বিজ্ঞানভিত্তিক রূপান্তর</p>
+                </div>
+                <Switch checked={showModernBn} onCheckedChange={setShowModernBn} />
+              </label>
+
+              {/* Layer 10 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-primary/40 bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-primary">১০. Modern Translation (English)</span>
+                  <p className="text-[11px] text-muted-foreground">Modern Scientific & Cosmic Translation</p>
+                </div>
+                <Switch checked={showModernEn} onCheckedChange={setShowModernEn} />
+              </label>
+
+              {/* Layer 11 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-emerald-500/30 bg-emerald-500/5 hover:bg-emerald-500/10 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-emerald-700 dark:text-emerald-400">১১. অভিধান / Lexicon</span>
+                  <p className="text-[11px] text-muted-foreground">শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ</p>
+                </div>
                 <Switch checked={showLexicon} onCheckedChange={setShowLexicon} />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors">
-                <span className="font-medium text-foreground">📘 সূরার পরিচিতি ও বৈজ্ঞানিক অর্থ</span>
-                <Switch checked={showSurahIntro} onCheckedChange={setShowSurahIntro} />
+              {/* Layer 12 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-emerald-500/30 bg-emerald-500/5 hover:bg-emerald-500/10 cursor-pointer transition-colors">
+                <div>
+                  <span className="font-bold text-emerald-700 dark:text-emerald-400">১২. লেক্সিকন নোট (Lexicon Notes)</span>
+                  <p className="text-[11px] text-muted-foreground">আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট</p>
+                </div>
+                <Switch checked={showLexiconScientific} onCheckedChange={setShowLexiconScientific} />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-muted/10 hover:bg-muted/30 cursor-pointer transition-colors sm:col-span-2">
-                <span className="font-medium text-foreground">✨ সূরার শুরুতে বিসমিল্লাহ প্রদর্শন</span>
+              {/* Layer 13 */}
+              <label className="flex items-center justify-between p-2.5 rounded-lg border border-indigo-500/30 bg-indigo-500/5 hover:bg-indigo-500/10 cursor-pointer transition-colors sm:col-span-2">
+                <div>
+                  <span className="font-bold text-indigo-700 dark:text-indigo-400">১৩. লজিক্যাল কনসিস্ট্যান্সি (৪:৮২)</span>
+                  <p className="text-[11px] text-muted-foreground">কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য বিশ্লেষণ</p>
+                </div>
+                <Switch checked={showLogicalConsistency} onCheckedChange={setShowLogicalConsistency} />
+              </label>
+
+              {/* Extra Arabic & Bismillah */}
+              <label className="flex items-center justify-between p-2 rounded-md bg-muted/20 border border-border/50 cursor-pointer">
+                <span className="font-semibold text-foreground">📖 আরবী হরফ (Uthmani Script)</span>
+                <Switch checked={showArabic} onCheckedChange={setShowArabic} />
+              </label>
+
+              <label className="flex items-center justify-between p-2 rounded-md bg-muted/20 border border-border/50 cursor-pointer">
+                <span className="font-semibold text-foreground">✨ সূরার শুরুতে বিসমিল্লাহ</span>
                 <Switch checked={showBismillah} onCheckedChange={setShowBismillah} />
               </label>
             </div>
@@ -692,9 +829,14 @@ export function QuranExportAdmin() {
 
           {/* Export Action Buttons Box */}
           <div className="rounded-xl border border-border bg-card p-5 shadow-xs space-y-4">
-            <div className="flex items-center gap-2 border-b border-border/60 pb-3">
-              <Download className="size-4 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">৪. এক্সপোর্ট ফরম্যাট ও ডাউনলোড</h3>
+            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+              <div className="flex items-center gap-2">
+                <Download className="size-4 text-primary" />
+                <h3 className="font-bold text-sm text-foreground">৪. এক্সপোর্ট ফরম্যাট নির্বাচন ও ডাউনলোড</h3>
+              </div>
+              <span className="text-xs text-muted-foreground">
+                ({sortedSelectedSurahIds.length} টি সূরা প্রস্তুত)
+              </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -706,15 +848,15 @@ export function QuranExportAdmin() {
                     <span>প্রিন্ট-রেডি PDF ডকুমেন্ট</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground leading-relaxed">
-                    সুন্দর বুক স্টাইল মার্জিন, কভার পেজ ও অটো-হেডারসহ ভেক্টর প্রিন্ট বা PDF হিসেবে সংরক্ষণ করুন।
+                    নির্বাচিত {sortedSelectedSurahIds.length}টি সূরার সুন্দর মার্জিন, কভার ও হেডারসহ ভেক্টর PDF হিসেবে প্রিন্ট বা সেভ করুন।
                   </p>
                 </div>
                 <Button
                   onClick={handleExportPdf}
-                  disabled={isProcessing}
+                  disabled={isProcessing || sortedSelectedSurahIds.length === 0}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-xs cursor-pointer"
                 >
-                  <Printer className="size-3.5 mr-1.5" /> PDF / প্রিন্ট তৈরি করুন
+                  <Printer className="size-3.5 mr-1.5" /> PDF / প্রিন্ট প্রস্তুত করুন
                 </Button>
               </div>
 
@@ -726,12 +868,12 @@ export function QuranExportAdmin() {
                     <span>স্ট্যান্ডার্ড EPUB 3.0 ই-বুক</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground leading-relaxed">
-                    Apple Books, Google Play Books, Kindle এবং যেকোনো ই-বুক রিডারের জন্য তৈরি <code>.epub</code> ফাইল।
+                    Apple Books, Google Play Books, Kindle, Moon+ Reader এ পড়ার জন্য স্ট্যান্ডার্ড <code>.epub</code> ফাইল।
                   </p>
                 </div>
                 <Button
                   onClick={handleExportEpub}
-                  disabled={isProcessing}
+                  disabled={isProcessing || sortedSelectedSurahIds.length === 0}
                   className="w-full bg-amber-600 hover:bg-amber-700 text-white text-xs cursor-pointer"
                 >
                   <Download className="size-3.5 mr-1.5" /> EPUB (.epub) ডাউনলোড
@@ -751,7 +893,7 @@ export function QuranExportAdmin() {
                 </div>
                 <Button
                   onClick={handleExportHtml}
-                  disabled={isProcessing}
+                  disabled={isProcessing || sortedSelectedSurahIds.length === 0}
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs cursor-pointer"
                 >
                   <Download className="size-3.5 mr-1.5" /> HTML (.html) ডাউনলোড
@@ -771,7 +913,7 @@ export function QuranExportAdmin() {
                 </div>
                 <Button
                   onClick={handleExportMarkdown}
-                  disabled={isProcessing}
+                  disabled={isProcessing || sortedSelectedSurahIds.length === 0}
                   variant="outline"
                   className="w-full text-xs cursor-pointer"
                 >
@@ -791,7 +933,7 @@ export function QuranExportAdmin() {
               <div className="flex items-center gap-2">
                 <Eye className="size-5 text-primary" />
                 <h3 className="font-bold text-sm text-foreground">লাইভ বুক প্রিভিউ</h3>
-                <span className="text-xs text-muted-foreground">({targetSurahIds.length} টি সূরা)</span>
+                <span className="text-xs text-muted-foreground">({sortedSelectedSurahIds.length} টি নির্বাচিত সূরা)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Button
