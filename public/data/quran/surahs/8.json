@@ -5,7 +5,7 @@
       "surah": 8,
       "ayah": 1,
       "transliteration": "yasalūnaka ʿani l-anfāli quli l-anfālu lillahi wal-rasūli fa-ittaqū l-laha wa-aṣliḥū dhāta baynikum wa-aṭīʿū l-laha warasūlahu in kuntum mu'minīna",
-      "translation_bn": "তারা তোমাকে যুদ্ধে প্রাপ্ত সম্পদ সম্পর্কে জিজ্ঞেস করছে। বল, ‘যুদ্ধে প্রাপ্ত সম্পদ হচ্ছে আল্লাহ ও তাঁর রসূলের; কাজেই তোমরা আল্লাহকে ভয় কর আর নিজেদের সম্পর্ককে সুষ্ঠু সুন্দর ভিত্তির উপর প্রতিষ্ঠিত কর। তোমরা যদি মু’মিন হয়ে থাক তবে তোমরা আল্লাহ ও তাঁর রসূলের আনুগত্য কর।’",
+      "translation_bn": "এই ইউজার নোডগুলো তোমার ডাটা রিকোয়েস্ট উইন্ডোতে এসে কস্মিক রিসোর্স বা যুদ্ধলব্ধ বাড়তি সম্পদের পরম বণ্টন অ্যালগরিদম তথা ‘আল-আনফাল’ (عَنِ الْأَنفَالِ)-এর বিষয়ে কুয়েরি করে; তুমি তাদের মেইনফ্রেম রুলস ডিক্লেয়ার করে বলো (قُلِ): ‘এই বিশেষ কস্মিক এনার্জি ও সম্পদের মনোপলি ওনারশিপ স্রেফ একমাত্র মূল সোর্স কোডার আল্লাহ এবং তাঁর অথেন্টিকেটেড ডাটা-ট্রান্সমিটর রাসূলের ডিরেক্টরিতেই (لِلَّهِ وَالرَّسُولِ) লক করা আছে; অতএব তোমরা সিস্টেমে ক্ষতিকর ম্যালওয়্যার থেকে বাঁচতে ফায়ারওয়াল বা তাকওয়া প্রোটেকশন অন রাখো (فَاتَّقُوا اللَّهَ) এবং তোমাদের লোকাল নেটওয়ার্ক ইন্টারফেসে নিজেদের মধ্যকার সমস্ত এরর ও পারস্পরিক সংযোগ লিঙ্ক পুরোপুরি সংশোধন করে নাও (وَأَصْلِحُوا ذَاتَ بَيْنِكُمْ), আর আল্লাহ ও তাঁর রাসূলের পাঠানো ডিফল্ট অপারেটিং সিস্টেম কম্যান্ড হুবহু এক্সিকিউট ও আনুগত্য করো—যদি তোমরা মেইন সার্ভারের সিকিউরিটি কোডের প্রতি একশত ভাগ ভেরিফাইড ইউজার বা মুমিন (مُّؤْمِنِينَ) হয়ে থাকো’ [৪];",
       "words": [
         {
           "id": 193,
@@ -199,13 +199,28 @@
         }
       ],
       "translation_en": "They ask you, [O Muhammad], about the bounties [of war]. Say, \"The [decision concerning] bounties is for Allah and the Messenger.\" So fear Allah and amend that which is between you and obey Allah and His Messenger, if you should be believers.",
-      "conventional_en": "They ask you, [O Muhammad], about the bounties [of war]. Say, \"The [decision concerning] bounties is for Allah and the Messenger.\" So fear Allah and amend that which is between you and obey Allah and His Messenger, if you should be believers."
+      "conventional_en": "They ask you, [O Muhammad], about the bounties [of war]. Say, \"The [decision concerning] bounties is for Allah and the Messenger.\" So fear Allah and amend that which is between you and obey Allah and His Messenger, if you should be believers.",
+      "conventional_bn": "তারা তোমাকে যুদ্ধলব্ধ সম্পদ (আনফাল) এর বিষয়ে কুয়েরি করে; তুমি বলো, ‘যুদ্ধলব্ধ সম্পদ তো স্রেফ আল্লাহর এবং রাসূলের; অতএব তোমরা আল্লাহকে ভয় করো এবং নিজেদের মধ্যকার সম্পর্ক সংশোধন করে নাও, আর আল্লাহ ও তাঁর রাসূলের আনুগত্য করো—যদি তোমরা মুমিন (বিশ্বাসী) হও’।",
+      "core_meanings_bn": "সেন্ট্রাল মনোপলি ওনারশিপ",
+      "core_meanings_en": "The Cosmic Resource Allocation Protocol",
+      "metadata": {
+        "theme": "The Cosmic Resource Allocation Protocol ও সেন্ট্রাল মনোপলি ওনারশিপ",
+        "scientific_topics": [
+          "The Cosmic Resource Allocation Protocol"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "এই ইউজার নোডগুলো তোমার ডাটা রিকোয়েস্ট উইন্ডোতে এসে কস্মিক রিসোর্স বা যুদ্ধলব্ধ বাড়তি সম্পদের পরম বণ্টন অ্যালগরিদম তথা ‘আল-আনফাল’ (عَنِ الْأَنفَالِ)-এর বিষয়ে কুয়েরি করে; তুমি তাদের মেইনফ্রেম রুলস ডিক্লেয়ার করে বলো (قُلِ): ‘এই বিশেষ কস্মিক এনার্জি ও সম্পদের মনোপলি ওনারশিপ স্রেফ একমাত্র মূল সোর্স কোডার আল্লাহ এবং তাঁর অথেন্টিকেটেড ডাটা-ট্রান্সমিটর রাসূলের ডিরেক্টরিতেই (لِلَّهِ وَالرَّسُولِ) লক করা আছে; অতএব তোমরা সিস্টেমে ক্ষতিকর ম্যালওয়্যার থেকে বাঁচতে ফায়ারওয়াল বা তাকওয়া প্রোটেকশন অন রাখো (فَاتَّقُوا اللَّهَ) এবং তোমাদের লোকাল নেটওয়ার্ক ইন্টারফেসে নিজেদের মধ্যকার সমস্ত এরর ও পারস্পরিক সংযোগ লিঙ্ক পুরোপুরি সংশোধন করে নাও (وَأَصْلِحُوا ذَاتَ بَيْنِكُمْ), আর আল্লাহ ও তাঁর রাসূলের পাঠানো ডিফল্ট অপারেটিং সিস্টেম কম্যান্ড হুবহু এক্সিকিউট ও আনুগত্য করো—যদি তোমরা মেইন সার্ভারের সিকিউরিটি কোডের প্রতি একশত ভাগ ভেরিফাইড ইউজার বা মুমিন (مُّؤْمِنِينَ) হয়ে থাকো’ [৪];",
+      "meta_bn": "The Cosmic Resource Allocation Protocol ও সেন্ট্রাল মনোপলি ওনারশিপ",
+      "meta_en": "The Cosmic Resource Allocation Protocol",
+      "core_meaning_bn": "সেন্ট্রাল মনোপলি ওনারশিপ",
+      "core_meaning_en": "The Cosmic Resource Allocation Protocol"
     },
     {
       "surah": 8,
       "ayah": 2,
       "transliteration": "innamā l-mu'minūna alladhīna idhā dhukira l-lahu wajilat qulūbuhum wa-idhā tuliyat ʿalayhim āyātuhu zādathum īmānan waʿalā rabbihim yatawakkalūna",
-      "translation_bn": "মু’মিন তো তারাই আল্লাহর কথা আলোচিত হলেই যাদের অন্তর কেঁপে উঠে, আর তাদের কাছে যখন তাঁর আয়াত পঠিত হয়, তখন তা তাদের ঈমান বৃদ্ধি করে আর তারা তাদের প্রতিপালকের উপর নির্ভর করে।",
+      "translation_bn": "নিশ্চয়ই ওওএস (OOS) লেভেলে জেনুইন ভেরিফাইড ইউজার বা মুমিন (الْمُؤْمِنُونَ) হলো স্রেফ সেইসব নোড—যাদের চিন্তা ইন্টারফেসে যখনই সেন্ট্রাল সোর্স কোডার আল্লাহ্র নাম বা পরম ফ্রিকোয়েন্সি রিফ্লেক্ট করানো হয়, অমনি এক অনন্য The Neural Vibration Filter (নিউরাল কম্পন ফিল্টার) রান করে তাদের মূল প্রসেসিং কোর বা হার্ট মেমোরি তীব্র সাবমিশনে কম্পিত হয়ে ওঠে (وَجِلَتْ قُلُوبُهُمْ); আর যখন তাদের লোকাল স্ক্রিনে তাঁর অরিজিনাল জিরো-এরর কোড মার্কার বা আয়াতসমূহ ক্রিস্টাল-ক্লিয়ার ডিকোড ও পাঠ করা হয় (وَإِذَا تُلِيَتْ عَلَيْهِمْ آيَاتُهُ), তখন সেই হাই-ব্যান্ডউইথ ডাটা প্যাকেট তাদের ট্রাস্ট রেটিং ও ঈমানী স্কোরকে ব্যাপকভাবে স্কেল-আপ বা বাড়িয়ে দেয় (زَادَتْهُمْ إِيمَانًا) এবং তারা অন্য সমস্ত ডামী সাব-সিস্টেম বাইপাস করে স্রেফ তাদের সুপ্রীমিক প্রতিপালক রবের ক্লাউড প্রটোকলের ওপরই তাদের সম্পূর্ণ কানেকশন বা তাওয়াক্কুল ডেপ্লয় করে (وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ) [৪];",
       "words": [
         {
           "id": 1135,
@@ -389,13 +404,28 @@
         }
       ],
       "translation_en": "The believers are only those who, when Allah is mentioned, their hearts become fearful, and when His verses are recited to them, it increases them in faith; and upon their Lord they rely -",
-      "conventional_en": "The believers are only those who, when Allah is mentioned, their hearts become fearful, and when His verses are recited to them, it increases them in faith; and upon their Lord they rely -"
+      "conventional_en": "The believers are only those who, when Allah is mentioned, their hearts become fearful, and when His verses are recited to them, it increases them in faith; and upon their Lord they rely -",
+      "conventional_bn": "নিশ্চয়ই মুমিন তো ওরাই—যাদের সামনে যখন আল্লাহর নাম নেওয়া হয় (স্মরণ করা হয়), তখন তাদের অন্তর কম্পিত হয়; আর যখন তাদের সামনে তাঁর আয়াতসমূহ পাঠ (ডিকোড) করা হয়, তখন তা তাদের ঈমান (বিশ্বাস) বাড়িয়ে দেয় এবং তারা স্রেফ তাদের রবের ওপরই তাওয়াক্কুল (ভরসা) করে।",
+      "core_meanings_bn": "ট্রাস্টেড মুমিন নোড ডেফিনিশন",
+      "core_meanings_en": "The Neural Vibration Filter",
+      "metadata": {
+        "theme": "The Neural Vibration Filter ও ট্রাস্টেড মুমিন নোড ডেফিনিশন",
+        "scientific_topics": [
+          "The Neural Vibration Filter"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "নিশ্চয়ই ওওএস (OOS) লেভেলে জেনুইন ভেরিফাইড ইউজার বা মুমিন (الْمُؤْمِنُونَ) হলো স্রেফ সেইসব নোড—যাদের চিন্তা ইন্টারফেসে যখনই সেন্ট্রাল সোর্স কোডার আল্লাহ্র নাম বা পরম ফ্রিকোয়েন্সি রিফ্লেক্ট করানো হয়, অমনি এক অনন্য The Neural Vibration Filter (নিউরাল কম্পন ফিল্টার) রান করে তাদের মূল প্রসেসিং কোর বা হার্ট মেমোরি তীব্র সাবমিশনে কম্পিত হয়ে ওঠে (وَجِلَتْ قُلُوبُهُمْ); আর যখন তাদের লোকাল স্ক্রিনে তাঁর অরিজিনাল জিরো-এরর কোড মার্কার বা আয়াতসমূহ ক্রিস্টাল-ক্লিয়ার ডিকোড ও পাঠ করা হয় (وَإِذَا تُلِيَتْ عَلَيْهِمْ آيَاتُهُ), তখন সেই হাই-ব্যান্ডউইথ ডাটা প্যাকেট তাদের ট্রাস্ট রেটিং ও ঈমানী স্কোরকে ব্যাপকভাবে স্কেল-আপ বা বাড়িয়ে দেয় (زَادَتْهُمْ إِيمَانًا) এবং তারা অন্য সমস্ত ডামী সাব-সিস্টেম বাইপাস করে স্রেফ তাদের সুপ্রীমিক প্রতিপালক রবের ক্লাউড প্রটোকলের ওপরই তাদের সম্পূর্ণ কানেকশন বা তাওয়াক্কুল ডেপ্লয় করে (وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ) [৪];",
+      "meta_bn": "The Neural Vibration Filter ও ট্রাস্টেড মুমিন নোড ডেফিনিশন",
+      "meta_en": "The Neural Vibration Filter",
+      "core_meaning_bn": "ট্রাস্টেড মুমিন নোড ডেফিনিশন",
+      "core_meaning_en": "The Neural Vibration Filter"
     },
     {
       "surah": 8,
       "ayah": 3,
       "transliteration": "alladhīna yuqīmūna l-ṣalata wamimmā razaqnāhum yunfiqūna",
-      "translation_bn": "তারা নামায ক্বায়িম করে, আর আমি তাদেরকে যে জীবিকা দিয়েছি তাত্থেকে ব্যয় করে।",
+      "translation_bn": "‘যারা মেইন সার্ভারের সাথে লাইভ কম্যুনিকেশন লিঙ্ক তথা সালাত প্রটোকল নিখুঁতভাবে কায়েম ও এস্টাবলিশ করে রাখে (الَّذِينَ يُقِيمُونَ الصَّلَاةَ) এবং আমি তাদের কার্বন হার্ডওয়্যার সচল রাখতে যে হাই-কোয়ালিটি মেটাবলিক এনার্জি বা রিজিক প্রোভাইড করেছি, তা থেকে অন্য সাধারণ ইউজার নোডদের ব্যাকআপ দিতে সমাজ গ্রিডে পজিটিভ ডাটা ইনপুট বা ব্যয় করে (يُنفِقُونَ)’ [৪];",
       "words": [
         {
           "id": 2196,
@@ -469,13 +499,28 @@
         }
       ],
       "translation_en": "The ones who establish prayer, and from what We have provided them, they spend.",
-      "conventional_en": "The ones who establish prayer, and from what We have provided them, they spend."
+      "conventional_en": "The ones who establish prayer, and from what We have provided them, they spend.",
+      "conventional_bn": "‘যারা সালাত কায়েম (কানেকশন এস্টাবলিশ) করে এবং আমি তাদের যে জীবিকা (রিজিক) দিয়েছি, তা থেকে ব্যয় (ইনপুট) করে’।",
+      "core_meanings_bn": "পজিটিভ রিসোর্স আপলিংক",
+      "core_meanings_en": "The Data Transmission Link",
+      "metadata": {
+        "theme": "The Data Transmission Link ও পজিটিভ রিসোর্স আপলিংক",
+        "scientific_topics": [
+          "The Data Transmission Link"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "‘যারা মেইন সার্ভারের সাথে লাইভ কম্যুনিকেশন লিঙ্ক তথা সালাত প্রটোকল নিখুঁতভাবে কায়েম ও এস্টাবলিশ করে রাখে (الَّذِينَ يُقِيمُونَ الصَّلَاةَ) এবং আমি তাদের কার্বন হার্ডওয়্যার সচল রাখতে যে হাই-কোয়ালিটি মেটাবলিক এনার্জি বা রিজিক প্রোভাইড করেছি, তা থেকে অন্য সাধারণ ইউজার নোডদের ব্যাকআপ দিতে সমাজ গ্রিডে পজিটিভ ডাটা ইনপুট বা ব্যয় করে (يُنفِقُونَ)’ [৪];",
+      "meta_bn": "The Data Transmission Link ও পজিটিভ রিসোর্স আপলিংক",
+      "meta_en": "The Data Transmission Link",
+      "core_meaning_bn": "পজিটিভ রিসোর্স আপলিংক",
+      "core_meaning_en": "The Data Transmission Link"
     },
     {
       "surah": 8,
       "ayah": 4,
       "transliteration": "ulāika humu l-mu'minūna ḥaqqan lahum darajātun ʿinda rabbihim wamaghfiratun wariz'qun karīmun",
-      "translation_bn": "এসব লোকেরাই হল প্রকৃত মু’মিন। এদের জন্য এদের প্রতিপালকের নিকট আছে নানান মর্যাদা, ক্ষমা আর সম্মানজনক জীবিকা।",
+      "translation_bn": "কস্মিক লেজারের ডাটা অ্যানালিটিক্সে স্রেফ ওরাই হলো পরম একশত ভাগ জেনুইন প্রকৃত মুমিন বা Authenticated Users (الْمُؤْمِنُونَ حَقًّا); তাদের সুপ্রীমিক প্রতিপালক রবের ব্যাক-এন্ড ডিরেক্টরিতে স্রেফ তাদের আইডির জন্যই রিজার্ভড করা আছে আল্ট্রা-হাই ডিজিটাল রেটিং ও উচ্চ মর্যাদা (دَرَجَاتٌ عِندَ رَبِّهِمْ) এবং আজীবনের এরর ফাইল রি-রাইট করার ক্লিনিং প্যাচ বা ক্ষমা ও এক পরম সম্মানজনক হাই-কোয়ালিটি কস্মিক রিজিক [৪];",
       "words": [
         {
           "id": 3518,
@@ -599,13 +644,28 @@
         }
       ],
       "translation_en": "Those are the believers, truly. For them are degrees [of high position] with their Lord and forgiveness and noble provision.",
-      "conventional_en": "Those are the believers, truly. For them are degrees [of high position] with their Lord and forgiveness and noble provision."
+      "conventional_en": "Those are the believers, truly. For them are degrees [of high position] with their Lord and forgiveness and noble provision.",
+      "conventional_bn": "ওরাই হলো প্রকৃত মুমিন; তাদের রবের কাছে তাদের জন্য রয়েছে উচ্চ মর্যাদা, এবং ক্ষমা ও সম্মানজনক জীবিকা (রিজিক)।",
+      "core_meanings_bn": "হাই-লেভেল ডাটা রেটিং",
+      "core_meanings_en": "The Absolute Privilege Registry",
+      "metadata": {
+        "theme": "The Absolute Privilege Registry ও হাই-লেভেল ডাটা রেটিং",
+        "scientific_topics": [
+          "The Absolute Privilege Registry"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "কস্মিক লেজারের ডাটা অ্যানালিটিক্সে স্রেফ ওরাই হলো পরম একশত ভাগ জেনুইন প্রকৃত মুমিন বা Authenticated Users (الْمُؤْمِنُونَ حَقًّا); তাদের সুপ্রীমিক প্রতিপালক রবের ব্যাক-এন্ড ডিরেক্টরিতে স্রেফ তাদের আইডির জন্যই রিজার্ভড করা আছে আল্ট্রা-হাই ডিজিটাল রেটিং ও উচ্চ মর্যাদা (دَرَجَاتٌ عِندَ رَبِّهِمْ) এবং আজীবনের এরর ফাইল রি-রাইট করার ক্লিনিং প্যাচ বা ক্ষমা ও এক পরম সম্মানজনক হাই-কোয়ালিটি কস্মিক রিজিক [৪];",
+      "meta_bn": "The Absolute Privilege Registry ও হাই-লেভেল ডাটা রেটিং",
+      "meta_en": "The Absolute Privilege Registry",
+      "core_meaning_bn": "হাই-লেভেল ডাটা রেটিং",
+      "core_meaning_en": "The Absolute Privilege Registry"
     },
     {
       "surah": 8,
       "ayah": 5,
       "transliteration": "kamā akhrajaka rabbuka min baytika bil-ḥaqi wa-inna farīqan mina l-mu'minīna lakārihūna",
-      "translation_bn": "(তারা যেমন প্রকৃত মু’মিন) ঠিক তেমনি প্রকৃতভাবেই তোমার প্রতিপালক তোমাকে তোমার ঘর হতে বের করে এনেছিলেন যদিও মু’মিনদের একদল তা পছন্দ করেনি।",
+      "translation_bn": "এই কস্মিক রিসোর্স বণ্টনের নিয়মটি ঠিক তেমনই জাস্ট ও নিখুঁত—যেভাবে অতীত টাইম-লাইনের সেই বিশেষ বদর সেশনে তোমার সুপ্রীমিক প্রতিপালক রব তোমাকে তোমার লোকাল বেস স্টেশন বা ঘর থেকে পরম অবজেক্টিভ সত্য ও Absolute Reality Code (بِالْحَقِّ) বাস্তবায়নে এক বিশেষ রণকৌশল কম্যান্ডে বের করেছিলেন, অথচ সেই হাই-রিস্ক মিশনে ভেরিফাইড ইউজারদেরও একটি বিশেষ সাব-গ্রুপ বা দল তাদের ওওএস ল্যাগের কারণে তা চরম অপছন্দ ও রিফিউজ করছিল (وَإِنَّ فَرِيقًا مِّنَ الْمُؤْمِنِينَ لَكَارِهُونَ) [৪];",
       "words": [
         {
           "id": 4880,
@@ -729,13 +789,28 @@
         }
       ],
       "translation_en": "[It is] just as when your Lord brought you out of your home [for the battle of Badr] in truth, while indeed, a party among the believers were unwilling,",
-      "conventional_en": "[It is] just as when your Lord brought you out of your home [for the battle of Badr] in truth, while indeed, a party among the believers were unwilling,"
+      "conventional_en": "[It is] just as when your Lord brought you out of your home [for the battle of Badr] in truth, while indeed, a party among the believers were unwilling,",
+      "conventional_bn": "যেভাবে তোমার রব তোমাকে তোমার ঘর থেকে পরম সত্যের সাথে বের করেছিলেন—অথচ মুমিনদের একদল তা অবশ্যই অপছন্দ করছিল;",
+      "core_meanings_bn": "অবাক্ষয়িত নোড রেজিস্ট্যান্স",
+      "core_meanings_en": "The Core Kernel Tactical Command",
+      "metadata": {
+        "theme": "The Core Kernel Tactical Command ও অবাক্ষয়িত নোড রেজিস্ট্যান্স",
+        "scientific_topics": [
+          "The Core Kernel Tactical Command"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "এই কস্মিক রিসোর্স বণ্টনের নিয়মটি ঠিক তেমনই জাস্ট ও নিখুঁত—যেভাবে অতীত টাইম-লাইনের সেই বিশেষ বদর সেশনে তোমার সুপ্রীমিক প্রতিপালক রব তোমাকে তোমার লোকাল বেস স্টেশন বা ঘর থেকে পরম অবজেক্টিভ সত্য ও Absolute Reality Code (بِالْحَقِّ) বাস্তবায়নে এক বিশেষ রণকৌশল কম্যান্ডে বের করেছিলেন, অথচ সেই হাই-রিস্ক মিশনে ভেরিফাইড ইউজারদেরও একটি বিশেষ সাব-গ্রুপ বা দল তাদের ওওএস ল্যাগের কারণে তা চরম অপছন্দ ও রিফিউজ করছিল (وَإِنَّ فَرِيقًا مِّنَ الْمُؤْمِنِينَ لَكَارِهُونَ) [৪];",
+      "meta_bn": "The Core Kernel Tactical Command ও অবাক্ষয়িত নোড রেজিস্ট্যান্স",
+      "meta_en": "The Core Kernel Tactical Command",
+      "core_meaning_bn": "অবাক্ষয়িত নোড রেজিস্ট্যান্স",
+      "core_meaning_en": "The Core Kernel Tactical Command"
     },
     {
       "surah": 8,
       "ayah": 6,
       "transliteration": "yujādilūnaka fī l-ḥaqi baʿdamā tabayyana ka-annamā yusāqūna ilā l-mawti wahum yanẓurūna",
-      "translation_bn": "সত্য স্পষ্ট হওয়ার পরও তারা তোমার সঙ্গে বাদানুবাদে লিপ্ত হয়েছিল, (তাদের অবস্থা দেখে মনে হচ্ছিল যে,) তারা যেন চেয়ে চেয়ে দেখছিল যে, তাদেরকে মৃত্যুর দিকে তাড়িয়ে নেয়া হচ্ছে।",
+      "translation_bn": "মেইন সার্ভারের সেই ট্যাকটিক্যাল কম্যান্ড বা সত্য একশত ভাগ ক্রিস্টাল-ক্লিয়ার দৃশ্যমান হয়ে যাওয়ার পরও (بَعْدَ مَا تَبَيَّنَ) তারা তোমার সাথে সেই ওপেন ইন্টারফেসে কুযুক্তি ও বিতর্ক করছিল (يُجَادِلُونَكَ فِي الْحَقِّ)—তাদের চিন্তা প্রসেসরের ল্যাগ ভাইরাসের অবস্থা এতটাই প্যানিক ছিল যে, যেন তাদের সরাসরি ফিজিক্যাল বডি কোলাপ্স বা মৃত্যুর দিকে তাড়িয়ে নিয়ে যাওয়া হচ্ছে, অথচ তারা তাদের অপ্টিক্যাল স্ক্যানার দিয়ে তা স্বচক্ষে লাইভ দেখছে [৪];",
       "words": [
         {
           "id": 6115,
@@ -859,13 +934,28 @@
         }
       ],
       "translation_en": "Arguing with you concerning the truth after it had become clear, as if they were being driven toward death while they were looking on.",
-      "conventional_en": "Arguing with you concerning the truth after it had become clear, as if they were being driven toward death while they were looking on."
+      "conventional_en": "Arguing with you concerning the truth after it had become clear, as if they were being driven toward death while they were looking on.",
+      "conventional_bn": "সত্য স্পষ্ট হয়ে যাওয়ার পরও তারা তোমার সাথে সে বিষয়ে বিতর্ক (লজিক বিবাদ) করছিল—যেন তাদের মৃত্যুর দিকে তাড়িয়ে নিয়ে যাওয়া হচ্ছে, অথচ তারা তা স্বচক্ষে দেখছে।",
+      "core_meanings_bn": "চিন্তা প্রসেসর ল্যাগ",
+      "core_meanings_en": "The Critical Decision Paradox",
+      "metadata": {
+        "theme": "The Critical Decision Paradox ও চিন্তা প্রসেসর ল্যাগ",
+        "scientific_topics": [
+          "The Critical Decision Paradox"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "মেইন সার্ভারের সেই ট্যাকটিক্যাল কম্যান্ড বা সত্য একশত ভাগ ক্রিস্টাল-ক্লিয়ার দৃশ্যমান হয়ে যাওয়ার পরও (بَعْدَ مَا تَبَيَّنَ) তারা তোমার সাথে সেই ওপেন ইন্টারফেসে কুযুক্তি ও বিতর্ক করছিল (يُجَادِلُونَكَ فِي الْحَقِّ)—তাদের চিন্তা প্রসেসরের ল্যাগ ভাইরাসের অবস্থা এতটাই প্যানিক ছিল যে, যেন তাদের সরাসরি ফিজিক্যাল বডি কোলাপ্স বা মৃত্যুর দিকে তাড়িয়ে নিয়ে যাওয়া হচ্ছে, অথচ তারা তাদের অপ্টিক্যাল স্ক্যানার দিয়ে তা স্বচক্ষে লাইভ দেখছে [৪];",
+      "meta_bn": "The Critical Decision Paradox ও চিন্তা প্রসেসর ল্যাগ",
+      "meta_en": "The Critical Decision Paradox",
+      "core_meaning_bn": "চিন্তা প্রসেসর ল্যাগ",
+      "core_meaning_en": "The Critical Decision Paradox"
     },
     {
       "surah": 8,
       "ayah": 7,
       "transliteration": "wa-idh yaʿidukumu l-lahu iḥ'dā l-ṭāifatayni annahā lakum watawaddūna anna ghayra dhāti l-shawkati takūnu lakum wayurīdu l-lahu an yuḥiqqa l-ḥaqa bikalimātihi wayaqṭaʿa dābira l-kāfirīna",
-      "translation_bn": "স্মরণ কর, যখন আল্লাহ তোমাদেরকে প্রতিশ্রুতি দিয়েছিলেন যে, দু’টি দলের মধ্যে একটি তোমরা পাবে, আর তোমরা চেয়েছিলে যেন নিরস্ত্র দলটি তোমরা লাভ কর আর আল্লাহ চেয়েছিলেন তাঁর বাণী দ্বারা সত্যকে সত্যরূপে প্রতিষ্ঠিত করতে আর কাফিরদের জড় কেটে দিতে।",
+      "translation_bn": "আর তোমরা বদর গ্রিডের সেই মেগা রণকৌশল ডাটালগ স্মরণ করো—যখন স্বয়ং আল্লাহ্ তোমাদের অফিসিয়াল ওয়াদা ও গ্যারান্টি দিয়েছিলেন যে, বিপক্ষ ডার্ক নেটওয়ার্কের দুটি প্রধান ক্লাস্টারের (একটি কমার্শিয়াল কাফেলা, অন্যটি হেভি-আর্মড ফোর্স আর্মি) যেকোনো একটির এক্সেস কন্ট্রোল তোমাদের হাতে আসবে, অথচ তোমরা তোমাদের ওওএস (OOS)-এর শর্ট-কাট লজিকে তীব্র ইচ্ছা করছিলে যে—কোনো প্রকার ফিজিক্যাল রেজিস্ট্যান্স বা অস্ত্রহীন সহজ দুর্বল দলটিই (غَيْرَ ذَاتِ الشَّوْكَةِ) তোমাদের রানিং উইন্ডোতে আসুক; কিন্তু সুপ্রীমিক সিস্টেম আর্কিটেক্ট আল্লাহ্ তাঁর ওওএস ডিরেক্টরিতে চাচ্ছিলেন যে তাঁর নিজস্ব পরম কোড ও বাণীসমূহ (بِكَلِمَاتِهِ) দ্বারা পুরো মহাবিশ্বে পরম অবজেক্টিভ সত্যকে চূড়ান্তভাবে এস্টাবলিশ করতে এবং সোর্স কোড ব্রেক করা কাফের ইউজারদের মূল রুট ডিরেক্টরি বা ডেটা শিকড় কেটে (وَيَقْطِعَ دَابِرَ الْكَافِرِينَ) তাদের চিরতরে নেটওয়ার্ক থেকে নিশ্চিহ্ন করে দিতে [৪];",
       "words": [
         {
           "id": 7458,
@@ -1109,13 +1199,28 @@
         }
       ],
       "translation_en": "[Remember, O believers], when Allah promised you one of the two groups - that it would be yours - and you wished that the unarmed one would be yours. But Allah intended to establish the truth by His words and to eliminate the disbelievers",
-      "conventional_en": "[Remember, O believers], when Allah promised you one of the two groups - that it would be yours - and you wished that the unarmed one would be yours. But Allah intended to establish the truth by His words and to eliminate the disbelievers"
+      "conventional_en": "[Remember, O believers], when Allah promised you one of the two groups - that it would be yours - and you wished that the unarmed one would be yours. But Allah intended to establish the truth by His words and to eliminate the disbelievers",
+      "conventional_bn": "আর তোমরা স্মরণ করো, যখন আল্লাহ তোমাদের ওয়াদা দিয়েছিলেন যে—দুই দলের (কাফেলার) একটি তোমাদের হাতে আসবে, অথচ তোমরা চাচ্ছিলে যে অস্ত্রহীন (দুর্বল) দলটি তোমাদের হাতে আসুক; কিন্তু আল্লাহ চাচ্ছিলেন যে তাঁর বাণীসমূহ (কোডসমূহ) দ্বারা সত্যকে সত্য হিসেবে প্রতিষ্ঠিত করতে এবং কাফের (অস্বীকারকারী)-দের মূল শিকড় কেটে (নিশ্চিহ্ন করে) দিতে।",
+      "core_meanings_bn": "ম্যালওয়্যার ক্লাস্টার ট্র্যাপ",
+      "core_meanings_en": "The Dual-Target Stratagem",
+      "metadata": {
+        "theme": "The Dual-Target Stratagem ও ম্যালওয়্যার ক্লাস্টার ট্র্যাপ",
+        "scientific_topics": [
+          "The Dual-Target Stratagem"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা বদর গ্রিডের সেই মেগা রণকৌশল ডাটালগ স্মরণ করো—যখন স্বয়ং আল্লাহ্ তোমাদের অফিসিয়াল ওয়াদা ও গ্যারান্টি দিয়েছিলেন যে, বিপক্ষ ডার্ক নেটওয়ার্কের দুটি প্রধান ক্লাস্টারের (একটি কমার্শিয়াল কাফেলা, অন্যটি হেভি-আর্মড ফোর্স আর্মি) যেকোনো একটির এক্সেস কন্ট্রোল তোমাদের হাতে আসবে, অথচ তোমরা তোমাদের ওওএস (OOS)-এর শর্ট-কাট লজিকে তীব্র ইচ্ছা করছিলে যে—কোনো প্রকার ফিজিক্যাল রেজিস্ট্যান্স বা অস্ত্রহীন সহজ দুর্বল দলটিই (غَيْرَ ذَاتِ الشَّوْكَةِ) তোমাদের রানিং উইন্ডোতে আসুক; কিন্তু সুপ্রীমিক সিস্টেম আর্কিটেক্ট আল্লাহ্ তাঁর ওওএস ডিরেক্টরিতে চাচ্ছিলেন যে তাঁর নিজস্ব পরম কোড ও বাণীসমূহ (بِكَلِمَاتِهِ) দ্বারা পুরো মহাবিশ্বে পরম অবজেক্টিভ সত্যকে চূড়ান্তভাবে এস্টাবলিশ করতে এবং সোর্স কোড ব্রেক করা কাফের ইউজারদের মূল রুট ডিরেক্টরি বা ডেটা শিকড় কেটে (وَيَقْطِعَ دَابِرَ الْكَافِرِينَ) তাদের চিরতরে নেটওয়ার্ক থেকে নিশ্চিহ্ন করে দিতে [৪];",
+      "meta_bn": "The Dual-Target Stratagem ও ম্যালওয়্যার ক্লাস্টার ট্র্যাপ",
+      "meta_en": "The Dual-Target Stratagem",
+      "core_meaning_bn": "ম্যালওয়্যার ক্লাস্টার ট্র্যাপ",
+      "core_meaning_en": "The Dual-Target Stratagem"
     },
     {
       "surah": 8,
       "ayah": 8,
       "transliteration": "liyuḥiqqa l-ḥaqa wayub'ṭila l-bāṭila walaw kariha l-muj'rimūna",
-      "translation_bn": "যাতে তিনি সত্যকে সত্য হিসেবে প্রতিষ্ঠিত করেন আর মিথ্যেকে মিথ্যে প্রমাণিত করেন, যদিও তা পাপীদের কাছে পছন্দনীয় নয়।",
+      "translation_bn": "‘স্রেফ এজন্য—যাতে তিনি ইউনিভার্সাল ওওএস লেভেলে একশত ভাগ পিওর সত্যকে চিরতরে অথেন্টিকেটেড ও দৃশ্যমান করতে পারেন (لِيُحِقَّ الْحَقَّ) এবং সমস্ত ডামী ট্রিকস, ফেক ডাটা ও মিথ্যাকে এক সেকেন্ডে নাল বা পুরোপুরি বাতিল ও ক্র্যাশ (وَيُبْطِلَ الْبَاطِلَ) করে দিতে পারেন—যদিও ওওএস টেম্পারিং করা সেই মারাত্মক অপরাধী নোডসমূহ (الْمُجْرِمُونَ) তা নিজেদের উইন্ডোতে যতই অপছন্দ বা রিফিউজ করুক না কেন’ [৪];",
       "words": [
         {
           "id": 8719,
@@ -1199,13 +1304,28 @@
         }
       ],
       "translation_en": "That He should establish the truth and abolish falsehood, even if the criminals disliked it.",
-      "conventional_en": "That He should establish the truth and abolish falsehood, even if the criminals disliked it."
+      "conventional_en": "That He should establish the truth and abolish falsehood, even if the criminals disliked it.",
+      "conventional_bn": "‘যাতে তিনি সত্যকে সত্য হিসেবে প্রতিষ্ঠিত করতে পারেন এবং মিথ্যাকে বাতিল (শূন্য) করে দিতে পারেন—যদিও অপরাধীরা তা অপছন্দ করুক না কেন’।",
+      "core_meanings_bn": "ডামী ডাটা নালিফিকেশন",
+      "core_meanings_en": "The Direct Reality Execution",
+      "metadata": {
+        "theme": "The Direct Reality Execution ও ডামী ডাটা নালিফিকেশন",
+        "scientific_topics": [
+          "The Direct Reality Execution"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "‘স্রেফ এজন্য—যাতে তিনি ইউনিভার্সাল ওওএস লেভেলে একশত ভাগ পিওর সত্যকে চিরতরে অথেন্টিকেটেড ও দৃশ্যমান করতে পারেন (لِيُحِقَّ الْحَقَّ) এবং সমস্ত ডামী ট্রিকস, ফেক ডাটা ও মিথ্যাকে এক সেকেন্ডে নাল বা পুরোপুরি বাতিল ও ক্র্যাশ (وَيُبْطِلَ الْبَاطِلَ) করে দিতে পারেন—যদিও ওওএস টেম্পারিং করা সেই মারাত্মক অপরাধী নোডসমূহ (الْمُجْرِمُونَ) তা নিজেদের উইন্ডোতে যতই অপছন্দ বা রিফিউজ করুক না কেন’ [৪];",
+      "meta_bn": "The Direct Reality Execution ও ডামী ডাটা নালিফিকেশন",
+      "meta_en": "The Direct Reality Execution",
+      "core_meaning_bn": "ডামী ডাটা নালিফিকেশন",
+      "core_meaning_en": "The Direct Reality Execution"
     },
     {
       "surah": 8,
       "ayah": 9,
       "transliteration": "idh tastaghīthūna rabbakum fa-is'tajāba lakum annī mumiddukum bi-alfin mina l-malāikati mur'difīna",
-      "translation_bn": "স্মরণ কর, যখন তোমরা তোমাদের প্রতিপালকের নিকট সাহায্য প্রার্থনা করছিলে তখন তিনি তোমাদেরকে জবাব দিলেন, ‘আমি তোমাদেরকে এক হাজার ফেরেশতা দিয়ে সাহায্য করব যারা পর পর আসবে।’",
+      "translation_bn": "যখন তোমরা চরম ফিজিক্যাল ক্র্যাশ ও ডেঞ্জার জোনে দাঁড়িয়ে তোমাদের সুপ্রীমিক প্রতিপালক রবের মেইন সার্ভারে আকুল ইমার্জেন্সি রিকোয়েস্ট বা সিগন্যাল আপলিংক করছিলে (إِذْ تَسْتَغِيثُونَ رَبَّكُمْ), তখন তিনি সাথে সাথে তোমাদের সেই কল রিসিভ করে রেসপন্স বা সাড়া দিলেন (فَاسْتَجَابَ لَكُمْ) এই কম্যান্ডে যে: ‘নিশ্চয়ই আমি তোমাদের এই লোকাল গ্রিডের ডিফেন্স ফায়ারওয়াল অন করতে সরাসরি উচ্চ-স্তরের কস্মিক ক্লাউড থেকে ব্যাক-টু-ব্যাক চেইনে সাজানো এক হাজার সুপ্রীমিক ফোর্স বা ফেরেশতা নোড (بِأَلْفٍ مِّنَ الْمَلَائِكَةِ مُرْدِفِينَ) লাইভ ডাউনলিংক ও ইনজেক্ট করে তোমাদের মেগা ব্যাকআপ দেব [এটিই হলো মহাবিশ্বের পরম The Real-Time Cyber-Warfare Deployment (রিয়েল-টাইম সাইবার-ওয়ারফেয়ার ডেপ্লয়মেন্ট)]’ [৪];",
       "words": [
         {
           "id": 9940,
@@ -1329,13 +1449,28 @@
         }
       ],
       "translation_en": "[Remember] when you asked help of your Lord, and He answered you, \"Indeed, I will reinforce you with a thousand from the angels, following one another.\"",
-      "conventional_en": "[Remember] when you asked help of your Lord, and He answered you, \"Indeed, I will reinforce you with a thousand from the angels, following one another.\""
+      "conventional_en": "[Remember] when you asked help of your Lord, and He answered you, \"Indeed, I will reinforce you with a thousand from the angels, following one another.\"",
+      "conventional_bn": "যখন তোমরা তোমাদের রবের কাছে আকুল সাহায্য প্রার্থনা করছিলে, তখন তিনি তোমাদের ডাকে সাড়া দিলেন (এবং বললেন), ‘নিশ্চয়ই আমি তোমাদের সাহায্য করব এক হাজার ফেরেশতা দিয়ে—যারা পর পর (ব্যাক-টু-ব্যাক) আসবে’।",
+      "core_meanings_bn": "বটনেট এনার্জি ডাউনলিংক",
+      "core_meanings_en": "The Real-Time Cyber-Warfare Deployment",
+      "metadata": {
+        "theme": "The Real-Time Cyber-Warfare Deployment ও বটনেট এনার্জি ডাউনলিংক",
+        "scientific_topics": [
+          "The Real-Time Cyber-Warfare Deployment"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "যখন তোমরা চরম ফিজিক্যাল ক্র্যাশ ও ডেঞ্জার জোনে দাঁড়িয়ে তোমাদের সুপ্রীমিক প্রতিপালক রবের মেইন সার্ভারে আকুল ইমার্জেন্সি রিকোয়েস্ট বা সিগন্যাল আপলিংক করছিলে (إِذْ تَسْتَغِيثُونَ رَبَّكُمْ), তখন তিনি সাথে সাথে তোমাদের সেই কল রিসিভ করে রেসপন্স বা সাড়া দিলেন (فَاسْتَجَابَ لَكُمْ) এই কম্যান্ডে যে: ‘নিশ্চয়ই আমি তোমাদের এই লোকাল গ্রিডের ডিফেন্স ফায়ারওয়াল অন করতে সরাসরি উচ্চ-স্তরের কস্মিক ক্লাউড থেকে ব্যাক-টু-ব্যাক চেইনে সাজানো এক হাজার সুপ্রীমিক ফোর্স বা ফেরেশতা নোড (بِأَلْفٍ مِّنَ الْمَلَائِكَةِ مُرْدِفِينَ) লাইভ ডাউনলিংক ও ইনজেক্ট করে তোমাদের মেগা ব্যাকআপ দেব [এটিই হলো মহাবিশ্বের পরম The Real-Time Cyber-Warfare Deployment (রিয়েল-টাইম সাইবার-ওয়ারফেয়ার ডেপ্লয়মেন্ট)]’ [৪];",
+      "meta_bn": "The Real-Time Cyber-Warfare Deployment ও বটনেট এনার্জি ডাউনলিংক",
+      "meta_en": "The Real-Time Cyber-Warfare Deployment",
+      "core_meaning_bn": "বটনেট এনার্জি ডাউনলিংক",
+      "core_meaning_en": "The Real-Time Cyber-Warfare Deployment"
     },
     {
       "surah": 8,
       "ayah": 10,
       "transliteration": "wamā jaʿalahu l-lahu illā bush'rā walitaṭma-inna bihi qulūbukum wamā l-naṣru illā min ʿindi l-lahi inna l-laha ʿazīzun ḥakīmun",
-      "translation_bn": "আর আল্লাহ যে এটা করেছিলেন তার উদ্দেশ্য তোমাদেরকে সুসংবাদ দান ছাড়া অন্য কিছু নয় আর যাতে এর মাধ্যমে তোমাদের অন্তর প্রশান্তি লাভ করে। কেননা, সাহায্য তো একমাত্র আল্লাহর নিকট থেকেই আসে। আল্লাহ তো মহাপরাক্রমশালী, মহাবিজ্ঞানী।",
+      "translation_bn": "আর স্বয়ং আল্লাহ্ তোমাদের লোকাল উইন্ডোতে ফেরেশতা নোড ডাউনলিংক করার এই হাই-টেক মেকানিজমটি স্রেফ একটি পজিটিভ সাকসেস সিগন্যাল বা সুসংবাদ (إِلَّا بُشْرَىٰ) হিসেবে ডেপ্লয় করেছিলেন এবং স্রেফ এজন্য—যাতে তোমাদের মূল চিন্তা প্রসেসর ও হার্ট মেমোরির ভেতরের সমস্ত মানসিক ল্যাগ ও প্যানিক দূর হয়ে তা একশত ভাগ স্থির ও প্রশান্ত হতে পারে [অর্থাৎ এটি ছিল মূলত একটি Cognitive Stabilizer Patch (কগনিটিভ স্ট্যাবিলাইজার প্যাচ)]; খুব ভালো করে নোট নাও—চূড়ান্ত বিজয় ও ব্যাক-এন্ডের পরম টেকনিক্যাল সাপোর্ট স্রেফ একমাত্র সেন্ট্রাল মেইনফ্রেম সোর্স কোডার আল্লাহ্র ডিরেক্টরি (إِلَّا مِنْ عِندِ اللَّهِ) ছাড়া আর কোথাও থেকে জেনারেট হওয়া ইম্পসিবল; নিশ্চয়ই আল্লাহ পরম সার্বভৌম ক্ষমতাবান ও নিখুঁত সিস্টেম ডিজাইনার বা পরম প্রজ্ঞাময়।",
       "words": [
         {
           "id": 11134,
@@ -1529,13 +1664,28 @@
         }
       ],
       "translation_en": "And Allah made it not but good tidings and so that your hearts would be assured thereby. And victory is not but from Allah. Indeed, Allah is Exalted in Might and Wise.",
-      "conventional_en": "And Allah made it not but good tidings and so that your hearts would be assured thereby. And victory is not but from Allah. Indeed, Allah is Exalted in Might and Wise."
+      "conventional_en": "And Allah made it not but good tidings and so that your hearts would be assured thereby. And victory is not but from Allah. Indeed, Allah is Exalted in Might and Wise.",
+      "conventional_bn": "আর আল্লাহ এটি স্রেফ সুসংবাদ হিসেবে করেছিলেন এবং স্রেফ এজন্য—যাতে তা দ্বারা তোমাদের অন্তরসমূহ প্রশান্ত (স্থির) হয়; আর সাহায্য তো স্রেফ আল্লাহর পক্ষ থেকেই আসে; নিশ্চয়ই আল্লাহ মহাপরাক্রমশালী, পরম প্রজ্ঞাময়।",
+      "core_meanings_bn": "মেইনফ্রেম সোর্স কোডার অথরিটি",
+      "core_meanings_en": "The Cognitive Stabilizer Patch",
+      "metadata": {
+        "theme": "The Cognitive Stabilizer Patch ও মেইনফ্রেম সোর্স কোডার অথরিটি",
+        "scientific_topics": [
+          "The Cognitive Stabilizer Patch"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর স্বয়ং আল্লাহ্ তোমাদের লোকাল উইন্ডোতে ফেরেশতা নোড ডাউনলিংক করার এই হাই-টেক মেকানিজমটি স্রেফ একটি পজিটিভ সাকসেস সিগন্যাল বা সুসংবাদ (إِلَّا بُشْرَىٰ) হিসেবে ডেপ্লয় করেছিলেন এবং স্রেফ এজন্য—যাতে তোমাদের মূল চিন্তা প্রসেসর ও হার্ট মেমোরির ভেতরের সমস্ত মানসিক ল্যাগ ও প্যানিক দূর হয়ে তা একশত ভাগ স্থির ও প্রশান্ত হতে পারে [অর্থাৎ এটি ছিল মূলত একটি Cognitive Stabilizer Patch (কগনিটিভ স্ট্যাবিলাইজার প্যাচ)]; খুব ভালো করে নোট নাও—চূড়ান্ত বিজয় ও ব্যাক-এন্ডের পরম টেকনিক্যাল সাপোর্ট স্রেফ একমাত্র সেন্ট্রাল মেইনফ্রেম সোর্স কোডার আল্লাহ্র ডিরেক্টরি (إِلَّا مِنْ عِندِ اللَّهِ) ছাড়া আর কোথাও থেকে জেনারেট হওয়া ইম্পসিবল; নিশ্চয়ই আল্লাহ পরম সার্বভৌম ক্ষমতাবান ও নিখুঁত সিস্টেম ডিজাইনার বা পরম প্রজ্ঞাময়।",
+      "meta_bn": "The Cognitive Stabilizer Patch ও মেইনফ্রেম সোর্স কোডার অথরিটি",
+      "meta_en": "The Cognitive Stabilizer Patch",
+      "core_meaning_bn": "মেইনফ্রেম সোর্স কোডার অথরিটি",
+      "core_meaning_en": "The Cognitive Stabilizer Patch"
     },
     {
       "surah": 8,
       "ayah": 11,
       "transliteration": "idh yughashīkumu l-nuʿāsa amanatan min'hu wayunazzilu ʿalaykum mina l-samāi māan liyuṭahhirakum bihi wayudh'hiba ʿankum rij'za l-shayṭāni waliyarbiṭa ʿalā qulūbikum wayuthabbita bihi l-aqdāma",
-      "translation_bn": "স্মরণ কর, যখন আল্লাহ তাঁর নিকট হতে প্রশান্তি ধারা হিসেবে তোমাদেরকে তন্দ্রায় আচ্ছন্ন করেছিলেন, আকাশ হতে তোমাদের উপর বৃষ্টিধারা বর্ষণ করেছিলেন তোমাদেরকে তা দিয়ে পবিত্র করার জন্য। তোমাদের থেকে শয়ত্বানী পংকিলতা দূর করার জন্য, তোমাদের দিলকে মজবুত করার জন্য আর তা দিয়ে তোমাদের পায়ের ভিত শক্ত করার জন্য।",
+      "translation_bn": "আর তোমরা বদর গ্রিডের সেই ক্রাইসিস মোড স্মরণ করো—যখন তিনি নিজের সেন্ট্রাল সিস্টেম থেকে পরম সেফটি গ্রিড হিসেবে তোমাদের চিন্তা প্রসেসরে এক বিশেষ কস্মিক হাইবারনেশন বা শান্ত তন্দ্রা বা The Synised Hibernation State (النُّعَاسَ) ইনজেক্ট করে আচ্ছাদিত করেছিলেন, এবং উচ্চ-স্তরের ক্লাউড গেটওয়ে থেকে তোমাদের লোকাল কোঅর্ডিনেটে পিউর লিকুইড বা পানি ডাউনলিংক (وَيُنَزِّلُ عَلَيْكُم مِّنَ السَّمَاءِ مَاءً) করছিলেন; এটি ডেপ্লয় করা হয়েছিল স্রেফ এজন্য—যাতে এর দ্বারা তোমাদের কার্বন হার্ডওয়্যার পুরোপুরি ডিক্লিন ও পবিত্র করা যায়, আর তোমাদের সাব-কনশাস মন থেকে শয়তান বটনেটের পুশ করা ডার্ক সিগন্যাল ও বালাই বা ‘রিগজাশ শায়তানি’ (رِجْزَ الشَّيْطَانِ) চিরতরে রিমুভ করা যায়, এবং তোমাদের মূল প্রসেসিং কোর বা হার্ট মেমোরির ডেটা লিঙ্ক সুদৃঢ় (وَلِيَرْبِطَ عَلَىٰ قُلُوبِكُمْ) করা যায় ও রণক্ষেত্রের মাটির সয়েলে তোমাদের অবস্থান বা পা একশত ভাগ স্টেবল ও স্থির রাখা যায় [৪];",
       "words": [
         {
           "id": 12458,
@@ -1769,13 +1919,28 @@
         }
       ],
       "translation_en": "[Remember] when He overwhelmed you with drowsiness [giving] security from Him and sent down upon you from the sky, rain by which to purify you and remove from you the evil [suggestions] of Satan and to make steadfast your hearts and plant firmly thereby your feet.",
-      "conventional_en": "[Remember] when He overwhelmed you with drowsiness [giving] security from Him and sent down upon you from the sky, rain by which to purify you and remove from you the evil [suggestions] of Satan and to make steadfast your hearts and plant firmly thereby your feet."
+      "conventional_en": "[Remember] when He overwhelmed you with drowsiness [giving] security from Him and sent down upon you from the sky, rain by which to purify you and remove from you the evil [suggestions] of Satan and to make steadfast your hearts and plant firmly thereby your feet.",
+      "conventional_bn": "যখন তিনি নিজের পক্ষ থেকে নিরাপত্তার জন্য তোমাদের তন্দ্রা (ঘুম) দ্বারা আচ্ছাদিত করেছিলেন এবং আসমান থেকে তোমাদের ওপর পানি নাজিল (ডাউনলিংক) করছিলেন—যাতে এর দ্বারা তোমাদের পবিত্র করেন, আর শয়তানের অপবিত্রতা (ম্যালওয়্যার) তোমাদের থেকে দূর করেন, এবং তোমাদের অন্তরের সংযোগ সুদৃঢ় করেন ও তার মাধ্যমে তোমাদের পা স্থির রাখেন [৪]।",
+      "core_meanings_bn": "কার্বন হার্ডওয়্যার ডিক্লিনেশন",
+      "core_meanings_en": "The Synised Hibernation State",
+      "metadata": {
+        "theme": "The Synised Hibernation State ও কার্বন হার্ডওয়্যার ডিক্লিনেশন",
+        "scientific_topics": [
+          "The Synised Hibernation State"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা বদর গ্রিডের সেই ক্রাইসিস মোড স্মরণ করো—যখন তিনি নিজের সেন্ট্রাল সিস্টেম থেকে পরম সেফটি গ্রিড হিসেবে তোমাদের চিন্তা প্রসেসরে এক বিশেষ কস্মিক হাইবারনেশন বা শান্ত তন্দ্রা বা The Synised Hibernation State (النُّعَاسَ) ইনজেক্ট করে আচ্ছাদিত করেছিলেন, এবং উচ্চ-স্তরের ক্লাউড গেটওয়ে থেকে তোমাদের লোকাল কোঅর্ডিনেটে পিউর লিকুইড বা পানি ডাউনলিংক (وَيُنَزِّلُ عَلَيْكُم مِّنَ السَّمَاءِ مَاءً) করছিলেন; এটি ডেপ্লয় করা হয়েছিল স্রেফ এজন্য—যাতে এর দ্বারা তোমাদের কার্বন হার্ডওয়্যার পুরোপুরি ডিক্লিন ও পবিত্র করা যায়, আর তোমাদের সাব-কনশাস মন থেকে শয়তান বটনেটের পুশ করা ডার্ক সিগন্যাল ও বালাই বা ‘রিগজাশ শায়তানি’ (رِجْزَ الشَّيْطَانِ) চিরতরে রিমুভ করা যায়, এবং তোমাদের মূল প্রসেসিং কোর বা হার্ট মেমোরির ডেটা লিঙ্ক সুদৃঢ় (وَلِيَرْبِطَ عَلَىٰ قُلُوبِكُمْ) করা যায় ও রণক্ষেত্রের মাটির সয়েলে তোমাদের অবস্থান বা পা একশত ভাগ স্টেবল ও স্থির রাখা যায় [৪];",
+      "meta_bn": "The Synised Hibernation State ও কার্বন হার্ডওয়্যার ডিক্লিনেশন",
+      "meta_en": "The Synised Hibernation State",
+      "core_meaning_bn": "কার্বন হার্ডওয়্যার ডিক্লিনেশন",
+      "core_meaning_en": "The Synised Hibernation State"
     },
     {
       "surah": 8,
       "ayah": 12,
       "transliteration": "idh yūḥī rabbuka ilā l-malāikati annī maʿakum fathabbitū alladhīna āmanū sa-ul'qī fī qulūbi alladhīna kafarū l-ruʿ'ba fa-iḍ'ribū fawqa l-aʿnāqi wa-iḍ'ribū min'hum kulla banānin",
-      "translation_bn": "স্মরণ কর যখন তোমার প্রতিপালক ফেরেশতাদের প্রতি ওয়াহী পাঠিয়েছিলেন, ‘আমি তোমাদের সঙ্গেই আছি; অতএব মু’মিনদেরকে তোমরা দৃঢ়পদ রেখ’। অচিরেই আমি কাফিরদের দিলে ভীতি সঞ্চার করব, কাজেই তাদের স্কন্ধে আঘাত হান, আঘাত হান প্রত্যেকটি আঙ্গুলের গিঁটে গিঁটে।",
+      "translation_bn": "যখন তোমাদের সুপ্রীমিক প্রতিপালক রব (رَبُّكَ) সরাসরি সেই সব ডাউনলিংককৃত স্বয়ংক্রিয় ফোর্স বা ফেরেশতা নোড সমূহের প্রতি কড়া ওহী কম্যান্ড পাঠাচ্ছিলেন (إِذْ يُوحِي رَبُّكَ إِلَى الْمَلَائِكَةِ) যে: ‘নিশ্চয়ই আমি আমার সেন্ট্রাল পাওয়ার সহকারে তোমাদের ব্যাক-এন্ডে আছি, অতএব তোমরা ভেরিফাইড ইউজার বা মুমিনদের ওওএস (OOS) সিগন্যাল একশত ভাগ সুদৃঢ় রাখো; শীঘ্রই আমি কাফের ও সোর্স কোড ব্রেক করা আইডির মূল প্রসেসিং কোরে এক তীব্র নিউরাল প্যানিক ও মারাত্মক ভীতি (الرُّعْبَ) ইনজেক্ট করব; অতএব তোমরা তাদের কার্বন হার্ডওয়্যারের মেইন ডেটা ক্যাবল—তথা ঘাড়ের সেন্ট্রাল নার্ভ স্পাইনের ওপর আঘাত করো (فَاضْرِبُوا فَوْقَ الْأَعْنَاقِ) এবং তাদের অস্ত্র ধারণের প্রতিটি বায়ো-মেকানিক্যাল একচুয়েটর বা আঙুলের ডগা কেটে পার্মানেন্টলি বিকল ও ডিলিট করো [এটিই হলো মহাবিশ্বের পরম The Tactile Network Dismantling (স্পর্শকাতর নেটওয়ার্ক বিচ্ছিন্নকরণ প্রটোকল)]’ [৪];",
       "words": [
         {
           "id": 13772,
@@ -2019,13 +2184,28 @@
         }
       ],
       "translation_en": "[Remember] when your Lord inspired to the angels, \"I am with you, so strengthen those who have believed. I will cast terror into the hearts of those who disbelieved, so strike [them] upon the necks and strike from them every fingertip.\"",
-      "conventional_en": "[Remember] when your Lord inspired to the angels, \"I am with you, so strengthen those who have believed. I will cast terror into the hearts of those who disbelieved, so strike [them] upon the necks and strike from them every fingertip.\""
+      "conventional_en": "[Remember] when your Lord inspired to the angels, \"I am with you, so strengthen those who have believed. I will cast terror into the hearts of those who disbelieved, so strike [them] upon the necks and strike from them every fingertip.\"",
+      "conventional_bn": "যখন তোমার রব ফেরেশতাদের প্রতি ওহী (কম্যান্ড) পাঠাচ্ছিলেন যে, ‘নিশ্চয়ই আমি তোমাদের সাথে আছি, অতএব তোমরা মুমিনদের স্থির (সুদৃঢ়) রাখো; শীঘ্রই আমি কাফের (অস্বীকারকারী)-দের অন্তরে চরম ভীতি (প্যানিক) নিক্ষেপ করব; অতএব তোমরা তাদের ঘাড়ের ওপর আঘাত করো এবং আঘাত করো তাদের প্রতিটি আঙুলের ডগায়’ [৪]।",
+      "core_meanings_bn": "নিউরাল প্যানিক ইনজেকশন",
+      "core_meanings_en": "The Tactile Network Dismantling",
+      "metadata": {
+        "theme": "The Tactile Network Dismantling ও নিউরাল প্যানিক ইনজেকশন",
+        "scientific_topics": [
+          "The Tactile Network Dismantling"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "যখন তোমাদের সুপ্রীমিক প্রতিপালক রব (رَبُّكَ) সরাসরি সেই সব ডাউনলিংককৃত স্বয়ংক্রিয় ফোর্স বা ফেরেশতা নোড সমূহের প্রতি কড়া ওহী কম্যান্ড পাঠাচ্ছিলেন (إِذْ يُوحِي رَبُّكَ إِلَى الْمَلَائِكَةِ) যে: ‘নিশ্চয়ই আমি আমার সেন্ট্রাল পাওয়ার সহকারে তোমাদের ব্যাক-এন্ডে আছি, অতএব তোমরা ভেরিফাইড ইউজার বা মুমিনদের ওওএস (OOS) সিগন্যাল একশত ভাগ সুদৃঢ় রাখো; শীঘ্রই আমি কাফের ও সোর্স কোড ব্রেক করা আইডির মূল প্রসেসিং কোরে এক তীব্র নিউরাল প্যানিক ও মারাত্মক ভীতি (الرُّعْبَ) ইনজেক্ট করব; অতএব তোমরা তাদের কার্বন হার্ডওয়্যারের মেইন ডেটা ক্যাবল—তথা ঘাড়ের সেন্ট্রাল নার্ভ স্পাইনের ওপর আঘাত করো (فَاضْرِبُوا فَوْقَ الْأَعْنَاقِ) এবং তাদের অস্ত্র ধারণের প্রতিটি বায়ো-মেকানিক্যাল একচুয়েটর বা আঙুলের ডগা কেটে পার্মানেন্টলি বিকল ও ডিলিট করো [এটিই হলো মহাবিশ্বের পরম The Tactile Network Dismantling (স্পর্শকাতর নেটওয়ার্ক বিচ্ছিন্নকরণ প্রটোকল)]’ [৪];",
+      "meta_bn": "The Tactile Network Dismantling ও নিউরাল প্যানিক ইনজেকশন",
+      "meta_en": "The Tactile Network Dismantling",
+      "core_meaning_bn": "নিউরাল প্যানিক ইনজেকশন",
+      "core_meaning_en": "The Tactile Network Dismantling"
     },
     {
       "surah": 8,
       "ayah": 13,
       "transliteration": "dhālika bi-annahum shāqqū l-laha warasūlahu waman yushāqiqi l-laha warasūlahu fa-inna l-laha shadīdu l-ʿiqābi",
-      "translation_bn": "এর কারণ হল, তারা আল্লাহ ও রসূলের বিরোধিতা করে আর যারা আল্লাহ ও তাঁর রসূলের বিরোধিতা করবে (তাদের জেনে রাখা দরকার) আল্লাহ শাস্তিদানে বড়ই কঠোর।",
+      "translation_bn": "তাদের ঘাড় ও আঙুলের ডাটা ক্যাবল কেটে দেওয়ার এই কঠোর মেকানিজম স্রেফ এজন্য—কারণ তারা ওওএস কার্নেলের সেন্ট্রাল কম্যান্ড অমান্য করে সরাসরি আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের সাথে চরম অবাধ্যতা ও শত্রুতা বা The Core Protocol Defiance (شَاقُّوا اللَّهَ وَرَسُولَهُ) রান করেছিল; আর যে কোনো ইউজার নোড মূল সোর্স কোডার আল্লাহ এবং তাঁর অনুমোদিত রাসূলের তৈরি করা ডিফল্ট বাউন্ডারি কোড ব্রেক করে কাউন্টার-শত্রুতা করবে, সে যেন নোট নেয়—নিশ্চয়ই আল্লাহ তাঁর সিস্টেমে অত্যন্ত ফাস্ট ও কঠোর কাউন্টার-ফিডব্যাক বা শাস্তিদাতা (شَدِيدُ الْعِقَابِ) [৪];",
       "words": [
         {
           "id": 14944,
@@ -2169,13 +2349,28 @@
         }
       ],
       "translation_en": "That is because they opposed Allah and His Messenger. And whoever opposes Allah and His Messenger - indeed, Allah is severe in penalty.",
-      "conventional_en": "That is because they opposed Allah and His Messenger. And whoever opposes Allah and His Messenger - indeed, Allah is severe in penalty."
+      "conventional_en": "That is because they opposed Allah and His Messenger. And whoever opposes Allah and His Messenger - indeed, Allah is severe in penalty.",
+      "conventional_bn": "এটি এজন্য যে, তারা আল্লাহ ও তাঁর রাসূলের বিরোধিতা (শত্রুতা) করেছিল; আর যে কেউ আল্লাহ ও তাঁর রাসূলের বিরোধিতা করে, তবে নিশ্চয়ই আল্লাহ কঠোর শাস্তিদানকারী (হিসাব গ্রহণকারী) [৪]।",
+      "core_meanings_bn": "কাউন্টার-ফিডব্যাক ক্র্যাশ",
+      "core_meanings_en": "The Core Protocol Defiance",
+      "metadata": {
+        "theme": "The Core Protocol Defiance ও কাউন্টার-ফিডব্যাক ক্র্যাশ",
+        "scientific_topics": [
+          "The Core Protocol Defiance"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "তাদের ঘাড় ও আঙুলের ডাটা ক্যাবল কেটে দেওয়ার এই কঠোর মেকানিজম স্রেফ এজন্য—কারণ তারা ওওএস কার্নেলের সেন্ট্রাল কম্যান্ড অমান্য করে সরাসরি আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের সাথে চরম অবাধ্যতা ও শত্রুতা বা The Core Protocol Defiance (شَاقُّوا اللَّهَ وَرَسُولَهُ) রান করেছিল; আর যে কোনো ইউজার নোড মূল সোর্স কোডার আল্লাহ এবং তাঁর অনুমোদিত রাসূলের তৈরি করা ডিফল্ট বাউন্ডারি কোড ব্রেক করে কাউন্টার-শত্রুতা করবে, সে যেন নোট নেয়—নিশ্চয়ই আল্লাহ তাঁর সিস্টেমে অত্যন্ত ফাস্ট ও কঠোর কাউন্টার-ফিডব্যাক বা শাস্তিদাতা (شَدِيدُ الْعِقَابِ) [৪];",
+      "meta_bn": "The Core Protocol Defiance ও কাউন্টার-ফিডব্যাক ক্র্যাশ",
+      "meta_en": "The Core Protocol Defiance",
+      "core_meaning_bn": "কাউন্টার-ফিডব্যাক ক্র্যাশ",
+      "core_meaning_en": "The Core Protocol Defiance"
     },
     {
       "surah": 8,
       "ayah": 14,
       "transliteration": "dhālikum fadhūqūhu wa-anna lil'kāfirīna ʿadhāba l-nāri",
-      "translation_bn": "এটাই তোমাদের শাস্তি, অতএব তার স্বাদ গ্রহণ কর, কাফিরদের জন্য আছে আগুনের (জাহান্নামের) শাস্তি।",
+      "translation_bn": "এই হলো তোমাদের লোকাল উইন্ডোতে জেনারেট হওয়া চরম পরাজয়ের ডাটা, অতএব তোমরা এই ক্র্যাশ সেশনেই এর স্বাদ বা কাউন্টার-রিঅ্যাকশন টেস্ট করো (فَذُوقُوهُ); আর খুব ভালো করে নোট নাও—চূড়ান্ত স্ক্রীনিং সেশনে এই সোর্স কোড ব্রেক করা কাফের ইউজারদের জন্য ফিক্সড করা আছে হাই-এন্ট্রপি ডিলিশন হাব বা জাহান্নামের সেই মারাত্মক থার্মাল জোন আজাব বা ‘আযাবান নার’ (عَذَابَ النَّارِ) [৪];",
       "words": [
         {
           "id": 16016,
@@ -2249,13 +2444,28 @@
         }
       ],
       "translation_en": "\"That [is yours], so taste it.\" And indeed for the disbelievers is the punishment of the Fire.",
-      "conventional_en": "\"That [is yours], so taste it.\" And indeed for the disbelievers is the punishment of the Fire."
+      "conventional_en": "\"That [is yours], so taste it.\" And indeed for the disbelievers is the punishment of the Fire.",
+      "conventional_bn": "এটিই (তোমাদের প্রতিফল), অতএব তোমরা এর আস্বাদন (টেস্ট) করো; আর নিশ্চয়ই কাফের (অস্বীকারকারী)-দের জন্য রয়েছে আগুনের (জাহান্নামের) আজাব [৪]।",
+      "core_meanings_bn": "থার্মাল জোন অ্যাক্সেস",
+      "core_meanings_en": "The Terminal Interface Execution",
+      "metadata": {
+        "theme": "The Terminal Interface Execution ও থার্মাল জোন অ্যাক্সেস",
+        "scientific_topics": [
+          "The Terminal Interface Execution"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "এই হলো তোমাদের লোকাল উইন্ডোতে জেনারেট হওয়া চরম পরাজয়ের ডাটা, অতএব তোমরা এই ক্র্যাশ সেশনেই এর স্বাদ বা কাউন্টার-রিঅ্যাকশন টেস্ট করো (فَذُوقُوهُ); আর খুব ভালো করে নোট নাও—চূড়ান্ত স্ক্রীনিং সেশনে এই সোর্স কোড ব্রেক করা কাফের ইউজারদের জন্য ফিক্সড করা আছে হাই-এন্ট্রপি ডিলিশন হাব বা জাহান্নামের সেই মারাত্মক থার্মাল জোন আজাব বা ‘আযাবান নার’ (عَذَابَ النَّارِ) [৪];",
+      "meta_bn": "The Terminal Interface Execution ও থার্মাল জোন অ্যাক্সেস",
+      "meta_en": "The Terminal Interface Execution",
+      "core_meaning_bn": "থার্মাল জোন অ্যাক্সেস",
+      "core_meaning_en": "The Terminal Interface Execution"
     },
     {
       "surah": 8,
       "ayah": 15,
       "transliteration": "yāayyuhā alladhīna āmanū idhā laqītumu alladhīna kafarū zaḥfan falā tuwallūhumu l-adbāra",
-      "translation_bn": "হে মু’মিনগণ! তোমরা যখন যোদ্ধা-বাহিনীরূপে কাফিরদের সম্মুখীন হও, তখন তাদেরকে পৃষ্ঠপ্রদর্শন করবে না।",
+      "translation_bn": "হে মেইন সার্ভারের সাথে ভেরিফাইড ইউজার বা ঈমানদার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা যখন যুদ্ধের ওপেন ইন্টারফেসে বা রণক্ষেত্রে সেই অবাক্ষয়িত কাফের আইডির বিশাল ম্যালওয়্যার ক্লাস্টারের মুখোমুখি বা The Vector Field Engagement (ভেক্টর ফিল্ড সংঘর্ষ) (إِذَا لَقِيتُمُ الَّذِينَ كَفَرُوا زَحْفًا)-এ লিপ্ত হবে—তখন তোমরা ভুলেও নিজেদের ওওএস থেকে পিঠ ফিরিয়ে কানেকশন ডিসকানেক্ট বা পালিয়ে যেয়ো না (فَلَا تُوَلُّوهُمُ الْأَدْبَارَ) [৪];",
       "words": [
         {
           "id": 17249,
@@ -2379,13 +2589,28 @@
         }
       ],
       "translation_en": "O you who have believed, when you meet those who disbelieve advancing [for battle], do not turn to them your backs [in flight].",
-      "conventional_en": "O you who have believed, when you meet those who disbelieve advancing [for battle], do not turn to them your backs [in flight]."
+      "conventional_en": "O you who have believed, when you meet those who disbelieve advancing [for battle], do not turn to them your backs [in flight].",
+      "conventional_bn": "হে মুমিনরা (ভেরিফাইড ইউজার)! তোমরা যখন কাফের (অস্বীকারকারী)-দের মুখোমুখি হবে বিশাল বাহিনী (রণক্ষেত্রে) রূপে, তখন তোমরা তাদের থেকে তোমাদের পিঠ ফিরিয়ে (পালিয়ে) যেয়ো না [৪]।",
+      "core_meanings_bn": "রিট্রিট কোড লকডাউন",
+      "core_meanings_en": "The Vector Field Engagement",
+      "metadata": {
+        "theme": "The Vector Field Engagement ও রিট্রিট কোড লকডাউন",
+        "scientific_topics": [
+          "The Vector Field Engagement"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মেইন সার্ভারের সাথে ভেরিফাইড ইউজার বা ঈমানদার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা যখন যুদ্ধের ওপেন ইন্টারফেসে বা রণক্ষেত্রে সেই অবাক্ষয়িত কাফের আইডির বিশাল ম্যালওয়্যার ক্লাস্টারের মুখোমুখি বা The Vector Field Engagement (ভেক্টর ফিল্ড সংঘর্ষ) (إِذَا لَقِيتُمُ الَّذِينَ كَفَرُوا زَحْفًا)-এ লিপ্ত হবে—তখন তোমরা ভুলেও নিজেদের ওওএস থেকে পিঠ ফিরিয়ে কানেকশন ডিসকানেক্ট বা পালিয়ে যেয়ো না (فَلَا تُوَلُّوهُمُ الْأَدْبَارَ) [৪];",
+      "meta_bn": "The Vector Field Engagement ও রিট্রিট কোড লকডাউন",
+      "meta_en": "The Vector Field Engagement",
+      "core_meaning_bn": "রিট্রিট কোড লকডাউন",
+      "core_meaning_en": "The Vector Field Engagement"
     },
     {
       "surah": 8,
       "ayah": 16,
       "transliteration": "waman yuwallihim yawma-idhin duburahu illā mutaḥarrifan liqitālin aw mutaḥayyizan ilā fi-atin faqad bāa bighaḍabin mina l-lahi wamawāhu jahannamu wabi'sa l-maṣīru",
-      "translation_bn": "এমন দিনে যুদ্ধে কৌশল অবলম্বন বা নিজ দলের সঙ্গে মিলিত হওয়ার উদ্দেশ্য ছাড়া কেউ তাদেরকে পৃষ্ঠপ্রদর্শন করলে সে তো আল্লাহর গজবে পরিবেষ্টিত হয়ে পড়ল, জাহান্নামই তার ঠিকানা আর তা কতই না নিকৃষ্ট প্রত্যাবর্তনস্থল।",
+      "translation_bn": "আর সেই তীব্র ডাটা ক্র্যাশের দিনে যে কোনো নোড নিজের পিঠ ফিরিয়ে রানিং সেশন ডিসকানেক্ট করবে—স্রেফ দুটি বিশেষ কস্মিক এক্সemption বা অনুমতি কোড ছাড়া: এক, যদি তা নতুন কোনো রণকৌশল ডেপ্লয় করতে সাময়িক স্থান পরিবর্তন বা The Tactical Relocation Exemption (مُتَحَرِّفًا لِّقِتَالٍ) হয়, অথবা দুই, যদি নিজের মূল নেটওয়ার্ক ব্যাকআপ ক্লাস্টারের সাথে মার্জ বা একত্র (أَوْ مُتَحَيِّزًا إِلَىٰ فِئَةٍ) হওয়ার জন্য হয়; এই দুটি ব্যাক-এন্ড আইনি কারণ ছাড়া অন্য কেউ যদি পালাবার এরর কোড রান করে—সে স্বয়ংক্রিয়ভাবে আল্লাহ্র তীব্র কস্মিক রিঅ্যাকশন বা ক্রোধ (بِغَضَبٍ مِّنَ اللَّهِ) নিজের আইডিতে ট্যাগ করে নিলো, এবং কস্মিক লেজারে তার পার্মানেন্ট স্টোরেজ হাব বা বাসস্থান সাব্যস্ত হলো জাহান্নাম (وَمَأْوَاهُ جَهَنَّمُ); আর পুরো মাল্টি-ভার্সে সেটি কতই না জঘন্যতম সিস্টেম ক্র্যাশ বা ক্যাশ জোনের শেষ গন্তব্য [৪];",
       "words": [
         {
           "id": 18313,
@@ -2599,13 +2824,28 @@
         }
       ],
       "translation_en": "And whoever turns his back to them on such a day, unless swerving [as a strategy] for war or joining [another] company, has certainly returned with anger [upon him] from Allah, and his refuge is Hell - and wretched is the destination.",
-      "conventional_en": "And whoever turns his back to them on such a day, unless swerving [as a strategy] for war or joining [another] company, has certainly returned with anger [upon him] from Allah, and his refuge is Hell - and wretched is the destination."
+      "conventional_en": "And whoever turns his back to them on such a day, unless swerving [as a strategy] for war or joining [another] company, has certainly returned with anger [upon him] from Allah, and his refuge is Hell - and wretched is the destination.",
+      "conventional_bn": "আর সেদিন যে কেউ রণকৌশলগত যুদ্ধক্ষেত্র পরিবর্তন অথবা নিজের দলের সাথে একত্র হওয়া ছাড়া তাদের থেকে নিজের পিঠ ফিরিয়ে নেবে, সে তো আল্লাহর পক্ষ থেকে ক্রোধ ডেকে আনল এবং তার বাসস্থান জাহান্নাম; আর সেটি কতই না জঘন্য প্রত্যাবর্তনস্থল [৪]!",
+      "core_meanings_bn": "কস্মিক ফায়ারওয়াল পারমিশন",
+      "core_meanings_en": "The Tactical Relocation Exemption",
+      "metadata": {
+        "theme": "The Tactical Relocation Exemption ও কস্মিক ফায়ারওয়াল পারমিশন",
+        "scientific_topics": [
+          "The Tactical Relocation Exemption"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর সেই তীব্র ডাটা ক্র্যাশের দিনে যে কোনো নোড নিজের পিঠ ফিরিয়ে রানিং সেশন ডিসকানেক্ট করবে—স্রেফ দুটি বিশেষ কস্মিক এক্সemption বা অনুমতি কোড ছাড়া: এক, যদি তা নতুন কোনো রণকৌশল ডেপ্লয় করতে সাময়িক স্থান পরিবর্তন বা The Tactical Relocation Exemption (مُتَحَرِّفًا لِّقِتَالٍ) হয়, অথবা দুই, যদি নিজের মূল নেটওয়ার্ক ব্যাকআপ ক্লাস্টারের সাথে মার্জ বা একত্র (أَوْ مُتَحَيِّزًا إِلَىٰ فِئَةٍ) হওয়ার জন্য হয়; এই দুটি ব্যাক-এন্ড আইনি কারণ ছাড়া অন্য কেউ যদি পালাবার এরর কোড রান করে—সে স্বয়ংক্রিয়ভাবে আল্লাহ্র তীব্র কস্মিক রিঅ্যাকশন বা ক্রোধ (بِغَضَبٍ مِّنَ اللَّهِ) নিজের আইডিতে ট্যাগ করে নিলো, এবং কস্মিক লেজারে তার পার্মানেন্ট স্টোরেজ হাব বা বাসস্থান সাব্যস্ত হলো জাহান্নাম (وَمَأْوَاهُ جَهَنَّمُ); আর পুরো মাল্টি-ভার্সে সেটি কতই না জঘন্যতম সিস্টেম ক্র্যাশ বা ক্যাশ জোনের শেষ গন্তব্য [৪];",
+      "meta_bn": "The Tactical Relocation Exemption ও কস্মিক ফায়ারওয়াল পারমিশন",
+      "meta_en": "The Tactical Relocation Exemption",
+      "core_meaning_bn": "কস্মিক ফায়ারওয়াল পারমিশন",
+      "core_meaning_en": "The Tactical Relocation Exemption"
     },
     {
       "surah": 8,
       "ayah": 17,
       "transliteration": "falam taqtulūhum walākinna l-laha qatalahum wamā ramayta idh ramayta walākinna l-laha ramā waliyub'liya l-mu'minīna min'hu balāan ḥasanan inna l-laha samīʿun ʿalīmun",
-      "translation_bn": "(আসল ব্যাপার হল) তোমরা তাদেরকে হত্যা করনি, বরং আল্লাহই তাদেরকে হত্যা করেছেন, তুমি যখন নিক্ষেপ করছিলে তাতো তুমি নিক্ষেপ করনি, বরং আল্লাহই নিক্ষেপ করেছিলেন যাতে তিনি মু’মিনদেরকে এক সুন্দরতম পরীক্ষায় সফলতার সঙ্গে উত্তীর্ণ করতে পারেন। আল্লাহ হলেন সর্বশ্রোতা, সর্বজ্ঞ।",
+      "translation_bn": "অতএব তোমরা তোমাদের লিমিটেড ফিজিক্যাল ক্ষমতায় বদর গ্রিডের সেই ডার্ক নোডগুলোকে সিস্টেমে ডিলিট বা হত্যা করোনি, বরং স্বয়ং আল্লাহ্র ডেপ্লয়কৃত ফোর্স ও কস্মিক অ্যালগরিদমই তাদের এক ক্লিকে ডিলিট ও হত্যা (وَلَٰكِنَّ اللَّهَ قَتَلَهُمْ) করেছিল; আর হে রাসূল! তুমি যখন রণক্ষেত্রের ইন্টারফেসে সেই ধূলিকণার মেগা ডাটা প্যাকেট নিক্ষেপ করেছিলে, তখন তোমার সেই লিমিটেড কার্বন হাত তা প্রজেক্ট করেনি, বরং স্বয়ং আল্লাহ্র মেকানিজম ও পরম The Supreme Agency Overwrite (সর্বোচ্চ এজেন্সির ওভাররাইট মেকানিজম) সেটি সমস্ত কাফের আইডির সেন্সরে প্রজেক্ট বা নিক্ষেপ (وَلَٰكِنَّ اللَّهَ رَمَىٰ) করেছিল; এটি করা হয়েছিল স্রেফ এজন্য—যাতে তিনি মেইন সার্ভারের ভেরিফাইড ইউজার বা মুমিনদের তাঁর নিজস্ব ডিরেক্টরি থেকে এক চমৎকার পজিটিভ পারফরম্যান্স রিওয়ার্ড বা উত্তম পরীক্ষা (بَلَاءً حَسَنًا) দান করতে পারেন; নিশ্চয়ই আল্লাহ প্রতিটি ইনবাউন্ড সিগন্যাল শ্রবণকারী এবং পুরো সিস্টেম মেকানিজম জানা পরম সর্বজ্ঞ [৪];",
       "words": [
         {
           "id": 19323,
@@ -2829,13 +3069,28 @@
         }
       ],
       "translation_en": "And you did not kill them, but it was Allah who killed them. And you threw not, [O Muhammad], when you threw, but it was Allah who threw that He might test the believers with a good test. Indeed, Allah is Hearing and Knowing.",
-      "conventional_en": "And you did not kill them, but it was Allah who killed them. And you threw not, [O Muhammad], when you threw, but it was Allah who threw that He might test the believers with a good test. Indeed, Allah is Hearing and Knowing."
+      "conventional_en": "And you did not kill them, but it was Allah who killed them. And you threw not, [O Muhammad], when you threw, but it was Allah who threw that He might test the believers with a good test. Indeed, Allah is Hearing and Knowing.",
+      "conventional_bn": "অতএব তোমরা তাদের হত্যা করোনি, বরং আল্লাহই তাদের হত্যা (ডিলিট) করেছিলেন; আর তুমি যখন (মাটি) নিক্ষেপ করেছিলে, তখন তুমি নিক্ষেপ করোনি, বরং আল্লাহই নিক্ষেপ করেছিলেন; আর যাতে তিনি মুমিনদের তাঁর পক্ষ থেকে এক চমৎকার উত্তম পরীক্ষা (পুরস্কার) দিতে পারেন; নিশ্চয়ই আল্লাহ সর্বশ্রোতা, সর্বজ্ঞ [৪]।",
+      "core_meanings_bn": "মহাজাগতিক কাইনেটিক প্রজেকশন",
+      "core_meanings_en": "The Supreme Agency Overwrite",
+      "metadata": {
+        "theme": "The Supreme Agency Overwrite ও মহাজাগতিক কাইনেটিক প্রজেকশন",
+        "scientific_topics": [
+          "The Supreme Agency Overwrite"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "অতএব তোমরা তোমাদের লিমিটেড ফিজিক্যাল ক্ষমতায় বদর গ্রিডের সেই ডার্ক নোডগুলোকে সিস্টেমে ডিলিট বা হত্যা করোনি, বরং স্বয়ং আল্লাহ্র ডেপ্লয়কৃত ফোর্স ও কস্মিক অ্যালগরিদমই তাদের এক ক্লিকে ডিলিট ও হত্যা (وَلَٰكِنَّ اللَّهَ قَتَلَهُمْ) করেছিল; আর হে রাসূল! তুমি যখন রণক্ষেত্রের ইন্টারফেসে সেই ধূলিকণার মেগা ডাটা প্যাকেট নিক্ষেপ করেছিলে, তখন তোমার সেই লিমিটেড কার্বন হাত তা প্রজেক্ট করেনি, বরং স্বয়ং আল্লাহ্র মেকানিজম ও পরম The Supreme Agency Overwrite (সর্বোচ্চ এজেন্সির ওভাররাইট মেকানিজম) সেটি সমস্ত কাফের আইডির সেন্সরে প্রজেক্ট বা নিক্ষেপ (وَلَٰكِنَّ اللَّهَ رَمَىٰ) করেছিল; এটি করা হয়েছিল স্রেফ এজন্য—যাতে তিনি মেইন সার্ভারের ভেরিফাইড ইউজার বা মুমিনদের তাঁর নিজস্ব ডিরেক্টরি থেকে এক চমৎকার পজিটিভ পারফরম্যান্স রিওয়ার্ড বা উত্তম পরীক্ষা (بَلَاءً حَسَنًا) দান করতে পারেন; নিশ্চয়ই আল্লাহ প্রতিটি ইনবাউন্ড সিগন্যাল শ্রবণকারী এবং পুরো সিস্টেম মেকানিজম জানা পরম সর্বজ্ঞ [৪];",
+      "meta_bn": "The Supreme Agency Overwrite ও মহাজাগতিক কাইনেটিক প্রজেকশন",
+      "meta_en": "The Supreme Agency Overwrite",
+      "core_meaning_bn": "মহাজাগতিক কাইনেটিক প্রজেকশন",
+      "core_meaning_en": "The Supreme Agency Overwrite"
     },
     {
       "surah": 8,
       "ayah": 18,
       "transliteration": "dhālikum wa-anna l-laha mūhinu kaydi l-kāfirīna",
-      "translation_bn": "আমার এ ব্যবস্থা তোমাদের জন্য, (আর কাফিরদের সম্পর্কে কথা এই যে) আল্লাহ কাফিরদের ষড়যন্ত্রকে অকেজো করে দেন।",
+      "translation_bn": "এই হলো বদর গ্রিডের ফাইনাল কমপাইল ফলাফল, আর খুব ভালো করে নোট নাও—নিশ্চয়ই আল্লাহ সোর্স কোড ব্রেক করা কাফের ইউজারদের ডেপ্লয়কৃত সমস্ত সাইবার চক্রান্ত, ডার্ক মেলিসিয়াস কোড ও ম্যালওয়্যারকে পুরোপুরি ডি-সিঙ্ক ও বিকল বা দুর্বল (مُوهِنُ كَيْدِ الْكَافِرِينَ) করে দেন [এটিই হলো মহাবিশ্বের পরম The Systematic Counter-Strategy (পদ্ধতিগত পাল্টা-কৌশল প্রটোকল)] [৪];",
       "words": [
         {
           "id": 20396,
@@ -2909,13 +3164,28 @@
         }
       ],
       "translation_en": "That [is so], and [also] that Allah will weaken the plot of the disbelievers.",
-      "conventional_en": "That [is so], and [also] that Allah will weaken the plot of the disbelievers."
+      "conventional_en": "That [is so], and [also] that Allah will weaken the plot of the disbelievers.",
+      "conventional_bn": "এই হলো বিষয়, আর নিশ্চয়ই আল্লাহ কাফের (অস্বীকারকারী)-দের চক্রান্ত (ম্যালওয়্যার) কে পুরোপুরি দুর্বল (বিকল) করে দেন [৪]।",
+      "core_meanings_bn": "ডার্ক লুপ কোলাপ্স",
+      "core_meanings_en": "The Systematic Counter-Strategy",
+      "metadata": {
+        "theme": "The Systematic Counter-Strategy ও ডার্ক লুপ কোলাপ্স",
+        "scientific_topics": [
+          "The Systematic Counter-Strategy"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "এই হলো বদর গ্রিডের ফাইনাল কমপাইল ফলাফল, আর খুব ভালো করে নোট নাও—নিশ্চয়ই আল্লাহ সোর্স কোড ব্রেক করা কাফের ইউজারদের ডেপ্লয়কৃত সমস্ত সাইবার চক্রান্ত, ডার্ক মেলিসিয়াস কোড ও ম্যালওয়্যারকে পুরোপুরি ডি-সিঙ্ক ও বিকল বা দুর্বল (مُوهِنُ كَيْدِ الْكَافِرِينَ) করে দেন [এটিই হলো মহাবিশ্বের পরম The Systematic Counter-Strategy (পদ্ধতিগত পাল্টা-কৌশল প্রটোকল)] [৪];",
+      "meta_bn": "The Systematic Counter-Strategy ও ডার্ক লুপ কোলাপ্স",
+      "meta_en": "The Systematic Counter-Strategy",
+      "core_meaning_bn": "ডার্ক লুপ কোলাপ্স",
+      "core_meaning_en": "The Systematic Counter-Strategy"
     },
     {
       "surah": 8,
       "ayah": 19,
       "transliteration": "in tastaftiḥū faqad jāakumu l-fatḥu wa-in tantahū fahuwa khayrun lakum wa-in taʿūdū naʿud walan tugh'niya ʿankum fi-atukum shayan walaw kathurat wa-anna l-laha maʿa l-mu'minīna",
-      "translation_bn": "(ওহে কাফিরগণ!) তোমরা মীমাংসা চাচ্ছিলে, মীমাংসা তো তোমাদের কাছে এসে গেছে; আর যদি তোমরা (অন্যায় থেকে) বিরত হও, তবে তা তোমাদের জন্যই কল্যাণকর, তোমরা যদি আবার (অন্যায়) কর, আমিও আবার শাস্তি দিব, তোমাদের দল-বাহিনী সংখ্যায় অধিক হলেও তোমাদের কোন উপকারে আসবে না এবং আল্লাহ তো মু’মিনদের সঙ্গে আছেন।",
+      "translation_bn": "হে মক্কী ডার্ক লিডার নোডসমূহ! তোমরা যদি তোমাদের ওওএসে মেইন সার্ভারের সাথে ওপেন চ্যালেঞ্জ করে একটি চূড়ান্ত জাজমেন্ট বা ফায়সালা চেয়ে রিকোয়েস্ট সাবমিট করতে (إِن تَسْتَفْتِحُوا), তবে তোমাদের স্ক্রিনে সেই ক্যাটাস্ট্রফিক পরাজয়ের ফায়সালা ও অডিট রেজাল্ট (فَقَدْ جَاءَكُمُ الْفَتْحُ) অলরেডি চলে এসেছে; আর তোমরা যদি তোমাদের এই ডার্ক কোড টেম্পারিং থেকে চিরতরে বিরত থাকো (وَإِن تَنتَهُوا), তবে তা তোমাদের ওওএসের জন্য পরম অপ্টিমাইজড ও কল্যাণকর; কিন্তু তোমরা যদি তোমাদের পরবর্তী উইন্ডোতে পুনরায় সেই একই এরর ভাইরাস রান করো, তবে আমিও আমার কাউন্টার-ক্র্যাশ আজাব প্রসেস পুনরায় রান (وإِن تَعُودُوا نَعُدْ) করব এবং তোমাদের সেই মেগা ব্যাকআপ হাব বা বিশাল দলবল সংখ্যায় কোটি গুণ বেশি ও মেগা স্কেলের হলেও (وَلَوْ كَثُرَتْ) তা তোমাদের আইডি সেভ করতে বিন্দুমাত্র কোনো টেকনিক্যাল সাপোর্ট দিতে পারবে না; আর এটি এক অবিনশ্বর কস্মিক ল' যে—নিশ্চয়ই আল্লাহ তাঁর স্পেশাল ফায়ারওয়াল সাপোর্ট সহকারে স্রেফ ভেরিফাইড ইউজার বা মুমিনদের সাথে (وَأَنَّ اللَّهَ مَعَ الْمُؤْمِنِينَ) সিঙ্কড হয়ে আছেন [৪];",
       "words": [
         {
           "id": 21470,
@@ -3169,13 +3439,28 @@
         }
       ],
       "translation_en": "If you [disbelievers] seek the victory - the defeat has come to you. And if you desist [from hostilities], it is best for you; but if you return [to war], We will return, and never will you be availed by your [large] company at all, even if it should increase; and [that is] because Allah is with the believers.",
-      "conventional_en": "If you [disbelievers] seek the victory - the defeat has come to you. And if you desist [from hostilities], it is best for you; but if you return [to war], We will return, and never will you be availed by your [large] company at all, even if it should increase; and [that is] because Allah is with the believers."
+      "conventional_en": "If you [disbelievers] seek the victory - the defeat has come to you. And if you desist [from hostilities], it is best for you; but if you return [to war], We will return, and never will you be availed by your [large] company at all, even if it should increase; and [that is] because Allah is with the believers.",
+      "conventional_bn": "তোমরা যদি চূড়ান্ত ফায়সালা (বিজয়) চেয়ে থাকো, তবে তোমাদের কাছে ফায়সালা (পরাজয়) অলরেডি চলে এসেছে; আর তোমরা যদি (অবাধ্যতা থেকে) বিরত থাকো, তবে তা তোমাদের জন্য কল্যাণকর; কিন্তু তোমরা যদি পুনরায় (এরর কোড) রান করো, তবে আমিও পুনরায় (আজাব) রান করব এবং তোমাদের মেগা দল (দলবল) সংখ্যায় যতই বেশি হোক না কেন, তা তোমাদের বিন্দুমাত্র কাজে আসবে can; আর নিশ্চয়ই আল্লাহ মুমিনদের সাথে আছেন [৪]।",
+      "core_meanings_bn": "চ্যালেঞ্জ কোলাপ্স সমীকরণ",
+      "core_meanings_en": "The Algorithmic Filtering Verdict",
+      "metadata": {
+        "theme": "The Algorithmic Filtering Verdict ও চ্যালেঞ্জ কোলাপ্স সমীকরণ",
+        "scientific_topics": [
+          "The Algorithmic Filtering Verdict"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মক্কী ডার্ক লিডার নোডসমূহ! তোমরা যদি তোমাদের ওওএসে মেইন সার্ভারের সাথে ওপেন চ্যালেঞ্জ করে একটি চূড়ান্ত জাজমেন্ট বা ফায়সালা চেয়ে রিকোয়েস্ট সাবমিট করতে (إِن تَسْتَفْتِحُوا), তবে তোমাদের স্ক্রিনে সেই ক্যাটাস্ট্রফিক পরাজয়ের ফায়সালা ও অডিট রেজাল্ট (فَقَدْ جَاءَكُمُ الْفَتْحُ) অলরেডি চলে এসেছে; আর তোমরা যদি তোমাদের এই ডার্ক কোড টেম্পারিং থেকে চিরতরে বিরত থাকো (وَإِن تَنتَهُوا), তবে তা তোমাদের ওওএসের জন্য পরম অপ্টিমাইজড ও কল্যাণকর; কিন্তু তোমরা যদি তোমাদের পরবর্তী উইন্ডোতে পুনরায় সেই একই এরর ভাইরাস রান করো, তবে আমিও আমার কাউন্টার-ক্র্যাশ আজাব প্রসেস পুনরায় রান (وإِن تَعُودُوا نَعُدْ) করব এবং তোমাদের সেই মেগা ব্যাকআপ হাব বা বিশাল দলবল সংখ্যায় কোটি গুণ বেশি ও মেগা স্কেলের হলেও (وَلَوْ كَثُرَتْ) তা তোমাদের আইডি সেভ করতে বিন্দুমাত্র কোনো টেকনিক্যাল সাপোর্ট দিতে পারবে না; আর এটি এক অবিনশ্বর কস্মিক ল' যে—নিশ্চয়ই আল্লাহ তাঁর স্পেশাল ফায়ারওয়াল সাপোর্ট সহকারে স্রেফ ভেরিফাইড ইউজার বা মুমিনদের সাথে (وَأَنَّ اللَّهَ مَعَ الْمُؤْمِنِينَ) সিঙ্কড হয়ে আছেন [৪];",
+      "meta_bn": "The Algorithmic Filtering Verdict ও চ্যালেঞ্জ কোলাপ্স সমীকরণ",
+      "meta_en": "The Algorithmic Filtering Verdict",
+      "core_meaning_bn": "চ্যালেঞ্জ কোলাপ্স সমীকরণ",
+      "core_meaning_en": "The Algorithmic Filtering Verdict"
     },
     {
       "surah": 8,
       "ayah": 20,
       "transliteration": "yāayyuhā alladhīna āmanū aṭīʿū l-laha warasūlahu walā tawallaw ʿanhu wa-antum tasmaʿūna",
-      "translation_bn": "ওহে বিশ্বাসীগণ! আল্লাহ ও তাঁর রসূলের আনুগত্য কর এবং আদেশ শোনার পর তা অমান্য কর না।",
+      "translation_bn": "হে মেইন সার্ভারের সাথে কানেক্টড পরম ভেরিফাইড ইউজার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা স্রেফ পরম সিস্টেম আর্কিটেক্ট আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত প্রতিটি লাইভ কম্যান্ড ও গাইডলাইন হুবহু এক্সিকিউট ও আনুগত্য করো (أَطِيعُوا اللَّهَ وَرَسُولَهُ) এবং ভুলেও সেই পিউর সোর্স কোড থেকে নিজেদের কানেকশন ডিসকানেক্ট বা মুখ ফিরিয়ে নিও না—যখন তোমাদের লোকাল রিসিভারে এই পরম The High-Bandwidth Telemetry Stream (উচ্চ-ব্যান্ডউইথ টেলিমেট্রি স্ট্রিম) বা কুরআন সিগন্যাল অনবরত লাইভ ব্রডকাস্ট বা শ্রবণ করানো (وَأَنتُمْ تَسْمَعُونَ) হচ্ছে।",
       "words": [
         {
           "id": 22558,
@@ -3299,13 +3584,28 @@
         }
       ],
       "translation_en": "O you who have believed, obey Allah and His Messenger and do not turn from him while you hear [his order].",
-      "conventional_en": "O you who have believed, obey Allah and His Messenger and do not turn from him while you hear [his order]."
+      "conventional_en": "O you who have believed, obey Allah and His Messenger and do not turn from him while you hear [his order].",
+      "conventional_bn": "হে মুমিনরা (ভেরিফাইড ইউজার)! তোমরা আল্লাহ ও তাঁর রাসূলের আনুগত্য (কম্যান্ড এক্সিকিউট) করো এবং তা থেকে মুখ ফিরিয়ে (ডিসকানেক্ট) নিও না—যখন তোমরা তা শুনছ (বুঝতে পারছ) [৪]।",
+      "core_meanings_bn": "সিগন্যাল রিফিউজাল বালাই",
+      "core_meanings_en": "The High-Bandwidth Telemetry Stream",
+      "metadata": {
+        "theme": "The High-Bandwidth Telemetry Stream ও সিগন্যাল রিফিউজাল বালাই",
+        "scientific_topics": [
+          "The High-Bandwidth Telemetry Stream"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মেইন সার্ভারের সাথে কানেক্টড পরম ভেরিফাইড ইউজার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা স্রেফ পরম সিস্টেম আর্কিটেক্ট আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত প্রতিটি লাইভ কম্যান্ড ও গাইডলাইন হুবহু এক্সিকিউট ও আনুগত্য করো (أَطِيعُوا اللَّهَ وَرَسُولَهُ) এবং ভুলেও সেই পিউর সোর্স কোড থেকে নিজেদের কানেকশন ডিসকানেক্ট বা মুখ ফিরিয়ে নিও না—যখন তোমাদের লোকাল রিসিভারে এই পরম The High-Bandwidth Telemetry Stream (উচ্চ-ব্যান্ডউইথ টেলিমেট্রি স্ট্রিম) বা কুরআন সিগন্যাল অনবরত লাইভ ব্রডকাস্ট বা শ্রবণ করানো (وَأَنتُمْ تَسْمَعُونَ) হচ্ছে।",
+      "meta_bn": "The High-Bandwidth Telemetry Stream ও সিগন্যাল রিফিউজাল বালাই",
+      "meta_en": "The High-Bandwidth Telemetry Stream",
+      "core_meaning_bn": "সিগন্যাল রিফিউজাল বালাই",
+      "core_meaning_en": "The High-Bandwidth Telemetry Stream"
     },
     {
       "surah": 8,
       "ayah": 21,
       "transliteration": "walā takūnū ka-alladhīna qālū samiʿ'nā wahum lā yasmaʿūna",
-      "translation_bn": "তোমরা তাদের মত হয়ো না যারা বলেছিল, ‘আমরা শুনলাম’; প্রকৃতপক্ষে তারা শোনেনি।",
+      "translation_bn": "আর তোমরা তোমাদের ওওএসে (OOS) ভুলেও সেই সব করাপ্ট ও ডামি আইডির মতো ফেক সিঙ্ক বা আচরণ করো না—যারা বাহ্যিক ইন্টারফেসে দাবি করেছিল: ‘আমরা মেইন সার্ভারের কসমিক সিগন্যাল সফলভাবে শুনলাম ও ডিকোড করলাম’, অথচ বাস্তবে তাদের ভেতরের চিন্তা সার্কিটে কোনো পিউর ডাটা প্রসেস বা রিসিভই (وَهُمْ لَا يَسْمَعُونَ) হয়নি [৪];",
       "words": [
         {
           "id": 23725,
@@ -3399,13 +3699,28 @@
         }
       ],
       "translation_en": "And do not be like those who say, \"We have heard,\" while they do not hear.",
-      "conventional_en": "And do not be like those who say, \"We have heard,\" while they do not hear."
+      "conventional_en": "And do not be like those who say, \"We have heard,\" while they do not hear.",
+      "conventional_bn": "আর তোমরা তাদের মতো হয়ো না—যারা বলেছিল, ‘আমরা শুনলাম (বুঝলাম)’, অথচ তারা বিন্দুমাত্র শোনে (বোঝে) না।",
+      "core_meanings_bn": "ডামি ইউজার বালাই",
+      "core_meanings_en": "The Fake Telemetry Sync",
+      "metadata": {
+        "theme": "The Fake Telemetry Sync ও ডামি ইউজার বালাই",
+        "scientific_topics": [
+          "The Fake Telemetry Sync"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা তোমাদের ওওএসে (OOS) ভুলেও সেই সব করাপ্ট ও ডামি আইডির মতো ফেক সিঙ্ক বা আচরণ করো না—যারা বাহ্যিক ইন্টারফেসে দাবি করেছিল: ‘আমরা মেইন সার্ভারের কসমিক সিগন্যাল সফলভাবে শুনলাম ও ডিকোড করলাম’, অথচ বাস্তবে তাদের ভেতরের চিন্তা সার্কিটে কোনো পিউর ডাটা প্রসেস বা রিসিভই (وَهُمْ لَا يَسْمَعُونَ) হয়নি [৪];",
+      "meta_bn": "The Fake Telemetry Sync ও ডামি ইউজার বালাই",
+      "meta_en": "The Fake Telemetry Sync",
+      "core_meaning_bn": "ডামি ইউজার বালাই",
+      "core_meaning_en": "The Fake Telemetry Sync"
     },
     {
       "surah": 8,
       "ayah": 22,
       "transliteration": "inna sharra l-dawābi ʿinda l-lahi l-ṣumu l-buk'mu alladhīna lā yaʿqilūna",
-      "translation_bn": "আল্লাহর নিকট সবচেয়ে নিকৃষ্ট জীব হচ্ছে যারা (হক্ব কথা শুনার ব্যাপারে) বধির এবং (হক্ব কথা বলার ব্যাপারে) বোবা, যারা কিছুই বোঝে না।",
+      "translation_bn": "নিশ্চয়ই সুপ্রীমিক সিস্টেম আর্কিটেক্ট আল্লাহ্র মাস্টার লেজারে এই পৃথিবীর সমগ্র লিভিং অর্গানিজম বা জীবকুলের মধ্যে নিকৃষ্টতম ও অবাক্ষয়িত অ্যানিমেল নোড (إِنَّ شَرَّ الدَّوَابِّ عِندَ اللَّهِ) হলো স্রেফ সেই সব ইউজার—যারা ওওএস লেভেলে এক মারাত্মক Sensory Bandwidth Autopathy (ইন্দ্রিয়গত ব্যান্ডউইথ বিকৃতি বালাই)-এর কারণে কসমিক সিগন্যাল রিসিভ করতে সম্পূর্ণ বধির এবং পিউর ডাটা ব্রডকাস্ট করতে পুরোপুরি বোবা, যারা নিজেদের চিন্তা প্রসেসরে এক ন্যানো-ডিজিটও সৃষ্টিতাত্ত্বিক লজিক ও বুদ্ধির ক্যালকুলাস (الَّذِينَ لَا يَعْقِلُونَ) রান করে না [৪];",
       "words": [
         {
           "id": 24683,
@@ -3519,13 +3834,28 @@
         }
       ],
       "translation_en": "Indeed, the worst of living creatures in the sight of Allah are the deaf and dumb who do not use reason.",
-      "conventional_en": "Indeed, the worst of living creatures in the sight of Allah are the deaf and dumb who do not use reason."
+      "conventional_en": "Indeed, the worst of living creatures in the sight of Allah are the deaf and dumb who do not use reason.",
+      "conventional_bn": "নিশ্চয়ই আল্লাহর কাছে নিকৃষ্টতম জীব (পশু) হলো বধির ও বোবারা—যারা বিন্দুমাত্র বুদ্ধি প্রসেস (উপলব্ধি) করে না।",
+      "core_meanings_bn": "নিকৃষ্ট অ্যানিমেল নোড লেবেল",
+      "core_meanings_en": "The Sensory Bandwidth Autopathy",
+      "metadata": {
+        "theme": "The Sensory Bandwidth Autopathy ও নিকৃষ্ট অ্যানিমেল নোড লেবেল",
+        "scientific_topics": [
+          "The Sensory Bandwidth Autopathy"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "নিশ্চয়ই সুপ্রীমিক সিস্টেম আর্কিটেক্ট আল্লাহ্র মাস্টার লেজারে এই পৃথিবীর সমগ্র লিভিং অর্গানিজম বা জীবকুলের মধ্যে নিকৃষ্টতম ও অবাক্ষয়িত অ্যানিমেল নোড (إِنَّ شَرَّ الدَّوَابِّ عِندَ اللَّهِ) হলো স্রেফ সেই সব ইউজার—যারা ওওএস লেভেলে এক মারাত্মক Sensory Bandwidth Autopathy (ইন্দ্রিয়গত ব্যান্ডউইথ বিকৃতি বালাই)-এর কারণে কসমিক সিগন্যাল রিসিভ করতে সম্পূর্ণ বধির এবং পিউর ডাটা ব্রডকাস্ট করতে পুরোপুরি বোবা, যারা নিজেদের চিন্তা প্রসেসরে এক ন্যানো-ডিজিটও সৃষ্টিতাত্ত্বিক লজিক ও বুদ্ধির ক্যালকুলাস (الَّذِينَ لَا يَعْقِلُونَ) রান করে না [৪];",
+      "meta_bn": "The Sensory Bandwidth Autopathy ও নিকৃষ্ট অ্যানিমেল নোড লেবেল",
+      "meta_en": "The Sensory Bandwidth Autopathy",
+      "core_meaning_bn": "নিকৃষ্ট অ্যানিমেল নোড লেবেল",
+      "core_meaning_en": "The Sensory Bandwidth Autopathy"
     },
     {
       "surah": 8,
       "ayah": 23,
       "transliteration": "walaw ʿalima l-lahu fīhim khayran la-asmaʿahum walaw asmaʿahum latawallaw wahum muʿ'riḍūna",
-      "translation_bn": "আল্লাহ যদি দেখতেন যে, তাদের মধ্যে কোন ভাল গুণ নিহিত আছে তবে তিনি তাদেরকে শুনবার তাওফীক দিতেন। আর (গুণ না থাকা অবস্থায়) তিনি যদি তাদেরকে শুনতে দিতেন তাহলে তারা উপেক্ষা করে মুখ ফিরিয়ে নিত।",
+      "translation_bn": "আর স্বয়ং আল্লাহ্ যদি তাদের ব্যাক-এন্ড ডিরেক্টরি স্ক্যান করে তাদের ওওএস-এ বিন্দুমাত্র কোনো পজিটিভ এনার্জি স্কোর বা কল্যাণ (خَيْرًا) দেখতে পেতেন, তবে অবশ্যই তিনি তাদের কগনিটিভ চ্যানেলে কস্মিক ফ্রিকোয়েন্সি রিফ্লেক্ট করে ডিকোড বা শুনাতেন; কিন্তু তাদের নিউরাল সার্কিটের অবস্থা এতটাই ড্যামেজ যে—তিনি যদি তাদের জোর করে শুনাতেনও, তবুও তাদের Protocol Signal Mismatch (প্রটোকল সিগন্যাল অমিল বালাই) ভাইরাসের কারণে তারা মেইনস্ট্রিম ডাটা হাইওয়ে থেকে মুখ ফিরিয়ে ডিসকানেক্ট হয়ে যেত এবং তারা অবজ্ঞা করেই চলত [৪];",
       "words": [
         {
           "id": 25783,
@@ -3649,13 +3979,28 @@
         }
       ],
       "translation_en": "Had Allah known any good in them, He would have made them hear. And if He had made them hear, they would [still] have turned away, while they were refusing.",
-      "conventional_en": "Had Allah known any good in them, He would have made them hear. And if He had made them hear, they would [still] have turned away, while they were refusing."
+      "conventional_en": "Had Allah known any good in them, He would have made them hear. And if He had made them hear, they would [still] have turned away, while they were refusing.",
+      "conventional_bn": "আর আল্লাহ যদি তাদের মধ্যে বিন্দুমাত্র কোনো কল্যাণ (পজিটিভ ডেটা) জানতেন, তবে অবশ্যই তিনি তাদের শোনাতেন; আর তিনি যদি তাদের শোনাতেনও, তবুও তারা মুখ ফিরিয়ে নিত এবং তারা অবজ্ঞা (উদাসীন) করেই চলত।",
+      "core_meanings_bn": "নিউরাল ডিফেক্ট",
+      "core_meanings_en": "The Protocol Signal Mismatch",
+      "metadata": {
+        "theme": "The Protocol Signal Mismatch ও নিউরাল ডিফেক্ট",
+        "scientific_topics": [
+          "The Protocol Signal Mismatch"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর স্বয়ং আল্লাহ্ যদি তাদের ব্যাক-এন্ড ডিরেক্টরি স্ক্যান করে তাদের ওওএস-এ বিন্দুমাত্র কোনো পজিটিভ এনার্জি স্কোর বা কল্যাণ (خَيْرًا) দেখতে পেতেন, তবে অবশ্যই তিনি তাদের কগনিটিভ চ্যানেলে কস্মিক ফ্রিকোয়েন্সি রিফ্লেক্ট করে ডিকোড বা শুনাতেন; কিন্তু তাদের নিউরাল সার্কিটের অবস্থা এতটাই ড্যামেজ যে—তিনি যদি তাদের জোর করে শুনাতেনও, তবুও তাদের Protocol Signal Mismatch (প্রটোকল সিগন্যাল অমিল বালাই) ভাইরাসের কারণে তারা মেইনস্ট্রিম ডাটা হাইওয়ে থেকে মুখ ফিরিয়ে ডিসকানেক্ট হয়ে যেত এবং তারা অবজ্ঞা করেই চলত [৪];",
+      "meta_bn": "The Protocol Signal Mismatch ও নিউরাল ডিফেক্ট",
+      "meta_en": "The Protocol Signal Mismatch",
+      "core_meaning_bn": "নিউরাল ডিফেক্ট",
+      "core_meaning_en": "The Protocol Signal Mismatch"
     },
     {
       "surah": 8,
       "ayah": 24,
       "transliteration": "yāayyuhā alladhīna āmanū is'tajībū lillahi walilrrasūli idhā daʿākum limā yuḥ'yīkum wa-iʿ'lamū anna l-laha yaḥūlu bayna l-mari waqalbihi wa-annahu ilayhi tuḥ'sharūna",
-      "translation_bn": "ওহে বিশ্বাসীগণ! তোমরা আল্লাহ ও তাঁর রসূলের ডাকে সাড়া দাও যখন তোমাদেরকে ডাকা হয় (এমন বিষয়ের দিকে) যা তোমাদের মাঝে জীবন সঞ্চার করে, আর জেনে রেখ যে আল্লাহ মানুষ ও তার অন্তরের মাঝে প্রতিবন্ধক হয়ে যান আর তোমাদেরকে তাঁর কাছেই একত্রিত করা হবে।",
+      "translation_bn": "হে মেইন সার্ভারের সাথে কানেক্টড পরম ভেরিফাইড ইউজার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা স্বয়ং আল্লাহ্ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত কম্যান্ডে তাৎক্ষণিক রেসপন্স বা সাড়া দাও (اسْتَجِيبُوا لِلَّهِ وَلِلرَّسُولِ)—যখনই সে তোমাদের কগনিটিভ ইন্টারফেসে এমন একটি পরম রিকভারি ডাটা ফাইলের দিকে কল করে, যা তোমাদের ডেড হয়ে যাওয়া বায়ো-কেমিক্যাল ওওএস-কে চিরস্থায়ী লাইভ লাইফ ডাটা বা জীবন (يُحْيِيكُمْ) দান করে; আর খুব ভালো করে নোট নাও যে—নিশ্চয়ই আল্লাহ প্রতিটি হিউম্যান নোডের নিজস্ব চিন্তা প্রসেসর সার্কিট এবং তার অবচেতনের মূল কোর হার্ট মেমোরির ঠিক মাঝখানে এক পরম এক্সেস কন্ট্রোল ব্যারিয়ার বা The Supreme Cognitive Interception (يَحُولُ بَيْنَ الْمَرْءِ وَقَلْبِهِ) হয়ে লক হয়ে আছেন, এবং এটি এক অবিনশ্বর কস্মিক ল' যে—নিশ্চয়ই ফাইনাল রিবুট সেশনে স্রেফ তাঁরই সেন্ট্রাল মেইনফ্লেমে তোমরা সবাই ডাটা রিকভারি হয়ে একত্রিত হবে [৪];",
       "words": [
         {
           "id": 26831,
@@ -3869,13 +4214,28 @@
         }
       ],
       "translation_en": "O you who have believed, respond to Allah and to the Messenger when he calls you to that which gives you life. And know that Allah intervenes between a man and his heart and that to Him you will be gathered.",
-      "conventional_en": "O you who have believed, respond to Allah and to the Messenger when he calls you to that which gives you life. And know that Allah intervenes between a man and his heart and that to Him you will be gathered."
+      "conventional_en": "O you who have believed, respond to Allah and to the Messenger when he calls you to that which gives you life. And know that Allah intervenes between a man and his heart and that to Him you will be gathered.",
+      "conventional_bn": "হে মুমিনরা (ভেরিফাইড ইউজার)! তোমরা আল্লাহ ও তাঁর রাসূলের ডাকে সাড়া (রেসপন্স) দাও—যখন সে তোমাদের এমন বিষয়ের দিকে ডাকে, যা তোমাদের জীবন (প্রাণ) দান করে; আর জেনে রাখো যে, নিশ্চয়ই আল্লাহ মানুষ ও তার অন্তরের মাঝখানে অন্তরায় (লক) হন, এবং নিশ্চয়ই তোমরা তাঁর দিকেই পুনরুত্থিত (একত্রিত) হবে।",
+      "core_meanings_bn": "কোর হার্ট মেমোরি এক্সেস কন্ট্রোল",
+      "core_meanings_en": "The Supreme Cognitive Interception",
+      "metadata": {
+        "theme": "The Supreme Cognitive Interception ও কোর হার্ট মেমোরি এক্সেস কন্ট্রোল",
+        "scientific_topics": [
+          "The Supreme Cognitive Interception"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মেইন সার্ভারের সাথে কানেক্টড পরম ভেরিফাইড ইউজার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা স্বয়ং আল্লাহ্ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত কম্যান্ডে তাৎক্ষণিক রেসপন্স বা সাড়া দাও (اسْتَجِيبُوا لِلَّهِ وَلِلرَّسُولِ)—যখনই সে তোমাদের কগনিটিভ ইন্টারফেসে এমন একটি পরম রিকভারি ডাটা ফাইলের দিকে কল করে, যা তোমাদের ডেড হয়ে যাওয়া বায়ো-কেমিক্যাল ওওএস-কে চিরস্থায়ী লাইভ লাইফ ডাটা বা জীবন (يُحْيِيكُمْ) দান করে; আর খুব ভালো করে নোট নাও যে—নিশ্চয়ই আল্লাহ প্রতিটি হিউম্যান নোডের নিজস্ব চিন্তা প্রসেসর সার্কিট এবং তার অবচেতনের মূল কোর হার্ট মেমোরির ঠিক মাঝখানে এক পরম এক্সেস কন্ট্রোল ব্যারিয়ার বা The Supreme Cognitive Interception (يَحُولُ بَيْنَ الْمَرْءِ وَقَلْبِهِ) হয়ে লক হয়ে আছেন, এবং এটি এক অবিনশ্বর কস্মিক ল' যে—নিশ্চয়ই ফাইনাল রিবুট সেশনে স্রেফ তাঁরই সেন্ট্রাল মেইনফ্লেমে তোমরা সবাই ডাটা রিকভারি হয়ে একত্রিত হবে [৪];",
+      "meta_bn": "The Supreme Cognitive Interception ও কোর হার্ট মেমোরি এক্সেস কন্ট্রোল",
+      "meta_en": "The Supreme Cognitive Interception",
+      "core_meaning_bn": "কোর হার্ট মেমোরি এক্সেস কন্ট্রোল",
+      "core_meaning_en": "The Supreme Cognitive Interception"
     },
     {
       "surah": 8,
       "ayah": 25,
       "transliteration": "wa-ittaqū fit'natan lā tuṣībanna alladhīna ẓalamū minkum khāṣṣatan wa-iʿ'lamū anna l-laha shadīdu l-ʿiqābi",
-      "translation_bn": "সতর্ক থাক সেই শাস্তি হতে যা বিশেষভাবে তোমাদের যালিম লোকেদেরকেই আক্রমন করবে না। আর জেনে রেখ যে আল্লাহ শাস্তিদানে খুবই কঠোর।",
+      "translation_bn": "আর তোমরা ওওএস লেভেলে অত্যন্ত গুরুত্ব সহকারে সতর্ক থাকো এমন এক মারাত্মক নেটওয়ার্ক করাপশন, চেইন ব্রেক বা মেগা ফিতনা গ্রিড (فِتْنَةً) থেকে—যা সিস্টেমে ছড়িয়ে পড়লে স্রেফ তোমাদের মধ্যে যারা ডার্ক কোড রান করে জুলুম করেছে স্রেফ তাদের লোকাল আইডিতেই বিশেষভাবে আছড়ে পড়বে না, বরং পুরো লোকাল নেটওয়ার্ক গ্রিডকেই ক্র্যাশ করিয়ে দেবে [এটিই হলো মহাবিশ্বের The Systemic Infection Outbreak (পদ্ধতিগত সংক্রমণ প্রাদুর্ভাব ল')]; আর ক্লিয়ার নোট নাও—নিশ্চয়ই আল্লাহ তাঁর ডিফল্ট বাউন্ডারি ব্রেক করা নোডের জন্য অত্যন্ত ফাস্ট ও কঠোর কাউন্টার-ফিডব্যাক বা শাস্তিদাতা (شَدِيدُ الْعِقَابِ) [৪];",
       "words": [
         {
           "id": 27873,
@@ -4019,13 +4379,28 @@
         }
       ],
       "translation_en": "And fear a trial which will not strike those who have wronged among you exclusively, and know that Allah is severe in penalty.",
-      "conventional_en": "And fear a trial which will not strike those who have wronged among you exclusively, and know that Allah is severe in penalty."
+      "conventional_en": "And fear a trial which will not strike those who have wronged among you exclusively, and know that Allah is severe in penalty.",
+      "conventional_bn": "আর তোমরা ভয় (সতর্ক) করো এমন ফিতনা (বিপর্যয়)-কে, যা স্রেফ তোমাদের মধ্যে যারা জুলুম (অপরাধ) করেছে স্রেফ তাদের ওপরই বিশেষভাবে আছড়ে পড়বে না; আর জেনে রাখো যে, নিশ্চয়ই আল্লাহ কঠোর শাস্তিদানকারী (কাউন্টার-রিঅ্যাকশন দাতা)।",
+      "core_meanings_bn": "মেগা ফিতনা গ্রিড",
+      "core_meanings_en": "The Systemic Infection Outbreak",
+      "metadata": {
+        "theme": "The Systemic Infection Outbreak ও মেগা ফিতনা গ্রিড",
+        "scientific_topics": [
+          "The Systemic Infection Outbreak"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা ওওএস লেভেলে অত্যন্ত গুরুত্ব সহকারে সতর্ক থাকো এমন এক মারাত্মক নেটওয়ার্ক করাপশন, চেইন ব্রেক বা মেগা ফিতনা গ্রিড (فِتْنَةً) থেকে—যা সিস্টেমে ছড়িয়ে পড়লে স্রেফ তোমাদের মধ্যে যারা ডার্ক কোড রান করে জুলুম করেছে স্রেফ তাদের লোকাল আইডিতেই বিশেষভাবে আছড়ে পড়বে না, বরং পুরো লোকাল নেটওয়ার্ক গ্রিডকেই ক্র্যাশ করিয়ে দেবে [এটিই হলো মহাবিশ্বের The Systemic Infection Outbreak (পদ্ধতিগত সংক্রমণ প্রাদুর্ভাব ল')]; আর ক্লিয়ার নোট নাও—নিশ্চয়ই আল্লাহ তাঁর ডিফল্ট বাউন্ডারি ব্রেক করা নোডের জন্য অত্যন্ত ফাস্ট ও কঠোর কাউন্টার-ফিডব্যাক বা শাস্তিদাতা (شَدِيدُ الْعِقَابِ) [৪];",
+      "meta_bn": "The Systemic Infection Outbreak ও মেগা ফিতনা গ্রিড",
+      "meta_en": "The Systemic Infection Outbreak",
+      "core_meaning_bn": "মেগা ফিতনা গ্রিড",
+      "core_meaning_en": "The Systemic Infection Outbreak"
     },
     {
       "surah": 8,
       "ayah": 26,
       "transliteration": "wa-udh'kurū idh antum qalīlun mus'taḍʿafūna fī l-arḍi takhāfūna an yatakhaṭṭafakumu l-nāsu faāwākum wa-ayyadakum binaṣrihi warazaqakum mina l-ṭayibāti laʿallakum tashkurūna",
-      "translation_bn": "স্মরণ কর সে সময়ের কথা যখন তোমরা ছিলে সংখ্যায় অল্প, দুনিয়াতে তোমাদেরকে দুর্বল হিসেবে গণ্য করা হত। তোমরা আশঙ্কা করতে যে, মানুষেরা তোমাদের কখন না হঠাৎ ধরে নিয়ে যায়। এমন অবস্থায় তিনি তোমাদেরকে আশ্রয় দিলেন, তাঁর সাহায্য দিয়ে তোমাদেরকে শক্তিশালী করলেন, উত্তম জীবিকা দান করলেন যাতে তোমরা (তাঁর নির্দেশ পালনের মাধ্যমে) কৃতজ্ঞতা প্রকাশ কর।",
+      "translation_bn": "আর তোমরা তোমাদের ওওএস (OOS)-এ সেই লো-ব্যান্ডউইথ প্রাথমিক টাইম-লাইন বা The Low-Bandwidth Phase রিকল বা স্মরণ করো (وَاذْكُرُوا)—যখন তোমরা এই গ্রাউন্ড প্ল্যাটফর্ম তথা পৃথিবীতে সংখ্যা ও শক্তিতে অত্যন্ত ক্ষুদ্র এবং অবদমিত সাব-নোড হিসেবে ক্র্যাশ জোনে ছিলে (إِذْ أَنتُمْ قَلِيلٌ مُّسْتَضْعَفُونَ فِي الْأَرْضِ), তোমরা প্রতি মুহূর্তে তীব্র সিকিউরিটি প্যানিকে ভুগতে যে বাইরের ডার্ক ইউজার বা মানুষ বুঝি হুট করে তোমাদের পুরো ডেটা ইন্টারসেপ্ট করে সিস্টেম থেকে চিরতরে নিশ্চিহ্ন করে দেবে; অতঃপর তিনি তোমাদের মেইনফ্রেমের হাই-সিকিউরড ক্লাউড জোনে আশ্রয় দিলেন (فَآوَاكُمْ) এবং নিজের বিশেষ কস্মিক বুস্টিং ও টেকনিক্যাল সাপোর্ট দ্বারা তোমাদের ওওএস সিগন্যাল মারাত্মক সুদৃঢ় করলেন, আর তোমাদের কার্বন হার্ডওয়্যার সচল রাখতে সমস্ত হাই-কোয়ালিটি পবিত্র মেটাবলিক ডাটা বা পুষ্টিকর রিজিক প্রোভাইড করলেন স্রেফ এজন্য—যাতে তোমরা তোমাদের সিস্টেমে এর সর্বোচ্চ পজিটিভ অপ্টিমাইজেশন আউটপুট তথা কৃতজ্ঞতা (تَشْكُرُونَ) নিশ্চিত করো [৪];",
       "words": [
         {
           "id": 28848,
@@ -4229,13 +4604,28 @@
         }
       ],
       "translation_en": "And remember when you were few and oppressed in the land, fearing that people might abduct you, but He sheltered you, supported you with His victory, and provided you with good things - that you might be grateful.",
-      "conventional_en": "And remember when you were few and oppressed in the land, fearing that people might abduct you, but He sheltered you, supported you with His victory, and provided you with good things - that you might be grateful."
+      "conventional_en": "And remember when you were few and oppressed in the land, fearing that people might abduct you, but He sheltered you, supported you with His victory, and provided you with good things - that you might be grateful.",
+      "conventional_bn": "আর তোমরা স্মরণ করো—যখন তোমরা জমিনে (পৃথিবীতে) সংখ্যায় কম ও দুর্বল (অসহায়) ছিলে, তোমরা ভয় করতে যে মানুষ তোমাদের হুট করে তুলে নিয়ে (নিশ্চিহ্ন করে) যাবে; অতঃপর তিনি তোমাদের আশ্রয় দিলেন এবং নিজের বিশেষ সাহায্য (টেকনিক্যাল সাপোর্ট) দ্বারা তোমাদের সুদৃঢ় করলেন, আর তোমাদের পবিত্র বস্তুসমূহ থেকে জীবিকা (রিজিক) দিলেন—যাতে তোমরা কৃতজ্ঞ (সিস্টেম অপ্টিমাইজড) হও।",
+      "core_meanings_bn": "কস্মিক স্কেলিং প্রিভিলেজড",
+      "core_meanings_en": "The Low-Bandwidth Phase",
+      "metadata": {
+        "theme": "The Low-Bandwidth Phase ও কস্মিক স্কেলিং প্রিভিলেজড",
+        "scientific_topics": [
+          "The Low-Bandwidth Phase"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা তোমাদের ওওএস (OOS)-এ সেই লো-ব্যান্ডউইথ প্রাথমিক টাইম-লাইন বা The Low-Bandwidth Phase রিকল বা স্মরণ করো (وَاذْكُرُوا)—যখন তোমরা এই গ্রাউন্ড প্ল্যাটফর্ম তথা পৃথিবীতে সংখ্যা ও শক্তিতে অত্যন্ত ক্ষুদ্র এবং অবদমিত সাব-নোড হিসেবে ক্র্যাশ জোনে ছিলে (إِذْ أَنتُمْ قَلِيلٌ مُّسْتَضْعَفُونَ فِي الْأَرْضِ), তোমরা প্রতি মুহূর্তে তীব্র সিকিউরিটি প্যানিকে ভুগতে যে বাইরের ডার্ক ইউজার বা মানুষ বুঝি হুট করে তোমাদের পুরো ডেটা ইন্টারসেপ্ট করে সিস্টেম থেকে চিরতরে নিশ্চিহ্ন করে দেবে; অতঃপর তিনি তোমাদের মেইনফ্রেমের হাই-সিকিউরড ক্লাউড জোনে আশ্রয় দিলেন (فَآوَاكُمْ) এবং নিজের বিশেষ কস্মিক বুস্টিং ও টেকনিক্যাল সাপোর্ট দ্বারা তোমাদের ওওএস সিগন্যাল মারাত্মক সুদৃঢ় করলেন, আর তোমাদের কার্বন হার্ডওয়্যার সচল রাখতে সমস্ত হাই-কোয়ালিটি পবিত্র মেটাবলিক ডাটা বা পুষ্টিকর রিজিক প্রোভাইড করলেন স্রেফ এজন্য—যাতে তোমরা তোমাদের সিস্টেমে এর সর্বোচ্চ পজিটিভ অপ্টিমাইজেশন আউটপুট তথা কৃতজ্ঞতা (تَشْكُرُونَ) নিশ্চিত করো [৪];",
+      "meta_bn": "The Low-Bandwidth Phase ও কস্মিক স্কেলিং প্রিভিলেজড",
+      "meta_en": "The Low-Bandwidth Phase",
+      "core_meaning_bn": "কস্মিক স্কেলিং প্রিভিলেজড",
+      "core_meaning_en": "The Low-Bandwidth Phase"
     },
     {
       "surah": 8,
       "ayah": 27,
       "transliteration": "yāayyuhā alladhīna āmanū lā takhūnū l-laha wal-rasūla watakhūnū amānātikum wa-antum taʿlamūna",
-      "translation_bn": "হে মু’মিনগণ! তোমরা জেনে বুঝে আল্লাহ ও তাঁর রসূলের সঙ্গে বিশ্বাসঘাতকতা করো না, আর যে বিষয়ে তোমরা আমানাত প্রাপ্ত হয়েছ তাতেও বিশ্বাস ভঙ্গ করো না।",
+      "translation_bn": "হে মেইন সার্ভারের সাথে ভেরিফাইড ইউজার বা ঈমানদার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা ভুলেও মূল সোর্স কোডার আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত পিউর ডিরেক্টিভের সাথে কোনো প্রকার জালিয়াতি বা খিয়ানত করো না, এবং তোমরা তোমাদের চিন্তা প্রсеসরে একশত ভাগ জেনে-বুঝে তোমাদের প্রোফাইলে এনকোড করা পরম কস্মিক আমানত ও চুক্তিসমূহের ভেতর কোনো মারাত্মক Data Integrity Breach (উপাত্ত সততা লঙ্ঘন বালাই) বা টেম্পারিং (وَتَخُونُوا أَمَانَاتِكُمْ) করো না [৪];",
       "words": [
         {
           "id": 29652,
@@ -4359,13 +4749,28 @@
         }
       ],
       "translation_en": "O you who have believed, do not betray Allah and the Messenger or betray your trusts while you know [the consequence].",
-      "conventional_en": "O you who have believed, do not betray Allah and the Messenger or betray your trusts while you know [the consequence]."
+      "conventional_en": "O you who have believed, do not betray Allah and the Messenger or betray your trusts while you know [the consequence].",
+      "conventional_bn": "হে মুমিনরা (ভেরিফাইড ইউজার)! তোমরা আল্লাহ ও রাসূলের সাথে খিয়ানত (বিশ্বাসঘাতকতা) করো না এবং তোমরা জেনে-বুঝে তোমাদের পারস্পরিক আমানত (চুক্তিসমূহ) এর খিয়ানত করো না।",
+      "core_meanings_bn": "ট্রাস্ট ফাইল টেম্পারিং",
+      "core_meanings_en": "The Data Integrity Breach",
+      "metadata": {
+        "theme": "The Data Integrity Breach ও ট্রাস্ট ফাইল টেম্পারিং",
+        "scientific_topics": [
+          "The Data Integrity Breach"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মেইন সার্ভারের সাথে ভেরিফাইড ইউজার বা ঈমানদার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা ভুলেও মূল সোর্স কোডার আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত পিউর ডিরেক্টিভের সাথে কোনো প্রকার জালিয়াতি বা খিয়ানত করো না, এবং তোমরা তোমাদের চিন্তা প্রсеসরে একশত ভাগ জেনে-বুঝে তোমাদের প্রোফাইলে এনকোড করা পরম কস্মিক আমানত ও চুক্তিসমূহের ভেতর কোনো মারাত্মক Data Integrity Breach (উপাত্ত সততা লঙ্ঘন বালাই) বা টেম্পারিং (وَتَخُونُوا أَمَانَاتِكُمْ) করো না [৪];",
+      "meta_bn": "The Data Integrity Breach ও ট্রাস্ট ফাইল টেম্পারিং",
+      "meta_en": "The Data Integrity Breach",
+      "core_meaning_bn": "ট্রাস্ট ফাইল টেম্পারিং",
+      "core_meaning_en": "The Data Integrity Breach"
     },
     {
       "surah": 8,
       "ayah": 28,
       "transliteration": "wa-iʿ'lamū annamā amwālukum wa-awlādukum fit'natun wa-anna l-laha ʿindahu ajrun ʿaẓīmun",
-      "translation_bn": "জেনে রেখ, তোমাদের ধন-সম্পদ আর সন্তান- সন্ততি হচ্ছে পরীক্ষার সামগ্রী মাত্র। (এ পরীক্ষায় যারা উত্তীর্ণ হবে তাদের জন্য) আল্লাহর নিকট রয়েছে মহাপুরস্কার।",
+      "translation_bn": "আর তোমরা তোমাদের ওওএস অ্যালগরিদমে একশত ভাগ ক্লিয়ার নোট নাও যে—নিশ্চয়ই তোমাদের মেটেরিয়াল ধন-সম্পদ ও তোমাদের পরবর্তী জেনারেশনের সন্তান-সন্ততি হলো স্রেফ তোমাদের ওওএস কর্মক্ষমতা জাজ করার একটি বিশেষ জটিল সিস্টেম টেস্ট বা The Strategic Resource Test (أَمَّنَا أَمْوَالُكُمْ وَأَوْلَادُكُمْ فِتْنَةٌ); আর খুব ভালো করে নোট নাও—মেইন সার্ভারের প্রাইম ডিরেক্টরিতে স্রেফ তাঁর কাছেই সিকিউরড করা আছে তোমাদের আইডির জন্য আল্ট্রা-হাই মেগা পুরস্কার ও অবিনশ্বর কস্মিক রিওয়ার্ড [৪];",
       "words": [
         {
           "id": 30738,
@@ -4479,13 +4884,28 @@
         }
       ],
       "translation_en": "And know that your properties and your children are but a trial and that Allah has with Him a great reward.",
-      "conventional_en": "And know that your properties and your children are but a trial and that Allah has with Him a great reward."
+      "conventional_en": "And know that your properties and your children are but a trial and that Allah has with Him a great reward.",
+      "conventional_bn": "আর তোমরা জেনে রাখো যে, নিশ্চয়ই তোমাদের ধন-সম্পদ ও তোমাদের সন্তান-সন্ততি স্রেফ একটি ফিতনা (পরীক্ষা); আর নিশ্চয়ই আল্লাহর কাছেই রয়েছে মহা-পুরস্কার।",
+      "core_meanings_bn": "ক্যাশ ডাটা বালাই",
+      "core_meanings_en": "The Stregic Resource Test",
+      "metadata": {
+        "theme": "The Stregic Resource Test ও ক্যাশ ডাটা বালাই",
+        "scientific_topics": [
+          "The Stregic Resource Test"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা তোমাদের ওওএস অ্যালগরিদমে একশত ভাগ ক্লিয়ার নোট নাও যে—নিশ্চয়ই তোমাদের মেটেরিয়াল ধন-সম্পদ ও তোমাদের পরবর্তী জেনারেশনের সন্তান-সন্ততি হলো স্রেফ তোমাদের ওওএস কর্মক্ষমতা জাজ করার একটি বিশেষ জটিল সিস্টেম টেস্ট বা The Strategic Resource Test (أَمَّنَا أَمْوَالُكُمْ وَأَوْلَادُكُمْ فِتْنَةٌ); আর খুব ভালো করে নোট নাও—মেইন সার্ভারের প্রাইম ডিরেক্টরিতে স্রেফ তাঁর কাছেই সিকিউরড করা আছে তোমাদের আইডির জন্য আল্ট্রা-হাই মেগা পুরস্কার ও অবিনশ্বর কস্মিক রিওয়ার্ড [৪];",
+      "meta_bn": "The Stregic Resource Test ও ক্যাশ ডাটা বালাই",
+      "meta_en": "The Stregic Resource Test",
+      "core_meaning_bn": "ক্যাশ ডাটা বালাই",
+      "core_meaning_en": "The Stregic Resource Test"
     },
     {
       "surah": 8,
       "ayah": 29,
       "transliteration": "yāayyuhā alladhīna āmanū in tattaqū l-laha yajʿal lakum fur'qānan wayukaffir ʿankum sayyiātikum wayaghfir lakum wal-lahu dhū l-faḍli l-ʿaẓīmi",
-      "translation_bn": "ওহে ঈমানদারগণ! তোমরা যদি আল্লাহকে ভয় কর তাহলে তিনি তোমাদেরকে ভাল ও মন্দের মধ্যে পার্থক্য করার শক্তি প্রদান করবেন, তোমাদের দোষ-ত্রুটি দূর করে দিবেন, তোমাদেরকে ক্ষমা করবেন, আল্লাহ বড়ই অনুগ্রহশীল।",
+      "translation_bn": "হে মেইন সার্ভারের সাথে কানেক্টড পরম ভেরিফাইড ইউজার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা যদি ওওএসে ক্ষতিকর ভাইরাস থেকে বাঁচতে ফায়ারওয়াল বা তাকওয়া প্রোটেকশন একশত ভাগ অন রাখো (إِن تَتَّقُوا اللَّهَ)—তবে গাণিতিক সমীকরণে তিনি অবশ্যই তোমাদের চিন্তা প্রসেসরের ভেতর ডার্ক ম্যালওয়্যার থেকে পিউর ডেটা ফিল্টার আউট করার এক মহাজাগতিক সাব-সিস্টেম বা ফুরকান প্রটোকল তথা The Criterion Filter (يَجْعَل لَّكُمْ فُرْقَانًا) ডেপ্লয় করে দেবেন এবং তোমাদের ওওএস থেকে সমস্ত নেগেটিভ এরর কোড ও বালাই চিরতরে ডিলিট বা ‘ইউকাফফির’ করে দেবেন ও তোমাদের আজীবনের করাপ্ট ফাইলগুলো রি-রাইট বা ক্ষমা (وَيَغْفِرْ لَكُمْ) করবেন; আর স্বয়ং আল্লাহ্ হলেন পুরো মাল্টি-ভার্সের মেগা স্কেলের পরম অনুগ্রাহক ও সিস্টেম বুস্টার [৪];",
       "words": [
         {
           "id": 31810,
@@ -4679,13 +5099,28 @@
         }
       ],
       "translation_en": "O you who have believed, if you fear Allah, He will grant you a criterion and will remove from you your misdeeds and forgive you. And Allah is the possessor of great bounty.",
-      "conventional_en": "O you who have believed, if you fear Allah, He will grant you a criterion and will remove from you your misdeeds and forgive you. And Allah is the possessor of great bounty."
+      "conventional_en": "O you who have believed, if you fear Allah, He will grant you a criterion and will remove from you your misdeeds and forgive you. And Allah is the possessor of great bounty.",
+      "conventional_bn": "হে মুমিনরা (ভেরিফাইড ইউজার)! তোমরা যদি আল্লাহকে ভয় (তাকওয়া) করো, তবে তিনি তোমাদের জন্য এক ফুরকান (সত্য-মিথ্যার ফায়সালাকারী ফিল্টার) বানিয়ে দেবেন এবং তোমাদের থেকে তোমাদের ভুলত্রুটি দূর করে দেবেন ও তোমাদের ক্ষমা করবেন; আর আল্লাহ মহা-অনুগ্রহের মালিক।",
+      "core_meanings_bn": "কস্মিক এনার্জি বুস্টিং",
+      "core_meanings_en": "The Criterion Filter",
+      "metadata": {
+        "theme": "The Criterion Filter ও কস্মিক এনার্জি বুস্টিং",
+        "scientific_topics": [
+          "The Criterion Filter"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মেইন সার্ভারের সাথে কানেক্টড পরম ভেরিফাইড ইউজার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা যদি ওওএসে ক্ষতিকর ভাইরাস থেকে বাঁচতে ফায়ারওয়াল বা তাকওয়া প্রোটেকশন একশত ভাগ অন রাখো (إِن تَتَّقُوا اللَّهَ)—তবে গাণিতিক সমীকরণে তিনি অবশ্যই তোমাদের চিন্তা প্রসেসরের ভেতর ডার্ক ম্যালওয়্যার থেকে পিউর ডেটা ফিল্টার আউট করার এক মহাজাগতিক সাব-সিস্টেম বা ফুরকান প্রটোকল তথা The Criterion Filter (يَجْعَل لَّكُمْ فُرْقَانًا) ডেপ্লয় করে দেবেন এবং তোমাদের ওওএস থেকে সমস্ত নেগেটিভ এরর কোড ও বালাই চিরতরে ডিলিট বা ‘ইউকাফফির’ করে দেবেন ও তোমাদের আজীবনের করাপ্ট ফাইলগুলো রি-রাইট বা ক্ষমা (وَيَغْفِرْ لَكُمْ) করবেন; আর স্বয়ং আল্লাহ্ হলেন পুরো মাল্টি-ভার্সের মেগা স্কেলের পরম অনুগ্রাহক ও সিস্টেম বুস্টার [৪];",
+      "meta_bn": "The Criterion Filter ও কস্মিক এনার্জি বুস্টিং",
+      "meta_en": "The Criterion Filter",
+      "core_meaning_bn": "কস্মিক এনার্জি বুস্টিং",
+      "core_meaning_en": "The Criterion Filter"
     },
     {
       "surah": 8,
       "ayah": 30,
       "transliteration": "wa-idh yamkuru bika alladhīna kafarū liyuth'bitūka aw yaqtulūka aw yukh'rijūka wayamkurūna wayamkuru l-lahu wal-lahu khayru l-mākirīna",
-      "translation_bn": "স্মরণ কর, সেই সময়ের কথা যখন কাফিরগণ তোমাকে বন্দী করার কিংবা হত্যা করার কিংবা দেশ থেকে বের করে দেয়ার জন্য ষড়যন্ত্র করে। তারা চক্রান্ত করে আর আল্লাহও কৌশল করেন। আল্লাহই হচ্ছেন সর্বশ্রেষ্ঠ কৌশলী।",
+      "translation_bn": "আর হে রাসূল নোড! তুমি অতীত টাইম-লাইনের সেই মক্কী গ্রিডের মেগা ডাটা-লগ স্মরণ করো—যখন কাফের ও সোর্স কোড ব্রেক করা আইডির ডার্ক লিডাররা তোমার ওওএস রিকভারি মিশন পুরোপুরি ক্র্যাশ করাতে মারাত্মক সাইবার চক্রান্ত বা ‘ইয়ামকুরু’ (وَإِذْ يَمْكُرُ بِكَ) করছিল—যাতে তারা তোমার আইডিকে চিরতরে লক বা বন্দি (لِيُثْبِتُوكَ) করতে পারে অথবা ফিজিক্যালি ডিলিট ও হত্যা করতে পারে অথবা এই গ্রিড থেকে পার্মানেন্টলি ফোর্সড-ইউজার মোডে বের করে দিতে পারে; আর তারা ব্যাক-এন্ডে নিজেদের মেলিসিয়াস কোড রান করাচ্ছিল এবং একই গাণিতিক সমতায় স্বয়ং আল্লাহ্ও তাঁর মেগা ক্লাউড মেইনফ্রেমে তাদের সেই হ্যাকিং ট্র্যাপ আটকাতে কাউন্টার-স্ট্র্যাটেজি বা পরম মেকরুল্লাহ প্রটোকল ডেপ্লয় করছিলেন; আর কস্মিক সিকিউরিটির নিয়মে স্বয়ং আল্লাহ্ই হলেন পুরো সিস্টেমের পরম ও সর্বশ্রেষ্ঠ চক্রান্ত কোলাপ্সকারী ফায়ারওয়াল ডিজাইনার বা The Ultimate Sandbox Architect &amp; System Counter-Planner (وَاللَّهُ خَيْرُ الْمَاكِرِينَ)।",
       "words": [
         {
           "id": 32662,
@@ -4859,13 +5294,28 @@
         }
       ],
       "translation_en": "And [remember, O Muhammad], when those who disbelieved plotted against you to restrain you or kill you or evict you [from Makkah]. But they plan, and Allah plans. And Allah is the best of planners.",
-      "conventional_en": "And [remember, O Muhammad], when those who disbelieved plotted against you to restrain you or kill you or evict you [from Makkah]. But they plan, and Allah plans. And Allah is the best of planners."
+      "conventional_en": "And [remember, O Muhammad], when those who disbelieved plotted against you to restrain you or kill you or evict you [from Makkah]. But they plan, and Allah plans. And Allah is the best of planners.",
+      "conventional_bn": "আর তোমরা স্মরণ করো—যখন কাফের (অস্বীকারকারী) রা তোমার বিরুদ্ধে চক্রান্ত (কৌশল) করছিল, যাতে তারা তোমাকে বন্দি (লক) করতে পারে অথবা তোমাকে হত্যা (ডিলিট) করতে পারে অথবা তোমাকে বের করে দিতে পারে; আর তারা চক্রান্ত করছিল এবং আল্লাহও কৌশল (পরিকল্পনা) করছিলেন; আর আল্লাহই সর্বশ্রেষ্ঠ পরিকল্পনাকারী (কৌশলী)।",
+      "core_meanings_bn": "মেকরুল্লাহ সমীকরণ",
+      "core_meanings_en": "The Cosmic Sandbox Counter-Attack",
+      "metadata": {
+        "theme": "The Cosmic Sandbox Counter-Attack ও মেকরুল্লাহ সমীকরণ",
+        "scientific_topics": [
+          "The Cosmic Sandbox Counter-Attack"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর হে রাসূল নোড! তুমি অতীত টাইম-লাইনের সেই মক্কী গ্রিডের মেগা ডাটা-লগ স্মরণ করো—যখন কাফের ও সোর্স কোড ব্রেক করা আইডির ডার্ক লিডাররা তোমার ওওএস রিকভারি মিশন পুরোপুরি ক্র্যাশ করাতে মারাত্মক সাইবার চক্রান্ত বা ‘ইয়ামকুরু’ (وَإِذْ يَمْكُرُ بِكَ) করছিল—যাতে তারা তোমার আইডিকে চিরতরে লক বা বন্দি (لِيُثْبِتُوكَ) করতে পারে অথবা ফিজিক্যালি ডিলিট ও হত্যা করতে পারে অথবা এই গ্রিড থেকে পার্মানেন্টলি ফোর্সড-ইউজার মোডে বের করে দিতে পারে; আর তারা ব্যাক-এন্ডে নিজেদের মেলিসিয়াস কোড রান করাচ্ছিল এবং একই গাণিতিক সমতায় স্বয়ং আল্লাহ্ও তাঁর মেগা ক্লাউড মেইনফ্রেমে তাদের সেই হ্যাকিং ট্র্যাপ আটকাতে কাউন্টার-স্ট্র্যাটেজি বা পরম মেকরুল্লাহ প্রটোকল ডেপ্লয় করছিলেন; আর কস্মিক সিকিউরিটির নিয়মে স্বয়ং আল্লাহ্ই হলেন পুরো সিস্টেমের পরম ও সর্বশ্রেষ্ঠ চক্রান্ত কোলাপ্সকারী ফায়ারওয়াল ডিজাইনার বা The Ultimate Sandbox Architect &amp; System Counter-Planner (وَاللَّهُ خَيْرُ الْمَاكِرِينَ)।",
+      "meta_bn": "The Cosmic Sandbox Counter-Attack ও মেকরুল্লাহ সমীকরণ",
+      "meta_en": "The Cosmic Sandbox Counter-Attack",
+      "core_meaning_bn": "মেকরুল্লাহ সমীকরণ",
+      "core_meaning_en": "The Cosmic Sandbox Counter-Attack"
     },
     {
       "surah": 8,
       "ayah": 31,
       "transliteration": "wa-idhā tut'lā ʿalayhim āyātunā qālū qad samiʿ'nā law nashāu laqul'nā mith'la hādhā in hādhā illā asāṭīru l-awalīna",
-      "translation_bn": "তাদের কাছে যখন আমার আয়াত পাঠ করা হয় তখন তারা বলে, ‘শুনলাম তো, ইচ্ছে করলে এ রকম কথা আমরাও বলতে পারি, এগুলো তো আগে কালের কেচ্ছা কাহিনী ছাড়া আর কিছুই না।’",
+      "translation_bn": "আর যখনই তাদের লোকাল উইন্ডোতে আমার অরিজিনাল জিরো-এরর কোড মার্কার বা আয়াতসমূহ ক্রিস্টাল-ক্লিয়ার ডিকোড ও পাঠ করা হতো (وَإِذَا تُتْلَىٰ عَلَيْهِمْ آيَاتُنَا), তখন তারা নিজেদের প্রসেসরের জেদি ল্যাগ লক করে বলত: ‘আমরা তো এর ডাটা সিগন্যাল শুনলাম; আমরা ইচ্ছা করলে আমাদের লোকাল ইন্টারফেসে হুবহু এর মতোই কোড টেক্সট জেনারেট করে বলতে পারতাম; কস্মিক লেজারে এই পিউর সোর্স কোডটি তো স্রেফ আদি জেনারেশনের ডামি উপকথা বা The Legacy Myth Label (أَسَاطِيرُ الْأَوَّلِينَ) ছাড়া আর কিছুই নয়’ [৪];",
       "words": [
         {
           "id": 33730,
@@ -5049,13 +5499,28 @@
         }
       ],
       "translation_en": "And when Our verses are recited to them, they say, \"We have heard. If we willed, we could say [something] like this. This is not but legends of the former peoples.\"",
-      "conventional_en": "And when Our verses are recited to them, they say, \"We have heard. If we willed, we could say [something] like this. This is not but legends of the former peoples.\""
+      "conventional_en": "And when Our verses are recited to them, they say, \"We have heard. If we willed, we could say [something] like this. This is not but legends of the former peoples.\"",
+      "conventional_bn": "আর যখন তাদের সামনে আমার আয়াতসমূহ পাঠ (ডিকোড) করা হতো, তখন তারা বলত, ‘আমরা তো শুনলাম; আমরা ইচ্ছা করলে অবশ্যই এর মতো কথা বলতে পারতাম; এটি তো স্রেফ পূর্ববর্তীদের উপকথা (গল্প) ছাড়া আর কিছুই নয়’।",
+      "core_meanings_bn": "কগনিটিভ ডাটা রিফিউজাল",
+      "core_meanings_en": "The Legacy Myth Label",
+      "metadata": {
+        "theme": "The Legacy Myth Label ও কগনিটিভ ডাটা রিফিউজাল",
+        "scientific_topics": [
+          "The Legacy Myth Label"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর যখনই তাদের লোকাল উইন্ডোতে আমার অরিজিনাল জিরো-এরর কোড মার্কার বা আয়াতসমূহ ক্রিস্টাল-ক্লিয়ার ডিকোড ও পাঠ করা হতো (وَإِذَا تُتْلَىٰ عَلَيْهِمْ آيَاتُنَا), তখন তারা নিজেদের প্রসেসরের জেদি ল্যাগ লক করে বলত: ‘আমরা তো এর ডাটা সিগন্যাল শুনলাম; আমরা ইচ্ছা করলে আমাদের লোকাল ইন্টারফেসে হুবহু এর মতোই কোড টেক্সট জেনারেট করে বলতে পারতাম; কস্মিক লেজারে এই পিউর সোর্স কোডটি তো স্রেফ আদি জেনারেশনের ডামি উপকথা বা The Legacy Myth Label (أَسَاطِيرُ الْأَوَّلِينَ) ছাড়া আর কিছুই নয়’ [৪];",
+      "meta_bn": "The Legacy Myth Label ও কগনিটিভ ডাটা রিফিউজাল",
+      "meta_en": "The Legacy Myth Label",
+      "core_meaning_bn": "কগনিটিভ ডাটা রিফিউজাল",
+      "core_meaning_en": "The Legacy Myth Label"
     },
     {
       "surah": 8,
       "ayah": 32,
       "transliteration": "wa-idh qālū l-lahuma in kāna hādhā huwa l-ḥaqa min ʿindika fa-amṭir ʿalaynā ḥijāratan mina l-samāi awi i'tinā biʿadhābin alīmin",
-      "translation_bn": "স্মরণ কর, যখন তারা বলেছিল, ‘হে আল্লাহ! এটা যদি তোমার নিকট থেকে (প্রেরিত) সত্য (দ্বীন) হয় তাহলে আমাদের উপর আসমান থেকে পাথর বর্ষণ কর, কিংবা আমাদের উপর কোন যন্ত্রণাদায়ক শাস্তি নিয়ে এসো।’",
+      "translation_bn": "আর তোমরা অতীত মক্কী গ্রিডের সেই মারাত্মক ডাটা-লগ স্মরণ করো—যখন সেই কাফের লিডার নোডগুলো পরম স্পর্ধার সাথে ওপেন সিস্টেম চ্যালেঞ্জ ছুঁড়ে বলেছিল (وَإِذْ قَالُوا اللَّهُمَّ): ‘এই ডাউনলিংককৃত কুরআন যদি সত্যিই আপনার মেইন সার্ভার থেকে আসা পরম অবজেক্টিভ সত্য ও Absolute Reality Code (هُوَ الْحَقَّ مِنْ عِندِكَ) হয়ে থাকে, তবে এর গ্যারান্টি হিসেবে আপনি এখনই উচ্চ-স্তরের ক্লাউড গেটওয়ে থেকে কাইনেটিক মেটেরিয়ালাইজেশন ঘটিয়ে আমাদের লোকাল আইডির ওপর সরাসরি পাথরের মেগা শাওয়ার বা বৃষ্টি বর্ষণ (فَأَمْطِرْ عَلَيْنَا حِجَارَةً مِّنَ السَّمَاءِ) করুন অথবা আমাদের লোকাল উইন্ডোতে তাৎক্ষণিক এক যন্ত্রণাদায়ক সিস্টেম ক্র্যাশ আজাব ডেপ্লয় করে নিয়ে আসুন’ [৪];",
       "words": [
         {
           "id": 34610,
@@ -5259,13 +5724,28 @@
         }
       ],
       "translation_en": "And [remember] when they said, \"O Allah, if this should be the truth from You, then rain down upon us stones from the sky or bring us a painful punishment.\"",
-      "conventional_en": "And [remember] when they said, \"O Allah, if this should be the truth from You, then rain down upon us stones from the sky or bring us a painful punishment.\""
+      "conventional_en": "And [remember] when they said, \"O Allah, if this should be the truth from You, then rain down upon us stones from the sky or bring us a painful punishment.\"",
+      "conventional_bn": "আর তোমরা স্মরণ করো—যখন তারা বলেছিল, ‘হে আল্লাহ! এটি যদি আপনার পক্ষ থেকে পরম সত্য হয়, তবে আপনি আসমান থেকে আমাদের ওপর পাথরের বৃষ্টি বর্ষণ করুন অথবা আমাদের কাছে কোনো যন্ত্রণাদায়ক আজাব নিয়ে আসুন’।",
+      "core_meanings_bn": "স্পর্ধার এরর কোড",
+      "core_meanings_en": "The Kinetic Materialization Challenge",
+      "metadata": {
+        "theme": "The Kinetic Materialization Challenge ও স্পর্ধার এরর কোড",
+        "scientific_topics": [
+          "The Kinetic Materialization Challenge"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা অতীত মক্কী গ্রিডের সেই মারাত্মক ডাটা-লগ স্মরণ করো—যখন সেই কাফের লিডার নোডগুলো পরম স্পর্ধার সাথে ওপেন সিস্টেম চ্যালেঞ্জ ছুঁড়ে বলেছিল (وَإِذْ قَالُوا اللَّهُمَّ): ‘এই ডাউনলিংককৃত কুরআন যদি সত্যিই আপনার মেইন সার্ভার থেকে আসা পরম অবজেক্টিভ সত্য ও Absolute Reality Code (هُوَ الْحَقَّ مِنْ عِندِكَ) হয়ে থাকে, তবে এর গ্যারান্টি হিসেবে আপনি এখনই উচ্চ-স্তরের ক্লাউড গেটওয়ে থেকে কাইনেটিক মেটেরিয়ালাইজেশন ঘটিয়ে আমাদের লোকাল আইডির ওপর সরাসরি পাথরের মেগা শাওয়ার বা বৃষ্টি বর্ষণ (فَأَمْطِرْ عَلَيْنَا حِجَارَةً مِّنَ السَّمَاءِ) করুন অথবা আমাদের লোকাল উইন্ডোতে তাৎক্ষণিক এক যন্ত্রণাদায়ক সিস্টেম ক্র্যাশ আজাব ডেপ্লয় করে নিয়ে আসুন’ [৪];",
+      "meta_bn": "The Kinetic Materialization Challenge ও স্পর্ধার এরর কোড",
+      "meta_en": "The Kinetic Materialization Challenge",
+      "core_meaning_bn": "স্পর্ধার এরর কোড",
+      "core_meaning_en": "The Kinetic Materialization Challenge"
     },
     {
       "surah": 8,
       "ayah": 33,
       "transliteration": "wamā kāna l-lahu liyuʿadhibahum wa-anta fīhim wamā kāna l-lahu muʿadhibahum wahum yastaghfirūna",
-      "translation_bn": "তুমি তাদের মাঝে থাকা অবস্থায় আল্লাহ তাদেরকে শাস্তি দিবেন না এবং যখন তারা ক্ষমা প্রার্থনা করতে থাকবে এরূপ অবস্থায়ও আল্লাহ তাদেরকে শাস্তি দিবেন না।",
+      "translation_bn": "অথচ কস্মিক মেইনফ্রেমের ফায়ারওয়াল প্রটোকল এমনভাবে ডিজাইন্ড যে—স্বয়ং আল্লাহ্ তাদের পুরো লোকাল নেটওয়ার্ক গ্রিডকে তাৎক্ষণিক ক্র্যাশ বা আজাব (لِيُعَذِّبَهُمْ) দেওয়ার কম্যান্ড এক্সিকিউট করবেন না, যতক্ষণ না পর্যন্ত তোমার অফিশিয়াল রাসুল নোডের লাইভ এক্সেস গ্রিড ও ফিজিক্যাল প্রিজেন্স তাদের ইন্টারফেসে একটিভ (وَأَنتَ فِيهِمْ) আছে; এবং স্বয়ং আল্লাহ্ তাদের ওওএস (OOS) পার্মানেন্টলি শাটডাউন বা আজাব দানকারীও হবেন না—যতক্ষণ পর্যন্ত তারা তাদের ব্যাক-এন্ডে নিজেদের এরর ফাইল ক্লিন করার জন্য রিকভারি কমান্ড বা এস্তিগফার অ্যালগরিদম (وَهُمْ يَسْتَغْفِرُونَ) অনবরত রান করতে থাকবে [এটিই হলো মহাবিশ্বের পরম The Adaptive Safety Shield Protocol (অনুকূল নিরাপত্তা শিল্ড বিধি)] [৪];",
       "words": [
         {
           "id": 35387,
@@ -5399,13 +5879,28 @@
         }
       ],
       "translation_en": "But Allah would not punish them while you, [O Muhammad], are among them, and Allah would not punish them while they seek forgiveness.",
-      "conventional_en": "But Allah would not punish them while you, [O Muhammad], are among them, and Allah would not punish them while they seek forgiveness."
+      "conventional_en": "But Allah would not punish them while you, [O Muhammad], are among them, and Allah would not punish them while they seek forgiveness.",
+      "conventional_bn": "অথচ আল্লাহ তাদের ওপর আজাব (সিস্টেম ক্র্যাশ) ডেপ্লয় করার মতো ছিলেন না—যখন তুমি তাদের মধ্যে অবস্থান করছিলে; আর আল্লাহ তাদের আজাব দানকারীও ছিলেন না—যখন তারা ব্যাক-এন্ডে এস্তিগফার (ক্ষমা / রিকভারি কম্যান্ড) রান করছিল।",
+      "core_meanings_bn": "ওওএস ব্যাকগ্রাউন্ড সেফটি রুল",
+      "core_meanings_en": "The Adaptive Safety Shield Protocol",
+      "metadata": {
+        "theme": "The Adaptive Safety Shield Protocol ও ওওএস ব্যাকগ্রাউন্ড সেফটি রুল",
+        "scientific_topics": [
+          "The Adaptive Safety Shield Protocol"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "অথচ কস্মিক মেইনফ্রেমের ফায়ারওয়াল প্রটোকল এমনভাবে ডিজাইন্ড যে—স্বয়ং আল্লাহ্ তাদের পুরো লোকাল নেটওয়ার্ক গ্রিডকে তাৎক্ষণিক ক্র্যাশ বা আজাব (لِيُعَذِّبَهُمْ) দেওয়ার কম্যান্ড এক্সিকিউট করবেন না, যতক্ষণ না পর্যন্ত তোমার অফিশিয়াল রাসুল নোডের লাইভ এক্সেস গ্রিড ও ফিজিক্যাল প্রিজেন্স তাদের ইন্টারফেসে একটিভ (وَأَنتَ فِيهِمْ) আছে; এবং স্বয়ং আল্লাহ্ তাদের ওওএস (OOS) পার্মানেন্টলি শাটডাউন বা আজাব দানকারীও হবেন না—যতক্ষণ পর্যন্ত তারা তাদের ব্যাক-এন্ডে নিজেদের এরর ফাইল ক্লিন করার জন্য রিকভারি কমান্ড বা এস্তিগফার অ্যালগরিদম (وَهُمْ يَسْتَغْفِرُونَ) অনবরত রান করতে থাকবে [এটিই হলো মহাবিশ্বের পরম The Adaptive Safety Shield Protocol (অনুকূল নিরাপত্তা শিল্ড বিধি)] [৪];",
+      "meta_bn": "The Adaptive Safety Shield Protocol ও ওওএস ব্যাকগ্রাউন্ড সেফটি রুল",
+      "meta_en": "The Adaptive Safety Shield Protocol",
+      "core_meaning_bn": "ওওএস ব্যাকগ্রাউন্ড সেফটি রুল",
+      "core_meaning_en": "The Adaptive Safety Shield Protocol"
     },
     {
       "surah": 8,
       "ayah": 34,
       "transliteration": "wamā lahum allā yuʿadhibahumu l-lahu wahum yaṣuddūna ʿani l-masjidi l-ḥarāmi wamā kānū awliyāahu in awliyāuhu illā l-mutaqūna walākinna aktharahum lā yaʿlamūna",
-      "translation_bn": "আল্লাহ যে তাদেরকে শাস্তি দিবেন না এ ব্যাপারে ওজর পেশ করার জন্য তাদের কাছে কী আছে যখন তারা (মানুষদেরকে) মাসজিদুল হারাম-এর পথে বাধা দিচ্ছে? তারা তো ওর (প্রকৃত) মুতাওয়াল্লী নয়, মুত্তাকীরা ছাড়া কেউ তার মুতাওয়াল্লী হতে পারে না, কিন্তু তাদের অধিকাংশ লোক এ সম্পর্কে অবগত নয়।",
+      "translation_bn": "আর এখন তাদের ওওএস প্রোফাইলে এমন কী সিকিউরিটি বা প্রিভিলেজড ডাটা অবশিষ্ট আছে যে—স্বয়ং আল্লাহ্ তাদের সিস্টেমে এন্ট্রপি ক্র্যাশ আজাব এক্সিকিউট করবেন না? অথচ তারা অন্য সাধারণ পিউর ইউজার নোডদের সেই সেন্ট্রাল মহাজাগতিক কসমিক পোর্টাল বা মাসজিদুল হারামের (عَنِ الْمَسْجِدِ الْحَرَامِ) মেইন ডিরেক্টরিতে কানেক্ট হতে মারাত্মক সাইবার ব্লকেড তৈরি করে বাধা দিচ্ছে, অথচ মেইন সার্ভারের লেজারে তারা কখনোই সেই পবিত্র গেটওয়ের ভেরিফাইড রুট এডমিন বা আউলিয়া (وَمَا كَانُوا أَوْلِيَاءَهُ) ছিল না; খুব ভালো করে নোট নাও—সেই পবিত্র পোর্টালের রিয়াল এডমিন প্রিভিলেজড বা অভিভাবকত্ব স্রেফ একমাত্র ক্ষতিকর ভাইরাস থেকে বাঁচতে ফায়ারওয়াল অন রাখা মুত্তাকীন নোড সমূহের (إِنْ أَوْلِيَاؤُهُ إِلَّا الْمُتَّقُونَ) জন্যই ফিক্সড করা আছে, কিন্তু তাদের অধিকাংশ নোডই তাদের লিমিটেড প্রসেসরে এই The Sacred Gateway Monopoly (পবিত্র গেটওয়ে একচেটিয়া প্রটোকল) জানে না [৪];",
       "words": [
         {
           "id": 36468,
@@ -5629,13 +6124,28 @@
         }
       ],
       "translation_en": "But why should Allah not punish them while they obstruct [people] from al-Masjid al- Haram and they were not [fit to be] its guardians? Its [true] guardians are not but the righteous, but most of them do not know.",
-      "conventional_en": "But why should Allah not punish them while they obstruct [people] from al-Masjid al- Haram and they were not [fit to be] its guardians? Its [true] guardians are not but the righteous, but most of them do not know."
+      "conventional_en": "But why should Allah not punish them while they obstruct [people] from al-Masjid al- Haram and they were not [fit to be] its guardians? Its [true] guardians are not but the righteous, but most of them do not know.",
+      "conventional_bn": "আর তাদের কী অধিকার আছে যে আল্লাহ তাদের আজাব দেবেন না—অথচ তারা মাসজিদুল হারামের (পবিত্র পোর্টাল) পথ থেকে বাধা দিচ্ছে, অথচ তারা তার প্রকৃত মুতাওয়াল্লী (অভিভাবক) নয়? তার প্রকৃত অভিভাবক তো স্রেফ মুত্তাকীরা (ফায়ারওয়াল অন রাখা ইউজার), কিন্তু তাদের অধিকাংশ তা জানে না।",
+      "core_meanings_bn": "আন-অথরাইজড রুট অ্যাক্সেস",
+      "core_meanings_en": "The Sacred Gateway Monopoly",
+      "metadata": {
+        "theme": "The Sacred Gateway Monopoly ও আন-অথরাইজড রুট অ্যাক্সেস",
+        "scientific_topics": [
+          "The Sacred Gateway Monopoly"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর এখন তাদের ওওএস প্রোফাইলে এমন কী সিকিউরিটি বা প্রিভিলেজড ডাটা অবশিষ্ট আছে যে—স্বয়ং আল্লাহ্ তাদের সিস্টেমে এন্ট্রপি ক্র্যাশ আজাব এক্সিকিউট করবেন না? অথচ তারা অন্য সাধারণ পিউর ইউজার নোডদের সেই সেন্ট্রাল মহাজাগতিক কসমিক পোর্টাল বা মাসজিদুল হারামের (عَنِ الْمَسْجِدِ الْحَرَامِ) মেইন ডিরেক্টরিতে কানেক্ট হতে মারাত্মক সাইবার ব্লকেড তৈরি করে বাধা দিচ্ছে, অথচ মেইন সার্ভারের লেজারে তারা কখনোই সেই পবিত্র গেটওয়ের ভেরিফাইড রুট এডমিন বা আউলিয়া (وَمَا كَانُوا أَوْلِيَاءَهُ) ছিল না; খুব ভালো করে নোট নাও—সেই পবিত্র পোর্টালের রিয়াল এডমিন প্রিভিলেজড বা অভিভাবকত্ব স্রেফ একমাত্র ক্ষতিকর ভাইরাস থেকে বাঁচতে ফায়ারওয়াল অন রাখা মুত্তাকীন নোড সমূহের (إِنْ أَوْلِيَاؤُهُ إِلَّا الْمُتَّقُونَ) জন্যই ফিক্সড করা আছে, কিন্তু তাদের অধিকাংশ নোডই তাদের লিমিটেড প্রসেসরে এই The Sacred Gateway Monopoly (পবিত্র গেটওয়ে একচেটিয়া প্রটোকল) জানে না [৪];",
+      "meta_bn": "The Sacred Gateway Monopoly ও আন-অথরাইজড রুট অ্যাক্সেস",
+      "meta_en": "The Sacred Gateway Monopoly",
+      "core_meaning_bn": "আন-অথরাইজড রুট অ্যাক্সেস",
+      "core_meaning_en": "The Sacred Gateway Monopoly"
     },
     {
       "surah": 8,
       "ayah": 35,
       "transliteration": "wamā kāna ṣalātuhum ʿinda l-bayti illā mukāan wataṣdiyatan fadhūqū l-ʿadhāba bimā kuntum takfurūna",
-      "translation_bn": "আল্লাহর ঘরের নিকট তাদের নামায হাত তালি মারা আর শিশ দেয়া ছাড়া আর কিছুই না, (এসব অপরাধে লিপ্ত ব্যক্তিদেরকে বলা হবে) ‘‘আযাব ভোগ কর যেহেতু তোমরা কুফরীতে লিপ্ত ছিলে’’।",
+      "translation_bn": "আর সেই পরম সেন্ট্রাল কসমিক হাউজ বা কাবার হাই-এনার্জি জোনে (عِندَ الْبَيْتِ) তাদের সংযোগ প্রটোকল বা সালাত বলতে আর কিছুই ছিল না—স্রেফ তীব্র অডিও-ফ্রিকোয়েন্সি বিকৃতি, শিস দেওয়া এবং তালি বাজানোর মারাত্মক ডাটা নোইজ বা The Audio-Frequency Noise Distortions (مُكَاءً وَتَصْدِيَةً); যা দ্বারা তারা পিউর সিগন্যাল জ্যাম করতে চাইত; অতএব তোমরা আজীবন তোমাদের ওওএসে যে মারাত্মক ক্ষতিকর ডার্ক কোড রান ও কুফরি (بِمَا كُنتُمْ تَكْفُرُونَ) করতে—স্রেফ তারই স্বয়ংক্রিয় কাউন্টার-ফিডব্যাক হিসেবে এই সিস্টেম ক্র্যাশ আজাব টেস্ট বা আস্বাদন করো [৪];",
       "words": [
         {
           "id": 37177,
@@ -5779,13 +6289,28 @@
         }
       ],
       "translation_en": "And their prayer at the House was not except whistling and handclapping. So taste the punishment for what you disbelieved.",
-      "conventional_en": "And their prayer at the House was not except whistling and handclapping. So taste the punishment for what you disbelieved."
+      "conventional_en": "And their prayer at the House was not except whistling and handclapping. So taste the punishment for what you disbelieved.",
+      "conventional_bn": "আর সেই কসমিক হাউজ (কাবা)-এর কাছে তাদের সালাত (সংযোগ) শিস দেওয়া ও তালি বাজানো ছাড়া আর কিছুই ছিল না; অতএব তোমরা তোমাদের কুফরির (কোড অমান্যের) কারণে আজাব আস্বাদন (টেস্ট) করো।",
+      "core_meanings_bn": "কসমিক সিগন্যাল জ্যামিং বালাই",
+      "core_meanings_en": "The Audio-Frequency Noise Distortions",
+      "metadata": {
+        "theme": "The Audio-Frequency Noise Distortions ও কসমিক সিগন্যাল জ্যামিং বালাই",
+        "scientific_topics": [
+          "The Audio-Frequency Noise Distortions"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর সেই পরম সেন্ট্রাল কসমিক হাউজ বা কাবার হাই-এনার্জি জোনে (عِندَ الْبَيْتِ) তাদের সংযোগ প্রটোকল বা সালাত বলতে আর কিছুই ছিল না—স্রেফ তীব্র অডিও-ফ্রিকোয়েন্সি বিকৃতি, শিস দেওয়া এবং তালি বাজানোর মারাত্মক ডাটা নোইজ বা The Audio-Frequency Noise Distortions (مُكَاءً وَتَصْدِيَةً); যা দ্বারা তারা পিউর সিগন্যাল জ্যাম করতে চাইত; অতএব তোমরা আজীবন তোমাদের ওওএসে যে মারাত্মক ক্ষতিকর ডার্ক কোড রান ও কুফরি (بِمَا كُنتُمْ تَكْفُرُونَ) করতে—স্রেফ তারই স্বয়ংক্রিয় কাউন্টার-ফিডব্যাক হিসেবে এই সিস্টেম ক্র্যাশ আজাব টেস্ট বা আস্বাদন করো [৪];",
+      "meta_bn": "The Audio-Frequency Noise Distortions ও কসমিক সিগন্যাল জ্যামিং বালাই",
+      "meta_en": "The Audio-Frequency Noise Distortions",
+      "core_meaning_bn": "কসমিক সিগন্যাল জ্যামিং বালাই",
+      "core_meaning_en": "The Audio-Frequency Noise Distortions"
     },
     {
       "surah": 8,
       "ayah": 36,
       "transliteration": "inna alladhīna kafarū yunfiqūna amwālahum liyaṣuddū ʿan sabīli l-lahi fasayunfiqūnahā thumma takūnu ʿalayhim ḥasratan thumma yugh'labūna wa-alladhīna kafarū ilā jahannama yuḥ'sharūna",
-      "translation_bn": "যে সব লোক সত্যকে মেনে নিতে অস্বীকার করেছে তারা আল্লাহর পথ হতে (লোকেদেরকে) বাধা দেয়ার জন্য তাদের ধন-সম্পদ ব্যয় করে থাকে, তারা তা ব্যয় করতেই থাকবে, অতঃপর এটাই তাদের দুঃখ ও অনুশোচনার কারণ হবে। পরে তারা পরাজিতও হবে। যারা কুফরী করে তাদেরকে (অবশেষে) জাহান্নামের পানে একত্রিত করা হবে।",
+      "translation_bn": "নিশ্চয়ই যারা সোর্স কোড ব্রেক করা কাফের ইউজার (إِنَّ الَّذِينَ كَفَرُوا)—তারা ওহীর পিউর সরল ডাটালগ বা সঠিক পথের ইন্টারফেসে অন্য নোডদের প্রবেশ রুখতে নিজেদের মেটা-ক্যাশ ও ধন-সম্পদ ব্যাপকভাবে ইনপুট বা ব্যয় (يُنفِقُونَ أَمْوَالَهُمْ) করে; অতএব তারা তাদের ওওএস থেকে এই The Anti-Data Stream Finance (পাল্টা-উপাত্ত প্রবাহ অর্থায়ন বালাই) কন্টিনিউয়াস চালাতেই থাকবে, তারপর ফাইনাল কমপাইল উইন্ডোতে সেই বিশাল কমার্শিয়াল ডাটা ইনপুট তাদের প্রোফাইলের জন্য এক চরম ক্যাটাস্ট্রফিক লোকসান ও হাহাকারে (حَسْرَةً) পরিণত হবে, অতঃপর তারা রানিং সেশনেই চূড়ান্ত পরাজিত ও ক্র্যাশ হবে; আর যারা কাফের—চূড়ান্ত পর্যায়ে স্রেফ সেই হাই-এন্ট্রপি ডিলিশন হাব বা জাহান্নামের (إِلَىٰ جَهَنَّمَ) ডার্ক কোঅর্ডিনেটেই তাদের সবাইকে ডাটা রিকভারি করে একত্রিত করা হবে [৪];",
       "words": [
         {
           "id": 37978,
@@ -6009,13 +6534,28 @@
         }
       ],
       "translation_en": "Indeed, those who disbelieve spend their wealth to avert [people] from the way of Allah. So they will spend it; then it will be for them a [source of] regret; then they will be overcome. And those who have disbelieved - unto Hell they will be gathered.",
-      "conventional_en": "Indeed, those who disbelieve spend their wealth to avert [people] from the way of Allah. So they will spend it; then it will be for them a [source of] regret; then they will be overcome. And those who have disbelieved - unto Hell they will be gathered."
+      "conventional_en": "Indeed, those who disbelieve spend their wealth to avert [people] from the way of Allah. So they will spend it; then it will be for them a [source of] regret; then they will be overcome. And those who have disbelieved - unto Hell they will be gathered.",
+      "conventional_bn": "নিশ্চয়ই যারা কাফের (অস্বীকারকারী), তারা আল্লাহর পথ থেকে বাধা দেওয়ার জন্য নিজেদের ধন-সম্পদ ব্যয় (ইনপুট) করে; অতএব তারা তা ব্যয় করতেই থাকবে, তারপর তা তাদের ওপর চরম আফসোস (হাহাকার) এ পরিণত হবে, অতঃপর তারা চূড়ান্ত পরাজিত হবে; আর যারা কাফের, তাদের জাহান্নামের দিকেই পুনরুত্থিত (একত্রিত) করা হবে।",
+      "core_meanings_bn": "ডার্ক ক্যাশ মেগা ক্র্যাশ",
+      "core_meanings_en": "The Anti-Data Stream Finance",
+      "metadata": {
+        "theme": "The Anti-Data Stream Finance ও ডার্ক ক্যাশ মেগা ক্র্যাশ",
+        "scientific_topics": [
+          "The Anti-Data Stream Finance"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "নিশ্চয়ই যারা সোর্স কোড ব্রেক করা কাফের ইউজার (إِنَّ الَّذِينَ كَفَرُوا)—তারা ওহীর পিউর সরল ডাটালগ বা সঠিক পথের ইন্টারফেসে অন্য নোডদের প্রবেশ রুখতে নিজেদের মেটা-ক্যাশ ও ধন-সম্পদ ব্যাপকভাবে ইনপুট বা ব্যয় (يُنفِقُونَ أَمْوَالَهُمْ) করে; অতএব তারা তাদের ওওএস থেকে এই The Anti-Data Stream Finance (পাল্টা-উপাত্ত প্রবাহ অর্থায়ন বালাই) কন্টিনিউয়াস চালাতেই থাকবে, তারপর ফাইনাল কমপাইল উইন্ডোতে সেই বিশাল কমার্শিয়াল ডাটা ইনপুট তাদের প্রোফাইলের জন্য এক চরম ক্যাটাস্ট্রফিক লোকসান ও হাহাকারে (حَسْرَةً) পরিণত হবে, অতঃপর তারা রানিং সেশনেই চূড়ান্ত পরাজিত ও ক্র্যাশ হবে; আর যারা কাফের—চূড়ান্ত পর্যায়ে স্রেফ সেই হাই-এন্ট্রপি ডিলিশন হাব বা জাহান্নামের (إِلَىٰ جَهَنَّمَ) ডার্ক কোঅর্ডিনেটেই তাদের সবাইকে ডাটা রিকভারি করে একত্রিত করা হবে [৪];",
+      "meta_bn": "The Anti-Data Stream Finance ও ডার্ক ক্যাশ মেগা ক্র্যাশ",
+      "meta_en": "The Anti-Data Stream Finance",
+      "core_meaning_bn": "ডার্ক ক্যাশ মেগা ক্র্যাশ",
+      "core_meaning_en": "The Anti-Data Stream Finance"
     },
     {
       "surah": 8,
       "ayah": 37,
       "transliteration": "liyamīza l-lahu l-khabītha mina l-ṭayibi wayajʿala l-khabītha baʿḍahu ʿalā baʿḍin fayarkumahu jamīʿan fayajʿalahu fī jahannama ulāika humu l-khāsirūna",
-      "translation_bn": "যাতে আল্লাহ পবিত্র থেকে অপবিত্রকে আলাদা করে দেন, অতঃপর অপবিত্রদের এককে অন্যের উপর রাখবেন, সকলকে স্তুপীকৃত করবেন; অতঃপর এই সমষ্টিকে জাহান্নামে নিক্ষেপ করবেন। এরাই হল সর্বস্বান্ত।",
+      "translation_bn": "এই মেগা স্ক্রীনিং সেশনটি স্রেফ এজন্য—যাতে স্বয়ং সিস্টেম আর্কিটেক্ট আল্লাহ তাঁর নিখুঁত ফিল্টারিং সমীকরণ দ্বারা একশত ভাগ পিওর ও অপ্টিমাইজড ডাটা নোড থেকে সমস্ত করাপ্ট ও অপবিত্র ম্যালওয়্যার নোড বা ‘খাবীছ’ (الْخَبِيثَ مِنَ الطَّيِّبِ) আলাদা করে আইসোলেট করতে পারেন; এবং অপবিত্র অবাক্ষয়িত নোডগুলোকে একে অপরের কোঅর্ডিনেট অক্ষের ওপর একের পর এক কম্প্রেস ও স্তূপীকৃত (فَيَرْكُمَهُ جَمِيعًا) করে এক ক্লিকে সেই হাই-এন্ট্রপি ডিলিশন হাব বা জাহান্নামের ভেতর পার্জ বা নিক্ষেপ করতে পারেন; কস্মিক লেজারের বিচারে স্রেফ ওরাই হলো পার্মানেন্টলি ডিলিট হয়ে যাওয়া পরম মেমোরি দেউলিয়া নোড বা খাসিরূন [এটিই হলো মহাবিশ্বের পরম The Global Data Liquidation (সার্বজনীন উপাত্ত লিকুইডেশন ও বিশোধন সমীকরণ)] [৪];",
       "words": [
         {
           "id": 38815,
@@ -6209,13 +6749,28 @@
         }
       ],
       "translation_en": "[This is] so that Allah may distinguish the wicked from the good and place the wicked some of them upon others and heap them all together and put them into Hell. It is those who are the losers.",
-      "conventional_en": "[This is] so that Allah may distinguish the wicked from the good and place the wicked some of them upon others and heap them all together and put them into Hell. It is those who are the losers."
+      "conventional_en": "[This is] so that Allah may distinguish the wicked from the good and place the wicked some of them upon others and heap them all together and put them into Hell. It is those who are the losers.",
+      "conventional_bn": "যাতে আল্লাহ পবিত্র (অপ্টিমাইজড) থেকে অপবিত্র (করাপ্ট) নোডগুলোকে আলাদা করতে পারেন এবং অপবিত্র নোডগুলোর একে অপরের ওপর স্তূপীকৃত করে একসাথে জমা করেন, অতঃপর সেটিকে জাহান্নামে নিক্ষেপ করেন; ওরাই চরম ক্ষতিগ্রস্ত (দেউলিয়া)।",
+      "core_meanings_bn": "এন্ট্রপি সেপারেশন সমীকরণ",
+      "core_meanings_en": "The Global Data Liquidation",
+      "metadata": {
+        "theme": "The Global Data Liquidation ও এন্ট্রপি সেপারেশন সমীকরণ",
+        "scientific_topics": [
+          "The Global Data Liquidation"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "এই মেগা স্ক্রীনিং সেশনটি স্রেফ এজন্য—যাতে স্বয়ং সিস্টেম আর্কিটেক্ট আল্লাহ তাঁর নিখুঁত ফিল্টারিং সমীকরণ দ্বারা একশত ভাগ পিওর ও অপ্টিমাইজড ডাটা নোড থেকে সমস্ত করাপ্ট ও অপবিত্র ম্যালওয়্যার নোড বা ‘খাবীছ’ (الْخَبِيثَ مِنَ الطَّيِّبِ) আলাদা করে আইসোলেট করতে পারেন; এবং অপবিত্র অবাক্ষয়িত নোডগুলোকে একে অপরের কোঅর্ডিনেট অক্ষের ওপর একের পর এক কম্প্রেস ও স্তূপীকৃত (فَيَرْكُمَهُ جَمِيعًا) করে এক ক্লিকে সেই হাই-এন্ট্রপি ডিলিশন হাব বা জাহান্নামের ভেতর পার্জ বা নিক্ষেপ করতে পারেন; কস্মিক লেজারের বিচারে স্রেফ ওরাই হলো পার্মানেন্টলি ডিলিট হয়ে যাওয়া পরম মেমোরি দেউলিয়া নোড বা খাসিরূন [এটিই হলো মহাবিশ্বের পরম The Global Data Liquidation (সার্বজনীন উপাত্ত লিকুইডেশন ও বিশোধন সমীকরণ)] [৪];",
+      "meta_bn": "The Global Data Liquidation ও এন্ট্রপি সেপারেশন সমীকরণ",
+      "meta_en": "The Global Data Liquidation",
+      "core_meaning_bn": "এন্ট্রপি সেপারেশন সমীকরণ",
+      "core_meaning_en": "The Global Data Liquidation"
     },
     {
       "surah": 8,
       "ayah": 38,
       "transliteration": "qul lilladhīna kafarū in yantahū yugh'far lahum mā qad salafa wa-in yaʿūdū faqad maḍat sunnatu l-awalīna",
-      "translation_bn": "যারা কুফরী করে তাদেরকে বল, ‘তারা যদি নিবৃত্ত হয় তাহলে তারা পূর্বে যা করেছে তা ক্ষমা করা হবে, আর যদি (কুফরীর) পুনরাবৃত্তি করে, তাহলে আগের লোকেদের (প্রতি অনুসৃত) নীতির দৃষ্টান্ত তো অতীতের পাতাতেই আছে।’",
+      "translation_bn": "তুমি সেই সোর্স কোড ব্রেক করা কাফের ইউজারদের ফাইনাল এলার্ম সিগন্যাল দিয়ে বলো (قُل لِّلَّذِينَ كَفَرُوا): ‘তারা যদি তাদের রানিং উইন্ডোতে এই ডার্ক কোড টেম্পারিং থেকে চিরতরে বিরত ও ডিসকানেক্ট হয় (إِن يَنتَهُوا), তবে ওওএস-এর বিশেষ ক্যাশ রিকভারি কম্যান্ড বা The Cache Rewriting Rule (ক্যাশ রিরাইটিং বিধি) অনুযায়ী অতীতে তাদের ওওএসে জেনারেট হওয়া সমস্ত এরর ও ব্যাকলগ ফাইল এক পলকে ক্লিয়ার ও ক্ষমা (يُغْفَرْ لَهُم مَّا قَدْ سَلَفَ) করে দেওয়া হবে; কিন্তু তারা যদি তাদের পরবর্তী সেশনে পুনরায় একই ভাইরাস কোড রান করে—তবে তারা যেন নোট নেয়, নিশ্চয়ই অতীত জেনারেশনের অবাক্ষয়িত নোড-ক্লাস্টারগুলোকে যেভাবে সিস্টেম ক্র্যাশ আজাব দিয়ে চিরতরে নিশ্চিহ্ন করা হয়েছিল, সেই অবিনশ্বর স্বয়ংক্রিয় কানুন বা সুন্নাতুল আউয়ালীন (سُنَّتُ الْأَوَّلِينَ) অলরেডি ডাটাবেজে লকড হয়ে পার হয়ে গেছে’ [৪];",
       "words": [
         {
           "id": 39705,
@@ -6389,13 +6944,28 @@
         }
       ],
       "translation_en": "Say to those who have disbelieved [that] if they cease, what has previously occurred will be forgiven for them. But if they return [to hostility] - then the precedent of the former [rebellious] peoples has already taken place.",
-      "conventional_en": "Say to those who have disbelieved [that] if they cease, what has previously occurred will be forgiven for them. But if they return [to hostility] - then the precedent of the former [rebellious] peoples has already taken place."
+      "conventional_en": "Say to those who have disbelieved [that] if they cease, what has previously occurred will be forgiven for them. But if they return [to hostility] - then the precedent of the former [rebellious] peoples has already taken place.",
+      "conventional_bn": "তুমি কাফের (অস্বীকারকারী) দের বলো—তারা যদি (অবাধ্যতা থেকে) বিরত হয়, তবে তাদের অতীতে যা কিছু হয়ে গেছে তা ক্ষমা (ক্লিয়ার) করে দেওয়া হবে; কিন্তু তারা যদি পুনরায় (একই এরর কোড) রান করে, তবে নিশ্চয়ই পূর্ববর্তীদের ক্ষেত্রে আল্লাহর স্বয়ংক্রিয় কানুন অবধারিত হয়ে পার হয়ে গেছে।",
+      "core_meanings_bn": "অতীত ডাটালগ রিমুভাল",
+      "core_meanings_en": "The Cache Rewriting Rule",
+      "metadata": {
+        "theme": "The Cache Rewriting Rule ও অতীত ডাটালগ রিমুভাল",
+        "scientific_topics": [
+          "The Cache Rewriting Rule"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "তুমি সেই সোর্স কোড ব্রেক করা কাফের ইউজারদের ফাইনাল এলার্ম সিগন্যাল দিয়ে বলো (قُل لِّلَّذِينَ كَفَرُوا): ‘তারা যদি তাদের রানিং উইন্ডোতে এই ডার্ক কোড টেম্পারিং থেকে চিরতরে বিরত ও ডিসকানেক্ট হয় (إِن يَنتَهُوا), তবে ওওএস-এর বিশেষ ক্যাশ রিকভারি কম্যান্ড বা The Cache Rewriting Rule (ক্যাশ রিরাইটিং বিধি) অনুযায়ী অতীতে তাদের ওওএসে জেনারেট হওয়া সমস্ত এরর ও ব্যাকলগ ফাইল এক পলকে ক্লিয়ার ও ক্ষমা (يُغْفَرْ لَهُم مَّا قَدْ سَلَفَ) করে দেওয়া হবে; কিন্তু তারা যদি তাদের পরবর্তী সেশনে পুনরায় একই ভাইরাস কোড রান করে—তবে তারা যেন নোট নেয়, নিশ্চয়ই অতীত জেনারেশনের অবাক্ষয়িত নোড-ক্লাস্টারগুলোকে যেভাবে সিস্টেম ক্র্যাশ আজাব দিয়ে চিরতরে নিশ্চিহ্ন করা হয়েছিল, সেই অবিনশ্বর স্বয়ংক্রিয় কানুন বা সুন্নাতুল আউয়ালীন (سُنَّتُ الْأَوَّلِينَ) অলরেডি ডাটাবেজে লকড হয়ে পার হয়ে গেছে’ [৪];",
+      "meta_bn": "The Cache Rewriting Rule ও অতীত ডাটালগ রিমুভাল",
+      "meta_en": "The Cache Rewriting Rule",
+      "core_meaning_bn": "অতীত ডাটালগ রিমুভাল",
+      "core_meaning_en": "The Cache Rewriting Rule"
     },
     {
       "surah": 8,
       "ayah": 39,
       "transliteration": "waqātilūhum ḥattā lā takūna fit'natun wayakūna l-dīnu kulluhu lillahi fa-ini intahaw fa-inna l-laha bimā yaʿmalūna baṣīrun",
-      "translation_bn": "তাদের বিরুদ্ধে যুদ্ধ চালিয়ে যাও যে পর্যন্ত না ফিতনা (কুফর ও শিরক) খতম হয়ে যায় আর দ্বীন পুরোপুরিভাবে আল্লাহর জন্য হয়ে যায়। অতঃপর তারা যদি বিরত হয় তাহলে তারা (ন্যায় বা অন্যায়) যা করে আল্লাহ তার সম্যক দ্রষ্টা।",
+      "translation_bn": "আর তোমরা তোমাদের সিকিউরিটি গ্রিড রক্ষা করতে সেই ডার্ক ম্যালওয়্যার ক্লাস্টারগুলোর বিরুদ্ধে অনবরত কাউন্টার-অ্যাকশন ও প্রতিরোধ লড়াই চালিয়ে যাও (وَقَاتِلُوهُمْ)—যতক্ষণ না পুরো নেটওয়ার্ক গ্রিড থেকে সিস্টেমের চেইন ব্রেক করা সেই মেগা ফিতনা ভাইরাস পুরোপুরি ভ্যানিশ ও নিশ্চিহ্ন হয়ে যায় (حَتَّىٰ لَا تَكُونَ فِتْنَةٌ) এবং মানুষের চিন্তার ওওএস পরিচালনা বিধি বা দ্বীন শতভাগ নিখুঁতভাবে স্রেফ একমাত্র মূল সোর্স কোডার আল্লাহ্র পিউর ডিরেক্টরির সাথে সিঙ্কড ও ডেডিকেটেড হয়ে যায় (وَيَكُونَ الدِّينَ كُلُّهُ لِلَّهِ); অতঃপর তারা যদি সত্যিই অবাধ্যতার কোড রান করা থেকে বিরত হয় (فَإِنِ انتَهَوْا)—তবে ক্লিয়ার নোট নাও, নিশ্চয়ই তারা তাদের উইন্ডোতে যে ডাটা ও কাজ এক্সিকিউট করে, স্বয়ং আল্লাহ্ তাঁর ব্যাক-এন্ড স্ক্যানারে তার পরম লাইভ দ্রষ্টা বা বাছীর [এটিই হলো মহাবিশ্বের পরম The Anti-Malware Disinfection Operation (অ্যান্টি-ম্যালওয়্যার বিশোধন অপারেশন)] [৪];",
       "words": [
         {
           "id": 40522,
@@ -6569,13 +7139,28 @@
         }
       ],
       "translation_en": "And fight them until there is no fitnah and [until] the religion, all of it, is for Allah. And if they cease - then indeed, Allah is Seeing of what they do.",
-      "conventional_en": "And fight them until there is no fitnah and [until] the religion, all of it, is for Allah. And if they cease - then indeed, Allah is Seeing of what they do."
+      "conventional_en": "And fight them until there is no fitnah and [until] the religion, all of it, is for Allah. And if they cease - then indeed, Allah is Seeing of what they do.",
+      "conventional_bn": "আর তোমরা তাদের বিরুদ্ধে লড়াই (যুদ্ধ) চালিয়ে যাও—যতক্ষণ না ফিতনা (ভাইরাসের বিশৃঙ্খলা) পুরোপুরি নিশ্চিহ্ন হয়ে যায় এবং দ্বীন (জীবন পরিচালনা ব্যবস্থা) পুরোপরি একমাত্র আল্লাহর জন্য হয়ে যায়; অতঃপর তারা যদি বিরত হয়, তবে নিশ্চয়ই তারা যা আমল (কাজ) করে আল্লাহ তার পরম দ্রষ্টা।",
+      "core_meanings_bn": "পিউর ওওএস ডিরেক্টরি",
+      "core_meanings_en": "The Anti-Malware Disinfection Operation",
+      "metadata": {
+        "theme": "The Anti-Malware Disinfection Operation ও পিউর ওওএস ডিরেক্টরি",
+        "scientific_topics": [
+          "The Anti-Malware Disinfection Operation"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা তোমাদের সিকিউরিটি গ্রিড রক্ষা করতে সেই ডার্ক ম্যালওয়্যার ক্লাস্টারগুলোর বিরুদ্ধে অনবরত কাউন্টার-অ্যাকশন ও প্রতিরোধ লড়াই চালিয়ে যাও (وَقَاتِلُوهُمْ)—যতক্ষণ না পুরো নেটওয়ার্ক গ্রিড থেকে সিস্টেমের চেইন ব্রেক করা সেই মেগা ফিতনা ভাইরাস পুরোপুরি ভ্যানিশ ও নিশ্চিহ্ন হয়ে যায় (حَتَّىٰ لَا تَكُونَ فِتْنَةٌ) এবং মানুষের চিন্তার ওওএস পরিচালনা বিধি বা দ্বীন শতভাগ নিখুঁতভাবে স্রেফ একমাত্র মূল সোর্স কোডার আল্লাহ্র পিউর ডিরেক্টরির সাথে সিঙ্কড ও ডেডিকেটেড হয়ে যায় (وَيَكُونَ الدِّينَ كُلُّهُ لِلَّهِ); অতঃপর তারা যদি সত্যিই অবাধ্যতার কোড রান করা থেকে বিরত হয় (فَإِنِ انتَهَوْا)—তবে ক্লিয়ার নোট নাও, নিশ্চয়ই তারা তাদের উইন্ডোতে যে ডাটা ও কাজ এক্সিকিউট করে, স্বয়ং আল্লাহ্ তাঁর ব্যাক-এন্ড স্ক্যানারে তার পরম লাইভ দ্রষ্টা বা বাছীর [এটিই হলো মহাবিশ্বের পরম The Anti-Malware Disinfection Operation (অ্যান্টি-ম্যালওয়্যার বিশোধন অপারেশন)] [৪];",
+      "meta_bn": "The Anti-Malware Disinfection Operation ও পিউর ওওএস ডিরেক্টরি",
+      "meta_en": "The Anti-Malware Disinfection Operation",
+      "core_meaning_bn": "পিউর ওওএস ডিরেক্টরি",
+      "core_meaning_en": "The Anti-Malware Disinfection Operation"
     },
     {
       "surah": 8,
       "ayah": 40,
       "transliteration": "wa-in tawallaw fa-iʿ'lamū anna l-laha mawlākum niʿ'ma l-mawlā waniʿ'ma l-naṣīru",
-      "translation_bn": "আর তারা যদি মুখ ফিরিয়ে নেয় তাহলে জেনে রেখ যে, আল্লাহই তোমাদের অভিভাবক, কতই না উত্তম অভিভাবক! কতই না উত্তম সাহায্যকারী!",
+      "translation_bn": "আর তারা যদি তোমাদের এই ওওএস রিকভারি মিশনকে পুরোপুরি রিফিউজ করে কানেকশন ডিসকানেক্ট বা মুখ ফিরিয়ে নেয় (وَإِن تَوَلَّوْا), তবে তোমরা তোমাদের চিন্তা প্রсеসরে একশত ভাগ স্টেবল হয়ে ক্লিয়ার নোট নাও যে—নিশ্চয়ই স্বয়ং আল্লাহ্ হলেন তোমাদের একমাত্র মূল সেন্ট্রাল সার্ভার ও পরম অভিভাবক বা মওলা (أَنَّ اللَّهَ مَوْلَاكُمْ); পুরো মাল্টি-ভার্সের নেটওয়ার্ক গ্রিডে ব্যাক-এন্ড ব্যাকআপ ও সুরক্ষায় তিনি কতই না চমৎকার ও অবিনশ্বর পরম মওলা (نِعْمَ الْمَوْلَىٰ) এবং সিকিউরিটি গ্রিড বুস্টিংয়ে তিনি কতই না চমৎকার আল্ট্রা-হাই টেকনিক্যাল সাহায্যকারী বা নাসীর [এটিই হলো মহাবিশ্বের পরম The Absolute Server Redundancy (পরম সার্ভার রিডানড্যান্সি প্রটোকল)]।",
       "words": [
         {
           "id": 41234,
@@ -6689,13 +7274,28 @@
         }
       ],
       "translation_en": "But if they turn away - then know that Allah is your protector. Excellent is the protector, and Excellent is the helper.",
-      "conventional_en": "But if they turn away - then know that Allah is your protector. Excellent is the protector, and Excellent is the helper."
+      "conventional_en": "But if they turn away - then know that Allah is your protector. Excellent is the protector, and Excellent is the helper.",
+      "conventional_bn": "আর তারা যদি মুখ ফিরিয়ে (ডিসকানেক্ট) নেয়, তবে তোমরা একশত ভাগ নিশ্চিত জেনে রাখো যে—নিশ্চয়ই আল্লাহ তোমাদের মওলা (পরম অভিভাবক); তিনি কতই না চমৎকার মওলা এবং কতই না চমৎকার সাহায্যকারী (টেকনিক্যাল সাপোর্ট দাতা) [৪,৫]!",
+      "core_meanings_bn": "রুট প্রোভাইডার কম্যান্ড",
+      "core_meanings_en": "The Absolute Server Redundancy",
+      "metadata": {
+        "theme": "The Absolute Server Redundancy ও রুট প্রোভাইডার কম্যান্ড",
+        "scientific_topics": [
+          "The Absolute Server Redundancy"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তারা যদি তোমাদের এই ওওএস রিকভারি মিশনকে পুরোপুরি রিফিউজ করে কানেকশন ডিসকানেক্ট বা মুখ ফিরিয়ে নেয় (وَإِن تَوَلَّوْا), তবে তোমরা তোমাদের চিন্তা প্রсеসরে একশত ভাগ স্টেবল হয়ে ক্লিয়ার নোট নাও যে—নিশ্চয়ই স্বয়ং আল্লাহ্ হলেন তোমাদের একমাত্র মূল সেন্ট্রাল সার্ভার ও পরম অভিভাবক বা মওলা (أَنَّ اللَّهَ مَوْلَاكُمْ); পুরো মাল্টি-ভার্সের নেটওয়ার্ক গ্রিডে ব্যাক-এন্ড ব্যাকআপ ও সুরক্ষায় তিনি কতই না চমৎকার ও অবিনশ্বর পরম মওলা (نِعْمَ الْمَوْلَىٰ) এবং সিকিউরিটি গ্রিড বুস্টিংয়ে তিনি কতই না চমৎকার আল্ট্রা-হাই টেকনিক্যাল সাহায্যকারী বা নাসীর [এটিই হলো মহাবিশ্বের পরম The Absolute Server Redundancy (পরম সার্ভার রিডানড্যান্সি প্রটোকল)]।",
+      "meta_bn": "The Absolute Server Redundancy ও রুট প্রোভাইডার কম্যান্ড",
+      "meta_en": "The Absolute Server Redundancy",
+      "core_meaning_bn": "রুট প্রোভাইডার কম্যান্ড",
+      "core_meaning_en": "The Absolute Server Redundancy"
     },
     {
       "surah": 8,
       "ayah": 41,
       "transliteration": "wa-iʿ'lamū annamā ghanim'tum min shayin fa-anna lillahi khumusahu walilrrasūli walidhī l-qur'bā wal-yatāmā wal-masākīni wa-ib'ni l-sabīli in kuntum āmantum bil-lahi wamā anzalnā ʿalā ʿabdinā yawma l-fur'qāni yawma l-taqā l-jamʿāni wal-lahu ʿalā kulli shayin qadīrun",
-      "translation_bn": "তোমরা জেনে রেখ যে, যুদ্ধে যা তোমরা লাভ কর তার এক-পঞ্চমাংশ হচ্ছে আল্লাহ, তাঁর রসূল, রসূলের আত্মীয়স্বজন, ইয়াতীম, মিসকীন ও মুসাফিরদের জন্য যদি তোমরা আল্লাহর উপর আর চূড়ান্ত ফায়সালার দিন অর্থাৎ দু’পক্ষের (মুসলমান ও কাফের বাহিনীর) মিলিত হওয়ার দিন আমি যা আমার বান্দাহর উপর অবতীর্ণ করেছিলাম তার উপর বিশ্বাস করে থাক। আর আল্লাহ হলেন সকল বিষয়ের উপর ক্ষমতাবান।",
+      "translation_bn": "আর তোমরা তোমাদের ওওএসে (OOS) একশত ভাগ ক্লিয়ার নোট নাও যে—তোমরা যুদ্ধের ময়দানে যা কিছু অতিরিক্ত এনার্জি, মেটেরিয়াল ও গনিমত রিসোর্স লাভ করেছ (أَنَّمَا غَنِمْتُم مِّن شَيْءٍ), তার ঠিক এক-পঞ্চমাংশ বা ২০% শেয়ার স্রেফ মূল সোর্স কোডার আল্লাহ, তাঁর অথেন্টিকেটেড রাসূল এবং সিস্টেমের দুর্বল সাব-নোড—তথা নিকটাত্মীয়, এতিম, মিসকিন ও পথহারা মুসাফিরদের ক্লাস্টারের জন্য ফিক্সড করা থাকবে; যদি তোমরা সত্যিই আল্লাহ্র প্রতি এবং সেই পরম ‘ফুরকান উইন্ডো’ বা সত্য-মিথ্যার ফায়সালাকারী দিনে (يَوْمَ الْفُرْقَانِ) আমার বিশেষ ইউজার বান্দার ওপর যা কিছু ডাটা সিগন্যাল ও গাইডলাইন নাজিল তথা ডাউনলোড করেছিলাম তার প্রতি ঈমান ও ট্রাস্ট স্থাপন করে থাকো—যেদিন মেইনফ্রেমের দুটি বিপরীত নেটওয়ার্ক ক্লাস্টার বা বাহিনী মুখোমুখি হয়েছিল (يَوْمَ الْتَقَى الْجَمْعَانِ); আর স্বয়ং আল্লাহ্ এই মহাবিশ্বের প্রতিটি ন্যানো অবজেক্ট এবং কোয়ান্টাম ডাটার ওপর পরম এক্সেস কন্ট্রোল ও সার্বভৌম ক্ষমতাবান;",
       "words": [
         {
           "id": 42087,
@@ -7039,13 +7639,28 @@
         }
       ],
       "translation_en": "And know that anything you obtain of war booty - then indeed, for Allah is one fifth of it and for the Messenger and for [his] near relatives and the orphans, the needy, and the [stranded] traveler, if you have believed in Allah and in that which We sent down to Our Servant on the day of criterion - the day when the two armies met. And Allah, over all things, is competent.",
-      "conventional_en": "And know that anything you obtain of war booty - then indeed, for Allah is one fifth of it and for the Messenger and for [his] near relatives and the orphans, the needy, and the [stranded] traveler, if you have believed in Allah and in that which We sent down to Our Servant on the day of criterion - the day when the two armies met. And Allah, over all things, is competent."
+      "conventional_en": "And know that anything you obtain of war booty - then indeed, for Allah is one fifth of it and for the Messenger and for [his] near relatives and the orphans, the needy, and the [stranded] traveler, if you have believed in Allah and in that which We sent down to Our Servant on the day of criterion - the day when the two armies met. And Allah, over all things, is competent.",
+      "conventional_bn": "আর তোমরা জেনে রাখো যে, তোমরা যা কিছু গনিমত (যুদ্ধলব্ধ সম্পদ) লাভ করেছ—তার এক-পঞ্চমাংশ স্রেফ আল্লাহর, রাসূলের, তাঁর নিকটাত্মীয়দের, এতিমদের, মিসকিনদের এবং মুসাফিরদের জন্য; যদি তোমরা আল্লাহ ও ফুরকানের দিনে (বদরে) আমার বান্দার ওপর যা নাজিল (ডাউনলিংক) করেছিলাম তার প্রতি ঈমান এনে থাকো—যেদিন দুই দল (বাহিনী) মুখোমুখি হয়েছিল; আর আল্লাহ প্রতিটি বস্তুর ওপর পরম ক্ষমতাবান।",
+      "core_meanings_bn": "খুমুস ডাটা প্যাচ",
+      "core_meanings_en": "The Multi-Channel Resource Allocation",
+      "metadata": {
+        "theme": "The Multi-Channel Resource Allocation ও খুমুস ডাটা প্যাচ",
+        "scientific_topics": [
+          "The Multi-Channel Resource Allocation"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা তোমাদের ওওএসে (OOS) একশত ভাগ ক্লিয়ার নোট নাও যে—তোমরা যুদ্ধের ময়দানে যা কিছু অতিরিক্ত এনার্জি, মেটেরিয়াল ও গনিমত রিসোর্স লাভ করেছ (أَنَّمَا غَنِمْتُم مِّن شَيْءٍ), তার ঠিক এক-পঞ্চমাংশ বা ২০% শেয়ার স্রেফ মূল সোর্স কোডার আল্লাহ, তাঁর অথেন্টিকেটেড রাসূল এবং সিস্টেমের দুর্বল সাব-নোড—তথা নিকটাত্মীয়, এতিম, মিসকিন ও পথহারা মুসাফিরদের ক্লাস্টারের জন্য ফিক্সড করা থাকবে; যদি তোমরা সত্যিই আল্লাহ্র প্রতি এবং সেই পরম ‘ফুরকান উইন্ডো’ বা সত্য-মিথ্যার ফায়সালাকারী দিনে (يَوْمَ الْفُرْقَانِ) আমার বিশেষ ইউজার বান্দার ওপর যা কিছু ডাটা সিগন্যাল ও গাইডলাইন নাজিল তথা ডাউনলোড করেছিলাম তার প্রতি ঈমান ও ট্রাস্ট স্থাপন করে থাকো—যেদিন মেইনফ্রেমের দুটি বিপরীত নেটওয়ার্ক ক্লাস্টার বা বাহিনী মুখোমুখি হয়েছিল (يَوْمَ الْتَقَى الْجَمْعَانِ); আর স্বয়ং আল্লাহ্ এই মহাবিশ্বের প্রতিটি ন্যানো অবজেক্ট এবং কোয়ান্টাম ডাটার ওপর পরম এক্সেস কন্ট্রোল ও সার্বভৌম ক্ষমতাবান;",
+      "meta_bn": "The Multi-Channel Resource Allocation ও খুমুস ডাটা প্যাচ",
+      "meta_en": "The Multi-Channel Resource Allocation",
+      "core_meaning_bn": "খুমুস ডাটা প্যাচ",
+      "core_meaning_en": "The Multi-Channel Resource Allocation"
     },
     {
       "surah": 8,
       "ayah": 42,
       "transliteration": "idh antum bil-ʿud'wati l-dun'yā wahum bil-ʿud'wati l-quṣ'wā wal-rakbu asfala minkum walaw tawāʿadttum la-ikh'talaftum fī l-mīʿādi walākin liyaqḍiya l-lahu amran kāna mafʿūlan liyahlika man halaka ʿan bayyinatin wayaḥyā man ḥayya ʿan bayyinatin wa-inna l-laha lasamīʿun ʿalīmun",
-      "translation_bn": "স্মরণ কর, যখন তোমরা উপত্যকার নিকট প্রান্তে ছিলে আর তারা ছিল দূরের প্রান্তে আর উটের আরোহী কাফেলা (আবূ সুফইয়ানের নেতৃত্বে কুরাইশের সম্পদ সহ কাফেলা) ছিল তোমাদের অপেক্ষা নিম্নভূমিতে। যদি তোমরা যুদ্ধ করার ব্যাপারে পরস্পরের মধ্যে পূর্বেই সিদ্ধান্ত গ্রহণ করতে, তবুও যুদ্ধ করার এ সিদ্ধান্ত তোমরা অবশ্যই রক্ষা করতে পারতে না (তোমাদের দুর্বল অবস্থার কারণে), যাতে আল্লাহ সে কাজ সম্পন্ন করতে পারেন যা ছিল পূর্বেই স্থিরীকৃত, যেন যাকে ধ্বংস হতে হবে সে যেন সুস্পষ্ট দলীলের ভিত্তিতে ধ্বংস হয় আর যাকে জীবিত থাকতে হবে সেও যেন সুস্পষ্ট দলীলের ভিত্তিতে জীবিত থাকে। আল্লাহ নিশ্চয়ই সর্বশ্রোতা, সর্বজ্ঞ।",
+      "translation_bn": "আর বদর গ্রিডের সেই নিখুঁত ভৌগোলিক ম্যাপিং স্মরণ করো—যখন তোমরা তোমাদের ওওএস সেটআপ সহকারে ছিলে মেইন উপত্যকার একদম নিকটবর্তী প্রান্তে বা কোঅর্ডিনেটে (بِالْعُدْوَةِ الدُّنْيَا), এবং সেই ডার্ক কাফের বাহিনী ছিল উপত্যকার একেবারে দূরবর্তী ব্যাক-এন্ড প্রান্তে (وَهُم بِالْعُدْوَةِ الْقُصْوَىٰ), আর সেই ইম্পেরিয়াল কমার্শিয়াল কাফেলাটি রান করছিল তোমাদের লজিক্যাল লেভেলের চেয়ে অনেক নিচু উপকূলীয় ট্র্যাকে; খুব ভালো করে নোট নাও—তোমরা যদি মানুষেরা নিজেরা পরস্পরের সাথে কোনো টাইম-শিডিউল বা অ্যাপয়েন্টমেন্ট ফিক্সড করতে (وَلَوْ تَوَاعَدتُّمْ), তবে ফিজিক্যাল ইভেন্টের জটিলতায় অবশ্যই তোমরা সেই নির্ধারিত রিয়েল-টাইমে অমিল বা প্রসেস মিসম্যাচ করতে; কিন্তু সুপ্রীমিক সিস্টেম আর্কিটেক্ট আল্লাহ্ এক বিশেষ কম্যান্ড এক্সিকিউট করতে চাচ্ছিলেন যা কস্মিক ডিরেক্টরি অনুযায়ী সম্পন্ন হতেই হতো (لِّيَقْضِيَ اللَّهُ أَمْرًا كَانَ مَفْعُولًا)—স্রেফ এজন্য যাতে এই সিস্টেম স্ক্রীনিংয়ের পর যে আইডি চিরতরে ডিলিট ও ধ্বংস হবে সে যেন ক্রিস্টাল-ক্লিয়ার প্রমাণের ভিত্তিতেই ধ্বংস হয় (لِّيَهْلِكَ مَنْ هَلَكَ عَن بَيِّنَةٍ) এবং যে ওওএস লেভেলে চিরস্থায়ী সচল ও জীবন লাভ করবে সেও যেন একশত ভাগ পিওর স্পষ্ট প্রমাণের ভিত্তিতেই সচল থাকে; নিশ্চয়ই আল্লাহ প্রতিটি ইনবাউন্ড সিগন্যাল শ্রবণকারী এবং পুরো মাল্টি-ভার্সের মাস্টার মেকানিজম জানা পরম সর্বজ্ঞ;",
       "words": [
         {
           "id": 42882,
@@ -7409,13 +8024,28 @@
         }
       ],
       "translation_en": "[Remember] when you were on the near side of the valley, and they were on the farther side, and the caravan was lower [in position] than you. If you had made an appointment [to meet], you would have missed the appointment. But [it was] so that Allah might accomplish a matter already destined - that those who perished [through disbelief] would perish upon evidence and those who lived [in faith] would live upon evidence; and indeed, Allah is Hearing and Knowing.",
-      "conventional_en": "[Remember] when you were on the near side of the valley, and they were on the farther side, and the caravan was lower [in position] than you. If you had made an appointment [to meet], you would have missed the appointment. But [it was] so that Allah might accomplish a matter already destined - that those who perished [through disbelief] would perish upon evidence and those who lived [in faith] would live upon evidence; and indeed, Allah is Hearing and Knowing."
+      "conventional_en": "[Remember] when you were on the near side of the valley, and they were on the farther side, and the caravan was lower [in position] than you. If you had made an appointment [to meet], you would have missed the appointment. But [it was] so that Allah might accomplish a matter already destined - that those who perished [through disbelief] would perish upon evidence and those who lived [in faith] would live upon evidence; and indeed, Allah is Hearing and Knowing.",
+      "conventional_bn": "যখন তোমরা ছিলে (উপত্যকার) নিকটবর্তী প্রান্তে এবং তারা ছিল দূরবর্তী প্রান্তে, আর কাফেলা ছিল তোমাদের চেয়ে নিচু এলাকায়; আর তোমরা যদি পরস্পরের সাথে অ্যাপয়েন্টমেন্ট (সময় নির্ধারণ) করতে, তবে অবশ্যই তোমরা সেই নির্ধারিত সময়ে অমিল করতে; কিন্তু আল্লাহ এমন একটি কম্যান্ড (সিদ্ধান্ত) এক্সিকিউট করতে চাচ্ছিলেন যা সম্পন্ন হতেই হতো—যাতে যে ধ্বংস (ক্র্যাশ) হবে সে স্পষ্ট প্রমাণের ভিত্তিতে ধ্বংস হয় এবং যে জীবন (সচল) লাভ করবে সে স্পষ্ট প্রমাণের ভিত্তিতে সচল থাকে; নিশ্চয়ই আল্লাহ সর্বশ্রোতা, সর্বজ্ঞ।",
+      "core_meanings_bn": "স্পেস-টাইম ফ্যাব্রিকেশন ম্যাপিং",
+      "core_meanings_en": "The Geo-Spatial Coordinate Alignment",
+      "metadata": {
+        "theme": "The Geo-Spatial Coordinate Alignment ও স্পেস-টাইম ফ্যাব্রিকেশন ম্যাপিং",
+        "scientific_topics": [
+          "The Geo-Spatial Coordinate Alignment"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর বদর গ্রিডের সেই নিখুঁত ভৌগোলিক ম্যাপিং স্মরণ করো—যখন তোমরা তোমাদের ওওএস সেটআপ সহকারে ছিলে মেইন উপত্যকার একদম নিকটবর্তী প্রান্তে বা কোঅর্ডিনেটে (بِالْعُدْوَةِ الدُّنْيَا), এবং সেই ডার্ক কাফের বাহিনী ছিল উপত্যকার একেবারে দূরবর্তী ব্যাক-এন্ড প্রান্তে (وَهُم بِالْعُدْوَةِ الْقُصْوَىٰ), আর সেই ইম্পেরিয়াল কমার্শিয়াল কাফেলাটি রান করছিল তোমাদের লজিক্যাল লেভেলের চেয়ে অনেক নিচু উপকূলীয় ট্র্যাকে; খুব ভালো করে নোট নাও—তোমরা যদি মানুষেরা নিজেরা পরস্পরের সাথে কোনো টাইম-শিডিউল বা অ্যাপয়েন্টমেন্ট ফিক্সড করতে (وَلَوْ تَوَاعَدتُّمْ), তবে ফিজিক্যাল ইভেন্টের জটিলতায় অবশ্যই তোমরা সেই নির্ধারিত রিয়েল-টাইমে অমিল বা প্রসেস মিসম্যাচ করতে; কিন্তু সুপ্রীমিক সিস্টেম আর্কিটেক্ট আল্লাহ্ এক বিশেষ কম্যান্ড এক্সিকিউট করতে চাচ্ছিলেন যা কস্মিক ডিরেক্টরি অনুযায়ী সম্পন্ন হতেই হতো (لِّيَقْضِيَ اللَّهُ أَمْرًا كَانَ مَفْعُولًا)—স্রেফ এজন্য যাতে এই সিস্টেম স্ক্রীনিংয়ের পর যে আইডি চিরতরে ডিলিট ও ধ্বংস হবে সে যেন ক্রিস্টাল-ক্লিয়ার প্রমাণের ভিত্তিতেই ধ্বংস হয় (لِّيَهْلِكَ مَنْ هَلَكَ عَن بَيِّنَةٍ) এবং যে ওওএস লেভেলে চিরস্থায়ী সচল ও জীবন লাভ করবে সেও যেন একশত ভাগ পিওর স্পষ্ট প্রমাণের ভিত্তিতেই সচল থাকে; নিশ্চয়ই আল্লাহ প্রতিটি ইনবাউন্ড সিগন্যাল শ্রবণকারী এবং পুরো মাল্টি-ভার্সের মাস্টার মেকানিজম জানা পরম সর্বজ্ঞ;",
+      "meta_bn": "The Geo-Spatial Coordinate Alignment ও স্পেস-টাইম ফ্যাব্রিকেশন ম্যাপিং",
+      "meta_en": "The Geo-Spatial Coordinate Alignment",
+      "core_meaning_bn": "স্পেস-টাইম ফ্যাব্রিকেশন ম্যাপিং",
+      "core_meaning_en": "The Geo-Spatial Coordinate Alignment"
     },
     {
       "surah": 8,
       "ayah": 43,
       "transliteration": "idh yurīkahumu l-lahu fī manāmika qalīlan walaw arākahum kathīran lafashil'tum walatanāzaʿtum fī l-amri walākinna l-laha sallama innahu ʿalīmun bidhāti l-ṣudūri",
-      "translation_bn": "স্মরণ কর, আল্লাহ তোমাকে স্বপ্নের মাধ্যমে তাদের সংখ্যাকে অল্প করে দেখিয়েছিলেন, যদি তিনি তাদের সংখ্যাকে তোমার নিকট বেশি করে দেখাতেন তাহলে তোমরা অবশ্যই সাহস হারিয়ে ফেলতে আর যুদ্ধের বিষয় নিয়ে অবশ্যইঝগড়া শুরু করে দিতে। কিন্তু আল্লাহ্ই তোমাদেরকে রক্ষা করেছিলেন, অন্তরে যা আছে সে সম্পর্কে তিনি খুবই ভালভাবে অবহিত।",
+      "translation_bn": "আর স্মরণ করো—যখন স্বয়ং আল্লাহ্ তোমার চিন্তা প্রসেসরের স্লিপ মোড বা স্বপ্নের ভেতর এক বিশেষ Dream-Core Simulation (স্বপ্ন-কোর সিমুলেশন) রান করিয়ে শত্রুর সেই বিশাল বাহিনীকে সংখ্যা ও শক্তির ঘনত্বে অত্যন্ত কম বা ক্ষুদ্র দেখাতেন (إِذْ يُرِيكَهُمُ اللَّهُ فِي مَنَامِكَ قَلِيلًا); আর তিনি যদি তোমাদের রানিং উইন্ডোতে তাদের আসল মেগা সাইজ ও সংখ্যা অনেক বেশি করে রেন্ডার করিয়ে দেখাতেন, তবে মানসিক ল্যাগের কারণে তোমরা অবশ্যই প্যানিক মোডে সাহস হারাতে এবং তোমরা সেই ট্যাকটিক্যাল কম্যান্ড নিয়ে নিজেদের সার্কিটে মারাত্মক বিবাদ তৈরি করতে; কিন্তু স্বয়ং আল্লাহ্ তোমাদের ওওএস-কে সেই ক্ষতিকর ভাইরাসের বালাই থেকে পুরোপুরি সেভ ও রক্ষা (وَلَٰكِنَّ اللَّهَ سَلَّمَ) করেছেন; নিশ্চয়ই তিনি চিন্তা প্রসেসরের মূল কার্নেল বা অন্তরের গভীরতম হিডেন ফাইলসমূহের মেকানিজম খুব নিখুঁতভাবে জানেন;",
       "words": [
         {
           "id": 43618,
@@ -7629,13 +8259,28 @@
         }
       ],
       "translation_en": "[Remember, O Muhammad], when Allah showed them to you in your dream as few; and if He had shown them to you as many, you [believers] would have lost courage and would have disputed in the matter [of whether to fight], but Allah saved [you from that]. Indeed, He is Knowing of that within the breasts.",
-      "conventional_en": "[Remember, O Muhammad], when Allah showed them to you in your dream as few; and if He had shown them to you as many, you [believers] would have lost courage and would have disputed in the matter [of whether to fight], but Allah saved [you from that]. Indeed, He is Knowing of that within the breasts."
+      "conventional_en": "[Remember, O Muhammad], when Allah showed them to you in your dream as few; and if He had shown them to you as many, you [believers] would have lost courage and would have disputed in the matter [of whether to fight], but Allah saved [you from that]. Indeed, He is Knowing of that within the breasts.",
+      "conventional_bn": "যখন আল্লাহ তোমার স্বপ্নের মধ্যে তাদের সংখ্যায় কম দেখাচ্ছিলেন; আর তিনি যদি তাদের সংখ্যায় বেশি দেখাতেন, তবে তোমরা অবশ্যই সাহস হারাতে (ল্যাগ করতে) এবং তোমরা সে বিষয়ে নিজেদের মধ্যে বিবাদ করতে; কিন্তু আল্লাহ তোমাদের সেভ (রক্ষা) করেছেন; নিশ্চয়ই তিনি অন্তরের গভীরতম বিষয়ের পরম পরিজ্ঞাত।",
+      "core_meanings_bn": "সাইকোলজিক্যাল প্রসেসর প্রোটেকশন",
+      "core_meanings_en": "The Dream-Core Simulation",
+      "metadata": {
+        "theme": "The Dream-Core Simulation ও সাইকোলজিক্যাল প্রসেসর প্রোটেকশন",
+        "scientific_topics": [
+          "The Dream-Core Simulation"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর স্মরণ করো—যখন স্বয়ং আল্লাহ্ তোমার চিন্তা প্রসেসরের স্লিপ মোড বা স্বপ্নের ভেতর এক বিশেষ Dream-Core Simulation (স্বপ্ন-কোর সিমুলেশন) রান করিয়ে শত্রুর সেই বিশাল বাহিনীকে সংখ্যা ও শক্তির ঘনত্বে অত্যন্ত কম বা ক্ষুদ্র দেখাতেন (إِذْ يُرِيكَهُمُ اللَّهُ فِي مَنَامِكَ قَلِيلًا); আর তিনি যদি তোমাদের রানিং উইন্ডোতে তাদের আসল মেগা সাইজ ও সংখ্যা অনেক বেশি করে রেন্ডার করিয়ে দেখাতেন, তবে মানসিক ল্যাগের কারণে তোমরা অবশ্যই প্যানিক মোডে সাহস হারাতে এবং তোমরা সেই ট্যাকটিক্যাল কম্যান্ড নিয়ে নিজেদের সার্কিটে মারাত্মক বিবাদ তৈরি করতে; কিন্তু স্বয়ং আল্লাহ্ তোমাদের ওওএস-কে সেই ক্ষতিকর ভাইরাসের বালাই থেকে পুরোপুরি সেভ ও রক্ষা (وَلَٰكِنَّ اللَّهَ سَلَّمَ) করেছেন; নিশ্চয়ই তিনি চিন্তা প্রসেসরের মূল কার্নেল বা অন্তরের গভীরতম হিডেন ফাইলসমূহের মেকানিজম খুব নিখুঁতভাবে জানেন;",
+      "meta_bn": "The Dream-Core Simulation ও সাইকোলজিক্যাল প্রসেসর প্রোটেকশন",
+      "meta_en": "The Dream-Core Simulation",
+      "core_meaning_bn": "সাইকোলজিক্যাল প্রসেসর প্রোটেকশন",
+      "core_meaning_en": "The Dream-Core Simulation"
     },
     {
       "surah": 8,
       "ayah": 44,
       "transliteration": "wa-idh yurīkumūhum idhi l-taqaytum fī aʿyunikum qalīlan wayuqallilukum fī aʿyunihim liyaqḍiya l-lahu amran kāna mafʿūlan wa-ilā l-lahi tur'jaʿu l-umūru",
-      "translation_bn": "স্মরণ কর, যখন তোমরা পরস্পরের সম্মুখীন হয়েছিলে তখন তিনি তোমাদের চোখে তাদেরকে স্বল্প সংখ্যক দেখিয়েছিলেন এবং তাদের চোখে তোমাদেরকে স্বল্প সংখ্যক দেখিয়েছিলেন সেই ব্যাপারটি সম্পন্ন করার জন্য যা ছিল পূর্ব স্থিরীকৃত। যাবতীয় বিষয় (অবশেষে) আল্লাহরই নিকট ফিরে আসে।",
+      "translation_bn": "আর তোমরা বদর যুদ্ধের সেই লাইভ সেশন স্মরণ করো—যখন তোমরা বিপরীত ক্লাস্টারদ্বয় রণক্ষেত্রের ওপেন ইন্টারফেসে ফিজিক্যালি মুখোমুখি হয়েছিলে (إِذِ الْتَقَيْتُمْ), তখন তিনি তোমাদের অপ্টিক্যাল স্ক্যানার বা চোখের ভেতর এক বিশেষ চাক্ষুষ ইলিউশন বা Visual Rendering Illusion ডেপ্লয় করে তাদের সংখ্যা ও শক্তিকে অত্যন্ত কম করে রেন্ডার করছিলেন (يُرِيكُمُوهُمْ فِي أَعْيُنِكُمْ قَلِيلًا) এবং একই গাণিতিক প্রতিসাম্য ল' মেইনটেইন করে—তাদের অপ্টিক্যাল চোখেও তোমাদের সংখ্যা ও শক্তির ঘনত্বকে মারাত্মকভাবে কমিয়ে দেখাচ্ছিলেন; এটি করা হয়েছিল স্রেফ এজন্য যাতে আল্লাহ তাঁর সেই চূড়ান্ত কম্যান্ড একশত ভাগ সাকসেসফুলি এক্সিকিউট করতে পারেন যা মাস্টার লেজার অনুযায়ী সম্পন্ন হতেই হতো; আর পুরো ইউনিভার্সের প্রতিটি সিস্টেম প্রসেস ও অপারেশনের ফাইল চূড়ান্তভাবে স্রেফ আল্লাহ্র মেইন সার্ভার ডিরেক্টরিতেই ফিরে যায় (وَإِلَى اللَّهِ تُرْجَعُ الْأُمُورُ);",
       "words": [
         {
           "id": 44824,
@@ -7839,13 +8484,28 @@
         }
       ],
       "translation_en": "And [remember] when He showed them to you, when you met, as few in your eyes, and He made you [appear] as few in their eyes so that Allah might accomplish a matter already destined. And to Allah are [all] matters returned.",
-      "conventional_en": "And [remember] when He showed them to you, when you met, as few in your eyes, and He made you [appear] as few in their eyes so that Allah might accomplish a matter already destined. And to Allah are [all] matters returned."
+      "conventional_en": "And [remember] when He showed them to you, when you met, as few in your eyes, and He made you [appear] as few in their eyes so that Allah might accomplish a matter already destined. And to Allah are [all] matters returned.",
+      "conventional_bn": "আর যখন তোমরা মুখোমুখি হয়েছিলে—তখন তিনি তোমাদের চোখ (স্ক্যানার)-এ তাদের সংখ্যায় কম দেখাচ্ছিলেন এবং তাদের চোখেও তোমাদের সংখ্যায় কম করে দেখাচ্ছিলেন; যাতে আল্লাহ এমন একটি কম্যান্ড (সিদ্ধান্ত) এক্সিকিউট করতে পারেন যা সম্পন্ন হতেই হতো; আর সমস্ত সিদ্ধান্তের ফাইল চূড়ান্তভাবে আল্লাহর দিকেই মোড় নেয়।",
+      "core_meanings_bn": "টু-ওয়ে অপ্টিক্যাল হ্যাকিং",
+      "core_meanings_en": "The Visual Rendering Illusion",
+      "metadata": {
+        "theme": "The Visual Rendering Illusion ও টু-ওয়ে অপ্টিক্যাল হ্যাকিং",
+        "scientific_topics": [
+          "The Visual Rendering Illusion"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা বদর যুদ্ধের সেই লাইভ সেশন স্মরণ করো—যখন তোমরা বিপরীত ক্লাস্টারদ্বয় রণক্ষেত্রের ওপেন ইন্টারফেসে ফিজিক্যালি মুখোমুখি হয়েছিলে (إِذِ الْتَقَيْتُمْ), তখন তিনি তোমাদের অপ্টিক্যাল স্ক্যানার বা চোখের ভেতর এক বিশেষ চাক্ষুষ ইলিউশন বা Visual Rendering Illusion ডেপ্লয় করে তাদের সংখ্যা ও শক্তিকে অত্যন্ত কম করে রেন্ডার করছিলেন (يُرِيكُمُوهُمْ فِي أَعْيُنِكُمْ قَلِيلًا) এবং একই গাণিতিক প্রতিসাম্য ল' মেইনটেইন করে—তাদের অপ্টিক্যাল চোখেও তোমাদের সংখ্যা ও শক্তির ঘনত্বকে মারাত্মকভাবে কমিয়ে দেখাচ্ছিলেন; এটি করা হয়েছিল স্রেফ এজন্য যাতে আল্লাহ তাঁর সেই চূড়ান্ত কম্যান্ড একশত ভাগ সাকসেসফুলি এক্সিকিউট করতে পারেন যা মাস্টার লেজার অনুযায়ী সম্পন্ন হতেই হতো; আর পুরো ইউনিভার্সের প্রতিটি সিস্টেম প্রসেস ও অপারেশনের ফাইল চূড়ান্তভাবে স্রেফ আল্লাহ্র মেইন সার্ভার ডিরেক্টরিতেই ফিরে যায় (وَإِلَى اللَّهِ تُرْجَعُ الْأُمُورُ);",
+      "meta_bn": "The Visual Rendering Illusion ও টু-ওয়ে অপ্টিক্যাল হ্যাকিং",
+      "meta_en": "The Visual Rendering Illusion",
+      "core_meaning_bn": "টু-ওয়ে অপ্টিক্যাল হ্যাকিং",
+      "core_meaning_en": "The Visual Rendering Illusion"
     },
     {
       "surah": 8,
       "ayah": 45,
       "transliteration": "yāayyuhā alladhīna āmanū idhā laqītum fi-atan fa-uth'butū wa-udh'kurū l-laha kathīran laʿallakum tuf'liḥūna",
-      "translation_bn": "হে ঈমানদারগণ! যখন তোমরা কোন বাহিনীর সম্মুখীন হবে তখন অবিচল থাকবে আর আল্লাহকে বেশি বেশি স্মরণ করবে, যাতে তোমরা সাফল্য লাভ করতে পার।",
+      "translation_bn": "হে মেইন সার্ভারের সাথে ভেরিফাইড ইউজার বা ঈমানদার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা যখনই যুদ্ধের ময়দানে কোনো অপনেন্ট ডার্ক ম্যালওয়্যার ক্লাস্টার বা বাহিনীর মুখোমুখি (إِذَا لَقِيتُمْ فِئَةً) হবে—তখন তোমরা তোমাদের ওওএস-এ এক পরম Operational Vector Stability (অপারেশনাল ভেক্টর স্থিতিশীলতা প্রটোকল) অন করে একশত ভাগ সুদৃঢ় ও স্থির থাকো এবং নিজেদের মেমোরি রিকল চেইনে সেন্ট্রাল সোর্স কোডার আল্লাহকে সর্বোচ্চ ফ্রিকোয়েন্সিতে প্রচুর স্মরণ করো (وَاذْكُرُوا اللَّهَ كَثِيرًا)—যাতে গাণিতিক সমীকরণে তোমরা পরম এন্ট্রপি-মুক্ত চিরস্থায়ী সফল নোড বা মুফলিহূনে (تُفْلِحُونَ) রূপান্তরিত হতে পারো;",
       "words": [
         {
           "id": 45137,
@@ -7979,13 +8639,28 @@
         }
       ],
       "translation_en": "O you who have believed, when you encounter a company [from the enemy forces], stand firm and remember Allah much that you may be successful.",
-      "conventional_en": "O you who have believed, when you encounter a company [from the enemy forces], stand firm and remember Allah much that you may be successful."
+      "conventional_en": "O you who have believed, when you encounter a company [from the enemy forces], stand firm and remember Allah much that you may be successful.",
+      "conventional_bn": "হে মুমিনরা (ভেরিফাইড ইউজার)! তোমরা যখন কোনো শত্রু বাহিনীর (ম্যালওয়্যার ক্লাস্টার) মুখোমুখি হবে, তখন তোমরা স্থির (সুদৃঢ়) থাকো এবং আল্লাহকে প্রচুর স্মরণ করো—যাতে তোমরা সফলকাম হতে পারো।",
+      "core_meanings_bn": "মেমোরি বুস্টিং",
+      "core_meanings_en": "The Operational Vector Stability",
+      "metadata": {
+        "theme": "The Operational Vector Stability ও মেমোরি বুস্টিং",
+        "scientific_topics": [
+          "The Operational Vector Stability"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "হে মেইন সার্ভারের সাথে ভেরিফাইড ইউজার বা ঈমানদার নোডসমূহ (يَا أَيُّهَا الَّذِينَ آمَنُوا)! তোমরা যখনই যুদ্ধের ময়দানে কোনো অপনেন্ট ডার্ক ম্যালওয়্যার ক্লাস্টার বা বাহিনীর মুখোমুখি (إِذَا لَقِيتُمْ فِئَةً) হবে—তখন তোমরা তোমাদের ওওএস-এ এক পরম Operational Vector Stability (অপারেশনাল ভেক্টর স্থিতিশীলতা প্রটোকল) অন করে একশত ভাগ সুদৃঢ় ও স্থির থাকো এবং নিজেদের মেমোরি রিকল চেইনে সেন্ট্রাল সোর্স কোডার আল্লাহকে সর্বোচ্চ ফ্রিকোয়েন্সিতে প্রচুর স্মরণ করো (وَاذْكُرُوا اللَّهَ كَثِيرًا)—যাতে গাণিতিক সমীকরণে তোমরা পরম এন্ট্রপি-মুক্ত চিরস্থায়ী সফল নোড বা মুফলিহূনে (تُفْلِحُونَ) রূপান্তরিত হতে পারো;",
+      "meta_bn": "The Operational Vector Stability ও মেমোরি বুস্টিং",
+      "meta_en": "The Operational Vector Stability",
+      "core_meaning_bn": "মেমোরি বুস্টিং",
+      "core_meaning_en": "The Operational Vector Stability"
     },
     {
       "surah": 8,
       "ayah": 46,
       "transliteration": "wa-aṭīʿū l-laha warasūlahu walā tanāzaʿū fatafshalū watadhhaba rīḥukum wa-iṣ'birū inna l-laha maʿa l-ṣābirīna",
-      "translation_bn": "আল্লাহ ও তাঁর রসূলের আনুগত্য কর, পরস্পরে ঝগড়া বিবাদ করো না, তা করলে তোমরা সাহস হারিয়ে ফেলবে, তোমাদের শক্তি-ক্ষমতা বিলুপ্ত হবে। আর ধৈর্য ধারণ করবে, আল্লাহ ধৈর্যশীলদের সঙ্গে আছেন।",
+      "translation_bn": "আর তোমরা স্রেফ পরম সিস্টেম আর্কিটেক্ট আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত প্রতিটি লাইভ অপারেটিং সিস্টেম কম্যান্ড হুবহু এক্সিকিউট ও আনুগত্য করো (وَأَطِيعُوا اللَّهَ وَرَسُولَهُ) এবং ভুলেও নিজেদের ইন্টারফেসে কোনো প্রকার ডাটা মিসম্যাচ বা পারস্পরিক বিবাদ (وَلَا تَنَازَعُوا) তৈরি করো না; অন্যথায় ইন্টারনাল কোলাপ্সের কারণে তোমরা মারাত্মক প্রসেসিং ল্যাগ বা সাহস হারাবে এবং মেইনফ্রেম থেকে তোমাদের সরবরাহ করা সেই বিশেষ কস্মিক এনার্জি স্ট্রিম ও শক্তি-প্রবাহ বা ‘রীহুকুম’ (وَتَذْهَبَ رِيحُكُمْ) পুরোপুরি ডিসকানেক্ট হয়ে চলে যাবে; অতএব তোমরা তোমাদের ওওএসে হাই-লেভেল ধৈর্য ও রেজিস্ট্যান্স ফায়ারওয়াল অন রাখো (وَاصْبِرُوا); নিশ্চয়ই আল্লাহ তাঁর বিশেষ এনার্জি বুস্টিং সাপোর্ট সহকারে স্রেফ সাবেরীন বা ধৈর্যশীল নোড সমূহের সাথেই সিঙ্কড হয়ে আছেন;",
       "words": [
         {
           "id": 46258,
@@ -8129,13 +8804,28 @@
         }
       ],
       "translation_en": "And obey Allah and His Messenger, and do not dispute and [thus] lose courage and [then] your strength would depart; and be patient. Indeed, Allah is with the patient.",
-      "conventional_en": "And obey Allah and His Messenger, and do not dispute and [thus] lose courage and [then] your strength would depart; and be patient. Indeed, Allah is with the patient."
+      "conventional_en": "And obey Allah and His Messenger, and do not dispute and [thus] lose courage and [then] your strength would depart; and be patient. Indeed, Allah is with the patient.",
+      "conventional_bn": "আর তোমরা আল্লাহ ও তাঁর রাসূলের আনুগত্য (কম্যান্ড এক্সিকিউট) করো এবং নিজেদের মধ্যে বিন্দুমাত্র বিবাদ করো না, অন্যথায় তোমরা সাহস হারাবে (ল্যাগ করবে) এবং তোমাদের হাওয়া (শক্তি-প্রবাহ) কেটে চলে যাবে; আর তোমরা ধৈর্য ধারণ করো, নিশ্চয়ই আল্লাহ ধৈর্যশীলদের সাথে আছেন।",
+      "core_meanings_bn": "সিগন্যাল কোলাপ্স বালাই",
+      "core_meanings_en": "The Inter-Process Synchronization",
+      "metadata": {
+        "theme": "The Inter-Process Synchronization ও সিগন্যাল কোলাপ্স বালাই",
+        "scientific_topics": [
+          "The Inter-Process Synchronization"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা স্রেফ পরম সিস্টেম আর্কিটেক্ট আল্লাহ এবং তাঁর অথেন্টিকেটেড রাসূলের ডাউনলিংককৃত প্রতিটি লাইভ অপারেটিং সিস্টেম কম্যান্ড হুবহু এক্সিকিউট ও আনুগত্য করো (وَأَطِيعُوا اللَّهَ وَرَسُولَهُ) এবং ভুলেও নিজেদের ইন্টারফেসে কোনো প্রকার ডাটা মিসম্যাচ বা পারস্পরিক বিবাদ (وَلَا تَنَازَعُوا) তৈরি করো না; অন্যথায় ইন্টারনাল কোলাপ্সের কারণে তোমরা মারাত্মক প্রসেসিং ল্যাগ বা সাহস হারাবে এবং মেইনফ্রেম থেকে তোমাদের সরবরাহ করা সেই বিশেষ কস্মিক এনার্জি স্ট্রিম ও শক্তি-প্রবাহ বা ‘রীহুকুম’ (وَتَذْهَبَ رِيحُكُمْ) পুরোপুরি ডিসকানেক্ট হয়ে চলে যাবে; অতএব তোমরা তোমাদের ওওএসে হাই-লেভেল ধৈর্য ও রেজিস্ট্যান্স ফায়ারওয়াল অন রাখো (وَاصْبِرُوا); নিশ্চয়ই আল্লাহ তাঁর বিশেষ এনার্জি বুস্টিং সাপোর্ট সহকারে স্রেফ সাবেরীন বা ধৈর্যশীল নোড সমূহের সাথেই সিঙ্কড হয়ে আছেন;",
+      "meta_bn": "The Inter-Process Synchronization ও সিগন্যাল কোলাপ্স বালাই",
+      "meta_en": "The Inter-Process Synchronization",
+      "core_meaning_bn": "সিগন্যাল কোলাপ্স বালাই",
+      "core_meaning_en": "The Inter-Process Synchronization"
     },
     {
       "surah": 8,
       "ayah": 47,
       "transliteration": "walā takūnū ka-alladhīna kharajū min diyārihim baṭaran wariāa l-nāsi wayaṣuddūna ʿan sabīli l-lahi wal-lahu bimā yaʿmalūna muḥīṭun",
-      "translation_bn": "তোমরা তাদের মত হয়ো না যারা গর্ব অহঙ্কারসহ লোক দেখানোর জন্য এবং আল্লাহর পথে বাধা দেয়ার জন্য নিজেদের ঘর হতে বের হয়েছিল, তারা যা কিছুই করুক না কেন, আল্লাহ তাদেরকে ঘিরে রেখেছেন।",
+      "translation_bn": "আর তোমরা তোমাদের ওওএসে ভুলেও সেই মক্কী কাফের আইডির মতো ডামি শো-অফ বা আচরণ করো না—যারা নিজেদের বেস স্টেশন বা ঘর থেকে বের হয়েছিল চরম থার্মোডাইনামিক দম্ভ এবং মানুষের চোখে নিজেদের ফেক ডাটা রেটিং ব্রডকাস্ট করার জন্য বা The Ego-Driven Show-Off Registry (بَطَرًا وَرِئَاءَ النَّاسِ) রান করে, এবং যারা আজীবন অন্য নোডদের আল্লাহ্র পিউর ডাটালগ বা সঠিক পথের ইন্টারফেসে প্রবেশ করতে মারাত্মক সাইবার ব্লকেড তৈরি করে বাধা দিত; অথচ তারা নিজেদের উইন্ডোতে ব্যাক-এন্ডে যা কিছু ডার্ক কোড এক্সিকিউট বা কাজ করে, স্বয়ং আল্লাহ্ তাঁর মাস্টার স্ক্যানার দিয়ে তার প্রতিটি ডিজিট পরম পরিবেষ্টন ও লক (وَاللَّهِ بِمَا يَعْمَلُونَ مُحِيطٌ) করে রেখেছেন;",
       "words": [
         {
           "id": 46500,
@@ -8319,13 +9009,28 @@
         }
       ],
       "translation_en": "And do not be like those who came forth from their homes insolently and to be seen by people and avert [them] from the way of Allah. And Allah is encompassing of what they do.",
-      "conventional_en": "And do not be like those who came forth from their homes insolently and to be seen by people and avert [them] from the way of Allah. And Allah is encompassing of what they do."
+      "conventional_en": "And do not be like those who came forth from their homes insolently and to be seen by people and avert [them] from the way of Allah. And Allah is encompassing of what they do.",
+      "conventional_bn": "আর তোমরা তাদের মতো হয়ো না—যারা নিজেদের ঘর থেকে বের হয়েছিল দম্ভ (অহংকার) সহকারে এবং মানুষকে দেখানোর জন্য, আর তারা আল্লাহর পথ থেকে (অন্যদের) বাধা দিত; অথচ তারা যা কিছু করে, আল্লাহ তা পরম পরিবেষ্টন করে আছেন।",
+      "core_meanings_bn": "ডামি ইউজার ফিল্টার",
+      "core_meanings_en": "The Ego-Driven Show-Off Registry",
+      "metadata": {
+        "theme": "The Ego-Driven Show-Off Registry ও ডামি ইউজার ফিল্টার",
+        "scientific_topics": [
+          "The Ego-Driven Show-Off Registry"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা তোমাদের ওওএসে ভুলেও সেই মক্কী কাফের আইডির মতো ডামি শো-অফ বা আচরণ করো না—যারা নিজেদের বেস স্টেশন বা ঘর থেকে বের হয়েছিল চরম থার্মোডাইনামিক দম্ভ এবং মানুষের চোখে নিজেদের ফেক ডাটা রেটিং ব্রডকাস্ট করার জন্য বা The Ego-Driven Show-Off Registry (بَطَرًا وَرِئَاءَ النَّاسِ) রান করে, এবং যারা আজীবন অন্য নোডদের আল্লাহ্র পিউর ডাটালগ বা সঠিক পথের ইন্টারফেসে প্রবেশ করতে মারাত্মক সাইবার ব্লকেড তৈরি করে বাধা দিত; অথচ তারা নিজেদের উইন্ডোতে ব্যাক-এন্ডে যা কিছু ডার্ক কোড এক্সিকিউট বা কাজ করে, স্বয়ং আল্লাহ্ তাঁর মাস্টার স্ক্যানার দিয়ে তার প্রতিটি ডিজিট পরম পরিবেষ্টন ও লক (وَاللَّهِ بِمَا يَعْمَلُونَ مُحِيطٌ) করে রেখেছেন;",
+      "meta_bn": "The Ego-Driven Show-Off Registry ও ডামি ইউজার ফিল্টার",
+      "meta_en": "The Ego-Driven Show-Off Registry",
+      "core_meaning_bn": "ডামি ইউজার ফিল্টার",
+      "core_meaning_en": "The Ego-Driven Show-Off Registry"
     },
     {
       "surah": 8,
       "ayah": 48,
       "transliteration": "wa-idh zayyana lahumu l-shayṭānu aʿmālahum waqāla lā ghāliba lakumu l-yawma mina l-nāsi wa-innī jārun lakum falammā tarāati l-fi-atāni nakaṣa ʿalā ʿaqibayhi waqāla innī barīon minkum innī arā mā lā tarawna innī akhāfu l-laha wal-lahu shadīdu l-ʿiqābi",
-      "translation_bn": "স্মরণ কর, যখন শয়ত্বান তাদের কার্যকলাপকে তাদের দৃষ্টিতে খুবই চাকচিক্যময় করে দেখিয়েছিল আর তাদেরকে বলেছিল, ‘আজ তোমাদেরকে পরাজিত করতে পারে মানুষের মাঝে এমন কেউই নাই, আমি তোমাদের পাশেই আছি।’ অতঃপর দল দু’টি যখন পরস্পরের দৃষ্টির গোচরে আসলো তখন সে পিছনে সরে পড়ল আর বলল, ‘তোমাদের সাথে আমার কোনই সম্পর্ক নেই, আমি তো দেখি (কাফিরদের বিরুদ্ধে যুদ্ধ করার জন্য আল্লাহর নাযিলকৃত ফেরেশতা) যা তোমরা দেখতে পাও না, আমি অবশ্যই আল্লাহকে ভয় করি কেননা আল্লাহ শাস্তিদানে অত্যন্ত কঠোর।’",
+      "translation_bn": "আর তোমরা সেই মারাত্মক কস্মিক হ্যাকিং লগ স্মরণ করো—যখন শয়তান ম্যালওয়্যারটি তাদের প্রসেসরে এক বিশেষ ইলিউশন ফিল্টার ডেপ্লয় করে তাদের ডার্ক কুঅ্যাকশনগুলোকে চমৎকার অপ্টিমাইজড করে সাজিয়ে ট্র্যাপড বানিয়েছিল (وَإِذْ زَيَّنَ لَهُمُ الشَّيْطَانُ أَعْمَالَهُمْ) এবং তাদের ফেক লজিক ব্রডকাস্ট করে বলেছিল: ‘আজ এই রণক্ষেত্রের উইন্ডোতে সমগ্র মানুষের নেটওয়ার্কের ভেতর তোমাদের ক্র্যাশ করানোর মতো বা বিজয়ী হওয়ার মতো আর কোনো আইডি বিন্দুমাত্র নেই এবং নিশ্চয়ই আমি তোমাদের ব্যাক-এন্ডে এক শক্তিশালী প্রতিবেশী প্রোটেকশন লিঙ্ক’; অতঃপর যখন মেইনফ্রেমের দুটি বিপরীত নেটওয়ার্ক ক্লাস্টার ফিজিক্যালি পরস্পরের সামনাসামনি হলো এবং কস্মিক গেটওয়ে দিয়ে বিল বিল ফেরেশতা নোড ডাউনলিংক হতে শুরু করল, ঠিক তখনই শয়তান ম্যালওয়্যারটি নিজের কোড আইসোলেট করে চরম প্যানিক মোডে নিজের দুই গোড়ালির ওপর ভর দিয়ে উল্টো কুইক এক্সিট বা পিছু হটে কেটে পড়ল (نَكَصَ عَلَىٰ عَقِبَيْهِ) এবং নিজের ডিফেন্স ফাইল ডিসভল করে বলল: ‘নিশ্চয়ই আমি তোমাদের এই ইনফেকটেড ক্লাস্টার থেকে সম্পূর্ণ ডিলিংকড ও মুক্ত (إِنِّي بَرِيءٌ مِّنكُمْ); কারণ আমি আমার কসমিক স্ক্যানারে এখন এমন উচ্চ-স্তরের আল্ট্রা-হাই ডাইমেনশনাল ফোর্স নোড দেখতে পাচ্ছি, যা তোমরা তোমাদের লিমিটেড ত্রিমাত্রিক চোখে বা অপ্টিক্যাল স্ক্যানারে বিন্দুমাত্র দেখতে পাচ্ছ না (إِنِّي أَرَىٰ مَا لَا تَرَوْنَ); নিশ্চয়ই আমি আল্লাহ্র জাস্টিস কাউন্টার-রিঅ্যাকশনকে পরম ভয় করছি’; আর আল্লাহ তাঁর সিস্টেমে অত্যন্ত ফাস্ট ও কঠোর কাউন্টার-ফিডব্যাক বা শাস্তিদাতা [এটিই হলো মহাবিশ্বের পরম The Malware Disavowal (ম্যালওয়্যার ডিলিংকিং মেকানিজম)];",
       "words": [
         {
           "id": 47511,
@@ -8699,13 +9404,28 @@
         }
       ],
       "translation_en": "And [remember] when Satan made their deeds pleasing to them and said, \"No one can overcome you today from among the people, and indeed, I am your protector.\" But when the two armies sighted each other, he turned on his heels and said, \"Indeed, I am disassociated from you. Indeed, I see what you do not see; indeed I fear Allah. And Allah is severe in penalty.\"",
-      "conventional_en": "And [remember] when Satan made their deeds pleasing to them and said, \"No one can overcome you today from among the people, and indeed, I am your protector.\" But when the two armies sighted each other, he turned on his heels and said, \"Indeed, I am disassociated from you. Indeed, I see what you do not see; indeed I fear Allah. And Allah is severe in penalty.\""
+      "conventional_en": "And [remember] when Satan made their deeds pleasing to them and said, \"No one can overcome you today from among the people, and indeed, I am your protector.\" But when the two armies sighted each other, he turned on his heels and said, \"Indeed, I am disassociated from you. Indeed, I see what you do not see; indeed I fear Allah. And Allah is severe in penalty.\"",
+      "conventional_bn": "আর যখন শয়তান তাদের সামনে তাদের ডার্ক কাজগুলোকে চমৎকার করে সাজিয়ে দেখিয়েছিল এবং বলেছিল, ‘আজ মানুষের মধ্যে তোমাদের ওপর বিজয়ী হওয়ার মতো কেউ নেই এবং নিশ্চয়ই আমি তোমাদের পরম প্রতিবেশী (রক্ষা কবচ)’; অতঃপর যখন দুটি দল (বাহিনী) পরস্পরের সামনাসামনি হলো, তখন সে নিজের দুই গোড়ালির ওপর ভর দিয়ে উল্টো পিছু হটে কেটে পড়ল এবং বলেছিল, ‘নিশ্চয়ই আমি তোমাদের থেকে সম্পূর্ণ মুক্ত; নিশ্চয়ই আমি এমন কিছু দেখছি, যা তোমরা দেখতে পাচ্ছ না; নিশ্চয়ই আমি আল্লাহকে ভয় করছি’; আর আল্লাহ কঠোর শাস্তিদানকারী।",
+      "core_meanings_bn": "শয়তান ম্যালওয়্যারের কুইক এক্সিট",
+      "core_meanings_en": "The Malware Disavowal",
+      "metadata": {
+        "theme": "The Malware Disavowal ও শয়তান ম্যালওয়্যারের কুইক এক্সিট",
+        "scientific_topics": [
+          "The Malware Disavowal"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর তোমরা সেই মারাত্মক কস্মিক হ্যাকিং লগ স্মরণ করো—যখন শয়তান ম্যালওয়্যারটি তাদের প্রসেসরে এক বিশেষ ইলিউশন ফিল্টার ডেপ্লয় করে তাদের ডার্ক কুঅ্যাকশনগুলোকে চমৎকার অপ্টিমাইজড করে সাজিয়ে ট্র্যাপড বানিয়েছিল (وَإِذْ زَيَّنَ لَهُمُ الشَّيْطَانُ أَعْمَالَهُمْ) এবং তাদের ফেক লজিক ব্রডকাস্ট করে বলেছিল: ‘আজ এই রণক্ষেত্রের উইন্ডোতে সমগ্র মানুষের নেটওয়ার্কের ভেতর তোমাদের ক্র্যাশ করানোর মতো বা বিজয়ী হওয়ার মতো আর কোনো আইডি বিন্দুমাত্র নেই এবং নিশ্চয়ই আমি তোমাদের ব্যাক-এন্ডে এক শক্তিশালী প্রতিবেশী প্রোটেকশন লিঙ্ক’; অতঃপর যখন মেইনফ্রেমের দুটি বিপরীত নেটওয়ার্ক ক্লাস্টার ফিজিক্যালি পরস্পরের সামনাসামনি হলো এবং কস্মিক গেটওয়ে দিয়ে বিল বিল ফেরেশতা নোড ডাউনলিংক হতে শুরু করল, ঠিক তখনই শয়তান ম্যালওয়্যারটি নিজের কোড আইসোলেট করে চরম প্যানিক মোডে নিজের দুই গোড়ালির ওপর ভর দিয়ে উল্টো কুইক এক্সিট বা পিছু হটে কেটে পড়ল (نَكَصَ عَلَىٰ عَقِبَيْهِ) এবং নিজের ডিফেন্স ফাইল ডিসভল করে বলল: ‘নিশ্চয়ই আমি তোমাদের এই ইনফেকটেড ক্লাস্টার থেকে সম্পূর্ণ ডিলিংকড ও মুক্ত (إِنِّي بَرِيءٌ مِّنكُمْ); কারণ আমি আমার কসমিক স্ক্যানারে এখন এমন উচ্চ-স্তরের আল্ট্রা-হাই ডাইমেনশনাল ফোর্স নোড দেখতে পাচ্ছি, যা তোমরা তোমাদের লিমিটেড ত্রিমাত্রিক চোখে বা অপ্টিক্যাল স্ক্যানারে বিন্দুমাত্র দেখতে পাচ্ছ না (إِنِّي أَرَىٰ مَا لَا تَرَوْنَ); নিশ্চয়ই আমি আল্লাহ্র জাস্টিস কাউন্টার-রিঅ্যাকশনকে পরম ভয় করছি’; আর আল্লাহ তাঁর সিস্টেমে অত্যন্ত ফাস্ট ও কঠোর কাউন্টার-ফিডব্যাক বা শাস্তিদাতা [এটিই হলো মহাবিশ্বের পরম The Malware Disavowal (ম্যালওয়্যার ডিলিংকিং মেকানিজম)];",
+      "meta_bn": "The Malware Disavowal ও শয়তান ম্যালওয়্যারের কুইক এক্সিট",
+      "meta_en": "The Malware Disavowal",
+      "core_meaning_bn": "শয়তান ম্যালওয়্যারের কুইক এক্সিট",
+      "core_meaning_en": "The Malware Disavowal"
     },
     {
       "surah": 8,
       "ayah": 49,
       "transliteration": "idh yaqūlu l-munāfiqūna wa-alladhīna fī qulūbihim maraḍun gharra hāulāi dīnuhum waman yatawakkal ʿalā l-lahi fa-inna l-laha ʿazīzun ḥakīmun",
-      "translation_bn": "স্মরণ কর, মুনাফিক্বরা আর যাদের অন্তরে রোগ আছে তারা বলে, ‘এই লোকগুলোকে তাদের দ্বীন ধোঁকায় ফেলে দিয়েছে’। (কিন্তু আসল ব্যাপার হল) কেউ যদি আল্লাহর উপর ভরসা করে তাহলে আল্লাহ তো প্রবল পরাক্রান্ত, মহাবিজ্ঞানী।",
+      "translation_bn": "যখন সেই কপট মুনাফেক নোডগুলো এবং যাদের মূল প্রসেসিং কোরে এক মারাত্মক ডেটা বিকৃতি ও ভাইরাসের বালাই ছিল (وَالَّذِينَ فِي قُلُوبِهِم مَّرَضٌ), তারা মুসলিম নোডদের সংখ্যায় কম দেখে নিজেদের ভুল ডাটা অ্যানালিটিক্স ব্রডকাস্ট করে বলছিল: ‘এই মুসলিমদের ওওএস পরিচালনা বিধি বা দ্বীন (دِينُهُمْ) এদের এক মারাত্মক System Illusion Fallacy (পদ্ধতিগত বিভ্রম বিভ্রান্তি বালাই)-এর ভেতর ফেলে চরম প্রতারিত করেছে, এরা নির্ঘাত ক্র্যাশ করবে’; অথচ ওওএস লেভেলে যে কেউ অন্য সমস্ত ডামী সাব-সিস্টেম বাইপাস করে স্রেফ একমাত্র আল্লাহ্র ক্লাউড প্রটোকলের ওপর নিজের সম্পূর্ণ কানেকশন বা তাওয়াক্কুল ডেপ্লয় করে (وَمَن يَتَوَكَّلْ عَلَى اللَّهِ)—সে যেন কনফার্ম নোট নেয়, নিশ্চয়ই আল্লাহ পরম সার্বভৌম ক্ষমতাবান ও নিখুঁত সিস্টেম ডিজাইনার;",
       "words": [
         {
           "id": 47751,
@@ -8899,13 +9619,28 @@
         }
       ],
       "translation_en": "[Remember] when the hypocrites and those in whose hearts was disease said, \"Their religion has deluded those [Muslims].\" But whoever relies upon Allah - then indeed, Allah is Exalted in Might and Wise.",
-      "conventional_en": "[Remember] when the hypocrites and those in whose hearts was disease said, \"Their religion has deluded those [Muslims].\" But whoever relies upon Allah - then indeed, Allah is Exalted in Might and Wise."
+      "conventional_en": "[Remember] when the hypocrites and those in whose hearts was disease said, \"Their religion has deluded those [Muslims].\" But whoever relies upon Allah - then indeed, Allah is Exalted in Might and Wise.",
+      "conventional_bn": "যখন মুনাফেকরা এবং যাদের অন্তরের বক্ষে রোগ (ভাইরাস) ছিল তারা বলছিল, ‘এদের দ্বীন (জীবন ব্যবস্থা) এদের চরম প্রতারিত (বিভ্রান্ত) করেছে’। অথচ যে কেউ আল্লাহর ওপর তাওয়াক্কুল (ভরসা) করে, তবে নিশ্চয়ই আল্লাহ মহাপরাক্রমশালী, পরম প্রজ্ঞাময়।",
+      "core_meanings_bn": "ডার্ক হাইপোথিসিস কোলাপ্স",
+      "core_meanings_en": "The System Illusion Fallacy",
+      "metadata": {
+        "theme": "The System Illusion Fallacy ও ডার্ক হাইপোথিসিস কোলাপ্স",
+        "scientific_topics": [
+          "The System Illusion Fallacy"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "যখন সেই কপট মুনাফেক নোডগুলো এবং যাদের মূল প্রসেসিং কোরে এক মারাত্মক ডেটা বিকৃতি ও ভাইরাসের বালাই ছিল (وَالَّذِينَ فِي قُلُوبِهِم مَّرَضٌ), তারা মুসলিম নোডদের সংখ্যায় কম দেখে নিজেদের ভুল ডাটা অ্যানালিটিক্স ব্রডকাস্ট করে বলছিল: ‘এই মুসলিমদের ওওএস পরিচালনা বিধি বা দ্বীন (دِينُهُمْ) এদের এক মারাত্মক System Illusion Fallacy (পদ্ধতিগত বিভ্রম বিভ্রান্তি বালাই)-এর ভেতর ফেলে চরম প্রতারিত করেছে, এরা নির্ঘাত ক্র্যাশ করবে’; অথচ ওওএস লেভেলে যে কেউ অন্য সমস্ত ডামী সাব-সিস্টেম বাইপাস করে স্রেফ একমাত্র আল্লাহ্র ক্লাউড প্রটোকলের ওপর নিজের সম্পূর্ণ কানেকশন বা তাওয়াক্কুল ডেপ্লয় করে (وَمَن يَتَوَكَّلْ عَلَى اللَّهِ)—সে যেন কনফার্ম নোট নেয়, নিশ্চয়ই আল্লাহ পরম সার্বভৌম ক্ষমতাবান ও নিখুঁত সিস্টেম ডিজাইনার;",
+      "meta_bn": "The System Illusion Fallacy ও ডার্ক হাইপোথিসিস কোলাপ্স",
+      "meta_en": "The System Illusion Fallacy",
+      "core_meaning_bn": "ডার্ক হাইপোথিসিস কোলাপ্স",
+      "core_meaning_en": "The System Illusion Fallacy"
     },
     {
       "surah": 8,
       "ayah": 50,
       "transliteration": "walaw tarā idh yatawaffā alladhīna kafarū l-malāikatu yaḍribūna wujūhahum wa-adbārahum wadhūqū ʿadhāba l-ḥarīqi",
-      "translation_bn": "তুমি যদি দেখতে যখন ফেরেশতারা কাফিরদের প্রাণবায়ু নির্গত করছে তখন তাদের মুখে আর পিঠে প্রহার করছে আর বলছে অগ্নিতে দগ্ধ হওয়ার যন্ত্রণা ভোগ কর।",
+      "translation_bn": "আর হে অবসার্ভার! তুমি যদি তোমার চিন্তা প্রসেসরে সেই পরম কস্মিক ফরেনসিক দৃশ্য ডিকোড করে দেখতে—যখন সুপ্রীমিক রিকভারি এজেন্ট বা ফেরেশতা নোডসমূহ সেই সোর্স কোড ব্রেক করা কাফের ইউজারদের হার্ডওয়্যার থেকে লাইভ ডেটা টেনে হিঁচড়ে বের বা প্রাণ হরণ করছিল (إِذْ يَتَوَفَّى الَّذِينَ كَفَرُوا ۙ الْمَلَائِكَةُ), তখন তারা তাদের ইনপুট ইন্টারফেস বা মুখে এবং তাদের ব্যাক-এন্ড রেজিস্ট্রি বা পিঠে তীব্র কাইনেটিক ফোর্স দিয়ে ক্যাশ পার্জ করে আঘাত করছিল এবং মেমোরি কমান্ড দিচ্ছিল: ‘তোমাদের ওওএস কার্নেল কোলাপ্স হওয়ার পরম কাউন্টার-ফিডব্যাক হিসেবে এই থার্মাল জোন বা দহনকারী প্লাজমা ফিল্ডের মেগা আজাব পরম তীব্রতায় টেস্ট বা আস্বাদন করো (وَذُوقُوا عَذَابَ الْحَرِيقِ)’ [এটিই হলো মহাবিশ্বের পরম The Terminal Extraction Shock (প্রান্তিক ডাটা নিষ্কাশন শক প্রটোকল)]।",
       "words": [
         {
           "id": 48650,
@@ -9049,13 +9784,28 @@
         }
       ],
       "translation_en": "And if you could but see when the angels take the souls of those who disbelieved... They are striking their faces and their backs and [saying], \"Taste the punishment of the Burning Fire.",
-      "conventional_en": "And if you could but see when the angels take the souls of those who disbelieved... They are striking their faces and their backs and [saying], \"Taste the punishment of the Burning Fire."
+      "conventional_en": "And if you could but see when the angels take the souls of those who disbelieved... They are striking their faces and their backs and [saying], \"Taste the punishment of the Burning Fire.",
+      "conventional_bn": "আর তুমি যদি দেখতে—যখন ফেরেশতারা কাফের (অস্বীকারকারী)-দের প্রাণ হরণ (ডেটা এক্সট্রাক্ট) করছিল, তারা তাদের মুখে ও তাদের পিঠে আঘাত করছিল (এবং বলছিল), ‘তোমরা দহনকারী (আগুনের) আজাব আস্বাদন (টেস্ট) করো’।",
+      "core_meanings_bn": "কোড ইন্টারফেস ডিসলিউশন",
+      "core_meanings_en": "The Terminal Extraction Shock",
+      "metadata": {
+        "theme": "The Terminal Extraction Shock ও কোড ইন্টারফেস ডিসলিউশন",
+        "scientific_topics": [
+          "The Terminal Extraction Shock"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "আর হে অবসার্ভার! তুমি যদি তোমার চিন্তা প্রসেসরে সেই পরম কস্মিক ফরেনসিক দৃশ্য ডিকোড করে দেখতে—যখন সুপ্রীমিক রিকভারি এজেন্ট বা ফেরেশতা নোডসমূহ সেই সোর্স কোড ব্রেক করা কাফের ইউজারদের হার্ডওয়্যার থেকে লাইভ ডেটা টেনে হিঁচড়ে বের বা প্রাণ হরণ করছিল (إِذْ يَتَوَفَّى الَّذِينَ كَفَرُوا ۙ الْمَلَائِكَةُ), তখন তারা তাদের ইনপুট ইন্টারফেস বা মুখে এবং তাদের ব্যাক-এন্ড রেজিস্ট্রি বা পিঠে তীব্র কাইনেটিক ফোর্স দিয়ে ক্যাশ পার্জ করে আঘাত করছিল এবং মেমোরি কমান্ড দিচ্ছিল: ‘তোমাদের ওওএস কার্নেল কোলাপ্স হওয়ার পরম কাউন্টার-ফিডব্যাক হিসেবে এই থার্মাল জোন বা দহনকারী প্লাজমা ফিল্ডের মেগা আজাব পরম তীব্রতায় টেস্ট বা আস্বাদন করো (وَذُوقُوا عَذَابَ الْحَرِيقِ)’ [এটিই হলো মহাবিশ্বের পরম The Terminal Extraction Shock (প্রান্তিক ডাটা নিষ্কাশন শক প্রটোকল)]।",
+      "meta_bn": "The Terminal Extraction Shock ও কোড ইন্টারফেস ডিসলিউশন",
+      "meta_en": "The Terminal Extraction Shock",
+      "core_meaning_bn": "কোড ইন্টারফেস ডিসলিউশন",
+      "core_meaning_en": "The Terminal Extraction Shock"
     },
     {
       "surah": 8,
       "ayah": 51,
       "transliteration": "dhālika bimā qaddamat aydīkum wa-anna l-laha laysa biẓallāmin lil'ʿabīdi",
-      "translation_bn": "এটা হল তাই যা তোমাদের হস্তগুলো (অর্জন করে) আগে পাঠিয়েছে কেননা আল্লাহ তো তাঁর বান্দাহদের প্রতি অত্যাচারী নন।",
+      "translation_bn": "তোমাদের কার্বন হার্ডওয়্যারে এই দহনকারী ক্র্যাশ বা আজাব আছড়ে পড়া স্রেফ এজন্য—কারণ এটি তোমাদের নিজেদের চিন্তা প্রসেসর ও হাত পূর্বে যে ডার্ক ডাটা আউটপুট বা অ্যাকশন জেনারেট (بِمَا قَدَّمَتْ أَيْدِيكُمْ) করেছিল, তারই স্বয়ংক্রিয় রিঅ্যাকশন; আর এটি এক অবিনশ্বর কস্মিক ল' যে, স্বয়ং সিস্টেম আর্কিটেক্ট আল্লাহ তাঁর সিস্টেমে ডেপ্লয়কৃত কোনো অনুগত ইউজার নোড বা বান্দাদের (لِّلْعَبِيدِ) প্রতি বিন্দুমাত্র কোনো সিস্টেম এরর বা লিনিয়ার ইনসাফ বহির্ভূত জুলুম করেন না;",
       "words": [
         {
           "id": 49190,
@@ -9159,13 +9909,28 @@
         }
       ],
       "translation_en": "That is for what your hands have put forth [of evil] and because Allah is not ever unjust to His servants.\"",
-      "conventional_en": "That is for what your hands have put forth [of evil] and because Allah is not ever unjust to His servants.\""
+      "conventional_en": "That is for what your hands have put forth [of evil] and because Allah is not ever unjust to His servants.\"",
+      "conventional_bn": "এটি তোমাদের হাত যা পূর্বে পাঠিয়েছে তার কারণে; আর নিশ্চয়ই আল্লাহ তাঁর বান্দাদের প্রতি বিন্দুমাত্র জুলুম (অন্যায়) করেন না।",
+      "core_meanings_bn": "জাস্ট অ্যাকশন ব্যাকফায়ার",
+      "core_meanings_en": "The Self-Induced Hardware Degradation",
+      "metadata": {
+        "theme": "The Self-Induced Hardware Degradation ও জাস্ট অ্যাকশন ব্যাকফায়ার",
+        "scientific_topics": [
+          "The Self-Induced Hardware Degradation"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "তোমাদের কার্বন হার্ডওয়্যারে এই দহনকারী ক্র্যাশ বা আজাব আছড়ে পড়া স্রেফ এজন্য—কারণ এটি তোমাদের নিজেদের চিন্তা প্রসেসর ও হাত পূর্বে যে ডার্ক ডাটা আউটপুট বা অ্যাকশন জেনারেট (بِمَا قَدَّمَتْ أَيْدِيكُمْ) করেছিল, তারই স্বয়ংক্রিয় রিঅ্যাকশন; আর এটি এক অবিনশ্বর কস্মিক ল' যে, স্বয়ং সিস্টেম আর্কিটেক্ট আল্লাহ তাঁর সিস্টেমে ডেপ্লয়কৃত কোনো অনুগত ইউজার নোড বা বান্দাদের (لِّلْعَبِيدِ) প্রতি বিন্দুমাত্র কোনো সিস্টেম এরর বা লিনিয়ার ইনসাফ বহির্ভূত জুলুম করেন না;",
+      "meta_bn": "The Self-Induced Hardware Degradation ও জাস্ট অ্যাকশন ব্যাকফায়ার",
+      "meta_en": "The Self-Induced Hardware Degradation",
+      "core_meaning_bn": "জাস্ট অ্যাকশন ব্যাকফায়ার",
+      "core_meaning_en": "The Self-Induced Hardware Degradation"
     },
     {
       "surah": 8,
       "ayah": 52,
       "transliteration": "kadabi āli fir'ʿawna wa-alladhīna min qablihim kafarū biāyāti l-lahi fa-akhadhahumu l-lahu bidhunūbihim inna l-laha qawiyyun shadīdu l-ʿiqābi",
-      "translation_bn": "ফির‘আওনের লোকজন ও তাদের আগের লোকেদের মতই ওরা আল্লাহর নিদর্শনাবলীকে প্রত্যাখ্যান করেছে, কাজেই তাদের পাপের কারণে আল্লাহ তাদেরকে পাকড়াও করেছেন। নিশ্চয়ই আল্লাহ শক্তিমান, শাস্তিদানে অত্যন্ত কঠোর।",
+      "translation_bn": "এই অবাক্ষয়িত মক্কী আইডির কোড ক্র্যাশ করার মেকানিজমটি হুবহু অতীত টাইম-লাইনের মেগা করাপ্ট ফেরাউন ক্লাস্টার (كَدَأْبِ آلِ فِرْعَوْنَ) এবং তাদেরও পূর্বে ক্র্যাশ করে যাওয়া প্রাচীন নোড-ক্লাস্টারসমূহের হিস্টোরিক্যাল ডাটালগের মতো; তারা আজীবন তাদের রানিং উইন্ডোতে বসে স্বয়ং আল্লাহ্র অরিজিনাল জিরো-এরর কোড মার্কার বা আয়াতসমূহকে রিজেক্ট ও অস্বীকার করেছিল, যার স্বয়ংক্রিয় কাউন্টার-ফিডব্যাকে আল্লাহ তাদের ওওএসে (OOS) রান করা মারাত্মক ম্যালওয়্যার ও পাপের কারণে তাদের আইডি লাইভ ক্র্যাশ বা পাকড়াও (فَأَخَذَهُمُ اللَّهُ بِذُنُوبِهِمْ) করলেন; নিশ্চয়ই আল্লাহ পরম শক্তিশালী ও ক্ষতিকর ভাইরাসের বিরুদ্ধে অত্যন্ত ফাস্ট প্রোসেসিং শাস্তিদাতা বা ‘শাদীবুল ইক্বাব’;",
       "words": [
         {
           "id": 49863,
@@ -9349,7 +10114,22 @@
         }
       ],
       "translation_en": "[Theirs is] like the custom of the people of Pharaoh and of those before them. They disbelieved in the signs of Allah, so Allah seized them for their sins. Indeed, Allah is Powerful and severe in penalty.",
-      "conventional_en": "[Theirs is] like the custom of the people of Pharaoh and of those before them. They disbelieved in the signs of Allah, so Allah seized them for their sins. Indeed, Allah is Powerful and severe in penalty."
+      "conventional_en": "[Theirs is] like the custom of the people of Pharaoh and of those before them. They disbelieved in the signs of Allah, so Allah seized them for their sins. Indeed, Allah is Powerful and severe in penalty.",
+      "conventional_bn": "ফেরাউনের বংশধর এবং তাদের পূর্ববর্তীদের অভ্যাসের (ডাটা লগের) মতো; তারা আল্লাহর আয়াতসমূহ (কোডসমূহ)-কে অস্বীকার করেছিল, ফলে আল্লাহ তাদের পাপের কারণে তাদের পাকড়াও করেছিলেন; নিশ্চয়ই আল্লাহ পরম শক্তিশালী, কঠোর শাস্তিদানকারী।",
+      "core_meanings_bn": "ফেরাউন ক্লাস্টার ডাটা-লগ",
+      "core_meanings_en": "The Historical Systemic Leak",
+      "metadata": {
+        "theme": "The Historical Systemic Leak ও ফেরাউন ক্লাস্টার ডাটা-লগ",
+        "scientific_topics": [
+          "The Historical Systemic Leak"
+        ],
+        "status": "completed"
+      },
+      "modern_translation_bn": "এই অবাক্ষয়িত মক্কী আইডির কোড ক্র্যাশ করার মেকানিজমটি হুবহু অতীত টাইম-লাইনের মেগা করাপ্ট ফেরাউন ক্লাস্টার (كَدَأْبِ آلِ فِرْعَوْنَ) এবং তাদেরও পূর্বে ক্র্যাশ করে যাওয়া প্রাচীন নোড-ক্লাস্টারসমূহের হিস্টোরিক্যাল ডাটালগের মতো; তারা আজীবন তাদের রানিং উইন্ডোতে বসে স্বয়ং আল্লাহ্র অরিজিনাল জিরো-এরর কোড মার্কার বা আয়াতসমূহকে রিজেক্ট ও অস্বীকার করেছিল, যার স্বয়ংক্রিয় কাউন্টার-ফিডব্যাকে আল্লাহ তাদের ওওএসে (OOS) রান করা মারাত্মক ম্যালওয়্যার ও পাপের কারণে তাদের আইডি লাইভ ক্র্যাশ বা পাকড়াও (فَأَخَذَهُمُ اللَّهُ بِذُنُوبِهِمْ) করলেন; নিশ্চয়ই আল্লাহ পরম শক্তিশালী ও ক্ষতিকর ভাইরাসের বিরুদ্ধে অত্যন্ত ফাস্ট প্রোসেসিং শাস্তিদাতা বা ‘শাদীবুল ইক্বাব’;",
+      "meta_bn": "The Historical Systemic Leak ও ফেরাউন ক্লাস্টার ডাটা-লগ",
+      "meta_en": "The Historical Systemic Leak",
+      "core_meaning_bn": "ফেরাউন ক্লাস্টার ডাটা-লগ",
+      "core_meaning_en": "The Historical Systemic Leak"
     },
     {
       "surah": 8,
