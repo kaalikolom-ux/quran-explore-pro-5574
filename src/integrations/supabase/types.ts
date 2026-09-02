@@ -420,6 +420,16 @@ export type Database = {
           ayah: number
           bn_text: string | null
           en_text: string | null
+          conventional_bn: string | null
+          conventional_en: string | null
+          core_meaning_bn: string | null
+          core_meaning_en: string | null
+          modern_translation_bn: string | null
+          modern_translation_en: string | null
+          meta_bn: string | null
+          meta_en: string | null
+          lexicon_modern_notes: string | null
+          transliteration: string | null
           surah: number
           text_uthmani: string
           updated_at: string
@@ -430,6 +440,16 @@ export type Database = {
           ayah: number
           bn_text?: string | null
           en_text?: string | null
+          conventional_bn?: string | null
+          conventional_en?: string | null
+          core_meaning_bn?: string | null
+          core_meaning_en?: string | null
+          modern_translation_bn?: string | null
+          modern_translation_en?: string | null
+          meta_bn?: string | null
+          meta_en?: string | null
+          lexicon_modern_notes?: string | null
+          transliteration?: string | null
           surah: number
           text_uthmani: string
           updated_at?: string
@@ -440,6 +460,16 @@ export type Database = {
           ayah?: number
           bn_text?: string | null
           en_text?: string | null
+          conventional_bn?: string | null
+          conventional_en?: string | null
+          core_meaning_bn?: string | null
+          core_meaning_en?: string | null
+          modern_translation_bn?: string | null
+          modern_translation_en?: string | null
+          meta_bn?: string | null
+          meta_en?: string | null
+          lexicon_modern_notes?: string | null
+          transliteration?: string | null
           surah?: number
           text_uthmani?: string
           updated_at?: string

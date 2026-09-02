@@ -35,6 +35,8 @@ export async function syncSurah(surah: number) {
     const audioUrl = a.audio_url || `https://everyayah.com/data/Alafasy_128kbps/${sPad}${aPad}.mp3`;
     const convBn = a.conventional_bn || a.translation_bn || "";
     const convEn = a.conventional_en || a.translation_en || "";
+    const coreBn = a.core_meaning_bn || null;
+    const coreEn = a.core_meaning_en || null;
     const modBn = a.modern_translation_bn || null;
     const modEn = a.modern_translation_en || null;
     const mBn = a.meta_bn || null;
@@ -56,6 +58,8 @@ export async function syncSurah(surah: number) {
       en_text: convEn,
       conventional_bn: convBn,
       conventional_en: convEn,
+      core_meaning_bn: coreBn,
+      core_meaning_en: coreEn,
       modern_translation_bn: modBn,
       modern_translation_en: modEn,
       meta_bn: mBn,

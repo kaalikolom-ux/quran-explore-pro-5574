@@ -2266,11 +2266,15 @@ function UserPermissionsDialog({
     showTransliteration: true,
     showConventionalBn: true,
     showConventionalEn: true,
+    showCoreMeaningBn: true,
+    showCoreMeaningEn: true,
     showModernBn: true,
     showModernEn: true,
     showLexicon: true,
     showLexiconScientific: true,
     showMetaData: true,
+    showSurahScientificMeaning: true,
+    showLogicalConsistency: true,
   });
   const [hasCustomRecord, setHasCustomRecord] = useState(false);
 
@@ -2290,11 +2294,15 @@ function UserPermissionsDialog({
             showTransliteration: true,
             showConventionalBn: true,
             showConventionalEn: true,
+            showCoreMeaningBn: true,
+            showCoreMeaningEn: true,
             showModernBn: true,
             showModernEn: true,
             showLexicon: true,
             showLexiconScientific: true,
             showMetaData: true,
+            showSurahScientificMeaning: true,
+            showLogicalConsistency: true,
             ...((data as any).permissions || {}),
           });
           setNotes((data as any).notes || "");
@@ -2354,11 +2362,13 @@ function UserPermissionsDialog({
     { key: "showTransliteration", title: "৪. উচ্চারণ নির্দেশিকা", desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" },
     { key: "showConventionalBn", title: "৫. প্রচলিত বাংলা অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
     { key: "showConventionalEn", title: "৬. Surface English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
-    { key: "showModernBn", title: "৭. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
-    { key: "showModernEn", title: "৮. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
-    { key: "showLexicon", title: "৯. অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
-    { key: "showLexiconScientific", title: "১০. লেক্সিকন নোট (Lexicon Notes)", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
-    { key: "showLogicalConsistency", title: "১১. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)", desc: "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য", highlight: true },
+    { key: "showCoreMeaningBn", title: "৭. অন্তর্নিহিত অর্থ (বাংলা)", desc: "আয়াতের অন্তর্নিহিত ভাবার্থ ও মূল বার্তা", highlight: true },
+    { key: "showCoreMeaningEn", title: "৮. Core Meaning (English)", desc: "আয়াতের অন্তর্নিহিত ইংরেজি ভাবার্থ ও মূল বার্তা", highlight: true },
+    { key: "showModernBn", title: "৯. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
+    { key: "showModernEn", title: "১০. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
+    { key: "showLexicon", title: "১১. অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
+    { key: "showLexiconScientific", title: "১২. লেক্সিকন নোট (Lexicon Notes)", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
+    { key: "showLogicalConsistency", title: "১৩. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)", desc: "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য", highlight: true },
   ];
 
   return (

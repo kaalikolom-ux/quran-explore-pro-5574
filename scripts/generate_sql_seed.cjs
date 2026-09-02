@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS public.quran_verses (
   en_text text,
   conventional_bn text,
   conventional_en text,
+  core_meaning_bn text,
+  core_meaning_en text,
   modern_translation_bn text,
   modern_translation_en text,
   meta_bn text,
@@ -234,6 +236,8 @@ for (const file of files) {
     totalAyahs++;
     const convBn = a.conventional_bn || a.translation_bn || '';
     const convEn = a.conventional_en || a.translation_en || '';
+    const coreBn = a.core_meaning_bn || null;
+    const coreEn = a.core_meaning_en || null;
     const modBn = a.modern_translation_bn || null;
     const modEn = a.modern_translation_en || null;
     const mBn = a.meta_bn || null;
@@ -254,7 +258,7 @@ for (const file of files) {
     const audioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sPad}${aPad}.mp3`;
     const wordsJson = JSON.stringify(a.words || []).replace(/'/g, "''");
 
-    valuesRows.push(`(${surahId}, ${a.ayah}, ${escapeSql(a.text_uthmani || '')}, '${wordsJson}'::jsonb, ${escapeSql(a.transliteration || '')}, ${escapeSql(convBn)}, ${escapeSql(convEn)}, ${escapeSql(convBn)}, ${escapeSql(convEn)}, ${escapeSql(modBn)}, ${escapeSql(modEn)}, ${escapeSql(mBn)}, ${escapeSql(mEn)}, ${escapeSql(lexNotes || null)}, ${escapeSql(audioUrl)}, now())`);
+    valuesRows.push(`(${surahId}, ${a.ayah}, ${escapeSql(a.text_uthmani || '')}, '${wordsJson}'::jsonb, ${escapeSql(a.transliteration || '')}, ${escapeSql(convBn)}, ${escapeSql(convEn)}, ${escapeSql(convBn)}, ${escapeSql(convEn)}, ${escapeSql(coreBn)}, ${escapeSql(coreEn)}, ${escapeSql(modBn)}, ${escapeSql(modEn)}, ${escapeSql(mBn)}, ${escapeSql(mEn)}, ${escapeSql(lexNotes || null)}, ${escapeSql(audioUrl)}, now())`);
 
     if (mBn || mEn) {
       metaRows.push(`(${surahId}, ${a.ayah}, ${escapeSql(mBn)}, ${escapeSql(mEn)}, now())`);
@@ -262,7 +266,7 @@ for (const file of files) {
   });
 
   // Batch insert into quran_verses
-  sql += `INSERT INTO public.quran_verses (surah, ayah, text_uthmani, words, transliteration, bn_text, en_text, conventional_bn, conventional_en, modern_translation_bn, modern_translation_en, meta_bn, meta_en, lexicon_modern_notes, audio_url, updated_at)\nVALUES\n  ` + valuesRows.join(',\n  ') + `\nON CONFLICT (surah, ayah) DO UPDATE SET\n  text_uthmani = EXCLUDED.text_uthmani,\n  words = EXCLUDED.words,\n  transliteration = EXCLUDED.transliteration,\n  bn_text = EXCLUDED.bn_text,\n  en_text = EXCLUDED.en_text,\n  conventional_bn = EXCLUDED.conventional_bn,\n  conventional_en = EXCLUDED.conventional_en,\n  modern_translation_bn = EXCLUDED.modern_translation_bn,\n  modern_translation_en = EXCLUDED.modern_translation_en,\n  meta_bn = EXCLUDED.meta_bn,\n  meta_en = EXCLUDED.meta_en,\n  lexicon_modern_notes = EXCLUDED.lexicon_modern_notes,\n  audio_url = EXCLUDED.audio_url,\n  updated_at = now();\n`;
+  sql += `INSERT INTO public.quran_verses (surah, ayah, text_uthmani, words, transliteration, bn_text, en_text, conventional_bn, conventional_en, core_meaning_bn, core_meaning_en, modern_translation_bn, modern_translation_en, meta_bn, meta_en, lexicon_modern_notes, audio_url, updated_at)\nVALUES\n  ` + valuesRows.join(',\n  ') + `\nON CONFLICT (surah, ayah) DO UPDATE SET\n  text_uthmani = EXCLUDED.text_uthmani,\n  words = EXCLUDED.words,\n  transliteration = EXCLUDED.transliteration,\n  bn_text = EXCLUDED.bn_text,\n  en_text = EXCLUDED.en_text,\n  conventional_bn = EXCLUDED.conventional_bn,\n  conventional_en = EXCLUDED.conventional_en,\n  core_meaning_bn = EXCLUDED.core_meaning_bn,\n  core_meaning_en = EXCLUDED.core_meaning_en,\n  modern_translation_bn = EXCLUDED.modern_translation_bn,\n  modern_translation_en = EXCLUDED.modern_translation_en,\n  meta_bn = EXCLUDED.meta_bn,\n  meta_en = EXCLUDED.meta_en,\n  lexicon_modern_notes = EXCLUDED.lexicon_modern_notes,\n  audio_url = EXCLUDED.audio_url,\n  updated_at = now();\n`;
 
   if (metaRows.length > 0) {
     sql += `\nINSERT INTO public.ayah_metadata (surah, ayah, meta_bn, meta_en, updated_at)\nVALUES\n  ` + metaRows.join(',\n  ') + `\nON CONFLICT (surah, ayah) DO UPDATE SET\n  meta_bn = EXCLUDED.meta_bn,\n  meta_en = EXCLUDED.meta_en,\n  updated_at = now();\n`;

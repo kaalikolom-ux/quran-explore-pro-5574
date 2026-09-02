@@ -32,7 +32,8 @@ import {
   Repeat,
   Square,
   Cpu,
-  Scale
+  Scale,
+  Compass,
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
@@ -244,6 +245,8 @@ export type QuranAyah = {
   conventional_en?: string;
   translation_bn?: string;
   translation_en?: string;
+  core_meaning_bn?: string;
+  core_meaning_en?: string;
   modern_translation_bn?: string;
   modern_translation_en?: string;
   lexicon_modern_notes?: string;
@@ -322,6 +325,12 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
           if (parsed.meta_en && typeof parsed.meta_en === "string" && parsed.meta_en.trim().length > 0) {
             a.meta_en = parsed.meta_en.trim();
           }
+          if (parsed.core_meaning_bn && typeof parsed.core_meaning_bn === "string" && parsed.core_meaning_bn.trim().length > 0) {
+            a.core_meaning_bn = parsed.core_meaning_bn.trim();
+          }
+          if (parsed.core_meaning_en && typeof parsed.core_meaning_en === "string" && parsed.core_meaning_en.trim().length > 0) {
+            a.core_meaning_en = parsed.core_meaning_en.trim();
+          }
           if (parsed.modern_translation_bn && typeof parsed.modern_translation_bn === "string" && parsed.modern_translation_bn.trim().length > 0) {
             a.modern_translation_bn = parsed.modern_translation_bn.trim();
           }
@@ -351,7 +360,7 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
   try {
     const { data: rows, error } = await supabase
       .from("quran_verses")
-      .select("surah, ayah, text_uthmani, words, transliteration, bn_text, en_text, conventional_bn, conventional_en, modern_translation_bn, modern_translation_en, meta_bn, meta_en, lexicon_modern_notes, audio_url")
+      .select("surah, ayah, text_uthmani, words, transliteration, bn_text, en_text, conventional_bn, conventional_en, core_meaning_bn, core_meaning_en, modern_translation_bn, modern_translation_en, meta_bn, meta_en, lexicon_modern_notes, audio_url")
       .eq("surah", sId)
       .order("ayah");
 
@@ -367,6 +376,8 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
           conventional_en: r.conventional_en || r.en_text || "",
           translation_bn: r.conventional_bn || r.bn_text || "",
           translation_en: r.conventional_en || r.en_text || "",
+          core_meaning_bn: r.core_meaning_bn || undefined,
+          core_meaning_en: r.core_meaning_en || undefined,
           modern_translation_bn: r.modern_translation_bn || undefined,
           modern_translation_en: r.modern_translation_en || undefined,
           meta_bn: r.meta_bn || undefined,
@@ -514,6 +525,8 @@ interface AyahCardProps {
   showTransliteration: boolean;
   showConventionalBn: boolean;
   showConventionalEn: boolean;
+  showCoreMeaningBn: boolean;
+  showCoreMeaningEn: boolean;
   showModernBn: boolean;
   showModernEn: boolean;
   showLexicon: boolean;
@@ -523,6 +536,8 @@ interface AyahCardProps {
   editForm: {
     conventional_bn: string;
     conventional_en: string;
+    core_meaning_bn: string;
+    core_meaning_en: string;
     modern_translation_bn: string;
     modern_translation_en: string;
     lexicon_modern_notes: string;
@@ -533,6 +548,8 @@ interface AyahCardProps {
     React.SetStateAction<{
       conventional_bn: string;
       conventional_en: string;
+      core_meaning_bn: string;
+      core_meaning_en: string;
       modern_translation_bn: string;
       modern_translation_en: string;
       lexicon_modern_notes: string;
@@ -570,6 +587,8 @@ const AyahCard = React.memo(function AyahCard({
   showTransliteration,
   showConventionalBn,
   showConventionalEn,
+  showCoreMeaningBn,
+  showCoreMeaningEn,
   showModernBn,
   showModernEn,
   showLexicon,
@@ -590,6 +609,12 @@ const AyahCard = React.memo(function AyahCard({
   onCancelEdit,
   onSelectWord,
 }: AyahCardProps) {
+  const hasCoreMeaningBnData = Boolean(
+    ayah.core_meaning_bn && ayah.core_meaning_bn.trim().length > 0
+  );
+  const hasCoreMeaningEnData = Boolean(
+    ayah.core_meaning_en && ayah.core_meaning_en.trim().length > 0
+  );
   const hasModernBnData = Boolean(
     ayah.modern_translation_bn && ayah.modern_translation_bn.trim().length > 0
   );
@@ -900,14 +925,72 @@ const AyahCard = React.memo(function AyahCard({
           )}
         </div>
 
-        {/* ৩. আধুনিক অনুবাদ (বাংলা) */}
+        {/* ৩. অন্তর্নিহিত অর্থ (বাংলা) */}
+        <div
+          style={{ display: isEditing || (showCoreMeaningBn && hasCoreMeaningBnData) ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+            <Compass className="size-3.5 text-primary" />
+            <span>৩. অন্তর্নিহিত অর্থ (বাংলা)</span>
+          </div>
+          {isEditing ? (
+            <Textarea
+              value={editForm.core_meaning_bn}
+              onChange={(e) =>
+                setEditForm({ ...editForm, core_meaning_bn: e.target.value })
+              }
+              className="mt-1 bg-background font-normal"
+              style={{ fontSize: `${translationFontSize}px` }}
+              placeholder="আয়াতের অন্তর্নিহিত বাংলা ভাবার্থ বা মূল বার্তা লিখুন..."
+            />
+          ) : (
+            <p
+              className="text-xs sm:text-sm font-normal text-foreground/90 leading-relaxed pl-5.5"
+              style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
+            >
+              {ayah.core_meaning_bn}
+            </p>
+          )}
+        </div>
+
+        {/* ৪. Core Meaning (English) */}
+        <div
+          style={{ display: isEditing || (showCoreMeaningEn && hasCoreMeaningEnData) ? "block" : "none" }}
+          className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+            <Compass className="size-3.5 text-primary" />
+            <span>৪. Core Meaning (English)</span>
+          </div>
+          {isEditing ? (
+            <Textarea
+              value={editForm.core_meaning_en}
+              onChange={(e) =>
+                setEditForm({ ...editForm, core_meaning_en: e.target.value })
+              }
+              className="font-serif italic mt-1 bg-background font-normal"
+              style={{ fontSize: `${translationFontSize}px` }}
+              placeholder="Core contextual meaning or message in English..."
+            />
+          ) : (
+            <p
+              className="text-xs sm:text-sm font-normal text-muted-foreground font-serif italic leading-relaxed pl-5.5"
+              style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
+            >
+              {ayah.core_meaning_en}
+            </p>
+          )}
+        </div>
+
+        {/* ৫. আধুনিক অনুবাদ (বাংলা) */}
         <div
           style={{ display: isEditing || (showModernBn && hasModernBnData) ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <BookMarked className="size-3.5 text-primary" />
-            <span>৩. আধুনিক অনুবাদ (বাংলা)</span>
+            <span>৫. আধুনিক অনুবাদ (বাংলা)</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -929,14 +1012,14 @@ const AyahCard = React.memo(function AyahCard({
           )}
         </div>
 
-        {/* ৪. Modern Translation (English) */}
+        {/* ৬. Modern Translation (English) */}
         <div
           style={{ display: isEditing || (showModernEn && hasModernEnData) ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <BookmarkCheck className="size-3.5 text-primary" />
-            <span>৪. Modern Translation (English)</span>
+            <span>৬. Modern Translation (English)</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -1151,6 +1234,8 @@ function SurahDetailPage() {
   const [editForm, setEditForm] = useState({
     conventional_bn: "",
     conventional_en: "",
+    core_meaning_bn: "",
+    core_meaning_en: "",
     modern_translation_bn: "",
     modern_translation_en: "",
     lexicon_modern_notes: "",
@@ -1503,6 +1588,8 @@ function SurahDetailPage() {
     setEditForm({
       conventional_bn: ayah.conventional_bn || (ayah as any).translation_bn || "",
       conventional_en: ayah.conventional_en || (ayah as any).translation_en || "",
+      core_meaning_bn: ayah.core_meaning_bn || "",
+      core_meaning_en: ayah.core_meaning_en || "",
       modern_translation_bn: ayah.modern_translation_bn || "",
       modern_translation_en: ayah.modern_translation_en || "",
       lexicon_modern_notes: ayah.lexicon_modern_notes || "",
@@ -1523,6 +1610,8 @@ function SurahDetailPage() {
         (target as any).translation_bn = editForm.conventional_bn.trim();
         target.conventional_en = editForm.conventional_en.trim();
         (target as any).translation_en = editForm.conventional_en.trim();
+        target.core_meaning_bn = editForm.core_meaning_bn.trim();
+        target.core_meaning_en = editForm.core_meaning_en.trim();
         target.modern_translation_bn = editForm.modern_translation_bn.trim();
         target.modern_translation_en = editForm.modern_translation_en.trim();
         target.lexicon_modern_notes = editForm.lexicon_modern_notes.trim();
@@ -1534,6 +1623,8 @@ function SurahDetailPage() {
           localStorage.setItem(`quran_ayah_meta_${surahId}_${ayahNumber}`, JSON.stringify({
             meta_bn: editForm.meta_bn.trim(),
             meta_en: editForm.meta_en.trim(),
+            core_meaning_bn: editForm.core_meaning_bn.trim(),
+            core_meaning_en: editForm.core_meaning_en.trim(),
             modern_translation_bn: editForm.modern_translation_bn.trim(),
             modern_translation_en: editForm.modern_translation_en.trim(),
             lexicon_modern_notes: editForm.lexicon_modern_notes.trim(),
@@ -1555,6 +1646,8 @@ function SurahDetailPage() {
             conventional_en: editForm.conventional_en.trim(),
             bn_text: editForm.conventional_bn.trim(),
             en_text: editForm.conventional_en.trim(),
+            core_meaning_bn: editForm.core_meaning_bn.trim() || null,
+            core_meaning_en: editForm.core_meaning_en.trim() || null,
             modern_translation_bn: editForm.modern_translation_bn.trim() || null,
             modern_translation_en: editForm.modern_translation_en.trim() || null,
             meta_bn: editForm.meta_bn.trim() || null,
@@ -1595,6 +1688,8 @@ function SurahDetailPage() {
   const showTransliteration = isLayerAllowed("showTransliteration", isAdmin) && prefs.showTransliteration;
   const showConventionalBn = isLayerAllowed("showConventionalBn", isAdmin) && prefs.showConventionalBn;
   const showConventionalEn = isLayerAllowed("showConventionalEn", isAdmin) && prefs.showConventionalEn;
+  const showCoreMeaningBn = isLayerAllowed("showCoreMeaningBn", isAdmin) && prefs.showCoreMeaningBn;
+  const showCoreMeaningEn = isLayerAllowed("showCoreMeaningEn", isAdmin) && prefs.showCoreMeaningEn;
   const showModernBn = isLayerAllowed("showModernBn", isAdmin) && prefs.showModernBn;
   const showModernEn = isLayerAllowed("showModernEn", isAdmin) && prefs.showModernEn;
   const showLexicon = isLayerAllowed("showLexicon", isAdmin) && prefs.showLexicon;
@@ -1863,6 +1958,8 @@ function SurahDetailPage() {
               showTransliteration={showTransliteration}
               showConventionalBn={showConventionalBn}
               showConventionalEn={showConventionalEn}
+              showCoreMeaningBn={showCoreMeaningBn}
+              showCoreMeaningEn={showCoreMeaningEn}
               showModernBn={showModernBn}
               showModernEn={showModernEn}
               showLexicon={showLexicon}

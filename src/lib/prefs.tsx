@@ -6,6 +6,8 @@ export type DisplayLayers = {
   showTransliteration: boolean;
   showConventionalBn: boolean;
   showConventionalEn: boolean;
+  showCoreMeaningBn: boolean;
+  showCoreMeaningEn: boolean;
   showModernBn: boolean;
   showModernEn: boolean;
   showLexicon: boolean;
@@ -36,6 +38,8 @@ export const DEFAULT_PREFS: Prefs = {
   showTransliteration: true,
   showConventionalBn: true,
   showConventionalEn: true,
+  showCoreMeaningBn: true,
+  showCoreMeaningEn: true,
   showModernBn: true,
   showModernEn: true,
   showLexicon: true,
@@ -51,6 +55,8 @@ export type PublicDisplayPermissions = {
   showTransliteration: boolean;
   showConventionalBn: boolean;
   showConventionalEn: boolean;
+  showCoreMeaningBn: boolean;
+  showCoreMeaningEn: boolean;
   showModernBn: boolean;
   showModernEn: boolean;
   showLexicon: boolean;
@@ -66,6 +72,8 @@ export const DEFAULT_PUBLIC_PERMISSIONS: PublicDisplayPermissions = {
   showTransliteration: true,
   showConventionalBn: true,
   showConventionalEn: true,
+  showCoreMeaningBn: true,
+  showCoreMeaningEn: true,
   showModernBn: true,
   showModernEn: true,
   showLexicon: true,
@@ -443,6 +451,8 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       sciEn: { bn: "বিজ্ঞানভিত্তিক (English)", en: "Scientific (English)" },
       stdBn: { bn: "প্রচলিত অনুবাদ (বাংলা)", en: "Standard (Bangla)" },
       stdEn: { bn: "Surface Translation (English)", en: "Surface Translation (English)" },
+      coreMeaningBn: { bn: "অন্তর্নিহিত অর্থ (বাংলা)", en: "Core Meaning (Bangla)" },
+      coreMeaningEn: { bn: "Core Meaning (English)", en: "Core Meaning (English)" },
     };
     return dict[key]?.[prefs.lang] || key;
   };

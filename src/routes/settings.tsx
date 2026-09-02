@@ -120,28 +120,38 @@ function SettingsPage() {
       desc: lang === "bn" ? "সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ (Greentech)" : "Sahih International translation",
     },
     {
+      key: "showCoreMeaningBn",
+      title: lang === "bn" ? "৭. অন্তর্নিহিত অর্থ (বাংলা)" : "7. Core Meaning (Bangla)",
+      desc: lang === "bn" ? "আয়াতের অন্তর্নিহিত ভাবার্থ ও মূল বার্তা" : "Core contextual meaning and deeper message in Bangla",
+    },
+    {
+      key: "showCoreMeaningEn",
+      title: lang === "bn" ? "৮. Core Meaning (English)" : "8. Core Meaning (English)",
+      desc: lang === "bn" ? "আয়াতের অন্তর্নিহিত ইংরেজি ভাবার্থ ও মূল বার্তা" : "Core contextual meaning and deeper message in English",
+    },
+    {
       key: "showModernBn",
-      title: lang === "bn" ? "৭. আধুনিক অনুবাদ (বাংলা)" : "7. Modern Translation (Bangla)",
+      title: lang === "bn" ? "৯. আধুনিক অনুবাদ (বাংলা)" : "9. Modern Translation (Bangla)",
       desc: lang === "bn" ? "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ" : "Contemporary contextual Bengali translation",
     },
     {
       key: "showModernEn",
-      title: lang === "bn" ? "৮. Modern Translation (English)" : "8. Modern Translation (English)",
+      title: lang === "bn" ? "১০. Modern Translation (English)" : "10. Modern Translation (English)",
       desc: lang === "bn" ? "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ" : "Contemporary contextual English translation",
     },
     {
       key: "showLexicon",
-      title: lang === "bn" ? "৯. অভিধান / Lexicon" : "9. Lexicon / Vocabulary",
+      title: lang === "bn" ? "১১. অভিধান / Lexicon" : "11. Lexicon / Vocabulary",
       desc: lang === "bn" ? "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণগত বিশ্লেষণ" : "Vocabulary, Arabic roots and grammatical notes",
     },
     {
       key: "showLexiconScientific",
-      title: lang === "bn" ? "১০. লেক্সিকন নোট (Lexicon Notes)" : "10. Lexicon Notes & Research",
+      title: lang === "bn" ? "১২. লেক্সিকন নোট (Lexicon Notes)" : "12. Lexicon Notes & Research",
       desc: lang === "bn" ? "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা, প্রেক্ষাপট ও বিস্তারিত নোট প্রদর্শন" : "Show scientific insights, contextual notes, and deep research in lexicon",
     },
     {
       key: "showLogicalConsistency",
-      title: lang === "bn" ? "১১. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)" : "11. Logical Consistency Framework (4:82)",
+      title: lang === "bn" ? "১৩. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)" : "13. Logical Consistency Framework (4:82)",
       desc: lang === "bn" ? "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য বিশ্লেষণ" : "Display internal non-contradiction & universal systemic harmony analysis",
     },
   ];
