@@ -8490,7 +8490,7 @@
       "surah": 4,
       "ayah": 31,
       "transliteration": "in tajtanibū kabāira mā tun'hawna ʿanhu nukaffir ʿankum sayyiātikum wanud'khil'kum mud'khalan karīman",
-      "translation_bn": "যদি তোমরা নিষিদ্ধ কাজের বড় বড় গুলো হতে বিরত থাক, তাহলে আমি তোমাদের ছোট ছোট পাপগুলো ক্ষমা ক’রে দেব এবং তোমাদেরকে এক মহামর্যাদার স্থানে প্রবেশ করাব।",
+      "translation_bn": "তোমাদের যা নিষিদ্ধ করা হয়েছে তার মধ্যে যা বড় বড় গুনাহ (কাবিরা গুনাহ) তা যদি তোমরা বর্জন করো, তবে আমি তোমাদের ছোট ছোট পাপগুলো তোমাদের থেকে মুছে দেব এবং তোমাদের সম্মানজনক স্থানে প্রবেশ করাব।",
       "words": [
         {
           "id": 33339,
@@ -8623,14 +8623,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "If you avoid the major sins which you are forbidden, We will remove from you your lesser sins and admit you to a noble entrance [into Paradise].",
-      "conventional_en": "If you avoid the major sins which you are forbidden, We will remove from you your lesser sins and admit you to a noble entrance [into Paradise]."
+      "translation_en": "If you avoid the major sins which you are forbidden, We will remove from you your lesser sins and admit you to a noble entrance.",
+      "conventional_en": "If you avoid the major sins which you are forbidden, We will remove from you your lesser sins and admit you to a noble entrance.",
+      "meta_bn": "মেগা-বাগ ফিল্টারিং ও ক্লাউড রিফ্রেশ প্রটোকল",
+      "meta_en": "Major Error Purging and System Refresh Protocol",
+      "conventional_bn": "তোমাদের যা নিষিদ্ধ করা হয়েছে তার মধ্যে যা বড় বড় গুনাহ (কাবিরা গুনাহ) তা যদি তোমরা বর্জন করো, তবে আমি তোমাদের ছোট ছোট পাপগুলো তোমাদের থেকে মুছে দেব এবং তোমাদের সম্মানজনক স্থানে প্রবেশ করাব।",
+      "modern_translation_bn": "তোমাদের ওওএসে (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) যেসকল ক্ষতিকারক কমান্ড রান করতে নিষেধ করা হয়েছে—তার মধ্যে থাকা মেগা-বাগ বা পরম ধ্বংসাত্মক সিস্টেম কোড ভায়োলেশনসমূহ (كَبَائِرَ مَا تُنْهَوْنَ عَنْهُ) যদি তোমরা সম্পূর্ণরূপে বর্জন বা ফিল্টার আউট (إِن تَجْتَنِبُوا) করো, তবে আমি স্বয়ংক্রিয় কাউন্টার-ফিডব্যাকে তোমাদের প্রোফাইল থেকে সাধারণ নেতিবাচক ত্রুটি ও ছোট এরর-লগগুলো (سَيِّئَاتِكُمْ) সম্পূর্ণ মার্জ বা ডিলিট (نُكَفِّرْ عَنْكُمْ) করে দেব এবং তোমাদের প্রবেশ করাব এক পরম অপ্টিমাইজড ও সুউচ্চ সম্মানজনক ডোমেইন বা জান্নাতে (مُّدْخَلًا كَرِيمًا);",
+      "modern_translation_en": "If you completely filter out and avoid the major catastrophic code violations and fatal errors (كَبَائِرَ مَا تُنْهَوْنَ عَنْهُ) which you are forbidden to execute within your operating system, We will systematically purge your minor error-logs and runtime glitches (سَيِّئَاتِكُمْ), admitting you into an exalted and optimized domain of noble honor (مُّدْخَلًا كَرِيمًا)."
     },
     {
       "surah": 4,
       "ayah": 32,
       "transliteration": "walā tatamannaw mā faḍḍala l-lahu bihi baʿḍakum ʿalā baʿḍin lilrrijāli naṣībun mimmā ik'tasabū walilnnisāi naṣībun mimmā ik'tasabna wasalū l-laha min faḍlihi inna l-laha kāna bikulli shayin ʿalīman",
-      "translation_bn": "তোমরা তা কামনা করো না যা দ্বারা আল্লাহ তোমাদের কাউকে কারো উপর মর্যাদা প্রদান করেছেন। পুরুষেরা তাদের কৃতকার্যের অংশ পাবে, নারীরাও তাদের কৃতকর্মের অংশ পাবে এবং তোমরা আল্লাহর নিকট তাঁর অনুগ্রহ কামনা কর, নিশ্চয়ই আল্লাহ সর্ববিষয়ে সর্বজ্ঞ।",
+      "translation_bn": "আর আল্লাহ তোমাদের একে অপরের ওপর যা কিছু শ্রেষ্ঠত্ব দিয়েছেন, তোমরা তা আকাঙ্ক্ষা (হিংসা) করো না। পুরুষরা যা উপার্জন করেছে তার জন্য তাদের অংশ রয়েছে এবং নারীরা যা উপার্জন করেছে তার জন্য তাদের অংশ রয়েছে। আর তোমরা আল্লাহর কাছে তাঁর অনুগ্রহ প্রার্থনা করো। নিশ্চয়ই আল্লাহ সব বিষয়ে সর্বজ্ঞ।",
       "words": [
         {
           "id": 34370,
@@ -8913,14 +8918,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And do not wish for that by which Allah has made some of you exceed others. For men is a share of what they have earned, and for women is a share of what they have earned. And ask Allah of his bounty. Indeed Allah is ever, of all things, Knowing.",
-      "conventional_en": "And do not wish for that by which Allah has made some of you exceed others. For men is a share of what they have earned, and for women is a share of what they have earned. And ask Allah of his bounty. Indeed Allah is ever, of all things, Knowing."
+      "translation_en": "And do not wish for that by which Allah has made some of you exceed others. For men is a share of what they have earned, and for women is a share of what they have earned. And ask Allah of His bounty. Indeed Allah is ever, of all things, Knowing.",
+      "conventional_en": "And do not wish for that by which Allah has made some of you exceed others. For men is a share of what they have earned, and for women is a share of what they have earned. And ask Allah of His bounty. Indeed Allah is ever, of all things, Knowing.",
+      "meta_bn": "রিসোর্স জেলাসি বালাই এবং স্বাধীন এনার্জি আর্নিং ম্যাট্রিক্স",
+      "meta_en": "Resource Jealousy Prevention and Independent Earning Ledger",
+      "conventional_bn": "আর আল্লাহ তোমাদের একে অপরের ওপর যা কিছু শ্রেষ্ঠত্ব দিয়েছেন, তোমরা তা আকাঙ্ক্ষা (হিংসা) করো না। পুরুষরা যা উপার্জন করেছে তার জন্য তাদের অংশ রয়েছে এবং নারীরা যা উপার্জন করেছে তার জন্য তাদের অংশ রয়েছে। আর তোমরা আল্লাহর কাছে তাঁর অনুগ্রহ প্রার্থনা করো। নিশ্চয়ই আল্লাহ সব বিষয়ে সর্বজ্ঞ।",
+      "modern_translation_bn": "আর Allah তাঁর ডাইনামিক সৃষ্টিতাত্ত্বিক ডিজাইনে তোমাদের এক নোডের ওপর অন্য নোডকে যে বিশেষ গাঠনিক বা মেটেরিয়াল শ্রেষ্ঠত্ব ও ব্যান্ডউইথ (مَا فَضَّلَ اللَّهُ بِهِ) ডেপ্লয় করেছেন—তোমরা নিজেদের সিস্টেমে তার বিরুদ্ধে কোনো প্রকার জেলাসি বা অসন্তোষের ট্র্যাশ আকাঙ্ক্ষা (وَلَا تَتَمَنَّوْا) রান করো না; মেল নোড বা পুরুষদের জন্য এনকোড করা সুনির্দিষ্ট রাইট বা অংশ (نَصِيبٌ) রয়েছে তারা নিজেদের ওওএসে যে পরিমাণ এনার্জি বা কর্ম প্রসেস ও উপার্জন (مِّمَّا اكْتَسَبُوا) করেছে তার ভিত্তিতে; এবং ফিমেল নোড বা নারীদের জন্যও এবং সামাজিকভাবে পিছিয়ে পড়া দুর্বল অংশ বা Nisa (النِّسَاءِ)-এর জন্যও সুনির্দিষ্ট অংশ রয়েছে তারা নিজেদের ওওএসে যা কিছু প্রসেস ও উপার্জন (مِّمَّا اكْتَسَبْنَ) করেছে তার সাপেক্ষে [সুতরাং উভয়ের স্বাধীন ইকোনমিক ওয়ালেট এক্সেস ফিক্সড]; আর তোমরা কেবল আল্লাহর কেন্দ্রীয় ক্লাউড সার্ভারের কাছেই তাঁর অফুরন্ত ডিফল্ট ব্যাকআপ এনার্জি ও অনুগ্রহের জন্য ইনপুট বা প্রার্থনা (وَاسْأَلُوا اللَّهَ مِن فَضْلِهِ) পাঠাও; নিশ্চয়ই Allah প্রতিটি অবজেক্ট, কণা ও ডাটাবেজ সম্পর্কে শতভাগ ইনফর্মড বা সর্বজ্ঞ (عَلِيمًا);",
+      "modern_translation_en": "And do not covet the distinctive capacities and structural advantages that Allah has allocated to some nodes over others (مَا فَضَّلَ اللَّهُ بِهِ); for male nodes is an allocated share corresponding to what they process and earn (مِّمَّا اكْتَسَبُوا), and for female nodes and vulnerable sectors (Nisa) is an allocated share corresponding to what they process and earn (مِّمَّا اكْتَسَبْنَ). And petition Allah for His boundless generative grace (وَاسْأَلُوا اللَّهَ مِن فَضْلِهِ); verily, Allah maintains comprehensive telemetry across every variable (عَلِيمًا)."
     },
     {
       "surah": 4,
       "ayah": 33,
       "transliteration": "walikullin jaʿalnā mawāliya mimmā taraka l-wālidāni wal-aqrabūna wa-alladhīna ʿaqadat aymānukum faātūhum naṣībahum inna l-laha kāna ʿalā kulli shayin shahīdan",
-      "translation_bn": "মাতা-পিতা ও স্বজনদের রেখে যাওয়া সম্পদে আমি প্রত্যেক উত্তরাধিকারের অংশ স্থির করেছি এবং যাদের সঙ্গে তোমাদের অঙ্গীকার রয়েছে, কাজেই তাদেরকে তাদের অংশ প্রদান কর, নিশ্চয়ই আল্লাহ সর্ববিষয়ে প্রত্যক্ষদর্শী।",
+      "translation_bn": "আর পিতা-মাতা ও আত্মীয়-স্বজনরা যা কিছু রেখে গেছে, তার প্রত্যেকের জন্য আমি উত্তরাধিকারী (মওলা) নির্ধারণ করেছি। আর যাদের সাথে তোমাদের ডান হাত চুক্তি (অঙ্গীকার) করেছে, তোমরা তাদের অংশ তাদের দিয়ে দাও। নিশ্চয়ই আল্লাহ সবকিছুর ওপর পূর্ণ সাক্ষী।",
       "words": [
         {
           "id": 35301,
@@ -9123,14 +9133,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And for all, We have made heirs to what is left by parents and relatives. And to those whom your oaths have bound [to you] - give them their share. Indeed Allah is ever, over all things, a Witness.",
-      "conventional_en": "And for all, We have made heirs to what is left by parents and relatives. And to those whom your oaths have bound [to you] - give them their share. Indeed Allah is ever, over all things, a Witness."
+      "translation_en": "And for all, We have made heirs to what is left by parents and kindred. And to those with whom your right hands have pledged a covenant - give them their share. Indeed Allah is ever, over all things, a Witness.",
+      "conventional_en": "And for all, We have made heirs to what is left by parents and kindred. And to those with whom your right hands have pledged a covenant - give them their share. Indeed Allah is ever, over all things, a Witness.",
+      "meta_bn": "ইনহেরিটেন্স রিসিভার মার্কার এবং আইনি কন্টাক্ট লক",
+      "meta_en": "Inheritance Receiver Markers and Contractual Entitlement Lock",
+      "conventional_bn": "আর পিতা-মাতা ও আত্মীয়-স্বজনরা যা কিছু রেখে গেছে, তার প্রত্যেকের জন্য আমি উত্তরাধিকারী (মওলা) নির্ধারণ করেছি। আর যাদের সাথে তোমাদের ডান হাত চুক্তি (অঙ্গীকার) করেছে, তোমরা তাদের অংশ তাদের দিয়ে দাও। নিশ্চয়ই আল্লাহ সবকিছুর ওপর পূর্ণ সাক্ষী।",
+      "modern_translation_bn": "আর পিতা-মাতা ও নিকটবর্তী জিনগত কো-নোডসমূহ স্পেস-টাইম ফ্যাব্রিকে যে মেটেরিয়াল এনার্জি বা সম্পদ লিভ/রেখে (تَرَكَ) গেছে—তার প্রত্যেকটি ভ্যারিয়েবলের জন্য আমি সুনির্দিষ্ট ডাটা-রিসিভার বা আইনি উত্তরাধিকারী মার্কার (مَوَالِيَ) সেট করেছি; আর যেসকল নোডের সাথে তোমাদের আইনি বন্ধন, কন্টাক্ট বা শপথ (عَقَدَتْ أَيْمَانُكُمْ) সম্পাদিত হয়েছে—তোমরা তাদের সেই নির্ধারিত আইনি অংশ বা নসীব (نَصِيبَهُمْ) হুবহু তাদের ওয়ালেটে দিয়ে দাও; নিশ্চয়ই Allah প্রতিটি কসমিক ইভেন্ট ও অ্যাকশনের ওপর সরাসরি রিয়াল-টাইম লাইভ উইটনেস বা পরম সাক্ষী (شَهِيدًا);",
+      "modern_translation_en": "And for all assets left by parental root nodes and close lineage relations, We have designated legal data-receiver markers (مَوَالِيَ); and to those terminals bound to you by institutional covenants and pledges (عَقَدَتْ أَيْمَانُكُمْ), deliver unto them their designated fractional entitlement (نَصِيبَهُمْ). Indeed, Allah is a live real-time Witness over all operational events (شَهِيدًا)."
     },
     {
       "surah": 4,
       "ayah": 34,
       "transliteration": "al-rijālu qawwāmūna ʿalā l-nisāi bimā faḍḍala l-lahu baʿḍahum ʿalā baʿḍin wabimā anfaqū min amwālihim fal-ṣāliḥātu qānitātun ḥāfiẓātun lil'ghaybi bimā ḥafiẓa l-lahu wa-allātī takhāfūna nushūzahunna faʿiẓūhunna wa-uh'jurūhunna fī l-maḍājiʿi wa-iḍ'ribūhunna fa-in aṭaʿnakum falā tabghū ʿalayhinna sabīlan inna l-laha kāna ʿaliyyan kabīran",
-      "translation_bn": "পুরুষগণ নারীদের উপর কর্তৃত্বশীল এ কারণে যে, আল্লাহ তাদের এককে অন্যের উপর মর্যাদা প্রদান করেছেন, আর এজন্য যে, পুরুষেরা স্বীয় ধন-সম্পদ হতে ব্যয় করে। ফলে পুণ্যবান স্ত্রীরা (আল্লাহ ও স্বামীর প্রতি) অনুগতা থাকে এবং পুরুষের অনুপস্থিতিতে তারা তা (অর্থাৎ তাদের সতীত্ব ও স্বামীর সম্পদ) সংরক্ষণ করে যা আল্লাহ সংরক্ষণ করতে আদেশ দিয়েছেন। যদি তাদের মধ্যে অবাধ্যতার সম্ভাবনা দেখতে পাও, তাদেরকে সদুপদেশ দাও এবং তাদের সাথে শয্যা বন্ধ কর এবং তাদেরকে (সঙ্গতভাবে) প্রহার কর, অতঃপর যদি তারা তোমাদের অনুগত হয়, তাহলে তাদের উপর নির্যাতনের বাহানা খোঁজ করো না, নিশ্চয় আল্লাহ সর্বোচ্চ, সর্বশ্রেষ্ঠ।",
+      "translation_bn": "পুরুষরা নারীদের ওপর অভিভাবক (কাওয়াম); কারণ আল্লাহ তাদের একে অপরের ওপর শ্রেষ্ঠত্ব দিয়েছেন এবং যেহেতু তারা তাদের ধন-সম্পদ থেকে ব্যয় করে। অতএব নেককার নারীরা অনুগত এবং আল্লাহর হেফাজতে অদৃশ্যের (গোপন বিষয়ের) রক্ষণাবেক্ষণকারী। আর যাদের অবাধ্যতার তোমরা আশঙ্কা করো, তাদের তোমরা উপদেশ দাও এবং তাদের শয়ানক্ষেত্রের (শয্যা) মধ্যে পরিহার করো এবং তাদের প্রহার করো (আঘাত করো); অতঃপর তারা যদি তোমাদের আনুগত্য করে, তবে তাদের বিরুদ্ধে কোনো পথ অন্বেষণ করো না। নিশ্চয়ই আল্লাহ সুউচ্চ, মহান।",
       "words": [
         {
           "id": 36370,
@@ -9543,14 +9558,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Men are in charge of women by [right of] what Allah has given one over the other and what they spend [for maintenance] from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those [wives] from whom you fear arrogance - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand.",
-      "conventional_en": "Men are in charge of women by [right of] what Allah has given one over the other and what they spend [for maintenance] from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those [wives] from whom you fear arrogance - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand."
+      "translation_en": "Men are caretakers of women because Allah has made one of them to excel the other, and because they spend from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those from whom you fear arrogance and rebellion - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand.",
+      "conventional_en": "Men are caretakers of women because Allah has made one of them to excel the other, and because they spend from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those from whom you fear arrogance and rebellion - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand.",
+      "meta_bn": "দ্য ফাংশনাল হায়ারার্কি কোড: কাওয়ামুন মেকানিজম",
+      "meta_en": "The Functional Hierarchy Code and Family Grid Maintenance Protocol",
+      "conventional_bn": "পুরুষরা নারীদের ওপর অভিভাবক (কাওয়াম); কারণ আল্লাহ তাদের একে অপরের ওপর শ্রেষ্ঠত্ব দিয়েছেন এবং যেহেতু তারা তাদের ধন-সম্পদ থেকে ব্যয় করে। অতএব নেককার নারীরা অনুগত এবং আল্লাহর হেফাজতে অদৃশ্যের (গোপন বিষয়ের) রক্ষণাবেক্ষণকারী। আর যাদের অবাধ্যতার তোমরা আশঙ্কা করো, তাদের তোমরা উপদেশ দাও এবং তাদের শয়ানক্ষেত্রের (শয্যা) মধ্যে পরিহার করো এবং তাদের প্রহার করো (আঘাত করো); অতঃপর তারা যদি তোমাদের আনুগত্য করে, তবে তাদের বিরুদ্ধে কোনো পথ অন্বেষণ করো না। নিশ্চয়ই আল্লাহ সুউচ্চ, মহান।",
+      "modern_translation_bn": "পারিবারিক ও সামাজিক গ্রিডের স্ট্রাকচারাল স্ট্যাবিলিটি (Structural Stability) ধরে রাখতে—মেল নোড বা পুরুষদের (الرِّجَالُ) করা হয়েছে সমাজের পিছিয়ে পড়া, দুর্বল ও পরনির্ভরশীল অংশ বা Nisa (النِّسَاءِ)-এর প্রধান মেইনটেইনার, টেক-কেয়ারার বা Qawwam [কার্যকরী ও অর্থনৈতিক দায়ভার হোল্ডার] (قَوَّامُونَ); এটি দুটি গাণিতিক ভ্যারিয়েবলের কারণে—প্রথমত Allah তাদের ফিজিক্যাল হার্ডওয়্যার ও মেকানিক্যাল ক্যাপাসিটিতে একে অপরের ওপর যে বিশেষ গাঠনিক ভ্যারিয়েশন বা শ্রেষ্ঠত্ব (مَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ) ডেপ্লয় করেছেন তার জন্য, এবং দ্বিতীয়ত যেহেতু পুরুষরা তাদের নিজস্ব পুঞ্জীভূত ফিন্যান্সিয়াল ওয়ালেট বা সম্পদ থেকে (مِنْ أَمْوَالِهِمْ) পুরো ফ্যামিলি ইকোসিস্টেমের মেটাবলিক খরচের আউটপুট বা ব্যয় (أَنفَقُوا) সরবরাহ করে। অতএব সিস্টেম-অপ্টিমাইজড ও নেককার ফিমেল নোডসমূহ (الصَّالِحَاتُ) সর্বদা মেইন ওএসের (OS) প্রতি শতভাগ অনুগত বা প্রোগ্রামড (قَانِتَاتٌ) থাকে এবং মেইন সার্ভারের ক্লাউড সুরক্ষার অধীনে নিজেদের ওওএসের কনফিডেনশিয়াল ডেটা ও অদৃশ্যের বাউন্ডারি (حَافِظَاتٌ لِّلْغَيْبِ بِمَا حَفِظَ اللَّهُ) নিখুঁতভাবে প্রোটেক্ট বা রক্ষণাবেক্ষণ করে। আর যেসকল নোডের ওওএসে তোমরা মারাত্মক ডেটা-ডিসরপশন, ইগো ভায়োলেশন বা চরম অবাধ্যতার Nushuz (تَخَافُونَ نُشُوزَهُنَّ) আশঙ্কা করো—তাদের সিস্টেম ডিবাগ করতে তোমরা এই থ্রি-স্টেপ এরর-ফিল্টারিং প্যাচ এক্সিকিউট করো: প্রথম ধাপে তাদের ইন্টারফেসে লজিক্যাল গাইডলাইন ইনপুট বা উপদেশ (فَعِظُوهُنَّ) দাও, দ্বিতীয় ধাপে কম্যুনিকেশন সিগন্যাল সাময়িক হোল্ড করতে তাদের শয়ানক্ষেত্র বা লোকাল বেড-লিঙ্ক থেকে নিজেদের আইসোলেট বা পরিহার (وَاهْجُرُوهُنَّ فِي الْمَضَاجِعِ) করো, এবং চূড়ান্ত ধাপে [যদি বাগ ফিক্স না হয় তবে] তাদের অ্যাকশন টার্মিনালকে শক্তভাবে ক্ল্যাম্প, আঘাত বা স্ট্রপ লকিং বা ইমপ্যাক্ট (وَاضْرِبُوهُنَّ) করো; অতঃপর তারা যদি নিজেদের ওওএস রি-অ্যালাইন করে তোমাদের চেইনের প্রতি অনুগত (فَإِنْ أَطَعْنَكُمْ) হয়—তবে তাদের বিরুদ্ধে কোনো প্রকার নেতিবাচক বা ক্ষতিকারক আইনি ট্র্যাকিং বা অতিরিক্ত অ্যাকশনের পথ (سَبِيلًا) অন্বেষণ করো না; নিশ্চয়ই Allah হলেন সুউচ্চ, মেগা-ইন্টেলিজেন্ট ও মহান;",
+      "modern_translation_en": "To preserve structural stability within the social and domestic grid, male nodes (الرِّجَالُ) are appointed as structural maintainers, economic caretakers, and protectors (Qawwamoon / قَوَّامُونَ) over vulnerable dependent nodes (Nisa); this is due to the natural hardware differentiation Allah has endowed upon some over others (بِمَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ) and because male nodes expend their capital assets (أَنفَقُوا مِنْ أَمْوَالِهِمْ) to sustain the household grid. Thus, optimized righteous female nodes (الصَّالِحَاتُ) are devoutly aligned (قَانِتَاتٌ), safeguarding the confidential parameters of unseen boundaries under Allah's protective custody (حَافِظَاتٌ لِّلْغَيْبِ بِمَا حَفِظَ اللَّهُ). And for those nodes from whom you anticipate severe systemic rebellion or disruptive egotism (نُشُوزَهُنَّ), apply this three-stage debugging protocol: first, provide logical counsel and guidance (فَعِظُوهُنَّ); second, isolate from local sleeping quarters to suspend communication (وَاهْجُرُوهُنَّ فِي الْمَضَاجِعِ); and third, apply decisive physical restraint or corrective impact (وَاضْرِبُوهُنَّ); but if they realign and cooperate with you (فَإِنْ أَطَعْنَكُمْ), seek no hostile measures against them. Verily, Allah is Supremely High, Immeasurably Great.",
+      "lexicon_modern_notes": "আর-রিজালু ক্বাওয়ামূনা আলান্ নিসা (الرِّجَالُ قَوَّامُونَ عَلَى النِّسَاءِ - ফাংশনাল হায়ারার্কি ও ইকোনমিক লোড ডিস্ট্রিবিউশন): ৩৪ নম্বর আয়াতের এই মহাজাগতিক ও সমাজতাত্ত্বিক ইকুয়েশনটি আমাদের সংশোধিত ডিকশনারি ফ্রেমওয়ার্ক অনুযায়ী অত্যন্ত নিখুঁত ও বৈজ্ঞানিক। 'কাওয়াম' শব্দের আসল সিস্টেমিক অর্থ হলো—এমন একটি নোড, যা নিজের পুঞ্জীভূত শক্তি ও স্থায়িত্ব ব্যবহার করে অন্য একটি পরনির্ভরশীল বা বাফারিং নোডকে স্ট্রাকচারালি সোজা ও সচল রাখতে সার্বক্ষণিক ব্যাকআপ দিয়ে যায়। আল্লাহ এখানে লিঙ্গভিত্তিক পুরুষ নোডকে (রিজাল) সমাজের সামষ্টিক পিছিয়ে পড়া ও দুর্বল নোড ক্লাস্টারের (নিসা) ওপর 'কাওয়াম' বা কার্যকরী অর্থনৈতিক ফায়ারওয়াল (Financial Firewall) হিসেবে ডেপ্লয় করেছেন। এর কারণ হিসেবে আল্লাহ দুটি ভ্যারিয়েবল স্পষ্ট করেছেন: প্রথমত, পুরুষদের ভৌত হার্ডওয়্যারের মেকানিক্যাল মাস ও শক্তি (Physical Mass) প্রাকৃতিকভাবে বেশি দিয়ে বা অপ্টিমাইজড করে তৈরি করা হয়েছে; এবং দ্বিতীয়ত, পুরুষ নোডটি তার নিজস্ব অর্জিত ওয়ালেটের ফাইন্যান্সিয়াল লিকুইডিটি পুরো ফ্যামিলি ও সোশ্যাল গ্রিডের মেটাবলিক চার্জে অবিরত রিলিজ বা ব্যয় করে। এটি মহাবিশ্বের একটি পরম Functional Load Distribution Hierarchy।"
     },
     {
       "surah": 4,
       "ayah": 35,
       "transliteration": "wa-in khif'tum shiqāqa baynihimā fa-ib'ʿathū ḥakaman min ahlihi waḥakaman min ahlihā in yurīdā iṣ'lāḥan yuwaffiqi l-lahu baynahumā inna l-laha kāna ʿalīman khabīran",
-      "translation_bn": "যদি তোমরা তাদের মধ্যে অনৈক্যের আশংকা কর, তবে স্বামীর আত্মীয়-স্বজন হতে একজন এবং স্ত্রীর আত্মীয়-স্বজন হতে একজন সালিস নিযুক্ত কর। যদি উভয়ে মীমাংসা করিয়ে দেয়ার ইচ্ছে করে, তবে আল্লাহ উভয়ের মধ্যে নিষ্পত্তির ব্যবস্থা করবেন, নিশ্চয় আল্লাহ সব কিছু জানেন, সকল কিছুর খবর রাখেন।",
+      "translation_bn": "আর তোমরা যদি তাদের উভয়ের (স্বামী-স্ত্রীর) মধ্যে বিচ্ছেদের আশঙ্কা করো, তবে তোমরা পুরুষের পরিবার থেকে একজন সালিশ (হাকাম) এবং নারীর পরিবার থেকে একজন সালিশ নিযুক্ত করো; তারা উভয়ে যদি সংশোধন চায়, তবে আল্লাহ তাদের উভয়ের মধ্যে মিল (সামঞ্জস্য) করে দেবেন। নিশ্চয়ই আল্লাহ সর্বজ্ঞ, সম্যক অবগত।",
       "words": [
         {
           "id": 36976,
@@ -9784,13 +9805,18 @@
         }
       ],
       "translation_en": "And if you fear dissension between the two, send an arbitrator from his people and an arbitrator from her people. If they both desire reconciliation, Allah will cause it between them. Indeed, Allah is ever Knowing and Acquainted [with all things].",
-      "conventional_en": "And if you fear dissension between the two, send an arbitrator from his people and an arbitrator from her people. If they both desire reconciliation, Allah will cause it between them. Indeed, Allah is ever Knowing and Acquainted [with all things]."
+      "conventional_en": "And if you fear dissension between the two, send an arbitrator from his people and an arbitrator from her people. If they both desire reconciliation, Allah will cause it between them. Indeed, Allah is ever Knowing and Acquainted [with all things].",
+      "meta_bn": "পারিবারিক গ্রিড ব্রেকডাউন প্রতিরোধ: হাকামাইন প্রটোকল",
+      "meta_en": "Domestic Grid Fracture Resolution: The Hakamayn Arbitration Protocol",
+      "conventional_bn": "আর তোমরা যদি তাদের উভয়ের (স্বামী-স্ত্রীর) মধ্যে বিচ্ছেদের আশঙ্কা করো, তবে তোমরা পুরুষের পরিবার থেকে একজন সালিশ (হাকাম) এবং নারীর পরিবার থেকে একজন সালিশ নিযুক্ত করো; তারা উভয়ে যদি সংশোধন চায়, তবে আল্লাহ তাদের উভয়ের মধ্যে মিল (সামঞ্জস্য) করে দেবেন। নিশ্চয়ই আল্লাহ সর্বজ্ঞ, সম্যক অবগত।",
+      "modern_translation_bn": "আর তোমরা যদি তোমাদের সোশ্যাল গ্রিডে সেই দুটি প্রাইমারি কানেক্টেড নোডের পারস্পরিক সম্পর্কের মধ্যে পার্মানেন্ট ডাটা-স্প্লিট বা চূড়ান্ত বিচ্ছেদের (شِقَاقَ بَيْنِهِمَا) আশঙ্কা করো—তবে তোমরা মেল নোডের লোকাল হোস্ট বা পরিবার থেকে একজন নিরপেক্ষ ডাটা-অডিটর বা সালিশ (حَكَمًا مِّنْ أَهْلِهِ) এবং ফিমেল নোডের পরিবার থেকে একজন ডাটা-অডিটর নিযুক্ত বা ডেপ্লয় (فَابْعَثُوا) করো; সেই দুটি সালিশ নোড যদি তাদের ওওএসের রুট থেকে আন্তরিকভাবে সিস্টেম রিকভারি বা সংশোধন (إِصْلَاحًا) কামনা করে—তবে পরম সোর্স Allah স্বয়ংক্রিয় অ্যালগরিদমে তাদের উভয়ের ওওএস ফ্রিকোয়েন্সি রি-সিঙ্ক বা সামঞ্জস্য (يُوَفِّقِ اللَّهُ بَيْنَهُمَا) করিয়ে দেবেন; নিশ্চয়ই Allah প্রতিটি ডেটাবেজ সম্পর্কে সর্বজ্ঞ এবং প্রতিটি হিডেন মেমোরি ফাইল সম্পর্কে সম্যক অবগত (خَبِيرٌ);",
+      "modern_translation_en": "And if you anticipate an irreconcilable fracture or permanent data-split between the primary coupled nodes (شِقَاقَ بَيْنِهِمَا), deploy an impartial mediator-auditor from his family grid (حَكَمًا مِّنْ أَهْلِهِ) and an arbitrator from her family grid; if both arbitrators sincerely pursue systemic reconciliation and debugging (إِصْلَاحًا), Allah will realign frequency resonance between the two (يُوَفِّقِ اللَّهُ بَيْنَهُمَا). Verily, Allah is All-Knowing (Aleem), fully Acquainted with every hidden file (Khabeer)."
     },
     {
       "surah": 4,
       "ayah": 36,
       "transliteration": "wa-uʿ'budū l-laha walā tush'rikū bihi shayan wabil-wālidayni iḥ'sānan wabidhī l-qur'bā wal-yatāmā wal-masākīni wal-jāri dhī l-qur'bā wal-jāri l-junubi wal-ṣāḥibi bil-janbi wa-ib'ni l-sabīli wamā malakat aymānukum inna l-laha lā yuḥibbu man kāna mukh'tālan fakhūran",
-      "translation_bn": "তোমরা আল্লাহর ‘ইবাদাত কর, কিছুকেই তাঁর শরীক করো না এবং মাতা-পিতা, আত্মীয়-স্বজন, ইয়াতীম অভাবগ্রস্ত, নিকট প্রতিবেশী, দূর প্রতিবেশী, সাথী, মুসাফির এবং তোমাদের আয়ত্তাধীন দাস-দাসীদের সঙ্গে সদ্ব্যবহার কর, নিশ্চয়ই আল্লাহ ঐ লোককে ভালবাসেন না, যে অহংকারী, দাম্ভিক।",
+      "translation_bn": "আর তোমরা আল্লাহর ইবাদাত করো এবং তাঁর সাথে কোনো কিছুকে শরিক করো না। আর পিতা-মাতার প্রতি সদয় ব্যবহার (এহসান) করো এবং নিকটাত্মীয়, এতিম, অভাবগ্রস্ত, নিকটবর্তী প্রতিবেশী, দূরবর্তী প্রতিবেশী, পার্শ্ববর্তী সঙ্গী, পথচারী এবং তোমাদের ডান হাত যার মালিক হয়েছে (দাস-দাসী) তাদের প্রতিও। নিশ্চয়ই আল্লাহ অহংকারী, দাম্ভিককে পছন্দ করেন না।",
       "words": [
         {
           "id": 37800,
@@ -10124,13 +10150,18 @@
         }
       ],
       "translation_en": "Worship Allah and associate nothing with Him, and to parents do good, and to relatives, orphans, the needy, the near neighbor, the neighbor farther away, the companion at your side, the traveler, and those whom your right hands possess. Indeed, Allah does not like those who are self-deluding and boastful.",
-      "conventional_en": "Worship Allah and associate nothing with Him, and to parents do good, and to relatives, orphans, the needy, the near neighbor, the neighbor farther away, the companion at your side, the traveler, and those whom your right hands possess. Indeed, Allah does not like those who are self-deluding and boastful."
+      "conventional_en": "Worship Allah and associate nothing with Him, and to parents do good, and to relatives, orphans, the needy, the near neighbor, the neighbor farther away, the companion at your side, the traveler, and those whom your right hands possess. Indeed, Allah does not like those who are self-deluding and boastful.",
+      "meta_bn": "মাল্টি-লেয়ার নেটওয়ার্ক কানেকশন ও সোশ্যাল ইকোসিস্টেম বাউন্ডারি",
+      "meta_en": "Multi-Layer Social Network Integrity and Comprehensive Altruism Matrix",
+      "conventional_bn": "আর তোমরা আল্লাহর ইবাদাত করো এবং তাঁর সাথে কোনো কিছুকে শরিক করো না। আর পিতা-মাতার প্রতি সদয় ব্যবহার (এহসান) করো এবং নিকটাত্মীয়, এতিম, অভাবগ্রস্ত, নিকটবর্তী প্রতিবেশী, দূরবর্তী প্রতিবেশী, পার্শ্ববর্তী সঙ্গী, পথচারী এবং তোমাদের ডান হাত যার মালিক হয়েছে (দাস-দাসী) তাদের প্রতিও। নিশ্চয়ই আল্লাহ অহংকারী, দাম্ভিককে পছন্দ করেন না।",
+      "modern_translation_bn": "আর তোমরা তোমাদের ওওএস শতভাগ একমাত্র পরম সোর্স Allah-এর তৈরি মূল ডিজাইনের সাথে সিঙ্ক ও এলাইন (وَاعْبُدُوا) করো এবং তাঁর সেই পরম একক অস্তিত্বের সমান্তরালে কোনো প্রকার ডামী ডাটা বা অবজেক্টের পার্টনারশিপ বা শিরক (وَلَا تُشْرِكُوا بِهِ شَيْئًا) করো না। আর সর্বোচ্চ অপ্টিমাইজড এনার্জি ফিডব্যাক বা এহসান (إِحْسَانًا) সরবরাহ করো তোমাদের আদি রুট তথা পিতা-মাতার প্রতি, এবং নিকটবর্তী জিনগত কো-নোড বা আত্মীয়দের প্রতি, এবং অভিভাবকহীন অসহায় এতিমদের প্রতি, এবং মেটাবলিক এনার্জি-সংকটে থাকা মিসকিনদের প্রতি, এবং তোমাদের লোকাল কোঅর্ডিনেটে থাকা নিকটবর্তী প্রতিবেশী নোডের প্রতি, এবং নেটওয়ার্কের দূরবর্তী প্রতিবেশী নোডের প্রতি, এবং তোমাদের পার্শ্ববর্তী সার্বক্ষণিক কো-ফাইল বা সঙ্গীর প্রতি, এবং ডেটা-হাইওয়েতে থাকা পথচারী বা মুসাফির নোডের প্রতি এবং তোমাদের সরাসরি অধিকারভুক্ত বা দায়িত্বপ্রাপ্ত স্থায়ী কর্মচারীদের (مَا مَلَكَتْ أَيْمَانُكُمْ) প্রতি; নিশ্চয়ই Allah মানুষের ওওএসে রান হওয়া কাল্পনিক আত্মম্ভরিতা, কগনিটিভ অহংকার ও দাম্ভিকতার ম্যালওয়্যার (مَن كَانَ مُخْتَالًا فَخُورًا) বিন্দুমাত্র পছন্দ করেন না;",
+      "modern_translation_en": "Align your entire operating system in singular devotion unto Allah (وَاعْبُدُوا اللَّهَ) and configure zero parallel entities or corrupt parameters alongside Him (وَلَا تُشْرِكُوا بِهِ شَيْئًا). And transmit optimal positive feedback (Ihsan / إِحْسَانًا) toward parental root nodes, lineage kin, orphaned terminals, vulnerable dependents in resource crisis, immediate neighboring nodes, distant perimeter neighbors, regular side-companions, traveling network nodes, and custodial personnel under your direct governance (مَا مَلَكَتْ أَيْمَانُكُمْ). Truly, Allah does not love arrogant, boastful outlier nodes (مَن كَانَ مُخْتَالًا فَخُورًا)."
     },
     {
       "surah": 4,
       "ayah": 37,
       "transliteration": "alladhīna yabkhalūna wayamurūna l-nāsa bil-bukh'li wayaktumūna mā ātāhumu l-lahu min faḍlihi wa-aʿtadnā lil'kāfirīna ʿadhāban muhīnan",
-      "translation_bn": "যারা কৃপণতা করে অধিকন্তু লোকেদেরকেও কার্পণ্য করার আদেশ দেয় এবং আল্লাহ নিজ অনুগ্রহে তাদেরকে যা দিয়েছেন তা গোপন করে, (ঐসব) কাফিরদের জন্য আমি লাঞ্ছনাদায়ক শাস্তি প্রস্তুত করে রেখেছি।",
+      "translation_bn": "যারা কৃপণতা করে এবং মানুষকে কৃপণতার নির্দেশ দেয় এবং আল্লাহ তাঁর অনুগ্রহ থেকে তাদের যা দিয়েছেন তা গোপন করে; আর আমি কাফেরদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছি।",
       "words": [
         {
           "id": 38693,
@@ -10293,14 +10324,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Who are stingy and enjoin upon [other] people stinginess and conceal what Allah has given them of His bounty - and We have prepared for the disbelievers a humiliating punishment -",
-      "conventional_en": "Who are stingy and enjoin upon [other] people stinginess and conceal what Allah has given them of His bounty - and We have prepared for the disbelievers a humiliating punishment -"
+      "translation_en": "Who are stingy and enjoin upon [other] people stinginess and hide what Allah has given them of His bounty; and We have prepared for the disbelievers a humiliating punishment.",
+      "conventional_en": "Who are stingy and enjoin upon [other] people stinginess and hide what Allah has given them of His bounty; and We have prepared for the disbelievers a humiliating punishment.",
+      "meta_bn": "রিসোর্স ব্লকিং এবং হাই-এন্ট্রপি ক্যাপিটাল হাইডিং বালাই",
+      "meta_en": "Capital Hoarding and Malicious Resource Throttling Audit",
+      "conventional_bn": "যারা কৃপণতা করে এবং মানুষকে কৃপণতার নির্দেশ দেয় এবং আল্লাহ তাঁর অনুগ্রহ থেকে তাদের যা দিয়েছেন তা গোপন করে; আর আমি কাফেরদের জন্য লাঞ্ছনাদায়ক শাস্তি প্রস্তুত রেখেছি।",
+      "modern_translation_bn": "এই অবক্ষয়িত অহংকারী নোডগুলো হলো ওরাই—যারা সমাজে মেটেরিয়াল রিসোর্স অবরুদ্ধ বা কৃপণতা (يَبْخَلُونَ) করে এবং সামষ্টিক মানবজাতি নেটওয়ার্ককেও (النَّاسَ) সেই ক্ষতিকারক রিসোর্স ব্লকিং বা কৃপণতার নির্দেশ দেয় এবং Allah তাঁর সুপ্রীমিক সোর্স থেকে এক্সটেন্ডেড এনার্জি ও কসমিক রিসোর্স (مِن فَضْلِهِ) হিসেবে তাদের আইডিতে যা কিছু ইনপুট করেছেন তা নিজেদের স্বার্থপর লুপে হাইড বা এনক্রিপ্ট (وَيَكْتُمُونَ) করে রাখে; আর আমি এই সোর্স ডাটার প্রবাহ ব্রেক করা Kafir নোডগুলোর জন্য এক চূড়ান্ত কগনিটিভ অপমান ও লাঞ্ছনাদায়ক ক্র্যাশ (عَذَابًا مُّهِينًا) প্রস্তুত রেখেছি;",
+      "modern_translation_en": "Those who throttle resources in miserliness (يَبْخَلُونَ), program others across the network to practice hoarding, and conceal the generative capital bestowed upon them by Allah out of His cosmic bounty (وَيَكْتُمُونَ مَا آتَاهُمُ اللَّهُ مِن فَضْلِهِ); and We have prepared for the disconnected disbelieving nodes a humiliating, degradative punishment (عَذَابًا مُّهِينًا)."
     },
     {
       "surah": 4,
       "ayah": 38,
       "transliteration": "wa-alladhīna yunfiqūna amwālahum riāa l-nāsi walā yu'minūna bil-lahi walā bil-yawmi l-ākhiri waman yakuni l-shayṭānu lahu qarīnan fasāa qarīnan",
-      "translation_bn": "(আর সেসব লোককেও আল্লাহ পছন্দ করেন না) যারা মানুষকে দেখানোর জন্য নিজেদের ধন-সম্পদ খরচ করে এবং আল্লাহ ও আখিরাত দিবসের উপর বিশ্বাস রাখে না। শয়ত্বান কারো সঙ্গী হলে সে সঙ্গী কতই না জঘন্য!",
+      "translation_bn": "আর যারা নিজেদের ধন-সম্পদ মানুষকে দেখানোর জন্য ব্যয় করে এবং আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখে না। আর শয়তান যার সঙ্গী হয়, সে কতই না নিকৃষ্ট সঙ্গী!",
       "words": [
         {
           "id": 39566,
@@ -10494,13 +10530,18 @@
         }
       ],
       "translation_en": "And [also] those who spend of their wealth to be seen by the people and believe not in Allah nor in the Last Day. And he to whom Satan is a companion - then evil is he as a companion.",
-      "conventional_en": "And [also] those who spend of their wealth to be seen by the people and believe not in Allah nor in the Last Day. And he to whom Satan is a companion - then evil is he as a companion."
+      "conventional_en": "And [also] those who spend of their wealth to be seen by the people and believe not in Allah nor in the Last Day. And he to whom Satan is a companion - then evil is he as a companion.",
+      "meta_bn": "ফলস ডাটা-পোস্টুরিং ও শায়তান কম্যুনিকেশন লিঙ্ক লকিং",
+      "meta_en": "Ostentatious Resource Dissipation and Satanic Link Trapping",
+      "conventional_bn": "আর যারা নিজেদের ধন-সম্পদ মানুষকে দেখানোর জন্য ব্যয় করে এবং আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখে না। আর শয়তান যার সঙ্গী হয়, সে কতই না নিকৃষ্ট সঙ্গী!",
+      "modern_translation_bn": "আর যারা নিজেদের পুঞ্জীভূত মেটেরিয়াল রিসোর্স বা সম্পদ ব্যয় (يُنفِقُونَ) করে স্রেফ ফ্রন্ট-এন্ড ইন্টারফেসে মানুষের রেটিং ও লোকদেখানো বা শো-অফের রিয়া (رِئَاءَ النَّاسِ) মোড রান করে, অথচ তারা পরম সোর্স Allah এবং সিস্টেমের চূড়ান্ত ডাটা-রিসেট অপারেটিং টাইম-লাইনের (وَالْيَوْمِ الْآخِرِ) প্রতি বিন্দুমাত্র সিনক্রোনাইজড বা ভেরিফাইড নয়; আর প্রকৃতির নিয়মে সেই বিচ্যুত ম্যালওয়্যার শক্তি বা শায়তান (الشَّيْطَانُ) যার ওওএসে প্রধান কম্যুনিকেশন লিঙ্ক বা স্থায়ী সঙ্গী (قَرِينًا) হিসেবে লক হয়ে যায়—সে কতই না নিকৃষ্ট ও মারাত্মক সিস্টেম-ধ্বংসকারী পার্টনার!",
+      "modern_translation_en": "And those who expend their financial capital solely for external ostentation to harvest user validation (رِئَاءَ النَّاسِ), lacking verified alignment with Allah and the final runtime accountability index (وَالْيَوْمِ الْآخِرِ); and whoever has the adversarial entropy malware of Shaytan bound as their core companion (قَرِينًا), how disastrous an operative companion that is!"
     },
     {
       "surah": 4,
       "ayah": 39,
       "transliteration": "wamādhā ʿalayhim law āmanū bil-lahi wal-yawmi l-ākhiri wa-anfaqū mimmā razaqahumu l-lahu wakāna l-lahu bihim ʿalīman",
-      "translation_bn": "তাদের কী ক্ষতি হত যদি তারা আল্লাহ ও আখিরাত দিবসের উপর ঈমান আনত, আর আল্লাহ তাদেরকে যে রিযক দিয়েছেন তাত্থেকে ব্যয় করত, বস্তুতঃ আল্লাহ তাদের বিষয় খুব জ্ঞাত আছেন।",
+      "translation_bn": "আর তাদের কী ক্ষতি হতো, যদি তারা আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখত এবং আল্লাহ তাদের যা রিজিক দিয়েছেন তা থেকে ব্যয় করত? আর আল্লাহ তাদের সম্পর্কে সম্যক অবগত।",
       "words": [
         {
           "id": 40381,
@@ -10664,13 +10705,18 @@
         }
       ],
       "translation_en": "And what [harm would come] upon them if they believed in Allah and the Last Day and spent out of what Allah provided for them? And Allah is ever, about them, Knowing.",
-      "conventional_en": "And what [harm would come] upon them if they believed in Allah and the Last Day and spent out of what Allah provided for them? And Allah is ever, about them, Knowing."
+      "conventional_en": "And what [harm would come] upon them if they believed in Allah and the Last Day and spent out of what Allah provided for them? And Allah is ever, about them, Knowing.",
+      "meta_bn": "সিস্টেমিক অপ্টিমাইজেশন লস অডিট",
+      "meta_en": "Systemic Verification and Resource Redistribution Logic Audit",
+      "conventional_bn": "আর তাদের কী ক্ষতি হতো, যদি তারা আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখত এবং আল্লাহ তাদের যা রিজিক দিয়েছেন তা থেকে ব্যয় করত? আর আল্লাহ তাদের সম্পর্কে সম্যক অবগত।",
+      "modern_translation_bn": "আর তাদের ওওএসের স্ট্যাবিলিটিতে কী ধরণের নেতিবাচক এরর বা লস হতো—যদি তারা পরম সোর্স Allah এবং ফাইনাল অ্যাকাউন্টাবিলিটি টাইম-লাইনের প্রতি নিজেদের ওওএস সফলভাবে ভেরিফাই বা সিঙ্ক (آمَنُوا) করত এবং Allah তাদের মেটাবলিক ওয়ালেটে যে রিসোর্স ও শক্তি (رَزَقَهُمُ) সরবরাহ করেছেন তা থেকে সিস্টেমের বৃহত্তর কল্যাণে সম্পদ রিলিজ বা ব্যয় করত? আর Allah তাদের প্রতিটি ব্যাক-এন্ড লগ ও প্রসেসিং ডেটা সম্পর্কে তাঁর কেন্দ্রীয় ক্লাউডে শতভাগ মেমোরি ইনফর্মড বা সর্বজ্ঞ (عَلِيمًا);",
+      "modern_translation_en": "And what systemic damage or deficit would fall upon their runtime if they synchronized in faith with Allah and the Final Accountability Cycle, expending from the sustenance and operational energy Allah provided them? And Allah maintains absolute omniscience regarding their operational parameters (عَلِيمًا)."
     },
     {
       "surah": 4,
       "ayah": 40,
       "transliteration": "inna l-laha lā yaẓlimu mith'qāla dharratin wa-in taku ḥasanatan yuḍāʿif'hā wayu'ti min ladun'hu ajran ʿaẓīman",
-      "translation_bn": "আল্লাহ অণু পরিমাণও যুলম করেন না, আর কোন পুণ্য কাজ হলে তাকে তিনি দ্বিগুণ করেন এবং নিজের নিকট হতেও বিরাট পুরস্কার দান করেন।",
+      "translation_bn": "নিশ্চয় আল্লাহ অণু পরিমাণ (পরমাণু ওজনের)ও জুলুম করেন না। আর যদি তা কোনো ভালো কাজ হয়, তবে তিনি তাকে দ্বিগুণ (বহুগুণ) করে দেন এবং তাঁর পক্ষ থেকে মহা প্রতিদান দান করেন।",
       "words": [
         {
           "id": 41120,
@@ -10834,7 +10880,13 @@
         }
       ],
       "translation_en": "Indeed, Allah does not do injustice, [even] as much as an atom's weight; while if there is a good deed, He multiplies it and gives from Himself a great reward.",
-      "conventional_en": "Indeed, Allah does not do injustice, [even] as much as an atom's weight; while if there is a good deed, He multiplies it and gives from Himself a great reward."
+      "conventional_en": "Indeed, Allah does not do injustice, [even] as much as an atom's weight; while if there is a good deed, He multiplies it and gives from Himself a great reward.",
+      "meta_bn": "সাব-অ্যাটমিক ক্লাউড লেজার ও এক্সপোনেনশিয়াল আউটপুট মাল্টিপ্লায়ার",
+      "meta_en": "Sub-Atomic Zero-Loss Quantum Ledger and Exponential Multiplier Principle",
+      "conventional_bn": "নিশ্চয় আল্লাহ অণু পরিমাণ (পরমাণু ওজনের)ও জুলুম করেন না। আর যদি তা কোনো ভালো কাজ হয়, তবে তিনি তাকে দ্বিগুণ (বহুগুণ) করে দেন এবং তাঁর পক্ষ থেকে মহা প্রতিদান দান করেন।",
+      "modern_translation_bn": "নিশ্চয়ই Allah তাঁর পরম গাণিতিক লেজারে একটি ক্ষুদ্রাতিক্ষুদ্র সাব-অ্যাটমিক কণা বা কোয়ান্টাম ধূলিকণার ওজনের মাপেও (مِثْقَالَ ذَرَّةٍ) কোনো ইউজার নোডের প্রতি বিন্দুমাত্র গাণিতিক বৈষম্য বা জুলুম (لَا يَظْلِمُ) করেন না। আর যদি সেই ডাটা লগে একটি একক পজিティブ এনার্জি বা সুষম কর্মের ফাইলও (حَسَنَةً) মেনিফেস্ট হয়—তবে তিনি তাঁর ডিফল্ট আউটপুট অ্যালগরিদমে তাকে গুণিতক হারে এক্সপোনেনশিয়াল মাল্টিপ্লাই বা দ্বিগুণ-বহুগুণ (يُضَاعِفْهَا) করে দেন এবং সরাসরি তাঁর বিশেষ উচ্চ-শক্তির ডোমেইন থেকে এক বিশাল ও অবিনশ্বর কসমিক আউটপুট বা মহা প্রতিদান (أَجْرًا عَظِيمًا) ডাউনলিংক করেন;",
+      "modern_translation_en": "Indeed, Allah never executes injustice by even the infinitesimal weight of a sub-atomic particle or quantum atom (مِثْقَالَ ذَرَّةٍ); and if there exists a positive deed or coherent energetic output (حَسَنَةً), He exponentially multiplies it (يُضَاعِفْهَا) and delivers from His transcendent proximity a magnificent cosmic reward (أَجْرًا عَظِيمًا).",
+      "lexicon_modern_notes": "মিছক্বালা যাররাতিন... ইয়ুদ্বা'ইফহা (مِثْقَالَ ذَرَّةٍ... يُضَاعِفْهَا - সাব-অ্যাটমিক লেজার ও কোয়ান্টাম মাল্টিপ্লায়ার ল'): ৪০ নম্বর আয়াতে কণার ওজনের মাপে হিসাব রাখার যে মহা-গাণিতিক গ্যারান্টি দেওয়া হয়েছে, তা কোয়ান্টাম ফিজিক্স (Quantum Physics) এবং ইনফরমেশন থিওরির 'Quantum Conservation Ledger & Exponential Feedback Loop'-কে নির্দেশ করে। 'যাররাহ' হলো আধুনিক বিজ্ঞানের মাপে একটি পরমাণু বা সাব-অ্যাটমিক কণা (Sub-atomic Particle)। আল্লাহর কেন্দ্রীয় সার্ভারটি একটি নিখুঁত জিরো-লস কোয়ান্টাম লেজার (Zero-Loss Quantum Ledger) দ্বারা পরিচালিত হওয়ায় মানুষের করা প্রতিটি ক্ষুদ্রাতিক্ষুদ্র পজিティブ এনার্জি বা আমালের ডাটা (হাসানাহ) সেখানে রিয়াল টাইমে নিখুঁতভাবে বাউন্ডেড থাকে। এরপর মেইন সার্ভারের ডিফল্ট অ্যালগরিদম সেই ডাটাটিকে স্রেফ রৈখিকভাবে ১-১ অনুপাতে ফেরত দেয় না; বরং সিস্টেমের ওভারঅল এফিসিয়েন্সি বুস্ট করার জন্য তাকে এক্সপোনেনশিয়াল মাল্টিপ্লায়ার (Exponential Multiplier) বা গুণিতক হারের লুপে (ইউদ্বা'ইফহা) ফেলে এক মেগা এনার্জি আউটপুট বা আজরান আজীমা-তে রূপান্তর করে ইউজারের প্রোফাইলে ট্রান্সফার করে দেয়, যা আল্লাহর পরম সৃষ্টিতাত্ত্বিক মহাজাগতিক ইনসাফ।"
     },
     {
       "surah": 4,
