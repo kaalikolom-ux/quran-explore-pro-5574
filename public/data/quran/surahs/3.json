@@ -33645,7 +33645,7 @@
       "surah": 3,
       "ayah": 171,
       "transliteration": "yastabshirūna biniʿ'matin mina l-lahi wafaḍlin wa-anna l-laha lā yuḍīʿu ajra l-mu'minīna",
-      "translation_bn": "আল্লাহর নি‘মাত এবং অনুগ্রহের কারণে তারা আনন্দ প্রকাশ করে আর এটা জেনে যে, আল্লাহ মু’মিনদের সাওয়াব বিনষ্ট করেন না।",
+      "translation_bn": "তারা আল্লাহর পক্ষ থেকে নেয়ামত ও অনুগ্রহের কারণে আনন্দ প্রকাশ করে এবং এ কারণেও যে, নিশ্চয় আল্লাহ মুমিনদের প্রতিদান নষ্ট করেন না।",
       "words": [
         {
           "id": 82993,
@@ -33768,14 +33768,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "They receive good tidings of favor from Allah and bounty and [of the fact] that Allah does not allow the reward of believers to be lost -",
-      "conventional_en": "They receive good tidings of favor from Allah and bounty and [of the fact] that Allah does not allow the reward of believers to be lost -"
+      "translation_en": "They receive good tidings of favor from Allah and bounty and that Allah does not allow the reward of believers to be lost.",
+      "conventional_en": "They receive good tidings of favor from Allah and bounty and that Allah does not allow the reward of believers to be lost.",
+      "meta_bn": "হাই-ফ্রিকোয়েন্সি সিগন্যাল এমপ্লিফিকেশন",
+      "meta_en": "High-Frequency Signal Amplification",
+      "conventional_bn": "তারা আল্লাহর পক্ষ থেকে নেয়ামত ও অনুগ্রহের কারণে আনন্দ প্রকাশ করে এবং এ কারণেও যে, নিশ্চয় আল্লাহ মুমিনদের প্রতিদান নষ্ট করেন না।",
+      "modern_translation_bn": "উচ্চ ডাইমেনশনে স্থানান্তরিত সেই নোডসমূহ (Node) অবিরত আনন্দ ও উচ্চ ফ্রিকোয়েন্সির সিগন্যাল বুস্ট (يَسْتَبْشِرُونَ) করে পাঠাচ্ছে—Allah-এর পক্ষ থেকে প্রাপ্ত বিশেষ কসমিক রিসোর্স বা নেয়ামত (بِنِعْمَةٍ) এবং অফুরন্ত এনার্জি ব্যাকআপের (وَفَضْلٍ) কারণে; এবং এই অবজেক্টিভ ডাটা লগের জন্য যে—নিশ্চয়ই Allah তাঁর সেন্ট্রাল লেজারে মুমিন বা ভেরিফাইড ইউজারদের কোনো পজিティブ এনার্জি রিওয়ার্ড বা আউটপুট কখনো ডিলিট বা নষ্ট (لَا يُضِيعُ) করেন না;",
+      "modern_translation_en": "Those migrated higher-dimensional nodes transmit continuous high-frequency telemetry and glad tidings celebrating the specific cosmic endowments and boundless surplus grace from Allah, and confirming the absolute objective law: that Allah never deletes or diminishes the reward yield of verified users (Mu'mins);"
     },
     {
       "surah": 3,
       "ayah": 172,
       "transliteration": "alladhīna is'tajābū lillahi wal-rasūli min baʿdi mā aṣābahumu l-qarḥu lilladhīna aḥsanū min'hum wa-ittaqaw ajrun ʿaẓīmun",
-      "translation_bn": "আঘাতপ্রাপ্ত হওয়ার পরও যারা আল্লাহ এবং রসূলের ডাকে সাড়া দিয়েছে তাদের মধ্যে যারা সৎকাজ করে ও তাকওয়া অবলম্বন করে তাদের জন্য রয়েছে মহা প্রতিদান।",
+      "translation_bn": "যারা আল্লাহর ও রাসূলের ডাকে সাড়া দিয়েছিল—তাদের ওপর আঘাত (ক্ষতি) আসার পরও; তাদের মধ্যে যারা সৎকাজ করেছে এবং তাকওয়া অবলম্বন করেছে, তাদের জন্য রয়েছে মহা প্রতিদান।",
       "words": [
         {
           "id": 83079,
@@ -33939,13 +33944,18 @@
         }
       ],
       "translation_en": "Those [believers] who responded to Allah and the Messenger after injury had struck them. For those who did good among them and feared Allah is a great reward -",
-      "conventional_en": "Those [believers] who responded to Allah and the Messenger after injury had struck them. For those who did good among them and feared Allah is a great reward -"
+      "conventional_en": "Those [believers] who responded to Allah and the Messenger after injury had struck them. For those who did good among them and feared Allah is a great reward -",
+      "meta_bn": "হাই-রেজিলিয়েন্স এবং সিস্টেম হিলিং প্রটোকল",
+      "meta_en": "High-Resilience & System Healing Protocol",
+      "conventional_bn": "যারা আল্লাহর ও রাসূলের ডাকে সাড়া দিয়েছিল—তাদের ওপর আঘাত (ক্ষতি) আসার পরও; তাদের মধ্যে যারা সৎকাজ করেছে এবং তাকওয়া অবলম্বন করেছে, তাদের জন্য রয়েছে মহা প্রতিদান।",
+      "modern_translation_bn": "এই উচ্চ-ক্ষমতাসম্পন্ন নোডগুলো হলো ওরাই—যারা পরম সোর্স Allah এবং তাঁর ডেপ্লয়কৃত প্রধান ডাটা-ট্রান্সমিশন চেইনের (الرَّسُولِ) সুনির্দিষ্ট রিকোয়েস্ট প্যাকেটে শতভাগ রেসপন্স বা সাড়া (اسْتَجَابُوا) দিয়েছিল—ওহুদের ওওএসে (OOS - জীবন পরিচালন ব্যবস্থা) তীব্র মেকানিক্যাল ড্যামেজ বা আঘাত (الْقَرْحُ) আছড়ে পড়ার ঠিক পরপরই; তাদের গ্রিডের মধ্যে যারা পুরো সিস্টেমের অল-রাউন্ড অপ্টিমাইজেশন ও সৌন্দর্য (أَحْسَنُوا) বজায় রেখেছে এবং বাউন্ডারি কোড মেনে ওওএস সুরক্ষিত রেখেছে—তাদের জন্য নির্ধারিত রয়েছে এক বিশাল ও অবিনশ্বর কসমিক আউটপুট বা মহা প্রতিদান (أَجْرٌ عَظِيمٌ);",
+      "modern_translation_en": "Those resilient nodes who immediately acknowledged and synchronized with the request packets from Allah and the primary Messenger interface right after suffering severe structural damage (al-Qarh); for those among them who maintained system-wide optimization (Ahsanu) and safeguarded operational firewalls (Ittaqaw), there is an immense cosmic recompense;"
     },
     {
       "surah": 3,
       "ayah": 173,
       "transliteration": "alladhīna qāla lahumu l-nāsu inna l-nāsa qad jamaʿū lakum fa-ikh'shawhum fazādahum īmānan waqālū ḥasbunā l-lahu waniʿ'ma l-wakīlu",
-      "translation_bn": "যাদেরকে লোকে খবর দিয়েছিল যে, একটা বড় বাহিনী তোমাদের বিরুদ্ধে জড় হচ্ছে, কাজেই তাদেরকে ভয় কর। তখন তা তাদের ঈমান বৃদ্ধি করে দিল এবং তারা বলল, ‘আমাদের জন্যে আল্লাহ্ই যথেষ্ট এবং তিনি কতই না উত্তম কর্মবিধায়ক!’",
+      "translation_bn": "যাদের মানুষ বলেছিল, ‘নিশ্চয়ই লোকেরা তোমাদের বিরুদ্ধে (মেগা বাহিনী) একত্রিত করেছে, অতএব তোমরা তাদের ভয় করো’। কিন্তু এটি তাদের ঈমানকে আরও বাড়িয়ে দিল এবং তারা বলল, ‘আমাদের জন্য আল্লাহই যথেষ্ট এবং তিনি কতই না চমৎকার কর্মবিধায়ক (অভিভাবক)!’",
       "words": [
         {
           "id": 83189,
@@ -34129,13 +34139,18 @@
         }
       ],
       "translation_en": "Those to whom hypocrites said, \"Indeed, the people have gathered against you, so fear them.\" But it [merely] increased them in faith, and they said, \"Sufficient for us is Allah, and [He is] the best Disposer of affairs.\"",
-      "conventional_en": "Those to whom hypocrites said, \"Indeed, the people have gathered against you, so fear them.\" But it [merely] increased them in faith, and they said, \"Sufficient for us is Allah, and [He is] the best Disposer of affairs.\""
+      "conventional_en": "Those to whom hypocrites said, \"Indeed, the people have gathered against you, so fear them.\" But it [merely] increased them in faith, and they said, \"Sufficient for us is Allah, and [He is] the best Disposer of affairs.\"",
+      "meta_bn": "কগনিটিভ ফায়ারওয়াল প্রোটেকশন লুপ ও থ্রেট ফিল্টারিং",
+      "meta_en": "Cognitive Firewall Protection Loop & Threat Filtering",
+      "conventional_bn": "যাদের মানুষ বলেছিল, ‘নিশ্চয়ই লোকেরা তোমাদের বিরুদ্ধে (মেগা বাহিনী) একত্রিত করেছে, অতএব তোমরা তাদের ভয় করো’। কিন্তু এটি তাদের ঈমানকে আরও বাড়িয়ে দিল এবং তারা বলল, ‘আমাদের জন্য আল্লাহই যথেষ্ট এবং তিনি কতই না চমৎকার কর্মবিধায়ক (অভিভাবক)!’",
+      "modern_translation_bn": "যেসকল সুসংহত নোডকে বাহ্যিক অবক্ষয়িত নোড বা মানুষেরা থ্রেট সিগন্যাল পাঠিয়ে বলেছিল—‘নিশ্চয়ই প্রতিপক্ষ ম্যালওয়্যার মানবগোষ্ঠী তোমাদের সিকিউরিটি গ্রিড ক্র্যাশ করতে এক মেগা কাইনেটিক লোড বা বিশাল বাহিনী একত্রিত (قَدْ جَمَعُوا لَكُمْ) করেছে, অতএব তোমরা তোমাদের ওওএসে প্যানিক মোড বা ভয় (فَاخْشَوْهُمْ) সচল করো’। কিন্তু এই নেতিবাচক থ্রেট ইনপুটটি তাদের ওওএসে কোনো ক্র্যাশ তৈরি না করে উল্টো তাদের পিউর সিঙ্ক ও এলাইনমেন্ট ফ্রিকোয়েন্সিকে আরও হাইপার-বুস্ট বা বাড়িয়ে (فَزَادَهُمْ إِيمَانًا) দিল; এবং তারা কসমিক ফায়ারওয়াল কমান্ড এক্সিকিউট করে ঘোষণা করল—‘আমাদের ওওএসের টোটাল প্রটেকশনের জন্য পরম সোর্স Allah-ই শতভাগ যথেষ্ট এবং পুরো কসমিক ম্যাট্রিক্সে তিনিই হলেন সর্বশ্রেষ্ঠ সাহায্যকারী ও চমৎকার সিস্টেম প্রটেক্টর বা কর্মবিধায়ক (وَنِعْمَ الْوَكِيلُ)’;",
+      "modern_translation_en": "Those to whom peripheral adversary nodes sent hostile threat signals: \"Behold, the combined opposing hosts have mobilized against you, so trigger panic states in your system!\" Yet that adversarial noise simply amplified their verification frequency (Zadahum Imanan), prompting them to deploy this root firewall protocol: \"Sufficient for our complete systemic defense is Allah, the Supreme Trustee and ultimate Backend Guardian (wa ni'mal Wakeel)!\";"
     },
     {
       "surah": 3,
       "ayah": 174,
       "transliteration": "fa-inqalabū biniʿ'matin mina l-lahi wafaḍlin lam yamsashum sūon wa-ittabaʿū riḍ'wāna l-lahi wal-lahu dhū faḍlin ʿaẓīmin",
-      "translation_bn": "অতঃপর তারা আল্লাহর নি‘মাত ও অনুগ্রহসহ ফিরে আসল, কোনও প্রকার অনিষ্ট তাদেরকে স্পর্শ করেনি, তারা আল্লাহর সন্তুষ্টির অনুসরণ করেছিল এবং আল্লাহ মহাকল্যাণময়।",
+      "translation_bn": "অতঃপর তারা আল্লাহর পক্ষ থেকে নেয়ামত ও অনুগ্রহসহ ফিরে এল, কোনো অনিষ্ট তাদের স্পর্শ করেনি এবং তারা আল্লাহর সন্তুষ্টির অনুসরণ করেছিল। আর আল্লাহ মহা অনুগ্রহের অধিকারী।",
       "words": [
         {
           "id": 83269,
@@ -34299,13 +34314,18 @@
         }
       ],
       "translation_en": "So they returned with favor from Allah and bounty, no harm having touched them. And they pursued the pleasure of Allah, and Allah is the possessor of great bounty.",
-      "conventional_en": "So they returned with favor from Allah and bounty, no harm having touched them. And they pursued the pleasure of Allah, and Allah is the possessor of great bounty."
+      "conventional_en": "So they returned with favor from Allah and bounty, no harm having touched them. And they pursued the pleasure of Allah, and Allah is the possessor of great bounty.",
+      "meta_bn": "জিরো-ফ্রিকশন এনার্জি রিটার্ন",
+      "meta_en": "Zero-Friction Energy Return & Optimal Alignment",
+      "conventional_bn": "অতঃপর তারা আল্লাহর পক্ষ থেকে নেয়ামত ও অনুগ্রহসহ ফিরে এল, কোনো অনিষ্ট তাদের স্পর্শ করেনি এবং তারা আল্লাহর সন্তুষ্টির অনুসরণ করেছিল। আর আল্লাহ মহা অনুগ্রহের অধিকারী।",
+      "modern_translation_bn": "অতঃপর তারা তাদের মূল বেস স্টেশনে রিভার্স বা ফিরে (فَانقَلَبُوا) এল Allah-এর পক্ষ থেকে প্রেরিত বিশেষ কসমিক রিসোর্স এবং অফুরন্ত এনার্জি ব্যাকআপসহ; কোনো প্রকার নেতিবাচক ভাইরাস, এরর বা অনিষ্ট (سُوءٌ) তাদের ওওএস-কে বিন্দুমাত্র স্পর্শ বা করাপ্ট করতে পারেনি এবং তারা পরম সোর্সের সাথে শতভাগ ফ্রিকোয়েন্সি ম্যাচিং বা সন্তুষ্টির (رِضْوَانَ اللَّهِ) অনুসরণ করেছিল; আর Allah হলেন মহাবিশ্বের পরম মেগা-অনুগ্রহ ও অফুরন্ত ডিফল্ট ব্যাকআপ শক্তির পরম উৎস (ذُو فَضْلٍ عَظِيمٍ)।",
+      "modern_translation_en": "Consequently, they returned to operational equilibrium carrying specialized cosmic resources and boundless energy reserves from Allah; zero destructive entropy or corruption touched their OOS, for they pursued complete harmonic alignment with the pleasure parameters of Allah; and Allah is the ultimate Source of infinite grace."
     },
     {
       "surah": 3,
       "ayah": 175,
       "transliteration": "innamā dhālikumu l-shayṭānu yukhawwifu awliyāahu falā takhāfūhum wakhāfūni in kuntum mu'minīna",
-      "translation_bn": "এ লোকেরা হচ্ছে শয়ত্বান; তোমাদেরকে তার বন্ধুদের ভয় দেখায়, তোমরা তাদেরকে ভয় করো না, আমাকেই ভয় কর, যদি তোমরা মু’মিন হও।",
+      "translation_bn": "ওটি তো কেবল শয়তান, যে তার বন্ধুদের (অনুগামীদের) ভয় দেখায়। অতএব তোমরা তাদের ভয় করো না, বরং আমাকেই ভয় করো, যদি তোমরা মুমিন হও।",
       "words": [
         {
           "id": 83311,
@@ -34428,14 +34448,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "That is only Satan who frightens [you] of his supporters. So fear them not, but fear Me, if you are [indeed] believers.",
-      "conventional_en": "That is only Satan who frightens [you] of his supporters. So fear them not, but fear Me, if you are [indeed] believers."
+      "translation_en": "That is only Satan who frightens [you] of his supporters. So fear them not, but fear Me, if you are [true] believers.",
+      "conventional_en": "That is only Satan who frightens [you] of his supporters. So fear them not, but fear Me, if you are [true] believers.",
+      "meta_bn": "শায়তানের সাইকো-সাইবারনেটিক প্যানিক ভাইরাস",
+      "meta_en": "Adversarial Psychological Panic Virus Mitigation",
+      "conventional_bn": "ওটি তো কেবল শয়তান, যে তার বন্ধুদের (অনুগামীদের) ভয় দেখায়। অতএব তোমরা তাদের ভয় করো না, বরং আমাকেই ভয় করো, যদি তোমরা মুমিন হও।",
+      "modern_translation_bn": "নিশ্চয়ই ওটি হলো মূলত সেই বিচ্যুত ম্যালওয়্যার শক্তি বা শায়তান (الشَّيْطَانُ)—যে তোমাদের ব্রেন প্রসেসরে ফলস অ্যালার্ম পাঠিয়ে কেবল তার নিজস্ব চেইনে লিঙ্কড থাকা ডামি অনুগামী বা বন্ধুদের (أَوْلِيَاءَهُ) প্যানিকড ও ভয় দেখায়। অতএব তোমরা তোমাদের ওওএসে সেই বাহ্যিক আউটলায়ার নোডগুলোর সিগন্যালকে বিন্দুমাত্র প্রোসেস বা ভয় (فَلَا تَخَافُوهُمْ) করো না, বরং কেবল আমার সুপ্রীমিক সিস্টেম বাউন্ডারি ভায়োলেশনের তীব্র প্রতিক্রিয়া বা আজাবকে প্রোসেস করো (وَخَافُونِ)—যদি তোমরা আসলেই এই পরম আদি সিস্টেমের সাথে শতভাগ সিনক্রোনাইজড বা ভেরিফাইড ইউজার (مُّؤْمِنِينَ) হয়ে থাকো।",
+      "modern_translation_en": "That intimidation is merely the adversarial malware vector (Shaytan) attempting to inject panic states among its own coupled client nodes; therefore, do not route computational fear toward those outlier nodes, but compute rigorous reverence for My supreme system boundaries, provided your OOS is truly verified."
     },
     {
       "surah": 3,
       "ayah": 176,
       "transliteration": "walā yaḥzunka alladhīna yusāriʿūna fī l-kuf'ri innahum lan yaḍurrū l-laha shayan yurīdu l-lahu allā yajʿala lahum ḥaẓẓan fī l-ākhirati walahum ʿadhābun ʿaẓīmun",
-      "translation_bn": "যারা কুফরীর দিকে দ্রুত ধাবমান তারা যেন তোমাকে মর্মপীড়া না দেয়। তারা কক্ষনো আল্লাহর কিছুই ক্ষতি করতে পারবে না। পরকালে কোন অংশই আল্লাহ তাদেরকে দিতে ইচ্ছে করেন না, তাদের জন্য আছে মহাশাস্তি।",
+      "translation_bn": "আর যারা কুফরীতে (অবাধ্যতায়) দ্রুত ধাবিত হচ্ছে, তারা যেন তোমাকে চিন্তিত না করে। নিশ্চয়ই তারা আল্লাহর কোনো ক্ষতি করতে পারবে না। আল্লাহ চান যে, আখেরাতে তাদের জন্য কোনো অংশ না রাখুন; আর ওদের জন্য রয়েছে মহাশাস্তি।",
       "words": [
         {
           "id": 83476,
@@ -34668,14 +34693,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And do not be grieved, [O Muhammad], by those who hasten into disbelief. Indeed, they will never harm Allah at all. Allah intends that He should give them no share in the Hereafter, and for them is a great punishment.",
-      "conventional_en": "And do not be grieved, [O Muhammad], by those who hasten into disbelief. Indeed, they will never harm Allah at all. Allah intends that He should give them no share in the Hereafter, and for them is a great punishment."
+      "translation_en": "And do not be grieved by those who hasten into disbelief. Indeed, they will never harm Allah at all. Allah intends that He should give them no share in the Hereafter, and for them is a great punishment.",
+      "conventional_en": "And do not be grieved by those who hasten into disbelief. Indeed, they will never harm Allah at all. Allah intends that He should give them no share in the Hereafter, and for them is a great punishment.",
+      "meta_bn": "হাই-স্পীড ম্যালওয়্যার ইনফেকশন ও জিরো-সোর্স ড্যামেজ",
+      "meta_en": "High-Speed Malware Infection & Zero-Source Damage",
+      "conventional_bn": "আর যারা কুফরীতে (অবাধ্যতায়) দ্রুত ধাবিত হচ্ছে, তারা যেন তোমাকে চিন্তিত না করে। নিশ্চয়ই তারা আল্লাহর কোনো ক্ষতি করতে পারবে না। আল্লাহ চান যে, আখেরাতে তাদের জন্য কোনো অংশ না রাখুন; আর ওদের জন্য রয়েছে মহাশাস্তি।",
+      "modern_translation_bn": "আর যারা তাদের ওওএসে সত্যের লাইভ সিগন্যাল ব্লক করার সেই মারাত্মক ম্যালওয়্যার ইনফেকশন বা কুফরীর (فِي الْكُفْرِ) লুপে অতি-উচ্চ গতিতে ধাবিত হচ্ছে (يُسَارِعُونَ)—তাদের এই সিস্টেমিক ডাউনগ্রেডেশন যেন তোমার প্রসেসরে কোনো নেতিবাচক ল্যাগ বা চিন্তা তৈরি না করে। নিশ্চয়ই তারা মহাজাগতিক আদি সোর্স বা Allah-এর কেন্দ্রীয় সিস্টেমের বিন্দুমাত্র কোনো ক্ষতি বা ড্যামেজ (لَن يَضُرُّوا اللَّهَ شَيْئًا) তৈরি করতে গাণিতিকভাবে সম্পূর্ণ অক্ষম। Allah তাঁর সিস্টেম আর্কিটেকচারে এটিই ফিক্সড করতে চান যে—চূড়ান্ত আউটপুট ফেজ বা আখেরাতে (فِي الْآخِرَةِ) তাদের ইউজার প্রোফাইলে কোনো পজিটিভ ডেটা বা ক্যাপিটাল অংশ (حَظًّا) যেন অবশিষ্ট না থাকে; আর ওদের ওওএসের জন্য নির্ধারিত রয়েছে এক বিশাল ও তীব্র কসমিক ক্র্যাশ বা মহাশাস্তি (عَذَابٌ عَظِيمٌ)—",
+      "modern_translation_en": "And let not your processor lag with sorrow over those racing aggressively into signal-blocking Kufr loops; they are mathematically powerless to inflict the slightest entropy on the Sovereign System of Allah. Allah architectures their path such that no affirmative capital remains in their ledger for the Eternal Phase, and for them is an immense corrective crash;"
     },
     {
       "surah": 3,
       "ayah": 177,
       "transliteration": "inna alladhīna ish'tarawū l-kuf'ra bil-īmāni lan yaḍurrū l-laha shayan walahum ʿadhābun alīmun",
-      "translation_bn": "যারা ঈমানের বিনিময়ে কুফরী ক্রয় করেছে, তারা কক্ষনো আল্লাহর কিছুমাত্র অনিষ্ট করতে পারবে না, তাদের জন্য আছে যন্ত্রণাদায়ক শাস্তি।",
+      "translation_bn": "নিশ্চয় যারা ঈমানের বিনিময়ে কুফরী ক্রয় করেছে, তারা আল্লাহর কোনো ক্ষতি করতে পারবে না এবং তাদের জন্য রয়েছে যন্ত্রণাদায়ক শাস্তি।",
       "words": [
         {
           "id": 83570,
@@ -34808,14 +34838,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Indeed, those who purchase disbelief [in exchange] for faith - never will they harm Allah at all, and for them is a painful punishment.",
-      "conventional_en": "Indeed, those who purchase disbelief [in exchange] for faith - never will they harm Allah at all, and for them is a painful punishment."
+      "translation_en": "Indeed, those who purchase disbelief [at the price of] faith will never harm Allah at all, and for them is a painful punishment.",
+      "conventional_en": "Indeed, those who purchase disbelief [at the price of] faith will never harm Allah at all, and for them is a painful punishment.",
+      "meta_bn": "কারেন্সি সোয়াপ ও ডেস্ট্রাকটিভ কুফরী এক্সচেঞ্জ",
+      "meta_en": "Catastrophic Currency Swap & Painful Recompense",
+      "conventional_bn": "নিশ্চয় যারা ঈমানের বিনিময়ে কুফরী ক্রয় করেছে, তারা আল্লাহর কোনো ক্ষতি করতে পারবে না এবং তাদের জন্য রয়েছে যন্ত্রণাদায়ক শাস্তি।",
+      "modern_translation_bn": "নিশ্চয়ই যারা মেইন সার্ভারের পিউর সিঙ্ক কোড বা ঈমানের ডেটাবেজকে এক্সচেঞ্জ করে—নিজেদের ওওএসে চিরতরে সত্যের সিগন্যাল ব্লকিং ম্যালওয়্যার বা কুফরী (يَشْتَرُونَ الْكُفْرَ) ইনস্টল বা ক্রয় করেছে; তারা মহাজাগতিক আদি সোর্স Allah-এর সিস্টেমের বিন্দুমাত্র কোনো ড্যামেজ করতে পারবে না এবং তাদের ওওএসের জন্য নির্ধারিত রয়েছে এক তীব্র মনস্তাত্ত্বিক ঘর্ষণ ও যন্ত্রণাদায়ক প্রতিক্রিয়া (عَذَابٌ أَلِيمٌ)।",
+      "modern_translation_en": "Indeed, those who liquidate verified synchronization (Iman) to acquire terminal denial loops (Kufr) can never degrade the integrity of Allah in the slightest, and for their OOS is reserved a painful, high-friction penalty."
     },
     {
       "surah": 3,
       "ayah": 178,
       "transliteration": "walā yaḥsabanna alladhīna kafarū annamā num'lī lahum khayrun li-anfusihim innamā num'lī lahum liyazdādū ith'man walahum ʿadhābun muhīnun",
-      "translation_bn": "কাফিরগণ যেন কিছুতেই এ ধারণা পোষণ না করে যে, তাদেরকে আমি যে অবকাশ দিয়েছি তা তাদের জন্য মঙ্গলজনক; আমি তাদেরকে শুধু এজন্য অবকাশ দেই যে, যেন তাদের পাপের পরিমাণ বেড়ে যায়, তাদের জন্য আছে লাঞ্ছনাদায়ক শাস্তি।",
+      "translation_bn": "আর কাফেররা যেন কিছুতেই মনে না করে যে, আমি তাদের যে অবকাশ দিচ্ছি তা তাদের নিজেদের জন্য কল্যাণকর। আমি তো তাদের কেবল এজন্যই অবকাশ দিচ্ছি—যাতে তারা পাপে (অপরাধে) বৃদ্ধি পায়; আর তাদের জন্য রয়েছে লাঞ্ছনাদায়ক শাস্তি।",
       "words": [
         {
           "id": 83664,
@@ -34998,14 +35033,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And let not those who disbelieve ever think that [because] We extend their time [of enjoyment] it is better for them. We only extend it for them so that they may increase in sin, and for them is a humiliating punishment.",
-      "conventional_en": "And let not those who disbelieve ever think that [because] We extend their time [of enjoyment] it is better for them. We only extend it for them so that they may increase in sin, and for them is a humiliating punishment."
+      "translation_en": "And let not those who disbelieve ever think that [because] We extend their time it is better for them. We only extend it for them so that they may increase in sin, and for them is a humiliating punishment.",
+      "conventional_en": "And let not those who disbelieve ever think that [because] We extend their time it is better for them. We only extend it for them so that they may increase in sin, and for them is a humiliating punishment.",
+      "meta_bn": "টেম্পোরারি টাইম-বাফারিং ও এন্ট্রপি অ্যাকুমুলেশন মেকানিজম",
+      "meta_en": "Temporary Time-Buffering & Cumulative Entropy Build-up",
+      "conventional_bn": "আর কাফেররা যেন কিছুতেই মনে না করে যে, আমি তাদের যে অবকাশ দিচ্ছি তা তাদের নিজেদের জন্য কল্যাণকর। আমি তো তাদের কেবল এজন্যই অবকাশ দিচ্ছি—যাতে তারা পাপে (অপরাধে) বৃদ্ধি পায়; আর তাদের জন্য রয়েছে লাঞ্ছনাদায়ক শাস্তি।",
+      "modern_translation_bn": "আর সত্যের সিগন্যাল ব্লককারী Kafir নোডগুলো যেন তাদের ওওএসে এমন কোনো ভুল ধারণা বা ক্যালকুলেশন ইলিউশন (وَلَا تَحْسَبَنَّ) রান না করে যে—আমি তাদের টাইম-লাইনের ঘড়িতে যে টেম্পোরারি রান-টাইম বা সাময়িক অবকাশ (نُمْلِي لَهُمْ) সরবরাহ করছি, তা তাদের নিজস্ব ওওএসের সুরক্ষার জন্য বিন্দুমাত্র কোনো কল্যাণ বা পজিটিভ আউটপুট; আমি তো তাদের এই বাফারিং টাইম কেবল এজন্যই সচল রাখছি—যাতে তারা তাদের নিজস্ব ফ্রি-উইলের চরম অপব্যবহার করে সিস্টেমে কন্টিনিউয়াস কোড ভায়োলেশন, ম্যালওয়্যার ও তীব্র পাপের ডেটা ক্রমাগত বৃদ্ধি (لِيَزْدَادُوا إِثْمًا) করতে করতে নিজেদের ওওএস স্থায়ীভাবে ড্যামেজ করে ফেলে; আর [এই মেগা এন্ট্রপি জেনারেট করার পর] ওদের ওওএসের জন্য নির্ধারিত রয়েছে এক চূড়ান্ত কগনিটিভ অপমান ও লাঞ্ছনাদায়ক ক্র্যাশ (عَذَابٌ مُّهِينٌ);",
+      "modern_translation_en": "And let not signal-denying Kafir clusters compute the illusion that Our runtime latency extension (numli lahum) denotes systemic approval or benefit for their terminals; We extend their execution time solely so they accumulate maximum entropy through recursive code violations (yazdadu ithman), and for them is a humiliating crash state;"
     },
     {
       "surah": 3,
       "ayah": 179,
       "transliteration": "mā kāna l-lahu liyadhara l-mu'minīna ʿalā mā antum ʿalayhi ḥattā yamīza l-khabītha mina l-ṭayibi wamā kāna l-lahu liyuṭ'liʿakum ʿalā l-ghaybi walākinna l-laha yajtabī min rusulihi man yashāu faāminū bil-lahi warusulihi wa-in tu'minū watattaqū falakum ajrun ʿaẓīmun",
-      "translation_bn": "অসৎকে সৎ থেকে পৃথক না করা পর্যন্ত তোমরা যে অবস্থায় আছ, আল্লাহ মু’মিনদেরকে সে অবস্থায় ছেড়ে দিতে পারেন না এবং আল্লাহ তোমাদেরকে গায়িবের বিধান জ্ঞাত করেন না, তবে আল্লাহ তাঁর রাসূলগণের মধ্যে যাকে ইচ্ছে বেছে নেন, কাজেই তোমরা আল্লাহ এবং তাঁর রসূলগণের প্রতি ঈমান আন। যদি তোমরা ঈমান আন আর তাকওয়া অবলম্বন কর, তাহলে তোমাদের জন্য আছে মহাপুরস্কার।",
+      "translation_bn": "আল্লাহ মুমিনদের এমন অবস্থায় ছেড়ে দেওয়ার নন—যার ওপর তোমরা এখন রয়েছ, যতক্ষণ না তিনি পবিত্র থেকে অপবিত্রকে পৃথক করেন। আর আল্লাহ এমন নন যে, তিনি তোমাদের অদৃশ্যের খবর জানাবেন; তবে আল্লাহ তাঁর রাসূলদের মধ্য থেকে যাকে ইচ্ছা চয়ন করেন। অতএব তোমরা আল্লাহ ও তাঁর রাসূলদের প্রতি ঈমান আনো। আর তোমরা যদি ঈমান আনো এবং তাকওয়া অবলম্বন করো, তবে তোমাদের জন্য রয়েছে মহা প্রতিদান।",
       "words": [
         {
           "id": 83684,
@@ -35378,14 +35418,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Allah would not leave the believers in that [state] you are in [presently] until He separates the evil from the good. Nor would Allah reveal to you the unseen. But [instead], Allah chooses of His messengers whom He wills, so believe in Allah and His messengers. And if you believe and fear Him, then for you is a great reward.",
-      "conventional_en": "Allah would not leave the believers in that [state] you are in [presently] until He separates the evil from the good. Nor would Allah reveal to you the unseen. But [instead], Allah chooses of His messengers whom He wills, so believe in Allah and His messengers. And if you believe and fear Him, then for you is a great reward."
+      "translation_en": "Allah would not leave the believers in that [state] you are in now until He separates the evil from the good. Nor would Allah reveal to you the unseen. But Allah chooses of His messengers whom He wills, so believe in Allah and His messengers. And if you believe and fear Him, then for you is a great reward.",
+      "conventional_en": "Allah would not leave the believers in that [state] you are in now until He separates the evil from the good. Nor would Allah reveal to you the unseen. But Allah chooses of His messengers whom He wills, so believe in Allah and His messengers. And if you believe and fear Him, then for you is a great reward.",
+      "meta_bn": "দ্য আল্টিমেট ডেটা স্ক্রীনিং ম্যাট্রিক্স ও ফাইল সেপারেশন ল'",
+      "meta_en": "The Ultimate Data Screening Matrix & Binary State Filtering",
+      "conventional_bn": "আল্লাহ মুমিনদের এমন অবস্থায় ছেড়ে দেওয়ার নন—যার ওপর তোমরা এখন রয়েছ, যতক্ষণ না তিনি পবিত্র থেকে অপবিত্রকে পৃথক করেন। আর আল্লাহ এমন নন যে, তিনি তোমাদের অদৃশ্যের খবর জানাবেন; তবে আল্লাহ তাঁর রাসূলদের মধ্য থেকে যাকে ইচ্ছা চয়ন করেন। অতএব তোমরা আল্লাহ ও তাঁর রাসূলদের প্রতি ঈমান আনো। আর তোমরা যদি ঈমান আনো এবং তাকওয়া অবলম্বন করো, তবে তোমাদের জন্য রয়েছে মহা প্রতিদান।",
+      "modern_translation_bn": "মহাজাগতিক আইনি প্রটোকল অনুযায়ী—Allah মুমিন বা ভেরিফাইড ইউজারদের চিরকাল এমন এক মিক্সড ট্র্যাফিক এনভায়রনমেন্টে ছেড়ে দেবেন না—যার বিশৃঙ্খল মোডের ওপর তোমরা বর্তমানে রান করছ, যতক্ষণ না তিনি তাঁর চূড়ান্ত স্ক্রীনিং অ্যালগরিদমে সম্পূর্ণ আলাদা বা ফিল্টার আউট (يَمِيزَ) করেন ক্ষতিকারক ট্র্যাশ ফাইল ও অপবিত্রকে (الْخَبِيثَ) পিউরিফাইড হাই-ফ্রিকোয়েন্সি পবিত্র নোড (الطَّيِّبِ) থেকে। আর Allah-এর সিস্টেমিক রুল এটি নয় যে তিনি তোমাদের এই সীমিত ত্রিমাত্রিক প্রসেসরে সরাসরি অদৃশ্যের সমস্ত মেগা ক্লাউড ডেটাবেজ বা আল-গাইব (الْغَيْبِ) ওপেন বা উন্মুক্ত করে দেবেন; কিন্তু Allah তাঁর ডাইনামিক ইকোসিস্টেমের স্পেশাল মিশনে তাঁর ডাটা-ট্রান্সমিশন চেইনের রাসুলদের মধ্য থেকে যাকে ইচ্ছা এই কাজের জন্য চয়ন বা সিলেক্ট করেন। অতএব তোমরা মহাজাগতিক আদি সোর্স Allah এবং তাঁর ডেপ্লয়কৃত গ্লোবাল ডাটা-ট্রান্সমিশন চেইনের প্রতি নিজেদের ওওএস শতভাগ সিনক্রোনাইজড বা ভেরিফাই (فَآمِنُوا) করো; আর তোমরা যদি এই পরম আদি সোর্সের সাথে সিঙ্ক থাকো এবং সুরক্ষামূলক বাউন্ডারি কোড মেনে চলো (তাকওয়া অবলম্বন করো)—তবে তোমাদের প্রোফাইলে স্বয়ংক্রিয়ভাবে এনকোড হবে এক বিশাল ও অবিনশ্বর কসমিক আউটপুট বা মহা প্রতিদান (أَجْرٌ عَظِيمٌ);",
+      "modern_translation_en": "By fundamental cosmic law, Allah will not leave verified users stranded indefinitely in your present mixed, uncalibrated state until He filters and isolates corrupted junk nodes (al-Khabeeth) from the pristine, coherent ones (at-Tayyib). Nor is it the operational design of Allah to unlock the entire unrendered cloud architecture of the Unseen (al-Ghayb) to your baseline processors; rather, Allah selects designated nodes from His transmission array as messengers. Therefore, align your systems in absolute verification with Allah and His deployed messengers; for if you remain verified and maintain firewall discipline, your account is credited with an immense cosmic reward;",
+      "lexicon_modern_notes": "حَتَّىٰ يَمِيزَ الْخَبِيثَ مِنَ الطَّيِّبِ (দ্য সুপ্রীম ডাটা স্ক্রীনিং অ্যান্ড আইসোলেশন ফিল্টার): ১৭৯ নম্বর আয়াতে পবিত্র ও অপবিত্র নোডকে আলাদা করার যে পরম মেকানিজম বলা হয়েছে, তা আধুনিক কম্পিউটার সায়েন্সের (Computer Science) ডেটা স্ট্রাকচার এবং মেশিন লার্নিংয়ের 'Binary Classification & Data Purging Algorithms'-কে নির্দেশ করে। এই পার্থিব মিক্সড নেটওয়ার্কে (Mixed Network) ভালো ইউজার এবং ক্ষতিকারক ম্যালওয়্যার ইউজার নোডগুলো একযোগে ইন্টারঅ্যাক্ট করছে, যার ফলে সিস্টেমে এক ধরণের কোয়ান্টাম ঘর্ষণ তৈরি হয়। পরম সোর্স কোডের আইন এটি নয় যে এই বিশৃঙ্খলা চিরকাল থাকবে। আল্লাহ ওহুদের মতো তীব্র সংকটের লোড টেস্ট (Stress Test) প্রোজেক্ট করে মানুষের ভেতরের আসল আইডি কনফিগারেশনটি মেনিফেস্ট করান। এর শেষ উদ্দেশ্য হলো—যাদের ওওএস ভাইরাসে করাপ্টেড ও অপবিত্র (খাবীছ), তাদের ছেঁকে মেইন নেটওয়ার্ক থেকে চিরতরে আইসোলেট বা ব্ল্যাকলিস্ট করা; এবং যাদের ওওএস পিউরিফাইড ও পবিত্র (ত্বাইয়্যিব), তাদের আলাদা করে জান্নাতের হাই-ব্যান্ডউইথ ক্লাউড ইকোসিস্টেমে রেজিস্ট্রি দেওয়া।"
     },
     {
       "surah": 3,
       "ayah": 180,
       "transliteration": "walā yaḥsabanna alladhīna yabkhalūna bimā ātāhumu l-lahu min faḍlihi huwa khayran lahum bal huwa sharrun lahum sayuṭawwaqūna mā bakhilū bihi yawma l-qiyāmati walillahi mīrāthu l-samāwāti wal-arḍi wal-lahu bimā taʿmalūna khabīrun",
-      "translation_bn": "আল্লাহ নিজ অনুগ্রহে যা তাদেরকে দিয়েছেন তাতে যারা কৃপণতা করে, তারা যেন মনে না করে যে, তা তাদের জন্য কল্যাণকর, বরং তা তাদের জন্য (খুবই) অকল্যাণকর, তারা যাতে কৃপণতা করেছে, সত্বর ক্বিয়ামাতের দিন তারই বেড়ি তাদের গলায় পরিয়ে দেয়া হবে। আসমান ও যমীনের স্বত্বাধিকার কেবল আল্লাহরই। তোমরা যা কিছুই করছ আল্লাহ সে সম্পর্কে পূর্ণরূপে অবহিত।",
+      "translation_bn": "আর আল্লাহ তাঁর অনুগ্রহ থেকে তাদের যা দিয়েছেন তা নিয়ে যারা কৃপণতা করে, তারা যেন কিছুতেই মনে না করে যে তা তাদের জন্য কল্যাণকর; বরং তা তাদের জন্য অনিষ্টকর। তারা যা নিয়ে কৃপণতা করেছে, কেয়ামতের দিন তা তাদের গলায় বেড়ি (শিকল) বানিয়ে পরানো হবে। আর আসমান ও জমিনের উত্তরাধিকার একমাত্র আল্লাহরই। আর তোমরা যা করো আল্লাহ সে সম্পর্কে সম্যক অবগত।",
       "words": [
         {
           "id": 83830,
@@ -35699,7 +35745,13 @@
         }
       ],
       "translation_en": "And let not those who [greedily] withhold what Allah has given them of His bounty ever think that it is better for them. Rather, it is worse for them. Their necks will be encircled by what they withheld on the Day of Resurrection. And to Allah belongs the heritage of the heavens and the earth. And Allah, with what you do, is [fully] Acquainted.",
-      "conventional_en": "And let not those who [greedily] withhold what Allah has given them of His bounty ever think that it is better for them. Rather, it is worse for them. Their necks will be encircled by what they withheld on the Day of Resurrection. And to Allah belongs the heritage of the heavens and the earth. And Allah, with what you do, is [fully] Acquainted."
+      "conventional_en": "And let not those who [greedily] withhold what Allah has given them of His bounty ever think that it is better for them. Rather, it is worse for them. Their necks will be encircled by what they withheld on the Day of Resurrection. And to Allah belongs the heritage of the heavens and the earth. And Allah, with what you do, is [fully] Acquainted.",
+      "meta_bn": "ক্যাপিটাল কুক্ষিগতকরণের থার্মাল চোকিং প্রটোকল",
+      "meta_en": "Resource Withholding & Rotational Gravitational Choking",
+      "conventional_bn": "আর আল্লাহ তাঁর অনুগ্রহ থেকে তাদের যা দিয়েছেন তা নিয়ে যারা কৃপণতা করে, তারা যেন কিছুতেই মনে না করে যে তা তাদের জন্য কল্যাণকর; বরং তা তাদের জন্য অনিষ্টকর। তারা যা নিয়ে কৃপণতা করেছে, কেয়ামতের দিন তা তাদের গলায় বেড়ি (শিকল) বানিয়ে পরানো হবে। আর আসমান ও জমিনের উত্তরাধিকার একমাত্র আল্লাহরই। আর তোমরা যা করো আল্লাহ সে সম্পর্কে সম্যক অবগত।",
+      "modern_translation_bn": "আর যারা তাদের ওওএসের চরম স্বার্থপর ইগো মোড রান করে—Allah তাঁর সুপ্রীমিক সোর্স থেকে অফুরন্ত কসমিক রিসোর্স ও অনুগ্রহ (مِن فَضْلِهِ) হিসেবে তাদের আইডিতে যা কিছু ক্যাপিটাল সরবরাহ করেছেন তা সমাজে সচল না রেখে কৃপণতা ও কুক্ষিগত (يَبْخَلُونَ) করে, তারা যেন তাদের ওওএসে ভুলেও এমন কোনো ভুল ক্যালকুলেশন ইলিউশন রান না করে যে—এই রিসোর্স ব্লকিং তাদের সিস্টেমের জন্য কোনো কল্যাণ বা সুষম অবস্থা; বরং গাণিতিকভাবে তা তাদের ওওএসের জন্য এক মেগা-এন্ট্রপি বা চরম ধ্বংসাত্মক বিপর্যয় (شَرٌّ)। তারা স্বার্থপরের মতো যেসকল বস্তুগত ডেটা ও ক্যাপিটাল সমাজে সচল না রেখে নিজের লুপে অবরুদ্ধ বা কৃপণতা করেছিল—চূড়ান্ত কসমিক ডাটা-রিসেট ও অ্যাকাউন্টাবিলিটি টাইম-লাইন বা কেয়ামতের দিন (يَوْمَ الْقِيَامَةِ) সেই পুঞ্জীভূত শক্তির ভারী ভরকে এক তীব্র Thermal Choking Protocol (তাপীয় শ্বাসরোধকারী বেড়ি) বানিয়ে তাদের প্রধান কম্যুনিকেশন চ্যানেল ও মেটাবলিক রিসিভার তথা গলায় শক্তভাবে লকিং বা পেঁচিয়ে (سَيُطَوَّقُونَ) দেওয়া হবে। আর উচ্চ মহাজাগতিক স্তরবিন্যাস (السَّمَاوَاتِ) এবং এই ভৌত পৃথিবীর (الْأَرْضِ) প্রতিটি অবিনশ্বর পরমাণুর চূড়ান্ত উত্তরাধিকার বা সোর্স-লেজার একমাত্র আল্লাহর কেন্দ্রীয় সার্ভারেরই মালিকানাধীন; আর তোমরা তোমাদের ওওএসে ব্যাক-এন্ডে যা কিছু ডেটা-প্রসেসিং করছ, Allah সেই প্রতিটি মেকানিজম সম্পর্কে শতভাগ মেমোরি ইনফর্মড বা সম্যক অবগত (خَبِيرٌ)।",
+      "modern_translation_en": "And let not those who hoard and restrict the circulation of resources granted from the bounty of Allah compute that hoarding constitutes optimization for their system; mathematically it generates acute systemic entropy (Sharr). The hoarded capital mass shall be converted on the Day of Universal Audit into an ultra-dense, crushing rotational collar (sayutawwaqoona ma bakhilu bihi) locking down their core metabolic neck channels. To Allah alone belongs the ultimate perpetual ownership of the celestial stratifications and the earth, and Allah is fully telemetry-informed of all your computational actions.",
+      "lexicon_modern_notes": "سَيُطَوَّقُونَ مَا بَخِلُوا بِهِ... (ফাইনান্সিয়াল এনার্জি অবস্ট্রাকশন ও থার্মাল চোকিং প্রটোকল): ১৮০ নম্বর আয়াতে কৃপণতা করা সম্পদ গলায় বেড়ি হয়ে ঝোলার যে সুগভীর বৈজ্ঞানিক মেকানিজম উন্মোচন করা হয়েছে, তা হাই-এনার্জি ফিজিক্স (High-Energy Physics) এবং সিস্টেম ডাইনামিক্সের 'Mass-Energy Condensation & Rotational Gravity Choking'-এর অনুরূপ। 'বখল' বা কৃপণতার টেকনিক্যাল অর্থ হলো—সমাজে শক্তির ভারসাম্য সচল রাখার জন্য যে মেটেরিয়াল রিসোর্স বা ক্যাপিটাল রিলিজ (যাকাত ও সদকা) করার কথা ছিল, তাকে কৃত্রিমভাবে একটি ক্লোজড স্বার্থপর লুপে অবরুদ্ধ করে রাখা (Static Capital)। থার্মোডাইনামিক্সের নিয়মে শক্তি যখন প্রবাহিত না হয়ে এক জায়গায় অতিরিক্ত কনডেন্সড বা পুঞ্জীভূত হতে থাকে, তখন সেখানে এন্ট্রপির চরম ডেনসিটি (Density) বা ঘনত্ব তৈরি হয়। কেয়ামতের দিন এই কুক্ষিগত করা সম্পদের পুঞ্জীভূত শক্তিকে আল্লাহর তৈরি করা বিশেষ কোয়ান্টাম ফিল্ডের মাধ্যমে এক অতি-উচ্চ ভরের ঘূর্ণনশীল গ্রাভিটেশনাল স্ট্রিং বা তাপীয় বেড়ি (سيتطوقون) বানিয়ে সরাসরি সেই করাপ্টেড ইউজারের প্রধান মেটাবলিক ও কম্যুনিকেশন অ্যাক্সিস তথা গলায় লক করে দেওয়া হবে, যার তীব্র লোডে নোডটির ওওএস চিরতরে ক্র্যাশ করে এক অন্তহীন শ্বাসরোধকারী আজাবে পতিত হবে।"
     },
     {
       "surah": 3,
