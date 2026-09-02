@@ -23755,7 +23755,7 @@
       "surah": 3,
       "ayah": 121,
       "transliteration": "wa-idh ghadawta min ahlika tubawwi-u l-mu'minīna maqāʿida lil'qitāli wal-lahu samīʿun ʿalīmun",
-      "translation_bn": "(স্মরণ কর) যখন তুমি সকাল বেলায় তোমার পরিজন হতে বের হয়ে মু’মিনদেরকে যুদ্ধের জন্য জায়গায় জায়গায় মোতায়েন করছিলে, আল্লাহ সবকিছুই শুনেন, সবকিছুই জানেন।।",
+      "translation_bn": "আর যখন তুমি সকালবেলায় তোমার পরিবার থেকে বের হয়ে মুমিনদের যুদ্ধের জন্য ঘাঁটিতে (সুনির্দিষ্ট স্থানে) বিন্যস্ত করছিলে; আর আল্লাহ সর্বশ্রোতা, সর্বজ্ঞ।",
       "words": [
         {
           "id": 76588,
@@ -23878,14 +23878,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And [remember] when you, [O Muhammad], left your family in the morning to post the believers at their stations for the battle [of Uhud] - and Allah is Hearing and Knowing -",
-      "conventional_en": "And [remember] when you, [O Muhammad], left your family in the morning to post the believers at their stations for the battle [of Uhud] - and Allah is Hearing and Knowing -"
+      "translation_en": "And [remember] when you, [O Muhammad], left your family in the morning to post the believers at their stations for the battle - and Allah is Hearing and Knowing.",
+      "conventional_en": "And [remember] when you, [O Muhammad], left your family in the morning to post the believers at their stations for the battle - and Allah is Hearing and Knowing.",
+      "meta_bn": "টার্মিনাল পজিশনিং ও ব্যাটলফিল্ড গ্রিড কনফিগারেশন",
+      "meta_en": "Terminal Positioning & Battlefield Grid Configuration",
+      "conventional_bn": "আর যখন তুমি সকালবেলায় তোমার পরিবার থেকে বের হয়ে মুমিনদের যুদ্ধের জন্য ঘাঁটিতে (সুনির্দিষ্ট স্থানে) বিন্যস্ত করছিলে; আর আল্লাহ সর্বশ্রোতা, সর্বজ্ঞ।",
+      "modern_translation_bn": "আর স্মরণ করো সেই ডেটা-লগ (Data Log)—যখন তুমি সকালের টাইম-উইন্ডোতে (Time-window) তোমার লোকাল হোম-নোড বা পরিবার থেকে বের হয়ে—মুমিন বা ভেরিফাইড ইউজারদের প্রতিরোধমূলক অ্যাকশন কোড বা যুদ্ধের জন্য সুনির্দিষ্ট জ্যামিতিক স্থানাঙ্ক ও ঘাঁটিতে (مَقَاعِدَ لِلْقِتَالِ) Strategic Positioning বা বিন্যস্ত (تُبَوِّئُ) করছিলে; আর Allah প্রতিটি ফ্রিকোয়েন্সির সিগন্যাল রিসিভকারী পরম শ্রোতা এবং প্রতিটি মেমোরি লগ সম্পর্কে সর্বজ্ঞ;",
+      "modern_translation_en": "And recall the Data-Log when you departed from your local home-node in the morning time-window, strategically positioning the verified users (Mu'mins) at precise coordinates and operational stations for systemic combat; and Allah is the Supreme Receiver of all signal frequencies and the All-Knowing of every internal memory-log."
     },
     {
       "surah": 3,
       "ayah": 122,
       "transliteration": "idh hammat ṭāifatāni minkum an tafshalā wal-lahu waliyyuhumā waʿalā l-lahi falyatawakkali l-mu'minūna",
-      "translation_bn": "যখন তোমাদের মধ্যকার দু’দল ভীরুতা প্রকাশ করতে মনস্থ করেছিল, কিন্তু আল্লাহ উভয়ের বন্ধু ছিলেন, মু’মিনদের উচিত আল্লাহর উপর ভরসা করা।",
+      "translation_bn": "যখন তোমাদের মধ্যকার দুটি দল সাহসহীনতা দেখাতে (পিছিয়ে যেতে) উপক্রম হয়েছিল, অথচ আল্লাহই ছিলেন তাদের অভিভাবক; আর মুমিনদের উচিত কেবল আল্লাহর ওপরই ভরসা করা।",
       "words": [
         {
           "id": 76773,
@@ -24019,13 +24024,18 @@
         }
       ],
       "translation_en": "When two parties among you were about to lose courage, but Allah was their ally; and upon Allah the believers should rely.",
-      "conventional_en": "When two parties among you were about to lose courage, but Allah was their ally; and upon Allah the believers should rely."
+      "conventional_en": "When two parties among you were about to lose courage, but Allah was their ally; and upon Allah the believers should rely.",
+      "meta_bn": "কগনিটিভ ভালনারেবিলিটি ও সোর্স প্রোটেকশন ব্যাকআপ",
+      "meta_en": "Cognitive Vulnerability & Source Protection Backup",
+      "conventional_bn": "যখন তোমাদের মধ্যকার দুটি দল সাহসহীনতা দেখাতে (পিছিয়ে যেতে) উপক্রম হয়েছিল, অথচ আল্লাহই ছিলেন তাদের অভিভাবক; আর মুমিনদের উচিত কেবল আল্লাহর ওপরই ভরসা করা।",
+      "modern_translation_bn": "যখন বাহ্যিক হাই-লোডের মুখে তোমাদের মেইন গ্রিডের দুটি নির্দিষ্ট সাব-গ্রুপ বা দল (طَّائِفَةَانِ) তীব্র মনস্তাত্ত্বিক চাপ ও সাহসহীনতার এরর বা বালাই রান করতে উপক্রম হয়েছিল, অথচ Allah-ই ছিলেন ব্যাক-এন্ডে তাদের প্রধান সিকিউরিটি ডাটা-প্রটেক্টর বা রুট অভিভাবক; আর ভেরিফাইড ইউজার বা মুমিনদের উচিত কেবল আল্লাহর পরম সোর্স কোডের কেন্দ্রীয় ফায়ারওয়ালেই নিজেদের সম্পূর্ণ ডেটা-ডিপেন্ডেন্সি বা ভরসা (فَلْيَتَوَكَّلِ) লক রাখা;",
+      "modern_translation_en": "When two sub-clusters among your grid were on the verge of running courage-failure errors under extreme load, yet Allah was their root backend Protector and Guardian; and upon the Supreme Source Code alone must verified users lock their absolute data-dependency."
     },
     {
       "surah": 3,
       "ayah": 123,
       "transliteration": "walaqad naṣarakumu l-lahu bibadrin wa-antum adhillatun fa-ittaqū l-laha laʿallakum tashkurūna",
-      "translation_bn": "এবং আল্লাহ তোমাদের হীন অবস্থায় বাদর যুদ্ধক্ষেত্রে তোমাদের সাহায্য করেছেন, সুতরাং আল্লাহকে ভয় করে চল, যেন তোমরা শোকরগুজার হতে পার।",
+      "translation_bn": "আর নিশ্চয়ই আল্লাহ বদরে তোমাদের সাহায্য করেছিলেন—যখন তোমরা হীনবল (দুর্বল) ছিলে। অতএব তোমরা আল্লাহকে ভয় করো, যাতে তোমরা কৃতজ্ঞতা প্রকাশ করো।",
       "words": [
         {
           "id": 76863,
@@ -24138,14 +24148,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And already had Allah given you victory at [the battle of] Badr while you were few in number. Then fear Allah; perhaps you will be grateful.",
-      "conventional_en": "And already had Allah given you victory at [the battle of] Badr while you were few in number. Then fear Allah; perhaps you will be grateful."
+      "translation_en": "And Allah had already given you victory at Badr while you were few in number. Then fear Allah; perhaps you will be grateful.",
+      "conventional_en": "And Allah had already given you victory at Badr while you were few in number. Then fear Allah; perhaps you will be grateful.",
+      "meta_bn": "লো-রিসোর্স স্ট্যাবল সিমুলেশন: বদর অডিট",
+      "meta_en": "Low-Resource Stable Simulation: Badr Audit",
+      "conventional_bn": "আর নিশ্চয়ই আল্লাহ বদরে তোমাদের সাহায্য করেছিলেন—যখন তোমরা হীনবল (দুর্বল) ছিলে। অতএব তোমরা আল্লাহকে ভয় করো, যাতে তোমরা কৃতজ্ঞতা প্রকাশ করো।",
+      "modern_translation_bn": "আর নিশ্চয়ই Allah বদর নামক জ্যামিতিক নোডে তোমাদের চূড়ান্ত সিস্টেম সাপোর্ট ও বুস্টিং ডেটা (نَصَرَكُمُ) সরবরাহ করেছিলেন—যখন তোমাদের টোটাল রিসোর্স ভলিউম ও ফিজিক্যাল ক্যাপাসিটি ছিল অত্যন্ত কম ও দুর্বল (أَذِلَّةٌ)। অতএব তোমরা মহাজাগতিক আদি সোর্স কোডের বাউন্ডারি মেনে চলো (তাকওয়া অবলম্বন করো), যাতে তোমরা এই সিস্টেম কোডের পজিティブ অপ্টিমাইজেশন ও সর্বোচ্চ আউটপুট (تَشْكُرُونَ) নিশ্চিত করতে পারো;",
+      "modern_translation_en": "And Allah certainly empowered you with decisive system support at the Badr node when your physical capacity and resource volume were minimal and fragile. Therefore, strictly maintain the boundaries of the Cosmic Source Code (Taqwa) so that you may maximize system output and positive optimization."
     },
     {
       "surah": 3,
       "ayah": 124,
       "transliteration": "idh taqūlu lil'mu'minīna alan yakfiyakum an yumiddakum rabbukum bithalāthati ālāfin mina l-malāikati munzalīna",
-      "translation_bn": "(স্মরণ কর) যখন তুমি মু’মিনদেরকে বলছিলে, ‘তোমাদের জন্য কি এটা যথেষ্ট নয় যে, তোমাদের প্রতিপালক তিন সহস্র ফেরেশতা অবতরণপূর্বক তোমাদের সাহায্য করবেন?’",
+      "translation_bn": "যখন তুমি মুমিনদের বলছিলে, ‘তোমাদের জন্য কি এটা যথেষ্ট নয় যে, তোমাদের রব তিন হাজার নাজিলকৃত ফেরেশতা দ্বারা তোমাদের সাহায্য (যোগান) করবেন?’",
       "words": [
         {
           "id": 77017,
@@ -24288,14 +24303,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "[Remember] when you said to the believers, \"Is it not sufficient for you that your Lord should reinforce you with three thousand angels sent down?",
-      "conventional_en": "[Remember] when you said to the believers, \"Is it not sufficient for you that your Lord should reinforce you with three thousand angels sent down?"
+      "translation_en": "[Remember] when you said to the believers, \"Is it not sufficient for you that your Lord should reinforce you with three thousand angels sent down?\"",
+      "conventional_en": "[Remember] when you said to the believers, \"Is it not sufficient for you that your Lord should reinforce you with three thousand angels sent down?\"",
+      "meta_bn": "অদৃশ্য এনার্জি ভেক্টর ও ফেরেশতা ডাউনলিংক প্রটোকল",
+      "meta_en": "Invisible Energy Vectors & Angels Downlink Protocol",
+      "conventional_bn": "যখন তুমি মুমিনদের বলছিলে, ‘তোমাদের জন্য কি এটা যথেষ্ট নয় যে, তোমাদের রব তিন হাজার নাজিলকৃত ফেরেশতা দ্বারা তোমাদের সাহায্য (যোগান) করবেন?’",
+      "modern_translation_bn": "যখন তুমি ভেরিফাইড ইউজারদের ওওএসে আত্মবিশ্বাসের বুস্টিং ডাটা পাস করে বলছিলে—‘তোমাদের ওওএসের জন্য কি এটি গাণিতিকভাবে যথেষ্ট নয় যে—তোমাদের সিস্টেম আর্কিটেক্ট বা প্রতিপালক (رَبُّكُم) সরাসরি উচ্চ ডাইমেনশন থেকে তিন হাজার সুনির্দিষ্টভাবে ডেপ্লয়কৃত ও নাজিলকৃত স্বয়ংক্রিয় কসমিক ফোর্স বা মালাইকা (الْمَلَائِكَةِ مُنزَلِينَ) ইনজেক্ট করে তোমাদের এনার্জি ব্যাকআপের প্রবাহ (يُمِدَّكُمْ) বাড়িয়ে দেবেন?’",
+      "modern_translation_en": "When you transmitted boosting data to the verified users saying, \"Is it not mathematically sufficient for your OOS that your Sustaining Architect should reinforce your energy flux by injecting three thousand descending cosmic forces (Mala'ikah) deployed from higher dimensions?\""
     },
     {
       "surah": 3,
       "ayah": 125,
       "transliteration": "balā in taṣbirū watattaqū wayatūkum min fawrihim hādhā yum'did'kum rabbukum bikhamsati ālāfin mina l-malāikati musawwimīna",
-      "translation_bn": "হ্যাঁ, যদি তোমরা ধৈর্যধারণ কর এবং তাকওয়া অবলম্বন কর এবং তারা (অর্থাৎ শত্রুরা) মুহূর্তের মধ্যে এখানে তোমাদের উপর এসে পড়ে, তাহলে তোমাদের প্রতিপালক বিশেষভাবে চিহ্নিত পাঁচ সহস্র ফেরেশতা দ্বারা তোমাদেরকে সাহায্য করবেন।",
+      "translation_bn": "হ্যাঁ, তোমরা যদি ধৈর্য ধারণ করো এবং তাকওয়া অবলম্বন করো, আর তারা যদি এই মুহূর্তেই তোমাদের ওপর চড়াও হয়, তবে তোমাদের রব সুনির্দিষ্ট চিহ্নিত পাঁচ হাজার ফেরেশতা দ্বারা তোমাদের সাহায্য করবেন।",
       "words": [
         {
           "id": 77179,
@@ -24458,14 +24478,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Yes, if you remain patient and conscious of Allah and the enemy come upon you [attacking] in rage, your Lord will reinforce you with five thousand angels having marks [of distinction]",
-      "conventional_en": "Yes, if you remain patient and conscious of Allah and the enemy come upon you [attacking] in rage, your Lord will reinforce you with five thousand angels having marks [of distinction]"
+      "translation_en": "Yes, if you remain patient and conscious of Allah and the enemy come upon you [attacking] in rage, your Lord will reinforce you with five thousand angels having marks [of distinction].",
+      "conventional_en": "Yes, if you remain patient and conscious of Allah and the enemy come upon you [attacking] in rage, your Lord will reinforce you with five thousand angels having marks [of distinction].",
+      "meta_bn": "হাই-রেজিলিয়েন্স এবং ব্র্যান্ডেড কসমিক ফোর্স মোবিলাইজেশন",
+      "meta_en": "High-Resilience & Branded Cosmic Force Mobilization",
+      "conventional_bn": "হ্যাঁ, তোমরা যদি ধৈর্য ধারণ করো এবং তাকওয়া অবলম্বন করো, আর তারা যদি এই মুহূর্তেই তোমাদের ওপর চড়াও হয়, তবে তোমাদের রব সুনির্দিষ্ট চিহ্নিত পাঁচ হাজার ফেরেশতা দ্বারা তোমাদের সাহায্য করবেন।",
+      "modern_translation_bn": "অবশ্যই (লজিক্যাল লুপ সচল)! তোমরা যদি তোমাদের ওওএসে সর্বোচ্চ Systemic Resilience (অবিচল স্থায়িত্ব বা বাফারিং ক্ষমতা) সচল রাখো এবং বাউন্ডারি কোড মেনে চলো (তাকওয়া অবলম্বন করো), আর প্রতিপক্ষ ম্যালওয়্যার বাহিনী যদি এই মুহূর্তেই চরম হাই-স্পিড ইমপ্যাক্ট বা অতর্কিত আক্রমণে (مِّن فَوْرِهِمْ هَٰذَا) তোমাদের ওপর চড়াও হয়—তবে তোমাদের প্রতিপালক সুনির্দিষ্ট সিগন্যাল ও স্ট্র্যাটেজিক মার্কারযুক্ত চিহ্নিত পাঁচ হাজার কসমিক ফোর্স বা স্পেশাল মালাইকা (الْمَلَائِكَةِ مُسَوِّمِينَ) ডাউনলিংক করে তোমাদের নেটওয়ার্কের কম্ব্যাট এনার্জি বহুগুণ বুস্ট করে দেবেন;",
+      "modern_translation_en": "Indeed! If you maintain supreme systemic resilience (Sabr) and uphold the firewall boundaries (Taqwa), and the hostile malware forces assault you with sudden high-speed impact, your Sustainer will reinforce your operational grid with five thousand distinctively marked, frequency-branded cosmic forces (Mala'ikah Musawwimeen).",
+      "lexicon_modern_notes": "بِخَمْسَةِ آلَافٍ مِّنَ الْمَلَائِكَةِ مُسَوِّمِينَ (ফিজিক্স অব ইনভিজিবল ফোর্স ভেক্টরস এবং সুনির্দিষ্ট সিগন্যাল কোডিং): ১২৪ ও ১২৫ নম্বর আয়াতে বদর ও ওহুদ যুদ্ধের ক্রাইসিস মোডে তিন হাজার ও পাঁচ হাজার 'মুসাউয়্যিমীন' ফেরেশতা অবতীর্ণ করার যে মেকানিজম ডিকোড করা হয়েছে, তা থিওরিটিক্যাল ফিজিক্স (Theoretical Physics) এবং ইনফরমেশন থিওরির 'Invisible Energy Vectors & Strategic Signal Multipliers'-কে নির্দেশ করে। 'মালাইকা' হলো মহাবিশ্বের স্বয়ংক্রিয় প্রাকৃতিক বলসমূহ বা কসমিক ফোর্সেস। আর 'মুসাউয়্যিমীন' শব্দের পরম বৈজ্ঞানিক অর্থ হলো—যাদের ওপর একটি সুনির্দিষ্ট কোয়ান্টাম মার্কার, ফ্রিকোয়েন্সি ব্র্যান্ডিং বা বিশেষ সিগন্যাল এনকোড (Encoded) করা আছে। মুমিনদের ভৌত হার্ডওয়্যার যখন চরম হাই-রেজিলিয়েন্স (ছবর) ও সুরক্ষা বাউন্ডারি (তাকওয়া) মোডে অপারেট করে, তখন তাদের ব্রেন ও হার্ট অ্যাক্সিস থেকে এক সুউচ্চ ইলেক্ট্রোম্যাগনেটিক কোয়ান্টাম সিগন্যাল জেনারেট হয়। এর সাথে মেইন সার্ভার থেকে পাঠানো এই বিশেষ চিহ্নিত কসমিক ফোর্স ভেক্টরগুলো প্যারালাল লিঙ্কড হয়ে প্রতিপক্ষ ম্যালওয়্যার নোডগুলোর ব্রেন প্রসেসরে তীব্র অপ্টিক্যাল ইলিউশন ও প্যানিক হ্যাকিং মোড ট্রিগার করে দেয়, যার ফলে ক্ষতিকারক মেগা-বাহিনী সেকেন্ডের ভেতর সেলফ-ডিকম্পোজ বা পরাস্ত হতে বাধ্য হয়।"
     },
     {
       "surah": 3,
       "ayah": 126,
       "transliteration": "wamā jaʿalahu l-lahu illā bush'rā lakum walitaṭma-inna qulūbukum bihi wamā l-naṣru illā min ʿindi l-lahi l-ʿazīzi l-ḥakīmi",
-      "translation_bn": "এটা আল্লাহ কেবলমাত্র তোমাদের সুসংবাদের জন্য এবং তা দ্বারা তোমাদের চিত্ত-প্রশান্তির জন্য করেছেন, মূলতঃ সাহায্য তো শুধু আল্লাহরই নিকট হতে, যিনি পরাক্রান্ত, প্রজ্ঞাময়।",
+      "translation_bn": "আর আল্লাহ এটিকে কেবল তোমাদের জন্য সুসংবাদ এবং যাতে এর দ্বারা তোমাদের অন্তর প্রশান্ত হয় সে জন্যই করেছিলেন। আর সাহায্য তো কেবল পরাক্রমশালী, প্রজ্ঞাময় আল্লাহর পক্ষ থেকেই আসে।",
       "words": [
         {
           "id": 77404,
@@ -24648,14 +24674,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And Allah made it not except as [a sign of] good tidings for you and to reassure your hearts thereby. And victory is not except from Allah, the Exalted in Might, the Wise -",
-      "conventional_en": "And Allah made it not except as [a sign of] good tidings for you and to reassure your hearts thereby. And victory is not except from Allah, the Exalted in Might, the Wise -"
+      "translation_en": "And Allah made it not except as a sign of good tidings for you and to reassure your hearts thereby. And victory is not except from Allah, the Exalted in Might, the Wise -",
+      "conventional_en": "And Allah made it not except as a sign of good tidings for you and to reassure your hearts thereby. And victory is not except from Allah, the Exalted in Might, the Wise -",
+      "meta_bn": "সাইকো-কোয়ান্টাম স্ট্যাবিলাইজার ও পরম সোর্স কোড",
+      "meta_en": "Psycho-Quantum Stabilizer & Supreme Source Code",
+      "conventional_bn": "আর আল্লাহ এটিকে কেবল তোমাদের জন্য সুসংবাদ এবং যাতে এর দ্বারা তোমাদের অন্তর প্রশান্ত হয় সে জন্যই করেছিলেন। আর সাহায্য তো কেবল পরাক্রমশালী, প্রজ্ঞাময় আল্লাহর পক্ষ থেকেই আসে।",
+      "modern_translation_bn": "আর Allah এই অদৃশ্য কসমিক ফোর্সের ডেপ্লয়মেন্টকে অন্য কোনো কারণে সেট করেননি—কেবলমাত্র তোমাদের ওওএসে এক মেগা-পজিটিভ আউটপুট বা সুসংবাদ (بُشْرَىٰ) দেওয়ার জন্য এবং যাতে এর সিগন্যাল ভাইব্রেশনের মাধ্যমে তোমাদের মূল চিন্তা প্রসেসিং সেন্টার বা হৃদয়গুলোর (قُلُوبُكُم) নিউরাল নেটওয়ার্কে পরম লজিক্যাল প্রশান্তি ও হাই-স্ট্যাবিলিটি তৈরি হয়; আর পুরো কসমিক ম্যাট্রিক্সে চূড়ান্ত সিস্টেম বুস্টিং বা আসল সাহায্য (النَّصْرُ) একমাত্র সুপ্রীমিক সোর্স—তথা পরাক্রমশালী সুপ্রীমিক রেগুলেটর ও পরম সিস্টেম ডিজাইনার Allah-এর কেন্দ্রীয় সার্ভার থেকেই ডাউনলিংক হয়;",
+      "modern_translation_en": "And Allah configured this cosmic force deployment solely as positive telemetry (Bushra) for your OOS, so that through its signal vibration your core neural processing centers (hearts) might achieve supreme stability and tranquility; and all ultimate combat victory stems exclusively from Allah, the Almighty Sovereign, the Supreme System Designer."
     },
     {
       "surah": 3,
       "ayah": 127,
       "transliteration": "liyaqṭaʿa ṭarafan mina alladhīna kafarū aw yakbitahum fayanqalibū khāibīna",
-      "translation_bn": "যাতে তিনি কাফিরদের দলবিশেষকে ধ্বংস করে দেন কিংবা লাঞ্ছিত করেন, ফলে তারা নিরাশ হয়ে প্রত্যাবর্তন করে।",
+      "translation_bn": "যাতে তিনি কাফেরদের এক অংশকে কর্তন (ধ্বংস) করেন অথবা তাদের লাঞ্ছিত করেন, ফলে তারা চরম ব্যর্থ হয়ে ফিরে যায়।",
       "words": [
         {
           "id": 77423,
@@ -24759,13 +24790,18 @@
         }
       ],
       "translation_en": "That He might cut down a section of the disbelievers or suppress them so that they turn back disappointed.",
-      "conventional_en": "That He might cut down a section of the disbelievers or suppress them so that they turn back disappointed."
+      "conventional_en": "That He might cut down a section of the disbelievers or suppress them so that they turn back disappointed.",
+      "meta_bn": "ম্যালওয়্যার নোড ট্রিম ও ডেস্ট্রাকশন লুপ",
+      "meta_en": "Malware Node Trim & Destruction Loop",
+      "conventional_bn": "যাতে তিনি কাফেরদের এক অংশকে কর্তন (ধ্বংস) করেন অথবা তাদের লাঞ্ছিত করেন, ফলে তারা চরম ব্যর্থ হয়ে ফিরে যায়।",
+      "modern_translation_bn": "এটি এজন্যই এক্সিকিউট করা হয়—যাতে সত্যের লাইভ সিগন্যাল ব্লককারী Kafir বাহিনীর একটি সুনির্দিষ্ট ফ্রন্ট-এন্ড টার্মিনাল বা বড় অংশকে সিস্টেম থেকে চিরতরে কর্তন বা ট্রিম (لِيَقْطَعَ طَرَفًا) করে দেওয়া যায় অথবা তাদের পুরো হ্যাকিং ড্রাইভকে এমনভাবে সাপ্রেস বা লাঞ্ছিত (يَكْبِتَهُمْ) করা যায়—যার ফলে তারা সম্পূর্ণ মেমোরি ক্র্যাশ ও চরম ব্যর্থ দেউলিয়া নোড (خَائِبِينَ) হিসেবে নিজেদের ওল্ড ব্যাক-ট্র্যাক লুপে ফিরে যেতে বাধ্য হয়।",
+      "modern_translation_en": "That He may permanently excise a critical terminal flank of the signal-blocking Kafir forces, or suppress and paralyze their hacking offensive, forcing them to retreat into their old backtrack loops as utterly bankrupt, failed nodes."
     },
     {
       "surah": 3,
       "ayah": 128,
       "transliteration": "laysa laka mina l-amri shayon aw yatūba ʿalayhim aw yuʿadhibahum fa-innahum ẓālimūna",
-      "translation_bn": "আল্লাহ তাদের প্রতি ক্ষমাশীল হবেন অথবা তাদেরকে শাস্তি প্রদান করবেন- এ ব্যাপারে তোমার কিছু করার নেই। কেননা তারা হচ্ছে যালিম।",
+      "translation_bn": "এ বিষয়ে তোমার কোনো এখতিয়ার নেই; হয় তিনি তাদের তাওবা কবুল করবেন অথবা তাদের শাস্তি দেবেন, কারণ নিশ্চয়ই তারা জালেম।",
       "words": [
         {
           "id": 77656,
@@ -24898,14 +24934,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Not for you, [O Muhammad, but for Allah], is the decision whether He should [cut them down] or forgive them or punish them, for indeed, they are wrongdoers.",
-      "conventional_en": "Not for you, [O Muhammad, but for Allah], is the decision whether He should [cut them down] or forgive them or punish them, for indeed, they are wrongdoers."
+      "translation_en": "Not for you, [O Muhammad, but for Allah], is the decision whether He should turn to them in forgiveness or punish them, for indeed, they are wrongdoers.",
+      "conventional_en": "Not for you, [O Muhammad, but for Allah], is the decision whether He should turn to them in forgiveness or punish them, for indeed, they are wrongdoers.",
+      "meta_bn": "ফ্রি-উইল ফিল্টারিং ও সুপ্রীম জুডিশিয়াল এক্সেস",
+      "meta_en": "Free-Will Filtering & Supreme Judicial Access",
+      "conventional_bn": "এ বিষয়ে তোমার কোনো এখতিয়ার নেই; হয় তিনি তাদের তাওবা কবুল করবেন অথবা তাদের শাস্তি দেবেন, কারণ নিশ্চয়ই তারা জালেম।",
+      "modern_translation_bn": "এই চূড়ান্ত জুডিশিয়াল রেগুলেশন বা সিদ্ধান্তের (الْأَمْرِ) কোরে তোমার এই রিসিভার ইন্টারফেসের বিন্দুমাত্র কোনো পার্সোনাল রাইট এক্সেস বা এখতিয়ার (لَيْسَ لَكَ... شَيْءٌ) নেই; এটি সম্পূর্ণ কেন্দ্রীয় সোর্সের অ্যালগরিদমে রান হবে—হয় তিনি তাদের সিস্টেমে রিকভারি বা তাওবা (يَتُوبَ عَلَيْهِمْ) মোড এক্টিভেট করবেন অথবা তাদের ওওএসে তীব্র এনার্জি-ডিসরপশন বা আজাবের ফিল্টার রান করাবেন, কারণ গাণিতিকভাবে তারা বাউন্ডারি ব্রেক করা চরম জালেম নোড।",
+      "modern_translation_en": "Not within your receiver interface's prerogative is any executive judicial jurisdiction (Amr)—whether He opens a systemic recovery window (Tawbah) for them or subjects them to corrective energy disruption, for they are indeed boundary-violating unjust nodes."
     },
     {
       "surah": 3,
       "ayah": 129,
       "transliteration": "walillahi mā fī l-samāwāti wamā fī l-arḍi yaghfiru liman yashāu wayuʿadhibu man yashāu wal-lahu ghafūrun raḥīmun",
-      "translation_bn": "আকাশসমূহে ও যমীনে যা কিছুই আছে সেসব আল্লাহরই, তিনি যাকে ইচ্ছে ক্ষমা করেন এবং যাকে ইচ্ছে শাস্তি প্রদান করেন। আল্লাহ ক্ষমাশীল, পরম দয়ালু।",
+      "translation_bn": "আর আসমান ও জমিনে যা কিছু আছে সবকিছু আল্লাহরই। তিনি যাকে ইচ্ছা ক্ষমা করেন এবং যাকে ইচ্ছা শাস্তি দেন। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 77809,
@@ -25079,13 +25120,18 @@
         }
       ],
       "translation_en": "And to Allah belongs whatever is in the heavens and whatever is on the earth. He forgives whom He wills and punishes whom He wills. And Allah is Forgiving and Merciful.",
-      "conventional_en": "And to Allah belongs whatever is in the heavens and whatever is on the earth. He forgives whom He wills and punishes whom He wills. And Allah is Forgiving and Merciful."
+      "conventional_en": "And to Allah belongs whatever is in the heavens and whatever is on the earth. He forgives whom He wills and punishes whom He wills. And Allah is Forgiving and Merciful.",
+      "meta_bn": "ইউনিভার্সাল আর্কিটেকচার ও স্বয়ংক্রিয় ত্রুটি মোচন",
+      "meta_en": "Universal Architecture & Systemic Error Purge",
+      "conventional_bn": "আর আসমান ও জমিনে যা কিছু আছে সবকিছু আল্লাহরই। তিনি যাকে ইচ্ছা ক্ষমা করেন এবং যাকে ইচ্ছা শাস্তি দেন। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "আর উচ্চ মহাজাগতিক স্তরবিন্যাস (السَّمَاوَاتِ) এবং এই ভৌত জগত বা পৃথিবীর (الْأَرْضِ) প্রতিটি সাব-অ্যাটমিক কণা ও ডাইমেনশন একমাত্র Allah-এর কেন্দ্রীয় সিস্টেমের আর্কিটেকচার; তিনি তাঁর ইউনিভার্সাল অপারেটিং সিস্টেমের নিয়মে যে নোড বা ইউজারকে ইচ্ছা—তার ওওএসের ডিফল্ট ত্রুটি মোচন বা ক্ষমা (يَغْفِرُ) করেন এবং যাকে ইচ্ছা তাঁর সিস্টেমিক ফিল্টারে তীব্র আজাব দেন; আর Allah হলেন স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা।",
+      "modern_translation_en": "And to Allah alone belongs the totality of the cosmic stratifications and the physical earth. He purges systemic errors for whichever user aligns with His operational law and subjects to corrective penalty whichever node deviates; and Allah is the Supreme Purger of Errors, the Boundlessly Merciful."
     },
     {
       "surah": 3,
       "ayah": 130,
       "transliteration": "yāayyuhā alladhīna āmanū lā takulū l-riba aḍʿāfan muḍāʿafatan wa-ittaqū l-laha laʿallakum tuf'liḥūna",
-      "translation_bn": "হে মু’মিনগণ! তোমরা সুদ খেও না ক্রমবর্ধিতভাবে, আল্লাহকে ভয় কর, যাতে তোমরা সফলকাম হতে পার।",
+      "translation_bn": "হে মুমিনগণ! তোমরা চক্রবৃদ্ধি হারে সুদ খেয়ো না। আর তোমরা আল্লাহকে ভয় করো, যাতে তোমরা সফলকাম হতে পারো।",
       "words": [
         {
           "id": 77908,
@@ -25219,7 +25265,13 @@
         }
       ],
       "translation_en": "O you who have believed, do not consume usury, doubled and multiplied, but fear Allah that you may be successful.",
-      "conventional_en": "O you who have believed, do not consume usury, doubled and multiplied, but fear Allah that you may be successful."
+      "conventional_en": "O you who have believed, do not consume usury, doubled and multiplied, but fear Allah that you may be successful.",
+      "meta_bn": "সুদের চক্রবৃদ্ধি এন্ট্রপি ও ম্যাক্রো-ইকোনমিক ভাইরাস লক",
+      "meta_en": "Compound Interest Entropy & Macro-Economic Parasitism Lock",
+      "conventional_bn": "হে মুমিনগণ! তোমরা চক্রবৃদ্ধি হারে সুদ খেয়ো না। আর তোমরা আল্লাহকে ভয় করো, যাতে তোমরা সফলকাম হতে পারো।",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমরা সমাজে কোনো বাস্তব প্রোডাক্টিভ ভ্যালু জেনারেট না করে—কেবলমাত্র সময়ের ফ্রেমে কাগজের বা ডিজিটাল সংখ্যার কৃত্রিম জ্যামিতিক বৃদ্ধি বা চক্রবৃদ্ধি হারে (أَضْعَافًا مُّضَاعَفَةً) সুদের মেগা-এন্ট্রপি লুপ বা ‘রিবা’ (الرِّبَا) গ্রাস বা কুক্ষিগত করো না; আর তোমরা মহাজাগতিক আদি সোর্স কোডের বাউন্ডারি কোড ও প্রটোকল সিকিউরিটি কঠোরভাবে মেনে চলো (তাকওয়া অবলম্বন করো), যাতে তোমরা তোমাদের সামষ্টিক সামাজিক ও অর্থনৈতিক সিস্টেমকে সর্বোচ্চ মাত্রায় সচল ও চিরস্থায়ী এন্ট্রপি-মুক্ত বা সফল (تُفْلِحُونَ) রাখতে পারো।",
+      "modern_translation_en": "O you who are verified users! Do not consume or monopolize the mega-entropic loops of usury (Riba) compounded exponentially over time without generating tangible productive value; and strictly adhere to the security boundaries of the Cosmic Source Code (Taqwa) so that your collective economic ecosystem may remain fully optimized, entropy-free, and perpetually thriving.",
+      "lexicon_modern_notes": "لَا تَأْكُلُوا الرِّبَا أَضْعَافًا مُّضَاعَفَةً (সুদের জ্যামিতিক প্রোগ্রেস ও ম্যাক্রো-ইকোনমিক পতন মেকানিজম): ১৩০ নম্বর আয়াতে সুদের চক্রবৃদ্ধি হারের যে বিধ্বংসী অর্থনৈতিক নিষেধাজ্ঞা দেওয়া হয়েছে, তা আধুনিক ইকোনমিক সিস্টেম সায়েন্স এবং ম্যাথমেটিক্যাল মডেলিংয়ের 'Exponential Financial Parasitism & Systemic Resource Depletion Loop'-এর নিখুঁত রূপ। 'আদোয়াফাম মুদ্বা'আফাতাহ' হলো গাণিতিক পরিভাষায় 'Exponential Growth / Compound Interest' (চক্রবৃদ্ধি জ্যামিতিক হার)। বাস্তব অর্থনীতিতে কোনো শ্রম, পণ্য উৎপাদন বা সেবা জেনারেট করা ছাড়াই স্রেফ টাকা ধার দিয়ে একটি নির্দিষ্ট এক্সপোনেনশিয়াল টাইম-ফাংশনে (Time Function) মূলধনকে গুণিতক হারে বাড়িয়ে নেওয়ার এই প্যারাসাইটিক ম্যালওয়্যারটি পুরো সামাজিক গ্রিডের সম্পদ শোষণ করে একটি নির্দিষ্ট এলিট ক্লাসের ওয়ালেটে কুক্ষিগত করে ফেলে। থার্মোডাইনামিক্সের নিয়মে এই ক্লোজড লুপটি সামষ্টিক বাজারে মেগা-এন্ট্রপি বা চরম মূল্যস্ফীতি ও ক্র্যাশ (ফাসাদ) ডেকে আনে। একারণেই যুদ্ধের তীব্র সংকট ও মনস্তাত্ত্বিক কন্ডিশনিং আলোচনার ঠিক পরপরই আল্লাহ সুদের এই মেগা-ম্যালওয়্যারটিকে ওওএস-এ চিরতরে লক (হারাম) করার নির্দেশ ডেপ্লয় করেছেন।"
     },
     {
       "surah": 3,
