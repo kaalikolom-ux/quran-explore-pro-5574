@@ -10,6 +10,8 @@ console.log(`\n🚀 Deploying to ${label} (Worker: ${workerName})...`);
 if (fs.existsSync(wranglerConfigPath)) {
   const config = JSON.parse(fs.readFileSync(wranglerConfigPath, "utf-8"));
   config.name = workerName;
+  const utcDate = new Date().toISOString().slice(0, 10);
+  config.compatibility_date = utcDate;
   fs.writeFileSync(wranglerConfigPath, JSON.stringify(config, null, 2), "utf-8");
 }
 execSync("npx nitro deploy --prebuilt", { stdio: "inherit" });
