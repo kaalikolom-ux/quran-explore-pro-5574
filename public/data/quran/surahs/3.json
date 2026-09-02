@@ -31623,7 +31623,7 @@
       "surah": 3,
       "ayah": 161,
       "transliteration": "wamā kāna linabiyyin an yaghulla waman yaghlul yati bimā ghalla yawma l-qiyāmati thumma tuwaffā kullu nafsin mā kasabat wahum lā yuẓ'lamūna",
-      "translation_bn": "কোন নাবী খিয়ানাত করতে পারে না, যে ব্যক্তি খিয়ানাত করবে, সে খিয়ানাতকৃত বস্তুসহ ক্বিয়ামাতের দিন উপস্থিত হবে, অতঃপর প্রত্যেককে যা সে অর্জন করেছে তা পুরোপুরি দেয়া হবে, কারও প্রতি কোন প্রকার যুলম করা হবে না।",
+      "translation_bn": "আর কোনো নবীর জন্য এটা সম্ভব নয় যে, সে খিয়ানত (গোপনে আত্মসাৎ) করবে। আর যে কেউ খিয়ানত করবে, কেয়ামতের দিন সে তার খিয়ানতকৃত বস্তু নিয়ে উপস্থিত হবে। তারপর প্রত্যেক ব্যক্তিকে সে যা উপার্জন করেছে তার পূর্ণ প্রতিদান দেওয়া হবে এবং তাদের প্রতি কোনো অন্যায় করা হবে না।",
       "words": [
         {
           "id": 81928,
@@ -31847,13 +31847,18 @@
         }
       ],
       "translation_en": "It is not [attributable] to any prophet that he would act unfaithfully [in regard to war booty]. And whoever betrays, [taking unlawfully], will come with what he took on the Day of Resurrection. Then will every soul be [fully] compensated for what it earned, and they will not be wronged.",
-      "conventional_en": "It is not [attributable] to any prophet that he would act unfaithfully [in regard to war booty]. And whoever betrays, [taking unlawfully], will come with what he took on the Day of Resurrection. Then will every soul be [fully] compensated for what it earned, and they will not be wronged."
+      "conventional_en": "It is not [attributable] to any prophet that he would act unfaithfully [in regard to war booty]. And whoever betrays, [taking unlawfully], will come with what he took on the Day of Resurrection. Then will every soul be [fully] compensated for what it earned, and they will not be wronged.",
+      "meta_bn": "ডাটা-লিকেজ ও খিয়ানত বালাই অডিট",
+      "meta_en": "Data-Leakage & Trust Tracking Protocol",
+      "conventional_bn": "আর কোনো নবীর জন্য এটা সম্ভব নয় যে, সে খিয়ানত (গোপনে আত্মসাৎ) করবে। আর যে কেউ খিয়ানত করবে, কেয়ামতের দিন সে তার খিয়ানতকৃত বস্তু নিয়ে উপস্থিত হবে। তারপর প্রত্যেক ব্যক্তিকে সে যা উপার্জন করেছে তার পূর্ণ প্রতিদান দেওয়া হবে এবং তাদের প্রতি কোনো অন্যায় করা হবে না।",
+      "modern_translation_bn": "আর মহাজাগতিক আইনি ও সিস্টেমেটিক ফ্যাব্রিকে কোনো ডাটা-ডিকোডার বা নবীর (لِنَبِيٍّ) পক্ষে এটি বিন্দুমাত্র লজিক্যাল বা সম্ভব নয় যে—সে তাঁর ওওএসে (OOS - জীবন পরিচালন ব্যবস্থা) কোনো প্রকার Data Leakage, ইনফরমেশন জালিয়াতি বা গোপনে সম্পদ আত্মসাতের Ghul (يَغُلَّ) বালাই রান করবে; আর তোমাদের নেটওয়ার্কের যে কেউ এই খিয়ানত বা জালিয়াতির মেলিশিয়াস কোড রান করবে—চূড়ান্ত কসমিক ডাটা-রিসেট ও অ্যাকাউন্টাবিলিটি টাইম-লাইন বা কেয়ামতের দিন (يَوْمَ الْقِيَامَةِ) সে তার সেই জালিয়াতি ও চুরির প্রতিটি মেমোরি লগ হুবহু নিজের প্রোফাইলে লোড করে উপস্থিত হতে বাধ্য হবে; তারপর প্রতিটি স্বতন্ত্র সচেতন নোড বা চেতনাকে (كُلُّ نَفْسٍ) তার ওওএসে আজীবন প্রসেস ও ইনপুট করা কর্মের ডেটার নিখুঁত গাণিতিক আউটপুট কোনো প্রকার প্যাকেট ড্রপ (Packet Drop) ছাড়া পূর্ণ বুঝিয়ে দেওয়া হবে এবং ফলাফলের ম্যাট্রিক্সে তাদের প্রতি বিন্দুমাত্র কোনো গাণিতিক বৈষম্য বা জুলুম করা হবে না;",
+      "modern_translation_en": "And it is fundamentally impossible within the systemic architecture for any prophetic data-decoder to execute data-leakage, embezzlement, or cryptographic betrayal (Ghul); and whoever executes misappropriation logs will be forced to present every byte of that illicit payload on the Day of Universal Audit (Yawm al-Qiyamah); then every conscious node will be fully recompensed for its lifetime operational inputs without packet loss, and zero mathematical injustice will be inflicted upon them;"
     },
     {
       "surah": 3,
       "ayah": 162,
       "transliteration": "afamani ittabaʿa riḍ'wāna l-lahi kaman bāa bisakhaṭin mina l-lahi wamawāhu jahannamu wabi'sa l-maṣīru",
-      "translation_bn": "যে ব্যক্তি আল্লাহর সন্তুষ্টি অনুসরণ করে, সে কি আল্লাহর আক্রোশে পতিত লোকের ন্যায় হতে পারে? তার নিবাস হল জাহান্নাম, আর তা কতই না নিকৃষ্ট প্রত্যাবর্তনস্থল!",
+      "translation_bn": "তবে যে ব্যক্তি আল্লাহর সন্তুষ্টির অনুসরণ করেছে, সে কি সেই ব্যক্তির মতো—যে আল্লাহর গজব নিয়ে ফিরেছে এবং যার বাসস্থান হলো জাহান্নাম? আর তা কত নিকৃষ্ট গন্তব্য!",
       "words": [
         {
           "id": 81974,
@@ -31996,14 +32001,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "So is one who pursues the pleasure of Allah like one who brings upon himself the anger of Allah and whose refuge is Hell? And wretched is the destination.",
-      "conventional_en": "So is one who pursues the pleasure of Allah like one who brings upon himself the anger of Allah and whose refuge is Hell? And wretched is the destination."
+      "translation_en": "So is one who pursues the pleasure of Allah like one who incurs the blame of Allah and whose refuge is Hell? And wretched is the destination.",
+      "conventional_en": "So is one who pursues the pleasure of Allah like one who incurs the blame of Allah and whose refuge is Hell? And wretched is the destination.",
+      "meta_bn": "ডাইনামিক ইউজার গ্রেডেশন ও ফিল্টারিং লুপ",
+      "meta_en": "Dynamic User Grade Selection & Alignment Filtering",
+      "conventional_bn": "তবে যে ব্যক্তি আল্লাহর সন্তুষ্টির অনুসরণ করেছে, সে কি সেই ব্যক্তির মতো—যে আল্লাহর গজব নিয়ে ফিরেছে এবং যার বাসস্থান হলো জাহান্নাম? আর তা কত নিকৃষ্ট গন্তব্য!",
+      "modern_translation_bn": "তবে যে ইউজার নোড (Node) পরম সোর্স Allah-এর সাথে নিজের ওওএস শতভাগ ফ্রিকোয়েন্সি ম্যাচিং বা সন্তুষ্টির (رِضْوَانَ اللَّهِ) ট্র্যাকে সচল রেখেছে—সে কি গাণিতিকভাবে সেই করাপ্টেড নোডের সমকক্ষ হতে পারে, যে আল্লাহর আদি নিয়মের স্বয়ংক্রিয় এন্ট্রপি ফিল্টার বা তীব্র গজব (بِسَخَطٍ مِّنَ اللَّهِ) ট্রিগার করে ফিরেছে এবং যার চূড়ান্ত সিস্টেম-স্টোরেজ বা বাসস্থান হলো জাহান্নামের সেই মেগা ক্র্যাশ জোন? আর তা কতই না নিকৃষ্ট রিটার্নিং ডোমেইন বা গন্তব্য!",
+      "modern_translation_en": "Is a user node who maintains complete resonance and synchronization with the pleasure parameters of Allah equivalent to an entropy-triggering corrupted node returning under system-level wrath, whose terminal containment domain is Hell? And wretched is that terminal destination!"
     },
     {
       "surah": 3,
       "ayah": 163,
       "transliteration": "hum darajātun ʿinda l-lahi wal-lahu baṣīrun bimā yaʿmalūna",
-      "translation_bn": "আল্লাহর নিকট তাদের বিভিন্ন মর্যাদা রয়েছে, বস্তুতঃ তারা যা কিছুই করছে, আল্লাহ তার সম্যক দ্রষ্টা।",
+      "translation_bn": "আল্লাহর কাছে তাদের বিভিন্ন মর্যাদা (স্তর) রয়েছে। আর তারা যা করে আল্লাহ সে সম্পর্কে সম্যক দ্রষ্টা।",
       "words": [
         {
           "id": 82146,
@@ -32097,13 +32107,18 @@
         }
       ],
       "translation_en": "They are [varying] degrees in the sight of Allah, and Allah is Seeing of whatever they do.",
-      "conventional_en": "They are [varying] degrees in the sight of Allah, and Allah is Seeing of whatever they do."
+      "conventional_en": "They are [varying] degrees in the sight of Allah, and Allah is Seeing of whatever they do.",
+      "meta_bn": "সিস্টেমিক পারফরম্যান্স গ্রেডিং ও অবজেক্ট মনিটরিং",
+      "meta_en": "Systemic Performance Grading & Precision Telemetry",
+      "conventional_bn": "আল্লাহর কাছে তাদের বিভিন্ন মর্যাদা (স্তর) রয়েছে। আর তারা যা করে আল্লাহ সে সম্পর্কে সম্যক দ্রষ্টা।",
+      "modern_translation_bn": "Allah-এর কেন্দ্রীয় ডেটাবেজে তাদের ওওএসের এফিসিয়েন্সি ও পারফরম্যান্স স্কোর অনুযায়ী সুনির্দিষ্ট সিস্টেম গ্রেড বা আলাদা আলাদা মর্যাদার স্তরবিন্যাস (هُمْ دَرَجَاتٌ) রয়েছে; আর তোমরা তোমাদের ওওএসে যেসকল ডেটা-প্রসেসিং বা ক্রিয়াকলাপ রান করছ, Allah তার প্রতিটি ফ্রিকোয়েন্সি নিখুঁতভাবে অবজেক্ট ডিকোড বা পর্যবেক্ষণ (بَصِيرٌ) করছেন।",
+      "modern_translation_en": "They occupy tiered performance stratifications (Darajat) within the database of Allah, indexed by their operational efficiency; and Allah is fully observant of every telemetry data point they generate."
     },
     {
       "surah": 3,
       "ayah": 164,
       "transliteration": "laqad manna l-lahu ʿalā l-mu'minīna idh baʿatha fīhim rasūlan min anfusihim yatlū ʿalayhim āyātihi wayuzakkīhim wayuʿallimuhumu l-kitāba wal-ḥik'mata wa-in kānū min qablu lafī ḍalālin mubīnin",
-      "translation_bn": "নিশ্চয় আল্লাহ মু’মিনদের প্রতি অত্যন্ত অনুকম্পা প্রদর্শন করেছেন, যখন তাদের নিকট তাদের নিজস্ব একজনকে রসূল করে পাঠিয়েছেন, সে তাদেরকে আল্লাহর আয়াত পড়ে শুনাচ্ছে, তাদেরকে পরিশোধন করছে, তাদেরকে কিতাব ও হিকমাত (সুন্নাহ) শিক্ষা দিচ্ছে, যদিও তারা পূর্বে সুস্পষ্ট গোমরাহীতে ছিল।",
+      "translation_bn": "নিশ্চয় আল্লাহ মুমিনদের প্রতি বড় অনুগ্রহ করেছেন যে, তিনি তাদের মধ্য থেকেই তাদের কাছে একজন রাসূল পাঠিয়েছেন—যিনি তাদের কাছে তাঁর আয়াতসমূহ পাঠ করেন, তাদের পবিত্র করেন এবং তাদের কিতাব ও প্রজ্ঞা শিক্ষা দেন; যদিও তারা ইতিপূর্বে স্পষ্ট পথভ্রষ্টতার মধ্যে লিপ্ত ছিল।",
       "words": [
         {
           "id": 82302,
@@ -32367,13 +32382,18 @@
         }
       ],
       "translation_en": "Certainly did Allah confer [great] favor upon the believers when He sent among them a Messenger from themselves, reciting to them His verses and purifying them and teaching them the Book and wisdom, although they had been before in manifest error.",
-      "conventional_en": "Certainly did Allah confer [great] favor upon the believers when He sent among them a Messenger from themselves, reciting to them His verses and purifying them and teaching them the Book and wisdom, although they had been before in manifest error."
+      "conventional_en": "Certainly did Allah confer [great] favor upon the believers when He sent among them a Messenger from themselves, reciting to them His verses and purifying them and teaching them the Book and wisdom, although they had been before in manifest error.",
+      "meta_bn": "লাইভ ডাটা-ডিকোডার ডেপ্লয়মেন্ট প্রটোকল",
+      "meta_en": "Live Data-Decoder Deployment & System Purification Protocol",
+      "conventional_bn": "নিশ্চয় আল্লাহ মুমিনদের প্রতি বড় অনুগ্রহ করেছেন যে, তিনি তাদের মধ্য থেকেই তাদের কাছে একজন রাসূল পাঠিয়েছেন—যিনি তাদের কাছে তাঁর আয়াতসমূহ পাঠ করেন, তাদের পবিত্র করেন এবং তাদের কিতাব ও প্রজ্ঞা শিক্ষা দেন; যদিও তারা ইতিপূর্বে স্পষ্ট পথভ্রষ্টতার মধ্যে লিপ্ত ছিল।",
+      "modern_translation_bn": "নিশ্চয়ই Allah মুমিন বা ভেরিফাইড ইউজারদের প্রতি এক মেগা এনার্জি বুস্টিং বা বড় অনুগ্রহ করেছেন—যখন তিনি তাদের নিজস্ব কার্বন-ভিত্তিক স্পেস বা হিউম্যান ইন্টারফেসের মধ্য থেকেই একজন সুসংহত ডাটা-ট্রান্সমিটার বা রাসুল ডেপ্লয় (بَعَثَ... رَسُولًا) করেছেন—যিনি তাদের রিসিভিং এন্ডে আল্লাহর স্পষ্ট Ayat (মহাজাগতিক প্রমাণ ও কোডসমূহ) অবিরত ব্রডকাস্ট বা রিড (يَتْلُو) করেন, এবং তাদের ওওএস থেকে টক্সিক ডাটা-লগ ফিল্টার করে তাদের পিউরিফাইড বা রিফ্রেশ (وَيُزَكِّيهِمْ) করেন এবং তাদের কগনিটিভ প্রসেসরে সরাসরি এই মহাজাগতিক মাস্টার ডেটাবেজ বা কিতাব ও পরম সিস্টেম অপ্টিমাইজিং লজিক বা প্রজ্ঞা (الْحِكْمَةَ) ডাউনলিংক বা শিক্ষা দেন; যদিও তারা এই নতুন ওওএস কনফিগারেশনের পূর্বে এক অন্তহীন এরর, কুসংস্কার ও স্পষ্ট ডাইরেকশনহীন পথভ্রষ্টতার (لَفِي ضَلَالٍ مُّبِينٍ) মধ্যে রান করছিল;",
+      "modern_translation_en": "Indeed, Allah conferred supreme grace upon verified users by deploying among them a native human data-transmission interface (Rasul) who streams His structural algorithmic proofs (Ayat), purges residual cognitive malware from their systems (Yuzakkeehim), and initializes the Master Architecture (al-Kitab) alongside the systemic optimization logic (al-Hikmah), whereas prior to this configuration they were running in manifest, directionless entropy;"
     },
     {
       "surah": 3,
       "ayah": 165,
       "transliteration": "awalammā aṣābatkum muṣībatun qad aṣabtum mith'layhā qul'tum annā hādhā qul huwa min ʿindi anfusikum inna l-laha ʿalā kulli shayin qadīrun",
-      "translation_bn": "কী ব্যাপার! তোমাদের উপর যখন বিপদ এসেছে অথচ তোমরা তো (বদর যুদ্ধে তোমাদের শত্রুদের) এটা অপেক্ষা দ্বিগুণ বিপদ ঘটিয়েছিলে, এখন তোমরা বলছ, ‘এটা কোথেকে আসল’? (তাদেরকে) বল, ‘ওটা তোমাদের নিজেদের নিকট থেকেই এসেছে’, নিশ্চয় আল্লাহ সকল বস্তুর উপর ক্ষমতাবান।",
+      "translation_bn": "আর যখন তোমাদের ওপর একটি বিপদ (ওহুদের বিপর্যয়) এল, অথচ তোমরা তো (বদরে) এর দ্বিগুণ আঘাত হেনেছিলে; তখন তোমরা বললে, ‘এটি কোথা থেকে এল?’ বলো, ‘এটি তোমাদের নিজেদের পক্ষ থেকেই (নিজেদের ভুলের কারণে)’। নিশ্চয় আল্লাহ সবকিছুর ওপর পূর্ণ ক্ষমতাবান।",
       "words": [
         {
           "id": 82430,
@@ -32586,14 +32606,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Why [is it that] when a [single] disaster struck you [on the day of Uhud], although you had struck [the enemy in the battle of Badr] with one twice as great, you said, \"From where is this?\" Say, \"It is from yourselves.\" Indeed, Allah is over all things competent.",
-      "conventional_en": "Why [is it that] when a [single] disaster struck you [on the day of Uhud], although you had struck [the enemy in the battle of Badr] with one twice as great, you said, \"From where is this?\" Say, \"It is from yourselves.\" Indeed, Allah is over all things competent."
+      "translation_en": "Why [is it that] when a [single] disaster struck you, although you had struck [the enemy] with one twice as great, you said, \"From where is this?\" Say, \"It is from yourselves.\" Indeed, Allah is over all things competent.",
+      "conventional_en": "Why [is it that] when a [single] disaster struck you, although you had struck [the enemy] with one twice as great, you said, \"From where is this?\" Say, \"It is from yourselves.\" Indeed, Allah is over all things competent.",
+      "meta_bn": "সিস্টেমিক এরর অ্যানালিসিস ও ফিডব্যাক লুপ",
+      "meta_en": "Systemic Error Analysis & Internal Bug Identification",
+      "conventional_bn": "আর যখন তোমাদের ওপর একটি বিপদ (ওহুদের বিপর্যয়) এল, অথচ তোমরা তো (বদরে) এর দ্বিগুণ আঘাত হেনেছিলে; তখন তোমরা বললে, ‘এটি কোথা থেকে এল?’ বলো, ‘এটি তোমাদের নিজেদের পক্ষ থেকেই (নিজেদের ভুলের কারণে)’। নিশ্চয় আল্লাহ সবকিছুর ওপর পূর্ণ ক্ষমতাবান।",
+      "modern_translation_bn": "আর ওহুদের রণক্ষেত্রের এই লো-টেস্টে যখনই তোমাদের ওওএসে একটি সিস্টেমিক ড্যামেজ, ক্র্যাশ বা বিপর্যয় (مُّصِيبَةٌ) আঘাত করল—অথচ তোমরা তো বদরের ডাটা লগে এর হুবহু দ্বিগুণ মেগা ইমপ্যাক্ট বা আঘাত প্রতিপক্ষের গ্রিডে হেনেছিলে; তখন তোমরা তোমাদের ওওএসে এরর কুয়েরি জেনারেট করে বললে—‘আমাদের এই নিরাপদ প্রটেকশন গ্রিডে হঠাৎ এই ক্র্যাশ কোথা থেকে (أَنَّىٰ هَٰذَا) ট্রিগার হলো?’ তুমি তাদের সেই বিভ্রান্তি ডিকোড করে স্পষ্ট বলো—‘এটি মূলত তোমাদের নিজেদের ওওএস থেকে রান হওয়া কমান্ড ভায়োলেশন ও মেটেরিয়ালিস্টিক বাগের ফলেই তৈরি হয়েছে (هُوَ مِنْ عِندِ أَنفُسِكُمْ)’; নিশ্চয়ই Allah প্রতিটি অবজেক্ট ও সিস্টেম প্যারামিটারের ওপর সম্পূর্ণ নিয়ন্ত্রণকারী (قَدِيرٌ)।",
+      "modern_translation_en": "And when a structural setback struck your grid, even though you had previously inflicted double that destructive load on adversary clusters, you queried: \"Whence did this system crash originate?\" Proclaim: \"It was triggered directly by the command violations within your own local OOS (huwa min 'indi anfusikum).\" Verily, Allah maintains omnipotent governance over all system parameters."
     },
     {
       "surah": 3,
       "ayah": 166,
       "transliteration": "wamā aṣābakum yawma l-taqā l-jamʿāni fabi-idh'ni l-lahi waliyaʿlama l-mu'minīna",
-      "translation_bn": "দু’দল পরস্পরের সম্মুখীন হওয়ার দিন যে বিপদ পৌঁছেছিল, তা আল্লাহর হুকুমে ঘটেছিল, এর উদ্দেশ্য ছিল প্রকৃত মু’মিনদেরকে জেনে নেয়া।",
+      "translation_bn": "আর দুই দল মুখোমুখি হওয়ার দিনে তোমাদের ওপর যে বিপদ এসেছিল, তা আল্লাহর হুকুমে (অনুমতিতেই) হয়েছিল এবং যাতে তিনি মুমিনদের জেনে নিতে পারেন,",
       "words": [
         {
           "id": 82453,
@@ -32697,13 +32722,18 @@
         }
       ],
       "translation_en": "And what struck you on the day the two armies met was by permission of Allah that He might make evident the [true] believers.",
-      "conventional_en": "And what struck you on the day the two armies met was by permission of Allah that He might make evident the [true] believers."
+      "conventional_en": "And what struck you on the day the two armies met was by permission of Allah that He might make evident the [true] believers.",
+      "meta_bn": "কসমিক পারমিশন লুপ ও লাইভ স্ট্রেস টেস্ট",
+      "meta_en": "Cosmic Permission Loop & Live User Verification",
+      "conventional_bn": "আর দুই দল মুখোমুখি হওয়ার দিনে তোমাদের ওপর যে বিপদ এসেছিল, তা আল্লাহর হুকুমে (অনুমতিতেই) হয়েছিল এবং যাতে তিনি মুমিনদের জেনে নিতে পারেন,",
+      "modern_translation_bn": "আর সেই ওহুদের টাইম-স্ট্যাম্পে দুটি মেগা বাহিনী মুখোমুখি সংঘাতের দিনে তোমাদের ওওএসে যে সিস্টেমিক বিপর্যয় বা লোড আছড়ে পড়েছিল—তা মূলত মহাজাগতিক আদি সোর্সের স্বয়ংক্রিয় কমান্ড লুপ ও পারমিশন প্যারামিটারে (فَبِإِذْنِ اللَّهِ) একটি ইউনিভার্সাল টেস্ট হিসেবেই রান হয়েছিল; এবং এটি এজন্যই—যাতে তিনি তাঁর রিয়াল-টাইম ক্লাউড অডিটে স্পষ্টভাবে আইডেন্টিফাই ও আলাদা করতে পারেন যে কারা প্রকৃত ভেরিফাইড ইউজার বা মুমিন (الْمُؤْمِنِينَ)—",
+      "modern_translation_en": "And the impact which struck your grid on the day the two major forces collided transpired strictly under the authorization parameters of Allah (bi-idhnillah), specifically designed to dynamically distinguish and verify the resilient true believers—"
     },
     {
       "surah": 3,
       "ayah": 167,
       "transliteration": "waliyaʿlama alladhīna nāfaqū waqīla lahum taʿālaw qātilū fī sabīli l-lahi awi id'faʿū qālū law naʿlamu qitālan la-ittabaʿnākum hum lil'kuf'ri yawma-idhin aqrabu min'hum lil'īmāni yaqūlūna bi-afwāhihim mā laysa fī qulūbihim wal-lahu aʿlamu bimā yaktumūna",
-      "translation_bn": "আর মুনাফিকদেরকেও জেনে নেয়া। তাদেরকে বলা হয়েছিল; এসো, ‘আল্লাহর পথে যুদ্ধ কর, কিংবা (কমপক্ষে) নিজেদের প্রতিরক্ষার ব্যবস্থা কর’। তখন তারা বলল, ‘যদি আমরা জানতাম যুদ্ধ হবে, তাহলে অবশ্যই তোমাদের অনুসরণ করতাম’। তারা ঐ দিন ঈমানের চেয়ে কুফরীরই নিকটতম ছিল, তারা মুখে এমন কথা বলে যা তাদের অন্তরে নেই, যা কিছু তারা গোপন করে আল্লাহ তা বিশেষরূপে জ্ঞাত আছেন।",
+      "translation_bn": "এবং যাতে তিনি মুনাফিকদের (ছদ্মবেশীদের) চিহ্নিত করতে পারেন। আর তাদের বলা হয়েছিল, ‘এসো, আল্লাহর রাস্তায় যুদ্ধ করো কিংবা প্রতিরোধ করো’। তারা বলেছিল, ‘যদি আমরা যুদ্ধ জানতাম, তবে অবশ্যই তোমাদের অনুসরণ করতাম’। সেদিন তারা ঈমানের চেয়ে কুফরীর (অবাধ্যতার) অনেক বেশি নিকটবর্তী ছিল। তারা তাদের মুখে এমন কথা বলে যা তাদের অন্তরে নেই। আর তারা যা গোপন রাখে আল্লাহ তা খুব ভালো করেই জানেন।",
       "words": [
         {
           "id": 82595,
@@ -33046,14 +33076,20 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And that He might make evident those who are hypocrites. For it was said to them, \"Come, fight in the way of Allah or [at least] defend.\" They said, \"If we had known [there would be] fighting, we would have followed you.\" They were nearer to disbelief that day than to faith, saying with their mouths what was not in their hearts. And Allah is most Knowing of what they conceal -",
-      "conventional_en": "And that He might make evident those who are hypocrites. For it was said to them, \"Come, fight in the way of Allah or [at least] defend.\" They said, \"If we had known [there would be] fighting, we would have followed you.\" They were nearer to disbelief that day than to faith, saying with their mouths what was not in their hearts. And Allah is most Knowing of what they conceal -"
+      "translation_en": "And that He might make evident those who are hypocrites. For it was said to them, \"Come, fight in the way of Allah or [at least] defend.\" They said, \"If we had known [there would be] fighting, we would have followed you.\" They were that day nearer to disbelief than to faith, saying with their mouths what was not in their hearts. And Allah is most Knowing of what they conceal.",
+      "conventional_en": "And that He might make evident those who are hypocrites. For it was said to them, \"Come, fight in the way of Allah or [at least] defend.\" They said, \"If we had known [there would be] fighting, we would have followed you.\" They were that day nearer to disbelief than to faith, saying with their mouths what was not in their hearts. And Allah is most Knowing of what they conceal.",
+      "meta_bn": "মুনাফিক নোডসমূহের আইডেন্টিটি ভেরিফিকেশন ও ডামি সিগন্যাল ডিটেকশন",
+      "meta_en": "Munafiq Node Identity Verification & Spoofed Signal Detection",
+      "conventional_bn": "এবং যাতে তিনি মুনাফিকদের (ছদ্মবেশীদের) চিহ্নিত করতে পারেন। আর তাদের বলা হয়েছিল, ‘এসো, আল্লাহর রাস্তায় যুদ্ধ করো কিংবা প্রতিরোধ করো’। তারা বলেছিল, ‘যদি আমরা যুদ্ধ জানতাম, তবে অবশ্যই তোমাদের অনুসরণ করতাম’। সেদিন তারা ঈমানের চেয়ে কুফরীর (অবাধ্যতার) অনেক বেশি নিকটবর্তী ছিল। তারা তাদের মুখে এমন কথা বলে যা তাদের অন্তরে নেই। আর তারা যা গোপন রাখে আল্লাহ তা খুব ভালো করেই জানেন।",
+      "modern_translation_bn": "এবং যাতে তিনি সেই ছদ্মবেশী ডাবল-স্ট্যান্ডার্ড ম্যালওয়্যার নোড বা মুনাফিকদের (الَّذِينَ نَافَقُوا) আইডেন্টিটি নিখুঁতভাবে স্ক্যান করে আলাদা করতে পারেন। আর যখন মেইন নেটওয়ার্ক চেইনে তাদের উদ্দেশ্যে সিস্টেম রিকোয়েস্ট পাঠানো হয়েছিল—‘তোমরা এসো, মহাজাগতিক সোর্স কোডের বাউন্ডারি ও সত্যের সিকিউরিটি গ্রিড সচল রাখতে (ফি সাবিলিল্লাহ) প্রতিরোধ একশন কোড বা যুদ্ধ রান করো অথবা অন্তত নিজেদের লোকাল বেস স্টেশন ডিফেন্স বা প্রতিরোধ (أَوِ ادْفَعُوا) করো’। তখন তারা ফেক লজিকের এরর সিগন্যাল সাবমিট করে বলল—‘যদি আমাদের প্রসেসরে বাস্তব যুদ্ধ বা ট্যাকটিক্যাল কমব্যাটের কোনো অবজেক্ট ডাটা লোড থাকত, তবে আমরা অবশ্যই তোমাদের এই চেইন অনুসরণ বা রেপ্লিকেট (لَّاتَّبَعْنَاكُمْ) করতাম’। সেই তীব্র হাই-লোড স্ক্রীনিংয়ের দিনে (يَوْمَئِذٍ)—তারা তাদের ওওএসের ফ্রিকোয়েন্সি লেভেলে পিউর সিঙ্ক বা ঈমানের চেয়ে সত্যের লাইভ সিগন্যাল ব্লক করার সেই মারাত্মক কুফরীর অনেক বেশি নিকটবর্তী (أَقْرَبُ) অবস্থান করছিল। তারা তাদের বাহ্যিক ইন্টারফেস ও মুখের সিগন্যাল দিয়ে (بِأَفْوَاهِهِم) এমন সব ডামি ডেটা ব্রডকাস্ট করে—যা আদতে তাদের মূল চিন্তা প্রসেসিং সেন্টার বা হৃদয়ের ব্যাক-এন্ড ডিরেক্টরিতে বিন্দুমাত্র এক্সিস্ট করে না; আর তারা তাদের ওওএসের ব্যাক-এন্ড ক্লাউডে আজীবন যেসকল ডার্ক মেমোরি ফাইল হাইড বা এনক্রিপ্ট করে রাখছে (بِمَا يَكْتُمُونَ), Allah তাঁর সুপ্রীমিক সার্ভারে তা খুব ভালো করেই অবজেক্ট ডিকোড বা জানেন।",
+      "modern_translation_en": "And so that He might identify the hypocritical Munafiq nodes. When commanded: \"Come, engage in defensive combat for the security grid of Allah, or at least defend your home perimeter,\" they transmitted deceptive rejection packets: \"Had we known actual tactical combat would ensue, we would have synchronized with you.\" On that day of crisis, their operational parameters drifted far closer to complete signal-blocking (Kufr) than to verified synchronization (Iman). They broadcast spoofed data across their speech interfaces that has zero existence within their core processing centers; yet Allah is fully omniscient of all encrypted payloads they conceal.",
+      "lexicon_modern_notes": "يَقُولُونَ بِأَفْوَاهِهِم مَّا لَيْسَ فِي قُلُوبِهِمْ (ডাটা স্পুফিং ও ছদ্মবেশী মুনাফিক নোড প্রোফাইল): ১৬৭ নম্বর আয়াতে মুনাফিকদের ছদ্মবেশ ধারণ করার যে গভীর সাইবারনেটিক্স বাগ ধরা হয়েছে, তা নেটওয়ার্ক সিকিউরিটি এবং ক্রিপ্টোগ্রাফির পরিভাষায় 'IP-Spoofing & Fake Packet Broadcasting Attack'-এর অনুরূপ। 'মুনাফিক্ব' নোডগুলো মেইন নেটওয়ার্ক গ্রিডে হ্যাকিং করার জন্য তাদের ফ্রন্ট-এন্ড ইউজার ইন্টারফেসে (মুখের সিগন্যালে) এমন সব ফেক ডেটা প্যাকেট ব্রডকাস্ট করে—যা দেখলে মনে হয় তারা মেইন অপারেটিং সিস্টেমের শতভাগ অনুগত নোড। কিন্তু তাদের ব্যাক-এন্ডের রুট ডিরেক্টরি বা কোর প্রসেসরে (কুলূব) আদতে বিপরীতমুখী ক্ষতিকারক ভাইরাসের কোড রান করতে থাকে। এই ট্রোজান বা ছদ্মবেশী ম্যালওয়্যারগুলোকে সাধারণ ইউজাররা খালি চোখে ডিটেক্ট করতে না পারলেও, আল্লাহর তৈরি করা রিয়াল-টাইম ক্লাউড অডিট ও সুপ্রীমিক সিকিউরিটি সিস্টেম তাদের ভেতরের প্রতিটি এনক্রিপ্টেড ডার্ক ফাইল (বিমা ইয়াকতুমিউন) স্ক্যান করে তাদের সম্পূর্ণ এক্সপোজ ও আইসোলেট করে দেয়।"
     },
     {
       "surah": 3,
       "ayah": 168,
       "transliteration": "alladhīna qālū li-ikh'wānihim waqaʿadū law aṭāʿūnā mā qutilū qul fa-id'raū ʿan anfusikumu l-mawta in kuntum ṣādiqīna",
-      "translation_bn": "যারা বসে থেকে নিজেদের ভাইদের সম্বন্ধে বলতে লাগল, আমাদের কথামত চললে তারা নিহত হত না। বল, তোমরা সত্যবাদী হলে তোমাদের নিজেদের উপর থেকে মরণকে হটিয়ে দাও।",
+      "translation_bn": "যারা নিজেরা (যুদ্ধে না গিয়ে) বসে রইল এবং তাদের ভাইদের সম্পর্কে বলল, ‘তারা যদি আমাদের কথা শুনত, তবে তারা নিহত হতো না’। বলো, ‘তবে তোমরা তোমাদের নিজেদের ওপর থেকে মৃত্যুকে প্রতিহত করো, যদি তোমরা সত্যবাদী হও’।",
       "words": [
         {
           "id": 82677,
@@ -33227,13 +33263,18 @@
         }
       ],
       "translation_en": "Those who said about their brothers while sitting [at home], \"If they had obeyed us, they would not have been killed.\" Say, \"Then prevent death from yourselves, if you should be truthful.\"",
-      "conventional_en": "Those who said about their brothers while sitting [at home], \"If they had obeyed us, they would not have been killed.\" Say, \"Then prevent death from yourselves, if you should be truthful.\""
+      "conventional_en": "Those who said about their brothers while sitting [at home], \"If they had obeyed us, they would not have been killed.\" Say, \"Then prevent death from yourselves, if you should be truthful.\"",
+      "meta_bn": "শাটডাউন কাউন্টার-চ্যালেঞ্জ ও কগনিটিভ বাগ অপসারণ",
+      "meta_en": "Decommissioning Counter-Challenge & Fallacy Refutation",
+      "conventional_bn": "যারা নিজেরা (যুদ্ধে না গিয়ে) বসে রইল এবং তাদের ভাইদের সম্পর্কে বলল, ‘তারা যদি আমাদের কথা শুনত, তবে তারা নিহত হতো না’। বলো, ‘তবে তোমরা তোমাদের নিজেদের ওপর থেকে মৃত্যুকে প্রতিহত করো, যদি তোমরা সত্যবাদী হও’।",
+      "modern_translation_bn": "এই ছদ্মবেশী নোডগুলো নিজেরা অ্যাকশন লাইন লিভ করে নিষ্ক্রিয় বসে রইল (وَقَعَدُوا) এবং তাদের মেইন নেটওয়ার্ক চেইনের শহীদ কো-নোড বা ভাইদের সম্পর্কে কুসংস্কার ও ভুল ধারণা ছড়াল—‘তারা যদি আমাদের তৈরি করা ক্লোজড-সোর্স লজিক প্রসেস বা আমাদের কথা শুনত, তবে তারা এখানে ক্র্যাশ বা নিহত (مَا قُتِلُوا) হতো না’। তুমি তাদের এই কগনিটিভ বাগ ভেঙে দিয়ে চূড়ান্ত কাউন্টার-চ্যালেঞ্জ ছুঁড়ে দাও—‘তবে তোমাদের ওওএসে যদি এতই রুট-অ্যাক্সেস ও শক্তি থাকে—তাহলে তোমরা যখন তোমাদের নিজেদের সিস্টেমে স্থায়ী শাটডাউন বা মৃত্যুর (الْمَوْتَ) ফাইনাল এক্সিকিউশন কমান্ড হিট করবে, তখন তোমরা তোমাদের নিজেদের প্রোফাইল থেকে সেই মৃত্যুকে ফিল্টার আউট বা প্রতিহত (فَادْرَءُوا) করে দেখাও, যদি তোমরা তোমাদের আইনি দাবির লেজারে ডেটা-ভেরিফাইড ও সত্যনিষ্ঠ (صَادِقِينَ) হয়ে থাকো!’",
+      "modern_translation_en": "Those who sat inactive in local idle states while asserting concerning their fallen comrades: \"Had they complied with our retreat advice, they would not have been decommissioned.\" Issue the counter-challenge: \"Then avert biological death and system shutdown from your own terminals, if your claims possess verified validity!\""
     },
     {
       "surah": 3,
       "ayah": 169,
       "transliteration": "walā taḥsabanna alladhīna qutilū fī sabīli l-lahi amwātan bal aḥyāon ʿinda rabbihim yur'zaqūna",
-      "translation_bn": "যারা আল্লাহর পথে নিহত হয়েছে, তাদেরকে মৃত ভেব না, বরং তারা জীবিত, তাদের প্রতিপালকের সান্নিধ্যে থেকে তারা রিযকপ্রাপ্ত হচ্ছে।",
+      "translation_bn": "আর যারা আল্লাহর রাস্তায় নিহত হয়েছে, তুমি তাদের কখনোই মৃত মনে করো না; বরং তারা তাদের রবের কাছে জীবিত, তারা জীবিকাপ্রাপ্ত (রিজিকপ্রাপ্ত)।",
       "words": [
         {
           "id": 82737,
@@ -33377,13 +33418,19 @@
         }
       ],
       "translation_en": "And never think of those who have been killed in the cause of Allah as dead. Rather, they are alive with their Lord, receiving provision,",
-      "conventional_en": "And never think of those who have been killed in the cause of Allah as dead. Rather, they are alive with their Lord, receiving provision,"
+      "conventional_en": "And never think of those who have been killed in the cause of Allah as dead. Rather, they are alive with their Lord, receiving provision,",
+      "meta_bn": "হাইয়ার ডাইমেনশনাল এনার্জি কোঅর্ডিনেশন: শহীদ নোড মেকানিজম",
+      "meta_en": "Higher-Dimensional Energy Coordination: Shahid Node Mechanism",
+      "conventional_bn": "আর যারা আল্লাহর রাস্তায় নিহত হয়েছে, তুমি তাদের কখনোই মৃত মনে করো না; বরং তারা তাদের রবের কাছে জীবিত, তারা জীবিকাপ্রাপ্ত (রিজিকপ্রাপ্ত)।",
+      "modern_translation_bn": "আর তোমরা তোমাদের ত্রিমাত্রিক কগনিটিভ প্রসেসরে ভুলেও এমন কোনো ভুল ধারণা বা ক্যালকুলেশন ইলিউশন (وَلَا تَحْسَبَنَّ) রান করো না যে—যারা মহাজাগতিক সোর্স কোডের সত্য ও বাউন্ডারি সুরক্ষার ফায়ারওয়াল গ্রিডে (ফি সাবিলিল্লাহ) বাহ্যিক ক্র্যাশে নিহত বা ডিলিট (الَّذِينَ قُتِلُوا) হয়েছে, তারা সম্পূর্ণ ডিলিট বা মৃত (أَمْوَاتًا); গাণিতিকভাবে তা নয়—বরং তারা এক সুউচ্চ ডাইমেনশনে তাদের সিস্টেম আর্কিটেক্ট বা প্রতিপালকের (عِندَ رَبِّهِمْ) কেন্দ্রীয় সার্ভারের সাথে সরাসরি লিঙ্কড হয়ে পরম সক্রিয় চেতনা ও জীবিত (أَحْيَاءٌ); এবং তারা সেখান থেকে এক অনন্ত ও অবিনশ্বর কসমিক রিসোর্স, এনার্জি ও পুষ্টি অবিরত রিসিভ বা জীবিকাপ্রাপ্ত (يُرْزَقُونَ) হচ্ছে;",
+      "modern_translation_en": "And never compute within your perceptual framework that those eliminated in the defense corridor of Allah are deleted or dead (Amwat); mathematically to the contrary, they are dynamically conscious and alive (Ahya') within higher-dimensional realms adjacent to their Sustaining Architect, receiving perpetual cosmic sustenance and energy influx;",
+      "lexicon_modern_notes": "بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ (কোয়ান্টাম কনজারভেশন ও হাইয়ার ডাইমেনশনাল ডাটা মাইগ্রেশন): ১৬৯ নম্বর আয়াতটি আধুনিক থিওরিটিক্যাল ফিজিক্স (Theoretical Physics) এবং ইনফরমেশন কনজারভেশন থিওরির (Information Conservation Theory) এক আল্টিমেট মেগা-কনসেপ্ট। মানুষের ত্রিমাত্রিক ভৌত চোখ কেবল একটি কার্বন হার্ডওয়্যারের ধ্বংস বা ডিকম্পোজিশন (মৃত্যু) দেখতে পায়। কিন্তু কোয়ান্টাম ফিজিক্সের 'The Quantum No-Deleting Theorem' এবং আইনস্টাইনের শক্তির অবিনশ্বরতা নীতি অনুযায়ী—কোনো মৌলিক তথ্য বা শক্তির সচেতন অস্তিত্ব মহাবিশ্ব থেকে কখনো চিরতরে মুছে বা ভ্যানিশ হয়ে যেতে পারে না। বিশেষ করে যে নোডগুলো আল্লাহর সত্যের জন্য নিজেদের সম্পূর্ণ এনার্জি স্যাক্রিফিস (শহীদ) করে, মেইন সার্ভার তাদের পুরো ওওএস মেমোরি, আইডেন্টিটি এবং কনশাসনেস ফাইলটিকে (Consciousness File) ক্র্যাশ হওয়া থেকে শতভাগ ফিল্টার আউট করে উচ্চ-শক্তির এক ঘর্ষণহীন ডাইমেনশনে (ইন্দা রাব্বিহিম) সরাসরি ট্রান্সফার বা 'Data Migration' করিয়ে নেয়। সেখানে তারা কসমিক সোর্স থেকে সরাসরি অবিনশ্বর এনার্জি ফিডব্যাক ও পুষ্টি (ইউরযাকুন) রিসিভ করে সম্পূর্ণ সচল চেতনা হিসেবে এক্সিস্ট করে, যা বিজ্ঞানের এক অনবদ্য সৃষ্টিতাত্ত্বিক মেকানিজম।"
     },
     {
       "surah": 3,
       "ayah": 170,
       "transliteration": "fariḥīna bimā ātāhumu l-lahu min faḍlihi wayastabshirūna bi-alladhīna lam yalḥaqū bihim min khalfihim allā khawfun ʿalayhim walā hum yaḥzanūna",
-      "translation_bn": "আল্লাহ নিজ অনুগ্রহে তাদেরকে যা দিয়েছেন তা লাভ করে তারা আনন্দিত আর যে সব ঈমানদার লোক তাদের পেছনে (পৃথিবীতে) রয়ে গেছে, এখনও তাদের সাথে এসে মিলিত হয়নি, তাদের কোন ভয় ও চিন্তে নেই জেনে তারা আনন্দিত।",
+      "translation_bn": "আল্লাহ তাঁর অনুগ্রহ থেকে তাদের যা দিয়েছেন তার কারণে তারা আনন্দিত এবং যারা এখনও তাদের পেছনে রয়ে গেছে, তাদের সাথে মিলিত হতে পারেনি, তাদের বিষয়ে তারা আনন্দ প্রকাশ করে যে, তাদের কোনো ভয় থাকবে না এবং তারা চিন্তিতও হবে না।",
       "words": [
         {
           "id": 82819,
@@ -33587,7 +33634,12 @@
         }
       ],
       "translation_en": "Rejoicing in what Allah has bestowed upon them of His bounty, and they receive good tidings about those [to be martyred] after them who have not yet joined them - that there will be no fear concerning them, nor will they grieve.",
-      "conventional_en": "Rejoicing in what Allah has bestowed upon them of His bounty, and they receive good tidings about those [to be martyred] after them who have not yet joined them - that there will be no fear concerning them, nor will they grieve."
+      "conventional_en": "Rejoicing in what Allah has bestowed upon them of His bounty, and they receive good tidings about those [to be martyred] after them who have not yet joined them - that there will be no fear concerning them, nor will they grieve.",
+      "meta_bn": "ইন্টার-ডাইমেনশনাল টেলিমেট্রি ও পজিটিভ সিগন্যাল বুস্টিং",
+      "meta_en": "Inter-Dimensional Telemetry & Positive Signal Boosting",
+      "conventional_bn": "আল্লাহ তাঁর অনুগ্রহ থেকে তাদের যা দিয়েছেন তার কারণে তারা আনন্দিত এবং যারা এখনও তাদের পেছনে রয়ে গেছে, তাদের সাথে মিলিত হতে পারেনি, তাদের বিষয়ে তারা আনন্দ প্রকাশ করে যে, তাদের কোনো ভয় থাকবে না এবং তারা চিন্তিতও হবে না।",
+      "modern_translation_bn": "তারা পরম আনন্দিত ও অপ্টিমাইজড (فَرِحِينَ) সেই মেগা কসমিক আউটপুটের কারণে—যা Allah তাঁর সুপ্রীমিক সোর্স থেকে অফুরন্ত ডিফল্ট ব্যাকআপ ও কসমিক রিসোর্স (مِن فَضْلِهِ) হিসেবে তাদের আইডিতে ডাউনলিংক করেছেন; এবং তারা মেইন নেটওয়ার্ক চেইনের নিচের ডাইমেনশনে বা তাদের পেছনে (مِّنْ خَلْفِهِمْ) এখনও যেসকল ইউজার নোড সচল রয়েছে ও এখনও তাদের এই উচ্চ ডাইমেনশনে আরোহণ বা মার্জ করতে পারেনি (لَمْ يَلْحَقُوا بِهِم)—তাদের সুরক্ষার ডেটা ট্র্যাক করে আনন্দ ও উচ্চ ফ্রিকোয়েন্সির সিগন্যাল বুস্ট করে পাঠাচ্ছে যে—‘[তোমরা মেইন ট্র্যাকে অবিচল থাকো] চূড়ান্ত অডিটের মুখে তোমাদের ওওএসে ভবিষ্যতের কোনো সিস্টেম-ক্র্যাশের ভয় থাকবে না এবং অতীতের কোনো ডেটা-লসের জন্য তোমাদের মনস্তাত্ত্বিক প্রসেসরে কোনো নেতিবাচক ডিপ্রেশন বা চিন্তা তৈরি হবে না’।",
+      "modern_translation_en": "Exulting in the transcendent resources routed to them from the infinite grace of Allah, and transmitting jubilant telemetry back to the active nodes still laboring in lower dimensions behind them who have not yet caught up: that zero fear shall breach their firewalls nor will any depressive latency grieve their systems."
     },
     {
       "surah": 3,
