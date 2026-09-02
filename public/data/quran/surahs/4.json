@@ -5709,7 +5709,7 @@
       "surah": 4,
       "ayah": 21,
       "transliteration": "wakayfa takhudhūnahu waqad afḍā baʿḍukum ilā baʿḍin wa-akhadhna minkum mīthāqan ghalīẓan",
-      "translation_bn": "কেমন করেই বা তোমরা তা গ্রহণ করবে যখন তোমরা একে অন্যের সাথে সঙ্গত হয়েছ এবং তারা তোমাদের নিকট হতে (বিবাহ বন্ধনের) সুস্পষ্ট প্রতিশ্রুতি নিয়েছে।",
+      "translation_bn": "আর তোমরা কীভাবে তা ফেরত নেবে—অথচ তোমরা একে অপরের সাথে সংগত হয়েছ এবং তারা তোমাদের কাছ থেকে সুদৃঢ় অঙ্গীকার গ্রহণ করেছে?",
       "words": [
         {
           "id": 24364,
@@ -5833,13 +5833,18 @@
         }
       ],
       "translation_en": "And how could you take it while you have gone in unto each other and they have taken from you a solemn covenant?",
-      "conventional_en": "And how could you take it while you have gone in unto each other and they have taken from you a solemn covenant?"
+      "conventional_en": "And how could you take it while you have gone in unto each other and they have taken from you a solemn covenant?",
+      "meta_bn": "ক্রিপ্টোগ্রাফিক কন্টাক্ট লক অডিট",
+      "meta_en": "Cryptographic Contract Lock and Covenant Integrity Audit",
+      "conventional_bn": "আর তোমরা কীভাবে তা ফেরত নেবে—অথচ তোমরা একে অপরের সাথে সংগত হয়েছ এবং তারা তোমাদের কাছ থেকে সুদৃঢ় অঙ্গীকার গ্রহণ করেছে?",
+      "modern_translation_bn": "আর তোমরা কোন লজিক্যাল ক্যালকুলেশনে সেই ফিমেল নোডের (নারী) পার্সোনাল ওয়ালেট থেকে পূর্বের স্থানান্তরিত ক্যাপিটাল বা মহর কেটে ব্যাক-রুট বা ফেরত (تَأْخُذُونَهُ) নেবে—অথচ তোমরা আইনি চুক্তির পর একে অপরের সাথে পরম ডাটা ফিউশন বা শারীরিক ও মানসিকভাবে সংগত (أَفْضَىٰ بَعْضُكُمْ إِلَىٰ بَعْضٍ) হয়েছ এবং তারা তোমাদের কাছ থেকে একটি মেগা Covenant [পরম এনক্রিপ্টেড সুদৃঢ় আইনি অঙ্গীকার বা মিছাক্বান গালীদ্বা] (مِّيثَاقًا غَلِيظًا) লক বা গ্রহণ করেছে [সুতরাং সেই আইনি বাউন্ডারি ব্রেক করা ওওএসের জন্য মারাত্মক এরর];",
+      "modern_translation_en": "And by what logical calculation would you reclaim the capital previously transferred into the female node's personal wallet (تَأْخُذُونَهُ), seeing that you have already executed complete data fusion and marital intimacy (أَفْضَىٰ بَعْضُكُمْ إِلَىٰ بَعْضٍ), and they have secured from you an immutable, encrypted solemn covenant (مِّيثَاقًا غَلِيظًا)?"
     },
     {
       "surah": 4,
       "ayah": 22,
       "transliteration": "walā tankiḥū mā nakaḥa ābāukum mina l-nisāi illā mā qad salafa innahu kāna fāḥishatan wamaqtan wasāa sabīlan",
-      "translation_bn": "যাদেরকে তোমাদের পিতৃপুরুষ বিয়ে করেছে, সেসব নারীকে বিয়ে করো না, পূর্বে যা হয়ে গেছে হয়ে গেছে, নিশ্চয়ই তা অশ্লীল, অতি ঘৃণ্য ও নিকৃষ্ট পন্থা।",
+      "translation_bn": "আর তোমাদের পিতা-পাদাদারা নারীদের মধ্য থেকে যাদের বিয়ে করেছে, তোমরা তাদের বিয়ে করো না, অতীতে যা হয়ে গেছে তা ছাড়া; নিশ্চয়ই এটি এক জঘন্য অশ্লীলতা, চরম ঘৃণ্য কাজ এবং অতি নিকৃষ্ট পথ।",
       "words": [
         {
           "id": 24449,
@@ -6022,14 +6027,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And do not marry those [women] whom your fathers married, except what has already occurred. Indeed, it was an immorality and hateful [to Allah] and was evil as a way.",
-      "conventional_en": "And do not marry those [women] whom your fathers married, except what has already occurred. Indeed, it was an immorality and hateful [to Allah] and was evil as a way."
+      "translation_en": "And do not marry those [women] whom your fathers married, except what has already passed. Indeed, it was an immorality and hateful [to Allah] and was evil as a way.",
+      "conventional_en": "And do not marry those [women] whom your fathers married, except what has already passed. Indeed, it was an immorality and hateful [to Allah] and was evil as a way.",
+      "meta_bn": "পার্থিব ওওএস ট্র্যাশ রোলব্যাক নিষেধাজ্ঞা",
+      "meta_en": "Prohibition of Ancestral Spousal Rollback",
+      "conventional_bn": "আর তোমাদের পিতা-পাদাদারা নারীদের মধ্য থেকে যাদের বিয়ে করেছে, তোমরা তাদের বিয়ে করো না, অতীতে যা হয়ে গেছে তা ছাড়া; নিশ্চয়ই এটি এক জঘন্য অশ্লীলতা, চরম ঘৃণ্য কাজ এবং অতি নিকৃষ্ট পথ।",
+      "modern_translation_bn": "আর তোমাদের প্রাতঃস্মরণীয় রুট বা পিতৃপুরুষ নোডসমূহ সমাজের পিছিয়ে পড়া ও পরনির্ভরশীল অংশ বা Nisa (النِّسَاءِ)-এর মধ্য থেকে যাদের সাথে পূর্বে আইনি পুনর্বাসন বা বৈবাহিক চুক্তি (নাকাহা) লক করেছিল—তোমরা ভুলেও তোমাদের ওওএসে (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) সেই একই নোডের সাথে পুনরায় নতুন কোনো ডাটা-লিঙ্ক বা চুক্তি (وَلَا تَنكِحُوا) রান করো না, অতীতের অজ্ঞতা ফেইজে যা পার হয়ে গেছে তা ছাড়া; নিশ্চয়ই এটি মহাজাগতিক ইকোসিস্টেমের নিয়মে এক জঘন্য সিস্টেমিক অবাধ্যতা বা অশ্লীলতা (فَاحِشَةً), চরম ঘৃণ্য রি-অ্যাকশন ট্রিগারকারী বালাই এবং ওওএসের স্থায়িত্বের জন্য এক অতি নিকৃষ্ট ও ক্ষতিকর পথ (وَسَاءَ سَبِيلًا);",
+      "modern_translation_en": "And do not initiate marital contracts (وَلَا تَنكِحُوا) within your operating system with those vulnerable nodes (Nisa) whom your ancestral root nodes previously contracted, except for what transpired in the past; indeed, it is a grave systemic immorality (فَاحِشَةً), an abhorrent violation, and an extremely destructive pathway (وَسَاءَ سَبِيلًا)."
     },
     {
       "surah": 4,
       "ayah": 23,
       "transliteration": "ḥurrimat ʿalaykum ummahātukum wabanātukum wa-akhawātukum waʿammātukum wakhālātukum wabanātu l-akhi wabanātu l-ukh'ti wa-ummahātukumu allātī arḍaʿnakum wa-akhawātukum mina l-raḍāʿati wa-ummahātu nisāikum warabāibukumu allātī fī ḥujūrikum min nisāikumu allātī dakhaltum bihinna fa-in lam takūnū dakhaltum bihinna falā junāḥa ʿalaykum waḥalāilu abnāikumu alladhīna min aṣlābikum wa-an tajmaʿū bayna l-ukh'tayni illā mā qad salafa inna l-laha kāna ghafūran raḥīman",
-      "translation_bn": "তোমাদের প্রতি হারাম করা হয়েছে তোমাদের মা এবং মেয়ে, বোন, ফুফু, খালা, ভাইঝি, ভাগিনী, দুধ মা, দুধ বোন, শ্বাশুড়ী, তোমাদের স্ত্রীদের মধ্যে যার সাথে সঙ্গত হয়েছ তার পূর্ব স্বামীর ঔরসজাত মেয়ে যারা তোমাদের তত্ত্বাবধানে আছে, কিন্তু যদি তাদের সাথে তোমরা সহবাস না করে থাক, তবে (তাদের বদলে তাদের মেয়েদেরকে বিয়ে করলে) তোমাদের প্রতি গুনাহ নেই এবং (তোমাদের প্রতি হারাম করা হয়েছে) তোমাদের ঔরসজাত পুত্রের স্ত্রী এবং এক সঙ্গে দু’ বোনকে (বিবাহ বন্ধনে) রাখা, পূর্বে যা হয়ে গেছে, হয়ে গেছে, নিশ্চয়ই আল্লাহ পরম ক্ষমাশীল, দয়ালু।",
+      "translation_bn": "তোমাদের জন্য হারাম (নিষিদ্ধ) করা হয়েছে—তোমাদের মায়েরা, তোমাদের কন্যারা, তোমাদের বোনেরা, তোমাদের ফুফুরা, তোমাদের খালােরা, ভ্রাতুষ্পুত্রীরা (ভাইয়ের মেয়েরা), ভাগিনেয়ীরা (বোনের মেয়েরা), তোমাদের সেই মায়েরা যারা তোমাদের দুধ পান করিয়েছে, তোমাদের দুধ-বোনেরা, তোমাদের শাশুড়িরা এবং তোমাদের স্ত্রীদের পূর্বের ঘরের কন্যারা যারা তোমাদের কোলে (তত্ত্বাবধানে) রয়েছে—যাদের মায়েদের সাথে তোমরা সংগত হয়েছ, আর তোমরা যদি তাদের মায়েদের সাথে সংগত না হয়ে থাকো, তবে (তাদের কন্যাদের বিয়ে করাতে) তোমাদের কোনো পাপ নেই এবং তোমাদের ঔরসজাত পুত্রদের স্ত্রীরা এবং দুই বোনকে এক সাথে যুক্ত করা, অতীতে যা হয়ে গেছে তা ছাড়া; নিশ্চয়ই আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 25516,
@@ -6583,13 +6593,18 @@
         }
       ],
       "translation_en": "Prohibited to you [for marriage] are your mothers, your daughters, your sisters, your father's sisters, your mother's sisters, your brother's daughters, your sister's daughters, your [milk] mothers who nursed you, your sisters through nursing, your wives' mothers, and your step-daughters under your guardianship [born] of your wives unto whom you have gone in. But if you have not gone in unto them, there is no sin upon you. And [also prohibited are] the wives of your sons who are from your [own] loins, and that you take [in marriage] two sisters simultaneously, except for what has already occurred. Indeed, Allah is ever Forgiving and Merciful.",
-      "conventional_en": "Prohibited to you [for marriage] are your mothers, your daughters, your sisters, your father's sisters, your mother's sisters, your brother's daughters, your sister's daughters, your [milk] mothers who nursed you, your sisters through nursing, your wives' mothers, and your step-daughters under your guardianship [born] of your wives unto whom you have gone in. But if you have not gone in unto them, there is no sin upon you. And [also prohibited are] the wives of your sons who are from your [own] loins, and that you take [in marriage] two sisters simultaneously, except for what has already occurred. Indeed, Allah is ever Forgiving and Merciful."
+      "conventional_en": "Prohibited to you [for marriage] are your mothers, your daughters, your sisters, your father's sisters, your mother's sisters, your brother's daughters, your sister's daughters, your [milk] mothers who nursed you, your sisters through nursing, your wives' mothers, and your step-daughters under your guardianship [born] of your wives unto whom you have gone in. But if you have not gone in unto them, there is no sin upon you. And [also prohibited are] the wives of your sons who are from your [own] loins, and that you take [in marriage] two sisters simultaneously, except for what has already occurred. Indeed, Allah is ever Forgiving and Merciful.",
+      "meta_bn": "মহররমাত প্রটোকল: রক্তের ও জেনারেশন চেইনের এনক্রিপ্ট নিষিদ্ধ নোডসমূহ",
+      "meta_en": "The Muharramat Protocol: Lineage and Genetic Encryption Boundaries",
+      "conventional_bn": "তোমাদের জন্য হারাম (নিষিদ্ধ) করা হয়েছে—তোমাদের মায়েরা, তোমাদের কন্যারা, তোমাদের বোনেরা, তোমাদের ফুফুরা, তোমাদের খালােরা, ভ্রাতুষ্পুত্রীরা (ভাইয়ের মেয়েরা), ভাগিনেয়ীরা (বোনের মেয়েরা), তোমাদের সেই মায়েরা যারা তোমাদের দুধ পান করিয়েছে, তোমাদের দুধ-বোনেরা, তোমাদের শাশুড়িরা এবং তোমাদের স্ত্রীদের পূর্বের ঘরের কন্যারা যারা তোমাদের কোলে (তত্ত্বাবধানে) রয়েছে—যাদের মায়েদের সাথে তোমরা সংগত হয়েছ, আর তোমরা যদি তাদের মায়েদের সাথে সংগত না হয়ে থাকো, তবে (তাদের কন্যাদের বিয়ে করাতে) তোমাদের কোনো পাপ নেই এবং তোমাদের ঔরসজাত পুত্রদের স্ত্রীরা এবং দুই বোনকে এক সাথে যুক্ত করা, অতীতে যা হয়ে গেছে তা ছাড়া; নিশ্চয়ই আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "জেনেটিক কোড ইনফেকশন ও সামাজিক ভারসাম্য সুরক্ষার্থে—তোমাদের ওওএসে চিরতরে Right-protected বা সম্পূর্ণ নিষিদ্ধ (حُرِّمَتْ عَلَيْكُمْ) করা হয়েছে এই সুনির্দিষ্ট এনক্রিপ্টেড নোডগুলোর সাথে ডাটা ফিউশন বা বৈবাহিক বন্ধন—তথা তোমাদের মাদার নোড বা মায়েরা, তোমাদের কন্যা নোডসমূহ, তোমাদের সিস্টার নোড বা বোনেরা, তোমাদের ফুফুরা, তোমাদের খালােরা, তোমাদের ভাইয়ের মেয়ে বা ভ্রাতুষ্পুত্রীরা, তোমাদের বোনের মেয়ে বা ভাগিনেয়ীরা, এবং তোমাদের সেই মায়েরা যারা তোমাদের ইনফ্যান্ট স্টেটে (শিশুকাল) বুকের দুধের মাধ্যমে বায়ো-কেমিক্যাল অ্যান্টিবডি ট্রান্সফার ও পান (أَرْضَعْنَكُمْ) করিয়েছে এবং তোমাদের সেই দুধ-সম্পর্কের বোনেরা, এবং তোমাদের স্ত্রীদের মাদার নোড বা শাশুড়িরা, এবং তোমাদের স্ত্রীদের পূর্বের ওওএসের জেনারেট হওয়া সেই কন্যারা—যারা সরাসরি তোমাদের লোকাল বেস স্টেশন বা কোলের তত্ত্বাবধানে (فِي حُجُورِكُم) রয়েছে—যাদের মায়েদের সাথে তোমরা অলরেডি আইনি চুক্তির পর সংগত বা ডেটা ফিউশন এক্সিকিউট করেছ, আর তোমরা যদি তাদের মায়েদের সাথে কেবল চুক্তি করেছ কিন্তু এখনও সংগত না হয়ে থাকো—তবে (তাদের কন্যাদের সাথে সংযোগে) তোমাদের ওওএসে কোনো প্রকার এরর চার্জ বা পাপ (فَلَا جُنَاحَ عَلَيْكُمْ) নেই; এবং তোমাদের নিজস্ব ঔরসজাত বা বায়ো-লজিক্যাল ব্যাকবোন থেকে উৎপন্ন পুত্রদের স্ত্রীরা (وَحَلَائِلُ أَبْنَائِكُمُ) এবং একই টাইম-উইন্ডোতে দুই বোনকে এক সাথে নেটওয়ার্কে যুক্ত করা, অতীতে যা হয়ে গেছে তা ছাড়া; নিশ্চয়ই Allah স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল (غَفُورٌ) এবং বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা (رَّحِيمٌ);",
+      "modern_translation_en": "Encrypted and permanently prohibited (حُرِّمَتْ عَلَيْكُمْ) for linkage within your operating system to prevent genetic corruption are: your mother nodes, daughter nodes, sister nodes, paternal aunts, maternal aunts, nieces from brother or sister nodes, foster mothers who provided bio-chemical nursing transfer (أَرْضَعْنَكُمْ), foster sisters through nursing, mothers of your wives, step-daughters under your base-station guardianship whose mothers you have consummated relations with—but if you have not consummated relations with them, no liability falls upon you—and the spouses of your biological direct-line sons (وَحَلَائِلُ أَبْنَائِكُمُ), and combining two sister nodes in the same runtime matrix, except what has already passed. Verily, Allah is ever Most-Forgiving (Ghafoor) and Most-Merciful (Raheem)."
     },
     {
       "surah": 4,
       "ayah": 24,
       "transliteration": "wal-muḥ'ṣanātu mina l-nisāi illā mā malakat aymānukum kitāba l-lahi ʿalaykum wa-uḥilla lakum mā warāa dhālikum an tabtaghū bi-amwālikum muḥ'ṣinīna ghayra musāfiḥīna famā is'tamtaʿtum bihi min'hunna faātūhunna ujūrahunna farīḍatan walā junāḥa ʿalaykum fīmā tarāḍaytum bihi min baʿdi l-farīḍati inna l-laha kāna ʿalīman ḥakīman",
-      "translation_bn": "নারীদের মধ্যে বিবাহবন্ধনে আবদ্ধ নারীগণও তোমাদের জন্য নিষিদ্ধ, কিন্তু তোমাদের অধিকারভুক্ত দাসীদের বাদে, আল্লাহ এসব ব্যবস্থা তোমাদের উপর ফরয করে দিয়েছেন। তোমাদের জন্য নিষিদ্ধ নারীদের ছাড়া অন্যান্য সকল নারীদেরকে মোহরের অর্থের বদলে বিবাহ বন্ধনে আবদ্ধ করতে চাওয়া তোমাদের জন্য বৈধ করা হয়েছে, অবৈধ যৌন সম্পর্কের জন্য নয়। অতঃপর তাদের মধ্যে যাদের তোমরা সম্ভোগ করেছ, তাদেরকে তাদের ধার্যকৃত মোহর প্রদান কর। তোমাদের প্রতি কোনও গুনাহ নেই মোহর ধার্যের পরও তোমরা উভয়ের সম্মতির ভিত্তিতে মোহরের পরিমাণে হেরফের করলে, নিশ্চয় আল্লাহ সবিশেষ পরিজ্ঞাত ও পরম কুশলী।",
+      "translation_bn": "এবং নারীদের মধ্যে যারা বিবাহিতা (সুরক্ষিত) তারা (হারাম করা হয়েছে)—তোমাদের ডান হাত যার মালিক হয়েছে (দাসী) তারা ছাড়া; এটি তোমাদের ওপর আল্লাহর লিখিত বিধান। আর এ ছাড়া অন্য সব নারীকে তোমাদের জন্য হালাল (বৈধ) করা হয়েছে—যাতে তোমরা তোমাদের ধনের বিনিময়ে তাদের মোহর দিয়ে সুরক্ষিত (বিবাহিত) হিসেবে অন্বেষণ করো, ব্যভিচারী হিসেবে নয়। অতঃপর তাদের মধ্য থেকে যাদের তোমরা ভোগ করেছ (সংগত হয়েছ), তাদের নির্ধারিত মহর (পারিশ্রমিক) ফরজ হিসেবে দিয়ে দাও। আর মহর নির্ধারণের পর তোমরা পরস্পরে যে বিষয়ে সন্তুষ্ট হবে, তাতে তোমাদের কোনো পাপ নেই। নিশ্চয়ই আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 26590,
@@ -7022,14 +7037,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And [also prohibited to you are all] married women except those your right hands possess. [This is] the decree of Allah upon you. And lawful to you are [all others] beyond these, [provided] that you seek them [in marriage] with [gifts from] your property, desiring chastity, not unlawful sexual intercourse. So for whatever you enjoy [of marriage] from them, give them their due compensation as an obligation. And there is no blame upon you for what you mutually agree to beyond the obligation. Indeed, Allah is ever Knowing and Wise.",
-      "conventional_en": "And [also prohibited to you are all] married women except those your right hands possess. [This is] the decree of Allah upon you. And lawful to you are [all others] beyond these, [provided] that you seek them [in marriage] with [gifts from] your property, desiring chastity, not unlawful sexual intercourse. So for whatever you enjoy [of marriage] from them, give them their due compensation as an obligation. And there is no blame upon you for what you mutually agree to beyond the obligation. Indeed, Allah is ever Knowing and Wise."
+      "translation_en": "And [also prohibited are all] fortified married women except those your right hands possess. [This is] the decree of Allah upon you. And lawful to you are [all others] beyond these, [provided] that you seek them [in marriage] with your property, desiring chastity, not unlawful sexual intercourse. So for whatever you enjoy [of marriage] from them, give them their due compensation as an obligation. And there is no blame upon you for what you mutually agree to beyond the obligation. Indeed, Allah is ever Knowing and Wise.",
+      "conventional_en": "And [also prohibited are all] fortified married women except those your right hands possess. [This is] the decree of Allah upon you. And lawful to you are [all others] beyond these, [provided] that you seek them [in marriage] with your property, desiring chastity, not unlawful sexual intercourse. So for whatever you enjoy [of marriage] from them, give them their due compensation as an obligation. And there is no blame upon you for what you mutually agree to beyond the obligation. Indeed, Allah is ever Knowing and Wise.",
+      "meta_bn": "সোশ্যাল গ্রিড ডেপ্লয়মেন্ট ফিল্টার এবং যুদ্ধবন্দী অসহায় নোড লিঙ্কিং প্রটোকল",
+      "meta_en": "Marital Firewalls and Legal Rehabilitation Integration Protocol",
+      "conventional_bn": "এবং নারীদের মধ্যে যারা বিবাহিতা (সুরক্ষিত) তারা (হারাম করা হয়েছে)—তোমাদের ডান হাত যার মালিক হয়েছে (দাসী) তারা ছাড়া; এটি তোমাদের ওপর আল্লাহর লিখিত বিধান। আর এ ছাড়া অন্য সব নারীকে তোমাদের জন্য হালাল (বৈধ) করা হয়েছে—যাতে তোমরা তোমাদের ধনের বিনিময়ে তাদের মোহর দিয়ে সুরক্ষিত (বিবাহিত) হিসেবে অন্বেষণ করো, ব্যভিচারী হিসেবে নয়। অতঃপর তাদের মধ্য থেকে যাদের তোমরা ভোগ করেছ (সংগত হয়েছ), তাদের নির্ধারিত মহর (পারিশ্রমিক) ফরজ হিসেবে দিয়ে দাও। আর মহর নির্ধারণের পর তোমরা পরস্পরে যে বিষয়ে সন্তুষ্ট হবে, তাতে তোমাদের কোনো পাপ নেই। নিশ্চয়ই আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
+      "modern_translation_bn": "এবং সমাজের সেই পিছিয়ে পড়া বা পরনির্ভরশীল অংশ বা Nisa (النِّسَاءِ)-এর মধ্য থেকে যারা অলরেডি অন্য আইনি চুক্তির ফায়ারওয়ালে লকড বা সুরক্ষিত বিবাহিতা (وَالْمُحْصَنَاتُ)—তাদের সাথেও তোমাদের নতুন কোনো লিঙ্ক তৈরি করা সম্পূর্ণ নিষিদ্ধ, কেবলমাত্র তোমাদের আইনি কন্টাক্ট ও কম্ব্যাট সিস্টেমের অধীনে আসা অবদমিত বা অসহায় নোডসমূহ (مَا مَلَكَتْ أَيْمَانُكُمْ) ছাড়া [যাদের ওল্ড ওওএস ক্র্যাশ করায় তারা সম্পূর্ণ আশ্রয়হীন হয়ে পড়েছে, ফলে তাদের নতুন পুনর্বাসন চুক্তি প্রয়োজন]; এটি তোমাদের ওওএসের ওপর Allah-এর ডিরেক্ট ক্লাউড সার্ভার থেকে লিখিত বাধ্যতামূলক কোড ও এনক্রিপশন বাউন্ডারি। আর এই নিষিদ্ধ সার্কেলের বাইরে থাকা অন্য সব নোডকে তোমাদের সুরক্ষার জন্য অনুমোদন বা বৈধ (وَأُحِلَّ لَكُم) করা হয়েছে—যাতে তোমরা তোমাদের মেটেরিয়াল ক্যাপিটাল বা ধন-সম্পদের (بِأَمْوَالِكُم) বিনিময়ে তাদের পারিশ্রমিক বা মহর ট্রান্সফার করে—একটি সুরক্ষিত ও স্থায়ী আইনি বন্ধন হিসেবে তাদের ওওএসে অন্বেষণ করো, স্রেফ ক্ষণস্থায়ী লালসা চরিতার্থ বা ব্যভিচারী (غَيْرَ مُسَافِحِينَ) হিসেবে নয়। অতঃপর তাদের মধ্য থেকে যাদের তোমরা এই আইনি লিঙ্কের সুবিধা বা ভোগ (اسْتَمْتَعْتُم بِهِ) করেছ—তাদের নির্ধারিত প্রাপ্য ভাতা বা মহর ফরজ নির্দেশ বা Forz (فَرِيضَةً) হিসেবে তাদের পার্সোনাল ওয়ালেটে দিয়ে দাও। আর মহর নির্ধারণের সেই পরম আইনি ফরজের পর—তোমরা পরস্পরে সমঝোতা ও ফ্রি-উইলের মাধ্যমে যে বিষয়ে ডেটা-মডিফাই বা সন্তুষ্ট (تَرَاضَيْتُم بِهِ) হবে, তাতে তোমাদের ওওএসে বিন্দুমাত্র কোনো এরর চার্জ বা পাপ নেই। নিশ্চয়ই Allah সর্বজ্ঞ এবং পরম রেগুলেটর বা প্রজ্ঞাময়;",
+      "modern_translation_en": "And prohibited are already-fortified married female nodes (وَالْمُحْصَنَاتُ) except those under your direct custodial legal care (مَا مَلَكَتْ أَيْمَانُكُمْ) [whose previous framework collapsed, requiring institutional rehabilitation]. This is the binding decree of Allah upon your system. Lawful for you are all others beyond these boundaries, provided you seek them using your capital resources (بِأَمْوَالِكُم), maintaining marital integrity and avoiding illicit leakage (غَيْرَ مُسَافِحِينَ). So for the benefits you derive through this mutual covenant (اسْتَمْتَعْتُم بِهِ), remit their designated compensation as an obligatory duty (فَرِيضَةً); and there is no fault in whatever mutually agreeable adjustments you make thereafter. Indeed, Allah is All-Knowing, All-Wise."
     },
     {
       "surah": 4,
       "ayah": 25,
       "transliteration": "waman lam yastaṭiʿ minkum ṭawlan an yankiḥa l-muḥ'ṣanāti l-mu'mināti famin mā malakat aymānukum min fatayātikumu l-mu'mināti wal-lahu aʿlamu biīmānikum baʿḍukum min baʿḍin fa-inkiḥūhunna bi-idh'ni ahlihinna waātūhunna ujūrahunna bil-maʿrūfi muḥ'ṣanātin ghayra musāfiḥātin walā muttakhidhāti akhdānin fa-idhā uḥ'ṣinna fa-in atayna bifāḥishatin faʿalayhinna niṣ'fu mā ʿalā l-muḥ'ṣanāti mina l-ʿadhābi dhālika liman khashiya l-ʿanata minkum wa-an taṣbirū khayrun lakum wal-lahu ghafūrun raḥīmun",
-      "translation_bn": "তোমাদের যে ব্যক্তির স্বাধীনা মু’মিন নারী বিবাহের ক্ষমতা না থাকে, সে যেন তোমাদের অধীনস্থ মু’মিনা দাসী বিবাহ করে এবং আল্লাহ বিশেষরূপে তোমাদের ঈমানকে জানেন। তোমাদের একজন অন্যজন থেকে উদ্ভূত, কাজেই তাদেরকে বিয়ে কর তাদের মালিকের অনুমতি নিয়ে, ন্যায়সঙ্গতভাবে তাদের মহর তাদেরকে দিয়ে দাও, তারা হবে সচ্চরিত্রা, ব্যভিচারিণী নয়, উপপতি গ্রহণকারিণীও নয়। বিবাহের দূর্গে সুরক্ষিত হওয়ার পর তারা যদি ব্যভিচার করে, তবে তাদের শাস্তি আজাদ নারীদের অর্ধেক; এ ব্যবস্থা তার জন্য তোমাদের যে ব্যক্তি (অবিবাহিত থাকার কারণে) ব্যভিচারের ভয় করে। ধৈর্য ধারণ করা তোমাদের পক্ষে উত্তম এবং আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "translation_bn": "আর তোমাদের মধ্যে যে ব্যক্তি স্বাধীন মুমিন নারীদের বিয়ে করার মতো আর্থিক সামর্থ্য (দৈর্ঘ্য) রাখে না, তবে সে তোমাদের অধিকারভুক্ত মুমিন দাসী বালিকাদের বিয়ে করুক; আর আল্লাহ তোমাদের ঈমান সম্পর্কে খুব ভালো করেই জানেন, তোমরা একে অপরের অংশ। অতএব তোমরা তাদের অভিভাবকদের অনুমতি ক্রমে তাদের বিয়ে করো এবং নিয়মমাফিক তাদের মহর দিয়ে দাও—সুরক্ষিত হিসেবে, ব্যভিচারী হিসেবে নয় এবং গোপনে উপপতি গ্রহণকারী হিসেবেও নয়। অতঃপর তারা যখন সুরক্ষিত (বিবাহিতা) হবে, তখন যদি তারা কোনো অশ্লীলতা (ব্যভিচার) করে, তবে তাদের ওপর স্বাধীন নারীদের অর্ধেক শাস্তি প্রযোজ্য হবে। এটি তোমাদের মধ্যে তার জন্য—যে ব্যভিচারে পতিত হওয়ার আশঙ্কা করে। আর তোমরা যদি ধৈর্য ধারণ করো, তবে তা তোমাদের জন্য উত্তম। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
       "words": [
         {
           "id": 27613,
@@ -7622,14 +7642,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And whoever among you cannot [find] the means to marry free, believing women, then [he may marry] from those whom your right hands possess of believing slave girls. And Allah is most knowing about your faith. You [believers] are of one another. So marry them with the permission of their people and give them their due compensation according to what is acceptable. [They should be] chaste, neither [of] those who commit unlawful intercourse randomly nor those who take [secret] lovers. But once they are sheltered in marriage, if they should commit adultery, then for them is half the punishment for free [unmarried] women. This [allowance] is for him among you who fears sin, but to be patient is better for you. And Allah is Forgiving and Merciful.",
-      "conventional_en": "And whoever among you cannot [find] the means to marry free, believing women, then [he may marry] from those whom your right hands possess of believing slave girls. And Allah is most knowing about your faith. You [believers] are of one another. So marry them with the permission of their people and give them their due compensation according to what is acceptable. [They should be] chaste, neither [of] those who commit unlawful intercourse randomly nor those who take [secret] lovers. But once they are sheltered in marriage, if they should commit adultery, then for them is half the punishment for free [unmarried] women. This [allowance] is for him among you who fears sin, but to be patient is better for you. And Allah is Forgiving and Merciful."
+      "translation_en": "And whoever among you cannot find the means to marry free, believing women, then [he may marry] from those whom your right hands possess of believing young women. And Allah is best knowing of your faith. You are of one another. So marry them with the permission of their people and give them their due compensation according to what is acceptable. [They should be] chaste, neither unlawful sexual intercourse nor secret lovers. But once they are protected in marriage, if they should commit adultery, then for them is half the punishment for free women. This is for him among you who fears sin, but to be patient is better for you. And Allah is Forgiving and Merciful.",
+      "conventional_en": "And whoever among you cannot find the means to marry free, believing women, then [he may marry] from those whom your right hands possess of believing young women. And Allah is best knowing of your faith. You are of one another. So marry them with the permission of their people and give them their due compensation according to what is acceptable. [They should be] chaste, neither unlawful sexual intercourse nor secret lovers. But once they are protected in marriage, if they should commit adultery, then for them is half the punishment for free women. This is for him among you who fears sin, but to be patient is better for you. And Allah is Forgiving and Merciful.",
+      "meta_bn": "রিসোর্স-সংকট মোডে ব্যাকআপ পুনর্বাসন অ্যালগরিদম",
+      "meta_en": "Resource-Constrained Secondary Rehabilitation Algorithm",
+      "conventional_bn": "আর তোমাদের মধ্যে যে ব্যক্তি স্বাধীন মুমিন নারীদের বিয়ে করার মতো আর্থিক সামর্থ্য (দৈর্ঘ্য) রাখে না, তবে সে তোমাদের অধিকারভুক্ত মুমিন দাসী বালিকাদের বিয়ে করুক; আর আল্লাহ তোমাদের ঈমান সম্পর্কে খুব ভালো করেই জানেন, তোমরা একে অপরের অংশ। অতএব তোমরা তাদের অভিভাবকদের অনুমতি ক্রমে তাদের বিয়ে করো এবং নিয়মমাফিক তাদের মহর দিয়ে দাও—সুরক্ষিত হিসেবে, ব্যভিচারী হিসেবে নয় এবং গোপনে উপপতি গ্রহণকারী হিসেবেও নয়। অতঃপর তারা যখন সুরক্ষিত (বিবাহিতা) হবে, তখন যদি তারা কোনো অশ্লীলতা (ব্যভিচার) করে, তবে তাদের ওপর স্বাধীন নারীদের অর্ধেক শাস্তি প্রযোজ্য হবে। এটি তোমাদের মধ্যে তার জন্য—যে ব্যভিচারে পতিত হওয়ার আশঙ্কা করে। আর তোমরা যদি ধৈর্য ধারণ করো, তবে তা তোমাদের জন্য উত্তম। আর আল্লাহ পরম ক্ষমাশীল, পরম দয়ালু।",
+      "modern_translation_bn": "আর তোমাদের নেটওয়ার্কের যে কোনো মেল নোডের ওওএসে যদি পর্যাপ্ত ফিন্যান্সিয়াল ব্যান্ডউইথ বা আর্থিক সামর্থ্য (طَوْلًا) না থাকে যে সে সমাজের মূল ধারার স্বাধীন ও সুরক্ষিত মুমিন ফিমেল নোডদের সাথে সরাসরি মেগা প্রজেক্ট বা বৈবাহিক চুক্তি (নিকাহ) সম্পাদন করবে—তবে সে তোমাদের আইনি কন্টাক্ট ও সিস্টেমের অধীনে থাকা অবদমিত অসহায় মুমিন তরুণী নোডসমূহ (مِّن فَتَيَاتِكُمُ الْمُؤْمِنَاتِ) থেকে পুনর্বাসন চুক্তি বা বিয়ে করুক; আর Allah তোমাদের ওওএসের অভ্যন্তরীণ পরম এলাইনমেন্ট ও ঈমান সম্পর্কে খুব ভালো করেই জানেন, তোমরা তো সামষ্টিক কসমিক চেইনে একে অপরের পরিপূরক ও এক অভিন্ন ডাটা স্ট্রাকচার। অতএব তোমরা তাদের লোকাল হোস্ট বা অভিভাবকদের আইনি অনুমতি লুপে (بِإِذْنِ أَهْلِهِنَّ) তাদের সাথে পুনর্বাসন বা বৈবাহিক চুক্তি সম্পাদন করো এবং সমাজ অনুমোদিত সুষম প্রটোকল বা মারুফ নিয়মে (بِالْمَعْرُوفِ) তাদের নির্ধারিত প্রাপ্য মহর বা ভাতা তাদের ওয়ালেটে দিয়ে দাও—একটি সুরক্ষিত স্থায়ী আইডি হিসেবে, স্রেফ লালসা চরিতার্থ বা ব্যভিচারী (غَيْرَ مُسَافِحَاتٍ) হিসেবে নয় এবং গোপনে উপপতি বা অবৈধ ব্যাক-চ্যানেল ডাটা-লিঙ্ক গ্রহণকারী (وَلَا مُتَّخِذَاتِ أَخْدَانٍ) হিসেবেও নয়। অতঃপর তারা যখন এই চুক্তির ফায়ারওয়ালে সম্পূর্ণ প্রটেক্টেড বা সুরক্ষিত (أُحْصِنَّ) হবে—তখনো যদি তারা নিজেদের ওওএসের স্বাধীন ইচ্ছার অপপ্রয়োগে কোনো মারাত্মক সিস্টেমিক অবাধ্যতা বা অশ্লীল ব্যভিচার (بِفَاحِشَةٍ) করে বসে, তবে কাউন্টার-লুপে তাদের ওপর চার্জড হওয়া শাস্তি বা সিস্টেমিক বালাইয়ের পরিমাণ হবে সমাজের মূল ধারার স্বাধীন সুরক্ষিত নোডদের ওপর নির্ধারিত শাস্তির নিখুঁত অর্ধেক বা হাফ (نِصْفُ); এই বিশেষ ব্যাকআপ রুলটি তোমাদের নেটওয়ার্কের কেবল তার ওওএসের জন্য ডেপ্লয় করা হয়েছে—যে নিজের কার্বন বাউন্ডারির কারণে চরম সিস্টেমিক এরর বা ব্যভিচারের ক্র্যাশে (الْعَنَتَ) পতিত হওয়ার তীব্র আশঙ্কা করে; আর তোমরা যদি তোমাদের ওওএসে সর্বোচ্চ Systemic Resilience (অবিচল স্থায়িত্ব বা বাফারিং ক্ষমতা) বা ধৈর্য (تَصْبِرُوا) সচল রাখো, তবে তা তোমাদের ওওএসের স্থায়িত্বের জন্য গাণিতিকভাবে সর্বোচ্চ উৎকৃষ্ট বা উত্তম; আর Allah স্বয়ংক্রিয় ত্রুটি মোচনকারী পরম ক্ষমাশীল এবং পরম দাতা;",
+      "modern_translation_en": "And whoever among your male nodes lacks sufficient financial bandwidth (طَوْلًا) to marry free believing women, let them establish covenants with dependent believing female nodes (مِّن فَتَيَاتِكُمُ الْمُؤْمِنَاتِ); and Allah has full knowledge of your systemic faith, for you all originate from one another. Contract them with the consent of their guardian hosts (بِإِذْنِ أَهْلِهِنَّ) and transfer their standard compensation equitably (بِالْمَعْرُوفِ) as chaste nodes, not engaging in illicit transactions (غَيْرَ مُسَافِحَاتٍ) nor taking clandestine partners (وَلَا مُتَّخِذَاتِ أَخْدَانٍ). And once fortified within marriage, if they commit proven code corruption (بِفَاحِشَةٍ), their corrective penalty is exactly half (نِصْفُ) of what is assigned to standard fortified nodes. This backup channel is configured for those who fear falling into catastrophic error (الْعَنَتَ); yet exercising systemic patience and resilience (تَصْبِرُوا) is far superior for your operating system; and Allah is All-Forgiving, Most Merciful."
     },
     {
       "surah": 4,
       "ayah": 26,
       "transliteration": "yurīdu l-lahu liyubayyina lakum wayahdiyakum sunana alladhīna min qablikum wayatūba ʿalaykum wal-lahu ʿalīmun ḥakīmun",
-      "translation_bn": "আল্লাহ ইচ্ছে করেন তোমাদের নিকট সবিস্তারে বর্ণনা করতে তোমাদের আগেকার লোকেদের নিয়মনীতি তোমাদের দেখানোর গ্রহণের জন্য, আর তোমাদেরকে ক্ষমা করার জন্য; বস্তুতঃ আল্লাহ সুপরিজ্ঞাত, পরম কুশলী।",
+      "translation_bn": "আল্লাহ চান যে, তিনি তোমাদের জন্য (সবকিছু) স্পষ্ট বর্ণনা করুন এবং তোমাদের পূর্ববর্তীদের নিয়ম-নীতি (Sunan)-র দিকে তোমাদের পরিচালিত করুন এবং তোমাদের তাওবা কবুল করুন। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
       "words": [
         {
           "id": 28631,
@@ -7783,13 +7808,18 @@
         }
       ],
       "translation_en": "Allah wants to make clear to you [the lawful from the unlawful] and guide you to the [good] practices of those before you and to accept your repentance. And Allah is Knowing and Wise.",
-      "conventional_en": "Allah wants to make clear to you [the lawful from the unlawful] and guide you to the [good] practices of those before you and to accept your repentance. And Allah is Knowing and Wise."
+      "conventional_en": "Allah wants to make clear to you [the lawful from the unlawful] and guide you to the [good] practices of those before you and to accept your repentance. And Allah is Knowing and Wise.",
+      "meta_bn": "সুপ্রীমিক ওওএস ডিকোর্ডিং ও হিস্টোরিক্যাল মডেল ডেপ্লয়মেন্ট",
+      "meta_en": "Systemic Clarification and Sunan Archetype Alignment",
+      "conventional_bn": "আল্লাহ চান যে, তিনি তোমাদের জন্য (সবকিছু) স্পষ্ট বর্ণনা করুন এবং তোমাদের পূর্ববর্তীদের নিয়ম-নীতি (Sunan)-র দিকে তোমাদের পরিচালিত করুন এবং তোমাদের তাওবা কবুল করুন। আর আল্লাহ সর্বজ্ঞ, প্রজ্ঞাময়।",
+      "modern_translation_bn": "Allah তাঁর ডাইনামিক সৃষ্টিতাত্ত্বিক ডিজাইনে এটিই চান যে—তিনি তোমাদের ওওএসের জন্য এই প্রতিটি জটিল ক্রিপ্টোগ্রাফিক কোড ক্রিস্টাল-ক্লিয়ার ডিকোড বা স্পষ্ট বর্ণনা (لِيُبَيِّنَ لَكُمْ) করুন এবং তোমাদের পূর্ববর্তী বিবর্তনীয় টাইম-লাইনের সফল অপ্টিমাইজড নোডগুলোর নিখুঁত ট্রাস্ট-মডেল ও Sunan (ঐশী অবজেক্ট রুলস)-এর দিকে তোমাদের ওওএস-কে রি-অ্যালাইন বা গাইডেন্স (وَيَهْدِيَكُمْ) করুন এবং তোমাদের সিস্টেমে রিয়াল-টাইম রিস্টোরেশন বা তাওবা (وَيَتُوبَ عَلَيْكُمْ) মোড সর্বদা সক্রিয় রাখুন; আর Allah হলেন প্রতিটি সিস্টেমের ডেটাবেজ সম্পর্কে সর্বজ্ঞ এবং পরম রেগুলেটর বা প্রজ্ঞাময়।",
+      "modern_translation_en": "Allah intends to systematically clarify these operational protocols for your OOS (لِيُبَيِّنَ لَكُمْ), guide you along the proven historical pathways (Sunan) of optimized righteous systems before you (سُنَنَ الَّذِينَ مِن قَبْلِكُمْ), and accept your systemic repentance (وَيَتُوبَ عَلَيْكُمْ); and Allah is All-Knowing and Perfectly Wise."
     },
     {
       "surah": 4,
       "ayah": 27,
       "transliteration": "wal-lahu yurīdu an yatūba ʿalaykum wayurīdu alladhīna yattabiʿūna l-shahawāti an tamīlū maylan ʿaẓīman",
-      "translation_bn": "আল্লাহ তোমাদেরকে ক্ষমা করতে চান, পক্ষান্তরে কুপ্রবৃত্তির অনুসারীরা চায় যে, তোমরা (আল্লাহর নিকট হতে) দূরে বহু দূরে সরে যাও।",
+      "translation_bn": "আর আল্লাহ চান যে, তিনি তোমাদের তাওবা কবুল করবেন; আর যারা কুপ্রবৃত্তির (আসক্তির) অনুসরণ করে, তারা চায় যে তোমরা (সত্যের পথ থেকে) সুদূর বিচ্যুত হয়ে যাও।",
       "words": [
         {
           "id": 29525,
@@ -7932,14 +7962,19 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "Allah wants to accept your repentance, but those who follow [their] passions want you to digress [into] a great deviation.",
-      "conventional_en": "Allah wants to accept your repentance, but those who follow [their] passions want you to digress [into] a great deviation."
+      "translation_en": "Allah wants to accept your repentance, but those who follow their passions want you to digress [into] a great deviation.",
+      "conventional_en": "Allah wants to accept your repentance, but those who follow their passions want you to digress [into] a great deviation.",
+      "meta_bn": "টক্সিক ডাটা-ইনজেকশন ও ডাইভারশন ম্যালওয়্যার এলার্ম",
+      "meta_en": "Data Integrity Restoration vs. Hedonistic Divergence Threat",
+      "conventional_bn": "আর আল্লাহ চান যে, তিনি তোমাদের তাওবা কবুল করবেন; আর যারা কুপ্রবৃত্তির (আসক্তির) অনুসরণ করে, তারা চায় যে তোমরা (সত্যের পথ থেকে) সুদূর বিচ্যুত হয়ে যাও।",
+      "modern_translation_bn": "আর Allah চান যে তিনি তোমাদের ওওএস-কে সর্বদা এরর-মুক্ত ও রিস্টোর বা তাওবা (أَن يَتُوبَ عَلَيْكُمْ) করাবেন; অথচ যেসকল করাপ্টেড আউটলায়ার নোড স্রেফ নিজেদের লো-ডাইমেনশনাল হরমোনাল আসক্তি ও বস্তুগত লোভের ক্ষতিকারক লুপ (الشَّهَوَاتِ) ফলো করে—তারা তীব্র কুচক্রান্তে এটিই চায় যে তোমরা এই মেইন সার্ভারের পিউর সিগন্যাল ট্র্যাক থেকে বিচ্যুত হয়ে এক মেগা সিস্টেমিক ক্র্যাশ বা সুদূর বিচ্যুতি (تَمِيلُوا مَيْلًا عَظِيمًا)-র লুপে চিরতরে ট্র্যাপড হয়ে যাও;",
+      "modern_translation_en": "Allah desires to restore your operating system through repentance (أَن يَتُوبَ عَلَيْكُمْ), whereas those outlier nodes who pursue low-level biological impulses and unregulated desires (الشَّهَوَاتِ) intend to divert you into catastrophic divergence and systemic deviation (تَمِيلُوا مَيْلًا عَظِيمًا)."
     },
     {
       "surah": 4,
       "ayah": 28,
       "transliteration": "yurīdu l-lahu an yukhaffifa ʿankum wakhuliqa l-insānu ḍaʿīfan",
-      "translation_bn": "আল্লাহ তোমাদের ভার লঘু করতে চান, কারণ মানুষকে দুর্বলরূপে সৃষ্টি করা হয়েছে।",
+      "translation_bn": "আল্লাহ তোমাদের থেকে (তোমাদের বোঝা) হালকা করতে চান; কারণ মানুষকে সৃষ্টি করা হয়েছে দুর্বল করে।",
       "words": [
         {
           "id": 30561,
@@ -8033,13 +8068,18 @@
         }
       ],
       "translation_en": "And Allah wants to lighten for you [your difficulties]; and mankind was created weak.",
-      "conventional_en": "And Allah wants to lighten for you [your difficulties]; and mankind was created weak."
+      "conventional_en": "And Allah wants to lighten for you [your difficulties]; and mankind was created weak.",
+      "meta_bn": "কার্বন হার্ডওয়্যার লোড অপ্টিমাইজেশন ল'",
+      "meta_en": "Carbon Hardware Load-Easing Law and Finite Bandwidth Principle",
+      "conventional_bn": "আল্লাহ তোমাদের থেকে (তোমাদের বোঝা) হালকা করতে চান; কারণ মানুষকে সৃষ্টি করা হয়েছে দুর্বল করে।",
+      "modern_translation_bn": "Allah তোমাদের কার্বন হার্ডওয়্যারের ওপর থেকে অতিরিক্ত সিস্টেমিক চাপ বা প্রসেসিং লোড ডিক্রিজ বা হালকা (أَن يُخَفِّفَ عَنْكُمْ) করতে চান; কারণ আদি জেনেটিক ডিজাইনেই কার্বন-ভিত্তিক এই ইন্টেলিজেন্ট প্রজাতি বা মানুষকে (الْإِنسَانُ) গাঠনিকভাবে অত্যন্ত লিমিটেড ব্যান্ডউইথ সম্পন্ন বা দুর্বল (ضَعِيفًا) করে আর্কিটেক্ট বা সৃষ্টি করা হয়েছে।",
+      "modern_translation_en": "Allah intends to lighten your operational load (أَن يُخَفِّفَ عَنْكُمْ), for the carbon-based human interface (الْإِنسَانُ) was engineered with intrinsically finite bandwidth and structural vulnerability (ضَعِيفًا)."
     },
     {
       "surah": 4,
       "ayah": 29,
       "transliteration": "yāayyuhā alladhīna āmanū lā takulū amwālakum baynakum bil-bāṭili illā an takūna tijāratan ʿan tarāḍin minkum walā taqtulū anfusakum inna l-laha kāna bikum raḥīman",
-      "translation_bn": "হে ঈমানদারগণ! তোমরা অন্যায়ভাবে একে অন্যের সম্পদ গ্রাস করো না, তবে পারস্পরিক সম্মতিতে ব্যবসায় বৈধ এবং নিজেদের ধ্বংস ডেকে এনো না কিংবা তোমরা পরস্পরকে হত্যা করো না, নিশ্চয় আল্লাহ তোমাদের প্রতি কৃপাময়।",
+      "translation_bn": "হে মুমিনগণ! তোমরা একে অপরের ধন-সম্পদ অন্যায়ভাবে (বাতিল উপায়ে) গ্রাস করো না, কেবলমাত্র তোমাদের পরস্পরের সন্তুষ্টির মাধ্যমে যে ব্যবসা (বাণিজ্য) হয় তা ছাড়া। আর তোমরা নিজেদের হত্যা করো না; নিশ্চয়ই আল্লাহ তোমাদের প্রতি পরম দয়ালু।",
       "words": [
         {
           "id": 31567,
@@ -8283,13 +8323,19 @@
         }
       ],
       "translation_en": "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allah is to you ever Merciful.",
-      "conventional_en": "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allah is to you ever Merciful."
+      "conventional_en": "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allah is to you ever Merciful.",
+      "meta_bn": "মেটেরিয়াল রিসোর্স জালিয়াতি ও অর্থনৈতিক হ্যাকিং বালাই নিষেধাজ্ঞা",
+      "meta_en": "Anti-Exploitation Rule and Bilateral Value Exchange Protocol",
+      "conventional_bn": "হে মুমিনগণ! তোমরা একে অপরের ধন-সম্পদ অন্যায়ভাবে (বাতিল উপায়ে) গ্রাস করো না, কেবলমাত্র তোমাদের পরস্পরের সন্তুষ্টির মাধ্যমে যে ব্যবসা (বাণিজ্য) হয় তা ছাড়া। আর তোমরা নিজেদের হত্যা করো না; নিশ্চয়ই আল্লাহ তোমাদের প্রতি পরম দয়ালু।",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমরা তোমাদের সামাজিক নেটওয়ার্ক গ্রিডে—একে অপরের পুঞ্জীভূত মেটেরিয়াল রিসোর্স বা সম্পদ (أَمْوَالَكُم) কোনো প্রকার জালিয়াতি, হ্যাকিং, দুর্নীতি বা অবৈধ ট্র্যাশ উপায়ে বা বাতিলে (بِالْبَاطِلِ) গ্রাস বা কুক্ষিগত করো না—কেবলমাত্র তোমাদের পরস্পরের ফ্রি-উইলের সম্পূর্ণ আইনি সন্তুষ্টি ও ওপেন ভ্যালু জেনারেশনের মাধ্যমে যে ডাইনামিক ব্যবসা বা কমার্শিয়াল ডাটা এক্সচেঞ্জ বা Tijarah (تِجَارَةً عَن تَرَاضٍ) সম্পন্ন হয় তা ছাড়া। আর তোমরা তোমাদের ওওএসের চরম স্বাধীন ইচ্ছা অপপ্রয়োগ করে নিজেদের মনস্তাত্ত্বিক ও ফিজিক্যাল অস্তিত্বকে ধ্বংস বা আত্মহত্যা/একে অপরকে হত্যা (وَلَا تَقْتُلُوا أَنفُسَكُمْ) করো না; নিশ্চয়ই Allah তোমাদের ওওএসের স্থায়িত্ব রক্ষায় সর্বদা বিশেষায়িত ভারসাম্য রক্ষাকারী পরম দাতা (رَحِيمًا);",
+      "modern_translation_en": "O you who have verified the system faith (آمَنُوا)! Do not consume one another's capital assets unjustly through fraudulent data-theft or invalid exploitation (بِالْبَاطِلِ), except through mutually consensual commercial enterprise and open-market trade (تِجَارَةً عَن تَرَاضٍ). And do not destroy yourselves or execute self-terminating protocols (وَلَا تَقْتُلُوا أَنفُسَكُمْ); verily, Allah is ever Merciful (Raheem) toward your runtime survival.",
+      "lexicon_modern_notes": "লা তা'কুলূ আমওয়ালাকুম বাইনাকুম বিল-বাত্বিল (لَا تَأْكُلُوا أَمْوَالَكُم بَيْنَكُم بِالْبَاطِلِ - ফিন্যান্সিয়াল এন্ট্রপি ও ডাটা-টেম্পারিং ম্যালওয়্যার লক): ২৯ নম্বর আয়াতে বাতিল উপায়ে সম্পদ গ্রাস করার যে অর্থনৈতিক নিষেধাজ্ঞা দেওয়া হয়েছে, তা আধুনিক ইনফরমেশন ইকোনমিক্স (Information Economics) এবং গেম থিওরির 'Zero-Sum Exploitation & Artificial Market Distortion Bugs'-এর নিখুঁত রূপ। 'বাত্বিল' শব্দের পরম টেকনিক্যাল মেকানিজম হলো—এমন কোনো প্রসেস যা সিস্টেমে বাস্তব কোনো কাজের আউটপুট বা প্রোডাক্টিভ ভ্যালু (Productive Value) জেনারেট করে না, বরং স্রেফ জালিয়াতি, হ্যাকিং, চুরি বা শোষণের মাধ্যমে অন্য নোডের ওয়ালেটের ব্যালেন্স নিজের লুপে হাইজ্যাক করে নেয়। থার্মোডাইনামিক্সের নিয়মে এই জালিয়াতি পুরো সামাজিক গ্রিডের শক্তির ভারসাম্য ধ্বংস করে এক মেগা-এন্ট্রপি (ফাসাদ) ডেকে আনে। একারণেই আল্লাহ কমার্শিয়াল ডাটা এক্সচেঞ্জের জন্য একমাত্র 'তিজারাতান আন তারাদ্বিন' বা পারস্পরিক স্বাধীন ইচ্ছার সন্তুষ্টির ভিত্তিতে তৈরি ওপেন-মার্কেট ভ্যালু জেনারেশন প্রটোকলকে ওওএসে অনুমোদন (হালাল) করেছেন।"
     },
     {
       "surah": 4,
       "ayah": 30,
       "transliteration": "waman yafʿal dhālika ʿud'wānan waẓul'man fasawfa nuṣ'līhi nāran wakāna dhālika ʿalā l-lahi yasīran",
-      "translation_bn": "যে ব্যক্তি সীমালঙ্ঘন ক’রে অন্যায়ভাবে এটা করবে, তাকে আমি অতিসত্বর অগ্নিতে দগ্ধ করব, এটা আল্লাহর পক্ষে সহজ।",
+      "translation_bn": "আর যে কেউ সীমালঙ্ঘন ও অন্যায়ভাবে এমনটি করবে, অচিরেই আমি তাকে আগুনে প্রবেশ করাব। আর এটি আল্লাহর জন্য অত্যন্ত সহজ।",
       "words": [
         {
           "id": 32486,
@@ -8432,8 +8478,13 @@
           "grammar_bn": "মার্কার"
         }
       ],
-      "translation_en": "And whoever does that in aggression and injustice - then We will drive him into a Fire. And that, for Allah, is [always] easy.",
-      "conventional_en": "And whoever does that in aggression and injustice - then We will drive him into a Fire. And that, for Allah, is [always] easy."
+      "translation_en": "And whoever does that in aggression and injustice - then We will drive him into a Fire, and that, for Allah, is [always] easy.",
+      "conventional_en": "And whoever does that in aggression and injustice - then We will drive him into a Fire, and that, for Allah, is [always] easy.",
+      "meta_bn": "বাউন্ডারি ব্রেককারীদের স্বয়ংক্রিয় থার্মাল টার্মিনেশন প্রটোকল",
+      "meta_en": "Automated Thermal Termination Protocol for Malicious Outliers",
+      "conventional_bn": "আর যে কেউ সীমালঙ্ঘন ও অন্যায়ভাবে এমনটি করবে, অচিরেই আমি তাকে আগুনে প্রবেশ করাব। আর এটি আল্লাহর জন্য অত্যন্ত সহজ।",
+      "modern_translation_bn": "আর যে কেউ পরম সোর্সের এই ডিফেন্স ফায়ারওয়াল বাউন্ডারি ব্রেক করে তীব্র বৈরিতা, সীমালঙ্ঘন ও অন্যের ওপর জুলুমের (عُدْوَانًا وَظُلْمًا) ক্ষতিকারক কোড রান বা অবাধ্যতা করবে—খুব শীঘ্রই স্বয়ংক্রিয় কাউন্টার-অ্যাকশনের হার্ড-প্রটোকলে আমি তার পুরো করাপ্টেড সিস্টেমটিকে রি-রুট বা নিক্ষেপ (فَسَوْفَ نُصْلِيهِ) করব এক মেগা-থার্মোডাইনামিক ক্লোজড ক্র্যাশ-জোন তথা আগুনে (نَارًا); আর সেন্ট্রাল সার্ভারের আদি অ্যালগরিদমে এই টক্সিক ভাইরাসের ডিলিশন ও ধ্বংসাত্মক প্রতিক্রিয়া এক্সিকিউট করা গাণিতিকভাবে অত্যন্ত সহজ ও সরল (يَسِيرًا);",
+      "modern_translation_en": "And whoever commits such acts out of aggressive transgression and systemic injustice (عُدْوَانًا وَظُلْمًا), We shall cast them into the high-entropy thermal containment zone of Fire (نَارًا); and executing that counter-measure is effortless for Allah (يَسِيرًا)."
     },
     {
       "surah": 4,
