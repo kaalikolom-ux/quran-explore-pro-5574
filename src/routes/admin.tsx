@@ -2348,16 +2348,18 @@ function UserPermissionsDialog({
   if (!user) return null;
 
   const displayLayersList: { key: string; title: string; desc: string; highlight?: boolean }[] = [
+    { key: "showSurahScientificMeaning", title: "১. সুরার নামের প্রচলিত ও আধুনিক অর্থ", desc: "প্রতিটি সুরার শীর্ষে প্রচলিত অর্থ ও আধুনিক বিজ্ঞানভিত্তিক অর্থ", highlight: true },
+    { key: "showMetaData", title: "২. মেটাডাটা (Meta Data)", desc: "আয়াতের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ", highlight: true },
+    { key: "showWordByWord", title: "৩. শব্দে শব্দে অর্থ", desc: "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" },
+    { key: "showTransliteration", title: "৪. উচ্চারণ নির্দেশিকা", desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" },
+    { key: "showConventionalBn", title: "৫. প্রচলিত বাংলা অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
+    { key: "showConventionalEn", title: "৬. Surface English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
+    { key: "showModernBn", title: "৭. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
+    { key: "showModernEn", title: "৮. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
+    { key: "showLexicon", title: "৯. অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
+    { key: "showLexiconScientific", title: "১০. লেক্সিকন নোট (Lexicon Notes)", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
+    { key: "showLogicalConsistency", title: "১১. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)", desc: "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য", highlight: true },
     { key: "showArabic", title: "আরবি টেক্সট", desc: "মূল কুরআন পাঠ প্রদর্শন" },
-    { key: "showWordByWord", title: "শব্দে শব্দে অর্থ", desc: "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" },
-    { key: "showTransliteration", title: "উচ্চারণ নির্দেশিকা", desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" },
-    { key: "showConventionalBn", title: "১. প্রচলিত বাংলা অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
-    { key: "showConventionalEn", title: "২. Surface English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
-    { key: "showModernBn", title: "৩. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
-    { key: "showModernEn", title: "৪. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
-    { key: "showLexicon", title: "অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
-    { key: "showLexiconScientific", title: "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
-    { key: "showMetaData", title: "মেটা ডাটা / Meta Data", desc: "আয়াতের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ", highlight: true },
   ];
 
   return (

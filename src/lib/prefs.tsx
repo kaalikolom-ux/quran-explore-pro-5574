@@ -12,6 +12,7 @@ export type DisplayLayers = {
   showLexiconScientific: boolean;
   showMetaData: boolean;
   showSurahScientificMeaning: boolean;
+  showLogicalConsistency: boolean;
 };
 
 export type ThemeMode = "dark" | "sepia" | "slate" | "light";
@@ -41,6 +42,7 @@ export const DEFAULT_PREFS: Prefs = {
   showLexiconScientific: true,
   showMetaData: true,
   showSurahScientificMeaning: true,
+  showLogicalConsistency: true,
 };
 
 export type PublicDisplayPermissions = {
@@ -55,6 +57,7 @@ export type PublicDisplayPermissions = {
   showLexiconScientific: boolean;
   showMetaData: boolean;
   showSurahScientificMeaning: boolean;
+  showLogicalConsistency: boolean;
 };
 
 export const DEFAULT_PUBLIC_PERMISSIONS: PublicDisplayPermissions = {
@@ -69,6 +72,7 @@ export const DEFAULT_PUBLIC_PERMISSIONS: PublicDisplayPermissions = {
   showLexiconScientific: true,
   showMetaData: true,
   showSurahScientificMeaning: true,
+  showLogicalConsistency: true,
 };
 
 const STORAGE_KEY = "quran_explorer_unified_prefs_v1";

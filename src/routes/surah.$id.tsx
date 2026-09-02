@@ -1584,6 +1584,7 @@ function SurahDetailPage() {
   const showLexicon = isLayerAllowed("showLexicon", isAdmin) && prefs.showLexicon;
   const showLexiconScientific = isLayerAllowed("showLexiconScientific", isAdmin) && prefs.showLexiconScientific;
   const showMetaData = isLayerAllowed("showMetaData", isAdmin) && prefs.showMetaData;
+  const showLogicalConsistency = isLayerAllowed("showLogicalConsistency", isAdmin) && prefs.showLogicalConsistency;
 
   const arabicFontSize = prefs.arabicFontSize || 22;
   const translationFontSize = prefs.translationFontSize || 12;
@@ -1871,7 +1872,10 @@ function SurahDetailPage() {
       </div>
 
       {/* ⚖️ ৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য) সেকশন */}
-      <div className="rounded-2xl border border-border/60 bg-muted/20 p-4 sm:p-5 space-y-2.5 transition-colors hover:border-border/80">
+      <div
+        style={{ display: showLogicalConsistency ? "block" : "none" }}
+        className="rounded-2xl border border-border/60 bg-muted/20 p-4 sm:p-5 space-y-2.5 transition-colors hover:border-border/80"
+      >
         <div className="flex items-center justify-between gap-2 border-b border-border/30 pb-2.5">
           <div className="flex items-center gap-2 min-w-0">
             <Scale className="size-4 text-primary shrink-0" />

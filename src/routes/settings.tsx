@@ -90,59 +90,64 @@ function SettingsPage() {
 
   const displayLayers: { key: keyof Prefs; title: string; desc: string }[] = [
     {
-      key: "showArabic",
-      title: lang === "bn" ? "আরবি টেক্সট" : "Arabic Text",
-      desc: lang === "bn" ? "মূল কুরআন পাঠ প্রদর্শন" : "Display original Quranic text",
+      key: "showSurahScientificMeaning",
+      title: lang === "bn" ? "১. সুরার নামের প্রচলিত ও আধুনিক অর্থ" : "1. Surah Names: Conventional & Modern Meaning",
+      desc: lang === "bn" ? "প্রতিটি সুরার শীর্ষে প্রচলিত অর্থ ও আধুনিক বিজ্ঞানভিত্তিক গবেষণামূলক অর্থ প্রদর্শন" : "Display conventional and modern contextual meanings in surah headers",
+    },
+    {
+      key: "showMetaData",
+      title: lang === "bn" ? "২. মেটাডাটা (Meta Data)" : "2. Ayah Meta Data",
+      desc: lang === "bn" ? "প্রতিটি আয়াতের নম্বরের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ প্রদর্শন" : "Display contextual topic and metadata next to ayah numbers",
     },
     {
       key: "showWordByWord",
-      title: lang === "bn" ? "শব্দে শব্দে অর্থ" : "Word by Word Meaning",
+      title: lang === "bn" ? "৩. শব্দে শব্দে অর্থ" : "3. Word by Word Meaning",
       desc: lang === "bn" ? "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" : "Meaning & transliteration under each word",
     },
     {
       key: "showTransliteration",
-      title: lang === "bn" ? "উচ্চারণ (Transliteration)" : "Ayah Transliteration",
+      title: lang === "bn" ? "৪. উচ্চারণ (Transliteration)" : "4. Ayah Transliteration",
       desc: lang === "bn" ? "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" : "Full ayah phonetic reading guide",
     },
     {
       key: "showConventionalBn",
-      title: lang === "bn" ? "১. প্রচলিত অনুবাদ (বাংলা)" : "1. Surface Translation (BN)",
+      title: lang === "bn" ? "৫. প্রচলিত অনুবাদ (বাংলা)" : "5. Conventional Translation (Bangla)",
       desc: lang === "bn" ? "মুহিউদ্দীন খান / তাইসিরুল কুরআন (Greentech)" : "Standard Bengali translation",
     },
     {
       key: "showConventionalEn",
-      title: lang === "bn" ? "২. Surface Translation (English)" : "2. Surface Translation (EN)",
+      title: lang === "bn" ? "৬. Surface Translation (English)" : "6. Surface Translation (English)",
       desc: lang === "bn" ? "সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ (Greentech)" : "Sahih International translation",
     },
     {
       key: "showModernBn",
-      title: lang === "bn" ? "৩. আধুনিক অনুবাদ (বাংলা)" : "3. Modern Translation (BN)",
-      desc: lang === "bn" ? "আমাদের প্রাঞ্জল ও সহজবোধ্য আধুনিক বাংলা অনুবাদ" : "Contemporary contextual Bengali translation",
+      title: lang === "bn" ? "৭. আধুনিক অনুবাদ (বাংলা)" : "7. Modern Translation (Bangla)",
+      desc: lang === "bn" ? "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ" : "Contemporary contextual Bengali translation",
     },
     {
       key: "showModernEn",
-      title: lang === "bn" ? "৪. Modern Translation (English)" : "4. Modern Translation (EN)",
+      title: lang === "bn" ? "৮. Modern Translation (English)" : "8. Modern Translation (English)",
       desc: lang === "bn" ? "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ" : "Contemporary contextual English translation",
     },
     {
       key: "showLexicon",
-      title: lang === "bn" ? "অভিধান / Lexicon" : "Lexicon / Vocabulary",
+      title: lang === "bn" ? "৯. অভিধান / Lexicon" : "9. Lexicon / Vocabulary",
       desc: lang === "bn" ? "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণগত বিশ্লেষণ" : "Vocabulary, Arabic roots and grammatical notes",
     },
     {
       key: "showLexiconScientific",
-      title: lang === "bn" ? "বিজ্ঞানভিত্তিক অর্থ ও গবেষণা" : "Scientific Meanings & Context",
-      desc: lang === "bn" ? "অভিধানে মূল ধাতুর আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট প্রদর্শন" : "Show scientific insights and contextual research in lexicon",
+      title: lang === "bn" ? "১০. লেক্সিকন নোট (Lexicon Notes)" : "10. Lexicon Notes & Research",
+      desc: lang === "bn" ? "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা, প্রেক্ষাপট ও বিস্তারিত নোট প্রদর্শন" : "Show scientific insights, contextual notes, and deep research in lexicon",
     },
     {
-      key: "showMetaData",
-      title: lang === "bn" ? "মেটা ডাটা / Meta Data" : "Ayah Meta Data",
-      desc: lang === "bn" ? "প্রতিটি আয়াতের নম্বরের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ প্রদর্শন" : "Display contextual topic and metadata next to ayah numbers",
+      key: "showLogicalConsistency",
+      title: lang === "bn" ? "১১. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)" : "11. Logical Consistency Framework (4:82)",
+      desc: lang === "bn" ? "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য বিশ্লেষণ" : "Display internal non-contradiction & universal systemic harmony analysis",
     },
     {
-      key: "showSurahScientificMeaning",
-      title: lang === "bn" ? "সুরার নামের প্রচলিত ও বিজ্ঞানভিত্তিক অর্থ" : "Surah Names: Conventional & Scientific Meaning",
-      desc: lang === "bn" ? "প্রতিটি সুরার শীর্ষে প্রচলিত অর্থ ও আধুনিক বিজ্ঞানভিত্তিক গবেষণামূলক অর্থ প্রদর্শন" : "Display conventional and scientific contextual meanings in surah headers",
+      key: "showArabic",
+      title: lang === "bn" ? "আরবি মূল পাঠ (Arabic Text)" : "Arabic Text",
+      desc: lang === "bn" ? "মূল কুরআন তিলাওয়াত ও আরবি হরফ প্রদর্শন" : "Display original Quranic Arabic script",
     },
   ];
 
