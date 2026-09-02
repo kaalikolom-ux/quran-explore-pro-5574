@@ -54,8 +54,8 @@
   --color-chrome: var(--chrome);
   --color-chrome-foreground: var(--chrome-foreground);
 
-  --font-sans: "Noto Sans Bengali", "Nirmala UI", "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont, "Hind Siliguri", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Noto Sans Bengali", "Nirmala UI", "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont, "Hind Siliguri", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Segoe UI", "Segoe UI Variable Text", "Segoe UI Variable Display", "Inter", -apple-system, BlinkMacSystemFont, "Noto Sans Bengali", "Nirmala UI", "Hind Siliguri", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Segoe UI", "Segoe UI Variable Display", "Segoe UI Variable Text", "Inter", -apple-system, BlinkMacSystemFont, "Noto Sans Bengali", "Nirmala UI", "Hind Siliguri", "SolaimanLipi", "Kalpurush", ui-sans-serif, system-ui, sans-serif;
   --font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
   --font-kaushan: "Kaushan Script", cursive;
   --font-mono: Consolas, "Cascadia Code", "Fira Code", "Courier New", monospace;
