@@ -18,6 +18,17 @@ let sql = `-- ==================================================================
 -- ==============================================================================
 
 -- 1. Ensure Table Structure
+CREATE TABLE IF NOT EXISTS public.quran_chapters (
+  id integer PRIMARY KEY,
+  name_simple text NOT NULL,
+  name_arabic text NOT NULL,
+  translated_name text NOT NULL,
+  verses_count integer NOT NULL,
+  revelation_place text,
+  lang text NOT NULL DEFAULT 'bn',
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
 CREATE TABLE IF NOT EXISTS public.quran_verses (
   surah integer NOT NULL,
   ayah integer NOT NULL,
@@ -49,12 +60,49 @@ CREATE TABLE IF NOT EXISTS public.ayah_metadata (
   UNIQUE (surah, ayah)
 );
 
+-- 2. Enable Row Level Security (RLS) & Allow Public Read
+ALTER TABLE public.quran_chapters ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.quran_verses ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.ayah_metadata ENABLE ROW LEVEL SECURITY;
+
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE tablename = 'quran_chapters' AND policyname = 'Allow public read on quran_chapters') THEN
+    CREATE POLICY "Allow public read on quran_chapters" ON public.quran_chapters FOR SELECT USING (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE tablename = 'quran_verses' AND policyname = 'Allow public read on quran_verses') THEN
+    CREATE POLICY "Allow public read on quran_verses" ON public.quran_verses FOR SELECT USING (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE tablename = 'ayah_metadata' AND policyname = 'Allow public read on ayah_metadata') THEN
+    CREATE POLICY "Allow public read on ayah_metadata" ON public.ayah_metadata FOR SELECT USING (true);
+  END IF;
+END $$;
+
 `;
 
 function escapeSql(str) {
   if (str === null || str === undefined) return 'NULL';
   return `'${String(str).replace(/'/g, "''")}'`;
 }
+
+// 3. Populate Chapters
+const chapterRows = [];
+for (const file of files) {
+  const surahId = parseInt(path.basename(file, '.json'), 10);
+  const data = JSON.parse(fs.readFileSync(path.join(surahsDir, file), 'utf8'));
+  const versesCount = data.ayahs ? data.ayahs.length : 0;
+  const nameSimple = data.transliteration || `Surah ${surahId}`;
+  const nameArabic = data.name || '';
+  const translatedName = data.translation || '';
+  const revPlace = data.type === 'Meccan' ? 'makkah' : 'madinah';
+
+  chapterRows.push(`(${surahId}, ${escapeSql(nameSimple)}, ${escapeSql(nameArabic)}, ${escapeSql(translatedName)}, ${versesCount}, ${escapeSql(revPlace)}, 'bn', now())`);
+}
+
+sql += `\n-- ------------------------------------------------------------------------------\n`;
+sql += `-- Chapters: 114 Surahs\n`;
+sql += `-- ------------------------------------------------------------------------------\n`;
+sql += `INSERT INTO public.quran_chapters (id, name_simple, name_arabic, translated_name, verses_count, revelation_place, lang, updated_at)\nVALUES\n  ` + chapterRows.join(',\n  ') + `\nON CONFLICT (id) DO UPDATE SET\n  name_simple = EXCLUDED.name_simple,\n  name_arabic = EXCLUDED.name_arabic,\n  translated_name = EXCLUDED.translated_name,\n  verses_count = EXCLUDED.verses_count,\n  revelation_place = EXCLUDED.revelation_place,\n  lang = EXCLUDED.lang,\n  updated_at = now();\n\n`;
 
 let totalAyahs = 0;
 let totalModern = 0;
@@ -114,6 +162,7 @@ for (const file of files) {
 
 fs.writeFileSync(outputSqlPath, sql, 'utf8');
 console.log(`✅ Master SQL Seed created: ${outputSqlPath} (${(fs.statSync(outputSqlPath).size / (1024 * 1024)).toFixed(2)} MB)`);
+console.log(`Total Chapters: 114`);
 console.log(`Total Ayahs: ${totalAyahs}`);
 console.log(`Ayahs with Modern Scientific Translations: ${totalModern}`);
 console.log(`Ayahs with Metadata Tags: ${totalMeta}`);

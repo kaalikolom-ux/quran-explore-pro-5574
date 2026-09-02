@@ -347,7 +347,44 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
 const APP_DATA_VERSION = "20260831_v22";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
-  // 1. Fetch from static JSON with versioned caching
+  // 1. Try Supabase Master Database first
+  try {
+    const { data: rows, error } = await supabase
+      .from("quran_verses")
+      .select("surah, ayah, text_uthmani, words, transliteration, bn_text, en_text, conventional_bn, conventional_en, modern_translation_bn, modern_translation_en, meta_bn, meta_en, lexicon_modern_notes, audio_url")
+      .eq("surah", sId)
+      .order("ayah");
+
+    if (!error && rows && rows.length > 0) {
+      const surahData: SurahData = {
+        surah: sId,
+        ayahs: rows.map((r: any) => ({
+          surah: r.surah,
+          ayah: r.ayah,
+          text_uthmani: r.text_uthmani || "",
+          transliteration: r.transliteration || "",
+          conventional_bn: r.conventional_bn || r.bn_text || "",
+          conventional_en: r.conventional_en || r.en_text || "",
+          translation_bn: r.conventional_bn || r.bn_text || "",
+          translation_en: r.conventional_en || r.en_text || "",
+          modern_translation_bn: r.modern_translation_bn || undefined,
+          modern_translation_en: r.modern_translation_en || undefined,
+          meta_bn: r.meta_bn || undefined,
+          meta_en: r.meta_en || undefined,
+          lexicon_modern_notes: r.lexicon_modern_notes || undefined,
+          audio_url: r.audio_url || undefined,
+          words: (r.words as any[]) || [],
+        })),
+      };
+      applyLocalMetaOverrides(sId, surahData);
+      await saveSurahOffline(sId, surahData);
+      return surahData;
+    }
+  } catch (supabaseErr) {
+    console.warn(`Supabase fetch failed for Surah ${sId}, checking local edge cache...`, supabaseErr);
+  }
+
+  // 2. Fetch from static JSON with versioned caching (Edge CDN)
   const url = `/data/quran/surahs/${sId}.json?v=${APP_DATA_VERSION}`;
   try {
     const res = await fetch(url);
@@ -362,13 +399,13 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
     console.warn(`Network fetch failed for Surah ${sId}, checking offline fallback...`, err);
   }
 
-  // 2. Offline fallback (IndexedDB + Cache Storage)
+  // 3. Offline fallback (IndexedDB + Cache Storage)
   const offlineData = await getSurahOffline(sId);
   if (offlineData?.ayahs && offlineData.ayahs.length > 0) {
     return applyLocalMetaOverrides(sId, offlineData);
   }
 
-  // 3. Last resort fallback
+  // 4. Last resort fallback
   const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
   if (fallbackRes.ok) {
     const freshData: SurahData = await fallbackRes.json();
