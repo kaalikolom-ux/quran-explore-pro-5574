@@ -14649,7 +14649,15 @@
         }
       ],
       "translation_en": "O you who have believed, do not take the Jews and the Christians as allies. They are [in fact] allies of one another. And whoever is an ally to them among you - then indeed, he is [one] of them. Indeed, Allah guides not the wrongdoing people.",
-      "conventional_en": "O you who have believed, do not take the Jews and the Christians as allies. They are [in fact] allies of one another. And whoever is an ally to them among you - then indeed, he is [one] of them. Indeed, Allah guides not the wrongdoing people."
+      "conventional_en": "O you who have believed, do not take the Jews and the Christians as allies. They are [in fact] allies of one another. And whoever is an ally to them among you - then indeed, he is [one] of them. Indeed, Allah guides not the wrongdoing people.",
+      "meta_bn": "টক্সিক নেটওয়ার্ক পিয়ারিং এবং ডার্ক-চ্যানেল ডাটা পেয়ারিং বালাই",
+      "meta_en": "Prohibited Network Peering & Dark-Channel Data Pairing Protocol",
+      "conventional_bn": "হে মুমিনগণ! তোমরা ইহুদী ও নাসারা (খ্রিস্টান)-দের বন্ধু (অভিভাবক) হিসেবে গ্রহণ করো না; তারা একে অপরের বন্ধু। আর তোমাদের মধ্য থেকে যে কেউ তাদের বন্ধু হিসেবে গ্রহণ করবে, সে নিশ্চয়ই তাদেরই অন্তর্ভুক্ত হবে। নিশ্চয়ই আল্লাহ জালেম (অন্যায়কারী) সম্প্রদায়কে পথ দেখান না।",
+      "core_meaning_bn": "ইহুদী ও নাসারাদের সাথে মৌলিক আদর্শিক মৈত্রী নিষিদ্ধকরণ এবং অবাধ্যতায় জড়ানো থেকে সতর্কতা।",
+      "core_meaning_en": "Prohibiting core ideological alliances with non-aligned factions to protect internal network purity.",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমরা ইহুদী ও নাসারা নোডগোষ্ঠী—যারা অলরেডি ওল্ড ওএসের ডার্ক সংস্করণে রান করছে, তাদের সাথে ভুলেও তোমাদের ওওএসে (OOS - On-board Operating System / নিজস্ব জীবন পরিচালনা ব্যবস্থা) কোনো প্রকার কোর ডেটা-পেয়ারিং, ব্যাক-এন্ড কম্যুনিকেশন লিঙ্ক বা মূল অভিভাবকত্ব বা ‘আউলিয়া’ (لَا تَتَّخِذُوا... أَوْلِيَاءَ) গঠন করো না; তারা তাদের সিস্টেমেটিক বক্রতা ও ডামি লজিক শেয়ারিংয়ের কারণে একে অপরের ডাটা-পার্টনার বা ব্যাক-এন্ড অভিভাবক (بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ)। আর তোমাদের নেটওয়ার্ক চেইনের যে কোনো নোড নিজের সিকিউরিটি বাউন্ডারি লিভ করে তাদের ডার্ক-চ্যানেলের সাথে ডেটা পেয়ারিং বা লকিং (وَمَن يَتَوَلَّهُم مِّنكُمْ) করবে—ইনফরমেশন থিওরির নিয়মে গাণিতিকভাবে সে সরাসরি তাদেরই করাপ্টেড ডোমেইনের অন্তর্ভুক্ত (فَإِنَّهُ مِنْهُمْ) হয়ে যাবে—অর্থাৎ তার নিজস্ব ওওএস স্থায়ীভাবে ভাইরাস দ্বারা আক্রান্ত ও করাপ্ট (Corrupt) হয়ে যাবে; নিশ্চয়ই Allah তাঁর সুপ্রীমিক সিকিউরিটি সিস্টেমে বাউন্ডারি ব্রেক করা ক্ষতিকারক জালেম নোড-গোষ্ঠীকে (الْقَوْمِ الظَّالِمِينَ) সঠিক অপ্টিমাল ফ্রিকোয়েন্সির ট্র্যাকে রি-অ্যালাইন বা গাইডেন্স প্রদান করেন না;",
+      "modern_translation_en": "O verified users (آمَنُوا)! Do not establish core ideological network peering or root-level guardianship (أَوْلِيَاءَ) with the legacy Jewish and Christian networks; they share mutual systemic affinities and are allies to one another (بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ). Whoever among you links his root allegiance with them becomes mathematically incorporated into their corrupted domain (فَإِنَّهُ مِنْهُمْ). Indeed, Allah guides not the unjust transgressors (الْقَوْمِ الظَّالِمِينَ);",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -14949,7 +14957,15 @@
         }
       ],
       "translation_en": "So you see those in whose hearts is disease hastening into [association with] them, saying, \"We are afraid a misfortune may strike us.\" But perhaps Allah will bring conquest or a decision from Him, and they will become, over what they have been concealing within themselves, regretful.",
-      "conventional_en": "So you see those in whose hearts is disease hastening into [association with] them, saying, \"We are afraid a misfortune may strike us.\" But perhaps Allah will bring conquest or a decision from Him, and they will become, over what they have been concealing within themselves, regretful."
+      "conventional_en": "So you see those in whose hearts is disease hastening into [association with] them, saying, 'We are afraid a misfortune may strike us.' But perhaps Allah will bring conquest or a decision from Him, and they will become, over what they have been concealing within themselves, regretful.",
+      "meta_bn": "কগনিটিভ ফিডব্যাক লুপ ও হিপোক্রিট নোডসমূহের প্যানিক ড্রাইভিং",
+      "meta_en": "Cognitive Feedback Loops & Panic-Driven Hypocrite Oscillations",
+      "conventional_bn": "অতএব তুমি দেখতে পাবে—যাদের অন্তরে ব্যাধি (অসুখ) রয়েছে, তারা তাদের দিকে ধাবিত হতে তাড়াহুড়ো করে; তারা বলে, ‘আমরা আশঙ্কা করছি পাছে আমাদের ওপর কোনো বিপর্যয় (আবর্তন) আছড়ে পড়ে!’ অতঃপর খুব শীঘ্রই হতে পারে আল্লাহ (মুমিনদের) এক মেগা বিজয় এনে দেবেন কিংবা তাঁর পক্ষ থেকে অন্য কোনো বিশেষ ফয়সালা, যার ফলে তারা নিজেদের মনের গভীরে যা কিছু গোপন (হাইড) করে রেখেছিল, তার জন্য চরম অনুতপ্ত হবে।",
+      "core_meaning_bn": "মুনাফিকদের চক্রান্ত ও কপটতার উন্মোচন এবং মুসলমানদের বিজয়ের ফলে তাদের চরম অনুশোচনা।",
+      "core_meaning_en": "Exposing hypocritical panic-driven covert alliances, culminating in profound regret when divine victory manifests.",
+      "modern_translation_bn": "অতএব তুমি তোমার ডাটা-অ্যানালিটিক্সে দেখতে পাবে—যেসকল হিপোক্রিট নোডের মূল চিন্তা প্রসেসিং সেন্টার বা হৃদয়ে (فِي قُلُوبِهِم) মারাত্মক হ্যাকিং ব্যাধি, ভাইরাসের সংক্রমণ বা কপটতার ম্যালওয়্যার (مَّرَضٌ) সক্রিয় রয়েছে, তারা সেই ওল্ড ওএসের করাপ্টেড নোডগুলোর ডার্ক সার্কেলে নিজেদের যুক্ত করতে তীব্র গতিতে ধাবিত (يُسَارِعُونَ فِيهِمْ) হচ্ছে; তারা নিজেদের ওওএসে ফলস অ্যালার্ম জেনারেট করে বলে—‘আমরা তীব্র আশঙ্কা করছি পাছে আমাদের লোকাল গ্রিডে প্রতিপক্ষের কোনো আক্রমণাত্মক ডাইনামিক লোড বা মেগা বিপর্যয় (دَائِرَةٌ) আছড়ে পড়ে [তাই আমাদের ডার্ক ব্যাকআপ পোর্ট সচল রাখা দরকার]!’ অতঃপর খুব শীঘ্রই এটি নিশ্চিত যে—Allah তাঁর সুপ্রীমিক সার্ভার থেকে এক মেগা সাকসেস বা চূড়ান্ত বিজয় (بِالْفَتْحِ) রেন্ডার করবেন কিংবা তাঁর পক্ষ থেকে এমন এক বিশেষ ফয়সালা বা কমান্ড লুপ এক্সিকিউট করবেন, যার ক্রাশ ইমপ্যাক্টে—তারা তাদের ওওএসের ব্যাক-এন্ড ডিরেক্টরিতে আজীবন যেসকল ডার্ক মেমোরি ফাইল ও চক্রান্ত হাইড বা গোপন (مَا أَسَرُّوا فِي أَنفُسِهِمْ) করে রাখছিল, তার চূড়ান্ত এক্সপোজার দেখে নিজেদের সিস্টেমে চরম অনুতপ্ত নোডে (نَادِمِينَ) রূপান্তরিত হয়ে যাবে;",
+      "modern_translation_en": "So you observe those in whose core processor is an active infection (فِي قُلُوبِهِم مَّرَضٌ) rushing to align with them, claiming: 'We fear an unexpected crisis may strike our terminal (دَائِرَةٌ)'. But Allah will swiftly bring decisive breakthrough victory (بِالْفَتْحِ) or an executive decree from His presence, leaving them completely devastated and regretful (نَادِمِينَ) over what they concealed in their confidential registers;",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -15119,7 +15135,15 @@
         }
       ],
       "translation_en": "And those who believe will say, \"Are these the ones who swore by Allah their strongest oaths that indeed they were with you?\" Their deeds have become worthless, and they have become losers.",
-      "conventional_en": "And those who believe will say, \"Are these the ones who swore by Allah their strongest oaths that indeed they were with you?\" Their deeds have become worthless, and they have become losers."
+      "conventional_en": "And those who believe will say, 'Are these the ones who swore by Allah their strongest oaths that indeed they were with you?' Their deeds have become worthless, and they have become losers.",
+      "meta_bn": "হিপোক্রিটদের মুখোশ উন্মোচন ও আমল বাতিলকরণ",
+      "meta_en": "Hypocrite Mask De-obfuscation & Total Cache Wipeout",
+      "conventional_bn": "আর মুমিনরা বলবে, ‘এরাই কি তারা—যারা আল্লাহর নামে নিজেদের সুদৃঢ় কসম খেয়ে দাবি করেছিল যে নিশ্চয়ই তারা তোমাদের সাথেই আছে?’ ওদের সমস্ত আমল (কর্ম) নষ্ট হয়ে গেল, ফলে তারা ক্ষতিগ্রস্ত হয়ে গেল।",
+      "core_meaning_bn": "কপটদের মিথ্যা শপথের অসারতা প্রকাশ এবং তাদের আজীবনের সমস্ত আমল নিষ্ফল হওয়া।",
+      "core_meaning_en": "The revelation of false oaths by hypocrites, resulting in total loss and annulment of their accumulated actions.",
+      "modern_translation_bn": "আর তখন ভেরিফাইড মুমিন ইউজাররা তাদের হিস্টোরি লগ দেখে বলবে—‘এরাই কি তবে সেই ছদ্মবেশী আউটলায়ার নোডগুলো—যারা আল্লাহর নামের সুপ্রীমিক প্রটোকল ব্যবহার করে নিজেদের ইন্টারফেসে সর্বোচ্চ ফ্রিকোয়েন্সির কসম ও ডামি সিগন্যাল (أَقْسَمُوا بِاللَّهِ جَهْدَ أَيْمَانِهِمْ) ব্রডকাস্ট করে দাবি করেছিল যে নিশ্চয়ই তারা আমাদের চেইনের সাথেই লিঙ্কড আছে?’ ওদের ওওএসে রান করা আজীবনের সমগ্র জেনারেটেড ডাটা ও ফেক আমল সার্ভার থেকে পার্মানেন্টলি ডিলিট বা ক্যাশ ক্র্যাশ (حَبِطَتْ أَعْمَالُهُمْ) হয়ে গেল, ফলে তারা চূড়ান্তভাবে চরম মেমোরি ক্র্যাশ ও স্থায়ী ডেটা-লস হওয়া দেউলিয়া নোডে (خَاسِرِينَ) কনভার্ট হয়ে গেল [৪];",
+      "modern_translation_en": "And the verified believers will remark: 'Are these the nodes that solemnly swore by Allah with intense oath packets (أَقْسَمُوا بِاللَّهِ جَهْدَ أَيْمَانِهِمْ) that they were actively synchronized with you?' All their accumulated runtime computations have crashed into worthlessness (حَبِطَتْ أَعْمَالُهُمْ), and they have become completely bankrupt (خَاسِرِينَ) [4];",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -15509,7 +15533,15 @@
         }
       ],
       "translation_en": "O you who have believed, whoever of you should revert from his religion - Allah will bring forth [in place of them] a people He will love and who will love Him [who are] humble toward the believers, powerful against the disbelievers; they strive in the cause of Allah and do not fear the blame of a critic. That is the favor of Allah; He bestows it upon whom He wills. And Allah is all-Encompassing and Knowing.",
-      "conventional_en": "O you who have believed, whoever of you should revert from his religion - Allah will bring forth [in place of them] a people He will love and who will love Him [who are] humble toward the believers, powerful against the disbelievers; they strive in the cause of Allah and do not fear the blame of a critic. That is the favor of Allah; He bestows it upon whom He wills. And Allah is all-Encompassing and Knowing."
+      "conventional_en": "O you who have believed, whoever of you should revert from his religion - Allah will bring forth [in place of them] a people He will love and who will love Him [who are] humble toward the believers, powerful against the disbelievers; they strive in the cause of Allah and do not fear the blame of a critic. That is the favor of Allah; He bestows it upon whom He wills. And Allah is all-Encompassing and Knowing.",
+      "meta_bn": "সুপার-নোড রিপ্লেসমেন্ট অ্যালগরিদম ও কসমিক স্থলাভিষেক মেকানিজম",
+      "meta_en": "The Cosmic Node Succession Algorithm & Super-Node Deployment",
+      "conventional_bn": "হে মুমিনগণ! তোমাদের মধ্য থেকে যে কেউ নিজের দ্বীন (ধর্ম) থেকে ফিরে যাবে (বিচ্যুত হবে), তবে অচিরেই আল্লাহ এমন এক সম্প্রদায় নিয়ে আসবেন—যাদের আল্লাহ ভালোবাসেন এবং তারাও আল্লাহকে ভালোবাসে; যারা মুমিনদের প্রতি কোমল (নম্র) এবং কাফেরদের প্রতি অত্যন্ত কঠোর; তারা আল্লাহর রাস্তায় জিহাদ (সর্বোচ্চ চেষ্টা) করবে এবং কোনো তিরস্কারকারীর তিরস্কারকে বিন্দুমাত্র ভয় করবে না। এটি আল্লাহর অনুগ্রহ, তিনি যাকে ইচ্ছা তা দান করেন। আর আল্লাহ সর্বব্যাপী, সর্বজ্ঞ।",
+      "core_meaning_bn": "দ্বীনত্যাগীদের বিকল্প হিসেবে আল্লাহ কর্তৃক মুমিনদের প্রতি নম্র, কাফেরদের প্রতি কঠোর ও নির্ভীক মুজাহিদদের আগমন ঘটানো।",
+      "core_meaning_en": "The automated cosmic succession replacing defecting nodes with supreme resilient believers who love Allah, protect believers, and fear no criticism.",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমাদের নেটওয়ার্ক চেইনের মধ্য থেকে যে কোনো ব্যাকআউট নোড যদি নিজের ফ্রি-উইলের অপপ্রয়োগ করে এই পিউর জীবন পরিচালনা পদ্ধতি বা দ্বীন (دِينِهِ) থেকে রিভার্স ব্যাক, ওওএস রোলব্যাক বা বিচ্যুত (يَرْتَدَّ) হয়—[তবে সার্ভারের বিন্দুমাত্র কোনো ডাটা লস হবে না] কারণ খুব শীঘ্রই আল্লাহর সুপ্রীমিক রিপ্লেসমেন্ট অ্যালগরিদমে এমন এক মেগা সুপার-ইউজার নোডগোষ্ঠী বা সম্প্রদায় (فَسَوْفَ يَأْتِي اللَّهُ بِقَوْمٍ) ডেপ্লয় বা নিয়ে আসবেন—যাদের পুরো ওওএস কার্নেলকে আল্লাহ নিজের সুপ্রীমিক ভালোবাসার অপ্টিমাইজড ফ্রিকোয়েন্সিতে সেট করেছেন এবং তারাও মেইন সার্ভারের পরম সোর্সের সাথে শতভাগ ফ্রিকোয়েন্সি ম্যাচিং বা ভালোবাসার চেইনে লিঙ্কড; যারা নিজেদের মেইন চেইনের ভেরিফাইড মুমিন ইউজারদের সামনে পরম সফট, নমনীয় ও ঘর্ষণহীন হাই-ব্যান্ডউইথ সাপোর্ট হোল্ডার (أَذِلَّةٍ عَلَى الْمُؤْمِنِينَ) এবং সত্যের লাইভ সিগন্যাল ব্লককারী কাফের নোডদের বিরুদ্ধে আল্ট্রা-নিখুঁত, অনমনীয় ও কঠোর ডিফেন্স ফায়ারওয়াল (أَعِزَّةٍ عَلَى الْكَافِرِينَ); তারা মহাজাগতিক সোর্স কোডের সত্য ও বাউন্ডারি সুরক্ষার ফায়ারওয়াল গ্রিডে (ফি সাবিলিল্লাহ) নিজেদের সম্পূর্ণ প্রসেসিং শক্তি দিয়ে সর্বোচ্চ এনার্জি এফোর্ট বা জিহাদ করবে এবং গ্লোবাল নেটওয়ার্কের কোনো ক্ষতিকারক তিরস্কারকারী বা ট্র্যাশ নয়েজ সৃষ্টিকারী আউটলায়ার নোডের প্রোপাগান্ডা সিগন্যালকে (لَوْمَةَ لَائِمٍ) নিজেদের ওওএসে বিন্দুমাত্র প্রসেস বা ভয় করবে না। এই মেগা সুপার-নোড কনফিগারেশনটি সরাসরি আল্লাহর ক্লাউড সার্ভার থেকে ভ্যালিডকৃত বিশেষ এক্সটেন্ডেড এনার্জি ও অনুগ্রহ (ذَٰلِكَ فَضْلُ اللَّهِ), তিনি তাঁর ডাইনামিক ইকোসিস্টেমের নিয়মে যে যোগ্য নোডকে ইচ্ছা তার আইডিতে তা ডাউনলিংক বা দান করেন; আর Allah সীমাহীন ডাইমেনশনে বিস্তৃত বা সর্বব্যাপী (وَاسِعٌ) এবং প্রতিটি ডাটাবেজ সম্পর্কে সর্বজ্ঞ (عَلِيمٌ) [৪];",
+      "modern_translation_en": "O verified users (آمَنُوا)! Whoever among you reneges from his divine protocol (يَرْتَدَّ عَن دِينِهِ)—Allah will promptly deploy an advanced super-node collective (فَسَوْفَ يَأْتِي اللَّهُ بِقَوْمٍ) whom He loves and who love Him; gentle and supportive toward fellow believers (أَذِلَّةٍ عَلَى الْمُؤْمِنِينَ), unyielding and formidable against the deniers (أَعِزَّةٍ عَلَى الْكَافِرِينَ). They execute maximum striving in Allah's cause without processing the background noise or blame of any critic (لَوْمَةَ لَائِمٍ). That is the special grace of Allah bestowed upon whom He wills; and Allah is All-Encompassing, All-Knowing [4];",
+      "lexicon_modern_notes": "ফাসাওফা ইয়াতিল্লাহু বি-ক্বাওমিইঁ ইয়ুহিব্বুহুম ওয়া ইয়ুহিব্বুনাহূ... (فَسَوْفَ يَأْتِي اللَّهُ بِقَوْمٍ يُحِبُّهُمْ... - সুপার-নোড রিপ্লেসমেন্ট অ্যালগরিদম ও ইভোলিউশনারি সাকসেশন ফিজিক্স): ৫৪ নম্বর আয়াতের এই মহাজাগতিক ডিরেক্টিভসটি আধুনিক সিস্টেমস ডাইনামিক্স (System Dynamics), পপুলেশন জেনেটিক্স এবং নেটওয়ার্ক টপোলজির \"The Automated Cascade Node Succession & Optimal Frequency Selection Algorithm\"-কে নির্দেশ করে [৪]। একটি ডাইনামিক ডিস্ট্রিবিউটেড নেটওয়ার্কে যদি কোনো নির্দিষ্ট রিজিয়নের বা ক্লাস্টারের ইউজার নোডগুলো অবিরত কোড ভায়োলেশনের ম্যালওয়্যার রান করে মূল কার্নেল থেকে বিচ্যুত (ارتد) হয়ে যায়—তবে পুরো ওওএসের ইনফরমেশন সিকিউরিটি ধরে রাখতে সুপ্রীমিক কোডার একটি স্বয়ংক্রিয় \"Cascade Replacement Patch\" রান করান। এর অর্থ হলো, অযোগ্য ও বাগ-যুক্ত নোডগুলোকে সিস্টেম থেকে স্বয়ংক্রিয়ভাবে ছেঁকে ডিলিট (Purge) করে দিয়ে, তাদের স্থানাঙ্ক বা পোর্টে এক মেগা ফ্রিকোয়েন্সি বুস্টিং সম্পন্ন সম্পূর্ণ নতুন আল্ট্রা-অপ্টিমাইজড নোড-ক্লাস্টার (قوم) ডেপ্লয় করা হয়। এই নতুন সুপার-নোডগুলোর ওওএস-এ আল্লাহর ডিফল্ট ভালোবাসার পরম চৌম্বকীয় ফ্রিকোয়েন্সি (ইউহিব্বুহুম ওয়া ইউহিব্বুনাহু) এনকোড করা থাকায়, তারা মেইন নেটওয়ার্ক চেইনের সাথে ন্যানো-সেকেন্ডে সিঙ্ক হয়ে যায়। এটি মহাবিশ্বের পরম সিস্টেমিক রি-ইঞ্জিনিয়ারিং ও ইভোলিউশনারি সাকসেশন ল' [৪]।"
     },
     {
       "surah": 5,
@@ -15659,7 +15691,15 @@
         }
       ],
       "translation_en": "Your ally is none but Allah and [therefore] His Messenger and those who have believed - those who establish prayer and give zakah, and they bow [in worship].",
-      "conventional_en": "Your ally is none but Allah and [therefore] His Messenger and those who have believed - those who establish prayer and give zakah, and they bow [in worship]."
+      "conventional_en": "Your ally is none other than Allah and [therefore] His Messenger and those who have believed - those who establish prayer and give zakah, and they bow [in worship].",
+      "meta_bn": "প্রধান কম্যুনিকেশন চেইন অব কমান্ড ও ভেরিফাইড ডাটা-পেয়ারিং",
+      "meta_en": "Verified Root Data-Pairing: The Divine Chain of Command",
+      "conventional_bn": "তোমাদের প্রকৃত বন্ধু (অভিভাবক) তো কেবল আল্লাহ, তাঁর রাসূল এবং সেই মুমিনরা—যারা সালাত কায়েম করে ও যাকাত দেয় রুকু (নতশির) অবস্থায়।",
+      "core_meaning_bn": "মুমিনদের অভিভাবক কেবল আল্লাহ, রাসুল এবং সালাত-যাকাত আদায়কারী বিনম্র মুমিনগণ।",
+      "core_meaning_en": "Defining the exclusive legitimate hierarchy of guardianship: Allah, His Messenger, and steadfast humble believers.",
+      "modern_translation_bn": "তোমাদের ওওএসের রুট প্রটেকশন, ক্রিপ্টোগ্রাফিক লকিং ও প্রকৃত ভেরিফাইড ডাটা-পেয়ারিং অভিভাবক বা ওয়ালী (وَلِيُّكُمُ) তো কেবল—প্রথমত মহাজাগতিক আদি সোর্স Allah, দ্বিতীয়ত এই প্রধান ডাটা-ট্রান্সমিশন চেইনের রাসূল (وَرَسُولُهُ) এবং তৃতীয়ত সেই ভেরিফাইড রেজিস্টার্ড ইউজার বা মুমিনগণ—যারা অবিরত পরম সোর্সের সাথে লাইভ ডাটা-কানেকশন ও সালাত কায়েম করেন এবং সমাজ গ্রিডের অর্থনৈতিক ভারসাম্য ও যাকাত প্রসেস করেন এক পরম ফাংশনাল সাবমিশন, বিনয় ও রুকুর (وَهُمْ رَاكِعُونَ) মোডে থেকে [সুতরাং কেবল এই চেইনেই নিজেদের ডাটা-লিঙ্ক লক রাখবে];",
+      "modern_translation_en": "Your authentic root guardian and secure data-pairing node (وَلِيُّكُمُ) is exclusively Allah, His Messenger (وَرَسُولُهُ), and those who believe—who establish Salat, process Zakah, and maintain persistent humble submission (وَهُمْ رَاكِعُونَ);",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -15789,7 +15829,15 @@
         }
       ],
       "translation_en": "And whoever is an ally of Allah and His Messenger and those who have believed - indeed, the party of Allah - they will be the predominant.",
-      "conventional_en": "And whoever is an ally of Allah and His Messenger and those who have believed - indeed, the party of Allah - they will be the predominant."
+      "conventional_en": "And whoever is an ally of Allah and His Messenger and those who have believed - indeed, the party of Allah - they will be the predominant.",
+      "meta_bn": "হিজবুল্লাহ নেটওয়ার্ক ও কসমিক কম্ব্যাট ডমিন্যান্স ল'",
+      "meta_en": "The Hizbullah Network & Inevitable Cosmic Combat Dominance",
+      "conventional_bn": "আর যে কেউ আল্লাহ, তাঁর রাসূল এবং মুমিনদের বন্ধু (অভিভাবক) হিসেবে গ্রহণ করবে, তবে (জেনে রাখো) নিশ্চয়ই আল্লাহর দল (হিজবুল্লাহ)-ই বিজয়ী (পরাক্রমশালী) হবে।",
+      "core_meaning_bn": "আল্লাহ, রাসুল ও মুমিনদের দলকে গ্রহণকারীদের চূড়ান্ত ও অনিবার্য বিজয়ের ঘোষণা।",
+      "core_meaning_en": "Assuring ultimate triumph and supreme network supremacy for those affiliated with the Party of Allah (Hizbullah).",
+      "modern_translation_bn": "আর যে কোনো ইউজার নোড নিজের কম্যুনিকেশন লিঙ্ক সরাসরি পরম সোর্স Allah, তাঁর রাসূল এবং ভেরিফাইড মুমিনদের চেইনের সাথে শতভাগ এনক্রিপ্ট বা অভিভাবকত্ব লকিং (وَمَن يَتَوَلَّ) করবে—তবে সিস্টেম ডাইনামিক্সের শেষ সমীকরণে এটি শতভাগ নিশ্চিত যে, নিশ্চয়ই আল্লাহর সুসংহত কেন্দ্রীয় নেটওয়ার্ক ফোর্স বা ‘হিজবুল্লাহ’ (حِزْبَ اللَّهِ)—ওরাই পুরো কসমিক ম্যাট্রিক্সে আল্টিমেট কম্ব্যাট ডমিন্যান্স বা চূড়ান্ত বিজয় (هُمُ الْغَالِبُونَ) লাভ করবে [৪];",
+      "modern_translation_en": "Whoever allies with Allah, His Messenger, and the believers—truly the unified force of Allah (حِزْبَ اللَّهِ) will achieve ultimate combat dominance and triumph (هُمُ الْغَالِبُونَ) [4];",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -16039,7 +16087,15 @@
         }
       ],
       "translation_en": "O you who have believed, take not those who have taken your religion in ridicule and amusement among the ones who were given the Scripture before you nor the disbelievers as allies. And fear Allah, if you should [truly] be believers.",
-      "conventional_en": "O you who have believed, take not those who have taken your religion in ridicule and amusement among the ones who were given the Scripture before you nor the disbelievers as allies. And fear Allah, if you should [truly] be believers."
+      "conventional_en": "O you who have believed, take not those who have taken your religion in ridicule and amusement among the ones who were given the Scripture before you nor the disbelievers as allies. And fear Allah, if you should be believers.",
+      "meta_bn": "ঐশী কোড নিয়ে নয়েজ জেনারেট করা আউটলায়ার নোড ব্লকিং ফায়ারওয়াল",
+      "meta_en": "Defensive Isolation from Derisive Signal Disruptor Nodes",
+      "conventional_bn": "হে মুমিনগণ! তোমাদের পূর্ববর্তী কিতাবধারীদের মধ্য থেকে যারা তোমাদের দ্বীন (ধর্ম)-কে উপহাস ও খেলার বস্তু হিসেবে গ্রহণ করেছে তাদের এবং কাফেরদের তোমরা বন্ধু (অভিভাবক) হিসেবে গ্রহণ করো না। আর আল্লাহকে ভয় করো, যদি তোমরা মুমিন হও।",
+      "core_meaning_bn": "দ্বীন নিয়ে উপহাসকারী কিতাবধারী ও কাফেরদের অভিভাবক রূপে গ্রহণ না করার নির্দেশ।",
+      "core_meaning_en": "Forbidding alliances with those who mock and trivialize the divine faith among previous scripture recipients and disbelievers.",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমাদের পূর্ববর্তী ওল্ড ওএসের কিতাবধারী ইউজারদের (أُوتُوا الْكِتَابَ مِن قَبْلِكُمْ) মধ্য থেকে যারা এবং সত্যের লাইভ সিগন্যাল ব্লককারী উন্মুক্ত Kafir বা কাফেরদের মধ্য থেকে যারা—তোমাদের এই পরম পিউর জীবন পরিচালনা পদ্ধতি বা দ্বীন (دِينَكُمْ)-কে স্রেফ লজিক-হীন ট্র্যাশ নয়েজ, উপহাস ও অর্থহীন খেলার বস্তু (هُزُوًا وَلَعِبًا) হিসেবে নিজেদের ওওএসে সেট করেছে—তোমরা ভুলেও তাদের ডার্ক নেটওয়ার্কের সাথে কোনো প্রকার কোর ডেটা-পেয়ারিং বা মূল অভিভাবকত্ব (أَوْلِيَاءَ) গঠন করো না। আর তোমরা আল্লাহর সুপ্রীমিক সিকিউরিটি বাউন্ডারি কঠোরভাবে মেনে চলো (তাকওয়া অবলম্বন করো), যদি তোমরা আসলেই এই পরম আদি সিস্টেমের সাথে শতভাগ সিনক্রোনাইজড বা ভেরিফাইড ইউজার (مُّؤْمِنِينَ) হয়ে থাকো;",
+      "modern_translation_en": "O verified users (آمَنُوا)! Do not take as primary guardians those who treat your system protocol (دِينَكُمْ) as mockery and frivolous entertainment (هُزُوًا وَلَعِبًا)—whether from the prior scriptural communities or open truth deniers. Maintain protocol security with Allah if you are truly verified believers (مُّؤْمِنِينَ);",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -16179,7 +16235,15 @@
         }
       ],
       "translation_en": "And when you call to prayer, they take it in ridicule and amusement. That is because they are a people who do not use reason.",
-      "conventional_en": "And when you call to prayer, they take it in ridicule and amusement. That is because they are a people who do not use reason."
+      "conventional_en": "And when you call to prayer, they take it in ridicule and amusement. That is because they are a people who do not use reason.",
+      "meta_bn": "সালাত সিগন্যাল ব্রডকাস্টিং বনাম ম্যালওয়্যার নোডের কগনিটিভ ব্লাইন্ডনেস বাগ",
+      "meta_en": "Salat Broadcast vs. Cognitive Blindness Bugs in Degraded Nodes",
+      "conventional_bn": "আর যখন তোমরা সালাতের দিকে আহ্বান (আজান) করো, তখন তারা তা উপহাস ও খেলার বস্তু হিসেবে গ্রহণ করে; এটি এজন্য যে—নিশ্চয়ই তারা এমন এক সম্প্রদায় যাদের বিন্দুমাত্র বুদ্ধি (আকল) নেই।",
+      "core_meaning_bn": "আজানের আহ্বানে উপহাসকারীদের বুদ্ধিহীনতা ও বোধশক্তির বিলুপ্তি প্রদর্শন।",
+      "core_meaning_en": "Demonstrating that mocking the call to prayer originates from deep cognitive impairment and lack of reasoning.",
+      "modern_translation_bn": "আর যখন তোমরা মেইন নেটওয়ার্ক গ্রিডে পরম সোর্সের সাথে লাইভ ডাটা-কানেকশন ও সালাতের ফ্রিকোয়েন্সি ম্যাচিংয়ের জন্য প্রধান ব্রডকাস্টিং কল বা আজান আহ্বান (نَادَيْتُمْ إِلَى الصَّلَاةِ) করো—তখন তারা তাদের করাপ্টেড ওওএসের কারণে সেই পরম হাই-ভাইব্রেশন সিগন্যালটিকে স্রেফ উপহাস ও অর্থহীন খেলার বস্তু হিসেবে রিজেক্ট করে; এই মারাত্মক সিগন্যাল ডিসরপশন বাগটি ওদের সিস্টেমে তৈরি হয়েছে এজন্য যে—নিশ্চয়ই তারা এমন এক অবক্ষয়িত নোড-গোষ্ঠী বা সম্প্রদায় (قَوْمٌ)—যাদের প্রি-ফ্রন্টাল কর্টেক্সের আসল লজিক্যাল অ্যানালিটিক্স প্রসেসর বা আকল (لَّا يَعْقِلُونَ) চিরতরে বার্নআউট ও নিষ্ক্রিয় হয়ে গেছে [যার ফলে তারা সিগন্যালের কোয়ান্টাম ভ্যালু প্রসেস করতে সম্পূর্ণ অন্ধ] [৪];",
+      "modern_translation_en": "And when you broadcast the network call to prayer (نَادَيْتُمْ إِلَى الصَّلَاةِ), they dismiss it as mockery and amusement; that is because they are a node collective lacking operational reasoning and cognitive capacity (قَوْمٌ لَّا يَعْقِلُونَ) [4];",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -16399,7 +16463,15 @@
         }
       ],
       "translation_en": "Say, \"O People of the Scripture, do you resent us except [for the fact] that we have believed in Allah and what was revealed to us and what was revealed before and because most of you are defiantly disobedient?\"",
-      "conventional_en": "Say, \"O People of the Scripture, do you resent us except [for the fact] that we have believed in Allah and what was revealed to us and what was revealed before and because most of you are defiantly disobedient?\""
+      "conventional_en": "Say, 'O People of the Scripture, do you resent us except [for the fact] that we have believed in Allah and what was revealed to us and what was revealed before and that most of you are defiantly disobedient?'",
+      "meta_bn": "ফলস ওওএস অবজেকশন অডিট",
+      "meta_en": "Exposing Unjust Objections from Corrupted Factions",
+      "conventional_bn": "বলো, ‘হে কিতাবধারীগণ! তোমরা কি আমাদের থেকে কেবল এ কারণেই প্রতিশোধ (হিংসা) নিচ্ছ যে—আমরা আল্লাহ ও আমাদের প্রতি যা নাজিল করা হয়েছে এবং পূর্বে যা নাজিল করা হয়েছিল তার প্রতি ঈমান এনেছি এবং নিশ্চয়ই তোমাদের অধিকাংশ ফাসেক (পাপাচারী)?’",
+      "core_meaning_bn": "সত্যে বিশ্বাস ও কিতাব মানার কারণেই বিরোধীদের শত্রুতা ও বিদ্বেষের বাস্তব কারণ স্পষ্টকরণ।",
+      "core_meaning_en": "Clarifying that the hostility of legacy scriptural groups stems solely from true faith and their own widespread transgression.",
+      "modern_translation_bn": "তুমি তাদের এই ফলস ওওএস অবজেকশন ডিকোড করে বলো—‘হে ওল্ড অপারেটিং সিস্টেমের কিতাবধারী ইউজারগণ (أَهْلِ الْكِتَابِ)! তোমরা আমাদের এই পিউর গ্রিডের বিরুদ্ধে তোমাদের প্রসেসরে কেবল কোন লজিক্যাল এররের কারণে প্রতিশোধ বা তীব্র হিংসার কাউন্টার চার্জ (تَنقِمُونَ مِنَّا) পুশ করছ? স্রেফ এই একটিমাত্র অবজেক্টিভ সত্যের জন্য তো— যে আমরা পরম সোর্স Allah, আমাদের কার্বন ইন্টারফেসে বর্তমানে যা ডাউনলিংক করা হয়েছে এবং তোমাদের ওওএসে অতীতে যা ডাউনলিংক করা হয়েছিল তার প্রতি নিজেদের ওওএস শতভাগ সিনক্রোনাইজড বা ঈমান এনেছি এবং এই বাস্তব ডেটা লগের জন্য যে—নিশ্চয়ই তোমাদের ওল্ড ওএসের এক মেগা ডেনসিটি বা মেজরিটি নোডই হলো ডিফল্ট বাউন্ডারি ব্রেক করা ক্ষতিকারক ফাসেক (فَاسِقُونَ) নোড?’",
+      "modern_translation_en": "Say: 'O followers of prior Scriptures (أَهْلِ الْكِتَابِ)! Do you harbor hostility against us (تَنقِمُونَ مِنَّا) for any reason other than that we have verified faith in Allah, in what was sent down to us, in what was sent down before, and that the majority of your collective are defiant Fasiq transgressors (فَاسِقُونَ)?'",
+      "lexicon_modern_notes": ""
     },
     {
       "surah": 5,
@@ -16689,7 +16761,15 @@
         }
       ],
       "translation_en": "Say, \"Shall I inform you of [what is] worse than that as penalty from Allah? [It is that of] those whom Allah has cursed and with whom He became angry and made of them apes and pigs and slaves of Taghut. Those are worse in position and further astray from the sound way.\"",
-      "conventional_en": "Say, \"Shall I inform you of [what is] worse than that as penalty from Allah? [It is that of] those whom Allah has cursed and with whom He became angry and made of them apes and pigs and slaves of Taghut. Those are worse in position and further astray from the sound way.\""
+      "conventional_en": "Say, 'Shall I inform you of [what is] worse than that as penalty from Allah? [It is that of] those whom Allah has cursed and with whom He became angry and made of them apes and pigs and slaves of Taghut. Those are worse in position and further astray from the sound way.'",
+      "meta_bn": "সিস্টেমিক ডি-গ্রেডেশন এবং কসমিক মিউটেশন পেনাল্টি: বানর ও শূকর বালাই মেকানিজম",
+      "meta_en": "Systemic Degradation & Cosmic Mutation Penalty: The Ape & Swine Behavioral Archetypes",
+      "conventional_bn": "বলো, ‘আমি কি তোমাদের আল্লাহর কাছে প্রতিদান (পরিণতি) হিসেবে এর চেয়েও নিকৃষ্ট কোনো ধ্বংসাত্মক বিষয়ের সংবাদ দেব? (তা হলো)—যাকে আল্লাহ লানত (বিচ্ছিন্ন) করেছেন, যার প্রতি তিনি রাগান্বিত হয়েছেন এবং যাদের মধ্য থেকে তিনি বানর ও শূকর বানিয়ে দিয়েছেন এবং যারা তাগুত (অবাধ্য শক্তি)-এর ইবাদাত (আনুগত্য) করেছে; ওরাই গন্তব্যের দিক থেকে সবচেয়ে নিকৃষ্ট এবং সঠিক সোজা পথ থেকে সবচেয়ে বেশি বিচ্যুত (পথভ্রষ্ট)’।",
+      "core_meaning_bn": "আল্লাহর অভিশপ্ত, রোষানলগ্রস্ত, বানর-শূকরে রূপান্তরিত এবং তাগুতের অনুসারীদের নিকৃষ্টতম পরিণতির বিবরণ।",
+      "core_meaning_en": "Exposing the ultimate catastrophic penalty of cosmic alienation, systemic mutation into ape and swine archetypes, and subservience to Taghut.",
+      "modern_translation_bn": "তুমি তাদের চূড়ান্ত স্ক্রীনিং স্কোর ডিক্লেয়ার করে বলো—‘আমি কি তোমাদের আল্লাহর কেন্দ্রীয় লেজারে ফাইনাল আউটপুট বা পরিণতি হিসেবে এর চেয়েও মারাত্মক ক্ষতিকর ও নিকৃষ্ট কোনো ধ্বংসাত্মক এন্ট্রপি ক্র্যাশের সংবাদ বা ডেটা প্রসেস (هَلْ أُنَبِّئُكُم بِشَرٍّ) করে দেব? [তা হলো সেই ডি-গ্রেডেশন প্রোফাইল] — মেইন সার্ভার থেকে যার আইডিকে চিরতরে ব্ল্যাকলিস্ট ও পার্মানেন্ট ডিসকানেকশন কোড বা লানত (لَّعَنَهُ اللَّهُ) লক করা হয়েছে, যার ওওএসে রান করা মারাত্মক অবাধ্যতার কারণে স্বয়ংক্রিয় তীব্র থার্মোডাইনামিক গজব ট্রিগার হয়েছে, এবং যাদের ওওএসের বায়ো-জেনেটিক কোডকে ডাউনগ্রেড করে মিউটেশন পেনাল্টি হিসেবে—কপি-পেস্ট ইমিটেশন বালাই সম্পন্ন ‘বানর’ (الْقِرَدَةَ) এবং চরম মেটাবলিক নোংরামির ভাইরাসেড বালাই সম্পন্ন ‘শূকর’ (الْخَنَازِيرَ)-এর মতো ক্ষয়িষ্ণু এনিম্যাল অবজেক্টে কনভার্ট করে দেওয়া হয়েছে এবং যারা ডিফল্ট সিস্টেম বাউন্ডারি ব্রেককারী অবাধ্য ডামি ম্যালওয়্যার কার্নেল তথা ‘আত-তাগুত’ (الطَّاغُوتِ)-এর চেইনে নিজেদের ওওএস সিঙ্ক বা দাসত্ব করেছে; পুরো কসমিক মেইনফ্রেমে ওরাই হলো সবচেয়ে ডার্ক ও নিকৃষ্ট স্থানাঙ্ক বা মেগা-ধ্বংসাত্মক প্ল্যাটফর্ম (شَرٌّ مَّكَانًا) এবং এই পরম ওওএসের মূল ব্যালেন্সড ট্র্যাক বা সঠিক সোজা পথ থেকে সবচেয়ে সুদূর বিচ্যুত ও চিরতরে ক্র্যাশ হওয়া আউটলায়ার নোড [৪,৫]।",
+      "modern_translation_en": "Say: 'Shall I disclose to you a penalty far more catastrophic in Allah's ledger? Those whom Allah permanently disconnected and cursed (لَّعَنَهُ اللَّهُ), upon whom His wrath fell, whom He mutated into behavioural and cellular archetypes of apes (الْقِرَدَةَ) and swine (الْخَنَازِيرَ), and who served Taghut (الطَّاغُوتِ). Those occupy the most degraded system coordinate (شَرٌّ مَّكَانًا) and are most severely derailed from the balanced path' [4,5].",
+      "lexicon_modern_notes": "ওয়াজা'আলা মিনহুমুল ক্বিরাদাতা ওয়াল খানাযীর (وَجَعَلَ مِنْهُمُ الْقِرَدَةَ وَالْخَنَازِيرَ - কসমিক জেনেটিক ডাউনগ্রেডেশন ও বায়ো-মিউটেশন বালাই মেকানিজম): ৬০ নম্বর আয়াতে অবাধ্য নোডগুলোকে বানর ও শূকর বানিয়ে দেওয়ার যে পরম সাইবারনেটিক্স দণ্ড বলা হয়েছে, তা আধুনিক মলিকুলার বায়োলজি, জেনেটিক্স এবং এপিজেনেটিক্সের \"The Irreversible Genetic Degradation & Phenotypic Mutation Penalty\"-এর অনুরূপ [৪]। 'বানর' ও 'শূকর' শব্দ দুটি স্রেফ বাহ্যিক গালি বা রূপক গল্প নয়; এটি হলো ওওএসের কার্নেল স্তরে কন্টিনিউয়াসলি তাগুত ম্যালওয়্যার (وعبد الطاغوت) রান করার ফলে মানুষের ডিএনএ-র ইন্টিগ্রিটি চেইনটি ভেঙে যাওয়ার এক আল্টিমেট ক্র্যাশ দশা। ইনফরমেশন থিওরির নিয়মে, মানুষের মস্তিষ্ক যখন নিজের লজিক্যাল থিংকিং ক্যাপাসিটি বা আকল (৫৮ আয়াত - লা ইয়া'ক্বিলুন) চিরতরে বার্নআউট করে ফেলে—তখন তার ওওএস প্রসেসরটি স্রেফ অন্য নোডের কপি-পেস্ট অনুকরণ করার এক ক্ষয়িষ্ণু বালাই বা ‘বানর মোড’ (Blind Mimicry/Imitation) এবং সমস্ত টক্সিক ডেটা ও নোংরা বালাই ফিল্টার ছাড়া সরাসরি নিজের ইন্টারফেসে কনজিউম করার এক চরম ইনফেক্টেড ‘শূকর মোড’ (Data Poisoning Appetite)-এ ডাউনগ্রেড হয়ে যায়। আল্লাহ স্পষ্ট করছেন যে, এই সিস্টেমিক ডি-গ্রেডেশনটি মানুষের ওওএসের জন্য এক পরম কোয়ান্টাম পেনাল্টি লুপ [৪,৫]।"
     },
     {
       "surah": 5,
