@@ -430,5 +430,187 @@ export const STATIC_ARTICLES: StaticArticle[] = [
 
 </div>
     `
+  },
+  {
+    id: "art-bigganbhittik-quranic-onubade-shobder-proyog-o-porimitibodh",
+    slug: "bigganbhittik-quranic-onubade-shobder-proyog-o-porimitibodh",
+    title_bn: "বিজ্ঞানভিত্তিক কুরআনিক অনুবাদে শব্দের প্রয়োগ ও পরিমিতিবোধ: আক্ষরিক বনাম তাত্ত্বিক বোঝাপড়া",
+    title_en: "Word Application & Balance in Scientific Quranic Translation: Literal vs Expository Understanding",
+    excerpt_bn: "বিজ্ঞানভিত্তিক অনুবাদে অতিরিক্ত শব্দ প্রয়োগের ঝুঁকি, শব্দানুবাদ বনাম তাত্ত্বিক অনুবাদের পার্থক্য এবং ৪:৮২ ফিল্টারের অধীনে কঠোর আকিদাগত ও ভাষাগত ভারসাম্য রক্ষার মেথডোলজি।",
+    excerpt_en: "The risk of verbosity in scientific translations, literal vs expository translation paradigms, and safeguarding the 4:82 consistency filter with theological rigor.",
+    category_id: "cat-scientific",
+    author_id: "38aa28c8-3535-4a1b-ba06-3d1e2792a9c1",
+    published: true,
+    published_at: "2026-09-03T00:30:00.000Z",
+    created_at: "2026-09-03T00:30:00.000Z",
+    updated_at: "2026-09-03T00:30:00.000Z",
+    tags: [
+      "বিজ্ঞানভিত্তিক",
+      "কুরআন গবেষণা",
+      "অনুবাদ তত্ত্ব",
+      "৪:৮২ ফিল্টার",
+      "আলম এম."
+    ],
+    author: STATIC_AUTHORS["38aa28c8-3535-4a1b-ba06-3d1e2792a9c1"],
+    category: STATIC_CATEGORIES[0],
+    content_bn: `
+<div class="article-rich-container space-y-8 text-foreground/90">
+
+  <!-- ইন্ট্রোডাকশন ও মেথডোলজি কার্ড -->
+  <div class="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 backdrop-blur-xs">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-primary">বিজ্ঞানভিত্তিক মেথডোলজি</span>
+      <span class="text-xs text-muted-foreground">কুরআন গবেষণা ও তাদাব্বুর</span>
+    </div>
+    <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">
+      কুরআনিক অনুবাদে শব্দচয়ন, সিস্টেমিক রূপক ও পরিমিতিবোধের স্বরূপ
+    </h2>
+    <p class="text-sm sm:text-base leading-relaxed text-muted-foreground">
+      পবিত্র কুরআনের মূল উদ্দেশ্য হলো <strong>তাদাব্বুর (গভীর চিন্তন ও অনুধাবন)</strong>। একবিংশ শতাব্দীর আধুনিক তথ্যপ্রযুক্তি, কোয়ান্টাম পদার্থবিজ্ঞান ও সিস্টেমস আর্কিটেকচারের যুগে কুরআনের চিরন্তন বার্তাকে একালের চিন্তাশীল মানুষের বোধগম্য ভাষায় তুলে ধরার সময় একটি মৌলিক প্রশ্ন সামনে আসে—<em>"বিজ্ঞানভিত্তিক অনুবাদ করতে গিয়ে আমরা কি অতিরিক্ত শব্দ প্রয়োগ করে ফেলছি, নাকি তা মূল বক্তব্যকে আরও স্বচ্ছ ও প্রাঞ্জল করছে?"</em>
+    </p>
+  </div>
+
+  <!-- ১. শব্দানুবাদ বনাম তাত্ত্বিক অনুবাদ -->
+  <div class="space-y-4">
+    <h3 class="text-lg sm:text-xl font-bold text-foreground flex items-center gap-2">
+      <span class="size-2 rounded-full bg-primary inline-block"></span>
+      ১. অনুবাদের প্রকারভেদ: ‘শব্দানুবাদ’ বনাম ‘তাত্ত্বিক/সিস্টেমিক অনুবাদ’
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-muted-foreground">
+      অনুবাদ তত্ত্বের (Translation Theory) আলোকে যেকোনো ক্লাসিক্যাল ধর্মগ্রন্থ অনুবাদের ক্ষেত্রে প্রধানত দুটি প্রতিষ্ঠিত ধারা রয়েছে:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+      <div class="rounded-xl border border-border bg-card p-5 space-y-2">
+        <h4 class="font-bold text-foreground text-sm flex items-center gap-2">
+          <span class="size-5 rounded-full bg-secondary text-foreground flex items-center justify-center text-xs">A</span>
+          শাব্দিক বা আক্ষরিক অনুবাদ (Tarjama Lafziyya)
+        </h4>
+        <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          এখানে মূল আরবি শব্দের বিপরীতে কেবল একটি করে বাংলা প্রতিশব্দ প্রতিস্থাপন করা হয়। এতে শব্দসংখ্যা সীমিত থাকে, কিন্তু আধুনিক বৈজ্ঞানিক মনস্তত্ত্বের কাছে বক্তব্যের পূর্ণাঙ্গ ডাইমেনশন ও অভ্যন্তরীণ কার্যকারণ অনেক সময় অনুদঘাটিত থেকে যায়।
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-primary/30 bg-primary/5 p-5 space-y-2">
+        <h4 class="font-bold text-primary text-sm flex items-center gap-2">
+          <span class="size-5 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs">B</span>
+          তাত্ত্বিক ও বিজ্ঞানভিত্তিক অনুবাদ (Expository Translation)
+        </h4>
+        <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          আমাদের এই গবেষণা প্রকল্পের মূল কাঠামো হলো মূলত একটি <strong>Expository & Systemic Translation</strong>। এখানে সংক্ষেপিত একটি আরবি রূপক বা ধারণার পেছনের সুগভীর মহাজাগতিক ও সিস্টেমিক মেকানিজমকে আধুনিক যৌক্তিক পরিভাষায় উন্মোচন করা হয়।
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ২. কেন শব্দসংখ্যা বেশি হয়? -->
+  <div class="rounded-2xl border border-border bg-card p-6 sm:p-8 space-y-6">
+    <h3 class="text-lg sm:text-xl font-bold text-foreground">
+      ২. বিজ্ঞানভিত্তিক অনুবাদে শব্দসংখ্যা কিছুটা বেশি হওয়ার কারণসমূহ
+    </h3>
+    
+    <div class="space-y-4">
+      <div class="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5">
+        <h4 class="text-sm font-bold text-foreground flex items-center gap-2">
+          🛡️ ক. লেয়ার ৫ ডুয়েল-ম্যাপিং (Layer 5 Dual Mapping)
+        </h4>
+        <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          আমরা ইংরেজি টেকনিক্যাল টার্মগুলোকে বাংলায় বানান বিকৃত না করে পিউর ইংরেজি হরফে রেখে ব্র্যাকেটে তার সাবলীল বাংলা অর্থ এবং সাথে মূল আরবি প্রতিশব্দ ধরে রাখছি। যেমন: <code>Dark Matter (অদৃশ্য কৃষ্ণবস্তু বা অন্ধকার) (الظُّلُمَاتِ)</code>। এর ফলে একটি আরবি শব্দ আধুনিক পাঠকের সামনে একটি পূর্ণাঙ্গ সিস্টেমিক কনসেপ্ট হিসেবে ধরা দেয়।
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5">
+        <h4 class="text-sm font-bold text-foreground flex items-center gap-2">
+          ⚙️ খ. মহাজাগতিক সিস্টেমিক আর্কিটেকচার (OOS Model)
+        </h4>
+        <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          কুরআনের গভীর আধ্যাত্মিক শব্দগুলোকে যখন আমরা একবিংশ শতাব্দীর মনস্তত্ত্বে রূপান্তর করি—যেমন ‘কুফর’ কে <code>Signal Blockade / System Disconnection</code>, ‘ঈমান’ কে <code>Trust Verification / Protocol Sync</code> এবং ‘আমলনামা’ কে <code>Master Activity Log</code> হিসেবে সংজ্ঞায়িত করা হয়—তখন ধারণাগত সংযোগটি সম্পূর্ণ করতে কিছু কনটেক্সচুয়াল শব্দের প্রয়োজন হয়।
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5">
+        <h4 class="text-sm font-bold text-foreground flex items-center gap-2">
+          ⚖️ গ. অস্পষ্টতা ও ভুল ব্যাখ্যার ঝুঁকি নিরসন
+        </h4>
+        <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          অতি-সংক্ষিপ্ত অনুবাদ অনেক সময় বিভ্রান্তির সৃষ্টি করে। পরিভাষার যথাযথ ব্যাখ্যার মাধ্যমে পাঠক যাতে কোনো ভুল ধারণায় পতিত না হন, তা নিশ্চিত করতেই এই পরিমিত ব্যাখ্যামূলক শব্দের সন্নিবেশ।
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ৩. ৪:৮২ ফিল্টারের কঠোর জবাবদিহিতা -->
+  <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 sm:p-8 space-y-4">
+    <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-semibold text-sm">
+      <span>🛡️ সেফটি ব্যারিয়ার ও ফিল্টার প্রটোকল</span>
+    </div>
+    <blockquote class="text-base sm:text-lg font-serif italic text-foreground/90 border-l-4 border-amber-500 pl-4 py-1">
+      "তারা কি কুরআন নিয়ে গভীর চিন্তা করে না? যদি তা আল্লাহ ছাড়া অন্য কারও পক্ষ থেকে হতো, তবে অবশ্যই তারা তাতে অনেক বৈপরীত্য ও অমিল দেখতে পেত।" <span class="text-xs not-italic text-muted-foreground block mt-1">— [সূরা আন-নিসা ৪:৮২]</span>
+    </blockquote>
+    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+      বিজ্ঞানভিত্তিক অনুবাদে অতিরিক্ত শব্দ প্রয়োগের একটি সুনির্দিষ্ট সীমারেখা রয়েছে। সেটি হলো <strong>৪:৮২ ফিল্টার</strong>:
+    </p>
+    <ul class="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 pl-2">
+      <li><strong>আকিদার মৌলিক সত্য অক্ষুণ্ণ রাখা:</strong> তাওহীদ, রিসালাত ও আখিরাতের কোনো প্রতিষ্ঠিত সত্যকে কখনো খর্ব করা যাবে না। আল্লাহকে কোনো যান্ত্রিক সিপিইউ বা মেকানিক হিসেবে উপস্থাপন করা যাবে না; তিনি পরম স্রষ্টা ও সর্বময় অধিপতি।</li>
+      <li><strong>অভ্যন্তরীণ সাংঘর্ষিকতা পরিহার:</strong> একটি সূরায় যে শব্দের যে সিস্টেমিক রূপক দেওয়া হয়েছে, অপর ১১২টি সূরায় তার অর্থের কোনো বৈপরীত্য থাকা চলবে না।</li>
+      <li><strong>মূল আরবির সীমা না ভাঙা:</strong> আরবি শব্দের ভাষাগত বা ব্যুৎপত্তিগত সীমার বাইরে নিজের কল্পনাপ্রসূত কোনো বাড়তি তত্ত্ব আরোপ করা যাবে না।</li>
+    </ul>
+  </div>
+
+  <!-- ৪. প্ল্যাটফর্মের ত্রি-স্তরীয় নিরাপত্তা -->
+  <div class="space-y-4">
+    <h3 class="text-lg sm:text-xl font-bold text-foreground flex items-center gap-2">
+      <span class="size-2 rounded-full bg-primary inline-block"></span>
+      ৪. প্ল্যাটফর্মের ত্রি-স্তরীয় নিরাপত্তা (Three-Tier Architecture)
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-muted-foreground">
+      পাঠকের মনে যেন কোনো বিভ্রান্তি তৈরি না হয়, সেজন্য আমাদের প্ল্যাটফর্মে একই সাথে ৩টি স্তর পাশাপাশি উপস্থাপন করা হয়:
+    </p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs sm:text-sm border border-border rounded-xl overflow-hidden">
+        <thead class="bg-muted text-foreground">
+          <tr>
+            <th class="p-3 border-b border-border font-bold">স্তর</th>
+            <th class="p-3 border-b border-border font-bold">ধরণ</th>
+            <th class="p-3 border-b border-border font-bold">উদ্দেশ্য</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+          <tr>
+            <td class="p-3 font-semibold text-foreground">১ম স্তর</td>
+            <td class="p-3 text-muted-foreground">শব্দে শব্দে অর্থ ও ব্যাকরণ (Word-by-Word)</td>
+            <td class="p-3 text-muted-foreground">১০০% আক্ষরিক ও ব্যুৎপত্তিগত বিশুদ্ধতা প্রদর্শন।</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold text-foreground">২য় স্তর</td>
+            <td class="p-3 text-muted-foreground">প্রচলিত অনুবাদ (Conventional Translation)</td>
+            <td class="p-3 text-muted-foreground">ঐতিহ্যবাহী সরল, সাবলীল ও সংক্ষিপ্ত পাঠ।</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold text-foreground">৩য় স্তর</td>
+            <td class="p-3 text-primary font-medium">আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (Modern Systemic)</td>
+            <td class="p-3 text-muted-foreground">আধুনিক মনস্তত্ত্বে গভীর বিশ্লেষণ ও মেকানিজম উন্মোচন।</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- সমাপনী বক্তব্য -->
+  <div class="rounded-2xl border border-border bg-secondary/30 p-6 sm:p-8 space-y-3 text-center sm:text-left">
+    <h3 class="text-lg sm:text-xl font-bold text-foreground">
+      🏁 উপসংহার: আমাদের ভবিষ্যৎ গবেষণার শপথ
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-foreground/90">
+      আমরা জানি, পবিত্র কুরআনের প্রতিটি হরফ পরম পবিত্র। বিজ্ঞানভিত্তিক অনুবাদ কোনোভাবেই মূল ওহীর বিকল্প নয়—এটি কেবল আমাদের যুগের মানুষকে কুরআনের বিস্ময়কর গভীরতার সাথে নতুন করে পরিচিত করানোর একটি বুদ্ধিবৃত্তিক প্রচেষ্টা।
+    </p>
+    <p class="text-xs sm:text-sm leading-relaxed text-primary font-medium">
+      আমরা প্রতিনিয়ত আমাদের অনুবাদকে আরও পরিমিত, সংক্ষিপ্ত এবং বাহুল্যমুক্ত করার জন্য কঠোরভাবে স্ব-নিরীক্ষণ (Self-Audit) চালিয়ে যাব, যেন কুরআনের দ্যুতি ও সৌন্দর্য কোনো কৃত্রিম ভারে ম্লান না হয়ে আরও উজ্জ্বলরূপে মানুষের হৃদয়ে প্রবেশ করে।
+    </p>
+  </div>
+
+</div>
+    `
   }
 ];
+
