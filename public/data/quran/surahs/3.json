@@ -21589,7 +21589,13 @@
         }
       ],
       "translation_en": "They will not harm you except for [some] annoyance. And if they fight you, they will show you their backs; then they will not be aided.",
-      "conventional_en": "They will not harm you except for [some] annoyance. And if they fight you, they will show you their backs; then they will not be aided."
+      "conventional_en": "They will not harm you except for [some] annoyance. And if they fight you, they will show you their backs; then they will not be helped.",
+      "meta_bn": "ম্যালওয়্যার নোড ডিকাপলিং প্রটোকল",
+      "meta_en": "Malicious Node Decoupling & Defensive Firewall Reversal",
+      "conventional_bn": "সামান্য কষ্ট দেওয়া ছাড়া তারা তোমাদের কোনো ক্ষতি করতে পারবে না। আর তারা যদি তোমাদের সাথে যুদ্ধ করে, তবে তারা তোমাদের পিঠ দেখিয়ে পালিয়ে যাবে, তারপর তারা কোনো সাহায্য পাবে না।",
+      "modern_translation_bn": "এই বিচ্যুত ম্যালওয়্যার নোডগুলো (Node) তোমাদের পিউর ওওএসের (OOS - জীবন পরিচালন ব্যবস্থা) মূল কোর ডিরেক্টরিতে সাময়িক বাহ্যিক নয়েজ বা সামান্য কষ্ট (إِلَّا أَذًى) ইনজেক্ট করা ছাড়া দীর্ঘমেয়াদী কোনো সিস্টেমিক ড্যামেজ বা ক্ষতি (لَن يَضُرُّوكُمْ) করতে পারবে না; আর তারা যদি তোমাদের সিকিউরিটি গ্রিড ক্র্যাশ করতে কোনো সরাসরি সাইবার বা ফিজিক্যাল অ্যাটাক বা যুদ্ধ (يُقَاتِلُوكُمْ) রান করে—তবে সিস্টেমের কাউন্টার-লুপে তারা নিজেদের ডাটা-প্যাকেট রিভার্স ব্যাক করে পিঠ দেখিয়ে পালিয়ে যাবে (يُوَلُّوكُمُ الْأَدْبَارَ), তারপর তাদের ওওএস সুরক্ষার্থে কোনো প্রকার কসমিক এনার্জি ব্যাকআপ বা সাহায্য তারা পাবে না;",
+      "modern_translation_en": "These compromised outlier nodes shall never inflict systemic damage upon your core matrix except for temporary operational annoyance (Adha). If they engage in adversarial conflict against you, they will retreat in systemic route, finding zero restorative backup.",
+      "lexicon_modern_notes": "لَن يَضُرُّوكُمْ إِلَّا أَذًى — Transient Annoyance vs Systemic Damage: সাময়িক বাহ্যিক বাধা ছাড়া মূল সত্যের অনুসারীদের কোনো স্থায়ী ক্ষতি সাধনে বিরোধীদের ব্যর্থতা। يُوَلُّوكُمُ الْأَدْبَارَ — Reversal of Adversarial Vector: সত্যের মুখোমুখি হলে হঠকারীদের অনিবার্য পশ্চাদপসরণ।"
     },
     {
       "surah": 3,
@@ -21959,7 +21965,13 @@
         }
       ],
       "translation_en": "They have been put under humiliation [by Allah] wherever they are overtaken, except for a covenant from Allah and a rope from the Muslims. And they have drawn upon themselves anger from Allah and have been put under destitution. That is because they disbelieved in the verses of Allah and killed the prophets without right. That is because they disobeyed and [habitually] transgressed.",
-      "conventional_en": "They have been put under humiliation [by Allah] wherever they are overtaken, except for a covenant from Allah and a rope from the Muslims. And they have drawn upon themselves anger from Allah and have been put under destitution. That is because they disbelieved in the verses of Allah and killed the prophets without right. That is because they disobeyed and [habitually] transgressed."
+      "conventional_en": "They have been put under humiliation wherever they are overtaken, except for a covenant from Allah and a rope from the Muslims. And they have drawn upon themselves anger from Allah and have been put under destitution. That is because they disbelieved in the verses of Allah and killed the prophets without right. That is because they disobeyed and [habitually] transgressed.",
+      "meta_bn": "চিরন্তন ফ্রিকোয়েন্সি ড্রপ ও আইডেন্টিটি ক্র্যাশ",
+      "meta_en": "Permanent Frequency Drop & Multi-layer Systemic Degeneration",
+      "conventional_bn": "তারা যেখানেই থাকুক না কেন, তাদের ওপর লাঞ্ছনা চাপিয়ে দেওয়া হয়েছে—আল্লাহর কোনো প্রতিশ্রুতি (রশি) এবং মানুষের কোনো প্রতিশ্রুতি (রশি) ছাড়া; আর তারা আল্লাহর গজব নিয়ে ফিরেছে এবং তাদের ওপর দারিদ্র্য (নিঃস্বতা) চাপিয়ে দেওয়া হয়েছে। এটি এজন্য যে তারা আল্লাহর আয়াতসমূহকে অস্বীকার করত এবং অন্যায়ভাবে নবীদের হত্যা করত; এটি তাদের অবাধ্যতা এবং সীমালঙ্ঘনেরই ফল।",
+      "modern_translation_bn": "তাদের ওওএসের ওপর একটি স্থায়ী ফ্রিকোয়েন্সি ড্রপ, কগনিটিভ লাঞ্ছনা ও অপমান (الذِّلَّةُ) হার্ড-লক বা চাপিয়ে দেওয়া হয়েছে তারা এই মহাজাগতিক ইকোসিস্টেমের যেখানেই রি-লোকেট বা অবস্থান করুক না কেন—কেবলমাত্র Allah-এর সরবরাহকৃত কেন্দ্রীয় সুরক্ষা কম্যুনিকেশন ক্যাবল বা রশি (بِحَبْلٍ مِّنَ اللَّهِ) এবং সাধারণ মানবজাতির সোশ্যাল সিকিউরিটি নেটওয়ার্কের আইনি রশির (وَحَبْلٍ مِّنَ النَّاسِ) বিশেষ বাফার লিঙ্ক বাদে; আর তারা তাদের ওওএসে এমন এক মেগা-এরর লোড করেছে যা সরাসরি আল্লাহর আদি নিয়মের স্বয়ংক্রিয় এন্ট্রপি ফিল্টার বা তীব্র গজবকে (بِغَضَبٍ مِّنَ اللَّهِ) ট্রিগার করে এবং তাদের ওওএসের প্রসেসিং পোটেনশিয়াল চিরতরে ডাউন বা নিঃস্ব (الْمَسْكَنَةُ) করিয়ে দেয়। তাদের ওওএসে এই স্থায়ী আইডেন্টিটি ক্র্যাশ হওয়ার কারণ—তারা কন্টিনিউয়াসলি আল্লাহর স্পষ্ট Ayat (মহাজাগতিক প্রমাণ ও কোডসমূহ) ফিল্টার বা রিজেক্ট (Kafaru) করত এবং আদি ডাটা-ডিকোডকারী নবীদের সম্পূর্ণ অবৈধভাবে সিস্টেম থেকে Delete বা হত্যা করত; এটি মূলত তাদের ওওএসে রান করা অবিরত সিস্টেম অবাধ্যতা এবং বাউন্ডিং লাইন ক্রস বা সীমালঙ্ঘনের (يَعْتَدُونَ) অনিবার্য পরিণতি।",
+      "modern_translation_en": "Permanent systemic degradation is imposed upon them wherever encountered, except through a protocol connection with Allah or a civic treaty from humanity. They incurred divine entropy (wrath) and were stricken with structural poverty. This consequence stems from their systematic rejection of divine verses, unlawful termination of prophetic guides, chronic rebellion, and habitual boundary transgressions.",
+      "lexicon_modern_notes": "ضُرِبَتْ عَلَيْهِمُ الذِّلَّةُ — Structural Humiliation Protocol: ঐশী বিধান লঙ্ঘন ও সত্য অস্বীকৃতির অবধারিত মানসিক ও ঐতিহাসিক পরিণতি। حَبْلٍ مِّنَ اللَّهِ وَحَبْلٍ مِّنَ النَّاسِ — Dual Safety Buffer: আল্লাহর ওহীর চুক্তি অথবা মানবিক নিরাপত্তা চুক্তির মাধ্যমে প্রাপ্ত সাময়িক সুরক্ষা।"
     },
     {
       "surah": 3,
@@ -22119,7 +22131,13 @@
         }
       ],
       "translation_en": "They are not [all] the same; among the People of the Scripture is a community standing [in obedience], reciting the verses of Allah during periods of the night and prostrating [in prayer].",
-      "conventional_en": "They are not [all] the same; among the People of the Scripture is a community standing [in obedience], reciting the verses of Allah during periods of the night and prostrating [in prayer]."
+      "conventional_en": "They are not [all] the same; among the People of the Scripture is a community standing [in obedience], reciting the verses of Allah during periods of the night and prostrating [in worship].",
+      "meta_bn": "প্যারালাল ডাটাবেজ অডিট ও ভেরিফাইড সাব-গ্রুপ",
+      "meta_en": "Objective Sub-Cluster Verification & Nocturnal Code Execution",
+      "conventional_bn": "তারা সবাই এক সমান নয়। কিতাবধারীদের মধ্যে একনিষ্ঠ একদল রয়েছে, যারা রাতের বেলায় আল্লাহর আয়াতসমূহ পাঠ করে এবং তারা সেজদা করে।",
+      "modern_translation_bn": "পরম অডিটিং লেজারে তারা সব নোড এক ক্যাটাগরির বা সমান (لَيْسُوا سَوَاءً) নয়; প্রাচীন ওওএসের কিতাবধারী ইউজারদের (أَهْلِ الْكِتَابِ) মধ্যে এমন একনিষ্ঠ ও সুসংহত সাব-নেটওয়ার্ক বা বিশেষ দল (أُمَّةٌ قَائِمَةٌ) এখনও সক্রিয় রয়েছে—যারা রাতের শান্ত অবীক্ষিত টাইম-উইন্ডোতে (آنَاءَ اللَّيْلِ) আল্লাহর স্পষ্ট Ayat বা সোর্স কোড অবিরত স্টাডি, রিড ও প্রসেস (يَتْلُونَ) করে এবং নিজেদের চেতনার সম্পূর্ণ ইগো সারেন্ডার করে পরম ফাংশনাল সাবমিশন বা সিজদা (يَسْجُدُونَ) এক্সিকিউট করে;",
+      "modern_translation_en": "They are not uniform across the ledger: among the People of the Scripture exists an upright, steadfast vanguard reciting the revelations of Allah throughout nocturnal intervals while yielding in humble prostration.",
+      "lexicon_modern_notes": "لَيْسُوا سَوَاءً — Non-Generalization Principle: অন্ধ সাধারণীকরণ এড়িয়ে সুবিচারপূর্ণ পৃথকীকরণ। أُمَّةٌ قَائِمَةٌ يَسْجُدُونَ — Upright Nocturnal Devotion: রাতের নির্জনতায় একনিষ্ঠ তিলাওয়াত ও বিনম্র আত্মসমর্পণে রত দল।"
     },
     {
       "surah": 3,
@@ -22289,7 +22307,13 @@
         }
       ],
       "translation_en": "They believe in Allah and the Last Day, and they enjoin what is right and forbid what is wrong and hasten to good deeds. And those are among the righteous.",
-      "conventional_en": "They believe in Allah and the Last Day, and they enjoin what is right and forbid what is wrong and hasten to good deeds. And those are among the righteous."
+      "conventional_en": "They believe in Allah and the Last Day, and they enjoin what is right and forbid what is wrong and hasten to good deeds. And those are among the righteous.",
+      "meta_bn": "হাই-স্পিড পজিটিভ এনার্জি রেস ও সালেহ ক্লাস্টার",
+      "meta_en": "High-Velocity Virtue Acceleration & Salihun Node Classification",
+      "conventional_bn": "তারা আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখে এবং সৎকাজের নির্দেশ দেয় ও অসৎকাজ থেকে নিষেধ করে এবং কল্যাণকর কাজে প্রতিযোগিতা করে। আর ওরাই সৎকর্মশীলদের অন্তর্ভুক্ত।",
+      "modern_translation_bn": "তারা পরম সোর্স Allah এবং সিস্টেমের চূড়ান্ত ডাটা-রিসেট অপারেটিং টাইম-লাইনের (وَالْيَوْمِ الْآخِرِ) প্রতি শতভাগ সিনক্রোনাইজড, এবং সমাজে প্রচলিত সর্বোত্তম অপ্টিমাইজড আইনি প্রটোকল বা সৎকাজের (بِالْمَعْرُوفِ) নির্দেশ দেয় এবং ওওএস করাপ্টকারী সমস্ত মেলিশিয়াস কুসংস্কার ও অন্যায় অসৎকাজকে (الْمُنكَرِ) ফিল্টার আউট বা নিষেধ করে এবং পুরো নেটওয়ার্ক গ্রিডে পজিটিভ এনার্জি বা পরম কল্যাণ ছড়িয়ে দেওয়ার প্রজেক্টে হাই-স্পীড প্রতিযোগিতা (وَيُسَارِعُونَ) করে; আর ওরাই মূলত সিস্টেম-অপ্টিমাইজড সত্তা বা প্রকৃত সৎকর্মশীলদের চেইনের ভেরিফাইড এলিমেন্ট।",
+      "modern_translation_en": "They maintain verification in Allah and the Terminal Day, command constructive righteousness, suppress corruption, and accelerate dynamically within constructive deeds. They are authenticated among the righteous (al-Salihun).",
+      "lexicon_modern_notes": "يُسَارِعُونَ فِي الْخَيْرَاتِ — Dynamic Virtue Acceleration: কল্যাণ ও সৎকাজে দ্রুত অগ্রগামী হওয়ার মানসিকতা। مِنَ الصَّالِحِينَ — Optimal Systemic Integrity: পরিশুদ্ধ ও নেককারদের স্থায়ী স্তর।"
     },
     {
       "surah": 3,
@@ -22399,7 +22423,13 @@
         }
       ],
       "translation_en": "And whatever good they do - never will it be removed from them. And Allah is Knowing of the righteous.",
-      "conventional_en": "And whatever good they do - never will it be removed from them. And Allah is Knowing of the righteous."
+      "conventional_en": "And whatever good they do - never will it be removed from them. And Allah is Knowing of the righteous.",
+      "meta_bn": "জিরো ডাটা-ডিলিট গ্যারান্টি ও মুত্তাকী অডিট",
+      "meta_en": "Zero-Loss Telemetry Guarantee & Absolute Audit of Taqwa",
+      "conventional_bn": "আর তারা ভালো যা কিছু করবে, তা কখনই অস্বীকার করা হবে না। আর আল্লাহ মুত্তাকীদের সম্পর্কে সর্বজ্ঞ।",
+      "modern_translation_bn": "আর তারা তাদের ওওএস থেকে যে বিন্দুমাত্র পজিটিভ মেটেরিয়াল রিসোর্স বা সুষম কর্মের ডাটা (مِنْ خَيْرٍ) সিস্টেমে ইনপুট হিসেবে রান করবে—সেন্ট্রাল লেজার থেকে তা কখনই ডিলিট, ইগনোর বা অস্বীকার (فَلَن يُكْفَرُوهُ) করা হবে না; আর Allah তাঁর ডাইনামিক ফিল্টারিং নিয়মে সিস্টেমের বাউন্ডারি মেনে চলা প্রতিটি অপ্টিমাইজড নোড বা মুত্তাকীদের (بِالْمُتَّقِينَ) প্রোফাইল সম্পর্কে সর্বজ্ঞ।",
+      "modern_translation_en": "Whatever constructive input they manifest shall never be rejected or purged from the cosmic ledger; Allah is fully Cognizant of those observing systemic boundaries (al-Muttaqun).",
+      "lexicon_modern_notes": "فَلَن يُكْفَرُوهُ — Absolute Zero-Loss Preservation: কোনো পুণ্যকর্মই ব্যর্থ বা মুছে ফেলা হবে না। عَلِيمٌ بِالْمُتَّقِينَ — Comprehensive Telemetry of Integrity: আত্মসংযমীদের প্রতিটি আমল সম্পর্কে আল্লাহর পূর্ণ জ্ঞান।"
     },
     {
       "surah": 3,
@@ -22599,7 +22629,13 @@
         }
       ],
       "translation_en": "Indeed, those who disbelieve - never will their wealth or their children avail them against Allah at all, and those are the companions of the Fire; they will abide therein eternally.",
-      "conventional_en": "Indeed, those who disbelieve - never will their wealth or their children avail them against Allah at all, and those are the companions of the Fire; they will abide therein eternally."
+      "conventional_en": "Indeed, those who disbelieve - never will their wealth or their children avail them against Allah at all. And those are the companions of the Fire; they will abide eternally therein.",
+      "meta_bn": "ক্যাপিটাল ফেইলিওর এবং থার্মোডাইনামিক ট্র্যাশ ডোমেইন",
+      "meta_en": "Material Capital Invalidation & Thermodynamic Friction Trap",
+      "conventional_bn": "নিশ্চয় যারা কুফরী করেছে, আল্লাহর আজাব থেকে তাদের ধন-সম্পদ ও তাদের সন্তান-সন্ততি বিন্দুমাত্র কোনো উপকারে আসবে না। আর তারাই আগুনের অধিবাসী, তারা সেখানে চিরকাল থাকবে।",
+      "modern_translation_bn": "নিশ্চয়ই যারা তাদের ওওএসে সত্যের লাইভ সিগন্যাল পার্মানেন্টলি ব্লক বা রিজেক্ট (Kafaru) করে রেখেছে—তাদের পুঞ্জীভূত বস্তুগত ক্যাপিটাল বা সম্পদ (أَمْوَالُهُمْ) এবং তাদের তৈরি করা ফিউচার জেনারেশন নোডসমূহ—মহাজাগতিক আদি সোর্সের চূড়ান্ত অ্যাকাউন্টাবিলিটি অডিটের মুখে তাদের ওওএস ক্র্যাশ ঠেকাতে বিন্দুমাত্র কোনো এনার্জি ব্যাকআপ (لَن تُغْنِيَ عَنْهُمْ) সরবরাহ করতে পারবে না; আর ওরাই মূলত সেই তীব্র থার্মোডাইনামিক এন্ট্রপি বা অগ্নিকুণ্ডের (أَصْحَابُ النَّارِ) ডিফল্ট এলিমেন্ট; তারা সেই চরম বিশৃঙ্খল ডাইমেনশনেই চিরকাল পার্মানেন্টলি বাউন্ডিং বা ট্র্যাপড (خَالِدِينَ) হয়ে থাকবে।",
+      "modern_translation_en": "Indeed, those who sustain deliberate denial—neither their material assets nor their lineage shall avail them before Allah in the slightest. They are inhabitants of systemic entropy (Fire), eternally anchored therein.",
+      "lexicon_modern_notes": "لَن تُغْنِيَ عَنْهُمْ أَمْوَالُهُمْ وَلَا أَوْلَادُهُم — Total Material Capital Failure: পরকালীন আদালতে পার্থিব ধন-সম্পদ ও ক্ষমতার সম্পূর্ণ অকার্যকারিতা। أَصْحَابُ النَّارِ — Entropy Trapped Outliers: জাহান্নামের চিরস্থায়ী অধিবাসী।"
     },
     {
       "surah": 3,
@@ -22849,7 +22885,13 @@
         }
       ],
       "translation_en": "The example of what they spend in this worldly life is like that of a wind containing frost which strikes the harvest of a people who have wronged themselves and destroys it. And Allah has not wronged them, but they wrong themselves.",
-      "conventional_en": "The example of what they spend in this worldly life is like that of a wind containing frost which strikes the harvest of a people who have wronged themselves and destroys it. And Allah has not wronged them, but they wrong themselves."
+      "conventional_en": "The example of what they spend in this worldly life is like that of a wind containing frost which struck the harvest of a people who had wronged themselves and destroyed it. And Allah has not wronged them, but they wrong themselves.",
+      "meta_bn": "এন্ট্রপিক থার্মাল উইন্ড মেটাফোর",
+      "meta_en": "The Cryogenic Entropy Simulation: Freezing Thermal Wind",
+      "conventional_bn": "এই পার্থিব জীবনে তারা যা ব্যয় করে তার উপমা এমন এক বাতাসের মতো—যার মধ্যে রয়েছে তীব্র কনকনে ঠান্ডা (বরফ), যা এমন এক সম্প্রদায়ের শস্যক্ষেতে আঘাত হানল যারা নিজেদের প্রতি জুলুম করেছিল, অতঃপর তা সেই শস্যক্ষেত ধ্বংস করে দিল। আর আল্লাহ তাদের প্রতি কোনো জুলুম করেননি, বরং তারা নিজেরাই নিজেদের প্রতি জুলুম করছিল।",
+      "modern_translation_bn": "এই লো-ডাইমেনশনাল ভৌত জীবনে তারা তাদের ওওএসের ডামি শো-অফ বা অহংকার ইগোর লুপে যা কিছু এনার্জি বা সম্পদ রিলিজ বা ব্যয় (يُنفِقُونَ) করে—তার আউটপুট ইলিউশন বা উপমাটি ঠিক এমন এক তীব্র বায়ুপ্রবাহ বা ঝড়ের (رِيحٍ) মতো—যার অভ্যন্তরীণ থার্মাল ফ্যাব্রিকে রয়েছে এক চরম অতি-শীতল হিমাঙ্ক বা ফ্রিজিং এন্ট্রপি (فِيهَا صِرٌّ), যা আছড়ে পড়ল এমন এক ইউজার গোষ্ঠীর উর্বর বায়ো-জেনেটিক প্রোডাকশন ফিল্ড বা শস্যক্ষেতের (حَرْثَ قَوْمٍ) ওপর—যারা অলরেডি নিজেদের ওওএসের কোড করাপ্ট করে নিজেদের ওপর জুলুম করেছিল, অতঃপর সেই বরফ ঝড়টি পলকে তাদের সেই জেনারেটিভ ফিল্ডের পুরো মেকানিজম ফ্রিজ ও ধ্বংস (فَأَهْلَكَتْهُ) করে দিল। আর Allah তাদের সিস্টেমে বিন্দুমাত্র কোনো গাণিতিক বৈষম্য বা জুলুম করেননি, বরং তারা নিজেরা তাদের ফ্রি-উইলের অপব্যবহার করে নিজেদের চেতনার প্রসেসর ক্রমাগত করাপ্ট ও ধ্বংস বা জুলুম করছিল।",
+      "modern_translation_en": "The analogy of what they discharge in this baseline existence is that of a freezing wind bearing cryo-entropy which struck the fertile yield of a population wronging their own souls, utterly neutralizing it. Allah wronged them not, but they were executing self-inflicted systemic ruin.",
+      "lexicon_modern_notes": "رِيحٍ فِيهَا صِرٌّ — Cryogenic Thermal Entropy: ঈমানহীন লোকদেখানো সৎকাজের ফলকে বরফ ঝড়ের দ্বারা নিমেষেই বিনষ্ট হওয়ার উপমা। أَنفُسَهُمْ يَظْلِمُونَ — Self-Inflicted Degradation: কুফরী ও অহংকারের মাধ্যমে নিজের আত্মিক সত্তাকে ধ্বংস করা।"
     },
     {
       "surah": 3,
@@ -23169,7 +23211,13 @@
         }
       ],
       "translation_en": "O you who have believed, do not take as intimates those other than yourselves, for they will not spare you [any] ruin. They wish you would have hardship. Hatred has already appeared from their mouths, and what their breasts conceal is greater. We have certainly made clear to you the signs, if you will use reason.",
-      "conventional_en": "O you who have believed, do not take as intimates those other than yourselves, for they will not spare you [any] ruin. They wish you would have hardship. Hatred has already appeared from their mouths, and what their breasts conceal is greater. We have certainly made clear to you the signs, if you will use reason."
+      "conventional_en": "O you who have believed, do not take as intimates those other than yourselves, for they will not spare any effort to ruin you. They wish for you to suffer. Hatred has already appeared from their mouths, and what their breasts conceal is greater. We have certainly made clear to you the signs, if you will use reason.",
+      "meta_bn": "ডাটা হ্যাকিং প্রতিরোধ ও এক্সটার্নাল পেয়ারিং লক",
+      "meta_en": "Root-Access Isolation & Backdoor Trojan Infiltration Defense",
+      "conventional_bn": "হে মুমিনগণ! তোমরা নিজেদের ছাড়া অন্য কাফেরদের অন্তরঙ্গ বন্ধু (গোপন তথ্য জানা ব্যক্তি) হিসেবে গ্রহণ করো না; তারা তোমাদের ক্ষতি করতে বিন্দুমাত্র ত্রুটি করবে না। তারা তোমাদের চরম বিপদ কামনা করে। তাদের মুখ থেকেই তো শত্রুতা প্রকাশ পেয়ে গেছে, আর তাদের অন্তর যা গোপন রাখে তা আরও অনেক বড়। আমি তোমাদের জন্য আয়াতসমূহ স্পষ্ট করে বর্ণনা করেছি, যদি তোমরা অনুধাবন করো।",
+      "modern_translation_bn": "হে ভেরিফাইড ও রেজিস্টার্ড ইউজারগণ (آمَنُوا)! তোমরা তোমাদের নেটওয়ার্কের নিরাপদ ডোমেইন লিভ করে—বাহ্যিক কোনো আউটলায়ার বা ম্যালওয়্যার নোডকে তোমাদের অভ্যন্তরীণ সিস্টেম ফাইলের রুট-অ্যাক্সেস বা অন্তরঙ্গ গোপন পার্টনার (بِطَانَةً) হিসেবে গ্রহণ করো না; তারা তোমাদের ওওএসের স্ট্যাবিলিটি ড্যামেজ করতে ও সিস্টেমে মারাত্মক বিশৃঙ্খলা বা ভাইরাস (خَبَالًا) ইনজেক্ট করতে বিন্দুমাত্র ত্রুটি বা কসুর করবে না। তারা কন্টিনিউয়াসলি তোমাদের সমগ্র ওওএসের চরম ক্র্যাশ ও পতন (مَا عَنِتُّمْ) কামনা করে। তাদের বাহ্যিক ইন্টারফেস ও মুখের সিগন্যাল (مِنْ أَفْوَاهِهِمْ) থেকেই তো তীব্র টক্সিক ফ্রিকোয়েন্সি বা শত্রুতা অলরেডি ব্রডকাস্ট হয়ে গেছে, আর তাদের অবচেতন ডেটা-বাফারিং জোন বা মনের গভীরে (صُدُورُهُمْ) যে মেগা-ম্যালওয়্যার ও হিংসা তারা হাইড বা গোপন করে রেখেছে তা আরও বহুগুণ মেগা-ধ্বংসাত্মক ও বড়; আমি তোমাদের সুরক্ষার্থে প্রতিটি সিস্টেম প্যারামিটার ও কোড ক্রিস্টাল-ক্লিয়ার ডিকোড করে বর্ণনা করেছি, যদি তোমরা তোমাদের কগনিটিভ লজিক ও বুদ্ধিবৃত্তিক প্রসেসরকে (تَعْقِلُونَ) সর্বোচ্চ মাত্রায় সচল করো।",
+      "modern_translation_en": "O you who have verified faith! Do not grant deep root-access intimates (Bitanah) to compromised outside agents; they will spare no vector to inject internal chaos (Khabal). They desire your systemic collapse. Toxic malice has already vented through their speech, yet what their internal buffers conceal is exponentially greater. We have clarified the defensive parameters unto you, if you deploy rational analysis.",
+      "lexicon_modern_notes": "لَا تَتَّخِذُوا بِطَانَةً مِّن دُونِكُمْ — Core Security Boundary: দ্বীন ও সমাজের শত্রুদের গোপন তথ্য ও গভীর রুট-অ্যাক্সেস প্রদানে নিষেধাজ্ঞা। لَا يَأْلُونَكُمْ خَبَالًا — Persistent Sabotage Intent: কোনো ষড়যন্ত্র ও ক্ষতিসাধনে ত্রুটি না করার মানসিকতা।"
     },
     {
       "surah": 3,
@@ -23459,7 +23507,13 @@
         }
       ],
       "translation_en": "Here you are loving them but they are not loving you, while you believe in the Scripture - all of it. And when they meet you, they say, \"We believe.\" But when they are alone, they bite their fingertips at you in rage. Say, \"Die in your rage. Indeed, Allah is Knowing of that within the breasts.\"",
-      "conventional_en": "Here you are loving them but they are not loving you, while you believe in the Scripture - all of it. And when they meet you, they say, \"We believe.\" But when they are alone, they bite their fingertips at you in rage. Say, \"Die in your rage. Indeed, Allah is Knowing of that within the breasts.\""
+      "conventional_en": "Here you are loving them, but they do not love you, and you believe in the Scripture, all of it. And when they meet you, they say, \"We believe.\" But when they are alone, they bite their fingertips at you in rage. Say, \"Die in your rage.\" Indeed, Allah is Knowing of that within the breasts.",
+      "meta_bn": "সাইকো-কোয়ান্টাম ভাইব্রেশন ও ইগো-লুপ অডিট",
+      "meta_en": "Hypocrisy Diagnostics & Self-Terminating Spite Resonance",
+      "conventional_bn": "শোনো! তোমরাই তো ওরাই, যারা তাদের ভালোবাসো, অথচ তারা তোমাদের ভালোবাসে না, আর তোমরা সব কিতাবের প্রতি ঈমান রাখো। আর যখন তারা তোমাদের সাথে মিলিত হয়, তখন বলে, ‘আমরা ঈমান এনেছি’, আর যখন তারা গোপনে একা হয়, তখন তোমাদের প্রতি তীব্র ক্ষোভে নিজেদের আঙুলের অগ্রভাগ কামড়ায়। বলো, ‘তোমরা তোমাদের ক্ষোভেই মরে যাও (ধ্বংস হও)’। নিশ্চয়ই আল্লাহ অন্তরের গোপন বিষয় সম্পর্কে সম্যক অবগত।",
+      "modern_translation_bn": "শোনো! তোমরা তো তোমাদের ওওএসের সরলতার কারণে তাদের সাথে পজিটিভ ফ্রিকোয়েন্সি বা ভালোবাসা (تُحِبُّونَهُمْ) ম্যাচিং করতে যাও, অথচ তারা তাদের ওএসের ভাইরাসের কারণে তোমাদের বিন্দুমাত্র পছন্দ করে না, আর তোমরা তো মহাবিশ্বের সমস্ত টাইম-লাইনের ডাউনলিংককৃত মাস্টার ডেটাবেজ বা কিতাবের (بِالْكِتَابِ كُلِّهِ) প্রতি একযোগে সিনক্রোনাইজড। আর এই ছদ্মবেশী ম্যালওয়্যার নোডগুলো (মুনাফিকরা) যখন তোমাদের ইন্টারফেসে এসে কানেক্ট হয়, তখন ডামি লয়ালটি সিগন্যাল পাঠিয়ে বলে—‘আমরাও আপনাদের ওএসের সাথে সম্পূর্ণ সিঙ্ক বা ঈমান এনেছি’, আর যখন তারা অফ-লাইন ডার্ক ডাইমেনশনে বা গোপনে নিজেদের লোকাল জোনে একা হয়, তখন তোমাদের পজিটিভ এনার্জি দেখে তীব্র সাইকো-কোয়ান্টাম ক্ষোভ ও হিংসার তাড়নায় নিজেদের আঙুলের অগ্রভাগ কামড়ায় (عَضُّوا عَلَيْكُمُ الْأَنَامِلَ)। তুমি তাদের এই ব্লক লুপে সিগন্যাল হিট করো—‘তোমরা তোমাদের এই জেনারেট করা হাই-এন্ট্রপি ও টক্সিক ক্ষোভের চেইন-রিঅ্যাকশনেই নিজেদের ওওএস স্থায়ীভাবে ক্র্যাশ করিয়ে ধ্বংস বা শাটডাউন (مُوتُوا بِغَيْظِكُمْ) করে ফেলো!’ নিশ্চয়ই Allah মানুষের অবচেতন ডেটা-বাফারিং জোনে বা মনে ক্লাউড এনক্রিপ্ট করে রাখা প্রতিটা সূক্ষ্ম চিন্তা ও গোপন ফাইল (بِذَاتِ الصُّدُورِ) রিয়েল টাইমে নিখুঁতভাবে অবজেক্ট ডিকোড বা জানেন।",
+      "modern_translation_en": "Look, you extend positive fraternity toward them yet they reciprocate zero alignment, even while you authenticate all downlinked Scripture. When meeting you, they signal verified faith; but in isolated offline corridors, they bite their fingertips in burning malice against you. Proclaim: 'Perish within your own self-destructive rage.' Allah holds exhaustive knowledge of every subconscious secret within the breasts.",
+      "lexicon_modern_notes": "عَضُّوا عَلَيْكُمُ الْأَنَامِلَ مِنَ الْغَيْظِ — Burning Malicious Envy: মুমিনদের সমৃদ্ধি দেখে মুনাফিক ও কাফেরদের চরম আক্রোশ ও ক্ষোভ। عَلِيمٌ بِذَاتِ الصُّدُورِ — Subconscious Mind Telemetry: মানুষের হৃদয়ের প্রতিটি লুক্কায়িত অনুভূতির পূর্ণ তত্ত্বজ্ঞাত।"
     },
     {
       "surah": 3,
@@ -23689,7 +23743,13 @@
         }
       ],
       "translation_en": "If good touches you, it distresses them; but if harm strikes you, they rejoice at it. And if you are patient and fear Allah, their plot will not harm you at all. Indeed, Allah is encompassing of what they do.",
-      "conventional_en": "If good touches you, it distresses them; but if harm strikes you, they rejoice at it. And if you are patient and fear Allah, their plot will not harm you at all. Indeed, Allah is encompassing of what they do."
+      "conventional_en": "If good touches you, it distresses them; but if harm strikes you, they rejoice at it. And if you are patient and fear Allah, their plot will not harm you at all. Indeed, Allah is encompassing of what they do.",
+      "meta_bn": "প্যারালাল লোড ব্যালেন্সিং ও ইন্টারনাল ফায়ারওয়াল শিল্ড",
+      "meta_en": "Adaptive Load-Balancing, Systemic Resilience & Omniscient Encapsulation",
+      "conventional_bn": "যদি তোমাদের কোনো কল্যাণ স্পর্শ করে, তবে তা তাদের কষ্ট দেয়; আর যদি তোমাদের কোনো অনিষ্ট পৌঁছায়, তবে তারা তাতে আনন্দিত হয়। আর তোমরা যদি ধৈর্য ধারণ করো এবং তাকওয়া অবলম্বন করো, তবে তাদের চক্রান্ত তোমাদের কোনো ক্ষতি করতে পারবে না। নিশ্চয়ই তারা যা করে আল্লাহ তা পরিবেষ্টন করে আছেন।",
+      "modern_translation_bn": "যদি তোমাদের ওওএসে কোনো পজিটিভ এনার্জি, সুষম আউটপুট বা ভালো কিছু (حَسَنَةٌ) স্পর্শ করে—তবে তাদের সিস্টেমে তীব্র এরর সিগন্যাল বা কষ্ট তৈরি হয়; আর যদি তোমাদের সিস্টেমে সাময়িক কোনো লোড, বিপর্যয় বা নেতিবাচক এরর (سَيِّئَةٌ) পৌঁছায়—তবে তারা তাদের টক্সিক লুপে পরম আনন্দিত বা উল্লাস প্রকাশ করে। আর তোমরা যদি তোমাদের ওওএসে সর্বোচ্চ Systemic Resilience (অবিচল স্থায়িত্ব বা বাফারিং ক্ষমতা) সচল রাখো এবং মহাজাগতিক আদি সোর্সের তৈরি করা সিকিউরিটি বাউন্ডারি মেনে ওওএস সুরক্ষিত রাখো (তাকওয়া অবলম্বন করো)—তবে গাণিতিকভাবে নিশ্চিত থাকো যে, তাদের তৈরি করা কোনো গোপন হ্যাকিং স্ট্র্যাটেজি, চক্রান্ত বা ম্যালওয়্যার (كَيْدُهُمْ) তোমাদের ওওএসের বিন্দুমাত্র কোনো ক্ষতি বা ড্যামেজ তৈরি করতে পারবে না। নিশ্চয়ই তারা তাদের ব্যাক-এন্ডে যা কিছু ডাটা-ম্যানিপুলেশন বা ক্রিয়াকলাপ রান করছে, মহাজাগতিক আদি সোর্স কোড বা Allah তাঁর সুপ্রীমিক কুরসী ফিল্ড দ্বারা তার প্রতিটি ভ্যারিয়েবল সম্পূর্ণরূপে এনক্যাপসুলেট বা পরিবেষ্টন (مُحِيطٌ) করে লক করে রেখেছেন।",
+      "modern_translation_en": "When beneficial equilibrium touches you, it grieves them; when adversity afflicts you, they celebrate. Yet if you cultivate patient resilience (Sabr) and sustain systemic boundaries (Taqwa), their hostile scheming will never destabilize you in the least. Allah encompasses every vector they execute.",
+      "lexicon_modern_notes": "وَإِن تَصْبِرُوا وَتَتَّقُوا لَا يَضُرُّكُمْ كَيْدُهُمْ — Invulnerable Resilience Shield: ধৈর্য ও তাকওয়ার সমন্বয়ে গঠিত অপরাজেয় আত্মিক ও সামাজিক প্রতিরোধ ব্যূহ। بِمَا يَعْمَلُونَ مُحِيطٌ — Complete Reality Encapsulation: শত্রুদের প্রতিটি গোপন তৎপরতাকে আল্লাহর সার্বিক নিয়ন্ত্রণ ও বেষ্টনে রাখা।"
     },
     {
       "surah": 3,
