@@ -573,8 +573,8 @@ const AyahCard = React.memo(function AyahCard({
     >
       <div className="border-b border-border/40 pb-3 space-y-2.5">
         {/* [শীর্ষ সারি] আয়াতের নম্বর ও মেটা ডাটা (Meta Data) */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          <div className="flex items-center gap-1.5 font-mono text-sm font-bold text-primary shrink-0">
+        <div className="flex items-start sm:items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-1.5 font-mono text-sm font-bold text-primary shrink-0 pt-0.5 sm:pt-0">
             <span>{surahId}:{ayah.ayah}</span>
           </div>
 
@@ -584,7 +584,7 @@ const AyahCard = React.memo(function AyahCard({
               <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 select-none leading-none">
                 {lang === "bn" ? "মেটা ডাটা" : "Meta Data"}
               </span>
-              <p className="text-xs sm:text-[13px] font-medium text-foreground/95 truncate sm:whitespace-normal leading-snug mt-0.5">
+              <p className="text-[11px] sm:text-xs md:text-[13px] font-medium text-foreground/95 whitespace-normal break-words leading-relaxed mt-0.5">
                 {lang === "bn"
                   ? (ayah.meta_bn || ayah.meta_en)
                   : (ayah.meta_en || ayah.meta_bn)}
