@@ -13539,7 +13539,13 @@
         }
       ],
       "translation_en": "O People of the Scripture, why do you confuse the truth with falsehood and conceal the truth while you know [it]?",
-      "conventional_en": "O People of the Scripture, why do you confuse the truth with falsehood and conceal the truth while you know [it]?"
+      "conventional_en": "O People of the Scripture, why do you confuse the truth with falsehood and conceal the truth while you know [it]?",
+      "meta_bn": "ডাটা ফ্যাব্রিকেশন ও সিগন্যাল করাপশন বালাই",
+      "meta_en": "Data Fabrication & Signal Corruption Filtering",
+      "conventional_bn": "হে কিতাবধারীগণ! তোমরা কেন সত্যকে মিথ্যার সাথে মিশ্রিত করছ এবং সত্যকে গোপন করছ, অথচ তোমরা তা জানো?",
+      "modern_translation_bn": "হে প্রাচীন ওওএসের (OOS - জীবন পরিচালন ব্যবস্থা) ডেটা এক্সেস পাওয়া ইউজার বা কিতাবধারীগণ (أَهْلَ الْكِتَابِ)! তোমরা কেন তোমাদের প্রসেসরে পরম অবজেক্টিভ সত্য বা পিউর ডেটাকে (الْحَقَّ) মানুষের তৈরি মনগড়া কুসংস্কার, ট্র্যাশ ডাটা ও মিথ্যার (بِالْبَاطِلِ) সাথে মিশ্রিত বা সিগন্যাল করাপ্ট করছ এবং মূল সোর্স কোডের সত্যকে সিস্টেমে হাইড বা এনক্রিপ্ট (وَتَكْتُمُونَ) করে রাখছ, অথচ তোমরা তোমাদের ডেটা অ্যানালিটিক্স অনুযায়ী খুব ভালো করেই তা জানো (وَأَنتُمْ تَعْلَمُونَ)?",
+      "modern_translation_en": "O users endowed with access to preceding scriptures (Ahl al-Kitab)! Why do you corrupt authentic objective truth with fabricated noise (al-Batil) and deliberately encrypt baseline verities while possessing complete telemetry of their validity?",
+      "lexicon_modern_notes": "تَلْبِسُونَ الْحَقَّ بِالْبَاطِلِ — Signal Contamination & Noise Injection: নির্ভেজাল ঐশী সত্যের সাথে কৃত্রিম ও বিকৃত ধারণার সংমিশ্রণ। تَكْتُمُونَ الْحَقَّ — Deliberate Data Suppression: সত্যের মূল কোডবেজ গোপন করে সাধারণকে বিভ্রান্ত করা।"
     },
     {
       "surah": 3,
@@ -13729,7 +13735,13 @@
         }
       ],
       "translation_en": "And a faction of the People of the Scripture say [to each other], \"Believe in that which was revealed to the believers at the beginning of the day and reject it at its end that perhaps they will abandon their religion,",
-      "conventional_en": "And a faction of the People of the Scripture say [to each other], \"Believe in that which was revealed to the believers at the beginning of the day and reject it at its end that perhaps they will abandon their religion,"
+      "conventional_en": "And a faction of the People of the Scripture said, \"Believe in that which was revealed to the believers at the beginning of the day and reject it at its end that perhaps they will abandon their religion,\"",
+      "meta_bn": "টাইম-ফ্রেমেড ম্যালওয়্যার ইনজেকশন কৌশল",
+      "meta_en": "Time-Framed Malware Injection & Phased Denial Strategy",
+      "conventional_bn": "আর কিতাবধারীদের একদল বলল, ‘মুমিনদের প্রতি যা নাজিল করা হয়েছে তার ওপর দিনের প্রথমভাগে ঈমান আনো এবং দিনের শেষভাগে তা অস্বীকার করো, যাতে তারা (ইসলাম থেকে) ফিরে যায়’।",
+      "modern_translation_bn": "আর কিতাবধারীদের একটি করাপ্টেড সাব-গ্রুপ বা দল (طَّائِفَةٌ) তাদের হ্যাকিং নেটওয়ার্কে পরিকল্পনা করল—‘মুমিন বা ভেরিফাইড ইউজারদের ওওএসে ডাউনলিংককৃত যে কসমিক ম্যানুয়াল রয়েছে—তার প্রতি তোমরা দিনের প্রথমভাগের টাইম-উইন্ডোতে (وَجْهَ النَّهَارِ) ডামি লয়ালটি সিগন্যাল পাঠিয়ে অপ্ট-ইন বা ঈমান আনো, এবং দিনের শেষভাগের টাইম-উইন্ডোতে (آخِرَهُ) তা পুরোপুরি ফিল্টার বা রিজেক্ট (Kafaru) করে দাও; যাতে এই সিস্টেমিক কনফিউশন বা বালাই দেখে প্রকৃত ভেরিফাইড ইউজারদের ওওএস-ও মেইন ট্র্যাক থেকে ব্যাক-ট্র্যাক বা ফিরে যায়’;",
+      "modern_translation_en": "A malicious sub-group of scripture holders devised: 'Transmit pseudo-loyalty signals toward the believers' revelation in the initial daily phase, then broadcast absolute rejection by nightfall, inducing systemic confusion to destabilize verified users from their core alignment.'",
+      "lexicon_modern_notes": "آمِنُوا... وَاكْفُرُوا آخِرَهُ — Phased Disruption & Cognitive Warfare: সচেতনভাবে নির্দিষ্ট সময় মেনে সাময়িক সমর্থন ও তাৎক্ষণিক বর্জনের মাধ্যমে মানসিক বিশৃঙ্খলা সৃষ্টি।"
     },
     {
       "surah": 3,
@@ -14069,7 +14081,13 @@
         }
       ],
       "translation_en": "And do not trust except those who follow your religion.\" Say, \"Indeed, the [true] guidance is the guidance of Allah. [Do you fear] lest someone be given [knowledge] like you were given or that they would [thereby] argue with you before your Lord?\" Say, \"Indeed, [all] bounty is in the hand of Allah - He grants it to whom He wills. And Allah is all-Encompassing and Wise.\"",
-      "conventional_en": "And do not trust except those who follow your religion.\" Say, \"Indeed, the [true] guidance is the guidance of Allah. [Do you fear] lest someone be given [knowledge] like you were given or that they would [thereby] argue with you before your Lord?\" Say, \"Indeed, [all] bounty is in the hand of Allah - He grants it to whom He wills. And Allah is all-Encompassing and Wise.\""
+      "conventional_en": "And do not trust except those who follow your religion.\" Say, \"Indeed, the [true] guidance is the guidance of Allah. [Do you fear] that someone will be given [knowledge] like you were given or that they would argue with you before your Lord?\" Say, \"Indeed, [all] bounty is in the hand of Allah - He grants it to whom He wills. And Allah is all-Encompassing and Knowing.\"",
+      "meta_bn": "ক্লোজড-সোর্স বায়াস বনাম ইউনিভার্সাল গাইডেন্স",
+      "meta_en": "Closed-Source Bias vs. Universal Divine Guidance",
+      "conventional_bn": "‘আর তোমরা কেবল তাকেই বিশ্বাস করো, যে তোমাদের দ্বীনের অনুসরণ করে’। বলো, ‘নিশ্চয়ই হেদায়াত তো আল্লাহরই হেদায়াত, (এটি তাঁরই দয়া) যে কাউকে অনুরূপ কিছু দেওয়া হবে যেমনটি তোমাদের দেওয়া হয়েছে, অথবা তারা তোমাদের রবের কাছে তোমাদের বিরুদ্ধে দলিল পেশ করবে’। বলো, ‘নিশ্চয়ই অনুগ্রহ আল্লাহর হাতে, তিনি যাকে ইচ্ছা তা দান করেন’। আর আল্লাহ সর্বব্যাপী, সর্বজ্ঞ।",
+      "modern_translation_bn": "‘আর তোমরা তোমাদের নেটওয়ার্কে কেবল তাকেই ট্রাস্ট বা পারমিশন এক্সেস দাও—যে তোমাদের তৈরি ক্লোজড-সোর্স সাব-সিস্টেম বা দ্বীনকে অনুসরণ করে’। তুমি তাদের এই বায়াস কোড ভেঙে ডিক্লেয়ার করো—‘নিশ্চয়ই প্রকৃত অপ্টিমাল ট্র্যাক বা Universal Guidance (সার্বজনীন পথনির্দেশ) হলো একমাত্র Allah-এর তৈরি ডিফল্ট গাইডেন্স; [তাঁর নিয়ম এটি নয় যে] তোমাদের ওল্ড ওওএসে অতীতে যে পরিমাণ রিসোর্স ও ম্যানুয়াল ইনপুট দেওয়া হয়েছিল—ঠিক অনুরূপ কোনো কসমিক ডেটা অন্য কোনো নতুন টাইম-লাইনের ইউজারকে দেওয়া যাবে না, অথবা চূড়ান্ত স্ক্রীনিং ফেজে তারা তোমাদের সিস্টেম আর্কিটেক্ট বা প্রতিপালকের (عِندَ رَبِّكُمْ) কেন্দ্রীয় কোরে তোমাদের বিরুদ্ধে লজিক্যাল কাউন্টার চার্জ বা দলিল পেশ করবে’। তুমি বলো—‘নিশ্চয়ই মহাজাগতিক এক্সটেন্ডেড এনার্জি, জ্ঞান ও অফুরন্ত রিসোর্সের প্রবাহ (الْفَضْلَ) একমাত্র Allah-এর চেইনে বা নিয়ন্ত্রণে বাউন্ডিং; তিনি তাঁর ইউনিভার্সাল অ্যালগরিদম অনুযায়ী যে নোড বা ইউজারকে ইচ্ছা তা সরবরাহ করেন; আর Allah সীমাহীন ডাইমেনশনে বিস্তৃত বা সর্বব্যাপী (وَاسِعٌ) এবং প্রতিটি সিস্টেম ডেটাবেজ সম্পর্কে সম্পূর্ণ ইনফর্মড বা সর্বজ্ঞ (عَلِيمٌ)’।",
+      "modern_translation_en": "They instruct: 'Do not extend operational trust except to those within your closed domain.' Declare: 'Authentic optimization is Allah’s Universal Guidance alone. Sovereign resource distribution (Fadl) is held solely within Allah’s parameter control, provisioned across nodes by His dynamic laws; and Allah is All-Encompassing, Omniscient.'",
+      "lexicon_modern_notes": "الْهُدَىٰ هُدَى اللَّهِ — Absolute Universal Baseline: সংকীর্ণ জাতিগত বা প্রাতিষ্ঠানিক সীমার বাইরে স্রষ্টার উন্মুক্ত ও সার্বজনীন হেদায়েত। الْفَضْلَ بِيَدِ اللَّهِ — Sovereign Distribution Matrix: সমস্ত অনুগ্রহ, জ্ঞান ও রিসোর্সের একচ্ছত্র মহাজাগতিক নিয়ন্ত্রণ।"
     },
     {
       "surah": 3,
@@ -14169,7 +14187,13 @@
         }
       ],
       "translation_en": "He selects for His mercy whom He wills. And Allah is the possessor of great bounty.",
-      "conventional_en": "He selects for His mercy whom He wills. And Allah is the possessor of great bounty."
+      "conventional_en": "He selects for His mercy whom He wills. And Allah is the possessor of great bounty.",
+      "meta_bn": "স্পেশালাইজড রহমত ও মেগা-রিসোর্স প্রভিশনিং",
+      "meta_en": "Specialized Mercy Allocation & Infinite Backup Reservoir",
+      "conventional_bn": "তিনি যাকে ইচ্ছা তাঁর দয়া দ্বারা বিশেষায়িত করেন। আর আল্লাহ মহা অনুগ্রহের অধিকারী।",
+      "modern_translation_bn": "তিনি তাঁর ডাইনামিক ইকোসিস্টেমের নিয়মে যে নোড বা ইউজারকে ইচ্ছা—তাকে তাঁর বিশেষায়িত সুরক্ষা ও ভারসাম্য রক্ষাকারী ফিডব্যাক লুপ বা রহমত (بِرَحْمَتِهِ) দ্বারা স্পেসিফাইড বা বিশেষায়িত করেন; আর Allah হলেন মহাবিশ্বের পরম মেগা-অনুগ্রহ ও অফুরন্ত ডিফল্ট ব্যাকআপ শক্তির পরম উৎস (ذُو الْفَضْلِ الْعَظِيمِ)।",
+      "modern_translation_en": "He designates His specialized protective resonance (Rahmah) unto whichever nodes He determines; for Allah is the Sovereign Master of Boundless Grace.",
+      "lexicon_modern_notes": "يَخْتَصُّ بِرَحْمَتِهِ — Specialized Parameter Tuning: সুনির্দিষ্ট নোডকে বিশেষায়িত দয়া ও নিরাপত্তার আওতায় আনা। ذُو الْفَضْلِ الْعَظِيمِ — Infinite Energy & Grace Reservoir: অফুরন্ত সার্বজনীন শক্তির পরম আধার।"
     },
     {
       "surah": 3,
@@ -14549,7 +14573,13 @@
         }
       ],
       "translation_en": "And among the People of the Scripture is he who, if you entrust him with a great amount [of wealth], he will return it to you. And among them is he who, if you entrust him with a [single] silver coin, he will not return it to you unless you are constantly standing over him [demanding it]. That is because they say, \"There is no blame upon us concerning the unlearned.\" And they speak untruth about Allah while they know [it].",
-      "conventional_en": "And among the People of the Scripture is he who, if you entrust him with a great amount [of wealth], he will return it to you. And among them is he who, if you entrust him with a [single] silver coin, he will not return it to you unless you are constantly standing over him [demanding it]. That is because they say, \"There is no blame upon us concerning the unlearned.\" And they speak untruth about Allah while they know [it]."
+      "conventional_en": "And among the People of the Scripture is he who, if you entrust him with a great amount [of wealth], he will return it to you. And among them is he who, if you entrust him with a [single] silver coin, he will not return it to you unless you are constantly standing over him [demanding it]. That is because they say, \"There is no blame upon us concerning the unlearned.\" And they speak untruth about Allah while they know.",
+      "meta_bn": "ক্রিপ্টোগ্রাফিক ট্রাস্ট ভায়োলেশন ও আমানত ট্র্যাকিং",
+      "meta_en": "Cryptographic Trust Violation & Asset Escrow Telemetry",
+      "conventional_bn": "আর কিতাবধারীদের মধ্যে কেউ এমন আছে, যার কাছে তোমরা বিপুল ধন-সম্পদ (কিনতার) আমানত রাখলেও সে তা তোমাদের কাছে বুঝিয়ে দেবে; আর তাদের মধ্যে কেউ এমনও আছে, যার কাছে তোমরা একটি দিনার আমানত রাখলেও সে তা তোমাদের বুঝিয়ে দেবে না—যতক্ষণ না তোমরা তার মাথার ওপর অবিরত দাঁড়িয়ে থাকো। এটি এজন্য যে তারা বলে, ‘নিরক্ষরদের (অন্যদের) ব্যাপারে আমাদের ওপর কোনো বাধ্যবাধকতা বা পাপ নেই’। আর তারা আল্লাহর নামে জেনে-বুঝে মিথ্যা বলে।",
+      "modern_translation_bn": "আর প্রাচীন ওওএসের ইউজার বা কিতাবধারীদের (أَهْلَ الْكِتَابِ) মধ্যে এমন কিছু হাই-ইন্টিগ্রিটি সম্পূর্ণ ট্রাস্টেড নোড রয়েছে—যার ওয়ালেটে তোমরা যদি মেগা মেটেরিয়াল রিসোর্স বা বিশাল এক খণ্ড ক্যাপিটালও আমানত বা ডেটা-লক (تَأْمَنْهُ بِقِنطَارٍ) করে রাখো, সে বিন্দুমাত্র জালিয়াতি ছাড়া হুবহু তা রিলিজ বা তোমাদের ওয়ালেটে রি-রুট (يُؤَدِّهِ إِلَيْكَ) করে দেবে; আর তাদের নেটওয়ার্কে এমন কিছু মারাত্মক করাপ্টেড ম্যালওয়্যার নোডও সক্রিয় রয়েছে—যার ওয়ালেটে তোমরা যদি একটি মাত্র ক্ষুদ্রতম ক্রিপ্টো টোকেন বা দিনারও (بِدِينَارٍ) আমানত রাখো, সে তা তোমাদের কাছে বিন্দুমাত্র ফেরত বা রিলিজ করবে না—যতক্ষণ না তোমরা কন্টিনিউয়াসলি আইনি প্রেশার দিয়ে তার ওপর মনিটরিং ও কঠোর ট্র্যাকিংয়ে অবিচল খাড়া (قَائِمًا) থাকো। তাদের ওওএসে এই জালিয়াতির বাগ (Bug) তৈরি হওয়ার কারণ—তারা এক ফলস সেলফিশ লজিক রান করে দাবি করেছিল: ‘আমাদের ডেটাবেজ-হীন আন-প্রোগ্রামড নিরক্ষর আউট-সাইডার নোডগুলোর (الْأُمِّيِّينَ) সম্পদ শোষণ করার ক্ষেত্রে আমাদের সিস্টেমে কোনো আইনি ট্র্যাকিং বা বাউন্ডারি লাইনের জরিমানা (سَبِيلٌ) নেই’; আর তারা মহাজাগতিক আদি সোর্স কোড বা Allah-এর ডিফল্ট সিস্টেম রুলসের বিরুদ্ধে সম্পূর্ণ জেনে-বুঝে ফলস ডাটা ফ্যাব্রিকেশন বা মারাত্মক মিথ্যাচার (الْكَذِبَ) জেনারেট করে, অথচ তারা ডাটা অ্যানালিটিক্সে খুব ভালো করেই সত্যটা জানে (وَهُمْ يَعْلَمُونَ)।",
+      "modern_translation_en": "Among scripture holders are high-integrity escrow nodes who disburse massive locked assets (Qintar) without compromise upon request; while others will withhold even a solitary token (Dinar) unless held under persistent surveillance (Qa'iman). This exploitation stems from their biased assertion: 'No liability binds us regarding outsider nodes (Ummiyyin).' Thus they fabricate deliberate falsifications against Allah with full foreknowledge.",
+      "lexicon_modern_notes": "تَأْمَنْهُ بِقِنطَارٍ... بِدِينَارٍ — Escrow Integrity Spectrum: বিশাল সম্পদ বা সামান্যতম আমানত রক্ষার ক্ষেত্রে নৈতিক সততার তারতম্য। لَيْسَ عَلَيْنَا فِي الْأُمِّيِّينَ سَبِيلٌ — Discriminatory Exemption Bias: বহিরাগত অনগ্রসর জনগোষ্ঠীর অধিকার হরণকে বৈধতা দেওয়ার স্বার্থান্বেষী অজুহাত।"
     },
     {
       "surah": 3,
@@ -14659,7 +14689,13 @@
         }
       ],
       "translation_en": "But yes, whoever fulfills his commitment and fears Allah - then indeed, Allah loves those who fear Him.",
-      "conventional_en": "But yes, whoever fulfills his commitment and fears Allah - then indeed, Allah loves those who fear Him."
+      "conventional_en": "But yes, whoever fulfills his commitment and fears Allah - then indeed, Allah loves those who fear Him.",
+      "meta_bn": "কন্টাক্ট ইন্টিগ্রিটি ও সিকিউরিটি বাউন্ডারি প্রটোকল",
+      "meta_en": "Contractual Integrity & Security Boundary Adherence",
+      "conventional_bn": "হ্যাঁ, যে কেউ তার অঙ্গীকার পূর্ণ করবে এবং তাকওয়া অবলম্বন করবে, তবে নিশ্চয় আল্লাহ মুত্তাকীদের ভালোবাসেন।",
+      "modern_translation_bn": "লজিক্যালি তা নয় (পরম সত্য কোড হলো এই)—যে কোনো ইউজার নোড সোর্সের বা অন্য নোডের সাথে করা তার প্রতিটি সিস্টেম-প্রটোকল বা কন্টাক্ট শতভাগ এক্সিকিউট বা পূর্ণ (أَوْفَىٰ بِعَهْدِهِ) করবে এবং মহাজাগতিক আদি সোর্সের তৈরি করা সিকিউরিটি বাউন্ডারি মেনে ওওএস সুরক্ষিত রাখবে (তাকওয়া অবলম্বন করবে)—তবে গাণিতিকভাবে নিশ্চিত থাকো যে, Allah তাঁর ডাইনামিক প্রটোকলে কেবল এই বাউন্ডারি মেনে চলা অপ্টিমাইজড নোড বা মুত্তাকীদের (الْمُتَّقِينَ) ফ্রিকোয়েন্সি লুপের সাথেই যুক্ত।",
+      "modern_translation_en": "Assuredly, whoever fulfills contracted covenants with precision and adheres strictly to systemic safeguards (Taqwa)—know that Allah harmonizes exclusively with boundary-compliant nodes (Muttaqin).",
+      "lexicon_modern_notes": "أَوْفَىٰ بِعَهْدِهِ وَاتَّقَىٰ — Total Protocol & Security Compliance: চুক্তি ও অঙ্গীকারের শতভাগ বাস্তবায়ন এবং ক্ষতিকর ত্রুটি থেকে সিস্টেমকে সুরক্ষিত রাখা।"
     },
     {
       "surah": 3,
@@ -14949,7 +14985,13 @@
         }
       ],
       "translation_en": "Indeed, those who exchange the covenant of Allah and their [own] oaths for a small price will have no share in the Hereafter, and Allah will not speak to them or look at them on the Day of Resurrection, nor will He purify them; and they will have a painful punishment.",
-      "conventional_en": "Indeed, those who exchange the covenant of Allah and their [own] oaths for a small price will have no share in the Hereafter, and Allah will not speak to them or look at them on the Day of Resurrection, nor will He purify them; and they will have a painful punishment."
+      "conventional_en": "Indeed, those who exchange the covenant of Allah and their [own] oaths for a small price will have no share in the Hereafter, and Allah will not speak to them or look at them on the Day of Resurrection, nor will He purify them; and they will have a painful punishment.",
+      "meta_bn": "শর্ট-টার্ম ডাটা এক্সচেঞ্জ ও পার্মানেন্ট মেমোরি ক্র্যাশ",
+      "meta_en": "Short-Term Asset Swap & Permanent Ledger Loss",
+      "conventional_bn": "নিশ্চয় যারা আল্লাহর অঙ্গীকার এবং নিজেদের শপথকে তুচ্ছ মূল্যের বিনিময়ে বিক্রি করে দেয়, আখেরাতে তাদের কোনো অংশ নেই; আর কেয়ামতের দিন আল্লাহ তাদের সাথে কথা বলবেন না, তাদের দিকে তাকাবেন না এবং তাদের পবিত্রও করবেন না; আর তাদের জন্য রয়েছে যন্ত্রণাদায়ক শাস্তি।",
+      "modern_translation_bn": "নিশ্চয়ই যারা মহাজাগতিক আদি সোর্সের সাথে করা সিস্টেম-প্রটোকল (بِعَهْدِ اللَّهِ) এবং নিজেদের আইনি শপথের ডাটাবেজকে—এই ত্রিমাত্রিক ভৌত জগতের সামান্য শর্ট-টার্ম মেটেরিয়াল গেইন বা তুচ্ছ মূল্যের (ثَمَنًا قَلِيلًا) বিনিময়ে ডেটা-এক্সচেঞ্জ বা বিক্রি (يَشْتَرُونَ) করে দেয়; চূড়ান্ত আউটপুট ফেজ বা আখেরাতে (فِي الْآخِرَةِ) তাদের ইউজার প্রোফাইলে কোনো পজিটিভ এনার্জি বা অংশ (خَلَاقَ) অবশিষ্ট থাকবে না; এবং চূড়ান্ত ডাটা-রিসেট টাইম-লাইনে (يَوْمِ الْقِيَامَةِ) Allah তাদের অডিটরি ইন্টারফেসে কোনো পিউর সিগন্যাল বা কথা ব্রডকাস্ট করবেন না, তাদের ক্র্যাশড প্রোফাইলের দিকে কোনো ফেভারেবল সিগন্যাল বা দয়ার দৃষ্টি দেবেন না, এবং তাদের ওওএস থেকে টক্সিক ডাটা-লগ ফিল্টার করে তাদের পিউরিফাইড বা রিফ্রেশ (وَلَا يُزَكِّيهِمْ) করবেন না; আর তাদের ওওএসের জন্য নির্ধারিত রয়েছে এক তীব্র মনস্তাত্ত্বিক ঘর্ষণ ও যন্ত্রণাদায়ক প্রতিক্রিয়া (عَذَابٌ أَلِيمٌ)।",
+      "modern_translation_en": "Those liquidating divine covenants and integrity oaths for ephemeral low-tier gains shall forfeit all positive allocation in the ultimate continuum. Allah will neither transmit benevolent telemetry nor process their cache for purification on Audit Day, reserving for them agonizing feedback loops.",
+      "lexicon_modern_notes": "لَا خَلَاقَ لَهُمْ — Total Asset/Reward Forfeiture: চূড়ান্ত ডেটাবেজে কোনো শেয়ার বা কল্যাণকর প্রাপ্তি না থাকা। وَلَا يُزَكِّيهِمْ — Denial of Systemic Sanitization: ওওএস থেকে টক্সিক ডেটা মুছে দিয়ে রিফ্রেশ করার সুবিধা বাতিল।"
     },
     {
       "surah": 3,
@@ -15259,7 +15301,13 @@
         }
       ],
       "translation_en": "And indeed, there is among them a party who alter the Scripture with their tongues so you may think it is from the Scripture, but it is not from the Scripture. And they say, \"This is from Allah,\" but it is not from Allah. And they speak untruth about Allah while they know.",
-      "conventional_en": "And indeed, there is among them a party who alter the Scripture with their tongues so you may think it is from the Scripture, but it is not from the Scripture. And they say, \"This is from Allah,\" but it is not from Allah. And they speak untruth about Allah while they know."
+      "conventional_en": "And indeed, there is among them a party who alter the Scripture with their tongues so you may think it is from the Scripture, but it is not from the Scripture. And they say, \"This is from Allah,\" but it is not from Allah. And they speak untruth about Allah while they know.",
+      "meta_bn": "ভয়েস-স্পুফিং ও ম্যান-ইন-দ্য-মিডল ডাটা ফ্যাব্রিকেশন",
+      "meta_en": "Voice-Spoofing & Man-in-the-Middle Script Manipulation",
+      "conventional_bn": "আর নিশ্চয় তাদের মধ্যে এমন এক দল রয়েছে, যারা কিতাব পাঠকালে নিজেদের জিহ্বা বাঁকা করে—যাতে তোমরা তাকে কিতাবের অংশ মনে করো, অথচ তা কিতাবের অংশ নয়। আর তারা বলে, ‘তা আল্লাহর পক্ষ থেকে’, অথচ তা আল্লাহর পক্ষ থেকে নয়। আর তারা আল্লাহর নামে জেনে-বুঝে মিথ্যা বলে।",
+      "modern_translation_bn": "আর নিশ্চয়ই তাদের নেটওয়ার্কের মধ্যে এমন এক মারাত্মক ক্ষতিকারক সাব-গ্রুপ বা হ্যাকার দল (لَفَرِيقًا) সক্রিয় রয়েছে—যারা মাস্টার ডেটাবেজ বা কিতাবের কোড রিড করার সময় নিজেদের ভয়েস সিগন্যাল ও অডিও পিচ বাঁকা করে এক ধরণের Data Spoofing বা জালিয়াতি (يَلْوُونَ أَلْسِنَتَهُم) রান করে—যাতে তোমরা তোমাদের ওওএসের মনস্তাত্ত্বিক প্রসেসরে ভুল হিসাব (لِتَحْسَبُوهُ) করে ধরে নাও যে তা মূল কিতাবেরই ডিফল্ট সোর্স কোড, অথচ প্রকৃত ডাটা স্ট্রাকচারে তা মূল কিতাবের (مِنَ الْكِتَابِ) বিন্দুমাত্র অংশই নয়; আর তারা ফলস আইডেন্টিটি জেনারেট করে দাবি করে—‘এই ডাটা সরাসরি মহাজাগতিক আদি সোর্স বা Allah-এর সার্ভার থেকে ডাউনলিংকড’, অথচ তা আল্লাহর সোর্স থেকে আসা কোনো ডেটা প্যাকেটই নয়; আর তারা আল্লাহর নামের পরম আইনি প্রটোকলের বিরুদ্ধে সম্পূর্ণ জেনে-বুঝে এই মারাত্মক মিথ্যাচার ও ভুয়া কোড ইনজেকশন দেয়, অথচ তারা ডাটা অ্যানালিটিক্সে খুব ভালো করেই সত্যটা জানে।",
+      "modern_translation_en": "A malicious sub-group among them executes synthetic data-spoofing by modulating their vocal frequencies over the Scripture (Yalwuna alsinatahum), deceiving your cognitive processors into cataloging synthetic fabrications as authentic source code; claiming: 'This descended from Allah,' when it bears zero divine origin, deliberately asserting falsehoods against systemic laws.",
+      "lexicon_modern_notes": "يَلْوُونَ أَلْسِنَتَهُم بِالْكِتَابِ — Data-Spoofing & Text Modulation: ইচ্ছাকৃতভাবে শব্দের স্বর বা উচ্চারণ বিকৃত করে নকল কথাকে ঐশী বাণীর মতো শোনানো। وَمَا هُوَ مِنَ الْكِتَابِ — Authentic Trace Failure: মূল সোর্স কোড বা কিতাবের সাথে কোনো প্রাতিষ্ঠানিক সম্পর্ক না থাকা।"
     },
     {
       "surah": 3,
@@ -15559,7 +15607,13 @@
         }
       ],
       "translation_en": "It is not for a human [prophet] that Allah should give him the Scripture and authority and prophethood and then he would say to the people, \"Be servants to me rather than Allah,\" but [instead, he would say], \"Be pious scholars of the Lord because of what you have taught of the Scripture and because of what you have studied.\"",
-      "conventional_en": "It is not for a human [prophet] that Allah should give him the Scripture and authority and prophethood and then he would say to the people, \"Be servants to me rather than Allah,\" but [instead, he would say], \"Be pious scholars of the Lord because of what you have taught of the Scripture and because of what you have studied.\""
+      "conventional_en": "It is not for a human [prophet] that Allah should give him the Scripture and authority and prophethood and then he would say to the people, \"Be servants to me rather than Allah,\" but [instead, he would say], \"Be pious scholars of the Lord because of what you have taught of the Scripture and because of what you have studied.\"",
+      "meta_bn": "ফলস ডিভাইন আইডেন্টিটি ক্লেম লক ও রব্বানী মোড",
+      "meta_en": "Rejection of False Divine Claims & Rabbanī Mode Mandate",
+      "conventional_bn": "কোনো মানুষের জন্য এটা সম্ভব নয় যে, আল্লাহ তাকে কিতাব, প্রজ্ঞা ও নবুয়ত দান করবেন, তারপর সে মানুষকে বলবে, ‘তোমরা আল্লাহকে ছেড়ে আমার বান্দা (উপাসক) হয়ে যাও’; বরং (সে বলবে), ‘তোমরা রব্বানী (আল্লাহরওয়ালা) হও, যেহেতু তোমরা কিতাব শিক্ষা দিতে এবং তা অধ্যয়ন করতে’।",
+      "modern_translation_bn": "মহাজাগতিক সৃষ্টিতাত্ত্বিক ও আইনি নিয়মে কোনো কার্বন-ভিত্তিক হিউম্যান নোড বা মানুষের (لِبَشَرٍ) জন্য এটি বিন্দুমাত্র লজিক্যাল বা সম্ভব নয় যে—Allah তাকে মাস্টার ডেটাবেজ বা কিতাব (الْكِتَابَ), পরম রেগুলেশন কোড ও প্রজ্ঞা (الْحُكْمَ) এবং আদি ডাটা-ডিকোডিং লাইসেন্স বা নবুয়ত (النُّبُوَّةَ) সরবরাহ করবেন, আর তারপর সে নিজের ওওএসে মারাত্মক ইগোর বাগ রান করে সাধারণ মানবজাতির ইন্টারফেসে গিয়ে বলবে: ‘তোমরা পরম সোর্স বা আল্লাহকে ডি-লিঙ্ক করে দিয়ে সরাসরি আমার তৈরি সাব-সিস্টেমের গোলাম, অবদমিত নোড বা উপাসক (عِبَادًا لِّي) হয়ে যাও’; বরং একজন প্রকৃত ডাটা-ট্রান্সমিটারের ডিফল্ট আউটপুট কমান্ড সর্বদা এটাই হবে—‘তোমরা তোমাদের সমগ্র ওওএসের প্রসেসিং ফ্রিকোয়েন্সি সরাসরি মূল সোর্সের সাথে সিনক্রোনাইজড করে নিখুঁত রব্বানী বা সোর্স-এলাইনড সত্তা (رَبَّانِيِّينَ) হিসেবে নিজেদের ওওএস সক্রিয় করো—যেহেতু তোমরা অবিরত কিতাবের মাস্টার কোড ও বিজ্ঞান সমাজে শিক্ষা দিচ্ছ (تُعَلِّمُونَ) এবং নিজেরা তা গভীর লজিক্যাল অ্যানালিটিক্সে মেমোরিতে স্টাডি বা অধ্যয়ন (تَدْرُسُونَ) করছ’।",
+      "modern_translation_en": "It is fundamentally impossible for any biological human node endowed with the Scripture, jurisdictional wisdom (Hukm), and prophetic decoding to demand: 'Become subservient slaves unto me beside Allah.' Rather, their operational command remains: 'Evolve into authentic source-aligned scholars (Rabbaniyyin), as you systematically teach the Code and continually study its foundations.'",
+      "lexicon_modern_notes": "كُونُوا عِبَادًا لِّي — False Subservience Injunction: মানুষকে ব্যক্তির গোলাম বানানোর অহংকারপ্রসূত বাগ। كُونُوا رَبَّانِيِّينَ — Source-Synchronized Integration: সার্বক্ষণিকভাবে মহান রবের সার্বজনীন বিজ্ঞান ও প্রজ্ঞার সাথে ব্যক্তি ও সমাজের নিখুঁত সংযুক্তি।"
     },
     {
       "surah": 3,
@@ -15709,7 +15763,13 @@
         }
       ],
       "translation_en": "Nor could he order you to take the angels and prophets as lords. Would he order you to disbelief after you had been Muslims?",
-      "conventional_en": "Nor could he order you to take the angels and prophets as lords. Would he order you to disbelief after you had been Muslims?"
+      "conventional_en": "Nor could he order you to take the angels and prophets as lords. Would he order you to disbelief after you had been Muslims?",
+      "meta_bn": "কসমিক ফোর্সেস ও ডাটা-ট্রান্সমিটারদের গড-মোড লকিং নিষেধাজ্ঞা",
+      "meta_en": "Absolute Prohibition of Elevating Entities to Root Status",
+      "conventional_bn": "আর সে তোমাদের এ নির্দেশও দেবে না যে, তোমরা ফেরেশতাদের ও নবীদের রব (প্রতিপালক) হিসেবে গ্রহণ করো। তোমরা মুসলিম (আত্মসমর্পণকারী) হওয়ার পর সে কি তোমাদের কুফরী করার (অবাধ্যতার) নির্দেশ দেবে?",
+      "modern_translation_bn": "আর সে তোমাদের ওওএসে ভুলেও এমন কোনো ক্ষতিকারক কমান্ড বা নির্দেশ (وَلَا يَأْمُرَكُمْ) ইনজেক্ট করবে না যে—তোমরা মহাবিশ্বের স্বয়ংক্রিয় প্রাকৃতিক বল বা কসমিক ফোর্সেস (الْمَلَائِكَةُ) এবং আদি ডাটা-ডিকোদকারী নবীদের (وَالنَّبِيِّينَ) পরম আইনদাতা, প্রতিপালক বা সুপার-ইউজার ‘রব’ (أَرْبَابًا) হিসেবে নিজেদের সিস্টেমে হোল্ড বা পূজা করো; তোমরা তোমাদের ওওএস-কে এই সুপ্রীমিক ওএসের সাথে শতভাগ ইন্টিগ্রেটেড ও এলাইনড ইউজার বা মুসলিম (مُّسْلِمُونَ) হিসেবে কনফিগার করার পর—সে কি তোমাদের ওওএসে পুনরায় সত্যের পিউর লাইভ সিগন্যাল ব্লক করার সেই মারাত্মক সিস্টেমিক অবাধ্যতা ও কুফরীর (بِالْكُفْرِ) ক্ষতিকর অ্যাপ্লিকেশন রান করার কমান্ড দেবে? [তা গাণিতিকভাবে সম্পূর্ণ অসম্ভব]。",
+      "modern_translation_en": "Nor could any prophet instruct your network to configure natural cosmic forces (Malaikah) or data-transmitters (Prophets) as sovereign root entities (Arbaban). Would he ever command you toward destructive signal denial (Kufr) after you have achieved synchronized alignment (Muslimun)?",
+      "lexicon_modern_notes": "تَتَّخِذُوا الْمَلَائِكَةَ وَالنَّبِيِّينَ أَرْبَابًا — Root-Level Attribution Error: প্রাকৃতিক শক্তি বা নবীগণকে স্রষ্টার সমকক্ষ ভেবে সুপার-ইউজার মর্যাদায় উন্নীত করার মারাত্মক ভুল।"
     },
     {
       "surah": 3,
