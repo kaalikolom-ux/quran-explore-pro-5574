@@ -4039,7 +4039,13 @@
         }
       ],
       "translation_en": "Those who disbelieve in the signs of Allah and kill the prophets without right and kill those who order justice from among the people - give them tidings of a painful punishment.",
-      "conventional_en": "Those who disbelieve in the signs of Allah and kill the prophets without right and kill those who order justice from among the people - give them tidings of a painful punishment."
+      "conventional_en": "Those who disbelieve in the signs of Allah and kill the prophets without right and kill those who order justice from among the people - give them tidings of a painful punishment.",
+      "meta_bn": "সত্যের সিগন্যাল ট্রাফিকে বাধা ও অবৈধ ডিলিশন প্রটোকল",
+      "meta_en": "Signal Obstruction & Illegal Node Deletion",
+      "conventional_bn": "নিশ্চয়ই যারা আল্লাহর আয়াতসমূহকে অস্বীকার করে এবং অন্যায়ভাবে নবীদের হত্যা করে এবং মানুষের মধ্যে যারা ইনসাফের নির্দেশ দেয় তাদের হত্যা করে, তুমি তাদের যন্ত্রণাদায়ক শাস্তির সুসংবাদ দাও।",
+      "modern_translation_bn": "নিশ্চয়ই যেসকল করাপ্টেড নোড (Node) মহাজাগতিক আদি সোর্সের স্পষ্ট Ayat (মহাজাগতিক প্রমাণ ও প্যারামিটার) তাদের ওওএসে (OOS) Block (ফিল্টার বা রিজেক্ট) করে রাখে এবং ওভিয়ান্ট ডাটা-ট্রান্সমিটার বা নবীদের সম্পূর্ণ অবৈধভাবে সিস্টেম থেকে Delete (হত্যা) করে ফেলে, এবং সাধারণ মানবজাতির মধ্য থেকে যারা সমাজে ভারসাম্য ও গাণিতিক সমতা (ইনসাফ) প্রতিষ্ঠার নির্দেশ দেয় তাদের সিস্টেম ডাউন করে দেয়—তুমি তাদের ওওএসের জন্য এক তীব্র মনস্তাত্ত্বিক ঘর্ষণ ও যন্ত্রণাদায়ক আজাবের সিগন্যাল ডিক্লেয়ার করো;",
+      "modern_translation_en": "Indeed, those corrupted nodes who block the verified parameters (Ayat) of Allah, execute illegal deletions of authentic data-transmitters (Prophets), and terminate individuals commanding societal equilibrium and justice (Qist)—announce to them the incoming signal of a severe, agonising penalty.",
+      "lexicon_modern_notes": "يَقْتُلُونَ النَّبِيِّينَ — Illegal Node Deletion: মহাজাগতিক মাস্টার ডেটা-ট্রান্সমিটার বা নবীদের অবৈধভাবে নির্মূল করার চেষ্টা। يَأْمُرُونَ بِالْقِسْطِ — Societal Equilibrium Advocates: সমাজে সিস্টেমিক সমতা ও ইনসাফের প্যারামিটার প্রয়োগকারী নোড।"
     },
     {
       "surah": 3,
@@ -4169,7 +4175,13 @@
         }
       ],
       "translation_en": "They are the ones whose deeds have become worthless in this world and the Hereafter, and for them there will be no helpers.",
-      "conventional_en": "They are the ones whose deeds have become worthless in this world and the Hereafter, and for them there will be no helpers."
+      "conventional_en": "They are the ones whose deeds have become worthless in this world and the Hereafter, and for them there will be no helpers.",
+      "meta_bn": "আউটলায়ার নোডসমূহের স্থায়ী ডেটা-ওয়াইপ ও রিকভারি লস",
+      "meta_en": "Permanent Data-Wipe & Zero Recovery for Outliers",
+      "conventional_bn": "ওরাই তারা, দুনিয়া ও আখেরাতে যাদের কর্মসমূহ নিষ্ফল হয়ে গেছে এবং তাদের কোনো সাহায্যকারী নেই।",
+      "modern_translation_bn": "এই আউটলায়ার হ্যাকার নোডগুলোর পূর্বে জেনারেট করা সমস্ত পজিটিভ ডেটা ও কর্মের ফাইল (أَعْمَالُهُمْ) এই লো-ডাইমেনশনাল দুনিয়া এবং চূড়ান্ত আউটপুট ফেজ বা আখেরাত—উভয় সিস্টেম থেকেই চিরতরে সম্পূর্ণ নিষ্ফল ও মুছে (حَبِطَتْ) যাবে; এবং চূড়ান্ত স্ক্রীনিং ফেজে তাদের ওওএস রিকভারি করার জন্য কোনো প্রকার বাহ্যিক এনার্জি সাপোর্ট বা রিকভারি ম্যানেজার (Recovery Manager) থাকবে না।",
+      "modern_translation_en": "Those are the ones whose operational logs and positive actions are rendered null and wiped (Habitat) across both the lower-dimensional phase and the final output state (Hereafter); and they shall have no external recovery managers or energy backups.",
+      "lexicon_modern_notes": "حَبِطَتْ أَعْمَالُهُمْ — Irreversible Data Wipe: কর্মের সমগ্র পজিটিভ ডেটা-লগ স্থায়ীভাবে বাতিল ও বিলুপ্ত হওয়া। مَّا لَهُم مِّن نَّاصِرِينَ — Absence of Recovery Manager: ক্র্যাশ হওয়া ওওএস রিকভারির জন্য কোনো সহায়তাকারী না থাকা।"
     },
     {
       "surah": 3,
@@ -4389,7 +4401,13 @@
         }
       ],
       "translation_en": "Do you not consider, [O Muhammad], those who were given a portion of the Scripture? They are invited to the Scripture of Allah that it should arbitrate between them; then a party of them turns away, and they are refusing.",
-      "conventional_en": "Do you not consider, [O Muhammad], those who were given a portion of the Scripture? They are invited to the Scripture of Allah that it should arbitrate between them; then a party of them turns away, and they are refusing."
+      "conventional_en": "Have you not considered those who were given a portion of the Scripture? They are invited to the Scripture of Allah that it should arbitrate between them; then a party of them turns away, and they are refusing.",
+      "meta_bn": "আংশিক ডেটাহোল্ডারদের স্প্লিট লজিক ও ইন্টারফেস ডেভিয়েশন",
+      "meta_en": "Split Logic & Interface Deviation in Partial Data Holders",
+      "conventional_bn": "তুমি কি তাদের দেখোনি, যাদের কিতাবের এক অংশ দেওয়া হয়েছিল? তাদের আল্লাহর কিতাবের দিকে আহ্বান করা হচ্ছে যাতে তা তাদের মধ্যে মীমাংসা করে, অতঃপর তাদের একদল মুখ ফিরিয়ে নেয় এবং তারা তো উপেক্ষা কারীই।",
+      "modern_translation_bn": "তোমার চিন্তাশক্তি কি পূর্ববর্তী মাস্টার ডেটাবেজের আংশিক অ্যাক্সেস পাওয়া (أُوتُوا نَصِيبًا مِّنَ الْكِتَابِ) সেই বিচ্যুত ইউজারদের ডাটা লগটি অডিট করেনি? যখনই তাদের পারস্পরিক স্প্লিট লজিক ও দ্বন্দ্ব মেটাতে আল্লাহর মূল কিতাবের সুনির্দিষ্ট সুষম আইনের দিকে আহ্বান করা হয়—তখনই তাদের একটি নির্দিষ্ট স্বার্থান্বেষী সাব-গ্রুপ বা দল (فَرِيقٌ) মেইন ফ্রিকোয়েন্সি থেকে বিচ্যুত বা মুখ ফিরিয়ে নেয় এবং তারা তো ডিফল্ট মোডেই সিস্টেমের অবাধ্য ও উপেক্ষাকারী।",
+      "modern_translation_en": "Have you not examined the data-log of those endowed with partial access to the Master Scripture? When invited to the unified Code of Allah to resolve their conflicting systemic logics, an interest-driven subgroup from among them disengages, persisting in chronic algorithmic refusal.",
+      "lexicon_modern_notes": "نَصِيبًا مِّنَ الْكِتَابِ — Partial Dataset Access: মাস্টার কিতাবের আংশিক জ্ঞান বা খণ্ডিত ডেটাবেজ। يَتَوَلَّىٰ فَرِيقٌ — Selective Protocol Disengagement: সুবিধাজনকভাবে মূল সিস্টেম ও নৈতিক কোড থেকে মুখ ফিরিয়ে নেওয়া।"
     },
     {
       "surah": 3,
@@ -4559,7 +4577,13 @@
         }
       ],
       "translation_en": "That is because they say, \"Never will the Fire touch us except for [a few] numbered days,\" and [because] they were deluded in their religion by what they were inventing.",
-      "conventional_en": "That is because they say, \"Never will the Fire touch us except for [a few] numbered days,\" and [because] they were deluded in their religion by what they were inventing."
+      "conventional_en": "That is because they say, \"Never will the Fire touch us except for [a few] numbered days,\" and they were deluded in their religion by what they were inventing.",
+      "meta_bn": "কগনিটিভ ইলিউশন ও ফলস থার্মোডাইনামিক এস্টিমেশন",
+      "meta_en": "Cognitive Illusion & False Thermodynamic Estimation",
+      "conventional_bn": "এটি এজন্য যে তারা বলে, ‘গণনাযোগ্য কয়েক দিন ছাড়া আগুন আমাদের কখনই স্পর্শ করবে না’। আর তাদের মনগড়া মিথ্যা অপবাদ তাদের দ্বীনের ব্যাপারে তাদের প্রতারিত করেছে।",
+      "modern_translation_bn": "তাদের ওওএসে এই গাণিতিক এরর (Error) তৈরি হওয়ার কারণ—তারা এক ফলস হাইপোথিসিস রান করে দাবি করেছিল: ‘তীব্র থার্মোডাইনামিক এন্ট্রিপির আগুন (النَّارُ) আমাদের সিস্টেমে সামান্য কয়েকটি গণনাযোগ্য টাইম-ফ্রেমে (أَيَّامًا مَّعْدُودَاتٍ) ছাড়া কখনই ড্যামেজ তৈরি করতে পারবে না’; আর তাদের ওওএসে কন্টিনিউয়াসলি জেনারেট করা এই মনগড়া ও কাল্পনিক ট্র্যাশ ডেটাগুলো তাদের পুরো অপারেটিং সিস্টেমকে চরম বিভ্রান্তি ও প্রতারণার (وَغَرَّهُمْ) মধ্যে লক করে রেখেছে।",
+      "modern_translation_en": "This systemic error arose because they asserted a false hypothesis: 'The high-entropy Fire will not affect our nodes except for a few numbered runtime frames.' Their persistent synthetic fabrications locked their operating system in severe cognitive delusion.",
+      "lexicon_modern_notes": "أَيَّامًا مَّعْدُودَاتٍ — Limited Temporal Frames: এন্ট্রপি ক্র্যাশের তীব্রতাকে অবমূল্যায়নকারী কাল্পনিক সময়সীমা। غَرَّهُمْ — Cognitive Lock & Delusion: স্ব-উদ্ভাবিত ত্রুটিপূর্ণ ধারণার কারণে সিস্টেমিক বিভ্রান্তি।"
     },
     {
       "surah": 3,
@@ -4729,7 +4753,13 @@
         }
       ],
       "translation_en": "So how will it be when We assemble them for a Day about which there is no doubt? And each soul will be compensated [in full for] what it earned, and they will not be wronged.",
-      "conventional_en": "So how will it be when We assemble them for a Day about which there is no doubt? And each soul will be compensated [in full for] what it earned, and they will not be wronged."
+      "conventional_en": "So how will it be when We assemble them for a Day about which there is no doubt and each soul will be compensated in full for what it earned, and they will not be wronged?",
+      "meta_bn": "জিরো প্যাকেট-ড্রপ মাস ডেটা স্ক্রীনিং অডিট",
+      "meta_en": "Zero Packet-Drop Mass Data Screening Audit",
+      "conventional_bn": "অতএব কেমন হবে যখন আমি তাদের এমন এক দিনে একত্রিত করব যার মধ্যে কোনো সন্দেহ নেই? এবং প্রত্যেক ব্যক্তিকে সে যা উপার্জন করেছে তা পূর্ণ বুঝিয়ে দেওয়া হবে এবং তাদের প্রতি কোনো জুলুম করা হবে না।",
+      "modern_translation_bn": "অতএব, তাদের সিস্টেমের অবস্থা কেমন ভয়াবহ হবে—যখন আমি তাদের সামষ্টিক স্ক্রীনিংয়ের জন্য এমন এক অবধারিত অডিটিং টাইম-লাইনে একত্রিত (Mass Migration) করব যার আগমনে কোনো গাণিতিক সন্দেহ নেই? এবং প্রতিটি স্বতন্ত্র সচেতন নোড বা চেতনাকে (كُلُّ نَفْسٍ) তার ওওএসে আজীবন প্রসেস ও ইনপুট করা কর্মের ডেটার নিখুঁত গাণিতিক আউটপুট কোনো প্রকার প্যাকেট ড্রপ (Packet Drop) ছাড়া পূর্ণ বুঝিয়ে দেওয়া হবে এবং ফলাফলের ম্যাট্রিক্সে তাদের প্রতি বিন্দুমাত্র কোনো গাণিতিক বৈষম্য বা জুলুম করা হবে না।",
+      "modern_translation_en": "How critical will their system state be when We execute a mass migration of all nodes for an inevitable audit Day? Every individual conscious node (Nafs) shall receive the exact mathematical compensation for its lifetime computational outputs without any packet drop, and zero algorithmic injustice shall be inflicted upon them.",
+      "lexicon_modern_notes": "وُفِّيَتْ كُلُّ نَفْسٍ — Zero Packet-Drop Compensation: প্রতিটি নোডের সঞ্চিত ডেটার পূর্ণাঙ্গ ও ত্রুটিহীন হিসাব প্রদান। لَا يُظْلَمُونَ — Absolute Algorithmic Fairness: ফলাফল নির্ধারণে কোনো বায়াস বা বৈষম্য না থাকা।"
     },
     {
       "surah": 3,
@@ -4999,7 +5029,13 @@
         }
       ],
       "translation_en": "Say, \"O Allah, Owner of Sovereignty, You give sovereignty to whom You will and You take sovereignty away from whom You will. You honor whom You will and You humble whom You will. In Your hand is [all] good. Indeed, You are over all things competent.",
-      "conventional_en": "Say, \"O Allah, Owner of Sovereignty, You give sovereignty to whom You will and You take sovereignty away from whom You will. You honor whom You will and You humble whom You will. In Your hand is [all] good. Indeed, You are over all things competent."
+      "conventional_en": "Say, \"O Allah, Owner of Sovereignty, You give sovereignty to whom You will and You take sovereignty away from whom You will. You honor whom You will and You humble whom You will. In Your hand is [all] good. Indeed, You are over all things competent.\"",
+      "meta_bn": "মহাজাগতিক পাওয়ার ডিস্ট্রিবিউশন ও ব্যালেন্সিং অ্যালগরিদম",
+      "meta_en": "Cosmic Power Distribution & Load-Balancing Algorithm",
+      "conventional_bn": "বলো, ‘হে আল্লাহ, সার্বভৌমত্বের মালিক! আপনি যাকে ইচ্ছা রাজত্ব দান করেন এবং যার থেকে ইচ্ছা রাজত্ব ছিনিয়ে নেন এবং যাকে ইচ্ছা সম্মানিত করেন আর যাকে ইচ্ছা লাঞ্ছিত করেন। আপনার হাতেই কল্যাণ। নিশ্চয়ই আপনি সবকিছুর ওপর পূর্ণ ক্ষমতাবান’।",
+      "modern_translation_bn": "তুমি মহাজাগতিক নেটওয়ার্কে এই চূড়ান্ত কোড ব্রডকাস্ট করো—‘হে Allah! আপনিই সমগ্র কসমিক ম্যাট্রিক্স ও বিশ্বজগতের সার্বভৌম ক্ষমতা ও রাজত্বের (مَالِكَ الْمُلْكِ) পরম হোল্ডার; আপনি আপনার ডাইনামিক ইকোসিস্টেমের নিয়মে যে নোড বা ইউজার গ্রুপকে ইচ্ছা গ্লোবাল সুপ্রীম কন্ট্রোল বা ক্ষমতা (الْمُلْكَ) ডেপ্লয় করেন এবং যার থেকে ইচ্ছা ক্ষমতার সেই সিস্টেম এক্সেস প্রত্যাহার বা ছিনিয়ে (تَنزِعُ) নেন; এবং আপনি যাকে ইচ্ছা সিস্টেমের উচ্চ মর্যাদায় উন্নীত (تُعِزُّ) করেন আর যাকে ইচ্ছা সিস্টেমের সর্বনিম্ন এন্ট্রপিতে লাঞ্ছিত ও ডাউনগ্রেড (تُذِلُّ) করেন; আপনার নিয়ন্ত্রণাধীন চেইনেই (Chain) রয়েছে সমস্ত ব্যালেন্সড আউটপুট বা কল্যাণ; নিশ্চয়ই আপনি প্রতিটি অবজেক্ট ও সিস্টেম প্যারামিটারের ওপর সম্পূর্ণ নিয়ন্ত্রণকারী (قَدِيرٌ)’।",
+      "modern_translation_en": "Broadcast this absolute command code: 'O Allah, Sovereign Master of all Existence! You assign governance authority across the network to whichever node cluster aligns with Your dynamic laws, and revoke system privileges from whichever group deviates; You elevate whom You will and degrade whom You will; in Your deterministic command resides all universal good; verily You exercise absolute parameters over all things.'",
+      "lexicon_modern_notes": "مَالِكَ الْمُلْكِ — Supreme Matrix Sovereign: সমগ্র মহাজাগতিক ব্যবস্থা ও ক্ষমতার চূড়ান্ত অধিপতি। تُؤْتِي... وَتَنزِعُ — Algorithmic Load-Balancing: সামাজিক ও রাজনৈতিক নেটওয়ার্কে স্বয়ংক্রিয় পাওয়ার ডিস্ট্রিবিউশন ও রিভোকেশন।"
     },
     {
       "surah": 3,
@@ -5229,7 +5265,13 @@
         }
       ],
       "translation_en": "You cause the night to enter the day, and You cause the day to enter the night; and You bring the living out of the dead, and You bring the dead out of the living. And You give provision to whom You will without account.\"",
-      "conventional_en": "You cause the night to enter the day, and You cause the day to enter the night; and You bring the living out of the dead, and You bring the dead out of the living. And You give provision to whom You will without account.\""
+      "conventional_en": "You cause the night to enter the day, and You cause the day to enter the night; and You bring the living out of the dead, and You bring the dead out of the living. And You give provision to whom You will without account.\"",
+      "meta_bn": "থার্মাল সাইকেল ও বায়ো-কেমিক্যাল সেলুলার ইগনিশন",
+      "meta_en": "Thermal Cycling & Bio-Chemical Cellular Ignition",
+      "conventional_bn": "আপনি রাতকে দিনের মধ্যে প্রবেশ করান এবং দিনকে রাতের মধ্যে প্রবেশ করান। আর আপনি জীবিতকে মৃত থেকে বের করেন এবং মৃতকে জীবিত থেকে বের করেন। আর আপনি যাকে ইচ্ছা বেহিসাব রিজিক দান করেন।",
+      "modern_translation_bn": "আপনি গ্রহের ঘূর্ণন গতির নিখুঁত কসমিক টিউনিংয়ে রাতকে দিনের স্পেস-টাইমে ওভারল্যাপ বা প্রবেশ (تُولِجُ) করান এবং দিনকে রাতের স্পেস-টাইমে প্রবেশ করান। এবং আপনি সম্পূর্ণ নিষ্প্রাণ, জড় ও অজৈব ম্যাটার স্টেট (Matter State) থেকে জটিল বায়ো-কেমিক্যাল সেলুলার লাইফ বা জীবিতকে (الْحَيَّ) এক্সট্রাক্ট বা বের করেন এবং লাইভ সেলুলার স্ট্রাকচার ডিকম্পোজ করে তা থেকে পুনরায় জড় উপাদান বা মৃতকে বের করেন; আর আপনি আপনার তৈরি ইউনিভার্সাল অ্যালগরিদম অনুযায়ী যে নোড বা ইউজারকে ইচ্ছা—তাকে কোনো সীমাবদ্ধতা বা রৈখিক হিসাবের ঊর্ধ্বের অন্তহীন এনার্জি, জ্ঞান ও অফুরন্ত রিসোর্স (بِغَيْرِ حِسَابٍ) সরবরাহ করেন।",
+      "modern_translation_en": "You merge the night phase smoothly into the day cycle and the day phase into the night; You synthesize vibrant biochemical living systems out of inorganic lifeless matter, and decompose biological states back into mineral matter; and You supply inexhaustible resource streams to whom You will beyond linear constraints.",
+      "lexicon_modern_notes": "تُولِجُ اللَّيْلَ فِي النَّهَارِ — Planetary Diurnal Modulation: ঘূর্ণন ও আলো-ছায়ার নিরবচ্ছিন্ন স্পেস-টাইম ট্রানজিশন। تُخْرِجُ الْحَيَّ مِنَ الْمَيِّتِ — Cellular Abiogenesis & Decomposition: অজৈব উপাদান থেকে জীবনের উৎপত্তি এবং জৈব পদার্থের পুনর্ব্যবহারযোগ্য রূপান্তর।"
     },
     {
       "surah": 3,
@@ -5519,7 +5561,13 @@
         }
       ],
       "translation_en": "Let not believers take disbelievers as allies rather than believers. And whoever [of you] does that has nothing with Allah, except when taking precaution against them in prudence. And Allah warns you of Himself, and to Allah is the [final] destination.",
-      "conventional_en": "Let not believers take disbelievers as allies rather than believers. And whoever [of you] does that has nothing with Allah, except when taking precaution against them in prudence. And Allah warns you of Himself, and to Allah is the [final] destination."
+      "conventional_en": "Let not believers take disbelievers as allies rather than believers. And whoever of you does that has nothing with Allah, except when taking precaution against them in prudence. And Allah warns you of Himself, and to Allah is the [final] destination.",
+      "meta_bn": "ডাটা সিকিউরিটি গ্রিড ও কোর পেয়ারিং বাউন্ডারি",
+      "meta_en": "Data Security Grid & Core Pairing Boundary",
+      "conventional_bn": "মুমিনগণ যেন মুমিনদের ছেড়ে কাফেরদের অভিভাবক (বন্ধু) হিসেবে গ্রহণ না করে। আর যে কেউ এমন করবে, আল্লাহর সাথে তার কোনো সম্পর্ক থাকবে না; তবে যদি তোমরা তাদের পক্ষ থেকে কোনো বিপদের আশঙ্কা করো (তবে আত্মরক্ষা করতে পারো)। আর আল্লাহ তোমাদের তাঁর নিজের ব্যাপারে সতর্ক করছেন। আর আল্লাহর দিকেই চূড়ান্ত প্রত্যাবর্তন।",
+      "modern_translation_bn": "ভেরিফাইড ও রেজিস্টার্ড ইউজার বা মুমিনগণ (الْمُؤْمِنُونَ) যেন তাদের নিজস্ব সিকিউরিটি সার্কেল লিভ করে—সত্যের লাইভ সিগন্যাল ব্লককারী Kafir নোডগুলোর সাথে কোনো প্রকার কোর ডেটা-পেয়ারিং বা মূল অভিভাবকত্ব (أَوْلِيَاءَ) গঠন না করে। আর তোমাদের গ্রিডের যে কোনো নোড যদি এই ক্ষতিকারক নেটওয়ার্কিং বা কাজ করবে—সে মূলত মহাজাগতিক আদি সোর্সের (আল্লাহর) ক্লাউড প্রটেকশন ও এনার্জি চেইন থেকে সম্পূর্ণরূপে ডি-লিঙ্ক বা বিচ্ছিন্ন হয়ে যাবে; কেবলমাত্র এই ব্যতিক্রমী লুপ ছাড়া যেখানে তাদের ক্ষতিকর ম্যালওয়্যার আক্রমণ থেকে বাঁচতে তোমরা সাময়িক কোনো স্ট্র্যাটেজিক ফায়ারওয়াল বা আত্মরক্ষা (تَتَّقُوا مِنْهُمْ تُقَاةً) অবলম্বন করো। আর Allah তোমাদের তাঁর নিজস্ব স্বয়ংক্রিয় এন্ট্রপি ফিল্টারের তীব্রতা ও অস্তিত্বের ব্যাপারে চূড়ান্ত সতর্ক (وَيُحَذِّرُكُمُ) করছেন; আর সমগ্র মহাবিশ্বের প্রতিটি লাইফ-ডাটা লগের চূড়ান্ত গতিপথ বা গন্তব্য কিন্তু সরাসরি আল্লাহর কেন্দ্রীয় সার্ভারের দিকেই।",
+      "modern_translation_en": "Synchronized nodes (Mu'minun) must not establish core data-pairing or root dependencies (Awliya) with signal-blocking nodes (Kafirun) over aligned peers. Whoever executes such misconfigured routing is severed from Allah's protective telemetry, except when applying temporary strategic firewall defense (Tuqah). Allah cautions you concerning His absolute laws; and to Allah is the final return destination.",
+      "lexicon_modern_notes": "لَّا يَتَّخِذِ... أَوْلِيَاءَ — Core Network Security Protocol: ক্ষতিকর ও অসঙ্গতিপূর্ণ নোডের সাথে মূল সিস্টেমিক ইন্টিগ্রেশন নিষিদ্ধকরণ। تَتَّقُوا مِنْهُمْ تُقَاةً — Strategic Firewall Defense: জরুরি নিরাপত্তা ঝুঁকি এড়াতে সতর্কতামূলক সুরক্ষা কৌশল।"
     },
     {
       "surah": 3,
@@ -5759,7 +5807,13 @@
         }
       ],
       "translation_en": "Say, \"Whether you conceal what is in your breasts or reveal it, Allah knows it. And He knows that which is in the heavens and that which is on the earth. And Allah is over all things competent.",
-      "conventional_en": "Say, \"Whether you conceal what is in your breasts or reveal it, Allah knows it. And He knows that which is in the heavens and that which is on the earth. And Allah is over all things competent."
+      "conventional_en": "Say, \"Whether you conceal what is in your breasts or reveal it, Allah knows it. And He knows that which is in the heavens and that which is on the earth. And Allah is over all things competent.\"",
+      "meta_bn": "রিয়েল-টাইম ক্লাউড অডিট ও থট-ইনজেকশন ট্র্যাকিং",
+      "meta_en": "Real-Time Cloud Audit & Subconscious Telemetry",
+      "conventional_bn": "বলো, ‘তোমরা যদি তোমাদের অন্তরে যা আছে তা গোপন করো কিংবা তা প্রকাশ করো, আল্লাহ তা জানেন। আর আসমান ও জমিনে যা কিছু আছে তা-ও তিনি জানেন। আর আল্লাহ সবকিছুর ওপর পূর্ণ ক্ষমতাবান’।",
+      "modern_translation_bn": "তুমি গ্লোবাল নেটওয়ার্কে স্পষ্ট ডিক্লেয়ার করো—‘তোমরা যদি তোমাদের অবচেতন ডেটা-বাফারিং জোন বা মনে (فِي صُدُورِكُمْ) যা কিছু অপ্রকাশিত ডেটা রান করো অথবা তা ফ্রন্ট-এন্ড ইন্টারফেসে আউটপুট বা প্রকাশ করো—মহাজাগতিক আদি সোর্স কোড (আল্লাহ) তাঁর সুনির্দিষ্ট Real-Time Cloud Audit-এর মাধ্যমে সেই প্রতিটি ক্ষুদ্রাতিক্ষুদ্র ডাটা প্যাকেটের লগ রিয়েল টাইমে রিড ও জানেন (يَعْلَمْهُ اللَّهُ); এবং তিনি উচ্চ মহাজাগতিক স্তরবিন্যাস (السَّمَاوَاتِ) এবং এই ভৌত জগত বা পৃথিবীর প্রতিটি সাব-অ্যাটমিক কণার কোড জানেন; আর Allah প্রতিটি অবজেক্ট ও সিস্টেম প্যারামিটারের ওপর সম্পূর্ণ নিয়ন্ত্রণকারী’।",
+      "modern_translation_en": "Proclaim: 'Whether you buffer unmanifested thoughts within your internal cognitive cores or transmit them through outward interfaces, Allah processes them in real-time telemetry. He possesses complete analytics across high cosmic dimensions and planetary domains; and Allah commands deterministic sovereignty over all things.'",
+      "lexicon_modern_notes": "تُخْفُوا مَا فِي صُدُورِكُمْ — Subconscious Internal Telemetry: অবচেতন মনের অভ্যন্তরীণ প্রতিটি ডেটা প্রক্রিয়াকরণ ও নিউরাল সিগন্যাল। يَعْلَمْهُ اللَّهُ — Zero-Lag Real-Time Cloud Logging: কেন্দ্রীয় ক্লাউডে প্রতিটি ডেটা-প্যাকেট সরাসরি লিপিবদ্ধ হওয়া।"
     },
     {
       "surah": 3,
@@ -6039,7 +6093,13 @@
         }
       ],
       "translation_en": "The Day every soul will find what it has done of good present [before it] and what it has done of evil, it will wish that between itself and that [evil] was a great distance. And Allah warns you of Himself, and Allah is Kind to [His] servants.\"",
-      "conventional_en": "The Day every soul will find what it has done of good present [before it] and what it has done of evil, it will wish that between itself and that [evil] was a great distance. And Allah warns you of Himself, and Allah is Kind to [His] servants.\""
+      "conventional_en": "The Day every soul will find what it has done of good presented [before it] and what it has done of evil, it will wish that between itself and that [evil] was a great distance. And Allah warns you of Himself, and Allah is kind to [His] servants.",
+      "meta_bn": "লাইভ ডেটা ভিজ্যুয়ালাইজেশন ও স্পেস-টাইম ডাইভারজেন্স উইশ",
+      "meta_en": "Live Data Visualization & Space-Time Separation Request",
+      "conventional_bn": "যেদিন প্রত্যেক ব্যক্তি সে যা ভালো কাজ করেছে তা চোখের সামনে উপস্থিত পাবে এবং সে যা মন্দ কাজ করেছে তা-ও; সে কামনা করবে যদি তার এবং সেই মন্দের মধ্যে সুদীর্ঘ দূরত্ব থাকত! আর আল্লাহ তোমাদের তাঁর নিজের ব্যাপারে সতর্ক করছেন। আর আল্লাহ বান্দাদের প্রতি পরম দয়ালু।",
+      "modern_translation_bn": "সেই চূড়ান্ত ডাটা-রিসেটের দিনে—প্রতিটি পার্সোনাল নোড বা চেতনা (كُلُّ نَفْسٍ) তার ওওএসে আজীবন ইনপুট করা প্রতিটি পজিティブ এনার্জি বা সুষম কর্মের ডাটা (مِنْ خَيْرٍ) নিজের ড্যাশবোর্ডে শতভাগ লাইভ উপস্থিত বা রেন্ডার করা (مُّحْضَرًا) দেখতে পাবে; এবং সে যা কিছু নেতিবাচক এরর, মেলিশিয়াস ভাইরাস বা ক্ষতিকারক কাজ (مِن سُوءٍ) রান করেছিল তা-ও দেখতে পাবে; [সেই ক্ষতিকর ডাটার তীব্র থার্মোডাইনামিক আউটপুট দেখে] সে তীব্র আকাঙ্ক্ষা করবে—যদি তার ওওএস এবং সেই ক্র্যাশ ফাইলের ধ্বংসাত্মক তরঙ্গের মাঝখানে স্পেস-টাইমের এক সুদীর্ঘ ও অতি-দূরবর্তী ব্যবধান (أَمَدًا بَعِيدًا) থাকত! আর Allah তোমাদের তাঁর নিজের অস্তিত্ব ও বাউন্ডারি কোডের চূড়ান্ত প্রতিক্রিয়া সম্পর্কে অত্যন্ত গুরুত্বের সাথে সতর্ক করছেন; আর Allah তাঁর তৈরি এই সমস্ত সিস্টেম-এলাইনড সত্তা বা বান্দাদের প্রতি পরম হাই-এফিসিয়েন্সি ব্যাকআপ দাতা (رَءُوفٌ)।",
+      "modern_translation_en": "On the Day of final data reckoning, each individual conscious node will behold its accumulated beneficial outputs fully rendered live before it, alongside its error logs and malicious routines; wishing an immense space-time divergence separated it from its corrupted files. Allah cautions you concerning His systemic integrity, and Allah is infinitely benevolent toward His servants.",
+      "lexicon_modern_notes": "مُّحْضَرًا — Real-Time Live Rendering: জীবনের সমস্ত কর্মের শতভাগ ভিজ্যুয়ালাইজেশন ও অডিট রেন্ডারিং। أَمَدًا بَعِيدًا — Extreme Space-Time Divergence: ক্ষতিকর এরর ফাইলের ধ্বংসাত্মক প্রতিক্রিয়া থেকে স্পেস-টাইমের দূরত্ব কামনা।"
     },
     {
       "surah": 3,
