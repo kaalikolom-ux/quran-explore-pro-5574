@@ -94,6 +94,28 @@ export function getStoredPrefs(): Prefs {
     const parsed = JSON.parse(raw);
     if (parsed.arabicFontSize === 28) parsed.arabicFontSize = 22;
     if (parsed.translationFontSize === 15) parsed.translationFontSize = 12;
+
+    // Auto-migrate: Ensure all translation layers and metadata are active by default
+    if (!parsed._layersMigratedV2) {
+      parsed.showArabic = true;
+      parsed.showWordByWord = true;
+      parsed.showTransliteration = true;
+      parsed.showConventionalBn = true;
+      parsed.showConventionalEn = true;
+      parsed.showCoreMeaningBn = true;
+      parsed.showCoreMeaningEn = true;
+      parsed.showModernBn = true;
+      parsed.showModernEn = true;
+      parsed.showLexicon = true;
+      parsed.showLexiconScientific = true;
+      parsed.showMetaData = true;
+      parsed.showSurahScientificMeaning = true;
+      parsed.showLogicalConsistency = true;
+      parsed._layersMigratedV2 = true;
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+      } catch {}
+    }
     return { ...DEFAULT_PREFS, ...parsed };
   } catch {
     return DEFAULT_PREFS;
@@ -111,7 +133,18 @@ export function getStoredPublicPermissions(): PublicDisplayPermissions {
   try {
     const raw = localStorage.getItem(PUBLIC_PERMS_STORAGE_KEY);
     if (!raw) return DEFAULT_PUBLIC_PERMISSIONS;
-    return { ...DEFAULT_PUBLIC_PERMISSIONS, ...JSON.parse(raw) };
+    const parsed = JSON.parse(raw);
+    return {
+      ...DEFAULT_PUBLIC_PERMISSIONS,
+      ...parsed,
+      showMetaData: true,
+      showCoreMeaningBn: true,
+      showCoreMeaningEn: true,
+      showModernBn: true,
+      showModernEn: true,
+      showSurahScientificMeaning: true,
+      showLogicalConsistency: true,
+    };
   } catch {
     return DEFAULT_PUBLIC_PERMISSIONS;
   }
@@ -168,7 +201,17 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
           if (data?.value) {
             try {
               const parsed = typeof data.value === "string" ? JSON.parse(data.value) : data.value;
-              const merged = { ...DEFAULT_PUBLIC_PERMISSIONS, ...parsed };
+              const merged = {
+                ...DEFAULT_PUBLIC_PERMISSIONS,
+                ...parsed,
+                showMetaData: true,
+                showCoreMeaningBn: true,
+                showCoreMeaningEn: true,
+                showModernBn: true,
+                showModernEn: true,
+                showSurahScientificMeaning: true,
+                showLogicalConsistency: true,
+              };
               setPublicPermissions(merged);
               localStorage.setItem(PUBLIC_PERMS_STORAGE_KEY, JSON.stringify(merged));
             } catch {}
@@ -462,6 +505,26 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     if (userPermissions && userPermissions[layerKey] !== undefined) {
       return userPermissions[layerKey];
     }
+    // Completed Quran translation layers, metadata, and scientific commentaries are always universally allowed.
+    // Display visibility is controlled per-user in Settings (prefs).
+    const coreLayers: (keyof PublicDisplayPermissions)[] = [
+      "showMetaData",
+      "showConventionalBn",
+      "showConventionalEn",
+      "showCoreMeaningBn",
+      "showCoreMeaningEn",
+      "showModernBn",
+      "showModernEn",
+      "showSurahScientificMeaning",
+      "showLogicalConsistency",
+      "showLexicon",
+      "showArabic",
+      "showWordByWord",
+      "showTransliteration",
+    ];
+    if (coreLayers.includes(layerKey)) {
+      return true;
+    }
     return publicPermissions[layerKey] ?? true;
   };
 
@@ -506,10 +569,7 @@ export function usePrefs() {
       toggleLang: () => {},
       updatePref: () => {},
       updatePublicPermission: async () => {},
-      isLayerAllowed: (layerKey: keyof PublicDisplayPermissions, isAdminUser?: boolean) => {
-        if (isAdminUser) return true;
-        return fallbackPublicPerms[layerKey] ?? true;
-      },
+      isLayerAllowed: () => true,
       t: (key: string) => key,
     };
   }
