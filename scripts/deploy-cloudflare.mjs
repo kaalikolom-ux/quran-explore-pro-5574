@@ -3,16 +3,22 @@ import fs from "node:fs";
 import path from "node:path";
 
 const wranglerConfigPath = path.resolve(".output/server/wrangler.json");
-const workerName = "kaalikolom-ux-quran-explore-pro-5574";
-const label = "wooniche.com (Quran Explorer)";
+const targetWorkers = [
+  "quran-explore-pro-5574",               // Powers wooniche.com (apex domain)
+  "kaalikolom-ux-quran-explore-pro-5574", // Powers www.wooniche.com
+];
 
-console.log(`\n🚀 Deploying to ${label} (Worker: ${workerName})...`);
-if (fs.existsSync(wranglerConfigPath)) {
-  const config = JSON.parse(fs.readFileSync(wranglerConfigPath, "utf-8"));
-  config.name = workerName;
-  const utcDate = new Date().toISOString().slice(0, 10);
-  config.compatibility_date = utcDate;
-  fs.writeFileSync(wranglerConfigPath, JSON.stringify(config, null, 2), "utf-8");
+for (const workerName of targetWorkers) {
+  console.log(`\n🚀 Deploying to Cloudflare Edge (Worker: ${workerName})...`);
+  if (fs.existsSync(wranglerConfigPath)) {
+    const config = JSON.parse(fs.readFileSync(wranglerConfigPath, "utf-8"));
+    config.name = workerName;
+    const utcDate = new Date().toISOString().slice(0, 10);
+    config.compatibility_date = utcDate;
+    fs.writeFileSync(wranglerConfigPath, JSON.stringify(config, null, 2), "utf-8");
+  }
+  execSync("npx nitro deploy --prebuilt", { stdio: "inherit" });
+  console.log(`✅ Successfully deployed to Worker: ${workerName}!`);
 }
-execSync("npx nitro deploy --prebuilt", { stdio: "inherit" });
-console.log(`✅ Successfully deployed to ${label}!`);
+
+console.log(`\n🎉 Full deployment completed for both wooniche.com and www.wooniche.com!`);
