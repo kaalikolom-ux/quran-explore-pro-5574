@@ -11,30 +11,12 @@ import { SocialLinks } from "@/components/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
+import { QuranLogoBadge } from "@/components/QuranLogoBadge";
 
 const footerLinkClass =
   "w-fit rounded-md border border-transparent px-3 py-1.5 text-muted-foreground transition-all duration-200 hover:bg-secondary hover:text-foreground hover:translate-x-1 font-medium";
 
 const emailSchema = z.string().trim().email("সঠিক ইমেইল এড্রেস লিখুন");
-
-function QuranLogoBadge({ className = "size-4.5" }: { className?: string }) {
-  return (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#115360]/15 dark:bg-[#1a9e8f]/20 text-[#115360] dark:text-[#1a9e8f] border border-[#115360]/30 dark:border-[#1a9e8f]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-      >
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </svg>
-    </div>
-  );
-}
 
 export function SiteFooter() {
   const { t, lang } = usePrefs();
@@ -104,7 +86,7 @@ export function SiteFooter() {
         {/* ১. পরিচিতি ও সোশ্যাল */}
         <div>
           <Link to="/" className="group inline-flex items-center gap-2.5 transition-opacity hover:opacity-80 select-none shrink-0">
-            <QuranLogoBadge />
+            <QuranLogoBadge className="h-8 w-8 rounded-lg" iconClassName="size-4.5" />
             <div className="flex flex-col leading-none min-w-0">
               <QuranExplorerLogo size="md" className="h-6 sm:h-7" />
               <span className="mt-1 text-[11px] text-muted-foreground font-medium tracking-wide whitespace-nowrap">

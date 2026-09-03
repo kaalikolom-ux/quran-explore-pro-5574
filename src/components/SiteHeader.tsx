@@ -24,25 +24,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { QuranExplorerLogo } from "@/components/QuranExplorerLogo";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
-
-function QuranLogoBadge({ className = "size-5" }: { className?: string }) {
-  return (
-    <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl bg-[#115360]/15 dark:bg-[#1a9e8f]/20 text-[#115360] dark:text-[#1a9e8f] border border-[#115360]/30 dark:border-[#1a9e8f]/40 shadow-xs transition-transform duration-200 group-hover:scale-105">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-      >
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </svg>
-    </div>
-  );
-}
+import { QuranLogoBadge } from "@/components/QuranLogoBadge";
 
 function AdminGearIcon({ className = "size-4.5" }: { className?: string }) {
   return (
@@ -175,7 +157,7 @@ export function SiteHeader() {
         
         {/* লোগো ও ব্র্যান্ডিং (Zero-Latency Standalone Kaushan Script Logo) */}
         <Link to="/" className="group flex items-center gap-1.5 sm:gap-2.5 shrink min-w-0 select-none">
-          <QuranLogoBadge className="size-4.5 sm:size-5 shrink-0" />
+          <QuranLogoBadge />
           <div className="flex flex-col justify-center leading-none min-w-0">
             <QuranExplorerLogo size="md" className="h-5.5 sm:h-7" />
             <span className="hidden sm:block text-[11px] text-muted-foreground font-medium tracking-wide mt-0.5 whitespace-nowrap">
