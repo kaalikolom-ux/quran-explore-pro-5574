@@ -64,8 +64,13 @@
       "conventional_bn": "বলো, 'তিনি আল্লাহ, একক।'",
       "meta_bn": "The Single Root Trust Architecture ও একক রুট ট্রাস্ট",
       "metadata": {
-        "theme": "The Single Root Trust Architecture ও একক রুট ট্রাস্ট"
-      }
+        "theme": "The Single Root Trust Architecture ও একক রুট ট্রাস্ট",
+        "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision.",
+        "consistency_4_82": "Ayah 1 conforms to the 4:82 filter test by maintaining absolute internal consistency."
+      },
+      "modern_translation_en": "Say, \"He is Allah, [who is] One,",
+      "meta_en": "The Single Root Trust Architecture ও একক রুট ট্রাস্ট",
+      "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision."
     },
     {
       "surah": 112,
@@ -110,8 +115,13 @@
       "conventional_bn": "আল্লাহ অমুখাপেক্ষী।",
       "meta_bn": "The Self-Sustaining Core ও সম্পূর্ণ ডেটা-স্বনির্ভরতা",
       "metadata": {
-        "theme": "The Self-Sustaining Core ও সম্পূর্ণ ডেটা-স্বনির্ভরতা"
-      }
+        "theme": "The Self-Sustaining Core ও সম্পূর্ণ ডেটা-স্বনির্ভরতা",
+        "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision.",
+        "consistency_4_82": "Ayah 2 conforms to the 4:82 filter test by maintaining absolute internal consistency."
+      },
+      "modern_translation_en": "Allah, the Eternal Refuge.",
+      "meta_en": "The Self-Sustaining Core ও সম্পূর্ণ ডেটা-স্বনির্ভরতা",
+      "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision."
     },
     {
       "surah": 112,
@@ -176,8 +186,13 @@
       "conventional_bn": "তিনি কাউকে জন্ম দেননি এবং তাকেও কেউ জন্ম দেয়নি।",
       "meta_bn": "The Non-Generative Origin ও অনাদি-অনন্ত সোর্স",
       "metadata": {
-        "theme": "The Non-Generative Origin ও অনাদি-অনন্ত সোর্স"
-      }
+        "theme": "The Non-Generative Origin ও অনাদি-অনন্ত সোর্স",
+        "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision.",
+        "consistency_4_82": "Ayah 3 conforms to the 4:82 filter test by maintaining absolute internal consistency."
+      },
+      "modern_translation_en": "He neither begets nor is born,",
+      "meta_en": "The Non-Generative Origin ও অনাদি-অনন্ত সোর্স",
+      "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision."
     },
     {
       "surah": 112,
@@ -252,8 +267,13 @@
       "conventional_bn": "আর তাঁর সমতুল্য কেউ নেই।",
       "meta_bn": "The Incomparable Architecture ও প্যারালাল নোডহীন একক অস্তিত্ব",
       "metadata": {
-        "theme": "The Incomparable Architecture ও প্যারালাল নোডহীন একক অস্তিত্ব"
-      }
+        "theme": "The Incomparable Architecture ও প্যারালাল নোডহীন একক অস্তিত্ব",
+        "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision.",
+        "consistency_4_82": "Ayah 4 conforms to the 4:82 filter test by maintaining absolute internal consistency."
+      },
+      "modern_translation_en": "Nor is there to Him any equivalent.\"",
+      "meta_en": "The Incomparable Architecture ও প্যারালাল নোডহীন একক অস্তিত্ব",
+      "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision."
     }
   ]
 }
