@@ -61,18 +61,20 @@
       "translation_en": "Have you seen the one who denies the Recompense?",
       "conventional_en": "Have you seen the one who denies the Recompense?",
       "conventional_bn": "তুমি কি তাকে দেখেছ, যে কর্মফল (দিবসকে) অস্বীকার করে?",
-      "modern_translation_bn": "তুমি কি তাকে দেখেছ, যে নৈতিক দায়বদ্ধতা ও জবাবদিহিতার বিধানকে মিথ্যা প্রতিপন্ন করে? (أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ)",
-      "modern_translation_en": "Have you observed the one who denies the reality of ultimate reckoning and moral accountability (Deen)?",
+      "modern_translation_bn": "তুমি কি তাকে দেখেছ, যে কর্মফল (দিবসকে) অস্বীকার করে?",
+      "modern_translation_en": "Have you seen the one who denies the Recompense?",
       "meta_bn": "Surah 107 Ayah 1 Theme",
       "meta_en": "Surah 107 Ayah 1 Theme",
-      "lexicon_modern_notes": "يُكَذِّبُ بِالدِّينِ: রুট د-ي-ن (প্রতিদান, চূড়ান্ত বিচার, ও নৈতিক জীবনব্যবস্থা প্রত্যাখ্যান)।",
+      "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 1 Theme",
         "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তুমি কি তাকে দেখেছ, যে নৈতিক দায়বদ্ধতা ও জবাবদিহিতার বিধানকে মিথ্যা প্রতিপন্ন করে? (أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ)",
-        "core_meaning_en": "Have you observed the one who denies the reality of ultimate reckoning and moral accountability (Deen)?"
-      }
+        "core_meaning_bn": "তুমি কি তাকে লক্ষ্য করেছ, যে পরকালীন জবাবদিহিতা ও ইনসাফকে অস্বীকার করে?",
+        "core_meaning_en": "Have you identified the one who denies moral accountability and societal judgment?"
+      },
+      "core_meaning_bn": "তুমি কি তাকে লক্ষ্য করেছ, যে পরকালীন জবাবদিহিতা ও ইনসাফকে অস্বীকার করে?",
+      "core_meaning_en": "Have you identified the one who denies moral accountability and societal judgment?"
     },
     {
       "surah": 107,
@@ -134,18 +136,20 @@
       "translation_en": "For that is the one who drives away the orphan",
       "conventional_en": "For that is the one who drives away the orphan",
       "conventional_bn": "সে তো সেই (লোক) যে ইয়াতীমকে ধাক্কা দিয়ে সরিয়ে দেয়,",
-      "modern_translation_bn": "সে তো সেই ব্যক্তি, যে এতিম ও পিতৃহীনকে রূঢ়ভাবে তাড়িয়ে দেয়, (فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ)",
-      "modern_translation_en": "That is the very one who harshly repels and deprives the vulnerable orphan,",
+      "modern_translation_bn": "সে তো সেই (লোক) যে ইয়াতীমকে ধাক্কা দিয়ে সরিয়ে দেয়,",
+      "modern_translation_en": "For that is the one who drives away the orphan",
       "meta_bn": "Surah 107 Ayah 2 Theme",
       "meta_en": "Surah 107 Ayah 2 Theme",
-      "lexicon_modern_notes": "يَدُعُّ: রুট د-ع-ع (রূঢ়ভাবে বিতাড়িত করা, অধিকার হরণ করা)। الْيَتِيمَ: সমাজের অভিভাবকহীন দুর্বল মানুষ।",
+      "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 2 Theme",
         "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "সে তো সেই ব্যক্তি, যে এতিম ও পিতৃহীনকে রূঢ়ভাবে তাড়িয়ে দেয়, (فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ)",
-        "core_meaning_en": "That is the very one who harshly repels and deprives the vulnerable orphan,"
-      }
+        "core_meaning_bn": "সে-ই তো সেই ব্যক্তি, যে এতিম ও পিতৃহীনকে রূঢ়ভাবে তাড়িয়ে দেয় ও তাদের অধিকার হরণ করে;",
+        "core_meaning_en": "That is the very one who harshly repulses and diminishes the vulnerable orphan;"
+      },
+      "core_meaning_bn": "সে-ই তো সেই ব্যক্তি, যে এতিম ও পিতৃহীনকে রূঢ়ভাবে তাড়িয়ে দেয় ও তাদের অধিকার হরণ করে;",
+      "core_meaning_en": "That is the very one who harshly repulses and diminishes the vulnerable orphan;"
     },
     {
       "surah": 107,
@@ -217,18 +221,20 @@
       "translation_en": "And does not encourage the feeding of the poor.",
       "conventional_en": "And does not encourage the feeding of the poor.",
       "conventional_bn": "এবং মিসকীনকে অন্ন দিতে উৎসাহ দেয় না",
-      "modern_translation_bn": "এবং নিঃস্ব ও অভাবগ্রস্তদের খাদ্যদানে কোনো আগ্রহ তৈরি করে না। (وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ)",
-      "modern_translation_en": "And feels no urge, nor mobilizes others, to feed and sustain the destitute.",
+      "modern_translation_bn": "এবং মিসকীনকে অন্ন দিতে উৎসাহ দেয় না",
+      "modern_translation_en": "And does not encourage the feeding of the poor.",
       "meta_bn": "Surah 107 Ayah 3 Theme",
       "meta_en": "Surah 107 Ayah 3 Theme",
-      "lexicon_modern_notes": "لَا يَحُضُّ: রুট ح-ض-ض (উৎসাহিত বা সামাজিক আন্দোলন গড়ে না তোলা)। الْمِسْكِينِ: অসহায় মানুষ।",
+      "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 3 Theme",
         "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং নিঃস্ব ও অভাবগ্রস্তদের খাদ্যদানে কোনো আগ্রহ তৈরি করে না। (وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ)",
-        "core_meaning_en": "And feels no urge, nor mobilizes others, to feed and sustain the destitute."
-      }
+        "core_meaning_bn": "এবং সমাজের নিঃস্ব ও অনাহারী মানুষের খাদ্যের ব্যবস্থা করতে কাউকে উৎসাহিত করে না।",
+        "core_meaning_en": "And feels no urgency to mobilize sustenance and rehabilitation for the destitute."
+      },
+      "core_meaning_bn": "এবং সমাজের নিঃস্ব ও অনাহারী মানুষের খাদ্যের ব্যবস্থা করতে কাউকে উৎসাহিত করে না।",
+      "core_meaning_en": "And feels no urgency to mobilize sustenance and rehabilitation for the destitute."
     },
     {
       "surah": 107,
@@ -270,18 +276,20 @@
       "translation_en": "So woe to those who pray",
       "conventional_en": "So woe to those who pray",
       "conventional_bn": "অতএব দুর্ভোগ সে সব নামায আদায়কারীর",
-      "modern_translation_bn": "অতএব চরম দুর্ভোগ সেই সংযোগ স্থাপনকারী (নামাজি)-দের জন্য, (فَوَيْلٌ لِّلْمُصَلِّينَ)",
-      "modern_translation_en": "So ruin and woe awaits those practicing ceremonial prayers (Musallin),",
+      "modern_translation_bn": "অতএব দুর্ভোগ সে সব নামায আদায়কারীর",
+      "modern_translation_en": "So woe to those who pray",
       "meta_bn": "Surah 107 Ayah 4 Theme",
       "meta_en": "Surah 107 Ayah 4 Theme",
-      "lexicon_modern_notes": "لِّلْمُصَلِّينَ: যারা বাহ্যিক সালাতের দাবি করে কিন্তু নৈতিক ফল শূন্য।",
+      "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 4 Theme",
         "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "অতএব চরম দুর্ভোগ সেই সংযোগ স্থাপনকারী (নামাজি)-দের জন্য, (فَوَيْلٌ لِّلْمُصَلِّينَ)",
-        "core_meaning_en": "So ruin and woe awaits those practicing ceremonial prayers (Musallin),"
-      }
+        "core_meaning_bn": "অতএব চরম ধ্বংস ও দুর্ভোগ সেই আনুষ্ঠানিক সালাত আদায়কারীদের জন্য,",
+        "core_meaning_en": "So calamity and ethical ruin unto those performative worshipers,"
+      },
+      "core_meaning_bn": "অতএব চরম ধ্বংস ও দুর্ভোগ সেই আনুষ্ঠানিক সালাত আদায়কারীদের জন্য,",
+      "core_meaning_en": "So calamity and ethical ruin unto those performative worshipers,"
     },
     {
       "surah": 107,
@@ -353,18 +361,20 @@
       "translation_en": "[But] who are heedless of their prayer -",
       "conventional_en": "[But] who are heedless of their prayer -",
       "conventional_bn": "যারা নিজেদের নামাযের ব্যাপারে উদাসীন,",
-      "modern_translation_bn": "যারা তাদের সালাতের প্রকৃত চেতনা ও উদ্দেশ্য সম্পর্কে উদাসীন ও অসচেতন; (الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ)",
-      "modern_translation_en": "Who are oblivious, heedless, and negligent of the transformative purpose of their communion;",
+      "modern_translation_bn": "যারা নিজেদের নামাযের ব্যাপারে উদাসীন,",
+      "modern_translation_en": "[But] who are heedless of their prayer -",
       "meta_bn": "Surah 107 Ayah 5 Theme",
       "meta_en": "Surah 107 Ayah 5 Theme",
-      "lexicon_modern_notes": "سَاهُونَ: রুট س-ه-و (মূল উদ্দেশ্য ভুলে গিয়ে কেবল আত্মতুষ্ট থাকা)।",
+      "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 5 Theme",
         "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যারা তাদের সালাতের প্রকৃত চেতনা ও উদ্দেশ্য সম্পর্কে উদাসীন ও অসচেতন; (الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ)",
-        "core_meaning_en": "Who are oblivious, heedless, and negligent of the transformative purpose of their communion;"
-      }
+        "core_meaning_bn": "যারা তাদের সালাতের প্রকৃত চেতনা ও সামাজিক দায়িত্ব সম্পর্কে সম্পূর্ণ উদাসীন ও গাফেল;",
+        "core_meaning_en": "Who are heedless of the core ethical imperatives and societal goals of their communion;"
+      },
+      "core_meaning_bn": "যারা তাদের সালাতের প্রকৃত চেতনা ও সামাজিক দায়িত্ব সম্পর্কে সম্পূর্ণ উদাসীন ও গাফেল;",
+      "core_meaning_en": "Who are heedless of the core ethical imperatives and societal goals of their communion;"
     },
     {
       "surah": 107,
@@ -416,18 +426,20 @@
       "translation_en": "Those who make show [of their deeds]",
       "conventional_en": "Those who make show [of their deeds]",
       "conventional_bn": "যারা লোক দেখানোর জন্য তা করে,",
-      "modern_translation_bn": "যারা কেবল লোকদেখানো ভণ্ডামিতে লিপ্ত থাকে, (الَّذِينَ هُمْ يُرَاءُونَ)",
-      "modern_translation_en": "Those who act merely for superficial social display and vanity (Riya),",
+      "modern_translation_bn": "যারা লোক দেখানোর জন্য তা করে,",
+      "modern_translation_en": "Those who make show [of their deeds]",
       "meta_bn": "Surah 107 Ayah 6 Theme",
       "meta_en": "Surah 107 Ayah 6 Theme",
-      "lexicon_modern_notes": "يُرَاءُونَ: রুট ر-أ-ي (মানুষকে দেখানোর জন্য ধর্মপালন)।",
+      "lexicon_modern_notes": "Ayah 6 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 6 Theme",
         "lexicon_modern_notes": "Ayah 6 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যারা কেবল লোকদেখানো ভণ্ডামিতে লিপ্ত থাকে, (الَّذِينَ هُمْ يُرَاءُونَ)",
-        "core_meaning_en": "Those who act merely for superficial social display and vanity (Riya),"
-      }
+        "core_meaning_bn": "যারা কেবল লোকদেখানো ভণ্ডামি ও আত্মপ্রচারের প্রদর্শন করে,",
+        "core_meaning_en": "Who operate solely for ostentation, hollow display, and superficial piety,"
+      },
+      "core_meaning_bn": "যারা কেবল লোকদেখানো ভণ্ডামি ও আত্মপ্রচারের প্রদর্শন করে,",
+      "core_meaning_en": "Who operate solely for ostentation, hollow display, and superficial piety,"
     },
     {
       "surah": 107,
@@ -469,18 +481,20 @@
       "translation_en": "And withhold [simple] assistance.",
       "conventional_en": "And withhold [simple] assistance.",
       "conventional_bn": "এবং প্রয়োজনীয় গৃহসামগ্রী দানের ছোট খাট সাহায্য করা থেকেও বিরত থাকে।",
-      "modern_translation_bn": "এবং সাধারণ নিত্যপ্রয়োজনীয় সাহায্য ও মানবিক সহানুভূতিটুকু পর্যন্ত আটকে রাখে। (وَيَمْنَعُونَ الْمَاعُونَ)",
-      "modern_translation_en": "And persistently withhold even the basic daily necessities, mutual aid, and human kindness.",
+      "modern_translation_bn": "এবং প্রয়োজনীয় গৃহসামগ্রী দানের ছোট খাট সাহায্য করা থেকেও বিরত থাকে।",
+      "modern_translation_en": "And withhold [simple] assistance.",
       "meta_bn": "Surah 107 Ayah 7 Theme",
       "meta_en": "Surah 107 Ayah 7 Theme",
-      "lexicon_modern_notes": "الْمَاعُونَ: রুট م-ع-ن (ক্ষুদ্র কিন্তু প্রয়োজনীয় সাহায্য, পারস্পরিক সহায়তা ও সহানুভূতি)।",
+      "lexicon_modern_notes": "Ayah 7 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 107 Ayah 7 Theme",
         "lexicon_modern_notes": "Ayah 7 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং সাধারণ নিত্যপ্রয়োজনীয় সাহায্য ও মানবিক সহানুভূতিটুকু পর্যন্ত আটকে রাখে। (وَيَمْنَعُونَ الْمَاعُونَ)",
-        "core_meaning_en": "And persistently withhold even the basic daily necessities, mutual aid, and human kindness."
-      }
+        "core_meaning_bn": "এবং প্রতিবেশীর নিত্যপ্রয়োজনীয় সামান্য সাহায্য ও সহযোগিতা প্রদানেও বাধা দেয়!",
+        "core_meaning_en": "While withholding the basic essential assistance and social kindness (Al-Ma'un)!"
+      },
+      "core_meaning_bn": "এবং প্রতিবেশীর নিত্যপ্রয়োজনীয় সামান্য সাহায্য ও সহযোগিতা প্রদানেও বাধা দেয়!",
+      "core_meaning_en": "While withholding the basic essential assistance and social kindness (Al-Ma'un)!"
     }
   ]
 }

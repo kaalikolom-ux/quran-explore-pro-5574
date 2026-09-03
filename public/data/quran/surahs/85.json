@@ -51,18 +51,20 @@
       "translation_en": "By the sky containing great stars",
       "conventional_en": "By the sky containing great stars",
       "conventional_bn": "শপথ গ্রহ-নক্ষত্র শোভিত আকাশের",
-      "modern_translation_bn": "মহাকাশের নক্ষত্রমণ্ডল ও গ্যালাক্সির সুবিন্যস্ত কাঠামোর সাক্ষ্য— (وَالسَّمَاءِ ذَاتِ الْبُرُوجِ)",
-      "modern_translation_en": "Witness the cosmic sky adorned with massive constellations and stellar structures—",
+      "modern_translation_bn": "মহাজাগতিক সাক্ষ্য দিচ্ছে সুবিশাল নক্ষত্রমণ্ডল ও গ্যালাকটিক স্তরে বিন্যস্ত আকাশ (وَالسَّمَاءِ ذَاتِ الْبُرُوجِ),",
+      "modern_translation_en": "Witness the sky containing great stars",
       "meta_bn": "Surah 85 Ayah 1 Theme",
       "meta_en": "Surah 85 Ayah 1 Theme",
-      "lexicon_modern_notes": "ذَاتِ الْبُرُوجِ: রুট ب-ر-ج (নক্ষত্রপুঞ্জ, গ্যালাক্সি ও প্রকাশ্য মহাজাগতিক দুর্গ)।",
+      "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 1 Theme",
         "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "মহাকাশের নক্ষত্রমণ্ডল ও গ্যালাক্সির সুবিন্যস্ত কাঠামোর সাক্ষ্য— (وَالسَّمَاءِ ذَاتِ الْبُرُوجِ)",
+        "core_meaning_bn": "মহাকাশের নক্ষত্রমণ্ডল ও গ্যালাক্সির সুবিন্যস্ত কাঠামোর সাক্ষ্য—",
         "core_meaning_en": "Witness the cosmic sky adorned with massive constellations and stellar structures—"
-      }
+      },
+      "core_meaning_bn": "মহাকাশের নক্ষত্রমণ্ডল ও গ্যালাক্সির সুবিন্যস্ত কাঠামোর সাক্ষ্য—",
+      "core_meaning_en": "Witness the cosmic sky adorned with massive constellations and stellar structures—"
     },
     {
       "surah": 85,
@@ -104,18 +106,20 @@
       "translation_en": "And [by] the promised Day",
       "conventional_en": "And [by] the promised Day",
       "conventional_bn": "আর সেদিনের যার ও‘য়াদা করা হয়েছে,",
-      "modern_translation_bn": "এবং প্রতিশ্রুতিবদ্ধ সেই বিচার ও জবাবদিহিতার দিবসের সাক্ষ্য— (وَالْيَوْمِ الْمَوْعُودِ)",
-      "modern_translation_en": "And witness the Promised Day of universal accountability—",
+      "modern_translation_bn": "এবং সাক্ষ্য সেই প্রতিশ্রুত টার্মিনাল অডিট দিবস (وَالْيَوْمِ الْمَوْعُودِ),",
+      "modern_translation_en": "And [by] the promised Day",
       "meta_bn": "Surah 85 Ayah 2 Theme",
       "meta_en": "Surah 85 Ayah 2 Theme",
-      "lexicon_modern_notes": "الْمَوْعُودِ: প্রতিশ্রুত ঐতিহাসিক ও পরকালীন পরিণতি।",
+      "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 2 Theme",
         "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং প্রতিশ্রুতিবদ্ধ সেই বিচার ও জবাবদিহিতার দিবসের সাক্ষ্য— (وَالْيَوْمِ الْمَوْعُودِ)",
+        "core_meaning_bn": "এবং প্রতিশ্রুতিবদ্ধ সেই বিচার ও জবাবদিহিতার দিবসের সাক্ষ্য—",
         "core_meaning_en": "And witness the Promised Day of universal accountability—"
-      }
+      },
+      "core_meaning_bn": "এবং প্রতিশ্রুতিবদ্ধ সেই বিচার ও জবাবদিহিতার দিবসের সাক্ষ্য—",
+      "core_meaning_en": "And witness the Promised Day of universal accountability—"
     },
     {
       "surah": 85,
@@ -157,18 +161,20 @@
       "translation_en": "And [by] the witness and what is witnessed,",
       "conventional_en": "And [by] the witness and what is witnessed,",
       "conventional_bn": "আর যে দেখে আর যা দেখা যায় তার শপথ",
-      "modern_translation_bn": "এবং প্রত্যক্ষকারী সাক্ষী ও যা কিছু প্রত্যক্ষ করা হয়েছে তার সাক্ষ্য— (وَشَاهِدٍ وَمَشْهُودٍ)",
-      "modern_translation_en": "And witness every observing consciousness and that which is objectively observed—",
+      "modern_translation_bn": "এবং সাক্ষ্য প্রত্যক্ষদর্শী ও যা প্রত্যক্ষ করা হবে (وَشَاهِدٍ وَمَشْهُودٍ)—",
+      "modern_translation_en": "And [by] the witness and what is witnessed,",
       "meta_bn": "Surah 85 Ayah 3 Theme",
       "meta_en": "Surah 85 Ayah 3 Theme",
-      "lexicon_modern_notes": "সচেতন পর্যবেক্ষণ ও বাস্তব সত্যের পারস্পরিক সাক্ষ্য।",
+      "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 3 Theme",
         "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং প্রত্যক্ষকারী সাক্ষী ও যা কিছু প্রত্যক্ষ করা হয়েছে তার সাক্ষ্য— (وَشَاهِدٍ وَمَشْهُودٍ)",
+        "core_meaning_bn": "এবং প্রত্যক্ষকারী সাক্ষী ও যা কিছু প্রত্যক্ষ করা হয়েছে তার সাক্ষ্য—",
         "core_meaning_en": "And witness every observing consciousness and that which is objectively observed—"
-      }
+      },
+      "core_meaning_bn": "এবং প্রত্যক্ষকারী সাক্ষী ও যা কিছু প্রত্যক্ষ করা হয়েছে তার সাক্ষ্য—",
+      "core_meaning_en": "And witness every observing consciousness and that which is objectively observed—"
     },
     {
       "surah": 85,
@@ -220,18 +226,20 @@
       "translation_en": "Cursed were the companions of the trench",
       "conventional_en": "Cursed were the companions of the trench",
       "conventional_bn": "ধ্বংস হয়েছে গর্ত ওয়ালারা",
-      "modern_translation_bn": "ধ্বংস ও লানত হোক সেই অগ্নিকুণ্ড খননকারী নির্মম নিপীড়কদের ওপর, (قُتِلَ أَصْحَابُ الْأُخْدُودِ)",
-      "modern_translation_en": "Ruin and destruction befall the tyrannical perpetrators of the blazing trench (Ukhdud),",
+      "modern_translation_bn": "ধ্বংস হয়েছে গর্ত ওয়ালারা",
+      "modern_translation_en": "Cursed were the companions of the trench",
       "meta_bn": "Surah 85 Ayah 4 Theme",
       "meta_en": "Surah 85 Ayah 4 Theme",
-      "lexicon_modern_notes": "أَصْحَابِ الْأُخْدُودِ: রাজনৈতিক ও ধর্মীয় চরমপন্থী নিপীড়ক শ্রেণি।",
+      "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 4 Theme",
         "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "ধ্বংস ও লানত হোক সেই অগ্নিকুণ্ড খননকারী নির্মম নিপীড়কদের ওপর, (قُتِلَ أَصْحَابُ الْأُخْدُودِ)",
+        "core_meaning_bn": "ধ্বংস ও লানত হোক সেই অগ্নিকুণ্ড খননকারী নির্মম নিপীড়কদের ওপর,",
         "core_meaning_en": "Ruin and destruction befall the tyrannical perpetrators of the blazing trench (Ukhdud),"
-      }
+      },
+      "core_meaning_bn": "ধ্বংস ও লানত হোক সেই অগ্নিকুণ্ড খননকারী নির্মম নিপীড়কদের ওপর,",
+      "core_meaning_en": "Ruin and destruction befall the tyrannical perpetrators of the blazing trench (Ukhdud),"
     },
     {
       "surah": 85,
@@ -283,18 +291,20 @@
       "translation_en": "[Containing] the fire full of fuel,",
       "conventional_en": "[Containing] the fire full of fuel,",
       "conventional_bn": "(যে গর্তে) দাউ দাউ করে জ্বলা ইন্ধনের আগুন ছিল,",
-      "modern_translation_bn": "সেই জ্বালানিসমৃদ্ধ প্রজ্বলিত অগ্নিকুণ্ডের কর্তাদের, (النَّارِ ذَاتِ الْوَقُودِ)",
-      "modern_translation_en": "Who fueled the fiercely stoked fire of systemic persecution,",
+      "modern_translation_bn": "(যে গর্তে) দাউ দাউ করে জ্বলা ইন্ধনের আগুন ছিল,",
+      "modern_translation_en": "[Containing] the fire full of fuel,",
       "meta_bn": "Surah 85 Ayah 5 Theme",
       "meta_en": "Surah 85 Ayah 5 Theme",
-      "lexicon_modern_notes": "অগ্নিদগ্ধ করে বিশ্বাসীদের হত্যা করার নিষ্ঠুর ইতিহাস।",
+      "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 5 Theme",
         "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "সেই জ্বালানিসমৃদ্ধ প্রজ্বলিত অগ্নিকুণ্ডের কর্তাদের, (النَّارِ ذَاتِ الْوَقُودِ)",
+        "core_meaning_bn": "সেই জ্বালানিসমৃদ্ধ প্রজ্বলিত অগ্নিকুণ্ডের কর্তাদের,",
         "core_meaning_en": "Who fueled the fiercely stoked fire of systemic persecution,"
-      }
+      },
+      "core_meaning_bn": "সেই জ্বালানিসমৃদ্ধ প্রজ্বলিত অগ্নিকুণ্ডের কর্তাদের,",
+      "core_meaning_en": "Who fueled the fiercely stoked fire of systemic persecution,"
     },
     {
       "surah": 85,
@@ -356,18 +366,20 @@
       "translation_en": "When they were sitting near it",
       "conventional_en": "When they were sitting near it",
       "conventional_bn": "যখন তারা গর্তের কিনারায় বসে ছিল",
-      "modern_translation_bn": "যখন তারা তার চারিপাশে অহংকারভরে বসে ছিল, (إِذْ هُمْ عَلَيْهَا قُعُودٌ)",
-      "modern_translation_en": "As they sat callously surrounding it,",
+      "modern_translation_bn": "যখন তারা গর্তের কিনারায় বসে ছিল",
+      "modern_translation_en": "When they were sitting near it",
       "meta_bn": "Surah 85 Ayah 6 Theme",
       "meta_en": "Surah 85 Ayah 6 Theme",
-      "lexicon_modern_notes": "অমানবিক উল্লাস।",
+      "lexicon_modern_notes": "Ayah 6 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 6 Theme",
         "lexicon_modern_notes": "Ayah 6 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যখন তারা তার চারিপাশে অহংকারভরে বসে ছিল, (إِذْ هُمْ عَلَيْهَا قُعُودٌ)",
+        "core_meaning_bn": "যখন তারা তার চারিপাশে অহংকারভরে বসে ছিল,",
         "core_meaning_en": "As they sat callously surrounding it,"
-      }
+      },
+      "core_meaning_bn": "যখন তারা তার চারিপাশে অহংকারভরে বসে ছিল,",
+      "core_meaning_en": "As they sat callously surrounding it,"
     },
     {
       "surah": 85,
@@ -449,18 +461,20 @@
       "translation_en": "And they, to what they were doing against the believers, were witnesses.",
       "conventional_en": "And they, to what they were doing against the believers, were witnesses.",
       "conventional_bn": "আর তারা মু’মিনদের সাথে যা করছিল তা দেখছিল",
-      "modern_translation_bn": "এবং বিশ্বাসীদের ওপর তারা যে অমানবিক নির্যাতন চালাচ্ছিল তা প্রত্যক্ষ করছিল। (وَهُمْ عَلَىٰ مَا يَفْعَلُونَ بِالْمُؤْمِنِينَ شُهُودٌ)",
-      "modern_translation_en": "Witnessing with sadistic pleasure what they inflicted upon the innocent believers.",
+      "modern_translation_bn": "আর তারা মু’মিনদের সাথে যা করছিল তা দেখছিল",
+      "modern_translation_en": "And they, to what they were doing against the believers, were witnesses.",
       "meta_bn": "Surah 85 Ayah 7 Theme",
       "meta_en": "Surah 85 Ayah 7 Theme",
-      "lexicon_modern_notes": "নিরপরাধদের ওপর জুলুমের রেকর্ড।",
+      "lexicon_modern_notes": "Ayah 7 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 7 Theme",
         "lexicon_modern_notes": "Ayah 7 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং বিশ্বাসীদের ওপর তারা যে অমানবিক নির্যাতন চালাচ্ছিল তা প্রত্যক্ষ করছিল। (وَهُمْ عَلَىٰ مَا يَفْعَلُونَ بِالْمُؤْمِنِينَ شُهُودٌ)",
+        "core_meaning_bn": "এবং বিশ্বাসীদের ওপর তারা যে অমানবিক নির্যাতন চালাচ্ছিল তা প্রত্যক্ষ করছিল।",
         "core_meaning_en": "Witnessing with sadistic pleasure what they inflicted upon the innocent believers."
-      }
+      },
+      "core_meaning_bn": "এবং বিশ্বাসীদের ওপর তারা যে অমানবিক নির্যাতন চালাচ্ছিল তা প্রত্যক্ষ করছিল।",
+      "core_meaning_en": "Witnessing with sadistic pleasure what they inflicted upon the innocent believers."
     },
     {
       "surah": 85,
@@ -572,18 +586,20 @@
       "translation_en": "And they resented them not except because they believed in Allah, the Exalted in Might, the Praiseworthy,",
       "conventional_en": "And they resented them not except because they believed in Allah, the Exalted in Might, the Praiseworthy,",
       "conventional_bn": "তারা তাদেরকে নির্যাতন করেছিল একমাত্র এই কারণে যে, তারা মহাপরাক্রান্ত প্রসংসিত আল্লাহর প্রতি ঈমান এনেছিল।",
-      "modern_translation_bn": "আর তারা বিশ্বাসীদের বিরুদ্ধে কোনো অপরাধ খুঁজে পায়নি—কেবল এই ছাড়া যে, তারা মহাপরাক্রমশালী ও সর্বপ্রশংসিত একক আল্লাহর প্রতি অবিচল বিশ্বাস স্থাপন করেছিল, (وَمَا نَقَمُوا مِنْهُمْ إِلَّا أَن يُؤْمِنُوا بِاللَّهِ الْعَزِيزِ الْحَمِيدِ)",
-      "modern_translation_en": "And they resented them for nothing other than their uncompromising conviction in Allah, the Almighty, the Worthy of all praise,",
+      "modern_translation_bn": "তারা তাদেরকে নির্যাতন করেছিল একমাত্র এই কারণে যে, তারা মহাপরাক্রান্ত প্রসংসিত পরম সোর্স কোড (আল্লাহ)র প্রতি ঈমান এনেছিল।",
+      "modern_translation_en": "And they resented them not except because they believed in Allah, the Exalted in Might, the Praiseworthy,",
       "meta_bn": "Surah 85 Ayah 8 Theme",
       "meta_en": "Surah 85 Ayah 8 Theme",
-      "lexicon_modern_notes": "সত্য ও ইনসাফের পক্ষ নেওয়াই ছিল তাদের একমাত্র 'অপরাধ'।",
+      "lexicon_modern_notes": "Ayah 8 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 8 Theme",
         "lexicon_modern_notes": "Ayah 8 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "আর তারা বিশ্বাসীদের বিরুদ্ধে কোনো অপরাধ খুঁজে পায়নি—কেবল এই ছাড়া যে, তারা মহাপরাক্রমশালী ও সর্বপ্রশংসিত একক আল্লাহর প্রতি অবিচল বিশ্বাস স্থাপন করেছিল, (وَمَا نَقَمُوا مِنْهُمْ إِلَّا أَن يُؤْمِنُوا بِاللَّهِ الْعَزِيزِ الْحَمِيدِ)",
+        "core_meaning_bn": "আর তারা বিশ্বাসীদের বিরুদ্ধে কোনো অপরাধ খুঁজে পায়নি—কেবল এই ছাড়া যে, তারা মহাপরাক্রমশালী ও সর্বপ্রশংসিত একক আল্লাহর প্রতি অবিচল বিশ্বাস স্থাপন করেছিল,",
         "core_meaning_en": "And they resented them for nothing other than their uncompromising conviction in Allah, the Almighty, the Worthy of all praise,"
-      }
+      },
+      "core_meaning_bn": "আর তারা বিশ্বাসীদের বিরুদ্ধে কোনো অপরাধ খুঁজে পায়নি—কেবল এই ছাড়া যে, তারা মহাপরাক্রমশালী ও সর্বপ্রশংসিত একক আল্লাহর প্রতি অবিচল বিশ্বাস স্থাপন করেছিল,",
+      "core_meaning_en": "And they resented them for nothing other than their uncompromising conviction in Allah, the Almighty, the Worthy of all praise,"
     },
     {
       "surah": 85,
@@ -705,18 +721,20 @@
       "translation_en": "To whom belongs the dominion of the heavens and the earth. And Allah, over all things, is Witness.",
       "conventional_en": "To whom belongs the dominion of the heavens and the earth. And Allah, over all things, is Witness.",
       "conventional_bn": "আসমান ও যমীনের রাজ্বত্ব যাঁর, আর সেই আল্লাহ সব কিছুর প্রত্যক্ষদর্শী।",
-      "modern_translation_bn": "যাঁর হাতে রয়েছে আকাশমণ্ডল ও পৃথিবীর সার্বভৌম কর্তৃত্ব; আর আল্লাহ প্রতিটি বিষয়ের ওপর প্রত্যক্ষদর্শী! (الَّذِي لَهُ مُلْكُ السَّمَاوَاتِ وَالْأَرْضِ ۚ وَاللَّهُ عَلَىٰ كُلِّ شَيْءٍ شَهِيدٌ)",
-      "modern_translation_en": "Unto whom belongs the sovereignty of the heavens and the earth; and Allah is an absolute Witness over all things!",
+      "modern_translation_bn": "আসমান ও যমীনের রাজ্বত্ব যাঁর, আর সেই পরম সোর্স কোড (আল্লাহ) সব কিছুর প্রত্যক্ষদর্শী।",
+      "modern_translation_en": "To whom belongs the dominion of the heavens and the earth. And Allah, over all things, is Witness.",
       "meta_bn": "Surah 85 Ayah 9 Theme",
       "meta_en": "Surah 85 Ayah 9 Theme",
-      "lexicon_modern_notes": "ঐশী সার্বভৌমত্ব ও নজরদারি।",
+      "lexicon_modern_notes": "Ayah 9 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 9 Theme",
         "lexicon_modern_notes": "Ayah 9 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যাঁর হাতে রয়েছে আকাশমণ্ডল ও পৃথিবীর সার্বভৌম কর্তৃত্ব; আর আল্লাহ প্রতিটি বিষয়ের ওপর প্রত্যক্ষদর্শী! (الَّذِي لَهُ مُلْكُ السَّمَاوَاتِ وَالْأَرْضِ ۚ وَاللَّهُ عَلَىٰ كُلِّ شَيْءٍ شَهِيدٌ)",
+        "core_meaning_bn": "যাঁর হাতে রয়েছে আকাশমণ্ডল ও পৃথিবীর সার্বভৌম কর্তৃত্ব; আর আল্লাহ প্রতিটি বিষয়ের ওপর প্রত্যক্ষদর্শী!",
         "core_meaning_en": "Unto whom belongs the sovereignty of the heavens and the earth; and Allah is an absolute Witness over all things!"
-      }
+      },
+      "core_meaning_bn": "যাঁর হাতে রয়েছে আকাশমণ্ডল ও পৃথিবীর সার্বভৌম কর্তৃত্ব; আর আল্লাহ প্রতিটি বিষয়ের ওপর প্রত্যক্ষদর্শী!",
+      "core_meaning_en": "Unto whom belongs the sovereignty of the heavens and the earth; and Allah is an absolute Witness over all things!"
     },
     {
       "surah": 85,
@@ -878,18 +896,20 @@
       "translation_en": "Indeed, those who have tortured the believing men and believing women and then have not repented will have the punishment of Hell, and they will have the punishment of the Burning Fire.",
       "conventional_en": "Indeed, those who have tortured the believing men and believing women and then have not repented will have the punishment of Hell, and they will have the punishment of the Burning Fire.",
       "conventional_bn": "যারা মু’মিন পুরুষ ও নারীদের প্রতি যুলম পীড়ন চালায় অতঃপর তাওবাহ করে না, তাদের জন্য আছে জাহান্নামের শাস্তি, আর আছে আগুনে দগ্ধ হওয়ার যন্ত্রণা।",
-      "modern_translation_bn": "নিশ্চয়ই যারা বিশ্বাসী নারী ও পুরুষদের ওপর জুলুম-নির্যাতন চালায় এবং এরপরও অনুশোচনা বা সংশোধন করে না—তাদের জন্য রয়েছে জাহান্নামের আজাব এবং তাদের জন্য রয়েছে দগ্ধ হওয়ার তীব্র শাস্তি। (إِنَّ الَّذِينَ فَتَنُوا الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ...)",
-      "modern_translation_en": "Indeed, those who persecute believing men and women and do not repent—theirs is the consequence of Hell, and theirs is the burning punishment.",
+      "modern_translation_bn": "যারা মু’মিন পুরুষ ও নারীদের প্রতি যুলম পীড়ন চালায় অতঃপর তাওবাহ করে না, তাদের জন্য আছে থার্মাল রিট্রিবিউটিভ জোন (জাহান্নাম)ের শাস্তি, আর আছে আগুনে দগ্ধ হওয়ার যন্ত্রণা।",
+      "modern_translation_en": "Indeed, those who have tortured the believing men and believing women and then have not repented will have the punishment of Hell, and they will have the punishment of the Burning Fire.",
       "meta_bn": "Surah 85 Ayah 10 Theme",
       "meta_en": "Surah 85 Ayah 10 Theme",
-      "lexicon_modern_notes": "فَتَنُوا: নিপীড়ন, অবিচার ও যন্ত্রণা দেওয়া।",
+      "lexicon_modern_notes": "Ayah 10 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 10 Theme",
         "lexicon_modern_notes": "Ayah 10 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "নিশ্চয়ই যারা বিশ্বাসী নারী ও পুরুষদের ওপর জুলুম-নির্যাতন চালায় এবং এরপরও অনুশোচনা বা সংশোধন করে না—তাদের জন্য রয়েছে জাহান্নামের আজাব এবং তাদের জন্য রয়েছে দগ্ধ হওয়ার তীব্র শাস্তি। (إِنَّ الَّذِينَ فَتَنُوا الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ...)",
-        "core_meaning_en": "Indeed, those who persecute believing men and women and do not repent—theirs is the consequence of Hell, and theirs is the burning punishment."
-      }
+        "core_meaning_bn": "নিশ্চয়ই যারা বিশ্বাসীদের ওপর নির্যাতন চালায় এবং সংশোধন করে না—তাদের জন্য রয়েছে জাহান্নামের আজাব এবং দগ্ধ হওয়ার তীব্র শাস্তি।",
+        "core_meaning_en": "Indeed, those who persecute believing men and women and do not repent—theirs is the consequence of Hell."
+      },
+      "core_meaning_bn": "নিশ্চয়ই যারা বিশ্বাসীদের ওপর নির্যাতন চালায় এবং সংশোধন করে না—তাদের জন্য রয়েছে জাহান্নামের আজাব এবং দগ্ধ হওয়ার তীব্র শাস্তি।",
+      "core_meaning_en": "Indeed, those who persecute believing men and women and do not repent—theirs is the consequence of Hell."
     },
     {
       "surah": 85,
@@ -1051,18 +1071,20 @@
       "translation_en": "Indeed, those who have believed and done righteous deeds will have gardens beneath which rivers flow. That is the great attainment.",
       "conventional_en": "Indeed, those who have believed and done righteous deeds will have gardens beneath which rivers flow. That is the great attainment.",
       "conventional_bn": "যারা ঈমান আনে আর সৎকাজ করে তাদের জন্য আছে জান্নাত, যার পাদদেশ দিয়ে বয়ে চলেছে নির্ঝরিণী, এটা বিরাট সাফল্য।",
-      "modern_translation_bn": "নিশ্চয়ই যারা বাস্তব সত্যে বিশ্বাস স্থাপন করেছে এবং গঠনমূলক ও কল্যাণকর কাজ করেছে, তাদের জন্য রয়েছে জান্নাত—যার তলদেশে নদীসমূহ প্রবাহিত; এটাই হলো মহাসাফল্য! (إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ...)",
-      "modern_translation_en": "Indeed, those who attain conviction and perform restorative, constructive deeds—for them are Gardens beneath which rivers flow; that is the supreme triumph!",
+      "modern_translation_bn": "যারা ঈমান আনে আর সৎকাজ করে তাদের জন্য আছে ব্লিসফুল অপটিমাইজড ইকোসিস্টেম (জান্নাত), যার পাদদেশ দিয়ে বয়ে চলেছে নির্ঝরিণী, এটা বিরাট সাফল্য।",
+      "modern_translation_en": "Indeed, those who have believed and done righteous deeds will have gardens beneath which rivers flow. That is the great attainment.",
       "meta_bn": "Surah 85 Ayah 11 Theme",
       "meta_en": "Surah 85 Ayah 11 Theme",
-      "lexicon_modern_notes": "নীতি ও কাজের সুফল।",
+      "lexicon_modern_notes": "Ayah 11 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 11 Theme",
         "lexicon_modern_notes": "Ayah 11 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "নিশ্চয়ই যারা বাস্তব সত্যে বিশ্বাস স্থাপন করেছে এবং গঠনমূলক ও কল্যাণকর কাজ করেছে, তাদের জন্য রয়েছে জান্নাত—যার তলদেশে নদীসমূহ প্রবাহিত; এটাই হলো মহাসাফল্য! (إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ...)",
-        "core_meaning_en": "Indeed, those who attain conviction and perform restorative, constructive deeds—for them are Gardens beneath which rivers flow; that is the supreme triumph!"
-      }
+        "core_meaning_bn": "নিশ্চয়ই যারা সত্যে বিশ্বাস করেছে এবং কল্যাণকর কাজ করেছে, তাদের জন্য রয়েছে জান্নাত—এটাই মহাসাফল্য!",
+        "core_meaning_en": "Indeed, those who attain conviction and perform virtuous deeds—for them are Gardens; that is supreme triumph!"
+      },
+      "core_meaning_bn": "নিশ্চয়ই যারা সত্যে বিশ্বাস করেছে এবং কল্যাণকর কাজ করেছে, তাদের জন্য রয়েছে জান্নাত—এটাই মহাসাফল্য!",
+      "core_meaning_en": "Indeed, those who attain conviction and perform virtuous deeds—for them are Gardens; that is supreme triumph!"
     },
     {
       "surah": 85,
@@ -1124,18 +1146,20 @@
       "translation_en": "Indeed, the vengeance of your Lord is severe.",
       "conventional_en": "Indeed, the vengeance of your Lord is severe.",
       "conventional_bn": "তোমার প্রতিপালকের পাকড়াও অবশ্যই বড় কঠিন।",
-      "modern_translation_bn": "নিশ্চয়ই তোমার প্রতিপালকের পাকড়াও ও বিচারের নিয়ম অত্যন্ত সুদৃঢ় ও অমোঘ! (إِنَّ بَطْشَ رَبِّكَ لَشَدِيدٌ)",
-      "modern_translation_en": "Verily, the seizing grasp of your Sustainer's invariant justice is exceedingly powerful!",
+      "modern_translation_bn": "তোমার প্রতিপালকের পাকড়াও অবশ্যই বড় কঠিন।",
+      "modern_translation_en": "Indeed, the vengeance of your Lord is severe.",
       "meta_bn": "Surah 85 Ayah 12 Theme",
       "meta_en": "Surah 85 Ayah 12 Theme",
-      "lexicon_modern_notes": "بَطْشَ: অনিবার্য ঐতিহাসিক ও মহাজাগতিক প্রতিবিধান।",
+      "lexicon_modern_notes": "Ayah 12 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 12 Theme",
         "lexicon_modern_notes": "Ayah 12 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "নিশ্চয়ই তোমার প্রতিপালকের পাকড়াও ও বিচারের নিয়ম অত্যন্ত সুদৃঢ় ও অমোঘ! (إِنَّ بَطْشَ رَبِّكَ لَشَدِيدٌ)",
+        "core_meaning_bn": "নিশ্চয়ই তোমার প্রতিপালকের পাকড়াও ও বিচারের নিয়ম অত্যন্ত সুদৃঢ় ও অমোঘ!",
         "core_meaning_en": "Verily, the seizing grasp of your Sustainer's invariant justice is exceedingly powerful!"
-      }
+      },
+      "core_meaning_bn": "নিশ্চয়ই তোমার প্রতিপালকের পাকড়াও ও বিচারের নিয়ম অত্যন্ত সুদৃঢ় ও অমোঘ!",
+      "core_meaning_en": "Verily, the seizing grasp of your Sustainer's invariant justice is exceedingly powerful!"
     },
     {
       "surah": 85,
@@ -1197,18 +1221,20 @@
       "translation_en": "Indeed, it is He who originates [creation] and repeats.",
       "conventional_en": "Indeed, it is He who originates [creation] and repeats.",
       "conventional_bn": "তিনিই প্রথমবার সৃষ্টি করেন অতঃপর সৃষ্টির আবর্তন ঘটান।",
-      "modern_translation_bn": "নিশ্চয়ই তিনিই প্রথমবার সৃষ্টির সূচনা করেন এবং তিনিই পুনরায় তা ফিরিয়ে আনেন; (إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ)",
-      "modern_translation_en": "Indeed, He is the One who originates cosmic existence and reproduces it continually;",
+      "modern_translation_bn": "তিনিই প্রথমবার সৃষ্টি করেন অতঃপর সৃষ্টির আবর্তন ঘটান।",
+      "modern_translation_en": "Indeed, it is He who originates [creation] and repeats.",
       "meta_bn": "Surah 85 Ayah 13 Theme",
       "meta_en": "Surah 85 Ayah 13 Theme",
-      "lexicon_modern_notes": "সৃষ্টি ও পুনর্জন্মের চক্র।",
+      "lexicon_modern_notes": "Ayah 13 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 13 Theme",
         "lexicon_modern_notes": "Ayah 13 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "নিশ্চয়ই তিনিই প্রথমবার সৃষ্টির সূচনা করেন এবং তিনিই পুনরায় তা ফিরিয়ে আনেন; (إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ)",
+        "core_meaning_bn": "নিশ্চয়ই তিনিই প্রথমবার সৃষ্টির সূচনা করেন এবং তিনিই পুনরায় তা ফিরিয়ে আনেন;",
         "core_meaning_en": "Indeed, He is the One who originates cosmic existence and reproduces it continually;"
-      }
+      },
+      "core_meaning_bn": "নিশ্চয়ই তিনিই প্রথমবার সৃষ্টির সূচনা করেন এবং তিনিই পুনরায় তা ফিরিয়ে আনেন;",
+      "core_meaning_en": "Indeed, He is the One who originates cosmic existence and reproduces it continually;"
     },
     {
       "surah": 85,
@@ -1260,18 +1286,20 @@
       "translation_en": "And He is the Forgiving, the Affectionate,",
       "conventional_en": "And He is the Forgiving, the Affectionate,",
       "conventional_bn": "তিনি ক্ষমাশীল, প্রেমময়,",
-      "modern_translation_bn": "এবং তিনিই পরম ক্ষমাশীল, অপার ভালোবাসাময় ও পরম মমতাময় সত্তা (আল-ওয়াদূদ); (وَهُوَ الْغَفُورُ الْوَدُودُ)",
-      "modern_translation_en": "And He is the Ever-Forgiving, the Loving and Tender (Al-Wadūd);",
+      "modern_translation_bn": "তিনি ক্ষমাশীল, প্রেমময়,",
+      "modern_translation_en": "And He is the Forgiving, the Affectionate,",
       "meta_bn": "Surah 85 Ayah 14 Theme",
       "meta_en": "Surah 85 Ayah 14 Theme",
-      "lexicon_modern_notes": "الْوَدُودُ: রুট و-د-د (পরম নিঃস্বার্থ ও গভীর ভালোবাসা)।",
+      "lexicon_modern_notes": "Ayah 14 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 14 Theme",
         "lexicon_modern_notes": "Ayah 14 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং তিনিই পরম ক্ষমাশীল, অপার ভালোবাসাময় ও পরম মমতাময় সত্তা (আল-ওয়াদূদ); (وَهُوَ الْغَفُورُ الْوَدُودُ)",
+        "core_meaning_bn": "এবং তিনিই পরম ক্ষমাশীল, অপার ভালোবাসাময় ও পরম মমতাময় সত্তা (আল-ওয়াদূদ);",
         "core_meaning_en": "And He is the Ever-Forgiving, the Loving and Tender (Al-Wadūd);"
-      }
+      },
+      "core_meaning_bn": "এবং তিনিই পরম ক্ষমাশীল, অপার ভালোবাসাময় ও পরম মমতাময় সত্তা (আল-ওয়াদূদ);",
+      "core_meaning_en": "And He is the Ever-Forgiving, the Loving and Tender (Al-Wadūd);"
     },
     {
       "surah": 85,
@@ -1323,18 +1351,20 @@
       "translation_en": "Honorable Owner of the Throne,",
       "conventional_en": "Honorable Owner of the Throne,",
       "conventional_bn": "‘আরশের অধিপতি, মহা সম্মানিত।",
-      "modern_translation_bn": "তিনিই মহিমান্বিত আরশ ও সর্বোচ্চ সার্বিক সার্বভৌম ক্ষমতার অধিকারী, (ذُو الْعَرْشِ الْمَجِيدُ)",
-      "modern_translation_en": "Lord of the Throne of Cosmic Dominion, the All-Glorious,",
+      "modern_translation_bn": "‘আরশের অধিপতি, মহা সম্মানিত।",
+      "modern_translation_en": "Honorable Owner of the Throne,",
       "meta_bn": "Surah 85 Ayah 15 Theme",
       "meta_en": "Surah 85 Ayah 15 Theme",
-      "lexicon_modern_notes": "সার্বভৌম আসন।",
+      "lexicon_modern_notes": "Ayah 15 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 15 Theme",
         "lexicon_modern_notes": "Ayah 15 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তিনিই মহিমান্বিত আরশ ও সর্বোচ্চ সার্বিক সার্বভৌম ক্ষমতার অধিকারী, (ذُو الْعَرْشِ الْمَجِيدُ)",
+        "core_meaning_bn": "তিনিই মহিমান্বিত আরশ ও সর্বোচ্চ সার্বিক সার্বভৌম ক্ষমতার অধিকারী,",
         "core_meaning_en": "Lord of the Throne of Cosmic Dominion, the All-Glorious,"
-      }
+      },
+      "core_meaning_bn": "তিনিই মহিমান্বিত আরশ ও সর্বোচ্চ সার্বিক সার্বভৌম ক্ষমতার অধিকারী,",
+      "core_meaning_en": "Lord of the Throne of Cosmic Dominion, the All-Glorious,"
     },
     {
       "surah": 85,
@@ -1386,18 +1416,20 @@
       "translation_en": "Effecter of what He intends.",
       "conventional_en": "Effecter of what He intends.",
       "conventional_bn": "যা করতে চান তাই করেন।",
-      "modern_translation_bn": "তিনি যা ইচ্ছা করেন তা নিখুঁতভাবে কার্যকরকারী। (فَعَّالٌ لِّمَا يُرِيدُ)",
-      "modern_translation_en": "The decisive Enactor of whatever He wills.",
+      "modern_translation_bn": "যা করতে চান তাই করেন।",
+      "modern_translation_en": "Effecter of what He intends.",
       "meta_bn": "Surah 85 Ayah 16 Theme",
       "meta_en": "Surah 85 Ayah 16 Theme",
-      "lexicon_modern_notes": "পূর্ণ নিয়ন্ত্রণ।",
+      "lexicon_modern_notes": "Ayah 16 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 16 Theme",
         "lexicon_modern_notes": "Ayah 16 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তিনি যা ইচ্ছা করেন তা নিখুঁতভাবে কার্যকরকারী। (فَعَّالٌ لِّمَا يُرِيدُ)",
+        "core_meaning_bn": "তিনি যা ইচ্ছা করেন তা নিখুঁতভাবে কার্যকরকারী।",
         "core_meaning_en": "The decisive Enactor of whatever He wills."
-      }
+      },
+      "core_meaning_bn": "তিনি যা ইচ্ছা করেন তা নিখুঁতভাবে কার্যকরকারী।",
+      "core_meaning_en": "The decisive Enactor of whatever He wills."
     },
     {
       "surah": 85,
@@ -1459,18 +1491,20 @@
       "translation_en": "Has there reached you the story of the soldiers -",
       "conventional_en": "Has there reached you the story of the soldiers -",
       "conventional_bn": "তোমার কাছে কি সৈন্য বাহিনীর খবর পৌছেছে?",
-      "modern_translation_bn": "তোমার কাছে কি সেই ঔদ্ধত্যপূর্ণ সৈন্যবাহিনীর ঐতিহাসিক সত্য পৌঁছেছে— (هَلْ أَتَاكَ حَدِيثُ الْجُنُودِ)",
-      "modern_translation_en": "Has the account of the tyrannical armies reached you—",
+      "modern_translation_bn": "তোমার কাছে কি সৈন্য বাহিনীর খবর পৌছেছে?",
+      "modern_translation_en": "Has there reached you the story of the soldiers -",
       "meta_bn": "Surah 85 Ayah 17 Theme",
       "meta_en": "Surah 85 Ayah 17 Theme",
-      "lexicon_modern_notes": "সামরিক শক্তির অসারতার দলিল।",
+      "lexicon_modern_notes": "Ayah 17 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 17 Theme",
         "lexicon_modern_notes": "Ayah 17 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তোমার কাছে কি সেই ঔদ্ধত্যপূর্ণ সৈন্যবাহিনীর ঐতিহাসিক সত্য পৌঁছেছে— (هَلْ أَتَاكَ حَدِيثُ الْجُنُودِ)",
+        "core_meaning_bn": "তোমার কাছে কি সেই ঔদ্ধত্যপূর্ণ সৈন্যবাহিনীর ঐতিহাসিক সত্য পৌঁছেছে—",
         "core_meaning_en": "Has the account of the tyrannical armies reached you—"
-      }
+      },
+      "core_meaning_bn": "তোমার কাছে কি সেই ঔদ্ধত্যপূর্ণ সৈন্যবাহিনীর ঐতিহাসিক সত্য পৌঁছেছে—",
+      "core_meaning_en": "Has the account of the tyrannical armies reached you—"
     },
     {
       "surah": 85,
@@ -1512,18 +1546,20 @@
       "translation_en": "[Those of] Pharaoh and Thamud?",
       "conventional_en": "[Those of] Pharaoh and Thamud?",
       "conventional_bn": "ফেরাউন ও সামূদের? (আল্লাহর ক্ষমতার বিরুদ্ধে তাদের লোক-লস্কর কোন কাজে আসেনি)।",
-      "modern_translation_bn": "ফেরাউন এবং সামূদ জাতির সৈন্যদের? (فِرْعَوْنَ وَثَمُودَ)",
-      "modern_translation_en": "Of Pharaoh and Thamud?",
+      "modern_translation_bn": "ফেরাউন ও সামূদের? (পরম সোর্স কোড (আল্লাহ)র ক্ষমতার বিরুদ্ধে তাদের লোক-লস্কর কোন কাজে আসেনি)।",
+      "modern_translation_en": "[Those of] Pharaoh and Thamud?",
       "meta_bn": "Surah 85 Ayah 18 Theme",
       "meta_en": "Surah 85 Ayah 18 Theme",
-      "lexicon_modern_notes": "স্বৈরাচারের পতন।",
+      "lexicon_modern_notes": "Ayah 18 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 18 Theme",
         "lexicon_modern_notes": "Ayah 18 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "ফেরাউন এবং সামূদ জাতির সৈন্যদের? (فِرْعَوْنَ وَثَمُودَ)",
+        "core_meaning_bn": "ফেরাউন এবং সামূদ জাতির সৈন্যদের?",
         "core_meaning_en": "Of Pharaoh and Thamud?"
-      }
+      },
+      "core_meaning_bn": "ফেরাউন এবং সামূদ জাতির সৈন্যদের?",
+      "core_meaning_en": "Of Pharaoh and Thamud?"
     },
     {
       "surah": 85,
@@ -1595,18 +1631,20 @@
       "translation_en": "But they who disbelieve are in [persistent] denial,",
       "conventional_en": "But they who disbelieve are in [persistent] denial,",
       "conventional_bn": "তবুও কাফিররা সত্য প্রত্যাখ্যান করেই চলেছে।",
-      "modern_translation_bn": "বরং সত্য অস্বীকারকারীরা সর্বদা মিথ্যা প্রতিপন্ন করার অন্ধ প্রবণতায় নিমজ্জিত থাকে; (بَلِ الَّذِينَ كَفَرُوا فِي تَكْذِيبٍ)",
-      "modern_translation_en": "Nay, but the truth-concealers persist in active denial and rejection;",
+      "modern_translation_bn": "তবুও সত্য প্রত্যাখ্যানকারী নোডরা সত্য প্রত্যাখ্যান করেই চলেছে।",
+      "modern_translation_en": "But they who disbelieve are in [persistent] denial,",
       "meta_bn": "Surah 85 Ayah 19 Theme",
       "meta_en": "Surah 85 Ayah 19 Theme",
-      "lexicon_modern_notes": "অহংকারের অন্ধত্ব।",
+      "lexicon_modern_notes": "Ayah 19 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 19 Theme",
         "lexicon_modern_notes": "Ayah 19 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "বরং সত্য অস্বীকারকারীরা সর্বদা মিথ্যা প্রতিপন্ন করার অন্ধ প্রবণতায় নিমজ্জিত থাকে; (بَلِ الَّذِينَ كَفَرُوا فِي تَكْذِيبٍ)",
+        "core_meaning_bn": "বরং সত্য অস্বীকারকারীরা সর্বদা মিথ্যা প্রতিপন্ন করার অন্ধ প্রবণতায় নিমজ্জিত থাকে;",
         "core_meaning_en": "Nay, but the truth-concealers persist in active denial and rejection;"
-      }
+      },
+      "core_meaning_bn": "বরং সত্য অস্বীকারকারীরা সর্বদা মিথ্যা প্রতিপন্ন করার অন্ধ প্রবণতায় নিমজ্জিত থাকে;",
+      "core_meaning_en": "Nay, but the truth-concealers persist in active denial and rejection;"
     },
     {
       "surah": 85,
@@ -1668,18 +1706,20 @@
       "translation_en": "While Allah encompasses them from behind.",
       "conventional_en": "While Allah encompasses them from behind.",
       "conventional_bn": "আর আল্লাহ আড়াল থেকে ওদেরকে ঘিরে রেখেছেন।",
-      "modern_translation_bn": "অথচ আল্লাহ তাদের সকল অস্তিত্বকে চতুর্দিক থেকে বেষ্টন করে আছেন! (وَاللَّهُ مِن وَرَائِهِم مُّحِيطٌ)",
-      "modern_translation_en": "While Allah encompasses them completely from beyond their perception!",
+      "modern_translation_bn": "আর পরম সোর্স কোড (আল্লাহ) আড়াল থেকে ওদেরকে ঘিরে রেখেছেন।",
+      "modern_translation_en": "While Allah encompasses them from behind.",
       "meta_bn": "Surah 85 Ayah 20 Theme",
       "meta_en": "Surah 85 Ayah 20 Theme",
-      "lexicon_modern_notes": "মূহীত: পূর্ণ নিয়ন্ত্রণ।",
+      "lexicon_modern_notes": "Ayah 20 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 20 Theme",
         "lexicon_modern_notes": "Ayah 20 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "অথচ আল্লাহ তাদের সকল অস্তিত্বকে চতুর্দিক থেকে বেষ্টন করে আছেন! (وَاللَّهُ مِن وَرَائِهِم مُّحِيطٌ)",
+        "core_meaning_bn": "অথচ আল্লাহ তাদের সকল অস্তিত্বকে চতুর্দিক থেকে বেষ্টন করে আছেন!",
         "core_meaning_en": "While Allah encompasses them completely from beyond their perception!"
-      }
+      },
+      "core_meaning_bn": "অথচ আল্লাহ তাদের সকল অস্তিত্বকে চতুর্দিক থেকে বেষ্টন করে আছেন!",
+      "core_meaning_en": "While Allah encompasses them completely from beyond their perception!"
     },
     {
       "surah": 85,
@@ -1741,18 +1781,20 @@
       "translation_en": "But this is an honored Qur'an",
       "conventional_en": "But this is an honored Qur'an",
       "conventional_bn": "(কাফিররা অমান্য করলেও এ কুরআনের কোনই ক্ষতি হবে না) বস্তুতঃ এটা সম্মানিত কুরআন,",
-      "modern_translation_bn": "বরং এটি এক পরম সম্মানিত ও মহিমান্বিত কুরআন, (بَلْ هُوَ قُرْآنٌ مَّجِيدٌ)",
-      "modern_translation_en": "Nay, this is a Glorious, Sublime Reading (Quran),",
+      "modern_translation_bn": "(সত্য প্রত্যাখ্যানকারী নোডরা অমান্য করলেও এ কুরআনের কোনই ক্ষতি হবে না) বস্তুতঃ এটা সম্মানিত কুরআন,",
+      "modern_translation_en": "But this is an honored Qur'an",
       "meta_bn": "Surah 85 Ayah 21 Theme",
       "meta_en": "Surah 85 Ayah 21 Theme",
-      "lexicon_modern_notes": "ওহীর শ্রেষ্ঠত্ব।",
+      "lexicon_modern_notes": "Ayah 21 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 21 Theme",
         "lexicon_modern_notes": "Ayah 21 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "বরং এটি এক পরম সম্মানিত ও মহিমান্বিত কুরআন, (بَلْ هُوَ قُرْآنٌ مَّجِيدٌ)",
+        "core_meaning_bn": "বরং এটি এক পরম সম্মানিত ও মহিমান্বিত কুরআন,",
         "core_meaning_en": "Nay, this is a Glorious, Sublime Reading (Quran),"
-      }
+      },
+      "core_meaning_bn": "বরং এটি এক পরম সম্মানিত ও মহিমান্বিত কুরআন,",
+      "core_meaning_en": "Nay, this is a Glorious, Sublime Reading (Quran),"
     },
     {
       "surah": 85,
@@ -1804,18 +1846,20 @@
       "translation_en": "[Inscribed] in a Preserved Slate.",
       "conventional_en": "[Inscribed] in a Preserved Slate.",
       "conventional_bn": "সুরক্ষিত ফলকে লিপিবদ্ধ।",
-      "modern_translation_bn": "যা এক সুরক্ষিত ও অপরিবর্তনীয় ফলকে (লাওহে মাহফুজে) সংরক্ষিত! (فِي لَوْحٍ مَّحْفُوظٍ)",
-      "modern_translation_en": "Preserved securely within an Invariant Cosmic Tablet (Lawh Mahfuz).",
+      "modern_translation_bn": "সুরক্ষিত ফলকে লিপিবদ্ধ।",
+      "modern_translation_en": "[Inscribed] in a Preserved Slate.",
       "meta_bn": "Surah 85 Ayah 22 Theme",
       "meta_en": "Surah 85 Ayah 22 Theme",
-      "lexicon_modern_notes": "فِي لَوْحٍ مَّحْفُوظٍ: প্রাকৃতিক ও ওহীর মহাজাগতিক মাস্টার ডাটাবেজ, যা কোনো মানবীয় বিকৃতি স্পর্শ করতে পারে না।",
+      "lexicon_modern_notes": "Ayah 22 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
       "metadata": {
         "theme": "Surah 85 Ayah 22 Theme",
         "lexicon_modern_notes": "Ayah 22 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যা এক সুরক্ষিত ও অপরিবর্তনীয় ফলকে (লাওহে মাহফুজে) সংরক্ষিত! (فِي لَوْحٍ مَّحْفُوظٍ)",
+        "core_meaning_bn": "যা এক সুরক্ষিত ও অপরিবর্তনীয় ফলকে (লাওহে মাহফুজে) সংরক্ষিত!",
         "core_meaning_en": "Preserved securely within an Invariant Cosmic Tablet (Lawh Mahfuz)."
-      }
+      },
+      "core_meaning_bn": "যা এক সুরক্ষিত ও অপরিবর্তনীয় ফলকে (লাওহে মাহফুজে) সংরক্ষিত!",
+      "core_meaning_en": "Preserved securely within an Invariant Cosmic Tablet (Lawh Mahfuz)."
     }
   ]
 }

@@ -50,19 +50,21 @@
       ],
       "translation_en": "When the sun is wrapped up [in darkness]",
       "conventional_en": "When the sun is wrapped up [in darkness]",
-      "modern_translation_bn": "যখন সূর্যকে নিস্তেজ করে আলোহীন ও গুটিয়ে নেওয়া হবে, (إِذَا الشَّمْسُ كُوِّرَتْ)",
+      "modern_translation_bn": "যখন স্টেলার ডেটা-কোর (إِذَا الشَّمْسُ) ডেটা-কম্প্রেস (كُوِّرَتْ) স্টেটে যাবে।",
       "conventional_bn": "যখন সূর্যকে গুটিয়ে ফেলা হবে।",
       "meta_bn": "The Stellar Core Gravitational Compression ও সূর্যের সংকোচন ও আলো বিলুপ্তিকরণ",
       "metadata": {
         "theme": "The Stellar Core Gravitational Compression ও সূর্যের সংকোচন ও আলো বিলুপ্তিকরণ",
         "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যখন সূর্যকে নিস্তেজ করে আলোহীন ও গুটিয়ে নেওয়া হবে, (إِذَا الشَّمْسُ كُوِّرَتْ)",
+        "core_meaning_bn": "যখন সূর্যকে নিস্তেজ করে আলোহীন ও গুটিয়ে নেওয়া হবে,",
         "core_meaning_en": "When the sun is enfolded and stripped of its radiant light,"
       },
-      "modern_translation_en": "When the sun is enfolded and stripped of its radiant light,",
+      "modern_translation_en": "When the sun is wrapped up [in darkness]",
       "meta_en": "The Stellar Core Gravitational Compression ও সূর্যের সংকোচন ও আলো বিলুপ্তিকরণ",
-      "lexicon_modern_notes": "كُوِّرَتْ: গুটিয়ে ফেলা, মহাজাগতিক জ্বালানি নিঃশেষ হওয়া।"
+      "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "যখন সূর্যকে নিস্তেজ করে আলোহীন ও গুটিয়ে নেওয়া হবে,",
+      "core_meaning_en": "When the sun is enfolded and stripped of its radiant light,"
     },
     {
       "surah": 81,
@@ -113,19 +115,21 @@
       ],
       "translation_en": "And when the stars fall, dispersing,",
       "conventional_en": "And when the stars fall, dispersing,",
-      "modern_translation_bn": "এবং যখন নক্ষত্ররাজি খসে পড়ে তাদের ঔজ্জ্বল্য হারাবে, (وَإِذَا النُّجُومُ انكَدَرَتْ)",
+      "modern_translation_bn": "আর যখন প্লাজমা নিউক্লিয়ার ফিউশন নোডগুলো (وَإِذَا النُّجُومُ) ডেটা-ক্র্যাশ (انكَدَرَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন নক্ষত্রসমূহ ঝরে পড়বে।",
       "meta_bn": "The Plasma Fusion Decay & Starfall ও নক্ষত্রসমূহের কক্ষচ্যুতি ও নিভে যাওয়া",
       "metadata": {
         "theme": "The Plasma Fusion Decay & Starfall ও নক্ষত্রসমূহের কক্ষচ্যুতি ও নিভে যাওয়া",
         "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন নক্ষত্ররাজি খসে পড়ে তাদের ঔজ্জ্বল্য হারাবে, (وَإِذَا النُّجُومُ انكَدَرَتْ)",
+        "core_meaning_bn": "এবং যখন নক্ষত্ররাজি খসে পড়ে তাদের ঔজ্জ্বল্য হারাবে,",
         "core_meaning_en": "And when the stars lose their brilliance and scatter,"
       },
-      "modern_translation_en": "And when the stars lose their brilliance and scatter,",
+      "modern_translation_en": "And when the stars fall, dispersing,",
       "meta_en": "The Plasma Fusion Decay & Starfall ও নক্ষত্রসমূহের কক্ষচ্যুতি ও নিভে যাওয়া",
-      "lexicon_modern_notes": "انكَدَرَتْ: ধূলিমলিন হওয়া, আলো হারানো।"
+      "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন নক্ষত্ররাজি খসে পড়ে তাদের ঔজ্জ্বল্য হারাবে,",
+      "core_meaning_en": "And when the stars lose their brilliance and scatter,"
     },
     {
       "surah": 81,
@@ -176,19 +180,21 @@
       ],
       "translation_en": "And when the mountains are removed",
       "conventional_en": "And when the mountains are removed",
-      "modern_translation_bn": "এবং যখন পর্বতমালা স্থানচ্যুত ও গতিশীল হবে, (وَإِذَا الْجِبَالُ سُيِّرَتْ)",
+      "modern_translation_bn": "আর যখন জিও-স্পেশিয়াল ডেটা-শিল্ডগুলো ডেটা-মাইগ্রেশন (وَإِذَا الْجِبَالُ سُيِّرَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন পর্বতমালাকে চলমান করা হবে।",
       "meta_bn": "The Tectonic Shield Disintegration & Mountain Migration ও পর্বতমালার স্থানচ্যুতি ও ধূলিসাৎকরণ",
       "metadata": {
         "theme": "The Tectonic Shield Disintegration & Mountain Migration ও পর্বতমালার স্থানচ্যুতি ও ধূলিসাৎকরণ",
         "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন পর্বতমালা স্থানচ্যুত ও গতিশীল হবে, (وَإِذَا الْجِبَالُ سُيِّرَتْ)",
+        "core_meaning_bn": "এবং যখন পর্বতমালা স্থানচ্যুত ও গতিশীল হবে,",
         "core_meaning_en": "And when the mountains are moved as dust,"
       },
-      "modern_translation_en": "And when the mountains are moved as dust,",
+      "modern_translation_en": "And when the mountains are removed",
       "meta_en": "The Tectonic Shield Disintegration & Mountain Migration ও পর্বতমালার স্থানচ্যুতি ও ধূলিসাৎকরণ",
-      "lexicon_modern_notes": "পাহাড়ের বিচূর্ণন।"
+      "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন পর্বতমালা স্থানচ্যুত ও গতিশীল হবে,",
+      "core_meaning_en": "And when the mountains are moved as dust,"
     },
     {
       "surah": 81,
@@ -239,19 +245,21 @@
       ],
       "translation_en": "And when full-term she-camels are neglected",
       "conventional_en": "And when full-term she-camels are neglected",
-      "modern_translation_bn": "এবং যখন মানুষের মহামূল্যবান গর্বের সম্পদসমূহও সম্পূর্ণ উপেক্ষিত হবে, (وَإِذَا الْعِشَارُ عُطِّلَتْ)",
+      "modern_translation_bn": "আর যখন ডেটা-ট্রান্সপোর্ট নোডগুলো ডেটা-ডিঅ্যাক্টিভেট (وَإِذَا الْعِشَارُ عُطِّلَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন গর্ভবতী উটনীসমূহকে উপেক্ষা করা হবে।",
       "meta_bn": "The Cessation of Prized Assets & Transport Systems ও মহামূল্যবান সম্পদ পরিত্যাগের চরম অবস্থা",
       "metadata": {
         "theme": "The Cessation of Prized Assets & Transport Systems ও মহামূল্যবান সম্পদ পরিত্যাগের চরম অবস্থা",
         "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন মানুষের মহামূল্যবান গর্বের সম্পদসমূহও সম্পূর্ণ উপেক্ষিত হবে, (وَإِذَا الْعِشَارُ عُطِّلَتْ)",
-        "core_meaning_en": "And when prized possessions (pregnant she-camels) are neglected in panic,"
+        "core_meaning_bn": "এবং যখন মানুষের মহামূল্যবান গর্বের সম্পদসমূহও সম্পূর্ণ উপেক্ষিত হবে,",
+        "core_meaning_en": "And when prized possessions are neglected in panic,"
       },
-      "modern_translation_en": "And when prized possessions (pregnant she-camels) are neglected in panic,",
+      "modern_translation_en": "And when full-term she-camels are neglected",
       "meta_en": "The Cessation of Prized Assets & Transport Systems ও মহামূল্যবান সম্পদ পরিত্যাগের চরম অবস্থা",
-      "lexicon_modern_notes": "পার্থিব ধনের মোহভঙ্গ।"
+      "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন মানুষের মহামূল্যবান গর্বের সম্পদসমূহও সম্পূর্ণ উপেক্ষিত হবে,",
+      "core_meaning_en": "And when prized possessions are neglected in panic,"
     },
     {
       "surah": 81,
@@ -302,19 +310,21 @@
       ],
       "translation_en": "And when the wild beasts are gathered",
       "conventional_en": "And when the wild beasts are gathered",
-      "modern_translation_bn": "এবং যখন বন্য প্রাণীকুল দিশেহারা হয়ে একত্রিত হবে, (وَإِذَا الْوُحُوشُ حُشِرَتْ)",
+      "modern_translation_bn": "আর যখন ডেটা-ওয়াইল্ড নোডগুলো ডেটা-রি-ইন্টিগ্রেট (وَإِذَا الْوُحُوشُ حُشِرَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন বন্য প্রাণীদের সমবেত করা হবে।",
       "meta_bn": "The Universal Biological Reintegration & Wild Gathering ও বন্য প্রাণীদের একত্রীকরণ",
       "metadata": {
         "theme": "The Universal Biological Reintegration & Wild Gathering ও বন্য প্রাণীদের একত্রীকরণ",
         "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন বন্য প্রাণীকুল দিশেহারা হয়ে একত্রিত হবে, (وَإِذَا الْوُحُوشُ حُشِرَتْ)",
+        "core_meaning_bn": "এবং যখন বন্য প্রাণীকুল দিশেহারা হয়ে একত্রিত হবে,",
         "core_meaning_en": "And when the wild beasts are corralled together in distress,"
       },
-      "modern_translation_en": "And when the wild beasts are corralled together in distress,",
+      "modern_translation_en": "And when the wild beasts are gathered",
       "meta_en": "The Universal Biological Reintegration & Wild Gathering ও বন্য প্রাণীদের একত্রীকরণ",
-      "lexicon_modern_notes": "প্রাণিজগতের অস্থিরতা।"
+      "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন বন্য প্রাণীকুল দিশেহারা হয়ে একত্রিত হবে,",
+      "core_meaning_en": "And when the wild beasts are corralled together in distress,"
     },
     {
       "surah": 81,
@@ -365,19 +375,21 @@
       ],
       "translation_en": "And when the seas are filled with flame",
       "conventional_en": "And when the seas are filled with flame",
-      "modern_translation_bn": "এবং যখন মহাসমুদ্রসমূহ উত্তপ্ত হয়ে প্রজ্বলিত হবে, (وَإِذَا الْبِحَارُ سُجِّرَتْ)",
+      "modern_translation_bn": "আর যখন ডেটা-ওশান স্ট্রিমগুলো ডেটা-টার্বুলেন্স (وَإِذَا الْبِحَارُ سُجِّرَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন সমুদ্রগুলোকে উত্তাল করা হবে।",
       "meta_bn": "The Oceanic Ignition & Hydrothermal Turbulence ও সমুদ্রের অগ্নিময় স্ফীতি ও আলোড়ন",
       "metadata": {
         "theme": "The Oceanic Ignition & Hydrothermal Turbulence ও সমুদ্রের অগ্নিময় স্ফীতি ও আলোড়ন",
         "lexicon_modern_notes": "Ayah 6 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন মহাসমুদ্রসমূহ উত্তপ্ত হয়ে প্রজ্বলিত হবে, (وَإِذَا الْبِحَارُ سُجِّرَتْ)",
+        "core_meaning_bn": "এবং যখন মহাসমুদ্রসমূহ উত্তপ্ত হয়ে প্রজ্বলিত হবে,",
         "core_meaning_en": "And when the oceans are set boiling and ablaze,"
       },
-      "modern_translation_en": "And when the oceans are set boiling and ablaze,",
+      "modern_translation_en": "And when the seas are filled with flame",
       "meta_en": "The Oceanic Ignition & Hydrothermal Turbulence ও সমুদ্রের অগ্নিময় স্ফীতি ও আলোড়ন",
-      "lexicon_modern_notes": "সাগরের দহন।"
+      "lexicon_modern_notes": "Ayah 6 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন মহাসমুদ্রসমূহ উত্তপ্ত হয়ে প্রজ্বলিত হবে,",
+      "core_meaning_en": "And when the oceans are set boiling and ablaze,"
     },
     {
       "surah": 81,
@@ -428,19 +440,21 @@
       ],
       "translation_en": "And when the souls are paired",
       "conventional_en": "And when the souls are paired",
-      "modern_translation_bn": "এবং যখন মানব আত্মাসমূহকে তাদের স্ব স্ব শ্রেণি ও কর্মসঙ্গীদের সাথে মিলিয়ে দেওয়া হবে, (وَإِذَا النُّفُوسُ زُوِّجَتْ)",
+      "modern_translation_bn": "আর যখন ফ্রি-উইল নোডগুলো ডেটা-পেয়ারিং (وَإِذَا النُّفُوسُ زُوِّجَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন আত্মাগুলোকে জোড়ায় জোড়ায় মিলিত করা হবে।",
       "meta_bn": "The Soul-Body Reconnection & Cohort Pairing ও রূহের সাথে দেহের পুনঃমিলন ও সমমনাদের জোটবদ্ধকরণ",
       "metadata": {
         "theme": "The Soul-Body Reconnection & Cohort Pairing ও রূহের সাথে দেহের পুনঃমিলন ও সমমনাদের জোটবদ্ধকরণ",
         "lexicon_modern_notes": "Ayah 7 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন মানব আত্মাসমূহকে তাদের স্ব স্ব শ্রেণি ও কর্মসঙ্গীদের সাথে মিলিয়ে দেওয়া হবে, (وَإِذَا النُّفُوسُ زُوِّجَتْ)",
+        "core_meaning_bn": "এবং যখন মানব আত্মাসমূহকে তাদের স্ব স্ব শ্রেণি ও কর্মসঙ্গীদের সাথে মিলিয়ে দেওয়া হবে,",
         "core_meaning_en": "And when souls are paired and categorized with their kind,"
       },
-      "modern_translation_en": "And when souls are paired and categorized with their kind,",
+      "modern_translation_en": "And when the souls are paired",
       "meta_en": "The Soul-Body Reconnection & Cohort Pairing ও রূহের সাথে দেহের পুনঃমিলন ও সমমনাদের জোটবদ্ধকরণ",
-      "lexicon_modern_notes": "زُوِّجَتْ: সমস্বভাব ও কর্মফল অনুযায়ী জোড়া বাঁধানো।"
+      "lexicon_modern_notes": "Ayah 7 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন মানব আত্মাসমূহকে তাদের স্ব স্ব শ্রেণি ও কর্মসঙ্গীদের সাথে মিলিয়ে দেওয়া হবে,",
+      "core_meaning_en": "And when souls are paired and categorized with their kind,"
     },
     {
       "surah": 81,
@@ -491,19 +505,21 @@
       ],
       "translation_en": "And when the girl [who was] buried alive is asked",
       "conventional_en": "And when the girl [who was] buried alive is asked",
-      "modern_translation_bn": "এবং যখন জীবন্ত প্রোথিত কন্যাশিশুকে সরাসরি জিজ্ঞেস করা হবে— (وَإِذَا الْمَوْءُودَةُ سُئِلَتْ)",
+      "modern_translation_bn": "আর যখন ডেটা-টার্মিনেটেড ফিমেল নোডকে ডেটা-কুয়েরি (وَإِذَا الْمَوْءُودَةُ سُئِلَتْ) করা হবে।",
       "conventional_bn": "আর যখন জীবন্ত নিহত কন্যাকে জিজ্ঞেস করা হবে।",
       "meta_bn": "The Interrogation for Murdered Infant Females ও জীবন্ত কবরস্থ কন্যাসন্তানের অধিকার ও বিচার",
       "metadata": {
         "theme": "The Interrogation for Murdered Infant Females ও জীবন্ত কবরস্থ কন্যাসন্তানের অধিকার ও বিচার",
         "lexicon_modern_notes": "Ayah 8 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন জীবন্ত প্রোথিত কন্যাশিশুকে সরাসরি জিজ্ঞেস করা হবে— (وَإِذَا الْمَوْءُودَةُ سُئِلَتْ)",
+        "core_meaning_bn": "এবং যখন জীবন্ত প্রোথিত কন্যাশিশুকে সরাসরি জিজ্ঞেস করা হবে—",
         "core_meaning_en": "And when the female infant buried alive is questioned—"
       },
-      "modern_translation_en": "And when the female infant buried alive is questioned—",
+      "modern_translation_en": "And when the girl [who was] buried alive is asked",
       "meta_en": "The Interrogation for Murdered Infant Females ও জীবন্ত কবরস্থ কন্যাসন্তানের অধিকার ও বিচার",
-      "lexicon_modern_notes": "الْمَوْءُودَةُ: জাহেলি কন্যাশিশু হত্যার বিরুদ্ধে কুরআনের সর্বজনীন মানবাধিকার ঘোষণা।"
+      "lexicon_modern_notes": "Ayah 8 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন জীবন্ত প্রোথিত কন্যাশিশুকে সরাসরি জিজ্ঞেস করা হবে—",
+      "core_meaning_en": "And when the female infant buried alive is questioned—"
     },
     {
       "surah": 81,
@@ -554,19 +570,21 @@
       ],
       "translation_en": "For what sin she was killed",
       "conventional_en": "For what sin she was killed",
-      "modern_translation_bn": "কোন অপরাধের কারণে তাকে হত্যা করা হয়েছিল? (بِأَيِّ ذَنبٍ قُتِلَتْ)",
+      "modern_translation_bn": "কী ডেটা-রুলস ভায়োলেশনে তাকে ডেটা-টার্মিনেট (بِأَيِّ ذَنبٍ قُتِلَتْ) করা হয়েছে?",
       "conventional_bn": "কী অপরাধে তাকে হত্যা করা হয়েছে?",
       "meta_bn": "The Judicial Audit of Arbitrary Termination ও নিরপরাধ শিশু হত্যার কৈফিয়ত",
       "metadata": {
         "theme": "The Judicial Audit of Arbitrary Termination ও নিরপরাধ শিশু হত্যার কৈফিয়ত",
         "lexicon_modern_notes": "Ayah 9 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "কোন অপরাধের কারণে তাকে হত্যা করা হয়েছিল? (بِأَيِّ ذَنبٍ قُتِلَتْ)",
+        "core_meaning_bn": "কোন অপরাধের কারণে তাকে হত্যা করা হয়েছিল?",
         "core_meaning_en": "For what crime was she murdered?"
       },
-      "modern_translation_en": "For what crime was she murdered?",
+      "modern_translation_en": "For what sin she was killed",
       "meta_en": "The Judicial Audit of Arbitrary Termination ও নিরপরাধ শিশু হত্যার কৈফিয়ত",
-      "lexicon_modern_notes": "জুলুমের অকাট্য বিচার।"
+      "lexicon_modern_notes": "Ayah 9 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "কোন অপরাধের কারণে তাকে হত্যা করা হয়েছিল?",
+      "core_meaning_en": "For what crime was she murdered?"
     },
     {
       "surah": 81,
@@ -617,19 +635,21 @@
       ],
       "translation_en": "And when the pages are made public",
       "conventional_en": "And when the pages are made public",
-      "modern_translation_bn": "এবং যখন মানুষের আমলনামার নথিপত্র উন্মুক্ত ও প্রকাশিত করা হবে, (وَإِذَا الصُّحُفُ نُشِرَتْ)",
+      "modern_translation_bn": "আর যখন ডেটা-মেমোরি ট্যাগগুলো ডেটা-ওপেন (وَإِذَا الصُّحُفُ نُشِرَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন আমলনামা খোলা হবে।",
       "meta_bn": "The Unrolling of Immutable Action Logs ও আমলনামা উন্মুক্তকরণ",
       "metadata": {
         "theme": "The Unrolling of Immutable Action Logs ও আমলনামা উন্মুক্তকরণ",
         "lexicon_modern_notes": "Ayah 10 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন মানুষের আমলনামার নথিপত্র উন্মুক্ত ও প্রকাশিত করা হবে, (وَإِذَا الصُّحُفُ نُشِرَتْ)",
+        "core_meaning_bn": "এবং যখন মানুষের আমলনামার নথিপত্র উন্মুক্ত ও প্রকাশিত করা হবে,",
         "core_meaning_en": "And when the recorded scrolls of deeds are laid wide open,"
       },
-      "modern_translation_en": "And when the recorded scrolls of deeds are laid wide open,",
+      "modern_translation_en": "And when the pages are made public",
       "meta_en": "The Unrolling of Immutable Action Logs ও আমলনামা উন্মুক্তকরণ",
-      "lexicon_modern_notes": "তথ্য প্রকাশ।"
+      "lexicon_modern_notes": "Ayah 10 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন মানুষের আমলনামার নথিপত্র উন্মুক্ত ও প্রকাশিত করা হবে,",
+      "core_meaning_en": "And when the recorded scrolls of deeds are laid wide open,"
     },
     {
       "surah": 81,
@@ -680,19 +700,21 @@
       ],
       "translation_en": "And when the sky is stripped away",
       "conventional_en": "And when the sky is stripped away",
-      "modern_translation_bn": "এবং যখন আকাশমণ্ডলীর আবরণ উন্মোচিত করে অপসারিত করা হবে, (وَإِذَا السَّمَاءُ كُشِطَتْ)",
+      "modern_translation_bn": "আর যখন মহাজাগতিক ডেটা-লেয়ার ডেটা-রিমুভ (وَإِذَا السَّمَاءُ كُشِطَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন আকাশকে সরিয়ে ফেলা হবে।",
       "meta_bn": "The Stripping of the Celestial Fabric ও মহাজাগতিক আকাশমণ্ডলের আবরণ উন্মোচন",
       "metadata": {
         "theme": "The Stripping of the Celestial Fabric ও মহাজাগতিক আকাশমণ্ডলের আবরণ উন্মোচন",
         "lexicon_modern_notes": "Ayah 11 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন আকাশমণ্ডলীর আবরণ উন্মোচিত করে অপসারিত করা হবে, (وَإِذَا السَّمَاءُ كُشِطَتْ)",
+        "core_meaning_bn": "এবং যখন আকাশমণ্ডলীর আবরণ উন্মোচিত করে অপসারিত করা হবে,",
         "core_meaning_en": "And when the sky is stripped bare,"
       },
-      "modern_translation_en": "And when the sky is stripped bare,",
+      "modern_translation_en": "And when the sky is stripped away",
       "meta_en": "The Stripping of the Celestial Fabric ও মহাজাগতিক আকাশমণ্ডলের আবরণ উন্মোচন",
-      "lexicon_modern_notes": "মহাজাগতিক পর্দা উন্মোচন।"
+      "lexicon_modern_notes": "Ayah 11 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন আকাশমণ্ডলীর আবরণ উন্মোচিত করে অপসারিত করা হবে,",
+      "core_meaning_en": "And when the sky is stripped bare,"
     },
     {
       "surah": 81,
@@ -743,19 +765,21 @@
       ],
       "translation_en": "And when Hellfire is set ablaze",
       "conventional_en": "And when Hellfire is set ablaze",
-      "modern_translation_bn": "এবং যখন জাহান্নামের আগুনকে তীব্রভাবে প্রজ্বলিত করা হবে, (وَإِذَا الْجَحِيمُ سُعِّرَتْ)",
+      "modern_translation_bn": "আর যখন থার্মোডাইনামিক ক্র্যাশ-জোন ডেটা-এনার্জি ম্যাক্স (وَإِذَا الْجَحِيمُ سُعِّرَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন জাহান্নামকে প্রজ্বলিত করা হবে।",
       "meta_bn": "The Thermal Maximum of Hellfire ও জাহান্নামের সর্বোচ্চ প্রজ্বলন",
       "metadata": {
         "theme": "The Thermal Maximum of Hellfire ও জাহান্নামের সর্বোচ্চ প্রজ্বলন",
         "lexicon_modern_notes": "Ayah 12 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন জাহান্নামের আগুনকে তীব্রভাবে প্রজ্বলিত করা হবে, (وَإِذَا الْجَحِيمُ سُعِّرَتْ)",
+        "core_meaning_bn": "এবং যখন জাহান্নামের আগুনকে তীব্রভাবে প্রজ্বলিত করা হবে,",
         "core_meaning_en": "And when the blazing fire is intensely stoked,"
       },
-      "modern_translation_en": "And when the blazing fire is intensely stoked,",
+      "modern_translation_en": "And when Hellfire is set ablaze",
       "meta_en": "The Thermal Maximum of Hellfire ও জাহান্নামের সর্বোচ্চ প্রজ্বলন",
-      "lexicon_modern_notes": "দহন।"
+      "lexicon_modern_notes": "Ayah 12 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন জাহান্নামের আগুনকে তীব্রভাবে প্রজ্বলিত করা হবে,",
+      "core_meaning_en": "And when the blazing fire is intensely stoked,"
     },
     {
       "surah": 81,
@@ -806,19 +830,21 @@
       ],
       "translation_en": "And when Paradise is brought near,",
       "conventional_en": "And when Paradise is brought near,",
-      "modern_translation_bn": "এবং যখন জান্নাতকে সৎকর্মশীলদের নিকটবর্তী করা হবে— (وَإِذَا الْجَنَّةُ أُزْلِفَتْ)",
+      "modern_translation_bn": "আর যখন উচ্চ-স্থিতিশীল ঘর্ষণহীন ইকোসিস্টেম ডেটা-প্রক্সিমিটি (وَإِذَا الْجَنَّةُ أُزْلِفَتْ) স্টেটে যাবে।",
       "conventional_bn": "আর যখন জান্নাতকে নিকটবর্তী করা হবে।",
       "meta_bn": "The Dimensional Proximity of Paradise ও জান্নাতের নৈকট্য বিধান",
       "metadata": {
         "theme": "The Dimensional Proximity of Paradise ও জান্নাতের নৈকট্য বিধান",
         "lexicon_modern_notes": "Ayah 13 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং যখন জান্নাতকে সৎকর্মশীলদের নিকটবর্তী করা হবে— (وَإِذَا الْجَنَّةُ أُزْلِفَتْ)",
+        "core_meaning_bn": "এবং যখন জান্নাতকে সৎকর্মশীলদের নিকটবর্তী করা হবে—",
         "core_meaning_en": "And when Paradise is brought near—"
       },
-      "modern_translation_en": "And when Paradise is brought near—",
+      "modern_translation_en": "And when Paradise is brought near,",
       "meta_en": "The Dimensional Proximity of Paradise ও জান্নাতের নৈকট্য বিধান",
-      "lexicon_modern_notes": "সান্নিধ্য।"
+      "lexicon_modern_notes": "Ayah 13 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং যখন জান্নাতকে সৎকর্মশীলদের নিকটবর্তী করা হবে—",
+      "core_meaning_en": "And when Paradise is brought near—"
     },
     {
       "surah": 81,
@@ -879,19 +905,21 @@
       ],
       "translation_en": "A soul will [then] know what it has brought [with it].",
       "conventional_en": "A soul will [then] know what it has brought [with it].",
-      "modern_translation_bn": "তখন প্রতিটি সত্তা স্পষ্টভাবে জেনে নেবে সে তার সাথে কী কর্মফল উপস্থিত করেছে! (عَلِمَتْ نَفْسٌ مَّا أَحْضَرَتْ)",
+      "modern_translation_bn": "প্রত্যেক ফ্রি-উইল নোড ডেটা-অ্যাওয়ারনেস (عَلِمَتْ نَفْسٌ) পাবে — সে কী ডেটা-প্যাকেট প্রি-ট্রান্সমিট (مَّا أَحْضَرَتْ) করেছিল।",
       "conventional_bn": "প্রত্যেক ব্যক্তি জানতে পারবে, সে কী (আমল) উপস্থিত করেছে।",
       "meta_bn": "The Absolute Self-Awareness of Accumulated Deeds ও আমলের পূর্ণাঙ্গ আত্ম-উপলব্ধি",
       "metadata": {
         "theme": "The Absolute Self-Awareness of Accumulated Deeds ও আমলের পূর্ণাঙ্গ আত্ম-উপলব্ধি",
         "lexicon_modern_notes": "Ayah 14 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তখন প্রতিটি সত্তা স্পষ্টভাবে জেনে নেবে সে তার সাথে কী কর্মফল উপস্থিত করেছে! (عَلِمَتْ نَفْسٌ مَّا أَحْضَرَتْ)",
+        "core_meaning_bn": "তখন প্রতিটি সত্তা স্পষ্টভাবে জেনে নেবে সে তার সাথে কী কর্মফল উপস্থিত করেছে!",
         "core_meaning_en": "Every soul will know precisely what it has brought forth!"
       },
-      "modern_translation_en": "Every soul will know precisely what it has brought forth!",
+      "modern_translation_en": "A soul will [then] know what it has brought [with it].",
       "meta_en": "The Absolute Self-Awareness of Accumulated Deeds ও আমলের পূর্ণাঙ্গ আত্ম-উপলব্ধি",
-      "lexicon_modern_notes": "আত্মোপলব্ধি।"
+      "lexicon_modern_notes": "Ayah 14 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "তখন প্রতিটি সত্তা স্পষ্টভাবে জেনে নেবে সে তার সাথে কী কর্মফল উপস্থিত করেছে!",
+      "core_meaning_en": "Every soul will know precisely what it has brought forth!"
     },
     {
       "surah": 81,
@@ -942,19 +970,21 @@
       ],
       "translation_en": "So I swear by the retreating stars -",
       "conventional_en": "So I swear by the retreating stars -",
-      "modern_translation_bn": "না, (তোমাদের ধারণা ভুল); আমি কক্ষপথে আবর্তনশীল নক্ষত্রমণ্ডলকে বাস্তব সাক্ষ্য হিসেবে তুলে ধরছি— (فَلَا أُقْسِمُ بِالْخُنَّسِ)",
+      "modern_translation_bn": "অতএব আমি সাক্ষ্য হিসেবে উপস্থাপন করছি ডেটা-রিভার্স নোড-ক্লাস্টারসমূহের (فَلَا أُقْسِمُ بِالْخُنَّسِ)।",
       "conventional_bn": "অতএব আমি শপথ করছি পশ্চাদগামী (নক্ষত্র) সমূহের।",
       "meta_bn": "The Sworn Oath by Retrograde Stellar Nodes ও পশ্চাদপসরণকারী নক্ষত্রমালার শপথ",
       "metadata": {
         "theme": "The Sworn Oath by Retrograde Stellar Nodes ও পশ্চাদপসরণকারী নক্ষত্রমালার শপথ",
         "lexicon_modern_notes": "Ayah 15 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "না, (তোমাদের ধারণা ভুল); আমি কক্ষপথে আবর্তনশীল নক্ষত্রমণ্ডলকে বাস্তব সাক্ষ্য হিসেবে তুলে ধরছি— (فَلَا أُقْسِمُ بِالْخُنَّسِ)",
+        "core_meaning_bn": "না, (তোমাদের ধারণা ভুল); আমি কক্ষপথে আবর্তনশীল নক্ষত্রমণ্ডলকে বাস্তব সাক্ষ্য হিসেবে তুলে ধরছি—",
         "core_meaning_en": "Nay! I cite the evident testimony of the receding planetary bodies—"
       },
-      "modern_translation_en": "Nay! I cite the evident testimony of the receding planetary bodies—",
+      "modern_translation_en": "So I call to witness the retreating stars -",
       "meta_en": "The Sworn Oath by Retrograde Stellar Nodes ও পশ্চাদপসরণকারী নক্ষত্রমালার শপথ",
-      "lexicon_modern_notes": "الْخُنَّسِ: কক্ষপথে চলাচলকারী গ্রহ-নক্ষত্র।"
+      "lexicon_modern_notes": "Ayah 15 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "না, (তোমাদের ধারণা ভুল); আমি কক্ষপথে আবর্তনশীল নক্ষত্রমণ্ডলকে বাস্তব সাক্ষ্য হিসেবে তুলে ধরছি—",
+      "core_meaning_en": "Nay! I cite the evident testimony of the receding planetary bodies—"
     },
     {
       "surah": 81,
@@ -995,19 +1025,21 @@
       ],
       "translation_en": "Those that run [their courses] and disappear -",
       "conventional_en": "Those that run [their courses] and disappear -",
-      "modern_translation_bn": "যা গতিশীল থাকে এবং আবার অদৃশ্য হয়ে যায়, (الْجَوَارِ الْكُنَّسِ)",
+      "modern_translation_bn": "যারা ডেটা-অরবিট স্টেটে থাকে এবং ডেটা-লেটেন্ট (الْجَوَارِ الْكُنَّسِ) স্টেটে যায়।",
       "conventional_bn": "যারা চলাচল করে এবং আত্মগোপন করে।",
       "meta_bn": "The Orbital Movement & Latency Cycle ও চলমান ও আত্মগোপনকারী নভোমণ্ডলীয় বস্তু",
       "metadata": {
         "theme": "The Orbital Movement & Latency Cycle ও চলমান ও আত্মগোপনকারী নভোমণ্ডলীয় বস্তু",
         "lexicon_modern_notes": "Ayah 16 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যা গতিশীল থাকে এবং আবার অদৃশ্য হয়ে যায়, (الْجَوَارِ الْكُنَّسِ)",
+        "core_meaning_bn": "যা গতিশীল থাকে এবং আবার অদৃশ্য হয়ে যায়,",
         "core_meaning_en": "Which sweep through their orbits and disappear from view,"
       },
-      "modern_translation_en": "Which sweep through their orbits and disappear from view,",
+      "modern_translation_en": "Those that run [their courses] and disappear -",
       "meta_en": "The Orbital Movement & Latency Cycle ও চলমান ও আত্মগোপনকারী নভোমণ্ডলীয় বস্তু",
-      "lexicon_modern_notes": "জ্যোতির্বিজ্ঞানের নিখুঁত গতিপ্রকৃতি।"
+      "lexicon_modern_notes": "Ayah 16 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "যা গতিশীল থাকে এবং আবার অদৃশ্য হয়ে যায়,",
+      "core_meaning_en": "Which sweep through their orbits and disappear from view,"
     },
     {
       "surah": 81,
@@ -1058,19 +1090,21 @@
       ],
       "translation_en": "And by the night as it closes in",
       "conventional_en": "And by the night as it closes in",
-      "modern_translation_bn": "এবং রাতের সাক্ষ্য—যখন তা ধীরে ধীরে বিদায় নেয়, (وَاللَّيْلِ إِذَا عَسْعَسَ)",
+      "modern_translation_bn": "আর এবং সাক্ষ্য ডেটা-ডার্ক ফেজের (وَاللَّيْلِ) — যখন তা ডেটা-টার্মিনেট (إِذَا عَسْعَسَ) স্টেটে যায়।",
       "conventional_bn": "আর শপথ রাতের, যখন তা শেষ হয়।",
       "meta_bn": "The Dissolution of the Dark Phase ও রাতের অবসান ও প্রস্থান",
       "metadata": {
         "theme": "The Dissolution of the Dark Phase ও রাতের অবসান ও প্রস্থান",
         "lexicon_modern_notes": "Ayah 17 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং রাতের সাক্ষ্য—যখন তা ধীরে ধীরে বিদায় নেয়, (وَاللَّيْلِ إِذَا عَسْعَسَ)",
+        "core_meaning_bn": "এবং রাতের সাক্ষ্য—যখন তা ধীরে ধীরে বিদায় নেয়,",
         "core_meaning_en": "And witness the night as it recedes and dissipates,"
       },
-      "modern_translation_en": "And witness the night as it recedes and dissipates,",
+      "modern_translation_en": "And by the night as it closes in",
       "meta_en": "The Dissolution of the Dark Phase ও রাতের অবসান ও প্রস্থান",
-      "lexicon_modern_notes": "عَسْعَسَ: রাতের অবসান।"
+      "lexicon_modern_notes": "Ayah 17 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং রাতের সাক্ষ্য—যখন তা ধীরে ধীরে বিদায় নেয়,",
+      "core_meaning_en": "And witness the night as it recedes and dissipates,"
     },
     {
       "surah": 81,
@@ -1121,19 +1155,21 @@
       ],
       "translation_en": "And by the dawn when it breathes",
       "conventional_en": "And by the dawn when it breathes",
-      "modern_translation_bn": "এবং প্রত্যুষের সাক্ষ্য—যখন তা নবজীবনের নিঃশ্বাস ছড়ায়; (وَالصُّبْحِ إِذَا تَنَفَّسَ)",
+      "modern_translation_bn": "আর এবং সাক্ষ্য ডেটা-রাইজ ভেক্টরের (وَالصُّبْحِ) — যখন তা ডেটা-অ্যাক্টিভেশন (إِذَا تَنَفَّسَ) স্টেটে যায়।",
       "conventional_bn": "আর শপথ ভোরের, যখন তা প্রকাশ পায়।",
       "meta_bn": "The Respiration of Dawn & Photon Activation ও প্রত্যুষের উন্মেষ ও আলোক নিঃসরণ",
       "metadata": {
         "theme": "The Respiration of Dawn & Photon Activation ও প্রত্যুষের উন্মেষ ও আলোক নিঃসরণ",
         "lexicon_modern_notes": "Ayah 18 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং প্রত্যুষের সাক্ষ্য—যখন তা নবজীবনের নিঃশ্বাস ছড়ায়; (وَالصُّبْحِ إِذَا تَنَفَّسَ)",
+        "core_meaning_bn": "এবং প্রত্যুষের সাক্ষ্য—যখন তা নবজীবনের নিঃশ্বাস ছড়ায়;",
         "core_meaning_en": "And witness the morning as it breathes fresh light and life;"
       },
-      "modern_translation_en": "And witness the morning as it breathes fresh light and life;",
+      "modern_translation_en": "And by the dawn when it breathes",
       "meta_en": "The Respiration of Dawn & Photon Activation ও প্রত্যুষের উন্মেষ ও আলোক নিঃসরণ",
-      "lexicon_modern_notes": "তানাফফাস: সকালের অক্সিজেন ও প্রাণের স্পন্দন।"
+      "lexicon_modern_notes": "Ayah 18 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং প্রত্যুষের সাক্ষ্য—যখন তা নবজীবনের নিঃশ্বাস ছড়ায়;",
+      "core_meaning_en": "And witness the morning as it breathes fresh light and life;"
     },
     {
       "surah": 81,
@@ -1194,19 +1230,21 @@
       ],
       "translation_en": "[That] indeed, the Qur'an is a word [conveyed by] a noble messenger",
       "conventional_en": "[That] indeed, the Qur'an is a word [conveyed by] a noble messenger",
-      "modern_translation_bn": "নিশ্চয়ই এটি এক সম্মানিত ও মর্যাদাবান বার্তাবাহকের মাধ্যমে পৌঁছানো বাণী, (إِنَّهُ لَقَوْلُ رَسُولٍ كَرِيمٍ)",
+      "modern_translation_bn": "নিশ্চয় এটি একজন সুপ্রীম ডেটা-প্রায়োরিটি ডেটা-ট্রান্সমিট নোডের (إِنَّهُ لَقَوْلُ رَسُولٍ كَرِيمٍ) ডেটা-অথেন্টিকেটেড ট্রান্সমিশন।",
       "conventional_bn": "নিশ্চয় এটি একজন সম্মানিত রাসূলের (আনা) বাণী।",
       "meta_bn": "The Noble Angelic Transmission Pipeline ও সম্মানিত রাসূলের (জিবরাঈল) মাধ্যমে ওহী প্রেরণ",
       "metadata": {
         "theme": "The Noble Angelic Transmission Pipeline ও সম্মানিত রাসূলের (জিবরাঈল) মাধ্যমে ওহী প্রেরণ",
         "lexicon_modern_notes": "Ayah 19 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "নিশ্চয়ই এটি এক সম্মানিত ও মর্যাদাবান বার্তাবাহকের মাধ্যমে পৌঁছানো বাণী, (إِنَّهُ لَقَوْلُ رَسُولٍ كَرِيمٍ)",
+        "core_meaning_bn": "নিশ্চয়ই এটি এক সম্মানিত ও মর্যাদাবান বার্তাবাহকের মাধ্যমে পৌঁছানো বাণী,",
         "core_meaning_en": "Indeed, this is the speech conveyed by an honorable and noble messenger,"
       },
-      "modern_translation_en": "Indeed, this is the speech conveyed by an honorable and noble messenger,",
+      "modern_translation_en": "[That] indeed, the Qur'an is a word [conveyed by] a noble messenger",
       "meta_en": "The Noble Angelic Transmission Pipeline ও সম্মানিত রাসূলের (জিবরাঈল) মাধ্যমে ওহী প্রেরণ",
-      "lexicon_modern_notes": "ওহীর বিশুদ্ধতা।"
+      "lexicon_modern_notes": "Ayah 19 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "নিশ্চয়ই এটি এক সম্মানিত ও মর্যাদাবান বার্তাবাহকের মাধ্যমে পৌঁছানো বাণী,",
+      "core_meaning_en": "Indeed, this is the speech conveyed by an honorable and noble messenger,"
     },
     {
       "surah": 81,
@@ -1287,19 +1325,21 @@
       ],
       "translation_en": "[Who is] possessed of power and with the Owner of the Throne, secure [in position],",
       "conventional_en": "[Who is] possessed of power and with the Owner of the Throne, secure [in position],",
-      "modern_translation_bn": "যিনি মহা শক্তিশালী এবং আরশের মহান অধিপতির নিকট অত্যন্ত মর্যাদাসম্পন্ন, (ذِي قُوَّةٍ عِندَ ذِي الْعَرْشِ مَكِينٍ)",
+      "modern_translation_bn": "যিনি আল্ট্রা-হাই ডেটা-ফোর্স স্টেটে (ذِي قُوَّةٍ) — সুপ্রীম ক্লাউড কন্ট্রোল শেলের (عِندَ ذِي الْعَرْشِ) নিকটে সুপ্রীম ডেটা-প্রক্সিমিটি স্টেটে (مَكِينٍ)।",
       "conventional_bn": "যিনি শক্তিশালী, আরশের অধিপতির কাছে মর্যাদাবান।",
       "meta_bn": "The High Energy & Proximity to the Throne ও মহাশক্তি ও আরশের রবের নিকট সুউচ্চ মর্যাদা",
       "metadata": {
         "theme": "The High Energy & Proximity to the Throne ও মহাশক্তি ও আরশের রবের নিকট সুউচ্চ মর্যাদা",
         "lexicon_modern_notes": "Ayah 20 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যিনি মহা শক্তিশালী এবং আরশের মহান অধিপতির নিকট অত্যন্ত মর্যাদাসম্পন্ন, (ذِي قُوَّةٍ عِندَ ذِي الْعَرْشِ مَكِينٍ)",
+        "core_meaning_bn": "যিনি মহা শক্তিশালী এবং আরশের মহান অধিপতির নিকট অত্যন্ত মর্যাদাসম্পন্ন,",
         "core_meaning_en": "Endowed with immense power, securely established in standing before the Lord of the Throne,"
       },
-      "modern_translation_en": "Endowed with immense power, securely established in standing before the Lord of the Throne,",
+      "modern_translation_en": "[Who is] possessed of power and with the Owner of the Throne, secure [in position],",
       "meta_en": "The High Energy & Proximity to the Throne ও মহাশক্তি ও আরশের রবের নিকট সুউচ্চ মর্যাদা",
-      "lexicon_modern_notes": "ক্ষমতা।"
+      "lexicon_modern_notes": "Ayah 20 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "যিনি মহা শক্তিশালী এবং আরশের মহান অধিপতির নিকট অত্যন্ত মর্যাদাসম্পন্ন,",
+      "core_meaning_en": "Endowed with immense power, securely established in standing before the Lord of the Throne,"
     },
     {
       "surah": 81,
@@ -1350,19 +1390,21 @@
       ],
       "translation_en": "Obeyed there [in the heavens] and trustworthy.",
       "conventional_en": "Obeyed there [in the heavens] and trustworthy.",
-      "modern_translation_bn": "যিনি সেখানে মান্যবর এবং পরম বিশ্বস্ত। (مُّطَاعٍ ثَمَّ أَمِينٍ)",
+      "modern_translation_bn": "যার সিস্টেম কম্যান্ড এক্সিকিউটেড (مُّطَاعٍ) এবং ডেটা-অথেনটিকেটেড (ثَمَّ أَمِينٍ)।",
       "conventional_bn": "যার কথা মান্য করা হয়, আমানতদার।",
       "meta_bn": "The Celestial Authority & Trustworthiness ও ঊর্ধ্বজগতে মান্যবর ও বিশ্বস্ত সত্তা",
       "metadata": {
         "theme": "The Celestial Authority & Trustworthiness ও ঊর্ধ্বজগতে মান্যবর ও বিশ্বস্ত সত্তা",
         "lexicon_modern_notes": "Ayah 21 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "যিনি সেখানে মান্যবর এবং পরম বিশ্বস্ত। (مُّطَاعٍ ثَمَّ أَمِينٍ)",
+        "core_meaning_bn": "যিনি সেখানে মান্যবর এবং পরম বিশ্বস্ত।",
         "core_meaning_en": "Obeyed therein and entirely trustworthy."
       },
-      "modern_translation_en": "Obeyed therein and entirely trustworthy.",
+      "modern_translation_en": "Obeyed there [in the heavens] and trustworthy.",
       "meta_en": "The Celestial Authority & Trustworthiness ও ঊর্ধ্বজগতে মান্যবর ও বিশ্বস্ত সত্তা",
-      "lexicon_modern_notes": "আমানতদারী।"
+      "lexicon_modern_notes": "Ayah 21 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "যিনি সেখানে মান্যবর এবং পরম বিশ্বস্ত।",
+      "core_meaning_en": "Obeyed therein and entirely trustworthy."
     },
     {
       "surah": 81,
@@ -1413,19 +1455,21 @@
       ],
       "translation_en": "And your companion is not [at all] mad.",
       "conventional_en": "And your companion is not [at all] mad.",
-      "modern_translation_bn": "আর তোমাদের এই সঙ্গী কোনো উন্মাদ বা ভারসাম্যহীন ব্যক্তি নন; (وَمَا صَاحِبُكُم بِمَجْنُونٍ)",
+      "modern_translation_bn": "আর তোমাদের পেয়ার ডেটা-নোড ডেটা-করাপ্টেড আউটপুট জেনারেটর (وَمَا صَاحِبُكُم بِمَجْنُونٍ) নন।",
       "conventional_bn": "আর তোমাদের সঙ্গী পাগল নন।",
       "meta_bn": "The Mental Coherence & Sanity of the Prophet ও রাসূল (সা.)-এর পবিত্র বিবেক ও সুস্থতা",
       "metadata": {
         "theme": "The Mental Coherence & Sanity of the Prophet ও রাসূল (সা.)-এর পবিত্র বিবেক ও সুস্থতা",
         "lexicon_modern_notes": "Ayah 22 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "আর তোমাদের এই সঙ্গী কোনো উন্মাদ বা ভারসাম্যহীন ব্যক্তি নন; (وَمَا صَاحِبُكُم بِمَجْنُونٍ)",
+        "core_meaning_bn": "আর তোমাদের এই সঙ্গী কোনো উন্মাদ বা ভারসাম্যহীন ব্যক্তি নন;",
         "core_meaning_en": "And your companion (Muhammad) is not mad or mentally unhinged;"
       },
-      "modern_translation_en": "And your companion (Muhammad) is not mad or mentally unhinged;",
+      "modern_translation_en": "And your companion is not [at all] mad.",
       "meta_en": "The Mental Coherence & Sanity of the Prophet ও রাসূল (সা.)-এর পবিত্র বিবেক ও সুস্থতা",
-      "lexicon_modern_notes": "বুদ্ধিবৃত্তিক সুস্থতা।"
+      "lexicon_modern_notes": "Ayah 22 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "আর তোমাদের এই সঙ্গী কোনো উন্মাদ বা ভারসাম্যহীন ব্যক্তি নন;",
+      "core_meaning_en": "And your companion (Muhammad) is not mad or mentally unhinged;"
     },
     {
       "surah": 81,
@@ -1486,19 +1530,21 @@
       ],
       "translation_en": "And he has already seen Gabriel in the clear horizon.",
       "conventional_en": "And he has already seen Gabriel in the clear horizon.",
-      "modern_translation_bn": "তিনি তো সেই স্পষ্ট দিগন্তে সত্যের রূপ প্রত্যক্ষ করেছেন, (وَلَقَدْ رَآهُ بِالْأُفُقِ الْمُبِينِ)",
+      "modern_translation_bn": "আর তিনি তাকে ডেটা-ক্লিয়ার বাউন্ডারি স্টেটে (وَلَقَدْ رَآهُ بِالْأُفُقِ الْمُبِينِ) ভিজুয়াল-ইনপুট প্রসেস করেছিলেন।",
       "conventional_bn": "আর তিনি তাকে স্পষ্ট দিগন্তে দেখেছেন।",
       "meta_bn": "The Clear Horizon Visual Processing ও সুস্পষ্ট দিগন্তে চাক্ষুষ দর্শন",
       "metadata": {
         "theme": "The Clear Horizon Visual Processing ও সুস্পষ্ট দিগন্তে চাক্ষুষ দর্শন",
         "lexicon_modern_notes": "Ayah 23 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তিনি তো সেই স্পষ্ট দিগন্তে সত্যের রূপ প্রত্যক্ষ করেছেন, (وَلَقَدْ رَآهُ بِالْأُفُقِ الْمُبِينِ)",
+        "core_meaning_bn": "তিনি তো সেই স্পষ্ট দিগন্তে সত্যের রূপ প্রত্যক্ষ করেছেন,",
         "core_meaning_en": "And he certainly saw the reality upon the clear horizon,"
       },
-      "modern_translation_en": "And he certainly saw the reality upon the clear horizon,",
+      "modern_translation_en": "And he has already seen Gabriel in the clear horizon.",
       "meta_en": "The Clear Horizon Visual Processing ও সুস্পষ্ট দিগন্তে চাক্ষুষ দর্শন",
-      "lexicon_modern_notes": "চাক্ষুষ ওহীর স্পষ্টতা।"
+      "lexicon_modern_notes": "Ayah 23 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "তিনি তো সেই স্পষ্ট দিগন্তে সত্যের রূপ প্রত্যক্ষ করেছেন,",
+      "core_meaning_en": "And he certainly saw the reality upon the clear horizon,"
     },
     {
       "surah": 81,
@@ -1569,19 +1615,21 @@
       ],
       "translation_en": "And Muhammad is not a withholder of [knowledge of] the unseen.",
       "conventional_en": "And Muhammad is not a withholder of [knowledge of] the unseen.",
-      "modern_translation_bn": "এবং তিনি এই অদৃশ্যের জ্ঞান পৌঁছে দেওয়ার ব্যাপারে কোনো কৃপণতা বা সংকীর্ণতা পোষণ করেন না। (وَمَا هُوَ عَلَى الْغَيْبِ بِضَنِينٍ)",
+      "modern_translation_bn": "আর তিনি অদৃশ্য কোয়ান্টাম ডাইমেনশনের ডেটা-অ্যাক্সেসে ডেটা-হোর্ডিং (وَمَا هُوَ عَلَى الْغَيْبِ بِضَنِينٍ) করেন না।",
       "conventional_bn": "আর তিনি অদৃশ্যের বিষয়ে কৃপণ নন।",
       "meta_bn": "The Flawless Transmission without Data Hoarding ও গায়েবী জ্ঞানের পূর্ণ প্রচার ও কার্পণ্যহীনতা",
       "metadata": {
         "theme": "The Flawless Transmission without Data Hoarding ও গায়েবী জ্ঞানের পূর্ণ প্রচার ও কার্পণ্যহীনতা",
         "lexicon_modern_notes": "Ayah 24 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এবং তিনি এই অদৃশ্যের জ্ঞান পৌঁছে দেওয়ার ব্যাপারে কোনো কৃপণতা বা সংকীর্ণতা পোষণ করেন না। (وَمَا هُوَ عَلَى الْغَيْبِ بِضَنِينٍ)",
+        "core_meaning_bn": "এবং তিনি এই অদৃশ্যের জ্ঞান পৌঁছে দেওয়ার ব্যাপারে কোনো কৃপণতা বা সংকীর্ণতা পোষণ করেন না।",
         "core_meaning_en": "Nor is he withholding or stingy regarding the knowledge of the unseen."
       },
-      "modern_translation_en": "Nor is he withholding or stingy regarding the knowledge of the unseen.",
+      "modern_translation_en": "And Muhammad is not a withholder of [knowledge of] the unseen.",
       "meta_en": "The Flawless Transmission without Data Hoarding ও গায়েবী জ্ঞানের পূর্ণ প্রচার ও কার্পণ্যহীনতা",
-      "lexicon_modern_notes": "পূর্ণ সত্যের উন্মুক্ত বিস্তার।"
+      "lexicon_modern_notes": "Ayah 24 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এবং তিনি এই অদৃশ্যের জ্ঞান পৌঁছে দেওয়ার ব্যাপারে কোনো কৃপণতা বা সংকীর্ণতা পোষণ করেন না।",
+      "core_meaning_en": "Nor is he withholding or stingy regarding the knowledge of the unseen."
     },
     {
       "surah": 81,
@@ -1652,19 +1700,21 @@
       ],
       "translation_en": "And the Qur'an is not the word of a devil, expelled [from the heavens].",
       "conventional_en": "And the Qur'an is not the word of a devil, expelled [from the heavens].",
-      "modern_translation_bn": "আর এটি কোনো বিতাড়িত ও বিভ্রান্তিকর শয়তানের প্রলাপ নয়; (وَمَا هُوَ بِقَوْلِ شَيْطَانٍ رَّجِيمٍ)",
+      "modern_translation_bn": "আর এটি ডেটা-ব্লকড ডিসট্যান্ট ভাইরাসবাহকের (وَمَا هُوَ بِقَوْلِ شَيْطَانٍ رَّجِيمٍ) ট্রান্সমিশন নয়।",
       "conventional_bn": "আর এটি বিতাড়িত শয়তানের বাণী নয়।",
       "meta_bn": "The Immunity from Malicious Malware & Satanic Interference ও বিতাড়িত শয়তানের হস্তক্ষেপমুক্ত বাণী",
       "metadata": {
         "theme": "The Immunity from Malicious Malware & Satanic Interference ও বিতাড়িত শয়তানের হস্তক্ষেপমুক্ত বাণী",
         "lexicon_modern_notes": "Ayah 25 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "আর এটি কোনো বিতাড়িত ও বিভ্রান্তিকর শয়তানের প্রলাপ নয়; (وَمَا هُوَ بِقَوْلِ شَيْطَانٍ رَّجِيمٍ)",
+        "core_meaning_bn": "আর এটি কোনো বিতাড়িত ও বিভ্রান্তিকর শয়তানের প্রলাপ নয়;",
         "core_meaning_en": "And it is not the utterance of an outcast, misleading devil;"
       },
-      "modern_translation_en": "And it is not the utterance of an outcast, misleading devil;",
+      "modern_translation_en": "And the Qur'an is not the word of a devil, expelled [from the heavens].",
       "meta_en": "The Immunity from Malicious Malware & Satanic Interference ও বিতাড়িত শয়তানের হস্তক্ষেপমুক্ত বাণী",
-      "lexicon_modern_notes": "পবিত্র ওহী।"
+      "lexicon_modern_notes": "Ayah 25 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "আর এটি কোনো বিতাড়িত ও বিভ্রান্তিকর শয়তানের প্রলাপ নয়;",
+      "core_meaning_en": "And it is not the utterance of an outcast, misleading devil;"
     },
     {
       "surah": 81,
@@ -1705,19 +1755,21 @@
       ],
       "translation_en": "So where are you going?",
       "conventional_en": "So where are you going?",
-      "modern_translation_bn": "অতএব সত্য ছেড়ে তোমরা কোন ভুল পথে চলে যাচ্ছ? (فَأَيْنَ تَذْهَبُونَ)",
+      "modern_translation_bn": "অতএব তোমরা কোন ডেটা-পাথে ডেটা-পাথ ডিভিয়েট (فَأَيْنَ تَذْهَبُونَ) করছ?",
       "conventional_bn": "অতএব তোমরা কোথায় যাচ্ছ?",
       "meta_bn": "The Existential Query on Trajectory Deviation ও পথভ্রষ্টতার দিকে অন্ধযাত্রার প্রতিবাদ",
       "metadata": {
         "theme": "The Existential Query on Trajectory Deviation ও পথভ্রষ্টতার দিকে অন্ধযাত্রার প্রতিবাদ",
         "lexicon_modern_notes": "Ayah 26 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "অতএব সত্য ছেড়ে তোমরা কোন ভুল পথে চলে যাচ্ছ? (فَأَيْنَ تَذْهَبُونَ)",
+        "core_meaning_bn": "অতএব সত্য ছেড়ে তোমরা কোন ভুল পথে চলে যাচ্ছ?",
         "core_meaning_en": "Whither then are you wandering away from reality?"
       },
-      "modern_translation_en": "Whither then are you wandering away from reality?",
+      "modern_translation_en": "So where are you going?",
       "meta_en": "The Existential Query on Trajectory Deviation ও পথভ্রষ্টতার দিকে অন্ধযাত্রার প্রতিবাদ",
-      "lexicon_modern_notes": "বিবেকের কাছে তীব্র প্রশ্ন।"
+      "lexicon_modern_notes": "Ayah 26 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "অতএব সত্য ছেড়ে তোমরা কোন ভুল পথে চলে যাচ্ছ?",
+      "core_meaning_en": "Whither then are you wandering away from reality?"
     },
     {
       "surah": 81,
@@ -1788,19 +1840,21 @@
       ],
       "translation_en": "It is not except a reminder to the worlds",
       "conventional_en": "It is not except a reminder to the worlds",
-      "modern_translation_bn": "এটি সমগ্র মানবজাতির জন্য এক সার্বজনীন উপদেশ ও জীবনস্মারক ছাড়া আর কিছুই নয়— (إِنْ هُوَ إِلَّا ذِكْرٌ لِّلْعَالَمِينَ)",
+      "modern_translation_bn": "এটা তো সমগ্র মহাজাগতিক আর্কিটেকচারের জন্য একটি ডেটা-রিমাইন্ডার সিগন্যাল (إِنْ هُوَ إِلَّا ذِكْرٌ لِّلْعَالَمِينَ) মাত্র।",
       "conventional_bn": "এটা তো বিশ্বজগতের জন্য একটি উপদেশ মাত্র।",
       "meta_bn": "The Universal Cosmic Reminder ও নিখিল বিশ্বের জন্য মহা উপদেশ",
       "metadata": {
         "theme": "The Universal Cosmic Reminder ও নিখিল বিশ্বের জন্য মহা উপদেশ",
         "lexicon_modern_notes": "Ayah 27 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "এটি সমগ্র মানবজাতির জন্য এক সার্বজনীন উপদেশ ও জীবনস্মারক ছাড়া আর কিছুই নয়— (إِنْ هُوَ إِلَّا ذِكْرٌ لِّلْعَالَمِينَ)",
+        "core_meaning_bn": "এটি সমগ্র মানবজাতির জন্য এক সার্বজনীন উপদেশ ও জীবনস্মারক ছাড়া আর কিছুই নয়—",
         "core_meaning_en": "It is nothing less than a universal reminder for all humanity—"
       },
-      "modern_translation_en": "It is nothing less than a universal reminder for all humanity—",
+      "modern_translation_en": "It is not except a reminder to the worlds",
       "meta_en": "The Universal Cosmic Reminder ও নিখিল বিশ্বের জন্য মহা উপদেশ",
-      "lexicon_modern_notes": "সার্বজনীন বার্তা।"
+      "lexicon_modern_notes": "Ayah 27 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "এটি সমগ্র মানবজাতির জন্য এক সার্বজনীন উপদেশ ও জীবনস্মারক ছাড়া আর কিছুই নয়—",
+      "core_meaning_en": "It is nothing less than a universal reminder for all humanity—"
     },
     {
       "surah": 81,
@@ -1871,19 +1925,21 @@
       ],
       "translation_en": "For whoever wills among you to take a right course.",
       "conventional_en": "For whoever wills among you to take a right course.",
-      "modern_translation_bn": "তোমাদের মধ্যে যে ব্যক্তি সত্যের সহজ-সরল ও অবিচল পথে চলতে ইচ্ছা পোষণ করে—তার জন্য; (لِمَن شَاءَ مِنكُمْ أَن يَسْتَقِيمَ)",
+      "modern_translation_bn": "তোমাদের মধ্যে যারা অপটিমাইজড পাথওয়েতে ডেটা-নেভিগেশন (لِمَن شَاءَ مِنكُمْ أَن يَسْتَقِيمَ) করতে চায়, তাদের জন্য।",
       "conventional_bn": "তোমাদের মধ্যে যারা সোজা পথে চলতে চায়, তাদের জন্য।",
       "meta_bn": "The Voluntary Alignment with the Optimized Pathway ও সরল পথে চলতে আগ্রহীদের সুযোগ",
       "metadata": {
         "theme": "The Voluntary Alignment with the Optimized Pathway ও সরল পথে চলতে আগ্রহীদের সুযোগ",
         "lexicon_modern_notes": "Ayah 28 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "তোমাদের মধ্যে যে ব্যক্তি সত্যের সহজ-সরল ও অবিচল পথে চলতে ইচ্ছা পোষণ করে—তার জন্য; (لِمَن شَاءَ مِنكُمْ أَن يَسْتَقِيمَ)",
+        "core_meaning_bn": "তোমাদের মধ্যে যে ব্যক্তি সত্যের সহজ-সরল ও অবিচল পথে চলতে ইচ্ছা পোষণ করে—তার জন্য;",
         "core_meaning_en": "For whoever among you wills to follow the invariant, upright path (Mustaqeem);"
       },
-      "modern_translation_en": "For whoever among you wills to follow the invariant, upright path (Mustaqeem);",
+      "modern_translation_en": "For whoever wills among you to take a right course.",
       "meta_en": "The Voluntary Alignment with the Optimized Pathway ও সরল পথে চলতে আগ্রহীদের সুযোগ",
-      "lexicon_modern_notes": "ইচ্ছার স্বাধীনতা।"
+      "lexicon_modern_notes": "Ayah 28 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "তোমাদের মধ্যে যে ব্যক্তি সত্যের সহজ-সরল ও অবিচল পথে চলতে ইচ্ছা পোষণ করে—তার জন্য;",
+      "core_meaning_en": "For whoever among you wills to follow the invariant, upright path (Mustaqeem);"
     },
     {
       "surah": 81,
@@ -1984,19 +2040,21 @@
       ],
       "translation_en": "And you do not will except that Allah wills - Lord of the worlds.",
       "conventional_en": "And you do not will except that Allah wills - Lord of the worlds.",
-      "modern_translation_bn": "আর তোমাদের এই ইতিবাচক ইচ্ছা তখনই সার্থক হয়, যখন তা সমগ্র মহাবিশ্বের প্রতিপালক আল্লাহর সামগ্রিক ইচ্ছার সাথে সামঞ্জস্যপূর্ণ হয়। (وَمَا تَشَاءُونَ إِلَّا أَن يَشَاءَ اللَّهُ رَبُّ الْعَالَمِينَ)",
+      "modern_translation_bn": "আর তোমরা ডেটা-প্রেফারেন্স (وَمَا تَشَاءُونَ) করতে পারো না, সিভায় (إِلَّا) — যদি সমগ্র মহাজাগতিক আর্কিটেকচারের রুট ডিরেক্টরি (اللَّهُ رَبُّ الْعَالَمِينَ) ডেটা-প্রেফারেন্স (أَن يَشَاءَ) করেন।",
       "conventional_bn": "আর তোমরা ইচ্ছা করতে পারো না, যদি না বিশ্বজগতের রব আল্লাহ ইচ্ছা করেন।",
       "meta_bn": "The Sovereign Will of the Cosmic Root Directory ও মহান রবের ইচ্ছার অধীনে মানব ইচ্ছা",
       "metadata": {
         "theme": "The Sovereign Will of the Cosmic Root Directory ও মহান রবের ইচ্ছার অধীনে মানব ইচ্ছা",
         "lexicon_modern_notes": "Ayah 29 Lexicon: Invariant root-level scientific and linguistic precision.",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
-        "core_meaning_bn": "আর তোমাদের এই ইতিবাচক ইচ্ছা তখনই সার্থক হয়, যখন তা সমগ্র মহাবিশ্বের প্রতিপালক আল্লাহর সামগ্রিক ইচ্ছার সাথে সামঞ্জস্যপূর্ণ হয়। (وَمَا تَشَاءُونَ إِلَّا أَن يَشَاءَ اللَّهُ رَبُّ الْعَالَمِينَ)",
+        "core_meaning_bn": "আর তোমাদের এই ইতিবাচক ইচ্ছা তখনই সার্থক হয়, যখন তা সমগ্র মহাবিশ্বের প্রতিপালক আল্লাহর সামগ্রিক ইচ্ছার সাথে সামঞ্জস্যপূর্ণ হয়।",
         "core_meaning_en": "And you cannot will except that it aligns with the cosmic will of Allah, the Sustainer of all existence."
       },
-      "modern_translation_en": "And you cannot will except that it aligns with the cosmic will of Allah, the Sustainer of all existence.",
+      "modern_translation_en": "And you do not will except that Allah wills - Lord of the worlds.",
       "meta_en": "The Sovereign Will of the Cosmic Root Directory ও মহান রবের ইচ্ছার অধীনে মানব ইচ্ছা",
-      "lexicon_modern_notes": "ঐশী নিয়মের অধীনে মানব ইচ্ছার সমন্বয়।"
+      "lexicon_modern_notes": "Ayah 29 Lexicon: Invariant root-level scientific and linguistic precision.",
+      "core_meaning_bn": "আর তোমাদের এই ইতিবাচক ইচ্ছা তখনই সার্থক হয়, যখন তা সমগ্র মহাবিশ্বের প্রতিপালক আল্লাহর সামগ্রিক ইচ্ছার সাথে সামঞ্জস্যপূর্ণ হয়।",
+      "core_meaning_en": "And you cannot will except that it aligns with the cosmic will of Allah, the Sustainer of all existence."
     }
   ]
 }
