@@ -29,13 +29,18 @@
         }
       ],
       "translation_en": "The Most Merciful",
-      "conventional_en": "The Most Merciful",
+      "conventional_en": "The Most Merciful.",
       "modern_translation_bn": "পরম কম্পাসনেট সোর্স আর্কিটেক্ট (الرَّحْمَٰنُ)।",
       "conventional_bn": "পরম দয়াময় (আল্লাহ)।",
       "meta_bn": "The Supreme Source Architect of Universal Grace ও পরম করুণাময়ের পরিচয়",
       "metadata": {
-        "theme": "The Supreme Source Architect of Universal Grace ও পরম করুণাময়ের পরিচয়"
-      }
+        "theme": "The Supreme Source Architect of Universal Grace ও পরম করুণাময়ের পরিচয়",
+        "consistency_4_82": "The entire universal infrastructure originates from a unified unconditioned Grace, eliminating internal conflicts.",
+        "lexicon_modern_notes": "الرَّحْمَٰنُ — Source Architect of Unbounded Grace: The all-encompassing origin of all cosmic energy, matter, and algorithmic constants."
+      },
+      "modern_translation_en": "The Supreme Source Architect of Universal Grace (Ar-Rahman).",
+      "meta_en": "The Supreme Source Architect of Universal Grace ও পরম করুণাময়ের পরিচয়",
+      "lexicon_modern_notes": "الرَّحْمَٰنُ — Source Architect of Unbounded Grace: The all-encompassing origin of all cosmic energy, matter, and algorithmic constants."
     },
     {
       "surah": 55,
@@ -75,13 +80,18 @@
         }
       ],
       "translation_en": "Taught the Qur'an,",
-      "conventional_en": "Taught the Qur'an,",
+      "conventional_en": "Taught the Qur'an.",
       "modern_translation_bn": "তিনিই ডেটা-ট্রান্সমিট করেছেন ইউনিভার্সাল মাস্টার কোড (عَلَّمَ الْقُرْآنَ)।",
       "conventional_bn": "তিনিই শিক্ষা দিয়েছেন কুরআন।",
       "meta_bn": "The Transmission of the Universal Master Code ও মহাগ্রন্থ কুরআনের শিক্ষা",
       "metadata": {
-        "theme": "The Transmission of the Universal Master Code ও মহাগ্রন্থ কুরআনের শিক্ষা"
-      }
+        "theme": "The Transmission of the Universal Master Code ও মহাগ্রন্থ কুরআনের শিক্ষা",
+        "consistency_4_82": "Governing software (Quran) is authored before the operating hardware (man), maintaining causal consistency.",
+        "lexicon_modern_notes": "عَلَّمَ الْقُرْآنَ — Master Code Downlink: Divine foundational data-structures established prior to human execution."
+      },
+      "modern_translation_en": "He has transmitted the Universal Master Code (the Qur'an).",
+      "meta_en": "The Transmission of the Universal Master Code ও মহাগ্রন্থ কুরআনের শিক্ষা",
+      "lexicon_modern_notes": "عَلَّمَ الْقُرْآنَ — Master Code Downlink: Divine foundational data-structures established prior to human execution."
     },
     {
       "surah": 55,
@@ -121,13 +131,18 @@
         }
       ],
       "translation_en": "Created man,",
-      "conventional_en": "Created man,",
+      "conventional_en": "Created man.",
       "modern_translation_bn": "তিনি সিস্টেমিক আর্কিটেক্ট করেছেন কনশাস কার্বন-বেসড হিউম্যান নোড (خَلَقَ الْإِنسَانَ)।",
       "conventional_bn": "তিনি সৃষ্টি করেছেন মানুষ।",
       "meta_bn": "The Architecture of Conscious Human Interface ও মানবজাতির সৃষ্টি",
       "metadata": {
-        "theme": "The Architecture of Conscious Human Interface ও মানবজাতির সৃষ্টি"
-      }
+        "theme": "The Architecture of Conscious Human Interface ও মানবজাতির সৃষ্টি",
+        "consistency_4_82": "Human creation follows the master code, designed specifically to decode cosmic and moral directives.",
+        "lexicon_modern_notes": "خَلَقَ الْإِنسَانَ — Conscious Biological Interface: Materialization of baryonic biological hardware endowed with reflective consciousness."
+      },
+      "modern_translation_en": "He architected the conscious carbon-based human node.",
+      "meta_en": "The Architecture of Conscious Human Interface ও মানবজাতির সৃষ্টি",
+      "lexicon_modern_notes": "خَلَقَ الْإِنسَانَ — Conscious Biological Interface: Materialization of baryonic biological hardware endowed with reflective consciousness."
     },
     {
       "surah": 55,
@@ -172,8 +187,13 @@
       "conventional_bn": "তিনি তাকে শিখিয়েছেন মনের ভাব প্রকাশ করতে।",
       "meta_bn": "The Endowment of Articulate Communication Logic ও বাকশক্তি ও ভাব প্রকাশের ক্ষমতা",
       "metadata": {
-        "theme": "The Endowment of Articulate Communication Logic ও বাকশক্তি ও ভাব প্রকাশের ক্ষমতা"
-      }
+        "theme": "The Endowment of Articulate Communication Logic ও বাকশক্তি ও ভাব প্রকাশের ক্ষমতা",
+        "consistency_4_82": "Linguistic and conceptual capabilities empower the human node to process, audit, and communicate empirical facts.",
+        "lexicon_modern_notes": "الْبَيَانَ — Articulate Expression Logic: The neural and symbolic faculty of syntax, abstract reasoning, and speech transmission."
+      },
+      "modern_translation_en": "He taught him articulate communication and logical expression protocols.",
+      "meta_en": "The Endowment of Articulate Communication Logic ও বাকশক্তি ও ভাব প্রকাশের ক্ষমতা",
+      "lexicon_modern_notes": "الْبَيَانَ — Articulate Expression Logic: The neural and symbolic faculty of syntax, abstract reasoning, and speech transmission."
     },
     {
       "surah": 55,
@@ -223,13 +243,18 @@
         }
       ],
       "translation_en": "The sun and the moon [move] by precise calculation,",
-      "conventional_en": "The sun and the moon [move] by precise calculation,",
+      "conventional_en": "The sun and the moon [move] by precise calculation.",
       "modern_translation_bn": "প্লাজমা ফিউশন সোলার কোর ও স্যাটেলাইট লুনার নোড নিখুঁত অরবিটাল অ্যালগরিদম ও টাইম-ক্যালকুলেশনে (الشَّمْسُ وَالْقَمَرُ بِحُسْبَانٍ) পরিচালিত।",
       "conventional_bn": "সূর্য ও চন্দ্র সুনির্দিষ্ট হিসাব অনুযায়ী আবর্তন করে।",
       "meta_bn": "The Precision Computational Celestial Mechanics ও সূর্য-চন্দ্রের সুনির্দিষ্ট কক্ষপথীয় হিসাব",
       "metadata": {
-        "theme": "The Precision Computational Celestial Mechanics ও সূর্য-চন্দ্রের সুনির্দিষ্ট কক্ষপথীয় হিসাব"
-      }
+        "theme": "The Precision Computational Celestial Mechanics ও সূর্য-চন্দ্রের সুনির্দিষ্ট কক্ষপথীয় হিসাব",
+        "consistency_4_82": "Invariable mathematical orbital laws confirm a single mathematical Lawgiver across macro-space.",
+        "lexicon_modern_notes": "بِحُسْبَانٍ — Computational Astrodynamics: Invariant mathematical laws governing celestial trajectories and temporal calibration."
+      },
+      "modern_translation_en": "The solar plasma fusion core and lunar satellite node operate with precise computational orbital algorithms.",
+      "meta_en": "The Precision Computational Celestial Mechanics ও সূর্য-চন্দ্রের সুনির্দিষ্ট কক্ষপথীয় হিসাব",
+      "lexicon_modern_notes": "بِحُسْبَانٍ — Computational Astrodynamics: Invariant mathematical laws governing celestial trajectories and temporal calibration."
     },
     {
       "surah": 55,
@@ -284,8 +309,13 @@
       "conventional_bn": "আর লতাগুল্ম ও বৃক্ষরাজি প্রণতি জ্ঞাপন করে।",
       "meta_bn": "The Cosmic & Biospheric Functional Submission ও তারকা ও বৃক্ষরাজির সার্বক্ষণিক সিজদা",
       "metadata": {
-        "theme": "The Cosmic & Biospheric Functional Submission ও তারকা ও বৃক্ষরাজির সার্বক্ষণিক সিজদা"
-      }
+        "theme": "The Cosmic & Biospheric Functional Submission ও তারকা ও বৃক্ষরাজির সার্বক্ষণিক সিজদা",
+        "consistency_4_82": "Micro-biology and macro-astrophysics share identical obedience to fundamental physical constants.",
+        "lexicon_modern_notes": "يَسْجُدَانِ — Functional Submission: Inherent algorithmic compliance with gravitational, nuclear, and photosynthetic laws."
+      },
+      "modern_translation_en": "And the cosmic stellar nodes and biospheric flora render absolute functional submission to universal law.",
+      "meta_en": "The Cosmic & Biospheric Functional Submission ও তারকা ও বৃক্ষরাজির সার্বক্ষণিক সিজদা",
+      "lexicon_modern_notes": "يَسْجُدَانِ — Functional Submission: Inherent algorithmic compliance with gravitational, nuclear, and photosynthetic laws."
     },
     {
       "surah": 55,
@@ -345,13 +375,18 @@
         }
       ],
       "translation_en": "And the heaven He raised and imposed the balance",
-      "conventional_en": "And the heaven He raised and imposed the balance",
+      "conventional_en": "And the heaven He raised and imposed the balance.",
       "modern_translation_bn": "আর মহাজাগতিক স্তরকে তিনি করেছেন সুউচ্চ এবং স্থাপন করেছেন ইউনিভার্সাল ইকুইলিব্রিয়াম ও ব্যালেন্স মেট্রিক্স (وَالسَّمَاءَ رَفَعَهَا وَوَضَعَ الْمِيزَانَ)।",
       "conventional_bn": "আর আকাশকে তিনি করেছেন সমুন্নত এবং স্থাপন করেছেন ভারসাম্য।",
       "meta_bn": "The Elevation of Cosmos & Universal Balance Matrix ও মহাকাশের উচ্চতা ও মহাজাগতিক ভারসাম্য",
       "metadata": {
-        "theme": "The Elevation of Cosmos & Universal Balance Matrix ও মহাকাশের উচ্চতা ও মহাজাগতিক ভারসাম্য"
-      }
+        "theme": "The Elevation of Cosmos & Universal Balance Matrix ও মহাকাশের উচ্চতা ও মহাজাগতিক ভারসাম্য",
+        "consistency_4_82": "Cosmic stability is grounded in mathematical symmetry and fine-tuned physical equilibrium.",
+        "lexicon_modern_notes": "الْمِيزَانَ — Universal Balance Matrix: Fundamental physical equilibrium (forces, matter-antimatter, entropy regulation)."
+      },
+      "modern_translation_en": "And the cosmic canopy He raised high, and established the universal equilibrium and balance matrix.",
+      "meta_en": "The Elevation of Cosmos & Universal Balance Matrix ও মহাকাশের উচ্চতা ও মহাজাগতিক ভারসাম্য",
+      "lexicon_modern_notes": "الْمِيزَانَ — Universal Balance Matrix: Fundamental physical equilibrium (forces, matter-antimatter, entropy regulation)."
     },
     {
       "surah": 55,
@@ -416,8 +451,13 @@
       "conventional_bn": "যাতে তোমরা ভারসাম্যে সীমালঙ্ঘন না করো।",
       "meta_bn": "The Mandate against Disrupting System Equilibrium ও ভারসাম্যে সীমালঙ্ঘন না করার নির্দেশ",
       "metadata": {
-        "theme": "The Mandate against Disrupting System Equilibrium ও ভারসাম্যে সীমালঙ্ঘন না করার নির্দেশ"
-      }
+        "theme": "The Mandate against Disrupting System Equilibrium ও ভারসাম্যে সীমালঙ্ঘন না করার নির্দেশ",
+        "consistency_4_82": "Human moral ethics directly mirror physical conservation laws: disruption of balance causes system crash.",
+        "lexicon_modern_notes": "أَلَّا تَطْغَوْا — Zero-Asymmetry Imperative: Prohibition against inducing systemic chaos, corruption, or ecological disruption."
+      },
+      "modern_translation_en": "That you may not disrupt the systemic equilibrium or cause asymmetry in the balance.",
+      "meta_en": "The Mandate against Disrupting System Equilibrium ও ভারসাম্যে সীমালঙ্ঘন না করার নির্দেশ",
+      "lexicon_modern_notes": "أَلَّا تَطْغَوْا — Zero-Asymmetry Imperative: Prohibition against inducing systemic chaos, corruption, or ecological disruption."
     },
     {
       "surah": 55,
@@ -502,8 +542,13 @@
       "conventional_bn": "আর ওজনকে প্রতিষ্ঠিত করো ইনসাফের সাথে এবং পাল্লায় কম দিও না।",
       "meta_bn": "The Strict Calibration of Metric Fairness ও পরিমাপে নিখুঁত ন্যায়বিচার প্রতিষ্ঠা",
       "metadata": {
-        "theme": "The Strict Calibration of Metric Fairness ও পরিমাপে নিখুঁত ন্যায়বিচার প্রতিষ্ঠা"
-      }
+        "theme": "The Strict Calibration of Metric Fairness ও পরিমাপে নিখুঁত ন্যায়বিচার প্রতিষ্ঠা",
+        "consistency_4_82": "Micro-transactional fairness is anchored in macro-cosmic equilibrium; cheating violates the cosmic blueprint.",
+        "lexicon_modern_notes": "بِالْقِسْطِ — Metric Calibration: Absolute precision in transactional, legal, and operational metrics."
+      },
+      "modern_translation_en": "And establish the measurement metrics with absolute justice and do not cause data-loss or deficit in the balance.",
+      "meta_en": "The Strict Calibration of Metric Fairness ও পরিমাপে নিখুঁত ন্যায়বিচার প্রতিষ্ঠা",
+      "lexicon_modern_notes": "بِالْقِسْطِ — Metric Calibration: Absolute precision in transactional, legal, and operational metrics."
     },
     {
       "surah": 55,
@@ -558,8 +603,13 @@
       "conventional_bn": "আর তিনি জমিনকে স্থাপন করেছেন জীবজগতের জন্য।",
       "meta_bn": "The Biospheric Configuration for Living Entities ও সমগ্র জীবজগতের জন্য পৃথিবীর বিন্যাস",
       "metadata": {
-        "theme": "The Biospheric Configuration for Living Entities ও সমগ্র জীবজগতের জন্য পৃথিবীর বিন্যাস"
-      }
+        "theme": "The Biospheric Configuration for Living Entities ও সমগ্র জীবজগতের জন্য পৃথিবীর বিন্যাস",
+        "consistency_4_82": "Planetary habitability is an intentionally balanced biome supporting multi-species coexistence.",
+        "lexicon_modern_notes": "لِلْأَنَامِ — Universal Biospheric Domain: Planetary habitat calibrated for the sustenance of all biological diversity."
+      },
+      "modern_translation_en": "And the terrestrial biosphere He deployed and stabilized for all living entities.",
+      "meta_en": "The Biospheric Configuration for Living Entities ও সমগ্র জীবজগতের জন্য পৃথিবীর বিন্যাস",
+      "lexicon_modern_notes": "لِلْأَنَامِ — Universal Biospheric Domain: Planetary habitat calibrated for the sustenance of all biological diversity."
     },
     {
       "surah": 55,
@@ -629,13 +679,18 @@
         }
       ],
       "translation_en": "Therein is fruit and palm trees having sheaths [of dates]",
-      "conventional_en": "Therein is fruit and palm trees having sheaths [of dates]",
+      "conventional_en": "Therein is fruit and palm trees having sheaths [of dates].",
       "modern_translation_bn": "তাতে রয়েছে ডেটা-নিউট্রিশন ফলমূল এবং প্রোটেক্টিভ-শেল আবৃত ডেটা-ট্রি (فِيهَا فَاكِهَةٌ وَالنَّخْلُ ذَاتُ الْأَكْمَامِ)।",
       "conventional_bn": "তাতে রয়েছে ফলমূল এবং আবরণযুক্ত খেজুর গাছ।",
       "meta_bn": "The Encapsulated Botanical Sustenance ও ফলমূল ও আবরণযুক্ত খেজুরের প্রাচুর্য",
       "metadata": {
-        "theme": "The Encapsulated Botanical Sustenance ও ফলমূল ও আবরণযুক্ত খেজুরের প্রাচুর্য"
-      }
+        "theme": "The Encapsulated Botanical Sustenance ও ফলমূল ও আবরণযুক্ত খেজুরের প্রাচুর্য",
+        "consistency_4_82": "Botanical shielding mechanisms guarantee uninterrupted food chains across varied weather cycles.",
+        "lexicon_modern_notes": "ذَاتُ الْأَكْمَامِ — Encapsulated Morphology: Protective biochemical coatings preserving vital seed nutrients."
+      },
+      "modern_translation_en": "Therein is vital nutrition fruit and date-palms with protective spathes and sheaths.",
+      "meta_en": "The Encapsulated Botanical Sustenance ও ফলমূল ও আবরণযুক্ত খেজুরের প্রাচুর্য",
+      "lexicon_modern_notes": "ذَاتُ الْأَكْمَامِ — Encapsulated Morphology: Protective biochemical coatings preserving vital seed nutrients."
     },
     {
       "surah": 55,
@@ -700,8 +755,13 @@
       "conventional_bn": "আর ভুসিযুক্ত শস্যদানা এবং সুগন্ধি ফুল।",
       "meta_bn": "The Husked Agro-Biomass & Sensory Botanicals ও ভূষিযুক্ত শস্য ও সুগন্ধি বৃক্ষরাজি",
       "metadata": {
-        "theme": "The Husked Agro-Biomass & Sensory Botanicals ও ভূষিযুক্ত শস্য ও সুগন্ধি বৃক্ষরাজি"
-      }
+        "theme": "The Husked Agro-Biomass & Sensory Botanicals ও ভূষিযুক্ত শস্য ও সুগন্ধি বৃক্ষরাজি",
+        "consistency_4_82": "Biospheric provisions meet both physical caloric needs and neurological-psychological satisfaction.",
+        "lexicon_modern_notes": "الْعَصْفِ وَالرَّيْحَانُ — Caloric & Aesthetic Provisions: Balancing essential carbohydrates with neurological sensory well-being."
+      },
+      "modern_translation_en": "And husked grain biomass with protective chaff, and aromatic sensory botanicals.",
+      "meta_en": "The Husked Agro-Biomass & Sensory Botanicals ও ভূষিযুক্ত শস্য ও সুগন্ধি বৃক্ষরাজি",
+      "lexicon_modern_notes": "الْعَصْفِ وَالرَّيْحَانُ — Caloric & Aesthetic Provisions: Balancing essential carbohydrates with neurological sensory well-being."
     },
     {
       "surah": 55,
@@ -766,8 +826,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Biospheric Provisions (Refrain 1) ও পৃথিবীর জীবজগৎ ও খাদ্যের নিয়ামতের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Biospheric Provisions (Refrain 1) ও পৃথিবীর জীবজগৎ ও খাদ্যের নিয়ামতের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Biospheric Provisions (Refrain 1) ও পৃথিবীর জীবজগৎ ও খাদ্যের নিয়ামতের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Biospheric Provisions (Refrain 1) ও পৃথিবীর জীবজগৎ ও খাদ্যের নিয়ামতের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -842,8 +907,13 @@
       "conventional_bn": "তিনি মানুষকে সৃষ্টি করেছেন পোড়া মাটির মতো শুষ্ক মাটি থেকে।",
       "meta_bn": "The Mineral & Carbon Matrix Origin of Humans ও শুষ্ক পোড়া মাটির উপাদানে মানুষের গঠন",
       "metadata": {
-        "theme": "The Mineral & Carbon Matrix Origin of Humans ও শুষ্ক পোড়া মাটির উপাদানে মানুষের গঠন"
-      }
+        "theme": "The Mineral & Carbon Matrix Origin of Humans ও শুষ্ক পোড়া মাটির উপাদানে মানুষের গঠন",
+        "consistency_4_82": "Baryonic mineral composition of human biology perfectly matches elemental geochemistry.",
+        "lexicon_modern_notes": "صَلْصَالٍ كَالْفَخَّارِ — Mineral Substrate Interface: Inorganic earth elements transformed into complex organic cellular hardware."
+      },
+      "modern_translation_en": "He architected the carbon-based human node from ceramic-like dried mineral clay substrate.",
+      "meta_en": "The Mineral & Carbon Matrix Origin of Humans ও শুষ্ক পোড়া মাটির উপাদানে মানুষের গঠন",
+      "lexicon_modern_notes": "صَلْصَالٍ كَالْفَخَّارِ — Mineral Substrate Interface: Inorganic earth elements transformed into complex organic cellular hardware."
     },
     {
       "surah": 55,
@@ -928,8 +998,13 @@
       "conventional_bn": "এবং তিনি জিনকে সৃষ্টি করেছেন ধোঁয়াহীন বিশুদ্ধ আগুনের শিখা থেকে।",
       "meta_bn": "The Pure Smokeless Plasma & Bio-Electric Spectrum of Jinn ও ধোঁয়াহীন অগ্নিশিখা ও প্লাজমায় জিনের উৎপত্তি",
       "metadata": {
-        "theme": "The Pure Smokeless Plasma & Bio-Electric Spectrum of Jinn ও ধোঁয়াহীন অগ্নিশিখা ও প্লাজমায় জিনের উৎপত্তি"
-      }
+        "theme": "The Pure Smokeless Plasma & Bio-Electric Spectrum of Jinn ও ধোঁয়াহীন অগ্নিশিখা ও প্লাজমায় জিনের উৎপত্তি",
+        "consistency_4_82": "Energy-matter duality in sentient life confirms the Quran's comprehensive ontology without mythological fantasy.",
+        "lexicon_modern_notes": "مَارِجٍ مِّن نَّارٍ — High-Energy Plasma Spectrum: Pure, smokeless, fluctuating electromagnetic/plasma state of energy life."
+      },
+      "modern_translation_en": "And He architected the hidden energy node (Jinn) from a smokeless high-frequency plasma energy flux.",
+      "meta_en": "The Pure Smokeless Plasma & Bio-Electric Spectrum of Jinn ও ধোঁয়াহীন অগ্নিশিখা ও প্লাজমায় জিনের উৎপত্তি",
+      "lexicon_modern_notes": "مَارِجٍ مِّن نَّارٍ — High-Energy Plasma Spectrum: Pure, smokeless, fluctuating electromagnetic/plasma state of energy life."
     },
     {
       "surah": 55,
@@ -994,8 +1069,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Dual-Ontology Creation (Refrain 2) ও মানুষ ও জিনের দ্বিবিধ সৃষ্টি-উপাদানের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Dual-Ontology Creation (Refrain 2) ও মানুষ ও জিনের দ্বিবিধ সৃষ্টি-উপাদানের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Dual-Ontology Creation (Refrain 2) ও মানুষ ও জিনের দ্বিবিধ সৃষ্টি-উপাদানের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Dual-Ontology Creation (Refrain 2) ও মানুষ ও জিনের দ্বিবিধ সৃষ্টি-উপাদানের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -1060,8 +1140,13 @@
       "conventional_bn": "তিনি দুই পূর্বের রব এবং দুই পশ্চিমের রব।",
       "meta_bn": "The Lord of Dual Astronomical Horizons ও দুই উদয়াচল ও দুই অস্তাচলের মহাজাগতিক নিয়ন্ত্রণ",
       "metadata": {
-        "theme": "The Lord of Dual Astronomical Horizons ও দুই উদয়াচল ও দুই অস্তাচলের মহাজাগতিক নিয়ন্ত্রণ"
-      }
+        "theme": "The Lord of Dual Astronomical Horizons ও দুই উদয়াচল ও দুই অস্তাচলের মহাজাগতিক নিয়ন্ত্রণ",
+        "consistency_4_82": "Axial orbital mechanics generate biospheric seasons, perfectly regulated by universal gravitational laws.",
+        "lexicon_modern_notes": "الْمَشْرِقَيْنِ وَالْمَغْرِبَيْنِ — Solstitial Horizons: Earth's axial tilt generating seasonal shifts in sunrise and sunset coordinates."
+      },
+      "modern_translation_en": "He is the Root Directory of the dual summer/winter solstice rising horizons and dual setting horizons.",
+      "meta_en": "The Lord of Dual Astronomical Horizons ও দুই উদয়াচল ও দুই অস্তাচলের মহাজাগতিক নিয়ন্ত্রণ",
+      "lexicon_modern_notes": "الْمَشْرِقَيْنِ وَالْمَغْرِبَيْنِ — Solstitial Horizons: Earth's axial tilt generating seasonal shifts in sunrise and sunset coordinates."
     },
     {
       "surah": 55,
@@ -1126,8 +1211,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Celestial Axes (Refrain 3) ও মহাজাগতিক অক্ষ ও ঋতুচক্রের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Celestial Axes (Refrain 3) ও মহাজাগতিক অক্ষ ও ঋতুচক্রের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Celestial Axes (Refrain 3) ও মহাজাগতিক অক্ষ ও ঋতুচক্রের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Celestial Axes (Refrain 3) ও মহাজাগতিক অক্ষ ও ঋতুচক্রের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -1182,8 +1272,13 @@
       "conventional_bn": "তিনি পাশাপাশি প্রবাহিত করেছেন দুই সমুদ্রকে, যা পরস্পরের সাথে মিলিত হয়।",
       "meta_bn": "The Adjacent Hydrodynamic Water Masses ও দুই সমুদ্রের সহাবস্থান ও সংযোগ",
       "metadata": {
-        "theme": "The Adjacent Hydrodynamic Water Masses ও দুই সমুদ্রের সহাবস্থান ও সংযোগ"
-      }
+        "theme": "The Adjacent Hydrodynamic Water Masses ও দুই সমুদ্রের সহাবস্থান ও সংযোগ",
+        "consistency_4_82": "Oceanographic fluid dynamics validate the coexistence of adjacent contrasting water masses.",
+        "lexicon_modern_notes": "مَرَجَ الْبَحْرَيْنِ — Dual Hydrodynamic Streams: Confluence of bodies of water with distinct salinities and densities."
+      },
+      "modern_translation_en": "He released the two adjacent aquatic oceanic streams, meeting at a converging interface.",
+      "meta_en": "The Adjacent Hydrodynamic Water Masses ও দুই সমুদ্রের সহাবস্থান ও সংযোগ",
+      "lexicon_modern_notes": "مَرَجَ الْبَحْرَيْنِ — Dual Hydrodynamic Streams: Confluence of bodies of water with distinct salinities and densities."
     },
     {
       "surah": 55,
@@ -1248,8 +1343,13 @@
       "conventional_bn": "তাদের উভয়ের মাঝে রয়েছে এক অন্তর্বর্তী পর্দা, যা তারা অতিক্রম করে না।",
       "meta_bn": "The Inviolable Fluid-Dynamic Barrier ও দুই সমুদ্রের অলঙ্ঘনীয় বাধা ও পৃথকীকরণ",
       "metadata": {
-        "theme": "The Inviolable Fluid-Dynamic Barrier ও দুই সমুদ্রের অলঙ্ঘনীয় বাধা ও পৃথকীকরণ"
-      }
+        "theme": "The Inviolable Fluid-Dynamic Barrier ও দুই সমুদ্রের অলঙ্ঘনীয় বাধা ও পৃথকীকরণ",
+        "consistency_4_82": "Precise hydrodynamic physical laws preserve marine ecological niches in adjacent oceanic bodies.",
+        "lexicon_modern_notes": "بَيْنَهُمَا بَرْزَخٌ — Thermohaline Barrier Interface: Density, temperature, and surface tension boundary preventing total homogenization."
+      },
+      "modern_translation_en": "Between them is an unbreakable surface tension and thermohaline barrier which they do not transgress.",
+      "meta_en": "The Inviolable Fluid-Dynamic Barrier ও দুই সমুদ্রের অলঙ্ঘনীয় বাধা ও পৃথকীকরণ",
+      "lexicon_modern_notes": "بَيْنَهُمَا بَرْزَخٌ — Thermohaline Barrier Interface: Density, temperature, and surface tension boundary preventing total homogenization."
     },
     {
       "surah": 55,
@@ -1314,8 +1414,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Oceanographic Barriers (Refrain 4) ও সমুদ্রের থার্মোহ্যালাইন প্রতিবন্ধকের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Oceanographic Barriers (Refrain 4) ও সমুদ্রের থার্মোহ্যালাইন প্রতিবন্ধকের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Oceanographic Barriers (Refrain 4) ও সমুদ্রের থার্মোহ্যালাইন প্রতিবন্ধকের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Oceanographic Barriers (Refrain 4) ও সমুদ্রের থার্মোহ্যালাইন প্রতিবন্ধকের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -1380,8 +1485,13 @@
       "conventional_bn": "উভয়টি থেকে উৎপন্ন হয় মুক্তা ও প্রবাল।",
       "meta_bn": "The Extraction of Marine Carbonate Gems ও মুক্তা ও প্রবালের খনিজ প্রাচুর্য",
       "metadata": {
-        "theme": "The Extraction of Marine Carbonate Gems ও মুক্তা ও প্রবালের খনিজ প্রাচুর্য"
-      }
+        "theme": "The Extraction of Marine Carbonate Gems ও মুক্তা ও প্রবালের খনিজ প্রাচুর্য",
+        "consistency_4_82": "Aquatic biochemistry naturally synthesizes exquisite organic-mineral compounds in regulated marine environments.",
+        "lexicon_modern_notes": "اللُّؤْلُؤُ وَالْمَرْجَانُ — Marine Biomineral Wealth: Biomineralized gems and calcified coral ecosystems providing immense ecological wealth."
+      },
+      "modern_translation_en": "From both hydrological systems emerge crystalline calcium carbonate pearls and vibrant coral bio-structures.",
+      "meta_en": "The Extraction of Marine Carbonate Gems ও মুক্তা ও প্রবালের খনিজ প্রাচুর্য",
+      "lexicon_modern_notes": "اللُّؤْلُؤُ وَالْمَرْجَانُ — Marine Biomineral Wealth: Biomineralized gems and calcified coral ecosystems providing immense ecological wealth."
     },
     {
       "surah": 55,
@@ -1446,8 +1556,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Marine Resources (Refrain 5) ও সামুদ্রিক রত্নরাজির নিয়ামতের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Marine Resources (Refrain 5) ও সামুদ্রিক রত্নরাজির নিয়ামতের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Marine Resources (Refrain 5) ও সামুদ্রিক রত্নরাজির নিয়ামতের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Marine Resources (Refrain 5) ও সামুদ্রিক রত্নরাজির নিয়ামতের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -1527,13 +1642,18 @@
         }
       ],
       "translation_en": "And to Him belong the ships [with sails] elevated in the sea like mountains.",
-      "conventional_en": "And to Him belong the ships [with sails] elevated in the sea like mountains.",
+      "conventional_en": "And to Him belong the ships elevated in the sea like mountains.",
       "modern_translation_bn": "আর তাঁরই সিস্টেমিক আর্কিটেকচারে মহাসমুদ্রে ভাসমান জিও-মাউন্টেন সদৃশ বিশাল মেরিটাইম ট্রান্সপোর্ট ভেসেলসমূহ (الْجَوَارِ الْمُنشَآتُ فِي الْبَحْرِ كَالْأَعْلَامِ)।",
       "conventional_bn": "আর সাগরে বিচরণশীল পর্বতসদৃশ সুবিশাল জাহাজসমূহ তাঁরই।",
       "meta_bn": "The Mountainous Maritime Navigation Vessels ও সমুদ্রে ভাসমান পর্বততুল্য জাহাজসমূহ",
       "metadata": {
-        "theme": "The Mountainous Maritime Navigation Vessels ও সমুদ্রে ভাসমান পর্বততুল্য জাহাজসমূহ"
-      }
+        "theme": "The Mountainous Maritime Navigation Vessels ও সমুদ্রে ভাসমান পর্বততুল্য জাহাজসমূহ",
+        "consistency_4_82": "Buoyancy mechanics and marine engineering allow massive vessels to float seamlessly across oceans.",
+        "lexicon_modern_notes": "الْجَوَارِ الْمُنشَآتُ — Hydrodynamic Flotation Physics: Archimedes principle and buoyancy laws utilized for intercontinental transit."
+      },
+      "modern_translation_en": "And to Him belong the mountain-like maritime navigation vessels surging across the ocean matrix.",
+      "meta_en": "The Mountainous Maritime Navigation Vessels ও সমুদ্রে ভাসমান পর্বততুল্য জাহাজসমূহ",
+      "lexicon_modern_notes": "الْجَوَارِ الْمُنشَآتُ — Hydrodynamic Flotation Physics: Archimedes principle and buoyancy laws utilized for intercontinental transit."
     },
     {
       "surah": 55,
@@ -1598,8 +1718,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Maritime Transportation (Refrain 6) ও নৌপরিবহন ও বাণিজ্যব্যবস্থার স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Maritime Transportation (Refrain 6) ও নৌপরিবহন ও বাণিজ্যব্যবস্থার স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Maritime Transportation (Refrain 6) ও নৌপরিবহন ও বাণিজ্যব্যবস্থার স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Maritime Transportation (Refrain 6) ও নৌপরিবহন ও বাণিজ্যব্যবস্থার স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -1664,8 +1789,13 @@
       "conventional_bn": "ভূ-পৃষ্ঠে যা কিছু আছে, সবই ধ্বংসশীল।",
       "meta_bn": "The Universal Transience of Finite Entropy Entities ও মহাবিশ্বের সমস্ত সৃষ্টির ক্ষণস্থায়িত্ব ও বিনাশ",
       "metadata": {
-        "theme": "The Universal Transience of Finite Entropy Entities ও মহাবিশ্বের সমস্ত সৃষ্টির ক্ষণস্থায়িত্ব ও বিনাশ"
-      }
+        "theme": "The Universal Transience of Finite Entropy Entities ও মহাবিশ্বের সমস্ত সৃষ্টির ক্ষণস্থায়িত্ব ও বিনাশ",
+        "consistency_4_82": "Second Law of Thermodynamics aligns directly with Quranic assertion that all finite physical entities decay.",
+        "lexicon_modern_notes": "كُلُّ مَنْ عَلَيْهَا فَانٍ — Universal Entropy Law: All localized physical entities experience thermodynamic degradation and temporal cessation."
+      },
+      "modern_translation_en": "Every temporal configured entity upon this planetary bio-matrix is subject to systemic entropy and decommission.",
+      "meta_en": "The Universal Transience of Finite Entropy Entities ও মহাবিশ্বের সমস্ত সৃষ্টির ক্ষণস্থায়িত্ব ও বিনাশ",
+      "lexicon_modern_notes": "كُلُّ مَنْ عَلَيْهَا فَانٍ — Universal Entropy Law: All localized physical entities experience thermodynamic degradation and temporal cessation."
     },
     {
       "surah": 55,
@@ -1750,8 +1880,13 @@
       "conventional_bn": "আর অবিনশ্বর থাকবে কেবল তোমার রবের সত্তা, যিনি মহিমাময় ও মহানুভব।",
       "meta_bn": "The Eternal Invariant Subsistence of the Sovereign Lord ও মহামহিম রবের শাশ্বত ও অবিনশ্বর স্থায়িত্ব",
       "metadata": {
-        "theme": "The Eternal Invariant Subsistence of the Sovereign Lord ও মহামহিম রবের শাশ্বত ও অবিনশ্বর স্থায়িত্ব"
-      }
+        "theme": "The Eternal Invariant Subsistence of the Sovereign Lord ও মহামহিম রবের শাশ্বত ও অবিনশ্বর স্থায়িত্ব",
+        "consistency_4_82": "The fundamental Ground of Being is non-contingent and immortal, unaffected by thermodynamic collapse.",
+        "lexicon_modern_notes": "وَيَبْقَىٰ وَجْهُ رَبِّكَ — Eternal Sovereign Invariance: The timeless, uncaused, non-entropic ultimate Reality that sustains all reality."
+      },
+      "modern_translation_en": "And there shall eternally persist the Supreme Sovereign Identity of your Root Directory, Owner of Majesty and Honor.",
+      "meta_en": "The Eternal Invariant Subsistence of the Sovereign Lord ও মহামহিম রবের শাশ্বত ও অবিনশ্বর স্থায়িত্ব",
+      "lexicon_modern_notes": "وَيَبْقَىٰ وَجْهُ رَبِّكَ — Eternal Sovereign Invariance: The timeless, uncaused, non-entropic ultimate Reality that sustains all reality."
     },
     {
       "surah": 55,
@@ -1816,8 +1951,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Divine Immortality (Refrain 7) ও রবের অবিনশ্বরতার একচ্ছত্র স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Divine Immortality (Refrain 7) ও রবের অবিনশ্বরতার একচ্ছত্র স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Divine Immortality (Refrain 7) ও রবের অবিনশ্বরতার একচ্ছত্র স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Divine Immortality (Refrain 7) ও রবের অবিনশ্বরতার একচ্ছত্র স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -1942,8 +2082,13 @@
       "conventional_bn": "আসমানসমূহ ও জমিনে যা কিছু আছে সবাই তাঁর কাছেই প্রার্থনা করে; প্রতিদিন তিনি কোনো না কোনো মহৎ কাজে রত।",
       "meta_bn": "The Continuous Universal Resource Demands & Sovereign Quantum Activity ও মহাবিশ্বের প্রতিটি মুহূর্তের জীবন্ত পরিচালনা",
       "metadata": {
-        "theme": "The Continuous Universal Resource Demands & Sovereign Quantum Activity ও মহাবিশ্বের প্রতিটি মুহূর্তের জীবন্ত পরিচালনা"
-      }
+        "theme": "The Continuous Universal Resource Demands & Sovereign Quantum Activity ও মহাবিশ্বের প্রতিটি মুহূর্তের জীবন্ত পরিচালনা",
+        "consistency_4_82": "Continuous real-time sustenance prevents the spontaneous collapse of quantum and macroscopic reality.",
+        "lexicon_modern_notes": "كُلَّ يَوْمٍ هُوَ فِي شَأْنٍ — Continuous Quantum Governance: Universal preservation through continuous divine sustaining operations at every instant."
+      },
+      "modern_translation_en": "Every entity in the celestial expanse and the earth requests resources from Him; at every quantum moment He is in dynamic sovereign operation.",
+      "meta_en": "The Continuous Universal Resource Demands & Sovereign Quantum Activity ও মহাবিশ্বের প্রতিটি মুহূর্তের জীবন্ত পরিচালনা",
+      "lexicon_modern_notes": "كُلَّ يَوْمٍ هُوَ فِي شَأْنٍ — Continuous Quantum Governance: Universal preservation through continuous divine sustaining operations at every instant."
     },
     {
       "surah": 55,
@@ -2008,8 +2153,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Sustenance Allocation (Refrain 8) ও সার্বক্ষণিক ঐশী পরিচালনার স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Sustenance Allocation (Refrain 8) ও সার্বক্ষণিক ঐশী পরিচালনার স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Sustenance Allocation (Refrain 8) ও সার্বক্ষণিক ঐশী পরিচালনার স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Sustenance Allocation (Refrain 8) ও সার্বক্ষণিক ঐশী পরিচালনার স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -2074,8 +2224,13 @@
       "conventional_bn": "হে দুই ভারী জাতি (মানুষ ও জিন)! শীঘ্রই আমি তোমাদের হিসাবের দিকে মনোনিবেশ করব।",
       "meta_bn": "The Impending Dedicated System Audit of Accountable Clades ও দুই ভারী জাতির হিসাব গ্রহণের অঙ্গীকার",
       "metadata": {
-        "theme": "The Impending Dedicated System Audit of Accountable Clades ও দুই ভারী জাতির হিসাব গ্রহণের অঙ্গীকার"
-      }
+        "theme": "The Impending Dedicated System Audit of Accountable Clades ও দুই ভারী জাতির হিসাব গ্রহণের অঙ্গীকার",
+        "consistency_4_82": "Free-will entities across physical and energy spectrums converge into a singular, unified moral audit.",
+        "lexicon_modern_notes": "أَيُّهَ الثَّقَلَانِ — The Two Accountable Clades: Visible carbon-based humanity and invisible bio-electric/plasma Jinn clades."
+      },
+      "modern_translation_en": "We shall execute a dedicated terminal audit session for you, O you two accountable sentient clades (men and jinn)!",
+      "meta_en": "The Impending Dedicated System Audit of Accountable Clades ও দুই ভারী জাতির হিসাব গ্রহণের অঙ্গীকার",
+      "lexicon_modern_notes": "أَيُّهَ الثَّقَلَانِ — The Two Accountable Clades: Visible carbon-based humanity and invisible bio-electric/plasma Jinn clades."
     },
     {
       "surah": 55,
@@ -2140,8 +2295,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Approaching Judgement (Refrain 9) ও আসন্ন মহা জবাবদিহিতার সতর্কতা",
       "metadata": {
-        "theme": "The Universal Audit on Approaching Judgement (Refrain 9) ও আসন্ন মহা জবাবদিহিতার সতর্কতা"
-      }
+        "theme": "The Universal Audit on Approaching Judgement (Refrain 9) ও আসন্ন মহা জবাবদিহিতার সতর্কতা",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Approaching Judgement (Refrain 9) ও আসন্ন মহা জবাবদিহিতার সতর্কতা",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -2321,13 +2481,18 @@
         }
       ],
       "translation_en": "O company of jinn and mankind, if you are able to pass beyond the regions of the heavens and the earth, then pass. You will not pass except by authority [from Allah].",
-      "conventional_en": "O company of jinn and mankind, if you are able to pass beyond the regions of the heavens and the earth, then pass. You will not pass except by authority [from Allah].",
+      "conventional_en": "O company of jinn and mankind, if you are able to pass beyond the regions of the heavens and the earth, then pass. You will not pass except by authority.",
       "modern_translation_bn": "হে হিডেন প্লাজমা স্পেকট্রাম ও কার্বন-বেসড ইন্টেলিজেন্ট নোডস (يَا مَعْشَرَ الْجِنِّ وَالْإِنسِ)! তোমরা যদি মহাজাগতিক ও পার্থিব কোঅর্ডিনেট বাউন্ডারি ক্রস করতে পারো, তবে করো; তোমরা সিস্টেম আর্কিটেক্টের সুপ্রীম অথরাইজেশন ও এনার্জি ক্যাপাসিটি (إِلَّا بِسُلْطَانٍ) ছাড়া কখনই এস্কেপ করতে পারবে না।",
       "conventional_bn": "হে জিন ও মানুষের দল! তোমরা যদি আকাশমণ্ডলী ও পৃথিবীর সীমানা ভেদ করে বের হতে পারো, তবে বের হও; তোমরা পরাক্রমশালী কর্তৃত্ব ছাড়া তা ভেদ করতে পারবে না।",
       "meta_bn": "The Inescapable Cosmic Bounds & Supreme Authority Threshold ও মহাজাগতিক পরিমণ্ডল অতিক্রমের সীমানা",
       "metadata": {
-        "theme": "The Inescapable Cosmic Bounds & Supreme Authority Threshold ও মহাজাগতিক পরিমণ্ডল অতিক্রমের সীমানা"
-      }
+        "theme": "The Inescapable Cosmic Bounds & Supreme Authority Threshold ও মহাজাগতিক পরিমণ্ডল অতিক্রমের সীমানা",
+        "consistency_4_82": "Relativistic astrophysics establishes that space-time boundaries cannot be crossed without astronomical energy and authority.",
+        "lexicon_modern_notes": "إِلَّا بِسُلْطَانٍ — Supreme Authorization & Escape Velocity: Cosmic gravitational and energy thresholds impenetrable without immense power."
+      },
+      "modern_translation_en": "O company of Jinn and Men, if you are able to pass beyond the cosmic coordinates of the heavens and earth, then pass; you cannot pass except with supreme authority and power!",
+      "meta_en": "The Inescapable Cosmic Bounds & Supreme Authority Threshold ও মহাজাগতিক পরিমণ্ডল অতিক্রমের সীমানা",
+      "lexicon_modern_notes": "إِلَّا بِسُلْطَانٍ — Supreme Authorization & Escape Velocity: Cosmic gravitational and energy thresholds impenetrable without immense power."
     },
     {
       "surah": 55,
@@ -2392,8 +2557,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Cosmic Enclosure (Refrain 10) ও মহাজাগতিক সীমার অমোঘ নিয়মের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Cosmic Enclosure (Refrain 10) ও মহাজাগতিক সীমার অমোঘ নিয়মের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Cosmic Enclosure (Refrain 10) ও মহাজাগতিক সীমার অমোঘ নিয়মের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Cosmic Enclosure (Refrain 10) ও মহাজাগতিক সীমার অমোঘ নিয়মের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -2493,13 +2663,18 @@
         }
       ],
       "translation_en": "There will be sent upon you a flame of fire and smoke, and you will not defend yourselves.",
-      "conventional_en": "There will be sent upon you a flame of fire and smoke, and you will not defend yourselves.",
+      "conventional_en": "There will be sent upon you a smoke of fire and [molten] brass, and you will not defend yourselves.",
       "modern_translation_bn": "তোমাদের উভয়ের দিকে রিলিজ করা হবে আনফিল্টার্ড প্লাজমা ফ্লেম ও মল্টেন মেটালিক ডেটা-ইমপ্যাক্ট (شُوَاظٌ مِّن نَّارٍ وَنُحَاسٌ); অতঃপর তোমরা কোনো ডিফেন্স বা সিস্টেম সাপোর্ট (فَلَا تَنتَصِرَانِ) পাবে না।",
       "conventional_bn": "তোমাদের উভয়ের ওপর ছেড়ে দেওয়া হবে অগ্নির শিখা ও গলিত তামা; অতঃপর তোমরা আত্মরক্ষা করতে পারবে না।",
       "meta_bn": "The Plasma Flares & Molten Defense Countermeasures ও অগ্নিশিখা ও গলিত তামার আক্রমণ",
       "metadata": {
-        "theme": "The Plasma Flares & Molten Defense Countermeasures ও অগ্নিশিখা ও গলিত তামার আক্রমণ"
-      }
+        "theme": "The Plasma Flares & Molten Defense Countermeasures ও অগ্নিশিখা ও গলিত তামার আক্রমণ",
+        "consistency_4_82": "High-energy plasma physics prevents escape through cosmic boundaries by neutralizing unauthorized entities.",
+        "lexicon_modern_notes": "شُوَاظٌ مِّن نَّارٍ وَنُحَاسٌ — Plasma Flare Defense Shields: High-energy ionizing cosmic radiation and intense particle fluxes blocking unauthorized ingress."
+      },
+      "modern_translation_en": "There will be released against you both flashes of unshielded plasma flame and molten cosmic smoke, and you will find no defense!",
+      "meta_en": "The Plasma Flares & Molten Defense Countermeasures ও অগ্নিশিখা ও গলিত তামার আক্রমণ",
+      "lexicon_modern_notes": "شُوَاظٌ مِّن نَّارٍ وَنُحَاسٌ — Plasma Flare Defense Shields: High-energy ionizing cosmic radiation and intense particle fluxes blocking unauthorized ingress."
     },
     {
       "surah": 55,
@@ -2564,8 +2739,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Protective Cosmic Shields (Refrain 11) ও মহাজাগতিক প্রটেকশন ব্যবস্থার স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Protective Cosmic Shields (Refrain 11) ও মহাজাগতিক প্রটেকশন ব্যবস্থার স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Protective Cosmic Shields (Refrain 11) ও মহাজাগতিক প্রটেকশন ব্যবস্থার স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Protective Cosmic Shields (Refrain 11) ও মহাজাগতিক প্রটেকশন ব্যবস্থার স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -2650,8 +2830,13 @@
       "conventional_bn": "অতঃপর যখন আকাশ বিদীর্ণ হবে এবং তা রঞ্জিত চামড়া বা লাল গোলাপের মতো হবে।",
       "meta_bn": "The Cataclysmic Sky Rupture & Red Rose Nebula Morphogenesis ও আকাশ বিদীর্ণ হয়ে লাল গোলাপের রূপ ধারণ",
       "metadata": {
-        "theme": "The Cataclysmic Sky Rupture & Red Rose Nebula Morphogenesis ও আকাশ বিদীর্ণ হয়ে লাল গোলাপের রূপ ধারণ"
-      }
+        "theme": "The Cataclysmic Sky Rupture & Red Rose Nebula Morphogenesis ও আকাশ বিদীর্ণ হয়ে লাল গোলাপের রূপ ধারণ",
+        "consistency_4_82": "Astrophysical imagery of stellar explosions accurately reflects expanding ionized rose-red nebular gas fields.",
+        "lexicon_modern_notes": "وَرْدَةً كَالدِّهَانِ — Red Nebula Rupture Phase: Thermal stellar disintegration resembling chromatic floral nebulae (e.g., Rosette Nebula structures)."
+      },
+      "modern_translation_en": "And when the cosmic sky layer ruptures and becomes rose-colored like molten red ointment and glowing oil.",
+      "meta_en": "The Cataclysmic Sky Rupture & Red Rose Nebula Morphogenesis ও আকাশ বিদীর্ণ হয়ে লাল গোলাপের রূপ ধারণ",
+      "lexicon_modern_notes": "وَرْدَةً كَالدِّهَانِ — Red Nebula Rupture Phase: Thermal stellar disintegration resembling chromatic floral nebulae (e.g., Rosette Nebula structures)."
     },
     {
       "surah": 55,
@@ -2711,13 +2896,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Cosmic Reconfiguration (Refrain 12) ও মহাবিশ্বের অন্তিম রূপান্তরের সতর্কতা",
       "metadata": {
-        "theme": "The Universal Audit on Cosmic Reconfiguration (Refrain 12) ও মহাবিশ্বের অন্তিম রূপান্তরের সতর্কতা"
-      }
+        "theme": "The Universal Audit on Cosmic Reconfiguration (Refrain 12) ও মহাবিশ্বের অন্তিম রূপান্তরের সতর্কতা",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Cosmic Reconfiguration (Refrain 12) ও মহাবিশ্বের অন্তিম রূপান্তরের সতর্কতা",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -2822,8 +3012,13 @@
       "conventional_bn": "সেদিন মানুষ বা জিনকে তাদের পাপ সম্পর্কে মৌখিক প্রশ্ন করা হবে না।",
       "meta_bn": "The Direct Autonomous Audit without Verbal Interrogation ও প্রত্যক্ষ ডেটা-লগ দ্বারা অপরাধ প্রমাণের স্বয়ংক্রিয়তা",
       "metadata": {
-        "theme": "The Direct Autonomous Audit without Verbal Interrogation ও প্রত্যক্ষ ডেটা-লগ দ্বারা অপরাধ প্রমাণের স্বয়ংক্রিয়তা"
-      }
+        "theme": "The Direct Autonomous Audit without Verbal Interrogation ও প্রত্যক্ষ ডেটা-লগ দ্বারা অপরাধ প্রমাণের স্বয়ংক্রিয়তা",
+        "consistency_4_82": "Self-authenticating biometric logs supersede fallible verbal testimonies during terminal evaluation.",
+        "lexicon_modern_notes": "لَّا يُسْأَلُ عَن ذَنبِهِ — Autonomous Data-Audit: Verification is intrinsic to immutable recorded telemetric state logs, not verbal claims."
+      },
+      "modern_translation_en": "On that audit cycle, no carbon-based human or plasma Jinn node will need manual questioning regarding their error logs.",
+      "meta_en": "The Direct Autonomous Audit without Verbal Interrogation ও প্রত্যক্ষ ডেটা-লগ দ্বারা অপরাধ প্রমাণের স্বয়ংক্রিয়তা",
+      "lexicon_modern_notes": "لَّا يُسْأَلُ عَن ذَنبِهِ — Autonomous Data-Audit: Verification is intrinsic to immutable recorded telemetric state logs, not verbal claims."
     },
     {
       "surah": 55,
@@ -2888,8 +3083,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Instant Verification (Refrain 13) ও স্বয়ংক্রিয় অডিটের সত্যতা",
       "metadata": {
-        "theme": "The Universal Audit on Instant Verification (Refrain 13) ও স্বয়ংক্রিয় অডিটের সত্যতা"
-      }
+        "theme": "The Universal Audit on Instant Verification (Refrain 13) ও স্বয়ংক্রিয় অডিটের সত্যতা",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Instant Verification (Refrain 13) ও স্বয়ংক্রিয় অডিটের সত্যতা",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -2974,8 +3174,13 @@
       "conventional_bn": "অপরাধীদের চেনা যাবে তাদের চেহারার লক্ষণ দেখে; অতঃপর ধরা হবে মাথার সম্মুখভাগ ও পা।",
       "meta_bn": "The Biometric Signature Identification & Seizure of Criminals ও মুখমণ্ডল দেখে অপরাধী শনাক্তকরণ ও পাকড়াও",
       "metadata": {
-        "theme": "The Biometric Signature Identification & Seizure of Criminals ও মুখমণ্ডল দেখে অপরাধী শনাক্তকরণ ও পাকড়াও"
-      }
+        "theme": "The Biometric Signature Identification & Seizure of Criminals ও মুখমণ্ডল দেখে অপরাধী শনাক্তকরণ ও পাকড়াও",
+        "consistency_4_82": "Automatic optical and spectral recognition provides zero false-positive error rates in ultimate justice.",
+        "lexicon_modern_notes": "بِسِيمَاهُمْ — Biometric Feature Extraction: Unmistakable physical and radiation frequency signatures indicating moral corruption."
+      },
+      "modern_translation_en": "The system violators will be recognized by their distinct biometric signatures, and they will be seized by their forelocks and feet.",
+      "meta_en": "The Biometric Signature Identification & Seizure of Criminals ও মুখমণ্ডল দেখে অপরাধী শনাক্তকরণ ও পাকড়াও",
+      "lexicon_modern_notes": "بِسِيمَاهُمْ — Biometric Feature Extraction: Unmistakable physical and radiation frequency signatures indicating moral corruption."
     },
     {
       "surah": 55,
@@ -3040,8 +3245,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Biometric Precision (Refrain 14) ও নিখুঁত বায়োমেট্রিক বিচারের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Biometric Precision (Refrain 14) ও নিখুঁত বায়োমেট্রিক বিচারের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Biometric Precision (Refrain 14) ও নিখুঁত বায়োমেট্রিক বিচারের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Biometric Precision (Refrain 14) ও নিখুঁত বায়োমেট্রিক বিচারের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -3121,13 +3331,18 @@
         }
       ],
       "translation_en": "This is Hell, which the criminals deny.",
-      "conventional_en": "This is Hell, which the criminals deny.",
+      "conventional_en": "This is Hell, which the criminals used to deny.",
       "modern_translation_bn": "এই সেই আল্ট্রা-থার্মাল ক্র্যাশ-জোন (جَهَنَّمُ), যাকে সিস্টেম রুলস ভায়োলেটররা ডেটা-ডিনাই (يُكَذِّبُ بِهَا الْمُجْرِمُونَ) করত।",
       "conventional_bn": "এই সেই জাহান্নাম, যাকে অপরাধীরা মিথ্যা বলত।",
       "meta_bn": "The Direct Empirical Exposure of the Denied Inferno ও অস্বীকারকৃত জাহান্নামের চাক্ষুষ প্রদর্শন",
       "metadata": {
-        "theme": "The Direct Empirical Exposure of the Denied Inferno ও অস্বীকারকৃত জাহান্নামের চাক্ষুষ প্রদর্শন"
-      }
+        "theme": "The Direct Empirical Exposure of the Denied Inferno ও অস্বীকারকৃত জাহান্নামের চাক্ষুষ প্রদর্শন",
+        "consistency_4_82": "Entities denying physical and moral laws face direct confrontation with the consequences of systemic failure.",
+        "lexicon_modern_notes": "جَهَنَّمُ — Retributive Thermal Containment: High-density punitive environment designed for corrupted data nodes."
+      },
+      "modern_translation_en": "This is the ultra-thermal crash zone (Jahannam) which the system violators denied as empirical reality.",
+      "meta_en": "The Direct Empirical Exposure of the Denied Inferno ও অস্বীকারকৃত জাহান্নামের চাক্ষুষ প্রদর্শন",
+      "lexicon_modern_notes": "جَهَنَّمُ — Retributive Thermal Containment: High-density punitive environment designed for corrupted data nodes."
     },
     {
       "surah": 55,
@@ -3197,13 +3412,18 @@
         }
       ],
       "translation_en": "They will go around between it and scalding water, heated [to the utmost degree].",
-      "conventional_en": "They will go around between it and scalding water, heated [to the utmost degree].",
+      "conventional_en": "They will go around between it and scalding water, heated [to the utmost].",
       "modern_translation_bn": "তারা এই ক্র্যাশ-জোন এবং ফুটন্ত সুপারক্রিটিক্যাল থার্মাল লিকুইডের (حَمِيمٍ آنٍ) মাঝে ক্রমাগত সাইক্লিং লুপে থাকবে।",
       "conventional_bn": "তারা এর মাঝে এবং ফুটন্ত উত্তপ্ত পানির মাঝে চক্কর খাবে।",
       "meta_bn": "The Oscillating Thermal Torment Cycle ও লেলিহান অগ্নি ও ফুটন্ত পানির নিরন্তর চক্র",
       "metadata": {
-        "theme": "The Oscillating Thermal Torment Cycle ও লেলিহান অগ্নি ও ফুটন্ত পানির নিরন্তর চক্র"
-      }
+        "theme": "The Oscillating Thermal Torment Cycle ও লেলিহান অগ্নি ও ফুটন্ত পানির নিরন্তর চক্র",
+        "consistency_4_82": "Thermodynamic cycles in extreme penalty zones maintain continuous stress feedback on deviant nodes.",
+        "lexicon_modern_notes": "حَمِيمٍ آنٍ — Supercritical Scalding Liquid: Extreme temperature-pressure thermodynamic fluid cycle inflicting continuous degradation."
+      },
+      "modern_translation_en": "They will oscillate continuously between the fire and scalding, supercritical boiling thermal liquid.",
+      "meta_en": "The Oscillating Thermal Torment Cycle ও লেলিহান অগ্নি ও ফুটন্ত পানির নিরন্তর চক্র",
+      "lexicon_modern_notes": "حَمِيمٍ آنٍ — Supercritical Scalding Liquid: Extreme temperature-pressure thermodynamic fluid cycle inflicting continuous degradation."
     },
     {
       "surah": 55,
@@ -3268,8 +3488,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Retributive Justice (Refrain 15) ও ইনসাফপূর্ণ কর্মফল ব্যবস্থার স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Retributive Justice (Refrain 15) ও ইনসাফপূর্ণ কর্মফল ব্যবস্থার স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Retributive Justice (Refrain 15) ও ইনসাফপূর্ণ কর্মফল ব্যবস্থার স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Retributive Justice (Refrain 15) ও ইনসাফপূর্ণ কর্মফল ব্যবস্থার স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -3344,8 +3569,13 @@
       "conventional_bn": "আর যে তার রবের সামনে উপস্থিত হওয়াকে ভয় করেছে, তার জন্য রয়েছে দুটি জান্নাত।",
       "meta_bn": "The Dual High-Order Ecosystems for God-Conscious ও রবের সামনে জবাবদিহিতায় ভীতদের জন্য দুটি উদ্যান",
       "metadata": {
-        "theme": "The Dual High-Order Ecosystems for God-Conscious ও রবের সামনে জবাবদিহিতায় ভীতদের জন্য দুটি উদ্যান"
-      }
+        "theme": "The Dual High-Order Ecosystems for God-Conscious ও রবের সামনে জবাবদিহিতায় ভীতদের জন্য দুটি উদ্যান",
+        "consistency_4_82": "Reverent self-calibration produces double-tiered biospheric excellence in eternal existence.",
+        "lexicon_modern_notes": "مَقَامَ رَبِّهِ — Root Directory Accountability: Awareness of absolute moral inspection governing every action in life."
+      },
+      "modern_translation_en": "And for him who maintained profound systemic reverence for the standing before his Root Directory, there are two supreme optimized ecosystems.",
+      "meta_en": "The Dual High-Order Ecosystems for God-Conscious ও রবের সামনে জবাবদিহিতায় ভীতদের জন্য দুটি উদ্যান",
+      "lexicon_modern_notes": "مَقَامَ رَبِّهِ — Root Directory Accountability: Awareness of absolute moral inspection governing every action in life."
     },
     {
       "surah": 55,
@@ -3405,13 +3635,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Dual Garden Allotment (Refrain 16) ও খোদাভীরুদের জন্য দুটি জান্নাতের পুরস্কার",
       "metadata": {
-        "theme": "The Universal Audit on Dual Garden Allotment (Refrain 16) ও খোদাভীরুদের জন্য দুটি জান্নাতের পুরস্কার"
-      }
+        "theme": "The Universal Audit on Dual Garden Allotment (Refrain 16) ও খোদাভীরুদের জন্য দুটি জান্নাতের পুরস্কার",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Dual Garden Allotment (Refrain 16) ও খোদাভীরুদের জন্য দুটি জান্নাতের পুরস্কার",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -3456,8 +3691,13 @@
       "conventional_bn": "উভয়টিই সুবিস্তৃত শাখা-প্রশাখা বিশিষ্ট।",
       "meta_bn": "The Manifold Branches & Ecological Richness ও ঘন শাখা-প্রশাখাময় বিচিত্র বৃক্ষলতা",
       "metadata": {
-        "theme": "The Manifold Branches & Ecological Richness ও ঘন শাখা-প্রশাখাময় বিচিত্র বৃক্ষলতা"
-      }
+        "theme": "The Manifold Branches & Ecological Richness ও ঘন শাখা-প্রশাখাময় বিচিত্র বৃক্ষলতা",
+        "consistency_4_82": "Fractal geometry in botanical branches mirrors structural elegance found throughout high-order ecosystems.",
+        "lexicon_modern_notes": "ذَوَاتَا أَفْنَانٍ — Multidimensional Canopy Structures: Complex branching architectures maximizing ecological diversity and aesthetic elegance."
+      },
+      "modern_translation_en": "Both ecosystems possess lush, multifaceted canopies and rich botanical diversity.",
+      "meta_en": "The Manifold Branches & Ecological Richness ও ঘন শাখা-প্রশাখাময় বিচিত্র বৃক্ষলতা",
+      "lexicon_modern_notes": "ذَوَاتَا أَفْنَانٍ — Multidimensional Canopy Structures: Complex branching architectures maximizing ecological diversity and aesthetic elegance."
     },
     {
       "surah": 55,
@@ -3522,8 +3762,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Botanical Diversity (Refrain 17) ও স্বর্গের অপরূপ প্রাকৃতিক সৌন্দর্যের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Botanical Diversity (Refrain 17) ও স্বর্গের অপরূপ প্রাকৃতিক সৌন্দর্যের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Botanical Diversity (Refrain 17) ও স্বর্গের অপরূপ প্রাকৃতিক সৌন্দর্যের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Botanical Diversity (Refrain 17) ও স্বর্গের অপরূপ প্রাকৃতিক সৌন্দর্যের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -3573,13 +3818,18 @@
         }
       ],
       "translation_en": "In both of them are two springs, flowing.",
-      "conventional_en": "In both of them are two springs, flowing.",
+      "conventional_en": "In them are two springs, flowing.",
       "modern_translation_bn": "উভয়টিতে রয়েছে দুটি অবিরাম ফ্লোয়িং ক্লিন ডেটা-হাইড্রোলিক স্প্রিং (عَيْنَانِ تَجْرِيَانِ)।",
       "conventional_bn": "উভয়টিতে রয়েছে দুটি প্রবাহমান ঝরনা।",
       "meta_bn": "The Twin Flowing Hydro-Purity Springs ও জান্নাতের দুটি অবিরাম প্রবাহমান ঝরনা",
       "metadata": {
-        "theme": "The Twin Flowing Hydro-Purity Springs ও জান্নাতের দুটি অবিরাম প্রবাহমান ঝরনা"
-      }
+        "theme": "The Twin Flowing Hydro-Purity Springs ও জান্নাতের দুটি অবিরাম প্রবাহমান ঝরনা",
+        "consistency_4_82": "Perpetual hydraulic replenishment ensures perfect closed-loop thermodynamic life support.",
+        "lexicon_modern_notes": "عَيْنَانِ تَجْرِيَانِ — Dynamic Hydro-Springs: Perpetual fluid circulation without stagnation or mineral depletion."
+      },
+      "modern_translation_en": "In both of them are two continuously flowing pristine hydrodynamic springs.",
+      "meta_en": "The Twin Flowing Hydro-Purity Springs ও জান্নাতের দুটি অবিরাম প্রবাহমান ঝরনা",
+      "lexicon_modern_notes": "عَيْنَانِ تَجْرِيَانِ — Dynamic Hydro-Springs: Perpetual fluid circulation without stagnation or mineral depletion."
     },
     {
       "surah": 55,
@@ -3644,8 +3894,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Flowing Pure Springs (Refrain 18) ও অফুরন্ত নির্মল প্রস্রবণের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Flowing Pure Springs (Refrain 18) ও অফুরন্ত নির্মল প্রস্রবণের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Flowing Pure Springs (Refrain 18) ও অফুরন্ত নির্মল প্রস্রবণের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Flowing Pure Springs (Refrain 18) ও অফুরন্ত নির্মল প্রস্রবণের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -3715,13 +3970,18 @@
         }
       ],
       "translation_en": "In both of them are of every fruit, two kinds.",
-      "conventional_en": "In both of them are of every fruit, two kinds.",
+      "conventional_en": "In them of every fruit are two kinds.",
       "modern_translation_bn": "উভয়টিতে রয়েছে প্রতিটি ক্যাটাগরির ডেটা-নিউট্রিশন ফ্রুটসের কমপ্লিমেন্টারি বাইনারি পেয়ার (مِن كُلِّ فَاكِهَةٍ زَوْجَانِ)।",
       "conventional_bn": "উভয়টিতে রয়েছে প্রত্যেক ফলের জোড়া।",
       "meta_bn": "The Binary Complementary Fruit Pairs ও প্রতিটি সুস্বাদু ফলের যুগল বিন্যাস",
       "metadata": {
-        "theme": "The Binary Complementary Fruit Pairs ও প্রতিটি সুস্বাদু ফলের যুগল বিন্যাস"
-      }
+        "theme": "The Binary Complementary Fruit Pairs ও প্রতিটি সুস্বাদু ফলের যুগল বিন্যাস",
+        "consistency_4_82": "Binary pairing in botanical cultivars ensures genetic resilience and taste diversity.",
+        "lexicon_modern_notes": "مِن كُلِّ فَاكِهَةٍ زَوْجَانِ — Binary Botanical Pairs: Symmetrical genetic varieties offering comprehensive biochemical nutrition."
+      },
+      "modern_translation_en": "In both of them are of every fruit two complementary paired varieties.",
+      "meta_en": "The Binary Complementary Fruit Pairs ও প্রতিটি সুস্বাদু ফলের যুগল বিন্যাস",
+      "lexicon_modern_notes": "مِن كُلِّ فَاكِهَةٍ زَوْجَانِ — Binary Botanical Pairs: Symmetrical genetic varieties offering comprehensive biochemical nutrition."
     },
     {
       "surah": 55,
@@ -3786,8 +4046,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Paired Nutrition (Refrain 19) ও জোড়ায় জোড়ায় ফলমূলের সমাহারের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Paired Nutrition (Refrain 19) ও জোড়ায় জোড়ায় ফলমূলের সমাহারের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Paired Nutrition (Refrain 19) ও জোড়ায় জোড়ায় ফলমূলের সমাহারের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Paired Nutrition (Refrain 19) ও জোড়ায় জোড়ায় ফলমূলের সমাহারের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -3897,13 +4162,18 @@
         }
       ],
       "translation_en": "[They are] reclining on beds whose linings are of silk brocade, and the fruit of the two gardens is hanging low.",
-      "conventional_en": "[They are] reclining on beds whose linings are of silk brocade, and the fruit of the two gardens is hanging low.",
+      "conventional_en": "[They are] reclining on beds whose linings are of silk brocade, and the fruit of both gardens is hanging low.",
       "modern_translation_bn": "তারা সিস্টেম স্ট্যান্ডবাই মোডে হেলান দিয়ে থাকবে ব্রোকেড সিল্ক লাইনিং সিটে এবং উভয় ইকোসিস্টেমের হারভেস্টেবল ফ্রুটস থাকবে নিখুঁত ডেটা-অ্যাক্সেস প্রক্সিমিটিতে (وَجَنَى الْجَنَّتَيْنِ دَانٍ)।",
       "conventional_bn": "তারা হেলান দিয়ে বসবে এমন বিছানায় যার আস্তর হবে রেশমের; আর দুই জান্নাতের ফলমূল থাকবে হাতের কাছে।",
       "meta_bn": "The Luxurious Silk Couches & Proximate Harvest ও স্বর্ণখচিত রেশমি আসন ও সন্নিকটের ফলমূল",
       "metadata": {
-        "theme": "The Luxurious Silk Couches & Proximate Harvest ও স্বর্ণখচিত রেশমি আসন ও সন্নিকটের ফলমূল"
-      }
+        "theme": "The Luxurious Silk Couches & Proximate Harvest ও স্বর্ণখচিত রেশমি আসন ও সন্নিকটের ফলমূল",
+        "consistency_4_82": "Ergonomic comfort and low-energy access optimize physical enjoyment without frictional exertion.",
+        "lexicon_modern_notes": "وَجَنَى الْجَنَّتَيْنِ دَانٍ — Zero-Latency Resource Proximity: Instantaneous ergonomic accessibility to biospheric produce without mechanical fatigue."
+      },
+      "modern_translation_en": "They recline upon couches lined with rich brocade silk, and the ripe harvest of both gardens hangs within immediate reach.",
+      "meta_en": "The Luxurious Silk Couches & Proximate Harvest ও স্বর্ণখচিত রেশমি আসন ও সন্নিকটের ফলমূল",
+      "lexicon_modern_notes": "وَجَنَى الْجَنَّتَيْنِ دَانٍ — Zero-Latency Resource Proximity: Instantaneous ergonomic accessibility to biospheric produce without mechanical fatigue."
     },
     {
       "surah": 55,
@@ -3968,8 +4238,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Sovereign Comfort (Refrain 20) ও জান্নাতী স্বাচ্ছন্দ্য ও নিকটবর্তী ফলের নিয়ামত",
       "metadata": {
-        "theme": "The Universal Audit on Sovereign Comfort (Refrain 20) ও জান্নাতী স্বাচ্ছন্দ্য ও নিকটবর্তী ফলের নিয়ামত"
-      }
+        "theme": "The Universal Audit on Sovereign Comfort (Refrain 20) ও জান্নাতী স্বাচ্ছন্দ্য ও নিকটবর্তী ফলের নিয়ামত",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Sovereign Comfort (Refrain 20) ও জান্নাতী স্বাচ্ছন্দ্য ও নিকটবর্তী ফলের নিয়ামত",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4084,8 +4359,13 @@
       "conventional_bn": "তাতে রয়েছে আনতনয়না সঙ্গিনীরা, যাদেরকে তাদের পূর্বে কোনো মানুষ বা জিন স্পর্শ করেনি।",
       "meta_bn": "The Chaste Modest Companions Untouched by Man or Jinn ও কোনো মানুষ বা জিনের অস্পর্শিত আনতনয়না হূর",
       "metadata": {
-        "theme": "The Chaste Modest Companions Untouched by Man or Jinn ও কোনো মানুষ বা জিনের অস্পর্শিত আনতনয়না হূর"
-      }
+        "theme": "The Chaste Modest Companions Untouched by Man or Jinn ও কোনো মানুষ বা জিনের অস্পর্শিত আনতনয়না হূর",
+        "consistency_4_82": "Emotional fidelity and exclusive psychological alignment guarantee ultimate interpersonal peace.",
+        "lexicon_modern_notes": "قَاصِرَاتُ الطَّرْفِ — Attentive Devoted Companions: Exclusively bonded peer nodes offering undivided emotional harmony."
+      },
+      "modern_translation_en": "Therein are modest companions restraining their glances, whom no human or jinn node has touched before them.",
+      "meta_en": "The Chaste Modest Companions Untouched by Man or Jinn ও কোনো মানুষ বা জিনের অস্পর্শিত আনতনয়না হূর",
+      "lexicon_modern_notes": "قَاصِرَاتُ الطَّرْفِ — Attentive Devoted Companions: Exclusively bonded peer nodes offering undivided emotional harmony."
     },
     {
       "surah": 55,
@@ -4145,13 +4425,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Pristine Companionship (Refrain 21) ও পবিত্র ও অকলঙ্কিত সঙ্গিনীর নিয়ামত",
       "metadata": {
-        "theme": "The Universal Audit on Pristine Companionship (Refrain 21) ও পবিত্র ও অকলঙ্কিত সঙ্গিনীর নিয়ামত"
-      }
+        "theme": "The Universal Audit on Pristine Companionship (Refrain 21) ও পবিত্র ও অকলঙ্কিত সঙ্গিনীর নিয়ামত",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Pristine Companionship (Refrain 21) ও পবিত্র ও অকলঙ্কিত সঙ্গিনীর নিয়ামত",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4206,8 +4491,13 @@
       "conventional_bn": "যেন তারা রুবি ও প্রবাল।",
       "meta_bn": "The Radiant Beauty Like Rubies and Coral ও চুনি-পান্না ও প্রবালের ন্যায় লাবণ্য",
       "metadata": {
-        "theme": "The Radiant Beauty Like Rubies and Coral ও চুনি-পান্না ও প্রবালের ন্যায় লাবণ্য"
-      }
+        "theme": "The Radiant Beauty Like Rubies and Coral ও চুনি-পান্না ও প্রবালের ন্যায় লাবণ্য",
+        "consistency_4_82": "Crystal physics and optical radiance serve as natural benchmarks for transcendent visual beauty.",
+        "lexicon_modern_notes": "الْيَاقُوتُ وَالْمَرْجَانُ — Optical Gem Translucence: Flawless aesthetic complexion reflecting pristine chromatic refraction."
+      },
+      "modern_translation_en": "As if they were crystalline rubies and radiant coral matrices.",
+      "meta_en": "The Radiant Beauty Like Rubies and Coral ও চুনি-পান্না ও প্রবালের ন্যায় লাবণ্য",
+      "lexicon_modern_notes": "الْيَاقُوتُ وَالْمَرْجَانُ — Optical Gem Translucence: Flawless aesthetic complexion reflecting pristine chromatic refraction."
     },
     {
       "surah": 55,
@@ -4272,8 +4562,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Transcendent Aesthetics (Refrain 22) ও অতুলনীয় রূপলাবণ্যের নিয়ামতের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Transcendent Aesthetics (Refrain 22) ও অতুলনীয় রূপলাবণ্যের নিয়ামতের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Transcendent Aesthetics (Refrain 22) ও অতুলনীয় রূপলাবণ্যের নিয়ামতের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Transcendent Aesthetics (Refrain 22) ও অতুলনীয় রূপলাবণ্যের নিয়ামতের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4348,8 +4643,13 @@
       "conventional_bn": "সৎকাজের প্রতিদান কি উত্তম পুরস্কার ছাড়া আর কিছু হতে পারে?",
       "meta_bn": "The Cardinal Axiom of Perfect Reciprocity ও এহসানের প্রতিদান কেবল এহসানই",
       "metadata": {
-        "theme": "The Cardinal Axiom of Perfect Reciprocity ও এহসানের প্রতিদান কেবল এহসানই"
-      }
+        "theme": "The Cardinal Axiom of Perfect Reciprocity ও এহসানের প্রতিদান কেবল এহসানই",
+        "consistency_4_82": "Core computational law of moral conservation: righteous output yields symmetric positive feedback.",
+        "lexicon_modern_notes": "هَلْ جَزَاءُ الْإِحْسَانِ إِلَّا الْإِحْسَانُ — Invariant Axiom of Reciprocity: Exact mathematical correspondence between optimal moral input and ultimate reward output."
+      },
+      "modern_translation_en": "Is the recompense for operational excellence (Ihsan) anything other than supreme excellence?",
+      "meta_en": "The Cardinal Axiom of Perfect Reciprocity ও এহসানের প্রতিদান কেবল এহসানই",
+      "lexicon_modern_notes": "هَلْ جَزَاءُ الْإِحْسَانِ إِلَّا الْإِحْسَانُ — Invariant Axiom of Reciprocity: Exact mathematical correspondence between optimal moral input and ultimate reward output."
     },
     {
       "surah": 55,
@@ -4414,8 +4714,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Perfect Reciprocity (Refrain 23) ও কর্মের সর্বোত্তম প্রতিদানের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Perfect Reciprocity (Refrain 23) ও কর্মের সর্বোত্তম প্রতিদানের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Perfect Reciprocity (Refrain 23) ও কর্মের সর্বোত্তম প্রতিদানের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Perfect Reciprocity (Refrain 23) ও কর্মের সর্বোত্তম প্রতিদানের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4465,13 +4770,18 @@
         }
       ],
       "translation_en": "And below them both [in excellence] are two [other] gardens -",
-      "conventional_en": "And below them both [in excellence] are two [other] gardens -",
+      "conventional_en": "And below them both are two [other] gardens -",
       "modern_translation_bn": "আর এই প্রাইমারি দুটির পাশাপাশি রয়েছে আরও দুটি রেজিলিয়েন্ট ব্যাকআপ ইকোসিস্টেম (وَمِن دُونِهِمَا جَنَّتَانِ)।",
       "conventional_bn": "আর এই দুটি ছাড়া রয়েছে আরও দুটি জান্নাত।",
       "meta_bn": "The Secondary Resilient Tier of Dual Gardens ও নিম্নের আরও দুটি সমৃদ্ধ উদ্যান",
       "metadata": {
-        "theme": "The Secondary Resilient Tier of Dual Gardens ও নিম্নের আরও দুটি সমৃদ্ধ উদ্যান"
-      }
+        "theme": "The Secondary Resilient Tier of Dual Gardens ও নিম্নের আরও দুটি সমৃদ্ধ উদ্যান",
+        "consistency_4_82": "Layered environmental gradations reflect merit-based operational tiers without systemic inequity.",
+        "lexicon_modern_notes": "وَمِن دُونِهِمَا جَنَّتَانِ — Secondary Layered Habitat: Multi-tier environmental architectures accommodating varied spiritual milestones."
+      },
+      "modern_translation_en": "And besides those two primary tiers are two additional resilient garden ecosystems.",
+      "meta_en": "The Secondary Resilient Tier of Dual Gardens ও নিম্নের আরও দুটি সমৃদ্ধ উদ্যান",
+      "lexicon_modern_notes": "وَمِن دُونِهِمَا جَنَّتَانِ — Secondary Layered Habitat: Multi-tier environmental architectures accommodating varied spiritual milestones."
     },
     {
       "surah": 55,
@@ -4531,13 +4841,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Secondary Garden Tier (Refrain 24) ও দ্বিতীয় স্তরের উদ্যানদ্বয়ের পুরস্কার",
       "metadata": {
-        "theme": "The Universal Audit on Secondary Garden Tier (Refrain 24) ও দ্বিতীয় স্তরের উদ্যানদ্বয়ের পুরস্কার"
-      }
+        "theme": "The Universal Audit on Secondary Garden Tier (Refrain 24) ও দ্বিতীয় স্তরের উদ্যানদ্বয়ের পুরস্কার",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Secondary Garden Tier (Refrain 24) ও দ্বিতীয় স্তরের উদ্যানদ্বয়ের পুরস্কার",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4572,8 +4887,13 @@
       "conventional_bn": "উভয়টিই ঘন শ্যামলবর্ণ।",
       "meta_bn": "The Deep Verdant Chlorophyll Canopy ও গাঢ় সবুজ ও ঘন উদ্ভিদের সমাহার",
       "metadata": {
-        "theme": "The Deep Verdant Chlorophyll Canopy ও গাঢ় সবুজ ও ঘন উদ্ভিদের সমাহার"
-      }
+        "theme": "The Deep Verdant Chlorophyll Canopy ও গাঢ় সবুজ ও ঘন উদ্ভিদের সমাহার",
+        "consistency_4_82": "High chlorophyll concentration naturally results in deep emerald and dark green botanical canopies.",
+        "lexicon_modern_notes": "مُدْهَامَّتَانِ — Dense Chlorophyll Density: Deep green foliage manifesting maximum moisture, nitrogen richness, and vitality."
+      },
+      "modern_translation_en": "Both of them are dense dark-green biospheres saturated with rich chlorophyll.",
+      "meta_en": "The Deep Verdant Chlorophyll Canopy ও গাঢ় সবুজ ও ঘন উদ্ভিদের সমাহার",
+      "lexicon_modern_notes": "مُدْهَامَّتَانِ — Dense Chlorophyll Density: Deep green foliage manifesting maximum moisture, nitrogen richness, and vitality."
     },
     {
       "surah": 55,
@@ -4638,8 +4958,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Dense Green Biosphere (Refrain 25) ও গাঢ় শ্যামলিমাময় কাননের নিয়ামত",
       "metadata": {
-        "theme": "The Universal Audit on Dense Green Biosphere (Refrain 25) ও গাঢ় শ্যামলিমাময় কাননের নিয়ামত"
-      }
+        "theme": "The Universal Audit on Dense Green Biosphere (Refrain 25) ও গাঢ় শ্যামলিমাময় কাননের নিয়ামত",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Dense Green Biosphere (Refrain 25) ও গাঢ় শ্যামলিমাময় কাননের নিয়ামত",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4689,13 +5014,18 @@
         }
       ],
       "translation_en": "In both of them are two springs, spouting.",
-      "conventional_en": "In both of them are two springs, spouting.",
+      "conventional_en": "In them are two springs, spouting.",
       "modern_translation_bn": "উভয়টিতে রয়েছে দুটি হাই-প্রেসার স্পাউটিং ওয়াটার স্প্রিং (عَيْنَانِ نَضَّاخَتَانِ)।",
       "conventional_bn": "উভয়টিতে রয়েছে দুটি উচ্ছ্বল ঝরনা।",
       "meta_bn": "The Twin Gushing High-Pressure Fountains ও দুটি প্রবল উচ্ছ্বসিত প্রস্রবণ",
       "metadata": {
-        "theme": "The Twin Gushing High-Pressure Fountains ও দুটি প্রবল উচ্ছ্বসিত প্রস্রবণ"
-      }
+        "theme": "The Twin Gushing High-Pressure Fountains ও দুটি প্রবল উচ্ছ্বসিত প্রস্রবণ",
+        "consistency_4_82": "Subterranean pressure dynamics drive perpetual gushing artesian fountains.",
+        "lexicon_modern_notes": "عَيْنَانِ نَضَّاخَتَانِ — High-Discharge Geysers: Pressurized aquatic conduits cascading fresh mineral-rich fluid constantly."
+      },
+      "modern_translation_en": "In both of them are two vigorously gushing, high-pressure springs.",
+      "meta_en": "The Twin Gushing High-Pressure Fountains ও দুটি প্রবল উচ্ছ্বসিত প্রস্রবণ",
+      "lexicon_modern_notes": "عَيْنَانِ نَضَّاخَتَانِ — High-Discharge Geysers: Pressurized aquatic conduits cascading fresh mineral-rich fluid constantly."
     },
     {
       "surah": 55,
@@ -4760,8 +5090,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Gushing Hydrodynamics (Refrain 26) ও উচ্ছ্বল ঝরনার অমূল্য নিয়ামত",
       "metadata": {
-        "theme": "The Universal Audit on Gushing Hydrodynamics (Refrain 26) ও উচ্ছ্বল ঝরনার অমূল্য নিয়ামত"
-      }
+        "theme": "The Universal Audit on Gushing Hydrodynamics (Refrain 26) ও উচ্ছ্বল ঝরনার অমূল্য নিয়ামত",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Gushing Hydrodynamics (Refrain 26) ও উচ্ছ্বল ঝরনার অমূল্য নিয়ামত",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4821,13 +5156,18 @@
         }
       ],
       "translation_en": "In both of them are fruit and palm trees and pomegranates.",
-      "conventional_en": "In both of them are fruit and palm trees and pomegranates.",
+      "conventional_en": "In them are fruit and palm trees and pomegranates.",
       "modern_translation_bn": "উভয়টিতে রয়েছে ডেটা-নিউট্রিশন ফ্রুটস, ডেটা-পামস এবং অ্যান্টিঅক্সিডেন্ট-রিচ পমেগ্রানেট বায়ো-রিসোর্স (فِيهِمَا فَاكِهَةٌ وَنَخْلٌ وَرُمَّانٌ)।",
       "conventional_bn": "উভয়টিতে রয়েছে ফলমূল, খেজুর ও ডালিম।",
       "meta_bn": "The Pomegranate & Date-Palm Abundance ও খেজুর, ডালিম ও ফলের প্রাচুর্য",
       "metadata": {
-        "theme": "The Pomegranate & Date-Palm Abundance ও খেজুর, ডালিম ও ফলের প্রাচুর্য"
-      }
+        "theme": "The Pomegranate & Date-Palm Abundance ও খেজুর, ডালিম ও ফলের প্রাচুর্য",
+        "consistency_4_82": "Complementary botanical foods provide complete macro-carbohydrate and micro-antioxidant coverage.",
+        "lexicon_modern_notes": "فَاكِهَةٌ وَنَخْلٌ وَرُمَّانٌ — Specialized Phytochemical Bounty: Date-palm carbohydrates paired with polyphenol-rich pomegranate antioxidants."
+      },
+      "modern_translation_en": "In both of them are fruits, date-palms, and antioxidant-rich pomegranates.",
+      "meta_en": "The Pomegranate & Date-Palm Abundance ও খেজুর, ডালিম ও ফলের প্রাচুর্য",
+      "lexicon_modern_notes": "فَاكِهَةٌ وَنَخْلٌ وَرُمَّانٌ — Specialized Phytochemical Bounty: Date-palm carbohydrates paired with polyphenol-rich pomegranate antioxidants."
     },
     {
       "surah": 55,
@@ -4892,8 +5232,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Specific Fruit Trees (Refrain 27) ও অনন্য ফলমূলের প্রাচুর্যের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Specific Fruit Trees (Refrain 27) ও অনন্য ফলমূলের প্রাচুর্যের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Specific Fruit Trees (Refrain 27) ও অনন্য ফলমূলের প্রাচুর্যের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Specific Fruit Trees (Refrain 27) ও অনন্য ফলমূলের প্রাচুর্যের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -4948,8 +5293,13 @@
       "conventional_bn": "তাতে রয়েছে চরিত্রবতী সুন্দরী রমণীগণ।",
       "meta_bn": "The Virtuous Beautiful Companions ও সচ্চরিত্রা রূপবতী সঙ্গিনীরা",
       "metadata": {
-        "theme": "The Virtuous Beautiful Companions ও সচ্চরিত্রা রূপবতী সঙ্গিনীরা"
-      }
+        "theme": "The Virtuous Beautiful Companions ও সচ্চরিত্রা রূপবতী সঙ্গিনীরা",
+        "consistency_4_82": "Harmony between inner behavioral virtue and outer biological beauty produces ideal companionship.",
+        "lexicon_modern_notes": "خَيْرَاتٌ حِسَانٌ — Moral-Aesthetic Integration: Combining supreme ethical integrity with sublime physical elegance."
+      },
+      "modern_translation_en": "Therein are companions of highest moral nobility and radiant physical excellence.",
+      "meta_en": "The Virtuous Beautiful Companions ও সচ্চরিত্রা রূপবতী সঙ্গিনীরা",
+      "lexicon_modern_notes": "خَيْرَاتٌ حِسَانٌ — Moral-Aesthetic Integration: Combining supreme ethical integrity with sublime physical elegance."
     },
     {
       "surah": 55,
@@ -5009,13 +5359,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Noble Companions (Refrain 28) ও সচ্চরিত্রা সঙ্গিনীদের প্রাপ্তি",
       "metadata": {
-        "theme": "The Universal Audit on Noble Companions (Refrain 28) ও সচ্চরিত্রা সঙ্গিনীদের প্রাপ্তি"
-      }
+        "theme": "The Universal Audit on Noble Companions (Refrain 28) ও সচ্চরিত্রা সঙ্গিনীদের প্রাপ্তি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Noble Companions (Refrain 28) ও সচ্চরিত্রা সঙ্গিনীদের প্রাপ্তি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -5080,8 +5435,13 @@
       "conventional_bn": "তাবুতে সুরক্ষিত হূরগণ।",
       "meta_bn": "The Sheltered Fair Companions in Pavilions ও তাবু ও প্রাসাদে সুরক্ষিতা হূরগণ",
       "metadata": {
-        "theme": "The Sheltered Fair Companions in Pavilions ও তাবু ও প্রাসাদে সুরক্ষিতা হূরগণ"
-      }
+        "theme": "The Sheltered Fair Companions in Pavilions ও তাবু ও প্রাসাদে সুরক্ষিতা হূরগণ",
+        "consistency_4_82": "Architectural privacy and dedicated living spaces are essential prerequisites for psychological tranquility.",
+        "lexicon_modern_notes": "مَّقْصُورَاتٌ فِي الْخِيَامِ — Secluded Architectural Sanctuaries: Dignified, dedicated residential retreats ensuring peace and privacy."
+      },
+      "modern_translation_en": "Pure fair companions securely sheltered in dignified private pavilions.",
+      "meta_en": "The Sheltered Fair Companions in Pavilions ও তাবু ও প্রাসাদে সুরক্ষিতা হূরগণ",
+      "lexicon_modern_notes": "مَّقْصُورَاتٌ فِي الْخِيَامِ — Secluded Architectural Sanctuaries: Dignified, dedicated residential retreats ensuring peace and privacy."
     },
     {
       "surah": 55,
@@ -5141,13 +5501,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Sheltered Maidens (Refrain 29) ও নিরাপদ সুরক্ষার পরম নিয়ামত",
       "metadata": {
-        "theme": "The Universal Audit on Sheltered Maidens (Refrain 29) ও নিরাপদ সুরক্ষার পরম নিয়ামত"
-      }
+        "theme": "The Universal Audit on Sheltered Maidens (Refrain 29) ও নিরাপদ সুরক্ষার পরম নিয়ামত",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Sheltered Maidens (Refrain 29) ও নিরাপদ সুরক্ষার পরম নিয়ামত",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -5232,8 +5597,13 @@
       "conventional_bn": "তাদের পূর্বে কোনো মানুষ বা জিন তাদের স্পর্শ করেনি।",
       "meta_bn": "The Inviolable Chastity for Both Species ও মানুষ ও জিনের অস্পর্শিত পবিত্রতার নিশ্চয়তা",
       "metadata": {
-        "theme": "The Inviolable Chastity for Both Species ও মানুষ ও জিনের অস্পর্শিত পবিত্রতার নিশ্চয়তা"
-      }
+        "theme": "The Inviolable Chastity for Both Species ও মানুষ ও জিনের অস্পর্শিত পবিত্রতার নিশ্চয়তা",
+        "consistency_4_82": "Pristine exclusivity confirms that high-order rewards maintain incorruptible purity for both species.",
+        "lexicon_modern_notes": "لَمْ يَطْمِثْهُنَّ — Absolute Inviolate Sanctity: Untainted physical and energetic exclusivity preserved for their designated partners."
+      },
+      "modern_translation_en": "Untouched before them by any human or jinn node.",
+      "meta_en": "The Inviolable Chastity for Both Species ও মানুষ ও জিনের অস্পর্শিত পবিত্রতার নিশ্চয়তা",
+      "lexicon_modern_notes": "لَمْ يَطْمِثْهُنَّ — Absolute Inviolate Sanctity: Untainted physical and energetic exclusivity preserved for their designated partners."
     },
     {
       "surah": 55,
@@ -5293,13 +5663,18 @@
         }
       ],
       "translation_en": "So which of the favors of your Lord would you deny? -",
-      "conventional_en": "So which of the favors of your Lord would you deny? -",
+      "conventional_en": "So which of the favors of your Lord would you deny?",
       "modern_translation_bn": "অতএব (হে কার্বন-হার্ডওয়্যার ও হিডেন বায়ো-ইলেকট্রিক এনার্জি স্পেকট্রাম—উভয় সিস্টেমিক নোডদ্বয়!) তোমরা তোমাদের রুট ডিরেক্টরির কোন কোন ডেটা-ব্লেসিং ও শক্তি-ভারসাম্যকে ডেটা-ডিনাই (فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ) করবে?",
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Universal Audit on Dual Untouched Purity (Refrain 30) ও অকলঙ্কিত স্বর্গীয় মিলনের স্বীকৃতি",
       "metadata": {
-        "theme": "The Universal Audit on Dual Untouched Purity (Refrain 30) ও অকলঙ্কিত স্বর্গীয় মিলনের স্বীকৃতি"
-      }
+        "theme": "The Universal Audit on Dual Untouched Purity (Refrain 30) ও অকলঙ্কিত স্বর্গীয় মিলনের স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Universal Audit on Dual Untouched Purity (Refrain 30) ও অকলঙ্কিত স্বর্গীয় মিলনের স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -5384,8 +5759,13 @@
       "conventional_bn": "তারা হেলান দিয়ে বসবে সবুজ গালিচায় এবং সুন্দর নকশাদার কার্পেটে।",
       "meta_bn": "The Green Cushions & Exquisite Carpets ও সবুজ গালিচা ও মনোরম কার্পেটের বিলাসী আরাম",
       "metadata": {
-        "theme": "The Green Cushions & Exquisite Carpets ও সবুজ গালিচা ও মনোরম কার্পেটের বিলাসী আরাম"
-      }
+        "theme": "The Green Cushions & Exquisite Carpets ও সবুজ গালিচা ও মনোরম কার্পেটের বিলাসী আরাম",
+        "consistency_4_82": "High sensory craftsmanship and tranquil chromatic aesthetics satisfy the highest cognitive needs.",
+        "lexicon_modern_notes": "رَفْرَفٍ خُضْرٍ وَعَبْقَرِيٍّ — Ergonomic Masterwork Decor: High-comfort structural seating coupled with peak artistic textile craftsmanship."
+      },
+      "modern_translation_en": "Reclining on rich green cushion matrices and exquisitely crafted, masterwork carpets.",
+      "meta_en": "The Green Cushions & Exquisite Carpets ও সবুজ গালিচা ও মনোরম কার্পেটের বিলাসী আরাম",
+      "lexicon_modern_notes": "رَفْرَفٍ خُضْرٍ وَعَبْقَرِيٍّ — Ergonomic Masterwork Decor: High-comfort structural seating coupled with peak artistic textile craftsmanship."
     },
     {
       "surah": 55,
@@ -5450,8 +5830,13 @@
       "conventional_bn": "অতএব তোমরা উভয়ে তোমাদের রবের কোন কোন অনুগ্রহকে অস্বীকার করবে?",
       "meta_bn": "The Final Universal Refrain on Abiding Splendor (Refrain 31) ও স্বর্গের স্থায়ী সুখ-শান্তির ৩১তম স্বীকৃতি",
       "metadata": {
-        "theme": "The Final Universal Refrain on Abiding Splendor (Refrain 31) ও স্বর্গের স্থায়ী সুখ-শান্তির ৩১তম স্বীকৃতি"
-      }
+        "theme": "The Final Universal Refrain on Abiding Splendor (Refrain 31) ও স্বর্গের স্থায়ী সুখ-শান্তির ৩১তম স্বীকৃতি",
+        "consistency_4_82": "Dual-addressing conscious physical entities and subconscious/plasma energy spectra confirms the complete integration of visible and invisible domains without contradiction.",
+        "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
+      },
+      "modern_translation_en": "So which of the systemic data-blessings and energy provisions of your Root Directory will you both (conscious carbon hardware and hidden bio-electric spectrum) deny?",
+      "meta_en": "The Final Universal Refrain on Abiding Splendor (Refrain 31) ও স্বর্গের স্থায়ী সুখ-শান্তির ৩১তম স্বীকৃতি",
+      "lexicon_modern_notes": "رَبِّكُمَا تُكَذِّبَانِ — Dual-Ontology Systemic Audit: Interrogating both visible conscious carbon nodes and hidden electromagnetic/subconscious plasma energy fields."
     },
     {
       "surah": 55,
@@ -5536,8 +5921,13 @@
       "conventional_bn": "মহিমান্বিত তোমার রবের নাম, যিনি মহিমাময় ও মহানুভব।",
       "meta_bn": "The Supreme Benediction of the Lord of Majesty and Honor ও মহিমাময় ও দয়ালু রবের নামের চিরন্তন বরকত",
       "metadata": {
-        "theme": "The Supreme Benediction of the Lord of Majesty and Honor ও মহিমাময় ও দয়ালু রবের নামের চিরন্তন বরকত"
-      }
+        "theme": "The Supreme Benediction of the Lord of Majesty and Honor ও মহিমাময় ও দয়ালু রবের নামের চিরন্তন বরকত",
+        "consistency_4_82": "The Surah opens with Ar-Rahman (Source of Grace) and concludes with His glorious Name, forming a mathematically perfect circular seal.",
+        "lexicon_modern_notes": "تَبَارَكَ اسْمُ رَبِّكَ — Ultimate Doxological Closure: The supreme name of the Root Directory encompasses infinite abundance, stability, and glory."
+      },
+      "modern_translation_en": "Blessed is the supreme name of your Root Directory, Owner of Infinite Majesty and Honor.",
+      "meta_en": "The Supreme Benediction of the Lord of Majesty and Honor ও মহিমাময় ও দয়ালু রবের নামের চিরন্তন বরকত",
+      "lexicon_modern_notes": "تَبَارَكَ اسْمُ رَبِّكَ — Ultimate Doxological Closure: The supreme name of the Root Directory encompasses infinite abundance, stability, and glory."
     }
   ]
 }
