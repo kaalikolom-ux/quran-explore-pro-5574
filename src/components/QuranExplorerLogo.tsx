@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 interface QuranExplorerLogoProps {
   className?: string;
@@ -8,7 +8,7 @@ interface QuranExplorerLogoProps {
 export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorerLogoProps) {
   const heightClass = {
     sm: "h-5 sm:h-6",
-    md: "h-6 sm:h-7.5",
+    md: "h-5.5 sm:h-7.5",
     lg: "h-8 sm:h-10",
   }[size];
 

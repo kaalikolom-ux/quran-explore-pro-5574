@@ -176,7 +176,7 @@ function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-16 sm:pt-24 md:pt-28 flex flex-col items-center text-center sm:items-start sm:text-left">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-3.5 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md shadow-xs">
             <Sparkles className="size-3.5 text-[#60a5fa]" /> {t("tagline")}
           </p>
@@ -194,7 +194,7 @@ function HomePage() {
             </h1>
 
             {/* ফিক্সড মিনিমাম হাইট দিয়ে লেআউট শিফট প্রতিরোধ */}
-            <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center">
+            <div className="mt-4 sm:mt-5 min-h-[44px] sm:min-h-[52px] text-xl font-semibold sm:text-2xl md:text-3xl font-serif flex items-center justify-center sm:justify-start">
               <Typewriter
                 words={
                   lang === "bn"
@@ -218,8 +218,8 @@ function HomePage() {
 
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">{t("heroSub")}</p>
           
-          {/* ৪টি সমান সাইজের Left-Aligned CTA বাটন (মোবাইলে ২ লাইনে ২x২ গ্রিড, ডেস্কটপে ৪ কলামে ১ লাইন) */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl w-full">
+          {/* ৪টি সমান সাইজের বাটন (মোবাইলে সেন্টারে ২ লাইনে ২x২ গ্রিড, ডেস্কটপে ৪ কলামে ১ লাইন) */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl w-full mx-auto sm:mx-0">
             <Button
               asChild
               size="lg"
@@ -270,7 +270,7 @@ function HomePage() {
           </div>
 
           {/* CTA বাটনগুলোর নীচে ১.৫ সেকেন্ড পরপর বার্স্ট করা অ্যানিমেটেড তারাবাত্তি বক্স CTA */}
-          <div className="mt-4 max-w-xl w-full">
+          <div className="mt-4 max-w-xl w-full mx-auto sm:mx-0">
             <SparkleCtaNotice variant="hero" />
           </div>
         </div>
@@ -321,7 +321,7 @@ function HomePage() {
           </div>
 
           {/* অনুবাদ উন্নয়ন ও ৪:৮২ সম্পর্কিত নোটিশ বক্স (Theme Sparkle Blast) */}
-          <div className="relative mt-6 w-full">
+          <div className="relative mt-6 w-full overflow-hidden rounded-2xl">
             {/* চার কোণায় উড়ে যাওয়া থিম তারাবাত্তি */}
             <span
               aria-hidden="true"

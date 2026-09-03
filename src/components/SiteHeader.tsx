@@ -174,10 +174,10 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
         
         {/* লোগো ও ব্র্যান্ডিং (Zero-Latency Standalone Kaushan Script Logo) */}
-        <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0 select-none">
-          <QuranLogoBadge className="size-4.5 sm:size-5" />
+        <Link to="/" className="group flex items-center gap-1.5 sm:gap-2.5 shrink min-w-0 select-none">
+          <QuranLogoBadge className="size-4.5 sm:size-5 shrink-0" />
           <div className="flex flex-col justify-center leading-none min-w-0">
-            <QuranExplorerLogo size="md" className="h-6 sm:h-7" />
+            <QuranExplorerLogo size="md" className="h-5.5 sm:h-7" />
             <span className="hidden sm:block text-[11px] text-muted-foreground font-medium tracking-wide mt-0.5 whitespace-nowrap">
               {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
             </span>
@@ -249,12 +249,12 @@ export function SiteHeader() {
             </span>
           </button>
 
-          {/* সেটিংস পেজ বাটন */}
+          {/* সেটিংস পেজ বাটন (মোবাইলে ড্রপডাউনে থাকায় হেডারে শুধু ডেস্কটপে দেখানো হবে) */}
           <Link
             to="/settings"
             title={lang === "bn" ? "সেটিংস ও পছন্দসমূহ" : "Settings & Preferences"}
             aria-label="Settings"
-            className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer ${
+            className={`hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer ${
               currentPath === "/settings" ? "border-primary text-primary font-bold bg-secondary" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -266,7 +266,7 @@ export function SiteHeader() {
               to="/admin"
               title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
               aria-label="Admin Panel"
-              className={`flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer ${
+              className={`hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer ${
                 currentPath.startsWith("/admin") ? "border-[#2A6F97] dark:border-[#58b4e8] text-[#1c5576] dark:text-[#58b4e8] font-bold" : ""
               }`}
             >
@@ -274,14 +274,14 @@ export function SiteHeader() {
             </Link>
           )}
 
-          {/* লগইন / লগআউট বাটন (ডান পাশের শেষে) */}
+          {/* লগইন / লগআউট বাটন (ডান পাশের শেষে - মোবাইলে ড্রপডাউনে থাকবে) */}
           {user ? (
             <button
               type="button"
               onClick={handleLogout}
               title={lang === "bn" ? "লগআউট করুন" : "Log out"}
               aria-label="Logout"
-              className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+              className="hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
             >
               <LogoutDoorIcon className="size-3.5 sm:size-4" />
             </button>
@@ -290,7 +290,7 @@ export function SiteHeader() {
               to="/auth"
               title={lang === "bn" ? "লগইন করুন" : "Sign In"}
               aria-label="Login"
-              className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
+              className="hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
             >
               <LoginDoorIcon className="size-3.5 sm:size-4" />
             </Link>
@@ -310,9 +310,9 @@ export function SiteHeader() {
       {/* গ্লোবাল সার্চ ডায়ালগ */}
       <GlobalSearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
-      {/* মোবাইল ড্রপডাউন মেনু */}
+      {/* মোবাইল ড্রপডাউন মেনু (Centered Aligned) */}
       {mobileOpen && (
-        <div className="border-b border-border bg-card p-4 md:hidden space-y-1 animate-in slide-in-from-top duration-200 shadow-md">
+        <div className="border-b border-border bg-card p-4 md:hidden space-y-1.5 animate-in slide-in-from-top duration-200 shadow-md">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
@@ -321,7 +321,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 onClick={() => setMobileOpen(false)}
-                className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition-all ${
+                className={`flex items-center justify-center gap-2.5 rounded-lg px-4 py-2.5 text-sm font-medium transition-all text-center ${
                   isActive
                     ? "bg-secondary text-foreground font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -333,29 +333,29 @@ export function SiteHeader() {
             );
           })}
 
-          <div className="pt-2 border-t border-border space-y-1">
+          <div className="pt-2 border-t border-border space-y-1.5">
             {/* মোবাইল থিম পরিবর্তন বাটন */}
             <button
               type="button"
               onClick={cycleTheme}
-              className="w-full flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted transition-all cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-foreground hover:bg-muted transition-all cursor-pointer text-center"
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center justify-center gap-2">
                 <span className="size-4 flex items-center justify-center">
                   {getThemeDetails().icon}
                 </span>
                 <span>{lang === "bn" ? "থিম পরিবর্তন" : "Switch Theme"}</span>
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20 ml-1">
+                  {getThemeDetails().name}
+                </span>
               </div>
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
-                {getThemeDetails().name}
-              </span>
             </button>
 
             {user && (
               <Link
                 to="/admin"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground bg-muted/40 transition-all"
+                className="flex items-center justify-center gap-2.5 rounded-lg px-4 py-2.5 text-sm font-medium text-foreground bg-muted/40 transition-all text-center"
               >
                 <AdminGearIcon className="size-4 text-[#1c5576] dark:text-[#58b4e8]" />
                 <span>{lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}</span>
@@ -369,7 +369,7 @@ export function SiteHeader() {
                   setMobileOpen(false);
                   handleLogout();
                 }}
-                className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2.5 rounded-lg px-4 py-2.5 text-sm font-medium text-destructive hover:bg-destructive/10 transition-all cursor-pointer text-center"
               >
                 <LogoutDoorIcon className="size-4" />
                 <span>{lang === "bn" ? "লগআউট" : "Logout"}</span>
@@ -378,7 +378,7 @@ export function SiteHeader() {
               <Link
                 to="/auth"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground bg-secondary transition-all"
+                className="flex items-center justify-center gap-2.5 rounded-lg px-4 py-2.5 text-sm font-medium text-foreground bg-secondary transition-all text-center"
               >
                 <LoginDoorIcon className="size-4 text-[#1c5576] dark:text-[#58b4e8]" />
                 <span>{lang === "bn" ? "লগইন করুন" : "Login"}</span>

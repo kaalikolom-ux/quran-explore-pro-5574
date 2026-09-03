@@ -199,7 +199,7 @@ function RootComponent() {
       <PrefsProvider>
         <AuthSync />
         <OfflineBoot />
-        <div className="flex min-h-screen flex-col bg-background">
+        <div className="flex min-h-screen flex-col bg-background overflow-x-hidden w-full max-w-[100vw]">
           <SiteHeader />
           <main className="flex-1">
             <Outlet />
