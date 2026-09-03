@@ -153,37 +153,32 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-md transition-colors">
-      <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
+      <div className="w-full flex h-14 sm:h-16 items-center justify-between px-3 sm:px-5 lg:px-6 xl:px-8">
         
         {/* লোগো ও ব্র্যান্ডিং (Zero-Latency Standalone Kaushan Script Logo) */}
-        <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0 select-none mr-2 sm:mr-4">
-          <QuranLogoBadge />
+        <Link to="/" className="group flex items-center gap-1.5 sm:gap-2.5 shrink-0 select-none mr-2 sm:mr-4">
+          <QuranLogoBadge className="h-7.5 w-7.5 sm:h-9 sm:w-9 rounded-xl" iconClassName="size-4 sm:size-5" />
           <div className="flex flex-col justify-center leading-none">
-            <QuranExplorerLogo size="md" className="h-5.5 sm:h-7" />
+            <QuranExplorerLogo size="md" className="h-5 sm:h-7" />
             <span className="hidden sm:block text-[11px] text-muted-foreground font-medium tracking-wide mt-0.5 whitespace-nowrap">
               {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
             </span>
           </div>
         </Link>
 
-        {/* প্রধান ন্যাভিগেশন মেনু (ডেস্কটপ - lg স্ক্রিন থেকে দৃশ্যমান) */}
-        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink min-w-0">
+        {/* প্রধান ন্যাভিগেশন মেনু (ডেস্কটপ - lg স্ক্রিন থেকে দৃশ্যমান, ফ্লুইড ফুল-উইডথ) */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 2xl:gap-2 shrink-0">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
             // সেটিংস অলরেডি ডান পাশের অ্যাকশন বারে আইকন হিসেবে রয়েছে, তাই টপ বারে বাদ রাখা হলো
             if (item.to === "/settings") return null;
 
-            // ১০২৪px-১২৭৯px (lg) স্ক্রিনে পরিচিতি ও যোগাযোগ অপশন অতিরিক্ত জায়গা বাঁচিয়ে রাখতে xl স্ক্রিনে দেখানো হবে
-            const isSecondary = item.to === "/about" || item.to === "/contact";
-
             return (
               <Link
                 key={item.to}
                 to={item.to}
                 className={`flex items-center gap-1 xl:gap-1.5 rounded-lg px-2 xl:px-2.5 py-1.5 text-xs font-medium transition-all whitespace-nowrap ${
-                  isSecondary ? "hidden xl:flex" : ""
-                } ${
                   isActive
                     ? "bg-secondary text-foreground font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -197,7 +192,7 @@ export function SiteHeader() {
         </nav>
 
         {/* অ্যাকশন আইকনসমূহ */}
-        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0 ml-auto">
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0 ml-2 sm:ml-4">
           
           {/* গ্লোবাল স্মার্ট সার্চ বাটন */}
           <button
@@ -208,10 +203,10 @@ export function SiteHeader() {
             className="flex items-center gap-1.5 h-7.5 sm:h-8 px-2 sm:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group shrink-0"
           >
             <Search className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
-            <span className="hidden xl:inline font-medium text-[11px]">
+            <span className="hidden 2xl:inline font-medium text-[11px]">
               {lang === "bn" ? "অনুসন্ধান..." : "Search..."}
             </span>
-            <kbd className="hidden xl:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground">
+            <kbd className="hidden 2xl:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground">
               ⌘K
             </kbd>
           </button>
@@ -220,7 +215,7 @@ export function SiteHeader() {
             type="button"
             onClick={toggleLang}
             title={lang === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
-            className="flex h-7.5 sm:h-8 items-center gap-1 rounded-lg border border-border bg-card px-1.5 sm:px-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors cursor-pointer"
+            className="flex h-7.5 sm:h-8 items-center gap-1 rounded-lg border border-border bg-card px-1.5 sm:px-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors cursor-pointer shrink-0"
           >
             <Languages className="size-3 sm:size-3.5 text-muted-foreground" />
             <span className="uppercase font-mono text-[10px] sm:text-[11px]">{lang}</span>
@@ -232,7 +227,7 @@ export function SiteHeader() {
             onClick={cycleTheme}
             title={getThemeDetails().title}
             aria-label="Toggle Theme"
-            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer group"
+            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer group shrink-0"
           >
             <span className="transition-transform duration-200 group-hover:scale-115">
               {getThemeDetails().icon}
@@ -244,7 +239,7 @@ export function SiteHeader() {
             to="/settings"
             title={lang === "bn" ? "সেটিংস ও পছন্দসমূহ" : "Settings & Preferences"}
             aria-label="Settings"
-            className={`hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer ${
+            className={`hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer shrink-0 ${
               currentPath === "/settings" ? "border-primary text-primary font-bold bg-secondary" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -256,7 +251,7 @@ export function SiteHeader() {
               to="/admin"
               title={lang === "bn" ? "এডমিন প্যানেল" : "Admin Panel"}
               aria-label="Admin Panel"
-              className={`hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer ${
+              className={`hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-all cursor-pointer shrink-0 ${
                 currentPath.startsWith("/admin") ? "border-[#2A6F97] dark:border-[#58b4e8] text-[#1c5576] dark:text-[#58b4e8] font-bold" : ""
               }`}
             >
@@ -264,14 +259,14 @@ export function SiteHeader() {
             </Link>
           )}
 
-          {/* লগইন / লগআউট বাটন (ডান পাশের শেষে - মোবাইলে ড্রপডাউনে থাকবে) */}
+          {/* লগইন / লগআউট বাটন (মোবাইল ও ডেস্কটপ উভয়েই দৃশ্যমান - মোবাইলে হ্যামবার্গার ত্রি-লাইন মেনুর ঠিক বামে) */}
           {user ? (
             <button
               type="button"
               onClick={handleLogout}
               title={lang === "bn" ? "লগআউট করুন" : "Log out"}
               aria-label="Logout"
-              className="hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+              className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer shrink-0"
             >
               <LogoutDoorIcon className="size-3.5 sm:size-4" />
             </button>
@@ -280,16 +275,17 @@ export function SiteHeader() {
               to="/auth"
               title={lang === "bn" ? "লগইন করুন" : "Sign In"}
               aria-label="Login"
-              className="hidden sm:flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer"
+              className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer shrink-0"
             >
               <LoginDoorIcon className="size-3.5 sm:size-4" />
             </Link>
           )}
 
+          {/* মোবাইল হ্যামবার্গার ত্রি-লাইন মেনু বাটন (মোবাইলে সর্ব ডানে, যার ঠিক বামে লগইন/লগআউট বাটন) */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground lg:hidden hover:bg-secondary transition-colors cursor-pointer"
+            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground lg:hidden hover:bg-secondary transition-colors cursor-pointer shrink-0"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="size-3.5 sm:size-4" /> : <Menu className="size-3.5 sm:size-4" />}
