@@ -279,9 +279,9 @@ function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-b from-transparent via-[var(--background)]/70 to-[var(--background)]" />
       </section>
 
-          {/* সুরা তালিকা ও সার্চ */}
-      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-14">
-        <div className="min-w-0">
+      {/* সুরা তালিকা ও সার্চ */}
+      <section className="mx-auto w-full max-w-6xl px-3 sm:px-4 py-8 sm:py-14">
+        <div className="w-full min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <h2 className="text-2xl font-semibold text-foreground">
               {t("surahs")} <span className="text-muted-foreground">({localNumber(114, lang)})</span>
@@ -379,7 +379,7 @@ function HomePage() {
           {chapters.isLoading ? (
             <p className="mt-8 text-sm text-muted-foreground">{t("loading")}</p>
           ) : (
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full min-w-0">
               {filtered.map((c: any) => {
                 const targetAyah = c.targetAyah || (searchAyahTarget && searchAyahTarget.surah === c.id ? searchAyahTarget.ayah : undefined);
 
@@ -389,25 +389,27 @@ function HomePage() {
                     to="/surah/$id"
                     params={{ id: String(c.id) }}
                     search={targetAyah ? { ayah: targetAyah } : undefined}
-                    className="card-soft group flex items-center gap-4 p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer"
+                    className="card-soft group flex items-center justify-between gap-2.5 sm:gap-4 p-3 sm:p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer w-full min-w-0 max-w-full overflow-hidden"
                   >
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-accent-foreground">
+                    <span className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-xs sm:text-sm font-semibold text-accent-foreground">
                       {localNumber(c.id, lang)}
                     </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate font-medium text-foreground">
+                    <span className="min-w-0 flex-1 overflow-hidden pr-1">
+                      <span className="block truncate font-medium text-sm sm:text-base text-foreground">
                         {c.name_simple}
                         {targetAyah && (
-                          <span className="ml-2 text-xs font-semibold text-[#1c5576] dark:text-[#58b4e8]">
+                          <span className="ml-1.5 text-xs font-semibold text-[#1c5576] dark:text-[#58b4e8]">
                             ({localNumber(targetAyah, lang)} নং আয়াত)
                           </span>
                         )}
                       </span>
-                      <span className="block truncate text-xs text-muted-foreground font-medium">
+                      <span className="block truncate text-[11px] sm:text-xs text-muted-foreground font-medium">
                         {c.translated_name.name} · {localNumber(c.verses_count, lang)} {t("verses")}
                       </span>
                     </span>
-                    <span className="arabic text-lg text-primary">{c.name_arabic}</span>
+                    <span className="arabic text-base sm:text-lg text-primary shrink-0 text-right select-none pl-1">
+                      {c.name_arabic}
+                    </span>
                   </Link>
                 );
               })}
@@ -446,7 +448,7 @@ function HomePage() {
           </div>
 
           {/* থিমেটিক টপিক গ্রিড */}
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full min-w-0">
             {QURAN_THEMATIC_DATABASE.slice(0, 6).map((topic) => (
               <div
                 key={topic.id}
@@ -490,7 +492,7 @@ function HomePage() {
             </Link>
           </div>
           {articles.data && articles.data.length > 0 ? (
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 w-full min-w-0">
               {articles.data.map((a: any) => {
                 const title = lang === "en" && a.title_en ? a.title_en : a.title_bn;
                 const rawBody = a.content_bn || a.body_bn || a.content_en || a.body_en || a.body || "";

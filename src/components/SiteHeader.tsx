@@ -156,9 +156,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-3 sm:px-6">
         
         {/* লোগো ও ব্র্যান্ডিং (Zero-Latency Standalone Kaushan Script Logo) */}
-        <Link to="/" className="group flex items-center gap-1.5 sm:gap-2.5 shrink min-w-0 select-none">
+        <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0 select-none mr-2 sm:mr-4">
           <QuranLogoBadge />
-          <div className="flex flex-col justify-center leading-none min-w-0">
+          <div className="flex flex-col justify-center leading-none">
             <QuranExplorerLogo size="md" className="h-5.5 sm:h-7" />
             <span className="hidden sm:block text-[11px] text-muted-foreground font-medium tracking-wide mt-0.5 whitespace-nowrap">
               {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
@@ -166,22 +166,30 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        {/* প্রধান ন্যাভিগেশন মেনু (ডেস্কটপ) */}
-        <nav className="hidden md:flex items-center gap-1">
+        {/* প্রধান ন্যাভিগেশন মেনু (ডেস্কটপ - lg স্ক্রিন থেকে দৃশ্যমান) */}
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink min-w-0">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
+            // সেটিংস অলরেডি ডান পাশের অ্যাকশন বারে আইকন হিসেবে রয়েছে, তাই টপ বারে বাদ রাখা হলো
+            if (item.to === "/settings") return null;
+
+            // ১০২৪px-১২৭৯px (lg) স্ক্রিনে পরিচিতি ও যোগাযোগ অপশন অতিরিক্ত জায়গা বাঁচিয়ে রাখতে xl স্ক্রিনে দেখানো হবে
+            const isSecondary = item.to === "/about" || item.to === "/contact";
+
             return (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
+                className={`flex items-center gap-1 xl:gap-1.5 rounded-lg px-2 xl:px-2.5 py-1.5 text-xs font-medium transition-all whitespace-nowrap ${
+                  isSecondary ? "hidden xl:flex" : ""
+                } ${
                   isActive
                     ? "bg-secondary text-foreground font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >
-                <Icon className="size-3.5" />
+                <Icon className="size-3.5 shrink-0" />
                 <span>{item.label}</span>
               </Link>
             );
@@ -189,7 +197,7 @@ export function SiteHeader() {
         </nav>
 
         {/* অ্যাকশন আইকনসমূহ */}
-        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0 ml-auto">
           
           {/* গ্লোবাল স্মার্ট সার্চ বাটন */}
           <button
@@ -197,13 +205,13 @@ export function SiteHeader() {
             onClick={() => setSearchOpen(true)}
             title={lang === "bn" ? "কুরআন, বিষয় ও আর্টিকেল খুঁজুন (Ctrl + K)" : "Search Quran, Topics & Articles (Ctrl + K)"}
             aria-label="Search"
-            className="flex items-center gap-1.5 h-7.5 sm:h-8 px-2 sm:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group"
+            className="flex items-center gap-1.5 h-7.5 sm:h-8 px-2 sm:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group shrink-0"
           >
             <Search className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline font-medium text-[11px]">
+            <span className="hidden xl:inline font-medium text-[11px]">
               {lang === "bn" ? "অনুসন্ধান..." : "Search..."}
             </span>
-            <kbd className="hidden md:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground">
+            <kbd className="hidden xl:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground">
               ⌘K
             </kbd>
           </button>
@@ -281,7 +289,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground md:hidden hover:bg-secondary transition-colors cursor-pointer"
+            className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground lg:hidden hover:bg-secondary transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="size-3.5 sm:size-4" /> : <Menu className="size-3.5 sm:size-4" />}
@@ -294,7 +302,7 @@ export function SiteHeader() {
 
       {/* মোবাইল ড্রপডাউন মেনু (Centered Aligned) */}
       {mobileOpen && (
-        <div className="border-b border-border bg-card p-4 md:hidden space-y-1.5 animate-in slide-in-from-top duration-200 shadow-md">
+        <div className="border-b border-border bg-card p-4 lg:hidden space-y-1.5 animate-in slide-in-from-top duration-200 shadow-md">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));

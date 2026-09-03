@@ -25,7 +25,7 @@ export function SparkleCtaNotice({ className = "", variant = "hero" }: SparkleCt
   };
 
   return (
-    <div className={`relative w-full max-w-xl mx-auto flex items-center justify-center ${className}`}>
+    <div className={`relative w-full max-w-xl mx-auto flex items-center justify-center overflow-hidden rounded-2xl ${className}`}>
       {/* ১.৫ সেকেন্ড পরপর চারদিকে ছড়িয়ে পড়া তারাবাত্তির কণা — থিম-অনুযায়ী রঙ */}
       <span
         aria-hidden="true"

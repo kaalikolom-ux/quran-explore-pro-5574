@@ -55,7 +55,7 @@ export function BackToTop() {
     <div
       id="quick-scroll-nav"
       data-testid="quick-scroll-nav"
-      className="fixed bottom-6 right-6 z-40 flex flex-col items-center rounded-2xl border border-border/80 bg-card/80 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-2xl p-1"
+      className="fixed bottom-4 right-2.5 sm:bottom-6 sm:right-6 z-40 flex flex-col items-center rounded-2xl border border-border/80 bg-card/80 text-foreground backdrop-blur-md shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-2xl p-1"
     >
       <button
         id="scroll-to-top"
