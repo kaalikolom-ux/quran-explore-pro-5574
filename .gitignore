@@ -35,3 +35,9 @@ dist-ssr
 backup/
 wooniche_quran_data.json
 a_wooniche_alam_m_data.json
+
+# Scratch & temporary migration scripts
+scratch/
+scratch_*
+*.sql
+
