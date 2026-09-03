@@ -42,10 +42,15 @@
       "conventional_en": "By the racers, panting,",
       "meta_bn": "হাই-কাইনেটিক এনার্জি ডিসচার্জ",
       "meta_en": "High-Kinetic Energy Discharge",
-      "modern_translation_bn": "সাক্ষ্য দিচ্ছে চরম গতিতে ধাবমান ঊর্ধ্বশ্বাসী অশ্ব ও তেজস্বী বাহনসমূহ (وَالْعَادِيَاتِ ضَبْحًا),",
-      "modern_translation_en": "Witness the dynamic forces galloping with extreme kinetic energy discharge and panting aerodynamic thrust (Wal-'adiyati dabha);",
-      "lexicon_modern_notes": "وَالْعَادِيَاتِ ضَبْحًا — কাইনেটিক মোমেন্টাম ও অ্যারোডাইনামিক থ্রাস্ট: 'দ্বাবহু' হলো তীব্র গতি ও বায়ু-সংকোচনের ফলে তৈরি হওয়া শব্দ। কসমিক ফোর্সের তীব্র গতিশীলতার রেফারেন্স।",
-      "conventional_bn": "শপথ সেই (ঘোড়া) গুলোর যারা ঊর্ধ্বশ্বাসে দৌড়ায়,"
+      "modern_translation_bn": "দৃঢ় পদক্ষেপে দ্রুত ধাবমান সেই তেজস্বী শক্তির সাক্ষ্য—যা গতিতে তীব্র নিঃশ্বাস ছাড়ে, (وَالْعَادِيَاتِ ضَبْحًا)",
+      "modern_translation_en": "Witness the spirited, charging forces surging forward with panting breath—",
+      "lexicon_modern_notes": "وَالْعَادِيَاتِ: রুট ع-د-و (তীব্র গতিতে ধাবমান তেজস্বী শক্তি)। এটি কোনো কসম নয়; লক্ষ্যপানে অবিচল ছুটে চলার গতিশীল মহাজাগতিক দৃষ্টান্ত।",
+      "conventional_bn": "শপথ সেই (ঘোড়া) গুলোর যারা ঊর্ধ্বশ্বাসে দৌড়ায়,",
+      "metadata": {
+        "core_meaning_bn": "দৃঢ় পদক্ষেপে দ্রুত ধাবমান সেই তেজস্বী শক্তির সাক্ষ্য—যা গতিতে তীব্র নিঃশ্বাস ছাড়ে, (وَالْعَادِيَاتِ ضَبْحًا)",
+        "core_meaning_en": "Witness the spirited, charging forces surging forward with panting breath—",
+        "consistency_4_82": "আল্লাহ সৃষ্টবস্তুর কসম খান না; শক্তির গতিময়তাকে বাস্তব সাক্ষ্য হিসেবে উপস্থাপন করেছেন।"
+      }
     },
     {
       "surah": 100,
@@ -88,10 +93,15 @@
       "conventional_en": "And the producers of sparks [when] striking",
       "meta_bn": "ঘর্ষণজনিত থার্মাল স্পার্ক মেকানিজম",
       "meta_en": "Frictional Thermal Spark Mechanism",
-      "modern_translation_bn": "এবং সাক্ষ্য ক্ষুর ঘর্ষণে অগ্নিস্ফুলিঙ্গ বিচ্ছুরণকারী গতিশীল বল (فَالْمُورِيَاتِ قَدْحًا),",
-      "modern_translation_en": "And those striking thermal sparks of fire by intense mechanical impact and friction (Fal-muriyati qadha);",
-      "lexicon_modern_notes": "فَالْمُورِيَاتِ قَدْحًا — ট্রাইবোলজিক্যাল ফ্রিকশন ও মেকানিক্যাল স্পার্ক: কঠিন বস্তুর উচ্চ কাইনেটিক সংঘর্ষে ঘর্ষণজনিত অগ্নিস্ফুলিঙ্গ সৃষ্টি হওয়া।",
-      "conventional_bn": "অতঃপর (নিজের ক্ষুরের) ঘর্ষণে আগুন ছুটায়,"
+      "modern_translation_bn": "যা পদঘাতে আগুনের স্ফুলিঙ্গ বিচ্ছুরিত করে, (فَالْمُورِيَاتِ قَدْحًا)",
+      "modern_translation_en": "Striking brilliant sparks of fire by their relentless impact,",
+      "lexicon_modern_notes": "فَالْمُورِيَاتِ: রুট و-ر-ي (অগ্নি প্রজ্বলিত করা)। قَدْحًا: ঘর্ষণে স্ফুলিঙ্গ ছড়ানো।",
+      "conventional_bn": "অতঃপর (নিজের ক্ষুরের) ঘর্ষণে আগুন ছুটায়,",
+      "metadata": {
+        "core_meaning_bn": "যা পদঘাতে আগুনের স্ফুলিঙ্গ বিচ্ছুরিত করে, (فَالْمُورِيَاتِ قَدْحًا)",
+        "core_meaning_en": "Striking brilliant sparks of fire by their relentless impact,",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -134,10 +144,15 @@
       "conventional_en": "And the chargers at dawn,",
       "meta_bn": "আকস্মিক ট্র্যাফিক অ্যাটাক",
       "meta_en": "Sudden Traffic Raid & Perimeter Breach",
-      "modern_translation_bn": "এবং সাক্ষ্য প্রত্যুষে আকস্মিক অভিযান পরিচালনাকারী শক্তি (فَالْمُغِيرَاتِ صُبْحًا),",
-      "modern_translation_en": "Then launching a sudden high-velocity raid and traffic burst at dawn (Fal-mughirati subha);",
-      "lexicon_modern_notes": "فَالْمُغِيرَاتِ صُبْحًا — আকস্মিক পেরিমিটার লঙ্ঘন: ভোরের শান্ত উইন্ডোতে সিকিউরিটি গ্রিডে অতর্কিত হাই-স্পিড অ্যাটাক।",
-      "conventional_bn": "অতঃপর সকালে হঠাৎ আক্রমণ চালায়,"
+      "modern_translation_bn": "যা প্রত্যুষেই আকস্মিক ক্ষিপ্রতায় লক্ষ্যস্থলে আঘাত হানে, (فَالْمُغِيرَاتِ صُبْحًا)",
+      "modern_translation_en": "Launching sudden, decisive raids at the break of dawn,",
+      "lexicon_modern_notes": "فَالْمُغِيرَاتِ: রুট غ-ي-ر (আকস্মিক অভিযান ও লক্ষ্যভেদ)।",
+      "conventional_bn": "অতঃপর সকালে হঠাৎ আক্রমণ চালায়,",
+      "metadata": {
+        "core_meaning_bn": "যা প্রত্যুষেই আকস্মিক ক্ষিপ্রতায় লক্ষ্যস্থলে আঘাত হানে, (فَالْمُغِيرَاتِ صُبْحًا)",
+        "core_meaning_en": "Launching sudden, decisive raids at the break of dawn,",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -190,10 +205,15 @@
       "conventional_en": "Stirring up thereby [clouds of] dust,",
       "meta_bn": "পার্টিক্যাল ডিসপার্শন ও এন্ট্রপি ক্লাউড",
       "meta_en": "Particle Dispersion & Entropy Cloud",
-      "modern_translation_bn": "ফলে সেই তীব্র কাইনেটিক ইমপ্যাক্টের ধাক্কায় তারা চারপাশের স্থবির কণাগুলোকে বাতাসে ভাসিয়ে এক বিশাল পার্টিক্যাল ডিসপার্শন বা ধূলিকণার এন্ট্রপি ক্লাউড (فَأَثَرْنَا بِهِ نَقْعًا) তৈরি করে;",
-      "modern_translation_en": "Raising thereby a dense entropy cloud of dispersed particulate matter (Fa-atharna bihi naq'a);",
-      "lexicon_modern_notes": "فَأَثَرْنَا بِهِ نَقْعًا — পার্টিক্যাল ডিসপার্শন: গতিশক্তির প্রবল আলোড়নে ধূলিকণা ও স্থবির কণাগুলোর চতুর্দিকে ছড়িয়ে পড়া।",
-      "conventional_bn": "আর সে সময় ধূলি উড়ায়,"
+      "modern_translation_bn": "এবং সেখানে তীব্র ধূলিঝড় উড্ডীন করে, (فَأَثَرْنَ بِهِ نَقْعًا)",
+      "modern_translation_en": "Raising thereby clouds of billowing dust,",
+      "lexicon_modern_notes": "উদ্যমের প্রচণ্ডতা।",
+      "conventional_bn": "আর সে সময় ধূলি উড়ায়,",
+      "metadata": {
+        "core_meaning_bn": "এবং সেখানে তীব্র ধূলিঝড় উড্ডীন করে, (فَأَثَرْنَ بِهِ نَقْعًا)",
+        "core_meaning_en": "Raising thereby clouds of billowing dust,",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -246,10 +266,15 @@
       "conventional_en": "Arriving thereby in the center collectively,",
       "meta_bn": "সেন্ট্রাল কোর পেনিট্রেশন ফেজ",
       "meta_en": "Central Core Penetration Phase",
-      "modern_translation_bn": "এবং সেই সর্বোচ্চ মোমেন্টাম বা গতিশক্তি নিয়ে একযোগে প্রতিপক্ষ ম্যালওয়্যার গ্রিডের একদম কেন্দ্রীয় কোরে বা মাঝখানে অনুপ্রবেশ (فَوَسَطْنَا بِهِ جَمْعًا) করে ফেলে;",
-      "modern_translation_en": "Penetrating thereby collectively into the very center and core of the targeted formation (Fa-wasatna bihi jam'a);",
-      "lexicon_modern_notes": "فَوَسَطْنَا بِهِ جَمْعًا — সেন্ট্রাল কোর পেনিট্রেশন: শীর্ষ মোমেন্টাম নিয়ে একযোগে সিস্টেম বা শত্রু গ্রিডের মূল কেন্দ্রে অনুপ্রবেশ করা।",
-      "conventional_bn": "অতঃপর (শত্রু) দলের অভ্যন্তরে ঢুকে পড়ে (এভাবে মানুষ নিজের শক্তি-সামর্থ্য ও আল্লাহর এক অতি বড় নি‘মাত ঘোড়াকে অপরের সম্পদ লুণ্ঠন ও অন্যের প্রতি যুলমের কাজে ব্যবহার করে),"
+      "modern_translation_bn": "অতঃপর একযোগে প্রতিপক্ষের দলের কেন্দ্রস্থলে প্রবেশ করে— (فَوَسَطْنَ بِهِ جَمْعًا)",
+      "modern_translation_en": "Penetrating collectively into the very center of the opposing forces—",
+      "lexicon_modern_notes": "লক্ষ্যের চূড়ান্ত সাফল্য।",
+      "conventional_bn": "অতঃপর (শত্রু) দলের অভ্যন্তরে ঢুকে পড়ে (এভাবে মানুষ নিজের শক্তি-সামর্থ্য ও আল্লাহর এক অতি বড় নি‘মাত ঘোড়াকে অপরের সম্পদ লুণ্ঠন ও অন্যের প্রতি যুলমের কাজে ব্যবহার করে),",
+      "metadata": {
+        "core_meaning_bn": "অতঃপর একযোগে প্রতিপক্ষের দলের কেন্দ্রস্থলে প্রবেশ করে— (فَوَسَطْنَ بِهِ جَمْعًا)",
+        "core_meaning_en": "Penetrating collectively into the very center of the opposing forces—",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -312,10 +337,15 @@
       "conventional_en": "Indeed mankind, to his Lord, is ungrateful.",
       "meta_bn": "কগনিটিভ অকৃতজ্ঞতা ও ওওএস ডিফেক্ট",
       "meta_en": "Cognitive Ungratefulness & Homeostatic Bias",
-      "modern_translation_bn": "নিশ্চয়ই কার্বন-ভিত্তিক এই বুদ্ধিবৃত্তিক প্রজাতি বা মানুষ (الْإِنسَانَ) তার ওওএসে (OOS) ডিফল্ট মেমোরি বালাইয়ের কারণে তার পরম সিস্টেম আর্কিটেক্ট বা প্রতিপালকের (لِرَبِّهِ) সরবরাহকৃত অফুরন্ত কসমিক রিসোর্সের প্রতি চরম কগনিটিভ অকৃতজ্ঞ বা সম্পূর্ণ আন-সিনক্রোনাইজড (لَكَنُودٌ);",
-      "modern_translation_en": "Indeed, the human agent is, to its Sustainer and Master Architect, ungrateful and cognitively un-synchronized (Innal-insana li-Rabbihi lakanud);",
-      "lexicon_modern_notes": "إِنَّ الْإِنسَانَ لِرَبِّهِ لَكَنُودٌ — কগনিটিভ এন্ট্রপি ও হোমওস্ট্যাটিক নেগেটিভ বায়াস: অফুরন্ত ডিফল্ট ব্যাকআপকে অভ্যস্ততায় অবহেলা করে সংকটের সময় অকৃতজ্ঞতার এরর কোড (কানূদ) রান করার মানবিক বাগ।",
-      "conventional_bn": "বস্তুতঃ মানুষ তার রব-এর প্রতি বড়ই অকৃতজ্ঞ।"
+      "modern_translation_bn": "নিশ্চয়ই মানুষ তার প্রতিপালকের প্রতি চরম অকৃতজ্ঞ ও অস্বীকৃতিপরায়ণ; (إِنَّ الْإِنسَانَ لِرَبِّهِ لَكَنُودٌ)",
+      "modern_translation_en": "Indeed, the human being is stubbornly ungrateful and in denial of his Sustainer;",
+      "lexicon_modern_notes": "لَكَنُودٌ: রুট ك-ن-د (অকৃতজ্ঞতা, অনুগ্রহ অস্বীকার করা)।",
+      "conventional_bn": "বস্তুতঃ মানুষ তার রব-এর প্রতি বড়ই অকৃতজ্ঞ।",
+      "metadata": {
+        "core_meaning_bn": "নিশ্চয়ই মানুষ তার প্রতিপালকের প্রতি চরম অকৃতজ্ঞ ও অস্বীকৃতিপরায়ণ; (إِنَّ الْإِنسَانَ لِرَبِّهِ لَكَنُودٌ)",
+        "core_meaning_en": "Indeed, the human being is stubbornly ungrateful and in denial of his Sustainer;",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -378,10 +408,15 @@
       "conventional_en": "And indeed, he is to that a witness.",
       "meta_bn": "লাইভ ডেটা-লগিং ও সেলফ-অডিট",
       "meta_en": "Live Data-Logging & Self-Audit",
-      "modern_translation_bn": "আর নিশ্চয়ই সে তার নিজের ওওএসের ব্যাক-এন্ড ডাটাবেজ এবং স্বয়ংক্রিয় আচরণের লাইভ ডেটা-লগিংয়ে এর জন্য নিজেই সরাসরি ভেরিফাইড সাক্ষী (لَشَهِيدٌ);",
-      "modern_translation_en": "And indeed, he is a direct eyewitness and telemetry log to that internal state (Wa innahu 'ala dhalika lashahid);",
-      "lexicon_modern_notes": "وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ — স্বয়ংক্রিয় ডাটা লগিং: মানব ওওএসের নিজস্ব আচরণ ও সাব-কনশাস মেমোরি নিজেই তার কৃতকর্মের অনস্বীকার্য সাক্ষী।",
-      "conventional_bn": "আর সে নিজেই (নিজের কাজ-কর্মের মাধ্যমে) এ বিষয়ের সাক্ষী।"
+      "modern_translation_bn": "এবং সে নিজেই তার আচরণের মাধ্যমে এই সত্যের প্রত্যক্ষ সাক্ষী; (وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ)",
+      "modern_translation_en": "And he is himself an undeniable witness to this reality through his conduct;",
+      "lexicon_modern_notes": "মানুষের কর্মই তার অকৃতজ্ঞতার প্রমাণ দেয়।",
+      "conventional_bn": "আর সে নিজেই (নিজের কাজ-কর্মের মাধ্যমে) এ বিষয়ের সাক্ষী।",
+      "metadata": {
+        "core_meaning_bn": "এবং সে নিজেই তার আচরণের মাধ্যমে এই সত্যের প্রত্যক্ষ সাক্ষী; (وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ)",
+        "core_meaning_en": "And he is himself an undeniable witness to this reality through his conduct;",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -444,10 +479,15 @@
       "conventional_en": "And indeed he is, in love of wealth, intense.",
       "meta_bn": "মেটেরিয়ালিস্টিক ডেটা অ্যাসোসিয়েশন বাগ",
       "meta_en": "Materialistic Resource Hoarding Bug",
-      "modern_translation_bn": "আর নিশ্চয়ই সে এই লো-ডাইমেনশনাল ক্ষণস্থায়ী মেটেরিয়াল রিসোর্স ও বস্তুগত শক্তির আসক্তি বা শর্ট-টার্ম ডাটা ভালোবাসার (لِحُبِّ الْخَيْرِ) লুপে অত্যন্ত কঠোর ও অন্ধভাবে লকড (لَشَدِيدٌ);",
-      "modern_translation_en": "And indeed, he is intense and obsessive in his attachment to materialistic wealth and transient assets (Wa innahu lihubbil-khayri lashadid);",
-      "lexicon_modern_notes": "وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ — শর্ট-টার্ম রিসোর্স অ্যাটাচমেন্ট: ক্ষণস্থায়ী মেটেরিয়াল রিসোর্সের প্রতি মাত্রাতিরিক্ত মোহ ও অন্ধ ভালোবাসা।",
-      "conventional_bn": "আর ধন-সম্পদের প্রতি অবশ্যই সে খুবই আসক্ত।"
+      "modern_translation_bn": "এবং নিশ্চয়ই পার্থিব সম্পদ ও বৈষয়িক সুবিধার ভালোবাসায় সে অতিশয় উন্মত্ত। (وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ)",
+      "modern_translation_en": "And indeed, in his intense love of worldly wealth and advantage, he is fiercely relentless.",
+      "lexicon_modern_notes": "لِحُبِّ الْخَيْرِ: রুট خ-ي-ر (এখানে বৈষয়িক সম্পদ ও সুবিধা)।",
+      "conventional_bn": "আর ধন-সম্পদের প্রতি অবশ্যই সে খুবই আসক্ত।",
+      "metadata": {
+        "core_meaning_bn": "এবং নিশ্চয়ই পার্থিব সম্পদ ও বৈষয়িক সুবিধার ভালোবাসায় সে অতিশয় উন্মত্ত। (وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ)",
+        "core_meaning_en": "And indeed, in his intense love of worldly wealth and advantage, he is fiercely relentless.",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -540,10 +580,15 @@
       "conventional_en": "But does he not know that when the contents of the graves are scattered",
       "meta_bn": "পোস্ট-শাটডাউন ডেটা এক্সট্রাকশন",
       "meta_en": "Post-Shutdown Data Extraction",
-      "modern_translation_bn": "তবে কি তার এই সীমিত কগনিটিভ প্রসেসর এই পরম সত্য জানে না যে—যখন চূড়ান্ত সিস্টেম-রিসেটের দিনে ভূগর্ভস্থ ডেটা-স্টোরেজ বা কবরসমূহের (فِي الْقُبُورِ) এনক্রিপশন আনলক করে ভেতরের সমস্ত অবিনশ্বর কণা ও মেমোরি ফাইল একযোগে বাইরে এক্সট্রাক্ট বা ছিটকে বের (بُعْثِرَ) করা হবে—",
-      "modern_translation_en": "Does he not know that when the contents of the subsurface memory graves are turned over and extracted (Idha bu'thira ma fil-qubur);",
-      "lexicon_modern_notes": "إِذَا بُعْثِرَ مَا فِي الْقُبُورِ — পোস্ট-শাটডাউন ডেটা এক্সট্রাকশন: ভূগর্ভস্থ স্টোরেজের সমস্ত এনক্রিপ্টেড অবিনশ্বর কণা ও মেমোরি ফাইল সিস্টেম রিসেটে আনলক হওয়া।",
-      "conventional_bn": "সে কি জানে না, কবরে যা আছে তা যখন উত্থিত হবে,"
+      "modern_translation_bn": "তবে কি সে জানে না—যখন কবরে যা কিছু আছে তা পুনরুত্থিত ও উন্মোচিত করা হবে? (أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِي الْقُبُورِ)",
+      "modern_translation_en": "Does he not know of the time when whatever is buried in the graves will be overturned and brought forth?",
+      "lexicon_modern_notes": "بُعْثِرَ: রুট ب-ع-ث-ر (উলটপালট করে বের করে আনা)।",
+      "conventional_bn": "সে কি জানে না, কবরে যা আছে তা যখন উত্থিত হবে,",
+      "metadata": {
+        "core_meaning_bn": "তবে কি সে জানে না—যখন কবরে যা কিছু আছে তা পুনরুত্থিত ও উন্মোচিত করা হবে? (أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِي الْقُبُورِ)",
+        "core_meaning_en": "Does he not know of the time when whatever is buried in the graves will be overturned and brought forth?",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -606,10 +651,15 @@
       "conventional_en": "And that within the breasts is obtained,",
       "meta_bn": "কোর মেমোরি আনলকিং ও ফাইল ডিক্রিপশন",
       "meta_en": "Core Memory Decryption & Subconscious Filter",
-      "modern_translation_bn": "এবং মানুষের অবচেতন ডেটা-বাফারিং জোন ও নিউরাল মেমোরি ফাইলের (فِي الصُّدُورِ) গভীরে আজীবন হাইড বা এনক্রিপ্ট করে রাখা প্রতিটি গোপন চিন্তা, কুযুক্তি ও প্রসেসিং ডেটা সম্পূর্ণ ডিক্রিপ্ট ও অবজেক্ট ফিল্টারিং (وَحُصِّلَ) করা হবে?",
-      "modern_translation_en": "And all that is concealed within the subconscious processors and cognitive buffering zones is decrypted and sorted (Wa hussila ma fis-sudur)?",
-      "lexicon_modern_notes": "وَحُصِّلَ مَا فِي الصُّدُورِ — মেমোরি ডিক্রিপশন ও কোয়ান্টাম ডেটা হারভেস্টিং: 'হুচ্ছিলা' হলো খোসা ছাড়িয়ে ভেতরের আসল নিরেট শস্যদানাটি বের করা। অবচেতন মনের এনক্রিপ্ট করে রাখা প্রতিটি গোপন ফাইল ডিক্রিপ্ট ও ফিল্টার করা।",
-      "conventional_bn": "আর অন্তরে যা (কিছু লুকানো) আছে তা প্রকাশ করা হবে,"
+      "modern_translation_bn": "এবং মানুষের অন্তরের গভীরে যা কিছু প্রচ্ছন্ন ছিল তা স্পষ্ট ও বাছাই করা হবে? (وَحُصِّلَ مَا فِي الصُّدُورِ)",
+      "modern_translation_en": "And all that was hidden within the inner depths of hearts and minds will be exposed and sorted?",
+      "lexicon_modern_notes": "وَحُصِّلَ: রুট ح-ص-ل (বিশ্লেষণ ও নিরূপণ করা)।",
+      "conventional_bn": "আর অন্তরে যা (কিছু লুকানো) আছে তা প্রকাশ করা হবে,",
+      "metadata": {
+        "core_meaning_bn": "এবং মানুষের অন্তরের গভীরে যা কিছু প্রচ্ছন্ন ছিল তা স্পষ্ট ও বাছাই করা হবে? (وَحُصِّلَ مَا فِي الصُّدُورِ)",
+        "core_meaning_en": "And all that was hidden within the inner depths of hearts and minds will be exposed and sorted?",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 100,
@@ -682,10 +732,15 @@
       "conventional_en": "Indeed, their Lord with them, that Day, is [fully] Acquainted.",
       "meta_bn": "রিয়াল-টাইম ক্লাউড অডিট ও জিরো-ল্যাগিং স্ক্যান",
       "meta_en": "Real-Time Cloud Analytics & Zero-Lag Scan",
-      "modern_translation_bn": "নিশ্চয়ই তাদের সুপ্রীম সিস্টেম আর্কিটেক্ট বা প্রতিপালক (رَبَّهُم) সেই চূড়ান্ত স্ক্রীনিংয়ের দিনে (يَوْمَئِذٍ) তাদের ওওএসের প্রতিটি ব্যাক-এন্ড লুপ, প্রসেস এবং ম্যালওয়্যার ডেটা সম্পর্কে শতভাগ মেমোরি ইনফর্মড বা নিখুঁত রিয়েল-টাইম ক্লাউড অ্যানালিটিক্সে সম্যক অবগত (لَّخَبِيرٌ)।",
-      "modern_translation_en": "Indeed, their Sustainer and Master Architect, on that Day, is fully informed and in real-time telemetry awareness of all their states (Inna Rabbahum bihim yawma'idhin lakhabir).",
-      "lexicon_modern_notes": "إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌ — রিয়েল-টাইম মেমোরি অ্যানালিটিক্স: মাস্টার সার্ভারে প্রতিটি নোডের অভ্যন্তরীণ ও বাহ্যিক অবস্থার তাৎক্ষণিক নিখুঁত ডাটাবেজ অডিট।",
-      "conventional_bn": "নিঃসন্দেহে তাদের প্রতিপালক সেদিন তাদের সম্পর্কে পুরোপুরি অবহিত থাকবেন।"
+      "modern_translation_bn": "নিশ্চয়ই তাদের প্রতিপালক সেই দিন তাদের সকল অবস্থা সম্পর্কে পূর্ণ সম্যক অবগত! (إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌ)",
+      "modern_translation_en": "Indeed, their Sustainer is entirely Cognizant and Aware of them on that Day!",
+      "lexicon_modern_notes": "خَبِيرٌ: সূক্ষ্মদর্শী ও সর্বজ্ঞ।",
+      "conventional_bn": "নিঃসন্দেহে তাদের প্রতিপালক সেদিন তাদের সম্পর্কে পুরোপুরি অবহিত থাকবেন।",
+      "metadata": {
+        "core_meaning_bn": "নিশ্চয়ই তাদের প্রতিপালক সেই দিন তাদের সকল অবস্থা সম্পর্কে পূর্ণ সম্যক অবগত! (إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌ)",
+        "core_meaning_en": "Indeed, their Sustainer is entirely Cognizant and Aware of them on that Day!",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     }
   ]
 }

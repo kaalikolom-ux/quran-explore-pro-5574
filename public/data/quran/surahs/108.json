@@ -51,15 +51,17 @@
       "translation_en": "Indeed, We have granted you, [O Muhammad], al-Kawthar.",
       "conventional_en": "Indeed, We have granted you, [O Muhammad], al-Kawthar.",
       "conventional_bn": "আমি তোমাকে (হাওযে) কাওসার দান করেছি।",
-      "modern_translation_bn": "আমি তোমাকে (হাওযে) কাওসার দান করেছি।",
-      "modern_translation_en": "Indeed, We have granted you, [O Muhammad], al-Kawthar.",
+      "modern_translation_bn": "নিশ্চয়ই আমি তোমাকে অফুরন্ত কল্যাণ, প্রজ্ঞা ও প্রাচুর্য দান করেছি; (إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ)",
+      "modern_translation_en": "Indeed, We have endowed you with the Inexhaustible Abundance of wisdom and goodness (Al-Kawthar);",
       "meta_bn": "Surah 108 Ayah 1 Theme",
       "meta_en": "Surah 108 Ayah 1 Theme",
-      "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "الْكَوْثَرَ: রুট ك-ث-ر (অফুরন্ত জ্ঞান, ওহীর প্রাচুর্য, নৈতিক শ্রেষ্ঠত্ব ও চিরন্তন শুভফল)।",
       "metadata": {
         "theme": "Surah 108 Ayah 1 Theme",
         "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 1 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "নিশ্চয়ই আমি তোমাকে অফুরন্ত কল্যাণ, প্রজ্ঞা ও প্রাচুর্য দান করেছি; (إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ)",
+        "core_meaning_en": "Indeed, We have endowed you with the Inexhaustible Abundance of wisdom and goodness (Al-Kawthar);"
       }
     },
     {
@@ -112,15 +114,17 @@
       "translation_en": "So pray to your Lord and sacrifice [to Him alone].",
       "conventional_en": "So pray to your Lord and sacrifice [to Him alone].",
       "conventional_bn": "কাজেই তুমি তোমার প্রতিপালকের উদ্দেশ্যে নামায আদায় কর এবং কুরবানী কর,",
-      "modern_translation_bn": "কাজেই তুমি তোমার প্রতিপালকের উদ্দেশ্যে নামায আদায় কর এবং কুরবানী কর,",
-      "modern_translation_en": "So pray to your Lord and sacrifice [to Him alone].",
+      "modern_translation_bn": "অতএব তোমার রবের সাথে অবিচ্ছিন্ন সংযোগ কায়েম রাখো এবং স্বার্থত্যাগ ও নিবেদন সম্পন্ন করো। (فَصَلِّ لِرَبِّكَ وَانْحَرْ)",
+      "modern_translation_en": "Therefore, maintain devoted communion with your Sustainer and enact resolute sacrifice;",
       "meta_bn": "Surah 108 Ayah 2 Theme",
       "meta_en": "Surah 108 Ayah 2 Theme",
-      "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "فَصَلِّ: রুট ص-ل-و (ঐশী নির্দেশনার সাথে অবিচ্ছিন্ন সংযোগ ও সালাত প্রতিষ্ঠা)। انْحَرْ: রুট ن-ح-ر (উৎসর্গ করা, অহংকার ও স্বার্থ বিসর্জন দেওয়া)।",
       "metadata": {
         "theme": "Surah 108 Ayah 2 Theme",
         "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 2 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "অতএব তোমার রবের সাথে অবিচ্ছিন্ন সংযোগ কায়েম রাখো এবং স্বার্থত্যাগ ও নিবেদন সম্পন্ন করো। (فَصَلِّ لِرَبِّكَ وَانْحَرْ)",
+        "core_meaning_en": "Therefore, maintain devoted communion with your Sustainer and enact resolute sacrifice;"
       }
     },
     {
@@ -183,15 +187,17 @@
       "translation_en": "Indeed, your enemy is the one cut off.",
       "conventional_en": "Indeed, your enemy is the one cut off.",
       "conventional_bn": "(তোমার নাম-চিহ্ন কোন দিন মুছবে না, বরং) তোমার প্রতি বিদ্বেষ পোষণকারীরাই নাম চিহ্নহীন- নির্মূল।",
-      "modern_translation_bn": "(তোমার নাম-চিহ্ন কোন দিন মুছবে না, বরং) তোমার প্রতি বিদ্বেষ পোষণকারীরাই নাম চিহ্নহীন- নির্মূল।",
-      "modern_translation_en": "Indeed, your enemy is the one cut off.",
+      "modern_translation_bn": "নিশ্চয়ই তোমার বিদ্বেষপোষণকারী শত্রু নিজেই হবে মূলহীন ও নির্বংশ। (إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ)",
+      "modern_translation_en": "Indeed, your rancorous, hateful antagonist is the one severed from lasting goodness and enduring legacy.",
       "meta_bn": "Surah 108 Ayah 3 Theme",
       "meta_en": "Surah 108 Ayah 3 Theme",
-      "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "شَانِئَكَ: রুট ش-ن-أ (বিদ্বেষী, ঘৃণা পোষণকারী)। الْأَبْتَرُ: রুট ب-ت-ر (বিচ্ছিন্ন, যার কোনো স্মরণীয় ও শুভ ধারাবাহিকতা থাকে না)।",
       "metadata": {
         "theme": "Surah 108 Ayah 3 Theme",
         "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 3 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "নিশ্চয়ই তোমার বিদ্বেষপোষণকারী শত্রু নিজেই হবে মূলহীন ও নির্বংশ। (إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ)",
+        "core_meaning_en": "Indeed, your rancorous, hateful antagonist is the one severed from lasting goodness and enduring legacy."
       }
     }
   ]

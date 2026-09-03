@@ -91,15 +91,17 @@
       "translation_en": "Have you not considered, [O Muhammad], how your Lord dealt with the companions of the elephant?",
       "conventional_en": "Have you not considered, [O Muhammad], how your Lord dealt with the companions of the elephant?",
       "conventional_bn": "তুমি কি দেখনি (কা‘বা ঘর ধ্বংসের জন্য আগত) হাতীওয়ালাদের সঙ্গে তোমার প্রতিপালক কীরূপ ব্যবহার করেছিলেন?",
-      "modern_translation_bn": "তুমি কি দেখনি (কা‘বা ঘর ধ্বংসের জন্য আগত) হাতীওয়ালাদের সঙ্গে তোমার প্রতিপালক কীরূপ ব্যবহার করেছিলেন?",
-      "modern_translation_en": "Have you not considered, [O Muhammad], how your Lord dealt with the companions of the elephant?",
+      "modern_translation_bn": "তুমি কি লক্ষ্য করোনি তোমার প্রতিপালক সেই হস্তিবাহিনীর অহংকারী আধিপত্যকামী শক্তির সাথে কী আচরণ করেছিলেন? (أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ)",
+      "modern_translation_en": "Have you not reflected upon how your Sustainer dealt with the aggressive, arrogant wielders of military force (the army of the elephant)?",
       "meta_bn": "Surah 105 Ayah 1 Theme",
       "meta_en": "Surah 105 Ayah 1 Theme",
-      "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "بِأَصْحَابِ الْفِيلِ: অন্ধ পাশবিক শক্তি ও ঔদ্ধত্যের প্রতীক।",
       "metadata": {
         "theme": "Surah 105 Ayah 1 Theme",
         "lexicon_modern_notes": "Ayah 1 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 1 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "তুমি কি লক্ষ্য করোনি তোমার প্রতিপালক সেই হস্তিবাহিনীর অহংকারী আধিপত্যকামী শক্তির সাথে কী আচরণ করেছিলেন? (أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ)",
+        "core_meaning_en": "Have you not reflected upon how your Sustainer dealt with the aggressive, arrogant wielders of military force (the army of the elephant)?"
       }
     },
     {
@@ -172,15 +174,17 @@
       "translation_en": "Did He not make their plan into misguidance?",
       "conventional_en": "Did He not make their plan into misguidance?",
       "conventional_bn": "তিনি কি তাদের চক্রান্ত ব্যর্থ করে দেননি?",
-      "modern_translation_bn": "তিনি কি তাদের চক্রান্ত ব্যর্থ করে দেননি?",
-      "modern_translation_en": "Did He not make their plan into misguidance?",
+      "modern_translation_bn": "তিনি কি তাদের সমস্ত চক্রান্ত ও ধ্বংসাত্মক নীলনকশাকে নিষ্ফল ও বিভ্রান্তিকর করে দেননি? (أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ)",
+      "modern_translation_en": "Did He not cause their treacherous conspiracy to collapse into total disorientation and failure?",
       "meta_bn": "Surah 105 Ayah 2 Theme",
       "meta_en": "Surah 105 Ayah 2 Theme",
-      "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "كَيْدَهُمْ: চক্রান্ত। تَضْلِيلٍ: রুট ض-ل-ل (লক্ষ্যচ্যুত ও অকার্যকর করা)।",
       "metadata": {
         "theme": "Surah 105 Ayah 2 Theme",
         "lexicon_modern_notes": "Ayah 2 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 2 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "তিনি কি তাদের সমস্ত চক্রান্ত ও ধ্বংসাত্মক নীলনকশাকে নিষ্ফল ও বিভ্রান্তিকর করে দেননি? (أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ)",
+        "core_meaning_en": "Did He not cause their treacherous conspiracy to collapse into total disorientation and failure?"
       }
     },
     {
@@ -243,15 +247,17 @@
       "translation_en": "And He sent against them birds in flocks,",
       "conventional_en": "And He sent against them birds in flocks,",
       "conventional_bn": "তিনি তাদের বিরুদ্ধে পাঠিয়েছিলেন ঝাঁকে ঝাঁকে পাখি।",
-      "modern_translation_bn": "তিনি তাদের বিরুদ্ধে পাঠিয়েছিলেন ঝাঁকে ঝাঁকে পাখি।",
-      "modern_translation_en": "And He sent against them birds in flocks,",
+      "modern_translation_bn": "এবং তিনি তাদের ওপর প্রেরণ করেছিলেন ঝাঁকে ঝাঁকে প্রাকৃতিক ধ্বংসকারী উপাদান, (وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ)",
+      "modern_translation_en": "And unleashed upon them systemic airborne forces in relentless succession,",
       "meta_bn": "Surah 105 Ayah 3 Theme",
       "meta_en": "Surah 105 Ayah 3 Theme",
-      "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "طَيْرًا أَبَابِيلَ: প্রাকৃতিক বিধ্বংসী শক্তির ধারাবাহিক আক্রমণ।",
       "metadata": {
         "theme": "Surah 105 Ayah 3 Theme",
         "lexicon_modern_notes": "Ayah 3 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 3 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "এবং তিনি তাদের ওপর প্রেরণ করেছিলেন ঝাঁকে ঝাঁকে প্রাকৃতিক ধ্বংসকারী উপাদান, (وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ)",
+        "core_meaning_en": "And unleashed upon them systemic airborne forces in relentless succession,"
       }
     },
     {
@@ -314,15 +320,17 @@
       "translation_en": "Striking them with stones of hard clay,",
       "conventional_en": "Striking them with stones of hard clay,",
       "conventional_bn": "যারা তাদের উপর পাথরের কাঁকর নিক্ষেপ করেছিল।",
-      "modern_translation_bn": "যারা তাদের উপর পাথরের কাঁকর নিক্ষেপ করেছিল।",
-      "modern_translation_en": "Striking them with stones of hard clay,",
+      "modern_translation_bn": "যা তাদের ওপর নিক্ষেপ করেছিল কঠিন পোড়ামাটির আঘাতকারী কণা, (تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ)",
+      "modern_translation_en": "Striking them with dense, fossilized stone-projectiles,",
       "meta_bn": "Surah 105 Ayah 4 Theme",
       "meta_en": "Surah 105 Ayah 4 Theme",
-      "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "سِجِّيلٍ: পোড়ামাটি ও কঠিন শিলাখণ্ড।",
       "metadata": {
         "theme": "Surah 105 Ayah 4 Theme",
         "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 4 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "যা তাদের ওপর নিক্ষেপ করেছিল কঠিন পোড়ামাটির আঘাতকারী কণা, (تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ)",
+        "core_meaning_en": "Striking them with dense, fossilized stone-projectiles,"
       }
     },
     {
@@ -375,15 +383,17 @@
       "translation_en": "And He made them like eaten straw.",
       "conventional_en": "And He made them like eaten straw.",
       "conventional_bn": "অতঃপর তিনি তাদেরকে করে দিলেন ভক্ষিত তৃণ-ভুষির মত।",
-      "modern_translation_bn": "অতঃপর তিনি তাদেরকে করে দিলেন ভক্ষিত তৃণ-ভুষির মত।",
-      "modern_translation_en": "And He made them like eaten straw.",
+      "modern_translation_bn": "অতঃপর তিনি তাদেরকে পশুর চিবানো ছিন্নভিন্ন ভূষির মতো নিশ্চিহ্ন করে দিলেন। (فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ)",
+      "modern_translation_en": "Thus rendering them like decimated, chewed-up straw.",
       "meta_bn": "Surah 105 Ayah 5 Theme",
       "meta_en": "Surah 105 Ayah 5 Theme",
-      "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "كَعَصْفٍ مَّأْكُولٍ: ক্ষমতার অহমিকা গুঁড়িয়ে গিয়ে মূল্যহীন বর্জ্যে পরিণত হওয়া।",
       "metadata": {
         "theme": "Surah 105 Ayah 5 Theme",
         "lexicon_modern_notes": "Ayah 5 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 5 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
+        "core_meaning_bn": "অতঃপর তিনি তাদেরকে পশুর চিবানো ছিন্নভিন্ন ভূষির মতো নিশ্চিহ্ন করে দিলেন। (فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ)",
+        "core_meaning_en": "Thus rendering them like decimated, chewed-up straw."
       }
     }
   ]
