@@ -1666,8 +1666,8 @@ function SurahDetailPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-3 sm:px-4 py-3 space-y-6">
       
-      {/* ফ্লোটিং স্টিকি হেডার */}
-      <div className="sticky top-2 sm:top-16 z-40 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl p-2.5 sm:px-4 sm:py-2.5 shadow-md transition-all">
+      {/* ফ্লোটিং স্টিকি হেডার (হেডারের নিচে মোবাইল ও ডেস্কটপ উভয় ভিউতে স্টিকি) */}
+      <div className="sticky top-14 sm:top-16 z-40 bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl p-2.5 sm:px-4 sm:py-2.5 shadow-md transition-all">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
           
           {/* হেডারের শীর্ষ অংশ */}
