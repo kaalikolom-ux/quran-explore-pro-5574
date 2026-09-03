@@ -2216,9 +2216,9 @@ function TranslationsAdmin() {
               onChange={(e) => setLng(e.target.value as typeof lng)}
               className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
             >
-              <option value="bn">বিজ্ঞানভিত্তিক / আধুনিক (বাংলা)</option>
-              <option value="en">Scientific / Modern (English)</option>
-              <option value="bn_std">প্রচলিত অনুবাদ (বাংলা)</option>
+              <option value="bn">বৈজ্ঞানিক অনুবাদ (বাংলা)</option>
+              <option value="en">Scientific Translation (English)</option>
+              <option value="bn_std">আক্ষরিক অনুবাদ (বাংলা)</option>
               <option value="en_std">Surface Translation (English)</option>
             </select>
           </div>
@@ -2421,12 +2421,12 @@ function UserPermissionsDialog({
     { key: "showMetaData", title: "২. মেটাডাটা (Meta Data)", desc: "আয়াতের পাশে বিষয়ভিত্তিক মেটা ডাটা ও টপিক ট্যাগ", highlight: true },
     { key: "showWordByWord", title: "৩. শব্দে শব্দে অর্থ", desc: "প্রতিটি শব্দের নিচে স্বতন্ত্র অর্থ ও উচ্চারণ" },
     { key: "showTransliteration", title: "৪. উচ্চারণ নির্দেশিকা", desc: "সহজে পড়ার জন্য আয়াতের উচ্চারণ নির্দেশিকা" },
-    { key: "showConventionalBn", title: "৫. প্রচলিত বাংলা অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
-    { key: "showConventionalEn", title: "৬. Surface English Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
-    { key: "showCoreMeaningBn", title: "৭. অন্তর্নিহিত অর্থ (বাংলা)", desc: "আয়াতের অন্তর্নিহিত ভাবার্থ ও মূল বার্তা", highlight: true },
-    { key: "showCoreMeaningEn", title: "৮. Core Meaning (English)", desc: "আয়াতের অন্তর্নিহিত ইংরেজি ভাবার্থ ও মূল বার্তা", highlight: true },
-    { key: "showModernBn", title: "৯. আধুনিক বাংলা অনুবাদ", desc: "আমাদের প্রাঞ্জল ও সমসাময়িক আধুনিক বাংলা অনুবাদ", highlight: true },
-    { key: "showModernEn", title: "১০. Modern English Translation", desc: "আমাদের সমসাময়িক আধুনিক ইংরেজি অনুবাদ", highlight: true },
+    { key: "showConventionalBn", title: "৫. আক্ষরিক অনুবাদ", desc: "মুহিউদ্দীন খান / তাইসিরুল কুরআন" },
+    { key: "showConventionalEn", title: "৬. Surface Translation", desc: "সহীহ ইন্টারন্যাশনাল অনুবাদ" },
+    { key: "showCoreMeaningBn", title: "৭. অন্তর্গত অনুবাদ", desc: "আয়াতের অন্তর্গত ভাবার্থ ও মূল বার্তা", highlight: true },
+    { key: "showCoreMeaningEn", title: "৮. Interlinear Translation", desc: "Interlinear contextual translation in English", highlight: true },
+    { key: "showModernBn", title: "৯. বৈজ্ঞানিক অনুবাদ", desc: "আমাদের সমসাময়িক বিজ্ঞানভিত্তিক বাংলা অনুবাদ", highlight: true },
+    { key: "showModernEn", title: "১০. Scientific Translation", desc: "আমাদের সমসাময়িক বিজ্ঞানভিত্তিক ইংরেজি অনুবাদ", highlight: true },
     { key: "showLexicon", title: "১১. অভিধান / Lexicon", desc: "শব্দকোষ, মূল ধাতু (Root) ও ব্যাকরণ" },
     { key: "showLexiconScientific", title: "১২. লেক্সিকন নোট (Lexicon Notes)", desc: "অভিধানে আধুনিক বিজ্ঞানভিত্তিক ব্যাখ্যা ও প্রেক্ষাপট", highlight: true },
     { key: "showLogicalConsistency", title: "১৩. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)", desc: "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য", highlight: true },

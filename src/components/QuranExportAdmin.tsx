@@ -66,12 +66,12 @@ export function QuranExportAdmin() {
   const [showMetaData, setShowMetaData] = useState(true);                             // ২. মেটাডাটা (Meta Data)
   const [showWordByWord, setShowWordByWord] = useState(false);                        // ৩. শব্দে শব্দে অর্থ
   const [showTransliteration, setShowTransliteration] = useState(true);               // ৪. উচ্চারণ (Transliteration)
-  const [showConventionalBn, setShowConventionalBn] = useState(true);                 // ৫. প্রচলিত অনুবাদ (বাংলা)
-  const [showConventionalEn, setShowConventionalEn] = useState(false);                // ৬. Surface Translation (English)
-  const [showCoreMeaningBn, setShowCoreMeaningBn] = useState(true);                   // ৭. অন্তর্নিহিত অর্থ (বাংলা)
-  const [showCoreMeaningEn, setShowCoreMeaningEn] = useState(false);                  // ৮. Core Meaning (English)
-  const [showModernBn, setShowModernBn] = useState(true);                             // ৯. আধুনিক অনুবাদ (বাংলা)
-  const [showModernEn, setShowModernEn] = useState(false);                            // ১০. Modern Translation (English)
+  const [showConventionalBn, setShowConventionalBn] = useState(true);                 // ৫. আক্ষরিক অনুবাদ
+  const [showConventionalEn, setShowConventionalEn] = useState(false);                // ৬. Surface Translation
+  const [showCoreMeaningBn, setShowCoreMeaningBn] = useState(true);                   // ৭. অন্তর্গত অনুবাদ
+  const [showCoreMeaningEn, setShowCoreMeaningEn] = useState(false);                  // ৮. Interlinear Translation
+  const [showModernBn, setShowModernBn] = useState(true);                             // ৯. বৈজ্ঞানিক অনুবাদ
+  const [showModernEn, setShowModernEn] = useState(false);                            // ১০. Scientific Translation
   const [showLexicon, setShowLexicon] = useState(false);                              // ১১. অভিধান / Lexicon
   const [showLexiconScientific, setShowLexiconScientific] = useState(true);          // ১২. লেক্সিকন নোট (Lexicon Notes)
   const [showLogicalConsistency, setShowLogicalConsistency] = useState(true);        // ১৩. লজিক্যাল কনসিস্ট্যান্সি (৪:৮২)
@@ -736,7 +736,7 @@ export function QuranExportAdmin() {
               {/* Layer 5 */}
               <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
                 <div>
-                  <span className="font-bold text-foreground">৫. প্রচলিত অনুবাদ (বাংলা)</span>
+                  <span className="font-bold text-foreground">৫. আক্ষরিক অনুবাদ</span>
                   <p className="text-[11px] text-muted-foreground">মুহিউদ্দীন খান / তাইসিরুল কুরআন</p>
                 </div>
                 <Switch checked={showConventionalBn} onCheckedChange={setShowConventionalBn} />
@@ -745,7 +745,7 @@ export function QuranExportAdmin() {
               {/* Layer 6 */}
               <label className="flex items-center justify-between p-2.5 rounded-lg border border-border/70 bg-card hover:bg-muted/30 cursor-pointer transition-colors">
                 <div>
-                  <span className="font-bold text-foreground">৬. Surface Translation (English)</span>
+                  <span className="font-bold text-foreground">৬. Surface Translation</span>
                   <p className="text-[11px] text-muted-foreground">সহীহ ইন্টারন্যাশনাল স্ট্যান্ডার্ড অনুবাদ</p>
                 </div>
                 <Switch checked={showConventionalEn} onCheckedChange={setShowConventionalEn} />
@@ -754,8 +754,8 @@ export function QuranExportAdmin() {
               {/* Layer 7 */}
               <label className="flex items-center justify-between p-2.5 rounded-lg border border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/10 cursor-pointer transition-colors">
                 <div>
-                  <span className="font-bold text-amber-700 dark:text-amber-400">৭. অন্তর্নিহিত অর্থ (বাংলা)</span>
-                  <p className="text-[11px] text-muted-foreground">আয়াতের অন্তর্নিহিত ভাবার্থ ও মূল বার্তা</p>
+                  <span className="font-bold text-amber-700 dark:text-amber-400">৭. অন্তর্গত অনুবাদ</span>
+                  <p className="text-[11px] text-muted-foreground">আয়াতের অন্তর্গত ভাবার্থ ও মূল বার্তা</p>
                 </div>
                 <Switch checked={showCoreMeaningBn} onCheckedChange={setShowCoreMeaningBn} />
               </label>
@@ -763,8 +763,8 @@ export function QuranExportAdmin() {
               {/* Layer 8 */}
               <label className="flex items-center justify-between p-2.5 rounded-lg border border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/10 cursor-pointer transition-colors">
                 <div>
-                  <span className="font-bold text-amber-700 dark:text-amber-400">৮. Core Meaning (English)</span>
-                  <p className="text-[11px] text-muted-foreground">Core Underlying Meaning in English</p>
+                  <span className="font-bold text-amber-700 dark:text-amber-400">৮. Interlinear Translation</span>
+                  <p className="text-[11px] text-muted-foreground">Interlinear translation in English</p>
                 </div>
                 <Switch checked={showCoreMeaningEn} onCheckedChange={setShowCoreMeaningEn} />
               </label>
@@ -772,7 +772,7 @@ export function QuranExportAdmin() {
               {/* Layer 9 */}
               <label className="flex items-center justify-between p-2.5 rounded-lg border border-primary/40 bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
                 <div>
-                  <span className="font-bold text-primary">৯. আধুনিক অনুবাদ (বাংলা)</span>
+                  <span className="font-bold text-primary">৯. বৈজ্ঞানিক অনুবাদ</span>
                   <p className="text-[11px] text-muted-foreground">মহাজাগতিক ও বিজ্ঞানভিত্তিক রূপান্তর</p>
                 </div>
                 <Switch checked={showModernBn} onCheckedChange={setShowModernBn} />
@@ -781,8 +781,8 @@ export function QuranExportAdmin() {
               {/* Layer 10 */}
               <label className="flex items-center justify-between p-2.5 rounded-lg border border-primary/40 bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
                 <div>
-                  <span className="font-bold text-primary">১০. Modern Translation (English)</span>
-                  <p className="text-[11px] text-muted-foreground">Modern Scientific & Cosmic Translation</p>
+                  <span className="font-bold text-primary">১০. Scientific Translation</span>
+                  <p className="text-[11px] text-muted-foreground">Scientific & Cosmic Translation</p>
                 </div>
                 <Switch checked={showModernEn} onCheckedChange={setShowModernEn} />
               </label>

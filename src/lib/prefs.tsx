@@ -447,12 +447,12 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       translationType: { bn: "অনুবাদ টাইপ", en: "Translation Type" },
       translationText: { bn: "অনুবাদ টেক্সট", en: "Translation Text" },
       note: { bn: "বিশেষ টীকা / নোট", en: "Special Note" },
-      sciBn: { bn: "বিজ্ঞানভিত্তিক (বাংলা)", en: "Scientific (Bangla)" },
-      sciEn: { bn: "বিজ্ঞানভিত্তিক (English)", en: "Scientific (English)" },
-      stdBn: { bn: "প্রচলিত অনুবাদ (বাংলা)", en: "Standard (Bangla)" },
-      stdEn: { bn: "Surface Translation (English)", en: "Surface Translation (English)" },
-      coreMeaningBn: { bn: "অন্তর্নিহিত অর্থ (বাংলা)", en: "Core Meaning (Bangla)" },
-      coreMeaningEn: { bn: "Core Meaning (English)", en: "Core Meaning (English)" },
+      sciBn: { bn: "বৈজ্ঞানিক অনুবাদ", en: "Scientific Translation" },
+      sciEn: { bn: "Scientific Translation", en: "Scientific Translation" },
+      stdBn: { bn: "আক্ষরিক অনুবাদ", en: "Literal Translation" },
+      stdEn: { bn: "Surface Translation", en: "Surface Translation" },
+      coreMeaningBn: { bn: "অন্তর্গত অনুবাদ", en: "Interlinear Translation (Bangla)" },
+      coreMeaningEn: { bn: "Interlinear Translation", en: "Interlinear Translation" },
     };
     return dict[key]?.[prefs.lang] || key;
   };

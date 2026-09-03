@@ -17,12 +17,12 @@ export interface ExportOptions {
   showMetaData: boolean;               // ২. মেটাডাটা (Meta Data)
   showWordByWord: boolean;             // ৩. শব্দে শব্দে অর্থ
   showTransliteration: boolean;        // ৪. উচ্চারণ (Transliteration)
-  showConventionalBn: boolean;         // ৫. প্রচলিত অনুবাদ (বাংলা)
-  showConventionalEn: boolean;         // ৬. Surface Translation (English)
-  showCoreMeaningBn: boolean;          // ৭. অন্তর্নিহিত অর্থ (বাংলা)
-  showCoreMeaningEn: boolean;          // ৮. Core Meaning (English)
-  showModernBn: boolean;               // ৯. আধুনিক অনুবাদ (বাংলা)
-  showModernEn: boolean;               // ১০. Modern Translation (English)
+  showConventionalBn: boolean;         // ৫. আক্ষরিক অনুবাদ
+  showConventionalEn: boolean;         // ৬. Surface Translation
+  showCoreMeaningBn: boolean;          // ৭. অন্তর্গত অনুবাদ
+  showCoreMeaningEn: boolean;          // ৮. Interlinear Translation
+  showModernBn: boolean;               // ৯. বৈজ্ঞানিক অনুবাদ
+  showModernEn: boolean;               // ১০. Scientific Translation
   showLexicon: boolean;                // ১১. অভিধান / Lexicon (Roots, Grammar)
   showLexiconScientific: boolean;      // ১২. লেক্সিকন নোট (Lexicon Notes)
   showLogicalConsistency: boolean;     // ১৩. লজিক্যাল কনসিস্ট্যান্সি (৪:৮২)
@@ -583,7 +583,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showConventionalBn && convBn
                     ? `
                   <div class="layer-row layer-conv">
-                    <div class="layer-label">৫. প্রচলিত অনুবাদ (বাংলা)</div>
+                    <div class="layer-label">৫. আক্ষরিক অনুবাদ</div>
                     <div>${escapeXml(convBn)}</div>
                   </div>
                 `
@@ -594,7 +594,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showConventionalEn && convEn
                     ? `
                   <div class="layer-row layer-conv">
-                    <div class="layer-label">৬. Surface Translation (English)</div>
+                    <div class="layer-label">৬. Surface Translation</div>
                     <div>${escapeXml(convEn)}</div>
                   </div>
                 `
@@ -605,7 +605,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showCoreMeaningBn && coreBn
                     ? `
                   <div class="layer-row layer-core">
-                    <div class="layer-label">৭. অন্তর্নিহিত অর্থ (বাংলা)</div>
+                    <div class="layer-label">৭. অন্তর্গত অনুবাদ</div>
                     <div>${escapeXml(coreBn)}</div>
                   </div>
                 `
@@ -616,7 +616,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showCoreMeaningEn && coreEn
                     ? `
                   <div class="layer-row layer-core">
-                    <div class="layer-label">৮. Core Meaning (English)</div>
+                    <div class="layer-label">৮. Interlinear Translation</div>
                     <div>${escapeXml(coreEn)}</div>
                   </div>
                 `
@@ -627,7 +627,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showModernBn && modernBn
                     ? `
                   <div class="layer-row layer-modern">
-                    <div class="layer-label">৯. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</div>
+                    <div class="layer-label">৯. বৈজ্ঞানিক অনুবাদ</div>
                     <div>${escapeXml(modernBn)}</div>
                   </div>
                 `
@@ -638,7 +638,7 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                   options.showModernEn && modernEn
                     ? `
                   <div class="layer-row layer-modern">
-                    <div class="layer-label">১০. Modern Translation (English)</div>
+                    <div class="layer-label">১০. Scientific Translation</div>
                     <div>${escapeXml(modernEn)}</div>
                   </div>
                 `
@@ -924,12 +924,12 @@ body {
           ${options.showMetaData && (metaBn || metaEn) ? `<div class="meta-tag">🏷️ ২. মেটাডাটা: ${escapeXml(metaBn)}${metaEn ? ` (${escapeXml(metaEn)})` : ""}</div>` : ""}
           ${options.showArabic && arabic ? `<div class="arabic-text">${escapeXml(arabic)}</div>` : ""}
           ${options.showTransliteration && transliteration ? `<div class="transliteration">৪. উচ্চারণ: ${escapeXml(transliteration)}</div>` : ""}
-          ${options.showConventionalBn && convBn ? `<div class="layer-row layer-conv"><div class="layer-label">৫. প্রচলিত অনুবাদ (বাংলা)</div><div>${escapeXml(convBn)}</div></div>` : ""}
-          ${options.showConventionalEn && convEn ? `<div class="layer-row layer-conv"><div class="layer-label">৬. Surface Translation (English)</div><div>${escapeXml(convEn)}</div></div>` : ""}
-          ${options.showCoreMeaningBn && coreBn ? `<div class="layer-row layer-core"><div class="layer-label">৭. অন্তর্নিহিত অর্থ (বাংলা)</div><div>${escapeXml(coreBn)}</div></div>` : ""}
-          ${options.showCoreMeaningEn && coreEn ? `<div class="layer-row layer-core"><div class="layer-label">৮. Core Meaning (English)</div><div>${escapeXml(coreEn)}</div></div>` : ""}
-          ${options.showModernBn && modernBn ? `<div class="layer-row layer-modern"><div class="layer-label">৯. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা)</div><div>${escapeXml(modernBn)}</div></div>` : ""}
-          ${options.showModernEn && modernEn ? `<div class="layer-row layer-modern"><div class="layer-label">১০. Modern Translation (English)</div><div>${escapeXml(modernEn)}</div></div>` : ""}
+          ${options.showConventionalBn && convBn ? `<div class="layer-row layer-conv"><div class="layer-label">৫. আক্ষরিক অনুবাদ</div><div>${escapeXml(convBn)}</div></div>` : ""}
+          ${options.showConventionalEn && convEn ? `<div class="layer-row layer-conv"><div class="layer-label">৬. Surface Translation</div><div>${escapeXml(convEn)}</div></div>` : ""}
+          ${options.showCoreMeaningBn && coreBn ? `<div class="layer-row layer-core"><div class="layer-label">৭. অন্তর্গত অনুবাদ</div><div>${escapeXml(coreBn)}</div></div>` : ""}
+          ${options.showCoreMeaningEn && coreEn ? `<div class="layer-row layer-core"><div class="layer-label">৮. Interlinear Translation</div><div>${escapeXml(coreEn)}</div></div>` : ""}
+          ${options.showModernBn && modernBn ? `<div class="layer-row layer-modern"><div class="layer-label">৯. বৈজ্ঞানিক অনুবাদ</div><div>${escapeXml(modernBn)}</div></div>` : ""}
+          ${options.showModernEn && modernEn ? `<div class="layer-row layer-modern"><div class="layer-label">১০. Scientific Translation</div><div>${escapeXml(modernEn)}</div></div>` : ""}
           ${options.showLexiconScientific && lexicon ? `<div class="layer-row layer-lexicon"><div class="layer-label">🔬 ১২. লেক্সিকন নোট (Lexicon Notes)</div><div>${escapeXml(lexicon)}</div></div>` : ""}
         </div>
       `;
@@ -1057,27 +1057,27 @@ export function generateMarkdownBook(options: ExportOptions, surahs: SurahExport
       }
 
       if (options.showConventionalBn && (ayah.conventional_bn || ayah.translation_bn)) {
-        md += `**৫. প্রচলিত অনুবাদ (বাংলা):** ${ayah.conventional_bn || ayah.translation_bn}\n\n`;
+        md += `**৫. আক্ষরিক অনুবাদ:** ${ayah.conventional_bn || ayah.translation_bn}\n\n`;
       }
 
       if (options.showConventionalEn && (ayah.conventional_en || ayah.translation_en)) {
-        md += `**৬. Surface Translation (English):** ${ayah.conventional_en || ayah.translation_en}\n\n`;
+        md += `**৬. Surface Translation:** ${ayah.conventional_en || ayah.translation_en}\n\n`;
       }
 
       if (options.showCoreMeaningBn && ayah.core_meaning_bn) {
-        md += `**৭. অন্তর্নিহিত অর্থ (বাংলা):** ${ayah.core_meaning_bn}\n\n`;
+        md += `**৭. অন্তর্গত অনুবাদ:** ${ayah.core_meaning_bn}\n\n`;
       }
 
       if (options.showCoreMeaningEn && ayah.core_meaning_en) {
-        md += `**৮. Core Meaning (English):** ${ayah.core_meaning_en}\n\n`;
+        md += `**৮. Interlinear Translation:** ${ayah.core_meaning_en}\n\n`;
       }
 
       if (options.showModernBn && ayah.modern_translation_bn) {
-        md += `**৯. আধুনিক বিজ্ঞানভিত্তিক অনুবাদ (বাংলা):** ${ayah.modern_translation_bn}\n\n`;
+        md += `**৯. বৈজ্ঞানিক অনুবাদ:** ${ayah.modern_translation_bn}\n\n`;
       }
 
       if (options.showModernEn && ayah.modern_translation_en) {
-        md += `**১০. Modern Translation (English):** ${ayah.modern_translation_en}\n\n`;
+        md += `**১০. Scientific Translation:** ${ayah.modern_translation_en}\n\n`;
       }
 
       if (options.showLexiconScientific && ayah.lexicon_modern_notes) {

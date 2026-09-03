@@ -828,14 +828,14 @@ const AyahCard = React.memo(function AyahCard({
           </div>
         )}
 
-        {/* ১. প্রচলিত অনুবাদ (বাংলা) */}
+        {/* ১. আক্ষরিক অনুবাদ */}
         <div
           style={{ display: isEditing || showConventionalBn ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
             <FileText className="size-3.5 text-muted-foreground/80" />
-            <span>১. প্রচলিত অনুবাদ (বাংলা)</span>
+            <span>১. আক্ষরিক অনুবাদ</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -845,26 +845,26 @@ const AyahCard = React.memo(function AyahCard({
               }
               className="mt-1 bg-background font-normal"
               style={{ fontSize: `${translationFontSize}px` }}
-              placeholder="প্রচলিত বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
+              placeholder="আক্ষরিক বাংলা অনুবাদ লিখুন বা সম্পাদনা করুন..."
             />
           ) : (
             <p
               className="text-sm font-normal text-foreground/90 leading-relaxed pl-5.5"
               style={{ fontSize: `${translationFontSize}px`, fontWeight: 400 }}
             >
-              {ayah.conventional_bn || (ayah as any).translation_bn || "প্রচলিত বাংলা অনুবাদ লোড হচ্ছে..."}
+              {ayah.conventional_bn || (ayah as any).translation_bn || "আক্ষরিক বাংলা অনুবাদ লোড হচ্ছে..."}
             </p>
           )}
         </div>
 
-        {/* ২. Surface Translation (English) */}
+        {/* ২. Surface Translation */}
         <div
           style={{ display: isEditing || showConventionalEn ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
             <Languages className="size-3.5 text-muted-foreground/80" />
-            <span>২. Surface Translation (English)</span>
+            <span>২. Surface Translation</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -881,19 +881,19 @@ const AyahCard = React.memo(function AyahCard({
               className="text-xs italic text-muted-foreground font-serif leading-relaxed pl-5.5 font-normal"
               style={{ fontSize: `${Math.max(12, translationFontSize - 1)}px`, fontWeight: 400 }}
             >
-              {ayah.conventional_en || (ayah as any).translation_en || (lang === "bn" ? "ইংরেজি অনুবাদ লোড হচ্ছে..." : "Loading English translation...")}
+              {ayah.conventional_en || (ayah as any).translation_en || (lang === "bn" ? "Surface translation লোড হচ্ছে..." : "Loading surface translation...")}
             </p>
           )}
         </div>
 
-        {/* ৩. অন্তর্নিহিত অর্থ (বাংলা) */}
+        {/* ৩. অন্তর্গত অনুবাদ */}
         <div
           style={{ display: isEditing || (showCoreMeaningBn && hasCoreMeaningBnData) ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <Compass className="size-3.5 text-primary" />
-            <span>৩. অন্তর্নিহিত অর্থ (বাংলা)</span>
+            <span>৩. অন্তর্গত অনুবাদ</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -903,7 +903,7 @@ const AyahCard = React.memo(function AyahCard({
               }
               className="mt-1 bg-background font-normal"
               style={{ fontSize: `${translationFontSize}px` }}
-              placeholder="আয়াতের অন্তর্নিহিত বাংলা ভাবার্থ বা মূল বার্তা লিখুন..."
+              placeholder="আয়াতের অন্তর্গত ভাবার্থ বা অনুবাদ লিখুন..."
             />
           ) : (
             <p
@@ -915,14 +915,14 @@ const AyahCard = React.memo(function AyahCard({
           )}
         </div>
 
-        {/* ৪. Core Meaning (English) */}
+        {/* ৪. Interlinear Translation */}
         <div
           style={{ display: isEditing || (showCoreMeaningEn && hasCoreMeaningEnData) ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <Compass className="size-3.5 text-primary" />
-            <span>৪. Core Meaning (English)</span>
+            <span>৪. Interlinear Translation</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -932,7 +932,7 @@ const AyahCard = React.memo(function AyahCard({
               }
               className="font-serif italic mt-1 bg-background font-normal"
               style={{ fontSize: `${translationFontSize}px` }}
-              placeholder="Core contextual meaning or message in English..."
+              placeholder="Interlinear English translation..."
             />
           ) : (
             <p
@@ -944,14 +944,14 @@ const AyahCard = React.memo(function AyahCard({
           )}
         </div>
 
-        {/* ৫. আধুনিক অনুবাদ (বাংলা) */}
+        {/* ৫. বৈজ্ঞানিক অনুবাদ */}
         <div
           style={{ display: isEditing || (showModernBn && hasModernBnData) ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <BookMarked className="size-3.5 text-primary" />
-            <span>৫. আধুনিক অনুবাদ (বাংলা)</span>
+            <span>৫. বৈজ্ঞানিক অনুবাদ</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -961,7 +961,7 @@ const AyahCard = React.memo(function AyahCard({
               }
               className="mt-1 bg-background font-normal text-muted-foreground"
               style={{ fontSize: `${translationFontSize}px` }}
-              placeholder="আমাদের আধুনিক বাংলা অনুবাদ ইনপুট দিন..."
+              placeholder="আমাদের বৈজ্ঞানিক বাংলা অনুবাদ ইনপুট দিন..."
             />
           ) : (
             <p
@@ -973,14 +973,14 @@ const AyahCard = React.memo(function AyahCard({
           )}
         </div>
 
-        {/* ৬. Modern Translation (English) */}
+        {/* ৬. Scientific Translation */}
         <div
           style={{ display: isEditing || (showModernEn && hasModernEnData) ? "block" : "none" }}
           className="rounded-xl border border-border/60 bg-muted/20 p-4 space-y-1.5 transition-colors hover:border-border/80"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
             <BookmarkCheck className="size-3.5 text-primary" />
-            <span>৬. Modern Translation (English)</span>
+            <span>৬. Scientific Translation</span>
           </div>
           {isEditing ? (
             <Textarea
@@ -990,7 +990,7 @@ const AyahCard = React.memo(function AyahCard({
               }
               className="font-serif italic mt-1 bg-background font-normal text-muted-foreground"
               style={{ fontSize: `${translationFontSize}px` }}
-              placeholder="Modern contemporary English translation..."
+              placeholder="Scientific contemporary English translation..."
             />
           ) : (
             <p
