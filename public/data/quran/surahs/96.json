@@ -72,10 +72,15 @@
       "conventional_en": "Recite in the name of your Lord who created -",
       "meta_bn": "কোর বুট-আপ ও ডাটা ডিকোর্ডিং কমান্ড",
       "meta_en": "Core Boot-Up & Data Decoding Command",
-      "modern_translation_bn": "তুমি তোমার ওওএসে (OOS) কসমিক ডাটা রিড, ডিকোড ও প্রসেস (اقْرَأْ) করো তোমার সেই সিস্টেম আর্কিটেক্ট বা প্রতিপালকের সুনির্দিষ্ট আইডেন্টিটি বা রেফারেন্স কোডে (بِاسْمِ رَبِّكَ)—যিনি সমগ্র মহাজাগতিক ইকোসিস্টেম ডিজাইন ও সৃষ্টি (خَلَقَ) করেছেন;",
-      "modern_translation_en": "Read, decode, and process in your OS in the name and reference code of your Master Architect who created and designed the cosmic ecosystem (Iqra bismi Rabbikalladhi khalaq);",
-      "lexicon_modern_notes": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ — কগনিটিভ ইগনিশন ও বুট-আপ: মানব মস্তিষ্কের নিউরাল নেটওয়ার্ককে ইউনিভার্সাল সোর্স কোডের সাথে সিনক্রোনাইজ করে ডাটা রিড ও প্রসেস করার আদি হার্ড-কোড কমান্ড।",
-      "conventional_bn": "পাঠ কর তোমার প্রতিপালকের নামে যিনি সৃষ্টি করেছেন,"
+      "modern_translation_bn": "পড়ো ও অনুসন্ধান করো তোমার সেই রবের নামে, যিনি সবকিছু সৃষ্টি করেছেন; (اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ)",
+      "modern_translation_en": "Read, research, and proclaim in the name of your Sustainer who originated all creation;",
+      "lexicon_modern_notes": "اقْرَأْ: রুট ق-ر-أ (পড়া, সংগ্রহ করা, সংকলন করা, গবেষণা ও ঘোষণা করা)। বিজ্ঞানের প্রথম পাঠ।",
+      "conventional_bn": "পাঠ কর তোমার প্রতিপালকের নামে যিনি সৃষ্টি করেছেন,",
+      "metadata": {
+        "core_meaning_bn": "পড়ো ও অনুসন্ধান করো তোমার সেই রবের নামে, যিনি সবকিছু সৃষ্টি করেছেন; (اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ)",
+        "core_meaning_en": "Read, research, and proclaim in the name of your Sustainer who originated all creation;",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -138,10 +143,15 @@
       "conventional_en": "Created man from a clinging substance.",
       "meta_bn": "জেনেটিক সোর্স কোডিং ও সেলুলার মেকানিজম",
       "meta_en": "Genetic Source Coding & Cellular Mechanism",
-      "modern_translation_bn": "যিনি কার্বন-ভিত্তিক এই বুদ্ধিবৃত্তিক প্রজাতি বা মানুষকে (الْإِنسَانَ) আর্কিটেক্ট করেছেন এক অত্যন্ত জটিল, আঠালো ও জ্যামিতিকভাবে ঝুলন্ত আণবিক বন্ড বা আদি সেলুলার জাইগোট/ক্লট (مِنْ عَلَقٍ) থেকে;",
-      "modern_translation_en": "Created and engineered the conscious human agent from an embryonic clinging zygote and cellular molecular bond (Khalaqal-insana min 'alaq);",
-      "lexicon_modern_notes": "مِنْ عَلَقٍ — এমব্রায়নিক জাইগোট: জরায়ুর দেয়ালে আঠার মতো ঝুলে থাকা এনক্রিপ্টেড ডিএনএ ইনফরমেশন সমৃদ্ধ আদি কোষীয় ক্লাস্টার ও জাইগোট।",
-      "conventional_bn": "সৃষ্টি করেছেন মানুষকে জমাট-বাঁধা রক্তপিন্ড হতে।"
+      "modern_translation_bn": "যিনি মানুষকে সৃষ্টি করেছেন একটি সংলগ্ন কোষগুচ্ছ বা ঝুলন্ত ভ্রূণ থেকে। (خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ)",
+      "modern_translation_en": "Who evolved the human being from an adhering, clinging embryo (Alaq);",
+      "lexicon_modern_notes": "عَلَقٍ: রুট ع-ل-ق (জরায়ুতে লেগে থাকা রক্তপিণ্ড/কোষপিণ্ড — নম্র সূচনার প্রতীক)।",
+      "conventional_bn": "সৃষ্টি করেছেন মানুষকে জমাট-বাঁধা রক্তপিন্ড হতে।",
+      "metadata": {
+        "core_meaning_bn": "যিনি মানুষকে সৃষ্টি করেছেন একটি সংলগ্ন কোষগুচ্ছ বা ঝুলন্ত ভ্রূণ থেকে। (خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ)",
+        "core_meaning_en": "Who evolved the human being from an adhering, clinging embryo (Alaq);",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -194,10 +204,15 @@
       "conventional_en": "Recite, and your Lord is the most Generous -",
       "meta_bn": "রিসোর্স বুস্টিং ও ডাটা ইনপুট",
       "meta_en": "Resource Boosting & Continuous Data Input",
-      "modern_translation_bn": "তুমি অবিরত ডাটা রিড ও প্রসেস (اقْرَأْ) করো, আর তোমার সিস্টেম আর্কিটেক্ট বা প্রতিপালক (وَرَبُّكَ) হলেন অন্তহীন রিসোর্স ব্যাকআপ ও সর্বোচ্চ আউটপুট দাতা পরম সম্মানিত (الْأَكْرَمُ);",
-      "modern_translation_en": "Read and process continuously! And your Sustainer and Master Architect is the Most Generous and Infinite Resource Provider (Iqra wa Rabbukal-Akram);",
-      "lexicon_modern_notes": "اقْرَأْ وَرَبُّكَ الْأَكْرَمُ — আনলিমিটেড রিসোর্স বুস্টিং: জ্ঞান ও ডেটা প্রসেসিংয়ের ক্ষেত্রে সেন্ট্রাল সার্ভারের অফুরন্ত ব্যান্ডউইথ ও ব্যাকআপ প্রদানের নিশ্চয়তা।",
-      "conventional_bn": "পাঠ কর, আর তোমার রব বড়ই অনুগ্রহশীল।"
+      "modern_translation_bn": "পড়ো, আর তোমার প্রতিপালক হলেন মহিমান্বিত ও অসীম দাতা, (اقْرَأْ وَرَبُّكَ الْأَكْرَمُ)",
+      "modern_translation_en": "Read! And your Sustainer is the Most Munificent and Generous,",
+      "lexicon_modern_notes": "الْأَكْرَمُ: জ্ঞানের অফুরন্ত প্রস্রবণ।",
+      "conventional_bn": "পাঠ কর, আর তোমার রব বড়ই অনুগ্রহশীল।",
+      "metadata": {
+        "core_meaning_bn": "পড়ো, আর তোমার প্রতিপালক হলেন মহিমান্বিত ও অসীম দাতা, (اقْرَأْ وَرَبُّكَ الْأَكْرَمُ)",
+        "core_meaning_en": "Read! And your Sustainer is the Most Munificent and Generous,",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -250,10 +265,15 @@
       "conventional_en": "Who taught by the pen -",
       "meta_bn": "ইনফরমেশন ট্রান্সমিশন প্রটোকল",
       "meta_en": "Information Transmission Protocol",
-      "modern_translation_bn": "যিনি সমগ্র টাইম-লাইনের ইন্টেলিজেন্ট নোডসমূহকে ইনফরমেশন ট্রান্সমিশন টুল, সংকেত লিপি বা 'কলম' নামক ডেটা-লগিং মাধ্যমের (بِالْقَلَمِ) সাহায্যে অপ্টিমাইজড জ্ঞান ও সত্যের কোডিং ডাউনলিংক বা শিক্ষা (عَلَّمَ) দিয়েছেন;",
-      "modern_translation_en": "Who taught and transmitted knowledge through the medium of the Pen—the universal tool of data logging and symbolic encoding (Alladhi 'allama bil-qalam);",
-      "lexicon_modern_notes": "عَلَّمَ بِالْقَلَمِ — ডাটা-লগিং ও এনকোডিং মিডিয়াম: প্রজন্মের পর প্রজন্ম তথ্য সংরক্ষণ ও ডাউনলিংক করার প্রতীকী ও লিখিত ডেটা ট্রান্সমিশন মাধ্যম।",
-      "conventional_bn": "যিনি শিক্ষা দিয়েছেন কলম দিয়ে,"
+      "modern_translation_bn": "যিনি কলমের মাধ্যমে (জ্ঞানের লিখিত দলিল ও লিপিবদ্ধকরণের মাধ্যমে) শিক্ষা দিয়েছেন, (الَّذِي عَلَّمَ بِالْقَلَمِ)",
+      "modern_translation_en": "Who taught humanity through the instrument of the pen (recorded knowledge and systemic learning),",
+      "lexicon_modern_notes": "بِالْقَلَمِ: রুট ق-ل-م (কাটা, কলম তৈরি, জ্ঞান সংরক্ষণ ও বংশপরম্পরায় বিজ্ঞান হস্তান্তর)।",
+      "conventional_bn": "যিনি শিক্ষা দিয়েছেন কলম দিয়ে,",
+      "metadata": {
+        "core_meaning_bn": "যিনি কলমের মাধ্যমে (জ্ঞানের লিখিত দলিল ও লিপিবদ্ধকরণের মাধ্যমে) শিক্ষা দিয়েছেন, (الَّذِي عَلَّمَ بِالْقَلَمِ)",
+        "core_meaning_en": "Who taught humanity through the instrument of the pen (recorded knowledge and systemic learning),",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -326,10 +346,15 @@
       "conventional_en": "Taught man that which he knew not.",
       "meta_bn": "কগনিটিভ আপগ্রেডেশন ও নলেজ ইনজেকশন",
       "meta_en": "Cognitive Upgradation & Knowledge Injection",
-      "modern_translation_bn": "তিনি মানুষের কগনিটিভ প্রসেসরে এমন সব অতি-উচ্চ মহাজাগতিক ডেটা ও বিজ্ঞান আপলোড করেছেন—যা ডিকোড করার ডিফল্ট যোগ্যতা বা কগনিটিভ ক্যাপাসিটি পূর্বে মানুষের ওওএসের বিন্দুমাত্র ছিল না (مَا لَمْ يَعْلَمْ);",
-      "modern_translation_en": "Taught the human processor that which it possessed no prior bandwidth or inherent cognitive capacity to know ('Allamal-insana ma lam ya'lam);",
-      "lexicon_modern_notes": "عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ — অরিজিনাল নলেজ আপলোড: মানুষের আদি বায়োলজিক্যাল মেমোরিতে অনুপস্থিত উচ্চতর কসমিক বিজ্ঞান ও ঐশী তত্ত্ব প্রসেসরে ইনস্টল করা।",
-      "conventional_bn": "শিক্ষা দিয়েছেন মানুষকে যা সে জানত না,"
+      "modern_translation_bn": "তিনি মানুষকে এমন কিছু শিখিয়েছেন যা সে কখনোই জানত না। (عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ)",
+      "modern_translation_en": "Taught the human being that which he never knew.",
+      "lexicon_modern_notes": "মানবজাতির চেতনাগত রূপান্তর।",
+      "conventional_bn": "শিক্ষা দিয়েছেন মানুষকে যা সে জানত না,",
+      "metadata": {
+        "core_meaning_bn": "তিনি মানুষকে এমন কিছু শিখিয়েছেন যা সে কখনোই জানত না। (عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ)",
+        "core_meaning_en": "Taught the human being that which he never knew.",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -392,10 +417,15 @@
       "conventional_en": "No! [But] indeed, man transgresses",
       "meta_bn": "মনস্তাত্ত্বিক বালাই ও হ্যাকিং ড্রাইভ",
       "meta_en": "Systemic Malfunction & Boundary Breach Drive",
-      "modern_translation_bn": "কখনই নয় (কড়া প্রটোকল লক)! নিশ্চয়ই মানুষ তার ফ্রি-উইলের অপব্যবহার করে নিজের ওওএসে এক মারাত্মক সিস্টেমিক অবাধ্যতা, বাউন্ডিং লাইন ক্রস বা হ্যাকিং ড্রাইভ (لَيَطْغَىٰ) রান করে—",
-      "modern_translation_en": "Nay! Indeed, the human transgresses boundaries and executes systemic rebellious code (Kalla innal-insana layatgha);",
-      "lexicon_modern_notes": "إِنَّ الْإِنسَانَ لَيَطْغَىٰ — বাউন্ডিং লাইন ক্রস: ফ্রি-উইলের ভুল ব্যবহারে সিস্টেমের সিকিউরিটি সীমা লঙ্ঘন করা।",
-      "conventional_bn": "না (এমন আচরণ করা) মোটেই ঠিক নয়, মানুষ অবশ্যই সীমালঙ্ঘন করে,"
+      "modern_translation_bn": "কখনোই ঔদ্ধত্য দেখানো উচিত নয়; অথচ মানুষ অবশ্যই সীমালঙ্ঘন ও স্বেচ্ছাচারিতা করে— (كَلَّا إِنَّ الْإِنسَانَ لَيَطْغَىٰ)",
+      "modern_translation_en": "Nay, indeed mankind transgresses into tyranny and overreaches bounds,",
+      "lexicon_modern_notes": "لَيَطْغَىٰ: রুট ط-غ-ي (সীমালঙ্ঘন, স্বৈরাচার ও ঔদ্ধত্য)।",
+      "conventional_bn": "না (এমন আচরণ করা) মোটেই ঠিক নয়, মানুষ অবশ্যই সীমালঙ্ঘন করে,",
+      "metadata": {
+        "core_meaning_bn": "কখনোই ঔদ্ধত্য দেখানো উচিত নয়; অথচ মানুষ অবশ্যই সীমালঙ্ঘন ও স্বেচ্ছাচারিতা করে— (كَلَّا إِنَّ الْإِنسَانَ لَيَطْغَىٰ)",
+        "core_meaning_en": "Nay, indeed mankind transgresses into tyranny and overreaches bounds,",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -448,10 +478,15 @@
       "conventional_en": "Because he sees himself self-sufficient.",
       "meta_bn": "সেলফ-সাস্টেইনিং বিভ্রম বা কগনিটিভ বাগ",
       "meta_en": "Self-Sustaining Delusion & Cognitive Bug",
-      "modern_translation_bn": "যখনই সে তার নিজের ত্রিমাত্রিক ওএসে সামান্য মেটেরিয়াল শক্তির প্রাচুর্য দেখে নিজেকে পরম উৎস থেকে সম্পূর্ণ স্বাধীন, এক্সটার্নাল এনার্জি-মুক্ত ও স্বয়ংসম্পূর্ণ (اسْتَغْنَىٰ) বলে ভুল হিসাব বা ইলিউশন দেখে;",
-      "modern_translation_en": "Because he perceives himself as self-sufficient and independent of the Central Source (Ar-ra'ahustaghna);",
-      "lexicon_modern_notes": "أَن رَّآهُ اسْتَغْنَىٰ — সেলফ-সাসটেইনিং ইলিউশন: সামান্য মেটেরিয়াল রিসোর্স পেয়ে নিজেকে মূল সার্ভার-নিরপেক্ষ ও স্বয়ংসম্পূর্ণ মনে করার মারাত্মক কগনিটিভ এরর।",
-      "conventional_bn": "কারণ, সে নিজেকে অভাবমুক্ত মনে করে,"
+      "modern_translation_bn": "যখন সে নিজেকে অভাবমুক্ত ও স্বয়ংসম্পূর্ণ মনে করে। (أَن رَّآهُ اسْتَغْنَىٰ)",
+      "modern_translation_en": "Because he perceives himself as self-sufficient and unaccountable.",
+      "lexicon_modern_notes": "اسْتَغْنَىٰ: রুট غ-ن-ي (ধনের অহমিকায় ধরাকে সরা জ্ঞান করা)।",
+      "conventional_bn": "কারণ, সে নিজেকে অভাবমুক্ত মনে করে,",
+      "metadata": {
+        "core_meaning_bn": "যখন সে নিজেকে অভাবমুক্ত ও স্বয়ংসম্পূর্ণ মনে করে। (أَن رَّآهُ اسْتَغْنَىٰ)",
+        "core_meaning_en": "Because he perceives himself as self-sufficient and unaccountable.",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -514,10 +549,15 @@
       "conventional_en": "Indeed, to your Lord is the return.",
       "meta_bn": "সিস্টেমিক ডাটা-রিসেট রুট",
       "meta_en": "Systemic Data-Reset Route",
-      "modern_translation_bn": "অথচ গাণিতিকভাবে এটি শতভাগ ফিক্সড যে—নিশ্চয়ই তোমার ওওএসের চূড়ান্ত গতিপথ, ডাটা-রিসেট ও আউটপুট রুট কিন্তু সরাসরি তোমার সেই সিস্টেম আর্কিটেক্ট বা প্রতিপালকের (إِلَىٰ رَبِّكَ) কেন্দ্রীয় কোরের দিকেই (الرُّجْعَىٰ);",
-      "modern_translation_en": "Indeed, to your Sustainer and Root Controller is the ultimate return and data termination (Inna ila Rabbikar-ruj'a);",
-      "lexicon_modern_notes": "إِنَّ إِلَىٰ رَبِّكَ الرُّجْعَىٰ — ফাইনাল রিটার্ন ভেক্টর: সমস্ত নোডের ডেপ্লয়মেন্ট লুপের চূড়ান্ত সমাপ্তি কেন্দ্রীয় সোর্স কোরের দিকেই নির্ধারিত।",
-      "conventional_bn": "নিঃসন্দেহে (সকলকে) ফিরে যেতে হবে তোমার প্রতিপালকের দিকে।"
+      "modern_translation_bn": "অথচ নিশ্চিতভাবেই তোমার প্রতিপালকের দিকেই সবার চূড়ান্ত প্রত্যাবর্তন! (إِنَّ إِلَىٰ رَبِّكَ الرُّجْعَىٰ)",
+      "modern_translation_en": "Yet surely, unto your Sustainer is the ultimate return and accountability!",
+      "lexicon_modern_notes": "الرُّجْعَىٰ: রুট ر-ج-ع (প্রত্যাবর্তন ও জবাবদিহিতা)।",
+      "conventional_bn": "নিঃসন্দেহে (সকলকে) ফিরে যেতে হবে তোমার প্রতিপালকের দিকে।",
+      "metadata": {
+        "core_meaning_bn": "অথচ নিশ্চিতভাবেই তোমার প্রতিপালকের দিকেই সবার চূড়ান্ত প্রত্যাবর্তন! (إِنَّ إِلَىٰ رَبِّكَ الرُّجْعَىٰ)",
+        "core_meaning_en": "Yet surely, unto your Sustainer is the ultimate return and accountability!",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -570,10 +610,15 @@
       "conventional_en": "Have you seen the one who forbids",
       "meta_bn": "টক্সিক ফায়ারওয়াল ইন্টারফারেন্স",
       "meta_en": "Toxic Interference & Signal Jamming",
-      "modern_translation_bn": "তোমার ওওএসের ডাটা-অ্যানালিটিক্স কি সেই বিচ্যুত ডামি নোডটিকে ট্র্যাক বা পর্যবেক্ষণ (أَرَأَيْتَ) করেনি—যে কন্টিনিউয়াসলি মেইন নেটওয়ার্কে সিগন্যাল ইন্টারফারেন্স বা বাধা (يَنْهَىٰ) তৈরি করছে—",
-      "modern_translation_en": "Have you observed the malicious rogue node who continuously obstructs and interferes (Ara'aytalladhi yanha);",
-      "lexicon_modern_notes": "أَرَأَيْتَ الَّذِي يَنْهَىٰ — সিগন্যাল ইন্টারফারেন্স: নেটওয়ার্কে পজিটিভ ডাটা ফ্লো ও কানেকশন বাধাগ্রস্তকারী রোগ নোড।",
-      "conventional_bn": "তুমি কি তাকে (অর্থাৎ আবূ জাহলকে) দেখেছ যে নিষেধ করে,"
+      "modern_translation_bn": "তুমি কি তাকে দেখেছ, যে প্রকাশ্যে বাধা প্রদান করে— (أَرَأَيْتَ الَّذِي يَنْهَىٰ)",
+      "modern_translation_en": "Have you observed the tyrant who actively obstructs and forbids—",
+      "lexicon_modern_notes": "ظلم ও প্রতিরোধের চিত্র।",
+      "conventional_bn": "তুমি কি তাকে (অর্থাৎ আবূ জাহলকে) দেখেছ যে নিষেধ করে,",
+      "metadata": {
+        "core_meaning_bn": "তুমি কি তাকে দেখেছ, যে প্রকাশ্যে বাধা প্রদান করে— (أَرَأَيْتَ الَّذِي يَنْهَىٰ)",
+        "core_meaning_en": "Have you observed the tyrant who actively obstructs and forbids—",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -626,10 +671,15 @@
       "conventional_en": "A servant when he prays?",
       "meta_bn": "কানেকশন লুপ ব্লকিং",
       "meta_en": "Connection Loop Blocking",
-      "modern_translation_bn": "মহাজাগতিক সোর্সের সাথে এক সুসংহত এলাইনড ইউজার বা বান্দাকে (عَبْدًا)—যখনই সে নিজের ওওএস-কে মেইন সার্ভারের সাথে লাইভ ডাটা-কানেকশন ও ফ্রিকোয়েন্সি টিউনিং বা সালাতে (صَلَّىٰ) যুক্ত করতে চায়?",
-      "modern_translation_en": "A connected servant and node when he initiates live synchronization and prayer (Abdan idha salla)?",
-      "lexicon_modern_notes": "عَبْدًا إِذَا صَلَّىٰ — ফ্রিকোয়েন্সি টিউনিং সেশন: মেইন সার্ভারের সাথে ডেটা ও ফ্রিকোয়েন্সি কানেকশন স্থাপনকারী ইউজার।",
-      "conventional_bn": "এক বান্দাহকে [অর্থাৎ রসূলুল্লাহ (সা.)-কে] যখন সে নামায আদায় করতে থাকে?"
+      "modern_translation_bn": "একজন দাসকে, যখন সে আল্লাহর সাথে সচেতন সংযোগ (সালাত) প্রতিষ্ঠা করতে চায়? (عَبْدًا إِذَا صَلَّىٰ)",
+      "modern_translation_en": "A devoted servant when he stands to establish conscious communion (Salat)?",
+      "lexicon_modern_notes": "ঐশী চেতনা ও সত্যের চর্চাকে দমিয়ে রাখার চেষ্টা।",
+      "conventional_bn": "এক বান্দাহকে [অর্থাৎ রসূলুল্লাহ (সা.)-কে] যখন সে নামায আদায় করতে থাকে?",
+      "metadata": {
+        "core_meaning_bn": "একজন দাসকে, যখন সে আল্লাহর সাথে সচেতন সংযোগ (সালাত) প্রতিষ্ঠা করতে চায়? (عَبْدًا إِذَا صَلَّىٰ)",
+        "core_meaning_en": "A devoted servant when he stands to establish conscious communion (Salat)?",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -702,10 +752,15 @@
       "conventional_en": "Have you seen if he is upon guidance",
       "meta_bn": "অপ্টিমাল পাথ ভ্যালিডেশন",
       "meta_en": "Optimal Path Validation",
-      "modern_translation_bn": "তুমি কি লজিক্যালি অবজেক্ট ডিকোড করেছ—যদি সেই কানেক্টেড ইউজার নোডটি পরম সোর্সের তৈরি করা নিখুঁত অপ্টিমাল ট্র্যাক বা গাইডেন্সের (عَلَى الْهُدَىٰ) ওপর সচল থাকে,",
-      "modern_translation_en": "Have you considered: what if he is running upon true systemic guidance (In kana 'alal-huda),",
-      "lexicon_modern_notes": "إِن كَانَ عَلَى الْهُدَىٰ — অপ্টিমাল পাথওয়ে: ডিভাইন গাইডেন্স ও নির্ভুল কোডের অ্যালগরিদমিক গতিপথ।",
-      "conventional_bn": "তুমি কি ভেবে দেখেছ (যাকে নিষেধ করা হচ্ছে) সে যদি সৎ পথে থাকে,"
+      "modern_translation_bn": "তুমি কি ভেবে দেখেছ, যদি সেই বান্দা সঠিক হিদায়াত ও সত্যের ওপর অবিচল থাকে, (أَرَأَيْتَ إِن كَانَ عَلَى الْهُدَىٰ)",
+      "modern_translation_en": "Have you considered: what if he is firmly established upon verified guidance,",
+      "lexicon_modern_notes": "সত্যের শক্তি।",
+      "conventional_bn": "তুমি কি ভেবে দেখেছ (যাকে নিষেধ করা হচ্ছে) সে যদি সৎ পথে থাকে,",
+      "metadata": {
+        "core_meaning_bn": "তুমি কি ভেবে দেখেছ, যদি সেই বান্দা সঠিক হিদায়াত ও সত্যের ওপর অবিচল থাকে, (أَرَأَيْتَ إِن كَانَ عَلَى الْهُدَىٰ)",
+        "core_meaning_en": "Have you considered: what if he is firmly established upon verified guidance,",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -758,10 +813,15 @@
       "conventional_en": "Or enjoins righteousness?",
       "meta_bn": "সিকিউরিটি প্রটোকল ব্রডকাস্ট",
       "meta_en": "Security Protocol Broadcasting",
-      "modern_translation_bn": "অথবা সে পুরো নেটওয়ার্ক গ্রিডে সিস্টেমের বাউন্ডারি মেনে চলতে ও সুরক্ষামূলক প্রটোকল বা তাকওয়া (بالتَّقْوَىٰ) এক্সিকিউট করার নির্দেশ দেয়;",
-      "modern_translation_en": "Or commanding network-wide system security boundaries and Taqwa (Aw amara bit-taqwa)?",
-      "lexicon_modern_notes": "أَمَرَ بِالتَّقْوَىٰ — ফায়ারওয়াল গার্ডিয়ান্স: সমগ্র নেটওয়ার্কে সিস্টেম বাউন্ডারি ও সিকিউরিটি প্রটোকল মানার নির্দেশ।",
-      "conventional_bn": "আর তাকওয়া অবলম্বনের নির্দেশ দেয় (তাহলে তার এ কাজগুলো কেমন মনে কর?)"
+      "modern_translation_bn": "কিংবা সে যদি মানুষকে সচেতন জবাবদিহিতা ও তাকওয়ার নির্দেশ দিয়ে থাকে? (أَوْ أَمَرَ بِالتَّقْوَىٰ)",
+      "modern_translation_en": "Or commands conscientious accountability and moral vigilance (Taqwa)?",
+      "lexicon_modern_notes": "তাকওয়া হলো সমাজ সংস্কারের মূলভিত্তি।",
+      "conventional_bn": "আর তাকওয়া অবলম্বনের নির্দেশ দেয় (তাহলে তার এ কাজগুলো কেমন মনে কর?)",
+      "metadata": {
+        "core_meaning_bn": "কিংবা সে যদি মানুষকে সচেতন জবাবদিহিতা ও তাকওয়ার নির্দেশ দিয়ে থাকে? (أَوْ أَمَرَ بِالتَّقْوَىٰ)",
+        "core_meaning_en": "Or commands conscientious accountability and moral vigilance (Taqwa)?",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -824,10 +884,15 @@
       "conventional_en": "Have you seen if he denies and turns away -",
       "meta_bn": "কাউন্টার অডিট: ম্যালওয়্যার প্রোফাইল স্ক্যান",
       "meta_en": "Counter Audit: Malware Profile Scan",
-      "modern_translation_bn": "তুমি কি তার ওওএসের ব্যাক-এন্ড প্রোফাইল স্ক্যান করেছ—যদি সেই বাধাদানকারী ম্যালওয়্যার নোডটি সরাসরি সোর্স ডাটা ডিলিট/মিথ্যা প্রতিপন্ন (كَذَّبَ) করে এবং মূল অপারেটিং সিস্টেমের ফ্রিকোয়েন্সি থেকে সম্পূর্ণ বিচ্যুত বা মুখ ফিরিয়ে (وَتَوَلَّىٰ) নেয়?",
-      "modern_translation_en": "Have you considered: what if he rejects the core data as false and turns away in defiance (In kadhdhaba wa tawalla)?",
-      "lexicon_modern_notes": "إِن كَذَّبَ وَتَوَلَّىٰ — ডাটা রিজেকশন ও ডেভিয়েশন: সত্য কোড ডিলিট করে মেইন সিস্টেম থেকে বিচ্ছিন্ন হওয়া।",
-      "conventional_bn": "তোমার কী ধারণা যদি সে (অর্থাৎ নিষেধকারী ব্যক্তি) সত্যকে অস্বীকার করে আর মুখ ফিরিয়ে নেয় (তাহলে তার এ কাজ কেমন মনে কর?)"
+      "modern_translation_bn": "তুমি কি লক্ষ্য করেছ, যদি এই বাধা প্রদানকারী স্বৈরাচারী ব্যক্তি সত্যকে মিথ্যা বলে এবং মুখ ফিরিয়ে নেয়— (أَرَأَيْتَ إِن كَذَّبَ وَتَوَلَّىٰ)",
+      "modern_translation_en": "Have you considered: what if the oppressor denies truth and turns away in obstinacy—",
+      "lexicon_modern_notes": "অহংকারের পরিণতি।",
+      "conventional_bn": "তোমার কী ধারণা যদি সে (অর্থাৎ নিষেধকারী ব্যক্তি) সত্যকে অস্বীকার করে আর মুখ ফিরিয়ে নেয় (তাহলে তার এ কাজ কেমন মনে কর?)",
+      "metadata": {
+        "core_meaning_bn": "তুমি কি লক্ষ্য করেছ, যদি এই বাধা প্রদানকারী স্বৈরাচারী ব্যক্তি সত্যকে মিথ্যা বলে এবং মুখ ফিরিয়ে নেয়— (أَرَأَيْتَ إِن كَذَّبَ وَتَوَلَّىٰ)",
+        "core_meaning_en": "Have you considered: what if the oppressor denies truth and turns away in obstinacy—",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -900,10 +965,15 @@
       "conventional_en": "Does he not know that Allah sees?",
       "meta_bn": "রিয়াল-টাইম ক্লাউড লগিং অ্যালার্ম",
       "meta_en": "Real-Time Cloud Logging Alarm",
-      "modern_translation_bn": "তার সেই করাপ্টেড প্রসেসর কি বিন্দুমাত্র কগনিটিভ অবগতি বা জ্ঞান রাখে না যে—নিশ্চয়ই মহাজাগতিক আদি সোর্স কোড (আল্লাহ) তার প্রতিটি ডার্ক ফাইল, চিন্তা ও ম্যালওয়্যার অ্যাকশন রিয়াল-টাইম ক্লাউড লগিংয়ে নিখুঁতভাবে রিড ও পর্যবেক্ষণ (يَرَىٰ) করছেন?",
-      "modern_translation_en": "Does he not realize that Allah is observing and telemetry-logging everything in real time (Alam ya'lam bi-annallaha yara)?",
-      "lexicon_modern_notes": "أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ — অমনিপ্রেজেন্ট ক্লাউড টেলিমেট্রি: সৃষ্টির প্রতিটি ক্ষুদ্রাতিক্ষুদ্র চিন্তা ও অ্যাকশন রিয়েল-টাইমে পর্যবেক্ষণ ও লগ হওয়ার নিশ্চয়তা।",
-      "conventional_bn": "সে কি জানে না যে, আল্লাহ দেখেন?"
+      "modern_translation_bn": "সে কি জানে না যে আল্লাহ তার প্রতিটি পদক্ষেপ প্রত্যক্ষ করছেন? (أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ)",
+      "modern_translation_en": "Does he not realize that Allah observes all that transpires?",
+      "lexicon_modern_notes": "ঐশী নজরদারি।",
+      "conventional_bn": "সে কি জানে না যে, আল্লাহ দেখেন?",
+      "metadata": {
+        "core_meaning_bn": "সে কি জানে না যে আল্লাহ তার প্রতিটি পদক্ষেপ প্রত্যক্ষ করছেন? (أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ)",
+        "core_meaning_en": "Does he not realize that Allah observes all that transpires?",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -986,10 +1056,15 @@
       "conventional_en": "No! If he does not desist, We will surely drag him by the forelock -",
       "meta_bn": "ক্ল্যাম্পিং প্রটোকল ও প্রি-ফ্রন্টাল কর্টেক্স ব্লকিং",
       "meta_en": "Clamping Protocol & Prefrontal Cortex Lock",
-      "modern_translation_bn": "কখনই নয় (কড়া প্রটোকল লক)! সে যদি তার ওওএসের এই ক্ষতিকারক সিগন্যাল হাইজ্যাকিং বা আক্রমণ থেকে অবিলম্বে বিরত না হয় (لَّمْ يَنتَهِ)—তবে আমি চূড়ান্ত রিসেট ফেজে তার ওওএসের মূল সিদ্ধান্ত গ্রহণ কেন্দ্র, ইগো-ড্রাইভ ও কপালের অগ্রভাগ তথা প্রি-ফ্রন্টাল কর্টেক্স নোডটিকে (بالنَّاصِيَةِ) এক পরম বিধ্বংসী ও তীব্র ক্র্যাশ মেকানিজমে শক্তভাবে ক্ল্যাম্প বা লক (لَنَسْفَعًا) করে ফেলব—",
-      "modern_translation_en": "Nay! If he does not desist, We will surely drag and clamp him by the forelock—the prefrontal executive cortex (Lanasfa'an bin-nasiyah);",
-      "lexicon_modern_notes": "لَنَسْفَعًا بِالنَّاصِيَةِ — প্রি-ফ্রন্টাল কর্টেক্স ক্ল্যাম্পিং: কপালের অগ্রভাগ অর্থাৎ প্রি-ফ্রন্টাল কর্টেক্স যা মানুষের সিদ্ধান্ত গ্রহণ ও চাতুর্যের মূল কেন্দ্র—তাকে কঠোর শক্তিতে লক ও ক্র্যাশ করিয়ে দেওয়া।",
-      "conventional_bn": "না, (সে যা করতে চায়) তা কক্ষনো করতে পারবে না, সে যদি বিরত না হয় তাহলে আমি অবশ্যই তার মাথার সামনের চুলগুচ্ছ ধরে হেঁচড়ে নিয়ে যাব-"
+      "modern_translation_bn": "কখনোই নয়! সে যদি বিরত না হয়, তবে আমি অবশ্যই তাকে কপালের উপরিভাগ (চিন্তা ও সিদ্ধান্তের কেন্দ্র) ধরে টেনে হিঁচড়ে পাকড়াও করব— (كَلَّا لَئِن لَّمْ يَنتَهِ لَنَسْفَعًا بِالنَّاصِيَةِ)",
+      "modern_translation_en": "Never! If he does not desist, We will surely seize him by the forelock (the prefrontal cortex of decision-making)—",
+      "lexicon_modern_notes": "بِالنَّاصِيَةِ: রুট ن-ص-ي (মস্তিষ্কের সম্মুখভাগ — মিথ্যা ও সিদ্ধান্ত গ্রহণের বৈজ্ঞানিক কেন্দ্র)।",
+      "conventional_bn": "না, (সে যা করতে চায়) তা কক্ষনো করতে পারবে না, সে যদি বিরত না হয় তাহলে আমি অবশ্যই তার মাথার সামনের চুলগুচ্ছ ধরে হেঁচড়ে নিয়ে যাব-",
+      "metadata": {
+        "core_meaning_bn": "কখনোই নয়! সে যদি বিরত না হয়, তবে আমি অবশ্যই তাকে কপালের উপরিভাগ (চিন্তা ও সিদ্ধান্তের কেন্দ্র) ধরে টেনে হিঁচড়ে পাকড়াও করব— (كَلَّا لَئِن لَّمْ يَنتَهِ لَنَسْفَعًا بِالنَّاصِيَةِ)",
+        "core_meaning_en": "Never! If he does not desist, We will surely seize him by the forelock (the prefrontal cortex of decision-making)—",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -1042,10 +1117,15 @@
       "conventional_en": "A lying, sinning forelock.",
       "meta_bn": "ফলস ডাটা ফ্যাব্রিকেটর এক্সিকিউটিভ ইউনিট",
       "meta_en": "False Data Fabricator Executive Processor",
-      "modern_translation_bn": "যে প্রি-ফ্রন্টাল কর্টেক্স বা সিদ্ধান্ত কেন্দ্রটি (نَاصِيَةٍ) সম্পূর্ণ ফলস ডাটা ফ্যাব্রিকেশন বা মিথ্যাচারী (كَاذِبَةٍ) এবং ইচ্ছাকৃতভাবে কন্টিনিউয়াস কোড ভায়োলেশন ও এরর পরিচালনাকারী পাপাচারী (خَاطِئَةٍ)!",
-      "modern_translation_en": "A lying, habitually sinful, and error-executing forelock processor (Nasiyatin kadhibatin khati'ah)!",
-      "lexicon_modern_notes": "نَاصِيَةٍ كَاذِبَةٍ خَاطِئَةٍ — মিথ্যা ও ভুলের মূল কেন্দ্র: নিউরোসায়েন্সের প্রমাণিত সত্য যে প্রি-ফ্রন্টাল কর্টেক্সই মানুষের মিথ্যা তৈরি ও ইচ্ছাকৃত ভুলের মূল প্রসেসর।",
-      "conventional_bn": "মিথ্যাচারী পাপাচারী চুলগুচ্ছ"
+      "modern_translation_bn": "সেই মিথ্যাবাদী, পাপাচারী কপালকে! (نَاصِيَةٍ كَاذِبَةٍ خَاطِئَةٍ)",
+      "modern_translation_en": "A lying, deceitful, and knowingly transgressive forelock!",
+      "lexicon_modern_notes": "নিখুঁত নিউরো-লজিক্যাল ও মনস্তাত্ত্বিক রূপক।",
+      "conventional_bn": "মিথ্যাচারী পাপাচারী চুলগুচ্ছ",
+      "metadata": {
+        "core_meaning_bn": "সেই মিথ্যাবাদী, পাপাচারী কপালকে! (نَاصِيَةٍ كَاذِبَةٍ خَاطِئَةٍ)",
+        "core_meaning_en": "A lying, deceitful, and knowingly transgressive forelock!",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -1088,10 +1168,15 @@
       "conventional_en": "Then let him call his associates;",
       "meta_bn": "ডামি সাব-সিস্টেম কল",
       "meta_en": "Dummy Sub-System & Network Cohort Call",
-      "modern_translation_bn": "অতএব সে তার সেই করাপ্টেড লোকাল ক্র্যাশ এনভায়রনমেন্টে তার তৈরি করা সমস্ত ডামি সাব-সিস্টেম, সহযোগী হ্যাকার গোষ্ঠী ও দলবলকে (نَادِيَهُ) ব্যাকআপের জন্য সিগন্যাল বা কল করুক;",
-      "modern_translation_en": "So let him call his council, confederates, and rogue networks (Falyad'u nadiyah);",
-      "lexicon_modern_notes": "فَلْيَدْعُ نَادِيَهُ — ডামি নেটওয়ার্ক কল: পার্থিব সহযোগীদের ডাক দিয়েও সিস্টেমিক ধ্বংস রোধ করার অক্ষমতা।",
-      "conventional_bn": "কাজেই সে তার সভাষদদের ডাকুক।"
+      "modern_translation_bn": "অতএব সে তার দলবল, সাঙ্গপাঙ্গ ও সংসদকে ডাকুক! (فَلْيَدْعُ نَادِيَهُ)",
+      "modern_translation_en": "Then let him summon his assembly, council, and associates!",
+      "lexicon_modern_notes": "نَادِيَهُ: ক্ষমতার চাটুকার পারিষদ।",
+      "conventional_bn": "কাজেই সে তার সভাষদদের ডাকুক।",
+      "metadata": {
+        "core_meaning_bn": "অতএব সে তার দলবল, সাঙ্গপাঙ্গ ও সংসদকে ডাকুক! (فَلْيَدْعُ نَادِيَهُ)",
+        "core_meaning_en": "Then let him summon his assembly, council, and associates!",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -1134,10 +1219,15 @@
       "conventional_en": "We will call the angels of Hell.",
       "meta_bn": "কসমিক ডিফেন্স ফোর্স এক্টিভেশন বা যাবানিয়াহ",
       "meta_en": "Cosmic Defense Force Activation & Threat Deletion",
-      "modern_translation_bn": "আমিও তাত্ক্ষণিকভাবে আমার ক্লাউড ডিফেন্স মেকানিজম থেকে—তীব্র এনার্জি-টার্মিনেশন পরিচালনাকারী অতি-ধ্বংসাত্মক স্বয়ংক্রিয় কসমিক প্রটেকশন ফোর্স বা ‘আয-যাবানিয়াহ’ (الزَّبَانِيَةَ)-কে সিস্টেমে এক্টিভেট বা কল করব;",
-      "modern_translation_en": "We will summon the Az-Zabaniyah—the autonomous cosmic enforcers and execution agents (Sanad'uz-Zabaniyah);",
-      "lexicon_modern_notes": "سَنَدْعُ الزَّبَانِيَةَ — যাবানিয়াহ ডিফেন্স ফোর্স: চরম এন্ট্রপি ক্র্যাশ জোনে ডেপ্লয় করা আল্লাহর স্বয়ংক্রিয় অটোমেটেড প্রটেকশন ফোর্স, যা এক নিমিষে ক্ষতিকর নোডকে টার্মিনেট করে।",
-      "conventional_bn": "আমিও ‘আযাবের ফেরেশতাদেরকে ডাকব,"
+      "modern_translation_bn": "আমিও তলব করব অনিবার্য প্রাকৃতিক ধ্বংসকারী শক্তিসমূহকে (জাবানিয়াহ)! (سَنَدْعُ الزَّبَانِيَةَ)",
+      "modern_translation_en": "We will summon the unrelenting forces of natural consequence and retribution (Zabaniyah)!",
+      "lexicon_modern_notes": "الزَّبَانِيَةَ: রুট ز-ب-ن (দৃঢ়ভাবে প্রতিহতকারী মহাজাগতিক ও প্রাকৃতিক শক্তি)।",
+      "conventional_bn": "আমিও ‘আযাবের ফেরেশতাদেরকে ডাকব,",
+      "metadata": {
+        "core_meaning_bn": "আমিও তলব করব অনিবার্য প্রাকৃতিক ধ্বংসকারী শক্তিসমূহকে (জাবানিয়াহ)! (سَنَدْعُ الزَّبَانِيَةَ)",
+        "core_meaning_en": "We will summon the unrelenting forces of natural consequence and retribution (Zabaniyah)!",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     },
     {
       "surah": 96,
@@ -1210,10 +1300,15 @@
       "conventional_en": "No! Do not obey him. But prostrate and draw near [to Allah].",
       "meta_bn": "চূড়ান্ত ফায়ারওয়াল শিল্ড ও প্রোটেকশন কোড",
       "meta_en": "Ultimate Firewall Shield & Functional Submission Code",
-      "modern_translation_bn": "কখনই নয় (কড়া প্রটোকল লক)! তুমি তোমার ওওএসে ভুলেও তার পাঠানো সেই ক্ষতিকারক নয়েজ বা অবাধ্যতার কমান্ড এক্সিকিউট বা আনুগত্য (لَا تُطِعْهُ) করো না; বরং তুমি তোমার চেতনার সম্পূর্ণ স্বাধীন ইচ্ছা ও অহংকারকে পরম সোর্সের কাছে সারেন্ডার করে চূড়ান্ত ফাংশনাল সাবমিশন বা সিজদা (وَاسْجُدْ) এক্সিকিউট করো, এবং মহাজাগতিক আদি সোর্স কোডের কেন্দ্রীয় কোরে সরাসরি শতভাগ সিনক্রোনাইজড ও পরম নিকটবর্তী (وَاقْتَرِب) হয়ে যাও।",
-      "modern_translation_en": "Nay! Do not yield to him; but perform functional submission and prostration (Wasjud), and draw infinitely near to the Core Source (Waqtarib).",
-      "lexicon_modern_notes": "وَاسْجُدْ وَاقْتَرِب — সিজদা ও কোর সিনক্রোনাইজেশন: নিজের ইগোকে সমর্পণ করে মহাজাগতিক মূল আর্কিটেক্টের কেন্দ্রীয় ফ্রিকোয়েন্সির পরম নৈকট্য লাভ।",
-      "conventional_bn": "না, তুমি কক্ষনো তার অনুসরণ করো না, তুমি সাজদাহ কর আর (আল্লাহর) নৈকট্য লাভ কর।[সাজদাহ]"
+      "modern_translation_bn": "কখনোই নয়! তুমি তার কোনো ভ্রান্ত নির্দেশনায় মাথা নত কোরো না; বরং সত্যের প্রতি বিনম্র সমর্পণে অবনত হও এবং আরও নিকটবর্তী হও। (كَلَّا لَا تُطِعْهُ وَاسْجُدْ وَاقْتَرِب)",
+      "modern_translation_en": "Never yield to him! Surrender in conscious humility unto truth (Sujud) and draw ever closer!",
+      "lexicon_modern_notes": "وَاسْجُدْ: সত্যের কাছে অহংকার বিসর্জন দিয়ে সমর্পণ। وَاقْتَرِب: সান্নিধ্য লাভ।",
+      "conventional_bn": "না, তুমি কক্ষনো তার অনুসরণ করো না, তুমি সাজদাহ কর আর (আল্লাহর) নৈকট্য লাভ কর।[সাজদাহ]",
+      "metadata": {
+        "core_meaning_bn": "কখনোই নয়! তুমি তার কোনো ভ্রান্ত নির্দেশনায় মাথা নত কোরো না; বরং সত্যের প্রতি বিনম্র সমর্পণে অবনত হও এবং আরও নিকটবর্তী হও। (كَلَّا لَا تُطِعْهُ وَاسْجُدْ وَاقْتَرِب)",
+        "core_meaning_en": "Never yield to him! Surrender in conscious humility unto truth (Sujud) and draw ever closer!",
+        "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।"
+      }
     }
   ]
 }
