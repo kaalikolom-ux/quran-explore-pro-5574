@@ -2408,15 +2408,16 @@
       "translation_en": "Deaf, dumb and blind - so they will not return [to the right path].",
       "conventional_en": "Deaf, dumb and blind - so they will not return [to the right path].",
       "meta_bn": "সেন্সর ব্লকিং ও নোড আইসোলেশন",
-      "modern_translation_bn": "তারা তথ্যগতভাবে সম্পূর্ণ বধির (অডিও ইনপুট লকড), বোবা (ডাটা আউটপুট বা সত্য প্রকাশে অক্ষম) এবং কগনিটিভলি অন্ধ (ভিজ্যুয়াল সেন্সর ব্লকড); যার ফলে তারা আর কখনোই ডিফল্ট অপ্টিমাল সিস্টেম ট্র্যাকে রি-অ্যালাইন বা ফিরে (লা ইয়ারজিউন) আসতে পারবে না।",
-      "lexicon_modern_notes": "صُمٌّۢ بُكْمٌ عُمْىٌۭ فَهُمْ لَا يَرْجِعُونَ — কমপ্লিট সেন্সরি ব্লকেজ ও নো-রিকভারি স্টেট: ইনপুট ও আউটপুট চ্যানেল সম্পূর্ণ বন্ধ হয়ে যাওয়ায় ওওএসে ডিফল্ট মোডে ফিরে আসার ক্ষমতা হারানো।",
-      "modern_translation_en": "Deaf, dumb and blind - so they will not return [to the right path].",
+      "modern_translation_bn": "তারা সত্য গ্রহণে বধির, সত্য প্রকাশে মূক এবং সত্য উপলব্ধিতে অন্ধ; ফলে তারা নিজেদের বিভ্রান্তি থেকে ফিরে আসতে পারে না। (صُمٌّ بُكْمٌ عُمْيٌ فَهُمْ لَا يَرْجِعُونَ)",
+      "lexicon_modern_notes": "صُمٌّ بُكْمٌ عُمْيٌ (Deaf, Mute, Blind): শারীরিক প্রতিবন্ধকতা নয়, বরং সত্য গ্রহণে অক্ষমতা (ص م م), সত্য প্রকাশের সাহস হারানো (ب ك م) এবং সুস্পষ্ট প্রমাণ উপলব্ধি না করার মানসিক অন্ধত্ব (ع م ي)। يَرْجِعُونَ (ফিরে আসা/সংশোধন করা)।",
+      "modern_translation_en": "They are cognitively deaf to receiving truth, mute to articulating it, and blind to perceiving clear evidence; hence they do not return to self-correction.",
       "conventional_bn": "তারা বধির, মূক, অন্ধ; কাজেই তারা (হিদায়াতের দিকে) ফিরে আসবে না।",
       "meta_en": "Surah 2 Ayah 18 Theme",
       "metadata": {
         "theme": "সেন্সর ব্লকিং ও নোড আইসোলেশন",
         "lexicon_modern_notes": "صُمٌّۢ بُكْمٌ عُمْىٌۭ فَهُمْ لَا يَرْجِعُونَ — কমপ্লিট সেন্সরি ব্লকেজ ও নো-রিকভারি স্টেট: ইনপুট ও আউটপুট চ্যানেল সম্পূর্ণ বন্ধ হয়ে যাওয়ায় ওওএসে ডিফল্ট মোডে ফিরে আসার ক্ষমতা হারানো।",
-        "consistency_4_82": "Ayah 18 demonstrates zero logical contradiction under the universal 4:82 consistency framework."
+        "consistency_4_82": "শারীরিক অন্ধত্ব ও বধিরতা হিসেবে না দেখে মনস্তাত্ত্বিক ও চেতনাগত সত্য অস্বীকার হিসেবে দেখলে ৮৩০ কোটি মানুষের দৃশ্যমান বাস্তবতায় ৪:৮২ ফিল্টার পূর্ণ সামঞ্জস্য বজায় রাখে।",
+        "core_meaning_bn": "তারা সত্য গ্রহণে বধির, সত্য প্রকাশে মূক এবং সত্য উপলব্ধিতে অন্ধ; ফলে তারা নিজেদের বিভ্রান্তি থেকে ফিরে আসতে পারে না। (صُمٌّ بُكْمٌ عُمْيٌ فَهُمْ لَا يَرْجِعُونَ)"
       }
     },
     {
