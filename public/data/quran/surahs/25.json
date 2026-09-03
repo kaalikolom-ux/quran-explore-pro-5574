@@ -10875,7 +10875,7 @@
           "position": 7,
           "text_uthmani": "أَزْوَٰجِنَا",
           "transliteration": "azwājinā",
-          "translation_bn": "আমাদের স্ত্রীদেরকে",
+          "translation_bn": "আমাদের জীবনসঙ্গীদের",
           "root": "زوج",
           "lemma": "زَوْج",
           "grammar_bn": "বিশেষ্য (Noun)"
@@ -10935,7 +10935,7 @@
           "position": 13,
           "text_uthmani": "إِمَامًا",
           "transliteration": "imāman",
-          "translation_bn": "নেতা\"",
+          "translation_bn": "অগ্রবর্তী আদর্শ হিসেবে\"",
           "root": "امم",
           "lemma": "إِمَام",
           "grammar_bn": "বিশেষ্য (Noun)"
@@ -10954,15 +10954,16 @@
       "translation_en": "And those who say, \"Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.\"",
       "conventional_en": "And those who say, \"Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.\"",
       "conventional_bn": "আর যারা প্রার্থনা করে : হে আমাদের প্রতিপালক! আমাদেরকে এমন স্ত্রী ও সন্তানাদি দান কর যারা আমাদের চোখ জুড়িয়ে দেয় আর আমাদেরকে মুত্তাকীদের নেতা বানিয়ে দাও।",
-      "modern_translation_bn": "আর যারা প্রার্থনা করে : হে আমাদের প্রতিপালক! আমাদেরকে এমন স্ত্রী ও সন্তানাদি দান কর যারা আমাদের চোখ জুড়িয়ে দেয় আর আমাদেরকে মুত্তাকীদের নেতা বানিয়ে দাও।",
-      "modern_translation_en": "And those who say, \"Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.\"",
+      "modern_translation_bn": "আর তারা বলে: হে আমাদের প্রতিপালক, আমাদের জীবনসঙ্গী ও আমাদের বংশধরদের মধ্য থেকে এমন দান কর যা আমাদের চোখে শান্তি আনে; এবং আমাদেরকে মুত্তাকীদের জন্য অগ্রবর্তী আদর্শ হিসেবে স্থাপন কর। (وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا)",
+      "modern_translation_en": "And those who say: 'Our Sustainer, grant us from our life-partners and our descendants that which brings tranquility to our eyes, and establish us as pioneering exemplars for those who are conscientious.'",
       "meta_bn": "Surah 25 Ayah 74 Theme",
       "meta_en": "Surah 25 Ayah 74 Theme",
-      "lexicon_modern_notes": "Ayah 74 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
+      "lexicon_modern_notes": "أَزْوَاجِنَا (Life-partners / Spouses): রুট ز-و-ج (জোড়া, সমকক্ষ সঙ্গী) — এটি সম্পূর্ণ নিরপেক্ষ পরিভাষা, কেবল 'স্ত্রী' নয় বরং নারী ও পুরুষ উভয়ের জন্য জীবনসঙ্গী। قُرَّةَ أَعْيُنٍ: রুট ق-ر-ر (চোখের শীতলতা, গভীর সন্তুষ্টি ও প্রশান্তি)। إِمَامًا: রুট أ-م-م (অগ্রবর্তী আদর্শ, অনুকরণীয় দৃষ্টান্ত)।",
       "metadata": {
         "theme": "Surah 25 Ayah 74 Theme",
         "lexicon_modern_notes": "Ayah 74 Lexicon: Invariant root-level scientific and linguistic precision under the universal operating system.",
-        "consistency_4_82": "Ayah 74 demonstrates 100% logical and cosmological consistency under the verse 4:82 non-contradiction framework."
+        "consistency_4_82": "আযওয়াজ-কে সংকীর্ণ 'স্ত্রী' না বানিয়ে 'জীবনসঙ্গী' হিসেবে গ্রহণ করলে পরিবারের মর্যাদা এবং নারী ও পুরুষ উভয়ের প্রার্থনার ৪:৮২ ভারসাম্য অক্ষুণ্ণ থাকে।",
+        "core_meaning_bn": "আর তারা বলে: হে আমাদের প্রতিপালক, আমাদের জীবনসঙ্গী ও আমাদের বংশধরদের মধ্য থেকে এমন দান কর যা আমাদের চোখে শান্তি আনে; এবং আমাদেরকে মুত্তাকীদের জন্য অগ্রবর্তী আদর্শ হিসেবে স্থাপন কর। (وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا)"
       }
     },
     {
