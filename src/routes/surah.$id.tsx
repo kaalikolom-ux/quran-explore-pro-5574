@@ -353,7 +353,7 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   return data;
 };
 
-const APP_DATA_VERSION = "20260903_v1";
+const APP_DATA_VERSION = "20260903_v3_core";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   // 1. Fetch directly from local static JSON (Cloudflare Edge CDN / ServiceWorker Cache)
