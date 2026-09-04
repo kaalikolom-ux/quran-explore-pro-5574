@@ -173,6 +173,7 @@ function HomePage() {
             className="w-full h-full object-cover object-center -scale-x-100 select-none pointer-events-none"
             loading="eager"
             decoding="async"
+            fetchPriority="high"
           />
         </div>
 

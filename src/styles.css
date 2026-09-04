@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'Kaushan Script';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/kaushanscript/v19/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf') format('truetype');
-}
-
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
