@@ -17,7 +17,9 @@ import {
   Moon,
   Sun,
   BookOpen,
-  Sparkles
+  Sparkles,
+  LogIn,
+  LogOut
 } from "lucide-react";
 import { usePrefs, type ThemeMode } from "@/lib/prefs";
 import { supabase } from "@/integrations/supabase/client";
@@ -160,14 +162,14 @@ export function SiteHeader() {
           <QuranLogoBadge className="h-7.5 w-7.5 sm:h-9 sm:w-9 rounded-xl" iconClassName="size-4 sm:size-5" />
           <div className="flex flex-col justify-center leading-none">
             <QuranExplorerLogo size="md" className="h-5 sm:h-7" />
-            <span className="hidden sm:block text-[11px] text-muted-foreground font-medium tracking-wide mt-0.5 whitespace-nowrap">
+            <span className="hidden xl:block text-[11px] text-muted-foreground font-medium tracking-wide mt-0.5 whitespace-nowrap">
               {lang === "bn" ? "শব্দে শব্দে কুরআন অন্বেষা" : "Word by Word Exploration"}
             </span>
           </div>
         </Link>
 
         {/* প্রধান ন্যাভিগেশন মেনু (ডেস্কটপ - lg স্ক্রিন থেকে দৃশ্যমান, ফ্লুইড ফুল-উইডথ) */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 2xl:gap-2 shrink-0">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2 shrink-0">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPath === item.to || (item.to !== "/" && currentPath.startsWith(item.to));
@@ -178,13 +180,13 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-1 xl:gap-1.5 rounded-lg px-2 xl:px-2.5 py-1.5 text-xs font-medium transition-all whitespace-nowrap ${
+                className={`flex items-center gap-1 xl:gap-1.5 rounded-lg px-1.5 xl:px-2.5 py-1.5 text-xs font-medium transition-all whitespace-nowrap ${
                   isActive
                     ? "bg-secondary text-foreground font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >
-                <Icon className="size-3.5 shrink-0" />
+                <Icon className="size-3.5 shrink-0 hidden xl:block" />
                 <span>{item.label}</span>
               </Link>
             );
@@ -200,13 +202,13 @@ export function SiteHeader() {
             onClick={() => setSearchOpen(true)}
             title={lang === "bn" ? "কুরআন, বিষয় ও আর্টিকেল খুঁজুন (Ctrl + K)" : "Search Quran, Topics & Articles (Ctrl + K)"}
             aria-label="Search"
-            className="flex items-center gap-1.5 h-7.5 sm:h-8 px-2 sm:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group shrink-0"
+            className="flex items-center justify-center size-7.5 sm:size-8 2xl:w-auto 2xl:px-2.5 rounded-lg border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-all cursor-pointer text-xs group shrink-0"
           >
             <Search className="size-3.5 text-primary group-hover:scale-110 transition-transform" />
-            <span className="hidden 2xl:inline font-medium text-[11px]">
+            <span className="hidden 2xl:inline font-medium text-[11px] ml-1.5">
               {lang === "bn" ? "অনুসন্ধান..." : "Search..."}
             </span>
-            <kbd className="hidden 2xl:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground">
+            <kbd className="hidden 2xl:inline-flex items-center rounded border border-border/80 bg-muted/80 px-1 text-[9px] font-mono font-semibold text-muted-foreground ml-1.5">
               ⌘K
             </kbd>
           </button>
@@ -268,7 +270,7 @@ export function SiteHeader() {
               aria-label="Logout"
               className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer shrink-0"
             >
-              <LogoutDoorIcon className="size-3.5 sm:size-4" />
+              <LogOut className="size-3.5 sm:size-4" />
             </button>
           ) : (
             <Link
@@ -277,7 +279,7 @@ export function SiteHeader() {
               aria-label="Login"
               className="flex size-7.5 sm:size-8 items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors cursor-pointer shrink-0"
             >
-              <LoginDoorIcon className="size-3.5 sm:size-4" />
+              <LogIn className="size-3.5 sm:size-4" />
             </Link>
           )}
 

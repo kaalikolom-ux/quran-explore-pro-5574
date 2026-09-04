@@ -16,52 +16,25 @@ function previewContext() {
 }
 
 export async function registerOfflineWorker() {
-  if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
+  if (typeof window === "undefined") return;
 
-  // Purge old HTML navigation caches so the browser never serves a stale error page
+  // 1. Purge all browser caches
   if ("caches" in window) {
     try {
       const keys = await caches.keys();
       for (const k of keys) {
-        if (k.includes("quran-pages")) {
-          await caches.delete(k);
-        }
+        await caches.delete(k);
       }
     } catch {}
   }
 
-  if (previewContext()) {
+  // 2. Unregister any service workers to ensure users always receive latest live updates
+  if ("serviceWorker" in navigator) {
     try {
       const registrations = await navigator.serviceWorker.getRegistrations();
-      await Promise.all(
-        registrations
-          .filter((r) => (r.active?.scriptURL ?? "").endsWith(SW_PATH))
-          .map((r) => r.unregister()),
-      );
+      await Promise.all(registrations.map((r) => r.unregister()));
     } catch (e) {
-      console.warn("Failed to unregister preview SW:", e);
+      console.warn("Failed to unregister SW:", e);
     }
-    return;
-  }
-
-  try {
-    const reg = await navigator.serviceWorker.register(SW_PATH, { scope: "/" });
-    
-    // সাথে সাথে নতুন আপডেট চেক ও এক্টিভ করা
-    if (reg.waiting) {
-      reg.waiting.postMessage({ type: "SKIP_WAITING" });
-    }
-    reg.onupdatefound = () => {
-      const installingWorker = reg.installing;
-      if (installingWorker) {
-        installingWorker.onstatechange = () => {
-          if (installingWorker.state === "installed" && navigator.serviceWorker.controller) {
-            console.log("New offline content is available; please refresh.");
-          }
-        };
-      }
-    };
-  } catch (err) {
-    console.warn("Service worker registration failed:", err);
   }
 }
