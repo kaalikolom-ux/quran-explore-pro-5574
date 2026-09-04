@@ -39,5 +39,6 @@ a_wooniche_alam_m_data.json
 # Scratch & temporary migration scripts
 scratch/
 scratch_*
+translate_*.cjs
 *.sql
 
