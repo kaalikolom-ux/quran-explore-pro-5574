@@ -389,6 +389,31 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
   throw new Error(`Failed to load Surah ${sId}`);
 };
 
+const fetchSurahInitData = async (sId: number): Promise<SurahData> => {
+  // 1. Offline fallback (IndexedDB) - if user has visited or downloaded before, instant!
+  try {
+    const offlineData = await getSurahOffline(sId);
+    if (offlineData?.ayahs && offlineData.ayahs.length > 0) {
+      return applyLocalMetaOverrides(sId, offlineData);
+    }
+  } catch {}
+
+  // 2. Fetch lightweight init JSON (~15 KB, first 5 ayahs)
+  const initUrl = `/data/quran/surahs/init/${sId}.json?v=${APP_DATA_VERSION}`;
+  try {
+    const res = await fetch(initUrl);
+    if (res.ok) {
+      const initData: SurahData = await res.json();
+      return applyLocalMetaOverrides(sId, initData);
+    }
+  } catch (err) {
+    console.warn(`Init fetch failed for Surah ${sId}, falling back to full static...`, err);
+  }
+
+  // 3. Fallback to full static
+  return fetchSurahData(sId);
+};
+
 const AyahJumpSearchForm = React.memo(function AyahJumpSearchForm({
   surahId,
   totalAyahs,
@@ -1206,6 +1231,14 @@ function SurahDetailPage() {
 
   const meta = SURAH_META_MAP[surahId] || SURAH_META_MAP[1];
 
+  // ১. প্রাথমিক ইনস্ট্যান্ট লোড (প্রথম ৫টি আয়াত - মাত্র ~১৫ KB, যা ১৫-২০ মিলিসেকেন্ডে চলে আসে)
+  const initQuery = useQuery<SurahData>({
+    queryKey: ["local-surah-init", surahId],
+    queryFn: () => fetchSurahInitData(surahId),
+    staleTime: 1000 * 60 * 60 * 24,
+  });
+
+  // ২. ব্যাকগ্রাউন্ডে সম্পূর্ণ সুরার ডাটাবেজ ফেচ (ফুল ৪.৫ মেগাবাইট ফাইল ব্যাকগ্রাউন্ডে লোড হবে)
   const surahQuery = useQuery<SurahData>({
     queryKey: ["local-surah-cache", surahId],
     queryFn: () => fetchSurahData(surahId),
@@ -1213,28 +1246,86 @@ function SurahDetailPage() {
     gcTime: 1000 * 60 * 60 * 24,
   });
 
+  // একটিভ ডাটা: ফুল ডাটা লোড হলে সেটি, অন্যথায় দ্রুতগতির ইনিশিয়াল ডাটা
+  const currentSurahData = surahQuery.data || initQuery.data;
+  const isFullDataLoaded = Boolean(surahQuery.data?.ayahs && surahQuery.data.ayahs.length > 5);
+
+  // প্রগ্রেসিভ ভার্চুয়ালাইজড স্ক্রল রেন্ডারিং (শুরুতে ৫টি, স্ক্রল করার সাথে সাথে ১০টি করে লোড হবে)
+  const INITIAL_BATCH_SIZE = 5;
+  const BATCH_INCREMENT = 10;
+  const [visibleCount, setVisibleCount] = useState<number>(INITIAL_BATCH_SIZE);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  // সুরা পরিবর্তন বা সার্চ প্যারামে আয়াত স্পেসিফাই করা হলে রেন্ডার কাউন্ট অ্যাডজাস্ট
+  useEffect(() => {
+    if (search.ayah) {
+      setVisibleCount(Math.max(INITIAL_BATCH_SIZE, Number(search.ayah) + 5));
+    } else {
+      setVisibleCount(INITIAL_BATCH_SIZE);
+    }
+  }, [surahId, search.ayah]);
+
+  // ফুল ডাটা ব্যাকগ্রাউন্ডে আসার পর যদি সার্চের আয়াত থাকে তবে দৃশ্যমান কাউন্ট বাড়ানো
+  useEffect(() => {
+    if (search.ayah && surahQuery.data?.ayahs) {
+      setVisibleCount((prev) => Math.max(prev, Number(search.ayah) + 5));
+    }
+  }, [search.ayah, surahQuery.data]);
+
+  // প্রগ্রেসিভ স্ক্রল ইন্টারসেকশন অবজারভার (ভিজিটর নিচে নামার ৬০০ পিক্সেল আগেই পরবর্তী ব্যাচ রেন্ডার করে)
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setVisibleCount((prev) => {
+            const maxAvailable = currentSurahData?.ayahs?.length || meta.total;
+            if (prev < maxAvailable) {
+              return Math.min(prev + BATCH_INCREMENT, maxAvailable);
+            }
+            return prev;
+          });
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [currentSurahData?.ayahs?.length, meta.total]);
+
+  // ডিসপ্লে করা আয়াতসমূহ (শুধুমাত্র দৃশ্যমান ব্যাচ রেন্ডার হবে)
+  const displayedAyahs = useMemo(() => {
+    if (!currentSurahData?.ayahs) return [];
+    return currentSurahData.ayahs.slice(0, visibleCount);
+  }, [currentSurahData?.ayahs, visibleCount]);
+
   const surahAudioUrls = useMemo(() => {
-    if (!surahQuery.data?.ayahs) return [];
     const sStr = String(surahId).padStart(3, "0");
-    return surahQuery.data.ayahs.map((a) => {
-      const aStr = String(a.ayah).padStart(3, "0");
-      return `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
-    });
-  }, [surahQuery.data, surahId]);
+    const total = meta.total;
+    const urls: string[] = [];
+    for (let i = 1; i <= total; i++) {
+      const aStr = String(i).padStart(3, "0");
+      urls.push(`https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`);
+    }
+    return urls;
+  }, [surahId, meta.total]);
 
   const checkIndividualAyahCaches = async () => {
-    if (!surahQuery.data?.ayahs) return;
     try {
       const sStr = String(surahId).padStart(3, "0");
       const found = new Set<number>();
-      for (const a of surahQuery.data.ayahs) {
-        const aStr = String(a.ayah).padStart(3, "0");
+      for (let i = 1; i <= meta.total; i++) {
+        const aStr = String(i).padStart(3, "0");
         const url = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
         const isSaved = await isAudioSavedOffline(url);
-        if (isSaved) found.add(a.ayah);
+        if (isSaved) found.add(i);
       }
       setCachedAyahs(found);
-      if (found.size === surahQuery.data.ayahs.length && surahQuery.data.ayahs.length > 0) {
+      if (found.size === meta.total && meta.total > 0) {
         setIsAudioDownloaded(true);
       } else {
         setIsAudioDownloaded(false);
@@ -1245,10 +1336,10 @@ function SurahDetailPage() {
   };
 
   useEffect(() => {
-    if (surahQuery.isSuccess) {
+    if (initQuery.isSuccess || surahQuery.isSuccess) {
       checkIndividualAyahCaches();
     }
-  }, [surahQuery.isSuccess, surahId]);
+  }, [initQuery.isSuccess, surahQuery.isSuccess, surahId]);
 
   const handleDownloadThisSurahAudio = async () => {
     if (surahAudioUrls.length === 0) return;
@@ -1352,6 +1443,9 @@ function SurahDetailPage() {
   }, [surahId, queryClient]);
 
   const scrollToAyah = (ayahNum: number) => {
+    // নিশ্চিত করা যেন স্ক্রলের টার্গেট আয়াতটি DOM-এ মাউন্ট করা থাকে
+    setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
+
     let attempts = 0;
     const interval = setInterval(() => {
       const el = document.getElementById(`ayah-${ayahNum}`);
@@ -1378,15 +1472,18 @@ function SurahDetailPage() {
   };
 
   useEffect(() => {
-    if (surahQuery.isSuccess && search.ayah) {
+    if (search.ayah && (initQuery.isSuccess || surahQuery.isSuccess)) {
       scrollToAyah(Number(search.ayah));
     }
-  }, [surahQuery.isSuccess, search.ayah, surahId]);
+  }, [initQuery.isSuccess, surahQuery.isSuccess, search.ayah, surahId]);
 
   const playAyahSequentially = useCallback(async (ayahNum: number) => {
     if (audioRef.current) {
       audioRef.current.pause();
     }
+
+    // নিশ্চিত করা যেন অডিও চলার সময় চলতি আয়াতটি দৃশ্যমান থাকে
+    setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
 
     const sStr = String(surahId).padStart(3, "0");
     const aStr = String(ayahNum).padStart(3, "0");
@@ -1405,7 +1502,7 @@ function SurahDetailPage() {
     });
 
     audio.onended = () => {
-      const totalAyahs = surahQuery.data?.ayahs?.length || meta.total;
+      const totalAyahs = meta.total;
       if (ayahNum < totalAyahs) {
         playAyahSequentially(ayahNum + 1);
       } else {
@@ -1417,7 +1514,7 @@ function SurahDetailPage() {
         }
       }
     };
-  }, [surahId, surahQuery.data, meta.total, isLoopingSurah, lang]);
+  }, [surahId, meta.total, meta.name_bn, isLoopingSurah, lang]);
 
   const handleNavigate = useCallback(
     (targetSurah: number, targetAyah?: number) => {
@@ -1564,8 +1661,9 @@ function SurahDetailPage() {
   }, []);
 
   const handleSaveEdit = async (ayahNumber: number) => {
-    if (surahQuery.data) {
-      const target = surahQuery.data.ayahs.find((a) => a.ayah === ayahNumber);
+    const targetData = surahQuery.data || initQuery.data;
+    if (targetData) {
+      const target = targetData.ayahs.find((a) => a.ayah === ayahNumber);
       if (target) {
         target.conventional_bn = editForm.conventional_bn.trim();
         (target as any).translation_bn = editForm.conventional_bn.trim();
@@ -1592,7 +1690,7 @@ function SurahDetailPage() {
             conventional_bn: editForm.conventional_bn.trim(),
             conventional_en: editForm.conventional_en.trim(),
           }));
-          await saveSurahOffline(surahId, surahQuery.data);
+          await saveSurahOffline(surahId, targetData);
         } catch {}
 
         // Cloud sync (Supabase quran_verses master table)
@@ -1882,16 +1980,17 @@ function SurahDetailPage() {
         </div>
       )}
 
-      {/* লোডিং স্টেট */}
-      {surahQuery.isLoading && (
-        <div className="py-16 text-center text-sm text-muted-foreground animate-pulse">
-          কুরআনের আয়াতসমূহ লোড হচ্ছে...
+      {/* লোডিং স্টেট - শুধুমাত্র প্রথমবার ইনিশিয়াল ডাটা না আসা পর্যন্ত দেখাবে (যা মাত্র ২০-৩০ মিলিসেকেন্ড) */}
+      {!currentSurahData && (initQuery.isLoading || surahQuery.isLoading) && (
+        <div className="py-16 text-center text-sm text-muted-foreground animate-pulse flex flex-col items-center justify-center gap-2">
+          <Loader2 className="size-5 animate-spin text-primary" />
+          <span>কুরআনের আয়াতসমূহ লোড হচ্ছে...</span>
         </div>
       )}
 
-      {/* আয়াতসমূহ */}
+      {/* আয়াতসমূহ (প্রগ্রেসিভ ব্যাচ রেন্ডারিং) */}
       <div className="space-y-6">
-        {surahQuery.data?.ayahs?.map((ayah) => {
+        {displayedAyahs.map((ayah) => {
           const isEditing = editingAyah === ayah.ayah;
           const isBookmarked = isAyahBookmarked(ayah.ayah);
           const isPlaying = playingAyah === ayah.ayah;
@@ -1944,6 +2043,30 @@ function SurahDetailPage() {
           );
         })}
       </div>
+
+      {/* স্ক্রল সেনটিনেল (স্ক্রল ডাউন করার সাথে সাথে পরবর্তী ব্যাচ স্বয়ংক্রিয়ভাবে আনফোল্ড করার জন্য) */}
+      <div ref={sentinelRef} className="h-4 w-full pointer-events-none" />
+
+      {/* ব্যাকগ্রাউন্ড ফুল ডাটা লোডিং প্রোগ্রেস / ইনফরমেশন */}
+      {currentSurahData && displayedAyahs.length < meta.total && (
+        <div className="py-6 flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground">
+          {!isFullDataLoaded && surahQuery.isLoading ? (
+            <div className="flex items-center gap-2 text-primary/80 animate-pulse text-xs sm:text-sm">
+              <Loader2 className="size-4 animate-spin" />
+              <span>{lang === "bn" ? "পরবর্তী আয়াতসমূহ প্রস্তুত হচ্ছে..." : "Preparing next verses..."}</span>
+            </div>
+          ) : displayedAyahs.length < (currentSurahData?.ayahs?.length || meta.total) ? (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setVisibleCount((prev) => Math.min(prev + 20, meta.total))}
+              className="rounded-full text-xs"
+            >
+              {lang === "bn" ? "আরো আয়াত দেখুন" : "Load more verses"}
+            </Button>
+          ) : null}
+        </div>
+      )}
 
       {/* ⚖️ ৪:৮২ আয়াতের লজিক্যাল কনসিস্টেন্সি (অভ্যন্তরীণ সামঞ্জস্য) সেকশন */}
       <div
