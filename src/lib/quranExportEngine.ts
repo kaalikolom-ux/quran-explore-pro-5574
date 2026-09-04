@@ -549,8 +549,8 @@ export function generateHtmlBook(options: ExportOptions, surahs: SurahExportData
                 <div class="ayah-badge">আয়াত ${s.surah}:${ayah.ayah}</div>
                 
                 ${
-                  options.showMetaData && (metaBn || metaEn)
-                    ? `<div class="meta-tag">🏷️ ২. মেটাডাটা: ${escapeXml(metaBn)}${metaEn ? ` (${escapeXml(metaEn)})` : ""}</div>`
+                  options.showMetaData && (metaEn || metaBn)
+                    ? `<div class="meta-tag">🏷️ ২. Metadata: ${escapeXml(metaEn || metaBn)}</div>`
                     : ""
                 }
 
@@ -921,7 +921,7 @@ body {
           return `
         <div class="ayah-card">
           <div class="ayah-badge">আয়াত ${s.surah}:${ayah.ayah}</div>
-          ${options.showMetaData && (metaBn || metaEn) ? `<div class="meta-tag">🏷️ ২. মেটাডাটা: ${escapeXml(metaBn)}${metaEn ? ` (${escapeXml(metaEn)})` : ""}</div>` : ""}
+          ${options.showMetaData && (metaEn || metaBn) ? `<div class="meta-tag">🏷️ ২. Metadata: ${escapeXml(metaEn || metaBn)}</div>` : ""}
           ${options.showArabic && arabic ? `<div class="arabic-text">${escapeXml(arabic)}</div>` : ""}
           ${options.showTransliteration && transliteration ? `<div class="transliteration">৪. উচ্চারণ: ${escapeXml(transliteration)}</div>` : ""}
           ${options.showConventionalBn && convBn ? `<div class="layer-row layer-conv"><div class="layer-label">৫. আক্ষরিক অনুবাদ</div><div>${escapeXml(convBn)}</div></div>` : ""}
@@ -1044,8 +1044,8 @@ export function generateMarkdownBook(options: ExportOptions, surahs: SurahExport
       const arabic = getArabicText(ayah);
       md += `### [${s.surah}:${ayah.ayah}]\n`;
 
-      if (options.showMetaData && (ayah.meta_bn || ayah.meta_en)) {
-        md += `🏷️ **২. মেটাডাটা:** ${ayah.meta_bn || ""}${ayah.meta_en ? ` (${ayah.meta_en})` : ""}\n\n`;
+      if (options.showMetaData && (ayah.meta_en || ayah.meta_bn)) {
+        md += `🏷️ **২. Metadata:** ${ayah.meta_en || ayah.meta_bn}\n\n`;
       }
 
       if (options.showArabic && arabic) {

@@ -319,10 +319,10 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
         const saved = localStorage.getItem(`quran_ayah_meta_${sId}_${a.ayah}`);
         if (saved) {
           const parsed = JSON.parse(saved);
-          if (parsed.meta_bn && typeof parsed.meta_bn === "string" && parsed.meta_bn.trim().length > 0) {
+          if (parsed.meta_bn && typeof parsed.meta_bn === "string" && parsed.meta_bn.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(parsed.meta_bn)) {
             a.meta_bn = parsed.meta_bn.trim();
           }
-          if (parsed.meta_en && typeof parsed.meta_en === "string" && parsed.meta_en.trim().length > 0) {
+          if (parsed.meta_en && typeof parsed.meta_en === "string" && parsed.meta_en.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(parsed.meta_en)) {
             a.meta_en = parsed.meta_en.trim();
           }
           if (parsed.core_meaning_bn && typeof parsed.core_meaning_bn === "string" && parsed.core_meaning_bn.trim().length > 0) {
@@ -626,16 +626,14 @@ const AyahCard = React.memo(function AyahCard({
             <span>{surahId}:{ayah.ayah}</span>
           </div>
 
-          {/* মেটা ডাটা / Meta Data বক্স */}
-          {showMetaData && (ayah.meta_bn || ayah.meta_en) && (
+          {/* মেটা ডাটা / Metadata বক্স */}
+          {showMetaData && (ayah.meta_en || ayah.meta_bn) && (
             <div className="flex-1 min-w-0 flex flex-col justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-500/15 px-2.5 py-1 transition-all">
               <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 select-none leading-none">
-                {lang === "bn" ? "মেটা ডাটা" : "Meta Data"}
+                Metadata
               </span>
               <p className="text-[11px] sm:text-xs md:text-[13px] font-medium text-foreground/95 whitespace-normal break-words leading-relaxed mt-0.5">
-                {lang === "bn"
-                  ? (ayah.meta_bn || ayah.meta_en)
-                  : (ayah.meta_en || ayah.meta_bn)}
+                {ayah.meta_en || ayah.meta_bn}
               </p>
             </div>
           )}
