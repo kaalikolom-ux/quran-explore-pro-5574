@@ -259,28 +259,28 @@ function SettingsPage() {
           <button
             type="button"
             onClick={() => setThemeMode("dark")}
-            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer bg-[#141414] ${
+            className={`group relative flex flex-col justify-between rounded-xl border-2 p-3 sm:p-3.5 text-left transition-all cursor-pointer bg-[#061219] ${
               themeMode === "dark"
-                ? "border-[#4a90e2] ring-2 ring-[#4a90e2]/40 shadow-md scale-[1.01]"
-                : "border-white/15 hover:border-[#4a90e2]/60 shadow-xs"
+                ? "border-[#2a6f97] ring-2 ring-[#2a6f97]/50 shadow-md scale-[1.01]"
+                : "border-[#2a6f97]/25 hover:border-[#4da3d4]/60 shadow-xs"
             }`}
           >
             <div>
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#f4f4f5]">
-                  <span className="size-3 sm:size-3.5 rounded-full bg-[#1c1c1f] border border-white/25 inline-block shadow-xs shrink-0" />
+                  <span className="size-3 sm:size-3.5 rounded-full bg-[#091820] border border-[#4da3d4]/50 inline-block shadow-xs shrink-0" />
                   {lang === "bn" ? "মিডনাইট ডার্ক" : "Midnight Dark"}
                 </span>
-                <Moon className="size-3.5 text-[#4a90e2]" />
+                <Moon className="size-3.5 text-[#4da3d4]" />
               </div>
-              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#a1a1aa] leading-relaxed">
+              <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#8cb8d4] leading-relaxed">
                 {lang === "bn"
-                  ? "গভীর ডার্ক ব্যাকগ্রাউন্ড। রাতে পড়ার জন্য ও ওলেড ডিসপ্লেতে চমৎকার।"
-                  : "Deep dark background, optimal for night reading."}
+                  ? "গভীর ওশিয়ানিক মিডনাইট ব্যাকগ্রাউন্ড। রাতে পড়ার জন্য ও ওলেড ডিসপ্লেতে চমৎকার।"
+                  : "Deep oceanic midnight background, optimal for night reading."}
               </p>
             </div>
-            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-white/15 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
-              <span className="font-mono text-[#4a90e2] font-bold">
+            <div className="mt-2.5 sm:mt-3 flex items-center justify-between border-t border-[#2a6f97]/30 pt-1.5 sm:pt-2 text-[10px] sm:text-[11px]">
+              <span className="font-mono text-[#4da3d4] font-bold">
                 {themeMode === "dark" ? "✓ " + (lang === "bn" ? "সক্রিয়" : "Active") : (lang === "bn" ? "নির্বাচন করুন" : "Select")}
               </span>
             </div>

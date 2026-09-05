@@ -125,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ একই পাতায়।",
       },
       { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
-      { name: "theme-color", content: "#091a1f" },
+      { name: "theme-color", content: "#061219" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

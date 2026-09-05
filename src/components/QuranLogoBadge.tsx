@@ -31,7 +31,7 @@ export function QuranLogoBadge({
 }: QuranLogoBadgeProps) {
   return (
     <div
-      className={`flex shrink-0 items-center justify-center bg-[#115360]/15 dark:bg-[#1a9e8f]/20 text-[#115360] dark:text-[#1a9e8f] border border-[#115360]/30 dark:border-[#1a9e8f]/40 shadow-xs transition-transform duration-200 group-hover:scale-105 ${className}`}
+      className={`flex shrink-0 items-center justify-center bg-[#115360]/15 dark:bg-[#2a6f97]/25 text-[#115360] dark:text-[#4da3d4] border border-[#115360]/30 dark:border-[#2a6f97]/50 shadow-xs transition-transform duration-200 group-hover:scale-105 ${className}`}
     >
       <QafIcon className={`${iconClassName} shrink-0`} />
     </div>
