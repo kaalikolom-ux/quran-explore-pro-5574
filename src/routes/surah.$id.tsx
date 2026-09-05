@@ -52,6 +52,7 @@ import {
   AUDIO_CACHE, 
   SURAH_TEXT_CACHE 
 } from "@/lib/offline";
+import { APP_DATA_VERSION } from "@/lib/constants";
 import { getSurahSegments, findActiveWordPosition, type SurahSegmentsMap } from "@/lib/quran-segments";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -313,12 +314,19 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
+const CYBER_RESIDUAL_PATTERN = /(?:সিমুলেট|বায়ো|প্রোটোকল|অ্যালগরিদম|ডিকোডার|স্পেকট্রাম|অপারেটিং|অ্যাসেনশন|কনশাসনেস|ফ্র্যাক্টাল|হোলোগ্রাফিক)/i;
+
 const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   if (typeof window !== "undefined" && data?.ayahs) {
     data.ayahs.forEach((a) => {
       try {
-        const saved = localStorage.getItem(`quran_ayah_meta_${sId}_${a.ayah}`);
+        const key = `quran_ayah_meta_${sId}_${a.ayah}`;
+        const saved = localStorage.getItem(key);
         if (saved) {
+          if (CYBER_RESIDUAL_PATTERN.test(saved)) {
+            localStorage.removeItem(key);
+            return;
+          }
           const parsed = JSON.parse(saved);
           if (parsed.meta_bn && typeof parsed.meta_bn === "string" && parsed.meta_bn.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(parsed.meta_bn)) {
             a.meta_bn = parsed.meta_bn.trim();
@@ -353,8 +361,6 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   }
   return data;
 };
-
-const APP_DATA_VERSION = "20260903_v3_core";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   // 1. Fetch directly from local static JSON (Cloudflare Edge CDN / ServiceWorker Cache)
@@ -1273,14 +1279,14 @@ function SurahDetailPage() {
 
   // ১. প্রাথমিক ইনস্ট্যান্ট লোড (প্রথম ৫টি আয়াত - মাত্র ~১৫ KB, যা ১৫-২০ মিলিসেকেন্ডে চলে আসে)
   const initQuery = useQuery<SurahData>({
-    queryKey: ["local-surah-init", surahId],
+    queryKey: ["local-surah-init-v4", surahId],
     queryFn: () => fetchSurahInitData(surahId),
     staleTime: 1000 * 60 * 60 * 24,
   });
 
   // ২. ব্যাকগ্রাউন্ডে সম্পূর্ণ সুরার ডাটাবেজ ফেচ (ফুল ৪.৫ মেগাবাইট ফাইল ব্যাকগ্রাউন্ডে লোড হবে)
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-surah-cache", surahId],
+    queryKey: ["local-surah-cache-v4", surahId],
     queryFn: () => fetchSurahData(surahId),
     staleTime: Infinity,
     gcTime: 1000 * 60 * 60 * 24,
@@ -1468,14 +1474,14 @@ function SurahDetailPage() {
   useEffect(() => {
     if (surahId < 114) {
       queryClient.prefetchQuery({
-        queryKey: ["local-surah-cache", surahId + 1],
+        queryKey: ["local-surah-cache-v4", surahId + 1],
         queryFn: () => fetchSurahData(surahId + 1),
         staleTime: Infinity,
       });
     }
     if (surahId > 1) {
       queryClient.prefetchQuery({
-        queryKey: ["local-surah-cache", surahId - 1],
+        queryKey: ["local-surah-cache-v4", surahId - 1],
         queryFn: () => fetchSurahData(surahId - 1),
         staleTime: Infinity,
       });
@@ -2462,7 +2468,7 @@ function WordAndRootSearchDialog({
         surahIds.map(async (sId) => {
           try {
             const data: SurahData = await queryClient.fetchQuery({
-              queryKey: ["local-surah-cache", sId],
+              queryKey: ["local-surah-cache-v4", sId],
               queryFn: () => fetchSurahData(sId),
               staleTime: Infinity,
             });

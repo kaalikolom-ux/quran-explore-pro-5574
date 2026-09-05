@@ -18,6 +18,7 @@ import { Toaster } from "../components/ui/sonner";
 import { supabase } from "../integrations/supabase/client";
 import { useQueryPersistence } from "../lib/query-persist";
 import { registerOfflineWorker } from "../lib/pwa";
+import { purgeStaleTextStorage } from "../lib/offline";
 
 function NotFoundComponent() {
   return (
@@ -201,6 +202,7 @@ function OfflineBoot() {
   useQueryPersistence();
   useEffect(() => {
     void registerOfflineWorker();
+    void purgeStaleTextStorage();
   }, []);
   return null;
 }

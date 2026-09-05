@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { APP_DATA_VERSION } from "./constants";
 
 /** Cache Storage buckets */
 export const AUDIO_CACHE = "quran-audio-v1";
-export const SURAH_TEXT_CACHE = "quran-text-v3";
+export const SURAH_TEXT_CACHE = "quran-text-v4_purified";
 const IDB_NAME = "quran_offline_storage_v1";
 const AUDIO_STORE = "offline_audio";
 const SURAH_STORE = "offline_surahs";
@@ -197,7 +198,7 @@ export async function removeSurahAudio(urls: string[]): Promise<void> {
 
 /** Save a full surah JSON to offline storage */
 export async function saveSurahOffline(surahId: number, data: any): Promise<void> {
-  const url = `/data/quran/surahs/${surahId}.json`;
+  const url = `/data/quran/surahs/${surahId}.json?v=${APP_DATA_VERSION}`;
   if (cachesAvailable()) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
@@ -209,14 +210,14 @@ export async function saveSurahOffline(surahId: number, data: any): Promise<void
   try {
     const db = await openOfflineDB();
     const tx = db.transaction(SURAH_STORE, "readwrite");
-    tx.objectStore(SURAH_STORE).put({ id: surahId, data, timestamp: Date.now() });
+    tx.objectStore(SURAH_STORE).put({ id: surahId, data, timestamp: Date.now(), version: APP_DATA_VERSION });
   } catch {}
 }
 
 /** Retrieve a full surah JSON from offline storage */
 export async function getSurahOffline(surahId: number): Promise<any | null> {
   // 1. Try Cache Storage
-  const url = `/data/quran/surahs/${surahId}.json`;
+  const url = `/data/quran/surahs/${surahId}.json?v=${APP_DATA_VERSION}`;
   if (cachesAvailable()) {
     try {
       const cache = await caches.open(SURAH_TEXT_CACHE);
@@ -234,10 +235,72 @@ export async function getSurahOffline(surahId: number): Promise<any | null> {
     const store = tx.objectStore(SURAH_STORE);
     return new Promise((resolve) => {
       const req = store.get(surahId);
-      req.onsuccess = () => resolve(req.result?.data || null);
+      req.onsuccess = () => {
+        const item = req.result;
+        if (!item) return resolve(null);
+        // Only return if it matches current purified data version!
+        if (item.version === APP_DATA_VERSION) {
+          return resolve(item.data || null);
+        }
+        resolve(null);
+      };
       req.onerror = () => resolve(null);
     });
   } catch {
     return null;
   }
+}
+
+/**
+ * Automatically purge stale surah texts, old cache buckets, and query cache
+ * while keeping audio recitations intact.
+ */
+export async function purgeStaleTextStorage(): Promise<void> {
+  if (typeof window === "undefined") return;
+
+  const currentVersion = localStorage.getItem("quran_app_data_version");
+  if (currentVersion === APP_DATA_VERSION) return;
+
+  // 1. Purge stale surah texts from IndexedDB
+  try {
+    const db = await openOfflineDB();
+    const tx = db.transaction(SURAH_STORE, "readwrite");
+    tx.objectStore(SURAH_STORE).clear();
+  } catch (e) {
+    console.warn("Failed to clear stale surah store:", e);
+  }
+
+  // 2. Purge stale CacheStorage text buckets
+  if (cachesAvailable()) {
+    try {
+      const keys = await caches.keys();
+      for (const k of keys) {
+        if (k.startsWith("quran-text-") && k !== SURAH_TEXT_CACHE) {
+          await caches.delete(k);
+        }
+      }
+    } catch (e) {
+      console.warn("Failed to delete stale cache buckets:", e);
+    }
+  }
+
+  // 3. Clear Tanstack query persistence key from idb-keyval
+  try {
+    const { del } = await import("idb-keyval");
+    await del("quran-onbesha-query-cache");
+  } catch {}
+
+  // 4. Clean any legacy localStorage keys that could contain stale overrides
+  try {
+    const toRemove: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith("quran_ayah_meta_")) {
+        toRemove.push(key);
+      }
+    }
+    toRemove.forEach((k) => localStorage.removeItem(k));
+  } catch {}
+
+  localStorage.setItem("quran_app_data_version", APP_DATA_VERSION);
 }
