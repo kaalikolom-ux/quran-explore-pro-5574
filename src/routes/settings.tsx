@@ -540,7 +540,7 @@ function SettingsPage() {
               >
                 {/* শীর্ষ অংশ: লেয়ারের নাম ও ইউজারের নিজস্ব ডিসপ্লে টগল */}
                 <div
-                  className="flex items-start justify-between gap-3 cursor-pointer"
+                  className="flex items-start justify-between gap-3 cursor-pointer select-none"
                   onClick={() => {
                     if (!isRestrictedForVisitor) {
                       updatePref(layer.key, !isChecked);
@@ -549,9 +549,9 @@ function SettingsPage() {
                 >
                   <div className="space-y-1 select-none flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <Label htmlFor={layer.key} className="text-sm font-semibold text-foreground cursor-pointer">
+                      <span className="text-sm font-semibold text-foreground cursor-pointer">
                         {layer.title}
-                      </Label>
+                      </span>
                       {isRestrictedForVisitor && (
                         <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">
                           <Lock className="size-2.5" />
@@ -577,8 +577,16 @@ function SettingsPage() {
                 {/* এডমিন মাস্টার অংশ: ভিজিটরদের জন্য গ্লোবাল অনুমতি টগল সুইচ */}
                 {isAdmin && (
                   <div 
-                    className="mt-3.5 pt-3 border-t border-border/50 flex items-center justify-between gap-2"
-                    onClick={(e) => e.stopPropagation()}
+                    className="mt-3.5 pt-3 border-t border-border/50 flex items-center justify-between gap-2 cursor-pointer hover:opacity-90 transition-opacity select-none"
+                    onClick={async () => {
+                      const nextVal = !isPublicAllowed;
+                      await updatePublicPermission(layer.key, nextVal);
+                      toast.success(
+                        lang === "bn" 
+                          ? `"${layer.title}" সাধারণ ভিজিটরদের জন্য ${nextVal ? "উন্মুক্ত" : "লুকানো/স্থগিত"} করা হয়েছে`
+                          : `"${layer.title}" is now ${nextVal ? "visible" : "hidden"} for public visitors`
+                      );
+                    }}
                   >
                     <div className="flex items-center gap-1.5 min-w-0">
                       <Globe className={`size-3.5 shrink-0 ${isPublicAllowed ? "text-emerald-500" : "text-amber-500"}`} />
@@ -596,18 +604,20 @@ function SettingsPage() {
                       </span>
                     </div>
 
-                    <Switch
-                      id={`admin-perm-${layer.key}`}
-                      checked={isPublicAllowed}
-                      onCheckedChange={async (val) => {
-                        await updatePublicPermission(layer.key, val);
-                        toast.success(
-                          lang === "bn" 
-                            ? `"${layer.title}" সাধারণ ভিজিটরদের জন্য ${val ? "উন্মুক্ত" : "লুকানো/স্থগিত"} করা হয়েছে`
-                            : `"${layer.title}" is now ${val ? "visible" : "hidden"} for public visitors`
-                        );
-                      }}
-                    />
+                    <div onClick={(e) => e.stopPropagation()}>
+                      <Switch
+                        id={`admin-perm-${layer.key}`}
+                        checked={isPublicAllowed}
+                        onCheckedChange={async (val) => {
+                          await updatePublicPermission(layer.key, val);
+                          toast.success(
+                            lang === "bn" 
+                              ? `"${layer.title}" সাধারণ ভিজিটরদের জন্য ${val ? "উন্মুক্ত" : "লুকানো/স্থগিত"} করা হয়েছে`
+                              : `"${layer.title}" is now ${val ? "visible" : "hidden"} for public visitors`
+                          );
+                        }}
+                      />
+                    </div>
                   </div>
                 )}
               </div>

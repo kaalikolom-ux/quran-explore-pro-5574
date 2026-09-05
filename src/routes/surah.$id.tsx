@@ -516,6 +516,7 @@ interface AyahCardProps {
   showModernBn: boolean;
   showModernEn: boolean;
   showLexicon: boolean;
+  showLexiconScientific: boolean;
   showMetaData: boolean;
   arabicFontSize: number;
   translationFontSize: number;
@@ -578,6 +579,7 @@ const AyahCard = React.memo(function AyahCard({
   showModernBn,
   showModernEn,
   showLexicon,
+  showLexiconScientific,
   showMetaData,
   arabicFontSize,
   translationFontSize,
@@ -1073,7 +1075,7 @@ const AyahCard = React.memo(function AyahCard({
             />
           </div>
         ) : (
-          ayah.lexicon_modern_notes && (
+          showLexiconScientific && ayah.lexicon_modern_notes && (
             <div className="mt-2 pt-2 border-t border-border/30 pl-5.5">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <span className="font-semibold text-foreground mr-1">লেক্সিকন নোট:</span>
@@ -2021,6 +2023,7 @@ function SurahDetailPage() {
               showModernBn={showModernBn}
               showModernEn={showModernEn}
               showLexicon={showLexicon}
+              showLexiconScientific={showLexiconScientific}
               showMetaData={showMetaData}
               arabicFontSize={arabicFontSize}
               translationFontSize={translationFontSize}

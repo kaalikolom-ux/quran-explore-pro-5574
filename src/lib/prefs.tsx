@@ -137,13 +137,6 @@ export function getStoredPublicPermissions(): PublicDisplayPermissions {
     return {
       ...DEFAULT_PUBLIC_PERMISSIONS,
       ...parsed,
-      showMetaData: true,
-      showCoreMeaningBn: true,
-      showCoreMeaningEn: true,
-      showModernBn: true,
-      showModernEn: true,
-      showSurahScientificMeaning: true,
-      showLogicalConsistency: true,
     };
   } catch {
     return DEFAULT_PUBLIC_PERMISSIONS;
@@ -204,13 +197,6 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
               const merged = {
                 ...DEFAULT_PUBLIC_PERMISSIONS,
                 ...parsed,
-                showMetaData: true,
-                showCoreMeaningBn: true,
-                showCoreMeaningEn: true,
-                showModernBn: true,
-                showModernEn: true,
-                showSurahScientificMeaning: true,
-                showLogicalConsistency: true,
               };
               setPublicPermissions(merged);
               localStorage.setItem(PUBLIC_PERMS_STORAGE_KEY, JSON.stringify(merged));
@@ -504,26 +490,6 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     if (isAdminUser) return true;
     if (userPermissions && userPermissions[layerKey] !== undefined) {
       return userPermissions[layerKey];
-    }
-    // Completed Quran translation layers, metadata, and scientific commentaries are always universally allowed.
-    // Display visibility is controlled per-user in Settings (prefs).
-    const coreLayers: (keyof PublicDisplayPermissions)[] = [
-      "showMetaData",
-      "showConventionalBn",
-      "showConventionalEn",
-      "showCoreMeaningBn",
-      "showCoreMeaningEn",
-      "showModernBn",
-      "showModernEn",
-      "showSurahScientificMeaning",
-      "showLogicalConsistency",
-      "showLexicon",
-      "showArabic",
-      "showWordByWord",
-      "showTransliteration",
-    ];
-    if (coreLayers.includes(layerKey)) {
-      return true;
     }
     return publicPermissions[layerKey] ?? true;
   };
