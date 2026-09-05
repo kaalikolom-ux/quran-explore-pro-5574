@@ -62,7 +62,7 @@
       "conventional_en": "Say, \"He is Allah, [who is] One,",
       "modern_translation_bn": "বলো, \"তিনিই আল্লাহ — একক ও অদ্বিতীয় [সমগ্র সৃষ্টির পরম আদি উৎস ও একক সার্বভৌম সত্তা (اللَّهُ أَحَدٌ)]।\"",
       "conventional_bn": "বলো, 'তিনি আল্লাহ, একক।'",
-      "meta_bn": "The Single Root Trust Architecture ও একক রুট ট্রাস্ট",
+      "meta_bn": "ও একক রুট ট্রাস্ট",
       "metadata": {
         "theme": "The Single Root Trust Architecture",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
@@ -116,7 +116,7 @@
       "conventional_en": "Allah, the Eternal Refuge.",
       "modern_translation_bn": "আল্লাহ হলেন 'আস-সামাদ' — যিনি চির অমুখাপেক্ষী, স্বয়ংস্পূর্ণ এবং সমগ্র সৃষ্টি অস্তিত্বের প্রতিটি মুহূর্তে তাঁর ওপর পরম নির্ভরশীল (اللَّهُ الصَّمَدُ)।",
       "conventional_bn": "আল্লাহ অমুখাপেক্ষী।",
-      "meta_bn": "The Self-Sustaining Core ও সম্পূর্ণ ডেটা-স্বনির্ভরতা",
+      "meta_bn": "আত্ম- অন্তর ও কেন্দ্র ও সম্পূর্ণ ডেটা-স্বনির্ভরতা",
       "metadata": {
         "theme": "The Self-Sustaining Core",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
@@ -190,7 +190,7 @@
       "conventional_en": "He neither begets nor is born,",
       "modern_translation_bn": "তিনি কাউকে জন্ম দেননি [তাঁর কোনো সন্তান বা বংশধর নেই] (لَمْ يَلِدْ) এবং তিনিও কারও থেকে জাত বা সৃষ্ট নন (وَلَمْ يُولَدْ)।",
       "conventional_bn": "তিনি কাউকে জন্ম দেননি এবং তাকেও কেউ জন্ম দেয়নি।",
-      "meta_bn": "The Non-Generative Origin ও অনাদি-অনন্ত সোর্স",
+      "meta_bn": "- ও অনাদি-অনন্ত সোর্স",
       "metadata": {
         "theme": "The Non-Generative Origin",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
@@ -274,14 +274,14 @@
       "conventional_en": "Nor is there to Him any equivalent.\"",
       "modern_translation_bn": "এবং তাঁর সমকক্ষ বা সমতুল্য কেউই নেই—কোনো সৃষ্টিই তাঁর সদৃশ হতে পারে না (وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ)।",
       "conventional_bn": "আর তাঁর সমতুল্য কেউ নেই।",
-      "meta_bn": "The Incomparable Architecture ও প্যারালাল ব্যক্তি ও সত্তাহীন একক অস্তিত্ব",
+      "meta_bn": "ও প্যারালাল ব্যক্তি ও সত্তাহীন একক অস্তিত্ব",
       "metadata": {
         "theme": "The Incomparable Architecture",
         "consistency_4_82": "৪:৮২ লজিক্যাল কনসিস্টেন্সি ও শব্দমূলের সার্বজনীন ফিল্টারে সম্পূর্ণ সামঞ্জস্যপূর্ণ।",
         "core_meaning_bn": "সমগ্র অস্তিত্বে তাঁর সমকক্ষ, সমতুল্য বা সাদৃশ্যপূর্ণ কেউই নেই।",
         "core_meaning_en": "And there is none comparable, equivalent, or co-equal unto Him in any dimension."
       },
-      "modern_translation_en": "And there is no comparable data-parallel node or equivalent entity to Him (Wa lam yakul-lahu kufuwan ahad).",
+      "modern_translation_en": "And there is no comparable data-parallel creatures and individuals or equivalent entity to Him (Wa lam yakul-lahu kufuwan ahad).",
       "meta_en": "The Incomparable Architecture",
       "lexicon_modern_notes": "Ayah 4 Lexicon: Invariant root-level scientific and linguistic precision.",
       "core_meaning_bn": "সমগ্র অস্তিত্বে তাঁর সমকক্ষ, সমতুল্য বা সাদৃশ্যপূর্ণ কেউই নেই।",
