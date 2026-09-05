@@ -2153,8 +2153,7 @@ function TranslationsAdmin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
-      queryClient.invalidateQueries({ queryKey: ["local-surah-cache-v4"] });
-      queryClient.invalidateQueries({ queryKey: ["local-surah-init-v4"] });
+      queryClient.invalidateQueries({ queryKey: ["local-surah-cache"] });
       setText("");
       setNote("");
       toast.success("আয়াতের তথ্য ও মেটা ডাটা সফলভাবে সংরক্ষণ করা হয়েছে");

@@ -18,7 +18,6 @@ import { Toaster } from "../components/ui/sonner";
 import { supabase } from "../integrations/supabase/client";
 import { useQueryPersistence } from "../lib/query-persist";
 import { registerOfflineWorker } from "../lib/pwa";
-import { purgeStaleTextStorage } from "../lib/offline";
 
 function NotFoundComponent() {
   return (
@@ -126,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "পবিত্র কুরআনের শব্দে শব্দে বাংলা অর্থ, প্রামাণ্য অনুবাদ ও আধুনিক শব্দ বিশ্লেষণ একই পাতায়।",
       },
       { name: "twitter:image", content: "https://wooniche.com/og-image.jpg" },
-      { name: "theme-color", content: "#061219" },
+      { name: "theme-color", content: "#091a1f" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -202,7 +201,6 @@ function OfflineBoot() {
   useQueryPersistence();
   useEffect(() => {
     void registerOfflineWorker();
-    void purgeStaleTextStorage();
   }, []);
   return null;
 }

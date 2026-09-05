@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 44" width="240" height="44">
   <defs>
-    <linearGradient id="quranLogoGradDark" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4da3d4" /><stop offset="100%" stop-color="#70c3ec" /></linearGradient>
     <style>
       @font-face {
         font-family: 'Kaushan Script';
@@ -12,7 +11,7 @@
         font-family: 'Kaushan Script', cursive;
         font-size: 32px;
         font-weight: 400;
-        fill: url(#quranLogoGradDark);
+        fill: #38d9c2;
       }
     </style>
   </defs>

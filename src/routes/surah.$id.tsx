@@ -52,8 +52,6 @@ import {
   AUDIO_CACHE, 
   SURAH_TEXT_CACHE 
 } from "@/lib/offline";
-import { APP_DATA_VERSION } from "@/lib/constants";
-import { getSurahSegments, findActiveWordPosition, type SurahSegmentsMap } from "@/lib/quran-segments";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -314,19 +312,12 @@ function extractIntelligentRoot(wordObj: QuranWord): string {
   return base;
 }
 
-const CYBER_RESIDUAL_PATTERN = /(?:সিমুলেট|বায়ো|প্রোটোকল|অ্যালগরিদম|ডিকোডার|স্পেকট্রাম|অপারেটিং|অ্যাসেনশন|কনশাসনেস|ফ্র্যাক্টাল|হোলোগ্রাফিক)/i;
-
 const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   if (typeof window !== "undefined" && data?.ayahs) {
     data.ayahs.forEach((a) => {
       try {
-        const key = `quran_ayah_meta_${sId}_${a.ayah}`;
-        const saved = localStorage.getItem(key);
+        const saved = localStorage.getItem(`quran_ayah_meta_${sId}_${a.ayah}`);
         if (saved) {
-          if (CYBER_RESIDUAL_PATTERN.test(saved)) {
-            localStorage.removeItem(key);
-            return;
-          }
           const parsed = JSON.parse(saved);
           if (parsed.meta_bn && typeof parsed.meta_bn === "string" && parsed.meta_bn.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(parsed.meta_bn)) {
             a.meta_bn = parsed.meta_bn.trim();
@@ -361,6 +352,8 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
   }
   return data;
 };
+
+const APP_DATA_VERSION = "20260903_v3_core";
 
 const fetchSurahData = async (sId: number): Promise<SurahData> => {
   // 1. Fetch directly from local static JSON (Cloudflare Edge CDN / ServiceWorker Cache)
@@ -505,7 +498,6 @@ interface AyahCardProps {
   ayah: QuranAyah;
   surahId: number;
   isPlaying: boolean;
-  activeWordPos?: number | null;
   isBookmarked: boolean;
   isAyahAudioSaved: boolean;
   isThisAyahDownloading: boolean;
@@ -568,7 +560,6 @@ const AyahCard = React.memo(function AyahCard({
   ayah,
   surahId,
   isPlaying,
-  activeWordPos,
   isBookmarked,
   isAyahAudioSaved,
   isThisAyahDownloading,
@@ -769,65 +760,44 @@ const AyahCard = React.memo(function AyahCard({
         style={{ display: showArabic ? "flex" : "none" }}
         className="flex-wrap items-center justify-start gap-x-4 gap-y-4 py-2 border-b border-border/40"
       >
-        {ayah.words.map((word) => {
-          const isActiveWord = Boolean(isPlaying && activeWordPos === word.position);
-          return (
-            <div
-              key={word.position}
-              id={`ayah-${ayah.ayah}-word-${word.position}`}
-              data-active-word={isActiveWord ? "true" : "false"}
-              onClick={() =>
-                onSelectWord({
-                  surah: surahId,
-                  ayah: ayah.ayah,
-                  word,
-                })
-              }
-              className={`group flex flex-col items-center cursor-pointer rounded-xl p-2 transition-all duration-200 select-none ${
-                isActiveWord
-                  ? "word-highlight-3d"
-                  : "border border-transparent hover:bg-muted/60 active:scale-95"
-              }`}
+        {ayah.words.map((word) => (
+          <div
+            key={word.position}
+            onClick={() =>
+              onSelectWord({
+                surah: surahId,
+                ayah: ayah.ayah,
+                word,
+              })
+            }
+            className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
+          >
+            <span
+              className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
+              style={{ fontSize: `${arabicFontSize}px` }}
             >
-              <span
-                className={`arabic transition-all duration-200 leading-loose ${
-                  isActiveWord
-                    ? "text-primary font-bold scale-[1.03]"
-                    : "text-foreground group-hover:text-primary"
-                }`}
-                style={{ fontSize: `${arabicFontSize}px` }}
-              >
-                {word.text_uthmani}
-              </span>
-              <span
-                style={{
-                  display: showWordByWord && word.transliteration ? "block" : "none",
-                  fontSize: `${Math.max(10, translationFontSize - 4)}px`,
-                }}
-                className={`font-mono italic mt-0.5 transition-colors duration-200 ${
-                  isActiveWord
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground/80 group-hover:text-foreground"
-                }`}
-              >
-                {word.transliteration}
-              </span>
-              <span
-                style={{
-                  display: showWordByWord && word.translation_bn ? "block" : "none",
-                  fontSize: `${Math.max(11, translationFontSize - 3)}px`,
-                }}
-                className={`font-medium mt-0.5 text-center transition-colors duration-200 ${
-                  isActiveWord
-                    ? "text-foreground font-semibold"
-                    : "text-muted-foreground group-hover:text-foreground"
-                }`}
-              >
-                {word.translation_bn}
-              </span>
-            </div>
-          );
-        })}
+              {word.text_uthmani}
+            </span>
+            <span
+              style={{
+                display: showWordByWord && word.transliteration ? "block" : "none",
+                fontSize: `${Math.max(10, translationFontSize - 4)}px`,
+              }}
+              className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
+            >
+              {word.transliteration}
+            </span>
+            <span
+              style={{
+                display: showWordByWord && word.translation_bn ? "block" : "none",
+                fontSize: `${Math.max(11, translationFontSize - 3)}px`,
+              }}
+              className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
+            >
+              {word.translation_bn}
+            </span>
+          </div>
+        ))}
       </div>
 
       {/* [২] পুরো আয়াতের উচ্চারণ */}
@@ -1167,26 +1137,8 @@ function SurahDetailPage() {
   const queryClient = useQueryClient();
 
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
-  const [playingWordPos, setPlayingWordPos] = useState<number | null>(null);
   const [isLoopingSurah, setIsLoopingSurah] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const syncRafRef = useRef<number | null>(null);
-  const [surahSegments, setSurahSegments] = useState<SurahSegmentsMap | null>(null);
-  const surahSegmentsRef = useRef<SurahSegmentsMap | null>(null);
-  surahSegmentsRef.current = surahSegments;
-
-  useEffect(() => {
-    let isMounted = true;
-    getSurahSegments(surahId).then((data) => {
-      if (isMounted) {
-        setSurahSegments(data);
-        surahSegmentsRef.current = data;
-      }
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, [surahId]);
 
   const [isAudioDownloaded, setIsAudioDownloaded] = useState(false);
   const [downloadingSurahAudio, setDownloadingSurahAudio] = useState(false);
@@ -1279,14 +1231,14 @@ function SurahDetailPage() {
 
   // ১. প্রাথমিক ইনস্ট্যান্ট লোড (প্রথম ৫টি আয়াত - মাত্র ~১৫ KB, যা ১৫-২০ মিলিসেকেন্ডে চলে আসে)
   const initQuery = useQuery<SurahData>({
-    queryKey: ["local-surah-init-v4", surahId],
+    queryKey: ["local-surah-init", surahId],
     queryFn: () => fetchSurahInitData(surahId),
     staleTime: 1000 * 60 * 60 * 24,
   });
 
   // ২. ব্যাকগ্রাউন্ডে সম্পূর্ণ সুরার ডাটাবেজ ফেচ (ফুল ৪.৫ মেগাবাইট ফাইল ব্যাকগ্রাউন্ডে লোড হবে)
   const surahQuery = useQuery<SurahData>({
-    queryKey: ["local-surah-cache-v4", surahId],
+    queryKey: ["local-surah-cache", surahId],
     queryFn: () => fetchSurahData(surahId),
     staleTime: Infinity,
     gcTime: 1000 * 60 * 60 * 24,
@@ -1474,14 +1426,14 @@ function SurahDetailPage() {
   useEffect(() => {
     if (surahId < 114) {
       queryClient.prefetchQuery({
-        queryKey: ["local-surah-cache-v4", surahId + 1],
+        queryKey: ["local-surah-cache", surahId + 1],
         queryFn: () => fetchSurahData(surahId + 1),
         staleTime: Infinity,
       });
     }
     if (surahId > 1) {
       queryClient.prefetchQuery({
-        queryKey: ["local-surah-cache-v4", surahId - 1],
+        queryKey: ["local-surah-cache", surahId - 1],
         queryFn: () => fetchSurahData(surahId - 1),
         staleTime: Infinity,
       });
@@ -1523,19 +1475,10 @@ function SurahDetailPage() {
     }
   }, [initQuery.isSuccess, surahQuery.isSuccess, search.ayah, surahId]);
 
-  const stopWordSync = useCallback(() => {
-    if (syncRafRef.current) {
-      cancelAnimationFrame(syncRafRef.current);
-      syncRafRef.current = null;
-    }
-    setPlayingWordPos(null);
-  }, []);
-
   const playAyahSequentially = useCallback(async (ayahNum: number) => {
     if (audioRef.current) {
       audioRef.current.pause();
     }
-    stopWordSync();
 
     // নিশ্চিত করা যেন অডিও চলার সময় চলতি আয়াতটি দৃশ্যমান থাকে
     setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
@@ -1551,45 +1494,12 @@ function SurahDetailPage() {
 
     scrollToAyah(ayahNum);
 
-    // সেগমেন্ট ডাটা আগে থেকে লোড না হয়ে থাকলে অবিলম্বে নিয়ে আসা
-    if (!surahSegmentsRef.current) {
-      getSurahSegments(surahId).then((data) => {
-        if (data) {
-          setSurahSegments(data);
-          surahSegmentsRef.current = data;
-        }
-      });
-    }
-
-    const startWordTracking = () => {
-      if (syncRafRef.current) {
-        cancelAnimationFrame(syncRafRef.current);
-      }
-      const syncLoop = () => {
-        if (!audioRef.current || audioRef.current.paused || audioRef.current.ended) {
-          return;
-        }
-        const currentMs = audioRef.current.currentTime * 1000;
-        const currentSegs = surahSegmentsRef.current?.[ayahNum];
-        const wordPos = findActiveWordPosition(currentSegs, currentMs);
-        setPlayingWordPos((prev) => (prev !== wordPos ? wordPos : prev));
-        syncRafRef.current = requestAnimationFrame(syncLoop);
-      };
-      syncRafRef.current = requestAnimationFrame(syncLoop);
-    };
-
-    audio.addEventListener("play", startWordTracking);
-    audio.addEventListener("pause", stopWordSync);
-    audio.addEventListener("ended", stopWordSync);
-
     audio.play().catch(() => {
       toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
       setPlayingAyah(null);
-      stopWordSync();
     });
 
     audio.onended = () => {
-      stopWordSync();
       const totalAyahs = meta.total;
       if (ayahNum < totalAyahs) {
         playAyahSequentially(ayahNum + 1);
@@ -1602,7 +1512,7 @@ function SurahDetailPage() {
         }
       }
     };
-  }, [surahId, meta.total, meta.name_bn, isLoopingSurah, lang, stopWordSync]);
+  }, [surahId, meta.total, meta.name_bn, isLoopingSurah, lang]);
 
   const handleNavigate = useCallback(
     (targetSurah: number, targetAyah?: number) => {
@@ -1620,45 +1530,28 @@ function SurahDetailPage() {
       if (audioRef.current) {
         audioRef.current.pause();
       }
-      stopWordSync();
       setPlayingAyah(null);
     } else {
       playAyahSequentially(1);
     }
-  }, [playingAyah, playAyahSequentially, stopWordSync]);
+  }, [playingAyah, playAyahSequentially]);
 
   const handlePlayAyah = useCallback((ayahNum: number) => {
     if (playingAyah === ayahNum) {
       if (audioRef.current) audioRef.current.pause();
-      stopWordSync();
       setPlayingAyah(null);
     } else {
       playAyahSequentially(ayahNum);
     }
-  }, [playingAyah, playAyahSequentially, stopWordSync]);
+  }, [playingAyah, playAyahSequentially]);
 
   useEffect(() => {
     return () => {
-      stopWordSync();
       if (audioRef.current) {
         audioRef.current.pause();
       }
     };
-  }, [surahId, stopWordSync]);
-
-  // চলতি শব্দ অনুযায়ী মসৃণ স্ক্রলিং (অটো-স্ক্রল যাতে চলতি শব্দটি আরামদায়কভাবে ভিউপোর্টে থাকে)
-  useEffect(() => {
-    if (playingAyah !== null && playingWordPos !== null) {
-      const el = document.getElementById(`ayah-${playingAyah}-word-${playingWordPos}`);
-      if (el) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "nearest",
-        });
-      }
-    }
-  }, [playingAyah, playingWordPos]);
+  }, [surahId]);
 
   const isAyahBookmarked = useCallback((ayahNum: number) => {
     return checkBookmarked({
@@ -2110,7 +2003,6 @@ function SurahDetailPage() {
               ayah={ayah}
               surahId={surahId}
               isPlaying={isPlaying}
-              activeWordPos={isPlaying ? playingWordPos : null}
               isBookmarked={isBookmarked}
               isAyahAudioSaved={isAyahAudioSaved}
               isThisAyahDownloading={isThisAyahDownloading}
@@ -2468,7 +2360,7 @@ function WordAndRootSearchDialog({
         surahIds.map(async (sId) => {
           try {
             const data: SurahData = await queryClient.fetchQuery({
-              queryKey: ["local-surah-cache-v4", sId],
+              queryKey: ["local-surah-cache", sId],
               queryFn: () => fetchSurahData(sId),
               staleTime: Infinity,
             });
