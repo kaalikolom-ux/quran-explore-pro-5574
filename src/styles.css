@@ -545,3 +545,42 @@ blockquote::before {
 .animate-star-fly-4 {
   animation: particleFlyOut4 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
 }
+
+/* ==========================================================================
+   Word-by-Word Synchronized Subtle 3D Elevated Highlight
+   ========================================================================== */
+.word-highlight-3d {
+  position: relative;
+  z-index: 20;
+  transform: translateY(-3px) scale(1.06) translateZ(0);
+  background: color-mix(in srgb, var(--primary) 14%, var(--card)) !important;
+  border-color: color-mix(in srgb, var(--primary) 70%, transparent) !important;
+  box-shadow:
+    0 10px 22px -3px rgba(18, 91, 104, 0.26),
+    0 4px 8px -2px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.7);
+  transition:
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.22s ease-out,
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out !important;
+}
+
+.word-highlight-3d .arabic {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 10px rgba(18, 91, 104, 0.32);
+}
+
+.dark .word-highlight-3d {
+  background: color-mix(in srgb, var(--primary) 24%, var(--card)) !important;
+  border-color: color-mix(in srgb, var(--primary) 85%, transparent) !important;
+  box-shadow:
+    0 12px 26px -3px rgba(45, 212, 191, 0.32),
+    0 4px 10px -2px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25);
+}
+
+.dark .word-highlight-3d .arabic {
+  text-shadow: 0 2px 14px rgba(45, 212, 191, 0.45);
+}

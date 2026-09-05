@@ -52,6 +52,7 @@ import {
   AUDIO_CACHE, 
   SURAH_TEXT_CACHE 
 } from "@/lib/offline";
+import { getSurahSegments, findActiveWordPosition, type SurahSegmentsMap } from "@/lib/quran-segments";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -498,6 +499,7 @@ interface AyahCardProps {
   ayah: QuranAyah;
   surahId: number;
   isPlaying: boolean;
+  activeWordPos?: number | null;
   isBookmarked: boolean;
   isAyahAudioSaved: boolean;
   isThisAyahDownloading: boolean;
@@ -560,6 +562,7 @@ const AyahCard = React.memo(function AyahCard({
   ayah,
   surahId,
   isPlaying,
+  activeWordPos,
   isBookmarked,
   isAyahAudioSaved,
   isThisAyahDownloading,
@@ -760,44 +763,65 @@ const AyahCard = React.memo(function AyahCard({
         style={{ display: showArabic ? "flex" : "none" }}
         className="flex-wrap items-center justify-start gap-x-4 gap-y-4 py-2 border-b border-border/40"
       >
-        {ayah.words.map((word) => (
-          <div
-            key={word.position}
-            onClick={() =>
-              onSelectWord({
-                surah: surahId,
-                ayah: ayah.ayah,
-                word,
-              })
-            }
-            className="group flex flex-col items-center cursor-pointer rounded-lg p-1.5 transition-all hover:bg-muted/60 active:scale-95"
-          >
-            <span
-              className="arabic text-foreground transition-colors group-hover:text-primary leading-loose"
-              style={{ fontSize: `${arabicFontSize}px` }}
+        {ayah.words.map((word) => {
+          const isActiveWord = Boolean(isPlaying && activeWordPos === word.position);
+          return (
+            <div
+              key={word.position}
+              id={`ayah-${ayah.ayah}-word-${word.position}`}
+              data-active-word={isActiveWord ? "true" : "false"}
+              onClick={() =>
+                onSelectWord({
+                  surah: surahId,
+                  ayah: ayah.ayah,
+                  word,
+                })
+              }
+              className={`group flex flex-col items-center cursor-pointer rounded-xl p-2 transition-all duration-200 select-none ${
+                isActiveWord
+                  ? "word-highlight-3d"
+                  : "border border-transparent hover:bg-muted/60 active:scale-95"
+              }`}
             >
-              {word.text_uthmani}
-            </span>
-            <span
-              style={{
-                display: showWordByWord && word.transliteration ? "block" : "none",
-                fontSize: `${Math.max(10, translationFontSize - 4)}px`,
-              }}
-              className="font-mono text-muted-foreground/80 italic group-hover:text-foreground mt-0.5"
-            >
-              {word.transliteration}
-            </span>
-            <span
-              style={{
-                display: showWordByWord && word.translation_bn ? "block" : "none",
-                fontSize: `${Math.max(11, translationFontSize - 3)}px`,
-              }}
-              className="text-muted-foreground font-medium transition-colors group-hover:text-foreground mt-0.5 text-center"
-            >
-              {word.translation_bn}
-            </span>
-          </div>
-        ))}
+              <span
+                className={`arabic transition-all duration-200 leading-loose ${
+                  isActiveWord
+                    ? "text-primary font-bold scale-[1.03]"
+                    : "text-foreground group-hover:text-primary"
+                }`}
+                style={{ fontSize: `${arabicFontSize}px` }}
+              >
+                {word.text_uthmani}
+              </span>
+              <span
+                style={{
+                  display: showWordByWord && word.transliteration ? "block" : "none",
+                  fontSize: `${Math.max(10, translationFontSize - 4)}px`,
+                }}
+                className={`font-mono italic mt-0.5 transition-colors duration-200 ${
+                  isActiveWord
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground/80 group-hover:text-foreground"
+                }`}
+              >
+                {word.transliteration}
+              </span>
+              <span
+                style={{
+                  display: showWordByWord && word.translation_bn ? "block" : "none",
+                  fontSize: `${Math.max(11, translationFontSize - 3)}px`,
+                }}
+                className={`font-medium mt-0.5 text-center transition-colors duration-200 ${
+                  isActiveWord
+                    ? "text-foreground font-semibold"
+                    : "text-muted-foreground group-hover:text-foreground"
+                }`}
+              >
+                {word.translation_bn}
+              </span>
+            </div>
+          );
+        })}
       </div>
 
       {/* [২] পুরো আয়াতের উচ্চারণ */}
@@ -1137,8 +1161,26 @@ function SurahDetailPage() {
   const queryClient = useQueryClient();
 
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
+  const [playingWordPos, setPlayingWordPos] = useState<number | null>(null);
   const [isLoopingSurah, setIsLoopingSurah] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const syncRafRef = useRef<number | null>(null);
+  const [surahSegments, setSurahSegments] = useState<SurahSegmentsMap | null>(null);
+  const surahSegmentsRef = useRef<SurahSegmentsMap | null>(null);
+  surahSegmentsRef.current = surahSegments;
+
+  useEffect(() => {
+    let isMounted = true;
+    getSurahSegments(surahId).then((data) => {
+      if (isMounted) {
+        setSurahSegments(data);
+        surahSegmentsRef.current = data;
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, [surahId]);
 
   const [isAudioDownloaded, setIsAudioDownloaded] = useState(false);
   const [downloadingSurahAudio, setDownloadingSurahAudio] = useState(false);
@@ -1475,10 +1517,19 @@ function SurahDetailPage() {
     }
   }, [initQuery.isSuccess, surahQuery.isSuccess, search.ayah, surahId]);
 
+  const stopWordSync = useCallback(() => {
+    if (syncRafRef.current) {
+      cancelAnimationFrame(syncRafRef.current);
+      syncRafRef.current = null;
+    }
+    setPlayingWordPos(null);
+  }, []);
+
   const playAyahSequentially = useCallback(async (ayahNum: number) => {
     if (audioRef.current) {
       audioRef.current.pause();
     }
+    stopWordSync();
 
     // নিশ্চিত করা যেন অডিও চলার সময় চলতি আয়াতটি দৃশ্যমান থাকে
     setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
@@ -1494,12 +1545,45 @@ function SurahDetailPage() {
 
     scrollToAyah(ayahNum);
 
+    // সেগমেন্ট ডাটা আগে থেকে লোড না হয়ে থাকলে অবিলম্বে নিয়ে আসা
+    if (!surahSegmentsRef.current) {
+      getSurahSegments(surahId).then((data) => {
+        if (data) {
+          setSurahSegments(data);
+          surahSegmentsRef.current = data;
+        }
+      });
+    }
+
+    const startWordTracking = () => {
+      if (syncRafRef.current) {
+        cancelAnimationFrame(syncRafRef.current);
+      }
+      const syncLoop = () => {
+        if (!audioRef.current || audioRef.current.paused || audioRef.current.ended) {
+          return;
+        }
+        const currentMs = audioRef.current.currentTime * 1000;
+        const currentSegs = surahSegmentsRef.current?.[ayahNum];
+        const wordPos = findActiveWordPosition(currentSegs, currentMs);
+        setPlayingWordPos((prev) => (prev !== wordPos ? wordPos : prev));
+        syncRafRef.current = requestAnimationFrame(syncLoop);
+      };
+      syncRafRef.current = requestAnimationFrame(syncLoop);
+    };
+
+    audio.addEventListener("play", startWordTracking);
+    audio.addEventListener("pause", stopWordSync);
+    audio.addEventListener("ended", stopWordSync);
+
     audio.play().catch(() => {
       toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
       setPlayingAyah(null);
+      stopWordSync();
     });
 
     audio.onended = () => {
+      stopWordSync();
       const totalAyahs = meta.total;
       if (ayahNum < totalAyahs) {
         playAyahSequentially(ayahNum + 1);
@@ -1512,7 +1596,7 @@ function SurahDetailPage() {
         }
       }
     };
-  }, [surahId, meta.total, meta.name_bn, isLoopingSurah, lang]);
+  }, [surahId, meta.total, meta.name_bn, isLoopingSurah, lang, stopWordSync]);
 
   const handleNavigate = useCallback(
     (targetSurah: number, targetAyah?: number) => {
@@ -1530,28 +1614,45 @@ function SurahDetailPage() {
       if (audioRef.current) {
         audioRef.current.pause();
       }
+      stopWordSync();
       setPlayingAyah(null);
     } else {
       playAyahSequentially(1);
     }
-  }, [playingAyah, playAyahSequentially]);
+  }, [playingAyah, playAyahSequentially, stopWordSync]);
 
   const handlePlayAyah = useCallback((ayahNum: number) => {
     if (playingAyah === ayahNum) {
       if (audioRef.current) audioRef.current.pause();
+      stopWordSync();
       setPlayingAyah(null);
     } else {
       playAyahSequentially(ayahNum);
     }
-  }, [playingAyah, playAyahSequentially]);
+  }, [playingAyah, playAyahSequentially, stopWordSync]);
 
   useEffect(() => {
     return () => {
+      stopWordSync();
       if (audioRef.current) {
         audioRef.current.pause();
       }
     };
-  }, [surahId]);
+  }, [surahId, stopWordSync]);
+
+  // চলতি শব্দ অনুযায়ী মসৃণ স্ক্রলিং (অটো-স্ক্রল যাতে চলতি শব্দটি আরামদায়কভাবে ভিউপোর্টে থাকে)
+  useEffect(() => {
+    if (playingAyah !== null && playingWordPos !== null) {
+      const el = document.getElementById(`ayah-${playingAyah}-word-${playingWordPos}`);
+      if (el) {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "nearest",
+        });
+      }
+    }
+  }, [playingAyah, playingWordPos]);
 
   const isAyahBookmarked = useCallback((ayahNum: number) => {
     return checkBookmarked({
@@ -2003,6 +2104,7 @@ function SurahDetailPage() {
               ayah={ayah}
               surahId={surahId}
               isPlaying={isPlaying}
+              activeWordPos={isPlaying ? playingWordPos : null}
               isBookmarked={isBookmarked}
               isAyahAudioSaved={isAyahAudioSaved}
               isThisAyahDownloading={isThisAyahDownloading}
