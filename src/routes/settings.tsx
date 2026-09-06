@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-import { usePrefs, type Prefs, type ThemeMode } from "@/lib/prefs";
+import { usePrefs, type Prefs, type ThemeMode, type TranslationAudioPermissions } from "@/lib/prefs";
 import { useIsAdmin } from "@/lib/auth";
 import { saveSurahOffline } from "@/lib/offline";
 import { Switch } from "@/components/ui/switch";
@@ -30,13 +30,36 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 
+const LAYER_TO_TRACK_MAP: Record<string, keyof TranslationAudioPermissions> = {
+  showConventionalBn: "conventional_bn",
+  showConventionalEn: "conventional_en",
+  showCoreMeaningBn: "core_meaning_bn",
+  showCoreMeaningEn: "core_meaning_en",
+  showModernBn: "modern_bn",
+  showModernEn: "modern_en",
+  showArabic: "arabic",
+};
+
 export const Route = createFileRoute("/settings")({
   component: SettingsPage,
 });
 
 function SettingsPage() {
   const { isAdmin } = useIsAdmin();
-  const { prefs, publicPermissions, userPermissions, updatePref, updatePublicPermission, isLayerAllowed, lang, themeMode, setThemeMode } = usePrefs();
+  const {
+    prefs,
+    publicPermissions,
+    userPermissions,
+    updatePref,
+    updatePublicPermission,
+    translationAudioPermissions,
+    updateTranslationAudioPermission,
+    isTranslationAudioAllowed,
+    isLayerAllowed,
+    lang,
+    themeMode,
+    setThemeMode,
+  } = usePrefs();
 
   const [downloadingSurahs, setDownloadingSurahs] = useState(false);
   const [downloadingAyahs, setDownloadingAyahs] = useState(false);
@@ -635,15 +658,65 @@ function SettingsPage() {
                   </div>
                 )}
 
+                {/* এডমিন অংশ: সুনির্দিষ্ট অনুবাদের অডিও প্লেব্যাক অনুমতি সুইচ */}
+                {isAdmin && LAYER_TO_TRACK_MAP[layer.key] && (
+                  <div 
+                    className="mt-2.5 pt-2.5 border-t border-dashed border-border/50 flex items-center justify-between gap-2 cursor-pointer hover:opacity-90 transition-opacity select-none"
+                    onClick={async () => {
+                      const trackId = LAYER_TO_TRACK_MAP[layer.key];
+                      const isAudioAllowed = isTranslationAudioAllowed(trackId, false);
+                      const nextVal = !isAudioAllowed;
+                      await updateTranslationAudioPermission(trackId, nextVal);
+                      toast.success(
+                        lang === "bn" 
+                          ? `এই অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য ${nextVal ? "উন্মুক্ত" : "লুকানো/স্থগিত"} করা হয়েছে`
+                          : `Audio playback for this translation is now ${nextVal ? "allowed" : "restricted"} for visitors`
+                      );
+                    }}
+                  >
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <Headphones className={`size-3.5 shrink-0 ${isTranslationAudioAllowed(LAYER_TO_TRACK_MAP[layer.key], false) ? "text-emerald-500" : "text-amber-500"}`} />
+                      <span className="text-xs font-semibold text-foreground/90 truncate">
+                        {lang === "bn" ? "ভিজিটর অডিও প্লেব্যাক:" : "Visitor Audio Access:"}
+                      </span>
+                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
+                        isTranslationAudioAllowed(LAYER_TO_TRACK_MAP[layer.key], false)
+                          ? "text-emerald-600 bg-emerald-500/10 dark:text-emerald-400" 
+                          : "text-amber-600 bg-amber-500/10 dark:text-amber-400"
+                      }`}>
+                        {isTranslationAudioAllowed(LAYER_TO_TRACK_MAP[layer.key], false)
+                          ? (lang === "bn" ? "উন্মুক্ত" : "Allowed") 
+                          : (lang === "bn" ? "লুকানো (Hidden)" : "Restricted")}
+                      </span>
+                    </div>
+
+                    <div onClick={(e) => e.stopPropagation()}>
+                      <Switch
+                        id={`admin-trans-audio-${layer.key}`}
+                        checked={isTranslationAudioAllowed(LAYER_TO_TRACK_MAP[layer.key], false)}
+                        onCheckedChange={async (val) => {
+                          const trackId = LAYER_TO_TRACK_MAP[layer.key];
+                          await updateTranslationAudioPermission(trackId, val);
+                          toast.success(
+                            lang === "bn" 
+                              ? `এই অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য ${val ? "উন্মুক্ত" : "লুকানো/স্থগিত"} করা হয়েছে`
+                              : `Audio playback for this translation is now ${val ? "allowed" : "restricted"} for visitors`
+                          );
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {isAdmin && layer.key === "showAudioPlayback" && (
-                  <div className="mt-2.5 pt-2.5 border-t border-dashed border-border/50 flex items-center justify-between gap-2">
+                  <div className="mt-2.5 pt-2.5 border-t border-dashed border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <span className="text-[11px] text-muted-foreground">
-                      {lang === "bn" ? "১১৪টি সুরার পৃথক অডিও কন্ট্রোল:" : "Per-surah audio controls:"}
+                      {lang === "bn" ? "সুনির্দিষ্ট অনুবাদের অডিও ও ১১৪টি সুরার পৃথক অডিও কন্ট্রোল:" : "Translation & Per-surah audio controls:"}
                     </span>
-                    <Button asChild size="sm" variant="ghost" className="h-6 text-[11px] px-2 text-primary hover:bg-primary/10">
+                    <Button asChild size="sm" variant="ghost" className="h-6 text-[11px] px-2 text-primary hover:bg-primary/10 self-end sm:self-auto">
                       <Link to="/admin" search={{ tab: "surah-audio" }}>
                         <Headphones className="size-3 mr-1" />
-                        {lang === "bn" ? "ম্যানেজ করুন →" : "Manage →"}
+                        {lang === "bn" ? "এডমিন কন্ট্রোল প্যানেল →" : "Admin Panel →"}
                       </Link>
                     </Button>
                   </div>

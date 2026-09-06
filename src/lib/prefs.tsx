@@ -107,6 +107,49 @@ const SURAH_AUDIO_PERMS_STORAGE_KEY = "quran_explorer_surah_audio_permissions_v1
 
 export type SurahAudioPermissions = Record<number, boolean>;
 
+export type TranslationAudioPermissions = {
+  conventional_bn: boolean;
+  core_meaning_bn: boolean;
+  modern_bn: boolean;
+  conventional_en: boolean;
+  core_meaning_en: boolean;
+  modern_en: boolean;
+  arabic?: boolean;
+};
+
+export const DEFAULT_TRANSLATION_AUDIO_PERMISSIONS: TranslationAudioPermissions = {
+  conventional_bn: true,
+  core_meaning_bn: true,
+  modern_bn: true,
+  conventional_en: true,
+  core_meaning_en: true,
+  modern_en: true,
+  arabic: true,
+};
+
+const TRANSLATION_AUDIO_PERMS_STORAGE_KEY = "quran_explorer_translation_audio_permissions_v1";
+
+export const TRACK_TO_LAYER_MAP: Record<TranslationAudioTrack | "arabic", keyof PublicDisplayPermissions> = {
+  conventional_bn: "showConventionalBn",
+  core_meaning_bn: "showCoreMeaningBn",
+  modern_bn: "showModernBn",
+  conventional_en: "showConventionalEn",
+  core_meaning_en: "showCoreMeaningEn",
+  modern_en: "showModernEn",
+  arabic: "showArabic",
+};
+
+export function getStoredTranslationAudioPermissions(): TranslationAudioPermissions {
+  if (typeof window === "undefined") return DEFAULT_TRANSLATION_AUDIO_PERMISSIONS;
+  try {
+    const raw = localStorage.getItem(TRANSLATION_AUDIO_PERMS_STORAGE_KEY);
+    if (!raw) return DEFAULT_TRANSLATION_AUDIO_PERMISSIONS;
+    return { ...DEFAULT_TRANSLATION_AUDIO_PERMISSIONS, ...JSON.parse(raw) };
+  } catch {
+    return DEFAULT_TRANSLATION_AUDIO_PERMISSIONS;
+  }
+}
+
 export function getStoredSurahAudioPermissions(): SurahAudioPermissions {
   if (typeof window === "undefined") return {};
   try {
@@ -182,6 +225,7 @@ type PrefsContextType = {
   publicPermissions: PublicDisplayPermissions;
   userPermissions: PublicDisplayPermissions | null;
   surahAudioPermissions: SurahAudioPermissions;
+  translationAudioPermissions: TranslationAudioPermissions;
   lang: "bn" | "en";
   dark: boolean;
   themeMode: ThemeMode;
@@ -192,8 +236,11 @@ type PrefsContextType = {
   updatePublicPermission: (key: keyof PublicDisplayPermissions, value: boolean) => Promise<void>;
   updateSurahAudioPermission: (surahId: number, allowed: boolean) => Promise<void>;
   bulkUpdateSurahAudioPermissions: (allowed: boolean) => Promise<void>;
+  updateTranslationAudioPermission: (track: keyof TranslationAudioPermissions, allowed: boolean) => Promise<void>;
+  bulkUpdateTranslationAudioPermissions: (allowed: boolean) => Promise<void>;
   isLayerAllowed: (layerKey: keyof PublicDisplayPermissions, isAdmin?: boolean) => boolean;
   isSurahAudioAllowed: (surahId: number, isAdmin?: boolean) => boolean;
+  isTranslationAudioAllowed: (track: TranslationAudioTrack | "arabic", isAdmin?: boolean) => boolean;
   t: (key: string) => string;
 };
 
@@ -203,6 +250,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
   const [prefs, setPrefsState] = useState<Prefs>(getStoredPrefs);
   const [publicPermissions, setPublicPermissions] = useState<PublicDisplayPermissions>(getStoredPublicPermissions);
   const [surahAudioPermissions, setSurahAudioPermissions] = useState<SurahAudioPermissions>(getStoredSurahAudioPermissions);
+  const [translationAudioPermissions, setTranslationAudioPermissions] = useState<TranslationAudioPermissions>(getStoredTranslationAudioPermissions);
   const [userPermissions, setUserPermissions] = useState<PublicDisplayPermissions | null>(null);
 
   useEffect(() => {
@@ -210,15 +258,18 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       setPrefsState(getStoredPrefs());
       setPublicPermissions(getStoredPublicPermissions());
       setSurahAudioPermissions(getStoredSurahAudioPermissions());
+      setTranslationAudioPermissions(getStoredTranslationAudioPermissions());
     };
     window.addEventListener("prefs-updated", handleUpdate);
     window.addEventListener("public-perms-updated", handleUpdate);
     window.addEventListener("surah-audio-perms-updated", handleUpdate);
+    window.addEventListener("translation-audio-perms-updated", handleUpdate);
     window.addEventListener("storage", handleUpdate);
     return () => {
       window.removeEventListener("prefs-updated", handleUpdate);
       window.removeEventListener("public-perms-updated", handleUpdate);
       window.removeEventListener("surah-audio-perms-updated", handleUpdate);
+      window.removeEventListener("translation-audio-perms-updated", handleUpdate);
       window.removeEventListener("storage", handleUpdate);
     };
   }, []);
@@ -259,6 +310,27 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
               const parsed = typeof data.value === "string" ? JSON.parse(data.value) : data.value;
               setSurahAudioPermissions(parsed);
               localStorage.setItem(SURAH_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(parsed));
+            } catch {}
+          }
+        })
+        .catch(() => {});
+
+      // 1c. Translation audio permissions from site_settings
+      supabase
+        .from("site_settings")
+        .select("value")
+        .eq("key", "translation_audio_permissions")
+        .maybeSingle()
+        .then(({ data }) => {
+          if (data?.value) {
+            try {
+              const parsed = typeof data.value === "string" ? JSON.parse(data.value) : data.value;
+              const merged = {
+                ...DEFAULT_TRANSLATION_AUDIO_PERMISSIONS,
+                ...parsed,
+              };
+              setTranslationAudioPermissions(merged);
+              localStorage.setItem(TRANSLATION_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(merged));
             } catch {}
           }
         })
@@ -377,6 +449,54 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       const { supabase } = await import("@/integrations/supabase/client");
       await supabase.from("site_settings").upsert({
         key: "surah_audio_permissions",
+        value: JSON.stringify(updated),
+        is_public: true,
+      }, { onConflict: "key" });
+    } catch {}
+  };
+
+  const updateTranslationAudioPermission = async (
+    track: keyof TranslationAudioPermissions,
+    allowed: boolean
+  ) => {
+    const current = getStoredTranslationAudioPermissions();
+    const updated: TranslationAudioPermissions = { ...current, [track]: allowed };
+    setTranslationAudioPermissions(updated);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(TRANSLATION_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event("translation-audio-perms-updated"));
+    }
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.from("site_settings").upsert({
+        key: "translation_audio_permissions",
+        value: JSON.stringify(updated),
+        is_public: true,
+      }, { onConflict: "key" });
+    } catch {}
+  };
+
+  const bulkUpdateTranslationAudioPermissions = async (allowed: boolean) => {
+    const updated: TranslationAudioPermissions = {
+      conventional_bn: allowed,
+      core_meaning_bn: allowed,
+      modern_bn: allowed,
+      conventional_en: allowed,
+      core_meaning_en: allowed,
+      modern_en: allowed,
+      arabic: allowed,
+    };
+    setTranslationAudioPermissions(updated);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(TRANSLATION_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event("translation-audio-perms-updated"));
+    }
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.from("site_settings").upsert({
+        key: "translation_audio_permissions",
         value: JSON.stringify(updated),
         is_public: true,
       }, { onConflict: "key" });
@@ -600,6 +720,21 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     return true;
   };
 
+  const isTranslationAudioAllowed = (
+    track: TranslationAudioTrack | "arabic",
+    isAdminUser: boolean = false
+  ): boolean => {
+    if (isAdminUser) return true;
+    // 1. Global master audio switch
+    if (publicPermissions.showAudioPlayback === false) return false;
+    // 2. Underlying text translation visibility (if text is hidden, audio is also hidden)
+    const layerKey = TRACK_TO_LAYER_MAP[track];
+    if (layerKey && publicPermissions[layerKey] === false) return false;
+    // 3. Granular translation audio switch
+    if (translationAudioPermissions[track] === false) return false;
+    return true;
+  };
+
   return (
     <PrefsContext.Provider
       value={{
@@ -607,6 +742,7 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
         publicPermissions,
         userPermissions,
         surahAudioPermissions,
+        translationAudioPermissions,
         lang: prefs.lang,
         dark: prefs.dark,
         themeMode,
@@ -617,8 +753,11 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
         updatePublicPermission,
         updateSurahAudioPermission,
         bulkUpdateSurahAudioPermissions,
+        updateTranslationAudioPermission,
+        bulkUpdateTranslationAudioPermissions,
         isLayerAllowed,
         isSurahAudioAllowed,
+        isTranslationAudioAllowed,
         t,
       }}
     >
@@ -633,12 +772,14 @@ export function usePrefs() {
     const fallbackPrefs = getStoredPrefs();
     const fallbackPublicPerms = getStoredPublicPermissions();
     const fallbackSurahAudio = getStoredSurahAudioPermissions();
+    const fallbackTranslationAudio = getStoredTranslationAudioPermissions();
     const fallbackMode = fallbackPrefs.themeMode || (fallbackPrefs.dark ? "dark" : "sepia");
     return {
       prefs: fallbackPrefs,
       publicPermissions: fallbackPublicPerms,
       userPermissions: null,
       surahAudioPermissions: fallbackSurahAudio,
+      translationAudioPermissions: fallbackTranslationAudio,
       lang: fallbackPrefs.lang,
       dark: fallbackPrefs.dark,
       themeMode: fallbackMode,
@@ -649,8 +790,11 @@ export function usePrefs() {
       updatePublicPermission: async () => {},
       updateSurahAudioPermission: async () => {},
       bulkUpdateSurahAudioPermissions: async () => {},
+      updateTranslationAudioPermission: async () => {},
+      bulkUpdateTranslationAudioPermissions: async () => {},
       isLayerAllowed: () => true,
       isSurahAudioAllowed: () => true,
+      isTranslationAudioAllowed: () => true,
       t: (key: string) => key,
     };
   }

@@ -1215,7 +1215,16 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, publicPermissions, userPermissions, isLayerAllowed, isSurahAudioAllowed, lang, updatePref } = usePrefs();
+  const {
+    prefs,
+    publicPermissions,
+    userPermissions,
+    isLayerAllowed,
+    isSurahAudioAllowed,
+    isTranslationAudioAllowed,
+    lang,
+    updatePref,
+  } = usePrefs();
   const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const { isAdmin } = useIsAdmin();
   const isAudioAllowedForThisSurah = isSurahAudioAllowed(surahId, isAdmin);
@@ -1652,6 +1661,23 @@ function SurahDetailPage() {
         }
       } else {
         // ২. ন্যাচারাল পুরুষ AI কণ্ঠে অনুবাদের অডিও প্লেব্যাক
+        if (!isAdmin && !isTranslationAudioAllowed(prefs.translationAudioTrack, false)) {
+          if (mode === "translation_only") {
+            toast.error(
+              lang === "bn"
+                ? "নির্বাচিত অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য সাময়িকভাবে স্থগিত রাখা হয়েছে।"
+                : "Audio playback for this translation is temporarily restricted."
+            );
+            setPlayingAyah(null);
+            setPlayingPhase(null);
+            return;
+          } else {
+            // mode === "arabic_and_translation" -> skip translation and move to next ayah Arabic
+            playAyahSequentially(ayahNum + 1, "arabic");
+            return;
+          }
+        }
+
         const currentAyahs = currentSurahData?.ayahs || [];
         const ayahObj = currentAyahs.find((a) => a.ayah === ayahNum);
         const text = ayahObj ? getAyahTranslationText(ayahObj, prefs.translationAudioTrack) : "";
@@ -1712,6 +1738,7 @@ function SurahDetailPage() {
       currentSurahData?.ayahs,
       isAdmin,
       isSurahAudioAllowed,
+      isTranslationAudioAllowed,
     ]
   );
 
@@ -1736,6 +1763,15 @@ function SurahDetailPage() {
       return;
     }
 
+    if (!isAdmin && prefs.audioPlaybackMode === "translation_only" && !isTranslationAudioAllowed(prefs.translationAudioTrack, false)) {
+      toast.error(
+        lang === "bn"
+          ? "নির্বাচিত অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য স্থগিত রাখা হয়েছে। অনুগ্রহ করে অন্য অনুবাদ নির্বাচন করুন বা শুধু আরবী তেলাওয়াত শুনুন।"
+          : "Audio playback for this translation is restricted. Please select another translation or Arabic only."
+      );
+      return;
+    }
+
     if (playingAyah !== null) {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -1747,7 +1783,7 @@ function SurahDetailPage() {
         prefs.audioPlaybackMode === "translation_only" ? "translation" : "arabic";
       playAyahSequentially(1, initialPhase);
     }
-  }, [playingAyah, playAyahSequentially, prefs.audioPlaybackMode, isAdmin, isSurahAudioAllowed, surahId, lang]);
+  }, [playingAyah, playAyahSequentially, prefs.audioPlaybackMode, prefs.translationAudioTrack, isAdmin, isSurahAudioAllowed, isTranslationAudioAllowed, surahId, lang]);
 
   const handlePlayAyah = useCallback(
     (ayahNum: number) => {
@@ -1756,6 +1792,15 @@ function SurahDetailPage() {
           lang === "bn"
             ? "এই সুরার অডিও প্লেব্যাক বর্তমানে অ্যাডমিন কর্তৃক সাময়িকভাবে স্থগিত রাখা হয়েছে।"
             : "Audio playback for this surah is currently restricted by administration."
+        );
+        return;
+      }
+
+      if (!isAdmin && prefs.audioPlaybackMode === "translation_only" && !isTranslationAudioAllowed(prefs.translationAudioTrack, false)) {
+        toast.error(
+          lang === "bn"
+            ? "নির্বাচিত অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য স্থগিত রাখা হয়েছে। অনুগ্রহ করে অন্য অনুবাদ নির্বাচন করুন বা শুধু আরবী তেলাওয়াত শুনুন।"
+            : "Audio playback for this translation is restricted. Please select another translation or Arabic only."
         );
         return;
       }
@@ -1770,7 +1815,7 @@ function SurahDetailPage() {
         playAyahSequentially(ayahNum, initialPhase);
       }
     },
-    [playingAyah, playAyahSequentially, prefs.audioPlaybackMode, isAdmin, isSurahAudioAllowed, surahId, lang]
+    [playingAyah, playAyahSequentially, prefs.audioPlaybackMode, prefs.translationAudioTrack, isAdmin, isSurahAudioAllowed, isTranslationAudioAllowed, surahId, lang]
   );
 
   const handlePlayVoiceSample = async (track: TranslationAudioTrack) => {
@@ -1780,6 +1825,15 @@ function SurahDetailPage() {
     }
     if (isPlayingVoiceSample) {
       setIsPlayingVoiceSample(false);
+      return;
+    }
+
+    if (!isAdmin && !isTranslationAudioAllowed(track, false)) {
+      toast.error(
+        lang === "bn"
+          ? "প্রশাসনিক নির্দেশনায় এই অনুবাদের ভয়েস প্রিভিউ সাধারণ ভিজিটরদের জন্য স্থগিত রয়েছে।"
+          : "Voice preview for this translation is restricted by administration."
+      );
       return;
     }
 
@@ -2619,25 +2673,50 @@ function SurahDetailPage() {
                     { id: "modern_bn", label: "৩. বিজ্ঞানভিত্তিক ও যৌক্তিক অনুবাদ", sub: "Scientific / Philosophical" },
                   ].map((t) => {
                     const isSelected = prefs.translationAudioTrack === t.id;
+                    const isAllowedForUser = isTranslationAudioAllowed(t.id as TranslationAudioTrack, isAdmin);
+                    const isPublicRestricted = !isTranslationAudioAllowed(t.id as TranslationAudioTrack, false);
+
                     return (
                       <button
                         key={t.id}
                         type="button"
                         onClick={() => {
+                          if (!isAllowedForUser) {
+                            toast.error(
+                              lang === "bn"
+                                ? "প্রশাসনিক নির্দেশনায় এই অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য সাময়িকভাবে স্থগিত রয়েছে।"
+                                : "Audio playback for this translation is temporarily restricted."
+                            );
+                            return;
+                          }
                           updatePref("translationAudioTrack", t.id as TranslationAudioTrack);
                           toast.success(lang === "bn" ? `${t.label} নির্বাচিত হয়েছে` : `Selected ${t.label}`);
                         }}
-                        className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left text-xs transition-all cursor-pointer ${
-                          isSelected
-                            ? "border-primary/80 bg-primary/10 font-semibold text-foreground"
-                            : "border-border/60 hover:bg-muted/40 text-muted-foreground"
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left text-xs transition-all ${
+                          !isAllowedForUser
+                            ? "border-border/40 bg-muted/20 opacity-60 cursor-not-allowed text-muted-foreground"
+                            : isSelected
+                            ? "border-primary/80 bg-primary/10 font-semibold text-foreground cursor-pointer"
+                            : "border-border/60 hover:bg-muted/40 text-muted-foreground cursor-pointer"
                         }`}
                       >
-                        <div>
+                        <div className="flex items-center flex-wrap gap-1.5">
                           <span className={isSelected ? "text-primary" : "text-foreground"}>{t.label}</span>
-                          <span className="text-[10px] text-muted-foreground ml-1.5 hidden sm:inline">({t.sub})</span>
+                          <span className="text-[10px] text-muted-foreground hidden sm:inline">({t.sub})</span>
+                          {!isAllowedForUser && (
+                            <span className="text-[10px] font-bold text-amber-600 bg-amber-500/15 px-1.5 py-0.2 rounded inline-flex items-center gap-0.5">
+                              <Lock className="size-2.5" />
+                              {lang === "bn" ? "স্থগিত" : "Restricted"}
+                            </span>
+                          )}
+                          {isAdmin && isPublicRestricted && (
+                            <span className="text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 px-1.5 py-0.2 rounded inline-flex items-center gap-0.5">
+                              <ShieldCheck className="size-2.5" />
+                              {lang === "bn" ? "এডমিন প্রিভিউ" : "Admin Preview"}
+                            </span>
+                          )}
                         </div>
-                        {isSelected && <Check className="size-3.5 text-primary shrink-0" />}
+                        {isSelected && <Check className="size-3.5 text-primary shrink-0 ml-2" />}
                       </button>
                     );
                   })}
@@ -2656,25 +2735,50 @@ function SurahDetailPage() {
                     { id: "modern_en", label: "6. Scientific / Modern Context", sub: "Scientific Framework" },
                   ].map((t) => {
                     const isSelected = prefs.translationAudioTrack === t.id;
+                    const isAllowedForUser = isTranslationAudioAllowed(t.id as TranslationAudioTrack, isAdmin);
+                    const isPublicRestricted = !isTranslationAudioAllowed(t.id as TranslationAudioTrack, false);
+
                     return (
                       <button
                         key={t.id}
                         type="button"
                         onClick={() => {
+                          if (!isAllowedForUser) {
+                            toast.error(
+                              lang === "bn"
+                                ? "প্রশাসনিক নির্দেশনায় এই অনুবাদের অডিও প্লেব্যাক সাধারণ ভিজিটরদের জন্য সাময়িকভাবে স্থগিত রয়েছে।"
+                                : "Audio playback for this translation is temporarily restricted."
+                            );
+                            return;
+                          }
                           updatePref("translationAudioTrack", t.id as TranslationAudioTrack);
                           toast.success(`Selected ${t.label}`);
                         }}
-                        className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left text-xs transition-all cursor-pointer ${
-                          isSelected
-                            ? "border-primary/80 bg-primary/10 font-semibold text-foreground"
-                            : "border-border/60 hover:bg-muted/40 text-muted-foreground"
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left text-xs transition-all ${
+                          !isAllowedForUser
+                            ? "border-border/40 bg-muted/20 opacity-60 cursor-not-allowed text-muted-foreground"
+                            : isSelected
+                            ? "border-primary/80 bg-primary/10 font-semibold text-foreground cursor-pointer"
+                            : "border-border/60 hover:bg-muted/40 text-muted-foreground cursor-pointer"
                         }`}
                       >
-                        <div>
+                        <div className="flex items-center flex-wrap gap-1.5">
                           <span className={isSelected ? "text-primary" : "text-foreground"}>{t.label}</span>
-                          <span className="text-[10px] text-muted-foreground ml-1.5 hidden sm:inline">({t.sub})</span>
+                          <span className="text-[10px] text-muted-foreground hidden sm:inline">({t.sub})</span>
+                          {!isAllowedForUser && (
+                            <span className="text-[10px] font-bold text-amber-600 bg-amber-500/15 px-1.5 py-0.2 rounded inline-flex items-center gap-0.5">
+                              <Lock className="size-2.5" />
+                              {lang === "bn" ? "Restricted" : "Restricted"}
+                            </span>
+                          )}
+                          {isAdmin && isPublicRestricted && (
+                            <span className="text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 px-1.5 py-0.2 rounded inline-flex items-center gap-0.5">
+                              <ShieldCheck className="size-2.5" />
+                              {lang === "bn" ? "এডমিন প্রিভিউ" : "Admin Preview"}
+                            </span>
+                          )}
                         </div>
-                        {isSelected && <Check className="size-3.5 text-primary shrink-0" />}
+                        {isSelected && <Check className="size-3.5 text-primary shrink-0 ml-2" />}
                       </button>
                     );
                   })}
