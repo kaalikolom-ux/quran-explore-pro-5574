@@ -130,14 +130,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       {
         rel: "preload",
-        href: "/fonts/hind-siliguri-v14-bengali-400.woff2",
+        href: "/fonts/noto-sans-bengali-v33.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
         rel: "preload",
-        href: "/fonts/hind-siliguri-v14-latin-400.woff2",
+        href: "/fonts/noto-sans-bengali-latin-v33.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
