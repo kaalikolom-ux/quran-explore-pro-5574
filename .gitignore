@@ -33,6 +33,7 @@ dist-ssr
 *.zip
 *.bundle
 backup/
+backups/
 wooniche_quran_data.json
 a_wooniche_alam_m_data.json
 
