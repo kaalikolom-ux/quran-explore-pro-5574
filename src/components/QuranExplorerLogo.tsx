@@ -14,10 +14,9 @@ export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorer
 
   return (
     <div className={`inline-flex items-center shrink-0 select-none ${className}`}>
-      {/* Light Mode Logo */}
+      {/* Light Mode Logo (Kaushan Script Vector) */}
       <img
-        src="/logo-light.png"
-        srcSet="/logo-light.png 1x, /logo-light@2x.png 2x"
+        src="/logo-light.svg"
         alt="Qur'an Explorer"
         width="240"
         height="44"
@@ -25,10 +24,9 @@ export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorer
         loading="eager"
         decoding="async"
       />
-      {/* Dark Mode Logo */}
+      {/* Dark Mode Logo (Kaushan Script Vector) */}
       <img
-        src="/logo-dark.png"
-        srcSet="/logo-dark.png 1x, /logo-dark@2x.png 2x"
+        src="/logo-dark.svg"
         alt="Qur'an Explorer"
         width="240"
         height="44"
