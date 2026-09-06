@@ -660,7 +660,7 @@ const AyahCard = React.memo(function AyahCard({
   return (
     <div
       id={`ayah-${ayah.ayah}`}
-      className={`scroll-mt-36 rounded-2xl border bg-card p-4 sm:p-5 space-y-4 shadow-sm transition-all duration-300 ${
+      className={`ayah-card-container scroll-mt-36 rounded-2xl border bg-card p-4 sm:p-5 space-y-4 shadow-sm transition-all duration-300 ${
         isPlaying
           ? "border-primary/80 ring-2 ring-primary/20 bg-primary/[0.02] shadow-md"
           : hasNote
@@ -2369,11 +2369,30 @@ function SurahDetailPage() {
         </div>
       )}
 
-      {/* লোডিং স্টেট - শুধুমাত্র প্রথমবার ইনিশিয়াল ডাটা না আসা পর্যন্ত দেখাবে (যা মাত্র ২০-৩০ মিলিসেকেন্ড) */}
+      {/* ইনস্ট্যান্ট ফার্স্ট ভিউপোর্ট (৬-৭ ইঞ্চি) আয়াত স্কেলিটন - ডাটা ফেচিংয়ের ২০-৩০ms সময়েও কোনো লেআউট জাম্প ছাড়া তাৎক্ষণিক প্রদর্শন */}
       {!currentSurahData && (initQuery.isLoading || surahQuery.isLoading) && (
-        <div className="py-16 text-center text-sm text-muted-foreground animate-pulse flex flex-col items-center justify-center gap-2">
-          <Loader2 className="size-5 animate-spin text-primary" />
-          <span>কুরআনের আয়াতসমূহ লোড হচ্ছে...</span>
+        <div className="space-y-6 animate-pulse">
+          {[1, 2, 3].map((num) => (
+            <div
+              key={num}
+              className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5 space-y-4 shadow-sm"
+            >
+              <div className="flex items-center justify-between border-b border-border/40 pb-3">
+                <div className="h-6 w-14 bg-muted/60 rounded-md" />
+                <div className="flex gap-2">
+                  <div className="size-7 bg-muted/40 rounded-lg" />
+                  <div className="size-7 bg-muted/40 rounded-lg" />
+                </div>
+              </div>
+              <div className="flex justify-end py-2">
+                <div className="h-8 w-3/4 sm:w-2/3 bg-muted/70 rounded-xl" />
+              </div>
+              <div className="space-y-2 pt-1">
+                <div className="h-4 w-full bg-muted/50 rounded" />
+                <div className="h-4 w-4/5 bg-muted/40 rounded" />
+              </div>
+            </div>
+          ))}
         </div>
       )}
 

@@ -545,3 +545,29 @@ blockquote::before {
 .animate-star-fly-4 {
   animation: particleFlyOut4 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
 }
+
+/* ==========================================================================
+   প্রগ্রেসিভ রেন্ডারিং ও ইনস্ট্যান্ট ফার্স্ট ভিউপোর্ট (৬-৭ ইঞ্চি) অপ্টিমাইজেশন
+   ========================================================================== */
+
+/* প্রথম ভিউপোর্টের বাইরের কার্ডগুলো ব্রাউজারে অন-ডিমান্ড প্রগ্রেসিভ রেন্ডার হবে */
+.progressive-surah-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 68px;
+}
+
+.ayah-card-container {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 240px;
+}
+
+.article-card-progressive {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px;
+}
+
+/* আর্টিকেলের ভেতরের গভীর সেকশনগুলো ধাপে ধাপে ব্যাকগ্রাউন্ডে রেন্ডার হবে */
+.article-rich-container > div:nth-child(n+3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 280px;
+}

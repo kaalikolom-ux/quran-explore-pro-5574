@@ -4,6 +4,7 @@ import { User, FileText, ChevronRight, PenTool } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
+import { STATIC_AUTHORS } from "@/lib/staticArticlesData";
 
 export const Route = createFileRoute("/authors/")({
   head: () => ({
@@ -38,6 +39,8 @@ function AuthorsDirectoryPage() {
 
   const { data: authors = [], isLoading } = useQuery({
     queryKey: ["authors-directory-list"],
+    initialData: STATIC_AUTHORS as any,
+    staleTime: 1000 * 60 * 10,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("authors")

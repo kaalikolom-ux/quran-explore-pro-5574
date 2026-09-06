@@ -78,9 +78,11 @@ function ArticlesIndexPage() {
     setSearchQuery(searchParams.q || null);
   }, [searchParams.author, searchParams.category, searchParams.q]);
 
-  // সরাসরি ক্যাটাগরি ফেচ করা
+  // সরাসরি ক্যাটাগরি ফেচ করা (ইনিশিয়াল স্ট্যাটিক ডাটা দিয়ে ইনস্ট্যান্ট রেন্ডার)
   const categoriesQuery = useQuery({
     queryKey: ["categories-list"],
+    initialData: STATIC_CATEGORIES,
+    staleTime: 1000 * 60 * 10,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("categories")
@@ -91,9 +93,11 @@ function ArticlesIndexPage() {
     },
   });
 
-  // লেখক তালিকা ফেচ
+  // লেখক তালিকা ফেচ (ইনিশিয়াল স্ট্যাটিক ডাটা দিয়ে ইনস্ট্যান্ট রেন্ডার)
   const authorsQuery = useQuery({
     queryKey: ["authors-list"],
+    initialData: STATIC_AUTHORS,
+    staleTime: 1000 * 60 * 10,
     queryFn: async () => {
       const { data, error } = await supabase
         .from("authors")
@@ -103,9 +107,11 @@ function ArticlesIndexPage() {
     },
   });
 
-  // আর্টিকেল ফেচ (১০০% নিরাপদ ও সুরক্ষিত কুয়েরি)
+  // আর্টিকেল ফেচ (১০০% নিরাপদ ও সুরক্ষিত কুয়েরি - স্ট্যাটিক ইনিশিয়াল ডাটা দিয়ে ০ms লোড)
   const query = useQuery({
     queryKey: ["articles", isAdmin],
+    initialData: STATIC_ARTICLES,
+    staleTime: 1000 * 60 * 5,
     queryFn: async () => {
       let q = supabase
         .from("articles")
@@ -373,7 +379,7 @@ function ArticlesIndexPage() {
             return (
               <div
                 key={art.id}
-                className="card-soft group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-md"
+                className="card-soft article-card-progressive group relative flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-md"
               >
                 <Link
                   to="/articles/$slug"

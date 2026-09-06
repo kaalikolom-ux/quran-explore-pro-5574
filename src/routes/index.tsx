@@ -11,8 +11,9 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { Typewriter } from "@/components/Typewriter";
 import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
-import { searchQuranSurahs, bnToEnDigits } from "@/lib/quranSearchEngine";
+import { searchQuranSurahs, bnToEnDigits, ALL_SURAHS_DATABASE } from "@/lib/quranSearchEngine";
 import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
+import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,7 +69,18 @@ function HomePage() {
   const deferredTerm = useDeferredValue(term);
   const [searchDialogOpen, setSearchDialogOpen] = useState(false);
   const [searchDialogQuery, setSearchDialogQuery] = useState("");
-  const chapters = useQuery(chaptersQuery(lang));
+  const chapters = useQuery({
+    ...chaptersQuery(lang),
+    initialData: () =>
+      (ALL_SURAHS_DATABASE || []).map((s) => ({
+        id: s.id,
+        name_simple: s.name_en,
+        name_arabic: s.name_arabic,
+        verses_count: s.total_verses,
+        revelation_place: s.type === "Meccan" ? "makkah" : "madinah",
+        translated_name: { name: lang === "bn" ? s.meaning_bn : s.meaning_en },
+      })),
+  });
   const navigate = useNavigate();
 
   const handleOpenSearchWith = (q: string) => {
@@ -78,6 +90,7 @@ function HomePage() {
 
   const articles = useQuery({
     queryKey: ["articles", "published", "home"],
+    initialData: () => STATIC_ARTICLES.slice(0, 3) as any,
     queryFn: async () => {
       try {
         const { data, error } = await supabase
@@ -390,7 +403,7 @@ function HomePage() {
                     to="/surah/$id"
                     params={{ id: String(c.id) }}
                     search={targetAyah ? { ayah: targetAyah } : undefined}
-                    className="card-soft group flex items-center justify-between gap-2.5 sm:gap-4 p-3 sm:p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer w-full min-w-0 max-w-full overflow-hidden"
+                    className="card-soft progressive-surah-card group flex items-center justify-between gap-2.5 sm:gap-4 p-3 sm:p-4 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] cursor-pointer w-full min-w-0 max-w-full overflow-hidden"
                   >
                     <span className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-xs sm:text-sm font-semibold text-accent-foreground">
                       {localNumber(c.id, lang)}

@@ -18,7 +18,7 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { toast } from "sonner";
 
 import { supabase } from "@/integrations/supabase/client";
@@ -68,9 +68,25 @@ function SingleArticlePage() {
   const [copied, setCopied] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
+  // স্ট্যাটিক আর্টিকেলের তাৎক্ষণিক সমাধান (0ms লোড - প্রথম ৬-৭ ইঞ্চি সাথে সাথে রেন্ডার)
+  const initialStaticArticle = useMemo(() => {
+    let cleanSlug = slug;
+    try {
+      cleanSlug = decodeURIComponent(slug);
+    } catch {}
+
+    return (
+      STATIC_ARTICLES.find(
+        (a) => a.slug === slug || a.slug === cleanSlug || a.id === slug || a.id === cleanSlug
+      ) || undefined
+    );
+  }, [slug]);
+
   // ১. সিঙ্গেল আর্টিকেল বিস্তারিত ফেচ (১০০% নিরাপদ ও নির্ভরযোগ্য কুয়েরি)
   const { data: article, isLoading } = useQuery({
     queryKey: ["article-single-detail", slug],
+    initialData: initialStaticArticle,
+    staleTime: 1000 * 60 * 5,
     queryFn: async () => {
       // প্রথমে স্ট্যাটিক রেজিস্ট্রি চেক
       let cleanSlug = slug;
@@ -220,8 +236,24 @@ function SingleArticlePage() {
 
   if (isLoading || accessLoading) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-20 text-center text-xs text-muted-foreground">
-        আর্টিকেল লোড হচ্ছে...
+      <div className="mx-auto max-w-3xl px-4 py-10 sm:py-14 animate-pulse space-y-6">
+        <div className="h-6 w-28 bg-muted/60 rounded-md" />
+        <div className="space-y-3">
+          <div className="h-9 sm:h-12 w-4/5 bg-muted/80 rounded-xl" />
+          <div className="h-5 w-3/5 bg-muted/50 rounded-md" />
+        </div>
+        <div className="flex items-center gap-3 pt-2">
+          <div className="size-10 rounded-full bg-muted/70" />
+          <div className="space-y-1">
+            <div className="h-4 w-24 bg-muted/70 rounded" />
+            <div className="h-3 w-16 bg-muted/40 rounded" />
+          </div>
+        </div>
+        <div className="h-48 rounded-3xl bg-muted/25 border border-border/60 p-6 space-y-3">
+          <div className="h-4 w-full bg-muted/50 rounded" />
+          <div className="h-4 w-5/6 bg-muted/40 rounded" />
+          <div className="h-4 w-4/6 bg-muted/30 rounded" />
+        </div>
       </div>
     );
   }
