@@ -131,17 +131,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "preload",
-        href: "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&family=Kaushan+Script&display=swap",
-        as: "style",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&family=Kaushan+Script&display=swap",
-        media: "print",
-        onLoad: "this.media='all'",
-      } as any,
       { rel: "icon", href: "/qaf-favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/qaf-favicon.png", type: "image/png" },
@@ -171,12 +160,27 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `(function(){try{var p=JSON.parse(localStorage.getItem("quran_explorer_unified_prefs_v1")||"{}");var m=p.themeMode||(p.dark===false?"sepia":"dark");document.documentElement.classList.remove("dark","theme-sepia","theme-slate","theme-light");if(m==="dark"){document.documentElement.classList.add("dark");}else if(m==="sepia"){document.documentElement.classList.add("theme-sepia");}else if(m==="slate"){document.documentElement.classList.add("theme-slate");}else if(m==="light"){document.documentElement.classList.add("theme-light");}else{document.documentElement.classList.add("dark");}}catch(e){document.documentElement.classList.add("dark");}})();`,
           }}
         />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&family=Kaushan+Script&display=swap"
-          />
-        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+              function loadFonts(){
+                if(document.getElementById("gf-fonts")) return;
+                var l=document.createElement("link");
+                l.id="gf-fonts";
+                l.rel="stylesheet";
+                l.href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&family=Kaushan+Script&display=swap";
+                document.head.appendChild(l);
+              }
+              if("requestIdleCallback" in window){
+                window.requestIdleCallback(loadFonts, {timeout: 1000});
+              } else if(document.readyState==="complete"){
+                setTimeout(loadFonts, 300);
+              } else {
+                window.addEventListener("load", function(){ setTimeout(loadFonts, 300); });
+              }
+            })();`,
+          }}
+        />
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/20 selection:text-primary">
         {children}

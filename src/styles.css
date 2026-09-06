@@ -527,50 +527,62 @@ blockquote::before {
 }
 
 /* ========================================================================== */
-/* VIEWPORT LOAD OPTIMIZATION: 0.3s DELAYED ANIMATIONS                        */
+/* VIEWPORT LOAD OPTIMIZATION: 0.5s DELAYED ANIMATIONS                        */
 /* প্রথম ভিউপোর্ট যেন ০ms-এ সম্পূর্ণ স্ট্যাটিক ও দ্রুত রেন্ডার হয়,             */
-/* এবং 0.3s পর মসৃণ মনোযোগ আকর্ষণকারী অ্যানিমেশনগুলো শুরু হয়।                   */
+/* এবং 0.5s পর মসৃণ মনোযোগ আকর্ষণকারী অ্যানিমেশনগুলো শুরু হয়।                   */
 /* ========================================================================== */
 
 .animate-sparkle-burst {
   animation: sparkleBurst 1.5s ease-in-out infinite;
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
   will-change: transform, filter;
 }
 
 .animate-star-fly-1 {
   animation: particleFlyOut1 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
   will-change: transform, opacity;
 }
 
 .animate-star-fly-2 {
   animation: particleFlyOut2 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
   will-change: transform, opacity;
 }
 
 .animate-star-fly-3 {
   animation: particleFlyOut3 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
   will-change: transform, opacity;
 }
 
 .animate-star-fly-4 {
   animation: particleFlyOut4 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
   will-change: transform, opacity;
 }
 
 /* প্রাথমিক পেইন্টে পালস অ্যানিমেশনের সিপিইউ প্রেসার বিলম্বিত করা */
 .animate-pulse {
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
+}
+
+/* মোবাইল ডিভাইসে সিপিইউ/জিপিইউ ফ্রেম ড্রপ রোধ ও শূন্য-ল্যাটেন্সি লোডিং */
+@media (max-width: 640px) {
+  .animate-sparkle-burst,
+  .animate-star-fly-1,
+  .animate-star-fly-2,
+  .animate-star-fly-3,
+  .animate-star-fly-4,
+  .animate-pulse {
+    animation-delay: 0.6s;
+  }
 }
 
 /* ==========================================================================
