@@ -241,3 +241,41 @@ export async function getSurahOffline(surahId: number): Promise<any | null> {
     return null;
   }
 }
+
+/** Generate offline cache key for an ayah's translation TTS audio */
+export function getTranslationAudioKey(surah: number, ayah: number, track: string): string {
+  return `/api/public/tts?surah=${surah}&ayah=${ayah}&track=${track}`;
+}
+
+/** Fetch translation audio from edge TTS (or offline cache) and cache it */
+export async function getOrFetchTranslationAudio(
+  surah: number,
+  ayah: number,
+  track: string,
+  text: string,
+  voice?: string
+): Promise<string> {
+  const cacheKey = getTranslationAudioKey(surah, ayah, track);
+
+  // 1. If already saved offline, resolve it immediately
+  const isSaved = await isAudioSavedOffline(cacheKey);
+  if (isSaved) {
+    return await resolveAudioSrc(cacheKey);
+  }
+
+  // 2. Fetch from edge TTS API
+  const encodedText = encodeURIComponent(text);
+  const voiceParam = voice ? `&voice=${encodeURIComponent(voice)}` : "";
+  const apiUrl = `/api/public/tts?text=${encodedText}${voiceParam}`;
+
+  const res = await fetch(apiUrl);
+  if (!res.ok) {
+    throw new Error(`TTS server responded with status ${res.status}`);
+  }
+
+  const blob = await res.blob();
+  // Save to offline storage with the persistent cache key
+  await saveAudioOffline(cacheKey, blob);
+
+  return URL.createObjectURL(blob);
+}

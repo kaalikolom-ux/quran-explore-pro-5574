@@ -27,6 +27,7 @@ import { Route as AuthorsIdRouteImport } from './routes/authors.$id'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as SurahIdRouteImport } from './routes/surah.$id'
 import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
+import { Route as ApiPublicTtsRouteImport } from './routes/api/public/tts'
 import { Route as ApiPublicRecitationSurahAyahRouteImport } from './routes/api/public/recitation.$surah.$ayah'
 
 const IndexRoute = IndexRouteImport.update({
@@ -119,6 +120,11 @@ const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
   path: '/api/public/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicTtsRoute = ApiPublicTtsRouteImport.update({
+  id: '/api/public/tts',
+  path: '/api/public/tts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicRecitationSurahAyahRoute =
   ApiPublicRecitationSurahAyahRouteImport.update({
     id: '/api/public/recitation/$surah/$ayah',
@@ -145,6 +151,7 @@ export interface FileRoutesByFullPath {
   '/articles/': typeof ArticlesIndexRoute
   '/authors/': typeof AuthorsIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/api/public/tts': typeof ApiPublicTtsRoute
   '/api/public/recitation/$surah/$ayah': typeof ApiPublicRecitationSurahAyahRoute
 }
 export interface FileRoutesByTo {
@@ -166,6 +173,7 @@ export interface FileRoutesByTo {
   '/articles': typeof ArticlesIndexRoute
   '/authors': typeof AuthorsIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/api/public/tts': typeof ApiPublicTtsRoute
   '/api/public/recitation/$surah/$ayah': typeof ApiPublicRecitationSurahAyahRoute
 }
 export interface FileRoutesById {
@@ -188,6 +196,7 @@ export interface FileRoutesById {
   '/articles/': typeof ArticlesIndexRoute
   '/authors/': typeof AuthorsIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/api/public/tts': typeof ApiPublicTtsRoute
   '/api/public/recitation/$surah/$ayah': typeof ApiPublicRecitationSurahAyahRoute
 }
 export interface FileRouteTypes {
@@ -211,6 +220,7 @@ export interface FileRouteTypes {
     | '/articles/'
     | '/authors/'
     | '/api/public/contact'
+    | '/api/public/tts'
     | '/api/public/recitation/$surah/$ayah'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -232,6 +242,7 @@ export interface FileRouteTypes {
     | '/articles'
     | '/authors'
     | '/api/public/contact'
+    | '/api/public/tts'
     | '/api/public/recitation/$surah/$ayah'
   id:
     | '__root__'
@@ -253,6 +264,7 @@ export interface FileRouteTypes {
     | '/articles/'
     | '/authors/'
     | '/api/public/contact'
+    | '/api/public/tts'
     | '/api/public/recitation/$surah/$ayah'
   fileRoutesById: FileRoutesById
 }
@@ -275,6 +287,7 @@ export interface RootRouteChildren {
   ArticlesIndexRoute: typeof ArticlesIndexRoute
   AuthorsIndexRoute: typeof AuthorsIndexRoute
   ApiPublicContactRoute: typeof ApiPublicContactRoute
+  ApiPublicTtsRoute: typeof ApiPublicTtsRoute
   ApiPublicRecitationSurahAyahRoute: typeof ApiPublicRecitationSurahAyahRoute
 }
 
@@ -406,6 +419,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/tts': {
+      id: '/api/public/tts'
+      path: '/api/public/tts'
+      fullPath: '/api/public/tts'
+      preLoaderRoute: typeof ApiPublicTtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/recitation/$surah/$ayah': {
       id: '/api/public/recitation/$surah/$ayah'
       path: '/api/public/recitation/$surah/$ayah'
@@ -435,6 +455,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArticlesIndexRoute: ArticlesIndexRoute,
   AuthorsIndexRoute: AuthorsIndexRoute,
   ApiPublicContactRoute: ApiPublicContactRoute,
+  ApiPublicTtsRoute: ApiPublicTtsRoute,
   ApiPublicRecitationSurahAyahRoute: ApiPublicRecitationSurahAyahRoute,
 }
 export const routeTree = rootRouteImport

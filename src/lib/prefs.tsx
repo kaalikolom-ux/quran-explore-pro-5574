@@ -19,12 +19,24 @@ export type DisplayLayers = {
 
 export type ThemeMode = "dark" | "sepia" | "slate" | "light";
 
+export type AudioPlaybackMode = "arabic_only" | "arabic_and_translation" | "translation_only";
+
+export type TranslationAudioTrack =
+  | "conventional_bn"
+  | "core_meaning_bn"
+  | "modern_bn"
+  | "conventional_en"
+  | "core_meaning_en"
+  | "modern_en";
+
 export type Prefs = DisplayLayers & {
   lang: "bn" | "en";
   dark: boolean;
   themeMode?: ThemeMode;
   arabicFontSize: number;
   translationFontSize: number;
+  audioPlaybackMode: AudioPlaybackMode;
+  translationAudioTrack: TranslationAudioTrack;
 };
 
 export const DEFAULT_PREFS: Prefs = {
@@ -33,6 +45,8 @@ export const DEFAULT_PREFS: Prefs = {
   themeMode: "dark",
   arabicFontSize: 22,
   translationFontSize: 12,
+  audioPlaybackMode: "arabic_only",
+  translationAudioTrack: "conventional_bn",
   showArabic: true,
   showWordByWord: true,
   showTransliteration: true,

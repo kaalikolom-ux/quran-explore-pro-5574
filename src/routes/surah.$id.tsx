@@ -34,8 +34,11 @@ import {
   Cpu,
   Scale,
   Compass,
+  Headphones,
+  Mic,
+  ChevronDown,
 } from "lucide-react";
-import { usePrefs } from "@/lib/prefs";
+import { usePrefs, type AudioPlaybackMode, type TranslationAudioTrack } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
 import { useIsAdmin } from "@/lib/auth";
 import { getSurahMeaning, saveCustomSurahMeaning, type SurahMeaningItem } from "@/lib/surahMeaningsData";
@@ -48,7 +51,8 @@ import {
   saveAudioOffline, 
   deleteAudioOffline, 
   saveSurahOffline, 
-  getSurahOffline, 
+  getSurahOffline,
+  getOrFetchTranslationAudio, 
   AUDIO_CACHE, 
   SURAH_TEXT_CACHE 
 } from "@/lib/offline";
@@ -259,6 +263,43 @@ export type SurahData = {
   surah: number;
   ayahs: QuranAyah[];
 };
+
+export function getAyahTranslationText(ayah: QuranAyah, track: TranslationAudioTrack): string {
+  let text = "";
+  switch (track) {
+    case "conventional_bn":
+      text = ayah.conventional_bn || ayah.translation_bn || "";
+      break;
+    case "core_meaning_bn":
+      text = ayah.core_meaning_bn || "";
+      break;
+    case "modern_bn":
+      text = ayah.modern_translation_bn || "";
+      break;
+    case "conventional_en":
+      text = ayah.conventional_en || ayah.translation_en || "";
+      break;
+    case "core_meaning_en":
+      text = ayah.core_meaning_en || "";
+      break;
+    case "modern_en":
+      text = ayah.modern_translation_en || "";
+      break;
+  }
+  return text
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\[\d+\]/g, "")
+    .replace(/[\{\}\[\]\<\>]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function getVoiceForTrack(track: TranslationAudioTrack): string {
+  if (track.endsWith("_bn")) {
+    return "bn-BD-PradeepNeural"; // Natural Bangladeshi Male Human Voice
+  }
+  return "en-US-GuyNeural"; // Natural American Male Human Voice
+}
 
 function toEnglishNumber(str: string): string {
   const bnToEn: Record<string, string> = {
@@ -555,12 +596,14 @@ interface AyahCardProps {
   onSaveEdit: (ayahNum: number) => void;
   onCancelEdit: () => void;
   onSelectWord: (info: { surah: number; ayah: number; word: QuranWord }) => void;
+  playingPhase?: "arabic" | "translation" | null;
 }
 
 const AyahCard = React.memo(function AyahCard({
   ayah,
   surahId,
   isPlaying,
+  playingPhase,
   isBookmarked,
   isAyahAudioSaved,
   isThisAyahDownloading,
@@ -652,8 +695,32 @@ const AyahCard = React.memo(function AyahCard({
                 isPlaying ? "text-primary bg-primary/10" : ""
               }`}
             >
-              {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="size-4 fill-current" />}
+              {isPlaying ? (
+                playingPhase === "translation" ? (
+                  <Mic className="size-4 text-primary animate-pulse" />
+                ) : (
+                  <Pause className="size-4 fill-current" />
+                )
+              ) : (
+                <Play className="size-4 fill-current" />
+              )}
             </button>
+
+            {isPlaying && (
+              <span className="text-[10px] font-semibold text-primary bg-primary/15 border border-primary/30 px-1.5 py-0.5 rounded-md flex items-center gap-1 animate-pulse">
+                {playingPhase === "translation" ? (
+                  <>
+                    <Mic className="size-2.5" />
+                    <span>{lang === "bn" ? "অনুবাদ পাঠ" : "Translation"}</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="size-2.5" />
+                    <span>{lang === "bn" ? "তেলাওয়াত" : "Recitation"}</span>
+                  </>
+                )}
+              </span>
+            )}
 
             <button
               type="button"
@@ -1132,15 +1199,19 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, publicPermissions, userPermissions, isLayerAllowed, lang } = usePrefs();
+  const { prefs, publicPermissions, userPermissions, isLayerAllowed, lang, updatePref } = usePrefs();
   const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const { isAdmin } = useIsAdmin();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const [playingAyah, setPlayingAyah] = useState<number | null>(null);
+  const [playingPhase, setPlayingPhase] = useState<"arabic" | "translation" | null>(null);
   const [isLoopingSurah, setIsLoopingSurah] = useState(false);
+  const [audioSettingsOpen, setAudioSettingsOpen] = useState(false);
+  const [isPlayingVoiceSample, setIsPlayingVoiceSample] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const sampleAudioRef = useRef<HTMLAudioElement | null>(null);
 
   const [isAudioDownloaded, setIsAudioDownloaded] = useState(false);
   const [downloadingSurahAudio, setDownloadingSurahAudio] = useState(false);
@@ -1477,44 +1548,143 @@ function SurahDetailPage() {
     }
   }, [initQuery.isSuccess, surahQuery.isSuccess, search.ayah, surahId]);
 
-  const playAyahSequentially = useCallback(async (ayahNum: number) => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
+  const playAyahSequentially = useCallback(
+    async (ayahNum: number, targetPhase?: "arabic" | "translation") => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
 
-    // নিশ্চিত করা যেন অডিও চলার সময় চলতি আয়াতটি দৃশ্যমান থাকে
-    setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
-
-    const sStr = String(surahId).padStart(3, "0");
-    const aStr = String(ayahNum).padStart(3, "0");
-    const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
-
-    const audioUrl = await resolveAudioSrc(rawAudioUrl);
-    const audio = new Audio(audioUrl);
-    audioRef.current = audio;
-    setPlayingAyah(ayahNum);
-
-    scrollToAyah(ayahNum);
-
-    audio.play().catch(() => {
-      toast.error(lang === "bn" ? `আয়াত ${ayahNum} প্লে করা যায়নি` : `Failed to play ayah ${ayahNum}`);
-      setPlayingAyah(null);
-    });
-
-    audio.onended = () => {
       const totalAyahs = meta.total;
-      if (ayahNum < totalAyahs) {
-        playAyahSequentially(ayahNum + 1);
-      } else {
+      if (ayahNum > totalAyahs) {
         if (isLoopingSurah) {
-          playAyahSequentially(1);
+          const startPhase =
+            prefs.audioPlaybackMode === "translation_only" ? "translation" : "arabic";
+          playAyahSequentially(1, startPhase);
         } else {
           setPlayingAyah(null);
-          toast.success(lang === "bn" ? `সুরা ${meta.name_bn} তেলাওয়াত সম্পন্ন হয়েছে` : `Completed recitation of Surah ${meta.name_bn}`);
+          setPlayingPhase(null);
+          toast.success(
+            lang === "bn"
+              ? `সুরা ${meta.name_bn} তেলাওয়াত ও পাঠ সম্পন্ন হয়েছে`
+              : `Completed recitation and playback of Surah ${meta.name_bn}`
+          );
+        }
+        return;
+      }
+
+      // নিশ্চিত করা যেন অডিও চলার সময় চলতি আয়াতটি দৃশ্যমান থাকে
+      setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
+      scrollToAyah(ayahNum);
+
+      const mode = prefs.audioPlaybackMode;
+      const phase: "arabic" | "translation" =
+        targetPhase || (mode === "translation_only" ? "translation" : "arabic");
+
+      setPlayingAyah(ayahNum);
+      setPlayingPhase(phase);
+
+      if (phase === "arabic") {
+        // ১. আরবী তেলাওয়াত প্লেব্যাক
+        const sStr = String(surahId).padStart(3, "0");
+        const aStr = String(ayahNum).padStart(3, "0");
+        const rawAudioUrl = `https://everyayah.com/data/Alafasy_128kbps/${sStr}${aStr}.mp3`;
+
+        try {
+          const audioUrl = await resolveAudioSrc(rawAudioUrl);
+          const audio = new Audio(audioUrl);
+          audioRef.current = audio;
+
+          audio.play().catch(() => {
+            toast.error(
+              lang === "bn"
+                ? `আয়াত ${ayahNum} এর আরবী অডিও প্লে করা যায়নি`
+                : `Failed to play Arabic audio for ayah ${ayahNum}`
+            );
+            if (mode === "arabic_and_translation") {
+              playAyahSequentially(ayahNum, "translation");
+            } else {
+              setPlayingAyah(null);
+              setPlayingPhase(null);
+            }
+          });
+
+          audio.onended = () => {
+            if (mode === "arabic_and_translation") {
+              playAyahSequentially(ayahNum, "translation");
+            } else {
+              playAyahSequentially(ayahNum + 1, "arabic");
+            }
+          };
+        } catch (err) {
+          console.error("Arabic playback error:", err);
+          if (mode === "arabic_and_translation") {
+            playAyahSequentially(ayahNum, "translation");
+          } else {
+            playAyahSequentially(ayahNum + 1, "arabic");
+          }
+        }
+      } else {
+        // ২. ন্যাচারাল পুরুষ AI কণ্ঠে অনুবাদের অডিও প্লেব্যাক
+        const currentAyahs = currentSurahData?.ayahs || [];
+        const ayahObj = currentAyahs.find((a) => a.ayah === ayahNum);
+        const text = ayahObj ? getAyahTranslationText(ayahObj, prefs.translationAudioTrack) : "";
+
+        if (!text) {
+          const nextPhase = mode === "translation_only" ? "translation" : "arabic";
+          playAyahSequentially(ayahNum + 1, nextPhase);
+          return;
+        }
+
+        const voice = getVoiceForTrack(prefs.translationAudioTrack);
+
+        try {
+          const audioUrl = await getOrFetchTranslationAudio(
+            surahId,
+            ayahNum,
+            prefs.translationAudioTrack,
+            text,
+            voice
+          );
+          const audio = new Audio(audioUrl);
+          audioRef.current = audio;
+
+          audio.play().catch(() => {
+            toast.error(
+              lang === "bn"
+                ? `আয়াত ${ayahNum} এর অনুবাদ অডিও প্লে করা যায়নি`
+                : `Failed to play translation audio for ayah ${ayahNum}`
+            );
+            const nextPhase = mode === "translation_only" ? "translation" : "arabic";
+            playAyahSequentially(ayahNum + 1, nextPhase);
+          });
+
+          audio.onended = () => {
+            const nextPhase = mode === "translation_only" ? "translation" : "arabic";
+            playAyahSequentially(ayahNum + 1, nextPhase);
+          };
+        } catch (err) {
+          console.error("Translation audio error:", err);
+          toast.error(
+            lang === "bn"
+              ? `আয়াত ${ayahNum} এর অনুবাদ অডিও ফেচ করা যায়নি`
+              : `Could not fetch translation audio for ayah ${ayahNum}`
+          );
+          const nextPhase = mode === "translation_only" ? "translation" : "arabic";
+          playAyahSequentially(ayahNum + 1, nextPhase);
         }
       }
-    };
-  }, [surahId, meta.total, meta.name_bn, isLoopingSurah, lang]);
+    },
+    [
+      surahId,
+      meta.total,
+      meta.name_bn,
+      isLoopingSurah,
+      lang,
+      prefs.audioPlaybackMode,
+      prefs.translationAudioTrack,
+      currentSurahData?.ayahs,
+    ]
+  );
 
   const handleNavigate = useCallback(
     (targetSurah: number, targetAyah?: number) => {
@@ -1533,24 +1703,72 @@ function SurahDetailPage() {
         audioRef.current.pause();
       }
       setPlayingAyah(null);
+      setPlayingPhase(null);
     } else {
-      playAyahSequentially(1);
+      const initialPhase =
+        prefs.audioPlaybackMode === "translation_only" ? "translation" : "arabic";
+      playAyahSequentially(1, initialPhase);
     }
-  }, [playingAyah, playAyahSequentially]);
+  }, [playingAyah, playAyahSequentially, prefs.audioPlaybackMode]);
 
-  const handlePlayAyah = useCallback((ayahNum: number) => {
-    if (playingAyah === ayahNum) {
-      if (audioRef.current) audioRef.current.pause();
-      setPlayingAyah(null);
-    } else {
-      playAyahSequentially(ayahNum);
+  const handlePlayAyah = useCallback(
+    (ayahNum: number) => {
+      if (playingAyah === ayahNum) {
+        if (audioRef.current) audioRef.current.pause();
+        setPlayingAyah(null);
+        setPlayingPhase(null);
+      } else {
+        const initialPhase =
+          prefs.audioPlaybackMode === "translation_only" ? "translation" : "arabic";
+        playAyahSequentially(ayahNum, initialPhase);
+      }
+    },
+    [playingAyah, playAyahSequentially, prefs.audioPlaybackMode]
+  );
+
+  const handlePlayVoiceSample = async (track: TranslationAudioTrack) => {
+    if (sampleAudioRef.current) {
+      sampleAudioRef.current.pause();
+      sampleAudioRef.current = null;
     }
-  }, [playingAyah, playAyahSequentially]);
+    if (isPlayingVoiceSample) {
+      setIsPlayingVoiceSample(false);
+      return;
+    }
+
+    setIsPlayingVoiceSample(true);
+    try {
+      const isBn = track.endsWith("_bn");
+      const voice = getVoiceForTrack(track);
+      const sampleText = isBn
+        ? "পরম করুণাময় অতি দয়ালু আল্লাহর নামে শুরু করছি"
+        : "In the name of Allah, the Entirely Merciful, the Especially Merciful";
+
+      const apiUrl = `/api/public/tts?text=${encodeURIComponent(sampleText)}&voice=${encodeURIComponent(voice)}`;
+      const audio = new Audio(apiUrl);
+      sampleAudioRef.current = audio;
+
+      audio.onended = () => {
+        setIsPlayingVoiceSample(false);
+      };
+      audio.onerror = () => {
+        setIsPlayingVoiceSample(false);
+        toast.error(lang === "bn" ? "ভয়েস প্রিভিউ লোড করা যায়নি" : "Failed to load voice preview");
+      };
+
+      await audio.play();
+    } catch {
+      setIsPlayingVoiceSample(false);
+    }
+  };
 
   useEffect(() => {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+      }
+      if (sampleAudioRef.current) {
+        sampleAudioRef.current.pause();
       }
     };
   }, [surahId]);
@@ -1798,6 +2016,46 @@ function SurahDetailPage() {
           {/* বাটনের অংশ */}
           <div className="flex items-center justify-between sm:justify-end gap-1.5 shrink-0 overflow-x-auto no-scrollbar pt-1 sm:pt-0 border-t sm:border-t-0 border-border/30">
             <div className="flex items-center gap-1.5">
+              {/* অডিও সেটিংস ও মোড সিলেক্টর বাটন */}
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setAudioSettingsOpen(true)}
+                className={`h-7 px-2 text-[11px] font-medium transition-all shrink-0 flex items-center gap-1 cursor-pointer ${
+                  prefs.audioPlaybackMode !== "arabic_only"
+                    ? "bg-primary/15 text-primary border-primary/50 shadow-2xs font-semibold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+                title="অডিও প্লেব্যাক মোড ও অনুবাদের ভয়েস সেটিংস"
+              >
+                <Headphones className="size-3.5 text-primary shrink-0" />
+                <span className="hidden sm:inline">
+                  {prefs.audioPlaybackMode === "arabic_only"
+                    ? "শুধু আরবী"
+                    : prefs.audioPlaybackMode === "arabic_and_translation"
+                    ? "আরবী + অনুবাদ"
+                    : "অনুবাদ শুধু"}
+                </span>
+                <ChevronDown className="size-3 text-muted-foreground opacity-70 shrink-0" />
+              </Button>
+
+              {/* অ্যাক্টিভ ফেজ ব্যাজ (যখন অডিও চলমান থাকে) */}
+              {isSurahPlaying && (
+                <span className="hidden md:inline-flex items-center gap-1 text-[10px] font-semibold text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded-full animate-pulse shrink-0 select-none">
+                  {playingPhase === "translation" ? (
+                    <>
+                      <Mic className="size-2.5" />
+                      <span>অনুবাদ পাঠ...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="size-2.5" />
+                      <span>আরবী তিলাওয়াত...</span>
+                    </>
+                  )}
+                </span>
+              )}
+
               <Button
                 size="sm"
                 variant={isSurahPlaying ? "default" : "outline"}
@@ -2005,6 +2263,7 @@ function SurahDetailPage() {
               ayah={ayah}
               surahId={surahId}
               isPlaying={isPlaying}
+              playingPhase={playingPhase}
               isBookmarked={isBookmarked}
               isAyahAudioSaved={isAyahAudioSaved}
               isThisAyahDownloading={isThisAyahDownloading}
@@ -2155,6 +2414,203 @@ function SurahDetailPage() {
                 সংরক্ষণ করুন
               </Button>
             </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* অডিও প্লেব্যাক মোড ও অনুবাদের ভয়েস সেটিংস ডায়ালগ */}
+      <Dialog open={audioSettingsOpen} onOpenChange={setAudioSettingsOpen}>
+        <DialogContent className="max-w-md w-[92vw] p-4 sm:p-6 rounded-2xl max-h-[88vh] overflow-y-auto">
+          <DialogHeader className="space-y-1 border-b border-border/40 pb-3">
+            <DialogTitle className="text-base sm:text-lg font-bold flex items-center gap-2 text-foreground">
+              <Headphones className="size-5 text-primary" />
+              <span>{lang === "bn" ? "অডিও প্লেব্যাক ও ভয়েস সেটিংস" : "Audio Playback & Voice Settings"}</span>
+            </DialogTitle>
+            <p className="text-xs text-muted-foreground">
+              {lang === "bn"
+                ? "আরবী তেলাওয়াত ও অনুবাদের ন্যাচারাল পুরুষ AI ভয়েস পছন্দ করুন"
+                : "Select Arabic recitation and natural AI male voice for translations"}
+            </p>
+          </DialogHeader>
+
+          <div className="py-2 space-y-4 text-sm">
+            {/* ১. প্লেব্যাক মোড */}
+            <div className="space-y-2">
+              <Label className="text-xs font-semibold text-foreground uppercase tracking-wider">
+                {lang === "bn" ? "১. প্লেব্যাক মোড নির্বাচন করুন" : "1. Select Playback Mode"}
+              </Label>
+              <div className="grid grid-cols-1 gap-2">
+                {[
+                  {
+                    id: "arabic_only",
+                    icon: "🕋",
+                    titleBn: "শুধু আরবী তেলাওয়াত",
+                    titleEn: "Arabic Recitation Only",
+                    descBn: "কারি মিশারী রাশিদ আল-আফাসীর সুললিত কণ্ঠ",
+                    descEn: "Mishary Rashid Al-Afasy recitation",
+                  },
+                  {
+                    id: "arabic_and_translation",
+                    icon: "🎙️",
+                    titleBn: "আরবী তেলাওয়াত + অনুবাদ",
+                    titleEn: "Arabic + Translation",
+                    descBn: "প্রথমে আরবী আয়াত, এরপর পুরুষ কণ্ঠে অনুবাদ পাঠ",
+                    descEn: "Arabic ayah followed by natural male voice translation",
+                  },
+                  {
+                    id: "translation_only",
+                    icon: "🗣️",
+                    titleBn: "শুধুমাত্র অনুবাদ পাঠ",
+                    titleEn: "Translation Only",
+                    descBn: "আরবী ব্যতীত সরাসরি নির্বাচিত অনুবাদের পাঠ",
+                    descEn: "Listen directly to chosen translation in natural voice",
+                  },
+                ].map((mode) => {
+                  const isSelected = prefs.audioPlaybackMode === mode.id;
+                  return (
+                    <button
+                      key={mode.id}
+                      type="button"
+                      onClick={() => {
+                        updatePref("audioPlaybackMode", mode.id as AudioPlaybackMode);
+                        toast.success(
+                          lang === "bn"
+                            ? `${mode.titleBn} মোড নির্বাচন করা হয়েছে`
+                            : `Switched to ${mode.titleEn}`
+                        );
+                      }}
+                      className={`flex items-start gap-3 p-2.5 sm:p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                        isSelected
+                          ? "border-primary bg-primary/10 ring-1 ring-primary/40 text-foreground"
+                          : "border-border/60 hover:border-border hover:bg-muted/40 text-muted-foreground"
+                      }`}
+                    >
+                      <span className="text-xl shrink-0 mt-0.5">{mode.icon}</span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center justify-between">
+                          <span className={`font-semibold text-xs sm:text-sm ${isSelected ? "text-primary" : "text-foreground"}`}>
+                            {lang === "bn" ? mode.titleBn : mode.titleEn}
+                          </span>
+                          {isSelected && <Check className="size-4 text-primary shrink-0" />}
+                        </div>
+                        <p className="text-[11px] text-muted-foreground mt-0.5 leading-snug">
+                          {lang === "bn" ? mode.descBn : mode.descEn}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* ২. অনুবাদ নির্বাচন (৬টি অনুবাদ) */}
+            <div className="space-y-2.5 pt-2 border-t border-border/40">
+              <div className="flex items-center justify-between">
+                <Label className="text-xs font-semibold text-foreground uppercase tracking-wider">
+                  {lang === "bn" ? "২. অনুবাদের ভয়েস ট্র্যাক (৬টি অনুবাদ)" : "2. Translation Voice Track (6 Options)"}
+                </Label>
+                <button
+                  type="button"
+                  onClick={() => handlePlayVoiceSample(prefs.translationAudioTrack)}
+                  disabled={isPlayingVoiceSample}
+                  className="text-[11px] font-medium text-primary hover:underline flex items-center gap-1 cursor-pointer bg-primary/10 px-2 py-0.5 rounded-md"
+                >
+                  {isPlayingVoiceSample ? (
+                    <>
+                      <Loader2 className="size-3 animate-spin" />
+                      <span>{lang === "bn" ? "বাজছে..." : "Playing..."}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="size-3" />
+                      <span>{lang === "bn" ? "ভয়েস প্রিভিউ শুনুন" : "Preview Voice"}</span>
+                    </>
+                  )}
+                </button>
+              </div>
+
+              {/* বাংলা অনুবাদ অপশনসমূহ */}
+              <div className="space-y-1.5">
+                <div className="text-[11px] font-bold text-muted-foreground flex items-center gap-1">
+                  <span>🇧🇩 বাংলা অনুবাদ (প্রদীপ - ন্যাচারাল পুরুষ কণ্ঠ):</span>
+                </div>
+                <div className="grid grid-cols-1 gap-1.5">
+                  {[
+                    { id: "conventional_bn", label: "১. প্রচলিত ও আক্ষরিক অনুবাদ", sub: "Conventional / Literal" },
+                    { id: "core_meaning_bn", label: "২. অন্তর্গত ভাবার্থ অনুবাদ", sub: "Interlinear / Core Meaning" },
+                    { id: "modern_bn", label: "৩. বিজ্ঞানভিত্তিক ও যৌক্তিক অনুবাদ", sub: "Scientific / Philosophical" },
+                  ].map((t) => {
+                    const isSelected = prefs.translationAudioTrack === t.id;
+                    return (
+                      <button
+                        key={t.id}
+                        type="button"
+                        onClick={() => {
+                          updatePref("translationAudioTrack", t.id as TranslationAudioTrack);
+                          toast.success(lang === "bn" ? `${t.label} নির্বাচিত হয়েছে` : `Selected ${t.label}`);
+                        }}
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left text-xs transition-all cursor-pointer ${
+                          isSelected
+                            ? "border-primary/80 bg-primary/10 font-semibold text-foreground"
+                            : "border-border/60 hover:bg-muted/40 text-muted-foreground"
+                        }`}
+                      >
+                        <div>
+                          <span className={isSelected ? "text-primary" : "text-foreground"}>{t.label}</span>
+                          <span className="text-[10px] text-muted-foreground ml-1.5 hidden sm:inline">({t.sub})</span>
+                        </div>
+                        {isSelected && <Check className="size-3.5 text-primary shrink-0" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* ইংরেজি অনুবাদ অপশনসমূহ */}
+              <div className="space-y-1.5 pt-1.5">
+                <div className="text-[11px] font-bold text-muted-foreground flex items-center gap-1">
+                  <span>🇬🇧 English Translations (Guy - Natural Male Voice):</span>
+                </div>
+                <div className="grid grid-cols-1 gap-1.5">
+                  {[
+                    { id: "conventional_en", label: "4. Conventional / Surface Translation", sub: "Surface Meaning" },
+                    { id: "core_meaning_en", label: "5. Interlinear / Core Meaning", sub: "Direct Lexical" },
+                    { id: "modern_en", label: "6. Scientific / Modern Context", sub: "Scientific Framework" },
+                  ].map((t) => {
+                    const isSelected = prefs.translationAudioTrack === t.id;
+                    return (
+                      <button
+                        key={t.id}
+                        type="button"
+                        onClick={() => {
+                          updatePref("translationAudioTrack", t.id as TranslationAudioTrack);
+                          toast.success(`Selected ${t.label}`);
+                        }}
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg border text-left text-xs transition-all cursor-pointer ${
+                          isSelected
+                            ? "border-primary/80 bg-primary/10 font-semibold text-foreground"
+                            : "border-border/60 hover:bg-muted/40 text-muted-foreground"
+                        }`}
+                      >
+                        <div>
+                          <span className={isSelected ? "text-primary" : "text-foreground"}>{t.label}</span>
+                          <span className="text-[10px] text-muted-foreground ml-1.5 hidden sm:inline">({t.sub})</span>
+                        </div>
+                        {isSelected && <Check className="size-3.5 text-primary shrink-0" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            <Button
+              type="button"
+              className="w-full h-8 text-xs font-semibold cursor-pointer"
+              onClick={() => setAudioSettingsOpen(false)}
+            >
+              {lang === "bn" ? "ঠিক আছে" : "Done"}
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
