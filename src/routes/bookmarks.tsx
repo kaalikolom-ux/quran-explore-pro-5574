@@ -89,7 +89,7 @@ function BookmarksPage() {
                       <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">
                         {isAyah ? "আয়াত" : "সুরা"}
                       </span>
-                      <span className="text-xs text-muted-foreground font-mono">
+                      <span className="text-xs text-muted-foreground font-semibold">
                         {surahId}{ayahNum ? `:${ayahNum}` : ""}
                       </span>
                     </div>

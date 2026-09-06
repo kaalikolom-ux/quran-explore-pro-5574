@@ -474,8 +474,8 @@ function HomePage() {
                     <span className="text-[11px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-md">
                       {lang === "en" ? topic.category_en : topic.category_bn}
                     </span>
-                    <span className="text-[11px] text-muted-foreground font-mono">
-                      {topic.references.length}টি রেফারেন্স
+                    <span className="text-[11px] text-muted-foreground font-medium">
+                      {localNumber(topic.references.length, lang)}টি রেফারেন্স
                     </span>
                   </div>
                   <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
