@@ -88,11 +88,14 @@ export async function synthesizeEdgeSpeech(text: string, rawVoice?: string): Pro
 
   return new Promise<Uint8Array>((resolve, reject) => {
     const audioChunks: Uint8Array[] = [];
+    const debugLogs: string[] = [];
+    let pendingProcessing = Promise.resolve();
+
     const timeout = setTimeout(() => {
       try {
         ws.close();
       } catch {}
-      reject(new Error("Edge TTS synthesis timed out"));
+      reject(new Error(`Edge TTS synthesis timed out. Debug: ${debugLogs.join(" | ")}`));
     }, 15000);
 
     const handleTurnEnd = () => {
@@ -101,6 +104,10 @@ export async function synthesizeEdgeSpeech(text: string, rawVoice?: string): Pro
         ws.close();
       } catch {}
       const totalLength = audioChunks.reduce((acc, c) => acc + c.byteLength, 0);
+      if (totalLength === 0) {
+        reject(new Error(`No audio chunks received. Debug: ${debugLogs.join(" | ")}`));
+        return;
+      }
       const merged = new Uint8Array(totalLength);
       let offset = 0;
       for (const chunk of audioChunks) {
@@ -110,47 +117,39 @@ export async function synthesizeEdgeSpeech(text: string, rawVoice?: string): Pro
       resolve(merged);
     };
 
-    const handleBinaryData = (data: any) => {
-      // 1. Node.js Buffer
-      if (typeof Buffer !== "undefined" && Buffer.isBuffer(data)) {
-        if (data.length > 2) {
-          const headerLen = data.readUInt16BE(0);
-          if (2 + headerLen <= data.length) {
-            const headerStr = data.subarray(2, 2 + headerLen).toString("utf-8");
-            if (headerStr.includes("Path:audio")) {
-              audioChunks.push(new Uint8Array(data.subarray(2 + headerLen)));
-            }
-          }
+    const handleBinaryData = async (raw: any) => {
+      let u8: Uint8Array | null = null;
+      if (typeof Blob !== "undefined" && raw instanceof Blob) {
+        const ab = await raw.arrayBuffer();
+        u8 = new Uint8Array(ab);
+      } else if (raw instanceof Uint8Array) {
+        u8 = raw;
+      } else if (typeof Buffer !== "undefined" && Buffer.isBuffer(raw)) {
+        u8 = new Uint8Array(raw.buffer, raw.byteOffset, raw.length);
+      } else if (raw instanceof ArrayBuffer) {
+        u8 = new Uint8Array(raw);
+      } else if (raw && typeof raw === "object" && "byteLength" in raw) {
+        if ("buffer" in raw && raw.buffer instanceof ArrayBuffer) {
+          u8 = new Uint8Array(raw.buffer, raw.byteOffset || 0, raw.byteLength);
+        } else {
+          u8 = new Uint8Array(raw);
         }
+      }
+
+      if (!u8 || u8.length < 2) {
+        debugLogs.push(`binary_unparsed: len=${u8?.length}, ctor=${raw?.constructor?.name}`);
         return;
       }
 
-      // 2. Cloudflare / Web ArrayBuffer
-      let arrayBuffer: ArrayBuffer | null = null;
-      let byteOffset = 0;
-      let byteLength = 0;
-
-      if (data instanceof ArrayBuffer) {
-        arrayBuffer = data;
-        byteOffset = 0;
-        byteLength = data.byteLength;
-      } else if (ArrayBuffer.isView(data)) {
-        arrayBuffer = data.buffer;
-        byteOffset = data.byteOffset;
-        byteLength = data.byteLength;
-      }
-
-      if (arrayBuffer && byteLength > 2) {
-        const dataView = new DataView(arrayBuffer, byteOffset, byteLength);
-        const headerLen = dataView.getUint16(0);
-        if (2 + headerLen <= byteLength) {
-          const headerBytes = new Uint8Array(arrayBuffer, byteOffset + 2, headerLen);
-          const headerStr = new TextDecoder().decode(headerBytes);
-          if (headerStr.includes("Path:audio")) {
-            audioChunks.push(
-              new Uint8Array(arrayBuffer, byteOffset + 2 + headerLen, byteLength - 2 - headerLen)
-            );
-          }
+      const headerLen = (u8[0] << 8) | u8[1];
+      if (2 + headerLen <= u8.length) {
+        const headerStr = new TextDecoder().decode(u8.subarray(2, 2 + headerLen));
+        if (headerStr.includes("Path:audio")) {
+          const audioSlice = u8.subarray(2 + headerLen);
+          audioChunks.push(audioSlice);
+          debugLogs.push(`chunk:${audioSlice.length}`);
+        } else {
+          debugLogs.push(`hdr:${headerStr.slice(0, 20)}`);
         }
       }
     };
@@ -181,10 +180,10 @@ export async function synthesizeEdgeSpeech(text: string, rawVoice?: string): Pro
         if (!isBinary) {
           const str = typeof msg === "string" ? msg : msg.toString("utf-8");
           if (str.includes("Path:turn.end")) {
-            handleTurnEnd();
+            pendingProcessing = pendingProcessing.then(() => handleTurnEnd());
           }
         } else {
-          handleBinaryData(msg);
+          pendingProcessing = pendingProcessing.then(() => handleBinaryData(msg));
         }
       });
       ws.on("error", (err: any) => {
@@ -195,10 +194,10 @@ export async function synthesizeEdgeSpeech(text: string, rawVoice?: string): Pro
       ws.addEventListener("message", (event: any) => {
         if (typeof event.data === "string") {
           if (event.data.includes("Path:turn.end")) {
-            handleTurnEnd();
+            pendingProcessing = pendingProcessing.then(() => handleTurnEnd());
           }
         } else {
-          handleBinaryData(event.data);
+          pendingProcessing = pendingProcessing.then(() => handleBinaryData(event.data));
         }
       });
       ws.addEventListener("error", (err: any) => {
