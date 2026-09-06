@@ -16,9 +16,10 @@ export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorer
     <div className={`inline-flex items-center shrink-0 select-none ${className}`}>
       {/* Light Mode Logo */}
       <img
-        src="/logo-light.svg"
+        src="/logo-light.png"
+        srcSet="/logo-light.png 1x, /logo-light@2x.png 2x"
         alt="Qur'an Explorer"
-        width="235"
+        width="240"
         height="44"
         className={`w-auto ${heightClass} object-contain dark:hidden block select-none`}
         loading="eager"
@@ -26,9 +27,10 @@ export function QuranExplorerLogo({ className = "", size = "md" }: QuranExplorer
       />
       {/* Dark Mode Logo */}
       <img
-        src="/logo-dark.svg"
+        src="/logo-dark.png"
+        srcSet="/logo-dark.png 1x, /logo-dark@2x.png 2x"
         alt="Qur'an Explorer"
-        width="235"
+        width="240"
         height="44"
         className={`w-auto ${heightClass} object-contain dark:block hidden select-none`}
         loading="eager"

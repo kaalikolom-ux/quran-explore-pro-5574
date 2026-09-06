@@ -4,7 +4,7 @@ import { User, FileText, ChevronRight, PenTool } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
-import { STATIC_AUTHORS } from "@/lib/staticArticlesData";
+import { STATIC_AUTHORS } from "@/lib/staticArticlesMeta";
 
 export const Route = createFileRoute("/authors/")({
   head: () => ({

@@ -20,7 +20,7 @@ import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
-import { STATIC_CATEGORIES } from "@/lib/staticArticlesData";
+import { STATIC_CATEGORIES } from "@/lib/staticArticlesMeta";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

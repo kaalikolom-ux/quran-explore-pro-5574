@@ -133,9 +133,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "preload",
-        href: "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Scheherazade+New:wght@400;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&display=swap",
         as: "style",
       },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&display=swap",
+        media: "print",
+        onLoad: "this.media='all'",
+      } as any,
       { rel: "icon", href: "/qaf-favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/qaf-favicon.png", type: "image/png" },
@@ -165,15 +171,10 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `(function(){try{var p=JSON.parse(localStorage.getItem("quran_explorer_unified_prefs_v1")||"{}");var m=p.themeMode||(p.dark===false?"sepia":"dark");document.documentElement.classList.remove("dark","theme-sepia","theme-slate","theme-light");if(m==="dark"){document.documentElement.classList.add("dark");}else if(m==="sepia"){document.documentElement.classList.add("theme-sepia");}else if(m==="slate"){document.documentElement.classList.add("theme-slate");}else if(m==="light"){document.documentElement.classList.add("theme-light");}else{document.documentElement.classList.add("dark");}}catch(e){document.documentElement.classList.add("dark");}})();`,
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Scheherazade+New:wght@400;700&display=swap";document.head.appendChild(l);}catch(e){}})();`,
-          }}
-        />
         <noscript>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Scheherazade+New:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600&family=Amiri:wght@400;700&display=swap"
           />
         </noscript>
       </head>

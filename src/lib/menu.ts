@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
-import { STATIC_CATEGORIES } from "@/lib/staticArticlesData";
+import { STATIC_CATEGORIES } from "@/lib/staticArticlesMeta";
 
 export type MenuLocation = "header" | "footer";
 

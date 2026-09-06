@@ -20,13 +20,16 @@ export default defineConfig({
               if (id.includes("lucide-react")) {
                 return "vendor-icons";
               }
-              if (id.includes("@tanstack")) {
-                return "vendor-tanstack";
-              }
               if (id.includes("@supabase")) {
                 return "vendor-supabase";
               }
               return "vendor";
+            }
+            if (id.includes("staticArticlesData")) {
+              return "data-static-articles";
+            }
+            if (id.includes("surahConsistencyData")) {
+              return "data-surah-consistency";
             }
           },
         },

@@ -10,7 +10,7 @@ import { useIsAdmin } from "@/lib/auth";
 import { useCategoryAccess } from "@/lib/accessControl";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { STATIC_ARTICLES, STATIC_CATEGORIES, STATIC_AUTHORS } from "@/lib/staticArticlesData";
+import { STATIC_ARTICLES_META, STATIC_CATEGORIES, STATIC_AUTHORS } from "@/lib/staticArticlesMeta";
 
 const searchSchema = z.object({
   category: z.string().optional(),
@@ -115,7 +115,7 @@ function ArticlesIndexPage() {
   // আর্টিকেল ফেচ (১০০% নিরাপদ ও সুরক্ষিত কুয়েরি - স্ট্যাটিক ইনিশিয়াল ডাটা দিয়ে ০ms লোড)
   const query = useQuery({
     queryKey: ["articles", isAdmin],
-    initialData: STATIC_ARTICLES,
+    initialData: STATIC_ARTICLES_META as any,
     staleTime: 1000 * 60 * 5,
     queryFn: async () => {
       let q = supabase
@@ -146,7 +146,7 @@ function ArticlesIndexPage() {
 
   const rawDbArticles = Array.isArray(query.data) ? query.data : [];
   const allArticles = [
-    ...STATIC_ARTICLES.filter(
+    ...STATIC_ARTICLES_META.filter(
       (sa) => !rawDbArticles.some((da: any) => da.slug === sa.slug || da.id === sa.id)
     ),
     ...rawDbArticles,

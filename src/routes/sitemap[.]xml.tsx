@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
 
-import type { Database } from "@/integrations/supabase/types";
-import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
+import { STATIC_ARTICLES_META } from "@/lib/staticArticlesMeta";
 
 const BASE_URL = "https://quran-explore-pro.lovable.app";
 
@@ -14,7 +13,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         for (let i = 1; i <= 114; i += 1) urls.push(`${BASE_URL}/surah/${i}`);
 
-        for (const sa of STATIC_ARTICLES) {
+        for (const sa of STATIC_ARTICLES_META) {
           if (sa.published && !urls.includes(`${BASE_URL}/articles/${sa.slug}`)) {
             urls.push(`${BASE_URL}/articles/${sa.slug}`);
           }

@@ -13,7 +13,7 @@ import { GlobalSearchDialog } from "@/components/GlobalSearchDialog";
 import { QURAN_THEMATIC_DATABASE } from "@/lib/quranThematicData";
 import { searchQuranSurahs, bnToEnDigits, ALL_SURAHS_DATABASE } from "@/lib/quranSearchEngine";
 import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
-import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
+import { STATIC_ARTICLES_META } from "@/lib/staticArticlesMeta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -90,7 +90,7 @@ function HomePage() {
 
   const articles = useQuery({
     queryKey: ["articles", "published", "home"],
-    initialData: () => STATIC_ARTICLES.slice(0, 3) as any,
+    initialData: () => STATIC_ARTICLES_META.slice(0, 3) as any,
     queryFn: async () => {
       try {
         const { data, error } = await supabase

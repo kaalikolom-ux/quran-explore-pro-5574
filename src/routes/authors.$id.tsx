@@ -6,7 +6,7 @@ import { User, Calendar, BookOpen, ArrowLeft, FileText } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { Button } from "@/components/ui/button";
-import { STATIC_ARTICLES, STATIC_AUTHORS } from "@/lib/staticArticlesData";
+import { STATIC_ARTICLES_META, STATIC_AUTHORS } from "@/lib/staticArticlesMeta";
 
 export const Route = createFileRoute("/authors/$id")({
   head: () => ({
@@ -46,7 +46,7 @@ function AuthorDetailPage() {
   const initialAuthorData = useMemo(() => {
     const staticAuthor = STATIC_AUTHORS[id];
     if (!staticAuthor) return undefined;
-    const staticAuthArticles = STATIC_ARTICLES.filter((a) => a.author_id === id);
+    const staticAuthArticles = STATIC_ARTICLES_META.filter((a) => a.author_id === id);
     return {
       ...staticAuthor,
       articles: staticAuthArticles,
@@ -79,7 +79,7 @@ function AuthorDetailPage() {
         .order("published_at", { ascending: false });
 
       const rawDb = Array.isArray(dbArticles) ? dbArticles : [];
-      const staticAuthArticles = STATIC_ARTICLES.filter((a) => a.author_id === id);
+      const staticAuthArticles = STATIC_ARTICLES_META.filter((a) => a.author_id === id);
       const mergedArticles = [
         ...staticAuthArticles.filter((sa) => !rawDb.some((da) => da.slug === sa.slug || da.id === sa.id)),
         ...rawDb,
