@@ -39,7 +39,7 @@ function AuthorsDirectoryPage() {
 
   const { data: authors = [], isLoading } = useQuery({
     queryKey: ["authors-directory-list"],
-    initialData: STATIC_AUTHORS as any,
+    initialData: () => Object.values(STATIC_AUTHORS) as any,
     staleTime: 1000 * 60 * 10,
     queryFn: async () => {
       const { data, error } = await supabase
@@ -51,6 +51,8 @@ function AuthorsDirectoryPage() {
       return data || [];
     },
   });
+
+  const authorsList = Array.isArray(authors) && authors.length > 0 ? authors : Object.values(STATIC_AUTHORS);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
@@ -73,14 +75,14 @@ function AuthorsDirectoryPage() {
             <div key={i} className="h-44 rounded-2xl bg-muted/40 animate-pulse border border-border" />
           ))}
         </div>
-      ) : authors.length === 0 ? (
+      ) : authorsList.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-border p-12 text-center space-y-3">
           <User className="mx-auto size-10 text-muted-foreground/50" />
           <p className="text-sm text-muted-foreground">কোনো লেখকের প্রোফাইল পাওয়া যায়নি।</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {authors.map((author) => {
+          {authorsList.map((author: any) => {
             const name = lang === "en" && author.name_en ? author.name_en : author.name_bn;
             const bio = lang === "en" && author.bio_en ? author.bio_en : author.bio_bn;
             const publishedCount =

@@ -167,7 +167,7 @@ function SingleArticlePage() {
         .is("deleted_at", null)
         .order("created_at", { ascending: false });
 
-      const rawDb = dbArticles || [];
+      const rawDb = Array.isArray(dbArticles) ? dbArticles : [];
       const allArticles = [
         ...STATIC_ARTICLES.filter(
           (sa) => !rawDb.some((da) => da.slug === sa.slug || da.id === sa.id)

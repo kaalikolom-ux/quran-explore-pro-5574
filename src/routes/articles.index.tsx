@@ -96,7 +96,12 @@ function ArticlesIndexPage() {
   // লেখক তালিকা ফেচ (ইনিশিয়াল স্ট্যাটিক ডাটা দিয়ে ইনস্ট্যান্ট রেন্ডার)
   const authorsQuery = useQuery({
     queryKey: ["authors-list"],
-    initialData: STATIC_AUTHORS,
+    initialData: () =>
+      Object.values(STATIC_AUTHORS).map((a) => ({
+        id: a.id,
+        name_bn: a.name_bn,
+        name_en: a.name_en,
+      })),
     staleTime: 1000 * 60 * 10,
     queryFn: async () => {
       const { data, error } = await supabase
@@ -139,7 +144,7 @@ function ArticlesIndexPage() {
     },
   });
 
-  const rawDbArticles = query.data || [];
+  const rawDbArticles = Array.isArray(query.data) ? query.data : [];
   const allArticles = [
     ...STATIC_ARTICLES.filter(
       (sa) => !rawDbArticles.some((da: any) => da.slug === sa.slug || da.id === sa.id)
@@ -147,7 +152,7 @@ function ArticlesIndexPage() {
     ...rawDbArticles,
   ];
 
-  const rawDbCategories = categoriesQuery.data || [];
+  const rawDbCategories = Array.isArray(categoriesQuery.data) ? categoriesQuery.data : [];
   const categories = [
     ...STATIC_CATEGORIES.filter(
       (sc) => !rawDbCategories.some((dc: any) => dc.slug === sc.slug || dc.id === sc.id)
@@ -155,7 +160,7 @@ function ArticlesIndexPage() {
     ...rawDbCategories,
   ];
 
-  const rawDbAuthors = authorsQuery.data || [];
+  const rawDbAuthors = Array.isArray(authorsQuery.data) ? authorsQuery.data : [];
   const authors = [
     ...Object.values(STATIC_AUTHORS).filter(
       (sa) => !rawDbAuthors.some((da: any) => da.id === sa.id)

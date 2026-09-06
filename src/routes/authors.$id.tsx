@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { User, Calendar, BookOpen, ArrowLeft, FileText } from "lucide-react";
@@ -42,9 +43,21 @@ function AuthorDetailPage() {
   const { id } = Route.useParams();
   const { lang } = usePrefs();
 
+  const initialAuthorData = useMemo(() => {
+    const staticAuthor = STATIC_AUTHORS[id];
+    if (!staticAuthor) return undefined;
+    const staticAuthArticles = STATIC_ARTICLES.filter((a) => a.author_id === id);
+    return {
+      ...staticAuthor,
+      articles: staticAuthArticles,
+    };
+  }, [id]);
+
   // ১. লেখকের বিস্তারিত প্রোফাইল ও সংশ্লিষ্ট আর্টিকেল ফেচ (১০০% নির্ভরযোগ্য)
   const { data: author, isLoading } = useQuery({
     queryKey: ["author-detail-page", id],
+    initialData: initialAuthorData,
+    staleTime: 1000 * 60 * 5,
     queryFn: async () => {
       const { data: authorData, error: authorErr } = await supabase
         .from("authors")
@@ -65,7 +78,7 @@ function AuthorDetailPage() {
         .eq("published", true)
         .order("published_at", { ascending: false });
 
-      const rawDb = dbArticles || [];
+      const rawDb = Array.isArray(dbArticles) ? dbArticles : [];
       const staticAuthArticles = STATIC_ARTICLES.filter((a) => a.author_id === id);
       const mergedArticles = [
         ...staticAuthArticles.filter((sa) => !rawDb.some((da) => da.slug === sa.slug || da.id === sa.id)),
