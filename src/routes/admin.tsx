@@ -54,6 +54,7 @@ import {
   Tag as TagIcon,
   Sparkles,
   BookOpen,
+  Headphones,
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -91,8 +92,14 @@ import { SocialLinksAdmin } from "@/components/SocialLinksAdmin";
 import { TurnstileAdmin } from "@/components/TurnstileAdmin";
 import { MessagesAdmin } from "@/components/MessagesAdmin";
 import { QuranExportAdmin } from "@/components/QuranExportAdmin";
+import { SurahAudioAdmin } from "@/components/SurahAudioAdmin";
 
 export const Route = createFileRoute("/admin")({
+  validateSearch: (search: Record<string, unknown>) => {
+    return {
+      tab: typeof search.tab === "string" ? search.tab : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "অ্যাডমিন ড্যাশবোর্ড — কুরআন অন্বেষা" },
@@ -820,8 +827,15 @@ function RichTextEditor({
 function AdminPage() {
   const { user, loading } = useSession();
   const { isAdmin, loading: roleLoading } = useIsAdmin();
-  const [activeTab, setActiveTab] = useState("articles");
+  const search = Route.useSearch();
+  const [activeTab, setActiveTab] = useState(search?.tab || "articles");
   const [importModalType, setImportModalType] = useState<"wordpress" | "blogger" | null>(null);
+
+  useEffect(() => {
+    if (search?.tab) {
+      setActiveTab(search.tab);
+    }
+  }, [search?.tab]);
 
   const menuSections = [
     {
@@ -830,6 +844,7 @@ function AdminPage() {
         { value: "articles", label: "আর্টিকেল ও প্রবন্ধ", icon: FileText },
         { value: "import", label: "পোস্ট ইমপোর্ট (Import)", icon: Download },
         { value: "translations", label: "কুরআন আয়াত ও অনুবাদ", icon: Languages },
+        { value: "surah-audio", label: "সুরার অডিও কন্ট্রোল", icon: Headphones },
         { value: "quran-export", label: "কুরআন PDF ও E-Book এক্সপোর্টার", icon: BookOpen },
         { value: "posts", label: "লেখক ও গবেষকবৃন্দ", icon: Users },
         { value: "categories", label: "বিষয়ভিত্তিক ক্যাটাগরি", icon: FolderTree },
@@ -1010,6 +1025,9 @@ function AdminPage() {
               </TabsContent>
               <TabsContent value="translations" className="mt-0 focus-visible:outline-none">
                 <TranslationsAdmin />
+              </TabsContent>
+              <TabsContent value="surah-audio" className="mt-0 focus-visible:outline-none">
+                <SurahAudioAdmin />
               </TabsContent>
               <TabsContent value="quran-export" className="mt-0 focus-visible:outline-none">
                 <QuranExportAdmin />

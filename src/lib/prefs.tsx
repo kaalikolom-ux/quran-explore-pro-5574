@@ -15,6 +15,7 @@ export type DisplayLayers = {
   showMetaData: boolean;
   showSurahScientificMeaning: boolean;
   showLogicalConsistency: boolean;
+  showAudioPlayback: boolean;
 };
 
 export type ThemeMode = "dark" | "sepia" | "slate" | "light";
@@ -61,6 +62,7 @@ export const DEFAULT_PREFS: Prefs = {
   showMetaData: true,
   showSurahScientificMeaning: true,
   showLogicalConsistency: true,
+  showAudioPlayback: true,
 };
 
 export type PublicDisplayPermissions = {
@@ -78,6 +80,7 @@ export type PublicDisplayPermissions = {
   showMetaData: boolean;
   showSurahScientificMeaning: boolean;
   showLogicalConsistency: boolean;
+  showAudioPlayback: boolean;
 };
 
 export const DEFAULT_PUBLIC_PERMISSIONS: PublicDisplayPermissions = {
@@ -95,10 +98,25 @@ export const DEFAULT_PUBLIC_PERMISSIONS: PublicDisplayPermissions = {
   showMetaData: true,
   showSurahScientificMeaning: true,
   showLogicalConsistency: true,
+  showAudioPlayback: true,
 };
 
 const STORAGE_KEY = "quran_explorer_unified_prefs_v1";
 const PUBLIC_PERMS_STORAGE_KEY = "quran_explorer_public_display_permissions_v1";
+const SURAH_AUDIO_PERMS_STORAGE_KEY = "quran_explorer_surah_audio_permissions_v1";
+
+export type SurahAudioPermissions = Record<number, boolean>;
+
+export function getStoredSurahAudioPermissions(): SurahAudioPermissions {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = localStorage.getItem(SURAH_AUDIO_PERMS_STORAGE_KEY);
+    if (!raw) return {};
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+}
 
 export function getStoredPrefs(): Prefs {
   if (typeof window === "undefined") return DEFAULT_PREFS;
@@ -108,6 +126,7 @@ export function getStoredPrefs(): Prefs {
     const parsed = JSON.parse(raw);
     if (parsed.arabicFontSize === 28) parsed.arabicFontSize = 22;
     if (parsed.translationFontSize === 15) parsed.translationFontSize = 12;
+    if (parsed.showAudioPlayback === undefined) parsed.showAudioPlayback = true;
 
     // Auto-migrate: Ensure all translation layers and metadata are active by default
     if (!parsed._layersMigratedV2) {
@@ -125,6 +144,7 @@ export function getStoredPrefs(): Prefs {
       parsed.showMetaData = true;
       parsed.showSurahScientificMeaning = true;
       parsed.showLogicalConsistency = true;
+      parsed.showAudioPlayback = true;
       parsed._layersMigratedV2 = true;
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
@@ -161,6 +181,7 @@ type PrefsContextType = {
   prefs: Prefs;
   publicPermissions: PublicDisplayPermissions;
   userPermissions: PublicDisplayPermissions | null;
+  surahAudioPermissions: SurahAudioPermissions;
   lang: "bn" | "en";
   dark: boolean;
   themeMode: ThemeMode;
@@ -169,7 +190,10 @@ type PrefsContextType = {
   toggleLang: () => void;
   updatePref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void;
   updatePublicPermission: (key: keyof PublicDisplayPermissions, value: boolean) => Promise<void>;
+  updateSurahAudioPermission: (surahId: number, allowed: boolean) => Promise<void>;
+  bulkUpdateSurahAudioPermissions: (allowed: boolean) => Promise<void>;
   isLayerAllowed: (layerKey: keyof PublicDisplayPermissions, isAdmin?: boolean) => boolean;
+  isSurahAudioAllowed: (surahId: number, isAdmin?: boolean) => boolean;
   t: (key: string) => string;
 };
 
@@ -178,19 +202,23 @@ const PrefsContext = createContext<PrefsContextType | null>(null);
 export function PrefsProvider({ children }: { children: React.ReactNode }) {
   const [prefs, setPrefsState] = useState<Prefs>(getStoredPrefs);
   const [publicPermissions, setPublicPermissions] = useState<PublicDisplayPermissions>(getStoredPublicPermissions);
+  const [surahAudioPermissions, setSurahAudioPermissions] = useState<SurahAudioPermissions>(getStoredSurahAudioPermissions);
   const [userPermissions, setUserPermissions] = useState<PublicDisplayPermissions | null>(null);
 
   useEffect(() => {
     const handleUpdate = () => {
       setPrefsState(getStoredPrefs());
       setPublicPermissions(getStoredPublicPermissions());
+      setSurahAudioPermissions(getStoredSurahAudioPermissions());
     };
     window.addEventListener("prefs-updated", handleUpdate);
     window.addEventListener("public-perms-updated", handleUpdate);
+    window.addEventListener("surah-audio-perms-updated", handleUpdate);
     window.addEventListener("storage", handleUpdate);
     return () => {
       window.removeEventListener("prefs-updated", handleUpdate);
       window.removeEventListener("public-perms-updated", handleUpdate);
+      window.removeEventListener("surah-audio-perms-updated", handleUpdate);
       window.removeEventListener("storage", handleUpdate);
     };
   }, []);
@@ -214,6 +242,23 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
               };
               setPublicPermissions(merged);
               localStorage.setItem(PUBLIC_PERMS_STORAGE_KEY, JSON.stringify(merged));
+            } catch {}
+          }
+        })
+        .catch(() => {});
+
+      // 1b. Surah audio permissions from site_settings
+      supabase
+        .from("site_settings")
+        .select("value")
+        .eq("key", "surah_audio_permissions")
+        .maybeSingle()
+        .then(({ data }) => {
+          if (data?.value) {
+            try {
+              const parsed = typeof data.value === "string" ? JSON.parse(data.value) : data.value;
+              setSurahAudioPermissions(parsed);
+              localStorage.setItem(SURAH_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(parsed));
             } catch {}
           }
         })
@@ -292,6 +337,46 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
       const { supabase } = await import("@/integrations/supabase/client");
       await supabase.from("site_settings").upsert({
         key: "public_display_permissions",
+        value: JSON.stringify(updated),
+        is_public: true,
+      }, { onConflict: "key" });
+    } catch {}
+  };
+
+  const updateSurahAudioPermission = async (surahId: number, allowed: boolean) => {
+    const current = getStoredSurahAudioPermissions();
+    const updated: SurahAudioPermissions = { ...current, [surahId]: allowed };
+    setSurahAudioPermissions(updated);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(SURAH_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event("surah-audio-perms-updated"));
+    }
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.from("site_settings").upsert({
+        key: "surah_audio_permissions",
+        value: JSON.stringify(updated),
+        is_public: true,
+      }, { onConflict: "key" });
+    } catch {}
+  };
+
+  const bulkUpdateSurahAudioPermissions = async (allowed: boolean) => {
+    const updated: SurahAudioPermissions = {};
+    for (let i = 1; i <= 114; i++) {
+      updated[i] = allowed;
+    }
+    setSurahAudioPermissions(updated);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(SURAH_AUDIO_PERMS_STORAGE_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event("surah-audio-perms-updated"));
+    }
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.from("site_settings").upsert({
+        key: "surah_audio_permissions",
         value: JSON.stringify(updated),
         is_public: true,
       }, { onConflict: "key" });
@@ -508,12 +593,20 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
     return publicPermissions[layerKey] ?? true;
   };
 
+  const isSurahAudioAllowed = (surahId: number, isAdminUser: boolean = false): boolean => {
+    if (isAdminUser) return true;
+    if (publicPermissions.showAudioPlayback === false) return false;
+    if (surahAudioPermissions[surahId] === false) return false;
+    return true;
+  };
+
   return (
     <PrefsContext.Provider
       value={{
         prefs,
         publicPermissions,
         userPermissions,
+        surahAudioPermissions,
         lang: prefs.lang,
         dark: prefs.dark,
         themeMode,
@@ -522,7 +615,10 @@ export function PrefsProvider({ children }: { children: React.ReactNode }) {
         toggleLang,
         updatePref,
         updatePublicPermission,
+        updateSurahAudioPermission,
+        bulkUpdateSurahAudioPermissions,
         isLayerAllowed,
+        isSurahAudioAllowed,
         t,
       }}
     >
@@ -536,11 +632,13 @@ export function usePrefs() {
   if (!context) {
     const fallbackPrefs = getStoredPrefs();
     const fallbackPublicPerms = getStoredPublicPermissions();
+    const fallbackSurahAudio = getStoredSurahAudioPermissions();
     const fallbackMode = fallbackPrefs.themeMode || (fallbackPrefs.dark ? "dark" : "sepia");
     return {
       prefs: fallbackPrefs,
       publicPermissions: fallbackPublicPerms,
       userPermissions: null,
+      surahAudioPermissions: fallbackSurahAudio,
       lang: fallbackPrefs.lang,
       dark: fallbackPrefs.dark,
       themeMode: fallbackMode,
@@ -549,7 +647,10 @@ export function usePrefs() {
       toggleLang: () => {},
       updatePref: () => {},
       updatePublicPermission: async () => {},
+      updateSurahAudioPermission: async () => {},
+      bulkUpdateSurahAudioPermissions: async () => {},
       isLayerAllowed: () => true,
+      isSurahAudioAllowed: () => true,
       t: (key: string) => key,
     };
   }

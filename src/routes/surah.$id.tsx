@@ -37,6 +37,8 @@ import {
   Headphones,
   Mic,
   ChevronDown,
+  Lock,
+  ShieldCheck,
 } from "lucide-react";
 import { usePrefs, type AudioPlaybackMode, type TranslationAudioTrack } from "@/lib/prefs";
 import { useBookmarks, type BookmarkTarget } from "@/lib/bookmarks";
@@ -597,6 +599,7 @@ interface AyahCardProps {
   onCancelEdit: () => void;
   onSelectWord: (info: { surah: number; ayah: number; word: QuranWord }) => void;
   playingPhase?: "arabic" | "translation" | null;
+  isAudioRestrictedForVisitor?: boolean;
 }
 
 const AyahCard = React.memo(function AyahCard({
@@ -604,6 +607,7 @@ const AyahCard = React.memo(function AyahCard({
   surahId,
   isPlaying,
   playingPhase,
+  isAudioRestrictedForVisitor,
   isBookmarked,
   isAyahAudioSaved,
   isThisAyahDownloading,
@@ -690,12 +694,24 @@ const AyahCard = React.memo(function AyahCard({
             <button
               type="button"
               onClick={() => onPlayAyah(ayah.ayah)}
-              title={isPlaying ? "পজ করুন" : "এই আয়াত থেকে শুনুন"}
+              title={
+                isAudioRestrictedForVisitor
+                  ? "এই সুরার অডিও প্লেব্যাক বর্তমানে স্থগিত"
+                  : isPlaying
+                  ? "পজ করুন"
+                  : "এই আয়াত থেকে শুনুন"
+              }
               className={`p-1.5 rounded-lg transition-colors hover:bg-muted hover:text-foreground cursor-pointer ${
-                isPlaying ? "text-primary bg-primary/10" : ""
+                isPlaying
+                  ? "text-primary bg-primary/10"
+                  : isAudioRestrictedForVisitor
+                  ? "opacity-70 text-amber-600 dark:text-amber-400"
+                  : ""
               }`}
             >
-              {isPlaying ? (
+              {isAudioRestrictedForVisitor ? (
+                <Lock className="size-4 text-amber-500" />
+              ) : isPlaying ? (
                 playingPhase === "translation" ? (
                   <Mic className="size-4 text-primary animate-pulse" />
                 ) : (
@@ -1199,9 +1215,11 @@ function SurahDetailPage() {
   const { id } = Route.useParams();
   const search = Route.useSearch();
   const surahId = Number(id) || 1;
-  const { prefs, publicPermissions, userPermissions, isLayerAllowed, lang, updatePref } = usePrefs();
+  const { prefs, publicPermissions, userPermissions, isLayerAllowed, isSurahAudioAllowed, lang, updatePref } = usePrefs();
   const { toggle: toggleBm, isBookmarked: checkBookmarked } = useBookmarks();
   const { isAdmin } = useIsAdmin();
+  const isAudioAllowedForThisSurah = isSurahAudioAllowed(surahId, isAdmin);
+  const isAudioRestrictedForVisitor = !isAdmin && !isAudioAllowedForThisSurah;
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -1550,6 +1568,15 @@ function SurahDetailPage() {
 
   const playAyahSequentially = useCallback(
     async (ayahNum: number, targetPhase?: "arabic" | "translation") => {
+      if (!isAdmin && !isSurahAudioAllowed(surahId, false)) {
+        toast.error(
+          lang === "bn"
+            ? "এই সুরার অডিও প্লেব্যাক বর্তমানে অ্যাডমিন কর্তৃক সাময়িকভাবে স্থগিত রাখা হয়েছে।"
+            : "Audio playback for this surah is currently restricted by administration."
+        );
+        return;
+      }
+
       if (audioRef.current) {
         audioRef.current.pause();
       }
@@ -1683,6 +1710,8 @@ function SurahDetailPage() {
       prefs.audioPlaybackMode,
       prefs.translationAudioTrack,
       currentSurahData?.ayahs,
+      isAdmin,
+      isSurahAudioAllowed,
     ]
   );
 
@@ -1698,6 +1727,15 @@ function SurahDetailPage() {
   );
 
   const handleToggleSurahPlay = useCallback(() => {
+    if (!isAdmin && !isSurahAudioAllowed(surahId, false)) {
+      toast.error(
+        lang === "bn"
+          ? "এই সুরার অডিও প্লেব্যাক বর্তমানে অ্যাডমিন কর্তৃক সাময়িকভাবে স্থগিত রাখা হয়েছে।"
+          : "Audio playback for this surah is currently restricted by administration."
+      );
+      return;
+    }
+
     if (playingAyah !== null) {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -1709,10 +1747,19 @@ function SurahDetailPage() {
         prefs.audioPlaybackMode === "translation_only" ? "translation" : "arabic";
       playAyahSequentially(1, initialPhase);
     }
-  }, [playingAyah, playAyahSequentially, prefs.audioPlaybackMode]);
+  }, [playingAyah, playAyahSequentially, prefs.audioPlaybackMode, isAdmin, isSurahAudioAllowed, surahId, lang]);
 
   const handlePlayAyah = useCallback(
     (ayahNum: number) => {
+      if (!isAdmin && !isSurahAudioAllowed(surahId, false)) {
+        toast.error(
+          lang === "bn"
+            ? "এই সুরার অডিও প্লেব্যাক বর্তমানে অ্যাডমিন কর্তৃক সাময়িকভাবে স্থগিত রাখা হয়েছে।"
+            : "Audio playback for this surah is currently restricted by administration."
+        );
+        return;
+      }
+
       if (playingAyah === ayahNum) {
         if (audioRef.current) audioRef.current.pause();
         setPlayingAyah(null);
@@ -1723,7 +1770,7 @@ function SurahDetailPage() {
         playAyahSequentially(ayahNum, initialPhase);
       }
     },
-    [playingAyah, playAyahSequentially, prefs.audioPlaybackMode]
+    [playingAyah, playAyahSequentially, prefs.audioPlaybackMode, isAdmin, isSurahAudioAllowed, surahId, lang]
   );
 
   const handlePlayVoiceSample = async (track: TranslationAudioTrack) => {
@@ -2016,67 +2063,97 @@ function SurahDetailPage() {
           {/* বাটনের অংশ */}
           <div className="flex items-center justify-between sm:justify-end gap-1.5 shrink-0 overflow-x-auto no-scrollbar pt-1 sm:pt-0 border-t sm:border-t-0 border-border/30">
             <div className="flex items-center gap-1.5">
-              {/* অডিও সেটিংস ও মোড সিলেক্টর বাটন */}
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => setAudioSettingsOpen(true)}
-                className={`h-7 px-2 text-[11px] font-medium transition-all shrink-0 flex items-center gap-1 cursor-pointer ${
-                  prefs.audioPlaybackMode !== "arabic_only"
-                    ? "bg-primary/15 text-primary border-primary/50 shadow-2xs font-semibold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                title="অডিও প্লেব্যাক মোড ও অনুবাদের ভয়েস সেটিংস"
-              >
-                <Headphones className="size-3.5 text-primary shrink-0" />
-                <span className="hidden sm:inline">
-                  {prefs.audioPlaybackMode === "arabic_only"
-                    ? "শুধু আরবী"
-                    : prefs.audioPlaybackMode === "arabic_and_translation"
-                    ? "আরবী + অনুবাদ"
-                    : "অনুবাদ শুধু"}
-                </span>
-                <ChevronDown className="size-3 text-muted-foreground opacity-70 shrink-0" />
-              </Button>
+              {isAudioRestrictedForVisitor ? (
+                <div
+                  onClick={() => {
+                    toast.info(
+                      lang === "bn"
+                        ? "এই সুরার অডিও প্লেব্যাক বর্তমানে অ্যাডমিন কর্তৃক সাময়িকভাবে স্থগিত রাখা হয়েছে।"
+                        : "Audio playback for this surah is currently restricted by administration."
+                    );
+                  }}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2.5 py-1 rounded-lg shrink-0 cursor-pointer shadow-2xs select-none"
+                  title="এই সুরার অডিও প্লেব্যাক বর্তমানে স্থগিত"
+                >
+                  <Lock className="size-3 text-amber-500 shrink-0" />
+                  <span>{lang === "bn" ? "অডিও স্থগিত" : "Audio Restricted"}</span>
+                </div>
+              ) : (
+                <>
+                  {/* অডিও সেটিংস ও মোড সিলেক্টর বাটন */}
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => setAudioSettingsOpen(true)}
+                    className={`h-7 px-2 text-[11px] font-medium transition-all shrink-0 flex items-center gap-1 cursor-pointer ${
+                      prefs.audioPlaybackMode !== "arabic_only"
+                        ? "bg-primary/15 text-primary border-primary/50 shadow-2xs font-semibold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    title="অডিও প্লেব্যাক মোড ও অনুবাদের ভয়েস সেটিংস"
+                  >
+                    <Headphones className="size-3.5 text-primary shrink-0" />
+                    <span className="hidden sm:inline">
+                      {prefs.audioPlaybackMode === "arabic_only"
+                        ? "শুধু আরবী"
+                        : prefs.audioPlaybackMode === "arabic_and_translation"
+                        ? "আরবী + অনুবাদ"
+                        : "অনুবাদ শুধু"}
+                    </span>
+                    <ChevronDown className="size-3 text-muted-foreground opacity-70 shrink-0" />
+                  </Button>
 
-              {/* অ্যাক্টিভ ফেজ ব্যাজ (যখন অডিও চলমান থাকে) */}
-              {isSurahPlaying && (
-                <span className="hidden md:inline-flex items-center gap-1 text-[10px] font-semibold text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded-full animate-pulse shrink-0 select-none">
-                  {playingPhase === "translation" ? (
-                    <>
-                      <Mic className="size-2.5" />
-                      <span>অনুবাদ পাঠ...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Volume2 className="size-2.5" />
-                      <span>আরবী তিলাওয়াত...</span>
-                    </>
+                  {/* অ্যাডমিন মোড নোটিশ ব্যাজ (যখন ভিজিটরদের জন্য অডিও বন্ধ কিন্তু এডমিন শুনতে পাচ্ছেন) */}
+                  {isAdmin && !isSurahAudioAllowed(surahId, false) && (
+                    <span
+                      className="hidden lg:inline-flex items-center gap-1 text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-full shrink-0 select-none"
+                      title="ভিজিটরদের জন্য এই সুরার অডিও বন্ধ রয়েছে, তবে এডমিন হিসেবে আপনি শুনতে পারছেন"
+                    >
+                      <ShieldCheck className="size-3 text-amber-500" />
+                      <span>{lang === "bn" ? "এডমিন প্রিভিউ (ভিজিটরদের অডিও বন্ধ)" : "Admin Preview (Audio Hidden)"}</span>
+                    </span>
                   )}
-                </span>
-              )}
 
-              <Button
-                size="sm"
-                variant={isSurahPlaying ? "default" : "outline"}
-                onClick={handleToggleSurahPlay}
-                className={`h-7 px-2 sm:px-2.5 text-[11px] font-medium transition-all shrink-0 ${
-                  isSurahPlaying ? "bg-primary text-primary-foreground shadow-xs animate-pulse" : ""
-                }`}
-                title={isSurahPlaying ? "তেলাওয়াত বন্ধ করুন" : "সম্পূর্ণ সুরা একনাগাড়ে শুনুন"}
-              >
-                {isSurahPlaying ? (
-                  <>
-                    <Pause className="size-3.5 mr-1 fill-current shrink-0" />
-                    <span>আয়াত {formatNumber(playingAyah, lang)}</span>
-                  </>
-                ) : (
-                  <>
-                    <Play className="size-3.5 mr-1 fill-current text-primary shrink-0" />
-                    <span>শুনুন</span>
-                  </>
-                )}
-              </Button>
+                  {/* অ্যাক্টিভ ফেজ ব্যাজ (যখন অডিও চলমান থাকে) */}
+                  {isSurahPlaying && (
+                    <span className="hidden md:inline-flex items-center gap-1 text-[10px] font-semibold text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded-full animate-pulse shrink-0 select-none">
+                      {playingPhase === "translation" ? (
+                        <>
+                          <Mic className="size-2.5" />
+                          <span>অনুবাদ পাঠ...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Volume2 className="size-2.5" />
+                          <span>আরবী তিলাওয়াত...</span>
+                        </>
+                      )}
+                    </span>
+                  )}
+
+                  <Button
+                    size="sm"
+                    variant={isSurahPlaying ? "default" : "outline"}
+                    onClick={handleToggleSurahPlay}
+                    className={`h-7 px-2 sm:px-2.5 text-[11px] font-medium transition-all shrink-0 ${
+                      isSurahPlaying ? "bg-primary text-primary-foreground shadow-xs animate-pulse" : ""
+                    }`}
+                    title={isSurahPlaying ? "তেলাওয়াত বন্ধ করুন" : "সম্পূর্ণ সুরা একনাগাড়ে শুনুন"}
+                  >
+                    {isSurahPlaying ? (
+                      <>
+                        <Pause className="size-3.5 mr-1 fill-current shrink-0" />
+                        <span>আয়াত {formatNumber(playingAyah, lang)}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Play className="size-3.5 mr-1 fill-current text-primary shrink-0" />
+                        <span>শুনুন</span>
+                      </>
+                    )}
+                  </Button>
+                </>
+              )}
 
               <Button
                 size="sm"
@@ -2264,6 +2341,7 @@ function SurahDetailPage() {
               surahId={surahId}
               isPlaying={isPlaying}
               playingPhase={playingPhase}
+              isAudioRestrictedForVisitor={isAudioRestrictedForVisitor}
               isBookmarked={isBookmarked}
               isAyahAudioSaved={isAyahAudioSaved}
               isThisAyahDownloading={isThisAyahDownloading}

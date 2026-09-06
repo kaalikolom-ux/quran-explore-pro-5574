@@ -17,7 +17,8 @@ import {
   Sparkles,
   Globe,
   ShieldCheck,
-  Lock
+  Lock,
+  Headphones,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -153,6 +154,11 @@ function SettingsPage() {
       key: "showLogicalConsistency",
       title: lang === "bn" ? "১৩. লজিক্যাল কন্সিসট্যান্সি (৪:৮২)" : "13. Logical Consistency Framework (4:82)",
       desc: lang === "bn" ? "কুরআনের সার্বজনীন ইনফরমেশন আর্কিটেকচার ও অভ্যন্তরীণ সামঞ্জস্য বিশ্লেষণ" : "Display internal non-contradiction & universal systemic harmony analysis",
+    },
+    {
+      key: "showAudioPlayback",
+      title: lang === "bn" ? "১৪. সুরার অডিও প্লেব্যাক (Audio Playback)" : "14. Audio Playback & Recitation",
+      desc: lang === "bn" ? "আরবী তেলাওয়াত ও বহুভাষিক AI অনুবাদ পাঠের অডিও প্লেয়ার ও অডিও কন্ট্রোল" : "Arabic recitation and multilingual AI translation audio playback controls",
     },
   ];
 
@@ -509,15 +515,23 @@ function SettingsPage() {
               <span className="text-[11px] text-foreground font-medium flex items-center gap-1.5">
                 <SlidersHorizontal className="size-3.5 text-emerald-600" />
                 {lang === "bn"
-                  ? "নির্দিষ্ট কোনো সাইন-আপ করা গ্রাহক/গবেষককে বিশেষ অংশ দেখার অনুমতি দিতে চান?"
-                  : "Want to grant specific signed-up visitors custom access to restricted layers?"}
+                  ? "নির্দিষ্ট গ্রাহকের পারমিশন বা ১১৪টি সুরার স্বতন্ত্র অডিও কন্ট্রোল করতে চান?"
+                  : "Want to grant specific user access or configure per-surah audio controls?"}
               </span>
-              <Button asChild size="sm" variant="outline" className="h-7 text-xs px-3 border-emerald-500/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/10 cursor-pointer shrink-0">
-                <Link to="/admin">
-                  <Users className="size-3.5 mr-1.5" />
-                  {lang === "bn" ? "গ্রাহক ও ইউজার পারমিশন প্যানেল" : "User Access Panel"}
-                </Link>
-              </Button>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Button asChild size="sm" variant="outline" className="h-7 text-xs px-3 border-emerald-500/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/10 cursor-pointer shrink-0">
+                  <Link to="/admin" search={{ tab: "surah-audio" }}>
+                    <Headphones className="size-3.5 mr-1.5" />
+                    {lang === "bn" ? "সুরার অডিও কন্ট্রোল" : "Surah Audio Panel"}
+                  </Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="h-7 text-xs px-3 border-emerald-500/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/10 cursor-pointer shrink-0">
+                  <Link to="/admin" search={{ tab: "subs" }}>
+                    <Users className="size-3.5 mr-1.5" />
+                    {lang === "bn" ? "ইউজার পারমিশন প্যানেল" : "User Access Panel"}
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         )}
@@ -618,6 +632,20 @@ function SettingsPage() {
                         }}
                       />
                     </div>
+                  </div>
+                )}
+
+                {isAdmin && layer.key === "showAudioPlayback" && (
+                  <div className="mt-2.5 pt-2.5 border-t border-dashed border-border/50 flex items-center justify-between gap-2">
+                    <span className="text-[11px] text-muted-foreground">
+                      {lang === "bn" ? "১১৪টি সুরার পৃথক অডিও কন্ট্রোল:" : "Per-surah audio controls:"}
+                    </span>
+                    <Button asChild size="sm" variant="ghost" className="h-6 text-[11px] px-2 text-primary hover:bg-primary/10">
+                      <Link to="/admin" search={{ tab: "surah-audio" }}>
+                        <Headphones className="size-3 mr-1" />
+                        {lang === "bn" ? "ম্যানেজ করুন →" : "Manage →"}
+                      </Link>
+                    </Button>
                   </div>
                 )}
               </div>
