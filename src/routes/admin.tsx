@@ -2120,10 +2120,11 @@ function TranslationsAdmin() {
       // ১. মেটা ডাটা লোকাল ও ক্লাউডে সংরক্ষণ
       if (metaBn.trim() || metaEn.trim()) {
         try {
-          localStorage.setItem(`quran_ayah_meta_${sNum}_${aNum}`, JSON.stringify({
-            meta_bn: metaBn.trim(),
-            meta_en: metaEn.trim(),
-          }));
+          const existingSaved = localStorage.getItem(`quran_ayah_meta_${sNum}_${aNum}`);
+          const currentObj = existingSaved ? JSON.parse(existingSaved) : {};
+          if (metaBn.trim()) currentObj.meta_bn = metaBn.trim();
+          if (metaEn.trim()) currentObj.meta_en = metaEn.trim();
+          localStorage.setItem(`quran_ayah_meta_${sNum}_${aNum}`, JSON.stringify(currentObj));
           metaSaved = true;
         } catch {}
 
@@ -2133,10 +2134,12 @@ function TranslationsAdmin() {
             ayah: aNum,
             meta_bn: metaBn.trim() || null,
             meta_en: metaEn.trim() || null,
-            created_by: user?.id,
+            created_by: user?.id || null,
             updated_at: new Date().toISOString(),
           }, { onConflict: "surah,ayah" });
-        } catch {}
+        } catch (mErr) {
+          console.warn("ayah_metadata sync notice:", mErr);
+        }
       }
 
       // ২. অনুবাদ টেক্সট সংরক্ষণ (যদি প্রদান করা হয়)
@@ -2151,27 +2154,100 @@ function TranslationsAdmin() {
 
         const parsed = transSchema.safeParse({ surah: sNum, ayah: aNum, lang: lng, text, note });
         if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? "সঠিক অনুবাদ তথ্য দিন");
-        const { error } = await supabase.from("verse_translations").upsert(
-          {
-            surah: parsed.data.surah,
-            ayah: parsed.data.ayah,
-            lang: parsed.data.lang,
-            text: parsed.data.text,
-            note: parsed.data.note || null,
-            created_by: user!.id,
-            updated_at: new Date().toISOString(),
-          },
-          { onConflict: "surah,ayah,lang" },
-        );
-        if (error) throw error;
+
+        // Safe lookup: check if translation row already exists for (surah, ayah, lang)
+        // This avoids Postgres 42P10 "there is no unique or exclusion constraint matching the ON CONFLICT specification"
+        const { data: existingTrans } = await supabase
+          .from("verse_translations")
+          .select("id")
+          .eq("surah", parsed.data.surah)
+          .eq("ayah", parsed.data.ayah)
+          .eq("lang", parsed.data.lang)
+          .maybeSingle();
+
+        if (existingTrans?.id) {
+          const { error: updateErr } = await supabase
+            .from("verse_translations")
+            .update({
+              text: parsed.data.text,
+              note: parsed.data.note || null,
+              created_by: user?.id || null,
+              updated_at: new Date().toISOString(),
+            })
+            .eq("id", existingTrans.id);
+          if (updateErr) throw updateErr;
+        } else {
+          const { error: insertErr } = await supabase
+            .from("verse_translations")
+            .insert({
+              surah: parsed.data.surah,
+              ayah: parsed.data.ayah,
+              lang: parsed.data.lang,
+              text: parsed.data.text,
+              note: parsed.data.note || null,
+              created_by: user?.id || null,
+              updated_at: new Date().toISOString(),
+            });
+          if (insertErr) throw insertErr;
+        }
+
+        // ৩. Sync to quran_verses master table so reader page (and all visitors) see the updated translation!
+        const verseUpdate: any = {
+          surah: parsed.data.surah,
+          ayah: parsed.data.ayah,
+          updated_at: new Date().toISOString(),
+        };
+        if (parsed.data.lang === "bn" || parsed.data.lang === "bn_std") {
+          verseUpdate.conventional_bn = parsed.data.text;
+          verseUpdate.bn_text = parsed.data.text;
+          if (parsed.data.lang === "bn") {
+            verseUpdate.modern_translation_bn = parsed.data.text;
+          }
+        } else if (parsed.data.lang === "en" || parsed.data.lang === "en_std") {
+          verseUpdate.conventional_en = parsed.data.text;
+          verseUpdate.en_text = parsed.data.text;
+          if (parsed.data.lang === "en") {
+            verseUpdate.modern_translation_en = parsed.data.text;
+          }
+        }
+        if (metaBn.trim()) verseUpdate.meta_bn = metaBn.trim();
+        if (metaEn.trim()) verseUpdate.meta_en = metaEn.trim();
+
+        try {
+          await (supabase as any).from("quran_verses").upsert(verseUpdate, { onConflict: "surah,ayah" });
+        } catch (qvErr) {
+          console.warn("Failed to sync quran_verses in admin:", qvErr);
+        }
+
+        // ৪. Local storage sync with full translation fields
+        try {
+          const existingSaved = localStorage.getItem(`quran_ayah_meta_${sNum}_${aNum}`);
+          const currentObj = existingSaved ? JSON.parse(existingSaved) : {};
+          if (metaBn.trim()) currentObj.meta_bn = metaBn.trim();
+          if (metaEn.trim()) currentObj.meta_en = metaEn.trim();
+          if (parsed.data.lang === "bn" || parsed.data.lang === "bn_std") {
+            currentObj.conventional_bn = parsed.data.text;
+            if (parsed.data.lang === "bn") {
+              currentObj.modern_translation_bn = parsed.data.text;
+            }
+          } else if (parsed.data.lang === "en" || parsed.data.lang === "en_std") {
+            currentObj.conventional_en = parsed.data.text;
+            if (parsed.data.lang === "en") {
+              currentObj.modern_translation_en = parsed.data.text;
+            }
+          }
+          localStorage.setItem(`quran_ayah_meta_${sNum}_${aNum}`, JSON.stringify(currentObj));
+        } catch {}
       } else if (!metaSaved) {
         throw new Error("অনুবাদ টেক্সট অথবা মেটা ডাটা প্রদান করুন");
       }
     },
     onSuccess: () => {
+      const sNum = Number(surah);
       queryClient.invalidateQueries({ queryKey: ["admin-verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
-      queryClient.invalidateQueries({ queryKey: ["local-surah-cache"] });
+      queryClient.invalidateQueries({ queryKey: ["local-surah-cache", sNum] });
+      queryClient.invalidateQueries({ queryKey: ["local-surah-init", sNum] });
       setText("");
       setNote("");
       toast.success("আয়াতের তথ্য ও মেটা ডাটা সফলভাবে সংরক্ষণ করা হয়েছে");

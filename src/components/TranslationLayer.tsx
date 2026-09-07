@@ -60,20 +60,71 @@ export function TranslationLayer({
 
   const save = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.from("verse_translations").upsert(
-        {
-          surah,
-          ayah,
-          lang: storageLang,
-          text: draft.trim(),
-          note: draftNote.trim() || null,
-        },
-        { onConflict: "surah,ayah,lang" },
-      );
-      if (error) throw error;
+      const cleanText = draft.trim();
+      const cleanNote = draftNote.trim() || null;
+
+      // 1. Safe lookup to avoid Postgres 42P10 onConflict constraint error
+      const { data: existingTrans } = await supabase
+        .from("verse_translations")
+        .select("id")
+        .eq("surah", surah)
+        .eq("ayah", ayah)
+        .eq("lang", storageLang)
+        .maybeSingle();
+
+      if (existingTrans?.id) {
+        const { error: updateErr } = await supabase
+          .from("verse_translations")
+          .update({
+            text: cleanText,
+            note: cleanNote,
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", existingTrans.id);
+        if (updateErr) throw updateErr;
+      } else {
+        const { error: insertErr } = await supabase
+          .from("verse_translations")
+          .insert({
+            surah,
+            ayah,
+            lang: storageLang,
+            text: cleanText,
+            note: cleanNote,
+            updated_at: new Date().toISOString(),
+          });
+        if (insertErr) throw insertErr;
+      }
+
+      // 2. Also sync to quran_verses master table
+      const verseUpdate: any = {
+        surah,
+        ayah,
+        updated_at: new Date().toISOString(),
+      };
+      if (storageLang === "bn" || storageLang === "bn_std") {
+        verseUpdate.conventional_bn = cleanText;
+        verseUpdate.bn_text = cleanText;
+        if (storageLang === "bn") {
+          verseUpdate.modern_translation_bn = cleanText;
+        }
+      } else if (storageLang === "en" || storageLang === "en_std") {
+        verseUpdate.conventional_en = cleanText;
+        verseUpdate.en_text = cleanText;
+        if (storageLang === "en") {
+          verseUpdate.modern_translation_en = cleanText;
+        }
+      }
+      try {
+        await (supabase as any).from("quran_verses").upsert(verseUpdate, { onConflict: "surah,ayah" });
+      } catch (qvErr) {
+        console.warn("Failed to sync quran_verses in TranslationLayer:", qvErr);
+      }
     },
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ["verse-translations", surah] });
+      await queryClient.invalidateQueries({ queryKey: ["local-surah-cache", surah] });
+      await queryClient.invalidateQueries({ queryKey: ["local-surah-init", surah] });
       setOpen(false);
       toast.success(t("saved"));
     },

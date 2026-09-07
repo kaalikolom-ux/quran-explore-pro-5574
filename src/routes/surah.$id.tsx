@@ -474,6 +474,36 @@ const applyCloudOverrides = async (sId: number, data: SurahData): Promise<SurahD
         }
       }
     }
+
+    // 3. Fetch overrides from Supabase verse_translations (in case translations were edited in admin panel or translation layer)
+    const { data: transRows } = await (supabase as any)
+      .from("verse_translations")
+      .select("ayah, lang, text, note")
+      .eq("surah", sId);
+
+    if (transRows && transRows.length > 0 && data?.ayahs) {
+      for (const row of transRows) {
+        const a = data.ayahs.find((item) => item.ayah === row.ayah);
+        if (a && row.text && typeof row.text === "string" && row.text.trim().length > 0) {
+          const tTrim = row.text.trim();
+          if (row.lang === "bn" || row.lang === "bn_std") {
+            a.conventional_bn = tTrim;
+            (a as any).translation_bn = tTrim;
+            (a as any).bn_text = tTrim;
+            if (row.lang === "bn") {
+              a.modern_translation_bn = tTrim;
+            }
+          } else if (row.lang === "en" || row.lang === "en_std") {
+            a.conventional_en = tTrim;
+            (a as any).translation_en = tTrim;
+            (a as any).en_text = tTrim;
+            if (row.lang === "en") {
+              a.modern_translation_en = tTrim;
+            }
+          }
+        }
+      }
+    }
   } catch (err) {
     console.warn("Failed to fetch Supabase cloud overrides for Surah", sId, err);
   }
@@ -525,7 +555,8 @@ const fetchSurahInitData = async (sId: number): Promise<SurahData> => {
   try {
     const offlineData = await getSurahOffline(sId);
     if (offlineData?.ayahs && offlineData.ayahs.length > 0) {
-      return applyLocalMetaOverrides(sId, offlineData);
+      applyLocalMetaOverrides(sId, offlineData);
+      return offlineData;
     }
   } catch {}
 
@@ -535,7 +566,8 @@ const fetchSurahInitData = async (sId: number): Promise<SurahData> => {
     const res = await fetch(initUrl);
     if (res.ok) {
       const initData: SurahData = await res.json();
-      return applyLocalMetaOverrides(sId, initData);
+      await applyCloudOverrides(sId, initData);
+      return initData;
     }
   } catch (err) {
     console.warn(`Init fetch failed for Surah ${sId}, falling back to full static...`, err);
@@ -1435,14 +1467,14 @@ function SurahDetailPage() {
   const initQuery = useQuery<SurahData>({
     queryKey: ["local-surah-init", surahId],
     queryFn: () => fetchSurahInitData(surahId),
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 5, // ৫ মিনিট পর স্বয়ংক্রিয় রিভ্যালিডেট
   });
 
-  // ২. ব্যাকগ্রাউন্ডে সম্পূর্ণ সুরার ডাটাবেজ ফেচ (ফুল ৪.৫ মেগাবাইট ফাইল ব্যাকগ্রাউন্ডে লোড হবে)
+  // ২. ব্যাকগ্রাউন্ডে সম্পূর্ণ সুরার ডাটাবেজ ফেচ (ফুল ডাটা ক্লাউড ওভাররাইডসহ ব্যাকগ্রাউন্ডে লোড হবে)
   const surahQuery = useQuery<SurahData>({
     queryKey: ["local-surah-cache", surahId],
     queryFn: () => fetchSurahData(surahId),
-    staleTime: Infinity,
+    staleTime: 1000 * 60 * 5, // ৫ মিনিট পর ক্লাউড পরিবর্তন রিভ্যালিডেট
     gcTime: 1000 * 60 * 60 * 24,
   });
 
