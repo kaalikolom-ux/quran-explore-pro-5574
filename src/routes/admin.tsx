@@ -2057,43 +2057,31 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   );
 }
 
+const TRANSLATION_LABELS: Record<string, string> = {
+  bn_std: "১. আক্ষরিক অনুবাদ (বাংলা)",
+  en_std: "২. Surface Translation (English)",
+  core_bn: "৩. অন্তর্গত অনুবাদ (বাংলা)",
+  core_en: "৪. Interlinear Translation (English)",
+  bn: "৫. বৈজ্ঞানিক অনুবাদ (বাংলা)",
+  en: "৬. Scientific Translation (English)",
+  modern_bn: "৫. বৈজ্ঞানিক অনুবাদ (বাংলা)",
+  modern_en: "৬. Scientific Translation (English)",
+  conventional_bn: "১. আক্ষরিক অনুবাদ (বাংলা)",
+  conventional_en: "২. Surface Translation (English)",
+};
+
+type TranslationType = "bn_std" | "en_std" | "core_bn" | "core_en" | "bn" | "en";
+
 function TranslationsAdmin() {
   const { user } = useSession();
   const queryClient = useQueryClient();
   const [surah, setSurah] = useState("1");
   const [ayah, setAyah] = useState("1");
-  const [lng, setLng] = useState<"bn" | "en" | "bn_std" | "en_std">("bn");
+  const [lng, setLng] = useState<TranslationType>("bn_std");
   const [metaBn, setMetaBn] = useState("");
   const [metaEn, setMetaEn] = useState("");
   const [text, setText] = useState("");
   const [note, setNote] = useState("");
-
-  // Load existing metadata whenever surah or ayah changes
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(`quran_ayah_meta_${surah}_${ayah}`);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        setMetaBn(parsed.meta_bn || "");
-        setMetaEn(parsed.meta_en || "");
-        return;
-      }
-    } catch {}
-
-    fetch(`/data/quran/surahs/${surah}.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        const a = d?.ayahs?.find((x: any) => String(x.ayah) === String(ayah));
-        if (a) {
-          setMetaBn(a.meta_bn || "");
-          setMetaEn(a.meta_en || "");
-        } else {
-          setMetaBn("");
-          setMetaEn("");
-        }
-      })
-      .catch(() => {});
-  }, [surah, ayah]);
 
   const list = useQuery({
     queryKey: ["admin-verse-translations", surah],
@@ -2107,6 +2095,80 @@ function TranslationsAdmin() {
       return data;
     },
   });
+
+  // Load existing metadata and translation text whenever surah, ayah, or translation type changes
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadData = async () => {
+      const sNum = Number(surah);
+      const aNum = Number(ayah);
+      if (!sNum || !aNum) return;
+
+      // 1. Check local storage first
+      let localObj: any = null;
+      try {
+        const saved = localStorage.getItem(`quran_ayah_meta_${sNum}_${aNum}`);
+        if (saved) localObj = JSON.parse(saved);
+      } catch {}
+
+      if (localObj && !cancelled) {
+        setMetaBn(localObj.meta_bn || "");
+        setMetaEn(localObj.meta_en || "");
+      }
+
+      // 2. Check if a translation was saved in database for this surah, ayah & lng
+      const matchedTrans = list.data?.find((t) => t.surah === sNum && t.ayah === aNum && t.lang === lng);
+      if (matchedTrans && !cancelled) {
+        setText(matchedTrans.text || "");
+        setNote(matchedTrans.note || "");
+        return;
+      }
+
+      // 3. Check local storage specific translation fields
+      if (localObj) {
+        let fieldText = "";
+        if (lng === "bn_std") fieldText = localObj.conventional_bn || localObj.bn_text || "";
+        else if (lng === "en_std") fieldText = localObj.conventional_en || localObj.en_text || "";
+        else if (lng === "core_bn") fieldText = localObj.core_meaning_bn || "";
+        else if (lng === "core_en") fieldText = localObj.core_meaning_en || "";
+        else if (lng === "bn") fieldText = localObj.modern_translation_bn || "";
+        else if (lng === "en") fieldText = localObj.modern_translation_en || "";
+
+        if (fieldText && !cancelled) {
+          setText(fieldText);
+          return;
+        }
+      }
+
+      // 4. Fetch from static surah JSON dataset
+      try {
+        const r = await fetch(`/data/quran/surahs/${sNum}.json`);
+        if (!r.ok || cancelled) return;
+        const d = await r.json();
+        const a = d?.ayahs?.find((x: any) => Number(x.ayah) === aNum);
+        if (a && !cancelled) {
+          if (!localObj?.meta_bn) setMetaBn(a.meta_bn || "");
+          if (!localObj?.meta_en) setMetaEn(a.meta_en || "");
+
+          let tVal = "";
+          if (lng === "bn_std") tVal = a.conventional_bn || a.translation_bn || a.bn_text || "";
+          else if (lng === "en_std") tVal = a.conventional_en || a.translation_en || a.en_text || "";
+          else if (lng === "core_bn") tVal = a.core_meaning_bn || "";
+          else if (lng === "core_en") tVal = a.core_meaning_en || "";
+          else if (lng === "bn") tVal = a.modern_translation_bn || "";
+          else if (lng === "en") tVal = a.modern_translation_en || "";
+
+          setText(tVal);
+        }
+      } catch {}
+    };
+
+    loadData();
+    return () => {
+      cancelled = true;
+    };
+  }, [surah, ayah, lng, list.data]);
 
   const save = useMutation({
     mutationFn: async () => {
@@ -2147,9 +2209,9 @@ function TranslationsAdmin() {
         const transSchema = z.object({
           surah: z.coerce.number().int().min(1).max(114),
           ayah: z.coerce.number().int().min(1).max(300),
-          lang: z.enum(["bn", "en", "bn_std", "en_std"]),
+          lang: z.enum(["bn", "en", "bn_std", "en_std", "core_bn", "core_en", "modern_bn", "modern_en"]),
           text: z.string().trim().min(1, "অনুবাদ টেক্সট প্রদান করুন").max(8000),
-          note: z.string().trim().max(4000),
+          note: z.string().trim().max(4000).optional().default(""),
         });
 
         const parsed = transSchema.safeParse({ surah: sNum, ayah: aNum, lang: lng, text, note });
@@ -2197,18 +2259,20 @@ function TranslationsAdmin() {
           ayah: parsed.data.ayah,
           updated_at: new Date().toISOString(),
         };
-        if (parsed.data.lang === "bn" || parsed.data.lang === "bn_std") {
+        if (parsed.data.lang === "bn_std") {
           verseUpdate.conventional_bn = parsed.data.text;
           verseUpdate.bn_text = parsed.data.text;
-          if (parsed.data.lang === "bn") {
-            verseUpdate.modern_translation_bn = parsed.data.text;
-          }
-        } else if (parsed.data.lang === "en" || parsed.data.lang === "en_std") {
+        } else if (parsed.data.lang === "en_std") {
           verseUpdate.conventional_en = parsed.data.text;
           verseUpdate.en_text = parsed.data.text;
-          if (parsed.data.lang === "en") {
-            verseUpdate.modern_translation_en = parsed.data.text;
-          }
+        } else if (parsed.data.lang === "core_bn") {
+          verseUpdate.core_meaning_bn = parsed.data.text;
+        } else if (parsed.data.lang === "core_en") {
+          verseUpdate.core_meaning_en = parsed.data.text;
+        } else if (parsed.data.lang === "bn" || parsed.data.lang === "modern_bn") {
+          verseUpdate.modern_translation_bn = parsed.data.text;
+        } else if (parsed.data.lang === "en" || parsed.data.lang === "modern_en") {
+          verseUpdate.modern_translation_en = parsed.data.text;
         }
         if (metaBn.trim()) verseUpdate.meta_bn = metaBn.trim();
         if (metaEn.trim()) verseUpdate.meta_en = metaEn.trim();
@@ -2225,16 +2289,20 @@ function TranslationsAdmin() {
           const currentObj = existingSaved ? JSON.parse(existingSaved) : {};
           if (metaBn.trim()) currentObj.meta_bn = metaBn.trim();
           if (metaEn.trim()) currentObj.meta_en = metaEn.trim();
-          if (parsed.data.lang === "bn" || parsed.data.lang === "bn_std") {
+          if (parsed.data.lang === "bn_std") {
             currentObj.conventional_bn = parsed.data.text;
-            if (parsed.data.lang === "bn") {
-              currentObj.modern_translation_bn = parsed.data.text;
-            }
-          } else if (parsed.data.lang === "en" || parsed.data.lang === "en_std") {
+            currentObj.bn_text = parsed.data.text;
+          } else if (parsed.data.lang === "en_std") {
             currentObj.conventional_en = parsed.data.text;
-            if (parsed.data.lang === "en") {
-              currentObj.modern_translation_en = parsed.data.text;
-            }
+            currentObj.en_text = parsed.data.text;
+          } else if (parsed.data.lang === "core_bn") {
+            currentObj.core_meaning_bn = parsed.data.text;
+          } else if (parsed.data.lang === "core_en") {
+            currentObj.core_meaning_en = parsed.data.text;
+          } else if (parsed.data.lang === "bn" || parsed.data.lang === "modern_bn") {
+            currentObj.modern_translation_bn = parsed.data.text;
+          } else if (parsed.data.lang === "en" || parsed.data.lang === "modern_en") {
+            currentObj.modern_translation_en = parsed.data.text;
           }
           localStorage.setItem(`quran_ayah_meta_${sNum}_${aNum}`, JSON.stringify(currentObj));
         } catch {}
@@ -2248,9 +2316,7 @@ function TranslationsAdmin() {
       queryClient.invalidateQueries({ queryKey: ["verse-translations"] });
       queryClient.invalidateQueries({ queryKey: ["local-surah-cache", sNum] });
       queryClient.invalidateQueries({ queryKey: ["local-surah-init", sNum] });
-      setText("");
-      setNote("");
-      toast.success("আয়াতের তথ্য ও মেটা ডাটা সফলভাবে সংরক্ষণ করা হয়েছে");
+      toast.success("আয়াতের তথ্য ও অনুবাদ সফলভাবে সংরক্ষণ করা হয়েছে");
     },
     onError: (error: Error) => toast.error(error.message),
   });
@@ -2267,6 +2333,16 @@ function TranslationsAdmin() {
     },
     onError: (error: Error) => toast.error(error.message),
   });
+
+  const handleEditRow = (v: any) => {
+    setSurah(String(v.surah));
+    setAyah(String(v.ayah));
+    setLng(v.lang as any);
+    setText(v.text);
+    setNote(v.note || "");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    toast.info(`সূরা ${v.surah} : আয়াত ${v.ayah} (${TRANSLATION_LABELS[v.lang] || v.lang}) ফর্মে লোড করা হয়েছে`);
+  };
 
   return (
     <div className="space-y-6">
@@ -2303,17 +2379,19 @@ function TranslationsAdmin() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="lng" className="text-xs font-semibold">অনুবাদ টাইপ</Label>
+            <Label htmlFor="lng" className="text-xs font-semibold">অনুবাদ স্তর (৬টির যেকোনোটি)</Label>
             <select
               id="lng"
               value={lng}
-              onChange={(e) => setLng(e.target.value as typeof lng)}
-              className="h-9 w-full rounded border border-input bg-background px-3 text-xs"
+              onChange={(e) => setLng(e.target.value as any)}
+              className="h-9 w-full rounded border border-input bg-background px-3 text-xs font-medium"
             >
-              <option value="bn">বৈজ্ঞানিক অনুবাদ (বাংলা)</option>
-              <option value="en">Scientific Translation (English)</option>
-              <option value="bn_std">আক্ষরিক অনুবাদ (বাংলা)</option>
-              <option value="en_std">Surface Translation (English)</option>
+              <option value="bn_std">১. আক্ষরিক অনুবাদ (বাংলা)</option>
+              <option value="en_std">২. Surface Translation (English)</option>
+              <option value="core_bn">৩. অন্তর্গত অনুবাদ (বাংলা)</option>
+              <option value="core_en">৪. Interlinear Translation (English)</option>
+              <option value="bn">৫. বৈজ্ঞানিক অনুবাদ (বাংলা)</option>
+              <option value="en">৬. Scientific Translation (English)</option>
             </select>
           </div>
         </div>
@@ -2353,13 +2431,15 @@ function TranslationsAdmin() {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="text" className="text-xs font-semibold">অনুবাদ টেক্সট (ঐচ্ছিক যদি শুধু মেটা ডাটা সংরক্ষণ করেন)</Label>
+          <Label htmlFor="text" className="text-xs font-semibold">
+            {TRANSLATION_LABELS[lng] || "অনুবাদ"} টেক্সট
+          </Label>
           <Textarea 
             id="text" 
             rows={4} 
             value={text} 
             onChange={(e) => setText(e.target.value)} 
-            placeholder="এখানে আয়াতের অনুবাদ লিখুন..."
+            placeholder="এখানে আয়াতের নির্বাচিত অনুবাদটি সম্পাদনা বা নতুন করে লিখুন..."
             className="text-xs" 
           />
         </div>
@@ -2382,23 +2462,42 @@ function TranslationsAdmin() {
       <div className="space-y-2">
         <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">সংরক্ষিত অনুবাদ তালিকা:</h3>
         <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-          {list.data?.map((v) => (
-            <div key={v.id} className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors">
-              <span className="rounded bg-[#2271b1]/10 px-2 py-0.5 text-[11px] font-bold text-[#2271b1]">
-                সূরা {v.surah} : আয়াত {v.ayah} · {v.lang}
-              </span>
-              <p className="min-w-0 flex-1 text-xs text-foreground leading-relaxed">{v.text}</p>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
-                aria-label="মুছে ফেলুন"
-                onClick={() => remove.mutate(v.id)}
-              >
-                <Trash2 className="size-3.5" />
-              </Button>
+          {list.data?.length ? (
+            list.data.map((v) => (
+              <div key={v.id} className="flex items-start gap-3 p-3.5 hover:bg-muted/30 transition-colors">
+                <span className="rounded bg-[#2271b1]/10 px-2 py-0.5 text-[11px] font-bold text-[#2271b1] shrink-0">
+                  সূরা {v.surah} : আয়াত {v.ayah} · {TRANSLATION_LABELS[v.lang] || v.lang}
+                </span>
+                <p className="min-w-0 flex-1 text-xs text-foreground leading-relaxed">{v.text}</p>
+                <div className="flex items-center gap-1 shrink-0">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 text-primary hover:bg-primary/10 cursor-pointer"
+                    aria-label="সম্পাদনা করুন"
+                    title="ফর্মে লোড করে সম্পাদনা করুন"
+                    onClick={() => handleEditRow(v)}
+                  >
+                    <Pencil className="size-3.5" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
+                    aria-label="মুছে ফেলুন"
+                    title="মুছে ফেলুন"
+                    onClick={() => remove.mutate(v.id)}
+                  >
+                    <Trash2 className="size-3.5" />
+                  </Button>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="p-4 text-center text-xs text-muted-foreground">
+              সূরা {surah}-এর কোনো কাস্টম অনুবাদ ডাটাবেজে এখনো সংরক্ষিত নেই। উপরের ফর্ম থেকে যেকোনো অনুবাদ সম্পাদনা করে সংরক্ষণ করতে পারেন।
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>

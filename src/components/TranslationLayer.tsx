@@ -102,18 +102,20 @@ export function TranslationLayer({
         ayah,
         updated_at: new Date().toISOString(),
       };
-      if (storageLang === "bn" || storageLang === "bn_std") {
+      if (storageLang === "bn_std" || storageLang === "conventional_bn") {
         verseUpdate.conventional_bn = cleanText;
         verseUpdate.bn_text = cleanText;
-        if (storageLang === "bn") {
-          verseUpdate.modern_translation_bn = cleanText;
-        }
-      } else if (storageLang === "en" || storageLang === "en_std") {
+      } else if (storageLang === "en_std" || storageLang === "conventional_en") {
         verseUpdate.conventional_en = cleanText;
         verseUpdate.en_text = cleanText;
-        if (storageLang === "en") {
-          verseUpdate.modern_translation_en = cleanText;
-        }
+      } else if (storageLang === "core_bn" || storageLang === "core_meaning_bn") {
+        verseUpdate.core_meaning_bn = cleanText;
+      } else if (storageLang === "core_en" || storageLang === "core_meaning_en") {
+        verseUpdate.core_meaning_en = cleanText;
+      } else if (storageLang === "bn" || storageLang === "modern_bn" || storageLang === "modern_translation_bn") {
+        verseUpdate.modern_translation_bn = cleanText;
+      } else if (storageLang === "en" || storageLang === "modern_en" || storageLang === "modern_translation_en") {
+        verseUpdate.modern_translation_en = cleanText;
       }
       try {
         await (supabase as any).from("quran_verses").upsert(verseUpdate, { onConflict: "surah,ayah" });

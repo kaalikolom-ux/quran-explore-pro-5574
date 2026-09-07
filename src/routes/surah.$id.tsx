@@ -486,20 +486,22 @@ const applyCloudOverrides = async (sId: number, data: SurahData): Promise<SurahD
         const a = data.ayahs.find((item) => item.ayah === row.ayah);
         if (a && row.text && typeof row.text === "string" && row.text.trim().length > 0) {
           const tTrim = row.text.trim();
-          if (row.lang === "bn" || row.lang === "bn_std") {
+          if (row.lang === "bn_std" || row.lang === "conventional_bn") {
             a.conventional_bn = tTrim;
             (a as any).translation_bn = tTrim;
             (a as any).bn_text = tTrim;
-            if (row.lang === "bn") {
-              a.modern_translation_bn = tTrim;
-            }
-          } else if (row.lang === "en" || row.lang === "en_std") {
+          } else if (row.lang === "en_std" || row.lang === "conventional_en") {
             a.conventional_en = tTrim;
             (a as any).translation_en = tTrim;
             (a as any).en_text = tTrim;
-            if (row.lang === "en") {
-              a.modern_translation_en = tTrim;
-            }
+          } else if (row.lang === "core_bn" || row.lang === "core_meaning_bn") {
+            a.core_meaning_bn = tTrim;
+          } else if (row.lang === "core_en" || row.lang === "core_meaning_en") {
+            a.core_meaning_en = tTrim;
+          } else if (row.lang === "bn" || row.lang === "modern_bn" || row.lang === "modern_translation_bn") {
+            a.modern_translation_bn = tTrim;
+          } else if (row.lang === "en" || row.lang === "modern_en" || row.lang === "modern_translation_en") {
+            a.modern_translation_en = tTrim;
           }
         }
       }
@@ -2221,36 +2223,56 @@ function SurahDetailPage() {
           }, { onConflict: "surah,ayah" })
         );
 
-        // verse_translations table (safe lookup + update/insert, avoiding 42P10 onConflict crash)
-        if (updatedFields.conventional_bn) {
-          promises.push((async () => {
-            try {
-              const { data: existingTrans } = await (supabase as any)
-                .from("verse_translations")
-                .select("id")
-                .eq("surah", surahId)
-                .eq("ayah", ayahNumber)
-                .eq("lang", "bn")
-                .maybeSingle();
+        // verse_translations table sync helper (safe lookup + update/insert, avoiding 42P10 onConflict crash)
+        const syncTranslationRow = async (langKey: string, textVal: string | undefined, noteVal?: string) => {
+          if (!textVal || !textVal.trim()) return;
+          try {
+            const { data: existingTrans } = await (supabase as any)
+              .from("verse_translations")
+              .select("id")
+              .eq("surah", surahId)
+              .eq("ayah", ayahNumber)
+              .eq("lang", langKey)
+              .maybeSingle();
 
-              if (existingTrans?.id) {
-                await (supabase as any).from("verse_translations").update({
-                  note: updatedFields.meta_bn || null,
-                  text: updatedFields.conventional_bn,
-                }).eq("id", existingTrans.id);
-              } else {
-                await (supabase as any).from("verse_translations").insert({
-                  surah: surahId,
-                  ayah: ayahNumber,
-                  lang: "bn",
-                  note: updatedFields.meta_bn || null,
-                  text: updatedFields.conventional_bn,
-                });
-              }
-            } catch (err) {
-              console.warn("verse_translations sync notice:", err);
+            if (existingTrans?.id) {
+              await (supabase as any).from("verse_translations").update({
+                note: noteVal || null,
+                text: textVal.trim(),
+                updated_at: new Date().toISOString(),
+              }).eq("id", existingTrans.id);
+            } else {
+              await (supabase as any).from("verse_translations").insert({
+                surah: surahId,
+                ayah: ayahNumber,
+                lang: langKey,
+                note: noteVal || null,
+                text: textVal.trim(),
+                updated_at: new Date().toISOString(),
+              });
             }
-          })());
+          } catch (err) {
+            console.warn(`verse_translations sync notice (${langKey}):`, err);
+          }
+        };
+
+        if (updatedFields.conventional_bn) {
+          promises.push(syncTranslationRow("bn_std", updatedFields.conventional_bn, updatedFields.meta_bn));
+        }
+        if (updatedFields.conventional_en) {
+          promises.push(syncTranslationRow("en_std", updatedFields.conventional_en, updatedFields.meta_en));
+        }
+        if (updatedFields.core_meaning_bn) {
+          promises.push(syncTranslationRow("core_bn", updatedFields.core_meaning_bn));
+        }
+        if (updatedFields.core_meaning_en) {
+          promises.push(syncTranslationRow("core_en", updatedFields.core_meaning_en));
+        }
+        if (updatedFields.modern_translation_bn) {
+          promises.push(syncTranslationRow("bn", updatedFields.modern_translation_bn));
+        }
+        if (updatedFields.modern_translation_en) {
+          promises.push(syncTranslationRow("en", updatedFields.modern_translation_en));
         }
 
         await Promise.allSettled(promises);
