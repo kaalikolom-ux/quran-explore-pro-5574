@@ -385,14 +385,101 @@ const applyLocalMetaOverrides = (sId: number, data: SurahData) => {
           }
           if (parsed.conventional_bn && typeof parsed.conventional_bn === "string" && parsed.conventional_bn.trim().length > 0) {
             a.conventional_bn = parsed.conventional_bn.trim();
+            (a as any).translation_bn = parsed.conventional_bn.trim();
+            (a as any).bn_text = parsed.conventional_bn.trim();
           }
           if (parsed.conventional_en && typeof parsed.conventional_en === "string" && parsed.conventional_en.trim().length > 0) {
             a.conventional_en = parsed.conventional_en.trim();
+            (a as any).translation_en = parsed.conventional_en.trim();
+            (a as any).en_text = parsed.conventional_en.trim();
           }
         }
       } catch {}
     });
   }
+  return data;
+};
+
+const applyCloudOverrides = async (sId: number, data: SurahData): Promise<SurahData> => {
+  try {
+    // 1. Fetch metadata overrides from Supabase ayah_metadata
+    const { data: metaRows } = await (supabase as any)
+      .from("ayah_metadata")
+      .select("ayah, meta_bn, meta_en")
+      .eq("surah", sId);
+
+    if (metaRows && metaRows.length > 0 && data?.ayahs) {
+      const metaMap = new Map<number, { meta_bn?: string | null; meta_en?: string | null }>();
+      for (const row of metaRows) {
+        metaMap.set(row.ayah, row);
+      }
+      for (const a of data.ayahs) {
+        const cloudMeta = metaMap.get(a.ayah);
+        if (cloudMeta) {
+          if (cloudMeta.meta_bn && typeof cloudMeta.meta_bn === "string" && cloudMeta.meta_bn.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(cloudMeta.meta_bn)) {
+            a.meta_bn = cloudMeta.meta_bn.trim();
+          }
+          if (cloudMeta.meta_en && typeof cloudMeta.meta_en === "string" && cloudMeta.meta_en.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(cloudMeta.meta_en)) {
+            a.meta_en = cloudMeta.meta_en.trim();
+          }
+        }
+      }
+    }
+
+    // 2. Fetch verse overrides from Supabase quran_verses
+    const { data: verseRows } = await (supabase as any)
+      .from("quran_verses")
+      .select("ayah, conventional_bn, conventional_en, core_meaning_bn, core_meaning_en, modern_translation_bn, modern_translation_en, lexicon_modern_notes, meta_bn, meta_en")
+      .eq("surah", sId);
+
+    if (verseRows && verseRows.length > 0 && data?.ayahs) {
+      const verseMap = new Map<number, any>();
+      for (const row of verseRows) {
+        verseMap.set(row.ayah, row);
+      }
+      for (const a of data.ayahs) {
+        const cloudVerse = verseMap.get(a.ayah);
+        if (cloudVerse) {
+          if (cloudVerse.conventional_bn && typeof cloudVerse.conventional_bn === "string" && cloudVerse.conventional_bn.trim().length > 0) {
+            a.conventional_bn = cloudVerse.conventional_bn.trim();
+            (a as any).translation_bn = cloudVerse.conventional_bn.trim();
+            (a as any).bn_text = cloudVerse.conventional_bn.trim();
+          }
+          if (cloudVerse.conventional_en && typeof cloudVerse.conventional_en === "string" && cloudVerse.conventional_en.trim().length > 0) {
+            a.conventional_en = cloudVerse.conventional_en.trim();
+            (a as any).translation_en = cloudVerse.conventional_en.trim();
+            (a as any).en_text = cloudVerse.conventional_en.trim();
+          }
+          if (cloudVerse.core_meaning_bn && typeof cloudVerse.core_meaning_bn === "string" && cloudVerse.core_meaning_bn.trim().length > 0) {
+            a.core_meaning_bn = cloudVerse.core_meaning_bn.trim();
+          }
+          if (cloudVerse.core_meaning_en && typeof cloudVerse.core_meaning_en === "string" && cloudVerse.core_meaning_en.trim().length > 0) {
+            a.core_meaning_en = cloudVerse.core_meaning_en.trim();
+          }
+          if (cloudVerse.modern_translation_bn && typeof cloudVerse.modern_translation_bn === "string" && cloudVerse.modern_translation_bn.trim().length > 0) {
+            a.modern_translation_bn = cloudVerse.modern_translation_bn.trim();
+          }
+          if (cloudVerse.modern_translation_en && typeof cloudVerse.modern_translation_en === "string" && cloudVerse.modern_translation_en.trim().length > 0) {
+            a.modern_translation_en = cloudVerse.modern_translation_en.trim();
+          }
+          if (cloudVerse.lexicon_modern_notes && typeof cloudVerse.lexicon_modern_notes === "string" && cloudVerse.lexicon_modern_notes.trim().length > 0) {
+            a.lexicon_modern_notes = cloudVerse.lexicon_modern_notes.trim();
+          }
+          if (cloudVerse.meta_bn && typeof cloudVerse.meta_bn === "string" && cloudVerse.meta_bn.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(cloudVerse.meta_bn)) {
+            a.meta_bn = cloudVerse.meta_bn.trim();
+          }
+          if (cloudVerse.meta_en && typeof cloudVerse.meta_en === "string" && cloudVerse.meta_en.trim().length > 0 && !/Surah\s+\d+\s+Ayah\s+\d+\s+Theme/i.test(cloudVerse.meta_en)) {
+            a.meta_en = cloudVerse.meta_en.trim();
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("Failed to fetch Supabase cloud overrides for Surah", sId, err);
+  }
+
+  // Also apply local localStorage overrides on top (e.g. recent offline edits)
+  applyLocalMetaOverrides(sId, data);
   return data;
 };
 
@@ -405,7 +492,7 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
     const res = await fetch(url);
     if (res.ok) {
       const freshData: SurahData = await res.json();
-      applyLocalMetaOverrides(sId, freshData);
+      await applyCloudOverrides(sId, freshData);
       // Persist to IndexedDB for offline use
       await saveSurahOffline(sId, freshData);
       return freshData;
@@ -417,14 +504,15 @@ const fetchSurahData = async (sId: number): Promise<SurahData> => {
   // 2. Offline fallback (IndexedDB + Cache Storage)
   const offlineData = await getSurahOffline(sId);
   if (offlineData?.ayahs && offlineData.ayahs.length > 0) {
-    return applyLocalMetaOverrides(sId, offlineData);
+    await applyCloudOverrides(sId, offlineData);
+    return offlineData;
   }
 
   // 3. Fallback to unversioned static path
   const fallbackRes = await fetch(`/data/quran/surahs/${sId}.json`);
   if (fallbackRes.ok) {
     const freshData: SurahData = await fallbackRes.json();
-    applyLocalMetaOverrides(sId, freshData);
+    await applyCloudOverrides(sId, freshData);
     await saveSurahOffline(sId, freshData);
     return freshData;
   }
@@ -548,6 +636,7 @@ interface AyahCardProps {
   hasNote: boolean;
   noteContent?: string;
   isEditing: boolean;
+  isSaving?: boolean;
   isAdmin: boolean;
   lang: "bn" | "en";
   showArabic: boolean;
@@ -615,6 +704,7 @@ const AyahCard = React.memo(function AyahCard({
   hasNote,
   noteContent,
   isEditing,
+  isSaving,
   isAdmin,
   lang,
   showArabic,
@@ -811,14 +901,24 @@ const AyahCard = React.memo(function AyahCard({
                       size="sm"
                       variant="default"
                       className="h-7 px-2 text-xs"
+                      disabled={isSaving}
                       onClick={() => onSaveEdit(ayah.ayah)}
                     >
-                      <Check className="size-3 mr-1" /> সংরক্ষণ
+                      {isSaving ? (
+                        <>
+                          <Loader2 className="size-3 mr-1 animate-spin" /> সংরক্ষণ...
+                        </>
+                      ) : (
+                        <>
+                          <Check className="size-3 mr-1" /> সংরক্ষণ
+                        </>
+                      )}
                     </Button>
                     <Button
                       size="sm"
                       variant="ghost"
                       className="h-7 px-2 text-xs"
+                      disabled={isSaving}
                       onClick={onCancelEdit}
                     >
                       <X className="size-3.5" />
@@ -1316,6 +1416,7 @@ function SurahDetailPage() {
   } | null>(null);
 
   const [editingAyah, setEditingAyah] = useState<number | null>(null);
+  const [isSavingAyah, setIsSavingAyah] = useState(false);
   const [editForm, setEditForm] = useState({
     conventional_bn: "",
     conventional_en: "",
@@ -1989,85 +2090,154 @@ function SurahDetailPage() {
   }, []);
 
   const handleSaveEdit = async (ayahNumber: number) => {
-    const targetData = surahQuery.data || initQuery.data;
-    if (targetData) {
-      const target = targetData.ayahs.find((a) => a.ayah === ayahNumber);
-      if (target) {
-        target.conventional_bn = editForm.conventional_bn.trim();
-        (target as any).translation_bn = editForm.conventional_bn.trim();
-        target.conventional_en = editForm.conventional_en.trim();
-        (target as any).translation_en = editForm.conventional_en.trim();
-        target.core_meaning_bn = editForm.core_meaning_bn.trim();
-        target.core_meaning_en = editForm.core_meaning_en.trim();
-        target.modern_translation_bn = editForm.modern_translation_bn.trim();
-        target.modern_translation_en = editForm.modern_translation_en.trim();
-        target.lexicon_modern_notes = editForm.lexicon_modern_notes.trim();
-        target.meta_bn = editForm.meta_bn.trim();
-        target.meta_en = editForm.meta_en.trim();
+    setIsSavingAyah(true);
+    try {
+      const currentData = queryClient.getQueryData<SurahData>(["local-surah-cache", surahId]) 
+        || queryClient.getQueryData<SurahData>(["local-surah-init", surahId]) 
+        || surahQuery.data 
+        || initQuery.data;
 
-        // Local storage override
-        try {
-          localStorage.setItem(`quran_ayah_meta_${surahId}_${ayahNumber}`, JSON.stringify({
-            meta_bn: editForm.meta_bn.trim(),
-            meta_en: editForm.meta_en.trim(),
-            core_meaning_bn: editForm.core_meaning_bn.trim(),
-            core_meaning_en: editForm.core_meaning_en.trim(),
-            modern_translation_bn: editForm.modern_translation_bn.trim(),
-            modern_translation_en: editForm.modern_translation_en.trim(),
-            lexicon_modern_notes: editForm.lexicon_modern_notes.trim(),
-            conventional_bn: editForm.conventional_bn.trim(),
-            conventional_en: editForm.conventional_en.trim(),
-          }));
-          await saveSurahOffline(surahId, targetData);
-        } catch {}
+      const target = currentData?.ayahs?.find((a) => a.ayah === ayahNumber);
 
-        // Cloud sync (Supabase quran_verses master table)
-        try {
-          await (supabase as any).from("quran_verses").upsert({
+      const updatedFields = {
+        conventional_bn: editForm.conventional_bn.trim(),
+        conventional_en: editForm.conventional_en.trim(),
+        core_meaning_bn: editForm.core_meaning_bn.trim(),
+        core_meaning_en: editForm.core_meaning_en.trim(),
+        modern_translation_bn: editForm.modern_translation_bn.trim(),
+        modern_translation_en: editForm.modern_translation_en.trim(),
+        lexicon_modern_notes: editForm.lexicon_modern_notes.trim(),
+        meta_bn: editForm.meta_bn.trim(),
+        meta_en: editForm.meta_en.trim(),
+      };
+
+      // 1. Local storage override (synchronous & immediate)
+      try {
+        localStorage.setItem(`quran_ayah_meta_${surahId}_${ayahNumber}`, JSON.stringify(updatedFields));
+      } catch (lsErr) {
+        console.warn("Failed to write to localStorage:", lsErr);
+      }
+
+      // 2. React Query Cache update (immutably update both caches so UI re-renders instantly)
+      const updateSurahImmutably = (old: SurahData | undefined): SurahData | undefined => {
+        if (!old?.ayahs) return old;
+        const exists = old.ayahs.some(a => a.ayah === ayahNumber);
+        if (!exists) return old;
+        return {
+          ...old,
+          ayahs: old.ayahs.map(a => {
+            if (a.ayah !== ayahNumber) return a;
+            return {
+              ...a,
+              ...updatedFields,
+              translation_bn: updatedFields.conventional_bn,
+              bn_text: updatedFields.conventional_bn,
+              translation_en: updatedFields.conventional_en,
+              en_text: updatedFields.conventional_en,
+            };
+          }),
+        };
+      };
+
+      queryClient.setQueryData<SurahData>(["local-surah-cache", surahId], updateSurahImmutably);
+      queryClient.setQueryData<SurahData>(["local-surah-init", surahId], updateSurahImmutably);
+
+      // 3. Persist to IndexedDB offline storage
+      try {
+        const fullCached = queryClient.getQueryData<SurahData>(["local-surah-cache", surahId]);
+        if (fullCached) {
+          await saveSurahOffline(surahId, fullCached);
+        }
+      } catch (idbErr) {
+        console.warn("Offline IndexedDB save error:", idbErr);
+      }
+
+      // 4. Cloud sync to Supabase (non-blocking with timeout)
+      const cloudSyncTask = async () => {
+        const promises: Promise<any>[] = [];
+
+        // Master verses table
+        promises.push(
+          (supabase as any).from("quran_verses").upsert({
             surah: surahId,
             ayah: ayahNumber,
-            text_uthmani: target.text_uthmani || target.words?.map(w => w.text_uthmani).join(" ") || "",
-            words: target.words || [],
-            transliteration: target.transliteration || "",
-            conventional_bn: editForm.conventional_bn.trim(),
-            conventional_en: editForm.conventional_en.trim(),
-            bn_text: editForm.conventional_bn.trim(),
-            en_text: editForm.conventional_en.trim(),
-            core_meaning_bn: editForm.core_meaning_bn.trim() || null,
-            core_meaning_en: editForm.core_meaning_en.trim() || null,
-            modern_translation_bn: editForm.modern_translation_bn.trim() || null,
-            modern_translation_en: editForm.modern_translation_en.trim() || null,
-            meta_bn: editForm.meta_bn.trim() || null,
-            meta_en: editForm.meta_en.trim() || null,
-            lexicon_modern_notes: editForm.lexicon_modern_notes.trim() || null,
+            text_uthmani: target?.text_uthmani || target?.words?.map(w => w.text_uthmani).join(" ") || "",
+            words: target?.words || [],
+            transliteration: target?.transliteration || "",
+            conventional_bn: updatedFields.conventional_bn,
+            conventional_en: updatedFields.conventional_en,
+            bn_text: updatedFields.conventional_bn,
+            en_text: updatedFields.conventional_en,
+            core_meaning_bn: updatedFields.core_meaning_bn || null,
+            core_meaning_en: updatedFields.core_meaning_en || null,
+            modern_translation_bn: updatedFields.modern_translation_bn || null,
+            modern_translation_en: updatedFields.modern_translation_en || null,
+            meta_bn: updatedFields.meta_bn || null,
+            meta_en: updatedFields.meta_en || null,
+            lexicon_modern_notes: updatedFields.lexicon_modern_notes || null,
             updated_at: new Date().toISOString(),
-          }, { onConflict: "surah,ayah" });
+          }, { onConflict: "surah,ayah" })
+        );
 
-          if (editForm.meta_bn.trim() || editForm.meta_en.trim()) {
-            await (supabase as any).from("ayah_metadata").upsert({
-              surah: surahId,
-              ayah: ayahNumber,
-              meta_bn: editForm.meta_bn.trim() || null,
-              meta_en: editForm.meta_en.trim() || null,
-            }, { onConflict: "surah,ayah" });
-          }
+        // Ayah metadata table (persisting metadata even if master verses table schema differs)
+        promises.push(
+          (supabase as any).from("ayah_metadata").upsert({
+            surah: surahId,
+            ayah: ayahNumber,
+            meta_bn: updatedFields.meta_bn || null,
+            meta_en: updatedFields.meta_en || null,
+          }, { onConflict: "surah,ayah" })
+        );
 
-          if (editForm.conventional_bn.trim()) {
-            await (supabase as any).from("verse_translations").upsert({
-              surah: surahId,
-              ayah: ayahNumber,
-              lang: "bn",
-              note: editForm.meta_bn.trim(),
-              text: editForm.conventional_bn.trim(),
-            }, { onConflict: "surah,ayah,lang" });
-          }
-        } catch (cloudErr) {
-          console.warn("Supabase master sync notice:", cloudErr);
+        // verse_translations table (safe lookup + update/insert, avoiding 42P10 onConflict crash)
+        if (updatedFields.conventional_bn) {
+          promises.push((async () => {
+            try {
+              const { data: existingTrans } = await (supabase as any)
+                .from("verse_translations")
+                .select("id")
+                .eq("surah", surahId)
+                .eq("ayah", ayahNumber)
+                .eq("lang", "bn")
+                .maybeSingle();
+
+              if (existingTrans?.id) {
+                await (supabase as any).from("verse_translations").update({
+                  note: updatedFields.meta_bn || null,
+                  text: updatedFields.conventional_bn,
+                }).eq("id", existingTrans.id);
+              } else {
+                await (supabase as any).from("verse_translations").insert({
+                  surah: surahId,
+                  ayah: ayahNumber,
+                  lang: "bn",
+                  note: updatedFields.meta_bn || null,
+                  text: updatedFields.conventional_bn,
+                });
+              }
+            } catch (err) {
+              console.warn("verse_translations sync notice:", err);
+            }
+          })());
         }
-      }
+
+        await Promise.allSettled(promises);
+      };
+
+      // Allow up to 3.5 seconds for cloud sync to settle; if network is slow, complete anyway so UI never freezes
+      await Promise.race([
+        cloudSyncTask(),
+        new Promise(res => setTimeout(res, 3500))
+      ]);
+
+      toast.success(lang === "bn" ? "আয়াতের মেটা ডাটা ও অনুবাদ ডাটাবেজ এবং লোকাল ক্যাশে সংরক্ষিত হয়েছে" : "Ayah metadata and translations saved successfully");
+    } catch (err) {
+      console.error("Error saving ayah edit:", err);
+      toast.error(lang === "bn" ? "সংরক্ষণে কিছু সমস্যা হয়েছে, তবে লোকাল ক্যাশে রাখা হয়েছে" : "Error saving to cloud, saved locally");
+    } finally {
+      setIsSavingAyah(false);
+      setEditingAyah(null);
     }
-    toast.success("আয়াতের মেটা ডাটা ও অনুবাদ ডাটাবেজ এবং লোকাল ক্যাশে সংরক্ষিত হয়েছে");
-    setEditingAyah(null);
   };
 
   const showArabic = isLayerAllowed("showArabic", isAdmin) && prefs.showArabic;
@@ -2430,6 +2600,7 @@ function SurahDetailPage() {
               hasNote={hasNote}
               noteContent={noteContent}
               isEditing={isEditing}
+              isSaving={isSavingAyah && editingAyah === ayah.ayah}
               isAdmin={isAdmin}
               lang={lang}
               showArabic={showArabic}
