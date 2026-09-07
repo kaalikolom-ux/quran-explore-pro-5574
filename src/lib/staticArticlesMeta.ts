@@ -98,6 +98,8 @@ export const STATIC_ARTICLES_META: StaticArticleMeta[] = [
   "published_at": "2026-09-07T03:00:00.000Z",
   "created_at": "2026-09-07T03:00:00.000Z",
   "updated_at": "2026-09-07T03:00:00.000Z",
+  "author_id": "38aa28c8-3535-4a1b-ba06-3d1e2792a9c1",
+  "category_id": "9046c108-9d88-46bc-a84b-2e563b7527d1",
   "tags": [
     "কুরআন ও বিজ্ঞান",
     "ডিএনএ",
