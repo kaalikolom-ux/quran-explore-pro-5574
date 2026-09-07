@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useSearch, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
-import { FileText, EyeOff, User, X, Lock, LogIn, Sparkles } from "lucide-react";
+import { FileText, EyeOff, User, X, Lock, LogIn, Sparkles, Tag as TagIcon } from "lucide-react";
 import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
@@ -16,6 +16,7 @@ const searchSchema = z.object({
   category: z.string().optional(),
   author: z.string().optional(),
   q: z.string().optional(),
+  tag: z.string().optional(),
 });
 
 export const Route = createFileRoute("/articles/")({
@@ -70,13 +71,15 @@ function ArticlesIndexPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.category || null);
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(searchParams.author || null);
   const [searchQuery, setSearchQuery] = useState<string | null>(searchParams.q || null);
+  const [selectedTag, setSelectedTag] = useState<string | null>(searchParams.tag || null);
   const [showDraftsOnly, setShowDraftsOnly] = useState(false);
 
   useEffect(() => {
     setSelectedAuthor(searchParams.author || null);
     setSelectedCategory(searchParams.category || null);
     setSearchQuery(searchParams.q || null);
-  }, [searchParams.author, searchParams.category, searchParams.q]);
+    setSelectedTag(searchParams.tag || null);
+  }, [searchParams.author, searchParams.category, searchParams.q, searchParams.tag]);
 
   // সরাসরি ক্যাটাগরি ফেচ করা (ইনিশিয়াল স্ট্যাটিক ডাটা দিয়ে ইনস্ট্যান্ট রেন্ডার)
   const categoriesQuery = useQuery({
@@ -216,7 +219,18 @@ function ArticlesIndexPage() {
       return false;
     }
 
-    // ৫. সার্চ কোয়েরি ফিল্টার (?q=...)
+    // ৫. ট্যাগ ফিল্টার (?tag=...)
+    if (selectedTag) {
+      const cleanTarget = decodeURIComponent(selectedTag).trim().toLowerCase().replace(/^#/, "");
+      const tags: string[] = Array.isArray(art.tags) ? art.tags : [];
+      const hasTag = tags.some((t: string) => {
+        const cleanT = String(t).trim().toLowerCase().replace(/^#/, "");
+        return cleanT === cleanTarget;
+      });
+      if (!hasTag) return false;
+    }
+
+    // ৬. সার্চ কোয়েরি ফিল্টার (?q=...)
     if (searchQuery && searchQuery.trim()) {
       const qLower = decodeURIComponent(searchQuery).trim().toLowerCase();
       const titleBn = (art.title_bn || "").toLowerCase();
@@ -224,13 +238,15 @@ function ArticlesIndexPage() {
       const excerptBn = (art.excerpt_bn || "").toLowerCase();
       const catNameBn = (art.category?.name_bn || "").toLowerCase();
       const catSlug = (art.category?.slug || "").toLowerCase();
+      const tagsMatch = Array.isArray(art.tags) && art.tags.some((t: string) => String(t).toLowerCase().includes(qLower));
       
       const matches = 
         titleBn.includes(qLower) || 
         titleEn.includes(qLower) || 
         excerptBn.includes(qLower) || 
         catNameBn.includes(qLower) ||
-        catSlug.includes(qLower);
+        catSlug.includes(qLower) ||
+        tagsMatch;
 
       if (!matches) return false;
     }
@@ -299,6 +315,26 @@ function ArticlesIndexPage() {
             className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
           >
             <X className="size-3.5" /> ফিল্টার মুছুন
+          </button>
+        </div>
+      )}
+
+      {/* যদি নির্দিষ্ট ট্যাগ দ্বারা ফিল্টার হয়ে থাকে (?tag=...) */}
+      {selectedTag && (
+        <div className="mb-6 flex items-center justify-between p-3 rounded-xl border border-primary/30 bg-primary/5 text-xs">
+          <div className="flex items-center gap-2">
+            <TagIcon className="size-4 text-primary" />
+            <span>ট্যাগ ফিল্টার: <strong className="text-primary font-semibold">#{decodeURIComponent(selectedTag).replace(/^#/, "")}</strong></span>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedTag(null);
+              navigate({ to: "/articles", search: (prev) => ({ ...prev, tag: undefined }) });
+            }}
+            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-destructive cursor-pointer transition-colors"
+          >
+            <X className="size-3.5" /> ট্যাগ ফিল্টার মুছুন
           </button>
         </div>
       )}
@@ -420,6 +456,32 @@ function ArticlesIndexPage() {
                     <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                       {excerpt}
                     </p>
+                    {Array.isArray(art.tags) && art.tags.length > 0 && (
+                      <div className="mt-2.5 flex flex-wrap gap-1 items-center">
+                        {art.tags.slice(0, 3).map((t: string, tidx: number) => {
+                          const cleanT = String(t).trim().replace(/^#/, "");
+                          return (
+                            <button
+                              key={tidx}
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedTag(cleanT);
+                                navigate({ to: "/articles", search: (prev) => ({ ...prev, tag: cleanT }) });
+                              }}
+                              className="inline-flex items-center text-[10px] text-muted-foreground hover:text-primary bg-secondary/60 hover:bg-primary/10 px-1.5 py-0.5 rounded transition-colors cursor-pointer"
+                            >
+                              #{cleanT}
+                            </button>
+                          );
+                        })}
+                        {art.tags.length > 3 && (
+                          <span className="text-[10px] text-muted-foreground/60 px-1">
+                            +{art.tags.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
 
                   <div className="mt-4 pt-3 border-t border-border/50 text-[11px] text-muted-foreground flex items-center justify-between">

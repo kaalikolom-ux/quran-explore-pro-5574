@@ -67,8 +67,10 @@ import { formatArticleContent } from "@/lib/contentFormatter";
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/lib/auth";
 import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
+import { STATIC_ARTICLES_META } from "@/lib/staticArticlesMeta";
 import { useCategories } from "@/lib/menu";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -1174,6 +1176,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [authorId, setAuthorId] = useState<string>("");
   const [categoryId, setCategoryId] = useState<string>("");
   const [tagsInput, setTagsInput] = useState<string>("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [newTagInput, setNewTagInput] = useState<string>("");
+  const [tagSearchQuery, setTagSearchQuery] = useState<string>("");
   const [customPublishedAt, setCustomPublishedAt] = useState<string>("");
 
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft" | "trash">("all");
@@ -1185,6 +1190,80 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
   const [isAutoSlugging, setIsAutoSlugging] = useState(false);
 
   const categories = useCategories();
+
+  // নিবন্ধিত সকল ট্যাগ ফেচ (ট্যাগ সিলেক্টরের জন্য)
+  const allTagsQuery = useQuery({
+    queryKey: ["admin-tags-selector-list"],
+    queryFn: async () => {
+      const { data } = await supabase
+        .from("tags")
+        .select("id, name_bn, name_en, slug")
+        .order("name_bn");
+      const dbTags = data || [];
+      const dbNames = new Set(dbTags.map((t: any) => (t.name_bn || "").toLowerCase().trim()));
+
+      const extraTags: { id: string; name_bn: string; slug: string }[] = [];
+      STATIC_ARTICLES_META.forEach((meta) => {
+        if (Array.isArray(meta.tags)) {
+          meta.tags.forEach((t: string) => {
+            const clean = String(t).trim().replace(/^#/, "");
+            if (clean && !dbNames.has(clean.toLowerCase())) {
+              dbNames.add(clean.toLowerCase());
+              extraTags.push({ id: `meta-${clean}`, name_bn: clean, slug: clean });
+            }
+          });
+        }
+      });
+
+      return [...dbTags, ...extraTags];
+    },
+  });
+
+  const availableTags = allTagsQuery.data || [];
+
+  const filteredAvailableTags = useMemo(() => {
+    if (!tagSearchQuery.trim()) return availableTags;
+    const q = tagSearchQuery.toLowerCase().trim();
+    return availableTags.filter((t: any) =>
+      t.name_bn?.toLowerCase().includes(q) ||
+      t.name_en?.toLowerCase().includes(q) ||
+      t.slug?.toLowerCase().includes(q)
+    );
+  }, [availableTags, tagSearchQuery]);
+
+  const toggleTagSelection = (tagName: string) => {
+    const clean = tagName.trim().replace(/^#/, "");
+    if (!clean) return;
+    setSelectedTags((prev) => {
+      const exists = prev.some((t) => t.toLowerCase() === clean.toLowerCase());
+      if (exists) {
+        return prev.filter((t) => t.toLowerCase() !== clean.toLowerCase());
+      } else {
+        return [...prev, clean];
+      }
+    });
+  };
+
+  const handleAddNewTag = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const clean = newTagInput.trim().replace(/^#/, "");
+    if (!clean) return;
+
+    if (!selectedTags.some((t) => t.toLowerCase() === clean.toLowerCase())) {
+      setSelectedTags((prev) => [...prev, clean]);
+    }
+    setNewTagInput("");
+
+    try {
+      await supabase.from("tags").insert({
+        name_bn: clean,
+        name_en: null,
+        slug: clean.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-") || `tag-${Date.now().toString(36)}`,
+      });
+      queryClient.invalidateQueries({ queryKey: ["admin-tags-selector-list"] });
+      queryClient.invalidateQueries({ queryKey: ["admin-tags-list"] });
+    } catch {}
+  };
 
   const authors = useQuery({
     queryKey: ["authors"],
@@ -1411,11 +1490,15 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         ? parsed.data.excerpt_en
         : parsed.data.content_en ? parsed.data.content_en.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").slice(0, 160).trim() : null;
 
-      // কমা দিয়ে আলাদা করা ট্যাগ অ্যারে রূপান্তর
-      const parsedTags = tagsInput
+      // কমা দিয়ে আলাদা করা ও সিলেক্ট করা ট্যাগ কম্বাইন
+      const commaTags = tagsInput
         .split(",")
-        .map((t) => t.trim())
+        .map((t) => t.trim().replace(/^#/, ""))
         .filter((t) => t.length > 0);
+
+      const combinedParsedTags = Array.from(
+        new Set([...selectedTags.map((t) => t.trim().replace(/^#/, "")), ...commaTags])
+      ).filter(Boolean);
 
       const payload = {
         ...parsed.data,
@@ -1428,7 +1511,7 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         published,
         author_id: authorId || null,
         category_id: categoryId || null,
-        tags: parsedTags,
+        tags: combinedParsedTags,
         published_at: published
           ? (customPublishedAt ? new Date(customPublishedAt).toISOString() : new Date().toISOString())
           : null,
@@ -1450,11 +1533,15 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
       queryClient.invalidateQueries({ queryKey: ["articles"] });
+      queryClient.invalidateQueries({ queryKey: ["admin-tags-selector-list"] });
       setForm({ ...EMPTY });
       setEditingId(null);
       setAuthorId("");
       setCategoryId("");
       setTagsInput("");
+      setSelectedTags([]);
+      setNewTagInput("");
+      setTagSearchQuery("");
       setCustomPublishedAt("");
       setPublished(true);
       toast.success(published ? "আর্টিকেল সফলভাবে প্রকাশিত হয়েছে" : "আর্টিকেল সফলভাবে খসড়া (Draft) হিসেবে সংরক্ষিত হয়েছে");
@@ -1636,18 +1723,118 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
         {field("content_en", "মূল বিষয়বস্তু (English)", true)}
         {field("cover_image_url", "কভার ইমেজ লিংক (Cover Image URL)")}
 
-        {/* ট্যাগ ইনপুট ফিল্ড */}
-        <div className="space-y-1.5">
-          <Label htmlFor="article-tags" className="text-xs font-semibold">
-            ট্যাগসমূহ (কমা দিয়ে আলাদা করুন)
-          </Label>
-          <Input
-            id="article-tags"
-            value={tagsInput}
-            onChange={(e) => setTagsInput(e.target.value)}
-            placeholder="যেমন: বিজ্ঞান, কুরআন, মহাবিশ্ব, তাদাব্বুর"
-            className="h-9 text-xs"
-          />
+        {/* ট্যাগ নির্বাচন ও ব্যবস্থাপনা প্যানেল (ক্যাটাগরির মতো সহজ নির্বাচন) */}
+        <div className="space-y-3 rounded-xl border border-border/80 bg-muted/20 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-2">
+            <Label className="text-xs font-semibold flex items-center gap-1.5 text-foreground">
+              <TagIcon className="size-3.5 text-primary" />
+              <span>ট্যাগসমূহ (Tags) নির্বাচন করুন</span>
+            </Label>
+            <span className="text-[11px] text-muted-foreground">
+              {selectedTags.length > 0 ? `${selectedTags.length}টি ট্যাগ নির্বাচিত` : "কোনো ট্যাগ নির্বাচিত হয়নি"}
+            </span>
+          </div>
+
+          {/* নির্বাচিত ট্যাগসমূহ (Chips/Badges) */}
+          <div className="flex flex-wrap gap-1.5 min-h-[36px] items-center p-2 rounded-lg bg-background border border-border/70 shadow-2xs">
+            {selectedTags.length === 0 ? (
+              <span className="text-[11px] text-muted-foreground italic px-1">
+                নিচের তালিকা থেকে ক্লিক করে ট্যাগ সিলেক্ট করুন অথবা নতুন ট্যাগ লিখে যোগ করুন...
+              </span>
+            ) : (
+              selectedTags.map((t, idx) => (
+                <Badge
+                  key={idx}
+                  variant="secondary"
+                  className="text-xs py-1 px-2.5 gap-1.5 font-normal bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
+                >
+                  <span>#{t}</span>
+                  <button
+                    type="button"
+                    onClick={() => toggleTagSelection(t)}
+                    className="hover:text-destructive transition-colors cursor-pointer"
+                    title="মুছে ফেলুন"
+                  >
+                    <X className="size-3" />
+                  </button>
+                </Badge>
+              ))
+            )}
+          </div>
+
+          {/* নতুন ট্যাগ লেখার ইনপুট ও বাটন */}
+          <div className="flex gap-2">
+            <div className="relative flex-1">
+              <Input
+                type="text"
+                placeholder="নতুন কোনো ট্যাগ লিখতে এখানে টাইপ করুন (যেমন: সৃষ্টিতত্ত্ব)..."
+                value={newTagInput}
+                onChange={(e) => setNewTagInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleAddNewTag();
+                  }
+                }}
+                className="h-8 text-xs bg-background"
+              />
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => handleAddNewTag()}
+              disabled={!newTagInput.trim()}
+              className="h-8 text-xs gap-1 cursor-pointer bg-background"
+            >
+              <Plus className="size-3.5" /> যোগ করুন
+            </Button>
+          </div>
+
+          {/* বিদ্যমান ট্যাগসমূহ থেকে সিলেক্ট করার তালিকা */}
+          <div className="space-y-1.5 pt-1">
+            <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+              <span>বিদ্যমান ট্যাগ তালিকা থেকে ক্লিক করে সিলেক্ট বা আন-সিলেক্ট করুন:</span>
+              {availableTags.length > 8 && (
+                <input
+                  type="text"
+                  placeholder="ট্যাগ ফিল্টার..."
+                  value={tagSearchQuery}
+                  onChange={(e) => setTagSearchQuery(e.target.value)}
+                  className="h-6 w-28 rounded border border-border bg-background px-2 text-[10px]"
+                />
+              )}
+            </div>
+
+            <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto p-2 rounded-lg border border-border/60 bg-card/60">
+              {allTagsQuery.isLoading ? (
+                <span className="text-[11px] text-muted-foreground">ট্যাগ লোড হচ্ছে...</span>
+              ) : filteredAvailableTags.length === 0 ? (
+                <span className="text-[11px] text-muted-foreground">কোনো ট্যাগ নেই। উপরে নতুন ট্যাগ লিখুন।</span>
+              ) : (
+                filteredAvailableTags.map((tagObj: any) => {
+                  const isSelected = selectedTags.some(
+                    (t) => t.toLowerCase() === tagObj.name_bn.toLowerCase()
+                  );
+                  return (
+                    <button
+                      key={tagObj.id}
+                      type="button"
+                      onClick={() => toggleTagSelection(tagObj.name_bn)}
+                      className={`text-xs px-2.5 py-1 rounded-md border transition-all cursor-pointer inline-flex items-center gap-1 ${
+                        isSelected
+                          ? "bg-primary text-primary-foreground border-primary font-medium shadow-2xs"
+                          : "bg-background text-foreground/80 border-border hover:bg-muted/70 hover:border-border/80"
+                      }`}
+                    >
+                      {isSelected ? <Check className="size-3 text-primary-foreground" /> : <TagIcon className="size-2.5 text-muted-foreground" />}
+                      <span>{tagObj.name_bn}</span>
+                    </button>
+                  );
+                })
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -1759,6 +1946,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                 setAuthorId("");
                 setCategoryId("");
                 setTagsInput("");
+                setSelectedTags([]);
+                setNewTagInput("");
+                setTagSearchQuery("");
                 setCustomPublishedAt("");
               }}
             >
@@ -2015,8 +2205,9 @@ function ArticlesAdmin({ onOpenImport }: { onOpenImport: (type: "wordpress" | "b
                             setEditingId(a.id);
                             setPublished(a.published);
                             setAuthorId(a.author_id ?? "");
-                            setCategoryId(a.category_id ?? "");
-                            setTagsInput(Array.isArray(a.tags) ? a.tags.join(", ") : "");
+                            const rawTags = Array.isArray(a.tags) ? a.tags : [];
+                            setTagsInput(rawTags.join(", "));
+                            setSelectedTags(rawTags.map((t: string) => String(t).trim().replace(/^#/, "")).filter(Boolean));
                             const pubDate = a.published_at || a.created_at;
                             setCustomPublishedAt(pubDate ? new Date(pubDate).toISOString().slice(0, 16) : "");
                             setForm({

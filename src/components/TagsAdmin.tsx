@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Plus, Trash2, Pencil, Tag as TagIcon } from "lucide-react";
+import { Plus, Trash2, Pencil, Tag as TagIcon, RefreshCw, Search } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -8,16 +8,30 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { STATIC_ARTICLES_META } from "@/lib/staticArticlesMeta";
+
+export function slugifyTag(val: string): string {
+  if (!val) return "";
+  const cleaned = val
+    .toLowerCase()
+    .trim()
+    .replace(/^#/, "")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-");
+
+  if (cleaned) return cleaned;
+  let hash = 0;
+  for (let i = 0; i < val.length; i++) {
+    hash = (hash << 5) - hash + val.charCodeAt(i);
+    hash |= 0;
+  }
+  return `tag-${Math.abs(hash).toString(36)}`;
+}
 
 const tagSchema = z.object({
   name_bn: z.string().trim().min(1, "ট্যাগের বাংলা নাম বাধ্যতামূলক").max(80),
-  name_en: z.string().trim().max(80),
-  slug: z
-    .string()
-    .trim()
-    .min(1, "স্লাগ বাধ্যতামূলক")
-    .max(80)
-    .regex(/^[a-z0-9-]+$/, "স্লাগে শুধুমাত্র ছোট হাতের ইংরেজি অক্ষর, সংখ্যা এবং ড্যাশ (-) ব্যবহার করা যাবে"),
+  name_en: z.string().trim().max(80).optional(),
+  slug: z.string().trim().min(1, "স্লাগ বাধ্যতামূলক").max(120),
 });
 
 const EMPTY_TAG = {
@@ -30,6 +44,8 @@ export function TagsAdmin() {
   const queryClient = useQueryClient();
   const [form, setForm] = useState({ ...EMPTY_TAG });
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [searchFilter, setSearchFilter] = useState("");
+  const [isSyncing, setIsSyncing] = useState(false);
 
   const tagsQuery = useQuery({
     queryKey: ["admin-tags-list"],
@@ -43,17 +59,94 @@ export function TagsAdmin() {
     },
   });
 
-  const generateSlug = (val: string) => {
-    return val
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "-");
+  // আর্টিকেলসমূহ থেকে ট্যাগ ব্যবহারের সংখ্যা ফেচ
+  const articleTagsQuery = useQuery({
+    queryKey: ["admin-article-tags-usage"],
+    staleTime: 1000 * 60 * 5,
+    queryFn: async () => {
+      const { data } = await supabase.from("articles").select("tags");
+      const counts: Record<string, number> = {};
+
+      const processTags = (tagList: any) => {
+        if (!Array.isArray(tagList)) return;
+        tagList.forEach((t: string) => {
+          if (!t) return;
+          const clean = String(t).trim().replace(/^#/, "");
+          if (clean) {
+            counts[clean] = (counts[clean] || 0) + 1;
+          }
+        });
+      };
+
+      if (data) {
+        data.forEach((row: any) => processTags(row.tags));
+      }
+      STATIC_ARTICLES_META.forEach((meta) => processTags(meta.tags));
+
+      return counts;
+    },
+  });
+
+  const tagCounts = articleTagsQuery.data || {};
+
+  // বিদ্যমান আর্টিকেল থেকে ট্যাগ সিঙ্ক
+  const handleSyncFromArticles = async () => {
+    setIsSyncing(true);
+    try {
+      const existingDbTags = tagsQuery.data || [];
+      const existingNames = new Set(
+        existingDbTags.map((t: any) => (t.name_bn || "").toLowerCase().trim())
+      );
+
+      const toInsert: { name_bn: string; name_en: string | null; slug: string }[] = [];
+      const seenInArticles = new Set<string>();
+
+      Object.keys(tagCounts).forEach((tagName) => {
+        const clean = tagName.trim();
+        const lower = clean.toLowerCase();
+        if (!existingNames.has(lower) && !seenInArticles.has(lower)) {
+          seenInArticles.add(lower);
+          toInsert.push({
+            name_bn: clean,
+            name_en: null,
+            slug: slugifyTag(clean),
+          });
+        }
+      });
+
+      if (toInsert.length === 0) {
+        toast.info("সবগুলো ট্যাগ ইতিমধ্যে ডাটাবেজে উপস্থিত রয়েছে।");
+        setIsSyncing(false);
+        return;
+      }
+
+      const { error } = await supabase.from("tags").insert(toInsert);
+      if (error) {
+        console.error("Sync error:", error);
+        toast.error("ট্যাগ সিঙ্ক করতে সমস্যা হয়েছে: " + error.message);
+      } else {
+        toast.success(`${toInsert.length}টি নতুন ট্যাগ সফলভাবে সংরক্ষিত হয়েছে!`);
+        queryClient.invalidateQueries({ queryKey: ["admin-tags-list"] });
+      }
+    } catch (err: any) {
+      toast.error(err.message || "সিঙ্ক ব্যর্থ হয়েছে");
+    } finally {
+      setIsSyncing(false);
+    }
   };
 
   const saveTag = useMutation({
     mutationFn: async () => {
-      const parsed = tagSchema.safeParse(form);
+      let slug = form.slug.trim();
+      if (!slug) {
+        slug = slugifyTag(form.name_en || form.name_bn);
+      }
+
+      const parsed = tagSchema.safeParse({
+        name_bn: form.name_bn,
+        name_en: form.name_en || undefined,
+        slug,
+      });
       if (!parsed.success) {
         throw new Error(parsed.error.issues[0]?.message);
       }
@@ -74,9 +167,10 @@ export function TagsAdmin() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-tags-list"] });
+      queryClient.invalidateQueries({ queryKey: ["admin-article-tags-usage"] });
       setForm({ ...EMPTY_TAG });
       setEditingId(null);
-      toast.success(editingId ? "ট্যাগ আপডেট হয়েছে" : "নতুন ট্যাগ যুক্ত হয়েছে");
+      toast.success(editingId ? "ট্যাগ সফলভাবে আপডেট হয়েছে" : "নতুন ট্যাগ যুক্ত হয়েছে");
     },
     onError: (err: Error) => toast.error(err.message),
   });
@@ -93,19 +187,64 @@ export function TagsAdmin() {
     onError: (err: Error) => toast.error(err.message),
   });
 
+  const combinedTags = useMemo(() => {
+    const dbTags = tagsQuery.data || [];
+    const list = [...dbTags];
+    const dbTagNames = new Set(dbTags.map((t: any) => (t.name_bn || "").toLowerCase().trim()));
+
+    Object.entries(tagCounts).forEach(([name]) => {
+      if (!dbTagNames.has(name.toLowerCase())) {
+        list.push({
+          id: `virtual-${name}`,
+          name_bn: name,
+          name_en: null,
+          slug: slugifyTag(name),
+          isVirtual: true,
+        } as any);
+      }
+    });
+
+    return list;
+  }, [tagsQuery.data, tagCounts]);
+
+  const filteredTags = useMemo(() => {
+    if (!searchFilter.trim()) return combinedTags;
+    const q = searchFilter.toLowerCase().trim();
+    return combinedTags.filter((t: any) =>
+      t.name_bn?.toLowerCase().includes(q) ||
+      t.name_en?.toLowerCase().includes(q) ||
+      t.slug?.toLowerCase().includes(q)
+    );
+  }, [combinedTags, searchFilter]);
+
   return (
     <div className="space-y-6">
+      {/* ট্যাগ তৈরি বা সম্পাদনা ফর্ম */}
       <form
         onSubmit={(e) => {
           e.preventDefault();
           saveTag.mutate();
         }}
-        className="rounded border border-border bg-card p-5 shadow-sm space-y-4"
+        className="rounded-xl border border-border bg-card p-5 shadow-xs space-y-4"
       >
-        <h2 className="text-base font-semibold flex items-center gap-2 border-b border-border/60 pb-2">
-          <TagIcon className="size-4 text-[#2271b1]" />
-          {editingId ? "ট্যাগ সম্পাদনা করুন" : "নতুন ট্যাগ তৈরি করুন"}
-        </h2>
+        <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <h2 className="text-sm font-semibold flex items-center gap-2 text-foreground">
+            <TagIcon className="size-4 text-primary" />
+            {editingId ? "ট্যাগ সম্পাদনা করুন" : "নতুন ট্যাগ তৈরি করুন"}
+          </h2>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={handleSyncFromArticles}
+            disabled={isSyncing}
+            className="text-xs h-8 gap-1.5 cursor-pointer text-muted-foreground hover:text-foreground"
+            title="সবগুলো আর্টিকেল স্ক্যান করে বিদ্যমান ট্যাগসমূহ স্বয়ংক্রিয়ভাবে ডাটাবেজে নিয়ে আসুন"
+          >
+            <RefreshCw className={`size-3.5 ${isSyncing ? "animate-spin text-primary" : ""}`} />
+            <span>আর্টিকেল থেকে ট্যাগ সিঙ্ক</span>
+          </Button>
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
@@ -120,7 +259,7 @@ export function TagsAdmin() {
                 setForm((prev) => ({
                   ...prev,
                   name_bn: val,
-                  slug: editingId ? prev.slug : generateSlug(prev.name_en || val),
+                  slug: editingId ? prev.slug : slugifyTag(prev.name_en || val),
                 }));
               }}
               placeholder="যেমন: বিজ্ঞান"
@@ -141,7 +280,7 @@ export function TagsAdmin() {
                 setForm((prev) => ({
                   ...prev,
                   name_en: val,
-                  slug: editingId ? prev.slug : generateSlug(val || prev.name_bn),
+                  slug: editingId ? prev.slug : slugifyTag(val || prev.name_bn),
                 }));
               }}
               placeholder="e.g. Science"
@@ -157,10 +296,10 @@ export function TagsAdmin() {
           <Input
             id="tag-slug"
             value={form.slug}
-            onChange={(e) => setForm({ ...form, slug: e.target.value.toLowerCase() })}
+            onChange={(e) => setForm({ ...form, slug: e.target.value.toLowerCase().trim() })}
             placeholder="যেমন: science"
             required
-            className="h-9 text-xs"
+            className="h-9 text-xs font-mono"
           />
         </div>
 
@@ -169,7 +308,7 @@ export function TagsAdmin() {
             type="submit"
             disabled={saveTag.isPending}
             size="sm"
-            className="bg-[#2271b1] hover:bg-[#135e96] text-white text-xs cursor-pointer"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs cursor-pointer h-9 px-4"
           >
             <Plus className="size-3.5 mr-1" />
             {editingId ? "আপডেট করুন" : "ট্যাগ সংরক্ষণ করুন"}
@@ -184,7 +323,7 @@ export function TagsAdmin() {
                 setEditingId(null);
                 setForm({ ...EMPTY_TAG });
               }}
-              className="text-xs cursor-pointer"
+              className="text-xs cursor-pointer h-9"
             >
               বাতিল
             </Button>
@@ -192,55 +331,121 @@ export function TagsAdmin() {
         </div>
       </form>
 
-      {/* ট্যাগ তালিকা */}
-      <div className="space-y-2">
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">
-          সকল ট্যাগ তালিকা ({tagsQuery.data?.length || 0})
-        </h3>
+      {/* ট্যাগ তালিকা ও অনুসন্ধান */}
+      <div className="space-y-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+            <span>সকল ট্যাগ তালিকা ({combinedTags.length})</span>
+          </h3>
 
-        <div className="divide-y divide-border rounded border border-border bg-card shadow-sm">
-          {tagsQuery.data?.length === 0 ? (
-            <p className="p-4 text-xs text-muted-foreground text-center">কোনো ট্যাগ তৈরি করা হয়নি।</p>
+          <div className="relative w-full sm:w-64">
+            <Search className="absolute left-2.5 top-2.5 size-3.5 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="ট্যাগ খুঁজুন..."
+              value={searchFilter}
+              onChange={(e) => setSearchFilter(e.target.value)}
+              className="pl-8 h-8 text-xs bg-card"
+            />
+          </div>
+        </div>
+
+        <div className="divide-y divide-border rounded-xl border border-border bg-card shadow-xs overflow-hidden">
+          {filteredTags.length === 0 ? (
+            <p className="p-6 text-xs text-muted-foreground text-center">কোনো ট্যাগ পাওয়া যায়নি।</p>
           ) : (
-            tagsQuery.data?.map((tag: any) => (
-              <div key={tag.id} className="flex items-center justify-between p-3.5 hover:bg-muted/30 transition-colors">
-                <div>
-                  <span className="text-xs font-bold text-foreground inline-flex items-center gap-1.5">
-                    <TagIcon className="size-3 text-[#2271b1]" />
-                    {tag.name_bn}
-                    {tag.name_en && <span className="text-muted-foreground font-normal">({tag.name_en})</span>}
-                  </span>
-                  <p className="text-[11px] text-muted-foreground mt-0.5 font-mono">/{tag.slug}</p>
-                </div>
+            filteredTags.map((tag: any) => {
+              const usageCount = tagCounts[tag.name_bn] || 0;
+              const isVirtual = Boolean(tag.isVirtual);
 
-                <div className="flex items-center gap-1">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-7 w-7 cursor-pointer"
-                    onClick={() => {
-                      setEditingId(tag.id);
-                      setForm({
-                        name_bn: tag.name_bn,
-                        name_en: tag.name_en || "",
-                        slug: tag.slug,
-                      });
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                  >
-                    <Pencil className="size-3.5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
-                    onClick={() => deleteTag.mutate(tag.id)}
-                  >
-                    <Trash2 className="size-3.5" />
-                  </Button>
+              return (
+                <div
+                  key={tag.id}
+                  className="flex items-center justify-between p-3.5 hover:bg-muted/30 transition-colors"
+                >
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-2">
+                      <TagIcon className="size-3.5 text-primary" />
+                      <span className="text-xs font-semibold text-foreground">
+                        #{tag.name_bn}
+                      </span>
+                      {tag.name_en && (
+                        <span className="text-muted-foreground font-normal text-[11px]">
+                          ({tag.name_en})
+                        </span>
+                      )}
+                      {usageCount > 0 && (
+                        <span className="text-[10px] bg-primary/10 text-primary font-medium px-2 py-0.5 rounded-full">
+                          {usageCount}টি আর্টিকেলে ব্যবহৃত
+                        </span>
+                      )}
+                      {isVirtual && (
+                        <span className="text-[9px] bg-amber-500/10 text-amber-600 dark:text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20">
+                          আর্টিকেলে পাওয়া গেছে
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-[11px] text-muted-foreground font-mono pl-5">
+                      URL: /articles?tag={encodeURIComponent(tag.name_bn)}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    {isVirtual ? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="h-7 text-xs gap-1 cursor-pointer"
+                        onClick={async () => {
+                          const { error } = await supabase.from("tags").insert({
+                            name_bn: tag.name_bn,
+                            name_en: null,
+                            slug: tag.slug || slugifyTag(tag.name_bn),
+                          });
+                          if (error) {
+                            toast.error(error.message);
+                          } else {
+                            toast.success(`'${tag.name_bn}' ট্যাগটি ডাটাবেজে যুক্ত হয়েছে`);
+                            queryClient.invalidateQueries({ queryKey: ["admin-tags-list"] });
+                          }
+                        }}
+                      >
+                        <Plus className="size-3" /> ডাটাবেজে রাখুন
+                      </Button>
+                    ) : (
+                      <>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 cursor-pointer"
+                          title="সম্পাদনা করুন"
+                          onClick={() => {
+                            setEditingId(tag.id);
+                            setForm({
+                              name_bn: tag.name_bn,
+                              name_en: tag.name_en || "",
+                              slug: tag.slug,
+                            });
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                        >
+                          <Pencil className="size-3.5" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 text-destructive hover:bg-destructive/10 cursor-pointer"
+                          title="মুছে ফেলুন"
+                          onClick={() => deleteTag.mutate(tag.id)}
+                        >
+                          <Trash2 className="size-3.5" />
+                        </Button>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>

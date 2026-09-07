@@ -467,11 +467,24 @@ function SingleArticlePage() {
       {tagsList.length > 0 && (
         <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-2">
           <TagIcon className="size-3.5 text-muted-foreground mr-1" />
-          {tagsList.map((tag: string, index: number) => (
-            <Badge key={index} variant="secondary" className="text-[11px] font-normal">
-              #{tag}
-            </Badge>
-          ))}
+          {tagsList.map((tag: string, index: number) => {
+            const cleanTag = tag.trim().replace(/^#/, "");
+            return (
+              <Link
+                key={index}
+                to="/articles"
+                search={{ tag: cleanTag } as any}
+                className="inline-block transition-transform duration-150 hover:scale-105 active:scale-95"
+              >
+                <Badge
+                  variant="secondary"
+                  className="text-[11px] font-normal hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer border border-transparent hover:border-primary/30"
+                >
+                  #{cleanTag}
+                </Badge>
+              </Link>
+            );
+          })}
         </div>
       )}
 
