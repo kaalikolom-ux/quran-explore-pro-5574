@@ -43,6 +43,16 @@ export interface StaticArticleMeta {
 
 export const STATIC_CATEGORIES: StaticCategory[] = [
   {
+  "id": "9046c108-9d88-46bc-a84b-2e563b7527d1",
+  "name_bn": "কুরআন ও বিজ্ঞান",
+  "name_en": "Qur'an and Science",
+  "slug": "quran-and-science",
+  "description_bn": "পবিত্র কুরআন ও আধুনিক বিজ্ঞানের তুলনামূলক ও চিন্তাশীল অনুসন্ধান, জীববিজ্ঞানের বিস্ময় ও আত্মিক নিদর্শন।",
+  "description_en": "Quranic signs in modern science, biological marvels, genetics, and reflective contemplation.",
+  "sort_order": 3,
+  "is_restricted": false
+},
+  {
     "id": "7f3d2a1b-4c5e-4689-a012-3456789abcde",
     "name_bn": "বিজ্ঞানভিত্তিক",
     "name_en": "Scientific",
@@ -76,6 +86,49 @@ export const STATIC_AUTHORS: Record<string, StaticAuthor> = {
 };
 
 export const STATIC_ARTICLES_META: StaticArticleMeta[] = [
+  {
+  "id": "art-dna-jiboner-char-okhkhor-o-nijer-moddhe-lukiye-thaka-ek-mohabissho",
+  "slug": "dna-jiboner-char-okhkhor-o-nijer-moddhe-lukiye-thaka-ek-mohabissho",
+  "title_bn": "ডিএনএ: জীবনের চার অক্ষর এবং নিজের মধ্যে লুকিয়ে থাকা এক মহাবিশ্ব",
+  "title_en": "DNA: The Four Letters of Life and the Universe Within",
+  "excerpt_bn": "আমাদের শরীরের একটি মাত্র কোষ খালি চোখে দেখা যায় না। অথচ সেই ক্ষুদ্র কোষের ভেতরে রয়েছে এমন এক জগৎ, যার জটিলতা পৃথিবীর অসংখ্য গ্রন্থাগারকেও বিস্মিত করে। ৩.২ বিলিয়ন বেস পেয়ার ও কোটি কোটি নিদর্শনের এক জীবন্ত কোরআনিক অনুসন্ধান।",
+  "excerpt_en": "A single human cell invisible to the naked eye harbors an information universe that dwarfs great libraries. A reflective exploration of 3.2 billion base pairs and divine signs within.",
+  "cover_image_url": null,
+  "published": true,
+  "published_at": "2026-09-07T03:00:00.000Z",
+  "created_at": "2026-09-07T03:00:00.000Z",
+  "updated_at": "2026-09-07T03:00:00.000Z",
+  "tags": [
+    "কুরআন ও বিজ্ঞান",
+    "ডিএনএ",
+    "DNA",
+    "জীববিজ্ঞান",
+    "জিনোম",
+    "সূরা আয-যারিয়াত ৫১:২১",
+    "সূরা আল-ইনসান ৭৬:২",
+    "সূরা ফুসসিলাত ৪১:৫৩",
+    "সৃষ্টিতত্ত্ব",
+    "আলম এম."
+  ],
+  "author": {
+    "id": "38aa28c8-3535-4a1b-ba06-3d1e2792a9c1",
+    "name_bn": "আলম এম.",
+    "name_en": "Alam M",
+    "bio_bn": "কুরআনের শব্দ ও সংখ্যা গভীর চিন্তার আহ্বান জানায়। আমি সেই চিহ্নগুলো অনুসরণ করি। আমি আলম, পাঠ্যের কাছে নম্র, বিশ্লেষণে কঠোর। লিখি নিজের বোধ থেকে; চূড়ান্ত জ্ঞান একমাত্র আল্লাহর কাছে।",
+    "bio_en": "The Quran’s words and numbers invite deep thought. I trace those traces. I'm Alam, humble before the text, rigorous in analysis. I write from my understanding; only ALLAH knows best.",
+    "image_url": "https://res.cloudinary.com/coindyna/image/upload/i_am_alam.webp"
+  },
+  "category": {
+    "id": "9046c108-9d88-46bc-a84b-2e563b7527d1",
+    "name_bn": "কুরআন ও বিজ্ঞান",
+    "name_en": "Qur'an and Science",
+    "slug": "quran-and-science",
+    "description_bn": "পবিত্র কুরআন ও আধুনিক বিজ্ঞানের তুলনামূলক ও চিন্তাশীল অনুসন্ধান, জীববিজ্ঞানের বিস্ময় ও আত্মিক নিদর্শন।",
+    "description_en": "Quranic signs in modern science, biological marvels, genetics, and reflective contemplation.",
+    "sort_order": 3,
+    "is_restricted": false
+  }
+},
   {
     "id": "art-zalika-dhalika-shobder-ortho-o-quranic-proyog",
     "slug": "zalika-dhalika-shobder-ortho-o-quranic-proyog",
