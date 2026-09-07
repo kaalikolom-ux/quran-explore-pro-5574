@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { 
   Calendar, 
   User, 
@@ -16,14 +16,22 @@ import {
   ShieldAlert,
   Sparkles,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Shield,
+  Edit3,
+  Eye,
+  EyeOff,
+  AlertTriangle,
+  Settings,
+  ExternalLink
 } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { toast } from "sonner";
 
 import { supabase } from "@/integrations/supabase/client";
 import { usePrefs } from "@/lib/prefs";
 import { useCategoryAccess } from "@/lib/accessControl";
+import { useIsAdmin } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CommentsSection } from "@/components/CommentsSection";
@@ -31,6 +39,7 @@ import { SparkleCtaNotice } from "@/components/SparkleCtaNotice";
 import { formatArticleContent } from "@/lib/contentFormatter";
 import { STATIC_ARTICLES } from "@/lib/staticArticlesData";
 import { STATIC_ARTICLES_META } from "@/lib/staticArticlesMeta";
+import { ArticleInlineEditorModal } from "@/components/ArticleInlineEditorModal";
 
 export const Route = createFileRoute("/articles/$slug")({
   head: ({ params }) => {
@@ -80,8 +89,24 @@ function SingleArticlePage() {
   const { slug } = Route.useParams();
   const { lang } = usePrefs();
   const { isLoggedIn, canAccessCategory, isLoading: accessLoading } = useCategoryAccess();
+  const { isAdmin } = useIsAdmin();
+  const queryClient = useQueryClient();
   const [copied, setCopied] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  // Keyboard shortcut: Ctrl+E or Alt+E to edit article on page
+  useEffect(() => {
+    if (!isAdmin) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey || e.altKey) && e.key.toLowerCase() === "e") {
+        e.preventDefault();
+        setIsEditModalOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isAdmin]);
 
   // স্ট্যাটিক আর্টিকেলের তাৎক্ষণিক সমাধান (0ms লোড - প্রথম ৬-৭ ইঞ্চি সাথে সাথে রেন্ডার)
   const initialStaticArticle = useMemo(() => {
@@ -249,6 +274,41 @@ function SingleArticlePage() {
     );
   };
 
+  // ১-ক্লিক ভিজিটর ভিজিবিলিটি টগল মিউটেশন (Published <-> Draft)
+  const togglePublishMutation = useMutation({
+    mutationFn: async () => {
+      if (!article?.id) {
+        throw new Error("পোস্ট আইডি পাওয়া যায়নি");
+      }
+      const newStatus = !article.published;
+      const { error } = await supabase
+        .from("articles")
+        .update({
+          published: newStatus,
+          published_at: newStatus ? (article.published_at || new Date().toISOString()) : null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", article.id);
+
+      if (error) throw error;
+      return newStatus;
+    },
+    onSuccess: (newStatus) => {
+      queryClient.invalidateQueries({ queryKey: ["article-single-detail", slug] });
+      queryClient.invalidateQueries({ queryKey: ["articles"] });
+      queryClient.invalidateQueries({ queryKey: ["admin-articles"] });
+      queryClient.invalidateQueries({ queryKey: ["article-prev-next-nav"] });
+      toast.success(
+        newStatus
+          ? "পোস্টটি সফলভাবে প্রকাশ (Publish) করা হয়েছে! ভিজিটররা এখন এটি দেখতে পাবেন।"
+          : "পোস্টটি খসড়া (Draft) করা হয়েছে! সাধারণ ভিজিটরদের থেকে এটি লুকানো হয়েছে।"
+      );
+    },
+    onError: (err: any) => {
+      toast.error(err?.message || "স্ট্যাটাস পরিবর্তন ব্যর্থ হয়েছে");
+    },
+  });
+
   if (isLoading || accessLoading) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-10 sm:py-14 animate-pulse space-y-6">
@@ -321,6 +381,28 @@ function SingleArticlePage() {
     );
   }
 
+  // ড্রাফট / খসড়া পোস্ট চেক: সাধারণ ভিজিটরদের জন্য সম্পূর্ণ হিডেন
+  if (article.published === false && !isAdmin) {
+    return (
+      <div className="mx-auto max-w-md px-4 py-24 text-center space-y-4">
+        <div className="mx-auto size-14 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
+          <EyeOff className="size-6" />
+        </div>
+        <h2 className="text-lg font-bold text-foreground font-serif">পোস্টটি বর্তমানে অপ্রকাশিত / খসড়া রয়েছে</h2>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          এই আর্টিকেলটি বর্তমানে খসড়া (Draft) হিসেবে সংরক্ষিত রয়েছে এবং সাধারণ পাঠকদের জন্য এখনও উন্মুক্ত নয়।
+        </p>
+        <div className="pt-2 flex justify-center gap-3">
+          <Button asChild variant="outline" size="sm">
+            <Link to="/articles">
+              <ArrowLeft className="size-3.5 mr-1.5" /> সকল প্রকাশিত আর্টিকেল
+            </Link>
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   const title = lang === "en" && article.title_en ? article.title_en : article.title_bn;
   const excerpt = lang === "en" && article.excerpt_en ? article.excerpt_en : article.excerpt_bn;
   const content = lang === "en" && article.content_en ? article.content_en : article.content_bn;
@@ -338,6 +420,125 @@ function SingleArticlePage() {
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+      {/* অ্যাডমিন কন্ট্রোল বার (শুধুমাত্র অ্যাডমিনদের জন্য দৃশ্যমান) */}
+      {isAdmin && (
+        <div className="mb-6 rounded-2xl border border-primary/30 bg-primary/5 p-3 sm:p-4 backdrop-blur-md shadow-sm transition-all">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            {/* Left: Admin badge & Visitor Status */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="inline-flex items-center gap-1.5 rounded-lg bg-primary/15 px-2.5 py-1 text-xs font-bold text-primary border border-primary/25">
+                <Shield className="size-3.5" />
+                <span>অ্যাডমিন কন্ট্রোল</span>
+              </div>
+
+              <div className="flex items-center gap-1.5">
+                <span
+                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold border ${
+                    article.published
+                      ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30"
+                      : "bg-amber-500/15 text-amber-700 dark:text-amber-400 border-amber-500/30"
+                  }`}
+                >
+                  {article.published ? (
+                    <>
+                      <Eye className="size-3.5" /> 🟢 প্রকাশিত (লাইভ)
+                    </>
+                  ) : (
+                    <>
+                      <EyeOff className="size-3.5" /> 🟡 খসড়া (হিডেন)
+                    </>
+                  )}
+                </span>
+
+                {isCategoryRestricted && (
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-amber-500/10 text-amber-600 border border-amber-500/20">
+                    <Lock className="size-2.5" /> রেস্ট্রিকটেড ক্যাটাগরি
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Right: Quick Action Buttons */}
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Quick 1-click Toggle Visibility */}
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                disabled={togglePublishMutation.isPending}
+                onClick={() => togglePublishMutation.mutate()}
+                className={`h-8 text-xs font-semibold cursor-pointer border transition-all ${
+                  article.published
+                    ? "hover:bg-amber-500/15 hover:border-amber-500 hover:text-amber-600 dark:hover:text-amber-400"
+                    : "hover:bg-emerald-500/15 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400"
+                }`}
+                title={article.published ? "ভিজিটরদের থেকে লুকিয়ে খসড়া করুন" : "ভিজিটরদের জন্য লাইভ প্রকাশ করুন"}
+              >
+                {togglePublishMutation.isPending ? (
+                  "আপডেট হচ্ছে..."
+                ) : article.published ? (
+                  <>
+                    <EyeOff className="size-3.5 mr-1 text-amber-500" /> খসড়া করুন
+                  </>
+                ) : (
+                  <>
+                    <Eye className="size-3.5 mr-1 text-emerald-500" /> প্রকাশ করুন
+                  </>
+                )}
+              </Button>
+
+              {/* Edit On-Page Modal Button */}
+              <Button
+                type="button"
+                size="sm"
+                onClick={() => setIsEditModalOpen(true)}
+                className="h-8 text-xs font-semibold bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5 shadow-sm cursor-pointer"
+                title="এই পেজ থেকেই আর্টিকেল ও বিষয়বস্তু এডিট করুন (Ctrl+E)"
+              >
+                <Edit3 className="size-3.5" />
+                <span>এই পেজেই এডিট করুন</span>
+                <kbd className="hidden sm:inline-block ml-1 rounded bg-primary-foreground/20 px-1 py-0.2 text-[9px] font-mono">
+                  Ctrl+E
+                </kbd>
+              </Button>
+
+              {/* Direct Admin Link */}
+              <Button
+                asChild
+                variant="ghost"
+                size="sm"
+                className="h-8 text-xs text-muted-foreground hover:text-foreground cursor-pointer px-2"
+              >
+                <Link to="/admin" search={{ tab: "articles" } as any} target="_blank">
+                  <Settings className="size-3.5 mr-1" />
+                  <span className="hidden sm:inline">প্যানেল</span>
+                  <ExternalLink className="size-3 ml-0.5 opacity-60" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* খসড়া সতর্কবার্তা ব্যানার (যদি অ্যাডমিন খসড়া পোস্ট প্রিভিউ করেন) */}
+      {isAdmin && article.published === false && (
+        <div className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3.5 sm:p-4 text-amber-800 dark:text-amber-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-xs font-medium">
+            <AlertTriangle className="size-4 shrink-0 text-amber-600 dark:text-amber-400" />
+            <span>
+              <strong>খসড়া প্রিভিউ মোড (Draft Preview):</strong> এই আর্টিকেলটি বর্তমানে খসড়া অবস্থায় আছে। সাধারণ ভিজিটররা এই পেজটি দেখতে পাচ্ছেন না।
+            </span>
+          </div>
+          <Button
+            size="sm"
+            onClick={() => togglePublishMutation.mutate()}
+            disabled={togglePublishMutation.isPending}
+            className="h-7 text-xs bg-emerald-600 hover:bg-emerald-700 text-white shrink-0 cursor-pointer"
+          >
+            <Eye className="size-3.5 mr-1" /> এখনই প্রকাশ করুন
+          </Button>
+        </div>
+      )}
       {/* ব্যাক বাটন ও ক্যাটাগরি */}
       <div className="mb-6 flex items-center justify-between gap-3 text-xs">
         <Button asChild variant="ghost" size="sm" className="-ml-2 text-xs">
@@ -583,6 +784,15 @@ function SingleArticlePage() {
       <div className="mt-12 pt-8 border-t border-border/60">
         <CommentsSection articleId={article.id} />
       </div>
+
+      {/* অ্যাডমিন ইন-লাইন এডিটর মোডাল (এই পেজ থেকেই সরাসরি এডিটের জন্য) */}
+      {isAdmin && article && (
+        <ArticleInlineEditorModal
+          article={article}
+          open={isEditModalOpen}
+          onOpenChange={setIsEditModalOpen}
+        />
+      )}
     </article>
   );
 }
