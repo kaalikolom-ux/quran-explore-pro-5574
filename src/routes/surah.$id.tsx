@@ -476,7 +476,7 @@ const AyahJumpSearchForm = React.memo(function AyahJumpSearchForm({
     if (!raw) return;
 
     const normalized = toEnglishNumber(raw);
-    const match = normalized.match(/^(\d{1,3})[:\/ঃ\.\-](\d{1,3})$/);
+    const match = normalized.match(/^(\d{1,3})\s*[:\/ঃ\.\-]\s*(\d{1,3})$/);
 
     if (match) {
       const targetSurah = Number(match[1]);
@@ -485,6 +485,7 @@ const AyahJumpSearchForm = React.memo(function AyahJumpSearchForm({
       if (targetSurah >= 1 && targetSurah <= 114) {
         if (targetSurah === surahId) {
           onScrollToAyah(targetAyah);
+          onNavigate(targetSurah, targetAyah);
         } else {
           onNavigate(targetSurah, targetAyah);
         }
@@ -1357,7 +1358,7 @@ function SurahDetailPage() {
   // সুরা পরিবর্তন বা সার্চ প্যারামে আয়াত স্পেসিফাই করা হলে রেন্ডার কাউন্ট অ্যাডজাস্ট
   useEffect(() => {
     if (search.ayah) {
-      setVisibleCount(Math.max(INITIAL_BATCH_SIZE, Number(search.ayah) + 5));
+      setVisibleCount(Math.max(INITIAL_BATCH_SIZE, Number(search.ayah) + 10));
     } else {
       setVisibleCount(INITIAL_BATCH_SIZE);
     }
@@ -1366,7 +1367,7 @@ function SurahDetailPage() {
   // ফুল ডাটা ব্যাকগ্রাউন্ডে আসার পর যদি সার্চের আয়াত থাকে তবে দৃশ্যমান কাউন্ট বাড়ানো
   useEffect(() => {
     if (search.ayah && surahQuery.data?.ayahs) {
-      setVisibleCount((prev) => Math.max(prev, Number(search.ayah) + 5));
+      setVisibleCount((prev) => Math.max(prev, Number(search.ayah) + 10));
     }
   }, [search.ayah, surahQuery.data]);
 
@@ -1540,40 +1541,48 @@ function SurahDetailPage() {
     }
   }, [surahId, queryClient]);
 
-  const scrollToAyah = (ayahNum: number) => {
+  const scrollToAyah = useCallback((ayahNum: number) => {
     // নিশ্চিত করা যেন স্ক্রলের টার্গেট আয়াতটি DOM-এ মাউন্ট করা থাকে
-    setVisibleCount((prev) => Math.max(prev, ayahNum + 5));
+    setVisibleCount((prev) => Math.max(prev, ayahNum + 10));
 
     let attempts = 0;
     const interval = setInterval(() => {
       const el = document.getElementById(`ayah-${ayahNum}`);
       if (el) {
-        const headerOffset = 140;
-        const elementPosition = el.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // Native scrollIntoView with scroll-margin-top (scroll-mt-36 on AyahCard is 144px)
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-
-        el.classList.add("ring-2", "ring-primary/40");
+        el.classList.add("ring-2", "ring-primary", "bg-primary/[0.06]");
         setTimeout(() => {
-          el.classList.remove("ring-2", "ring-primary/40");
-        }, 2000);
+          el.classList.remove("ring-2", "ring-primary", "bg-primary/[0.06]");
+        }, 3000);
+
+        // সেকেন্ডারি অ্যালাইনমেন্ট চেক (ডাইনামিক ফন্ট ও ওয়ার্ড লেআউট লোড হওয়ার পর)
+        setTimeout(() => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < 60 || rect.top > 220) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 400);
 
         clearInterval(interval);
       }
       attempts++;
-      if (attempts > 30) clearInterval(interval);
-    }, 80);
-  };
+      if (attempts > 50) clearInterval(interval);
+    }, 50);
+  }, []);
 
   useEffect(() => {
-    if (search.ayah && (initQuery.isSuccess || surahQuery.isSuccess)) {
-      scrollToAyah(Number(search.ayah));
+    if (!search.ayah) return;
+    const target = Number(search.ayah);
+    if (!target || target < 1) return;
+
+    // নিশ্চিত হওয়া যেন টার্গেট আয়াতটি লোড হওয়া ডাটাতে বিদ্যমান
+    const hasTarget = currentSurahData?.ayahs?.some((a) => a.ayah === target);
+    if (hasTarget) {
+      scrollToAyah(target);
     }
-  }, [initQuery.isSuccess, surahQuery.isSuccess, search.ayah, surahId]);
+  }, [search.ayah, currentSurahData, surahId, scrollToAyah]);
 
   const playAyahSequentially = useCallback(
     async (ayahNum: number, targetPhase?: "arabic" | "translation") => {

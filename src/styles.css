@@ -667,11 +667,6 @@ blockquote::before {
   contain-intrinsic-size: auto 68px;
 }
 
-.ayah-card-container {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 240px;
-}
-
 .article-card-progressive {
   content-visibility: auto;
   contain-intrinsic-size: auto 340px;

@@ -1286,8 +1286,8 @@ export function normalizeQuranQuery(rawQuery: string): {
 } {
   let q = bnToEnDigits(rawQuery.trim().toLowerCase());
   
-  // 1. Direct Verse Number Match e.g. "2:183", "2.183", "2/183", "2-183"
-  const directAyahMatch = q.match(/^(\d{1,3})[:ঃ\/\.\-](\d{1,3})$/);
+  // 1. Direct Verse Number Match e.g. "2:183", "2.183", "2/183", "2-183", "2 / 183", "২/৩৪"
+  const directAyahMatch = q.match(/^(\d{1,3})\s*[:ঃ\/\.\-]\s*(\d{1,3})$/);
   if (directAyahMatch) {
     const s = Number(directAyahMatch[1]);
     const a = Number(directAyahMatch[2]);
@@ -1319,8 +1319,8 @@ export function normalizeQuranQuery(rawQuery: string): {
   const prefixRegex = /^(সুরাহ্|সুরাহ|সূরাহ|সূরা|সুরা|সুরত|surah|surat|sura|অধ্যায়|অধ্যায়|পারা|আয়াত|আয়াত|verse|ayah)\s+/i;
   let stripped = q.replace(prefixRegex, "").trim();
 
-  // Check if query had format like "সুরা বাকারা ১৮৩" or "বাকারা ১৮৩"
-  const surahNameAndAyahMatch = stripped.match(/^(.+?)\s+(\d{1,3})$/);
+  // Check if query had format like "সুরা বাকারা ১৮৩", "বাকারা ১৮৩", "বাকারা:৩৪", "বাকারা/৩৪"
+  const surahNameAndAyahMatch = stripped.match(/^(.+?)\s*[:ঃ\/\.\-\s]\s*(\d{1,3})$/);
   let parsedAyah: number | undefined;
   if (surahNameAndAyahMatch) {
     stripped = surahNameAndAyahMatch[1].trim();
